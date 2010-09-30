@@ -25,7 +25,7 @@ class Output
 	end
 
 	def close
-		@f.close
+		@f.close unless @f.class == IO
 	end
 end
 

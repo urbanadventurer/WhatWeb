@@ -1,13 +1,13 @@
 WhatWeb - Next generation web scanner.
 By urbanadventurer aka Andrew Horton from Security-Assessment.com
-Version : 0.4.5, August 17th 2010
+Version : 0.4.6, Unreleased Development Version
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 License: GPLv2
 
 
 Identify content management systems (CMS), blogging platforms, stats/analytics packages, javascript libraries, servers and more. When you visit a website in your browser the transaction includes many unseen hints about how the webserver is set up and what software is delivering the webpage. Some of these hints are obvious, eg. "Powered by XYZ" and others are more subtle. WhatWeb recognises these cues and reports what it finds.
 
-WhatWeb has over 250 plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
+WhatWeb has over 400 plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
 
 There are both passive and aggressive plugins, passive plugins use information on the page, in cookies and in the URL to identify the system. A passive request is as light weight as a simple GET / HTTP/1.1 request. Aggressive plugins guess URLs and request more files. Plugins are easy to write, you don't need to know ruby to make them.
 
@@ -17,18 +17,20 @@ EXAMPLE USAGE
 Using WhatWeb on a handful of websites, standard WhatWeb output is in colour.
 
 $ whatweb slashdot.org reddit.com digg.com http://www.engadget.com/ www.whitehouse.gov
-http://reddit.com [302] HTTPServer[AkamaiGHost], RedirectLocation[http://www.reddit.com/], MD5[d41d8cd98f00b204e9800998ecf8427e]
-http://www.whitehouse.gov [200] Cookies[d], RSSFeed[http://www.whitehouse.gov/opensearch/apachesolr_search], Drupal, OpenSearch[http://www.whitehouse.gov/opensearch/apachesolr_search], Google-Analytics[GA][10791350], Title[The White House], MD5[130f09ee31cf626fa75b699cd94c7de0], Footer-Hash[8fa0ba794e1c21e1ee93d12064764f1a], Div-Span-Structure[19b509a62c40d9ce7210a8a33c740784], Header-Hash[6ab220f882680f23982afcd35d28da29]
-http://slashdot.org [200] X-Powered-By[Slash 2.005001302], UncommonHeaders[x-fry,x-varnish,x-xrds-location,slash_log_data], Google-Analytics[GA][32013], HTTPServer[Apache/1.3.41 (Unix) mod_perl/1.31-rc4], Title[Slashdot - News for nerds, stuff that matters], RSSFeed[//a.fsdn.com/sd/idlecore-tidied.css?T_2_5_0_302], PasswordField[upasswd], Mailto[jamie@slashdot.org], MD5[d80992f646155d9a601847fd5750aeb7], Header-Hash[fd1bda33896292c8183cf21321db611c], Footer-Hash[7fafeba5d1d7b9cee5387feed4bf8338], Div-Span-Structure[22f6ac9e051e449400d5dc0b82c713a1]
-http://www.engadget.com/ [200] probably BlogSmithMedia, Title[Engadget], RSSFeed[http://www.blogsmithmedia.com/www.engadget.com/media/favicon.ico], HTTPServer[Apache/2.2], PasswordField[login-pw,newkey], UncommonHeaders[keep-alive], Header-Hash[40cbd7dad1da86fa8db86b1f67e8c161], Footer-Hash[acc6ad1f37193dc0a722264bd04bbaa0], Div-Span-Structure[63dc0a8a6f4d6031419cedb4d77de546], MD5[82ca88e88d6d542efc8879e9907852fb]
-http://digg.com [200] Cookies[1337,PHPSESSID,ccc], UncommonHeaders[keep-alive], Title[Digg - The Latest News Headlines, Videos and Images], HTTPServer[Apache], RSSFeed[/opensearch.xml], OpenSearch[/opensearch.xml], X-Powered-By[PHP/5.2.9-digg8], Header-Hash[2df7eaaa4480f28013aaf48ae9266b84], Footer-Hash[6e2c99013c0f12a0b9493ad54d2db2da], Div-Span-Structure[7f4e9099c1e7c62e31d9cf0fb89ab66b], MD5[b246c05975e7ab71270de3ea8fc44e84]
-http://www.reddit.com/ [200] Cookies[reddit_first], RSSFeed[/static/reddit.css?v=b11e18eb53fe51d29cb4756ca6cf7584], PasswordField[passwd,passwd2], Google-Analytics[GA][12131688], HTTPServer['; DROP TABLE servertypes; --], JQuery, Title[reddit.com: what's new online!], MD5[c62ca3b43ee4c756d90d759aec3f1fce], Footer-Hash[9086bcb16723f874c9cebdb8497731bb], Div-Span-Structure[849596c76df42ee019847417bea59a41], Header-Hash[4fbc1dcf08d2a4be4f8b4de0617e9956]
+http://www.whitehouse.gov [200] Cookies[d], Drupal, RSSFeed[http://www.whitehouse.gov/opensearch/apachesolr_search], Google-Analytics[GA][10791350], HTTPServer[White House], OpenSearch[http://www.whitehouse.gov/opensearch/apachesolr_search], Title[The White House], MD5[5037c644b2934e3897b751e49fed22ef], Footer-Hash[27c5d9f6ed08701f8d27cbc29c0b1753], Tag-Hash[957e5dc85c5fd75df3981e917365bf64], Header-Hash[6ab220f882680f23982afcd35d28da29]
+http://reddit.com [302] HTTPServer[AkamaiGHost], RedirectLocation[http://www.reddit.com/], MD5[d41d8cd98f00b204e9800998ecf8427e], Tag-Hash[d41d8cd98f00b204e9800998ecf8427e]
+http://digg.com [302] Cookies[d,traffic_control], HTTPServer[Apache], X-Powered-By[PHP/5.2.9-digg8], UncommonHeaders[x-digg-time,keep-alive], RedirectLocation[/news], Tag-Hash[d41d8cd98f00b204e9800998ecf8427e], MD5[d41d8cd98f00b204e9800998ecf8427e]
+http://www.reddit.com/ [200] Cookies[reddit_first], Title[reddit.com: where dreams come true], Google-Analytics[GA][12131688], HTTPServer['; DROP TABLE servertypes; --], RSSFeed[/static/reddit.css?v=979b766d30fcfdef667f67feb1cc72ea], PasswordField[passwd,passwd2], JQuery, MD5[81205b7f2719605325806b1e6c9196e9], Header-Hash[754c4c29dadba9a60ed8c05db7c44819], Tag-Hash[d18d7cd019d7d54e2ccb234875ad2419], Footer-Hash[9086bcb16723f874c9cebdb8497731bb]
+http://digg.com/news [200] Cookies[d,traffic_control], X-Powered-By[PHP/5.2.9-digg8], HTML5, HTTPServer[Apache], UncommonHeaders[x-digg-time,keep-alive], Title[Digg                 - The Latest News Headlines, Videos and Images], RSSFeed[http://cdn1.diggstatic.com/img/iphone/icon.63e34426.png], Mobile-Website[Apple iPhone], Tag-Hash[b9e39fdf7d9fc460a3dc3d09ddbbd1a7], MD5[60ae72dd371895711e9873e50d918c96], Header-Hash[6ddd6eeae8ee2ae04a260c724742bf79], Footer-Hash[7a08d0572a2fd995b63b98da3547da36]
+http://www.engadget.com/ [200] probably BlogSmithMedia, Cookies[GEO-202_160_48_249], UncommonHeaders[keep-alive], HTTPServer[Apache/2.2], Title[Engadget], RSSFeed[http://www.blogsmithmedia.com/www.engadget.com/media/favicon.ico], PoweredBy[lithium], PasswordField[login-pw,newkey], Mobile-Website[Apple iPhone], MD5[bb16e2f7a2019855a0f16daf9201ce33], Tag-Hash[000596f9ac321916d2fb218855da2354], Header-Hash[40cbd7dad1da86fa8db86b1f67e8c161], Footer-Hash[4c93280680bd3f1bfd5c37439efb9b04]
+http://slashdot.org [200] X-Powered-By[Slash 2.005001], Google-Analytics[GA][32013], HTTPServer[Apache/1.3.41 (Unix) mod_perl/1.31-rc4], UncommonHeaders[x-fry,x-varnish,x-xrds-location,slash_log_data], Title[Slashdot - News for nerds, stuff that matters], Mailto[soulskillatslashdotdotorg], RSSFeed[//a.fsdn.com/sd/idlecore-tidied.css?T_2_5_0_303b], PasswordField[upasswd], Tag-Hash[b740b7b0bc46a2f3ff8813ef25a6c5b5], MD5[901702dbfe3f5f86ba4fcad7478b4587], Header-Hash[b7b9e14ea8fb33e711ac1562f91305a9], Footer-Hash[7fafeba5d1d7b9cee5387feed4bf8338]
+
 
 
 
 HELP
 WhatWeb - Next generation web scanner.
-Version 0.4.5 by Andrew Horton aka urbanadventurer from Security-Assessment.com
+Version 0.4.6 by Andrew Horton aka urbanadventurer from Security-Assessment.com
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
@@ -40,7 +42,7 @@ Usage: whatweb [options] <URLs>
 			2 polite - unimplemented
 			3 impolite - guess URLs when plugin matches
 			(smart, guess a few urls)
-			4 aggressive - try guess URLs for every plugin
+			4 aggressive - guess URLs for every plugin
 			(guess a lot of urls like nikto)
 --recursion, -r		Follow links recursively. Only follows links under the
 			path (default: off)
@@ -51,8 +53,8 @@ Usage: whatweb [options] <URLs>
 			(default: zip,gz,tar,jpg,exe,png,pdf)
 --list-plugins, -l	List the plugins
 --run-plugins, -p	Run comma delimited list of plugins. Default is all
---info-plugins, -I	Display information plugins. Optionally specific a comma
-			delimited list.
+--info-plugins, -I	Display information for all plugins. Optionally search with
+			keywords in a comma delimited list.
 --example-urls, -e	Add example urls for each plugin to the target list
 --colour=[WHEN],
 --color=[WHEN]		control whether colour is used. WHEN may be `never',
@@ -60,14 +62,18 @@ Usage: whatweb [options] <URLs>
 --log-full=FILE		Log verbose output
 --log-brief=FILE	Log brief, one-line output
 --log-xml=FILE		Log XML format
---user-agent, -U	Identify as user-agent instead of WhatWeb/0.4.5.
+--log-json=FILE		Log JSON format
+--log-json-verbose=FILE	Log JSON Verbose format
+--log-errors=FILE	Log errors
+--user-agent, -U	Identify as user-agent instead of WhatWeb/0.4.6.
 --max-threads, -t	Number of simultaneous threads. Default is 25.
---no-redirect		Do not follow HTTP 3xx redirects.
+--no-redirect		Do not follow HTTP 3xx or meta-refresh redirects 
 --proxy			<hostname[:port]> Set proxy hostname and port
 			(default: 8080)
 --proxy-user		<username:password> Set proxy user and password
 --open-timeout		Time in seconds
 --read-timeout		Time in seconds
+--wait=SECONDS		Wait SECONDS between connections (combine with threads = 1).
 --custom-plugin		Define a custom plugin call Custom,
 			Examples: ":text=>'powered by abc'"
 			":regexp=>/powered[ ]?by ab[0-9]/"
@@ -84,33 +90,35 @@ Usage: whatweb [options] <URLs>
 
 
 
-
 VERBOSE OUTPUT
 ./whatweb -v www.morningstarsecurity.com
 www.morningstarsecurity.com/ [200]
-http://www.morningstarsecurity.com [200] WordPress[3.0.1], Google-API[ajax/libs/jquery/1.3.2/jquery.min.js ], Google-Analytics[GA][791888], HTTPServer[Apache], UncommonHeaders[x-pingback], JQuery[1.4.2], Title[MorningStar Security], MetaGenerator[WordPress 3.0.1], RSSFeed[http://www.morningstarsecurity.com/wp-content/themes/pyrmont-v2-white/style.css], MD5[2b47722f6e9ad3add669f5a4d2267642], Tag-Hash[bce4fdbac307d13d570d3a0d2d45b078], Header-Hash[dba021c0aa225c8eede02c7dcc45b0d8], Footer-Hash[bd8866bbab7e53b19e03131a041d451a]
-Footer-Hash                    => hash
+http://www.morningstarsecurity.com [200] WordPress[3.0.1], Google-API[ajax/libs/jquery/1.3.2/jquery.min.js ], Google-Analytics[GA][791888], HTTPServer[Apache], UncommonHeaders[x-pingback], JQuery[1.4.2], Title[MorningStar Security], MetaGenerator[WordPress 3.0.1], RSSFeed[http://www.morningstarsecurity.com/wp-content/themes/pyrmont-v2-white/style.css], MD5[59f20aef7452702787fff7ec46733501], Tag-Hash[2e45809b1f8a1ecf782757d8dbafbb08], Header-Hash[dba021c0aa225c8eede02c7dcc45b0d8], Footer-Hash[d0efcc9da7c8c45eb1e2ac5b8d5b354e]
+Footer-Hash                    => hash (string: d0efcc9da7c8c45eb1e2ac5b8d5b354e)
 Google-API                     => google javascript API (version: ajax/libs/jquery/1.3.2/jquery.min.js )
-Google-Analytics               => pageTracker = ...UA-123-1231
-HTTPServer                     => server string
-Header-Hash                    => hash
+Google-Analytics               => pageTracker = ...UA-123-1231 (string: GA,accounts: 791888)
+HTTPServer                     => server string (string: Apache)
+Header-Hash                    => hash (string: dba021c0aa225c8eede02c7dcc45b0d8)
 JQuery                         => script (version: 1.4.2)
-MD5                            => md5 hash of html
-MetaGenerator                  => meta generator tag
-RSSFeed                        => rss link type, rss link
-Tag-Hash                       => tag pattern hash
-Title                          => page title
-UncommonHeaders                => headers
-WordPress                      => wp-content (certainty: 75), meta generator tag (version: 3.0.1)
+MD5                            => md5 hash of html (string: 59f20aef7452702787fff7ec46733501)
+MetaGenerator                  => meta generator tag (string: WordPress 3.0.1)
+RSSFeed                        => rss link type, rss link (string: http://www.morningstarsecurity.com/wp-content/themes/pyrmont-v2-white/style.css)
+Tag-Hash                       => tag pattern hash (string: 2e45809b1f8a1ecf782757d8dbafbb08)
+Title                          => page title (string: MorningStar Security)
+UncommonHeaders                => headers (string: x-pingback)
+WordPress                      => wp-content (certainty: 75), meta generator tag (version: 3.0.1), Relative /wp-content/ link
 
 
 
 LOG OUTPUT
 
-There are currently 3 types of log output. They are:
-	--log-brief Brief logging. Default output
-	--log-full  Full logging. Complete output from each plugin
-	--log-xml   XML logging. Same information as default output but in XML format
+There are currently 6 types of log output. They are:
+	--log-brief=FILE	Log brief, one-line output. Default output.
+	--log-full=FILE		Log verbose output (might be removed in future)
+	--log-xml=FILE		Log XML format
+	--log-json=FILE		Log JSON format
+	--log-json-verbose=FILE	Log JSON Verbose format
+	--log-errors=FILE	Log errors. This is usually printed to the screen in red.
 
 You can output to multiple logs simulatenously by specifying muliple command line logging options.
 
@@ -118,57 +126,9 @@ Brief Logging.
 
 Example usage: whatweb --brief-full b.log digg.com
 
-	http://digg.com [200] X-Powered-By[PHP/5.2.9-digg8], Cookies[1337,PHPSESSID,ccc], UncommonHeaders[keep-alive], Title[Digg - The Latest News Headlines, Videos and Images], HTTPServer[Apache], Mailto, Header-Hash[2df7eaaa4480f28013aaf48ae9266b84], MD5[24bc43e698e5d1388e836f5eee094fbe], Footer-Hash[ca2ffbc939969a2246cde196f0fc4841], Div-Span-Structure[828d809947c3c760d41c720c9203993b]
+http://digg.com [200] X-Powered-By[PHP/5.2.9-digg8], Cookies[1337,PHPSESSID,ccc], UncommonHeaders[keep-alive], Title[Digg - The Latest News Headlines, Videos and Images], HTTPServer[Apache], Mailto, Header-Hash[2df7eaaa4480f28013aaf48ae9266b84], MD5[24bc43e698e5d1388e836f5eee094fbe], Footer-Hash[ca2ffbc939969a2246cde196f0fc4841], Div-Span-Structure[828d809947c3c760d41c720c9203993b]
 
-
-Full Logging (may be removed in future)
-
-Example usage: whatweb --log-full f.log digg.com
-	Identifying: http://digg.com
-	HTTP-Status: 200
-	[["Cookies",
-	  [{:certainty=>100,
-	    :name=>"cookie names",
-	    :string=>["1337", "PHPSESSID", "ccc"]}]],
-	 ["Footer-Hash",
-	  [{:certainty=>100,
-	    :name=>"hash",
-	    :string=>"6e2c99013c0f12a0b9493ad54d2db2da"}]],
-	 ["HTTPServer",
-	  [{:certainty=>100, :name=>"server string", :string=>"Apache"}]],
-	 ["Header-Hash",
-	  [{:certainty=>100,
-	    :name=>"hash",
-	    :string=>"2df7eaaa4480f28013aaf48ae9266b84"}]],
-	 ["MD5",
-	  [{:certainty=>100,
-	    :name=>"md5 hash of html",
-	    :string=>"77d9c9878dfc609c84ce2cad0eed1e61"}]],
-	 ["OpenSearch",
-	  [{:certainty=>100,
-	    :name=>"open search",
-	    :regexp=>
-	     /<link .*?type=["']application\/opensearchdescription\+xml['"].*?>/mi},
-	   {:certainty=>100, :name=>"search link", :string=>"/opensearch.xml"}]],
-	 ["RSSFeed",
-	  [{:certainty=>100,
-	    :name=>"rss link type",
-	    :regexp=>/<link .*?type=["']application\/rss\+xml["'].*?>/mi},
-	   {:certainty=>100, :name=>"rss link", :string=>"/opensearch.xml"}]],
-	 ["Tag-Hash",
-	  [{:certainty=>100,
-	    :name=>"tag pattern hash",
-	    :string=>"f0d06a3e709e6ea1c1942a4b749e4afe"}]],
-	 ["Title",
-	  [{:certainty=>100,
-	    :name=>"page title",
-	    :string=>"Digg - The Latest News Headlines, Videos and Images"}]],
-	 ["UncommonHeaders",
-	  [{:certainty=>100, :name=>"headers", :string=>"keep-alive"}]],
-	 ["X-Powered-By",
-	  [{:certainty=>100,
-	    :name=>"x-powered-by string",
-	    :string=>"PHP/5.2.9-digg8"}]]]
+This is one connection per line and is searchable with grep.
 
 
 
@@ -176,20 +136,58 @@ XML Logging
 
 The XML logging is currently naive and may change. Please contact me if you have suggestions.
 
-Example usage: ./whatweb --log-full f.log --log-xml x.log digg.com
+Example usage: ./whatweb --log-xml x.log digg.com
 
+Contents of x.log:
+	<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>
+	<log>
 	<target>
 		<uri>http://digg.com</uri>
+		<http-status>302</http-status>
+		<plugin>
+			<name>Cookies</name>
+			<string>d</string>
+			<string>traffic_control</string>
+		</plugin>
+		<plugin>
+			<name>HTTPServer</name>
+			<string>Apache</string>
+		</plugin>
+		<plugin>
+			<name>MD5</name>
+			<string>d41d8cd98f00b204e9800998ecf8427e</string>
+		</plugin>
+		<plugin>
+			<name>RedirectLocation</name>
+			<string>/news</string>
+		</plugin>
+		<plugin>
+			<name>Tag-Hash</name>
+			<string>d41d8cd98f00b204e9800998ecf8427e</string>
+		</plugin>
+		<plugin>
+			<name>UncommonHeaders</name>
+			<string>x-digg-time,keep-alive</string>
+		</plugin>
+		<plugin>
+			<name>X-Powered-By</name>
+			<string>PHP/5.2.9-digg8</string>
+		</plugin>
+	</target>
+	<target>
+		<uri>http://digg.com/news</uri>
 		<http-status>200</http-status>
 		<plugin>
 			<name>Cookies</name>
-			<string>1337</string>
-			<string>PHPSESSID</string>
-			<string>ccc</string>
+			<string>d</string>
+			<string>traffic_control</string>
 		</plugin>
 		<plugin>
 			<name>Footer-Hash</name>
-			<string>6e2c99013c0f12a0b9493ad54d2db2da</string>
+			<string>7a08d0572a2fd995b63b98da3547da36</string>
+		</plugin>
+		<plugin>
+			<name>HTML5</name>
 		</plugin>
 		<plugin>
 			<name>HTTPServer</name>
@@ -197,39 +195,38 @@ Example usage: ./whatweb --log-full f.log --log-xml x.log digg.com
 		</plugin>
 		<plugin>
 			<name>Header-Hash</name>
-			<string>2df7eaaa4480f28013aaf48ae9266b84</string>
+			<string>6ddd6eeae8ee2ae04a260c724742bf79</string>
 		</plugin>
 		<plugin>
 			<name>MD5</name>
-			<string>2443327e1f1815f752af9901be54bc54</string>
+			<string>597fa07fcb516ad18711f3b04484080a</string>
 		</plugin>
 		<plugin>
-			<name>OpenSearch</name>
-			<string>/opensearch.xml</string>
+			<name>Mobile-Website</name>
+			<version>Apple iPhone</version>
 		</plugin>
 		<plugin>
 			<name>RSSFeed</name>
-			<string>/opensearch.xml</string>
+			<string>http://cdn1.diggstatic.com/img/iphone/icon.63e34426.png</string>
 		</plugin>
 		<plugin>
 			<name>Tag-Hash</name>
-			<string>f0d06a3e709e6ea1c1942a4b749e4afe</string>
+			<string>b9e39fdf7d9fc460a3dc3d09ddbbd1a7</string>
 		</plugin>
 		<plugin>
 			<name>Title</name>
-			<string>Digg - The Latest News Headlines, Videos and Images</string>
+			<string>Digg                 - The Latest News Headlines, Videos and Images</string>
 		</plugin>
 		<plugin>
 			<name>UncommonHeaders</name>
-			<string>keep-alive</string>
+			<string>x-digg-time,keep-alive</string>
 		</plugin>
 		<plugin>
 			<name>X-Powered-By</name>
 			<string>PHP/5.2.9-digg8</string>
 		</plugin>
 	</target>
-
-
+	</log>
 
 
 
@@ -245,8 +242,7 @@ Matches are made with:
 	* URL recognition
 	* HTML tag patterns
 	* Custom ruby code for passive and aggressive operations
-
-	
+	* and more...
 
 To list the plugins supported:
 	./whatweb -l
@@ -681,9 +677,9 @@ To list the plugins supported:
 
 
 
-To view more detail about a plugin or plugins:
+To view more detail about a plugin or search plugins for a keyword:
 
-	./whatweb -I Joomla
+	./whatweb -I joomla
 	Plugin Information
 	------------------------------
 	Joomla version 0.4 by Andrew Horton
@@ -746,6 +742,8 @@ The methods are:
 	* :name			This is the name of the match, and is optional.
 	* :url			The URL has to match this. Used for passive and agressive testing
 	* :certainty		Optional, defaults to 100. Values are maybe (25), probably (75) and certain (100).
+	* :version		As a string or number this is a version returned when other methods match
+	* :version		As a regular expression, this extracts the version information from the HTML. Also requires :version_regexp_offset=>1
 
 
 If you port a GHDB match, use :ghdb. I usually rewrite the GHDB matches with regular expressions, especially if they require inurl:
@@ -756,7 +754,7 @@ Example:
 
 Note the GHDB queries are case insensitive, as a Google query is.
 
-Supported codes are:
+Supported GHDB codes are:
 	* intitle:
 	* inurl:
 	* filetype:
@@ -817,6 +815,7 @@ KNOWN ISSUES OR BUGS
 * The MD5 hashing algorithm is used not for it's security but for it's speed as a hashing algorithm especially compared to SHA1
 * Timeout settings do not apply to the Anemone spider
 * Meta refresh redirects do not apply to the Anemone spider
+
 
 RELATED PROJECTS
 
@@ -882,12 +881,12 @@ Version 0.4.2 Released April 30th, 2010
 Version 0.4.3 Released May 24th, 2010
 Version 0.4.4 Released June 29th, 2010
 Version 0.4.5 Released August 17th, 2010
-
+Version 0.4.6 UnReleased
 
 CREDITS
 
 Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
-Homepage: http://www.morningstarsecurity.com
+Homepage: http://www.morningstarsecurity.com/research/whatweb
 License: GPLv2
 
 Anemone library (used for spidering) is written by Chris Kite
