@@ -701,8 +701,8 @@ puts "
 \t\t\t(default: #{$ANEMONE_SKIP_EXTENSIONS.join(",")})
 --list-plugins, -l\tList the plugins
 --run-plugins, -p\tRun comma delimited list of plugins. Default is all
---info-plugins, -I\tDisplay information for all plugins. Optionally search with
-\t\t\tkeywords in a comma delimited list.
+--info-plugins, -I\tDisplay information for all plugins. Optionally search
+\t\t\twith keywords in a comma delimited list.
 --example-urls, -e\tAdd example urls for each plugin to the target list
 --colour=[WHEN],\n--color=[WHEN]\t\tcontrol whether colour is used. WHEN may be `never',
 \t\t\t`always', or `auto'
@@ -720,7 +720,8 @@ puts "
 --proxy-user\t\t<username:password> Set proxy user and password
 --open-timeout\t\tTime in seconds
 --read-timeout\t\tTime in seconds
---wait=SECONDS\t\tWait SECONDS between connections (combine with threads = 1).
+--wait=SECONDS\t\tWait SECONDS between connections
+\t\t\t(combine with threads = 1).
 --custom-plugin\t\tDefine a custom plugin call Custom,
 \t\t\tExamples: \":text=>'powered by abc'\"
 \t\t\t\":regexp=>/powered[ ]?by ab[0-9]/\"
