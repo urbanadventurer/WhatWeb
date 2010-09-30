@@ -252,59 +252,93 @@ To list the plugins supported:
 	./whatweb -l
 	Plugins Loaded
 	------------------------------
+	1024-CMS,0.1
 	360-Web-Manager,0.1
+	4images,0.1
+	AChecker,0.1
+	ACollab,0.1
+	AContent,0.1
+	AMX-Mod-X,0.1
 	ANECMS,0.1
-	ASP-Nuke,0.2
+	ASP-Nuke,0.3
+	ASPThai.Net-Webboard,0.1
+	ATutor,0.1
+	AV-Arcade,0.1
 	AVTech-Video-Web-Server,0.1
 	AWStats,0.1
 	Aardvark-Topsites-PHP,0.1
 	Acclipse,0.2
 	AdobeFlash,0.1
-	Advanced-Guestbook,0.2
+	Advanced-Guestbook,0.3
+	Advanced-Image-Hosting-Script,0.1
+	AirvaeCommerce,0.1
 	Alcatel-Lucent-Omniswitch,0.1
+	All-in-one-SEO-Pack,0.1
 	Allinta-CMS,0.1
+	Amiro-CMS,0.1
 	Antiboard,0.1
 	Apache-Default,0.3
 	ArGoSoft-Mail-Server,0.1
 	Arab-Portal,0.1
+	ArticlePublisherPRO,0.1
+	Atmail-WebMail,0.1
 	AtomFeed,0.1
+	Atomic-Photo-Album,0.1
+	Axigen-Mail-Server,0.1
 	Axis-Network-Camera,0.1
 	BM-Classifieds,0.1
 	BXR,0.1
 	Barracuda-Spam-Firewall,0.1
 	Basilic,0.1
+	Battle-Blog,0.1
 	BeEF,0.1
 	Belkin-Modem,0.2
+	BinGoPHP-News,0.1
 	Bing-SearchEngine,0.1
 	Biromsoft-WebCam,0.1
 	BlogSmithMedia,0.2
 	Blogger,0.1
 	BlognPlus,0.1
 	BlueNet-Video-Server,0.1
+	BosClassifieds,0.1
 	Brother-Printer,0.1
+	Buddy-Zone,0.1
 	Burning-Board-Lite,0.1
 	BusinessSpace,0.1
+	CF-Image-Hosting-Script,0.1
 	CGI Backdoor,0.1
 	CGIProxy,0.1
+	CMS-WebManager-Pro,0.1
 	CMSQLite,0.1
 	CMScontrol,0.1
+	CMScout,0.1
 	CMSimple,0.1
 	CPanel,0.2
+	CS-Cart,0.1
+	CaLogic-Calendars,0.1
+	Calendarix,0.1
 	Campsite,0.1
 	Canon-Network-Camera,0.1
+	Cartweaver,0.1
+	CaupoShop-Classic,0.1
 	Cisco-VPN-3000-Concentrator,0.1
 	Citrix-Metaframe,0.2
+	ClanSphere,0.1
+	ClipShare,0.1
 	CodeIgniterProfiler,0.1
 	ColdFusion,0.1
 	Comersus,0.2
 	CommonSpot,0.1
-	Concrete5,0.2
+	Concrete5,0.3
 	Confluence,0.1
+	Connectix-Boards,0.1
 	Cookies,0.1
-	Coppermine,0.2
+	Coppermine,0.3
 	CruxCMS,0.1
 	CruxPA,0.1
+	CubeCart,0.1
 	CushyCMS,0.2
+	Custom-CMS,0.1
 	D-Link-Network-Camera,0.1
 	DMXReady,0.1
 	DT-Centrepiece,0.1
@@ -313,37 +347,54 @@ To list the plugins supported:
 	DUgallery,0.1
 	Dell-Printer,0.1
 	DiBos,0.2
+	DiY-CMS,0.1
+	DiamondList,0.1
+	Diferior-CMS,0.1
 	DotCMS,0.2
-	DotNetNuke,0.3
+	DotNetNuke,0.4
 	Drupal,0.2
 	DublinCore,0.1
+	E-Xoopport,0.1
+	EDK,0.1
 	EMO-Realty-Manager,0.1
+	EZCMS,0.1
 	EarlyImpact-ProductCart,0.2
 	EazyCMS,0.1
 	Echo,0.2
 	Empire-CMS,0.1
+	Escenic,0.2
+	Esvon-Classifieds,0.1
 	Evo-Cam,0.1
 	ExpressionEngine,0.2
 	F3Site,0.1
+	FAQ-Manager,0.1
+	Favicon-DB,0.1
 	FestOS,0.1
+	Fidion-CMS,0.1
 	File-Upload-Manager,0.1
 	Flax-Article-Manager,0.1
 	FluentNET,0.1
 	FluxBB,0.3
-	FontFace,0.1
 	Footer-Hash,0.2
 	Forest-Blog,0.1
-	FormMail,0.2
+	FormMail,0.3
+	Free-Simple-Software,0.1
 	FrogCMS,0.3
+	GeekLog,0.1
+	GetSimple,0.1
 	GoAhead-Webs,0.2
 	Google-API,0.1
 	Google-Analytics,0.2
 	Google-Hack-Honeypot,0.1
+	Group-Office,0.1
 	GuppY,0.1
 	HP-LaserJet-Printer,0.1
 	HTML5,0.2
 	HTTPServer,0.2
 	Header-Hash,0.1
+	Horde-Application-Framework,0.1
+	Hunt-Electronics-CCTV,0.1
+	Hycus-CMS,0.1
 	IIS-SiteNotFound,0.2
 	IIS-UnderConstruction,0.2
 	IMGallery,0.1
@@ -359,8 +410,13 @@ To list the plugins supported:
 	JQuery,0.2
 	Jamroom,0.1
 	Jboss,0.1
-	Joomla,0.4
+	Joomla,0.5
+	Kayako-SupportSuite,0.1
+	Kleeja,0.1
 	Kloxo Single Server,0.1
+	KnowledgeTree,0.1
+	Kontaktformular,0.1
+	Koobi,0.1
 	Liferay,0.1
 	Lightbox,0.2
 	Lime-Survey,0.1
@@ -371,29 +427,41 @@ To list the plugins supported:
 	LocazoList-Classifieds,0.1
 	Loggix,0.1
 	Lucky-Tech-iGuard,0.1
+	MAXdev,0.1
 	MD5,0.2
+	Macs-CMS,0.1
+	MailForm-Plugin,0.1
 	MailSiteExpress,0.2
 	Mailman,0.1
 	Mailto,0.2
 	Mambo,0.2
 	MediaWiki,0.1
+	Meta-Refresh-Redirect,0.2
 	MetaGenerator,0.2
 	MetaPoweredBy,0.2
 	Microsoft-Sharepoint,0.1
 	MicrosoftODBCError,0.1
-	MikroTik,0.2
+	Mihalism-Multi-Host,0.1
+	MikroTik,0.3
+	MiniCWB,0.1
 	Minify,0.1
 	MnoGoSearch,0.2
+	Mobile-Website,0.1
 	Mobotix-Network-Camera,0.1
 	ModxCMS,0.2
 	Moodle,0.2
-	MovableType,0.2
+	Motorito,0.1
+	MovableType,0.3
 	My-PHP-Indexer,0.1
 	My-WebCamXP-Server,0.1
+	MyHobbySite,0.1
+	MyPHP-Forum,0.1
+	MySource-Matrix,0.1
 	MyioSoft-Ajax-Portal,0.1
-	MysqlSyntaxError,0.1
+	NetArtMedia-Real-Estate-Portal,0.1
 	NetBotz-Network-Monitoring-Device,0.1
 	Netious-CMS,0.1
+	Netref,0.1
 	Netsnap-Web-Camera,0.1
 	NovellGroupwise,0.2
 	Nukedit,0.1
@@ -402,6 +470,7 @@ To list the plugins supported:
 	OSCommerce,0.3
 	Oce,0.2
 	OkiPBX,0.2
+	Open-Auto-Classifieds,0.1
 	Open-Blog,0.1
 	Open-Freeway,0.1
 	Open-Source-Ticket-Request-System,0.1
@@ -409,44 +478,64 @@ To list the plugins supported:
 	OpenGraphProtocol,0.1
 	OpenID,0.1
 	OpenSearch,0.1
+	Orbis-CMS,0.1
+	OvBB,0.1
+	PG-Real-Estate-Solution,0.1
 	PG-Roomate-Finder-Solution,0.1
 	PHP-Fusion,0.1
 	PHP-Layers,0.1
 	PHP-Link-Directory,0.1
+	PHP-Live,0.1
+	PHP-Photo-Gallery,0.1
 	PHP-Shell,0.1
 	PHPCake,0.2
 	PHPDirector,0.1
 	PHPEasyData,0.1
 	PHPError,0.2
 	PHPFM,0.1
-	PHPNuke,0.2
+	PHPNuke,0.3
 	PHPraid,0.1
 	PageUp-People,0.1
 	Panasonic-Network-Camera,0.1
 	Parked-Domain,0.1
 	PasswordField,0.1
+	Pc4Uploader,0.1
 	PhilBoard,0.1
+	PhotoPost-PHP,0.1
+	PhpMesFilms,0.1
+	Piwigo,0.1
 	Piwik,0.1
 	Pixel-Ads-Script,0.1
+	Pixelpost,0.1
 	Pixie,0.1
 	Plesk,0.2
 	Pligg-CMS,0.1
+	Plogger,0.1
 	Plone,0.2
 	PortalApp,0.1
 	PoweredBy,0.2
 	Pressflow,0.1
+	Pro-Chat-Rooms,0.1
 	Prototype,0.2
 	QNAP-NAS,0.1
 	Quantcast,0.1
+	Quick.Cms,0.1
 	RSSFeed,0.1
+	Realtor-747,0.1
 	RedirectLocation,0.2
+	RevSense,0.1
 	RoundCube,0.2
+	Rumba-CMS,0.1
 	RunCMS,0.1
+	S-CMS,0.1
 	SHOUTcast-Administrator,0.1
 	SMF,0.2
 	Saurus-CMS,0.1
+	SazCart,0.1
 	Scriptaculous,0.2
-	SearchFitShoppingCart,0.2
+	Seagull-PHP-Framework,0.1
+	SearchFitShoppingCart,0.3
+	Shaadi-Zone,0.1
 	SiemensSpeedStreamRouter,0.2
 	SilverStripe,0.2
 	SimpNews,0.1
@@ -454,80 +543,109 @@ To list the plugins supported:
 	SkaLinks,0.1
 	SmodCMS,0.1
 	Snap-Appliance-Server,0.1
+	SnoGrafx,0.1
 	SnomPhone,0.2
 	Softbiz-Freelancers-Script,0.1
 	Softbiz-Online-Auctions-Script,0.1
 	Softbiz-Online-Classifieds,0.1
 	Sony-Network-Camera,0.1
 	Sony-Video-Network-Station,0.1
-	SquirrelMail,0.2
+	SquirrelMail,0.3
 	Star-Network,0.1
 	StarDot-NetCam,0.1
 	Stardot-Express,0.1
+	Streamline-PHP-Media-Server,0.1
 	Subdreamer-CMS,0.1
 	Subrion-CMS,0.1
+	Suspended-Webpage,0.1
+	Symphony,0.1
 	SyndeoCMS,0.1
+	System-Shop,0.1
+	TCMS,0.1
 	TWiki,0.1
 	Tag-Hash,0.2
 	TaskFreak,0.1
 	Team-Board,0.1
 	Textpattern,0.1
+	Textpattern-CMS,0.1
 	The-PHP-Real-Estate-Script,0.1
 	Title,0.2
 	TomatoCMS,0.1
+	TomatoCart,0.1
 	Tomcat,0.2
+	Toner-Cart,0.1
 	Toshiba-Network-Camera,0.1
 	ToshibaPrinter,0.2
 	Trac,0.1
+	Traidnt-UP,0.1
+	Tribiq,0.1
 	Turbo-Seek,0.1
 	TypePad,0.2
 	TypoLight,0.2
+	Ultrastats,0.1
 	Umbraco,0.1
 	UncommonHeaders,0.2
-	VBulletin,0.2
-	VP-ASP,0.2
-	VSNSLemon,0.2
+	VBulletin,0.3
+	VP-ASP,0.3
+	VS-Panel,0.1
+	VSNSLemon,0.3
 	Veo-Observer,0.1
 	VideoShareEnterprise,0.1
 	Virtualmin,0.1
 	VisionGS-Webcam,0.1
 	Vulnerable-To-XSS,0.1
 	WWWBoard,0.1
+	Warcraft-3-Frozen-Throne-Mod-Config-File,0.1
+	Weatimages,0.1
 	Web-Calendar-System,0.1
 	Web-Data-Administrator,0.1
+	WebAsyst-Shop-Script,0.1
 	WebDVR,0.1
 	WebEye-Network-Camera,0.1
 	WebGuard,0.2
 	WebPress,0.1
+	Webmatic,0.1
+	WebspotBlogging,0.1
 	WhiteBoard,0.1
+	Whizzy-CMS,0.1
 	Winamp-Web-Interface,0.1
 	Windows-Internet-Printing,0.1
 	WindowsSBS,0.2
 	WoW-Raid-Manager,0.1
-	WordPress,0.2
+	WordPress,0.3
 	WordPressSpamFree,0.2
 	WordpressSuperCache,0.3
 	X-ASPNetVersion,0.2
 	X-Powered-By,0.2
 	X7-Chat,0.1
 	XHP-CMS,0.1
+	XchangeBoard,0.1
 	Xerox-Printers,0.1
 	XtraBusinessHosting,0.2
 	Zen-Cart,0.1
 	Zeus-Cart,0.1
 	Zikula,0.1
+	Zomplog,0.1
 	Zoph,0.1
 	Zyxel-Vantage-Service-Gateway,0.1
 	anyInventory,0.1
+	ashnews,0.1
+	aspWebLinks,0.1
+	bSpeak,0.1
 	boastMachine,0.1
+	chillyCMS,0.1
 	coWiki,0.1
 	cpCommerce,0.1
 	eLitius,0.1
+	eMeeting-Online-Dating-Software,0.1
+	eSitesBuilder,0.1
 	eSyndiCat,0.1
+	easyLink-Web-Solutions,0.1
 	envezion~media,0.1
 	ezBOO-WebStats,0.1
 	i-Catcher-Console,0.1
 	iDVR,0.1
+	iGaming-CMS,0.1
 	iRealty,0.1
 	iScripts-CyberMatch,0.1
 	iScripts-EasySnaps,0.1
@@ -536,20 +654,31 @@ To list the plugins supported:
 	iScripts-SocialWare,0.1
 	ispCP-Omega,0.2
 	jobberBase,0.1
+	linkSpheric,0.1
 	mojoPortal,0.1
+	mySQL-Error,0.1
 	phPhotoAlbum,0.1
 	php-ping,0.1
 	phpBB,0.2
 	phpFreeChat,0.1
 	phpMyAdmin,0.1
+	phpMyTourney,0.1
 	phpPgAdmin,0.1
+	phpQuestionnaire,0.1
 	phpSysInfo,0.1
+	phpVID,0.1
 	phpinfo,0.1
+	phpwcms,0.1
 	sabros.us,0.1
 	samPHPweb,0.1
 	syntaxCMS,0.1
 	uPortal,0.1
+	vbPortal,0.1
+	wpQuiz,0.1
 	xGB,0.1
+	zFeeder,0.1
+
+
 
 
 To view more detail about a plugin or plugins:
