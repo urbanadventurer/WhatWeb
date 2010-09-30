@@ -1,0 +1,2129 @@
+
+How to develop WhatWeb 0.4 plugins
+----------------------------------
+by Andrew Horton aka urbanadventurer. MorningStar Security http://www.morningstarsecurity.com/
+Revision 1.1, 29th March 2010.
+
+
+Contents
+=================================================
+1. Introduction to WhatWeb
+2. Introduction to WhatWeb plugins
+	General aims of a plugin
+	Methods to identify systems
+	Important files and folders
+	Anatomy of a plugin
+3. Research background information
+4. Collect samples
+	Website Showcases
+	Using Search Engines
+	Forums for website development with the cms	
+5. Analyze samples
+	Read the source of a couple of samples
+	Collect HTML and HTTP headers from samples
+	Remove incorrectly identified samples
+	Examine the samples with WhatWeb
+	Remove more incorrectly identified samples with the whatweb report		
+	Use find-common-stuff to automatically identify common strings in the samples
+	Analyse HTTP headers and cookies
+	Read more HTML source
+6. Review of unique patterns identified
+7. Write the plugin
+8. Closing notes
+9. Resources
+
+
+1. Introduction to WhatWeb
+=================================================
+
+WhatWeb lets you identify content management systems (CMS), blogging platforms, stats/analytics packages, javascript libraries, servers and more. When you visit a website in your browser the transaction includes many unseen hints about how the webserver is set up and what software is delivering the webpage. Some of these hints are obvious, eg. "Powered by XYZ" and others are more subtle. WhatWeb recognises these hints and reports what it finds.
+
+WhatWeb has many plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
+
+There are both passive and aggressive plugins, passive plugins use information on the page, in cookies and in the URL to identify the system. A passive request is as light weight as a simple GET / HTTP/1.1 request so it is suitable for large scale scanning of websites. Aggressive plugins guess URLs and request more files.
+
+
+2. Introduction to WhatWeb Plugins
+=================================================
+
+Plugins are easy to write, you don't need to know ruby to make them but it helps.
+
+General aims of a plugin
+------------------------
+
+Most plugins have a primary aim which is to identify a type of system based on signatures. The system could be a:
+
+	* Content Management System
+	* Javascript Library
+	* HTTP Server
+	* Application Framework
+	
+Some plugins do not have the aim to identify a specific type of system. Instead they try to give information that can be used to identify unanticipated systems or can be used for all types of websites. These plugins are:
+	
+	* Title
+	* MD5 hash
+	* Meta generator tag name
+	* Uncommon HTTP headers
+	
+
+Methods to identify systems
+---------------------------
+There are 4 main methods to identify a CMS or web application. They are:
+
+	1. Matching patterns in the HTTP headers and HTML of a simple webpage request
+	2. Testing for URLs and identifying patterns in the HTML
+	3. Testing for URLs and recognising the MD5 hash of the HTML
+	4. Testing for URLs and simply noting they exist or return an HTTP status 200 code.
+
+WhatWeb supports all 4 methods however the 1st method is the most useful in large scale scanning. It is also the most efficient by trading off knowledge for network bandwidth and time.
+Support for the first method is the most developed method within WhatWeb and is discussed in detail in this document. Future development of WhatWeb will add more user friendly support for methods 2 through 4 which come under the purview of aggressive plugins.
+
+
+Important files and folders
+---------------------------
+
+The important folders to plugins are:
+
+	* disabled-plugins/
+	* plugin-development/
+	* plugin-development/tests/	
+	* plugins/
+
+All .rb files in the plugins/ folder are loaded by WhatWeb. To disable a plugin, move it into the disabled-plugins/ folder.
+
+The plugin-development folder contains some tools that are useful in developing plugins.
+The tools are:
+
+	* find-common-stuff		- This searches for common strings among a set of HTML files
+	* wget-list				- This downloads a list of example websites
+
+The plugin-development/tests folder contains example webpages of CMS's to study. The wget-list will create two files for each example webpage. A .html file and a .meta file.
+
+
+
+
+Anatomy of a plugin
+-------------------
+
+This is a typical plugin. It identifies the Drupal framework and it's split into sections and given line numbers.
+
+
+->-----------------------------------------------------------------------------------------------------------
+1	Plugin.define "Drupal" do
+2	author "Andrew Horton"
+3	version "0.1"
+4	description "Drupal is an opensource CMS written in PHP. Homepage: http://www.drupal.org"
+-<-----------------------------------------------------------------------------------------------------------
+
+Line 1. has the name. This name can be referred to on the commandline in a case insensitive way.
+
+For example, the following works:
+
+	$ ./whatweb -pdrupal www.example.com
+	
+Line 2. has the author. Just fill in your name between the double quotes.
+Line 3. contains the version number. It's up to you what number to choose.
+Line 4. Contains the description. This should contain a description of what the plugin identifies that anyone can understand. It can be many lines but must start and end with double quotes.
+
+Note that the author, version and description follow the format:
+	
+	field-name field-content
+	
+On the left is the name of the variable and on the right, separated by a space is the value. This type of variable declaration isn't ruby code, it's specific to the plugins and only works for certain variable names.
+
+The list of variable names that can be declared in a plugin in this manner are:
+	
+	* author
+	* version
+	* description
+	* examples
+	* matches
+
+
+->-----------------------------------------------------------------------------------------------------------
+5	# hard to identify
+6	#<a href="http://drupal.org"><img src="/dagboek/misc/powered-black-80x15.png" alt="Powered by Drupal, an open source content management system" title="Powered by Drupal, an open source content management system" width="80" height="15" /></a>  </div>
+7	#  <script type="text/javascript" src="/misc/drupal.js"></script>
+8	#  <script type="text/javascript" src="/main/misc/drupal.js"></script>
+9	# @import "/misc/drupal.css";
+10	# Set-Cookie: SESS6bdd09d4debccdc3a0f49becc449e8d5=2sq674vjn6vig48e3podh3j8e2; expires=Fri, 11 Dec 2009 15:37:52 GMT; path=/; domain=.moby.com
+11	# Set-Cookie: SESS9795bcd4ea70e3f846e84f29f9491636=57eafcca6400d894772a136fb5889b92; expires=Fri, 11-Dec-2009 15:38:25 GMT; path=/; domain=.save-your-future.com
+12
+13
+14	examples %w| amnesty.org/ appel.nasa.gov/ beta.worldbank.org/ entergy.pewclimate.org/ labs.divx.com/ lindenlab.com/ littlestarprints.com moby.com/ myplay.com/ sequelnaturals.com/ teen.secondlife.com/ www.artwaves.de www.asys.com.br/ www.atomicbop.net www.cristal.com.pe/?adulto=si www.dutchbutnotfromholland.eu/ www.elespectador.com/ www.ensembles.com.ph/ www.foxsearchlight.com/index.php www.freshbrain.org/ www.icsalabs.com/ www.johnnycashonline.com/ www.journalismcenter.org/ www.jovenscriativos.com.br/ www.koalafoundation.org.au/ www.la2day.com/ www.moove.be www.mtv.co.uk/channel/flux www.mulinobianco.it/ www.multiways.com/ www.nowpublic.com/ www.pravda.lt/ www.realismssoftware.com/ www.save-your-future.com www.shock.com.co/ www.sosojuicy.com/ www.spreadfirefox.com/ www.tidningenresultat.se www.ubuntu.com/ www.universitytowers.net/ www.warnerbrosrecords.com |
+15
+-<-----------------------------------------------------------------------------------------------------------
+
+Lines 5 through to 11 are comments. Each commented line must begin with a # character and this is a standard ruby way to comment code.
+
+Line 14 is a list of example websites. The examples prefix of %w| means an array of elements separated by whitespace. The individual examples are URLs. If they are missing the http:// or https:// then http:// is assumed.
+
+If you prefer you can list the examples like this:
+
+	examples %w|
+	http://www.example.com
+	http://www.example2.com
+	http://www.site.com/blah/
+	|
+
+->-----------------------------------------------------------------------------------------------------------
+16	matches [
+17	{:name=>"/misc/drupal.js",
+18	:probability=>100,
+19	:regexp=>/<script type="text\/javascript" src="[^\"]*\/misc\/drupal.js[^\"]*"><\/script>/},
+20
+21	{:name=>"Powered by link",
+22	:probability=>100,
+23	:regexp=>/<[^>]+alt="Powered by Drupal, an open source content management system"/},
+24
+25	{:name=>"/misc/drupal.css",
+26	:probability=>100,
+27	:regexp=>/@import "[^\"]*\/misc\/drupal.css"/},
+28
+29	{:name=>"jQuery.extend(Drupal.settings,",
+30	:probability=>100,
+31	:text=>'jQuery.extend(Drupal.settings,'},
+32
+33	{:name=>"Drupal.extend(",
+34	:probability=>100,
+36	:text=>'Drupal.extend('}
+37	]
+-<-----------------------------------------------------------------------------------------------------------
+
+This section is a list of patterns to match against the webpage. Matches is an array and each element of the array is a hash and is surrounded by {} brackets. Notice that each pattern has a comma after it except for the last one. This is the normal ruby method of defining an array except that there is whitespace between matches and the content.
+
+Lines 17 through 19 define the first pattern. 
+Line 17 defines the pattern name. The name can be anything that describes what it's matching.
+Line 18 defines the probability of the pattern correctly identifying the system. It's not a real probability, instead it refers to the certainty that the match correctly identifies the system:
+
+The probability values are:
+
+	 25	= Maybe
+	 75	= Probably
+	100	= Certain
+
+Line 19 contains the pattern to match. It is a regular expression but could be any of the following list:
+	
+	* regexp	- Regular Expression. Standard ruby regular expression surrounded by slashes.
+	* text		- Simple string of text surrounded by " or ' quotes
+	* ghdb		- Google Hacking Database. This is a google-like query that supports a few parameters.
+
+The parameters supported by ghdb are:
+	
+	* inurl:	- the following string is in the URL
+	* intitle:	- the following string is between the <title> </title> tags
+	* filetype:	- the following string is the file extension, eg. PDF, JPG, RB, etc.
+	* -			- the following string is not matched on the page
+
+The match used on Line 19 is regexp and the pattern is:
+	 /<script type="text\/javascript" src="[^\"]*\/misc\/drupal.js[^\"]*"><\/script>/
+
+The slash needs to be escaped with a backslash. That is why "text/javascript" is written as "text\/javascript". This is a standard ruby regular expression which differs slightly from regular expressions in other languages. To learn to write regular expressions visit http://rubular.com/ where you can copy & paste some HTML into the box then test out different regular expressions to see if they match.
+
+->-----------------------------------------------------------------------------------------------------------
+38.	def passive
+39.		m=[]
+40.		#SESS 9795bcd4ea70e3f846e84f29f9491636 =6b74f8aff4bf7d34d181a6a380d1ec7b; expires=Tue, 15-Dec-2009 15:21:24 GMT; path=/; domain=.save-your-future.com
+41.		m << {:name=>"SESS Drupal Cookie", :probability=>75 } if @meta["set-cookie"] =~ /^SESS[a-z0-9]{32}=[a-z0-9]{32}/
+42.		m
+43.	end
+
+
+44.	end
+-<-----------------------------------------------------------------------------------------------------------
+
+Lines 38 through 43 defined the passive function. This function is called everytime the plugin is matched against a webpage.
+Functions are able to access the following variables:
+
+	* @body		- The HTML body
+	* @meta		- The HTTP Headers include cookies
+	* @status	- The HTTP status code. 200 is successful, 404 is not found.
+  	* @base_uri	- The URL
+
+The passive plugin on line 39 creates an empty array called m. On line 42 it returns that array. The m array will either be empty or will have the sames fields as the patterns in the match array.
+
+Line 40 is a comment which contains a sample session cookie
+
+Line 41 adds the hash to m if the @meta array element 'set-cookie' matches the regular expression /^SESS[a-z0-9]{32}=[a-z0-9]{32}/
+This regexp means a line that starts with SESS followed by 32 lowercase letters or numbers followed by the equals sign which is followed by 32 lowercase letters or numbers.
+
+Line 44 ends the plugin which was started on line 1.
+
+
+	
+3. Research background information
+=================================================
+
+Go to the homepage of the software or CMS you are researching and learn about it. 
+
+Look for:
+	* Requirements, eg. the type of web server and languages it requires
+	* Demo sites
+	* Website showcases and portfolios
+	* Download links
+	* Documentation.
+
+Some of this information will help in writing the plugin description and some will be useful in collecting samples. 
+
+The information I gathered:
+	* The SilverStripe homepage is http://www.silverstripe.com/
+	* The opensource CMS software is at http://silverstripe.org/
+	* Documentation of requirements is at http://doc.silverstripe.org/doku.php?id=server-requirements	
+	* A project showcase at http://www.silverstripe.com/project-showcase/
+	* A demo site at http://demo.silverstripe.com/
+	
+Using the information found I wrote the following plugin description:
+"SilverStripe is an opensource CMS written in PHP. It can run on Apache, IIS or lighthttpd. Homepage: http://www.silverstripe.com"
+
+Advanced hint: If you intend to make an aggressive plugin then you may wish to download multiple versions of the software.
+
+
+4. Collect samples
+=================================================
+
+Your website samples should be representative of all SilverStripe installations. Take care not to just collect samples that are recently developed. Try to collect samples from a variety of sources and with a range of configurations.
+
+
+Methods to find samples:
+	* Search Engines
+	* Website Showcases and Design Portfolios
+	* Forums for website development with the cms
+
+Website Showcases
+-----------------
+A website showcase is a collection of websites that show off the abilities of the web designers and the potential of the CMS. Try to find showcases that have websites designed by more than one web developer. Sites that are made by the same developer are not properly representative of all sites and may include the designers idiosyncrasies.
+
+While reading the background information I found this showcase on the official homepage: http://www.silverstripe.com/project-showcase/
+
+By Googling for "silverstripe showcase" I found the official community showcase at http://www.silverstripe.org/community-showcase.
+
+Googling for "webdesign portfolio silverstripe" found some web designers with links to SilverStripe websites.
+
+The portfolio at http://smartplugsdesign.com/portfolio/ contains the following SilverStripe sites:
+	http://www.lisamarieelliott.com/
+	http://www.moonlitekustoms.com/
+	http://www.textiprints.com/
+	http://www.intandemtheatre.org/
+	http://www.stillrunnin.com/
+	http://www.enamaine.org/
+
+The best source of samples is the community showcase because it contains a variety of websites made by different webdesigners and the websites are included in the portfolio over a period of time. Websites created over a wide period of time are useful as samples because they will run different versions of the SilverStripe software. There are 98 portfolio pages so I collected samples from pages 1, 25, 50, 75 and 98.
+
+The samples collected from the community portfolio:
+	http://www.holistichealth.com/
+	http://www.verus.com.tr/
+	http://www.latenightdisco.com/
+	http://www.arprostatecancer.org/
+	http://www.cavendishimaging.com/
+	http://beatone.co.uk/
+	http://www.loguitos.com/
+	http://www.easycash4life.com/
+	http://www.gsbc.edu/
+	http://www.bradyinc.com/
+	http://www.monjasantner.de/
+	http://www.robert80.de/
+	http://customcanvas.fritzandandre.com/
+	http://www.idee-cruises.de/
+	http://www.maklerservice-greiz.de/
+	http://www.kitesurfnelson.co.nz/
+	http://www.moto-racepaint.com/
+	http://www.hutmacherin.com/
+	http://www.fuel.ie/silverstripe
+	http://www.infinitestillness.ie/ss
+	http://www.peterpanvakantieclub.nl/
+	http://www.chapmansurfboards.com/
+	http://www.fairtradenap.net/
+	http://www.benpearce.co.nz/
+	http://www.wend.nl/
+	http://www.resoba.com/
+	http://maungataniwha.co.nz/
+	http://www.gyo.co.nz/
+	http://www.firstgalaxies.org/
+	http://www.clockwork.co.nz/
+	http://www.upstreamgroup.com/
+	http://www.moerakihavenmotel.co.nz/
+	http://www.thelightboxdesigns.com/
+	http://www.nadabakery.co.nz/
+	http://comtel.com.au/
+	http://victoriaoruwari.com/
+	http://www.demconvention.com/
+	http://www.whileyouwait.co.nz/
+	http://omb.cl/
+	http://www.executivemediasearch.com/
+	http://www.naciondnb.com/
+	http://www.thecelebritytruth.com/
+	http://www.frussian.com.ar/
+	http://unbounded.org/
+	http://www.rcaforum.org.nz/
+	http://charcoalinteriors.com.au/
+	http://www.rcaforum.org.nz/
+	http://www.andrewking.co.nz/
+	http://www.elijahlofgren.com/silverstripe/
+	http://www.silverstripe.com/
+
+This may seem like a large number of samples to collect but I assume that some of these websites will no longer be running SilverStripe or may no longer exist at all.
+
+
+Using Search Engines
+--------------------
+
+Introduction
+------------
+Google-dorks are strings that can be used with Google to discover specific systems. There is an extensive database of google-dorks in the Google Hacking Database hosted at http://www.hackersforcharity.org/ghdb/. 
+
+	Example: “Powered by Vsns Lemon” intitle:”Vsns Lemon”
+
+Using search engines to discover samples with google-dorks must not be the sole method used as these websites do not represent all sites on the internet running the system you are searching for. Webmasters have an incentive to remove the identifying strings discovered by google-dorks to reduce it's discoverability by malicious hackers.
+
+Some WordPress installations include the text in the footer "Powered by WordPress" while this makes an excellent string to search for to find some installations, most WordPress sites do not include this string.
+
+
+SilverStripe example
+--------------------
+First I searched for known google-dorks for SilverStripe by googling for "silverstripe google dork" and "silverstripe google hacking".
+	
+We won't know how to search for SilverStripe sites until we analyze some of the sample sites. Note that Google doesn't index html fragments, instead it just indexes words, titles, and urls.
+
+I pick one sample to check, www.cavendishimaging.com. By reading the HTML source code I notice that the following line is included: <meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" >
+This positively identifies the site is made with SilverStripe but this content won't be indexed by google. At first glance nothing else on the page looks as though it can identify it was made with SilverStripe.
+
+
+Forums for website development with the cms:
+--------------------------------------------
+
+Webdesign forums often have links to websites provided by the web designers. Some of these websites will be of lower quality than found in a portfolio and some will also be in the default setup. Such websites would not be included in an offical portfolio.
+
+By Googling for "silverstripe webdesign forum" I found the official SilverStripe Forum: http://silverstripe.org/connect-with-other-silverstripe-members/show/256356
+
+Some website samples collected from the forum are:
+	http://hungryhearts.no 
+	http://weonline.in 
+	http://belitsky.info/work/hartmann 
+	http://kunstforum.as/
+	http://www.choidoco.com/demo/
+	http://www.tobychampion.co.uk/
+	http://www.silverstripe.org.pl/
+
+
+
+5. Anaylze samples
+=================================================
+
+I need to analyze the samples I have collected to find similarities that can be used to identify these websites as SilverStripe. First I will search for identifying features in the webpages and HTTP headers.
+
+In step 2 I collected 62 SilverStripe samples. I assume that some of these websites are incorrectly listed as SilverStripe so I will keep that in mind.
+
+	http://beatone.co.uk/
+	http://belitsky.info/work/hartmann 
+	http://charcoalinteriors.com.au/
+	http://comtel.com.au/
+	http://customcanvas.fritzandandre.com/
+	http://hungryhearts.no 
+	http://kunstforum.as/
+	http://maungataniwha.co.nz/
+	http://omb.cl/
+	http://unbounded.org/
+	http://victoriaoruwari.com/
+	http://weonline.in 
+	http://www.andrewking.co.nz/
+	http://www.arprostatecancer.org/
+	http://www.benpearce.co.nz/
+	http://www.bradyinc.com/
+	http://www.cavendishimaging.com/
+	http://www.chapmansurfboards.com/
+	http://www.choidoco.com/demo/
+	http://www.clockwork.co.nz/
+	http://www.demconvention.com/
+	http://www.easycash4life.com/
+	http://www.elijahlofgren.com/silverstripe/
+	http://www.enamaine.org/
+	http://www.executivemediasearch.com/
+	http://www.fairtradenap.net/
+	http://www.firstgalaxies.org/
+	http://www.frussian.com.ar/
+	http://www.fuel.ie/silverstripe
+	http://www.gsbc.edu/
+	http://www.gyo.co.nz/
+	http://www.holistichealth.com/
+	http://www.hutmacherin.com/
+	http://www.idee-cruises.de/
+	http://www.infinitestillness.ie/ss
+	http://www.intandemtheatre.org/
+	http://www.kitesurfnelson.co.nz/
+	http://www.latenightdisco.com/
+	http://www.lisamarieelliott.com/
+	http://www.loguitos.com/
+	http://www.maklerservice-greiz.de/
+	http://www.moerakihavenmotel.co.nz/
+	http://www.monjasantner.de/
+	http://www.moonlitekustoms.com/
+	http://www.moto-racepaint.com/
+	http://www.naciondnb.com/
+	http://www.nadabakery.co.nz/
+	http://www.peterpanvakantieclub.nl/
+	http://www.rcaforum.org.nz/
+	http://www.resoba.com/
+	http://www.robert80.de/
+	http://www.silverstripe.com/
+	http://www.silverstripe.org.pl/
+	http://www.stillrunnin.com/
+	http://www.textiprints.com/
+	http://www.thecelebritytruth.com/
+	http://www.thelightboxdesigns.com/
+	http://www.tobychampion.co.uk/
+	http://www.upstreamgroup.com/
+	http://www.verus.com.tr/
+	http://www.wend.nl/
+	http://www.whileyouwait.co.nz/
+
+
+Read the source of a couple of samples
+--------------------------------------
+Select at random 2 or 3 websites and read the HTML source carefully. Look for anything that isn't generic or anything that you wouldn't find on any website. Good places to scrutinise are headers, footers, url structures, filenames of javascript libraries and css files, and div naming schemes.
+
+A fast visual inspection only identifies the meta generator tag:
+<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" >
+
+A 2nd sample shows the following tag which includes a version number.
+<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" >
+
+I also notice the URL format of some images is interesting, eg. "/assets/galleries/cakes/_resampled/Banner-Nada-090.jpg"
+
+The div id names appear generic, eg. <div id="BgContainer">, <div id="Footer"> and <div class="footerTop">. At this stage they aren't interesting because I expect these div names to change with themes.
+
+
+Collect HTML and HTTP headers from samples
+------------------------------------------
+Make a separate folder for the plugin you are analyzing. I will make the folder, plugin-development/tests/silverstripe/
+
+	$ cd whatweb-0.4/plugin-development/tests
+	$ mkdir silverstripe
+	$ cd silverstripe
+
+Create a file in the silverstripe folder that contains the list of samples. I have called the file 'list'.
+
+	$ ../../wget-list 
+	Usage: ../../wget-list <file with list of urls>
+	downloads each URL's html and headers into the current directory
+
+In the plugin-development/ folder there is a script called wget-list. Use the script to download the samples into the silverstripe folder.
+
+	$ ../../wget-list ./list 
+	--2010-03-04 17:03:09--  http://beatone.co.uk/
+	Resolving beatone.co.uk... 84.45.68.168
+	Connecting to beatone.co.uk|84.45.68.168|:80... connected.
+	HTTP request sent, awaiting response... 200 OK
+	Length: unspecified [text/html]
+	Saving to: `beatone.co.uk-.html'
+
+		[   <=>                                                                    ] 10,785      19.2K/s   in 0.5s    
+
+This takes a few minutes to complete. The script creates 2 files for each sample, an HTML and a META file which contains the HTTP headers.
+
+	$ ls
+	beatone.co.uk-.html                   www.demconvention.com-.meta               www.moerakihavenmotel.co.nz-.meta
+	beatone.co.uk-.meta                   www.easycash4life.com-.html               www.monjasantner.de-.html
+	belitsky.info-work-hartmann.html      www.easycash4life.com-.meta               www.monjasantner.de-.meta
+	belitsky.info-work-hartmann.meta      www.elijahlofgren.com-silverstripe-.html  www.moonlitekustoms.com-.html
+	charcoalinteriors.com.au-.html        www.elijahlofgren.com-silverstripe-.meta  www.moonlitekustoms.com-.meta
+	charcoalinteriors.com.au-.meta        www.enamaine.org-.html                    www.moto-racepaint.com-.html
+	comtel.com.au-.html                   www.enamaine.org-.meta                    www.moto-racepaint.com-.meta
+	comtel.com.au-.meta                   www.executivemediasearch.com-.html        www.naciondnb.com-.html
+	customcanvas.fritzandandre.com-.html  www.executivemediasearch.com-.meta        www.naciondnb.com-.meta
+	customcanvas.fritzandandre.com-.meta  www.fairtradenap.net-.html                www.nadabakery.co.nz-.html
+	hungryhearts.no.html                  www.fairtradenap.net-.meta                www.nadabakery.co.nz-.meta
+	hungryhearts.no.meta                  www.firstgalaxies.org-.html               www.peterpanvakantieclub.nl-.html
+	kunstforum.as-.html                   www.firstgalaxies.org-.meta               www.peterpanvakantieclub.nl-.meta
+	kunstforum.as-.meta                   www.frussian.com.ar-.html                 www.rcaforum.org.nz-.html
+	list                                  www.frussian.com.ar-.meta                 www.rcaforum.org.nz-.meta
+	maungataniwha.co.nz-.html             www.fuel.ie-silverstripe.html             www.resoba.com-.html
+	maungataniwha.co.nz-.meta             www.fuel.ie-silverstripe.meta             www.resoba.com-.meta
+	omb.cl-.html                          www.gsbc.edu-.html                        www.robert80.de-.html
+	omb.cl-.meta                          www.gsbc.edu-.meta                        www.robert80.de-.meta
+	unbounded.org-.html                   www.gyo.co.nz-.html                       www.silverstripe.com-.html
+	unbounded.org-.meta                   www.gyo.co.nz-.meta                       www.silverstripe.com-.meta
+	victoriaoruwari.com-.html             www.holistichealth.com-.html              www.silverstripe.org.pl-.html
+	victoriaoruwari.com-.meta             www.holistichealth.com-.meta              www.silverstripe.org.pl-.meta
+	weonline.in.html                      www.hutmacherin.com-.html                 www.stillrunnin.com-.html
+	weonline.in.meta                      www.hutmacherin.com-.meta                 www.stillrunnin.com-.meta
+	www.andrewking.co.nz-.html            www.idee-cruises.de-.html                 www.textiprints.com-.html
+	www.andrewking.co.nz-.meta            www.idee-cruises.de-.meta                 www.textiprints.com-.meta
+	www.arprostatecancer.org-.html        www.infinitestillness.ie-ss.html          www.thecelebritytruth.com-.html
+	www.arprostatecancer.org-.meta        www.infinitestillness.ie-ss.meta          www.thecelebritytruth.com-.meta
+	www.benpearce.co.nz-.html             www.intandemtheatre.org-.html             www.thelightboxdesigns.com-.html
+	www.benpearce.co.nz-.meta             www.intandemtheatre.org-.meta             www.thelightboxdesigns.com-.meta
+	www.bradyinc.com-.html                www.kitesurfnelson.co.nz-.html            www.tobychampion.co.uk-.html
+	www.bradyinc.com-.meta                www.kitesurfnelson.co.nz-.meta            www.tobychampion.co.uk-.meta
+	www.cavendishimaging.com-.html        www.latenightdisco.com-.html              www.upstreamgroup.com-.html
+	www.cavendishimaging.com-.meta        www.latenightdisco.com-.meta              www.upstreamgroup.com-.meta
+	www.chapmansurfboards.com-.html       www.lisamarieelliott.com-.html            www.verus.com.tr-.html
+	www.chapmansurfboards.com-.meta       www.lisamarieelliott.com-.meta            www.verus.com.tr-.meta
+	www.choidoco.com-demo-.html           www.loguitos.com-.html                    www.wend.nl-.html
+	www.choidoco.com-demo-.meta           www.loguitos.com-.meta                    www.wend.nl-.meta
+	www.clockwork.co.nz-.html             www.maklerservice-greiz.de-.html          www.whileyouwait.co.nz-.html
+	www.clockwork.co.nz-.meta             www.maklerservice-greiz.de-.meta          www.whileyouwait.co.nz-.meta
+	www.demconvention.com-.html           www.moerakihavenmotel.co.nz-.html
+
+The folder whatweb-0.4/plugin-development/tests/silverstripe now contains many .html and .meta files.
+
+	$ head beatone.co.uk-.html 
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+	<html>
+		<head>
+		    <base href="http://beatone.co.uk/" ><!--[if IE 6]></base><![endif]-->
+			<title>Be At One - London Bar, Bookings Central London, Great Cocktails London </title>
+		    <meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" >
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" >
+	<meta http-equiv="Content-Language" content="en-US">
+
+		    <link rel="shortcut icon" href="/favicon.ico">
+
+This is a standard HTML file, this is the same as what you see when you select 'View Source' in a web browser.
+
+	$ cat beatone.co.uk-.meta 
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:04:35 GMT
+	Server: Apache/2.2.3 (Debian) PHP/5.2.0-8+etch16 mod_ssl/2.2.3 OpenSSL/0.9.8c
+	X-Powered-By: PHP/5.2.0-8+etch16
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Vary: Accept,User-Agent,Accept-Encoding
+	Content-Type: text/html; charset=utf-8
+	Via: 1.1 bc2
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=4d463f54abb74031c117569ca3aa3c61; path=/
+
+These are the HTTP Headers the webserver sends before the HTML. Look for unusual cookie names and non-standard HTTP headers.
+
+
+Remove incorrectly identified samples
+-------------------------------------
+To identify some samples that are not SilverStripe I grep for the generator tag and remove all occurances that include the word Silver. This leaves me with the following:
+
+	$ grep generator *html | grep -v Silver
+	omb.cl-.html:	<meta name="generator" content="dospuntocero.cl" >
+	www.andrewking.co.nz-.html:<meta name="generator" content="WordPress 2.8.4" />
+	www.easycash4life.com-.html:<meta name="generator" content="WordPress 2.8.2" />
+	www.idee-cruises.de-.html:<meta name="generator" http-equiv="generator" content="cms.Koncepts - http://www.koncepts.de" />
+	www.thecelebritytruth.com-.html:<meta name="generator" content="WordPress 2.8.4" />
+
+These websites are obviously not SilverStripe so I delete their files and remove them from the list.
+
+	$ rm omb.cl-.* www.andrewking.co.nz-.* www.easycash4life.com-.* www.idee-cruises.de-.* www.thecelebrity	truth.com-.* 
+
+
+How many sites can we be certain are SilverStripe?
+--------------------------------------------------
+There are 57 website samples left:
+	$ ls *html | wc -l
+	57
+
+Of these samples, 38 include the term silverstrip in the HTML	
+	$ grep -li silverstripe *html | wc -l
+	38
+
+
+Examine the samples with WhatWeb
+--------------------------------
+Using whatweb before the plugin is written may show some interesting information. In this case it has identified the meta generator tag. However notice that some of these websites do not have the meta generator tag. Reasons could be that the webmaster has removed it or the website is no longer running SilverStripe.
+
+This is also useful to find more samples that are not SilverStripe
+
+$ ./whatweb -i ./plugin-development/tests/silverstripe/list 
+
+ttp://belitsky.info/work/hartmann [301] md5[c112335e6a56038ca4ba4b906d6aee05], redirect-location[http://belitsky.info/work/hartmann/], server-header[Apache], title[301 Moved Permanently]
+http://belitsky.info/work/hartmann/ [200] index-of, md5[21577203b9abc6091d99203295712f0c], server-header[Apache], title[Index of /work/hartmann]
+http://charcoalinteriors.com.au/ [200] md5[bff9a28ebdc1cdfdb80743458606df1d], server-header[Apache/2.2.13 (Unix) mod_ssl/2.2.13 OpenSSL/0.9.8e-fips-rhel5 mod_bwlimited/1.4 mod_perl/2.0.4 Perl/v5.8.8], title[Home -Charcoal Interiors], x-powered-by-header[PHP/5.2.10]
+http://customcanvas.fritzandandre.com/ [200] JQuery, Mailto, md5[452d4fd540f07c98e0288094d0bf959f], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.9 (Debian) DAV/2 SVN/1.5.1 PHP/5.2.6-1+lenny6 with Suhosin-Patch mod_python/3.3.1 Python/2.5.2 mod_ruby/1.2.6 Ruby/1.8.7(2008-08-11) mod_ssl/2.2.9 OpenSSL/0.9.8g], title[Home], x-powered-by-header[PHP/5.2.6-1+lenny6]
+http://comtel.com.au/ [200] Google-Analytics-GA[1388941], probably Joomla[com_search], md5[050d35f63e2d9cd46065cde83f876989], server-header[Apache/2.0.55 (Ubuntu) PHP/5.1.2], title[Comtel - Telephone Radio & Data Systems | Comtel], x-powered-by-header[PHP/5.1.2]
+http://beatone.co.uk/ [200] Google-Analytics-GA[11953167], JQuery, md5[b85a0567c28cfc3ba050ccbc95c899c4], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny6 with Suhosin-Patch mod_ssl/2.2.9 OpenSSL/0.9.8g], title[Be At One - London Bar, Bookings Central London, Great Cocktails London], x-powered-by-header[PHP/5.2.6-1+lenny6]
+http://kunstforum.as/ ERROR: Socket error getaddrinfo: Name or service not known
+http://hungryhearts.no [200] Google-Analytics-GA[2984373], JQuery, Mailto, md5[1156688f57dfb37d853d3d7326daaadc], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/1.3.41 (Unix) PHP/5.2.6 mod_psoft_traffic/0.2 mod_ssl/2.8.31 OpenSSL/0.9.7a mod_macro/1.1.2], title[The Hungry Hearts. Pin-up performance band.], x-powered-by-header[PHP/5.2.6]
+http://unbounded.org/ [200] Google-Analytics-urchin[97930], md5[34d6c3cfc3b9ba0c66a8942a490c259d], meta-generator[SilverStripe 2.0 - http://www.silverstripe.com], server-header[Apache/2.2.3 (Debian) DAV/2 PHP/5.2.6-1+lenny3 with Suhosin-Patch mod_ssl/2.2.3 OpenSSL/0.9.8g], title[unbounded], x-powered-by-header[PHP/5.2.6-1+lenny3]
+http://www.arprostatecancer.org/ [200] Google-Analytics-GA[2447233], Mailto, md5[dc1a9f02efc52b1ebc72f2c8a0b03ae6], server-header[Apache/1.3.41 (Unix) PHP/5.2.6 mod_auth_passthrough/1.8 mod_log_bytes/1.2 mod_bwlimited/1.4 FrontPage/5.0.2.2635 mod_ssl/2.8.31 OpenSSL/0.9.7a], title[Arkansas Prostate Cancer Foundation], x-powered-by-header[PHP/5.2.6]
+http://weonline.in [200] Google-Analytics-GA[8297705], Mailto, md5[f9d784e8b18c942fe7ea4ed8273630c9], meta-generator[SilverStripe 2.3.1 - http://www.silverstripe.com], server-header[Apache], title[Home. Weonline web design group. We love to do beautiful stuff for the web.], x-powered-by-header[PHP/5.2.9]
+http://maungataniwha.co.nz/ [200] Google-Analytics-GA[3842018], JQuery, md5[58fbcc50e566ceaab813ecd38098e1df], server-header[Apache/2.2], title[Maungataniwha Lodge | New Zealand | Home]
+http://victoriaoruwari.com/ [200] md5[2afe04307f5e3503efbe1c2c75b62511], server-header[Apache/1.3.41 (Unix) mod_ssl/2.8.31 OpenSSL/0.9.7a PHP/5.2.8 mod_perl/1.29 FrontPage/5.0.2.2510], title[Victoria Oruwari - Home], x-powered-by-header[PHP/5.2.8]
+http://www.benpearce.co.nz/ [200] Google-Analytics-GA[1362535], JQuery, Mailto, Prototype, md5[4b1abe022c1c40c6091366c71c367cca], server-header[Apache/2.0.54 (Debian GNU/Linux) PHP/5.2.3-0.dotdeb.0 with Suhosin-Patch mod_ssl/2.0.54 OpenSSL/0.9.7e], title[Ben Pearce - artist], x-powered-by-header[PHP/5.2.3-0.dotdeb.0]
+http://www.chapmansurfboards.com/ [200] Google-Analytics-GA[419314], JQuery, md5[9036620b334c3d2e7f6722e946277d29], meta-generator[SilverStripe 2.0 - http://www.silverstripe.com], server-header[Apache], title[Dale Chapman Surf Designs], x-powered-by-header[PHP/5.2.10]
+http://www.cavendishimaging.com/ [200] Google-Analytics-GA[11469477], JQuery, md5[ef8fbfae1dec5750a55478ed295cb34d], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny6 with Suhosin-Patch mod_ssl/2.2.9 OpenSSL/0.9.8g], title[Dentomaxillofacial Imaging &amp; Anatomical Model Specialists - Cavendish Imaging], x-powered-by-header[PHP/5.2.6-1+lenny6]
+http://www.demconvention.com/ ERROR: Socket error getaddrinfo: Name or service not known
+http://www.clockwork.co.nz/ [200] md5[70e4b614d4ae85161014d05939ebd073], server-header[Apache], title[clockwork.co.nz]
+http://www.choidoco.com/demo/ [200] md5[ccfe1940e9651416af58ff3f4a3eff77], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.12 (Unix) mod_ssl/2.2.12 OpenSSL/0.9.8e-fips-rhel5 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 PHP/5.2.11 mod_perl/2.0.4 Perl/v5.8.8], title[home], x-powered-by-header[PHP/5.2.11]
+http://www.bradyinc.com/ [200] Google-Analytics-GA[13121212], Prototype, md5[34d5c1f763e3ceffaeae07de7de98f3d], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/1.3.41 (Unix) FrontPage/5.0.2.2635 mod_ssl/2.8.31 OpenSSL/0.9.7m], title[Staffing Productivity Benchmarks &raquo; Brady &amp; Associates], x-powered-by-header[PHP/5.2.11]
+http://www.executivemediasearch.com/ [404] md5[588da43361637cd97f3096ab9ce70183], server-header[Apache], title[Error 404 - Not found]
+http://www.fairtradenap.net/ [200] Google-Analytics-GA[1362535], Mailto, md5[f4f36e648290b8fb818ea7fb297a4944], server-header[Apache], title[Home], x-powered-by-header[PHP/5.2.9]
+http://www.elijahlofgren.com/silverstripe/ [404] Google-Analytics-urchin[2328965], maybe Mambo, md5[89a0d093054c83ef60a842b2aa7ff48f], meta-generator[CMS Made Simple - Copyright (C) 2004-6 Ted Kulp. All rights reserved.], powered by...[CMSMS], server-header[lighttpd/1.4.22], title[404 Error - Elijah Lofgren's Website]
+http://www.enamaine.org/ [200] Google-Analytics-GA[3359251], Mailto, md5[57cb1e27c565acff11ce5f8103696696], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache], title[Maine ENA Home | Maine ENA], x-powered-by-header[PHP/5.2.9]
+http://www.fuel.ie/silverstripe [301] md5[cbee7d5cfda4e161caffa892cc08558a], redirect-location[http://www.fuel.ie/silverstripe/], server-header[Zeus/4.3], title[Error 301 Moved Permanently]
+http://www.firstgalaxies.org/ [200] Google-Analytics-urchin[777185], md5[fde922a270e0b438789eef03f2bbc064], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache], title[A Resource for Research on the Most Distant Galaxies], x-powered-by-header[PHP/5.2.11]
+http://www.frussian.com.ar/ [200] md5[54b8d6e69f5be47d29f8225126bf92da], meta-generator[SilverStripe 2.0 - http://www.silverstripe.com], server-header[Apache/2.2.11 (Unix) mod_ssl/2.2.11 OpenSSL/0.9.8i DAV/2 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635], title[Home], x-powered-by-header[PHP/5.2.9]
+http://www.gyo.co.nz/ ERROR: Socket error getaddrinfo: Name or service not known
+http://www.gsbc.edu/ [200] Google-Analytics-GA[276990], JQuery, Prototype, md5[dc166f92e1ed43f5435f60743c0d272a], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.14 (Unix) mod_ssl/2.2.14 OpenSSL/0.9.8l DAV/2 mod_auth_passthrough/2.1 FrontPage/5.0.2.2635], title[Home &raquo; Golden State Baptist College], x-powered-by-header[PHP/5.2.11]
+http://www.fuel.ie/silverstripe/ [200] Mailto, md5[c63c8ea00aa0624fb4df7989c92b172e], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Zeus/4.3], title[The Fuel/Silverstripe Demo Site &raquo; The Fuel/Silverstripe Demo Site]
+http://www.infinitestillness.ie/ss [301] md5[cbee7d5cfda4e161caffa892cc08558a], redirect-location[http://www.infinitestillness.ie/ss/], server-header[Zeus/4.3], title[Error 301 Moved Permanently]
+http://www.holistichealth.com/ [200] Google-Analytics-GA[6289330], md5[b59e703ec114ea8cd99da42af210f1a1], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/1.3.41 (Unix) mod_auth_passthrough/1.8 mod_log_bytes/1.2 mod_bwlimited/1.4 FrontPage/5.0.2.2635 mod_ssl/2.8.31 OpenSSL/0.9.7a], title[Holistic Health International - Where Science and Caring Meet], x-powered-by-header[PHP/5.2.6]
+http://www.hutmacherin.com/ [301] md5[d41d8cd98f00b204e9800998ecf8427e], redirect-location[/start], server-header[Apache/2.2.9 (Debian) DAV/2 SVN/1.5.1 PHP/5.2.6-1+lenny6 with Suhosin-Patch mod_python/3.3.1 Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g]
+http://www.infinitestillness.ie/ss/ [200] Mailto, md5[77b579a3d6752d45bcd8718d906fe5c3], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Zeus/4.3], title[Infinite Stillness | Ki Massage &amp; Reiki Healing Dublin 4]
+http://www.hutmacherin.com/start [200] md5[a89fbf86cf798314dba620717b1d99b8], server-header[Apache/2.2.9 (Debian) DAV/2 SVN/1.5.1 PHP/5.2.6-1+lenny6 with Suhosin-Patch mod_python/3.3.1 Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g], title[Start | Isabell von Maltzahn | Hutmacherin aus Berlin]
+http://www.intandemtheatre.org/ [200] Google-Analytics-GA[6603467], Prototype, md5[133a6893f85c4c41034ced6a7aec3e75], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache], title[Welcome | In Tandem Theatre], x-powered-by-header[PHP/5.2.9]
+http://www.latenightdisco.com/ [200] Google-Analytics-GA[768894], md5[b81b6b18af21e3d5f7d0749aa483da64], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.8 (Ubuntu) PHP/5.2.4-2ubuntu5.4 with Suhosin-Patch], title[Experience Central Arkansas hottest night club Discovery], x-powered-by-header[PHP/5.2.4-2ubuntu5.4]
+http://www.lisamarieelliott.com/ [200] Google-Analytics-GA[3359251], md5[d844eb0937b79fc02c347930522fe490], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache], title[Home], x-powered-by-header[PHP/5.2.9]
+http://www.loguitos.com/ [200] Joomla[1.0], maybe Mambo, md5[0eed48ee56f6a2b784ea010b1bfa15b8], meta-generator[Joomla! - Copyright (C) 2005 - 2007 Open Source Matters. All rights reserved.], server-header[Apache/2.2.10 (Unix) mod_ssl/2.2.10 OpenSSL/0.9.8i DAV/2 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635], title[Dise�o de logotipos - Loguitos - Dise�adores de logos profesionales - Inicio], x-powered-by-header[PHP/5.2.6]
+http://www.moonlitekustoms.com/ [200] md5[cf3d07ae32e645d04a1acad6560ce668], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache], title[In The Shop - Moonlite Kustoms], x-powered-by-header[PHP/5.2.9]
+http://www.maklerservice-greiz.de/ [200] Google-Analytics-GA[10587433], Prototype, md5[9ac4c5710cf3e694917e2a3949680fc7], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/1.3 (Unix) mod_ssl/2.8.28 OpenSSL/0.9.8f AuthPG/1.3 FrontPage/5.0.2.2635], title[Ihr Maklerservice in Greiz: Steiniger Versicherungsmakler], x-powered-by-header[PHP/5.2.9]
+http://www.moerakihavenmotel.co.nz/ [200] md5[12e0be3129dea7738500b21aeab0ff96], meta-generator[SilverStripe 2.0 - http://www.silverstripe.com], powered by...[:], server-header[Apache], title[Moeraki Haven Motel, Moreaki Motel Accommodation, Otago Motel Accommodation.], x-powered-by-header[PHP/5.2.11]
+http://www.monjasantner.de/ [200] Google-Analytics-GA[10599117], JQuery, md5[c30a4c5e6b9aad2a7f435621deb2ef40], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache], title[Monja Santner &raquo; Home], x-powered-by-header[PHP/5.2.6-1+lenny6]
+http://www.nadabakery.co.nz/ [200] Google-Analytics-GA[4761582], md5[68f3dd581e40f370927205103ca6903a], meta-generator[SilverStripe 2.3.1 - http://www.silverstripe.com], server-header[Apache/2], title[Home | Nada - New Zealand's Greatest Bakery], x-powered-by-header[PHP/5.2.12]
+http://www.naciondnb.com/ [200] md5[d443c89dc137c8286aaa173ebc806176], server-header[Apache], title[NacionDNB]
+http://www.moto-racepaint.com/ [200] Google-Analytics-GA[1912569], JQuery, md5[7c1db45c5801d09dac4539725c6cf658], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.14 (Unix) mod_ssl/2.2.14 OpenSSL/0.9.8e-fips-rhel5 mod_bwlimited/1.4], title[MotoRacePaint Home], x-powered-by-header[PHP/5.2.11]
+http://www.rcaforum.org.nz/ [200] Google-Analytics-GA[4693659], Mailto, Prototype, md5[5cbb333d29fb180f42142a9551e105a2], meta-generator[SilverStripe 2.3.0 - http://www.silverstripe.com], server-header[Apache], title[Homepage - RCA Forum], x-powered-by-header[PHP/5.2.1]
+http://www.peterpanvakantieclub.nl/ [200] Google-Analytics-GA[1010482], JQuery, md5[011e5aa0e0e9599d10cd2913270959ea], meta-generator[SilverStripe 2.0 - http://www.silverstripe.com], server-header[Apache/2], title[Peter Pan Vakantieclub | Home], x-powered-by-header[PHP/5.2.4]
+http://www.robert80.de/ [200] Lightbox, md5[e12ecd879e7a24eaf6630d0097f6d0c8], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache], title[Robert Müller 80 Freunde &raquo; Robert Müller 80 Freunde helfen], x-powered-by-header[PHP/5.2.13]
+http://www.silverstripe.com/ [200] Google-Analytics-urchin[84547], JQuery, md5[25a7a15b8e40a9443ed6bd896705b7ba], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.11 (Debian) PHP/5.2.6-1+lenny2 with Suhosin-Patch mod_ssl/2.2.11 OpenSSL/0.9.8g], title[SilverStripe.com - Open Source CMS / Framework], x-powered-by-header[PHP/5.2.6-1+lenny2]
+http://www.stillrunnin.com/ [200] Google-Analytics-GA[3359251], md5[bd3f631ef6075169b66c44031e526184], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.11 (Unix) mod_ssl/2.2.11 OpenSSL/0.9.8i DAV/2 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635], title[Still Runnin Magazine - Online Gearhead Ezine], x-powered-by-header[PHP/5.2.9]
+http://www.silverstripe.org.pl/ [200] Google-Analytics-GA[8121843], md5[1d8badb4df0d05a72c665de18087ae2b], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.0.63 (Unix) mod_ssl/2.0.63 OpenSSL/0.9.8e-fips-rhel5 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 PHP/5.2.8], title[Serwis polskiej społeczności SilverStripe &raquo; SilverStripe.org.pl], x-powered-by-header[PHP/5.2.8]
+http://www.thelightboxdesigns.com/ [200] Mailto, md5[763842fb73491b1ccc9090219e299ed1], server-header[Apache], title[Graphic and Web Site Design Services in Brownsville, TX, McAllen, Harlingen and the Rio Grande Valley :: The Lightbox Designs]
+http://www.textiprints.com/ [200] Google-Analytics-GA[10064088], md5[65c429cfbad7a5acccddb8eda664f13c], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache], title[TextiPrints - Digital Garment Printer - Ormond Beach, Florida], x-powered-by-header[PHP/5.2.9]
+http://www.tobychampion.co.uk/ [500] md5[c5ea88dc871f71751f932a8a9bed884b], server-header[Apache/2.0.63 (FreeBSD) DAV/2 SVN/1.5.2 mod_python/3.3.1 Python/2.5.1 PHP/5.2.6 with Suhosin-Patch mod_ssl/2.0.63 OpenSSL/0.9.7e-p1 mod_fastcgi/2.4.6 mod_perl/2.0.3 Perl/v5.8.8], title[GET /], x-powered-by-header[PHP/5.2.12]
+http://www.upstreamgroup.com/ [200] Google-Analytics-GA[3522744], md5[085964a490aa87a8d061828ebd63f35b], meta-generator[SilverStripe 2.3.1 - http://www.silverstripe.com], server-header[Apache], title[Upstream Group: Clarity, Perspective, Knowledge], x-powered-by-header[PHP/5.2.11]
+http://www.wend.nl/ [200] Google-Analytics-GA[1010482], JQuery, md5[e08dcd1b16e7210f1762b49bb45d58ff], server-header[Apache/2], title[Wend - Home], x-powered-by-header[PHP/5.2.4]
+http://www.verus.com.tr/ [200] Google-Analytics-GA[7233761], md5[54bfe62b41b88b472d9739d2ed47b30f], meta-generator[SilverStripe - http://www.silverstripe.com], server-header[Apache/2.2.8 (Ubuntu) mod_python/3.3.1 Python/2.5.2 PHP/5.2.4-2ubuntu5.10 with Suhosin-Patch mod_ssl/2.2.8 OpenSSL/0.9.8g mod_perl/2.0.3 Perl/v5.8.8], title[VERUS &raquo; ETKİNLİK ÇÖZÜMLERİ &raquo; İŞ ÇÖZÜMLERİ &raquo; WEB ÇÖZÜMLERİ], x-powered-by-header[PHP/5.2.4-2ubuntu5.10]
+http://www.whileyouwait.co.nz/ [200] Mailto, md5[05df26cf45f8410dea2272f6c0ff269b], meta-generator[SilverStripe 2.0 - http://www.silverstripe.com], server-header[Apache], title[While You Wait Studios - Christchurch, New Zealand - PTFOTO], x-powered-by-header[PHP/5.2.11]
+http://www.kitesurfnelson.co.nz/ [200] Google-Analytics-GA[1921819], md5[f7618ec4d8da26579e5df948d80ba5b8], server-header[Apache/2.2.8 (Unix) mod_ssl/2.2.8 OpenSSL/0.9.8e-fips-rhel5 mod_bwlimited/1.4 mod_perl/2.0.4 Perl/v5.8.8], title[Kite Surf Nelson - kitesurfing lessons, equipment sales and advice - in Nelson, New Zealand], x-powered-by-header[PHP/5.2.6]
+http://www.resoba.com/ ERROR: EOF error end of file reached
+
+
+Remove more incorrectly identified samples with the whatweb report
+------------------------------------------------------------------
+
+	http://belitsky.info/work/hartmann [301] md5[c112335e6a56038ca4ba4b906d6aee05], redirect-location[http://belitsky.info/work/hartmann/], server-header[Apache], title[301 Moved Permanently]
+	http://belitsky.info/work/hartmann/ [200] index-of, md5[21577203b9abc6091d99203295712f0c], server-header[Apache], title[Index of /work/hartmann]
+
+This matches the 'Index of' plugin. By loading this URL into a web browser I can see that this webpage isn't a CMS, instead it's a directory listing so I can delete http://belitsky.info/work/hartmann from the list.
+
+	http://charcoalinteriors.com.au/ [200] md5[bff9a28ebdc1cdfdb80743458606df1d], server-header[Apache/2.2.13 (Unix) mod_ssl/2.2.13 OpenSSL/0.9.8e-fips-rhel5 mod_bwlimited/1.4 mod_perl/2.0.4 Perl/v5.8.8], title[Home -Charcoal Interiors], x-powered-by-header[PHP/5.2.10]
+
+There's no way to be sure if this is SilverStripe because it has the meta generator tag removed.
+
+	http://comtel.com.au/ [200] Google-Analytics-GA[1388941], probably Joomla[com_search], md5[050d35f63e2d9cd46065cde83f876989], server-header[Apache/2.0.55 (Ubuntu) PHP/5.1.2], title[Comtel - Telephone Radio & Data Systems | Comtel], x-powered-by-header[PHP/5.1.2]
+
+This appears to be powered by the Joomla CMS. A website cannot be two CMSs at the same time with the same URL so if Joomla is present then SilverStripe cannot be. Note that other plugin matches such as Jquery identify a javascript library and will be found with many different CMSs including SilverStripe. Manual verification by testing http://comtel.com.au/administrator proves it is Joomla.
+
+	http://kunstforum.as/ ERROR: Socket error getaddrinfo: Name or service not known
+
+This website doesn't exist anymore.
+
+	http://www.arprostatecancer.org/ [200] Google-Analytics-GA[2447233], Mailto, md5[dc1a9f02efc52b1ebc72f2c8a0b03ae6], server-header[Apache/1.3.41 (Unix) PHP/5.2.6 mod_auth_passthrough/1.8 mod_log_bytes/1.2 mod_bwlimited/1.4 FrontPage/5.0.2.2635 mod_ssl/2.8.31 OpenSSL/0.9.7a], title[Arkansas Prostate Cancer Foundation], x-powered-by-header[PHP/5.2.6]
+
+I can't be sure if this is SilverStripe yet.
+
+I deleted the files of the remaining websites that are identified as something other than SilverStream.
+	$ wc -l list
+	49 list
+
+Now I have just 49 SilverStripe samples. I know that some of these samples might not be SilverStripe.
+
+
+
+Use find-common-stuff to automatically identify common strings in the samples
+-----------------------------------------------------------------------------
+I can use a simple tool called find-common-stuff to find certain types of common strings in samples.
+
+find-common-stuff will identify and count the occurances of:
+	* complete HTML tags
+	* strings enclosed in double quotes
+
+It has threshold setting that adjusts how many uncommon things are displayed.
+	
+	$  ../../find-common-stuff 
+	Usage: find-common-stuff FILES
+	--threshold, -t	The lowest % of files an item occurs in to display. Eg. 0.25 and 0.50
+
+	$ ../../find-common-stuff *html
+	imported 49 files
+	counted 3324 tags
+	[["<script type=\"text/javascript\">", 35],
+	 ["<![endif]-->", 30],
+	 ["<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />",
+	  28],
+	 ["<style type=\"text/css\">", 21],
+	 ["<!--[if IE 7]>", 21],
+	 ["<!--[if IE 6]>", 21],
+	 ["<meta name=\"generator\" http-equiv=\"generator\" content=\"SilverStripe - http://www.silverstripe.com\" />",
+	  20],
+	 ["<div id=\"footer\">", 16],
+	 ["<link rel=\"shortcut icon\" href=\"/favicon.ico\" />", 16],
+	 ["<div class=\"clear\">", 16],
+	 ["<meta http-equiv=\"Content-Language\" content=\"en-US\"/>", 14],
+	 ["<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">",
+	  14],
+	 ["<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">",
+	  14],
+	 ["<div class=\"typography\">", 14],
+	 ["<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" >",
+	  13]]
+	counted 1874 quoted texts
+	[["\"text/javascript\"", 35],
+	 ["\"link\"", 24],
+	 ["\"text/css\"", 23],
+	 ["\"typography\"", 19],
+	 ["\"current\"", 19],
+	 ["\"clear\"", 18],
+	 ["\"footer\"", 17],
+	 ["\"en\"", 16],
+	 ["\"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\"", 14],
+	 ["\"http://www.w3.org/TR/html4/strict.dtd\"", 14],
+	 ["\"header\"", 14]]
+
+In this case, the automated tool, find-common-stuff has failed to identify anything I didn't noticed while reading the HTML source.
+
+
+Analyse HTTP headers and cookies
+--------------------------------
+The .meta files contain the HTTP headers and any cookies set by the websites.
+Use the cat command to display all of them.
+
+
+	$ cat *meta
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:04:35 GMT
+	Server: Apache/2.2.3 (Debian) PHP/5.2.0-8+etch16 mod_ssl/2.2.3 OpenSSL/0.9.8c
+	X-Powered-By: PHP/5.2.0-8+etch16
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Vary: Accept,User-Agent,Accept-Encoding
+	Content-Type: text/html; charset=utf-8
+	Via: 1.1 bc2
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=4d463f54abb74031c117569ca3aa3c61; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:04:41 GMT
+	Server: Apache/2.2.13 (Unix) mod_ssl/2.2.13 OpenSSL/0.9.8e-fips-rhel5 mod_bwlimited/1.4 mod_perl/2.0.4 Perl/v5.8.8
+	X-Powered-By: PHP/5.2.10
+	Content-Type: text/html
+	Via: 1.1 bc6
+	Connection: Keep-Alive
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:04:30 GMT
+	Server: Apache/2.2.9 (Debian) DAV/2 SVN/1.5.1 PHP/5.2.6-1+lenny6 with Suhosin-Patch mod_python/3.3.1 Python/2.5.2 mod_ruby/1.2.6 Ruby/1.8.7(2008-08-11) mod_ssl/2.2.9 OpenSSL/0.9.8g
+	X-Powered-By: PHP/5.2.6-1+lenny6
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Vary: Accept-Encoding
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc1
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=1b627d14a21e4475c49e7089c01e11b8; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:04:49 GMT
+	Server: Apache/1.3.41 (Unix) PHP/5.2.6 mod_psoft_traffic/0.2 mod_ssl/2.8.31 OpenSSL/0.9.7a mod_macro/1.1.2
+	X-Powered-By: PHP/5.2.6
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc6
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=kibbf9utq9decif304ml5lgu01; path=/
+
+	HTTP/1.1 200 OK
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+	Date: Thu, 04 Mar 2010 04:05:09 GMT
+	Server: Apache/2.2
+	Content-Type: text/html; charset="utf-8"
+	Pragma: no-cache
+	Via: 1.1 bc2
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=tmufihalkg02p4t0vi3mdf3k94; path=/
+	Set-Cookie: X-Mapping-caklakng=293486F930CB5202C46B0E5EFB41C64E; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:05:29 GMT
+	Server: Apache/2.2.3 (Debian) DAV/2 PHP/5.2.6-1+lenny3 with Suhosin-Patch mod_ssl/2.2.3 OpenSSL/0.9.8g
+	X-Powered-By: PHP/5.2.6-1+lenny3
+	Set-Cookie: PHPSESSID=1b0b76cadaefb10b5973b8bb622d9669; path=/
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:05:29 GMT; path=/
+	Vary: Accept,Accept-Encoding
+	Content-Type: text/html; charset=utf-8
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:05:35 GMT
+	Server: Apache/1.3.41 (Unix) mod_ssl/2.8.31 OpenSSL/0.9.7a PHP/5.2.8 mod_perl/1.29 FrontPage/5.0.2.2510
+	X-Powered-By: PHP/5.2.8
+	Expires: Mon, 21 Jun 2010 11:11:02 GMT
+	Cache-Control: max-age=86400, must-revalidate
+	Pragma: 
+	Last-Modified: Sat, 14 Nov 2009 21:00:08 GMT
+	Vary: Accept
+	Content-Type: text/html; charset=utf-8
+	Via: 1.1 bc6
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=b255ace17a48eadebd5de6ec6b7f3dc6; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:05:35 GMT; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:05:37 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.9
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Vary: Accept-Encoding
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc5
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=5nfa7b62smslu5qo660bmtmk32; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:05:34 GMT
+	Server: Apache/1.3.41 (Unix) PHP/5.2.6 mod_auth_passthrough/1.8 mod_log_bytes/1.2 mod_bwlimited/1.4 FrontPage/5.0.2.2635 mod_ssl/2.8.31 OpenSSL/0.9.7a
+	X-Powered-By: PHP/5.2.6
+	Content-Type: text/html
+	Via: 1.1 bc7
+	Connection: Keep-Alive
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:05:46 GMT
+	Server: Apache/2.0.54 (Debian GNU/Linux) PHP/5.2.3-0.dotdeb.0 with Suhosin-Patch mod_ssl/2.0.54 OpenSSL/0.9.7e
+	X-Powered-By: PHP/5.2.3-0.dotdeb.0
+	Set-Cookie: PHPSESSID=d627a8e8613eecd6b0c2a41b0ec79dd4; path=/
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Content-Type: text/html; charset="utf-8"
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:05:50 GMT
+	Server: Apache/1.3.41 (Unix) FrontPage/5.0.2.2635 mod_ssl/2.8.31 OpenSSL/0.9.7m
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	X-Powered-By: PHP/5.2.11
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc7
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=9508d9fa7a9d869e745c286ff9799d40; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:05:54 GMT
+	Server: Apache/2.2.3 (Debian) PHP/5.2.0-8+etch16 mod_ssl/2.2.3 OpenSSL/0.9.8c
+	X-Powered-By: PHP/5.2.0-8+etch16
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Vary: Accept,User-Agent,Accept-Encoding
+	Content-Type: text/html; charset=utf-8
+	Via: 1.1 bc2
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=8d9b19f46268342f8a0823bd79599cd2; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:06:01 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.10
+	Expires: Sat, 13 Mar 2010 04:54:33 GMT
+	Cache-Control: max-age=86400, must-revalidate
+	Pragma: 
+	Last-Modified: Tue, 23 Feb 2010 03:17:29 GMT
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc7
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=4askloa60f26kvftt1cfiao344; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:06:01 GMT; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:06:13 GMT
+	Server: Apache/2.2.12 (Unix) mod_ssl/2.2.12 OpenSSL/0.9.8e-fips-rhel5 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 PHP/5.2.11 mod_perl/2.0.4 Perl/v5.8.8
+	X-Powered-By: PHP/5.2.11
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform
+	Pragma: no-cache
+	Vary: Accept,Accept-Encoding,User-Agent
+	Content-Type: text/html; charset=utf-8
+	X-Cache: MISS from sv25.byethost25.org
+	Via: 1.0 sv25.byethost25.org:80 (squid/2.7.STABLE7), 1.1 bc7
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=f0c426eaeef84f38c04624a59a98edd4; path=/demo/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:06:17 GMT
+	Server: Apache
+	Expires: Thu, 29 Oct 1998 17:04:19 GMT
+	Last-Modified: Thu, 04 Mar 2010 04:06:17 GMT
+	Cache-Control: no-store, no-cache, must-revalidate
+	Cache-Control: post-check=0, pre-check=0
+	Pragma: no-cache
+	Vary: Accept-Encoding
+	Content-Type: text/html; charset=UTF-8
+	Via: 1.1 bc2
+	Connection: Keep-Alive
+	Set-Cookie: clockwork_co_nz=4040a20413b27678f6a5b225bd85f612; expires=Tue, 03-Mar-2015 04:06:17 GMT; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:06:46 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.9
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc6
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=6e9a4bb3b41cdd968202a19fbb91b3c0; path=/
+
+	HTTP/1.1 404 Not Found
+	Date: Thu, 04 Mar 2010 04:06:48 GMT
+	Server: Apache
+	Content-Type: text/html
+	Via: 1.1 bc1
+	Content-Length: 0
+	Connection: Keep-Alive
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:06:49 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.9
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc2
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=ec0a2031ab05b371baf412429859bbdf; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:07:01 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.11
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Vary: Accept,Accept-Encoding
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset=utf-8
+	Via: 1.1 bc4
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=5e61do18cag74urkrq65eqkcf3; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:07:07 GMT
+	Server: Apache/2.2.11 (Unix) mod_ssl/2.2.11 OpenSSL/0.9.8i DAV/2 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635
+	X-Powered-By: PHP/5.2.9
+	Cache-Control: max-age=86400, must-revalidate
+	Pragma: 
+	Expires: Wed, 14 Mar 2012 07:10:47 GMT
+	Vary: Accept
+	Last-Modified: Fri, 22 Feb 2008 01:03:27 GMT
+	Content-Type: text/html; charset=utf-8
+	Via: 1.1 bc3
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=3fb099aeb12584c9a2a308667e960553; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:07:07 GMT; path=/
+
+	HTTP/1.1 301 Moved Permanently
+	Date: Thu, 04 Mar 2010 04:07:14 GMT
+	Location: http://www.fuel.ie/silverstripe/
+	Server: Zeus/4.3
+	Content-Type: text/html
+	Via: 1.1 bc3
+	Content-Length: 212
+	Connection: Keep-Alive
+	Set-Cookie: X-Mapping-enlokcai=E05A570E7E395D6AB72BEA6FC2D4D8D4; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:07:19 GMT
+	Server: Apache/2.2.14 (Unix) mod_ssl/2.2.14 OpenSSL/0.9.8l DAV/2 mod_auth_passthrough/2.1 FrontPage/5.0.2.2635
+	X-Powered-By: PHP/5.2.11
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Vary: Accept-Encoding
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc1
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=05b506d2ba68f9057269c4ff70ff9643; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:07:11 GMT
+	Server: Apache/1.3.41 (Unix) mod_auth_passthrough/1.8 mod_log_bytes/1.2 mod_bwlimited/1.4 FrontPage/5.0.2.2635 mod_ssl/2.8.31 OpenSSL/0.9.7a
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	X-Powered-By: PHP/5.2.6
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc5
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=f7aec63e8640dcd5d42a0476301a065f; path=/
+
+	HTTP/1.1 301 OK
+	Date: Thu, 04 Mar 2010 04:07:27 GMT
+	Server: Apache/2.2.9 (Debian) DAV/2 SVN/1.5.1 PHP/5.2.6-1+lenny6 with Suhosin-Patch mod_python/3.3.1 Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+	Pragma: no-cache
+	Location: /start
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc1
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=0e75b5e83a844f8902e361394c39c39f; path=/
+
+	HTTP/1.1 301 Moved Permanently
+	Date: Thu, 04 Mar 2010 04:07:36 GMT
+	Location: http://www.infinitestillness.ie/ss/
+	Server: Zeus/4.3
+	Content-Type: text/html
+	Via: 1.1 bc3
+	Content-Length: 212
+	Connection: Keep-Alive
+	Set-Cookie: X-Mapping-enlokcai=E05A570E7E395D6AB72BEA6FC2D4D8D4; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:07:48 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.9
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Vary: Accept-Encoding
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc6
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=75cd9c74439efc3bca8a6f6a8fd429f4; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:07:48 GMT
+	Server: Apache/2.2.8 (Unix) mod_ssl/2.2.8 OpenSSL/0.9.8e-fips-rhel5 mod_bwlimited/1.4 mod_perl/2.0.4 Perl/v5.8.8
+	X-Powered-By: PHP/5.2.6
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc3
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=e5fa1ae0a7149cb25f36f4cf63e55603; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:07:54 GMT
+	Server: Apache/2.2.8 (Ubuntu) PHP/5.2.4-2ubuntu5.4 with Suhosin-Patch
+	X-Powered-By: PHP/5.2.4-2ubuntu5.4
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc7
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=4c256b274d52c2746423786faadd30c4; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:08:00 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.9
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc6
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=bb34c4a17da632e7aefab6246e7704ab; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:08:06 GMT
+	Server: Apache/1.3 (Unix) mod_ssl/2.8.28 OpenSSL/0.9.8f AuthPG/1.3 FrontPage/5.0.2.2635
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	X-Powered-By: PHP/5.2.9
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc2
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=416bd54449181a0b0839ae7dcda95902; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:08:06 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.11
+	Cache-Control: max-age=86400, must-revalidate
+	Pragma: 
+	Expires: Sat, 09 Oct 2010 04:35:26 GMT
+	Vary: Accept
+	Set-Cookie: PHPSESSID=c977eedf73ae811cabbe26bc8e0313c5; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:08:06 GMT; path=/
+	Last-Modified: Tue, 28 Jul 2009 03:40:46 GMT
+	Content-Type: text/html; charset=utf-8
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:08:11 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.6-1+lenny6
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc5
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=e0a6ca2c8e29af432c8a1266e992e129; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:08:17 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.9
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc6
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=0423b5407d22301ff1e4b3d2f41b9970; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:08:14 GMT
+	Server: Apache/2.2.14 (Unix) mod_ssl/2.2.14 OpenSSL/0.9.8e-fips-rhel5 mod_bwlimited/1.4
+	X-Powered-By: PHP/5.2.11
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc5
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=6ad778ad438fca511d10c7f438d181dd; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:08:20 GMT
+	Server: Apache
+	Last-Modified: Mon, 17 Aug 2009 04:07:41 GMT
+	ETag: "7c8c026-3aa-8b0b3d40"
+	Accept-Ranges: bytes
+	Vary: Accept-Encoding
+	Content-Type: text/html
+	Via: 1.1 bc1
+	Content-Length: 938
+	Connection: Keep-Alive
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:08:20 GMT
+	Server: Apache/2
+	X-Powered-By: PHP/5.2.12
+	Set-Cookie: PHPSESSID=78e42396dc632a12633ef0f065b979be; path=/
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Vary: Accept,Accept-Encoding,User-Agent
+	Content-Type: text/html; charset=utf-8
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:09:47 GMT
+	Server: Apache/2
+	X-Powered-By: PHP/5.2.4
+	Expires: Fri, 19 Mar 2010 21:22:18 GMT
+	Cache-Control: max-age=86400, must-revalidate
+	Pragma: 
+	Last-Modified: Tue, 16 Feb 2010 10:57:16 GMT
+	Vary: Accept,Accept-Encoding,User-Agent
+	Content-Type: text/html; charset=utf-8
+	Via: 1.1 bc7
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=2055abb25c60b3a28fc9810dd601fe13; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:09:47 GMT; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:08:24 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.1
+	Set-Cookie: PHPSESSID=b6cc6c9f2dc42acb0dca07bd778b031c; path=/
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Content-Type: text/html; charset="utf-8"
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:28:26 GMT
+	Server: Apache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	X-Powered-By: PHP/5.2.13
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc3
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=40555488da9765a46c63a96625ad28b6; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:28:27 GMT
+	Server: Apache/2.2.11 (Debian) PHP/5.2.6-1+lenny2 with Suhosin-Patch mod_ssl/2.2.11 OpenSSL/0.9.8g
+	X-Powered-By: PHP/5.2.6-1+lenny2
+	Set-Cookie: PHPSESSID=1f41c7f80dfad6ef9e9594963612472f; path=/
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Vary: Accept,Accept-Encoding
+	Content-Type: text/html; charset=utf-8
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:28:13 GMT
+	Server: Apache/2.0.63 (Unix) mod_ssl/2.0.63 OpenSSL/0.9.8e-fips-rhel5 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 PHP/5.2.8
+	X-Powered-By: PHP/5.2.8
+	Content-Type: text/html
+	Via: 1.1 bc5
+	Connection: Keep-Alive
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:28:35 GMT
+	Server: Apache/2.2.11 (Unix) mod_ssl/2.2.11 OpenSSL/0.9.8i DAV/2 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635
+	X-Powered-By: PHP/5.2.9
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc6
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=f0ca06da67663004b31d8f14f721daab; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:28:40 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.9
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc6
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=98f72bf1ed2792b143f47308b3b5f099; path=/
+
+	HTTP/1.1 403 Forbidden
+	Date: Thu, 04 Mar 2010 04:28:42 GMT
+	Server: Apache
+	Content-Type: text/html; charset=iso-8859-1
+	Via: 1.1 bc5
+	Connection: Keep-Alive
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:28:45 GMT
+	Server: Apache/2.0.63 (FreeBSD) DAV/2 SVN/1.5.2 mod_python/3.3.1 Python/2.5.1 PHP/5.2.6 with Suhosin-Patch mod_ssl/2.0.63 OpenSSL/0.9.7e-p1 mod_fastcgi/2.4.6 mod_perl/2.0.3 Perl/v5.8.8
+	X-Powered-By: PHP/5.2.12
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Pragma: no-cache
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Vary: Accept-Encoding
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc7
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=860147a02be38690829b458077eabd7c; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:28:47 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.11
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc7
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=t4962e1dunk93crufg8qil4375; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:28:53 GMT
+	Server: Apache/2.2.8 (Ubuntu) mod_python/3.3.1 Python/2.5.2 PHP/5.2.4-2ubuntu5.10 with Suhosin-Patch mod_ssl/2.2.8 OpenSSL/0.9.8g mod_perl/2.0.3 Perl/v5.8.8
+	X-Powered-By: PHP/5.2.4-2ubuntu5.10
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-cache, max-age=0, must-revalidate
+	Pragma: no-cache
+	Content-Type: text/html; charset="utf-8"
+	Via: 1.1 bc7
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=5a5baaf3c09bd237859f534039e52f03; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:30:20 GMT
+	Server: Apache/2
+	X-Powered-By: PHP/5.2.4
+	Expires: Tue, 08 Jun 2010 22:50:34 GMT
+	Cache-Control: max-age=86400, must-revalidate
+	Pragma: 
+	Last-Modified: Fri, 27 Nov 2009 10:10:06 GMT
+	Vary: Accept,Accept-Encoding,User-Agent
+	Content-Type: text/html; charset=utf-8
+	Via: 1.1 bc7
+	Connection: Keep-Alive
+	Set-Cookie: PHPSESSID=2089013901ea310463177f049f4a92b4; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:30:20 GMT; path=/
+
+	HTTP/1.1 200 OK
+	Date: Thu, 04 Mar 2010 04:28:55 GMT
+	Server: Apache
+	X-Powered-By: PHP/5.2.11
+	Expires: Thu, 19 Nov 1981 08:52:00 GMT
+	Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+	Pragma: no-cache
+	Vary: Accept
+	Set-Cookie: PHPSESSID=b63d92df808dc2f1edafa1c1e8830409; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:28:56 GMT; path=/
+	Content-Type: text/html; charset=utf-8
+
+
+I noticed two uncommon HTTP headers. The expiry date in 1981 and the cookie, PastVisitor.
+
+		Expires: Thu, 19 Nov 1981 08:52:00 GMT
+		Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:28:56 GMT; path=/
+
+Googling for 'cookie "PastVisitor"' turns up results referring directly to SilverStripe and results referring to websites running SilverStripe. This cookie name while generic sounding appears to be only used by SilverStripe and makes a good plugin pattern.
+
+Googling for 'Thu, 19 Nov 1981 08:52:00 GMT' turns up many results. This date relates to the PHP language and is not useful in identifying SilverStripe.
+
+
+Read more HTML source
+---------------------
+Select some more HTML files to read, looking for unusual patterns.
+
+grep all the HTML files simulatenously looking for patterns:
+Examples:
+	$ grep css *html
+	
+	$ grep javascript *html
+	
+
+Many of the samples have a css file called typography.css. This by itself isn't uncommon enough to make a plugin match. Even if we search for themes/.*/css/typography.css it's still not uncommon enough.
+
+	<link rel="stylesheet" type="text/css" href="http://www.lisamarieelliott.com/themes/lisamarieelliott/css/typography.css?m=1254246770" />
+
+The -A parameter to the grep command is used to display lines after the matched line. Using this we can see the lines directly after layout.css.
+
+	$ grep -A 2 layout.css *html
+	customcanvas.fritzandandre.com-.html:<link rel="stylesheet" type="text/css" href="http://customcanvas.fritzandandre.com/themes/blueplanet/css/layout.css?m=1254524509" />
+	customcanvas.fritzandandre.com-.html-<link rel="stylesheet" type="text/css" href="http://customcanvas.fritzandandre.com/themes/blueplanet/css/typography.css?m=1254524509" />
+	customcanvas.fritzandandre.com-.html-<link rel="stylesheet" type="text/css" href="http://customcanvas.fritzandandre.com/themes/blueplanet/css/form.css?m=1254524509" />
+	--
+	hungryhearts.no.html:	<link rel="stylesheet" href="themes/hh/css/layout.css" type="text/css">
+	hungryhearts.no.html-	<link rel="stylesheet" href="themes/hh/css/form.css" type="text/css">
+	hungryhearts.no.html-	<link rel="stylesheet" href="themes/hh/javascript/fancybox/jquery.fancybox.css" type="text/css" media="screen">
+	--
+	maungataniwha.co.nz-.html:<link rel="stylesheet" type="text/css" href="http://maungataniwha.co.nz/themes/maungataniwha/css/layout.css?m=1265149666" />
+	maungataniwha.co.nz-.html-<link rel="stylesheet" type="text/css" href="http://maungataniwha.co.nz/themes/maungataniwha/css/typography.css?m=1265149666" />
+	maungataniwha.co.nz-.html-<link rel="stylesheet" type="text/css" href="http://maungataniwha.co.nz/themes/maungataniwha/css/form.css?m=1265149668" />
+	--
+	weonline.in.html:	<link rel="stylesheet" href="themes/weonline/css/layout.css" type="text/css" media="screen" />
+	weonline.in.html-	
+	weonline.in.html-	<!--[if IE 6]>
+	--
+	www.benpearce.co.nz-.html:			<link href="themes/main/css/layout.css" rel="stylesheet" type="text/css" />
+	www.benpearce.co.nz-.html-			<link href="themes/main/css/typography.css" rel="stylesheet" type="text/css" />
+	www.benpearce.co.nz-.html-			<link href="themes/main/css/form.css" rel="stylesheet" type="text/css" />
+	--
+	www.bradyinc.com-.html:	<link rel="stylesheet" type="text/css" href="http://www.bradyinc.com/themes/bradyassociates/css/layout.css?m=1267052060" />
+	www.bradyinc.com-.html-<link rel="stylesheet" type="text/css" href="http://www.bradyinc.com/themes/bradyassociates/css/typography.css?m=1266644617" />
+	www.bradyinc.com-.html-<link rel="stylesheet" type="text/css" href="http://www.bradyinc.com/themes/bradyassociates/css/form.css?m=1266644611" />
+	--
+
+layout.css itself is not uncommon enough to make a plugin match. However many of the samples have at least 3 css files named layout.css, typography.css and form.css. The use of these names is not exclusive to SilverStripe and is considered best practice for making CSS frameworks but the order of their appearance combined with the folder structure is unique enough for a 'probable' plugin match.
+
+<link rel="stylesheet" type="text/css" href="http://www.textiprints.com/themes/textiprints/css/layout.css?m=1266347738" />
+<link rel="stylesheet" type="text/css" href="http://www.textiprints.com/themes/textiprints/css/typography.css?m=1266347623" />
+<link rel="stylesheet" type="text/css" href="http://www.textiprints.com/themes/textiprints/css/form.css?m=1247030621" />
+
+
+Earlier I identified the format /assets/galleries/xxxx/_resampled/xxxx.jpg as worthy of investigation.
+
+	$ grep -o 'src="/assets[^"]*' *html
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-BAL-Busy2.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-Cheers.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-COV-BarBusy.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-FolkDrinking1.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-FolkDrinkingTWINS.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-HAM-Busy2.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-HAM-BusyGirls.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-HAM-GirlDrinking.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-PUT-HappyHour.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-ShakeShake.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-SOHO-BarBusy2.jpg
+	beatone.co.uk-.html:src="/assets/Banner-Images/Home/_resampled/croppedimage626168-SOHO-BarMixing.jpg
+	beatone.co.uk-.html:src="/assets/Widgets/_resampled/croppedimage158220-book-a-party.jpg
+	beatone.co.uk-.html:src="/assets/Widgets/_resampled/SetWidth182-book-a-party-title.gif
+	beatone.co.uk-.html:src="/assets/Widgets/_resampled/croppedimage158220-happy-hour.jpg
+	beatone.co.uk-.html:src="/assets/Widgets/_resampled/SetWidth182-happy-hour-title.gif
+	customcanvas.fritzandandre.com-.html:src="/assets/Banners/blueplanetvespa.jpg
+	customcanvas.fritzandandre.com-.html:src="/assets/Banners/scooter5.jpg
+	customcanvas.fritzandandre.com-.html:src="/assets/Banners/scooterad4.jpg
+	customcanvas.fritzandandre.com-.html:src="/assets/Banners/traffic.jpg
+	customcanvas.fritzandandre.com-.html:src="/assets/Banners/badboy.jpg
+	hungryhearts.no.html:src="/assets/Uploads/_resampled/croppedimage177207-hungry-heartsindex5.jpg
+	hungryhearts.no.html:src="/assets/Uploads/_resampled/croppedimage8075-kvad-cropst2web2.jpg
+	hungryhearts.no.html:src="/assets/Uploads/_resampled/croppedimage8075-IMG6686.jpg
+	hungryhearts.no.html:src="/assets/Uploads/_resampled/croppedimage8075-henri4.jpg
+	hungryhearts.no.html:src="/assets/Uploads/_resampled/croppedimage8075-bil4.jpg
+	...
+	
+	$ grep -lo 'src="/assets.*_resampled' *html | wc -l
+	13
+
+The pattern appears in only 13 of the samples. At first it doesn't appear to be a very unique match but a google query for "/assets/ _resampled/" returned almost entirely SilverStripe websites.
+
+
+
+6. Review of unique patterns identified
+=======================================
+
+Pattern 1 - Meta generator tag
+-------------------------------
+
+Examples:
+	$ grep -hi 'name="generator' *html | sed  's/^[ \t]*//g' | sort -u
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" >
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" />
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.0 - http://www.silverstripe.com" />
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" >
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" />
+	<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" >
+	<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" />
+
+The meta generator tag is most likely to be removed by a web developer. It sometimes has the version number which is useful.
+I will give this pattern a certainty of 100%.
+
+
+Pattern 2 - Cookie PastVisitor
+-------------------------------
+Googling for 'cookie "PastVisitor"' turns up results referring directly to SilverStripe and results referring to websites that turn out to be running SilverStripe. This cookie name, while generic sounding appears to be only used by SilverStripe and will make a good plugin match.
+
+Examples:
+	$ grep -h PastV *meta	
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:05:29 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:05:35 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:06:01 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:07:07 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:08:06 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:09:47 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:30:20 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:28:56 GMT; path=/
+
+I will give this pattern a certainty of 100% because I couldn't find any examples of a non-SilverStripe website using the cookie name.
+
+
+Pattern 3 - 3 CSS files, layouts.css, typography.css and form.css
+-----------------------------------------------------------------
+Many of the samples have at least 3 css files named layout.css, typography.css and form.css. The use of these names is not exclusive to SilverStripe and is considered best practice for making CSS frameworks but the order of their appearance combined with the folder structure is unique enough for a 'probable' plugin match.
+
+	<link rel="stylesheet" type="text/css" href="http://www.textiprints.com/themes/textiprints/css/layout.css?m=1266347738" />
+	<link rel="stylesheet" type="text/css" href="http://www.textiprints.com/themes/textiprints/css/typography.css?m=1266347623" />
+	<link rel="stylesheet" type="text/css" href="http://www.textiprints.com/themes/textiprints/css/form.css?m=1247030621" />
+
+Not all samples have the ?m= after the css filename. Here are examples without the ?m=
+	$ grep -h -A 2 layout.css plugin-development/tests/silverstripe/*html |fgrep -v "?m="
+
+	<link rel="stylesheet" type="text/css" href="themes/dcsd/css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="themes/dcsd/css/form.css" />
+
+	<link rel="stylesheet" type="text/css" href="tutorial/css/layout.css" >
+	<link rel="stylesheet" type="text/css" href="tutorial/css/typography.css" >
+	<link rel="stylesheet" type="text/css" href="tutorial/css/form.css" >
+
+	<link rel="stylesheet" href="/themes/firstgalaxies/css/layout.css" type="text/css">
+	<link rel="stylesheet" href="/themes/firstgalaxies/css/typography.css" type="text/css">
+	<link rel="stylesheet" href="/themes/firstgalaxies/css/form.css" type="text/css">
+
+I will give this pattern a certainty of 75% because these three CSS filenames are considered best practice.
+
+
+Pattern 4 - image assets url structure
+-----------------------------------------------------------------
+<img src="/assets/.*/_resampled/.*.jpg"
+
+Examples:
+	<img src="/assets/magazine/sr6/toc/_resampled/croppedimage220165-02-Two Vietnam Vets.jpg" alt="" />
+	<img class="left noborder" src="/assets/Uploads/services/icons/fundraisers-icon.jpg" alt="Fundraisers Icon" />
+
+At first it doesn't appear to be a very unique match but a google query for "/assets/ _resampled/" returned almost entirely SilverStripe websites.
+I will give this pattern a certainty of 75% because I found at least 1 non-SilverStripe example with Google.
+
+
+7. Write the plugin
+=======================================
+
+Build on the plugin template
+---------------------------------------
+The plugin template is found in the plugin-development/ folder. Copy this into the plugins/ folder with the name of your choosing. All plugin names have the .rb extension.
+
+The template:
+
+	Plugin.define "Plugin-Template" do
+	author "Enter Your Name"
+	version "0.1"
+	description "Describe what the plugin identifies. Include the homepage of the software package"
+	examples %w| include-some.net example-websites.com here.com |
+
+	# a comment block here is a good place to make notes for yourself and others
+
+	# There are four types of matches: regexp, text, ghdb
+	# Matches are enclosed in {} brackets and separated by commas
+	matches [
+	{:name=>"a brief description of the match, eg. powered by in footer",
+	:probability=>100, # this isn't a real probability. 100 is certain, 75 is probably and 25 is maybe
+	:regexp=>/This page was generated by <a href="http:\/\/www.genericcms.com\/en\/products\/generic-cms\/">Generic CMS<\/a>/ },
+
+	{:name=>"title",
+	:probability=>75,
+	:text=>"<title>Generic Homepage</title>" }
+	]
+	end
+
+
+Fill in the plugin name, author, version, description and examples fields. The examples are a ruby array delimited by whitespace and the http:// prefix is optional.
+
+	Plugin.define "SilverStripe" do
+	author "Andrew Horton"
+	version "0.1"
+	description "SilverStripe is an opensource CMS written in PHP. It can run on Apache, IIS or lighthttpd. Homepage: http://www.silverstripe.com"
+
+	examples %w|http://beatone.co.uk/ http://charcoalinteriors.com.au/ http://customcanvas.fritzandandre.com/ http://hungryhearts.no http://maungataniwha.co.nz/ http://unbounded.org/ http://victoriaoruwari.com/ http://weonline.in  http://www.arprostatecancer.org/ http://www.benpearce.co.nz/ http://www.bradyinc.com/ http://www.cavendishimaging.com/ http://www.chapmansurfboards.com/ http://www.choidoco.com/demo/ http://www.clockwork.co.nz/ http://www.enamaine.org/ http://www.executivemediasearch.com/ http://www.fairtradenap.net/ http://www.firstgalaxies.org/ http://www.frussian.com.ar/ http://www.fuel.ie/silverstripe http://www.gsbc.edu/ http://www.holistichealth.com/ http://www.hutmacherin.com/ http://www.infinitestillness.ie/ss http://www.intandemtheatre.org/ http://www.kitesurfnelson.co.nz/ http://www.latenightdisco.com/ http://www.lisamarieelliott.com/ http://www.maklerservice-greiz.de/ http://www.moerakihavenmotel.co.nz/ http://www.monjasantner.de/ http://www.moonlitekustoms.com/ http://www.moto-racepaint.com/ http://www.naciondnb.com/ http://www.nadabakery.co.nz/ http://www.peterpanvakantieclub.nl/ http://www.rcaforum.org.nz/ http://www.robert80.de/ http://www.silverstripe.com/ http://www.silverstripe.org.pl/ http://www.stillrunnin.com/ http://www.textiprints.com/ http://www.thelightboxdesigns.com/ http://www.tobychampion.co.uk/ http://www.upstreamgroup.com/ http://www.verus.com.tr/ http://www.wend.nl/ http://www.whileyouwait.co.nz/ |
+	
+	# a comment block here is a good place to make notes for yourself and others
+	
+	# There are four types of matches: regexp, text, ghdb
+	# Matches are enclosed in {} brackets and separated by commas
+	matches [
+	{:name=>"a brief description of the match, eg. powered by in footer",
+	:probability=>100, # this isn't a real probability. 100 is certain, 75 is probably and 25 is maybe
+	:regexp=>/This page was generated by <a href="http:\/\/www.genericcms.com\/en\/products\/generic-cms\/">Generic CMS<\/a>/ },
+
+	{:name=>"title",
+	:probability=>75,
+	:text=>"<title>Generic Homepage</title>" }
+	]
+	end
+
+
+Match Pattern 1 - Meta generator tag
+----------------------------------------------------
+
+Review the examples you have collected for match 1 and decide on what type of match is best suited to this pattern.
+	
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" >
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" />
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.0 - http://www.silverstripe.com" />
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" >
+	<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" />
+	<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" >
+	<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" />
+
+Match types are:
+	regexp	- Ruby regular expressions that start and end with / characters
+	text	- A text string enclosed in ' or " characters
+	ghdb	- Google Hacking Database. This uses some Google query parameters. It currently supports intitle:, filetype:, inurl:
+
+For this plugin to match we will look for a meta tag with the name 'generator' and a content parameter that starts with "SilverStripe". Later we can extract the version number. A regular expression match is best suited for this.
+
+The following regular expression will match the tag.
+	/<meta name="generator"[^>]*content="SilverStripe/
+
+Notice how I haven't tried to match the http-equiv="generator" part of the tag or the website URL in the content field. Those parts of the tag are irrelevant and may change in future versions of SilverStripe. 
+
+Note: If you don't understand regular expressions you could make a text match like:
+	:text=>'<meta name="generator" http-equiv="generator" content="SilverStripe'
+
+The plugin now looks like:
+
+	Plugin.define "SilverStripe" do
+	author "Andrew Horton"
+	version "0.1"
+	description "SilverStripe is an opensource CMS written in PHP. It can run on Apache, IIS or lighthttpd. Homepage: http://www.silverstripe.com"
+
+	examples %w|http://beatone.co.uk/ http://charcoalinteriors.com.au/ http://customcanvas.fritzandandre.com/ http://hungryhearts.no http://maungataniwha.co.nz/ http://unbounded.org/ http://victoriaoruwari.com/ http://weonline.in  http://www.arprostatecancer.org/ http://www.benpearce.co.nz/ http://www.bradyinc.com/ http://www.cavendishimaging.com/ http://www.chapmansurfboards.com/ http://www.choidoco.com/demo/ http://www.clockwork.co.nz/ http://www.enamaine.org/ http://www.executivemediasearch.com/ http://www.fairtradenap.net/ http://www.firstgalaxies.org/ http://www.frussian.com.ar/ http://www.fuel.ie/silverstripe http://www.gsbc.edu/ http://www.holistichealth.com/ http://www.hutmacherin.com/ http://www.infinitestillness.ie/ss http://www.intandemtheatre.org/ http://www.kitesurfnelson.co.nz/ http://www.latenightdisco.com/ http://www.lisamarieelliott.com/ http://www.maklerservice-greiz.de/ http://www.moerakihavenmotel.co.nz/ http://www.monjasantner.de/ http://www.moonlitekustoms.com/ http://www.moto-racepaint.com/ http://www.naciondnb.com/ http://www.nadabakery.co.nz/ http://www.peterpanvakantieclub.nl/ http://www.rcaforum.org.nz/ http://www.robert80.de/ http://www.silverstripe.com/ http://www.silverstripe.org.pl/ http://www.stillrunnin.com/ http://www.textiprints.com/ http://www.thelightboxdesigns.com/ http://www.tobychampion.co.uk/ http://www.upstreamgroup.com/ http://www.verus.com.tr/ http://www.wend.nl/ http://www.whileyouwait.co.nz/ |
+
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" >
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" />
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.0 - http://www.silverstripe.com" />
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" >
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" />
+	#<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" >
+	#<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" />
+
+	matches [
+	{:name=>"meta generator tag",
+	:probability=>100,
+	:regexp=>/<meta name="generator"[^>]*content="SilverStripe/}
+
+	]
+	end
+
+I have included the meta generatator tag examples within the plugin as comments because this is a good place to refer to them later.
+
+
+Plugin Testing
+---------------------------------------
+It's good practice to test your plugin while writing it to make sure it works.
+
+If you want to ensure your plugin is loaded, run the following command:
+	$ ./whatweb -l
+	
+This shows all loaded plugins displayed along with the version number.
+
+Test your current plugin on the SilverStripe samples you have collected. The whatweb parameters used are:
+	-v	Verbose. This shows us which matches are being found
+	-p	Plugins. Only load the SilverStripe plugin
+	
+	$ ./whatweb -v -psilverstripe ./plugin-development/tests/silverstripe/*html
+	
+	./plugin-development/tests/silverstripe/charcoalinteriors.com.au-.html [] 
+	Identifying: ./plugin-development/tests/silverstripe/charcoalinteriors.com.au-.html
+	HTTP-Status: 
+
+	./plugin-development/tests/silverstripe/beatone.co.uk-.html [] SilverStripe
+	Identifying: ./plugin-development/tests/silverstripe/beatone.co.uk-.html
+	HTTP-Status: 
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100}]]]
+
+	./plugin-development/tests/silverstripe/hungryhearts.no.html [] SilverStripe
+	Identifying: ./plugin-development/tests/silverstripe/hungryhearts.no.html
+	HTTP-Status: 
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100}]]]
+
+	./plugin-development/tests/silverstripe/maungataniwha.co.nz-.html [] 
+	Identifying: ./plugin-development/tests/silverstripe/maungataniwha.co.nz-.html
+	HTTP-Status: 
+
+	./plugin-development/tests/silverstripe/customcanvas.fritzandandre.com-.html [] SilverStripe
+	Identifying: ./plugin-development/tests/silverstripe/customcanvas.fritzandandre.com-.html
+	HTTP-Status: 
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100}]]]
+
+We notice that charcoalinteriors.com.au and maungataniwha.co.nz aren't matching. After viewing the HTML files we notice they do not include the meta generator tag. Our first match is working correctly.
+
+
+Match Pattern 2 - Cookie PastVisitor
+------------------------------------------------------
+Review the examples you have collected and decide on what type of match is best suited.
+
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:05:29 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:05:35 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:06:01 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:07:07 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:08:06 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:09:47 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:30:20 GMT; path=/
+	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:28:56 GMT; path=/
+
+Matching the cookie cannot be done within the matches array. Create a function called passive that will be triggered whenever the plugin is used.
+
+	def passive
+		m=[]
+	
+		m
+	end
+
+This code creates a empty array called m and returns the value of that array. This array will contain hashes in the same format as the matches section. Hash element names can be name, probability, version, etc.
+
+	def passive
+		m=[]
+	    m << {:name=>"PastVisitor Cookie", :probability=>100 } if @meta["set-cookie"] =~ /PastVisitor=[0-9]+.*/	
+		m
+	end
+
+Now the function is checking the @meta array element "set-cookie" is see if it contains a regular expression that begins with PastVisitor= then has some numbers.
+
+We cannot test this against the saved HTML files in our plugin-development/silverstripe/ folder. Instead we will test it using example sites. Note the whatweb parameter -e uses the examples in the loaded plugins as targets.
+
+	$ ./whatweb -v -psilverstripe -e 
+	http://charcoalinteriors.com.au/ [200] 
+	Identifying: http://charcoalinteriors.com.au/
+	HTTP-Status: 200
+
+	http://beatone.co.uk/ [200] SilverStripe
+	Identifying: http://beatone.co.uk/
+	HTTP-Status: 200
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100}]]]
+
+	http://maungataniwha.co.nz/ [200] 
+	Identifying: http://maungataniwha.co.nz/
+	HTTP-Status: 200
+
+	http://hungryhearts.no [200] SilverStripe
+	Identifying: http://hungryhearts.no
+	HTTP-Status: 200
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100}]]]
+
+	http://customcanvas.fritzandandre.com/ [200] SilverStripe
+	Identifying: http://customcanvas.fritzandandre.com/
+	HTTP-Status: 200
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100}]]]
+
+	http://unbounded.org/ [200] SilverStripe
+	Identifying: http://unbounded.org/
+	HTTP-Status: 200
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100},
+	   {:name=>"PastVisitor Cookie", :probability=>100}]]]
+
+	http://weonline.in [200] SilverStripe
+	Identifying: http://weonline.in
+	HTTP-Status: 200
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100}]]]
+
+	http://www.arprostatecancer.org/ [200] 
+	Identifying: http://www.arprostatecancer.org/
+	HTTP-Status: 200
+
+	http://victoriaoruwari.com/ [200] SilverStripe
+	Identifying: http://victoriaoruwari.com/
+	HTTP-Status: 200
+	[["SilverStripe", [{:name=>"PastVisitor Cookie", :probability=>100}]]]
+
+Our plugin has recognised the PastVistitor cookie for unbounded.org and victoriaoruwari.com so we know that it works. 
+
+Using just the two matches so far would be insufficient. Notice how some sites match only the meta generator tag, other match only the cookie and some aren't matched at all.
+
+
+Match Pattern 3 - 3 CSS files, layouts.css, typography.css and form.css
+-----------------------------------------------------------------------
+
+Review the examples you have collected and decide on what type of match is best suited.
+
+	<link rel="stylesheet" type="text/css" href="http://www.textiprints.com/themes/textiprints/css/layout.css?m=1266347738" />
+	<link rel="stylesheet" type="text/css" href="http://www.textiprints.com/themes/textiprints/css/typography.css?m=1266347623" />
+	<link rel="stylesheet" type="text/css" href="http://www.textiprints.com/themes/textiprints/css/form.css?m=1247030621" />
+	
+	<link rel="stylesheet" href="/themes/firstgalaxies/css/layout.css" type="text/css">
+	<link rel="stylesheet" href="/themes/firstgalaxies/css/typography.css" type="text/css">
+	<link rel="stylesheet" href="/themes/firstgalaxies/css/form.css" type="text/css">
+
+I decided earlier to give this pattern a certainty of 75% because using this set of filenames for CSS files is considered best practice. I also discovered an example where the typography.css file wasn't included. I chose to not match that because three names in order is a more likely unique match.
+
+A regular expression is the best choice to match match these three css files in order:
+/<link[^>]*stylesheet[^>]*layout.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*typography.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*form.css[^>]*>/
+
+Including this regular expression gives us the following matches array in our plugin. Notice how a comma is included after the first match.
+
+	matches [
+	{:name=>"meta generator tag",
+	:probability=>100,
+	:regexp=>/<meta name="generator"[^>]*content="SilverStripe/},
+	
+	{:name=>"layout, typography, form css files",
+	:probability=>75,
+	:regexp=>/<link[^>]*stylesheet[^>]*layout.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*typography.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*form.css[^>]*>/}
+	]
+
+
+Test the regular expression to make sure it works.
+
+	$ ./whatweb -v -psilverstripe ./plugin-development/tests/silverstripe/*html
+	./plugin-development/tests/silverstripe/charcoalinteriors.com.au-.html [] 
+	Identifying: ./plugin-development/tests/silverstripe/charcoalinteriors.com.au-.html
+	HTTP-Status: 
+
+	./plugin-development/tests/silverstripe/beatone.co.uk-.html [] SilverStripe
+	Identifying: ./plugin-development/tests/silverstripe/beatone.co.uk-.html
+	HTTP-Status: 
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100}]]]
+
+	./plugin-development/tests/silverstripe/hungryhearts.no.html [] SilverStripe
+	Identifying: ./plugin-development/tests/silverstripe/hungryhearts.no.html
+	HTTP-Status: 
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100}]]]
+
+	./plugin-development/tests/silverstripe/maungataniwha.co.nz-.html [] probably SilverStripe
+	Identifying: ./plugin-development/tests/silverstripe/maungataniwha.co.nz-.html
+	HTTP-Status: 
+	[["SilverStripe",
+	  [{:regexp=>
+		 /<link[^>]*stylesheet[^>]*layout.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*typography.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*form.css[^>]*>/,
+		:name=>"layout, typography, form css files",
+		:probability=>75}]]]
+
+	./plugin-development/tests/silverstripe/customcanvas.fritzandandre.com-.html [] SilverStripe
+	Identifying: ./plugin-development/tests/silverstripe/customcanvas.fritzandandre.com-.html
+	HTTP-Status: 
+	[["SilverStripe",
+	  [{:regexp=>/<meta name="generator"[^>]*content="SilverStripe/,
+		:name=>"meta generator tag",
+		:probability=>100},
+	   {:regexp=>
+		 /<link[^>]*stylesheet[^>]*layout.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*typography.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*form.css[^>]*>/,
+		:name=>"layout, typography, form css files",
+		:probability=>75}]]]
+
+3 of the first 5 didn't match the CSS files, charcoalinteriors.com.au, beatone.co.uk, and hungryhearts.no.html. I manually inspected the files to see what their CSS files were. None of them include the 3 CSS files in order so our regular expression works.
+
+
+Match Pattern 4 - image assets url structure
+-----------------------------------------------------------------
+
+Review the examples you have collected and decide on what type of match is best suited.
+
+	<img src="/assets/magazine/sr6/toc/_resampled/croppedimage220165-02-Two Vietnam Vets.jpg" alt="" />
+	<img class="left noborder" src="/assets/Uploads/services/icons/fundraisers-icon.jpg" alt="Fundraisers Icon" />
+
+This match is best found with a regular expression.
+
+Earlier I thought it didn't appear to be a unique match but a google query for "/assets/ _resampled/" returned almost entirely SilverStripe websites. I'm giving this pattern a certainty of 75% because I found at least 1 non-SilverStripe example with Google.
+
+The following regular expression will work, <img src="/assets/[^/]+/_resampled/[^"]+.jpg" . In plain english this is read as 
+<img src="/assets/anything but a slash/_resampled/anything but double quotes.jpg"
+
+Our plugin matches array now looks like:
+
+	matches [
+	{:name=>"meta generator tag",
+	:probability=>100,
+	:regexp=>/<meta name="generator"[^>]*content="SilverStripe/},
+	
+	{:name=>"layout, typography, form css files",
+	:probability=>75,
+	:regexp=>/<link[^>]*stylesheet[^>]*layout.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*typography.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*form.css[^>]*>/},
+	
+	{:name=>"<img src="/assets/something/_resampled/something.jpg"",
+	:probability=>75,
+	:regexp=>/<img src="/assets/[^/]+/_resampled/[^"]+.jpg"/}	
+	]
+
+Next I tested the plugin to confirm that it matches some of the samples.
+
+
+Test the plugin against all the examples
+----------------------------------------
+
+Test the plugin against all the example websites to test how effectively it idenfies them. Instead of testing against the saved HTML files I will test against the example URLs in the plugin so that the match that checks the cookies will work.
+
+	$ ./whatweb  -psilverstripe -e
+	http://unbounded.org/ [200] SilverStripe
+	http://charcoalinteriors.com.au/ [200] 
+	http://customcanvas.fritzandandre.com/ [200] SilverStripe
+	http://beatone.co.uk/ [200] SilverStripe
+	http://maungataniwha.co.nz/ [200] probably SilverStripe
+	http://hungryhearts.no [200] SilverStripe
+	http://www.benpearce.co.nz/ [200] 
+	http://victoriaoruwari.com/ [200] SilverStripe
+	http://www.arprostatecancer.org/ [200] 
+	http://weonline.in [200] SilverStripe
+	http://www.choidoco.com/demo/ [200] SilverStripe
+	http://www.cavendishimaging.com/ [200] SilverStripe
+	http://www.bradyinc.com/ [200] SilverStripe
+	http://www.clockwork.co.nz/ ERROR: Socket error getaddrinfo: Name or service not known
+	http://www.chapmansurfboards.com/ [200] SilverStripe
+	http://www.fairtradenap.net/ [200] probably SilverStripe
+	http://www.executivemediasearch.com/ [404] 
+	http://www.fuel.ie/silverstripe [301] 
+	http://www.firstgalaxies.org/ [200] SilverStripe
+	http://www.fuel.ie/silverstripe/ [200] SilverStripe
+	http://www.enamaine.org/ [200] SilverStripe
+	http://www.frussian.com.ar/ [200] SilverStripe
+	http://www.infinitestillness.ie/ss [301] 
+	http://www.holistichealth.com/ [200] SilverStripe
+	http://www.gsbc.edu/ [200] SilverStripe
+	http://www.hutmacherin.com/ [301] 
+	http://www.infinitestillness.ie/ss/ [200] SilverStripe
+	http://www.hutmacherin.com/start [200] probably SilverStripe
+	http://www.latenightdisco.com/ [200] SilverStripe
+	http://www.kitesurfnelson.co.nz/ [200] probably SilverStripe
+	http://www.intandemtheatre.org/ [200] SilverStripe
+	http://www.moerakihavenmotel.co.nz/ [200] SilverStripe
+	http://www.lisamarieelliott.com/ [200] SilverStripe
+	http://www.moonlitekustoms.com/ [200] SilverStripe
+	http://www.naciondnb.com/ ERROR: Socket error getaddrinfo: Name or service not known
+	http://www.maklerservice-greiz.de/ [200] SilverStripe
+	http://www.monjasantner.de/ [200] SilverStripe
+	http://www.nadabakery.co.nz/ [200] SilverStripe
+	http://www.rcaforum.org.nz/ [200] SilverStripe
+	http://www.moto-racepaint.com/ [200] SilverStripe
+	http://www.peterpanvakantieclub.nl/ [200] SilverStripe
+	http://www.robert80.de/ [200] SilverStripe
+	http://www.silverstripe.com/ [200] SilverStripe
+	http://www.stillrunnin.com/ [200] SilverStripe
+	http://www.textiprints.com/ [200] SilverStripe
+	http://www.thelightboxdesigns.com/ [200] 
+	http://www.silverstripe.org.pl/ [200] SilverStripe
+	http://www.whileyouwait.co.nz/ [200] SilverStripe
+	http://www.tobychampion.co.uk/ [500] 
+	http://www.wend.nl/ [200] SilverStripe
+	http://www.upstreamgroup.com/ [200] SilverStripe
+	http://www.verus.com.tr/ [200] SilverStripe
+
+Most of the sites with a HTTP 301 status redirect to a page with a status of 200 and are identified as SilverStripe. Some sites are no longer active so I removed them from the examples list.
+
+Of the 45 live websites, 43 are identified as SilverStripe. It is accurate to say our plugin, using only passive matches identifies about 95% of SilverStripe websites.
+
+
+Extract version numbers
+-----------------------
+
+The meta generator tag sometimes contains version numbers which we want to detect.
+
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" >
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" />
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.0 - http://www.silverstripe.com" />
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" >
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" />
+	#<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" >
+	#<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" />
+
+To extract the version number I need to write some custom ruby code in the passive function.
+
+	if @body =~ /<meta name="generator"[^>]*content="SilverStripe [0-9\.]+/
+			v=@body.scan(/<meta name="generator"[^>]*content="SilverStripe ([0-9\.]+)/)[0].to_s
+			m << {:name=>"meta generator version", :probability=>100, :version=>v }
+	end
+	
+This code checks that the regular expression that has the SilverStripe version within the meta generator tag is in the HTML body. If so, it copies it into a variable called v then includes it in a hash which is put into the array of matches.
+
+Testing the code shows that version numbers are being extracted. Note that if SilverStripe were to include letters after version number, eg. 2.3.5b that the letter wouldn't be recognised.
+
+	$ ./whatweb  -psilverstripe ./plugin-development/tests/silverstripe/*html
+	./plugin-development/tests/silverstripe/charcoalinteriors.com.au-.html [] 
+	./plugin-development/tests/silverstripe/beatone.co.uk-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/maungataniwha.co.nz-.html [] probably SilverStripe
+	./plugin-development/tests/silverstripe/hungryhearts.no.html [] SilverStripe
+	./plugin-development/tests/silverstripe/customcanvas.fritzandandre.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/victoriaoruwari.com-.html [] 
+	./plugin-development/tests/silverstripe/weonline.in.html [] SilverStripe[2.3.1]
+	./plugin-development/tests/silverstripe/unbounded.org-.html [] SilverStripe[2.0]
+	./plugin-development/tests/silverstripe/www.benpearce.co.nz-.html [] 
+	./plugin-development/tests/silverstripe/www.choidoco.com-demo-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.bradyinc.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.cavendishimaging.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.chapmansurfboards.com-.html [] SilverStripe[2.0]
+	./plugin-development/tests/silverstripe/www.arprostatecancer.org-.html [] 
+	./plugin-development/tests/silverstripe/www.executivemediasearch.com-.html [] 
+	./plugin-development/tests/silverstripe/www.enamaine.org-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.firstgalaxies.org-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.fairtradenap.net-.html [] probably SilverStripe
+	./plugin-development/tests/silverstripe/www.fuel.ie-silverstripe.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.holistichealth.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.hutmacherin.com-.html [] probably SilverStripe
+	./plugin-development/tests/silverstripe/www.gsbc.edu-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.clockwork.co.nz-.html [] 
+	./plugin-development/tests/silverstripe/www.frussian.com.ar-.html [] SilverStripe[2.0]
+	./plugin-development/tests/silverstripe/www.infinitestillness.ie-ss.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.lisamarieelliott.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.latenightdisco.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.kitesurfnelson.co.nz-.html [] probably SilverStripe
+	./plugin-development/tests/silverstripe/www.intandemtheatre.org-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.moerakihavenmotel.co.nz-.html [] SilverStripe[2.0]
+	./plugin-development/tests/silverstripe/www.maklerservice-greiz.de-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.monjasantner.de-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.naciondnb.com-.html [] 
+	./plugin-development/tests/silverstripe/www.moto-racepaint.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.nadabakery.co.nz-.html [] SilverStripe[2.3.1]
+	./plugin-development/tests/silverstripe/www.moonlitekustoms.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.peterpanvakantieclub.nl-.html [] SilverStripe[2.0]
+	./plugin-development/tests/silverstripe/www.robert80.de-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.rcaforum.org.nz-.html [] SilverStripe[2.3.0]
+	./plugin-development/tests/silverstripe/www.silverstripe.org.pl-.html [] 
+	./plugin-development/tests/silverstripe/www.thelightboxdesigns.com-.html [] 
+	./plugin-development/tests/silverstripe/www.silverstripe.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.textiprints.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.stillrunnin.com-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.tobychampion.co.uk-.html [] SilverStripe
+	./plugin-development/tests/silverstripe/www.upstreamgroup.com-.html [] SilverStripe[2.3.1]
+	./plugin-development/tests/silverstripe/www.whileyouwait.co.nz-.html [] SilverStripe[2.0]
+	./plugin-development/tests/silverstripe/www.wend.nl-.html [] probably SilverStripe
+	./plugin-development/tests/silverstripe/www.verus.com.tr-.html [] SilverStripe
+
+We can see that only some websites include the version number in the meta generator tag.
+
+The final plugin
+----------------
+
+	Plugin.define "SilverStripe" do
+	author "Andrew Horton"
+	version "0.1"
+	description "SilverStripe is an opensource CMS written in PHP. It can run on Apache, IIS or lighthttpd. Homepage: http://www.silverstripe.com"
+
+	examples %w|http://beatone.co.uk/ http://charcoalinteriors.com.au/ http://customcanvas.fritzandandre.com/ http://hungryhearts.no http://maungataniwha.co.nz/ http://unbounded.org/ http://victoriaoruwari.com/ http://weonline.in  http://www.arprostatecancer.org/ http://www.benpearce.co.nz/ http://www.bradyinc.com/ http://www.cavendishimaging.com/ http://www.chapmansurfboards.com/ http://www.choidoco.com/demo/ http://www.enamaine.org/ http://www.executivemediasearch.com/ http://www.fairtradenap.net/ http://www.firstgalaxies.org/ http://www.frussian.com.ar/ http://www.fuel.ie/silverstripe http://www.gsbc.edu/ http://www.holistichealth.com/ http://www.hutmacherin.com/ http://www.infinitestillness.ie/ss http://www.intandemtheatre.org/ http://www.kitesurfnelson.co.nz/ http://www.latenightdisco.com/ http://www.lisamarieelliott.com/ http://www.maklerservice-greiz.de/ http://www.moerakihavenmotel.co.nz/ http://www.monjasantner.de/ http://www.moonlitekustoms.com/ http://www.moto-racepaint.com/ http://www.nadabakery.co.nz/ http://www.peterpanvakantieclub.nl/ http://www.rcaforum.org.nz/ http://www.robert80.de/ http://www.silverstripe.com/ http://www.silverstripe.org.pl/ http://www.stillrunnin.com/ http://www.textiprints.com/ http://www.thelightboxdesigns.com/ http://www.tobychampion.co.uk/ http://www.upstreamgroup.com/ http://www.verus.com.tr/ http://www.wend.nl/ http://www.whileyouwait.co.nz/ |
+
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" >
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.0 - http://www.silverstripe.com" />
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.0 - http://www.silverstripe.com" />
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" >
+	#<meta name="generator" http-equiv="generator" content="SilverStripe 2.3.1 - http://www.silverstripe.com" />
+	#<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" >
+	#<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" />
+
+	matches [
+	{:name=>"meta generator tag",
+	:probability=>100,
+	:regexp=>/<meta name="generator"[^>]*content="SilverStripe/}, #" I have included a comment with double quotes for the benefit of syntax hilighting in gedit
+
+	{:name=>"layout, typography, form css files",
+	:probability=>75,
+	:regexp=>/<link[^>]*stylesheet[^>]*layout.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*typography.css[^>]*>[^<]*<link[^>]*stylesheet[^>]*form.css[^>]*>/},
+
+	{:name=>'<img src="/assets/something/_resampled/something.jpg"',
+	:probability=>75,
+	:regexp=>/<img src="\/assets\/[^\/]+\/_resampled\/[^"]+.jpg"/} #"
+	] 
+
+	#	Set-Cookie: PastVisitor=1; expires=Wed, 02-Jun-2010 04:05:29 GMT; path=/
+	def passive
+		m=[]
+		m << {:name=>"PastVisitor Cookie", :probability=>100 } if @meta["set-cookie"] =~ /PastVisitor=[0-9]+.*/	
+	
+		if @body =~ /<meta name="generator"[^>]*content="SilverStripe [0-9\.]+/
+				v=@body.scan(/<meta name="generator"[^>]*content="SilverStripe ([0-9\.]+)/)[0].to_s
+				m << {:name=>"meta generator version", :probability=>100, :version=>v }
+		end
+		m
+	end
+
+	end
+
+
+8. Closing Notes
+=======================================
+
+I have shown you the process of how to write a simple WhatWeb plugin. The most important part of the process is the complete research that happens before writing any matches.
+
+Some people will be tempted to write a pattern for the meta-generator tag then stop. Such an approach would identify about 75% of SilverStripe sites. Futhermore there is a generic meta generator tag plugin so such an effort would be of little practical use.
+
+Our final plugin identifies about 95% of SilverStripe websites using only passive matches. An aggressive plugin that guesses URLs would increase the effectivenses to 100% however aggressive plugins are not stealthy, they use more bandwidth and so are less suitable for large scale website identification. However aggressive plugins are useful during penetration testing to identify frameworks. Writing aggressive plugins is a more advanced topic and will be covered in another tutorial.
+
+Please submit your plugins to andrew [at] morningstarsecurity.com to be included in the next release of WhatWeb.
+
+
+
+9. Resources
+=======================================
+
+The best way to learn how to develop plugins is by reading the plugins bundled with WhatWeb.
+
+To learn and test regular expressions visit: http://rubular.com/
+WhatWeb homepage: http://www.morningstarsecurity.com/research/whatweb
+
+Visit MorningStar Security for the best Information Security news at http://www.morningstarsecurity.com/news
+

@@ -1,0 +1,23 @@
+INSTALL
+
+Packages are available for:
+
+* Arch Linux
+* Mandriva Linux
+* FreeBSD
+* Gentoo
+
+Please note that these packages may not be up to date.
+
+
+Installation instructions for Ubuntu Linux
+
+1. Install Ruby
+---------------------------------------
+sudo apt-get install ruby ruby-dev libopenssl-ruby
+
+In older versions whatweb required rubygems, the anemone rubygem and ruby-dev.
+
+Please contact me if these installation instructions don't work for you.
+
+

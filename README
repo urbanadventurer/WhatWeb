@@ -1,0 +1,782 @@
+WhatWeb - Next generation web scanner.
+By urbanadventurer aka Andrew Horton from Security-Assessment.com
+Version : 0.4.5, August 17th 2010
+Homepage: http://www.morningstarsecurity.com/research/whatweb
+License: GPLv2
+
+
+Identify content management systems (CMS), blogging platforms, stats/analytics packages, javascript libraries, servers and more. When you visit a website in your browser the transaction includes many unseen hints about how the webserver is set up and what software is delivering the webpage. Some of these hints are obvious, eg. "Powered by XYZ" and others are more subtle. WhatWeb recognises these cues and reports what it finds.
+
+WhatWeb has over 250 plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
+
+There are both passive and aggressive plugins, passive plugins use information on the page, in cookies and in the URL to identify the system. A passive request is as light weight as a simple GET / HTTP/1.1 request. Aggressive plugins guess URLs and request more files. Plugins are easy to write, you don't need to know ruby to make them.
+
+
+EXAMPLE USAGE
+
+Using WhatWeb on a handful of websites, standard WhatWeb output is in colour.
+
+$ whatweb slashdot.org reddit.com digg.com http://www.engadget.com/ www.whitehouse.gov
+http://reddit.com [302] HTTPServer[AkamaiGHost], RedirectLocation[http://www.reddit.com/], MD5[d41d8cd98f00b204e9800998ecf8427e]
+http://www.whitehouse.gov [200] Cookies[d], RSSFeed[http://www.whitehouse.gov/opensearch/apachesolr_search], Drupal, OpenSearch[http://www.whitehouse.gov/opensearch/apachesolr_search], Google-Analytics[GA][10791350], Title[The White House], MD5[130f09ee31cf626fa75b699cd94c7de0], Footer-Hash[8fa0ba794e1c21e1ee93d12064764f1a], Div-Span-Structure[19b509a62c40d9ce7210a8a33c740784], Header-Hash[6ab220f882680f23982afcd35d28da29]
+http://slashdot.org [200] X-Powered-By[Slash 2.005001302], UncommonHeaders[x-fry,x-varnish,x-xrds-location,slash_log_data], Google-Analytics[GA][32013], HTTPServer[Apache/1.3.41 (Unix) mod_perl/1.31-rc4], Title[Slashdot - News for nerds, stuff that matters], RSSFeed[//a.fsdn.com/sd/idlecore-tidied.css?T_2_5_0_302], PasswordField[upasswd], Mailto[jamie@slashdot.org], MD5[d80992f646155d9a601847fd5750aeb7], Header-Hash[fd1bda33896292c8183cf21321db611c], Footer-Hash[7fafeba5d1d7b9cee5387feed4bf8338], Div-Span-Structure[22f6ac9e051e449400d5dc0b82c713a1]
+http://www.engadget.com/ [200] probably BlogSmithMedia, Title[Engadget], RSSFeed[http://www.blogsmithmedia.com/www.engadget.com/media/favicon.ico], HTTPServer[Apache/2.2], PasswordField[login-pw,newkey], UncommonHeaders[keep-alive], Header-Hash[40cbd7dad1da86fa8db86b1f67e8c161], Footer-Hash[acc6ad1f37193dc0a722264bd04bbaa0], Div-Span-Structure[63dc0a8a6f4d6031419cedb4d77de546], MD5[82ca88e88d6d542efc8879e9907852fb]
+http://digg.com [200] Cookies[1337,PHPSESSID,ccc], UncommonHeaders[keep-alive], Title[Digg - The Latest News Headlines, Videos and Images], HTTPServer[Apache], RSSFeed[/opensearch.xml], OpenSearch[/opensearch.xml], X-Powered-By[PHP/5.2.9-digg8], Header-Hash[2df7eaaa4480f28013aaf48ae9266b84], Footer-Hash[6e2c99013c0f12a0b9493ad54d2db2da], Div-Span-Structure[7f4e9099c1e7c62e31d9cf0fb89ab66b], MD5[b246c05975e7ab71270de3ea8fc44e84]
+http://www.reddit.com/ [200] Cookies[reddit_first], RSSFeed[/static/reddit.css?v=b11e18eb53fe51d29cb4756ca6cf7584], PasswordField[passwd,passwd2], Google-Analytics[GA][12131688], HTTPServer['; DROP TABLE servertypes; --], JQuery, Title[reddit.com: what's new online!], MD5[c62ca3b43ee4c756d90d759aec3f1fce], Footer-Hash[9086bcb16723f874c9cebdb8497731bb], Div-Span-Structure[849596c76df42ee019847417bea59a41], Header-Hash[4fbc1dcf08d2a4be4f8b4de0617e9956]
+
+
+
+HELP
+WhatWeb - Next generation web scanner.
+Version 0.4.5 by Andrew Horton aka urbanadventurer from Security-Assessment.com
+Homepage: http://www.morningstarsecurity.com/research/whatweb
+
+Usage: whatweb [options] <URLs>
+
+<URLs>			Enter URLs or filenames. Use /dev/stdin to pipe HTML
+			directly
+--input-file=FILE, -i	Identify URLs found in FILE, eg. -i /dev/stdin
+--aggression, -a	1 passive - on-page
+			2 polite - unimplemented
+			3 impolite - guess URLs when plugin matches
+			(smart, guess a few urls)
+			4 aggressive - try guess URLs for every plugin
+			(guess a lot of urls like nikto)
+--recursion, -r		Follow links recursively. Only follows links under the
+			path (default: off)
+--depth, -d		Maximum recursion depth (default: 10)
+--max-links, -m		Maximum number of links to follow on one page
+			(default: 250)
+--spider-skip-extensions Redefine extensions to skip.
+			(default: zip,gz,tar,jpg,exe,png,pdf)
+--list-plugins, -l	List the plugins
+--run-plugins, -p	Run comma delimited list of plugins. Default is all
+--info-plugins, -I	Display information plugins. Optionally specific a comma
+			delimited list.
+--example-urls, -e	Add example urls for each plugin to the target list
+--colour=[WHEN],
+--color=[WHEN]		control whether colour is used. WHEN may be `never',
+			`always', or `auto'
+--log-full=FILE		Log verbose output
+--log-brief=FILE	Log brief, one-line output
+--log-xml=FILE		Log XML format
+--user-agent, -U	Identify as user-agent instead of WhatWeb/0.4.5.
+--max-threads, -t	Number of simultaneous threads. Default is 25.
+--no-redirect		Do not follow HTTP 3xx redirects.
+--proxy			<hostname[:port]> Set proxy hostname and port
+			(default: 8080)
+--proxy-user		<username:password> Set proxy user and password
+--open-timeout		Time in seconds
+--read-timeout		Time in seconds
+--custom-plugin		Define a custom plugin call Custom,
+			Examples: ":text=>'powered by abc'"
+			":regexp=>/powered[ ]?by ab[0-9]/"
+			":ghdb=>'intitle:abc \"powered by abc\"'"
+			":md5=>'8666257030b94d3bdb46e05945f60b42'"
+			"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
+--url-prefix		Add a prefix to target URLs
+--url-suffix		Add a suffix to target URLs
+--url-pattern		Insert the targets into a URL. Requires --input-file,
+			eg. www.example.com/%insert%/robots.txt 
+--help, -h		This help
+--verbose, -v		Increase verbosity, use twice for debugging.
+--version		Display version information.
+
+
+
+
+VERBOSE OUTPUT
+./whatweb -v www.morningstarsecurity.com
+www.morningstarsecurity.com/ [200]
+http://www.morningstarsecurity.com [200] WordPress[3.0.1], Google-API[ajax/libs/jquery/1.3.2/jquery.min.js ], Google-Analytics[GA][791888], HTTPServer[Apache], UncommonHeaders[x-pingback], JQuery[1.4.2], Title[MorningStar Security], MetaGenerator[WordPress 3.0.1], RSSFeed[http://www.morningstarsecurity.com/wp-content/themes/pyrmont-v2-white/style.css], MD5[2b47722f6e9ad3add669f5a4d2267642], Tag-Hash[bce4fdbac307d13d570d3a0d2d45b078], Header-Hash[dba021c0aa225c8eede02c7dcc45b0d8], Footer-Hash[bd8866bbab7e53b19e03131a041d451a]
+Footer-Hash                    => hash
+Google-API                     => google javascript API (version: ajax/libs/jquery/1.3.2/jquery.min.js )
+Google-Analytics               => pageTracker = ...UA-123-1231
+HTTPServer                     => server string
+Header-Hash                    => hash
+JQuery                         => script (version: 1.4.2)
+MD5                            => md5 hash of html
+MetaGenerator                  => meta generator tag
+RSSFeed                        => rss link type, rss link
+Tag-Hash                       => tag pattern hash
+Title                          => page title
+UncommonHeaders                => headers
+WordPress                      => wp-content (certainty: 75), meta generator tag (version: 3.0.1)
+
+
+
+LOG OUTPUT
+
+There are currently 3 types of log output. They are:
+	--log-brief Brief logging. Default output
+	--log-full  Full logging. Complete output from each plugin
+	--log-xml   XML logging. Same information as default output but in XML format
+
+You can output to multiple logs simulatenously by specifying muliple command line logging options.
+
+Brief Logging.
+
+Example usage: whatweb --brief-full b.log digg.com
+
+	http://digg.com [200] X-Powered-By[PHP/5.2.9-digg8], Cookies[1337,PHPSESSID,ccc], UncommonHeaders[keep-alive], Title[Digg - The Latest News Headlines, Videos and Images], HTTPServer[Apache], Mailto, Header-Hash[2df7eaaa4480f28013aaf48ae9266b84], MD5[24bc43e698e5d1388e836f5eee094fbe], Footer-Hash[ca2ffbc939969a2246cde196f0fc4841], Div-Span-Structure[828d809947c3c760d41c720c9203993b]
+
+
+Full Logging (may be removed in future)
+
+Example usage: whatweb --log-full f.log digg.com
+	Identifying: http://digg.com
+	HTTP-Status: 200
+	[["Cookies",
+	  [{:certainty=>100,
+	    :name=>"cookie names",
+	    :string=>["1337", "PHPSESSID", "ccc"]}]],
+	 ["Footer-Hash",
+	  [{:certainty=>100,
+	    :name=>"hash",
+	    :string=>"6e2c99013c0f12a0b9493ad54d2db2da"}]],
+	 ["HTTPServer",
+	  [{:certainty=>100, :name=>"server string", :string=>"Apache"}]],
+	 ["Header-Hash",
+	  [{:certainty=>100,
+	    :name=>"hash",
+	    :string=>"2df7eaaa4480f28013aaf48ae9266b84"}]],
+	 ["MD5",
+	  [{:certainty=>100,
+	    :name=>"md5 hash of html",
+	    :string=>"77d9c9878dfc609c84ce2cad0eed1e61"}]],
+	 ["OpenSearch",
+	  [{:certainty=>100,
+	    :name=>"open search",
+	    :regexp=>
+	     /<link .*?type=["']application\/opensearchdescription\+xml['"].*?>/mi},
+	   {:certainty=>100, :name=>"search link", :string=>"/opensearch.xml"}]],
+	 ["RSSFeed",
+	  [{:certainty=>100,
+	    :name=>"rss link type",
+	    :regexp=>/<link .*?type=["']application\/rss\+xml["'].*?>/mi},
+	   {:certainty=>100, :name=>"rss link", :string=>"/opensearch.xml"}]],
+	 ["Tag-Hash",
+	  [{:certainty=>100,
+	    :name=>"tag pattern hash",
+	    :string=>"f0d06a3e709e6ea1c1942a4b749e4afe"}]],
+	 ["Title",
+	  [{:certainty=>100,
+	    :name=>"page title",
+	    :string=>"Digg - The Latest News Headlines, Videos and Images"}]],
+	 ["UncommonHeaders",
+	  [{:certainty=>100, :name=>"headers", :string=>"keep-alive"}]],
+	 ["X-Powered-By",
+	  [{:certainty=>100,
+	    :name=>"x-powered-by string",
+	    :string=>"PHP/5.2.9-digg8"}]]]
+
+
+
+XML Logging
+
+The XML logging is currently naive and may change. Please contact me if you have suggestions.
+
+Example usage: ./whatweb --log-full f.log --log-xml x.log digg.com
+
+	<target>
+		<uri>http://digg.com</uri>
+		<http-status>200</http-status>
+		<plugin>
+			<name>Cookies</name>
+			<string>1337</string>
+			<string>PHPSESSID</string>
+			<string>ccc</string>
+		</plugin>
+		<plugin>
+			<name>Footer-Hash</name>
+			<string>6e2c99013c0f12a0b9493ad54d2db2da</string>
+		</plugin>
+		<plugin>
+			<name>HTTPServer</name>
+			<string>Apache</string>
+		</plugin>
+		<plugin>
+			<name>Header-Hash</name>
+			<string>2df7eaaa4480f28013aaf48ae9266b84</string>
+		</plugin>
+		<plugin>
+			<name>MD5</name>
+			<string>2443327e1f1815f752af9901be54bc54</string>
+		</plugin>
+		<plugin>
+			<name>OpenSearch</name>
+			<string>/opensearch.xml</string>
+		</plugin>
+		<plugin>
+			<name>RSSFeed</name>
+			<string>/opensearch.xml</string>
+		</plugin>
+		<plugin>
+			<name>Tag-Hash</name>
+			<string>f0d06a3e709e6ea1c1942a4b749e4afe</string>
+		</plugin>
+		<plugin>
+			<name>Title</name>
+			<string>Digg - The Latest News Headlines, Videos and Images</string>
+		</plugin>
+		<plugin>
+			<name>UncommonHeaders</name>
+			<string>keep-alive</string>
+		</plugin>
+		<plugin>
+			<name>X-Powered-By</name>
+			<string>PHP/5.2.9-digg8</string>
+		</plugin>
+	</target>
+
+
+
+
+
+PLUGINS
+
+Plugins are easy to make.
+
+Matches are made with:
+	* Text strings (case sensitive)
+	* Regular expressions
+	* Google Hack Database queries (limited set of keywords)
+	* MD5 hashes
+	* URL recognition
+	* HTML tag patterns
+	* Custom ruby code for passive and aggressive operations
+
+	
+
+To list the plugins supported:
+	./whatweb -l
+	Plugins Loaded
+	------------------------------
+	360-Web-Manager,0.1
+	ANECMS,0.1
+	ASP-Nuke,0.2
+	AVTech-Video-Web-Server,0.1
+	AWStats,0.1
+	Aardvark-Topsites-PHP,0.1
+	Acclipse,0.2
+	AdobeFlash,0.1
+	Advanced-Guestbook,0.2
+	Alcatel-Lucent-Omniswitch,0.1
+	Allinta-CMS,0.1
+	Antiboard,0.1
+	Apache-Default,0.3
+	ArGoSoft-Mail-Server,0.1
+	Arab-Portal,0.1
+	AtomFeed,0.1
+	Axis-Network-Camera,0.1
+	BM-Classifieds,0.1
+	BXR,0.1
+	Barracuda-Spam-Firewall,0.1
+	Basilic,0.1
+	BeEF,0.1
+	Belkin-Modem,0.2
+	Bing-SearchEngine,0.1
+	Biromsoft-WebCam,0.1
+	BlogSmithMedia,0.2
+	Blogger,0.1
+	BlognPlus,0.1
+	BlueNet-Video-Server,0.1
+	Brother-Printer,0.1
+	Burning-Board-Lite,0.1
+	BusinessSpace,0.1
+	CGI Backdoor,0.1
+	CGIProxy,0.1
+	CMSQLite,0.1
+	CMScontrol,0.1
+	CMSimple,0.1
+	CPanel,0.2
+	Campsite,0.1
+	Canon-Network-Camera,0.1
+	Cisco-VPN-3000-Concentrator,0.1
+	Citrix-Metaframe,0.2
+	CodeIgniterProfiler,0.1
+	ColdFusion,0.1
+	Comersus,0.2
+	CommonSpot,0.1
+	Concrete5,0.2
+	Confluence,0.1
+	Cookies,0.1
+	Coppermine,0.2
+	CruxCMS,0.1
+	CruxPA,0.1
+	CushyCMS,0.2
+	D-Link-Network-Camera,0.1
+	DMXReady,0.1
+	DT-Centrepiece,0.1
+	DUclassified,0.1
+	DUforum,0.1
+	DUgallery,0.1
+	Dell-Printer,0.1
+	DiBos,0.2
+	DotCMS,0.2
+	DotNetNuke,0.3
+	Drupal,0.2
+	DublinCore,0.1
+	EMO-Realty-Manager,0.1
+	EarlyImpact-ProductCart,0.2
+	EazyCMS,0.1
+	Echo,0.2
+	Empire-CMS,0.1
+	Evo-Cam,0.1
+	ExpressionEngine,0.2
+	F3Site,0.1
+	FestOS,0.1
+	File-Upload-Manager,0.1
+	Flax-Article-Manager,0.1
+	FluentNET,0.1
+	FluxBB,0.3
+	FontFace,0.1
+	Footer-Hash,0.2
+	Forest-Blog,0.1
+	FormMail,0.2
+	FrogCMS,0.3
+	GoAhead-Webs,0.2
+	Google-API,0.1
+	Google-Analytics,0.2
+	Google-Hack-Honeypot,0.1
+	GuppY,0.1
+	HP-LaserJet-Printer,0.1
+	HTML5,0.2
+	HTTPServer,0.2
+	Header-Hash,0.1
+	IIS-SiteNotFound,0.2
+	IIS-UnderConstruction,0.2
+	IMGallery,0.1
+	IPCop-Firewall,0.1
+	IQeye-Netcam,0.1
+	ISPConfig,0.2
+	Index-Of,0.2
+	Intellinet-IP-Camera,0.1
+	Interspire-Shopping-Cart,0.1
+	InvisionPowerBoard,0.2
+	JAMM-CMS,0.1
+	JGS-Portal,0.1
+	JQuery,0.2
+	Jamroom,0.1
+	Jboss,0.1
+	Joomla,0.4
+	Kloxo Single Server,0.1
+	Liferay,0.1
+	Lightbox,0.2
+	Lime-Survey,0.1
+	Linksys-NAS,0.1
+	Linksys-Network-Camera,0.1
+	Linksys-USB-HDD,0.1
+	Linksys-Wireless-G-Camera,0.1
+	LocazoList-Classifieds,0.1
+	Loggix,0.1
+	Lucky-Tech-iGuard,0.1
+	MD5,0.2
+	MailSiteExpress,0.2
+	Mailman,0.1
+	Mailto,0.2
+	Mambo,0.2
+	MediaWiki,0.1
+	MetaGenerator,0.2
+	MetaPoweredBy,0.2
+	Microsoft-Sharepoint,0.1
+	MicrosoftODBCError,0.1
+	MikroTik,0.2
+	Minify,0.1
+	MnoGoSearch,0.2
+	Mobotix-Network-Camera,0.1
+	ModxCMS,0.2
+	Moodle,0.2
+	MovableType,0.2
+	My-PHP-Indexer,0.1
+	My-WebCamXP-Server,0.1
+	MyioSoft-Ajax-Portal,0.1
+	MysqlSyntaxError,0.1
+	NetBotz-Network-Monitoring-Device,0.1
+	Netious-CMS,0.1
+	Netsnap-Web-Camera,0.1
+	NovellGroupwise,0.2
+	Nukedit,0.1
+	ORCA-Platform,0.1
+	ORITE-301-Camera,0.1
+	OSCommerce,0.3
+	Oce,0.2
+	OkiPBX,0.2
+	Open-Blog,0.1
+	Open-Freeway,0.1
+	Open-Source-Ticket-Request-System,0.1
+	OpenCms,0.1
+	OpenGraphProtocol,0.1
+	OpenID,0.1
+	OpenSearch,0.1
+	PG-Roomate-Finder-Solution,0.1
+	PHP-Fusion,0.1
+	PHP-Layers,0.1
+	PHP-Link-Directory,0.1
+	PHP-Shell,0.1
+	PHPCake,0.2
+	PHPDirector,0.1
+	PHPEasyData,0.1
+	PHPError,0.2
+	PHPFM,0.1
+	PHPNuke,0.2
+	PHPraid,0.1
+	PageUp-People,0.1
+	Panasonic-Network-Camera,0.1
+	Parked-Domain,0.1
+	PasswordField,0.1
+	PhilBoard,0.1
+	Piwik,0.1
+	Pixel-Ads-Script,0.1
+	Pixie,0.1
+	Plesk,0.2
+	Pligg-CMS,0.1
+	Plone,0.2
+	PortalApp,0.1
+	PoweredBy,0.2
+	Pressflow,0.1
+	Prototype,0.2
+	QNAP-NAS,0.1
+	Quantcast,0.1
+	RSSFeed,0.1
+	RedirectLocation,0.2
+	RoundCube,0.2
+	RunCMS,0.1
+	SHOUTcast-Administrator,0.1
+	SMF,0.2
+	Saurus-CMS,0.1
+	Scriptaculous,0.2
+	SearchFitShoppingCart,0.2
+	SiemensSpeedStreamRouter,0.2
+	SilverStripe,0.2
+	SimpNews,0.1
+	Site-Sift,0.1
+	SkaLinks,0.1
+	SmodCMS,0.1
+	Snap-Appliance-Server,0.1
+	SnomPhone,0.2
+	Softbiz-Freelancers-Script,0.1
+	Softbiz-Online-Auctions-Script,0.1
+	Softbiz-Online-Classifieds,0.1
+	Sony-Network-Camera,0.1
+	Sony-Video-Network-Station,0.1
+	SquirrelMail,0.2
+	Star-Network,0.1
+	StarDot-NetCam,0.1
+	Stardot-Express,0.1
+	Subdreamer-CMS,0.1
+	Subrion-CMS,0.1
+	SyndeoCMS,0.1
+	TWiki,0.1
+	Tag-Hash,0.2
+	TaskFreak,0.1
+	Team-Board,0.1
+	Textpattern,0.1
+	The-PHP-Real-Estate-Script,0.1
+	Title,0.2
+	TomatoCMS,0.1
+	Tomcat,0.2
+	Toshiba-Network-Camera,0.1
+	ToshibaPrinter,0.2
+	Trac,0.1
+	Turbo-Seek,0.1
+	TypePad,0.2
+	TypoLight,0.2
+	Umbraco,0.1
+	UncommonHeaders,0.2
+	VBulletin,0.2
+	VP-ASP,0.2
+	VSNSLemon,0.2
+	Veo-Observer,0.1
+	VideoShareEnterprise,0.1
+	Virtualmin,0.1
+	VisionGS-Webcam,0.1
+	Vulnerable-To-XSS,0.1
+	WWWBoard,0.1
+	Web-Calendar-System,0.1
+	Web-Data-Administrator,0.1
+	WebDVR,0.1
+	WebEye-Network-Camera,0.1
+	WebGuard,0.2
+	WebPress,0.1
+	WhiteBoard,0.1
+	Winamp-Web-Interface,0.1
+	Windows-Internet-Printing,0.1
+	WindowsSBS,0.2
+	WoW-Raid-Manager,0.1
+	WordPress,0.2
+	WordPressSpamFree,0.2
+	WordpressSuperCache,0.3
+	X-ASPNetVersion,0.2
+	X-Powered-By,0.2
+	X7-Chat,0.1
+	XHP-CMS,0.1
+	Xerox-Printers,0.1
+	XtraBusinessHosting,0.2
+	Zen-Cart,0.1
+	Zeus-Cart,0.1
+	Zikula,0.1
+	Zoph,0.1
+	Zyxel-Vantage-Service-Gateway,0.1
+	anyInventory,0.1
+	boastMachine,0.1
+	coWiki,0.1
+	cpCommerce,0.1
+	eLitius,0.1
+	eSyndiCat,0.1
+	envezion~media,0.1
+	ezBOO-WebStats,0.1
+	i-Catcher-Console,0.1
+	iDVR,0.1
+	iRealty,0.1
+	iScripts-CyberMatch,0.1
+	iScripts-EasySnaps,0.1
+	iScripts-MultiCart,0.1
+	iScripts-ReserveLogic,0.1
+	iScripts-SocialWare,0.1
+	ispCP-Omega,0.2
+	jobberBase,0.1
+	mojoPortal,0.1
+	phPhotoAlbum,0.1
+	php-ping,0.1
+	phpBB,0.2
+	phpFreeChat,0.1
+	phpMyAdmin,0.1
+	phpPgAdmin,0.1
+	phpSysInfo,0.1
+	phpinfo,0.1
+	sabros.us,0.1
+	samPHPweb,0.1
+	syntaxCMS,0.1
+	uPortal,0.1
+	xGB,0.1
+
+
+To view more detail about a plugin or plugins:
+
+	./whatweb -I Joomla
+	Plugin Information
+	------------------------------
+	Joomla version 0.4 by Andrew Horton
+	[14] examples, [3] matches, [x] aggressive, [x] passive.
+	Description: Opensource CMS written in PHP. Homepage: http://joomla.org. Plugin can aggresively identify version by comparing md5 hashes of 4 files. Valid up to version 1.5.15.
+
+	--------------------------------------------------------------------------------
+
+WRITING PLUGINS
+
+To get started modify plugin-template.rb.txt in the my-plugins folder. Also read the (out of date) tutorial on writing WhatWeb plugins at www.morningstarsecurity.com/downloads/How-to-develop-WhatWeb-plugins-1.1.txt.
+
+A typical plugin looks like this:
+
+	Plugin.define "Plone" do
+	author "Andrew Horton"
+	version "0.2"
+	description "CMS http://plone.org"
+	examples %w| www.norden.org www.trolltech.com www.plone.net www.smeal.psu.edu|
+
+	matches [
+	{:name=>"meta generator tag",
+	:regexp=>/<meta name="generator" content="[^>]*http:\/\/plone.org" \/>/},
+
+	{:name=>"plone css",
+	:regexp=>/(@import url|text\/css)[^>]*portal_css\/.*plone.*css(\)|")/}, #"
+
+	{:name=>"plone javascript",
+	:regexp=>/src="[^"]*ploneScripts[0-9]+.js"/}, #"
+
+	{:text=>'<div class="visualIcon contenttype-plone-site">'},
+
+	{:name=>"div tag, visual-portal-wrapper",
+	:certainty=>75,
+	:text=>'<div id="visual-portal-wrapper">'},
+	]
+
+	def passive
+		m=[]
+		#X-Caching-Rule-Id: plone-content-types
+		#X-Cache-Rule: plone-content-types
+		m << {:name=>"X-Caching-Rule-Id: plone-content-types" } if @meta["x-caching-rule-id"] =~ /plone-content-types/i
+		m << {:name=>"X-Cache-Rule: plone-content-types" } if @meta["x-cache-rule"] =~ /plone-content-types/i
+		m
+	end
+
+
+	end
+
+There are 3 levels to a plugin. Simple matches, passive and agressive tests. You don’t need to know ruby to write plugins with simple matches. Passive and aggressive tests are written in ruby.
+
+
+The matches [] array contains a set of ways to match a website to a system.
+The methods are:
+	* :text			Matches text within the webpage
+	* :regexp		A regular expression. Append /i for case insensitive matches
+	* :ghdb			Like a google query
+	* :md5			MD5 hash of the HTML page
+	* :tagpattern		Pattern of HTML tags
+	* :name			This is the name of the match, and is optional.
+	* :url			The URL has to match this. Used for passive and agressive testing
+	* :certainty		Optional, defaults to 100. Values are maybe (25), probably (75) and certain (100).
+
+
+If you port a GHDB match, use :ghdb. I usually rewrite the GHDB matches with regular expressions, especially if they require inurl:
+
+Example:
+	# http://johnny.ihackstuff.com/ghdb?function=detail&id=1840
+	{ :ghdb=>'"Powered by Vsns Lemon" intitle:"Vsns Lemon"' }
+
+Note the GHDB queries are case insensitive, as a Google query is.
+
+Supported codes are:
+	* intitle:
+	* inurl:
+	* filetype:
+
+
+Each plugin can access @body, @meta, @status, @base_uri, @md5 and @tagpattern variables. 
+
+Passive tests add matches to the m array, each match is a hash containing the name of the match, probability and more.
+The entire hash is returned with Full output, Brief output returns just the match, :version and :string
+
+To discover the regular expressions to match against, wget about 20-30 examples into the tests/ folder. Be aware that some software can have dramatic variations between versions.
+
+
+
+AGGRESSIVE PLUGINS
+
+There are currently aggressive plugins for Joomla, phpBB, FluxBB, OSCommerce and Tomcat.
+With the passive plugin we know that ardentcreative.co.nz is running Joomla version 1.5
+
+$ ./whatweb ardentcreative.co.nz
+http://ardentcreative.co.nz [301] HTTPServer[Apache], RedirectLocation[http://www.ardentcreative.co.nz/], Title[301 Moved Permanently], Header-Hash[0670664f07b972398a96c6a58e812c2d], MD5[0670664f07b972398a96c6a58e812c2d]
+http://www.ardentcreative.co.nz/ [200] Cookies[e964b8ff6be2b1058b145da14a39e90d], MetaGenerator[Joomla! 1.5 - Open Source Content Management], Joomla[1.5], Google-Analytics[GA][791888], HTTPServer[Apache], Title[Ardent Creative, Christchurch Web Design], Footer-Hash[a19d726fa577100ccaec0c61b1bf8ea7], MD5[fcb3ec0dfafae53dfdef2e991a24f1c1], Div-Span-Structure[e56dd07d6f482ee11873e4ea99a9e6a8], Header-Hash[4379923363b07114470ba24584214e3f]
+
+With the aggressive plugin we know that ardentcreative.co.nz is running Joomla version 1.5.13 - 1.5.14
+
+dc@dc-laptop:~/projects/whatweb/whatweb-0.4.4$ ./whatweb -a 3 ardentcreative.co.nz
+http://ardentcreative.co.nz [301] HTTPServer[Apache], RedirectLocation[http://www.ardentcreative.co.nz/], Title[301 Moved Permanently], Header-Hash[0670664f07b972398a96c6a58e812c2d], MD5[0670664f07b972398a96c6a58e812c2d]
+http://www.ardentcreative.co.nz/ [200] Cookies[e964b8ff6be2b1058b145da14a39e90d], MetaGenerator[Joomla! 1.5 - Open Source Content Management], Joomla[1.5,1.5.15], Google-Analytics[GA][791888], HTTPServer[Apache], Title[Ardent Creative, Christchurch Web Design], Footer-Hash[a19d726fa577100ccaec0c61b1bf8ea7], MD5[fcb3ec0dfafae53dfdef2e991a24f1c1], Div-Span-Structure[e56dd07d6f482ee11873e4ea99a9e6a8], Header-Hash[4379923363b07114470ba24584214e3f]
+
+Do not use aggressive plugins with recursive site crawling. WhatWeb has no understanding of a website, instead it currently treats each URL separately. 
+It also has no caching so if you use aggressive plugins with recursion you will fetch the same files multiple times. The same is true for aggressive modes on redirecting URLs.
+
+
+
+RECURSIVE SPIDER
+
+The recursion option is used to scan some or all of a website with whatweb. Recursive spidering will follow each link on a webpage if it is within the same website, then repeat the process on the followed pages.
+
+The configurable settings for recursive spidering are:
+	--recursion, -r		Follow links recursively. Only follows links under the path (default: off)
+	--depth, -d		Maximum recursion depth (default: 3)
+	--max-links, -m		Maximum number of links to follow on one page (default: 25)
+
+The spider skips this hardcoded list of file extensions:
+/\.zip$/,/\.gz$/,/\.tar$/,/\.jpg$/,/\.exe$/,/\.png$/,/\.pdf$/
+
+Limitations of the spidering. This follows links in <a> tags, these are the HTML tags designed specifically for links. The spider does not obtain urls from other sources. Some good choices for future improvement are image tags, eg. <img src="/images/boats.jpg">, form tags, eg. <form action="/vote.php">, url paths in CSS files, etc.
+
+The spider is provided by Anemone, a third party ruby gem. It doesn't follow redirects. For example the URL treshna.com will fail and www.treshna.com will produce results.
+
+
+KNOWN ISSUES OR BUGS
+
+* The web spider, Anemone doesn't following 302 redirects
+* Don't use aggressive modes with website spidering as it will repeat the tests and URL requests.
+* :text matches are case sensitive
+* :regexp matches are case sensitive, you can make then case insensitive by appending i, eg. /foobar/i
+* The MD5 hashing algorithm is used not for it's security but for it's speed as a hashing algorithm especially compared to SHA1
+* Timeout settings do not apply to the Anemone spider
+* Meta refresh redirects do not apply to the Anemone spider
+
+RELATED PROJECTS
+
+WhatWeb is unique however there are some web projects with the same goal of identifying a website.
+
+Blind Elephant
+The BlindElephant Web Application Fingerprinter attempts to discover the version of a (known) web application by comparing static files at known locations against precomputed hashes for versions of those files in all all available releases. The technique is fast, low-bandwidth, non-invasive, generic, and highly automatable.
+http://blindelephant.sourceforge.net/
+
+WAFP - Web Application Finger Printing
+Wafp identifies systems by requesting a large quantity of URLs and comparing md5 sums of the results against a database. This method is reliable for known systems in the database and it is simple to add new ones. Unlike whatweb, this method is intrusive and will create a lot of webserver log entries.
+http://www.mytty.org/wafp
+
+Wappalyzer
+This is the most similar project to WhatWeb.
+Firefox plugin identifies sites using 1 regexp each. Only looks for obvious identifiers like meta generator tags. Sends all recognized urls to a DB. Has nice icons
+https://addons.mozilla.org/en-US/firefox/addon/10229
+
+w3af
+http://w3af.sourceforge.net
+Very slight overlap of features in the grep and discovery scripts section.
+
+HTTPRecon
+No feature overlap, fingerprints the HTTP Server
+http://w3dt.net/tools/httprecon/
+http://www.net-square.com/httprint/httprint_paper.html
+http://www.darknet.org.uk/2007/09/httprint-v301-web-server-fingerprinting-tool-download/
+
+Nmap version scan
+Nmap shows some info about HTTP servers when using version scan, eg. nmap -sV -p80 treshna.com
+
+THC's Amap
+This tool is an application fingerprint scanner which can identify an HTTP protocol server. It doesn't identify types of HTTP servers.
+
+What's that web server running 1.0 (whatweb.exe)
+This shares the same name and goal but is shit. It ONLY uses the HTTP Server string. For example 'Apache/2.0.55 (Ubuntu) PHP/5.1.2'
+http://www.spambutcher.com/whatweb.html
+
+http-stats.com
+Lots of info about HTTP server names
+
+Builtwith.com
+Stats of popularity of web stuff.
+
+FUNNY & UNUSUAL
+Slashdot.org
+X-Fry: You mean Bender is the evil Bender? I'm shocked! Shocked! Well not that shocked.
+
+popurls.com
+X-popurls-a: in the future every url will be popular for 1.5 seconds
+
+reddit.com
+HTTPServer:'; DROP TABLE servertypes; --
+
+
+
+NOTES
+
+Version 0.3 Released at Kiwicon III (kiwicon.org), 2009.
+Version 0.4 Released March 14th, 2010
+Version 0.4.1 Released April 28th, 2010
+Version 0.4.2 Released April 30th, 2010
+Version 0.4.3 Released May 24th, 2010
+Version 0.4.4 Released June 29th, 2010
+Version 0.4.5 Released August 17th, 2010
+
+
+CREDITS
+
+Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
+Homepage: http://www.morningstarsecurity.com
+License: GPLv2
+
+Anemone library (used for spidering) is written by Chris Kite
+Homepage: http://anemone.rubyforge.org/
+License: MIT
+
+
+COMMUNITY PLUGINS
+
+Thank you to the following people who have contributed plugins to WhatWeb.
+
+Brendan Coles (Major contributor!)
+Emilio Casbas
+Louis Nyffenegger
+Patrik Wallström
+Caleb Anderson
+Tonmoy Saikia
+Michal Ambroz for writing the Makefile and Man pages, not plugins.
+
+
+

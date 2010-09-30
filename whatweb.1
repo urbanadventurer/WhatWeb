@@ -1,0 +1,140 @@
+.TH WHATWEB 1 "August 17, 2010"
+.SH NAME
+WhatWeb \- web scanner. Identify what websites are running.
+.SH SYNOPSIS
+.B whatweb
+.RI [ options ] 
+.RI <URLs>
+
+.br
+.SH DESCRIPTION
+.PP
+Identify content management systems (CMS), blogging platforms, stats/analytics
+packages, javascript libraries, servers and more. When you visit a website
+in your browser the transaction includes many unseen hints about how
+the webserver is set up and what software is delivering the webpage.
+Some of these hints are obvious, eg. “Powered by XYZ” and others are more
+subtle. WhatWeb recognises these hints and reports what it finds.
+
+WhatWeb has over 290 plugins and needs community support to develop more. 
+Plugins can identify systems with obvious signs removed by looking for subtle
+clues. For example, a WordPress site might remove the tag but the WordPress
+plugin also looks for “wp-content” which is less easy to disguise. Plugins
+are flexible and can return any datatype, for example plugins can return
+version numbers, email addresses, account ID’s and more.
+
+There are both passive and aggressive plugins, passive plugins use information
+on the page, in cookies and in the URL to identify the system. A passive
+request is as light weight as a simple GET / HTTP/1.1 request. Aggressive
+plugins guess URLs and request more files. Plugins are easy to write, you
+don’t need to know ruby to make them.
+.SH OPTIONS
+.TP
+.B \<URLs\>
+Enter URLs or filenames. Use /dev/stdin to pipe HTML directly
+.TP
+.B \-\-input-file=FILE \-i
+Identify URLs found in FILE
+.TP
+.B \-\-aggression \-a
+1 passive - on-page
+
+2 polite - unimplemented
+
+3 impolite - guess URLs when plugin matches (smart, guess a few URLs)
+
+4 aggressive - guess URLs for every plugin (guess a lot of urls like nikto)
+
+.TP
+.B \-\-recursion \-r
+Follow links recursively. Only follows links under the path (default: off)
+.TP
+.B \-\-depth \-d
+Maximum recursion depth (default: 10)
+.TP
+.B \-\-max-links \-m
+Maximum number of links to follow on one page (default: 250)
+.TP
+.B \-\-spider-skip-extensions
+Redefine extensions to skip. (default: zip,gz,tar,jpg,exe,png,pdf)
+.TP
+.B \-\-list-plugins \-l
+List the plugins
+.TP
+.B \-\-run-plugins \-p
+Run comma delimited list of plugins. Default is to run all
+.TP
+.B \-\-info-plugins \-I
+Display information about a comma delimited list of plugins. Default is all
+.TP
+.B \-\-example-urls \-e
+Add example urls for each plugin to the target list
+.TP
+.B \-\-colour=[WHEN] \-\-color=[WHEN]
+control whether colour is used. WHEN may be `never', `always', or `auto'
+.TP
+.B \-\-log-full=FILE
+Log verbose output
+.TP
+.B \-\-log-brief=FILE
+Log brief, one-line output
+.TP
+.B \-\-log-xml=FILE
+Log XML format
+.TP
+.B \-\-user-agent \-U
+Identify as user-agent instead of WhatWeb/VERSION.
+.TP
+.B \-\-max-threads \-t
+Number of simultaneous threads. Default is 25.
+.TP
+.B \-\-no-redirect
+Do not follow HTTP 3xx redirects.
+.TP
+.B \-\-proxy <hostname[:port]>
+Set proxy hostname and port (default: 8080)
+.TP
+.B \-\-proxy-user <username:password>
+Set proxy user and password
+.TP
+.B \-\-open-timeout
+Time in seconds
+.TP
+.B \-\-read-timeout
+Time in seconds
+.TP
+.B \-\-custom-plugin
+Define a custom plugin call Custom,
+Examples: ":text=>'powered by abc'"
+":regexp=>/powered[ ]?by ab[0-9]/"
+":ghdb=>'intitle:abc \"powered by abc\"'"
+":md5=>'8666257030b94d3bdb46e05945f60b42'"
+"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
+.B \-\-url-prefix
+Add a prefix to target URLs
+.TP
+.B \-\-url-suffix
+Add a suffix to target URLs
+.TP
+.B \-\-url-pattern
+Insert the targets into a URL. Requires --input-file,
+eg. www.example.com/%insert%/robots.txt
+.TP
+.B \-\-help \-h
+This help
+.TP
+.B \-\-verbose \-v
+Increase verbosity (recommended), use twice for debugging.
+.TP
+.B \-\-version
+Display verion information.
+
+.SH AUTHOR
+whatweb was written by Andrew Horton aka urbanadventurer
+
+This manual page was originally written by Michal Ambroz <rebus AT seznam.cz>
+for the Fedora project (and may be used by others). Updated by Andrew Horton.
+.SH HOMEPAGE
+http://www.morningstarsecurity.com/research/whatweb
+.PP
+
