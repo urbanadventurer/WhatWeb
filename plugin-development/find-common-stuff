@@ -1,0 +1,86 @@
+#!/usr/bin/env ruby
+# helper for plugin research
+# identify common tags, paths / quoted text in tags, link text
+# add paths, truncated paths
+#
+
+require 'getoptlong'
+require 'pp'
+
+ignore_tags=%w|<head> </script> </head> </title> </html> <script> </body> </td> </a> <html> </tr> </table> <tr> <td> </div> </p> </P> </A> <title> </li> </ul> </style> </span> </form> <li> <br /> <p> <ul> </h1> <span> </label> </strong> <strong> <div> </h2> <dt> </h3> <h2> <h3> <noscript> </noscript> <body> <em> </b> <b> </thead> <thead> <table> <br> <br\ /> </font> </em> <h1> <small> </small>|
+
+
+class Webpage
+	attr_reader :filename, :tags, :quoted_text
+	
+	def initialize(filename)
+		@filename=filename
+		@contents=File.read(filename)
+		@tags=@contents.scan(/<[^>]+>/).sort.uniq
+		@quoted_text=@contents.scan(/<[^>]+("[^"]+")>/).flatten.sort.uniq
+	end
+end
+
+def usage
+	puts "Usage: find-common-stuff FILES"
+	puts "--threshold, -t\tThe lowest % of files an item occurs in to display. Eg. 0.25 and 0.50"
+	puts
+end
+
+threshold = 0.25
+
+opts = GetoptLong.new(
+      [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
+      [ '--threshold', '-t', GetoptLong::REQUIRED_ARGUMENT ]            
+	  )
+	  
+opts.each do |opt, arg|
+    case opt
+    	when '-t','--threshold'
+    			threshold=arg
+    	when '-h','--help'
+    			usage
+    			exit
+    end
+end    
+   
+if ARGV.length <1
+	usage
+	exit
+end 			
+
+#files=Dir["tests/plone/*html"]
+files=ARGV
+
+all=[]
+# for each file, have a set of hashes
+files.each do |f|    
+	w=Webpage.new(f)
+	all << w
+end
+
+puts "imported #{all.size} files"
+
+# find tags common to all/most files
+all_tags_counted={}
+all_tags = all.map {|w| w.tags}.flatten.sort.uniq - ignore_tags
+puts "counted #{all_tags.size} tags"
+all_tags.each {|tag| 
+	truth=all.map {|wp| wp.tags.include?(tag) }
+	all_tags_counted[tag]=truth.count(true) unless truth.count(true) / all.size.to_f < threshold
+}
+pp all_tags_counted.sort_by{|x| x[1] }.reverse
+
+
+all_quoted_text_counted={}
+all_quoted_text = all.map {|w| w.quoted_text }.flatten.sort.uniq
+puts "counted #{all_quoted_text.size} quoted texts"
+
+all_quoted_text.each {|qt| 
+	truth=all.map {|wp| wp.quoted_text.include?(qt) }
+	all_quoted_text_counted[qt]=truth.count(true) unless truth.count(true) / all.size.to_f < threshold
+}
+
+pp all_quoted_text_counted.sort_by{|x| x[1] }.reverse
+
+

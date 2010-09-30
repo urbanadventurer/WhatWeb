@@ -1,0 +1,4 @@
+
+This version of anemone has been modified.
+it no longer relies on nokogiri and can be used without rubygems
+
