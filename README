@@ -821,6 +821,10 @@ RELATED PROJECTS
 
 WhatWeb is unique however there are some web projects with the same goal of identifying a website.
 
+www.whatweb.net
+Brendan Coles has set up a web frontend to WhatWeb.
+http://www.whatweb.net/
+
 Blind Elephant
 The BlindElephant Web Application Fingerprinter attempts to discover the version of a (known) web application by comparing static files at known locations against precomputed hashes for versions of those files in all all available releases. The technique is fast, low-bandwidth, non-invasive, generic, and highly automatable.
 http://blindelephant.sourceforge.net/
