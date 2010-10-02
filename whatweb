@@ -1,10 +1,25 @@
 #!/usr/bin/env ruby
-# WhatWeb - Next generation web scanner.
-# Author: Andrew Horton aka urbanadventurer. Security Consultant for Security-Assessment.com
-# 
-# http://www.morningstarsecurity.com/research/whatweb
-
 =begin
+
+.$$$$       $.                                                .$$$$       $.                            
+$$$$$       $$$$. .$$$$  $$$$$ .$$$$$$$.    .$$$$$$$$$$$$$$$. $$$$$       $$$$. .$$$$$$$$$. .$$$$$$$.    
+$ $$$       $$$$$ $ $$$  $$$$$ $ $$$$$$$$$. $$$$$ $ $$$ $$$$$ $ $$$       $$$$$ $ $$$  $$$$ $ $$$$$$$$. 
+$  $$       $$$$$ $  $$  $$$$$ $  $$  $$$$$ $$$$$ $  $$ $$$$$ $  $$       $$$$$ $  $$       $  $$  $$$$' 
+$..$$       $$$$$ $..$$$$$$$$$ $..$$$$$$$$$ `:$:' $..$$ `:$:' $..$$       $$$$$ $..$$       $..$$$$$$$. 
+$:::$       $$$$$ $:::$$$$$$$$ $:::$$$$$$$$       $:::$       $:::$       $$$$$ $:::$$$$    $:::$  $$$$$ 
+$;;;$   $   $$$$$ $;;;$  $$$$$ $;;;$  $$$$$       $;;;$       $;;;$   $   $$$$$ $;;;$       $;;;$  $$$$$ 
+$$$$$  $$$  $$$$$ $$$$$  $$$$$ $$$$$  $$$$$       $$$$$       $$$$$  $$$  $$$$$ $$$$$   ;$$ $$$$$  $$$$$ 
+$$$$$$$$ $$$$$$$$ $$$$$  $$$$$ $$$$$  $$$$$       $$$$$       $$$$$$$$ $$$$$$$$ $$$$$$$$$$$ $$$$$$$$$$$' 
+
+
+
+WhatWeb - Next generation web scanner.
+Author: Andrew Horton aka urbanadventurer. Security Consultant for Security-Assessment.com
+ 
+Homepage: http://www.morningstarsecurity.com/research/whatweb
+
+
+
 Copyright 2009, 2010 Andrew Horton <andrew.horton at security-assessment dot com>
 
 This file is part of WhatWeb.
@@ -679,6 +694,17 @@ end
 
 
 def usage()
+puts"
+.$$$     $.                                   .$$$     $.         
+$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
+$ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
+$ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
+$. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
+$::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
+$;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
+$$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
+
+"
 puts "WhatWeb - Next generation web scanner.\nVersion #{$VERSION} by Andrew Horton aka urbanadventurer from Security-Assessment.com"
 puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
 puts

@@ -59,6 +59,5 @@ matches [
 # this is in awstats.pl?framename=mainright and there's on version info in /awstats.pl for 5.5
 #<FONT COLOR="#000000"><b>Advanced Web Statistics 5.5 (build 1.500)</b> - <a href="http://awstats.sourceforge.net" target="awstatshome">Created by awstats</a></font><br>
 
-
 end
 
