@@ -8,7 +8,7 @@ Version 0.4.6 Released ? 2010
 * Modified XML logging to record modules separately
 * Added --wait SECONDS between connections. Combine with -t 1 if preferred.
 * Added meta-refresh redirect support. eg. <meta http-equiv="refresh" content="0;url=../default/mail/index.html">. Only for non-spidering
-* Added {:version=>/regexp/, :version_regex_offset} to remove cargo cult programming. eg.
+* Added {:version=>/regexp/, :version_regexp_offset} to remove cargo cult programming. eg.
 {:version=>/<meta name="Generator" (content|CONTENT)="(ASPNUKE|ASP-Nuke) ([^->"]+)/, :version_regexp_offset=>2,  :name=>"meta generator tag" }
 * Updated plugins to use :version=>/regexp/: Advanced-Guestbook, ASP-Nuke, Concrete5, Coppermine, FormMail, InvisionPowerBoard, FormMail, MikroTik, MovableType, SearchFitShoppingCart, SquirrelMail, VBulletin, VP-ASP, VSNSLemon, WordPress
 * Replaced :probability with :certainty in my-plugins/plugin-template.rb.txt. Thanks Erik Inge Bolsø

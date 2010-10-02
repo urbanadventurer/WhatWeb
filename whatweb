@@ -257,9 +257,9 @@ class Plugin
 				end
 
 				if !match[:version].nil? and match[:version].class==Regexp
-					if @body =~ match[:version]
+					if thisbody =~ match[:version]
 						m = match.dup
-						m[:version] = @body.scan(match[:version])[0][match[:version_regexp_offset]]
+						m[:version] = thisbody.scan(match[:version])[0][match[:version_regexp_offset]]
 						r << m
 					end
 				end

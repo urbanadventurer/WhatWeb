@@ -12,8 +12,7 @@ add geoIP country plugin
 
 precompile regular expressions for matching speed
 
-escape output in logs. \[ for brief logs. <> for xml logs. <---?
-
+[x] escape output in logs. <>"& for xml logs.
 [x] add XML log initialisation and termination: 
 
 	--log-full=FILE		Log verbose output (might be removed in future)

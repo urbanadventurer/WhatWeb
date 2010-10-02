@@ -14,11 +14,9 @@ alfven.princeton.edu/cgi-bin/awstats.pl
 www.2server.amazound.com.ar/awstats/cgi-bin/awstats.pl
 first-cis.com/awstats/cgi-bin/awstats.pl
 graciaaudio.com/awstats/cgi-bin/awstats.pl/awstats.pl
-artdebois.com/awstats/cgi-bin/awstats.pl
 http://pres4.thefungallink.com/awstats/cgi-bin/awstats.pl
 endless-referrals.com/awstats/cgi-bin/awstats.pl
 brementravelguide.com/awstats/cgi-bin/awstats.pl
-drupal.playart.org/awstats/cgi-bin/awstats.pl
 westernwarner.com/awstats/cgi-bin/awstats.pl
 sky-venture.org/awstats/cgi-bin/awstats.pl
 cleaningfx.ca/awstats/cgi-bin/awstats.pl
@@ -40,10 +38,22 @@ matches [
 {:certainty=>75, :ghdb=>'inurl:awstats ext:pl +intitle:"Statistics for"'},
 {:text=>'<a href="http://awstats.sourceforge.net" target="_newawstats">Created by awstats</a><br>'},
 {:text=>'<meta http-equiv="description" content="Awstats - Advanced Web Statistics for'},
-{:name=>"default logo", :text=>'<a href="http://awstats.sourceforge.net" target="_newawstats"><img src="/icon/other/awstats_logo1.png" border=0 alt="awstats Official Web Site" title="awstats Official Web Site"></a>'}
+{:name=>"default logo", :text=>'<a href="http://awstats.sourceforge.net" target="_newawstats"><img src="/icon/other/awstats_logo1.png" border=0 alt="awstats Official Web Site" title="awstats Official Web Site"></a>'},
 
+{:version=>/<meta name="generator" content="AWStats ([0-9\.]+ \(build [0-9\.]+\))/, :version_regexp_offset=>0}, #" good for 6.7
+{:version=>/<FONT COLOR="#000000"><b>Advanced Web Statistics ([0-9\.]+ \(build [0-9\.]+\))/, :version_regexp_offset=>0},
 
+{:url=>'awstats.pl?framename=mainright', :version=>/<FONT COLOR="#000000"><b>Advanced Web Statistics ([0-9\.]+ \(build [0-9\.]+\))/, :version_regexp_offset=>0}
 ]
+
+# <meta name="generator" content="AWStats 6.7 (build 1.892) from config file awstats.dhcook.net.conf (http://awstats.sourceforge.net)">
+
+# no meta generator for 3.1
+#<FONT COLOR="#000000"><b>Advanced Web Statistics 3.1 (build 41)</b> - <a href="http://awstats.sourceforge.net" target="_newawstats">Created by awstats</a><br>
+
+# this is in awstats.pl?framename=mainright
+#<FONT COLOR="#000000"><b>Advanced Web Statistics 5.5 (build 1.500)</b> - <a href="http://awstats.sourceforge.net" target="awstatshome">Created by awstats</a></font><br>
+
 
 end
 
