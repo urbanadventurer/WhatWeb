@@ -5,9 +5,12 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
+# Version 0.2 by Andrew Horton
+# Added version detection
+
 Plugin.define "AWStats" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04
-version "0.1"
+version "0.2"
 description "AWStats - Free log file analyzer for advanced statistics (GNU GPL). - homepage:http://awstats.sourceforge.net/"
 examples %w|
 alfven.princeton.edu/cgi-bin/awstats.pl
@@ -46,12 +49,14 @@ matches [
 {:url=>'awstats.pl?framename=mainright', :version=>/<FONT COLOR="#000000"><b>Advanced Web Statistics ([0-9\.]+ \(build [0-9\.]+\))/, :version_regexp_offset=>0}
 ]
 
+# Version examples for 3.1, 5.5 and 6.7.
+
 # <meta name="generator" content="AWStats 6.7 (build 1.892) from config file awstats.dhcook.net.conf (http://awstats.sourceforge.net)">
 
-# no meta generator for 3.1
+# there is no meta generator for 3.1
 #<FONT COLOR="#000000"><b>Advanced Web Statistics 3.1 (build 41)</b> - <a href="http://awstats.sourceforge.net" target="_newawstats">Created by awstats</a><br>
 
-# this is in awstats.pl?framename=mainright
+# this is in awstats.pl?framename=mainright and there's on version info in /awstats.pl for 5.5
 #<FONT COLOR="#000000"><b>Advanced Web Statistics 5.5 (build 1.500)</b> - <a href="http://awstats.sourceforge.net" target="awstatshome">Created by awstats</a></font><br>
 
 
