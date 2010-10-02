@@ -233,7 +233,6 @@ class OutputJSONVerbose < Output
 	end
 end
 
-
 class OutputErrors < Output
 	def out(error)
 		@f.puts error
