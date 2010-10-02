@@ -20,6 +20,9 @@ Version 0.4.6 Released ? 2010
 * Added JSON logging. Must have the json ruby gem installed or be using Ruby 1.9
 * Added error logging.
 * Added XML header and footer to XML logs
+* Added Ruby on Rails plugin
+* Bug fix: Escaping the XML log properly for &, <, >, "
+* Changed error message for non resolving hostnames from "undefined method `closed?' for nil:NilClass" to "Cannot resolve hostname"
 
 
 Version 0.4.5 Released August 17th 2010

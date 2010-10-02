@@ -603,7 +603,8 @@ def open_target(target)
 	rescue EOFError => err
 		error(target + " ERROR: EOF error #{err}")
 		return [0, nil, nil, nil,nil]
-	rescue StandardError => err
+	rescue StandardError => err		
+		err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
 		error(target + " ERROR: #{err}")
 		return [0, nil, nil, nil,nil]
 	rescue => err

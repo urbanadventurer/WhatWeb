@@ -7,7 +7,7 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 [x] bug in verbose output. closing file
 
 
-add IP plugin
+add IP plugin <-- can't get IP out of http object
 add geoIP country plugin
 
 precompile regular expressions for matching speed

@@ -145,6 +145,7 @@ end
 class OutputXML < Output
 	def initialize(f=STDOUT)
 		super
+		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
 		@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
 		@f.puts "<log>"
 	end
@@ -154,14 +155,21 @@ class OutputXML < Output
 		@f.close
 	end
 
+	def escape(t)		
+		text=t.to_s.dup
+		# use sort_by so that & is before &quot;, etc.
+		@substitutions.sort_by {|a,b| a=="&" ? 0 : 1 }.map{|from,to| text.gsub!(from,to) }
+		text
+	end
+
 	def out(target, status, results)	
 		@f.puts "<target>"
-		@f.puts "\t<uri>#{target}</uri>"
-		@f.puts "\t<http-status>#{status}</http-status>"
+		@f.puts "\t<uri>#{escape(target)}</uri>"
+		@f.puts "\t<http-status>#{escape(status)}</http-status>"
 		
 		results.each do |plugin_name,plugin_results|		
 			@f.puts "\t<plugin>"
-			@f.puts "\t\t<name>#{plugin_name}</name>"
+			@f.puts "\t\t<name>#{escape(plugin_name)}</name>"
 			
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
@@ -174,15 +182,15 @@ class OutputXML < Output
 				firmware = plugin_results.map {|x| x[:firmware] }.compact.sort.uniq.join(",")
 				modules = plugin_results.map {|x| x[:modules] }.flatten.compact.sort.uniq
 
-				@f.puts "\t\t<certainty>#{certainty}</certainty>" if certainty and certainty < 100
-				version.map  {|x| @f.puts "\t\t<version>#{x}</version>"  }
-				string.map   {|x| @f.puts "\t\t<string>#{x}</string>" }
-				accounts.map {|x| @f.puts "\t\t<accounts>#{x}</accounts>" }
-				model.map {|x| @f.puts "\t\t<model>#{x}</model>" }
-				firmware.map {|x| @f.puts "\t\t<firmware>#{x}</firmware>" }
+				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
+				version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
+				string.map   {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
+				accounts.map {|x| @f.puts "\t\t<accounts>#{escape(x)}</accounts>" }
+				model.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
+				firmware.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
 
 				if modules.size > 0
-					@f.puts "\t\t<modules>\n" + modules.map {|x| "\t\t\t<module>#{x}</module>" }.join("\n") + "\n\t\t</modules>"
+					@f.puts "\t\t<modules>\n" + modules.map {|x| "\t\t\t<module>#{escape(x)}</module>" }.join("\n") + "\n\t\t</modules>"
 				end
 			end
 			@f.puts "\t</plugin>"
