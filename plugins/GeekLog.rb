@@ -5,7 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 Plugin.define "GeekLog" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-25
+author "Brendan Coles <bcoles@gmail.com>, Aung Khant <http://yehg.net>" 
 version "0.1"
 description "Geeklog is an open source application for managing dynamic web content. It is written in PHP and supports MySQL, PostgreSQL, or MS SQL as the database backend. - homepage: http://www.geeklog.net/"
 
@@ -41,6 +41,10 @@ matches [
 # HTML Comment
 { :text=>'<!--If you want the splash, uncomment the last line. If you want no splash, make sure it is commented out.-->' },
 
+# agressive 
+{:url=>'index.php?display=microsummary', :text=>'GL: '},
+{:url=>'backend/geeklog.rss', :text=>'<generator>Geeklog</generator>' },
+	
 ]
 
 # Version detection
