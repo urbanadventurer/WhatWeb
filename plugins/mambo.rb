@@ -5,20 +5,24 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-# Version 0.2
-# removed :name & :certainty
+# Version 0.3
+
 
 Plugin.define "Mambo" do
-author "Andrew Horton"
-version "0.2"
-description "CMS Mambo.org"
+author "Andrew Horton, Aung Khant(http://yehg.net)"
+version "0.3"
+description "Mambo CMS (http://mambo-foundation.org)"
+
+examples=%w|
+http://mamboserver.com/
+|	
+
 
 matches [
-{:regexp=>/<meta name="Generator" content="Mambo - Copyright 2000 - [0-9]+ Miro International Pty Ltd.  All rights reserved." \/>/},
+{:name=>'Metatag', :regexp=>/<meta name="Generator" content="Mambo - Copyright 2000 - [0-9]+ Miro International Pty Ltd.  All rights reserved." \/>/},
+{:url=>'README.php', :text=>'Mambo is OSI Certified Open Source Software, released under the GNU General Public License' },
+{:url=>'administrator/templates/mambo_admin/templateDetails.xml', :regexp=> /(<name>Mambo Admin<\/name>|<authorUrl>http:\/\/www\.mambo\-foundation\.org<\/authorUrl>)/},
 
-{:name=>"seconds since epoch in html comment afer </html>",
-:certainty=>25, # joomla 1.0 + mambo have this
-:regexp=>/<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/}
 
 ]
 
