@@ -5,19 +5,18 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-# Version 0.3 - Aung Khant(http://yehg.net)
-# added two aggressive check url - README.php, administrator 
-# added certainty 100 to avoid overlapping with Joomla
-# added index.php?option=com_ check 
+# Version 0.2
+# removed :name & :certainty
+# Version 0.3
+# Andrew Horton added examples, changed time since epoch match for less false positives with Joomla, added mosvisitor cookie match
+# Aung Khant(http://yehg.net) added description, README.php match, Mambo Admin match
 
 Plugin.define "Mambo" do
 author "Andrew Horton"
 version "0.3"
 description "Mambo CMS (http://mambo-foundation.org)"
 
-examples=%w|
-http://mamboserver.com/
-|	
+examples %w|http://mamboserver.com/ http://historycouncilvic.org.au/ http://www.turksandcaicosproperty.com/ http://www.moneydepot.com.au/md/  http://www.fuzzytoad.com/mambo/ http://www.ultimatescrapbooksite.com/ http://wreathsbydesign.com/portal/ http://www.xpec.co.uk/|
 
 
 matches [
@@ -25,9 +24,6 @@ matches [
 {:name=>'Metatag', :regexp=>/<meta name="description" content="Mambo - the dynamic portal engine and content management system" \/>/,:certain=>100},
 {:url=>'README.php', :text=>'Mambo is OSI Certified Open Source Software, released under the GNU General Public License', :certain=>100 },
 {:url=>'administrator/templates/mambo_admin/templateDetails.xml', :regexp=> /(<name>Mambo Admin<\/name>|<authorUrl>http:\/\/www\.mambo\-foundation\.org<\/authorUrl>)/, :certain=>100},
-{:name=>"seconds since epoch in html comment afer </html>",
-:certainty=>25, # joomla 1.0 + mambo have this
-:regexp=>/<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/}
 
 ]
 
@@ -40,6 +36,12 @@ def passive
 		m << {:certainty=>25,:modules=>modules}
 	end
 
+	# joomla 1.0 + mambo have this
+	if @body.scan(/<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/) and !@body.scan(/joomla/i)
+		m << {:name=>"seconds since epoch in html comment afer </html>",:certainty=>25}
+	end
+
+	m << {:name=>"mosvisitor cookie" } if @meta["set-cookie"] =~ /mosvisitor=[0-9]+/ 
 end
 
 
