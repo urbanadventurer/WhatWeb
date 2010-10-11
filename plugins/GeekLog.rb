@@ -4,14 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+## version 0.2 , Aung Khant <http://yehg.net>
+## added two aggressive url checks, minor changes
+
 Plugin.define "GeekLog" do
-author "Brendan Coles <bcoles@gmail.com>, Aung Khant <http://yehg.net>" 
-version "0.1"
+author "Brendan Coles <bcoles@gmail.com>" 
+version "0.2"
 description "Geeklog is an open source application for managing dynamic web content. It is written in PHP and supports MySQL, PostgreSQL, or MS SQL as the database backend. - homepage: http://www.geeklog.net/"
 
 # 352 results for "powered by GeekLog" @ 2010-09-25
 examples %w|
 www.geeklog.net
+demo.geeklog.net
 news.infoshop.org
 www.sangria.org.il/gl/users.php
 www.battersbox.ca
@@ -34,12 +38,12 @@ www.j-soho.or.jp
 matches [
 
 # Powered by text
-{ :text=>'Powered By <a href="http://www.geeklog.net/">Geeklog</a>' },
-{ :text=>'Powered By <a class="footer" href="http://www.geeklog.net/">GeekLog</a>' },
-{ :text=>'Powered by&nbsp;<a href="http://www.geeklog.net/">Geeklog</a>' },
+{ :name=>"Powered By footer",:text=>'Powered By <a href="http://www.geeklog.net/">Geeklog</a>' },
+{ :name=>"Powered By footer",:text=>'Powered By <a class="footer" href="http://www.geeklog.net/">GeekLog</a>' },
+{ :name=>"Powered By footer",:text=>'Powered by&nbsp;<a href="http://www.geeklog.net/">Geeklog</a>' },
 
 # HTML Comment
-{ :text=>'<!--If you want the splash, uncomment the last line. If you want no splash, make sure it is commented out.-->' },
+{ :name=>"HTML Comment",:text=>'<!--If you want the splash, uncomment the last line. If you want no splash, make sure it is commented out.-->' },
 
 # agressive 
 {:url=>'index.php?display=microsummary', :text=>'GL: '},
