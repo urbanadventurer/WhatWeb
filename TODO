@@ -8,8 +8,8 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 
 add plugin init & close.
 add alexa plugin
-
 add dmoz plugin
+
 [x] add IP plugin <-- can't get IP out of http object
 [x] add geoIP country plugin
 

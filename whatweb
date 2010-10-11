@@ -694,6 +694,7 @@ def make_tag_pattern(b)
 	# remove stuff between script and /script
 	# don't bother with  !--, --> or noscript and /noscript
 	inscript=false;
+
 	b.scan(/<([^\s>]*)/).flatten.map {|x| x.downcase!; r=nil;
 			r=x if inscript==false
 			inscript=true if x=="script"
