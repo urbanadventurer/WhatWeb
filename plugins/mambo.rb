@@ -5,11 +5,12 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-# Version 0.3
-
+# Version 0.3 - Aung Khant(http://yehg.net)
+# added two aggressive check url - README.php, administrator 
+# added certainty 100 to avoid overlapping with Joomla
 
 Plugin.define "Mambo" do
-author "Andrew Horton, Aung Khant(http://yehg.net)"
+author "Andrew Horton"
 version "0.3"
 description "Mambo CMS (http://mambo-foundation.org)"
 
@@ -19,9 +20,10 @@ http://mamboserver.com/
 
 
 matches [
-{:name=>'Metatag', :regexp=>/<meta name="Generator" content="Mambo - Copyright 2000 - [0-9]+ Miro International Pty Ltd.  All rights reserved." \/>/},
-{:url=>'README.php', :text=>'Mambo is OSI Certified Open Source Software, released under the GNU General Public License' },
-{:url=>'administrator/templates/mambo_admin/templateDetails.xml', :regexp=> /(<name>Mambo Admin<\/name>|<authorUrl>http:\/\/www\.mambo\-foundation\.org<\/authorUrl>)/},
+{:name=>'Metatag', :regexp=>/<meta name="Generator" content="Mambo - Copyright 2000 - [0-9]+ Miro International Pty Ltd.  All rights reserved." \/>/, :certain=>100},
+{:name=>'Metatag', :regexp=>/<meta name="description" content="Mambo - the dynamic portal engine and content management system" \/>/,:certain=>100},
+{:url=>'README.php', :text=>'Mambo is OSI Certified Open Source Software, released under the GNU General Public License', :certain=>100 },
+{:url=>'administrator/templates/mambo_admin/templateDetails.xml', :regexp=> /(<name>Mambo Admin<\/name>|<authorUrl>http:\/\/www\.mambo\-foundation\.org<\/authorUrl>)/, :certain=>100},
 
 
 ]
