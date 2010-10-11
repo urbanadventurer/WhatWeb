@@ -11,11 +11,12 @@
 # Version 0.5
 # uses :modules instead of :string, changed the 3rd regexp from 75 certainty to 25.
 # Version 0.6  - Aung Khant
-# commented out index.php?option=com  because it's overlapped with mambo
+# decreased certainty level for index.php?option=com to avoid overlapped detection with mambo and generic web apps
 # added Joomla! 1.6 detection 
 # added joomla demo sites
+
 Plugin.define "Joomla" do
-author "Andrew Horton, Aung Khant <http://yehg.net>"
+author "Andrew Horton"
 version "0.6"
 description "Opensource CMS written in PHP. Homepage: http://joomla.org. Plugin can aggresively identify version by comparing md5 hashes of 4 files. Valid up to version 1.5.15."
 
@@ -28,12 +29,12 @@ examples %w|biokolchuga.com cosmicfantasia.net.au rustedfables.com turning2jooml
 # older joomla
 #<meta name="Generator" content="Joomla! - Copyright (C) 2005 - 2007 Open Source Matters. All rights reserved." />
 matches [
-{:version=>"1.0", :regexp=>/<meta name="Generator" content="Joomla! - Copyright \(C\) 200[0-9] - 200[0-9] Open Source Matters. All rights reserved." \/>/},
+{:version=>"1.0", :regexp=>/<meta name="Generator" content="Joomla! - Copyright \(C\) 200[0-9] - 200[0-9] Open Source Matters. All rights reserved." \/>/,:certainty=>100},
 {:version=>"1.5", :text=>'<meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />'},
-#{:certainty=>25, :regexp=>/<a href="[^"]*index.php\?option=com_/}
+{:certainty=>25, :regexp=>/<a href="[^"]*index.php\?option=com_/},
 {:version=>"1.6", :text=>'<meta name="generator" content="Joomla! 1.6 - Open Source Content Management" />'},
-{:name=>"1.6",:url=>"plugins/authentication/example/example.xml",:text=>'<install version="1.6" type="plugin" group="authentication">'},
-{:name=>"1.6",:url=>"?format=feed&type=rss",:text=>'<generator>Joomla! 1.6 - Open Source Content Management</generator>'},
+{:version=>"1.6",:url=>"plugins/authentication/example/example.xml",:text=>'<install version="1.6" type="plugin" group="authentication">'},
+{:version=>"1.6",:url=>"?format=feed&type=rss",:text=>'<generator>Joomla! 1.6 - Open Source Content Management</generator>'},
 {:name=>'Joomla! Database Error', :text=>'Database Error: Unable to connect to the Database: JLIB_DATABASE_ERROR_CONNECT_MYSQL'},
 
 ]
@@ -46,10 +47,10 @@ def passive
 #   <a href="http://www.porsche.com.br/index.php?option=com_content&task=view&id=242&Itemid=235">Galeria</a>
 
 	# get modules, doesn't work in SEO mode
-	#if @body =~ /<a href="[^"]*index.php\?option=com_/
-	#	modules = @body.scan(/<a href="[^"]*index.php\?option=(com_[^&"]+)/).flatten.compact.sort.uniq		
-	#	m << {:certainty=>75,:modules=>modules}
-	#end
+	if @body =~ /<a href="[^"]*index.php\?option=com_/
+		modules = @body.scan(/<a href="[^"]*index.php\?option=(com_[^&"]+)/).flatten.compact.sort.uniq		
+		m << {:certainty=>25,:modules=>modules}
+	end
 	
 	# phpcake has this string too	
 	m << {:name=>"P3P Privacy Headers", :certainty=>25 } if @meta["p3p"] == "CP=\"NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM\""	
