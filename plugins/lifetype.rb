@@ -14,24 +14,19 @@ examples=%w|
 http://demo.opensourcecms.com/lifetype/
 |	
 
+# <meta name="generator" content="lifetype-1.2.10_r6971" />
+
 matches [
 {:name=>"poweredBy", :text=>'Powered by <a href="http://www.lifetype.net">LifeType</a>'},
 {:url=>'summary.php?op=resetPasswordForm',:text=>'Powered by <a href="http://www.lifetype.net">LifeType</a>'},
 {:url=>'summary.php?op=resetPasswordForm',:text=>'<title>Your Service Name</title>'},
-
+{:version=>/<meta name=\"generator\" content=\"(lifetype\-)?(lifetype-?[0-9\.\_a-z]+)\"/, :version_regexp_offset=>1},
 ]
 
-def passive
-	m=[]
-
-	if @body =~ /<meta name=\"generator\" content=\"lifetype-?[0-9\.\_a-z]+\"/
-		version=@body.scan(/<meta name=\"generator\" content=\"(lifetype\-)?(lifetype-?[0-9\.\_a-z]+)\"/)[0][1]
-		m << {:name=>"meta generator tag",:version=>version} 
-	end	
-	m
-end
 
 end
+
+
 
 
 
