@@ -21,20 +21,19 @@ joomla16.terraluna.nu
 
 def passive
 	m=[]
-	lan=''
 	if @body =~ /xml\:lang="[\.\_a-zA-Z\-]+"/
 		lan=@body.scan(/xml\:lang="([\.\_a-zA-Z\-]+)"/)[0]
-		m << {:name=>"#{lan} (xml:lang)",:text=>lan} 
+		m << {:name=>"xml:lang",:string=>lan} 
 	end	
 
 	if @body =~ /lang="[\.\_a-zA-Z\-]+"/
 		lan=@body.scan(/lang="([\.\_a-zA-Z\-]+)"/)[0]
-		m << {:name=>"#{lan} (lang)",:text=>lan} 
+		m << {:name=>"lang",:string=>lan} 
 	end	
 
 	if @body =~ /<meta name="language" content="[\.\_a-zA-Z\-]+" \/>/
 		lan=@body.scan(/<meta name="language" content="([\.\_a-zA-Z\-]+)" \/>/)[0]
-		m << {:name=>"#{lan} (meta tag)",:text=>lan} 
+		m << {:name=>"meta tag",:string=>lan} 
 	end	
 	m
 end
