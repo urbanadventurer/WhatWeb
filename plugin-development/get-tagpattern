@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+# helper for tagpattern search
+# (c) Aung Khant, http://yehg.net
+
+
+# Feed a url
+# Get its tag pattern that's ready to use in your plugin
+
+require 'net/http'
+require 'net/https'
+require 'uri'
+
+
+def usage
+	puts "Helper for tagpattern search
+by Aung Khant, http://yehg.net
+
+Usage: ./get-tagpattern http://www.example.com/
+"
+
+	puts
+end
+
+   
+if ARGV.length <1
+	usage
+	exit
+end
+
+url= ARGV[0]
+
+uri = URI.parse(url)
+http = Net::HTTP.new(uri.host,uri.port)
+http.use_ssl= true if uri.scheme == "https"
+http.verify_ssl = OpenSSL::SSL::VERIFY_NONE if uri.scheme == "https"
+req,body = http.get(uri.path)
+
+
+puts body.scan(/(<[a-zA-Z]+|<\/[a-zA-Z]+)/).join(",").gsub("<","")
+
+
+
