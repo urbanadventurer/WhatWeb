@@ -18,7 +18,7 @@ matches [
 {:name=>"meta generator tag", :text=>'<meta name="generator" content="b2evolution'},
 {:name=>"poweredBy", :text=>'<div class="powered_by"><a href="http://b2evolution.net/"'},
 {:url=>'?tempskin=_rss2', :text=>'<admin:generatorAgent rdf:resource="http://b2evolution.net/'},
-{:url=>'?tempskin=_rss0.8',:tagpattern=> 'div,h3,/h3,p,/p,p,a,/a,/p,/div,div,h3,/h3,a,/a,/div,/body,/html',:text=>'An unexpected error has occurred!' },
+#{:url=>'?tempskin=_rss0.8',:tagpattern=> 'div,h3,/h3,p,/p,p,a,/a,/p,/div,div,h3,/h3,a,/a,/div,/body,/html',:text=>'An unexpected error has occurred!' },
 
 ]
 
