@@ -24,6 +24,7 @@ Version 0.4.6 Released ? 2010
 * Added error logging.
 * Added XML header and footer to XML logs
 * Bug fix: Escaping the XML log properly for &, <, >, "
+* Bug fix: References to :probability instead of :certainty in some logging
 * Changed error message for non resolving hostnames from "undefined method `closed?' for nil:NilClass" to "Cannot resolve hostname"
 * Added ascii whatweb logo
 
