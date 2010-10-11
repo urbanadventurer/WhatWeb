@@ -8,6 +8,7 @@
 # Version 0.3 - Aung Khant(http://yehg.net)
 # added two aggressive check url - README.php, administrator 
 # added certainty 100 to avoid overlapping with Joomla
+# added index.php?option=com_ check 
 
 Plugin.define "Mambo" do
 author "Andrew Horton"
@@ -29,6 +30,17 @@ matches [
 :regexp=>/<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/}
 
 ]
+
+
+def passive
+	m=[]
+
+	if @body =~ /<a href="[^"]*index.php\?option=com_/
+		modules = @body.scan(/<a href="[^"]*index.php\?option=(com_[^&"]+)/).flatten.compact.sort.uniq		
+		m << {:certainty=>25,:modules=>modules}
+	end
+
+end
 
 
 # identifying strings
