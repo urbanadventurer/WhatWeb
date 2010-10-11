@@ -68,7 +68,7 @@ def aggressive
 	m=[]
 
 	target = URI.join(@base_uri.to_s,"docs/CHANGELOG.html").to_s
-	status,url,body,headers=open_target(target)
+	status,url,ip,body,headers=open_target(target)
 	
 	unless body.nil?
 		# /docs/CHANGELOG.html
