@@ -36,7 +36,7 @@ Plugin.define "Tomcat" do
 		target = "http://#{@base_uri.host}:#{@base_uri.port.to_s}/#{random_string}"
 		info = []
 		begin 
-			status, url, body, headers = open_target(target)
+			status, url, ip, body, headers = open_target(target)
 						
 			if status == 404
 				v= body.scan(/Apache Tomcat\/([456]\.\d+\.\d+)/)[0]

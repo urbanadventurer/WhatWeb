@@ -46,8 +46,9 @@ matches [
 :regexp=>/<td width="20" align="center"><img src="[^"]+images\/folder_new_big.gif" alt="New posts"\/><\/td>/}, # "
 
 {:name=>"In total there are x users online ::",
-:regexp=>/In total there are <b>[0-9]+<\/b> users online :: [0-9]+ Registered, [0-9]+ Hidden and [0-9]+ Guests/}
+:regexp=>/In total there are <b>[0-9]+<\/b> users online :: [0-9]+ Registered, [0-9]+ Hidden and [0-9]+ Guests/},
 
+{:url=>"/docs/CHANGELOG.html", :md5=>"931e4dd982451b9baf4dbfa3a6d6da4e", :version=>"3.0.5"}
 ]
 
 def passive
@@ -67,7 +68,7 @@ def aggressive
 	m=[]
 
 	target = URI.join(@base_uri.to_s,"docs/CHANGELOG.html").to_s
-	status,url,body,headers=open_target(target)
+	status,url,ip,body,headers=open_target(target)
 	
 	unless body.nil?
 		# /docs/CHANGELOG.html

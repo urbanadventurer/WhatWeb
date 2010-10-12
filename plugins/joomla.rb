@@ -89,7 +89,7 @@ to_download = %w| language/en-GB/en-GB.ini administrator/language/en-GB/en-GB.in
 downloads={}
 to_download.each do |d|	
 	target = URI.join(@base_uri.to_s,d).to_s	
-	status,url,body,headers=open_target(target)
+	status,url,ip,body,headers=open_target(target)
 	downloads[d] = {:md5sum=>MD5.new(body).to_s}	
 end
 

@@ -174,7 +174,7 @@ class OutputXML < Output
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
-				certainty = plugin_results.map {|x| x[:probability] }.compact.sort.uniq.last
+				certainty = plugin_results.map {|x| x[:certainty] }.compact.sort.uniq.last
 				version = plugin_results.map {|x| x[:version] }.flatten.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] }.flatten.compact.sort.uniq
 				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq
@@ -211,7 +211,7 @@ class OutputJSON < Output
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
 
-				certainty = plugin_results.map {|x| x[:probability] }.compact.sort.uniq.last
+				certainty = plugin_results.map {|x| x[:certainty] }.compact.sort.uniq.last
 				version = plugin_results.map {|x| x[:version] }.flatten.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] }.flatten.compact.sort.uniq
 				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq

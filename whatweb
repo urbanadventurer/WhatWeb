@@ -163,7 +163,7 @@ class Plugin
   	@locked
   end
 
-  def init (body=nil,meta={},cookies=nil,status=nil,base_uri=nil, md5sum=nil, tagpattern=nil)
+  def init (body=nil,meta={},cookies=nil,status=nil,base_uri=nil, ip=nil, md5sum=nil, tagpattern=nil)
   	@body=body
   	@meta=meta
   	@cookies=cookies
@@ -171,6 +171,7 @@ class Plugin
   	@base_uri=base_uri
 	@md5sum=md5sum
 	@tagpattern=tagpattern
+	@ip=ip
   end
 
 # execute plugin
@@ -238,7 +239,7 @@ class Plugin
 				# this is messy... need a webpage class
 				thisbase_uri=URI.join(@base_uri.to_s, match[:url])
 				if thisbase_uri != lastbase_uri
-					thisstatus,thisurl,thisbody,thisheaders,thiscookies = open_target( thisbase_uri.to_s) 
+					thisstatus,thisurl,thisip,thisbody,thisheaders,thiscookies = open_target( thisbase_uri.to_s) 
 				end
 				lastbase_uri=thisbase_uri
 
@@ -625,11 +626,21 @@ def open_target(target)
 		error(target + " ERROR: #{err}")
 		return [0, nil, nil, nil,nil]
 	end
-	[status,uri,body,headers,cookies]
+
+
+	begin		
+		ip=IPSocket.getaddress(uri.host)
+	rescue StandardError => err		
+		err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
+		error(target + " ERROR: #{err}")
+		return [0, nil, nil, nil,nil]
+	end
+
+	[status,uri,ip,body,headers,cookies]
 end
 
 
-def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil)
+def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 		#pp target, body, headers, status, url
 
 		# need a webpage model for this stuff
@@ -657,11 +668,11 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil)
 					pp "target is a string url" if $verbose > 2
 					# it's a uri, with meta data, etc - #status,url,body,headers
 
-					plugin.init(body,headers,cookies,status,url,md5sum,tagpattern)
+					plugin.init(body,headers,cookies,status,url,ip,md5sum,tagpattern)
 				else
 					puts "target is a file" if $verbose > 2
 					# it's a file
-					plugin.init(body,{},nil,0,URI.parse('http://example.com/' + target),md5sum,tagpattern)
+					plugin.init(body,{},nil,0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
 				end
 				
 				# eXecute the plugin
@@ -683,6 +694,7 @@ def make_tag_pattern(b)
 	# remove stuff between script and /script
 	# don't bother with  !--, --> or noscript and /noscript
 	inscript=false;
+
 	b.scan(/<([^\s>]*)/).flatten.map {|x| x.downcase!; r=nil;
 			r=x if inscript==false
 			inscript=true if x=="script"
@@ -1037,14 +1049,14 @@ while thistarget = next_target
 				else
 					# not a file, not recursive
 					#status,url,body,headers = open_with_openuri(target)
-					status,url,body,headers,cookies = open_target(target)
+					status,url,ip,body,headers,cookies = open_target(target)
 					if status == 0 or status.nil?
 						no_redirects=true
 						next
 					end	
 				end
 
-				results = run_plugins(target,body,headers,cookies,status,url)
+				results = run_plugins(target,body,headers,cookies,status,url,ip)
 			
 				# reporting
 				# multiple output plugins simultaneously, some stdout, some files

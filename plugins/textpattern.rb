@@ -51,7 +51,7 @@ def aggressive
 	target = "http://#{@base_uri.host}:#{@base_uri.port.to_s}/textpattern/"
 	info = []
 		
-	status, url, body, headers = open_target(target)
+	status, url, ip, body, headers = open_target(target)
 	if status == 200		
 			info <<  {:name=>"default login"}
 	end

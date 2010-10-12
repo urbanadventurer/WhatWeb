@@ -101,7 +101,7 @@ def aggressive
 	m=[]
 	
 	target = URI.join(@base_uri.to_s,"READ_THIS_FIRST.txt").to_s
-	status,url,body,headers=open_target(target)
+	status,url,ip,body,headers=open_target(target)
 	
 	if body =~ /ExpressionEngine/
 		m << {:name=>"readthisfirst txt file" }

@@ -119,7 +119,7 @@ def aggressive
 	m=[]
 	
 	target = URI.join(@base_uri.to_s,"admin/login.php").to_s
-	status,url,body,headers=open_target(target)
+	status,url,ip,body,headers=open_target(target)
 	
 	if body =~ /<img src="images\/oscommerce.png" border="0" alt="osCommerce ([^"]+)"/
 		version=body.scan(/<img src="images\/oscommerce.png" border="0" alt="osCommerce ([^"]+)"/)[0][0]
