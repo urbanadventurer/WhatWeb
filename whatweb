@@ -1073,8 +1073,13 @@ while thistarget = next_target
 					else
 						# meta refresh						
                 				metarefresh=body.scan(/<meta[^>]*http\-equiv[^>]*refresh[^>]*url=([^\"]*)/i)[0].to_s
-						target=URI.join(target,metarefresh).to_s # this works for relative and absolute links
-						num_redirects+=1
+						newtarget=URI.join(target,metarefresh).to_s # this works for relative and absolute
+						if newtarget != target # don't redirect to self
+							num_redirects+=1
+							target=newtarget
+						else
+							no_redirects=true # punishment for redirecting to self
+						end
 					end
 				else
 					no_redirects=true
