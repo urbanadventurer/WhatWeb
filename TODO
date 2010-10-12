@@ -343,32 +343,17 @@ files %w| license.txt wp-blog-header.php wp-content/ wp-load.php wp-register.php
 
 
 
-# drop Div-Span-Structure
-# add a hash for tagpattern
-# add :url=> to matches
-
 CVE array
-# :model=>
-# :firmware=>
-# :modules=>
-# :credentials=>
-# --wait time
-# follow meta-refresh
-# {:version=>/<meta name=\"generator\" content=\"(WordPress)[ ]?([0-9\.]+)\"/, :version_regexp_offset=>1, :name=>"meta generator tag" } #"
-
 CVEs [
 	["1.0-1.4",	"CVE-1111, "XSS in asdf.php"],
 	["2.0-",		"CVE-1112, "CSRF in asdf.php"],						# All versions prior to 2.0
 	["4.0",			"CVE-1113, "SQL injection in asdf.php"],	# version 4.0
 	["5.3-5.6",	"CVE-1114, "RCE in asdf.php"],						# versions 5.3 to 5.6
-	["6.0+",		"CVE-1115, "XSS in asdf.php"],						# All know versions from 6 to date
 ]
 
 search for slow regexps. use examples in plugins
 
 plugins for cisco-ios version, linksys version
-
-#add variables for  : :fwversion, :model, :modules (joomla, WP, etc)
 
 only do aggressive checks that provide more infoz.. eg, if it's already matched and all it does is identify the system then skip it
 
@@ -377,10 +362,6 @@ make a webpage model and a website model
 show which plugin is requesting a URL
 
 add option to not thread - need to rewrite main loop 1st
-
-should :text be case insensitive? maybe
-
-# make plugin errors red. check out Zoph error on 
 
 option to not display hashes? Hashes are most useful with a large dataset to find similar systems or when manually pentesting. maybe leave it in
 
@@ -402,29 +383,9 @@ if @body =~ pattern
 	version=@body.scan(pattern)[0][1]
 	m << ....
 
-
-#custom plugins on the cmdline
-# ./whatweb --custom-plugin ":text=>'powered by fuck'" -i ./targets
-# ./whatweb --custom-plugin "{:text=>'powered by fuck'},{:regexp=>/meta generator/}" -i ./targets
-#move tag pattern into main section so any plugin can use it
-#move md5 into main section so any plugin can use it
-
-Write a quick guide to writing plugins
-
-change -example scanning. -e <plugin>,<plugin> <-- just where 2 take the targets from
---- nah
-
-# add prefix, suffix, etc... for manual usage.
-#make help wrap around a 	standard terminal size
-
-option to not output hash plugins, footer, header, tag pattern, div span, md5. plugin groups? categories?
+option to not output hash plugins, footer, header, tag pattern, div span, md5. --- maybe use plugin groups? categories?
 
 try to reconnect when a timeout is received
-
-#add probability to XML output
-#strip :probability requirement -- assume 100 if not specified. 
-#strip :name requirement -- same as regexp, etc if not specified.
-#rename probability to certainty
 
 make local plugin take precedence over installed location
 
@@ -439,38 +400,8 @@ option to supress 404s -- maybe they just just grep for 200 or -v 404
 make plugins for http://trends.builtwith.com/cms
 
 
-
-> one of the plugins attached, shoutcast administrator, doesn't work
-> because it returns different HTTP 200 OK messages. is there some way to
-> fix this or even use it for fingerprinting, rather than aborting the
-> request?
-> 
-> ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
-> 100.m2radio.fr:8000 <http://100.m2radio.fr:8000>
-> http://100.m2radio.fr:8000 ERROR: wrong status line: "ICY 200 OK"
-> 
-> ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
-> 128relay1.gothmetal.net:6666 <http://128relay1.gothmetal.net:6666>
-> http://128relay1.gothmetal.net:6666 ERROR: wrong status line: "ICY 200 OK"
-> 
-> ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
-> 160.79.128.30:7702 <http://160.79.128.30:7702>
-> http://160.79.128.30:7702 ERROR: wrong status line: "ICY 400 Server Full"
-> 
-> ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
-> aol-relay2.chuckeh.com:8026 <http://aol-relay2.chuckeh.com:8026>
-> http://aol-relay2.chuckeh.com:8026 [302] Title[Redirect],
-> RedirectLocation[http://scfire-ntc-aa03.stream.aol.com:80/stream/1051],
-> MD5[2548da190bd45c8ab7b42f781b6d8b2c],
-> Header-Hash[2548da190bd45c8ab7b42f781b6d8b2c]
-> http://scfire-ntc-aa03.stream.aol.com:80/stream/1051 ERROR: wrong status
-> line: "ICY 200 OK"
-
-
 GUI
 read XML and list urls by plugin
-
-custom plugin defined on cmdline
 
 
 each plugin should say what it identifies:
@@ -490,6 +421,7 @@ what methods it uses for each above task:
 and whether the above are passive or aggressive functions.
 
 
+bcoles:
 possibly separate aggressive functions into:
 def aggressive_identify
 def aggressive_version
@@ -510,8 +442,6 @@ we don't need 1 plugin per extension!
 
 
 list of filetypes to download and scan. useful ones are: css, js, favicon.ico. not links, but stuff that a browser would include on a page.
-
-#target prefix and target suffix
 
 joomla plugin aggressive tests should be relative to the site root.
 now they're just relative to the site.
@@ -549,22 +479,15 @@ extract more info from https certificates, like hostnames
 
 include IP in logs
 
-more output types, like JSON,XML,YAML
+more output types, like YAML
 
-make a distinction in colour between  standard webpage things we find all the time like
+make a distinction in colour between standard webpage things we find all the time like
 title, meta generator, md5, server-header, Mailto and other matches, i.e. Joomla.
 
 
 maybe plugins should return TEXT. i.e. type of default apache,etc
 
 let ppl specific custom functions for plugins - like enumerating all drupal nodes.
-
-
-
-
-BUG https://120.136.48.33/ ERROR: EOF error end of file reached
-This redirects but doesn't have a proper certificate
-
 
 
 whatweb doesn't understand websites, only URLs
@@ -586,13 +509,12 @@ say whether it has aggressive tests in the plugin list
 the plugin locking is ugly, might be better to make a new instance of the plugin for each test
 
 
-should modify whatweb to run as a proxy and invoke wget
+maybe modify whatweb to run as a proxy and invoke wget
 
 fast way:
 	use tiny proxy, or similar writtin in C. 
 	capture the data and pass to ruby through a socket.
 	ruby just starts teh proxy, starts wget and collects the data.
-
 
 the url guessing sux
 eg. oscommerce
@@ -615,14 +537,9 @@ should just read 1 at a time, potentially from stdin
 fix GHDB expressions
   --   ghdb "abc def" doesn't match "abc <b>def</b>"
 
-detect mobile versions
-
 logs currently only log successful attempts. should be optional
 
 maybe Make account, username, id, etc all username in output?
-
-md5sums of files -identify favicon for mambo, joomla, apple, etc. have @md5_hash for plugins
-
 
 Use NAMED GROUPS in regular expressions for stuff like version numbers
 
@@ -712,7 +629,7 @@ website
                        examples it matches
 
 
-
+bcoles:
 What are your thoughts on returning info for hardware? Often there's different information to return, such as hardware model, firmware version, software versions, enabled modules, etc.
 
 The output starts to get messy.
@@ -721,7 +638,7 @@ ABC-Hardware[xx.xx.xx][Model: XYZ][Firmware: xx.xx.xx][Modules:asdf,ghkj,zxcv]
 
 
 
-
+bcoles:
 Fingerprinting using HTTP headers would be much cleaner if shodan style searches could be performed in a similair way to ghdb.
 
 For example, instead of using:
@@ -766,11 +683,7 @@ I've noted a few plugins where this could be useful:
 # About 50 SHODAN results for Server:"Observer XT (c) Veo" @ 2010-07-18
 
 
-I think ShodanHQ has gained enough publicity that using "shodan=>" would make sense.
-
-
-Just a suggestion. Also I haven't been able to fingerprint using copyright symbols and different languages have been a challenge. UTF-8 support would be awesome :D
-
+I think ShodanHQ has gained enough publicity that using "shodan=>" would make sense. Alternatively you could use "header=>".
 
 
 
@@ -779,7 +692,37 @@ BUGS
 nicer error handling when fed bad input, cmdline options, etc
 
 
+BUG https://120.136.48.33/ ERROR: EOF error end of file reached
+This redirects but doesn't have a proper certificate
 
+
+bcoles:
+The Shoutcat Administrator plugin doesn't work because it returns
+different HTTP 200 OK messages. is there some way to fix this of even
+use it for fingerprinting, rather than aborting the request?
+
+
+$ ./whatweb  --log-brief=asdf.log -a 1
+
+ 100.m2radio.fr:8000 <http://100.m2radio.fr:8000>
+ http://100.m2radio.fr:8000 ERROR: wrong status line: "ICY 200 OK"
+
+ ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
+ 128relay1.gothmetal.net:6666 <http://128relay1.gothmetal.net:6666>
+ http://128relay1.gothmetal.net:6666 ERROR: wrong status line: "ICY 200 OK"
+
+ ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
+ 160.79.128.30:7702 <http://160.79.128.30:7702>
+ http://160.79.128.30:7702 ERROR: wrong status line: "ICY 400 Server Full"
+
+ ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
+ aol-relay2.chuckeh.com:8026 <http://aol-relay2.chuckeh.com:8026>
+ http://aol-relay2.chuckeh.com:8026 [302] Title[Redirect],
+ RedirectLocation[http://scfire-ntc-aa03.stream.aol.com:80/stream/1051],
+ MD5[2548da190bd45c8ab7b42f781b6d8b2c],
+ Header-Hash[2548da190bd45c8ab7b42f781b6d8b2c]
+ http://scfire-ntc-aa03.stream.aol.com:80/stream/1051 ERROR: wrong status
+ line: "ICY 200 OK"
 
 
 
