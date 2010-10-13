@@ -1,0 +1,73 @@
+#!/bin/bash
+##
+# This script creates WhatWeb plugins from the OWASP Favicon Database file
+# Version 0.1 # Written by: Brendan Coles <bcoles@gmail.com> (c) 2010-09-17
+##
+# Declerations
+##
+ERROR_ID=0
+FAVICON_FILE="favicon-md5"
+
+# Check if argument 1 was supplied
+if [ $1 ]
+then
+	FAVICON_FILE=$1
+fi
+
+# Check if argument 1 is a valid file
+if [ ! -f $FAVICON_FILE ]
+then
+	ERROR_ID=404
+fi
+
+# Show usage and quit on error
+if [ $ERROR_ID -gt 0 ]
+then
+	echo "/************************************"
+	echo "* OWASP Favicon Database to WhatWeb *"
+	echo "*************************************/"
+	echo "This script creates WhatWeb plugins from the OWASP Favicon Database file."
+	echo "Written by: Brendan Coles <bcoles@gmail.com> (c) 2010-09-17"
+	echo
+	echo "Usage:"
+	echo "$0 /path/to/favicon-md5"
+	echo
+	echo "Example:"
+	echo "$0 favicon-md5"
+	echo
+	exit
+fi
+
+################################################################################
+# Plugin creation and OWASP Favicon Database hash extraction
+################################################################################
+
+# Start plugin
+echo "[*] Generating Favicon-DB.rb plugin . . ."
+START=`date +%s`
+
+# Open OWASP Favicon Database file
+MD5_HASHES=`cat favicon-md5 | sed '/^$/d; /:/s/:/\",\ :version=>\"/i; s/^/{ :url=>"\/favicon.ico", :md5=>\"/i; s/$/\" },/i;'`
+
+# Write plugin
+echo "##" > "Favicon-DB.rb"
+echo "# This file is part of WhatWeb and may be subject to" >> "Favicon-DB.rb"
+echo "# redistribution and commercial restrictions. Please see the WhatWeb" >> "Favicon-DB.rb"
+echo "# web site for more information on licensing and terms of use." >> "Favicon-DB.rb"
+echo "# http://www.morningstarsecurity.com/research/whatweb" >> "Favicon-DB.rb"
+echo "##" >> "Favicon-DB.rb"
+echo "Plugin.define \"Favicon-DB\" do" >> "Favicon-DB.rb"
+echo "author \"Brendan Coles <bcoles@gmail.com>\"" >> "Favicon-DB.rb"
+echo "version \"0.1\"" >> "Favicon-DB.rb"
+echo "description \"This plugin detects Wordpress versions using the OWASP Favicon Database. - homepage: http://liss.owasp.org/index.php/Category:OWASP_Favicon_Database_Project\"" >> "Favicon-DB.rb"
+echo "matches [" >> "Favicon-DB.rb"
+echo $MD5_HASHES >> "Favicon-DB.rb"
+echo "]" >> "Favicon-DB.rb"
+echo "end" >> "Favicon-DB.rb"
+
+# Output elapsed time and total md5 matches
+FINISH=`date +%s`
+ELAPSED=`expr $FINISH - $START`
+unset START
+LINES=`cat Favicon-DB.rb | wc -l`
+echo "[*] Wrote $LINES md5 matches to Favicon-DB.rb in $ELAPSED seconds"
