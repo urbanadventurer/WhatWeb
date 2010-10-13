@@ -108,7 +108,7 @@ def aggressive
 	end
 
 	target = URI.join(@base_uri.to_s,"system/updates/ee_logo.jpg").to_s
-	status,url,body,headers=open_target(target)
+	status,url,ip,body,headers=open_target(target)
 	
 	if status == 200 and body =~ /JFIF/
 		m << {:name=>"ee_logo jpg" }

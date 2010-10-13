@@ -53,7 +53,7 @@ def aggressive
 	m=[]
 	
 	target = URI.join(@base_uri.to_s,"/typolight/").to_s
-	status,url,body,headers=open_target(target)
+	status,url,ip,body,headers=open_target(target)
 	
 	if body =~ /<title>[^<]+TYPOlight[^<]+CMS ([^<]+)<\/title>/
 		version=body.scan(/<title>[^<]+TYPOlight[^<]+CMS ([^<]+)<\/title>/)[0][0]
