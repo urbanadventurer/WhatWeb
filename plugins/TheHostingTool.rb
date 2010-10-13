@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Fixed bug with returned modules not comma seperated
+##
 Plugin.define "TheHostingTool" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
-version "0.1"
+version "0.2"
 description "homepage: http://thehostingtool.com/"
 
 # 161 results for "powered by TheHostingTool" @ 2010-10-12
@@ -73,12 +76,12 @@ def passive
 	# OS detection
 	if @body =~ /<td width="20%"><strong>Server OS:<\/strong><\/td>[\r\n|\n]+<td width="80%"> ([^\ ]+) <\/td>/
 		version=@body.scan(/<td width="20%"><strong>Server OS:<\/strong><\/td>[\r\n|\n]+<td width="80%"> ([^\ ]+) <\/td>/).to_s
-		m << { :version=>"OS:"+version }
+		m << { :version=>version }
 	end
 
 	# Module detection
 	if @body =~ /<td align="center"><strong>([^<]+)<\/strong><\/td>/
-		modules=@body.scan(/<td align="center"><strong>([^<]+)<\/strong><\/td>/).to_s
+		modules=@body.scan(/<td align="center"><strong>([^<]+)<\/strong><\/td>/)
 		m << { :modules=>modules }
 	end
 
