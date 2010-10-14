@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Fixed regex to return multiple frames
+##
 Plugin.define "Frame" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-13
-version "0.1"
+version "0.2"
 description "This plugin detects instances of frame and iframe HTML elements and grabs the URL."
 
 # 213 results for "your browser does not support frames" @ 2010-10-13
@@ -24,12 +27,18 @@ www.ornatopia.com
 www.usbornebooksandmore.com/?NewID=NEW
 |
 
-matches [
-
 # URL Extraction
-{ :version=>/<[\s]*[i]*frame[^src]+src[\s]*=[\s]*[\"|\']*([^>^\"]+)/i, :version_regexp_offset=>0 },
+def passive
+	m=[]
 
-]
+	if @body =~ /<[\s]*[i]*frame[^src]+src[\s]*=[\s]*[\"|\']*([^>^\"]+)/i
+		version=@body.scan(/<[\s]*[i]*frame[^src]+src[\s]*=[\s]*[\"|\']*([^>^\"]+)/i)
+		m << { :version=>version }
+	end
+
+	m
+
+end
 
 end
 
