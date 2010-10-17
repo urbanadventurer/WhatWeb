@@ -19,13 +19,9 @@ howlingsword.co.kr
 |
 def passive
 	m=[]
-	
-	unless @meta.nil?
-		serverkey= %w|x-aspnetmvc-version X-AspNetMvc-Version|.map {|x| x if @meta.keys.include?(x) }.compact.first
-		
-		unless serverkey.nil?
-			m << {:name=>"x-aspnetmvc-version string",:version=>@meta[serverkey]}
-		end
+			
+	if @meta.keys.include?("x-aspnetmvc-version")
+		m << {:name=>"x-aspnetmvc-version string",:version=>@meta["x-aspnetmvc-version"]}
 	end
 	m
 end
