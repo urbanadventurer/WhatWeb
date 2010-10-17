@@ -33,7 +33,7 @@ matches [
 { :regexp=>/<object.*?>*?application\/x-shockwave-flash.*?<\/object>/i },
 
 # Extract flash file path from <embed> elements
-{ :version=>/<embed[^src]+src[\s]*=[\s]*([^\ ]+)/i, :version_regexp_offset=>0 },
+{ :version=>/<embed[^>]+src[\s]*=[\s]*([^\ ]+)/i, :version_regexp_offset=>0 },
 
 # Extract flash file path from Javascript
 { :version=>/new[\s]+FlashObject[\s]*\([\s]*'([^\']+)/, :version_regexp_offset=>0 },
