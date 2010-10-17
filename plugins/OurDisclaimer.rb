@@ -27,10 +27,10 @@ www.CloudTweaks.com
 matches [
 
 # Get URL # Link & Image method
-{ :version=>/<a[^href]+href[\s]*=[\s]*"http:\/\/ourdisclaimer.com\/\?i=([^\"]+)/i, :version_regexp_offset=>0 },
+{ :version=>/<a[^>]+href[\s]*=[\s]*"http:\/\/ourdisclaimer.com\/\?i=([^\"]+)/i, :version_regexp_offset=>0 },
 
 # Get URL # Iframe method
-{ :version=>/<iframe[^src]+src[\s]*=[\s]*"http:\/\/ourdisclaimer.com\/\?i=([^\"]+)/i, :version_regexp_offset=>0 },
+{ :version=>/<iframe[^>]+src[\s]*=[\s]*"http:\/\/ourdisclaimer.com\/\?i=([^\"]+)/i, :version_regexp_offset=>0 },
 
 ]
 
