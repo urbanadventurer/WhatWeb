@@ -31,8 +31,8 @@ www.usbornebooksandmore.com/?NewID=NEW
 def passive
 	m=[]
 
-	if @body =~ /<[\s]*[i]*frame[^src]+src[\s]*=[\s]*[\"|\']*([^>^\"]+)/i
-		version=@body.scan(/<[\s]*[i]*frame[^src]+src[\s]*=[\s]*[\"|\']*([^>^\"]+)/i)
+	if @body =~ /<[\s]*[i]*frame[^>]+src[\s]*=[\s]*[\"|\']*([^>^\"^\'^\s]+)/i
+		version=@body.scan(/<[\s]*[i]*frame[^>]+src[\s]*=[\s]*[\"|\']*([^>^\"^\'^\s]+)/i)
 		m << { :version=>version }
 	end
 
