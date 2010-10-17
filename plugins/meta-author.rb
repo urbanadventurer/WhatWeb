@@ -18,8 +18,8 @@ www.webmarketingnow.com
 matches [
 
 # Get author's name
-{ :version=>/<meta[^name]+name[\s]*=[\s]*[\'|\"]?author[^content]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :version_regexp_offset=>0 },
-{ :version=>/<meta[^content]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^name]+name[\s]*=[\s]*[\'|\"]?author/i, :version_regexp_offset=>0 },
+{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?author[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :version_regexp_offset=>0 },
+{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?author/i, :version_regexp_offset=>0 },
 
 ]
 
