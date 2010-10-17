@@ -27,6 +27,7 @@ Version 0.4.6 Released ? 2010
 * Bug fix: References to :probability instead of :certainty in some logging
 * Changed error message for non resolving hostnames from "undefined method `closed?' for nil:NilClass" to "Cannot resolve hostname"
 * Added ascii whatweb logo
+* All logs are now flushed/synced
 
 
 Version 0.4.5 Released August 17th 2010
