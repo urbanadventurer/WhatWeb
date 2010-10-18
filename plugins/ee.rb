@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "\0" do # In celebration of our 500th plugin - 2010-10-18
+Plugin.define "¿" do # In celebration of our 500th plugin - 2010-10-18
 
 
 
