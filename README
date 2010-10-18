@@ -826,12 +826,12 @@ There are 3 levels to a plugin. Simple matches, passive and agressive tests. You
 
 The matches [] array contains a set of ways to match a website to a system.
 The methods are:
-	* :text		Matches text within the webpage
+	* :text			Matches text within the webpage
 	* :regexp		A regular expression. Append /i for case insensitive matches
-	* :ghdb		Like a google query
+	* :ghdb			Like a google query
 	* :md5			MD5 hash of the HTML page
 	* :tagpattern		Pattern of HTML tags
-	* :name		This is the name of the match, and is optional.
+	* :name			This is the name of the match, and is optional.
 	* :url			The URL has to match this. Used for passive and agressive testing
 	* :certainty		Optional, defaults to 100. Values are maybe (25), probably (75) and certain (100).
 	* :version		As a string or number this is a version returned when other methods match
