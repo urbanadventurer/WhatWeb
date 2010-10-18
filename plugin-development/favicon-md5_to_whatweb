@@ -1,6 +1,6 @@
 #!/bin/bash
 ##
-# This script creates WhatWeb plugins from the OWASP Favicon Database file
+# This script creates a WhatWeb plugin from the OWASP Favicon Database file
 # Version 0.1 # Written by: Brendan Coles <bcoles@gmail.com> (c) 2010-09-17
 ##
 # Declerations
@@ -26,7 +26,7 @@ then
 	echo "/************************************"
 	echo "* OWASP Favicon Database to WhatWeb *"
 	echo "*************************************/"
-	echo "This script creates WhatWeb plugins from the OWASP Favicon Database file."
+	echo "This script creates a WhatWeb plugin from the OWASP Favicon Database file."
 	echo "Written by: Brendan Coles <bcoles@gmail.com> (c) 2010-09-17"
 	echo
 	echo "Usage:"
@@ -47,7 +47,7 @@ echo "[*] Generating Favicon-DB.rb plugin . . ."
 START=`date +%s`
 
 # Open OWASP Favicon Database file
-MD5_HASHES=`cat favicon-md5 | sed '/^$/d; /:/s/:/\",\ :version=>\"/i; s/^/{ :url=>"\/favicon.ico", :md5=>\"/i; s/$/\" },/i;'`
+MD5_HASHES=`cat "$FAVICON_FILE" | sed '/^$/d; /:/s/:/\",\ :version=>\"/i; s/^/{ :url=>"\/favicon.ico", :md5=>\"/i; s/$/\" },/i;'`
 
 # Write plugin
 echo "##" > "Favicon-DB.rb"
@@ -59,7 +59,7 @@ echo "##" >> "Favicon-DB.rb"
 echo "Plugin.define \"Favicon-DB\" do" >> "Favicon-DB.rb"
 echo "author \"Brendan Coles <bcoles@gmail.com>\"" >> "Favicon-DB.rb"
 echo "version \"0.1\"" >> "Favicon-DB.rb"
-echo "description \"This plugin detects Wordpress versions using the OWASP Favicon Database. - homepage: http://liss.owasp.org/index.php/Category:OWASP_Favicon_Database_Project\"" >> "Favicon-DB.rb"
+echo "description \"This plugin identifies Web Applications using the OWASP Favicon Database. - homepage: http://liss.owasp.org/index.php/Category:OWASP_Favicon_Database_Project\"" >> "Favicon-DB.rb"
 echo "matches [" >> "Favicon-DB.rb"
 echo $MD5_HASHES >> "Favicon-DB.rb"
 echo "]" >> "Favicon-DB.rb"
