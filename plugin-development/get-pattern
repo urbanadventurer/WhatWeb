@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+# Page Pattern Generator
+#  Aung Khant, http://yehg.net
+
+# Feed a url
+# Get its tag pattern that's ready to use in your plugin
+
+# Codes taken from Andrew Horton
+
+require 'net/http'
+require 'net/https'
+require 'open-uri'
+
+if RUBY_VERSION =~ /^1.9/
+        require 'digest/md5'
+else
+        require 'md5'
+end
+
+# from tag_pattern.rb
+def pg_tag_pattern(b)
+# remove stuff between script and /script
+# don't bother with  !--, --> or noscript and /noscript
+    inscript=false;
+	
+    tag_pattern = b.scan(/<([^\s>]*)/).flatten.map {|x| x.downcase!; r=nil;
+		r=x if inscript==false
+		inscript=true if x=="script"
+		(inscript=false; r=x) if x=="/script"
+		r
+	}.compact.join(",")
+end
+
+def usage
+    puts "Usage: ./page-pattern http://www.example.com/\n"
+end
+
+   
+if ARGV.length <1
+	usage
+	exit
+end
+
+url= ARGV[0].to_s 
+
+url = 'http://' + url if url !~ /^http(s)?:\/\//
+uri = URI.parse(url)
+uri.path += '/' if uri.path.size == 0
+http = Net::HTTP.new(uri.host,uri.port)
+http.open_timeout=180
+http.read_timeout=180
+http.use_ssl= true if uri.scheme == "https"
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE if uri.scheme == "https"
+ 
+begin
+	req,body = http.get(uri.path)
+rescue
+	raise "Cannot resolve or connect to #{uri.to_s}."
+end
+
+puts "
+== Page Pattern Generator 0.1 for WhatWeb == 
+	by Aung Khant, http://yehg.net
+
+"
+
+puts "URL: #{uri.to_s}
+
+{:name=>'HTML Tag Pattern', :tagpattern=>'" + pg_tag_pattern(body) + "'},\n
+{:name=>'MD5 hash', :md5=>'"+  Digest::MD5.hexdigest(body) + "'}\n\n"
+
+
+
+

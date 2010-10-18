@@ -37,6 +37,8 @@ def passive
 #	http://www.porsche.com.br/component/option,com_artbanners/Itemid,0/task,clk/id,45/">
 #   <a href="http://www.porsche.com.br/index.php?option=com_content&task=view&id=242&Itemid=235">Galeria</a>
 
+
+
 	# get modules, doesn't work in SEO mode
 	if @body =~ /<a href="[^"]*index.php\?option=com_/
 		modules = @body.scan(/<a href="[^"]*index.php\?option=(com_[^&"]+)/).flatten.compact.sort.uniq		
