@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated regex and version detection
+##
 Plugin.define "Advanced-Image-Hosting-Script" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
-version "0.1"
+version "0.2"
 description "AIHS is a highly-flexible advanced image hosting solution for anyone who wants to offer an image hosting services of any kind. - homepage: http://yabsoft.com/aihs-feature.php"
 
 # 2 results for "Welcome to install Advanced Image Hosting Script" @ 2010-08-30
@@ -23,38 +26,20 @@ phoqlove.com/install/
 
 matches [
 
-# Admin page CSS
+# Admin page # Default CSS
 { :text=>'  .title                          { font-size: 10px; font-weight: bold; line-height: 150%; color: #FFFFFF; height: 26px; background-image: url(./tile_back.gif) }' },
 
-# Admin page h3 title text
+# Admin page # Default title HTML
 { :text=>'    <td colspan=2 align=center><h3>Advanced Image Host Script</h3></td>' },
 
+# Version detection # Powered by text
+{ :version=>/Powered by: <B><a href="http:\/\/yabsoft.com">AIH v([\d\.]+)<\/a><\/B>/, :version_regexp_offset=>0 },
+
+# Version detection # Install page
+{ :version=>/<center><b>Welcome to install AIHS Script ([\d\.]+)<\/b><\/center>/, :version_regexp_offset=>0 },
+{ :version=>/<tr><td class=info width=100%>Welcome to install Advanced Image Hosting Script Pro ([\d\.]+) on your server<\/td><\/tr>/, :version_regexp_offset=>0 },
+
 ]
-
-# Version detection
-def passive
-        m=[]
-
-	# Powered by text
-        if @body =~ /Powered by: <B><a href="http:\/\/yabsoft.com">AIH v([\d\.]+)<\/a><\/B>/
-                version=@body.scan(/Powered by: <B><a href="http:\/\/yabsoft.com">AIH v([\d\.]+)<\/a><\/B>/)[0][0]
-                m << {:version=>version}
-        end
-
-	# Install page
-	if @body =~ /<center><b>Welcome to install AIHS Script ([\d\.]+)<\/b><\/center>/
-		version=@body.scan(/<center><b>Welcome to install AIHS Script ([\d\.]+)<\/b><\/center>/)[0][0]
-		m << {:version=>version}
-	end
-	if @body =~ /<tr><td class=info width=100%>Welcome to install Advanced Image Hosting Script Pro ([\d\.]+) on your server<\/td><\/tr>/
-		version@body.scan(/<tr><td class=info width=100%>Welcome to install Advanced Image Hosting Script Pro ([\d\.]+) on your server<\/td><\/tr>/)[0][0]
-		 m << {:version=>version}
-	end
-
-        m
-
-end
-
 
 end
 
