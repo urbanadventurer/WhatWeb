@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated regex and version detection
+##
 Plugin.define "Aardvark-Topsites-PHP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
-version "0.1"
+version "0.2"
 description "Aardvark Topsites PHP is a free topsites script built on PHP and MySQL. - homepage: http://www.aardvarktopsitesphp.com/topsites/"
+
+# About 330,000 results for "Powered by Aardvark Topsites PHP" @ 2010-06-26
 examples %w|
 www.aardvarktopsitesphp.com/topsites/
 toptopsites.com
@@ -73,37 +78,17 @@ www.phonesextoplist.com
 
 matches [
 
-# About 330,000 results @ 2010-06-26
-{:name=>'GHDB: "Powered by Aardvark Topsites PHP"',
-:certainty=>75,
-:ghdb=>'"Powered by Aardvark Topsites PHP"'
-},
+# GHDB Match
+{ :ghdb=>'"Powered by Aardvark Topsites PHP"' },
 
-{:name=>'default powered by text',
-:certainty=>100,
-:regexp=>/Powered by <a href="http:\/\/www.aardvarktopsitesphp.com[\/]*">[<b>]*Aardvark Topsites PHP[<\/b>]*<\/a>/i
-},
+# Default powered by text
+{ :regexp=>/Powered by <a href="http:\/\/www.aardvarktopsitesphp.com[^>]*>[^A]*Aardvark Topsites PHP/i },
+
+# Version detection # Powered by text
+{ :version=>/Powered by <a href="http:\/\/www.aardvarktopsitesphp.com\/"><b>Aardvark Topsites PHP<\/b><\/a> ([\d\.]+)/, :version_regexp_offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/www.aardvarkind.com\/">Aardvark Topsites PHP<\/a> ([\d\.]+)/, :version_regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /Powered by <a href="http:\/\/www.aardvarktopsitesphp.com\/"><b>Aardvark Topsites PHP<\/b><\/a> [\d\.]+/
-                version=@body.scan(/Powered by <a href="http:\/\/www.aardvarktopsitesphp.com\/"><b>Aardvark Topsites PHP<\/b><\/a> ([\d\.]+)/)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text",:version=>version}
-        end
-
-        if @body =~ /Powered by <a href="http:\/\/aardvarkind.com\/" target="_blank">Aardvark Topsites PHP<\/a> [\d\.]+/
-                version=@body.scan(/Powered by <a href="http:\/\/www.aardvarkind.com\/">Aardvark Topsites PHP<\/a> ([\d\.]+)/)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text old",:version=>version}
-
-	end
-
-        m
-
-end
-
 
 end
 
