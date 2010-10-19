@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated regex and version detection
+##
 Plugin.define "Allinta-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
-version "0.1"
+version "0.2"
 description "Allinta - easy to use ASP CMS (Content Management System) - professional features & superior value. - homepage: http://www.allinta.com/"
 
 # 31 results for "powered by allinta CMS" @ 2010-08-15
@@ -30,38 +33,26 @@ www.mywoodhandcross.com
 
 matches [
 
+# Default CSS HTML
 { :regexp=>/	<link rel="stylesheet" href="css\/wizard\/t[0-9_]+.css" type="text\/css">/ },
-
 { :regexp=>/	<link href="css\/wizard\/t[0-9_]+.css" rel="stylesheet" type="text\/css">/ },
 
+# Powered by text
 { :text=>'		<td align="right" class="footerText">Powered by allinta CMS</td>' },
 
-{ :regexp=>/	<link rel="stylesheet" href="css\/wizard\/t[0-9_]+.css" type="text\/css">/ },
+# Default logo HTML
+{ :regexp=>/<img src="img\/wizard\/t[0-9_]+\/powered_allinta.gif"[^>]*alt="Powered by Allinta CMS"/ },
 
-{ :regexp=>/<a[\ target="_blank"]* href="http:\/\/www.allinta.com[\/buy\/default\.asp\?ac=]*[0-9]*"[\ target="blank"]*>/ },
-
-{ :regexp=>/<img src="img\/wizard\/t[0-9_]+\/powered_allinta.gif" [^alt]+alt="Powered by Allinta CMS"/ },
-
+# Default image HTML
 { :regexp=>/<img contenteditable="inherit" start="fileopen" height="[0-9]+" src="img\/powered_allinta.gif" width="[0-9]+" \/>/ },
 
-# Admin page
+# Admin page # Default title
 { :text=>'<title>allinta.com- aCMS Content Manager</title>' },
 
+# Version detection # HTML comment
+{ :version=>/<!-- allintaCMS V([\d\.]+) - http:\/\/www.allinta.com\/ -->/, :version_regexp_offset=>0 },
+
 ]
-
-# Version detection using HTML comment on the admin login page
-def passive
-        m=[]
-
-        if @body =~ /<!-- allintaCMS V[\d\.]+ - http:\/\/www.allinta.com\/ -->/
-                version=@body.scan(/<!-- allintaCMS V([\d\.]+) - http:\/\/www.allinta.com\/ -->/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
