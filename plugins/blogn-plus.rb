@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated regex matches and version detection
+##
 Plugin.define "BlognPlus" do
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
-version "0.1"
-description " - homepage: http://www.blogn.org/"
+version "0.2"
+description "BlognPlus - homepage: http://www.blogn.org/"
+
+# 106 results for "powered by BlognPlus" @ 2010-06-15
 examples %w|
 fuc.byethost2.com/blog/
 www.acute-girls.com/nega/renew/
@@ -17,42 +22,19 @@ www.eg2mix.com
 www.hyperntn.net/weblog/
 www.sendai-c.ed.jp/~koorisyo/blognplus/
 www.okinawanet.info/oki/
-f34.aaa.livedoor.jp/~lsws/whirwind/
 www.teamhanes.com/contents/surfin/
 www.q-v-p.com/kyui/
 |
 
 matches [
 
-# 106 results @ 2010-06-15
-{:name=>'GHDB: "powered by BlognPlus"',
-:certainty=>75,
-:ghdb=>'"powered by BlognPlus"'
-},
+# Default powered by text
+{ :regexp=>/Powered by[\s]*<a href="http:\/\/www.blogn.org[^>]*>BlognPlus/i },
 
-# powered by <a href="http://www.blogn.org/" target="_blank">BLOGNPLUS(????+)</a>
-# Powered by <a href="http://www.blogn.org/" target="_blank">BlognPlus</a>
-# Powered by <a href="http://www.blogn.org/" target="_blank">BLOGNPLUS</a>
-# Powered by  <a href="http://www.blogn.org/" title="BlognPlus">BlognPlus</a>
-# powered by <a href="http://www.blogn.org/" target="_blank">BlognPlus</a>
-# Powered by <a href="http://www.blogn.org/" target="_blank">BlognPlus</a>
-{:name=>'default powered by text',
-:certainty=>100,
-:regexp=>/Powered by[\s]*<a href="http:\/\/www.blogn.org\/"[\ target="_blank"]*[\ title="BlognPlus"]*>BlognPlus/i,
-},
+# Version detection # Meta generator
+{ :version=>/<meta name="generator"[^>]*content="BlognPlus ([0-9\.]+)/, :version_regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /<meta name="generator"[^>]*content="BlognPlus [0-9\.]+/
-                        v=@body.scan(/<meta name="generator"[^>]*content="BlognPlus ([0-9\.]+)/)[0].to_s
-                        m << {:name=>"meta generator version", :certainty=>100, :version=>v }
-        end
-        m
-end
-
 
 end
 
