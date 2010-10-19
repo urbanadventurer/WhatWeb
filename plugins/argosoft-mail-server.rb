@@ -1,14 +1,18 @@
-
 ##
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated matches and version detection
+##
 Plugin.define "ArGoSoft-Mail-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
-version "0.1"
-description 'web based mail server - homepage: http://www.argosoft.com'
+version "0.2"
+description 'ArGoSoft-Mail-Server web interface - homepage: http://www.argosoft.com/'
+
+# 26 results for GHDB: +intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser -inurl @ 2010-06-13
 examples %w|
 www.mecmont.info/addnewuser
 www.network-options.net/addnewuser
@@ -28,24 +32,24 @@ mail.fws.net/addnewuser
 
 matches [
 
-# 26 results @ 2010-06-13
-{:name=>'GHDB: +intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser -inurl',
-:certainty=>75,
-:ghdb=>'+intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser -inurl'
-}
+# GHDB Match
+{ :ghdb=>'+intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser', :certainty=>75 },
+
+# Version detection
+{ :version=>/ArGoSoft Mail Server Pro for WinNT\/2000[\/XP]*, Version [\d\.]+ \(([\d\.]+)\)<\/p>/, :version_regexp_offset=>0 }
 
 ]
 
-# <p>ArGoSoft Mail Server Pro for WinNT/2000/XP, Version 1.8 (1.8.9.6)</p>
-# <p>ArGoSoft Mail Server Pro for WinNT/2000/XP, Version 1.8 (1.8.8.7)</p>
-# <p>ArGoSoft Mail Server Pro for WinNT/2000, Version 1.70 (1.7.0.3)</p>
+# Version detection # HTTP Header Server text
 def passive
-        m=[]
+	m=[]
 
-        if @body =~ /<p[\ class=divhidden]*>ArGoSoft Mail Server Pro for WinNT\/2000[\/XP]*, Version [\d\.]+ \([\d\.]+\)<\/p>/
-		v=@body.scan(/<p[\ class=divhidden]*>ArGoSoft Mail Server Pro for WinNT\/2000[\/XP]*, Version [\d\.]+ \(([\d\.]+)\)<\/p>/)[0].to_s
-		m << {:name=>"default version text", :version=>v }
-        end
+	server=@meta["server"] if @meta.keys.include?("server")
+	server=@meta["Server"] if @meta.keys.include?("Server")
+	if server =~ /ArGoSoft Mail Server Pro for WinNT\/2000[\/XP]*, Version [\d\.]+ \(([\d\.]+)\)/
+		version=server.scan(/ArGoSoft Mail Server Pro for WinNT\/2000[\/XP]*, Version [\d\.]+ \(([\d\.]+)\)/)[0][0]
+		m << {:version=>version}
+	end
 
 	m
 
