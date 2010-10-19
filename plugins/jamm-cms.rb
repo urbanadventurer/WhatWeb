@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Fixed regex and ghdb matches
+##
 Plugin.define "JAMM-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
-version "0.1"
+version "0.2"
 description "JAMM CMS - homepage: http://www.branchen-plz.de/"
 
 # 6 results for "powered by JAMM CMS" @ 2010-08-08 
@@ -20,11 +23,16 @@ www.mondzorgvaals.nl/cms/
 
 matches [
 
-{ :ghdb=>"powered by JAMM CMS", :certainty=>75 },
-{ :regexp=>/<a href="http:\/\/jammcms.jamm-media.de?ref=[0-9]*"[\s]*[target="_blank"]*>powered by JAMM CMS/ },
-{ :text=>"  <META NAME='Author' CONTENT='JAMM MEDIA Technologies Team 2005'>" },
+# Powered by text
+{ :ghdb=>'"powered by JAMM CMS"', :certainty=>75 },
+{ :regexp=>/<a[^>]*href="http:\/\/jammcms.jamm-media.de?ref=[0-9]*"[^>]*>powered by JAMM CMS/i },
+
+# Meta author
+{ :text=>"<META NAME='Author' CONTENT='JAMM MEDIA Technologies Team 2005'>" },
+{ :text=>"<META NAME=   'author' CONTENT='JAMM MEDIA Team 2001'>" },
+
+# HTML comment
 { :text=>'<!--- Content Management System JAMM CMS OWEN - Visit www.jamm-media.de for more informations -->' },
-{ :text=>"<META NAME=	'author' CONTENT='JAMM MEDIA Team 2001'>" },
 
 ]
 
