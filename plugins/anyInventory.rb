@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated version detection
+##
 Plugin.define "anyInventory" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
-version "0.1"
+version "0.2"
 description "anyInventory, the most flexible and powerful web-based inventory system - homepage: http://anyinventory.sourceforge.net/"
 
 # 51 results for "anyInventory, the most flexible and powerful web-based inventory system" @ 2010-07-25
@@ -34,25 +37,17 @@ www.napalmmotorsport.com/showroom/
 
 matches [
 
+# Default title
 { :text=>'		<title>anyInventory: Top</title>' },
 
+# Default HTML
 { :regexp=>/					 you have inventoried <b>[0-9]*<\/b>  items with <a href="http:\/\/anyinventory.sourceforge.net\/">anyInventory, the most flexible and powerful web-based inventory system<\/a>/ },
 
-]
-
+# Version detection # default whitespace and version
 # Tested versions: 1.9.1 / 1.9.2 / 2.0
-def passive
-        m=[]
+{ :version=>/								anyInventory ([\d\.]+)/, :version_regexp_offset=>0 },
 
-        if @body =~ /								anyInventory [\d\.]+/
-                version=@body.scan(/								anyInventory ([\d\.]+)/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
+]
 
 end
 
