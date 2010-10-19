@@ -74,12 +74,10 @@ begin
 	require 'rubygems' # rubygems is optional
 	if Gem.available?('mongo') # this is much faster
 		require 'mongo'
-		puts "we loaded mongo"
 	end
 rescue LoadError
 	# that failed.. no big deal
 end
-
 
 if RUBY_VERSION =~ /^1.9/
         require 'digest/md5'
