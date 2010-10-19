@@ -4,11 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated matches and removed ghdb match
+##
 Plugin.define "Zen-Cart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
-version "0.1"
+version "0.2"
 description "Zen Cart. truly is the art of e-commerce; free, user-friendly, open source shopping cart software. - homepage:http://www.zen-cart.com/"
-# find more shops here: http://www.zen-cart.com/index.php?main_page=showcase
+
+# About 31,400,000 results for +intitle:"Powered by Zen Cart!, The Art of E-commerce" @ 2010-06-01
+# Find more shops here: http://www.zen-cart.com/index.php?main_page=showcase
 examples %w|
 http://demo.opensourcecms.com/zencart/
 http://www.livedemo.com/scripts/zencart/
@@ -44,27 +49,19 @@ http://www.shoeskingdom.info/
 
 matches [
 
-# About 31,400,000 results @ 2010-06-01
-{:name=>'GHDB: +intitle:"Powered by Zen Cart!, The Art of E-commerce"',
-:certainty=>75,
-:ghdb=>'+intitle:"Powered by Zen Cart!, The Art of E-commerce"'
-},
+# About 31,400,000 results for +intitle:"Powered by Zen Cart!, The Art of E-commerce" @ 2010-06-01
 
-{:name=>"default title", 
-:text=>"Powered by Zen Cart!, The Art of E-commerce</title>" },
+# Default title
+{ :text=>"Powered by Zen Cart!, The Art of E-commerce</title>" },
 
 # According to the Zen Cart rules: "You must have the reciprocal link - Powered by Zen Cart in the footer."  
-{:name=>"powered by text",
-:text=>'Powered by <a href="http://www.zen-cart.com" target="_blank">Zen Cart</a>'
-},
+{ :text=>'Powered by <a href="http://www.zen-cart.com" target="_blank">Zen Cart</a>' },
 
-{:name=>"meta authors",
-:text=>'<meta name="authors" content="The Zen Cart&trade; Team and others'
-},
+# Default meta authors
+{ :text=>'<meta name="authors" content="The Zen Cart&trade; Team and others' },
 
-{:name=>"meta generator",
-:text=>'<meta name="generator" content="shopping cart program by Zen Cart&trade;, http://www.zen-cart.com'
-}
+# Meta generator
+{ :text=>'<meta name="generator" content="shopping cart program by Zen Cart&trade;, http://www.zen-cart.com' },
 
 ]
 
