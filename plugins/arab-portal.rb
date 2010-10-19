@@ -4,10 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated version detection and regex
+##
 Plugin.define "Arab-Portal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
-version "0.1"
-description ""
+version "0.2"
+description "Arab-Portal"
 
 # 308 results for "powered by Arab Portal" -exploit @ 2010-07-25
 examples %w|
@@ -113,29 +116,16 @@ jawatha.edu.sa
 
 matches [
 
-{ :regexp=>/<META NAME="COPYRIGHT" CONTENT="Copyright[^\ ]* by ArabPortal"/ },
+# Meta copyright
+{ :regexp=>/<META NAME="COPYRIGHT" CONTENT="Copyright[^\>]*by Arab[\s]*Portal"/ },
 
-{ :text=>'        <META NAME="COPYRIGHT" CONTENT="Copyright (c) by Arab Portal">' },
+# Version detection # Meta Copyright
+{ :version=>/<META content="[^>]*Powered by: Arab Portal v([\d\.]+), Copyright[^>]*" name="description">/, :version_regexp_offset=>0 },
+
+# Version detection # Powered by text
+{ :version=>/<center><font size=2>Powered by: Arab[\s]*Portal v([\d\.]+)[\s]*, Copyright/, :version_regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /<META content="[^>]*Powered by: Arab Portal v[\d\.]+, Copyright[^>]*" name="description">/
-                version=@body.scan(/<META content="[^>]*Powered by: Arab Portal v([\d\.]+), Copyright[^>]*" name="description">/)[0][0]
-                m << {:version=>version }
-        end
-
-        if @body =~ /<center><font size=2>Powered by: Arab Portal v[\d\.]+ , Copyright/
-                version=@body.scan(/<center><font size=2>Powered by: Arab Portal v([\d\.]+) , Copyright/)[0][0]
-                m << {:version=>version }
-        end
-
-        m
-
-end
-
 
 end
 
