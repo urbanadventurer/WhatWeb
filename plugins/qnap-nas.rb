@@ -4,10 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Tested on TS Models:
+# TS-109 PRO, TS-109 PRO II, TS-119, TS-209 PRO, TS-209 PRO II,
+# TS-219, TS-239, TS-259, TS-409, TS-410U, TS-419P, TS-509, TS-559, TS-639
+##
+# Version 0.2 #
+# Added model, firmware and module extraction support for /cgi-bin/authLogin.cgi
+## 
 Plugin.define "QNAP-NAS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
 version "0.1"
 description "QNAP provides a series of network attached storage (NAS) products - homepage:http://www.qnap.com/"
+
+# 3,990 results for inurl:Qmultimedia +thumb_index @ 2010-06-01
 examples %w|
 http://www.guillerault.eu:8080/cgi-bin/
 http://119.247.13.81:8080/cgi-bin/
@@ -81,52 +90,73 @@ http://yaohaiping.net:8080/cgi-bin/
 
 matches [
 
-# 3,990 results @ 2010-06-01
-{:name=>"GHDB: inurl:Qmultimedia +thumb_index",
-:certainty=>75,
-:ghdb=>"inurl:Qmultimedia +thumb_index"
-}, 
+# Multimedia Station URL pattern
+{ :ghdb=>"inurl:Qmultimedia +thumb_index", :modules=>"Multimedia Station" },
 
-{:name=>"Photo Station module title", 
-:text=>"<title>QNAP Photo Station</title>" },
+# Photo Station module title
+{ :text=>"<title>QNAP Photo Station</title>", :modules=>"Photo Station" },
 
-{:name=>"Download Station module title", 
-:text=>"<title>QNAP Download Station</title>" },
+# Download Station module title
+{ :text=>"<title>QNAP Download Station</title>", :modules=>"Download Station" },
 
-{:name=>"Qmultimedia module title",
-:text=>"<TITLE>QNAP Multimedia Station (Photo Album)</TITLE>" },
+# Qmultimedia module title
+{ :text=>"<TITLE>QNAP Multimedia Station (Photo Album)</TITLE>", :modules=>"Multimedia Station" },
 
-{:name=>"Qmultimedia module title",
-:certainty=>75,
-:text=>"<TITLE>Multimedia Station</TITLE>" },
+# Qmultimedia module title
+{ :text=>"<TITLE>Multimedia Station</TITLE>", :modules=>"Multimedia Station", :certainty=>75 },
 
-{:name=>"Qmultimedia module", 
-:certainty=>75,
-:text=>'/Qmultimedia/cgi-bin/thumb_index.cgi?folder=/Qmultimedia'
-},
+# Default JavaScript
+{ :text=>'NavPage("http://"+ location_hostname_for_ipv6(location.hostname) +":"+ qweb_port +"/", 0);' },
 
-{:name=>"file manager module", 
-:text=>"/cgi-bin/filemanager/filemanager.cgi?folder=/home/httpd/cgi-bin/filemanager/share" 
-},
-
-# fairly specific directory structure - no false positives on google
-{:name=>"loading image",
-:text=>"/ajax_obj/images/qnap_loading.gif"
-},
+# Default logo HTML
+{ :text=>'<a href="http://www.qnap.com"><img src="/ajax_obj/images/qnap_logo_w.gif" alt="QNAP Turbo NAS" title="QNAP Turbo NAS"' },
 
 # QNAP NAS - not TS Series
-{:name=>"QNAP NAS (not TS Series) text",
-:text=>'<table width="100%" border="0" background="/v3_menu/images/admin_header.jpg" cellpadding="0" cellspacing="0" class="12-blue">'
-}
+{ :text=>'<table width="100%" border="0" background="/v3_menu/images/admin_header.jpg" cellpadding="0" cellspacing="0" class="12-blue">', :model=>"Uknown (not TS Series)" },
+
+# Login page # /cgi-bin/html/login.html # Extract modules
+{ :text=>'<img id="img_webserver" src="/ajax_obj/images/login_main_2.jpg" longdesc="javascript:onQuickLinkChange(2);" alt="Web Server" />', :modules=>"QWeb Server" },
+{ :text=>'<img id="img_multimedia" src="/ajax_obj/images/login_main_3.jpg" longdesc="javascript:onQuickLinkChange(3);" alt="Multimedia Station" />', :modules=>"Multimedia Station" },
+{ :text=>'<img id="img_download" src="/ajax_obj/images/login_main_4.jpg" longdesc="javascript:onQuickLinkChange(4);" alt="Download Station" />', :modules=>"Download Station" },
+{ :text=>'<img id="img_webfile" src="/ajax_obj/images/login_main_5.jpg" longdesc="javascript:onQuickLinkChange(5);" alt="Web File Manager" />', :modules=>"Web File Manager" },
+{ :text=>'<img id="img_surveillance" src="/ajax_obj/images/login_main_6.jpg" longdesc="javascript:onQuickLinkChange(6);" alt="Surveillance Station" />', :modules=>"Surveillance Station" },
 
 ]
 
-# An aggressive plugin can use /cgi-bin/authLogin.cgi (in XML format) to find:
-# - model, firmware and software versions
-# - enabled services and ports 
-# Tested on TS Series:
-# TS-109 PRO, TS-109 PRO II, TS-119, TS-209 PRO, TS-209 PRO II,
-# TS-219, TS-239, TS-259, TS-409, TS-410U, TS-419P, TS-509, TS-559, TS-639
+# Extract details from /cgi-bin/authLogin.cgi (in XML format)
+def passive
+	m=[]
+
+	if @body =~ /<QDocRoot version="[\d\.]+">/
+
+		# Get firmware version and build
+		if @body =~ /<version><!\[CDATA\[([^\]]+)\]\]><\/version>/ and @body =~ /<build><!\[CDATA\[([^\]]+)\]\]><\/build>/
+			firmware=@body.scan(/<version><!\[CDATA\[([^\]]+)\]\]><\/version>/)[0][0]+" build "+@body.scan(/<build><!\[CDATA\[([^\]]+)\]\]><\/build>/)[0][0]
+			m << { :firmware=>firmware }
+		end	
+
+		# Get model
+		if @body =~ /<internalModelName><!\[CDATA\[([^\]]+)\]\]><\/internalModelName>/
+			model=@body.scan(/<internalModelName><!\[CDATA\[([^\]]+)\]\]><\/internalModelName>/)[0][0]
+			m << { :model=>model }
+		end
+
+		# Get enabled modules
+		if @body =~ /<webFSEnabled><!\[CDATA\[1\]\]><\/webFSEnabled>/ then m << { :modules=>"WebFS" } end
+		if @body =~ /<QMultimediaEnabled><!\[CDATA\[1\]\]><\/QMultimediaEnabled>/ then m << { :modules=>"Multimedia Station" } end
+		if @body =~ /<MSV2Supported><!\[CDATA\[1\]\]><\/MSV2Supported>/ then m << { :modules=>"MSV2" } end
+		if @body =~ /<MSV2WebEnabled><!\[CDATA\[1\]\]><\/MSV2WebEnabled>/ then m << { :modules=>"MSV2 Web" } end
+		if @body =~ /<QDownloadEnabled><!\[CDATA\[1\]\]><\/QDownloadEnabled>/ then m << { :modules=>"Download Station" } end
+		if @body =~ /<QWebEnabled><!\[CDATA\[1\]\]><\/QWebEnabled>/ then m << { :modules=>"QWeb Server" } end
+		if @body =~ /<QWebSSLEnabled><!\[CDATA\[1\]\]><\/QWebSSLEnabled>/ then m << { :modules=>"Qweb Server SSL" } end
+		if @body =~ /<NVREnabled><!\[CDATA\[1\]\]><\/NVREnabled>/ then m << { :modules=>"NVR" } end
+		if @body =~ /<WFM2><!\[CDATA\[1\]\]><\/WFM2>/ then m << { :modules=>"Web File Manager 2" } end
+
+	end
+
+	m
+
+end
 
 end
 
