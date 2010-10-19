@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHPEasyData" do
+# Version 0.2 #
+# Updated regex and version detection
+##
+Plugin.define "PHPEasyDataasdf" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-16
-version "0.1"
+version "0.2"
 description "homepage: http://www.phpeasydata.com/"
 
 # 12 results for "powered by PHPEasyData" @ 2010-08-15
@@ -28,34 +31,11 @@ matches [
 { :text=>"<div id='phpeasydata_container'  >" },
 { :text=>'  <head><title>PhpEasyData login page</title>' },
 
+# Version detection # Powered by text
+{ :version=/<a[^>]*href="http:\/\/www.(phpeasydata.com\/|freewebmaster\-scripts.com\/phpeasydata)[^>]*>PHPEasyData ([^<]+)<\/a>/, :version_regexp_offset=>0 },
+{ :version=@body.scan(/n main de pages dynamiques. " target="_blank"[\s]*>PhpEasyData([^<]+)<\/a><\/b>/, :version_regexp_offset=>0 },
+
 ]
-
-# Version detection using powered by footer text
-def passive
-        m=[]
-
-        if @body =~ /Powered by <b><a  class='copy' href="http:\/\/www.[phpeasydata.com\/|freewebmaster\-scripts.com\/phpeasydata]+" title="Script PHP/
-
-		if @body =~ /n main de pages dynamiques. " target="_blank" >PhpEasyData  [\d\.]+  <\/a><\/b>/
-                	version=@body.scan(/n main de pages dynamiques. " target="_blank" >PhpEasyData  ([\d\.]+)  <\/a><\/b>/)[0][0]
-                	m << {:version=>version}
-        	end
-
-	end
-
-	if @body =~ /Powered by [<strong><b>]+<a  class='copy' title="Script PHP/
-
-		if @body =~/" href="http:\/\/www.[phpeasydata.com\/|freewebmaster\-scripts.com\/phpeasydata]+[\/]*" target="_blank" >PHPEasyData   [Pro]* ([\d\.]+)<\/a>/
-			version=@body.scan(/" href="http:\/\/www.[phpeasydata.com\/|freewebmaster\-scripts.com\/phpeasydata]+[\/]*" target="_blank" >PHPEasyData   [Pro]* ([\d\.]+)<\/a>/)[0][0]
-			m << {:version=>version}
-		end
-
-	end
-
-        m
-
-end
-
 
 end
 
