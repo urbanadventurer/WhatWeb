@@ -46,6 +46,7 @@ require 'open-uri'
 require 'cgi'
 require 'thread'
 
+
 # load resolv-replace to see whatweb on speed
 begin
 	require 'rubygems' # rubygems is optional
@@ -57,11 +58,23 @@ rescue LoadError
 	# that failed.. no big deal
 end
 
+
 # load JSON if it's available. Is this Ruby 1.9 JSON safe? who knows?
 begin
 	require 'rubygems' # rubygems is optional
 	if Gem.available?('json') # this is much faster
 		require 'json'
+	end
+rescue LoadError
+	# that failed.. no big deal
+end
+
+# load MongoDB if it's available. Is this Ruby 1.9 JSON safe? who knows?
+begin
+	require 'rubygems' # rubygems is optional
+	if Gem.available?('mongo') # this is much faster
+		require 'mongo'
+		puts "we loaded mongo"
 	end
 rescue LoadError
 	# that failed.. no big deal
@@ -84,6 +97,8 @@ require 'lib/output.rb'
 require 'lib/colour.rb'
 require 'lib/anemone/anemone.rb'
 require 'tempfile'
+
+
 
 #unless opts.size
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
@@ -117,6 +132,8 @@ $ANEMONE_SKIP_EXTENSIONS = %w|zip gz tar jpg exe png pdf|
 $ANEMONE_SKIP_REGEX=nil
 $WAIT=nil
 $OUTPUT_ERRORS=nil
+
+
 
 
 
