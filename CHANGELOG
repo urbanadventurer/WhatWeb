@@ -28,6 +28,8 @@ Version 0.4.6 Released ? 2010
 * Changed error message for non resolving hostnames from "undefined method `closed?' for nil:NilClass" to "Cannot resolve hostname"
 * Added ascii whatweb logo
 * All logs are now flushed/synced
+* Moved Plugin class into lib/plugins.rb
+* Added startup and shutdown for plugins
 
 
 Version 0.4.5 Released August 17th 2010

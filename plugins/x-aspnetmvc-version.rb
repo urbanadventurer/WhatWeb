@@ -5,10 +5,12 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
+# Version 0.2 by Andrew Horton
+# Removed unneeded code, fixed bugs and simplified
 
 Plugin.define "X-ASPNetMvc-Version" do
 author "Aung Khant <http://yehg.net>"
-version "0.1"
+version "0.2"
 description "HTTP header, x-aspnetmvc-version"
 
 examples=%w|
