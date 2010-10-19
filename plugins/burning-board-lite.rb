@@ -4,11 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated matches and version detection
+##
 Plugin.define "Burning-Board-Lite" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
-version "0.1"
+version "0.2"
 description "Burning Board 3 is the modern, secure and user friendly solution for your discussion board! - homepage: http://www.woltlab.com/products/burning_board/index_en.php"
 
+# 309 results for "Powered by Burning Board" -exploit -dork -johnny' @ 2010-06-26
 examples %w|
 demo.woltlab.com
 board.devision-music.com
@@ -56,42 +60,19 @@ romnation.net/forums/
 
 matches [
 
-# 309 results @ 2010-06-26
-{:name=>'GHDB: "Powered by Burning Board" -exploit -dork -johnny',
-:certainty=>75,
-:ghdb=>'"Powered by Burning Board" -exploit -dork -johnny'
-},
+# Powered by text
+{ :regexp=>/Powered by <a href="http:\/\/www.woltlab.de[^>]*>Burning Board[\s]*<\/a>/ },
 
-{:name=>'powered by text',
-:certainty=>100,
-:regexp=>/Powered by <a href="http:\/\/www.woltlab.de" target="_blank">Burning Board[\s]*<\/a>/
-}
+# Version Detection # 1.x # Powered by text
+{ :version=>/Powered by <b><a href="http:\/\/www.woltlab.de" target="_blank">Burning Board ([^<]+)<\/a><\/b>/, :version_regexp_offset=>0 },
+
+# Version Detection # 2.x # Powered by text
+{ :version=>/Powered by <b>Burning Board ([\d\.]+)<\/b>/, :version_regexp_offset=>0 },
+
+# Version Detection # 3.x # Copyright text
+{ :version=>/<p class="copyright"><a href="http:\/\/www.woltlab.com">Forum Software: <strong>Burning Board&reg; ([\d\.]*)<\/strong>, developed by <strong>WoltLab&reg; GmbH<\/strong><\/a><\/p>/, :version_regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /Powered by <b><a href="http:\/\/www.woltlab.de" target="_blank">Burning Board [Lite\ ]*[\d\.a-zA-Z]+<\/a><\/b>/
-                version=@body.scan(/Powered by <b><a href="http:\/\/www.woltlab.de" target="_blank">Burning Board [Lite\ ]*([\d\.a-zA-Z]+)<\/a><\/b>/)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text v1",:version=>version}
-        end
-
-        if @body =~ /Powered by <b>Burning Board [\d\.]+<\/b> /
-                version=@body.scan(/Powered by <b>Burning Board ([\d\.]+)<\/b> /)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text v2",:version=>version}
-        end
-
-        if @body =~ /<p class="copyright"><a href="http:\/\/www.woltlab.com">Forum Software: <strong>Burning Board&reg; [\d\.]*<\/strong>, developed by <strong>WoltLab&reg; GmbH<\/strong><\/a><\/p>/
-                version=@body.scan(/<p class="copyright"><a href="http:\/\/www.woltlab.com">Forum Software: <strong>Burning Board&reg; ([\d\.]*)<\/strong>, developed by <strong>WoltLab&reg; GmbH<\/strong><\/a><\/p>/)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text v3",:version=>version}
-        end
-
-
-
-        m
-end
-
 
 end
 
