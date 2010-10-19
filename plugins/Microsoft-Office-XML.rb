@@ -111,7 +111,7 @@ def passive
 		# Get company
 		if @body =~ /<Company>([^<]+)<\/Company>/
 			accounts=@body.scan(/<Company>([^<]+)<\/Company>/)[0][0]
-			m << {:accounts=>accounts}
+			m << {:accounts=>"Company:"+accounts}
 		end
 
 		# Get version
