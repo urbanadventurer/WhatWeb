@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated regex
+##
 Plugin.define "ANECMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15
-version "0.1"
-description "cms - homepage: http://anecms.com/"
+version "0.2"
+description "ANECMS - homepage: http://anecms.com/"
+
+# 11 results for "powered by anecms" @ 2010-06-15
 examples %w|
 anecms.com
 demo.anecms.com
@@ -18,23 +23,15 @@ girolaghiamo.delta-support.ch
 
 matches [
 
-# 11 results @ 2010-06-15
-{:name=>'GHDB: "powered by anecms"',
-:certainty=>75,
-:ghdb=>'"powered by anecms"'
-},
+# Default meta author
+{ :text=>'<meta name="Author" content="Erwin Aligam - ealigam@gmail.com" />' },
 
-{:name=>'default meta author',
-:text=>'<meta name="Author" content="Erwin Aligam - ealigam@gmail.com" />'
-},
+# Powered by text
+{ :ghdb=>'"powered by anecms"', :certainty=>75 },
+{ :regexp=>/&copy; [\d]{4} <strong><a href="http:\/\/anecms.com[^\>]*>anecms.com<\/a><\/strong>/ },
 
-{:name=>'powered by text',
-:regexp=>/&copy; [\d]{4} <strong><a href="http:\/\/anecms.com">anecms.com<\/a><\/strong> /
-},
-
-{:name=>'default title',
-:regexp=>/<title>[a-zA-Z0-9_\s\.\-\+\=\\\/\'\:\"\;]* - Powered By ANECMS<\/title>/
-}
+# Default title
+{ :regexp=>/<title>[^<^\-]+- Powered By ANECMS<\/title>/ },
 
 ]
 
