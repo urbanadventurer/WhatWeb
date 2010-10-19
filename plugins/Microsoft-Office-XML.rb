@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated regex
+##
 Plugin.define "Microsoft-Office-XML" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
-version "0.1"
+version "0.2"
 description "This module detects instances of Microsoft Office documents saved as HTML and attempts to extract the user name, company name and office version. - homepage: http://en.wikipedia.org/wiki/Microsoft_Office_XML_formats"
 
 # About 123,000 results for <o:DocumentProperties> <o:Template> @ 2010-10-14
@@ -27,6 +30,8 @@ www.newvisiontn.org/Modified_News_letter.mht
 www.p12.nysed.gov/specialed/nyssb/nimas/NIMAS_for_TVIs.mht
 www.raymondchamber.com
 www.staklofoundation.com/torts/Torts-Oct-3.mht
+www.kyzmet.kz/usersfiles/3476.05.2010.xml
+www.unicusdata.com/download/DefaultTemplate.docx.AmpTemplate
 |
 
 # Extract version, usernames and company
@@ -85,6 +90,34 @@ def passive
 		if @body =~ /<o:LastAuthor>([^<]+)<\/o:LastAuthor>/
 			accounts=@body.scan(/<o:LastAuthor>([^<]+)<\/o:LastAuthor>/)[0][0]
 			m << {:accounts=>accounts}
+		end
+
+	end
+
+	# Core document properties
+	if @body =~ /<cp:coreProperties/
+
+		# Get usernames
+		if @body =~ /<dc:creator>([^<]+)<\/creator>/
+			accounts=@body.scan(/<dc:creator>([^<]+)<\/creator>/)[0][0]
+			m << {:accounts=>accounts}
+		end
+
+		if @body =~ /<dc:lastModifiedBy>([^<]+)<\/creator>/
+			accounts=@body.scan(/<dc:lastModifiedBy>([^<]+)<\/creator>/)[0][0]
+			m << {:accounts=>accounts}
+		end
+
+		# Get company
+		if @body =~ /<Company>([^<]+)<\/Company>/
+			accounts=@body.scan(/<Company>([^<]+)<\/Company>/)[0][0]
+			m << {:accounts=>accounts}
+		end
+
+		# Get version
+		if @body =~ /<AppVersion>([^<]+)<\/AppVersion>/
+			version=@body.scan(/<AppVersion>([^<]+)<\/AppVersion>/)[0][0]
+			m << {:version=>version}
 		end
 
 	end
