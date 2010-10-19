@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated matches, removed certainty and updated version detection
+##
 Plugin.define "boastMachine" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
-version "0.1"
-description "blog - homepage: http://boastology.com/"
+version "0.2"
+description "boastMachine blog - homepage: http://boastology.com/"
+
+# 217 results for "powered by boastMachine" +"Recent posts" -exploit' @ 2010-06-16
 examples %w|
 www.coolzen.com
 www.askdatabaseblogs.com
@@ -35,35 +40,16 @@ www.cycleanywhere.com/blog/
 
 matches [
 
-# 217 results @ 2010-06-16
-{:name=>'GHDB: "powered by boastMachine" +"Recent posts" -exploit',
-:certainty=>75,
-:ghdb=>'"powered by boastMachine" +"Recent posts" -exploit'
-},
+# Powered by text
+{ :ghdb=>'"powered by boastMachine" +"Recent posts"', :certainty=>75 },
 
-{:name=>"powered by text #1",
-:certainty=>100,
-:regexp=>/Powered by <a href="http:\/\/boastology.com">boastMachine v[\d\.]+<\/a>/
-},
+# Version detection # Powered by text
+{ :version=>/Powered by <a href="http:\/\/boastology.com">boastMachine v([\d\.]+)<\/a>/, :version_regexp_offset=>0 },
 
-{:name=>"powered by text #2",
-:certainty=>100,
-:regexp=>/<a href="http:\/\/boastology.com"><img src="http:\/\/[a-zA-Z0-9\.\-\+\'\"\/_]*" alt="Powered by boastMachine" \/><\/a>/
-},
-
+# Default logo HTML
+{ :regexp=>/<a href="http:\/\/boastology.com"><img src="http:\/\/[^>]*alt="Powered by boastMachine" \/><\/a>/ },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /Powered by <a href="http:\/\/boastology.com">boastMachine v[\d\.]+<\/a>/
-                version=@body.scan(/Powered by <a href="http:\/\/boastology.com">boastMachine v([\d\.]+)<\/a>/)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text",:version=>version}
-        end
-
-        m
-end
 
 end
 
