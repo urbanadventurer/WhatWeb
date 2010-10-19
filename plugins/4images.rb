@@ -26,25 +26,13 @@ www.voreart.com/vorevideo/
 
 matches [
 
-# Powered by text
-{ :regexp=>/Copyright &copy; 2002-[0-9]{4} <a href="http:\/\/www.4homepages.de[\/]*" target="_blank">4homepages.de<\/a>/ },
+# Copyright text
+{ :regexp=>/Copyright &copy; 2002-[0-9]{4} <a href="http:\/\/www.4homepages.de[\>]*>4homepages.de<\/a>/ },
+
+# Version detection # Powered by text
+{ :version=>/Powered by <b>4images<\/b> ([\d\.]+)/, :version_regexp_offset=>0 },
 
 ]
-
-# Passive version detection
-def passive
-        m=[]
-
-	# Powered by text
-        if @body =~ /Powered by <b>4images<\/b> ([\d\.]+)/
-                version=@body.scan(/Powered by <b>4images<\/b> ([\d\.]+)/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
