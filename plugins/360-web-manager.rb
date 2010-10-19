@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated regex and version detection
+##
 Plugin.define "360-Web-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
-version "0.1"
-description "- homepage: http://www.360webmanager.com"
+version "0.2"
+description "360-Web-Manager - homepage: http://www.360webmanager.com"
+
+# About 36,800 results for "powered by 360 Web Manager" @ 2010-06-12
 examples %w|
 www.360webmanager.com/index.php
 www.360web.com.ar/index.php
@@ -32,31 +37,16 @@ www.kalmada.com.ar/index1.php
 
 matches [
 
-# About 36,800 results @ 2010-06-12
-{:name=>'GHDB: "powered by 360 Web Manager"',
-:certainty=>75,
-:ghdb=>'"powered by 360 Web Manager"'
-},
+# Powered by text
+{ :ghdb=>'"powered by 360 Web Manager"', :certainty=>75 },
 
-# catch redirect pages 
-{:name=>'default redirect title',
-:certainty=>75,
-:regexp=>/360WebManager Software :: administrador contenidos web/
-}
+# Redirect page
+{ :regexp=>/360WebManager Software :: administrador contenidos web/, :certainty=>75 },
+
+# Version detection # Powered by text
+{ :version=>/<div align="center"><span class="copyr">Powered by <a href="http:\/\/www.360webmanager.com" target="_blank" class="copyrlink">360 Web Manager<\/a> ([\d\.]+)/, :version_regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /<div align="center"><span class="copyr">Powered by <a href="http:\/\/www.360webmanager.com" target="_blank" class="copyrlink">360 Web Manager<\/a> [\d\.]+/
-                version=@body.scan(/<div align="center"><span class="copyr">Powered by <a href="http:\/\/www.360webmanager.com" target="_blank" class="copyrlink">360 Web Manager<\/a> ([\d\.]+)/)[0][0]
-                m << {:name=>"powered by text",:version=>version}
-        end
-
-        m
-end
-
 
 end
 
