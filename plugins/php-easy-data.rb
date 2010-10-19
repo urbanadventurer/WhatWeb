@@ -7,7 +7,7 @@
 # Version 0.2 #
 # Updated regex and version detection
 ##
-Plugin.define "PHPEasyDataasdf" do
+Plugin.define "PHPEasyData" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-16
 version "0.2"
 description "homepage: http://www.phpeasydata.com/"
@@ -32,8 +32,8 @@ matches [
 { :text=>'  <head><title>PhpEasyData login page</title>' },
 
 # Version detection # Powered by text
-{ :version=/<a[^>]*href="http:\/\/www.(phpeasydata.com\/|freewebmaster\-scripts.com\/phpeasydata)[^>]*>PHPEasyData ([^<]+)<\/a>/, :version_regexp_offset=>0 },
-{ :version=@body.scan(/n main de pages dynamiques. " target="_blank"[\s]*>PhpEasyData([^<]+)<\/a><\/b>/, :version_regexp_offset=>0 },
+{ :version=>/<a[^>]*href="http:\/\/www.(phpeasydata.com|freewebmaster-scripts.com\/phpeasydata)[^>]*>PHPEasyData[\s]*([^<]+)<\/a>/, :version_regexp_offset=>0 },
+{ :version=>/n main de pages dynamiques. " target="_blank"[\s]*>PhpEasyData[\s]*([^<]+)<\/a><\/b>/, :version_regexp_offset=>0 },
 
 ]
 
