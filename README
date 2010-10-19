@@ -1,3 +1,14 @@
+
+.$$$     $.                                   .$$$     $.
+$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$.
+$ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
+$ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
+$. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
+$::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
+$;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
+$$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
+
+
 WhatWeb - Next generation web scanner.
 By urbanadventurer aka Andrew Horton from Security-Assessment.com
 Version : 0.4.6, Unreleased Development Version
@@ -7,7 +18,7 @@ License: GPLv2
 
 Identify content management systems (CMS), blogging platforms, stats/analytics packages, javascript libraries, servers and more. When you visit a website in your browser the transaction includes many unseen hints about how the webserver is set up and what software is delivering the webpage. Some of these hints are obvious, eg. "Powered by XYZ" and others are more subtle. WhatWeb recognises these cues and reports what it finds.
 
-WhatWeb has over 400 plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
+WhatWeb has over 500 plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
 
 There are both passive and aggressive plugins, passive plugins use information on the page, in cookies and in the URL to identify the system. A passive request is as light weight as a simple GET / HTTP/1.1 request. Aggressive plugins guess URLs and request more files. Plugins are easy to write, you don't need to know ruby to make them.
 
@@ -26,9 +37,8 @@ http://www.engadget.com/ [200] probably BlogSmithMedia, Cookies[GEO-202_160_48_2
 http://slashdot.org [200] X-Powered-By[Slash 2.005001], Google-Analytics[GA][32013], HTTPServer[Apache/1.3.41 (Unix) mod_perl/1.31-rc4], UncommonHeaders[x-fry,x-varnish,x-xrds-location,slash_log_data], Title[Slashdot - News for nerds, stuff that matters], Mailto[soulskillatslashdotdotorg], RSSFeed[//a.fsdn.com/sd/idlecore-tidied.css?T_2_5_0_303b], PasswordField[upasswd], Tag-Hash[b740b7b0bc46a2f3ff8813ef25a6c5b5], MD5[901702dbfe3f5f86ba4fcad7478b4587], Header-Hash[b7b9e14ea8fb33e711ac1562f91305a9], Footer-Hash[7fafeba5d1d7b9cee5387feed4bf8338]
 
 
-
-
 HELP
+
 WhatWeb - Next generation web scanner.
 Version 0.4.6 by Andrew Horton aka urbanadventurer from Security-Assessment.com
 Homepage: http://www.morningstarsecurity.com/research/whatweb
@@ -91,18 +101,20 @@ Usage: whatweb [options] <URLs>
 
 
 VERBOSE OUTPUT
+
 ./whatweb -v www.morningstarsecurity.com
 www.morningstarsecurity.com/ [200]
-http://www.morningstarsecurity.com [200] WordPress[3.0.1], Google-API[ajax/libs/jquery/1.3.2/jquery.min.js ], Google-Analytics[GA][791888], HTTPServer[Apache], UncommonHeaders[x-pingback], JQuery[1.4.2], Title[MorningStar Security], MetaGenerator[WordPress 3.0.1], RSSFeed[http://www.morningstarsecurity.com/wp-content/themes/pyrmont-v2-white/style.css], MD5[59f20aef7452702787fff7ec46733501], Tag-Hash[2e45809b1f8a1ecf782757d8dbafbb08], Header-Hash[dba021c0aa225c8eede02c7dcc45b0d8], Footer-Hash[d0efcc9da7c8c45eb1e2ac5b8d5b354e]
+http://www.morningstarsecurity.com [200] WordPress[3.0.1], Google-API[ajax/libs/jquery/1.3.2/jquery.min.js ], Google-Analytics[GA][791888], HTTPServer[Apache], UncommonHeaders[x-pingback], JQuery[1.4.2], Title[MorningStar Security], MetaGenerator[WordPress 3.0.1], Subdomains[www], RSS-Feed[/blog/feed], MD5[b73a610e7b145eba3cc5ba5db7432263], Tag-Hash[2e45809b1f8a1ecf782757d8dbafbb08], Header-Hash[dba021c0aa225c8eede02c7dcc45b0d8], Footer-Hash[d0efcc9da7c8c45eb1e2ac5b8d5b354e]
 Footer-Hash                    => hash (string: d0efcc9da7c8c45eb1e2ac5b8d5b354e)
 Google-API                     => google javascript API (version: ajax/libs/jquery/1.3.2/jquery.min.js )
 Google-Analytics               => pageTracker = ...UA-123-1231 (string: GA,accounts: 791888)
 HTTPServer                     => server string (string: Apache)
 Header-Hash                    => hash (string: dba021c0aa225c8eede02c7dcc45b0d8)
 JQuery                         => script (version: 1.4.2)
-MD5                            => md5 hash of html (string: 59f20aef7452702787fff7ec46733501)
+MD5                            => md5 hash of html (string: b73a610e7b145eba3cc5ba5db7432263)
 MetaGenerator                  => meta generator tag (string: WordPress 3.0.1)
-RSSFeed                        => rss link type, rss link (string: http://www.morningstarsecurity.com/wp-content/themes/pyrmont-v2-white/style.css)
+RSS-Feed                       =>  (version: /blog/feed)
+Subdomains                     =>  (version: www)
 Tag-Hash                       => tag pattern hash (string: 2e45809b1f8a1ecf782757d8dbafbb08)
 Title                          => page title (string: MorningStar Security)
 UncommonHeaders                => headers (string: x-pingback)
@@ -245,435 +257,515 @@ Matches are made with:
 	* and more...
 
 To list the plugins supported:
-	./whatweb -l
-	Plugins Loaded
-	------------------------------
-	1024-CMS,0.1
-	360-Web-Manager,0.1
-	4images,0.1
-	AChecker,0.1
-	ACollab,0.1
-	AContent,0.1
-	AMX-Mod-X,0.1
-	ANECMS,0.1
-	ASP-Nuke,0.3
-	ASPThai.Net-Webboard,0.1
-	ATutor,0.1
-	AV-Arcade,0.1
-	AVTech-Video-Web-Server,0.1
-	AWStats,0.1
-	Aardvark-Topsites-PHP,0.1
-	Acclipse,0.2
-	AdobeFlash,0.1
-	Advanced-Guestbook,0.3
-	Advanced-Image-Hosting-Script,0.1
-	AirvaeCommerce,0.1
-	Alcatel-Lucent-Omniswitch,0.1
-	All-in-one-SEO-Pack,0.1
-	Allinta-CMS,0.1
-	Amiro-CMS,0.1
-	Antiboard,0.1
-	Apache-Default,0.3
-	ArGoSoft-Mail-Server,0.1
-	Arab-Portal,0.1
-	ArticlePublisherPRO,0.1
-	Atmail-WebMail,0.1
-	AtomFeed,0.1
-	Atomic-Photo-Album,0.1
-	Axigen-Mail-Server,0.1
-	Axis-Network-Camera,0.1
-	BM-Classifieds,0.1
-	BXR,0.1
-	Barracuda-Spam-Firewall,0.1
-	Basilic,0.1
-	Battle-Blog,0.1
-	BeEF,0.1
-	Belkin-Modem,0.2
-	BinGoPHP-News,0.1
-	Bing-SearchEngine,0.1
-	Biromsoft-WebCam,0.1
-	BlogSmithMedia,0.2
-	Blogger,0.1
-	BlognPlus,0.1
-	BlueNet-Video-Server,0.1
-	BosClassifieds,0.1
-	Brother-Printer,0.1
-	Buddy-Zone,0.1
-	Burning-Board-Lite,0.1
-	BusinessSpace,0.1
-	CF-Image-Hosting-Script,0.1
-	CGI Backdoor,0.1
-	CGIProxy,0.1
-	CMS-WebManager-Pro,0.1
-	CMSQLite,0.1
-	CMScontrol,0.1
-	CMScout,0.1
-	CMSimple,0.1
-	CPanel,0.2
-	CS-Cart,0.1
-	CaLogic-Calendars,0.1
-	Calendarix,0.1
-	Campsite,0.1
-	Canon-Network-Camera,0.1
-	Cartweaver,0.1
-	CaupoShop-Classic,0.1
-	Cisco-VPN-3000-Concentrator,0.1
-	Citrix-Metaframe,0.2
-	ClanSphere,0.1
-	ClipShare,0.1
-	CodeIgniterProfiler,0.1
-	ColdFusion,0.1
-	Comersus,0.2
-	CommonSpot,0.1
-	Concrete5,0.3
-	Confluence,0.1
-	Connectix-Boards,0.1
-	Cookies,0.1
-	Coppermine,0.3
-	CruxCMS,0.1
-	CruxPA,0.1
-	CubeCart,0.1
-	CushyCMS,0.2
-	Custom-CMS,0.1
-	D-Link-Network-Camera,0.1
-	DMXReady,0.1
-	DT-Centrepiece,0.1
-	DUclassified,0.1
-	DUforum,0.1
-	DUgallery,0.1
-	Dell-Printer,0.1
-	DiBos,0.2
-	DiY-CMS,0.1
-	DiamondList,0.1
-	Diferior-CMS,0.1
-	DotCMS,0.2
-	DotNetNuke,0.4
-	Drupal,0.2
-	DublinCore,0.1
-	E-Xoopport,0.1
-	EDK,0.1
-	EMO-Realty-Manager,0.1
-	EZCMS,0.1
-	EarlyImpact-ProductCart,0.2
-	EazyCMS,0.1
-	Echo,0.2
-	Empire-CMS,0.1
-	Escenic,0.2
-	Esvon-Classifieds,0.1
-	Evo-Cam,0.1
-	ExpressionEngine,0.2
-	F3Site,0.1
-	FAQ-Manager,0.1
-	Favicon-DB,0.1
-	FestOS,0.1
-	Fidion-CMS,0.1
-	File-Upload-Manager,0.1
-	Flax-Article-Manager,0.1
-	FluentNET,0.1
-	FluxBB,0.3
-	Footer-Hash,0.2
-	Forest-Blog,0.1
-	FormMail,0.3
-	Free-Simple-Software,0.1
-	FrogCMS,0.3
-	GeekLog,0.1
-	GetSimple,0.1
-	GoAhead-Webs,0.2
-	Google-API,0.1
-	Google-Analytics,0.2
-	Google-Hack-Honeypot,0.1
-	Group-Office,0.1
-	GuppY,0.1
-	HP-LaserJet-Printer,0.1
-	HTML5,0.2
-	HTTPServer,0.2
-	Header-Hash,0.1
-	Horde-Application-Framework,0.1
-	Hunt-Electronics-CCTV,0.1
-	Hycus-CMS,0.1
-	IIS-SiteNotFound,0.2
-	IIS-UnderConstruction,0.2
-	IMGallery,0.1
-	IPCop-Firewall,0.1
-	IQeye-Netcam,0.1
-	ISPConfig,0.2
-	Index-Of,0.2
-	Intellinet-IP-Camera,0.1
-	Interspire-Shopping-Cart,0.1
-	InvisionPowerBoard,0.2
-	JAMM-CMS,0.1
-	JGS-Portal,0.1
-	JQuery,0.2
-	Jamroom,0.1
-	Jboss,0.1
-	Joomla,0.5
-	Kayako-SupportSuite,0.1
-	Kleeja,0.1
-	Kloxo Single Server,0.1
-	KnowledgeTree,0.1
-	Kontaktformular,0.1
-	Koobi,0.1
-	Liferay,0.1
-	Lightbox,0.2
-	Lime-Survey,0.1
-	Linksys-NAS,0.1
-	Linksys-Network-Camera,0.1
-	Linksys-USB-HDD,0.1
-	Linksys-Wireless-G-Camera,0.1
-	LocazoList-Classifieds,0.1
-	Loggix,0.1
-	Lucky-Tech-iGuard,0.1
-	MAXdev,0.1
-	MD5,0.2
-	Macs-CMS,0.1
-	MailForm-Plugin,0.1
-	MailSiteExpress,0.2
-	Mailman,0.1
-	Mailto,0.2
-	Mambo,0.2
-	MediaWiki,0.1
-	Meta-Refresh-Redirect,0.2
-	MetaGenerator,0.2
-	MetaPoweredBy,0.2
-	Microsoft-Sharepoint,0.1
-	MicrosoftODBCError,0.1
-	Mihalism-Multi-Host,0.1
-	MikroTik,0.3
-	MiniCWB,0.1
-	Minify,0.1
-	MnoGoSearch,0.2
-	Mobile-Website,0.1
-	Mobotix-Network-Camera,0.1
-	ModxCMS,0.2
-	Moodle,0.2
-	Motorito,0.1
-	MovableType,0.3
-	My-PHP-Indexer,0.1
-	My-WebCamXP-Server,0.1
-	MyHobbySite,0.1
-	MyPHP-Forum,0.1
-	MySource-Matrix,0.1
-	MyioSoft-Ajax-Portal,0.1
-	NetArtMedia-Real-Estate-Portal,0.1
-	NetBotz-Network-Monitoring-Device,0.1
-	Netious-CMS,0.1
-	Netref,0.1
-	Netsnap-Web-Camera,0.1
-	NovellGroupwise,0.2
-	Nukedit,0.1
-	ORCA-Platform,0.1
-	ORITE-301-Camera,0.1
-	OSCommerce,0.3
-	Oce,0.2
-	OkiPBX,0.2
-	Open-Auto-Classifieds,0.1
-	Open-Blog,0.1
-	Open-Freeway,0.1
-	Open-Source-Ticket-Request-System,0.1
-	OpenCms,0.1
-	OpenGraphProtocol,0.1
-	OpenID,0.1
-	OpenSearch,0.1
-	Orbis-CMS,0.1
-	OvBB,0.1
-	PG-Real-Estate-Solution,0.1
-	PG-Roomate-Finder-Solution,0.1
-	PHP-Fusion,0.1
-	PHP-Layers,0.1
-	PHP-Link-Directory,0.1
-	PHP-Live,0.1
-	PHP-Photo-Gallery,0.1
-	PHP-Shell,0.1
-	PHPCake,0.2
-	PHPDirector,0.1
-	PHPEasyData,0.1
-	PHPError,0.2
-	PHPFM,0.1
-	PHPNuke,0.3
-	PHPraid,0.1
-	PageUp-People,0.1
-	Panasonic-Network-Camera,0.1
-	Parked-Domain,0.1
-	PasswordField,0.1
-	Pc4Uploader,0.1
-	PhilBoard,0.1
-	PhotoPost-PHP,0.1
-	PhpMesFilms,0.1
-	Piwigo,0.1
-	Piwik,0.1
-	Pixel-Ads-Script,0.1
-	Pixelpost,0.1
-	Pixie,0.1
-	Plesk,0.2
-	Pligg-CMS,0.1
-	Plogger,0.1
-	Plone,0.2
-	PortalApp,0.1
-	PoweredBy,0.2
-	Pressflow,0.1
-	Pro-Chat-Rooms,0.1
-	Prototype,0.2
-	QNAP-NAS,0.1
-	Quantcast,0.1
-	Quick.Cms,0.1
-	RSSFeed,0.1
-	Realtor-747,0.1
-	RedirectLocation,0.2
-	RevSense,0.1
-	RoundCube,0.2
-	Rumba-CMS,0.1
-	RunCMS,0.1
-	S-CMS,0.1
-	SHOUTcast-Administrator,0.1
-	SMF,0.2
-	Saurus-CMS,0.1
-	SazCart,0.1
-	Scriptaculous,0.2
-	Seagull-PHP-Framework,0.1
-	SearchFitShoppingCart,0.3
-	Shaadi-Zone,0.1
-	SiemensSpeedStreamRouter,0.2
-	SilverStripe,0.2
-	SimpNews,0.1
-	Site-Sift,0.1
-	SkaLinks,0.1
-	SmodCMS,0.1
-	Snap-Appliance-Server,0.1
-	SnoGrafx,0.1
-	SnomPhone,0.2
-	Softbiz-Freelancers-Script,0.1
-	Softbiz-Online-Auctions-Script,0.1
-	Softbiz-Online-Classifieds,0.1
-	Sony-Network-Camera,0.1
-	Sony-Video-Network-Station,0.1
-	SquirrelMail,0.3
-	Star-Network,0.1
-	StarDot-NetCam,0.1
-	Stardot-Express,0.1
-	Streamline-PHP-Media-Server,0.1
-	Subdreamer-CMS,0.1
-	Subrion-CMS,0.1
-	Suspended-Webpage,0.1
-	Symphony,0.1
-	SyndeoCMS,0.1
-	System-Shop,0.1
-	TCMS,0.1
-	TWiki,0.1
-	Tag-Hash,0.2
-	TaskFreak,0.1
-	Team-Board,0.1
-	Textpattern,0.1
-	Textpattern-CMS,0.1
-	The-PHP-Real-Estate-Script,0.1
-	Title,0.2
-	TomatoCMS,0.1
-	TomatoCart,0.1
-	Tomcat,0.2
-	Toner-Cart,0.1
-	Toshiba-Network-Camera,0.1
-	ToshibaPrinter,0.2
-	Trac,0.1
-	Traidnt-UP,0.1
-	Tribiq,0.1
-	Turbo-Seek,0.1
-	TypePad,0.2
-	TypoLight,0.2
-	Ultrastats,0.1
-	Umbraco,0.1
-	UncommonHeaders,0.2
-	VBulletin,0.3
-	VP-ASP,0.3
-	VS-Panel,0.1
-	VSNSLemon,0.3
-	Veo-Observer,0.1
-	VideoShareEnterprise,0.1
-	Virtualmin,0.1
-	VisionGS-Webcam,0.1
-	Vulnerable-To-XSS,0.1
-	WWWBoard,0.1
-	Warcraft-3-Frozen-Throne-Mod-Config-File,0.1
-	Weatimages,0.1
-	Web-Calendar-System,0.1
-	Web-Data-Administrator,0.1
-	WebAsyst-Shop-Script,0.1
-	WebDVR,0.1
-	WebEye-Network-Camera,0.1
-	WebGuard,0.2
-	WebPress,0.1
-	Webmatic,0.1
-	WebspotBlogging,0.1
-	WhiteBoard,0.1
-	Whizzy-CMS,0.1
-	Winamp-Web-Interface,0.1
-	Windows-Internet-Printing,0.1
-	WindowsSBS,0.2
-	WoW-Raid-Manager,0.1
-	WordPress,0.3
-	WordPressSpamFree,0.2
-	WordpressSuperCache,0.3
-	X-ASPNetVersion,0.2
-	X-Powered-By,0.2
-	X7-Chat,0.1
-	XHP-CMS,0.1
-	XchangeBoard,0.1
-	Xerox-Printers,0.1
-	XtraBusinessHosting,0.2
-	Zen-Cart,0.1
-	Zeus-Cart,0.1
-	Zikula,0.1
-	Zomplog,0.1
-	Zoph,0.1
-	Zyxel-Vantage-Service-Gateway,0.1
-	anyInventory,0.1
-	ashnews,0.1
-	aspWebLinks,0.1
-	bSpeak,0.1
-	boastMachine,0.1
-	chillyCMS,0.1
-	coWiki,0.1
-	cpCommerce,0.1
-	eLitius,0.1
-	eMeeting-Online-Dating-Software,0.1
-	eSitesBuilder,0.1
-	eSyndiCat,0.1
-	easyLink-Web-Solutions,0.1
-	envezion~media,0.1
-	ezBOO-WebStats,0.1
-	i-Catcher-Console,0.1
-	iDVR,0.1
-	iGaming-CMS,0.1
-	iRealty,0.1
-	iScripts-CyberMatch,0.1
-	iScripts-EasySnaps,0.1
-	iScripts-MultiCart,0.1
-	iScripts-ReserveLogic,0.1
-	iScripts-SocialWare,0.1
-	ispCP-Omega,0.2
-	jobberBase,0.1
-	linkSpheric,0.1
-	mojoPortal,0.1
-	mySQL-Error,0.1
-	phPhotoAlbum,0.1
-	php-ping,0.1
-	phpBB,0.2
-	phpFreeChat,0.1
-	phpMyAdmin,0.1
-	phpMyTourney,0.1
-	phpPgAdmin,0.1
-	phpQuestionnaire,0.1
-	phpSysInfo,0.1
-	phpVID,0.1
-	phpinfo,0.1
-	phpwcms,0.1
-	sabros.us,0.1
-	samPHPweb,0.1
-	syntaxCMS,0.1
-	uPortal,0.1
-	vbPortal,0.1
-	wpQuiz,0.1
-	xGB,0.1
-	zFeeder,0.1
 
+$ ./whatweb -l
+
+Plugins Loaded
+------------------------------
+1024-CMS,0.1
+360-Web-Manager,0.1
+4images,0.1
+Aardvark-Topsites-PHP,0.1
+Acclipse,0.2
+AChecker,0.1
+ACollab,0.1
+AContent,0.1
+AdaptCMS,0.1
+Ad-Network-Script,0.1
+AdobeFlash,0.1
+Adobe-Flash,0.2
+Advanced-Guestbook,0.2
+Advanced-Image-Hosting-Script,0.1
+AirvaeCommerce,0.1
+Alcatel-Lucent-Omniswitch,0.1
+All-in-one-SEO-Pack,0.1
+Allinta-CMS,0.1
+AlstraSoft-AskMe,0.1
+Amiro-CMS,0.1
+AMX-Mod-X,0.1
+ANECMS,0.1
+Antiboard,0.1
+anyInventory,0.1
+Apache-Default,0.3
+Applet,0.1
+Arab-Portal,0.1
+ArGoSoft-Mail-Server,0.1
+ArticlePublisherPRO,0.1
+Aruba-Mobility-Controller-Config-File,0.1
+ashnews,0.1
+ASP.NET,0.1
+ASP-Nuke,0.2
+ASPThai.Net-Webboard,0.1
+aspWebLinks,0.1
+Atmail-WebMail,0.1
+AtomFeed,0.1
+Atomic-Photo-Album,0.1
+ATutor,0.1
+Auto-CMS,0.1
+AV-Arcade,0.1
+AVTech-Video-Web-Server,0.1
+AWStats,0.1
+Axigen-Mail-Server,0.1
+Axis-Network-Camera,0.1
+b2evolution,0.1
+Barracuda-Spam-Firewall,0.1
+Basilic,0.1
+Battle-Blog,0.1
+BeEF,0.1
+Belkin-Modem,0.2
+BinGoPHP-News,0.1
+Bing-SearchEngine,0.1
+Biromsoft-WebCam,0.1
+Blogger,0.1
+BlognPlus,0.1
+BlogSmithMedia,0.2
+BlueNet-Video-Server,0.1
+BM-Classifieds,0.1
+boastMachine,0.1
+BosClassifieds,0.1
+Brother-Printer,0.1
+BrowserCMS,0.1
+bSpeak,0.1
+Buddy-Zone,0.1
+Burning-Board-Lite,0.1
+BusinessSpace,0.1
+BXR,0.1
+c99-Shell,0.1
+Calendarix,0.1
+CaLogic-Calendars,0.1
+Campsite,0.1
+Canon-Network-Camera,0.1
+Cartweaver,0.1
+CaupoShop-Classic,0.1
+Censura,0.1
+CF-Image-Hosting-Script,0.1
+CGI Backdoor,0.1
+CGIProxy,0.1
+chillyCMS,0.1
+Cisco-VPN-3000-Concentrator,0.1
+Citrix-Metaframe,0.2
+ClanSphere,0.1
+ClipShare,0.1
+CMScontrol,0.1
+CMScout,0.1
+CMSimple,0.1
+CMSQLite,0.1
+CMS-WebManager-Pro,0.1
+CodeIgniter-PHP-Framework,0.1
+CodeIgniterProfiler,0.1
+ColdFusion,0.1
+Comersus,0.2
+CommonSpot,0.1
+Concrete5,0.2
+Confluence,0.1
+Connectix-Boards,0.1
+Cookies,0.1
+Coppermine,0.2
+coWiki,0.1
+CPanel,0.2
+cPassMan,0.1
+cpCommerce,0.1
+CruxCMS,0.1
+CruxPA,0.1
+CS-Cart,0.1
+CubeCart,0.1
+CushyCMS,0.2
+Custom-CMS,0.1
+Dell-Printer,0.1
+DiamondList,0.1
+DiBos,0.2
+Diferior-CMS,0.1
+Div-Span-Structure,0.1
+DiY-CMS,0.1
+D-Link-Network-Camera,0.1
+DMXReady,0.1
+Donations-Cloud,0.1
+DotCMS,0.2
+DotNetNuke,0.3
+Drupal,0.2
+DT-Centrepiece,0.1
+DublinCore,0.1
+DUclassified,0.1
+DUforum,0.1
+DUgallery,0.1
+EarlyImpact-ProductCart,0.2
+easyLink-Web-Solutions,0.1
+EazyCMS,0.1
+Echo,0.2
+EDK,0.1
+eLitius,0.1
+Elxis-CMS,0.1
+eMeeting-Online-Dating-Software,0.1
+EMO-Realty-Manager,0.1
+Empire-CMS,0.1
+envezion~media,0.1
+EPiServer,0.2
+Escenic,0.2
+eSitesBuilder,0.1
+Esvon-Classifieds,0.1
+eSyndiCat,0.1
+Evo-Cam,0.1
+E-Xoopport,0.1
+Exponent-CMS,0.1
+ExpressionEngine,0.2
+eXtreme-Message-Board,0.1
+ezBOO-WebStats,0.1
+EZCMS,0.1
+ez-oscommerce,0.1
+F3Site,0.1
+FAQ-Manager,0.1
+FastCGI-echo,0.1
+Favicon-DB,0.2
+FestOS,0.1
+Fidion-CMS,0.1
+File-Upload-Manager,0.1
+Flax-Article-Manager,0.1
+FluentNET,0.1
+FluxBB,0.3
+Footer-Hash,0.2
+Forest-Blog,0.1
+FormMail,0.2
+Frame,0.2
+Free-Simple-Software,0.1
+FrogCMS,0.3
+GeekLog,0.1
+GetSimple,0.1
+Glossword,0.1
+GoAhead-Webs,0.2
+Google-Analytics,0.2
+Google-API,0.1
+Google-Hack-Honeypot,0.1
+Group-Office,0.1
+GuppY,0.1
+Header-Hash,0.1
+HoloCMS,0.1
+Horde-Application-Framework,0.1
+HP-LaserJet-Printer,0.1
+HTML5,0.2
+HTTPServer,0.2
+Hunt-Electronics-CCTV,0.1
+Hycus-CMS,0.1
+i-Catcher-Console,0.1
+iDVR,0.1
+i-Gallery,0.1
+iGaming-CMS,0.1
+IIS-SiteNotFound,0.2
+IIS-UnderConstruction,0.2
+iLO,0.1
+IMGallery,0.1
+Index-Of,0.2
+Inout-Adserver,0.1
+Inout-Article-Base,0.1
+Inout-Music,0.1
+Intellinet-IP-Camera,0.1
+Interspire-Shopping-Cart,0.1
+InvisionPowerBoard,0.2
+IPCop-Firewall,0.1
+IQeye-Netcam,0.1
+iRealty,0.1
+iScripts-CyberMatch,0.1
+iScripts-EasySnaps,0.1
+iScripts-MultiCart,0.1
+iScripts-ReserveLogic,0.1
+iScripts-SocialWare,0.1
+ISPConfig,0.2
+ispCP-Omega,0.2
+JAMM-CMS,0.1
+Jamroom,0.1
+Java-Management-Extensions,0.1
+Java-Password-Log,0.1
+Jboss,0.1
+JGS-Portal,0.1
+jobberBase,0.1
+Joomla,0.4
+JQuery,0.2
+Kayako-SupportSuite,0.1
+Kleeja,0.1
+Kloxo Single Server,0.1
+KMSoft-Guestbook,0.1
+KnowledgeTree,0.1
+Kontaktformular,0.1
+Koobi,0.1
+Liferay,0.1
+Lightbox,0.2
+Lime-Survey,0.1
+LINK-CMS,0.1
+linkSpheric,0.1
+Linksys-NAS,0.1
+Linksys-Network-Camera,0.1
+Linksys-USB-HDD,0.1
+Linksys-Wireless-G-Camera,0.1
+LocazoList-Classifieds,0.1
+Loggix,0.1
+Lucky-Tech-iGuard,0.1
+Macs-CMS,0.1
+Magento,0.1
+MailForm-Plugin,0.1
+Mailman,0.1
+MailSiteExpress,0.2
+Mailto,0.2
+Mambo,0.2
+MAXdev,0.1
+MD5,0.2
+MediaWiki,0.1
+Meta-Author,0.1
+MetaGenerator,0.2
+MetaPoweredBy,0.2
+Meta-Refresh-Redirect,0.2
+MicrosoftODBCError,0.1
+Microsoft-Office-XML,0.1
+Microsoft-Sharepoint,0.1
+Mihalism-Multi-Host,0.1
+MikroTik,0.2
+MiniCWB,0.1
+Minify,0.1
+MnoGoSearch,0.2
+Mobile-Website,0.1
+Mobotix-Network-Camera,0.1
+ModxCMS,0.2
+mojoPortal,0.1
+Moodle,0.2
+Motorito,0.1
+MovableType,0.2
+MyHobbySite,0.1
+MyioSoft-Ajax-Portal,0.1
+MyPHP-Forum,0.1
+My-PHP-Indexer,0.1
+MySource-Matrix,0.1
+MySQL-dump,0.1
+mySQL-Error,0.1
+MysqlSyntaxError,0.1
+My-WebCamXP-Server,0.1
+NetArtMedia-Real-Estate-Portal,0.1
+NetBotz-Network-Monitoring-Device,0.1
+Netious-CMS,0.1
+Netref,0.1
+Netsnap-Web-Camera,0.1
+NetWin-DBabble,0.1
+NetWin-Surgemail,0.1
+Nortel-Ethernet-Routing-Switch-Config-File,0.1
+NovellGroupwise,0.2
+Nukedit,0.1
+Oce,0.2
+OkiPBX,0.2
+Open-Auto-Classifieds,0.1
+Open-Blog,0.1
+OpenCms,0.1
+Open-Freeway,0.1
+OpenGraphProtocol,0.1
+OpenID,0.1
+Open-Realty,0.1
+OpenSearch,0.1
+Open-Source-Ticket-Request-System,0.1
+Orbis-CMS,0.1
+ORCA-Platform,0.1
+ORITE-301-Camera,0.1
+OSCommerce,0.3
+OurDisclaimer,0.1
+OvBB,0.1
+PageUp-People,0.1
+Panasonic-Network-Camera,0.1
+Parked-Domain,0.1
+PasswordField,0.1
+Pc4Uploader,0.1
+PG-Real-Estate-Solution,0.1
+PG-Roomate-Finder-Solution,0.1
+PhilBoard,0.1
+PhotoPost-PHP,0.1
+phpBB,0.2
+PHPCake,0.2
+PHPDirector,0.1
+PHPEasyData,0.1
+PHPError,0.2
+PHP-Error,0.3
+PHPFM,0.1
+phpFreeChat,0.1
+PHP-Fusion,0.1
+phpGreetCards,0.1
+PHP-Hosting-Directory,0.1
+phPhotoAlbum,0.1
+phpinfo,0.1
+PHP-Layers,0.1
+PHP-Link-Directory,0.1
+PHP-Live,0.1
+PhpMesFilms,0.1
+phpMyAdmin,0.1
+phpMyFAQ,0.1
+phpMyTourney,0.1
+PHPNuke,0.2
+phpPgAdmin,0.1
+PHP-Photo-Gallery,0.1
+php-ping,0.1
+phpQuestionnaire,0.1
+PHPraid,0.1
+phpScheduleIt,0.1
+PHP-Shell,0.1
+phpSysInfo,0.1
+PHP-Update,0.1
+phpVID,0.1
+phpwcms,0.1
+PithCMS,0.1
+Piwigo,0.1
+Piwik,0.1
+Pixel-Ads-Script,0.1
+Pixelpost,0.1
+Pixie,0.1
+Plesk,0.2
+Pligg-CMS,0.1
+Plogger,0.1
+Plone,0.2
+PluXml,0.1
+PortalApp,0.1
+PoweredBy,0.2
+Pressflow,0.1
+Price-Comparison-Script,0.1
+Pro-Chat-Rooms,0.1
+Prototype,0.2
+PuTTY-Log,0.1
+QNAP-NAS,0.1
+Quantcast,0.1
+Quick.Cms,0.1
+Realtor-747,0.1
+RedirectLocation,0.2
+RedShop,0.1
+RevSense,0.1
+RFI-Scanner-Bot,0.1
+RoundCube,0.2
+RSSFeed,0.1
+RSS-Feed,0.2
+Ruby-on-Rails,0.1
+Rumba-CMS,0.1
+RunCMS,0.1
+sabros.us,0.1
+samPHPweb,0.1
+Saurus-CMS,0.1
+SazCart,0.1
+S-CMS,0.1
+Script,0.2
+Scriptaculous,0.2
+Seagull-PHP-Framework,0.1
+SearchFitShoppingCart,0.2
+Shaadi-Zone,0.1
+Shortcut-Icon,0.1
+SHOUTcast-Administrator,0.1
+SiemensSpeedStreamRouter,0.2
+SilverStripe,0.2
+SimpNews,0.1
+Site-Sift,0.1
+SkaLinks,0.1
+SMF,0.2
+SmodCMS,0.1
+Snap-Appliance-Server,0.1
+sNews,0.1
+SnoGrafx,0.1
+SnomPhone,0.2
+Softbiz-Freelancers-Script,0.1
+Softbiz-Online-Auctions-Script,0.1
+Softbiz-Online-Classifieds,0.1
+Sony-Network-Camera,0.1
+Sony-Video-Network-Station,0.1
+SquirrelMail,0.2
+Stardot-Express,0.1
+StarDot-NetCam,0.1
+Star-Network,0.1
+Steam-Steal0r-Log,0.1
+Streamline-PHP-Media-Server,0.1
+Subdomains,0.1
+Subdreamer-CMS,0.1
+Subrion-CMS,0.1
+Suspended-Webpage,0.1
+sX-Shop,0.1
+Symphony,0.1
+SyndeoCMS,0.1
+syntaxCMS,0.1
+System-Shop,0.1
+Tag-Hash,0.2
+TaskFreak,0.1
+TCMS,0.1
+Team-Board,0.1
+TeamSpeak-Server-Log,0.1
+Textpattern,0.1
+Textpattern-CMS,0.1
+TheHostingTool,0.2
+The-PHP-Real-Estate-Script,0.1
+Title,0.2
+TomatoCart,0.1
+TomatoCMS,0.1
+Tomcat,0.2
+Toner-Cart,0.1
+Toshiba-Network-Camera,0.1
+ToshibaPrinter,0.2
+Trac,0.1
+Traidnt-UP,0.1
+Tribiq,0.1
+Turbo-Seek,0.1
+TWiki,0.1
+TypePad,0.2
+TypoLight,0.2
+UCenter-Home,0.1
+Ultrastats,0.1
+Umbraco,0.1
+UncommonHeaders,0.2
+uPortal,0.1
+vbPortal,0.1
+VBulletin,0.2
+Veo-Observer,0.1
+Videoconference-Management-System,0.1
+VideoShareEnterprise,0.1
+Virtualmin,0.1
+VisionGS-Webcam,0.1
+VP-ASP,0.2
+VSNSLemon,0.2
+VS-Panel,0.1
+Vulnerable-To-XSS,0.1
+Warcraft-3-Frozen-Throne-Mod-Config-File,0.1
+Weatimages,0.1
+WebAsyst-Shop-Script,0.1
+webbackdoor,0.1
+Web-Calendar-System,0.1
+Web-Data-Administrator,0.1
+WebDVR,0.1
+WebEye-Network-Camera,0.1
+WebGuard,0.2
+Webmatic,0.1
+WebPress,0.1
+WebSideStory,0.1
+WebspotBlogging,0.1
+WhatWeb-Plugin,0.1
+WhiteBoard,0.1
+Whizzy-CMS,0.1
+WikiWebHelp,0.1
+Winamp-Web-Interface,0.1
+Windows-Internet-Printing,0.1
+WindowsSBS,0.2
+WordPress,0.2
+WordPressSpamFree,0.2
+WordpressSuperCache,0.3
+WoW-Raid-Manager,0.1
+wpQuiz,0.1
+WS_FTP-log,0.1
+WWWBoard,0.1
+X10media-MP3-Search-Engine,0.1
+X10media-Torrent-Search-Engine,0.1
+X7-Chat,0.1
+X-ASPNetMvc-Version,0.1
+X-ASPNetVersion,0.2
+XchangeBoard,0.1
+Xerox-Printers,0.1
+xGB,0.1
+XHP-CMS,0.1
+X-Powered-By,0.2
+XtraBusinessHosting,0.2
+Zen-Cart,0.1
+Zend,0.1
+Zeus-Cart,0.1
+zFeeder,0.1
+Zikula,0.1
+Zimplit-CMS,0.1
+Zomplog,0.1
+Zoph,0.1
+Zylone-IT,0.1
+Zyxel-Vantage-Service-Gateway,0.1
 
 
 
@@ -780,7 +872,7 @@ http://www.ardentcreative.co.nz/ [200] Cookies[e964b8ff6be2b1058b145da14a39e90d]
 
 With the aggressive plugin we know that ardentcreative.co.nz is running Joomla version 1.5.13 - 1.5.14
 
-dc@dc-laptop:~/projects/whatweb/whatweb-0.4.4$ ./whatweb -a 3 ardentcreative.co.nz
+$ ./whatweb -a 3 ardentcreative.co.nz
 http://ardentcreative.co.nz [301] HTTPServer[Apache], RedirectLocation[http://www.ardentcreative.co.nz/], Title[301 Moved Permanently], Header-Hash[0670664f07b972398a96c6a58e812c2d], MD5[0670664f07b972398a96c6a58e812c2d]
 http://www.ardentcreative.co.nz/ [200] Cookies[e964b8ff6be2b1058b145da14a39e90d], MetaGenerator[Joomla! 1.5 - Open Source Content Management], Joomla[1.5,1.5.15], Google-Analytics[GA][791888], HTTPServer[Apache], Title[Ardent Creative, Christchurch Web Design], Footer-Hash[a19d726fa577100ccaec0c61b1bf8ea7], MD5[fcb3ec0dfafae53dfdef2e991a24f1c1], Div-Span-Structure[e56dd07d6f482ee11873e4ea99a9e6a8], Header-Hash[4379923363b07114470ba24584214e3f]
 
@@ -885,7 +977,7 @@ Version 0.4.2 Released April 30th, 2010
 Version 0.4.3 Released May 24th, 2010
 Version 0.4.4 Released June 29th, 2010
 Version 0.4.5 Released August 17th, 2010
-Version 0.4.6 UnReleased
+Version 0.4.6 Unreleased Development Version
 
 CREDITS
 
