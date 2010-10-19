@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 
+# Fixed GHDB and regex matches
+##
 Plugin.define "FluentNET" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
-version "0.1"
+version "0.2"
 description "FluentNET, DotContent's powerful content management software, empowers business users to create, manage and publish web content for both general public access as well as internal use, and maximises the value of web-based information. - homepage: http://www.dotcontent.net"
 
 # 14 results for "powered by FluentCMS from DotContent" @ 2010-08-08
@@ -18,28 +21,14 @@ resolvetraining.co.za.dedi5a.your-server.co.za
 |
 
 matches [
-{ :ghdb=>'powered by FluentCMS from DotContent', :certainty=>75 }
+
+# Powered by text
+{ :ghdb=>'"powered by FluentCMS from DotContent"', :certainty=>75 },
+
+# Version Detection # Meta Generator
+{ :version=>/<meta name="GENERATOR" content="Fluent[CMS|NET]+ ([\d\.]+) /, :version_regexp_offset=>0 },
+
 ]
-
-# Version detection from meta generator
-# <meta name="GENERATOR" content="FluentNET 5.6.1 (July 2010) - http://dotcontent.net">
-# <meta name="GENERATOR" content="FluentCMS 5.2.1 (April 2009) - http://dotcontent.net">
-# <meta name="GENERATOR" content="FluentNET 5.6.0 (July 2010) - http://dotcontent.net">
-# <meta name="GENERATOR" content="FluentNET 5.5.0 (December 2009) - http://dotcontent.net">
-# <meta name="GENERATOR" content="FluentCMS 4.7.4 (September 2007) - http://dotcontent.net" />
-
-def passive
-        m=[]
-
-        if @body =~ /<meta name="GENERATOR" content="Fluent[CMS|NET]+ [\d\.]+ /
-                version=@body.scan(/<meta name="GENERATOR" content="Fluent[CMS|NET]+ ([\d\.]+) /)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
