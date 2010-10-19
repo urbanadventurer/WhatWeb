@@ -4,9 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated version detection #
 Plugin.define "aspWebLinks" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
-version "0.1"
+version "0.2"
 description "Web app for categorizing links - homepage: http://www.fullrevolution.com/"
 
 # 41 results for "powered by aspWebLinks" @ 2010-08-28
@@ -27,31 +29,16 @@ users6.nofeehost.com/goalsurfer/links.asp
 www.studentenwerk-aachen.de/links/links.asp
 |
 
-# Version detection
-def passive
-        m=[]
+matches [
 
-	# Powered by text
-        if @body =~ /Powered By aspWebLinks ([\d\.]+) from <A HREF=[\"|\']*http:\/\/www.fullrevolution.com[\"|\']* TARGET=_blank>Full Revolution, Inc.<\/A>/
-                version=@body.scan(/Powered By aspWebLinks ([\d\.]+) from <A HREF=[\"|\']*http:\/\/www.fullrevolution.com[\"|\']* TARGET=_blank>Full Revolution, Inc.<\/A>/)[0][0]
-                m << {:version=>version}
-        end
+# Version detection # Powered by text
+{ :version=>/Powered By aspWebLinks ([\d\.]+) from <A[^>]*HREF=["']http:\/\/www.fullrevolution.com[^>]*>Full Revolution, Inc.<\/A>/, :version_regexp_offset=>0 },
+{ :version=>/<A[^>]*HREF=["']http:\/\/www.fullrevolution.com[^>]*>Powered By aspWebLinks ([\d\.]+)<\/A>/, :version_regexp_offset=>0 },
 
-	if @body =~ /<A HREF=[\"|\']*http:\/\/www.fullrevolution.com[\"|\']* TARGET=_blank>Powered By aspWebLinks ([\d\.]+)<\/A>/
-		version=@body.scan(/<A HREF=[\"|\']*http:\/\/www.fullrevolution.com[\"|\']* TARGET=_blank>Powered By aspWebLinks ([\d\.]+)<\/A>/)[0][0]
-		m << {:version=>version}
-	end
+# Version detection # Default title
+{ :version=>/<title>aspWebLinks ([\d\.]+)<\/title>/, :version_regexp_offset=>0 },
 
-	# Default title
-	if @body =~ /<title>aspWebLinks ([\d\.]+)<\/title>/
-		version=@body.scan(/<title>aspWebLinks ([\d\.]+)<\/title>/)[0][0]
-		 m << {:version=>version}
-	end
-
-        m
-
-end
-
+]
 
 end
 
