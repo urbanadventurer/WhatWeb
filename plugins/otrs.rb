@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated matches and version detection
+##
 Plugin.define "Open-Source-Ticket-Request-System" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
-version "0.1"
+version "0.2"
 description "OTRS is an Open source Ticket Request System (also well known as trouble ticket system) with many features to manage customer telephone calls and e-mails. - homepage: http://otrs.org/"
+
+# About 529 results for "Powered by OTRS" inurl:customer.pl' @ 2010-60-06
 examples %w|
 customer.otrs.org
 support.plimus.com/otrs/customer.pl
@@ -23,28 +28,16 @@ support.blaustift.com/otrs/customer.pl
 
 matches [
 
-# About 529 results @ 2010-60-06
-{:name=>'GHDB: "Powered by OTRS" inurl:customer.pl',
-:certainty=>75,
-:ghdb=>'"Powered by OTRS" inurl:customer.pl'
-},
+# GHDB Match
+{ :ghdb=>'"Powered by OTRS" inurl:customer.pl', :certainty=>75 },
 
-{:name=>"default title",
-:text=>'<title>OTRS  :: Login</title>'
-}
+# Default title
+{ :text=>'<title>OTRS  :: Login</title>' },
+
+# Version detection # Powered by text
+{ :version=>/Powered by <a href="http:\/\/otrs.org[\/]*" class="small">OTRS ([^<]+)<\/a>/, :version_regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /Powered by <a href="http:\/\/otrs.org\/" class="small">OTRS [0-9_\.]+/
-		v=@body.scan(/Powered by <a href="http:\/\/otrs.org\/" class="small">OTRS ([0-9_\.]+)<\/a>/)[0].to_s
-		m << {:name=>"powered by version", :version=>v }
-        end
-        m
-
-end
 
 end
 
