@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Fixed regex
+##
 Plugin.define "PHP-Link-Directory" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
-version "0.1"
+version "0.2"
 description "phpLD is the most widely used directory script on the internet, installed on over 100,000 websites. phpLD is a great addition to any site, and is easy to install. - homepage: http://www.phplinkdirectory.com/"
+
+# 186 results for "powered by phpLinkDirectory" @ 2010-08-07
 examples %w|
 www.inclusio.com
 pornocms.com
@@ -22,7 +27,6 @@ www.knifedirectory.info
 shrateralliance.com
 www.gardenwebdirectory.com
 highriselinks.info
-www.webworlddirectory.info
 www.drinksdirectory.info
 www.hitchfifty.com
 www.hitslive.info
@@ -34,36 +38,14 @@ www.europelink.info
 
 matches [
 
-# About 86,500 results @ 2010-06-13
-{:name=>'GHDB: "powered by phpLinkDirectory"',
-:certainty=>25,
-:ghdb=>'"powered by phpLinkDirectory"'
-},
+# Powered by text
+{ :ghdb=>'"powered by phpLinkDirectory"', :certainty=>25 },
+{ :regexp=>/<a href="http:\/\/www.phplinkdirectory.com[^>]*Phplinkdirectory/i },
 
-{:name=>"powered by text",
-:regexp=>/[powered by]*[\s]*<a href="http:\/\/www.phplinkdirectory.com[\/]*"[\ title="PHP Link Directory"]*>PHP Link Directory<\/a>/i
-},
+# Version detection # Meta generator
+{ :version=>/<meta name="generator"[^>]*content="PHP Link Directory ([0-9\.]+)"/, :version_regexp_offset=>0 },
 
 ]
-=begin
-{:name=>"alternate powered by text",
-:regexp=>/[site\ ]*[powered by]*[\s]*<a href="http:\/\/www.phplinkdirectory.com[\/]*"[\ target="_blank"]*[\ title="PHP Link Directory"]*[a-zA-Z0-9\;\:\#\.\-\+\=\'\"\\\/_\s\>\<]*>[a-zA-Z0-9\;\:\#\.\-\+\=\'\"\\\/_\s\>\<]*Phplinkdirectory[\.com]*[a-zA-Z0-9\;\:\#\.\-\+\=\'\"\\\/_\s\>\<]*<\/a>/i
-}
-
-]
-=end
-
-# meta generator version
-def passive
-        m=[]
-
-        if @body =~ /<meta name="generator"[^>]*content="PHP Link Directory [0-9\.]+"/
-		v=@body.scan(/<meta name="generator"[^>]*content="PHP Link Directory ([0-9\.]+)"/)[0].to_s
-		m << {:name=>"meta generator version", :version=>v }
-        end
-
-	m
-end
 
 end
 
