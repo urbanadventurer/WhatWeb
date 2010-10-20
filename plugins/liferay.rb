@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Update version detection and ghdb match
+##
 Plugin.define "Liferay" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
-version "0.1"
+version "0.2"
 description "Liferay Portal is an enterprise web platform for building business solutions that deliver immediate results and long-term value. - homepage: http://www.liferay.com/"
+
+# 26 results for "Powered by Liferay Portal" @ 2010-06-13
 examples %w|
 www.liferay.com
 www.optionsnet.gr/c/portal/
@@ -17,20 +22,17 @@ vm-20.liferay.com/community/
 
 matches [
 
-# 26 results @ 2010-06-13
-{:name=>'GHDB: "Powered by Liferay Portal"',
-:certainty=>75,
-:ghdb=>'"Powered by Liferay Portal"'
-}
+{ :ghdb=>'"Powered by Liferay Portal"', :certainty=>75 },
 
 ]
 
+# Version detection
 def passive
         m=[]
 
-	if @meta["liferay-portal"] =~ /[0-9A-Za-z\(\)\.\"\'\\\/\-_,]+/i
-		v=@meta["liferay-portal"].scan(/([0-9A-Za-z\s\(\)\.\"\'\\\/\-_,]+)/i)[0].to_s
-		m << {:name=>"liferay-portal header", :version=>v }
+	if @meta["liferay-portal"] =~ /([\s]*)/
+		version=@meta["liferay-portal"].to_s
+		m << { :version=>version }
 	end
 
         m
