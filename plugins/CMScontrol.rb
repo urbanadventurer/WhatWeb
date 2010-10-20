@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated regex and ghdb matches
+##
 Plugin.define "CMScontrol" do
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
-version "0.1"
-description "cms - homepage: http://www.cmscontrol.com"
+version "0.2"
+description "CMScontrol - homepage: http://www.cmscontrol.com/"
+
+# 79 results for +CMScontrol -"SQL Injection" -exploit +inurl:"index.php?id_menu=" @ 2010-06-15
 examples %w|
 www.cmscontrol.com
 www.galsi.it
@@ -35,41 +40,26 @@ www.studiodartefioretti.it
 
 matches [
 
-# 79 results @ 2010-06-15
-{:name=>'GHDB: +CMScontrol -"SQL Injection" -exploit +inurl:"index.php?id_menu="',
-:certainty=>25,
-:ghdb=>'+CMScontrol -"SQL Injection" -exploit +inurl:"index.php?id_menu="'
+# 79 results for +CMScontrol -"SQL Injection" -exploit +inurl:"index.php?id_menu=" @ 2010-06-15
+{ :ghdb=>'+CMScontrol inurl:"index.php?id_menu="', :certainty=>25 },
+
+# Default meta generator
+{ :regexp=>/<META name=[\"\']*generator[\"\']* content=[\"\']*CMScontrol eContent[\"\']*>/i
 },
 
-{:name=>'default meta generator',
-:certainty=>100,
-:regexp=>/<META name=[\"\']*generator[\"\']* content=[\"\']*CMScontrol eContent[\"\']*>/i
-},
+# Default meta formatter
+{ :regexp=>/<META name=[\"\']*formatter[\"\']* content=[\"\']*CMScontrol eContent[\"\']*>/i },
 
-{:name=>'default meta formatter',
-:certainty=>100,
-:regexp=>/<META name=[\"\']*formatter[\"\']* content=[\"\']*CMScontrol eContent[\"\']*>/i
-},
+# Default meta abstract
+{ :regexp=>/<META name=[\"\']*abstract[\"\']* content=[\"\']*CMScontrol[\"\']*>/i },
 
-{:name=>'default meta abstract',
-:certainty=>100,
-:regexp=>/<META name=[\"\']*abstract[\"\']* content=[\"\']*CMScontrol[\"\']*>/i
-},
+# Default javascript in old versions
+{ :text=>'document.write("<ME"+"TA ht"+"tp-eq"+"uiv=\"REF"+"RESH\" con"+"tent=\"1.00; u"+"rl="+"index"+"."+"ph"+"p\">");' },
 
-# default javascript in old versions
-{:name=>'old default javascript',
-:certainty=>100,
-:text=>'document.write("<ME"+"TA ht"+"tp-eq"+"uiv=\"REF"+"RESH\" con"+"tent=\"1.00; u"+"rl="+"index"+"."+"ph"+"p\">");'
-},
-
-{:name=>'old default meta generator',
-:certainty=>100,
-:regexp=>/<META NAME=[\"\']*generator[\"\']* CONTENT=[\"\']*CMScontrol rel 3.x[\"\']*>/i,
-:version=>'3.x'
-},
+# Default meta generator # 3.x
+{ :regexp=>/<META NAME=[\"\']*generator[\"\']* CONTENT=[\"\']*CMScontrol rel 3.x[\"\']*>/i, :version=>'3.x' },
 
 ]
-
 
 end
 
