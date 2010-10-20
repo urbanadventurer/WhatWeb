@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Fixed regex
+##
+
 Plugin.define "iDVR" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
-version "0.1"
+version "0.2"
 description "iDVR (formerly Devloution Security System) is a video surveillance system for the Linux/X11 platform. - homepage: http://code.google.com/p/idvr/"
 # default login: administrator/blank
 
@@ -41,8 +45,10 @@ def passive
         m=[]
 
         if @body =~ /<title>iDVR /
-                version=@body.scan(/[\d\.]+ \(Build ([\d\.]+)\)<\/title>/)[0][0]
-                m << {:version=>version}
+                if @body =~ /[\d\.]+ \(Build ([\d\.]+)\)<\/title>/
+                        version=@body.scan(/[\d\.]+ \(Build ([\d\.]+)\)<\/title>/)[0][0]
+                        m << {:version=>version}
+                end
         end
 
         m
@@ -51,4 +57,5 @@ end
 
 
 end
+
 
