@@ -10,6 +10,9 @@ add plugin init & close.
 add alexa plugin
 add dmoz plugin
 
+add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
+
+
 [x] add IP plugin <-- can't get IP out of http object
 [x] add geoIP country plugin
 
