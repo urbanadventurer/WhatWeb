@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated GHDB match and version detection
+##
 Plugin.define "phpFreeChat" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
-version "0.1"
+version "0.2"
 description "phpFreeChat is a free, simple to install, fast, customizable and multi languages chat that uses a simple filesystem for message and nickname storage. - homepage: http://www.phpfreechat.net/"
+
+# About 434,000 results for "powered by phpfreechat" @ 2010-06-12
 examples %w|
 www.phpfreechat.net/demo/
 www.radioambientalfm.com/chat/
@@ -30,33 +35,13 @@ realestate-saltlakecityutah.net
 
 matches [
 
-# About 434,000 results @ 2010-06-12
-{:name=>'GHDB: "powered by phpfreechat"',
-:certainty=>75,
-:ghdb=>'"powered by phpfreechat"'
-}
+# GHDB Match
+{ :ghdb=>'"powered by phpfreechat"', :certainty=>75 },
+
+# Version detection # Default logo HTML
+{ :version=>/<img src="http:\/\/www.phpfreechat.net\/pub\/logo[2]*_80x15.gif" alt="PHP FREE CHAT \[powered by phpFreeChat-([\d\.\-a-z]*)\]"/, :version_regexp_offset=>0 },
 
 ]
-
-# <a href="http://www.phpfreechat.net" style="text-align:center"><img src="http://www.phpfreechat.net/pub/logo2_80x15.gif" alt="PHP FREE CHAT [powered by phpFreeChat-]" /></a>
-# <a href="http://www.phpfreechat.net" style="text-align:center"><img src="http://www.phpfreechat.net/pub/logo2_80x15.gif" alt="PHP FREE CHAT [powered by phpFreeChat-1.3]" /></a>
-# <a href="http://www.phpfreechat.net" style="text-align:center"><img src="http://www.phpfreechat.net/pub/logo2_80x15.gif" alt="PHP FREE CHAT [powered by phpFreeChat-1.2]" /></a>
-# <a href="http://www.phpfreechat.net" id="pfc_logo" target="_blank"><img src="http://www.phpfreechat.net/pub/logo_80x15.gif" alt="PHP FREE CHAT [powered by phpFreeChat-0.9.3]" title="PHP FREE CHAT [powered by phpFreeChat-0.9.3]" /></a>
-# <a href="http://www.phpfreechat.net" style="text-align:center"><img src="http://www.phpfreechat.net/pub/logo2_80x15.gif" alt="PHP FREE CHAT [powered by phpFreeChat-1.0-final]" /></a>
-# <a href="http://www.phpfreechat.net" style="text-align:center"><img src="http://www.phpfreechat.net/pub/logo_80x15.gif" alt="PHP FREE CHAT [powered by phpFreeChat-1.0-beta11]" /></a>
-# <a href="http://www.phpfreechat.net" style="text-align:center"><img src="http://www.phpfreechat.net/pub/logo_80x15.gif" alt="PHP FREE CHAT [powered by phpFreeChat-1.0-beta9]" /></a>
-
-def passive
-        m=[]
-
-        if @body =~ /<img src="http:\/\/www.phpfreechat.net\/pub\/logo[2]*_80x15.gif" alt="PHP FREE CHAT \[powered by phpFreeChat-[\d\.\-a-z]*\]"/
-                version=@body.scan(/<img src="http:\/\/www.phpfreechat.net\/pub\/logo[2]*_80x15.gif" alt="PHP FREE CHAT \[powered by phpFreeChat-([\d\.\-a-z]*)\]"/)[0][0]
-                m << {:name=>"powered by img alt",:version=>version}
-        end
-
-        m
-end
-
 
 end
 
