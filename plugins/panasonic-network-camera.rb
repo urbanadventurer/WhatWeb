@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Fixed regex
+##
 Plugin.define "Panasonic-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
-version "0.1"
+version "0.2"
 description "Panasonic network cameras"
 
 # About 18,400 Google results for inurl:"ViewerFrame?Mode=" @ 2010-07-20
@@ -189,8 +192,10 @@ def passive
         m=[]
 
         if @body =~ /      <FONT FACE="Arial" STYLE="font-size: 16px" COLOR="#ffffff">/
-                version=@body.scan(/        <B>([\d\-A-Z]+)<\/B>/)[0][0]
-                m << {:version=>version}
+                if @body =~ /        <B>([\d\-A-Z]+)<\/B>/
+                        version=@body.scan(/        <B>([\d\-A-Z]+)<\/B>/)[0][0]
+                        m << { :version=>version }
+                end
         end
 
         m
@@ -199,4 +204,5 @@ end
 
 
 end
+
 
