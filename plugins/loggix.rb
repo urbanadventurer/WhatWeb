@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updates matches and version detection
+##
 Plugin.define "Loggix" do
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
-version "0.1"
+version "0.2"
 description "Loggix is a really simple, lightweight PHP and SQlite driven weblog/cms engine. - homepage: http://loggix.gotdns.org/"
+
+# 22 results for "Powered by Loggix" @ 2010-06-15
 examples %w|
 loggix.gotdns.org
 jamlog.podzone.org
@@ -20,32 +25,13 @@ blog.apoderus.net
 
 matches [
 
-# 22 results @ 2010-06-15
-{:name=>'GHDB: "Powered by Loggix"',
-:certainty=>25,
-:ghdb=>'"Powered by Loggix"'
-},
+# Default meta generator
+{ :text=>'<meta name="generator" content="Loggix" />' },
 
-{:name=>'default meta generator',
-:certainty=>100,
-:text=>'<meta name="generator" content="Loggix" />'
-}
+# Version detection # Powered by text
+{ :version=>/Powered by <a href="http:\/\/loggix.gotdns.org">Loggix<\/a> ver.([\d\.]+)<\/address>/, :version_regexp_offset=>0 },
 
 ]
-
-# Powered by <a href="http://loggix.gotdns.org">Loggix</a> ver.9.8.20</address>
-# Powered by <a href="http://loggix.gotdns.org">Loggix</a> ver.9.5.20</address>
-def passive
-        m=[]
-
-        if @body =~ /Powered by <a href="http:\/\/loggix.gotdns.org">Loggix<\/a> ver.[\d\.]+<\/address>/
-                version=@body.scan(/Powered by <a href="http:\/\/loggix.gotdns.org">Loggix<\/a> ver.([\d\.]+)<\/address>/)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text",:version=>version}
-        end
-
-        m
-end
-
 
 end
 
