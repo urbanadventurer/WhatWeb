@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Added version detection. Updated matches.
+##
 Plugin.define "CMSimple" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
-version "0.1"
+version "0.2"
 description "CMSimple is a simple content management system for smart maintainance of small commercial or private sites. - homepage:http://www.cmsimple.org/"
+
+# About 70,800 results for "Powered by CMSimple.dk" +welcome @ 2010-06-04
 examples %w|
 www.cmsimple.org/demo/
 www.musicmaulindustries.com/
@@ -39,22 +44,16 @@ www.cj-web.dk/
 www.cidtegypt.com/
 |
 
-# <meta name="generator" content="CMSimple 3.2">
-# <meta name="generator" content="CMSimple 3.1 - www.cmsimple.org">
-# <meta name="generator" content="CMSimple 3.0 - www.cmsimple.dk">
-# <meta name="generator" content="CMSimple 2.9 - www.cmsimple.dk">
-# <meta name="generator" content="CMSimple 2.7 - www.cmsimple.dk">
-# <meta name="generator" content="CMSimple 2.4 - www.cmsimple.dk">
-
 matches [
 
-# About 70,800 results @ 2010-06-04
-{:name=>'GHDB: "Powered by CMSimple.dk" +welcome',
-:certainty=>75,
-:ghdb=>'"Powered by CMSimple.dk" +welcome'
-},
+# GHDB Match
+{ :ghdb=>'"Powered by CMSimple.dk" welcome', :certainty=>75 },
 
-{:text=>'<meta name="generator" content="CMSimple' }
+# Meta generator
+{ :text=>'<meta name="generator" content="CMSimple' },
+
+# Version detection # Meta generator
+{ :version=>/<meta name="generator" content="CMSimple ([\d\.]+)[^>]*>/, :version_regexp_offset=>0 },
 
 ]
 
