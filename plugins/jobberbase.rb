@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Update regex and ghdb matches
+##
 Plugin.define "jobberBase" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
-version "0.1"
+version "0.2"
 description "jobberBase is the open-source job board software that helps you set up a jobsite in minutes! - homepage: http://www.jobberbase.com/"
+
+# About 116,000 results for +Companies +Sitemap "Proudly powered by jobberBase" @ 2010-60-06
 examples %w|
 www.jobberbase.com/demo/
 jobs.murexusers.org
@@ -36,24 +41,14 @@ www.jobs.searchatradie.com.au
 
 matches [
 
-# About 116,000 results  @ 2010-60-06
-{:name=>'GHDB: +Companies +Sitemap "Proudly powered by jobberBase"',
-:certainty=>75,
-:ghdb=>'+Companies +Sitemap "Proudly powered by jobberBase"'
-},
+# GHDB Match
+{ :ghdb=>'Companies Sitemap "Proudly powered by jobberBase"', :certainty=>75 },
 
-{:name=>"meta author",
-:certainty=>75,
-:text=>'<meta name="author" content="http://www.jobberbase.com" />'
-},
+# Meta author
+{ :text=>'<meta name="author" content="http://www.jobberbase.com" />' },
 
-{:name=>"powered by text",
-:regexp=>/Proudly powered by[\s]+<a href="http:\/\/www.jobberbase.com\/" title="open source job board software">jobberBase<\/a>/
-},
-
-{:name=>"powered by text",
-:regexp=>/Proudly powered by[\s]+<a href="http:\/\/www.jobberbase.com\/" target="_blank" title="open source job board software">jobberBase<\/a>/
-}
+# Powered by text
+{ :regexp=>/Proudly powered by[\s]+<a href="http:\/\/www.jobberbase.com\/"[^>]*title="open source job board software">jobberBase<\/a>/ },
 
 ]
 
