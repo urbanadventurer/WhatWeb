@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated regex
+##
 Plugin.define "php-ping" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
-version "0.1"
-description ""
+version "0.2"
+description "php-ping - PHP powered ping web interface."
+
+# About 184 results for "Enter ip" inurl:"php-ping.php" @ 2010-06-13
 examples %w|
 www.help4web.net/network/php-ping.php
 hostpit.com/tools/php-ping.php
@@ -33,23 +38,14 @@ www.didc.lbl.gov/secret/php-ping.php
 |
 
 matches [
-# About 184 results @ 2010-06-13
-{:name=>'GHDB: "Enter ip" inurl:"php-ping.php"',
-:certainty=>75,
-:ghdb=>'"Enter ip" inurl:"php-ping.php"'
-},
+
+# GHDB Match
+{ :ghdb=>'"Enter ip" inurl:"php-ping.php"', :certainty=>75 },
+
+# Default form HTML
+{ :regexp=>/<form methode="post" action="[^>]*>[\s]*Enter IP or Host[^<]*<[^<]*type="text" name="host" value="[\d\.]*"><\/input>[\s]*Enter Count[^>]*name="count" size="2" value="4"><\/input>[^>]*[\s]*<input type="submit"[^>]*name="submit" value="Ping!"><\/input><\/form><br><b><\/b>/ },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /<form methode="post" action="[\ \/\'\+\-\._a-zA-Z0-9]*">[\s]*Enter IP or Host[\s]*<input[\ class="input"]* type="text" name="host" value="[\d\.]*"><\/input>[\s]*Enter Count[\s]*<input type="text"[\ class="input"]* name="count" size="2" value="4"><\/input>[\s]*[<input name="ping" type="hidden" value="1">]*[\s]*<input type="submit"[\ class="button"]* name="submit" value="Ping!"><\/input><\/form><br><b><\/b>/
-                m << {:name=>"default html"}
-        end
-
-        m
-end
 
 end
 
