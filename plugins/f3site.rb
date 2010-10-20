@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated matches and version detection
+##
 Plugin.define "F3Site" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-27
-version "0.1"
+version "0.2"
 description "F3Site is a lightweight CMS written in XHTML 1.0 Strict, CSS and PHP 5. It lets you create multilingual websites without necessity of separate installation for each language. - homepage: http://compmaster.prv.pl"
+
+# 64 results for "powered by F3Site" -exploit -dork @ 2010-10-20
 examples %w|
 www.gon.ugu.pl
 www.smolinscy.pl
@@ -31,47 +36,15 @@ erotyka.darmowe-porno.sex.pl
 
 matches [
 
-# 52 results @ 2010-06-27
-{:name=>'GHDB: "Powered by F3Site" -exploit',
-:certainty=>75,
-:ghdb=>'"Powered by F3Site" -exploit'
-},
+# Powered by text
+{ :text=>'<a href="http://compmaster.prv.pl" target="_blank">powered by F3Site</a></span>' },
+{ :regexp=>/Powered by[^>]*<a[^>]*href="http:\/\/compmaster.prv.pl[^>]*>F3Site[^>]*<\/a>/ },
+{ :regexp=>/Powered by[^>]*<a[^>]*href="http:\/\/dhost.info\/compmaste[^>]*>F3Site[^<]*<\/a>/ },
 
-{:name=>'powered by text #1',
-:certainty=>100,
-:text=>'Powered by <a href="http://compmaster.prv.pl">F3Site</a>'
-},
-
-{:name=>'powered by text #2',
-:certainty=>100,
-:text=>'<a href="http://compmaster.prv.pl" target="_blank">powered by F3Site</a></span>'
-},
-
-{:name=>'powered by text #3',
-:certainty=>100,
-:regexp=>/Powered by <a[\ target="_blank"]* href="http:\/\/compmaster.prv.pl[\/]*"[\ target="_blank"]*>F3Site<\/a>/
-},
-
-{:name=>'powered by text #4',
-:certainty=>100,
-:regexp=>/Powered by <a href="http:\/\/dhost.info\/compmaster[\/]*">F3Site[\ \d]*<\/a>/
-},
+# Version detection # Powered by text
+{ :version=>/Powered by <a href="http:\/\/compmaster.prv.pl">F3Site v([\d\.]+) plus<\/a>/, :version_regexp_offset=>0 },
 
 ]
-
-# Powered by <a href="http://compmaster.prv.pl">F3Site v.2.1 plus</a>
-def passive
-        m=[]
-
-        if @body =~ /Powered by <a href="http:\/\/compmaster.prv.pl">F3Site v[\d\.]+ plus<\/a>/
-                version=@body.scan(/Powered by <a href="http:\/\/compmaster.prv.pl">F3Site v([\d\.]+) plus<\/a>/)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text",:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
