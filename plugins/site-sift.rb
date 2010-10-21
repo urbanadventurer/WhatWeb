@@ -4,10 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated matches
+##
 Plugin.define "Site-Sift" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
-version "0.1"
-description "Site Sift Listings is a FREE directory script with many features that webmasters want including creation of static pages. Site Sift Listings can be customized to create the look and feel you want from a directory. Many of the functions are easily turned ON & OFF with the push of a button from the admin section. - homepage: http://scripts.site-sift.com/"
+version "0.2"
+description "Site Sift Listings is a FREE directory script with many features that webmasters want including creation of static pages. Site Sift Listings can be customized to create the look and feel you want from a directory. Requirements: PHP. - homepage: http://scripts.site-sift.com/"
+
+# 96 results for "powered by Site Sift" -exploit -"SQL Injection" @ 2010-06-29
+# 148 results for inurl: "index php go addpage" @ 2010-06-29
+# 68 results for inurl: "index.php?go=detail id=" @ 2010-06-29
 examples %w|
 scripts.site-sift.com/demo/
 www.twbdir.com
@@ -54,28 +61,17 @@ www.thevipdirectory.info
 
 matches [
 
-# 96 results @ 2010-06-29
-{:certainty=>75,:ghdb=>'"powered by Site Sift" -exploit -"SQL Injection"'},
+# URL patterns
+{ :certainty=>25, :ghdb=>'inurl: "index.php?go=detail id="' },
+{ :certainty=>25, :ghdb=>'inurl: "index php go addpage"' },
 
-# 68 results @ 2010-06-29
-{:certainty=>75,:ghdb=>'inurl: "index.php?go=detail id="'},
+# Powered by text
+{ :certainty=>25,:ghdb=>'"powered by Site Sift"' },
+{ :regexp=>/<div align="center" class="copyright">powered by <A class="bottomlink" href="http:\/\/[scripts|www]+.site-sift.com[\/]*">Site Sift[^<]*<\/A><\/div>/i },
 
-# 148 results @ 2010-06-29
-{:certainty=>75,:ghdb=>'inurl: "index php go addpage"'},
-
-# <div align="center" class="copyright">powered by <A class="bottomlink" href="http://www.site-sift.com">Site Sift Listings</A></div>
-# <div align="center" class="copyright">powered by <A class="bottomlink" href="http://www.site-sift.com/">Site Sift</A></div>
-# <div align="center" class="copyright">powered by <A class="bottomlink" href="http://www.site-sift.com/">Site Sift Internet Directory</A></div>
-# <div align="center" class="copyright">powered by <A class="bottomlink" href="http://www.site-sift.com/">Site Sift Web Directory</A></div>
-# <div align="center" class="copyright">powered by <A class="bottomlink" href="http://scripts.site-sift.com/">Site Sift Listings</A></div>
-# <div align="center" class="copyright">powered by <A class="bottomlink" href="http://scripts.site-sift.com/">Site Sift Directory Script</A></div>
-# <div align="center" class="copyright">powered by <A class="bottomlink" href="http://scripts.site-sift.com/">Site Sift Listings</A></div>
-
-{:regexp=>/<div align="center" class="copyright">powered by <A class="bottomlink" href="http:\/\/[scripts|www]+.site-sift.com[\/]*">Site Sift[\ ]*[Internet\ Directory|Web\ Directory|Listings|Directory\ Script]*<\/A><\/div>/},
-
-# default html comments
-{:text=>'				<!-- end of header.php -->'},
-{:text=>'				<!-- begin of footer.php -->'},
+# Default HTML comments
+{ :text=>'				<!-- end of header.php -->' },
+{ :text=>'				<!-- begin of footer.php -->' },
 
 ]
 
