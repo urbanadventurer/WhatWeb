@@ -4,10 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated matches and version detection
+##
 Plugin.define "Umbraco" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
-version "0.1"
+version "0.2"
 description "umbraco is an open source project with roots back to year 2000 even though it wasn't released as open source until 2004. - homepage: http://www.umbraco.org"
+
+# About 24,400 results for "powered by umbraco" @ 2010-06-08
+# 27 results for "site powered by umbraco" @ 2010-06-08
+# 17 results for "site powered by umbraco v4" @ 2010-06-08
 examples %w|
 store.umbraco.org
 webguruservices.com
@@ -31,44 +38,25 @@ www.bpk.cc
 
 matches [
 
-# "powered by umbraco" - About 24,400 results @ 2010-06-08
-# "site powered by umbraco" - 27 results @ 2010-06-08
-# "site powered by umbraco v4" - 17 results @ 2010-06-08
-{:name=>'GHDB: "powered by umbraco"',
-:certainty=>75,
-:ghdb=>'"powered by umbraco"'
-},
+# GHDB Match
+{ :ghdb=>'"powered by umbraco"', :certainty=>25 },
 
-{:name=>'meta generator', :text=>'<meta name="generator" content="umbraco" />'
-},
+# Meta generator
+{ :text=>'<meta name="generator" content="umbraco" />' },
 
-# Powered by <a href="http://umbraco.org">umbraco</a>
-# Powered by <a href="http://umbraco.org/" target="_blank">Umbraco v4</a>
-# Powered by <a href="http://umbraco.org" title="umbraco.org">umbraco</a>
-# powered by <br/><a href="http://www.umbraco.org">Umbraco</a>
-# site powered by <a href="http://www.umbraco.org/v4">umbraco v4</a>
-# site powered by <a href="http://umbraco.org" title="visit umbraco.org">umbraco</a>
-# Site powered by <a href="http://www.umbraco.org" title="Umbraco">Umbraco v4 RC3</a>
-# site powered by <a  href="http://www.umbraco.org">umbraco</a>
-# powered by <br/><a href="http://www.umbraco.org">Umbraco</a>
-{:name=>'powered by text',
-:certainty=>100,
-:regexp=>/[site\ ]*powered by[\s]*[<br \/>]*<a[\s]+href="http:\/\/[www.]*umbraco.org[\/]*[v4]*"[\ target="_blank"]*[\ title="umbraco.org"]*[\ title="visit\ umbraco.org"]*>umbraco[\ v4]*[\ 0-9a-zA-Z]*<\/a>/i
-}
+# Powered by text
+{ :regexp=>/Powered by[^<]*<a[\s]+href="http:\/\/[www.]*umbraco.org[^>]*>Umbraco<\/a>/i },
+
+# Version detection # Powered by text
+{ :version=>/powered by[^<]*<a[\s]+href="http:\/\/[www.]*umbraco.org[^>]*>umbraco v([^<]+)<\/a>/i, :version_regexp_offset=>0 },
+
+# Version detection # Powered by text # 4.x
+{ :regexp=>/powered by[^<]*<a[\s]+href="http:\/\/[www.]*umbraco.org[^>]*>umbraco v4<\/a>/i, :version=>"4.x" },
+
+# Version detection # Meta generator
+{ :version=>/<meta name="generator"[^>]*content="umbraco[\s]+([0-9\.]+)"/i, :version_regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /<meta name="generator"[^>]*content="umbraco  [0-9\.]"+/
-                        v=@body.scan(/<meta name="generator"[^>]*content="umbraco  ([0-9\.]+)"/)[0].to_s
-                        m << {:name=>"meta generator version", :version=>v }
-        end
-
-        m
-end
-
 
 end
 
