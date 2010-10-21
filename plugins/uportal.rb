@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated version detection
+##
 Plugin.define "uPortal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
-version "0.1"
-description ""
+version "0.2"
+description "uPortal"
+
+# About 1,790 results for "powered by uportal" @ 2010-06-13
 examples %w|
 https://my.rice.edu/uPortal/
 https://my.nsac.ca/uPortal/
@@ -24,41 +29,28 @@ https://thefort.fortlewis.edu/uPortal/
 
 matches [
 
-# About 1,790 results @ 2010-06-13
-{:name=>'GHDB: "powered by uportal"',
-:certainty=>75,
-:ghdb=>'"powered by uportal"'
-}
+# GHDB Match
+{ :ghdb=>'"powered by uportal"', :certainty=>75 },
+
+# Version detection # Default logo HTML
+{ :version=>/<img[^>]*alt="Powered by uPortal ([\d\.]+)"[^>]*>/, :version_regexp_offset=>0 },
+
+# Version detection # Powered by text
+{ :version=>/<a target="_blank" title="Powered by \$" href="http:\/\/www.uportal.org">Powered by uPortal ([^<]+)<\/a>/, :version_regexp_offset=>0 },
 
 ]
 
-# <a target="_blank" title="Powered by $" href="http://www.jasig.org/uportal">Powered by uPortal 3.1.1</a>
-# <a target="_blank" title="Powered by $" href="http://www.uportal.org">Powered by uPortal 3.0.2 on UP6</a>
-# <a target="_blank" title="Powered by $" href="http://www.uportal.org">Powered by uPortal 3.0.2</a>
-# <a target="_blank" title="Powered by $" href="http://www.uportal.org">Powered by uPortal 3.0.1</a>
-# <img src="rsad_channels/images/poweredByUPortal.png" class="clearPNGimage" alt="Powered by uPortal 1.0" border=0 width=121 height=11>&nbsp; &nbsp;
 def passive
         m=[]
-
-        if @body =~ /<a target="_blank" title="Powered by \$" href="http:\/\/www.uportal.org">Powered by uPortal [0-9a-zA-Z\ \.\-_]+<\/a>/
-                        v=@body.scan(/<a target="_blank" title="Powered by \$" href="http:\/\/www.uportal.org">Powered by uPortal ([0-9a-zA-Z\ \.\-_]+)<\/a>/)[0][0]
-                        m << {:name=>"powered by text", :version=>v }
-        end
 
 	if @meta["uportal-version"] =~ /uPortal_rel-([\-0-9]+)/i
 		v=@meta["uportal-version"].scan(/uPortal_rel-([\-0-9]+)/i)[0][0]
 		m << {:name=>"uportal-version header",  :version=>v }
 	end
 
-	if @body =~ /<img [a-zA-Z0-9\s\.\-\+\=\"\'\\\/_]*alt="Powered by uPortal [\d\.]+"[a-zA-Z0-9\s\.\-\+\=\"\'\\\/_]*>/
-		v=@body.scan(/<img [a-zA-Z0-9\s\.\-\+\=\"\'\\\/_]*alt="Powered by uPortal ([\d\.]+)"[a-zA-Z0-9\s\.\-\+\=\"\'\\\/_]*>/)[0][0]
-		m << {:name=>"old powered by text", :version=>v }
-	end
-
         m
 
 end
-
 
 end
 
