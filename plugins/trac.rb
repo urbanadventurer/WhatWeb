@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated version detection
+##
 Plugin.define "Trac" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15
-version "0.1"
+version "0.2"
 description "Trac is an enhanced wiki and issue tracking system for software development projects. - homepage: http://trac.edgewall.org/"
+
+# About 77,000,000 results for "Powered by Trac" +intitle:Trac' @ 2010-06-14
 examples %w|
 trac.edgewall.org/demo-0.12
 trac.edgewall.org/demo-0.11
@@ -51,23 +56,19 @@ createrepo.baseurl.org
 
 matches [
 
-# About 77,000,000 results @ 2010-06-14
-{:name=>'GHDB: "Powered by Trac" +intitle:Trac',
-:certainty=>75,
-:ghdb=>'"Powered by Trac" +intitle:Trac'
-},
+# GHDB Match
+{ :ghdb=>'"Powered by Trac" +intitle:Trac', :certainty=>75 },
+
+# Version detection # Powered by text
+{ :version=>/Powered by <a[^>]*><strong>Trac ([^<]+)<\/strong><\/a><br \/>/, :version_regexp_offset=>0 },
 
 ]
 
+# Fingerprint cookie
 def passive
         m=[]
 
         m << {:name=>"trac_form_token Cookie", :probability=>100 } if @meta["set-cookie"] =~ /trac_form_token=/
-
-	if @body =~ /Powered by <a href="[0-9a-zA-Z\.\'\/\-\+\)\(_]*"><strong>Trac [\d\.\-a-z]+<\/strong><\/a><br \/>/
-                version=@body.scan(/Powered by <a href="[0-9a-zA-Z\.\'\/\-\+\)\(_]*"><strong>Trac ([\d\.\-a-z]+)<\/strong><\/a><br \/>/)[0][0]
-                m << {:name=>"powered by version",:version=>version}
-        end
 
 	m
 
