@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Updated version detection
+##
 Plugin.define "IQeye-Netcam" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
-version "0.1"
+version "0.2"
 description "IQeye netcam web interface"
 
 # 5 results for intitle:"IQeye302 | IQeye303 | IQeye601 | IQeye602 | IQeye603" intitle:"Live Images" @ 2010-07-11
@@ -16,18 +19,25 @@ ocwx.com
 203.122.250.159
 |
 
+matches [
+
+# Default title
+{ :regexp=>/<title>IQeye[^:]*: Live Images[^<]*<\/title>/ },
+
+]
+
 def passive
-        m=[]
+	m=[]
 
-        if @body =~ /<[TITLE|title]*>IQeye[a-zA-Z0-9\ \-_]+: Live Images/
-                version=@body.scan(/<[TITLE|title]*>IQeye([a-zA-Z0-9\ \-_]+): Live Images/)[0][0]
-                m << {:version=>version}
-        end
+	# Model detection # Default title
+	if @body =~ /<title>IQeye([^:]+): Live Images[^<]*<\/title>/i
+		model=@body.scan(/<title>IQeye([^:]+): Live Images[^<]*<\/title>/i)
+		m << { :model=>model }
+	end
 
-        m
+	m
 
 end
-
 
 end
 
