@@ -99,6 +99,35 @@ class Plugin
 				end
 			end
 
+			# Model
+			if !match[:model].nil? and match[:model].class==Regexp
+
+				if @body =~ match[:model]
+					m = match.dup
+					m[:model] = @body.scan(match[:model])[0][match[:model_regexp_offset]]
+					r << m
+				end
+			end
+
+			# String
+			if !match[:string].nil? and match[:string].class==Regexp
+
+				if @body =~ match[:string]
+					m = match.dup
+					m[:string] = @body.scan(match[:string])[0][match[:string_regexp_offset]]
+					r << m
+				end
+			end
+
+			# Firmware
+			if !match[:firmware].nil? and match[:firmware].class==Regexp
+				if @body =~ match[:firmware]
+					m = match.dup
+					m[:firmware] = @body.scan(match[:firmware])[0][match[:firmware_regexp_offset]]
+					r << m
+				end
+			end
+
 			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
 			results +=r if match[:url].nil? or (!match[:url].nil? and !@base_uri.nil? and match[:url] == @base_uri.path)
 		end
@@ -166,6 +195,31 @@ class Plugin
 						r << m
 					end
 				end
+
+				if !match[:model].nil? and match[:model].class==Regexp
+					if thisbody =~ match[:model]
+						m = match.dup
+						m[:model] = thisbody.scan(match[:model])[0][match[:model_regexp_offset]]
+						r << m
+					end
+				end
+
+				if !match[:string].nil? and match[:string].class==Regexp
+					if thisbody =~ match[:string]
+						m = match.dup
+						m[:string] = thisbody.scan(match[:string])[0][match[:string_regexp_offset]]
+						r << m
+					end
+				end
+
+				if !match[:firmware].nil? and match[:firmware].class==Regexp
+					if thisbody =~ match[:firmware]
+						m = match.dup
+						m[:firmware] = thisbody.scan(match[:firmware])[0][match[:firmware_regexp_offset]]
+						r << m
+					end
+				end
+
 				results +=r						
 			end
 		end
