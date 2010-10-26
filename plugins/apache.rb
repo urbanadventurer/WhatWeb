@@ -30,6 +30,26 @@ https://ls.berkeley.edu
 130.206.76.199
 203.27.92.33
 69.163.142.76
+209.237.234.71
+122.117.86.79
+64.91.244.64
+96.9.55.205
+77.91.206.23
+206.251.255.137
+84.40.53.47
+66.118.165.57
+66.194.79.90
+219.94.214.128
+74.53.210.56
+69.161.152.1
+46.43.50.77
+109.123.83.175
+208.43.51.173
+209.90.225.114
+174.123.148.250
+208.43.165.236
+174.36.241.50
+129.121.100.8
 |
 
 matches [
@@ -66,9 +86,21 @@ def passive
 	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /[^\r^\n]*Apache[^\r^\n]*/i
 	m << { :name=>"HTTP Server Header" } if @meta["Server"].to_s =~ /[^\r^\n]*Apache[^\r^\n]*/i
 
-	# Server # Version detection
+	# Version detection
 	m << { :version=>@meta["server"].to_s.scan(/[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i) } if @meta["server"].to_s =~ /[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i
 	m << { :version=>@meta["Server"].to_s.scan(/[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i) } if @meta["Server"].to_s =~ /[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i
+
+	# About 2172233 ShodanHQ results for "server: mod_ssl"
+	m << { :modules=>"mod_ssl/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :modules=>"mod_ssl/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i
+
+	# About 691816 ShodanHQ results for "server: mod_auth_passthrough"
+	m << { :modules=>"mod_auth_passthrough/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :modules=>"mod_auth_passthrough/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i
+
+	# About 753880 ShodanHQ results for "server: mod_bwlimited"
+	m << { :modules=>"mod_bwlimited/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :modules=>"mod_bwlimited/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i
 
 	m
 
