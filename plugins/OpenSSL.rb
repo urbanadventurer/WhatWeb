@@ -21,14 +21,16 @@ examples %w|
 212.159.99.18
 74.80.179.75
 66.147.225.92
+67.214.171.147
 |
 
 # HTTP Header
 def passive
 	m=[]
 
-	m << { :version=>@meta["Server"].scan(/[^\r^\n]*OpenSSL\/([\d\.]+)[^\r^\n]*/) } if @meta["Server"].to_s =~ /[^\r^\n]*OpenSSL\/([\d\.]+)[^\r^\n]*/
-	m << { :version=>@meta["server"].scan(/[^\r^\n]*OpenSSL\/([\d\.]+)[^\r^\n]*/) } if @meta["server"].to_s =~ /[^\r^\n]*OpenSSL\/([\d\.]+)[^\r^\n]*/
+	# Version detection
+	m << { :version=>@meta["Server"].scan(/[^\r^\n]*OpenSSL\/([^\s^\r^\n]+)/) } if @meta["Server"].to_s =~ /[^\r^\n]*OpenSSL\/([^\s^\r^\n]+)/
+	m << { :version=>@meta["server"].scan(/[^\r^\n]*OpenSSL\/([^\s^\r^\n]+)/) } if @meta["server"].to_s =~ /[^\r^\n]*OpenSSL\/([^\s^\r^\n]+)/
 
 	m
 
