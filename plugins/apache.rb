@@ -102,6 +102,23 @@ def passive
 	m << { :modules=>"mod_bwlimited/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i
 	m << { :modules=>"mod_bwlimited/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i
 
+	# About 177808 ShodanHQ results for "Server: mod_jk"
+	m << { :modules=>"mod_jk/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :modules=>"mod_jk/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i
+
+	# About 25076 ShodanHQ results for "Server: mod_fcgid"
+	m << { :modules=>"mod_fcgid/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :modules=>"mod_fcgid/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i
+
+	# About 165191 ShodanHQ results for "Server: mod_log_bytes"
+	m << { :modules=>"mod_log_bytes/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :modules=>"mod_log_bytes/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i
+
+	# About 75655 ShodanHQ results for "Server: mod_gzip"
+	m << { :modules=>"mod_gzip/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i
+	m << { :modules=>"mod_gzip/"+@meta["Sserver"].to_s.scan(/[^\r^\n]*mod_gz
+ip\/([^\s^\r^\n]+)/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i
+
 	m
 
 end
