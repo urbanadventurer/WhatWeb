@@ -18,10 +18,10 @@ directmovies.net/form.asp
 matches [
 
 # Version detection # Powered by text
-{ :version=>/<div id="footer">KMSoft Guestbook v ([\d\.]+) Powered by <a href="http:\/\/www.kmsoft.org[\/]*">KMSoft<\/a><\/div>/, :version_regexp_offset=>0 },
+{ :version=>/<div id="footer">KMSoft Guestbook v ([\d\.]+) Powered by <a href="http:\/\/www.kmsoft.org[\/]*">KMSoft<\/a><\/div>/, :regexp_offset=>0 },
 
 # Version detection # Powered by text
-{ :version=>/<title>KMSoft Guestbook v([\d\.]+)[^<]+<\/title>/, :version_regexp_offset=>0 },
+{ :version=>/<title>KMSoft Guestbook v([\d\.]+)[^<]+<\/title>/, :regexp_offset=>0 },
 
 ]
 

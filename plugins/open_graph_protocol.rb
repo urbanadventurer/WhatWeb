@@ -24,7 +24,7 @@ matches [
 { :regexp=>/<meta[^>]*property="og:title"[^>]*>/i },
 
 # Get type # og:type
-{ :version=>/<meta[^>]*property="og:type"[^>]*content="([^\"^>]+)"/, :version_regexp_offset=>0 },
+{ :version=>/<meta[^>]*property="og:type"[^>]*content="([^\"^>]+)"/, :regexp_offset=>0 },
 
 ]
 

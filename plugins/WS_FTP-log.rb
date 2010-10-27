@@ -43,7 +43,7 @@ www.sex-and-relationships.com/pages/LH/images/WS_FTP.LOG
 matches [
 
 # FTP server extraction
-{ :version=>/^[0-9]+.[0-9]{2}.[0-9]{2} [0-9]{2}:[0-9]{2} [A|B]{1} [^>]*> ([^\ ]+) /, :version_regexp_offset=>0 },
+{ :version=>/^[0-9]+.[0-9]{2}.[0-9]{2} [0-9]{2}:[0-9]{2} [A|B]{1} [^>]*> ([^\ ]+) /, :regexp_offset=>0 },
 
 ]
 

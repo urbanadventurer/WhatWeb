@@ -36,7 +36,7 @@ matches [
 { :ghdb=>'+intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser', :certainty=>75 },
 
 # Version detection
-{ :version=>/ArGoSoft Mail Server Pro for WinNT\/2000[\/XP]*, Version [\d\.]+ \(([\d\.]+)\)<\/p>/, :version_regexp_offset=>0 }
+{ :version=>/ArGoSoft Mail Server Pro for WinNT\/2000[\/XP]*, Version [\d\.]+ \(([\d\.]+)\)<\/p>/, :regexp_offset=>0 }
 
 ]
 

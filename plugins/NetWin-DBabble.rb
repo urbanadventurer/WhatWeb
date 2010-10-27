@@ -19,9 +19,9 @@ netwin.co.nz:8132
 matches [
 
 # Version detection
-{ :version=>/^DBabble ([^Server]+)Server Version ([^\ ]+) /, :version_regexp_offset=>1 },
+{ :version=>/^DBabble ([^Server]+)Server Version ([^\ ]+) /, :regexp_offset=>1 },
 # OS detection
-{ :version=>/^DBabble ([^Server]+)Server Version ([^\(]+)\(/, :version_regexp_offset=>0 },
+{ :version=>/^DBabble ([^Server]+)Server Version ([^\(]+)\(/, :regexp_offset=>0 },
 
 # Default Title
 { :text=>'<title>DBabble login</title>' },

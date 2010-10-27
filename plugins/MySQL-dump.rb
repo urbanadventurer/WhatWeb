@@ -37,10 +37,10 @@ www.scrailway.gov.in/enggol/LASTAWARDEDRATE.sql
 matches [
 
 # Version detection # mySQL dump
-{ :version=>/------------------------------------------------------[\r]?\n-- Server version[\s]+([^\r^\n]+)/, :version_regexp_offset=>0 },
+{ :version=>/------------------------------------------------------[\r]?\n-- Server version[\s]+([^\r^\n]+)/, :regexp_offset=>0 },
 
 # Version detection # phpMyAdmin dump
-{ :version=>/^# phpMyAdmin MySQL-Dump[\s]+# version [^\s]+[\s]+# http:\/\/www.phpmyadmin.net\/ \(download page\)[\s#]+# Host: [^\s]+[\s]+# Generation Time: [^\n]+[\s]+# Server version: ([\d\.]+)/, :version_regexp_offset=>0 },
+{ :version=>/^# phpMyAdmin MySQL-Dump[\s]+# version [^\s]+[\s]+# http:\/\/www.phpmyadmin.net\/ \(download page\)[\s#]+# Host: [^\s]+[\s]+# Generation Time: [^\n]+[\s]+# Server version: ([\d\.]+)/, :regexp_offset=>0 },
 
 ]
 

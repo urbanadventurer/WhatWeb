@@ -29,7 +29,7 @@ www.habbok.com
 matches [
 
 # Version detection # Meta generator
-{ :version=>/<meta name="build" content="([^\ ]+) - [^-]+- HoloCMS" \/>/, :version_regexp_offset=>0 },
+{ :version=>/<meta name="build" content="([^\ ]+) - [^-]+- HoloCMS" \/>/, :regexp_offset=>0 },
 
 # Default HTML
 { :text=>'<div id="remember-me-notification" class="bottom-bubble" style="display:none;">' },

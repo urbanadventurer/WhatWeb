@@ -55,11 +55,11 @@ matches [
 {:text=>"Designed with <a href=\"http://www.asp-nuke.net\" target=\"_blank\">ASP-Nuke</a>" },
 {:version=>"v1.1+", :text=>"<br>Designed with ASP-Nuke v1.1+" },
 
-{:version=>/<meta name="Generator" (content|CONTENT)="(ASPNUKE|ASP-Nuke) ([^->"]+)/, :version_regexp_offset=>2,  :name=>"meta generator tag" },
+{:version=>/<meta name="Generator" (content|CONTENT)="(ASPNUKE|ASP-Nuke) ([^->"]+)/, :regexp_offset=>2,  :name=>"meta generator tag" },
 
-{:version=>/Designed with <a href="http:\/\/www.asp-nuke.net" target="_blank">ASP-Nuke<\/a> ([^<]+)<br>/, :version_regexp_offset=>0,  :name=>"desgined by" },
+{:version=>/Designed with <a href="http:\/\/www.asp-nuke.net" target="_blank">ASP-Nuke<\/a> ([^<]+)<br>/, :regexp_offset=>0,  :name=>"desgined by" },
 
-{:version=>/<a href="http:\/\/www.aspnuke.it" target="_blank">Asp-Nuke ([\d\.]+)<\/a>/, :version_regexp_offset=>0,  :name=>"aspnuke.it" },
+{:version=>/<a href="http:\/\/www.aspnuke.it" target="_blank">Asp-Nuke ([\d\.]+)<\/a>/, :regexp_offset=>0,  :name=>"aspnuke.it" },
 
 ]
 

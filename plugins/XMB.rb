@@ -43,13 +43,13 @@ matches [
 { :text=>'<!-- www.aventure-media.co.uk  :  www.xmbforum.com -->' },
 
 # Version detection # Powered by text
-{ :version=>/^Powered by XMB ([^<]+)<br \/>/, :version_regexp_offset=>0 },
+{ :version=>/^Powered by XMB ([^<]+)<br \/>/, :regexp_offset=>0 },
 
 # Version detection # Default title
-{ :version=>/<title>[^\-]+- Powered by XMB ([^<]+)<\/title>/, :version_regexp_offset=>0 },
+{ :version=>/<title>[^\-]+- Powered by XMB ([^<]+)<\/title>/, :regexp_offset=>0 },
 
 # Version detection # HTML comments
-{ :version=>/^<!-- Powered by XMB ([^\ \ ]+)/, :version_regexp_offset=>0 },
+{ :version=>/^<!-- Powered by XMB ([^\ \ ]+)/, :regexp_offset=>0 },
 
 ]
 

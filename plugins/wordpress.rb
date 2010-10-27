@@ -24,7 +24,7 @@ matches [
 {:regexp=>/"[^"]+\/wp-content\/[^"]+"/, :name=>"wp-content", :certainty=>75 },
 
 {:version=>/<meta name=\"generator\" content=\"(WordPress)[ ]?([0-9\.]+)\"/, #"# we use the version_regexp_offset=1 because (WordPress) is 0 and ([0-9]..) is 1
- :version_regexp_offset=>1,  :name=>"meta generator tag" },
+ :regexp_offset=>1,  :name=>"meta generator tag" },
 
 
 {:url=>"/wp-cron.php"}, # url exists, i.e. returns HTTP status 200

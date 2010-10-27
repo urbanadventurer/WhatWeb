@@ -29,7 +29,7 @@ matches [
 { :text=>'<meta name="generator" content="Loggix" />' },
 
 # Version detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/loggix.gotdns.org">Loggix<\/a> ver.([\d\.]+)<\/address>/, :version_regexp_offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/loggix.gotdns.org">Loggix<\/a> ver.([\d\.]+)<\/address>/, :regexp_offset=>0 },
 
 ]
 
