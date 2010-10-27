@@ -17,7 +17,11 @@ www.morningstarsecurity.com/contact
 matches [
 
 # Version detection
+<<<<<<< HEAD:plugins/wordpress-contact-form.rb
 { :version=>/<input type="hidden" name="_wpcf([\d\.]+)" value="1" \/>/, :version_regexp_offset=>0 }
+=======
+{ :version=>/<input type="hidden" name="_wpcf([\d\.]+)" value="1" \/>/, :regexp_offset=>0 }
+>>>>>>> upstream/master:plugins/wordpress-contact-form.rb
 
 ]
 

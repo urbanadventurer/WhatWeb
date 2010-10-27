@@ -22,7 +22,7 @@ matches [
 {:name=>"js function", :text=>"function squirrelmail_loginpage_onload()"},
 {:name=>"css comment", :text=>'/* avoid stupid IE6 bug with frames and scrollbars */'},
 {:text=>'<b>SquirrelMail Login</b>'},
-{:version=>/<(small|SMALL)>SquirrelMail version ([^<]+)</, :version_regexp_offset=>1,  :name=>"version" } 
+{:version=>/<(small|SMALL)>SquirrelMail version ([^<]+)</, :regexp_offset=>1,  :name=>"version" } 
 ]
 
 # <SMALL>SquirrelMail version 1.2.7<BR>

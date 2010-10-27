@@ -10,10 +10,12 @@
 # removed :probability & :name
 # Version 0.5
 # uses :modules instead of :string, changed the 3rd regexp from 75 certainty to 25.
+# Version 0.6
+# added seconds since epoch match from the mambo plugin
 
 Plugin.define "Joomla" do
 author "Andrew Horton"
-version "0.5"
+version "0.6"
 description "Opensource CMS written in PHP. Homepage: http://joomla.org. Plugin can aggresively identify version by comparing md5 hashes of 4 files. Valid up to version 1.5.15."
 
 examples %w|biokolchuga.com cosmicfantasia.net.au rustedfables.com turning2joomla.com www.1000usi.ch www.allananova.com www.azrul.com www.bittdesign.nl www.clubjoomla.com www.danone.com www.imusictools.com www.joomla.org www.joomlawebdesigns.com www.livelovehope.org |
@@ -37,6 +39,11 @@ def passive
 #	http://www.porsche.com.br/component/option,com_artbanners/Itemid,0/task,clk/id,45/">
 #   <a href="http://www.porsche.com.br/index.php?option=com_content&task=view&id=242&Itemid=235">Galeria</a>
 
+
+	# joomla 1.0 + mambo have this
+	if @body.scan(/<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/) and !@body.scan(/mambo/i)
+		m << {:name=>"seconds since epoch in html comment afer </html>",:version=>"1.0",:certainty=>25}
+	end
 
 
 	# get modules, doesn't work in SEO mode

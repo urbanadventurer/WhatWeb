@@ -56,7 +56,7 @@ matches [
 :certainty=>50,
 :regexp=>/<a href="[^"]*\/displayimage.php\?album=[a-z0-9]+&pos=">/ }, # "
 
-{:version=>/<!--Coppermine Photo Gallery ([\d\.]+[^>]+)-->/, :version_regexp_offset=>0,  :name=>"<!--Coppermine Photo Gallery" } #"
+{:version=>/<!--Coppermine Photo Gallery ([\d\.]+[^>]+)-->/, :regexp_offset=>0,  :name=>"<!--Coppermine Photo Gallery" } #"
 								]
 # 
 

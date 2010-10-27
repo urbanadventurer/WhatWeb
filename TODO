@@ -11,7 +11,14 @@ add alexa plugin
 add dmoz plugin
 
 add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
+--plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
+--plugins +/tmp/moo.rb
+--plugins foobar (only select foobar)
 
+
+
+{ :ghdb=>"powered by JAMM CMS", :certainty=>75 },
+this matches on morningstarsecurity.com/research/whatweb
 
 [x] add IP plugin <-- can't get IP out of http object
 [x] add geoIP country plugin

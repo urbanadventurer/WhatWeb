@@ -32,6 +32,13 @@ Version 0.4.6 Released ? 2010
 * Added startup and shutdown for plugins
 * Added IP plugin
 * Moved some plugins into disabled-plugins, as they clutter output. adobe_flash.rb, footer-hash.rb, frame.rb, header-hash.rb, md5.rb, script.rb, shortcut-icon.rb, tagpattern-hash.rb
+* Model and Firmware results now display in dark green
+* Changed :version_regexp_offset, :modules_regexp_offset, etc to :regexp_offset. Updated 86 plugins.
+* Added :filepath match type
+* Renamed disabled-plugins/ to plugins-disabled/
+* Updated mailto plugin
+* Updated Mambo and Joomla plugins with suggestions from Aung Khant
+
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman

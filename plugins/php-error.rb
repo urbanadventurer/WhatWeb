@@ -26,7 +26,7 @@ www.wunschrausch.com/blog/wp-content/themes/default/
 matches [
 
 # Extract local file path
-{ :version=>/<b>(Warning|Fatal error)<\/b>: .* in <b>([^<]+)<\/b> on line <b>[0-9]+<\/b><br \/>/, :version_regexp_offset=>1 },
+{ :version=>/<b>(Warning|Fatal error)<\/b>: .* in <b>([^<]+)<\/b> on line <b>[0-9]+<\/b><br \/>/, :regexp_offset=>1 },
 
 ]
 

@@ -120,10 +120,10 @@ matches [
 { :regexp=>/<META NAME="COPYRIGHT" CONTENT="Copyright[^\>]*by Arab[\s]*Portal"/ },
 
 # Version detection # Meta Copyright
-{ :version=>/<META content="[^>]*Powered by: Arab Portal v([\d\.]+), Copyright[^>]*" name="description">/, :version_regexp_offset=>0 },
+{ :version=>/<META content="[^>]*Powered by: Arab Portal v([\d\.]+), Copyright[^>]*" name="description">/, :regexp_offset=>0 },
 
 # Version detection # Powered by text
-{ :version=>/<center><font size=2>Powered by: Arab[\s]*Portal v([\d\.]+)[\s]*, Copyright/, :version_regexp_offset=>0 },
+{ :version=>/<center><font size=2>Powered by: Arab[\s]*Portal v([\d\.]+)[\s]*, Copyright/, :regexp_offset=>0 },
 
 ]
 

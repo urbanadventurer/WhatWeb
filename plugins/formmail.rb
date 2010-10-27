@@ -33,7 +33,7 @@ matches [
 {:text=>"<tr><th><font size=+2>FormMail</font></th></tr>" },
 {:ghdb=>"inurl:/FormMail.pl" },
 {:version=>"1.9", :regexp=>/Copyright 1995 - 2001 Matt Wright<br>[\s]+Version 1.9/ },
-{:version=>/FormMail<\/a>[\s]+V([\d\.]+)/i, :version_regexp_offset=>0,  :name=>"version" } 
+{:version=>/FormMail<\/a>[\s]+V([\d\.]+)/i, :regexp_offset=>0,  :name=>"version" } 
 ]
 
 end

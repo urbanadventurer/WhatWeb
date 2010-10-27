@@ -54,7 +54,7 @@ www.teratecno.com/clientes/
 matches [
 
 # Version detection # Powered by text
-{ :version=>/<div id="footer">Powered by <a href="http:\/\/thehostingtool.com" target="_blank">TheHostingTool<\/a> ([\d\.]*)<\/div>/, :version_regexp_offset=>0 },
+{ :version=>/<div id="footer">Powered by <a href="http:\/\/thehostingtool.com" target="_blank">TheHostingTool<\/a> ([\d\.]*)<\/div>/, :regexp_offset=>0 },
 
 ]
 

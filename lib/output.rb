@@ -58,6 +58,7 @@ class OutputVerbose < Output
 					stuff << "firmware: #{pr[:firmware]}" if pr[:firmware]
 					stuff << "modules: #{pr[:modules]}" if pr[:modules]
 					stuff << "accounts: #{pr[:accounts]}" if pr[:accounts]
+					stuff << "filepath: #{pr[:filepath]}" if pr[:filepath]
 					stuff << "url: #{pr[:url]}" if pr[:url]
 					name_of_match + ( !stuff.empty? ? " (" + stuff.join(",") +")" : "" )
 				end
@@ -88,7 +89,8 @@ class OutputBrief < Output
 				model = plugin_results.map {|x| x[:model] }.compact.sort.uniq.join(",")
 				firmware = plugin_results.map {|x| x[:firmware] }.compact.sort.uniq.join(",")
 				modules = plugin_results.map {|x| x[:modules] }.compact.sort.uniq.join(",")
-			
+				filepath = plugin_results.map {|x| x[:filepath] }.compact.sort.uniq.join(",")
+
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
 				if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
@@ -114,8 +116,9 @@ class OutputBrief < Output
 					   coloured_plugin + (!version.empty? ? "["+green(version)+"]" : "") +
 					   (!string.empty? ? "[" + coloured_string+"]" : "") +
 					   (!accounts.empty? ? "["+ accounts+"]" : "" ) +
-					   (!model.empty? ? "["+ model+"]" : "" ) +
-					   (!firmware.empty? ? "["+ firmware+"]" : "" ) +
+					   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
+					   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
+					   (!filepath.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
 					   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
 
 					 
@@ -127,6 +130,7 @@ class OutputBrief < Output
 					   (!accounts.empty? ? " ["+ accounts+"]" : "" ) +
 					   (!model.empty? ? "["+ model+"]" : "" ) +
 					   (!firmware.empty? ? "["+ firmware+"]" : "" ) +
+					   (!filepath.empty? ? "["+ firmware+"]" : "" ) +
 					   (!modules.empty? ? "["+ modules+"]" : "" )
 				end	
 			end
@@ -176,12 +180,13 @@ class OutputXML < Output
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
 				certainty = plugin_results.map {|x| x[:certainty] }.compact.sort.uniq.last
-				version = plugin_results.map {|x| x[:version] }.flatten.compact.sort.uniq
-				string = plugin_results.map {|x| x[:string] }.flatten.compact.sort.uniq
-				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq
+				version = plugin_results.map {|x| x[:version] }.flatten.compact.sort.uniq.join(",")
+				string = plugin_results.map {|x| x[:string] }.flatten.compact.sort.uniq.join(",")
+				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq.join(",")
 				model = plugin_results.map {|x| x[:model] }.compact.sort.uniq.join(",")
 				firmware = plugin_results.map {|x| x[:firmware] }.compact.sort.uniq.join(",")
 				modules = plugin_results.map {|x| x[:modules] }.flatten.compact.sort.uniq
+				filepath = plugin_results.map {|x| x[:filepath] }.flatten.compact.sort.uniq.join(",")
 
 				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
 				version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
@@ -189,6 +194,7 @@ class OutputXML < Output
 				accounts.map {|x| @f.puts "\t\t<accounts>#{escape(x)}</accounts>" }
 				model.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
 				firmware.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
+				filepath.map {|x| @f.puts "\t\t<filepath>#{escape(x)}</filepath>" }
 
 				if modules.size > 0
 					@f.puts "\t\t<modules>\n" + modules.map {|x| "\t\t\t<module>#{escape(x)}</module>" }.join("\n") + "\n\t\t</modules>"
@@ -216,9 +222,10 @@ class OutputJSON < Output
 				version = plugin_results.map {|x| x[:version] }.flatten.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] }.flatten.compact.sort.uniq
 				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq
-				model = plugin_results.map {|x| x[:model] }.compact.sort.uniq.join(",")
-				firmware = plugin_results.map {|x| x[:firmware] }.compact.sort.uniq.join(",")
+				model = plugin_results.map {|x| x[:model] }.compact.sort.uniq
+				firmware = plugin_results.map {|x| x[:firmware] }.compact.sort.uniq
 				modules = plugin_results.map {|x| x[:modules] }.flatten.compact.sort.uniq
+				filepath = plugin_results.map {|x| x[:filepath] }.flatten.compact.sort.uniq
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?
@@ -227,6 +234,7 @@ class OutputJSON < Output
 				thisplugin[:model] = model unless model.empty?
 				thisplugin[:firmware] = firmware unless firmware.empty?
 				thisplugin[:modules] = modules unless modules.empty?
+				thisplugin[:filepath] = filepath unless filepath.empty?
 				foo[:plugins] << thisplugin
 			end
 		end

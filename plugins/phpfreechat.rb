@@ -39,7 +39,7 @@ matches [
 { :ghdb=>'"powered by phpfreechat"', :certainty=>75 },
 
 # Version detection # Default logo HTML
-{ :version=>/<img src="http:\/\/www.phpfreechat.net\/pub\/logo[2]*_80x15.gif" alt="PHP FREE CHAT \[powered by phpFreeChat-([\d\.\-a-z]*)\]"/, :version_regexp_offset=>0 },
+{ :version=>/<img src="http:\/\/www.phpfreechat.net\/pub\/logo[2]*_80x15.gif" alt="PHP FREE CHAT \[powered by phpFreeChat-([\d\.\-a-z]*)\]"/, :regexp_offset=>0 },
 
 ]
 

@@ -20,7 +20,7 @@ matches [
 {:name=>"powered by", :version=>2.2, :regexp=>/<b>Advanced Guestbook 2.2<br>\s+Powered by PHP/},
 
 {:name=>"powered by - regexp", :version=>/<a href="http:\/\/www.proxy2.de" target="_blank"><font color="#CCCCCC" size="1">(Advanced Guestbook) ([^<]+)/,
-:version_regexp_offset=>1}
+:regexp_offset=>1}
 ]
 
 # Vuln version 2.2

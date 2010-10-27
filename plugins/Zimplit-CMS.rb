@@ -54,7 +54,7 @@ matches [
 { :regexp=>/<[script|SCRIPT]+[\ type="text\/javascript"]* src="http:\/\/client.zimplit.com\/users\/publicUser\/[jquery.js|ZimgZoomer.js|ZZMenu.js]+"[\ type="text\/javascript"]*><\/[script|SCRIPT]+>/ },
 
 # Version detection # Default Javascript
-{ :version=>/<[script|SCRIPT]+[\ type="text\/javascript"]* src="http:\/\/client.zimplit.com\/users\/publicUser_v([\d\._]+)\/[jquery.js|ZimgZoomer.js|ZZMenu.js]+"[\ type="text\/javascript"]*><\/[script|SCRIPT]+>/, :version_regexp_offset=>0 },
+{ :version=>/<[script|SCRIPT]+[\ type="text\/javascript"]* src="http:\/\/client.zimplit.com\/users\/publicUser_v([\d\._]+)\/[jquery.js|ZimgZoomer.js|ZZMenu.js]+"[\ type="text\/javascript"]*><\/[script|SCRIPT]+>/, :regexp_offset=>0 },
 
 # Powered by text
 { :text=>'<!-- YOU ARE ONLY ALLOWED TO HIDE, DELETE OR MODIFY "POWERED BY ZIMPLIT CMS" LINK, IF THE DOMAIN HAS BEEN REGISTERED WITH A COMMERCIAL LICENSE AT WWW.ZIMPLIT.ORG -->' },

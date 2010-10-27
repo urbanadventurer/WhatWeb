@@ -85,12 +85,12 @@ matches [
 { :text=>'vti_title:SR|Web Settings for Active Server Pages' },
 
 # Get connection strings # global.asa
-{ :version=>/connectionstring=DRIVER=([^\n]+)/, :version_regexp_offset=>0 },
-{ :version=>/connectionstring=Provider=([^\n]+)/, :version_regexp_offset=>0 },
+{ :version=>/connectionstring=DRIVER=([^\n]+)/, :regexp_offset=>0 },
+{ :version=>/connectionstring=Provider=([^\n]+)/, :regexp_offset=>0 },
 
 # Get connection strings # web.config
-{:version=>/connectionString="([^\"]+)/, :version_regexp_offset=>0 },
-{:version=>/<add key="ConnectionString" value="([^\"]+)/, :version_regexp_offset=>0 },
+{:version=>/connectionString="([^\"]+)/, :regexp_offset=>0 },
+{:version=>/<add key="ConnectionString" value="([^\"]+)/, :regexp_offset=>0 },
 
 ]
 

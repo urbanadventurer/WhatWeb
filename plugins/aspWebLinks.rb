@@ -32,11 +32,11 @@ www.studentenwerk-aachen.de/links/links.asp
 matches [
 
 # Version detection # Powered by text
-{ :version=>/Powered By aspWebLinks ([\d\.]+) from <A[^>]*HREF=["']http:\/\/www.fullrevolution.com[^>]*>Full Revolution, Inc.<\/A>/, :version_regexp_offset=>0 },
-{ :version=>/<A[^>]*HREF=["']http:\/\/www.fullrevolution.com[^>]*>Powered By aspWebLinks ([\d\.]+)<\/A>/, :version_regexp_offset=>0 },
+{ :version=>/Powered By aspWebLinks ([\d\.]+) from <A[^>]*HREF=["']http:\/\/www.fullrevolution.com[^>]*>Full Revolution, Inc.<\/A>/, :regexp_offset=>0 },
+{ :version=>/<A[^>]*HREF=["']http:\/\/www.fullrevolution.com[^>]*>Powered By aspWebLinks ([\d\.]+)<\/A>/, :regexp_offset=>0 },
 
 # Version detection # Default title
-{ :version=>/<title>aspWebLinks ([\d\.]+)<\/title>/, :version_regexp_offset=>0 },
+{ :version=>/<title>aspWebLinks ([\d\.]+)<\/title>/, :regexp_offset=>0 },
 
 ]
 

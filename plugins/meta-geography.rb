@@ -18,20 +18,20 @@ lars.nocrew.org
 matches [
 
 # Get geography
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geography[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :version_regexp_offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geography/i, :version_regexp_offset=>0 },
+{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geography[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :regexp_offset=>0 },
+{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geography/i, :regexp_offset=>0 },
 
 # Get geo.position
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.position[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :version_regexp_offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.position/i, :version_regexp_offset=>0 },
+{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.position[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :regexp_offset=>0 },
+{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.position/i, :regexp_offset=>0 },
 
 # Get geo.placename
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.placename[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :version_regexp_offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.placename/i, :version_regexp_offset=>0 },
+{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.placename[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :regexp_offset=>0 },
+{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.placename/i, :regexp_offset=>0 },
 
 # Get geo.region
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.region[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :version_regexp_offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.region/i, :version_regexp_offset=>0 },
+{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.region[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :regexp_offset=>0 },
+{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.region/i, :regexp_offset=>0 },
 
 ]
 

@@ -44,7 +44,7 @@ matches [
 { :regexp=>/360WebManager Software :: administrador contenidos web/, :certainty=>75 },
 
 # Version detection # Powered by text
-{ :version=>/<div align="center"><span class="copyr">Powered by <a href="http:\/\/www.360webmanager.com" target="_blank" class="copyrlink">360 Web Manager<\/a> ([\d\.]+)/, :version_regexp_offset=>0 },
+{ :version=>/<div align="center"><span class="copyr">Powered by <a href="http:\/\/www.360webmanager.com" target="_blank" class="copyrlink">360 Web Manager<\/a> ([\d\.]+)/, :regexp_offset=>0 },
 
 ]
 
