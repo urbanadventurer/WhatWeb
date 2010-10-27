@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+
+# version 0.2
+# requires htpasswd in the url path to reduce false positives
+
 Plugin.define "Credentials" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
-version "0.1"
+version "0.2"
 description "This plugin attempts to retrievs credentials in user:pass format."
 
 # 104 results for inurl:htpasswd ext:txt @ 2010-10-23
@@ -39,13 +43,14 @@ www.pornstarsociety.com/acpay/acp.htpasswd.bak.20021015051207
 # Extract credentials
 def passive
 	m=[]
-
-	# user{2-255}:pass{1-80} combination # sha1, md4, md5, plaintext
-	if @body =~ /^([0-9a-z\-_]{2,255}:[^\r^\n^\s^:]{1,80})[\r\n\s:]*/
-		accounts=@body.scan(/^([0-9a-z\-_]{2,255}:[^\r^\n^\s^:]{1,80})[\r\n\s:]*/)
-		m << { :accounts=>accounts }
+	
+	if @base_uri.path =~ /htpasswd/i
+		# user{2-255}:pass{1-80} combination # sha1, md4, md5, plaintext
+		if @body =~ /^([0-9a-z\-_]{2,255}:[^\r^\n^\s^:]{1,80})[\r\n\s:]*/
+			accounts=@body.scan(/^([0-9a-z\-_]{2,255}:[^\r^\n^\s^:]{1,80})[\r\n\s:]*/)
+			m << { :accounts=>accounts }
+		end
 	end
-
 	m
 
 end
