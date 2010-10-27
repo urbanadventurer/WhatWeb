@@ -15,7 +15,7 @@
 
 Plugin.define "Mambo" do
 author "Andrew Horton"
-version "0.3"
+version "0.4"
 description "Mambo CMS (http://mambo-foundation.org)"
 
 examples %w|http://historycouncilvic.org.au/ http://www.turksandcaicosproperty.com/ http://www.moneydepot.com.au/md/  http://www.fuzzytoad.com/mambo/ http://www.ultimatescrapbooksite.com/ http://wreathsbydesign.com/portal/ http://www.xpec.co.uk/|
