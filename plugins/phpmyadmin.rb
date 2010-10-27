@@ -46,17 +46,10 @@ matches [
 { :certainty=>75, :ghdb=>'+intitle:phpMyAdmin +"Language: Afrikaans" +"Welcome to phpMyAdmin"' },
 
 # Version Detection # Default Title
-<<<<<<< HEAD:plugins/phpmyadmin.rb
-{ :version=>/<title>phpMyAdmin ([^\s^<]+)[^<]*<\/title>/, :version_regexp_offset=>0 },
-
-# Version Detection # Default heading HTML
-{ :version=>/<h2>Welcome to  phpMyAdmin ([^<]+)<\/h2>/, :version_regexp_offset=>0 },
-=======
 { :version=>/<title>phpMyAdmin ([^\s^<]+)[^<]*<\/title>/, :regexp_offset=>0 },
 
 # Version Detection # Default heading HTML
 { :version=>/<h2>Welcome to  phpMyAdmin ([^<]+)<\/h2>/, :regexp_offset=>0 },
->>>>>>> upstream/master:plugins/phpmyadmin.rb
 
 # Default Logo HTML
 { :text=>'<img src="./themes/original/img/logo_right.png" id="imLogo" name="imLogo" alt="phpMyAdmin" border="0" /></a>' },

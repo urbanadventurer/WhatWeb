@@ -24,11 +24,7 @@ matches [
 { :regexp=>/<meta[^>]*property="og:title"[^>]*>/i },
 
 # Get type # og:type
-<<<<<<< HEAD:plugins/open_graph_protocol.rb
-{ :version=>/<meta[^>]*property="og:type"[^>]*content="([^\"^>]+)"/, :version_regexp_offset=>0 },
-=======
 { :version=>/<meta[^>]*property="og:type"[^>]*content="([^\"^>]+)"/, :regexp_offset=>0 },
->>>>>>> upstream/master:plugins/open_graph_protocol.rb
 
 ]
 
