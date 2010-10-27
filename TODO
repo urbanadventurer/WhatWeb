@@ -13,6 +13,9 @@ add dmoz plugin
 add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
 
 
+{ :ghdb=>"powered by JAMM CMS", :certainty=>75 },
+this matches on morningstarsecurity.com/research/whatweb
+
 [x] add IP plugin <-- can't get IP out of http object
 [x] add geoIP country plugin
 

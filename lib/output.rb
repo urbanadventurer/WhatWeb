@@ -114,8 +114,8 @@ class OutputBrief < Output
 					   coloured_plugin + (!version.empty? ? "["+green(version)+"]" : "") +
 					   (!string.empty? ? "[" + coloured_string+"]" : "") +
 					   (!accounts.empty? ? "["+ accounts+"]" : "" ) +
-					   (!model.empty? ? "["+ model+"]" : "" ) +
-					   (!firmware.empty? ? "["+ firmware+"]" : "" ) +
+					   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
+					   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
 					   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
 
 					 
