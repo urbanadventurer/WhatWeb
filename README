@@ -20,21 +20,21 @@ Identify content management systems (CMS), blogging platforms, stats/analytics p
 
 WhatWeb has over 500 plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
 
-There are both passive and aggressive plugins, passive plugins use information on the page, in cookies and in the URL to identify the system. A passive request is as light weight as a simple GET / HTTP/1.1 request. Aggressive plugins guess URLs and request more files. Plugins are easy to write, you don't need to know ruby to make them.
+There are both passive and aggressive plugins. Passive plugins use information on the page, in cookies and in the URL to identify the system. A passive request is as light weight as a simple GET / HTTP/1.1 request. Aggressive plugins guess URLs and request more files. Plugins are easy to write, you don't need to know ruby to make them.
 
 
 EXAMPLE USAGE
 
 Using WhatWeb on a handful of websites, standard WhatWeb output is in colour.
 
-$ whatweb slashdot.org reddit.com digg.com http://www.engadget.com/ www.whitehouse.gov
-http://www.whitehouse.gov [200] Cookies[d], Drupal, RSSFeed[http://www.whitehouse.gov/opensearch/apachesolr_search], Google-Analytics[GA][10791350], HTTPServer[White House], OpenSearch[http://www.whitehouse.gov/opensearch/apachesolr_search], Title[The White House], MD5[5037c644b2934e3897b751e49fed22ef], Footer-Hash[27c5d9f6ed08701f8d27cbc29c0b1753], Tag-Hash[957e5dc85c5fd75df3981e917365bf64], Header-Hash[6ab220f882680f23982afcd35d28da29]
-http://reddit.com [302] HTTPServer[AkamaiGHost], RedirectLocation[http://www.reddit.com/], MD5[d41d8cd98f00b204e9800998ecf8427e], Tag-Hash[d41d8cd98f00b204e9800998ecf8427e]
-http://digg.com [302] Cookies[d,traffic_control], HTTPServer[Apache], X-Powered-By[PHP/5.2.9-digg8], UncommonHeaders[x-digg-time,keep-alive], RedirectLocation[/news], Tag-Hash[d41d8cd98f00b204e9800998ecf8427e], MD5[d41d8cd98f00b204e9800998ecf8427e]
-http://www.reddit.com/ [200] Cookies[reddit_first], Title[reddit.com: where dreams come true], Google-Analytics[GA][12131688], HTTPServer['; DROP TABLE servertypes; --], RSSFeed[/static/reddit.css?v=979b766d30fcfdef667f67feb1cc72ea], PasswordField[passwd,passwd2], JQuery, MD5[81205b7f2719605325806b1e6c9196e9], Header-Hash[754c4c29dadba9a60ed8c05db7c44819], Tag-Hash[d18d7cd019d7d54e2ccb234875ad2419], Footer-Hash[9086bcb16723f874c9cebdb8497731bb]
-http://digg.com/news [200] Cookies[d,traffic_control], X-Powered-By[PHP/5.2.9-digg8], HTML5, HTTPServer[Apache], UncommonHeaders[x-digg-time,keep-alive], Title[Digg                 - The Latest News Headlines, Videos and Images], RSSFeed[http://cdn1.diggstatic.com/img/iphone/icon.63e34426.png], Mobile-Website[Apple iPhone], Tag-Hash[b9e39fdf7d9fc460a3dc3d09ddbbd1a7], MD5[60ae72dd371895711e9873e50d918c96], Header-Hash[6ddd6eeae8ee2ae04a260c724742bf79], Footer-Hash[7a08d0572a2fd995b63b98da3547da36]
-http://www.engadget.com/ [200] probably BlogSmithMedia, Cookies[GEO-202_160_48_249], UncommonHeaders[keep-alive], HTTPServer[Apache/2.2], Title[Engadget], RSSFeed[http://www.blogsmithmedia.com/www.engadget.com/media/favicon.ico], PoweredBy[lithium], PasswordField[login-pw,newkey], Mobile-Website[Apple iPhone], MD5[bb16e2f7a2019855a0f16daf9201ce33], Tag-Hash[000596f9ac321916d2fb218855da2354], Header-Hash[40cbd7dad1da86fa8db86b1f67e8c161], Footer-Hash[4c93280680bd3f1bfd5c37439efb9b04]
-http://slashdot.org [200] X-Powered-By[Slash 2.005001], Google-Analytics[GA][32013], HTTPServer[Apache/1.3.41 (Unix) mod_perl/1.31-rc4], UncommonHeaders[x-fry,x-varnish,x-xrds-location,slash_log_data], Title[Slashdot - News for nerds, stuff that matters], Mailto[soulskillatslashdotdotorg], RSSFeed[//a.fsdn.com/sd/idlecore-tidied.css?T_2_5_0_303b], PasswordField[upasswd], Tag-Hash[b740b7b0bc46a2f3ff8813ef25a6c5b5], MD5[901702dbfe3f5f86ba4fcad7478b4587], Header-Hash[b7b9e14ea8fb33e711ac1562f91305a9], Footer-Hash[7fafeba5d1d7b9cee5387feed4bf8338]
+$ ./whatweb slashdot.org reddit.com digg.com http://www.engadget.com/ www.whitehouse.gov
+http://reddit.com [302] Akamai-Global-Host, Country[US], HTTPServer[AkamaiGHost], IP[24.29.138.57], RedirectLocation[http://www.reddit.com/]
+http://www.whitehouse.gov [200] Cookies[d], Country[US], Drupal, Google-Analytics[GA][10791350], HTTPServer[White House], IP[206.57.116.170], OpenSearch[http://www.whitehouse.gov/opensearch/apachesolr_search], Subdomains[www], Title[The White House]
+http://digg.com [302] Apache, Cookies[d,imp_id,traffic_control], Country[US], HTTPServer[Apache], IP[64.191.203.30], PHP[5.2.9-digg8], RedirectLocation[/news], UncommonHeaders[x-digg-time,keep-alive], X-Powered-By[PHP/5.2.9-digg8]
+http://slashdot.org [200] Apache[1.3.42], Country[US], Google-Analytics[GA][32013], HTTPServer[Apache/1.3.42 (Unix) mod_perl/1.31], IP[216.34.181.45], OpenGraphProtocol[100000696822412], PasswordField[upasswd], Subdomains[rss,books], Title[Slashdot - News for nerds, stuff that matters], UncommonHeaders[x-varnish,x-bender,x-xrds-location,slash_log_data], X-Powered-By[Slash 2.005001]
+http://www.engadget.com/ [200] Apache[2.2], probably BlogSmithMedia, Cookies[GEO-64_251_29_84], Country[US], HTTPServer[Apache/2.2], IP[64.12.173.101], Mobile-Website[Apple iPhone], PasswordField[login-pw,newkey], Subdomains[www,mobile,hd,alt,es,chinese,cn,japanese,kr,de,pl], Title[Engadget], UncommonHeaders[keep-alive]
+http://www.reddit.com/ [200] Cookies[reddit_first], Country[US], Google-Analytics[GA][12131688], HTTPServer['; DROP TABLE servertypes; --], IP[206.57.116.160], JQuery, PasswordField[passwd,passwd2], Subdomains[www,thumbs,pixel,blog], Title[reddit: the voice of the internet -- news before it happens]
+http://digg.com/news [200] Apache, Cookies[d,imp_id,traffic_control], Country[US], HTML5, HTTPServer[Apache], IP[64.191.203.30], Mobile-Website[Apple iPhone], PHP[5.2.9-digg8], PasswordField[password], Subdomains[dads.new,about,developers,jobs], Title[Digg                    - All Topics                 - The Latest News Headlines, Videos and Images], UncommonHeaders[x-digg-time,keep-alive], X-Powered-By[PHP/5.2.9-digg8]
 
 
 HELP
@@ -104,21 +104,21 @@ VERBOSE OUTPUT
 
 ./whatweb -v www.morningstarsecurity.com
 www.morningstarsecurity.com/ [200]
-http://www.morningstarsecurity.com [200] WordPress[3.0.1], Google-API[ajax/libs/jquery/1.3.2/jquery.min.js ], Google-Analytics[GA][791888], HTTPServer[Apache], UncommonHeaders[x-pingback], JQuery[1.4.2], Title[MorningStar Security], MetaGenerator[WordPress 3.0.1], Subdomains[www], RSS-Feed[/blog/feed], MD5[b73a610e7b145eba3cc5ba5db7432263], Tag-Hash[2e45809b1f8a1ecf782757d8dbafbb08], Header-Hash[dba021c0aa225c8eede02c7dcc45b0d8], Footer-Hash[d0efcc9da7c8c45eb1e2ac5b8d5b354e]
-Footer-Hash                    => hash (string: d0efcc9da7c8c45eb1e2ac5b8d5b354e)
+http://www.morningstarsecurity.com [200] Apache, Country[NZ], Google-API[ajax/libs/jquery/1.3.2/jquery.min.js ], Google-Analytics[GA][791888], HTTPServer[Apache], IP[210.48.71.202], JQuery[1.4.2], MetaGenerator[WordPress 3.0.1], Subdomains[www], Title[MorningStar Security], UncommonHeaders[x-pingback], WordPress[3.0.1], x-pingback[http://www.morningstarsecurity.com/xmlrpc.php,]
+Apache                         => HTTP Server Header
+Country                        =>  (string: NZ)
 Google-API                     => google javascript API (version: ajax/libs/jquery/1.3.2/jquery.min.js )
 Google-Analytics               => pageTracker = ...UA-123-1231 (string: GA,accounts: 791888)
 HTTPServer                     => server string (string: Apache)
-Header-Hash                    => hash (string: dba021c0aa225c8eede02c7dcc45b0d8)
+IP                             => IP (string: 210.48.71.202)
 JQuery                         => script (version: 1.4.2)
-MD5                            => md5 hash of html (string: b73a610e7b145eba3cc5ba5db7432263)
 MetaGenerator                  => meta generator tag (string: WordPress 3.0.1)
-RSS-Feed                       =>  (version: /blog/feed)
 Subdomains                     =>  (version: www)
-Tag-Hash                       => tag pattern hash (string: 2e45809b1f8a1ecf782757d8dbafbb08)
 Title                          => page title (string: MorningStar Security)
 UncommonHeaders                => headers (string: x-pingback)
 WordPress                      => wp-content (certainty: 75), meta generator tag (version: 3.0.1), Relative /wp-content/ link
+x-pingback                     =>  (string: http://www.morningstarsecurity.com/xmlrpc.php)
+
 
 
 
@@ -136,9 +136,10 @@ You can output to multiple logs simulatenously by specifying muliple command lin
 
 Brief Logging.
 
-Example usage: whatweb --brief-full b.log digg.com
+Example usage: ./whatweb --log-brief b.log digg.com
 
-http://digg.com [200] X-Powered-By[PHP/5.2.9-digg8], Cookies[1337,PHPSESSID,ccc], UncommonHeaders[keep-alive], Title[Digg - The Latest News Headlines, Videos and Images], HTTPServer[Apache], Mailto, Header-Hash[2df7eaaa4480f28013aaf48ae9266b84], MD5[24bc43e698e5d1388e836f5eee094fbe], Footer-Hash[ca2ffbc939969a2246cde196f0fc4841], Div-Span-Structure[828d809947c3c760d41c720c9203993b]
+http://digg.com [302] Apache, Cookies[d,imp_id,traffic_control], Country[US], HTTPServer[Apache], IP[64.191.203.30], PHP[5.2.9-digg8], RedirectLocation[/news], UncommonHeaders[x-digg-time,keep-alive], X-Powered-By[PHP/5.2.9-digg8]
+http://digg.com/news [200] Apache, Cookies[d,imp_id,traffic_control], Country[US], HTML5, HTTPServer[Apache], IP[64.191.203.30], Mobile-Website[Apple iPhone], PHP[5.2.9-digg8], PasswordField[password], Subdomains[dads.new,about,developers,jobs], Title[Digg                    - All Topics                 - The Latest News Headlines, Videos and Images], UncommonHeaders[x-digg-time,keep-alive], X-Powered-By[PHP/5.2.9-digg8]
 
 This is one connection per line and is searchable with grep.
 
@@ -151,31 +152,38 @@ The XML logging is currently naive and may change. Please contact me if you have
 Example usage: ./whatweb --log-xml x.log digg.com
 
 Contents of x.log:
+
 	<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>
 	<log>
 	<target>
 		<uri>http://digg.com</uri>
 		<http-status>302</http-status>
 		<plugin>
+			<name>Apache</name>
+		</plugin>
+		<plugin>
 			<name>Cookies</name>
-			<string>d</string>
-			<string>traffic_control</string>
+			<string>d,imp_id,traffic_control</string>
+		</plugin>
+		<plugin>
+			<name>Country</name>
+			<string>US</string>
 		</plugin>
 		<plugin>
 			<name>HTTPServer</name>
 			<string>Apache</string>
 		</plugin>
 		<plugin>
-			<name>MD5</name>
-			<string>d41d8cd98f00b204e9800998ecf8427e</string>
+			<name>IP</name>
+			<string>64.191.203.30</string>
+		</plugin>
+		<plugin>
+			<name>PHP</name>
+			<version>5.2.9-digg8</version>
 		</plugin>
 		<plugin>
 			<name>RedirectLocation</name>
 			<string>/news</string>
-		</plugin>
-		<plugin>
-			<name>Tag-Hash</name>
-			<string>d41d8cd98f00b204e9800998ecf8427e</string>
 		</plugin>
 		<plugin>
 			<name>UncommonHeaders</name>
@@ -190,13 +198,15 @@ Contents of x.log:
 		<uri>http://digg.com/news</uri>
 		<http-status>200</http-status>
 		<plugin>
-			<name>Cookies</name>
-			<string>d</string>
-			<string>traffic_control</string>
+                <name>Apache</name>
 		</plugin>
 		<plugin>
-			<name>Footer-Hash</name>
-			<string>7a08d0572a2fd995b63b98da3547da36</string>
+			<name>Cookies</name>
+			<string>d,imp_id,traffic_control</string>
+		</plugin>
+		<plugin>
+			<name>Country</name>
+			<string>US</string>
 		</plugin>
 		<plugin>
 			<name>HTML5</name>
@@ -206,28 +216,28 @@ Contents of x.log:
 			<string>Apache</string>
 		</plugin>
 		<plugin>
-			<name>Header-Hash</name>
-			<string>6ddd6eeae8ee2ae04a260c724742bf79</string>
-		</plugin>
-		<plugin>
-			<name>MD5</name>
-			<string>597fa07fcb516ad18711f3b04484080a</string>
+			<name>IP</name>
+			<string>64.191.203.30</string>
 		</plugin>
 		<plugin>
 			<name>Mobile-Website</name>
 			<version>Apple iPhone</version>
 		</plugin>
 		<plugin>
-			<name>RSSFeed</name>
-			<string>http://cdn1.diggstatic.com/img/iphone/icon.63e34426.png</string>
+			<name>PHP</name>
+			<version>5.2.9-digg8</version>
 		</plugin>
 		<plugin>
-			<name>Tag-Hash</name>
-			<string>b9e39fdf7d9fc460a3dc3d09ddbbd1a7</string>
+			<name>PasswordField</name>
+			<string>password</string>
+		</plugin>
+		<plugin>
+			<name>Subdomains</name>
+			<version>about,dads.new,developers,jobs</version>
 		</plugin>
 		<plugin>
 			<name>Title</name>
-			<string>Digg                 - The Latest News Headlines, Videos and Images</string>
+			<string>Digg                    - All Topics                 - The Latest News Headlines, Videos and Images</string>
 		</plugin>
 		<plugin>
 			<name>UncommonHeaders</name>
@@ -263,51 +273,49 @@ $ ./whatweb -l
 Plugins Loaded
 ------------------------------
 1024-CMS,0.1
-360-Web-Manager,0.1
+360-Web-Manager,0.2
 4images,0.1
-Aardvark-Topsites-PHP,0.1
-Acclipse,0.2
 AChecker,0.1
 ACollab,0.1
 AContent,0.1
-AdaptCMS,0.1
+AMX-Mod-X,0.1
+ANECMS,0.2
+ASP-Nuke,0.3
+ASP.NET,0.1
+ASPThai.Net-Webboard,0.1
+ATutor,0.1
+AV-Arcade,0.1
+AVTech-Video-Web-Server,0.1
+AWStats,0.2
+Aardvark-Topsites-PHP,0.2
+Acclipse,0.2
 Ad-Network-Script,0.1
-AdobeFlash,0.1
-Adobe-Flash,0.2
-Advanced-Guestbook,0.2
-Advanced-Image-Hosting-Script,0.1
+AdaptCMS,0.1
+Advanced-Guestbook,0.3
+Advanced-Image-Hosting-Script,0.2
 AirvaeCommerce,0.1
+Akamai-Global-Host,0.1
 Alcatel-Lucent-Omniswitch,0.1
 All-in-one-SEO-Pack,0.1
-Allinta-CMS,0.1
+Allegro-RomPager,0.1
+Allinta-CMS,0.2
 AlstraSoft-AskMe,0.1
 Amiro-CMS,0.1
-AMX-Mod-X,0.1
-ANECMS,0.1
 Antiboard,0.1
-anyInventory,0.1
-Apache-Default,0.3
+Apache,0.4
 Applet,0.1
-Arab-Portal,0.1
-ArGoSoft-Mail-Server,0.1
+ArGoSoft-Mail-Server,0.2
+Arab-Portal,0.2
 ArticlePublisherPRO,0.1
 Aruba-Mobility-Controller-Config-File,0.1
-ashnews,0.1
-ASP.NET,0.1
-ASP-Nuke,0.2
-ASPThai.Net-Webboard,0.1
-aspWebLinks,0.1
 Atmail-WebMail,0.1
 AtomFeed,0.1
 Atomic-Photo-Album,0.1
-ATutor,0.1
 Auto-CMS,0.1
-AV-Arcade,0.1
-AVTech-Video-Web-Server,0.1
-AWStats,0.1
 Axigen-Mail-Server,0.1
 Axis-Network-Camera,0.1
-b2evolution,0.1
+BM-Classifieds,0.1
+BXR,0.1
 Barracuda-Spam-Firewall,0.1
 Basilic,0.1
 Battle-Blog,0.1
@@ -316,143 +324,127 @@ Belkin-Modem,0.2
 BinGoPHP-News,0.1
 Bing-SearchEngine,0.1
 Biromsoft-WebCam,0.1
-Blogger,0.1
-BlognPlus,0.1
 BlogSmithMedia,0.2
+Blogger,0.1
+BlognPlus,0.2
 BlueNet-Video-Server,0.1
-BM-Classifieds,0.1
-boastMachine,0.1
+Boa-WebServer,0.1
 BosClassifieds,0.1
 Brother-Printer,0.1
 BrowserCMS,0.1
-bSpeak,0.1
 Buddy-Zone,0.1
-Burning-Board-Lite,0.1
+Burning-Board-Lite,0.2
 BusinessSpace,0.1
-BXR,0.1
-c99-Shell,0.1
-Calendarix,0.1
+CF-Image-Hosting-Script,0.1
+CGI Backdoor,0.1
+CGIProxy,0.2
+CMS-WebManager-Pro,0.1
+CMSQLite,0.1
+CMScontrol,0.2
+CMScout,0.1
+CMSimple,0.2
+CPanel,0.3
+CS-Cart,0.1
+CSCSSM,0.1
 CaLogic-Calendars,0.1
+Calendarix,0.1
 Campsite,0.1
 Canon-Network-Camera,0.1
 Cartweaver,0.1
 CaupoShop-Classic,0.1
 Censura,0.1
-CF-Image-Hosting-Script,0.1
-CGI Backdoor,0.1
-CGIProxy,0.1
-chillyCMS,0.1
+Cisco-IOS,0.1
 Cisco-VPN-3000-Concentrator,0.1
 Citrix-Metaframe,0.2
 ClanSphere,0.1
 ClipShare,0.1
-CMScontrol,0.1
-CMScout,0.1
-CMSimple,0.1
-CMSQLite,0.1
-CMS-WebManager-Pro,0.1
 CodeIgniter-PHP-Framework,0.1
 CodeIgniterProfiler,0.1
 ColdFusion,0.1
 Comersus,0.2
 CommonSpot,0.1
-Concrete5,0.2
-Confluence,0.1
+Concrete5,0.3
+Confluence,0.2
 Connectix-Boards,0.1
 Cookies,0.1
-Coppermine,0.2
-coWiki,0.1
-CPanel,0.2
-cPassMan,0.1
-cpCommerce,0.1
+Coppermine,0.3
+Country,0.1
+Credentials,0.2
 CruxCMS,0.1
 CruxPA,0.1
-CS-Cart,0.1
 CubeCart,0.1
 CushyCMS,0.2
 Custom-CMS,0.1
-Dell-Printer,0.1
-DiamondList,0.1
-DiBos,0.2
-Diferior-CMS,0.1
-Div-Span-Structure,0.1
-DiY-CMS,0.1
 D-Link-Network-Camera,0.1
+D-Link-Router,0.1
 DMXReady,0.1
-Donations-Cloud,0.1
-DotCMS,0.2
-DotNetNuke,0.3
-Drupal,0.2
 DT-Centrepiece,0.1
-DublinCore,0.1
 DUclassified,0.1
 DUforum,0.1
-DUgallery,0.1
+DUgallery,0.2
+Dell-Printer,0.1
+DiBos,0.2
+DiY-CMS,0.1
+DiamondList,0.1
+Diferior-CMS,0.1
+Donations-Cloud,0.1
+DotCMS,0.2
+DotNetNuke,0.4
+Drupal,0.2
+DublinCore,0.1
+E-Xoopport,0.1
+EDK,0.1
+EMO-Realty-Manager,0.1
+EPiServer,0.2
+EZCMS,0.1
 EarlyImpact-ProductCart,0.2
-easyLink-Web-Solutions,0.1
 EazyCMS,0.1
 Echo,0.2
-EDK,0.1
-eLitius,0.1
 Elxis-CMS,0.1
-eMeeting-Online-Dating-Software,0.1
-EMO-Realty-Manager,0.1
 Empire-CMS,0.1
-envezion~media,0.1
-EPiServer,0.2
 Escenic,0.2
-eSitesBuilder,0.1
 Esvon-Classifieds,0.1
-eSyndiCat,0.1
 Evo-Cam,0.1
-E-Xoopport,0.1
 Exponent-CMS,0.1
 ExpressionEngine,0.2
-eXtreme-Message-Board,0.1
-ezBOO-WebStats,0.1
-EZCMS,0.1
-ez-oscommerce,0.1
-F3Site,0.1
+F3Site,0.2
 FAQ-Manager,0.1
 FastCGI-echo,0.1
-Favicon-DB,0.2
 FestOS,0.1
 Fidion-CMS,0.1
 File-Upload-Manager,0.1
 Flax-Article-Manager,0.1
-FluentNET,0.1
+FluentNET,0.2
 FluxBB,0.3
-Footer-Hash,0.2
 Forest-Blog,0.1
-FormMail,0.2
-Frame,0.2
+FormMail,0.3
 Free-Simple-Software,0.1
 FrogCMS,0.3
+FrontPage,0.1
+GearHost,0.1
 GeekLog,0.1
 GetSimple,0.1
 Glossword,0.1
 GoAhead-Webs,0.2
-Google-Analytics,0.2
 Google-API,0.1
+Google-Analytics,0.2
 Google-Hack-Honeypot,0.1
 Group-Office,0.1
 GuppY,0.1
-Header-Hash,0.1
-HoloCMS,0.1
-Horde-Application-Framework,0.1
 HP-LaserJet-Printer,0.1
 HTML5,0.2
 HTTPServer,0.2
+HoloCMS,0.1
+Horde-Application-Framework,0.1
 Hunt-Electronics-CCTV,0.1
 Hycus-CMS,0.1
-i-Catcher-Console,0.1
-iDVR,0.1
-i-Gallery,0.1
-iGaming-CMS,0.1
-IIS-SiteNotFound,0.2
-IIS-UnderConstruction,0.2
-iLO,0.1
+IBM-HTTP-Server,0.1
 IMGallery,0.1
+IP,0.2
+IPCop-Firewall,0.1
+IQeye-Netcam,0.2
+ISPConfig,0.2
+IWSS-Proxy,0.1
 Index-Of,0.2
 Inout-Adserver,0.1
 Inout-Article-Base,0.1
@@ -460,150 +452,135 @@ Inout-Music,0.1
 Intellinet-IP-Camera,0.1
 Interspire-Shopping-Cart,0.1
 InvisionPowerBoard,0.2
-IPCop-Firewall,0.1
-IQeye-Netcam,0.1
-iRealty,0.1
-iScripts-CyberMatch,0.1
-iScripts-EasySnaps,0.1
-iScripts-MultiCart,0.1
-iScripts-ReserveLogic,0.1
-iScripts-SocialWare,0.1
-ISPConfig,0.2
-ispCP-Omega,0.2
-JAMM-CMS,0.1
+JAMM-CMS,0.2
+JGS-Portal,0.1
+JQuery,0.2
 Jamroom,0.1
 Java-Management-Extensions,0.1
 Java-Password-Log,0.1
 Jboss,0.1
-JGS-Portal,0.1
-jobberBase,0.1
-Joomla,0.4
-JQuery,0.2
+Joomla,0.6
+KMSoft-Guestbook,0.1
+KaZaA,0.1
 Kayako-SupportSuite,0.1
 Kleeja,0.1
 Kloxo Single Server,0.1
-KMSoft-Guestbook,0.1
 KnowledgeTree,0.1
 Kontaktformular,0.1
 Koobi,0.1
-Liferay,0.1
+LINK-CMS,0.1
+Liferay,0.2
 Lightbox,0.2
 Lime-Survey,0.1
-LINK-CMS,0.1
-linkSpheric,0.1
-Linksys-NAS,0.1
-Linksys-Network-Camera,0.1
-Linksys-USB-HDD,0.1
+Linksys-NAS,0.2
+Linksys-Network-Camera,0.2
+Linksys-Router,0.1
+Linksys-USB-HDD,0.2
 Linksys-Wireless-G-Camera,0.1
 LocazoList-Classifieds,0.1
-Loggix,0.1
+Loggix,0.2
 Lucky-Tech-iGuard,0.1
+MAXdev,0.1
+MHttpd,0.1
 Macs-CMS,0.1
 Magento,0.1
 MailForm-Plugin,0.1
-Mailman,0.1
 MailSiteExpress,0.2
-Mailto,0.2
-Mambo,0.2
-MAXdev,0.1
-MD5,0.2
+Mailman,0.1
+Mailto,0.4
+Mambo,0.4
 MediaWiki,0.1
 Meta-Author,0.1
+Meta-City,0.1
+Meta-Contact,0.1
+Meta-Country,0.1
+Meta-Geography,0.1
+Meta-Refresh-Redirect,0.2
+Meta-State,0.1
+Meta-Zipcode,0.1
 MetaGenerator,0.2
 MetaPoweredBy,0.2
-Meta-Refresh-Redirect,0.2
-MicrosoftODBCError,0.1
-Microsoft-Office-XML,0.1
+Microsoft-IIS,0.1
+Microsoft-Office-XML,0.2
 Microsoft-Sharepoint,0.1
+MicrosoftODBCError,0.1
+MicrosoftOfficeWebServer,0.1
 Mihalism-Multi-Host,0.1
-MikroTik,0.2
+MikroTik,0.3
 MiniCWB,0.1
 Minify,0.1
 MnoGoSearch,0.2
 Mobile-Website,0.1
 Mobotix-Network-Camera,0.1
 ModxCMS,0.2
-mojoPortal,0.1
 Moodle,0.2
 Motorito,0.1
-MovableType,0.2
-MyHobbySite,0.1
-MyioSoft-Ajax-Portal,0.1
-MyPHP-Forum,0.1
+MovableType,0.3
 My-PHP-Indexer,0.1
-MySource-Matrix,0.1
-MySQL-dump,0.1
-mySQL-Error,0.1
-MysqlSyntaxError,0.1
 My-WebCamXP-Server,0.1
+MyHobbySite,0.1
+MyPHP-Forum,0.1
+MySQL-dump,0.1
+MySource-Matrix,0.1
+MyioSoft-Ajax-Portal,0.1
 NetArtMedia-Real-Estate-Portal,0.1
 NetBotz-Network-Monitoring-Device,0.1
+NetWin-DBabble,0.1
+NetWin-Surgemail,0.1
 Netious-CMS,0.1
 Netref,0.1
 Netsnap-Web-Camera,0.1
-NetWin-DBabble,0.1
-NetWin-Surgemail,0.1
+Nmap-Log,0.1
 Nortel-Ethernet-Routing-Switch-Config-File,0.1
 NovellGroupwise,0.2
+Nucleus,0.1
 Nukedit,0.1
+ORCA-Platform,0.1
+ORITE-301-Camera,0.1
+OSCommerce,0.3
 Oce,0.2
 OkiPBX,0.2
 Open-Auto-Classifieds,0.1
 Open-Blog,0.1
-OpenCms,0.1
 Open-Freeway,0.1
-OpenGraphProtocol,0.1
-OpenID,0.1
 Open-Realty,0.1
+Open-Source-Ticket-Request-System,0.2
+OpenCms,0.1
+OpenGraphProtocol,0.2
+OpenID,0.1
+OpenSSL,0.1
 OpenSearch,0.1
-Open-Source-Ticket-Request-System,0.1
+Oracle-iPlanet,0.1
 Orbis-CMS,0.1
-ORCA-Platform,0.1
-ORITE-301-Camera,0.1
-OSCommerce,0.3
 OurDisclaimer,0.1
 OvBB,0.1
+PG-Real-Estate-Solution,0.1
+PG-Roomate-Finder-Solution,0.1
+PHP,0.1
+PHP-Error,0.3
+PHP-Fusion,0.1
+PHP-Hosting-Directory,0.1
+PHP-Layers,0.1
+PHP-Link-Directory,0.2
+PHP-Live,0.1
+PHP-Photo-Gallery,0.1
+PHP-Shell,0.2
+PHP-Update,0.1
+PHPCake,0.2
+PHPDirector,0.1
+PHPEasyData,0.2
+PHPFM,0.1
+PHPNuke,0.3
+PHPraid,0.1
 PageUp-People,0.1
-Panasonic-Network-Camera,0.1
+Panasonic-Network-Camera,0.2
 Parked-Domain,0.1
 PasswordField,0.1
 Pc4Uploader,0.1
-PG-Real-Estate-Solution,0.1
-PG-Roomate-Finder-Solution,0.1
-PhilBoard,0.1
+Perl,0.1
+PhilBoard,0.2
 PhotoPost-PHP,0.1
-phpBB,0.2
-PHPCake,0.2
-PHPDirector,0.1
-PHPEasyData,0.1
-PHPError,0.2
-PHP-Error,0.3
-PHPFM,0.1
-phpFreeChat,0.1
-PHP-Fusion,0.1
-phpGreetCards,0.1
-PHP-Hosting-Directory,0.1
-phPhotoAlbum,0.1
-phpinfo,0.1
-PHP-Layers,0.1
-PHP-Link-Directory,0.1
-PHP-Live,0.1
 PhpMesFilms,0.1
-phpMyAdmin,0.1
-phpMyFAQ,0.1
-phpMyTourney,0.1
-PHPNuke,0.2
-phpPgAdmin,0.1
-PHP-Photo-Gallery,0.1
-php-ping,0.1
-phpQuestionnaire,0.1
-PHPraid,0.1
-phpScheduleIt,0.1
-PHP-Shell,0.1
-phpSysInfo,0.1
-PHP-Update,0.1
-phpVID,0.1
-phpwcms,0.1
 PithCMS,0.1
 Piwigo,0.1
 Piwik,0.1
@@ -622,41 +599,36 @@ Price-Comparison-Script,0.1
 Pro-Chat-Rooms,0.1
 Prototype,0.2
 PuTTY-Log,0.1
+Python,0.1
 QNAP-NAS,0.1
 Quantcast,0.1
 Quick.Cms,0.1
-Realtor-747,0.1
-RedirectLocation,0.2
-RedShop,0.1
-RevSense,0.1
 RFI-Scanner-Bot,0.1
+Realtor-747,0.1
+RedShop,0.1
+RedirectLocation,0.2
+RevSense,0.1
 RoundCube,0.2
-RSSFeed,0.1
-RSS-Feed,0.2
+Ruby,0.1
 Ruby-on-Rails,0.1
 Rumba-CMS,0.1
 RunCMS,0.1
-sabros.us,0.1
-samPHPweb,0.1
+S-CMS,0.1
+SHOUTcast-Administrator,0.1
+SMF,0.2
 Saurus-CMS,0.1
 SazCart,0.1
-S-CMS,0.1
-Script,0.2
 Scriptaculous,0.2
 Seagull-PHP-Framework,0.1
-SearchFitShoppingCart,0.2
+SearchFitShoppingCart,0.3
 Shaadi-Zone,0.1
-Shortcut-Icon,0.1
-SHOUTcast-Administrator,0.1
 SiemensSpeedStreamRouter,0.2
 SilverStripe,0.2
 SimpNews,0.1
-Site-Sift,0.1
+Site-Sift,0.2
 SkaLinks,0.1
-SMF,0.2
 SmodCMS,0.1
 Snap-Appliance-Server,0.1
-sNews,0.1
 SnoGrafx,0.1
 SnomPhone,0.2
 Softbiz-Freelancers-Script,0.1
@@ -664,108 +636,172 @@ Softbiz-Online-Auctions-Script,0.1
 Softbiz-Online-Classifieds,0.1
 Sony-Network-Camera,0.1
 Sony-Video-Network-Station,0.1
-SquirrelMail,0.2
-Stardot-Express,0.1
-StarDot-NetCam,0.1
+Squid-Web-Proxy-Cache,0.1
+SquirrelMail,0.3
 Star-Network,0.1
+StarDot-NetCam,0.1
+Stardot-Express,0.1
 Steam-Steal0r-Log,0.1
 Streamline-PHP-Media-Server,0.1
 Subdomains,0.1
 Subdreamer-CMS,0.1
 Subrion-CMS,0.1
+Sun-Java-System-Server,0.1
 Suspended-Webpage,0.1
-sX-Shop,0.1
 Symphony,0.1
 SyndeoCMS,0.1
-syntaxCMS,0.1
 System-Shop,0.1
-Tag-Hash,0.2
-TaskFreak,0.1
 TCMS,0.1
+TWiki,0.1
+TaskFreak,0.1
 Team-Board,0.1
 TeamSpeak-Server-Log,0.1
 Textpattern,0.1
 Textpattern-CMS,0.1
-TheHostingTool,0.2
 The-PHP-Real-Estate-Script,0.1
+TheHostingTool,0.2
 Title,0.2
-TomatoCart,0.1
 TomatoCMS,0.1
+TomatoCart,0.1
 Tomcat,0.2
 Toner-Cart,0.1
 Toshiba-Network-Camera,0.1
 ToshibaPrinter,0.2
-Trac,0.1
+Trac,0.2
 Traidnt-UP,0.1
 Tribiq,0.1
 Turbo-Seek,0.1
-TWiki,0.1
 TypePad,0.2
 TypoLight,0.2
 UCenter-Home,0.1
 Ultrastats,0.1
-Umbraco,0.1
+Umbraco,0.2
 UncommonHeaders,0.2
-uPortal,0.1
-vbPortal,0.1
-VBulletin,0.2
+VBulletin,0.3
+VP-ASP,0.3
+VS-Panel,0.1
+VSNSLemon,0.3
 Veo-Observer,0.1
-Videoconference-Management-System,0.1
+Via-Proxy,0.1
 VideoShareEnterprise,0.1
+Videoconference-Management-System,0.1
 Virtualmin,0.1
 VisionGS-Webcam,0.1
-VP-ASP,0.2
-VSNSLemon,0.2
-VS-Panel,0.1
-Vulnerable-To-XSS,0.1
+Vulnerable-To-XSS,0.2
+WS_FTP-log,0.1
+WWWBoard,0.1
 Warcraft-3-Frozen-Throne-Mod-Config-File,0.1
 Weatimages,0.1
-WebAsyst-Shop-Script,0.1
-webbackdoor,0.1
 Web-Calendar-System,0.1
 Web-Data-Administrator,0.1
+Web-Publishing-Wizard,0.1
+WebAsyst-Shop-Script,0.1
+WebDAV,0.1
 WebDVR,0.1
 WebEye-Network-Camera,0.1
 WebGuard,0.2
-Webmatic,0.1
 WebPress,0.1
 WebSideStory,0.1
+Webmatic,0.1
 WebspotBlogging,0.1
 WhatWeb-Plugin,0.1
 WhiteBoard,0.1
 Whizzy-CMS,0.1
 WikiWebHelp,0.1
 Winamp-Web-Interface,0.1
+WindWeb,0.1
 Windows-Internet-Printing,0.1
 WindowsSBS,0.2
-WordPress,0.2
-WordPressSpamFree,0.2
-WordpressSuperCache,0.3
 WoW-Raid-Manager,0.1
-wpQuiz,0.1
-WS_FTP-log,0.1
-WWWBoard,0.1
+WordPress,0.3
+WordPressSpamFree,0.2
+Wordpress-Contact-Form,0.1
+WordpressSuperCache,0.3
+X-ASPNetMvc-Version,0.2
+X-ASPNetVersion,0.2
+X-Powered-By,0.2
 X10media-MP3-Search-Engine,0.1
 X10media-Torrent-Search-Engine,0.1
 X7-Chat,0.1
-X-ASPNetMvc-Version,0.1
-X-ASPNetVersion,0.2
+XHP-CMS,0.1
 XchangeBoard,0.1
 Xerox-Printers,0.1
-xGB,0.1
-XHP-CMS,0.1
-X-Powered-By,0.2
 XtraBusinessHosting,0.2
-Zen-Cart,0.1
+Zen-Cart,0.2
 Zend,0.1
 Zeus-Cart,0.1
-zFeeder,0.1
 Zikula,0.1
 Zimplit-CMS,0.1
 Zomplog,0.1
-Zoph,0.1
+Zoph,0.2
 Zylone-IT,0.1
 Zyxel-Vantage-Service-Gateway,0.1
+anyInventory,0.2
+ashnews,0.1
+aspWebLinks,0.2
+b2evolution,0.1
+bSpeak,0.1
+boastMachine,0.2
+c99-Shell,0.1
+cPassMan,0.1
+chillyCMS,0.1
+coWiki,0.1
+cpCommerce,0.1
+eLitius,0.1
+eMeeting-Online-Dating-Software,0.1
+eSitesBuilder,0.1
+eSyndiCat,0.1
+eXtreme-Message-Board,0.1
+easyLink-Web-Solutions,0.1
+envezion~media,0.1
+ez-oscommerce,0.1
+ezBOO-WebStats,0.1
+i-Catcher-Console,0.1
+i-Gallery,0.1
+iDVR,0.2
+iGaming-CMS,0.1
+iLO,0.1
+iRealty,0.1
+iScripts-CyberMatch,0.1
+iScripts-EasySnaps,0.1
+iScripts-MultiCart,0.1
+iScripts-ReserveLogic,0.1
+iScripts-SocialWare,0.1
+ispCP-Omega,0.2
+jobberBase,0.2
+lighttpd,0.1
+linkSpheric,0.1
+micro_httpd,0.1
+mojoPortal,0.1
+mySQL-Error,0.1
+phPhotoAlbum,0.1
+php-ping,0.2
+phpBB,0.2
+phpFreeChat,0.2
+phpGreetCards,0.1
+phpMyAdmin,0.2
+phpMyFAQ,0.1
+phpMyTourney,0.1
+phpPgAdmin,0.1
+phpQuestionnaire,0.1
+phpScheduleIt,0.1
+phpSysInfo,0.2
+phpVID,0.1
+phpinfo,0.1
+phpwcms,0.1
+robots.txt,0.1
+sNews,0.1
+sX-Shop,0.1
+sabros.us,0.1
+samPHPweb,0.1
+syntaxCMS,0.1
+uPortal,0.2
+vbPortal,0.1
+webbackdoor,0.1
+wpQuiz,0.1
+x-pingback,0.1
+xGB,0.1
+zFeeder,0.1
 
 
 
@@ -773,12 +809,14 @@ To view more detail about a plugin or search plugins for a keyword:
 
 	./whatweb -I joomla
 	Plugin Information
+	Searching for joomla
 	------------------------------
-	Joomla version 0.4 by Andrew Horton
-	[14] examples, [3] matches, [x] aggressive, [x] passive.
+	Joomla version 0.6 by Andrew Horton
+	[14] examples, [3] matches, [x] aggressive, [x] passive, [x] version.
 	Description: Opensource CMS written in PHP. Homepage: http://joomla.org. Plugin can aggresively identify version by comparing md5 hashes of 4 files. Valid up to version 1.5.15.
 
 	--------------------------------------------------------------------------------
+
 
 WRITING PLUGINS
 
@@ -821,11 +859,12 @@ A typical plugin looks like this:
 
 	end
 
-There are 3 levels to a plugin. Simple matches, passive and agressive tests. You don’t need to know ruby to write plugins with simple matches. Passive and aggressive tests are written in ruby.
+There are 3 levels to a plugin. Simple matches, passive and agressive tests. You don't need to know ruby to write plugins with simple matches. Passive and aggressive tests are written in ruby.
 
 
 The matches [] array contains a set of ways to match a website to a system.
 The methods are:
+
 	* :text			Matches text within the webpage
 	* :regexp		A regular expression. Append /i for case insensitive matches
 	* :ghdb			Like a google query
@@ -834,8 +873,19 @@ The methods are:
 	* :name			This is the name of the match, and is optional.
 	* :url			The URL has to match this. Used for passive and agressive testing
 	* :certainty		Optional, defaults to 100. Values are maybe (25), probably (75) and certain (100).
+
 	* :version		As a string or number this is a version returned when other methods match
-	* :version		As a regular expression, this extracts the version information from the HTML. Also requires :version_regexp_offset=>1
+	* :version		As a regular expression, this extracts the version information from the HTML. Also requires :regexp_offset=>1
+	* :model		As a string or number this is a device model returned when other methods match
+	* :model		As a regular expression, this extracts the device model information from the HTML. Also requires :regexp_offset=>11
+	* :modules		As a string or number this is a web application module returned when other methods match
+	* :modules		As a regular expression, this extracts the web application module information from the HTML. Also requires :regexp_offset=>1
+	* :firmware		As a string or number this is a device firmware version returned when other methods match
+	* :firmware		As a regular expression, this extracts the device firmware version information from the HTML. Also requires :regexp_offset=>1
+	* :filepath		As a string or number this is a file path returned when other methods match
+	* :filepath		As a regular expression, this extracts the file path information from the HTML. Also requires :regexp_offset=>1
+	* :accounts		As a string or number this is a user credential returned when other methods match
+	* :accounts		As a regular expression, this extracts the user credential information from the HTML. Also requires :regexp_offset=>1
 
 
 If you port a GHDB match, use :ghdb. I usually rewrite the GHDB matches with regular expressions, especially if they require inurl:
@@ -864,17 +914,16 @@ To discover the regular expressions to match against, wget about 20-30 examples 
 AGGRESSIVE PLUGINS
 
 There are currently aggressive plugins for Joomla, phpBB, FluxBB, OSCommerce and Tomcat.
-With the passive plugin we know that ardentcreative.co.nz is running Joomla version 1.5
+With the passive plugin we know that smartor.is-root.com/forum/ is running phpBB version 2
 
-$ ./whatweb ardentcreative.co.nz
-http://ardentcreative.co.nz [301] HTTPServer[Apache], RedirectLocation[http://www.ardentcreative.co.nz/], Title[301 Moved Permanently], Header-Hash[0670664f07b972398a96c6a58e812c2d], MD5[0670664f07b972398a96c6a58e812c2d]
-http://www.ardentcreative.co.nz/ [200] Cookies[e964b8ff6be2b1058b145da14a39e90d], MetaGenerator[Joomla! 1.5 - Open Source Content Management], Joomla[1.5], Google-Analytics[GA][791888], HTTPServer[Apache], Title[Ardent Creative, Christchurch Web Design], Footer-Hash[a19d726fa577100ccaec0c61b1bf8ea7], MD5[fcb3ec0dfafae53dfdef2e991a24f1c1], Div-Span-Structure[e56dd07d6f482ee11873e4ea99a9e6a8], Header-Hash[4379923363b07114470ba24584214e3f]
+$ ./whatweb smartor.is-root.com/forum/
+http://smartor.is-root.com/forum/ [200] Apache[2.2.15], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Country[DE], HTTPServer[Apache/2.2.15], IP[88.198.177.36], PHP[5.2.13], PasswordField[password], PoweredBy[phpBB], Title[Smartors Mods Forums - Reloaded], X-Powered-By[PHP/5.2.13], phpBB[2]
 
-With the aggressive plugin we know that ardentcreative.co.nz is running Joomla version 1.5.13 - 1.5.14
 
-$ ./whatweb -a 3 ardentcreative.co.nz
-http://ardentcreative.co.nz [301] HTTPServer[Apache], RedirectLocation[http://www.ardentcreative.co.nz/], Title[301 Moved Permanently], Header-Hash[0670664f07b972398a96c6a58e812c2d], MD5[0670664f07b972398a96c6a58e812c2d]
-http://www.ardentcreative.co.nz/ [200] Cookies[e964b8ff6be2b1058b145da14a39e90d], MetaGenerator[Joomla! 1.5 - Open Source Content Management], Joomla[1.5,1.5.15], Google-Analytics[GA][791888], HTTPServer[Apache], Title[Ardent Creative, Christchurch Web Design], Footer-Hash[a19d726fa577100ccaec0c61b1bf8ea7], MD5[fcb3ec0dfafae53dfdef2e991a24f1c1], Div-Span-Structure[e56dd07d6f482ee11873e4ea99a9e6a8], Header-Hash[4379923363b07114470ba24584214e3f]
+With the aggressive plugin we know that ardentcreative.co.nz is running phpBB version 2.0.20
+
+$ ./whatweb -a 3 smartor.is-root.com/forum/
+http://smartor.is-root.com/forum/ [200] Apache[2.2.15], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Country[DE], HTTPServer[Apache/2.2.15], IP[88.198.177.36], PHP[5.2.13], PasswordField[password], PoweredBy[phpBB], Title[Smartors Mods Forums - Reloaded], X-Powered-By[PHP/5.2.13], phpBB[2,2.0.20]
 
 Do not use aggressive plugins with recursive site crawling. WhatWeb has no understanding of a website, instead it currently treats each URL separately. 
 It also has no caching so if you use aggressive plugins with recursion you will fetch the same files multiple times. The same is true for aggressive modes on redirecting URLs.
@@ -914,7 +963,7 @@ RELATED PROJECTS
 WhatWeb is unique however there are some web projects with the same goal of identifying a website.
 
 www.whatweb.net
-Brendan Coles has set up a web frontend to WhatWeb.
+Brendan Coles has set up a web frontend to WhatWeb. No registration required.
 http://www.whatweb.net/
 
 Blind Elephant
@@ -942,6 +991,9 @@ http://www.darknet.org.uk/2007/09/httprint-v301-web-server-fingerprinting-tool-d
 
 Nmap version scan
 Nmap shows some info about HTTP servers when using version scan, eg. nmap -sV -p80 treshna.com
+
+Shodan Computer Search Engine
+ShodanHQ returns the HTTP header, country and model for some devices. Full results requires registration.
 
 THC's Amap
 This tool is an application fingerprint scanner which can identify an HTTP protocol server. It doesn't identify types of HTTP servers.
