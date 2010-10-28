@@ -91,6 +91,21 @@ class Plugin
 				r << match if @tagpattern == match[:tagpattern]
 			end
 
+			# HTTP Header
+			header=""
+			@meta.each do|h,v|
+				header=header+h.to_s+': '+v.to_s+"\n"
+			end
+
+			if !match[:header].nil? and match[:header].class==Regexp
+				if header =~ match[:header]
+					m = match.dup
+					m[:string] = header.scan(match[:header])[0][match[:regexp_offset]]
+					r << m
+				end
+			end
+
+			# Version
 			if !match[:version].nil? and match[:version].class==Regexp
 				if @body =~ match[:version]
 					m = match.dup
@@ -196,6 +211,22 @@ class Plugin
 				unless match[:tagpattern].nil?
 					r << match if thistagpattern == match[:tagpattern]
 				end
+
+				# HTTP Header
+				header=""
+				@meta.each do|h,v|
+					header=header+h.to_s+': '+v.to_s+"\n"
+				end
+
+				if !match[:header].nil? and match[:header].class==Regexp
+					if header =~ match[:header]
+						m = match.dup
+						m[:string] = header.scan(match[:header])[0][match[:regexp_offset]].to_s
+						r << m
+					end
+
+				end
+
 
 				if !match[:version].nil? and match[:version].class==Regexp
 					if thisbody =~ match[:version]
