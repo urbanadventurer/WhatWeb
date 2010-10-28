@@ -4,8 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+
+# Version 0.4
+# Combined Apache and Apache default pages plugins by Brendan Coles
+
 Plugin.define "Apache" do
-author "Andrew Horton"
+author "Andrew Horton & Brendan Coles"
 version "0.4"
 description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards. - homepage: http://httpd.apache.org/"
 
@@ -55,14 +59,14 @@ https://ls.berkeley.edu
 matches [
 
 # Default page # Default title
-{:text=>"<title>Test Page for Apache Installation</title>", :modules=>"Default" },
-{:text=>"<TITLE>Test Page for the SSL/TLS-aware Apache Installation on Web Site</TITLE>", :modules=>"Default" },
+{:text=>"<title>Test Page for Apache Installation</title>", :text=>"Default" },
+{:text=>"<TITLE>Test Page for the SSL/TLS-aware Apache Installation on Web Site</TITLE>", :text=>"Default" },
 
 # Default page # Default HTML
-{:text=>"<html><body><h1>It works!</h1></body></html>", :modules=>"Default" },
-{:text=>"<html>Apache is functioning normally</html>", :modules=>"Default" },
+{:text=>"<html><body><h1>It works!</h1></body></html>", :text=>"Default" },
+{:text=>"<html>Apache is functioning normally</html>", :text=>"Default" },
 {:name=>"This IP is being shared among many domains.", 
-:text=>"<body><center>This IP is being shared among many domains.<br>\nTo view the domain you are looking for, simply enter the domain name in the location bar of your web browser.<br>", :modules=>"Default" },
+:text=>"<body><center>This IP is being shared among many domains.<br>\nTo view the domain you are looking for, simply enter the domain name in the location bar of your web browser.<br>", :text=>"Default" },
 
 # Shortcut Icon # Apache on Redhat
 { :url=>"/favicon.ico", :md5=>"71e30c507ca3fa005e2d1322a5aa8fb2" },

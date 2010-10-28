@@ -277,6 +277,28 @@ class Plugin
 		end
 	end
 
+	# check for CVE stuff
+	# for each plugin
+		# if has CVE array
+			# get final version. just use longest version for now, eg. 3.0.15 over 3.0
+				# for each CVE version / version range
+					# does version fit thisversion?
+						# match CVE
+
+
+	# take CVE version, split into comma delimited list
+	# for each
+	# it's a range if it has - or x
+	# is it in the range?
+
+
+	# examples
+	# ["2.1.0-2.1.8, 2.2.0-2.2.8, 2.3.0-2.3.4, 2.4.0-2.4.6"
+	# "2.0.x"
+	# "1.81-"
+	# "3.1"
+
+
 	results
   end
 
