@@ -91,21 +91,6 @@ class Plugin
 				r << match if @tagpattern == match[:tagpattern]
 			end
 
-			# HTTP Header
-			header=""
-			@meta.each do|h,v|
-				header=header+h.to_s+': '+v.to_s+"\n"
-			end
-
-			if !match[:header].nil? and match[:header].class==Regexp
-				if header =~ match[:header]
-					m = match.dup
-					m[:string] = header.scan(match[:header])[0][match[:regexp_offset]]
-					r << m
-				end
-			end
-
-			# Version
 			if !match[:version].nil? and match[:version].class==Regexp
 				if @body =~ match[:version]
 					m = match.dup
@@ -212,22 +197,6 @@ class Plugin
 					r << match if thistagpattern == match[:tagpattern]
 				end
 
-				# HTTP Header
-				header=""
-				@meta.each do|h,v|
-					header=header+h.to_s+': '+v.to_s+"\n"
-				end
-
-				if !match[:header].nil? and match[:header].class==Regexp
-					if header =~ match[:header]
-						m = match.dup
-						m[:string] = header.scan(match[:header])[0][match[:regexp_offset]].to_s
-						r << m
-					end
-
-				end
-
-
 				if !match[:version].nil? and match[:version].class==Regexp
 					if thisbody =~ match[:version]
 						m = match.dup
@@ -307,6 +276,28 @@ class Plugin
 			r [:certainty]=100 if r[:certainty].nil?
 		end
 	end
+
+	# check for CVE stuff
+	# for each plugin
+		# if has CVE array
+			# get final version. just use longest version for now, eg. 3.0.15 over 3.0
+				# for each CVE version / version range
+					# does version fit thisversion?
+						# match CVE
+
+
+	# take CVE version, split into comma delimited list
+	# for each
+	# it's a range if it has - or x
+	# is it in the range?
+
+
+	# examples
+	# ["2.1.0-2.1.8, 2.2.0-2.2.8, 2.3.0-2.3.4, 2.4.0-2.4.6"
+	# "2.0.x"
+	# "1.81-"
+	# "3.1"
+
 
 	results
   end
