@@ -4,10 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 # Version 0.4
 # Combined Apache and Apache default pages plugins by Brendan Coles
-
+##
 Plugin.define "Apache" do
 author "Andrew Horton & Brendan Coles"
 version "0.4"
@@ -59,14 +58,14 @@ https://ls.berkeley.edu
 matches [
 
 # Default page # Default title
-{:text=>"<title>Test Page for Apache Installation</title>", :text=>"Default" },
-{:text=>"<TITLE>Test Page for the SSL/TLS-aware Apache Installation on Web Site</TITLE>", :text=>"Default" },
+{:text=>"<title>Test Page for Apache Installation</title>", :string=>"Default" },
+{:text=>"<TITLE>Test Page for the SSL/TLS-aware Apache Installation on Web Site</TITLE>", :string=>"Default" },
 
 # Default page # Default HTML
-{:text=>"<html><body><h1>It works!</h1></body></html>", :text=>"Default" },
-{:text=>"<html>Apache is functioning normally</html>", :text=>"Default" },
+{:text=>"<html><body><h1>It works!</h1></body></html>", :string=>"Default" },
+{:text=>"<html>Apache is functioning normally</html>", :string=>"Default" },
 {:name=>"This IP is being shared among many domains.", 
-:text=>"<body><center>This IP is being shared among many domains.<br>\nTo view the domain you are looking for, simply enter the domain name in the location bar of your web browser.<br>", :text=>"Default" },
+:text=>"<body><center>This IP is being shared among many domains.<br>\nTo view the domain you are looking for, simply enter the domain name in the location bar of your web browser.<br>", :string=>"Default" },
 
 # Shortcut Icon # Apache on Redhat
 { :url=>"/favicon.ico", :md5=>"71e30c507ca3fa005e2d1322a5aa8fb2" },
@@ -88,40 +87,30 @@ def passive
 
 	# Server
 	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /[^\r^\n]*Apache[^\r^\n]*/i
-	m << { :name=>"HTTP Server Header" } if @meta["Server"].to_s =~ /[^\r^\n]*Apache[^\r^\n]*/i
 
 	# Version detection
 	m << { :version=>@meta["server"].to_s.scan(/[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i) } if @meta["server"].to_s =~ /[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i
-	m << { :version=>@meta["Server"].to_s.scan(/[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i) } if @meta["Server"].to_s =~ /[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i
 
 	# About 2172233 ShodanHQ results for "server: mod_ssl"
 	m << { :modules=>"mod_ssl/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i
-	m << { :modules=>"mod_ssl/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 691816 ShodanHQ results for "server: mod_auth_passthrough"
 	m << { :modules=>"mod_auth_passthrough/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i
-	m << { :modules=>"mod_auth_passthrough/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 753880 ShodanHQ results for "server: mod_bwlimited"
 	m << { :modules=>"mod_bwlimited/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i
-	m << { :modules=>"mod_bwlimited/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 177808 ShodanHQ results for "Server: mod_jk"
 	m << { :modules=>"mod_jk/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i
-	m << { :modules=>"mod_jk/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 25076 ShodanHQ results for "Server: mod_fcgid"
 	m << { :modules=>"mod_fcgid/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i
-	m << { :modules=>"mod_fcgid/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 165191 ShodanHQ results for "Server: mod_log_bytes"
 	m << { :modules=>"mod_log_bytes/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i
-	m << { :modules=>"mod_log_bytes/"+@meta["Server"].to_s.scan(/[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 75655 ShodanHQ results for "Server: mod_gzip"
 	m << { :modules=>"mod_gzip/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i
-	m << { :modules=>"mod_gzip/"+@meta["Sserver"].to_s.scan(/[^\r^\n]*mod_gz
-ip\/([^\s^\r^\n]+)/i).to_s } if @meta["Server"].to_s =~ /[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i
 
 	m
 
