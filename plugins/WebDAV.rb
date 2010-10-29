@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Added Server DAV/[\d\.]+ version detection
+##
 Plugin.define "WebDAV" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
-version "0.1"
+version "0.2"
 description "Web-based Distributed Authoring and Versioning (WebDAV) is a set of methods based on the Hypertext Transfer Protocol (HTTP) that facilitates collaboration between users in editing and managing documents and files stored on World Wide Web servers. - More Info: http://en.wikipedia.org/wiki/WebDAV"
 
 # 22354 ShodanHQ results for MS-Author-Via: DAV
@@ -31,11 +34,15 @@ examples %w|
 173.11.171.172
 173.74.74.208
 217.144.100.163
+212.87.83.78
 |
 
 # HTTP Header
 def passive
 	m=[]
+
+	# Version Detection # Server DAV
+	m << { :version=>@meta["server"].scan(/[^\r^\n]*DAV\/([^\s^\r^\n]*)/) } if @meta["server"] =~ /[^\r^\n]*DAV\/([^\s^\r^\n]*)/
 
 	# MS-Author-Via
 	if @meta["MS-Author-Via"].to_s =~ /^[\s]*DAV/ or @meta["ms-author-via"].to_s =~ /^[\s]*DAV/
@@ -43,11 +50,9 @@ def passive
 	end
 
 	# DAV
-	m << { :version=>@meta["DAV"].scan(/[\s]*1,2,<http:\/\/([^>]+)>/) } unless @meta["DAV"].nil?
 	m << { :version=>@meta["dav"].scan(/[\s]*1,2,<http:\/\/([^>]+)>/) } unless @meta["dav"].nil?
 
 	# X-WebDAV-Status
-	m << { :name=>"X-WebDAV-Status HTTP Header" } unless @meta["X-WebDAV-Status"].nil?
 	m << { :name=>"x-webdav-status HTTP Header" } unless @meta["x-webdav-status"].nil?
 
 	m
