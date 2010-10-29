@@ -39,7 +39,7 @@ www.wordpress.com
 def passive
 	m=[]
 
-	m << { :string=>@meta["x-pingback"].scan( /[\s]*([^\r^\n]*)/i) } if @meta["x-pingback"] =~ /[\s]*([^\r^\n]*)/i
+	m << { :string=>@meta["x-pingback"].scan(/[\s]*([^\r^\n]*)/i) } if @meta["x-pingback"] =~ /[\s]*([^\r^\n]*)/i
 
 	m
 
