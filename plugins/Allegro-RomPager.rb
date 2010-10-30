@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Added EXT HTTP header
+##
 Plugin.define "Allegro-RomPager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.1"
@@ -11,6 +14,7 @@ description "The RomPager suite of products enable your engineering team to leve
 
 # About 2247816 ShodanHQ results for "server: RomPager" @ 2010-10-26
 # About 190212 ShodanHQ results for "server: Allegro-Software-RomPager" @ 2010-10-26
+# About 2087647 ShodanHQ results for "EXT: " @ 2010-10-30
 examples %w|
 74.189.97.193
 68.68.104.145
@@ -34,17 +38,18 @@ examples %w|
 125.161.205.182
 |
 
-# HTTP Header
+# Passive # HTTP Headers
 def passive
 	m=[]
 
 	# Server # RomPager
 	m << { :version=>@meta["server"].to_s.scan(/^[\s]*RomPager\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /^[\s]*RomPager\/([^\s^\r^\n]+)/i
-	m << { :version=>@meta["Server"].to_s.scan(/^[\s]*RomPager\/([^\s^\r^\n]+)/i).to_s } if @meta["Server"].to_s =~ /^[\s]*RomPager\/([^\s^\r^\n]+)/i
 
 	# Server # Allegro-Software-RomPager
 	m << { :version=>@meta["server"].to_s.scan(/^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i
-	m << { :version=>@meta["Server"].to_s.scan(/^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i).to_s } if @meta["Server"].to_s =~ /^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i
+
+	# EXT
+	m << { :name=>"EXT HTTP Header" } if @meta["ext"] =~ //
 
 	m
 
