@@ -4,12 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4
-# Combined Apache and Apache default pages plugins by Brendan Coles
+# Version 0.5 #
+# Added module detection
+##
+# Version 0.4 #
+# Combined Apache and Apache default pages plugins
 ##
 Plugin.define "Apache" do
 author "Andrew Horton & Brendan Coles"
-version "0.4"
+version "0.5"
 description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards. - homepage: http://httpd.apache.org/"
 
 # 190 results for intitle:"Test Page for Apache Installation" @ 2010-10-26
@@ -111,6 +114,27 @@ def passive
 
 	# About 75655 ShodanHQ results for "Server: mod_gzip"
 	m << { :modules=>"mod_gzip/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i
+
+	# About 559 ShodanHQ results for "Server: mod_security"
+	m << { :modules=>"mod_security/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_security\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_security\/([^\s^\r^\n]+)/i
+
+	# About 450117 ShodanHQ results for "Server: mod_perl"
+	m << { :modules=>"mod_perl/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_perl\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_perl\/([^\s^\r^\n]+)/i
+
+	# About 154334 ShodanHQ results for "Server: mod_python"
+	m << { :modules=>"mod_python/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_python\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_python\/([^\s^\r^\n]+)/i
+
+	# About 87454 ShodanHQ results for "Server: mod_fastcgi"
+	m << { :modules=>"mod_fastcgi/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_fastcgi\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_fastcgi\/([^\s^\r^\n]+)/i
+
+	# About 45696 ShodanHQ results for "Server: mod_psoft_traffic"
+	m << { :modules=>"mod_psoft_traffic/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_psoft_traffic\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_psoft_traffic\/([^\s^\r^\n]+)/i
+
+	# About 34854 ShodanHQ results for "Server: mod_macro"
+	m << { :modules=>"mod_macro/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_macro\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_macro\/([^\s^\r^\n]+)/i
+
+	# About 61692 ShodanHQ results for "Server: mod_throttle"
+	m << { :modules=>"mod_throttle/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_throttle\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_throttle\/([^\s^\r^\n]+)/i
 
 	m
 
