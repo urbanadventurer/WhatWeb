@@ -35,10 +35,11 @@ www.wordpress.com
 184.82.44.96
 |
 
-# HTTP Header
+# Passive #
 def passive
 	m=[]
-
+	
+	# X-Pingback HTTP Header
 	m << { :string=>@meta["x-pingback"].scan(/[\s]*([^\r^\n]*)/i) } if @meta["x-pingback"] =~ /[\s]*([^\r^\n]*)/i
 
 	m
