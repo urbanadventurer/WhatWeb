@@ -6,6 +6,9 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 [x] JSON output plugin
 [x] bug in verbose output. closing file
 
+for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
+
+
 add plugin init & close.
 add alexa plugin
 add dmoz plugin
@@ -15,7 +18,7 @@ add stuff for adding/removing sets of plugins. maybe select additional plugin di
 --plugins +/tmp/moo.rb
 --plugins foobar (only select foobar)
 
-
+open_target({:method=>"POST"})
 
 { :ghdb=>"powered by JAMM CMS", :certainty=>75 },
 this matches on morningstarsecurity.com/research/whatweb

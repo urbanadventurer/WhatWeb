@@ -277,6 +277,7 @@ class Plugin
 		end
 	end
 
+
 	# check for CVE stuff
 	# for each plugin
 		# if has CVE array
