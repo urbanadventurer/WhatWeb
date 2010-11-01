@@ -4,17 +4,24 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Added version detection. Updated matches.
+##
 Plugin.define "SolarWinds-Network-Performance-Monitor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-31
-version "0.1"
+version "0.2"
 description "Our flagship network monitoring software manages dynamic networks of all sizes, simply and affordably. Discover how easy it is to detect, diagnose, and resolve network problems with Orion Network Performance Monitor (NPM). - homepage: http://www.solarwinds.com/products/orion/"
 # Manual: http://www.solarwinds.com/support/Orion/docs/OrionQuickStartGuide.pdf
 
 # 2 ShodanHQ results for "Location: /Admin/CriticalError.asp"
 # 2 Google results for "Cannot access main SQL Server database" intitle:"SolarWinds Network Management"
+# 14 results for inurl:netperfmon
+# 2 results for inurl:Orion inurl:login ext:aspx intitle:"Orion Network Performance Monitor"
 examples %w|
 205.214.205.46
 oriondemo.solarwinds.com
+188.136.136.8/Orion/
+infocenter2.chinahk.net:8787/Orion/
 |
 
 matches [
@@ -28,20 +35,20 @@ matches [
 # Default TD Heading
 { :text=>'<TD Class=PageHeader>Network Performance Monitor</TD>' },
 
+# Old versions # Default CSS HTML
+{ :text=>'<link rel="stylesheet" type="text/css" href="/SolarWinds.css">', :version=>"Old" },
+
+# Default Title
+{ :regexp=>/<title>[\r\n]*	Orion Network Performance Monitor[\r\n]*<\/title>/ },
+
 # Default CSS HTML
-{ :text=>'<link rel="stylesheet" type="text/css" href="/SolarWinds.css">' },
+{ :text=>'<link rel="stylesheet" type="text/css" href="/SolarWinds.css" />' },
 
-# 10.x # Default Title
-{ :regexp=>/<title>[\s]*Orion Network Performance Monitor[\s]*<\/title>/, :version=>"10.x" },
+# Default HTML Comment
+{ :text=>'<!-- Stylesheets left here to support legacy resources -->' },
 
-# 10.x # Default CSS HTML
-{ :text=>'<link rel="stylesheet" type="text/css" href="/SolarWinds.css" />', :version=>"10.x" },
-
-# 10.x # Default HTML Comment
-{ :text=>'<!-- Stylesheets left here to support legacy resources -->', :version=>"10.x" },
-
-# 10.x # Default Logo HTML 
-{ :text=>'<img src="/NetPerfMon/images/SolarWinds.Logo.gif" alt="Site Logo"/>', :version=>"10.x" },
+# Default Logo HTML 
+{ :text=>'<img src="/NetPerfMon/images/SolarWinds.Logo.gif" alt="Site Logo"/>' },
 
 # Default Logo HTML
 { :text=>'<img src="../NetPerfMon/images/SolarWinds.Logo.jpg" border=0>' },
@@ -50,8 +57,8 @@ matches [
 # Error page # Default Malformed HTML
 { :text=>'<a href="/Login.asp"><u><b>Retry Login<b><u></a>' },
 
-# Copyright Text
-{ :text=>'<TD class=Copyright align=middle><A class=Copyright href="http://solarwinds.net/">SOLARWINDS.NET</A> Network Performance Monitor Version Copyright 1995-2007 SolarWinds.Net All Rights Reserved</TD>' },
+# Version detection # Copyright text
+{ :version=>/<div id="footer">[^S]*SolarWinds Orion Network Performance Monitor ([^&]+)&copy; 1995-[0-9]{4} All Rights Reserved[^<]*<\/div>/, :regexp_offset=>0 },
 
 ]
 
