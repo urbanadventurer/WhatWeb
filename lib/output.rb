@@ -20,6 +20,7 @@ along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 class Output
 	def initialize(f=STDOUT)
 	# if no f, output to STDOUT, if f is a filename then open it, if f is a file use it	
+	  f = STDOUT if (f.class == String and f == '')
 		@f = f if f.class == IO or f.class == File
 		@f=File.open(f,"a") if f.class == String
 		@f.sync = true # we want flushed output	

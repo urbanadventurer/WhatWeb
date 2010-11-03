@@ -587,8 +587,7 @@ end
 
 run_plugins_list=nil
 input_file=nil
-output_list = [ OutputBrief.new ] # by default output brief
-
+output_list = []
 
 opts = GetoptLong.new(
       [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
@@ -598,11 +597,11 @@ opts = GetoptLong.new(
       [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
       [ '-e','--example-urls', GetoptLong::NO_ARGUMENT ],
       [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-full', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-brief', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-xml', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-json', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-json-verbose', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-full', GetoptLong::OPTIONAL_ARGUMENT ],
+      [ '--log-brief', GetoptLong::OPTIONAL_ARGUMENT ],
+      [ '--log-xml', GetoptLong::OPTIONAL_ARGUMENT ],
+      [ '--log-json', GetoptLong::OPTIONAL_ARGUMENT ],
+      [ '--log-json-verbose', GetoptLong::OPTIONAL_ARGUMENT ],
       [ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-i','--input-file', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
@@ -719,7 +718,10 @@ begin
 		         	puts "WhatWeb version #{$VERSION} ( http://www.morningstarsecurity.com/research/whatweb/ )"
 		         	exit
 		end
-	end		
+	end
+	if output_list.length == 0
+	  output_list = [ OutputBrief.new ] # by default output brief
+  end
 rescue GetoptLong::Error => err
 	puts
 	usage
