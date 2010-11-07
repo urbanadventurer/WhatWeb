@@ -143,8 +143,46 @@ $WAIT=nil
 $OUTPUT_ERRORS=nil
 
 
+def precompile_regular_expressions
+	# precompile regular expressions in plugins
+	Plugin.registered_plugins.each do |thisplugin|
+		matches=thisplugin[1].matches
+		unless matches.nil?
+			matches.each do |thismatch|
+				unless thismatch[:regexp].nil?
+					#pp thismatch
+					thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
+				end
 
+				[:version,:model, :firmware, :string, :filepath].each do |label|
+					if !thismatch[label].nil? and thismatch[label].class==Regexp
+						thismatch[:regexp_compiled]=Regexp.new(thismatch[label])
+						#pp thismatch
+					end
+				end
 
+			end
+		end		
+	end
+
+=begin
+	# check
+	Plugin.registered_plugins.each do |thisplugin|
+		matches=thisplugin[1].matches
+		unless matches.nil?
+			matches.each do |thismatch|
+				unless thismatch[:regexp].nil?
+					pp thismatch
+					pp thismatch[:regexp_compiled].class
+					#thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
+				end
+			end
+		end		
+	end
+	exit
+=end
+	
+end
 
 def plugin_list
 	puts "Plugins Loaded"
@@ -159,7 +197,6 @@ def plugin_info(keywords= nil)
 	puts "Plugin Information"
 	puts "Searching for " + keywords.join(",") unless keywords.nil?
 	puts "-" * 30
-
 
 	
 	Plugin.registered_plugins.sort_by {|a,b| a }.each do |name,plugin|
@@ -204,7 +241,9 @@ def load_plugins(plugin_list = nil)
 	   plugins.each {|folder| Dir.glob(folder).each {|x| load x } }
 	else
 	   plugins.each {|folder| Dir.glob(folder).each {|x| load x if plugin_list.include?(x)}}
-	end	
+	end
+
+	
 end
 
 
@@ -758,6 +797,8 @@ if $plugins_to_use.size == 0
 	exit
 end
 
+precompile_regular_expressions
+
 # set up ANEMONE skip regex
 # turn an array of extensions into a regexp
 # $ANEMONE_SKIP_REGEX=Regexp.union($ANEMONE_SKIP_EXTENSIONS.map {|x| /\.#{x}$/  })
@@ -775,6 +816,8 @@ end
 
 output_list << OutputFull.new() if $verbose > 1 # full output if -vv
 output_list <<  OutputVerbose.new() if $verbose > 0 # full output if -vv
+
+
 
 # for each target, we try each plugin then print the results
 semaphore=Mutex.new
