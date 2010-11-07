@@ -113,8 +113,8 @@ $KCODE = ''
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
-$VERSION="0.4.6"
 $DEBUG = false # raise exceptions in plugins, etc
+$VERSION="0.4.6"
 $verbose=0
 $USE_EXAMPLE_URLS=false
 $use_colour="auto"
