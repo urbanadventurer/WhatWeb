@@ -278,15 +278,20 @@ class Plugin
 	end
 
 
+	
 	# check for CVE stuff
-	# for each plugin
+
 		# if has CVE array
 			# get final version. just use longest version for now, eg. 3.0.15 over 3.0
 				# for each CVE version / version range
 					# does version fit thisversion?
 						# match CVE
-
-
+	unless results.empty?
+		if defined?(self.vulnerabilities)
+			v=self.vulnerabilities(results)
+			pp v
+		end
+	end
 	# take CVE version, split into comma delimited list
 	# for each
 	# it's a range if it has - or x
@@ -304,7 +309,7 @@ class Plugin
   end
 
   extend PluginSugar
-  def_field :author, :version, :examples, :description, :matches, :extra_urls
+  def_field :author, :version, :examples, :description, :matches, :cve, :extra_urls
 end
 
 
