@@ -209,7 +209,7 @@ end
 class OutputJSON < Output
 	def out(target, status, results)
 		# nice
-		foo= {:target=>target, :http_status=>status, :plugins=>[] } 
+		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
 		
 		results.each do |plugin_name,plugin_results|		
 #			thisplugin = {:name=>plugin_name}
@@ -238,7 +238,7 @@ class OutputJSON < Output
 				thisplugin[:modules] = modules unless modules.empty?
 				thisplugin[:filepath] = filepath unless filepath.empty?
 #				foo[:plugins] << thisplugin
-				foo[:plugins] << {plugin_name => thisplugin}
+				foo[:plugins][plugin_name.to_sym] = thisplugin
 			end
 		end
 
@@ -252,8 +252,9 @@ class OutputMongo < Output
 
 	def initialize(collection)
 #		$KCODE='u'
+	# should make databse and collection comma or fullstop delimited, eg. test,scan
 		@db = Mongo::Connection.new("0.0.0.0").db("test") # resolve-replace means we can't connect to localhost by name
-		@coll=@db.collection("scan")
+		@coll=@db.collection(collection)
 		@charset=nil
 	end
 
@@ -283,7 +284,7 @@ class OutputMongo < Output
 
 	def out(target, status, results)
 		# nice
-		foo= {:target=>target, :http_status=>status, :plugins=>[] } 
+		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
 		
 		results.each do |plugin_name,plugin_results|		
 #			thisplugin = {:name=>plugin_name}
@@ -311,7 +312,7 @@ class OutputMongo < Output
 				thisplugin[:modules] = modules unless modules.empty?
 				thisplugin[:filepath] = filepath unless filepath.empty?
 #				foo[:plugins] << thisplugin
-				foo[:plugins] << {plugin_name => thisplugin}
+				foo[:plugins][plugin_name.to_sym] = thisplugin
 			end
 		end
 		#data=JSON::fast_generate(foo)
