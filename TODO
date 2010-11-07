@@ -8,8 +8,9 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
 
+maybe there should be a different location for data such as country-ips.dat. eg. /data/
 
-add plugin init & close.
+[x] add plugin init & close.
 add alexa plugin
 add dmoz plugin
 
