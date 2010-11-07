@@ -207,6 +207,7 @@ class OutputXML < Output
 end
 
 class OutputJSON < Output
+
 	def out(target, status, results)
 		# nice
 		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
@@ -260,6 +261,22 @@ class OutputMongo < Output
 
 	def close
 		# nothing
+	end
+
+	def flatten_elements!(obj)
+		if obj.class == Hash
+			obj.each_value {|x| 
+				flatten_elements!(x)
+			}
+		end
+
+		if obj.class == Array
+			obj.flatten!
+		end
+
+#		if obj.class == String
+
+#		end
 	end
 
 	def utf8_elements!(obj)
@@ -323,7 +340,9 @@ class OutputMongo < Output
 		unless @charset.nil? or @charset == "Failed"
 #			puts "here"
 			utf8_elements!(foo) # convert foo to utf-8
+			flatten_elements!(foo)
 			@coll.insert(foo)
+			pp foo
 		end
 	end
 end

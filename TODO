@@ -7,6 +7,9 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 [x] JSON output plugin
 [x] bug in verbose output. closing file
 
+fix DMOZ plugin error with trailing /
+flatten arrays in json, like mongo output
+
 need some kind of plugin dependencies, eg. 
 	def depends
 		defined?(Mongo)
