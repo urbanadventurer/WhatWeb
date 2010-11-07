@@ -45,7 +45,7 @@ require 'net/https'
 require 'open-uri'
 require 'cgi'
 require 'thread'
-
+require 'iconv'
 
 # load resolv-replace to see whatweb on speed
 begin

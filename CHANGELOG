@@ -44,6 +44,10 @@ Version 0.4.6 Released ? 2010
 * Added vulnerability matching support, this is still in the experimental phase
 * Added vulerability matching code to awstats.
 * Added logging failure error messages
+* Precompiled regular expressions in matches[] for speed improvement
+* Changed internal sleep times from 1s to 0.5s
+* Added --debug to raise errors found in plugins
+
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman
