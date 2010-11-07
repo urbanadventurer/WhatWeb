@@ -631,6 +631,7 @@ puts "
 \t\t\teg. www.example.com/%insert%/robots.txt 
 --help, -h\t\tThis help
 --verbose, -v\t\tIncrease verbosity, use twice for debugging.
+--debug\t\t\tRaise errors in plugins
 --version\t\tDisplay version information.\n\n"
 end
 
@@ -674,6 +675,7 @@ opts = GetoptLong.new(
       [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--spider-skip-extensions', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--debug', GetoptLong::NO_ARGUMENT ],
       [ '--version', GetoptLong::NO_ARGUMENT ]
     )
 
@@ -768,6 +770,8 @@ begin
 					$ANEMONE_SKIP_EXTENSIONS = arg.split(",")
 			when '--wait'
 					$WAIT = arg.to_i
+			when '--debug'
+					$DEBUG = true
 		    	when '-h','--help'
 		            usage
 		            exit
@@ -972,13 +976,13 @@ while thistarget = next_target
 
 			while Thread.list.length>($MAX_THREADS+1)
 				puts "sleeping" if $verbose>1
-				sleep 1
+				sleep 0.5
 			end
 end # targets.each
 
 while Thread.list.length>1
 	puts "waiting for #{Thread.list.size-1} threads to exit" if $verbose>1
-	sleep 1	
+	sleep 0.5
 end
 
 # close output logs
