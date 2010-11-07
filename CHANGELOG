@@ -38,7 +38,12 @@ Version 0.4.6 Released ? 2010
 * Renamed disabled-plugins/ to plugins-disabled/
 * Updated mailto plugin
 * Updated Mambo and Joomla plugins with suggestions from Aung Khant
-
+* Bug fix: Updated WordPress plugin
+* Added mongo support - MongoOutput and --log-mongo
+* Added Charset plugin, required for conversion to UTF-8 which is required for MongoDB. Optionally requires rchardet gem
+* Added vulnerability matching support, this is still in the experimental phase
+* Added vulerability matching code to awstats.
+* Added logging failure error messages
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman

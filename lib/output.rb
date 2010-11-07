@@ -22,7 +22,7 @@ class Output
 	# if no f, output to STDOUT, if f is a filename then open it, if f is a file use it	
 		@f = f if f.class == IO or f.class == File
 		@f=File.open(f,"a") if f.class == String
-		@f.sync = true # we want flushed output	
+		@f.sync = true # we want flushed output
 	end
 
 	def close
@@ -82,14 +82,14 @@ class OutputBrief < Output
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
-				certainty = plugin_results.map {|x| x[:certainty] }.compact.sort.uniq.last					
-				version = plugin_results.map {|x| x[:version] }.compact.sort.uniq.join(",")
-				string = plugin_results.map {|x| x[:string] }.compact.sort.uniq.join(",")
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
+				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq.join(",")
+				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq.join(",")
 				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq.join(",")
-				model = plugin_results.map {|x| x[:model] }.compact.sort.uniq.join(",")
-				firmware = plugin_results.map {|x| x[:firmware] }.compact.sort.uniq.join(",")
-				modules = plugin_results.map {|x| x[:modules] }.compact.sort.uniq.join(",")
-				filepath = plugin_results.map {|x| x[:filepath] }.compact.sort.uniq.join(",")
+				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq.join(",")
+				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq.join(",")
+				modules = plugin_results.map {|x| x[:modules] unless x[:modules].class==Regexp }.compact.sort.uniq.join(",")
+				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.compact.sort.uniq.join(",")
 
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
@@ -179,14 +179,14 @@ class OutputXML < Output
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
-				certainty = plugin_results.map {|x| x[:certainty] }.compact.sort.uniq.last
-				version = plugin_results.map {|x| x[:version] }.flatten.compact.sort.uniq.join(",")
-				string = plugin_results.map {|x| x[:string] }.flatten.compact.sort.uniq.join(",")
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
+				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
+				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
 				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq.join(",")
-				model = plugin_results.map {|x| x[:model] }.compact.sort.uniq.join(",")
-				firmware = plugin_results.map {|x| x[:firmware] }.compact.sort.uniq.join(",")
-				modules = plugin_results.map {|x| x[:modules] }.flatten.compact.sort.uniq
-				filepath = plugin_results.map {|x| x[:filepath] }.flatten.compact.sort.uniq.join(",")
+				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.compact.sort.uniq.join(",")
+				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.compact.sort.uniq.join(",")
+				modules = plugin_results.map {|x| x[:modules] unless x[:modules].class==Regexp}.flatten.compact.sort.uniq
+				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
 
 				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
 				version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
@@ -212,20 +212,22 @@ class OutputJSON < Output
 		foo= {:target=>target, :http_status=>status, :plugins=>[] } 
 		
 		results.each do |plugin_name,plugin_results|		
-			thisplugin = {:name=>plugin_name}
+#			thisplugin = {:name=>plugin_name}
+			thisplugin = {}
 			
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
 
-				certainty = plugin_results.map {|x| x[:certainty] }.compact.sort.uniq.last
-				version = plugin_results.map {|x| x[:version] }.flatten.compact.sort.uniq
-				string = plugin_results.map {|x| x[:string] }.flatten.compact.sort.uniq
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
+				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
+				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
 				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq
-				model = plugin_results.map {|x| x[:model] }.compact.sort.uniq
-				firmware = plugin_results.map {|x| x[:firmware] }.compact.sort.uniq
-				modules = plugin_results.map {|x| x[:modules] }.flatten.compact.sort.uniq
-				filepath = plugin_results.map {|x| x[:filepath] }.flatten.compact.sort.uniq
+				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
+				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
+				modules = plugin_results.map {|x| x[:modules] unless x[:modules].class==Regexp }.compact.sort.uniq
+				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.compact.sort.uniq
+
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?
@@ -235,13 +237,97 @@ class OutputJSON < Output
 				thisplugin[:firmware] = firmware unless firmware.empty?
 				thisplugin[:modules] = modules unless modules.empty?
 				thisplugin[:filepath] = filepath unless filepath.empty?
-				foo[:plugins] << thisplugin
+#				foo[:plugins] << thisplugin
+				foo[:plugins] << {plugin_name => thisplugin}
 			end
 		end
 
 		@f.puts JSON::fast_generate(foo)
 	end
 end
+
+
+# basically the same as OutputJSON
+class OutputMongo < Output
+
+	def initialize(collection)
+#		$KCODE='u'
+		@db = Mongo::Connection.new("0.0.0.0").db("test") # resolve-replace means we can't connect to localhost by name
+		@coll=@db.collection("scan")
+		@charset=nil
+	end
+
+	def close
+		# nothing
+	end
+
+	def utf8_elements!(obj)
+		if obj.class == Hash
+			obj.each_value {|x| 
+				utf8_elements!(x)
+			}
+		end
+
+		if obj.class == Array
+			obj.each {|x| 
+				utf8_elements!(x)
+			}
+		end
+
+		if obj.class == String
+#			obj=obj.upcase!
+#			obj=Iconv.iconv("UTF-8",@charset,obj).join
+			obj=obj.gsub!(/^.*$/,Iconv.iconv("UTF-8",@charset,obj).join) # this is a bad way to do this but it works			
+		end
+	end
+
+	def out(target, status, results)
+		# nice
+		foo= {:target=>target, :http_status=>status, :plugins=>[] } 
+		
+		results.each do |plugin_name,plugin_results|		
+#			thisplugin = {:name=>plugin_name}
+			thisplugin = {}
+			
+			unless plugin_results.empty?
+				# important info in brief mode is version, type and ?
+				# what's the highest probability for the match?
+
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
+				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
+				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
+				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq
+				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
+				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
+				modules = plugin_results.map {|x| x[:modules] unless x[:modules].class==Regexp }.compact.sort.uniq
+				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.compact.sort.uniq
+
+				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
+				thisplugin[:version] = version unless version.empty?
+				thisplugin[:string] = string unless string.empty?
+				thisplugin[:accounts] = accounts unless accounts.empty?
+				thisplugin[:model] = model unless model.empty?
+				thisplugin[:firmware] = firmware unless firmware.empty?
+				thisplugin[:modules] = modules unless modules.empty?
+				thisplugin[:filepath] = filepath unless filepath.empty?
+#				foo[:plugins] << thisplugin
+				foo[:plugins] << {plugin_name => thisplugin}
+			end
+		end
+		#data=JSON::fast_generate(foo)
+
+		# extract charset from charset plugin		
+		@charset=results.map {|n,r| r[0][:string] if n=="Charset" }.compact.first
+#		pp @charset
+		unless @charset.nil? or @charset == "Failed"
+#			puts "here"
+			utf8_elements!(foo) # convert foo to utf-8
+			@coll.insert(foo)
+		end
+	end
+end
+
+
 
 class OutputJSONVerbose < Output
 	def out(target, status, results)
