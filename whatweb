@@ -636,6 +636,7 @@ puts "
 end
 
 
+usage if ARGV.size==0 # faster usage info
 
 run_plugins_list=nil
 input_file=nil
