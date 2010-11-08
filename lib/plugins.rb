@@ -71,7 +71,7 @@ class Plugin
 	  	@matches.map do |match|
 			r=[]
 
-			unless match[:regexp_compiled].nil?
+			unless match[:regexp].nil?
 				r << match if @body =~ match[:regexp_compiled]
 			end
 
@@ -91,48 +91,15 @@ class Plugin
 				r << match if @tagpattern == match[:tagpattern]
 			end
 
-			if !match[:version].nil? and match[:version].class==Regexp
-				if regexpmatch = @body =~ match[:regexp_compiled]
-					m = match.dup
-					m[:version] = regexpmatch[0][match[:regexp_offset]]
-					r << m
-				end
-			end
-
-			# Model
-			if !match[:model].nil? and match[:model].class==Regexp
-				if regexpmatch = @body =~ match[:regexp_compiled]
-					m = match.dup
-					m[:model] = regexpmatch[0][match[:regexp_offset]]
-					r << m
-				end
-			end
-
-			# String
-			if !match[:string].nil? and match[:string].class==Regexp
-				if regexpmatch = @body =~ match[:regexp_compiled]
-					m = match.dup
-					m[:string] = regexpmatch[0][match[:regexp_offset]]
-					r << m
-				end
-			end
-
-			# Firmware
-			if !match[:firmware].nil? and match[:firmware].class==Regexp
-				if regexpmatch = @body =~ match[:regexp_compiled]
-					m = match.dup
-					m[:firmware] = regexpmatch[0][match[:regexp_offset]]
-					r << m
-				end
-			end
-
-			# Filepath
-			if !match[:filepath].nil? and match[:filepath].class==Regexp
-				if regexpmatch = @body =~ match[:regexp_compiled]
-					m = match.dup
-					m[:filepath] = regexpmatch[0][match[:regexp_offset]]
-					r << m
-				end
+			[:version,:model,:string,:firmware,:filepath].each do |symbol|
+		                if !match[symbol].nil? and match[symbol].class==Regexp
+		                        if @body =~ match[:regexp_compiled]
+		                                regexpmatch = $~
+		                                m = match.dup
+		                                m[symbol] = regexpmatch[match[:regexp_offset]+1]
+		                                r << m
+		                        end
+		                end
 			end
 
 			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
@@ -197,44 +164,15 @@ class Plugin
 					r << match if thistagpattern == match[:tagpattern]
 				end
 		
-				if !match[:version].nil? and match[:version].class==Regexp
-					if regexpmatch = thisbody =~ match[:regexp_compiled]
-						m = match.dup
-						m[:version] = regexpmatch[0][match[:regexp_offset]]
-						r << m
-					end
-				end
-
-				if !match[:model].nil? and match[:model].class==Regexp
-					if regexpmatch = thisbody =~ match[:regexp_compiled]
-						m = match.dup
-						m[:model] = regexpmatch[0][match[:regexp_offset]]
-						r << m
-					end
-				end
-
-				if !match[:string].nil? and match[:string].class==Regexp
-					if regexpmatch = thisbody =~ match[:regexp_compiled]
-						m = match.dup
-						m[:string] = regexpmatch[0][match[:regexp_offset]]
-						r << m
-					end
-				end
-
-				if !match[:firmware].nil? and match[:firmware].class==Regexp
-					if regexpmatch = thisbody =~ match[:regexp_compiled]
-						m = match.dup
-						m[:firmware] = regexpmatch[0][match[:regexp_offset]]
-						r << m
-					end
-				end
-
-				if !match[:filepath].nil? and match[:filepath].class==Regexp
-					if regexpmatch = thisbody =~ match[:regexp_compiled]
-						m = match.dup
-						m[:filepath] = regexpmatch[0][match[:regexp_offset]]
-						r << m
-					end
+				[:version,:model,:string,:firmware,:filepath].each do |symbol|
+				        if !match[symbol].nil? and match[symbol].class==Regexp
+				                if @body =~ match[:regexp_compiled]
+				                        regexpmatch = $~
+				                        m = match.dup
+				                        m[symbol] = regexpmatch[match[:regexp_offset]+1]
+				                        r << m
+				                end
+				        end
 				end
 
 				results +=r						

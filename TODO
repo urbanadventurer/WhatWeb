@@ -2,11 +2,20 @@ TO-DO
 
 Good luck understanding these notes for myself :) Some of this stuff has already been done.
 
-precompile regular expressions for speed if target size >1
-
+[x] precompile regular expressions for speed if target size >1
 [x] put whatweb on github
 [x] JSON output plugin
 [x] bug in verbose output. closing file
+
+fix DMOZ plugin error with trailing /
+flatten arrays in json, like mongo output
+
+need some kind of plugin dependencies, eg. 
+	def depends
+		defined?(Mongo)
+	end
+etc..
+
 
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
 
