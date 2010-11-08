@@ -7,14 +7,19 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 [x] JSON output plugin
 [x] bug in verbose output. closing file
 
-fix DMOZ plugin error with trailing /
+[x] fix DMOZ plugin error with trailing /
 flatten arrays in json, like mongo output
+
+
 
 need some kind of plugin dependencies, eg. 
 	def depends
 		defined?(Mongo)
 	end
 etc..
+
+
+dont load plugins if no args, just show help
 
 
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
