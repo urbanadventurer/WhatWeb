@@ -632,7 +632,7 @@ puts "
 --help, -h\t\tThis help
 --verbose, -v\t\tIncrease verbosity, use twice for debugging.
 --debug\t\t\tRaise errors in plugins
---version\t\tDisplay version information.\n\n"
+--version\t\tDisplay version information. (WhatWeb #{$VERSION})\n\n"
 end
 
 
