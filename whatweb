@@ -45,7 +45,7 @@ require 'net/https'
 require 'open-uri'
 require 'cgi'
 require 'thread'
-
+require 'iconv'
 
 # load resolv-replace to see whatweb on speed
 begin
@@ -58,11 +58,10 @@ rescue LoadError
 	# that failed.. no big deal
 end
 
-
 # load JSON if it's available. Is this Ruby 1.9 JSON safe? who knows?
 begin
 	require 'rubygems' # rubygems is optional
-	if Gem.available?('json') # this is much faster
+	if Gem.available?('json') # 
 		require 'json'
 	end
 rescue LoadError
@@ -72,12 +71,24 @@ end
 # load MongoDB if it's available. Is this Ruby 1.9 JSON safe? who knows?
 begin
 	require 'rubygems' # rubygems is optional
-	if Gem.available?('mongo') # this is much faster
+	if Gem.available?('mongo') # 
 		require 'mongo'
 	end
 rescue LoadError
 	# that failed.. no big deal
 end
+
+# load rchardet -- needed for foreign charsets and mongodb
+begin
+	require 'rubygems' # rubygems is optional
+	if Gem.available?('rchardet') # this detects encodings and is cpu heavy
+		require 'rchardet'
+	end
+rescue LoadError
+	# that failed.. no big deal
+end
+
+
 
 if RUBY_VERSION =~ /^1.9/
         require 'digest/md5'
@@ -96,14 +107,14 @@ require 'lib/colour.rb'
 require 'lib/anemone/anemone.rb'
 require 'tempfile'
 
-
+$KCODE = ''
 
 #unless opts.size
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
-$VERSION="0.4.6"
 $DEBUG = false # raise exceptions in plugins, etc
+$VERSION="0.4.6"
 $verbose=0
 $USE_EXAMPLE_URLS=false
 $use_colour="auto"
@@ -132,8 +143,46 @@ $WAIT=nil
 $OUTPUT_ERRORS=nil
 
 
+def precompile_regular_expressions
+	# precompile regular expressions in plugins
+	Plugin.registered_plugins.each do |thisplugin|
+		matches=thisplugin[1].matches
+		unless matches.nil?
+			matches.each do |thismatch|
+				unless thismatch[:regexp].nil?
+					#pp thismatch
+					thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
+				end
 
+				[:version,:model, :firmware, :string, :filepath].each do |label|
+					if !thismatch[label].nil? and thismatch[label].class==Regexp
+						thismatch[:regexp_compiled]=Regexp.new(thismatch[label])
+						#pp thismatch
+					end
+				end
 
+			end
+		end		
+	end
+
+=begin
+	# check
+	Plugin.registered_plugins.each do |thisplugin|
+		matches=thisplugin[1].matches
+		unless matches.nil?
+			matches.each do |thismatch|
+				unless thismatch[:regexp].nil?
+					pp thismatch
+					pp thismatch[:regexp_compiled].class
+					#thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
+				end
+			end
+		end		
+	end
+	exit
+=end
+	
+end
 
 def plugin_list
 	puts "Plugins Loaded"
@@ -148,7 +197,6 @@ def plugin_info(keywords= nil)
 	puts "Plugin Information"
 	puts "Searching for " + keywords.join(",") unless keywords.nil?
 	puts "-" * 30
-
 
 	
 	Plugin.registered_plugins.sort_by {|a,b| a }.each do |name,plugin|
@@ -193,7 +241,9 @@ def load_plugins(plugin_list = nil)
 	   plugins.each {|folder| Dir.glob(folder).each {|x| load x } }
 	else
 	   plugins.each {|folder| Dir.glob(folder).each {|x| load x if plugin_list.include?(x)}}
-	end	
+	end
+
+	
 end
 
 
@@ -352,7 +402,7 @@ def match_ghdb(ghdb, body, meta, status, base_uri)
 			matches << ((body =~ /#{w[1..-1]}/i).nil? ? true : false) 
 		else
 			w = w[1..-1] if w[0..0] == '+' # if it starts with +, ignore the 1st char
-			matches << ((body =~ /#{w}/i).nil? ? false : true) 
+			matches << ((body =~ /#{w}/i).nil? ? false : true)
 		end	
 	end
 
@@ -557,6 +607,7 @@ puts "
 --log-xml=FILE\t\tLog XML format
 --log-json=FILE\t\tLog JSON format
 --log-json-verbose=FILE\tLog JSON Verbose format
+--log-mongo=Collection\tLog to a Mongo DB on localhost
 --log-errors=FILE\tLog errors
 --user-agent, -U\tIdentify as user-agent instead of WhatWeb/#{$VERSION}.
 --max-threads, -t\tNumber of simultaneous threads. Default is #{$MAX_THREADS}.
@@ -580,10 +631,15 @@ puts "
 \t\t\teg. www.example.com/%insert%/robots.txt 
 --help, -h\t\tThis help
 --verbose, -v\t\tIncrease verbosity, use twice for debugging.
---version\t\tDisplay version information.\n\n"
+--debug\t\t\tRaise errors in plugins
+--version\t\tDisplay version information. (WhatWeb #{$VERSION})\n\n"
 end
 
 
+if ARGV.size==0 # faster usage info
+	usage
+	exit 
+end
 
 run_plugins_list=nil
 input_file=nil
@@ -602,6 +658,7 @@ opts = GetoptLong.new(
       [ '--log-xml', GetoptLong::OPTIONAL_ARGUMENT ],
       [ '--log-json', GetoptLong::OPTIONAL_ARGUMENT ],
       [ '--log-json-verbose', GetoptLong::OPTIONAL_ARGUMENT ],
+      [ '--log-mongo', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-i','--input-file', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
@@ -621,6 +678,7 @@ opts = GetoptLong.new(
       [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--spider-skip-extensions', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--debug', GetoptLong::NO_ARGUMENT ],
       [ '--version', GetoptLong::NO_ARGUMENT ]
     )
 
@@ -670,6 +728,12 @@ begin
 					else
 						abort("Sorry. The JSON gem is required for JSONVerbose output")
 					end
+			when '--log-mongo'
+					if defined?(Mongo) and defined?(CharDet)
+				 		output_list << OutputMongo.new(arg)
+					else
+						abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+					end
 			when '--log-errors'
 				 	$OUTPUT_ERRORS = OutputErrors.new(arg)
 		  	when '-U','--user-agent'
@@ -709,6 +773,8 @@ begin
 					$ANEMONE_SKIP_EXTENSIONS = arg.split(",")
 			when '--wait'
 					$WAIT = arg.to_i
+			when '--debug'
+					$DEBUG = true
 		    	when '-h','--help'
 		            usage
 		            exit
@@ -741,6 +807,8 @@ if $plugins_to_use.size == 0
 	exit
 end
 
+precompile_regular_expressions
+
 # set up ANEMONE skip regex
 # turn an array of extensions into a regexp
 # $ANEMONE_SKIP_REGEX=Regexp.union($ANEMONE_SKIP_EXTENSIONS.map {|x| /\.#{x}$/  })
@@ -758,6 +826,8 @@ end
 
 output_list << OutputFull.new() if $verbose > 1 # full output if -vv
 output_list <<  OutputVerbose.new() if $verbose > 0 # full output if -vv
+
+
 
 # for each target, we try each plugin then print the results
 semaphore=Mutex.new
@@ -872,7 +942,12 @@ while thistarget = next_target
 				# multiple output plugins simultaneously, some stdout, some files
 				semaphore.synchronize do # mutex is right?
 					output_list.each do |o|
-						o.out(target, status, results)
+						begin
+							o.out(target, status, results)
+						rescue
+							#srsly, logging failed
+							error(target + "ERROR: Logging failed.")
+						end
 					end
 				end
 			begin		
@@ -907,13 +982,13 @@ while thistarget = next_target
 
 			while Thread.list.length>($MAX_THREADS+1)
 				puts "sleeping" if $verbose>1
-				sleep 1
+				sleep 0.5
 			end
 end # targets.each
 
 while Thread.list.length>1
 	puts "waiting for #{Thread.list.size-1} threads to exit" if $verbose>1
-	sleep 1	
+	sleep 0.5
 end
 
 # close output logs

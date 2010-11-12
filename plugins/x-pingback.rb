@@ -13,14 +13,38 @@ description "A pingback is one of three types of linkbacks, methods for Web auth
 examples %w|
 www.wordpress.com
 195.158.41.1
+82.103.135.222
+173.224.115.166
+67.215.246.126
+96.0.164.173
+76.162.52.111
+64.34.110.21
+65.164.217.86
+98.130.232.45
+109.75.97.150
+163.121.52.134
+24.173.89.252
+168.177.21.37
+202.184.111.36
+207.41.16.115
+69.63.153.173
+193.105.109.38
+63.118.57.57
+142.31.97.190
+202.144.154.34
+184.82.44.96
 |
 
-matches [
+# Passive #
+def passive
+	m=[]
+	
+	# X-Pingback HTTP Header
+	m << { :string=>@meta["x-pingback"].scan(/[\s]*([^\r^\n]*)/i) } if @meta["x-pingback"] =~ /[\s]*([^\r^\n]*)/i
 
-# HTTP Header
-{ :header=>/x-pingback: ([^\r^\n]*)/i, :regexp_offset=>0 },
+	m
 
-]
+end
 
 end
 

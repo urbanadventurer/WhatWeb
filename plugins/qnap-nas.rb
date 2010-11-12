@@ -8,12 +8,15 @@
 # TS-109 PRO, TS-109 PRO II, TS-119, TS-209 PRO, TS-209 PRO II,
 # TS-219, TS-239, TS-259, TS-409, TS-410U, TS-419P, TS-509, TS-559, TS-639
 ##
+# Version 0.3 #
+# Added aggressive model, firmware and module extraction from /cgi-bin/authLogin.cgi
+##
 # Version 0.2 #
-# Added model, firmware and module extraction support for /cgi-bin/authLogin.cgi
+# Added passive model, firmware and module extraction support for /cgi-bin/authLogin.cgi
 ## 
 Plugin.define "QNAP-NAS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
-version "0.1"
+version "0.3"
 description "QNAP provides a series of network attached storage (NAS) products - homepage:http://www.qnap.com/"
 
 # 3,990 results for inurl:Qmultimedia +thumb_index @ 2010-06-01
@@ -90,28 +93,28 @@ http://yaohaiping.net:8080/cgi-bin/
 
 matches [
 
-# Multimedia Station URL pattern
+# Multimedia Station # URL pattern
 { :ghdb=>"inurl:Qmultimedia +thumb_index", :modules=>"Multimedia Station" },
 
-# Photo Station module title
+# Photo Station module # Default title
 { :text=>"<title>QNAP Photo Station</title>", :modules=>"Photo Station" },
 
-# Download Station module title
+# Download Station module # Default title
 { :text=>"<title>QNAP Download Station</title>", :modules=>"Download Station" },
 
-# Qmultimedia module title
+# Qmultimedia module # Default title
 { :text=>"<TITLE>QNAP Multimedia Station (Photo Album)</TITLE>", :modules=>"Multimedia Station" },
 
-# Qmultimedia module title
+# Qmultimedia module # Default title
 { :text=>"<TITLE>Multimedia Station</TITLE>", :modules=>"Multimedia Station", :certainty=>75 },
 
-# Default JavaScript
+# Login page # Default JavaScript
 { :text=>'NavPage("http://"+ location_hostname_for_ipv6(location.hostname) +":"+ qweb_port +"/", 0);' },
 
-# Default logo HTML
+# Login page # Default logo HTML
 { :text=>'<a href="http://www.qnap.com"><img src="/ajax_obj/images/qnap_logo_w.gif" alt="QNAP Turbo NAS" title="QNAP Turbo NAS"' },
 
-# QNAP NAS - not TS Series
+# QNAP NAS # Not TS Series # Default table HTML
 { :text=>'<table width="100%" border="0" background="/v3_menu/images/admin_header.jpg" cellpadding="0" cellspacing="0" class="12-blue">', :model=>"Uknown (not TS Series)" },
 
 # Login page # /cgi-bin/html/login.html # Extract modules
@@ -123,10 +126,11 @@ matches [
 
 ]
 
-# Extract details from /cgi-bin/authLogin.cgi (in XML format)
+# Passive #
 def passive
 	m=[]
 
+	# Check document is QNAP XML
 	if @body =~ /<QDocRoot version="[\d\.]+">/
 
 		# Get firmware version and build
@@ -151,6 +155,46 @@ def passive
 		if @body =~ /<QWebSSLEnabled><!\[CDATA\[1\]\]><\/QWebSSLEnabled>/ then m << { :modules=>"Qweb Server SSL" } end
 		if @body =~ /<NVREnabled><!\[CDATA\[1\]\]><\/NVREnabled>/ then m << { :modules=>"NVR" } end
 		if @body =~ /<WFM2><!\[CDATA\[1\]\]><\/WFM2>/ then m << { :modules=>"Web File Manager 2" } end
+
+	end
+
+	m
+
+end
+
+# Aggressive #
+def aggressive
+	m=[]
+
+	# Extract details from /cgi-bin/authLogin.cgi (in XML format)
+	target = URI.join(@base_uri.to_s,"/cgi-bin/authLogin.cgi").to_s
+	status,url,ip,body,headers=open_target(target)
+
+	# Check document is QNAP XML
+	if body =~ /<QDocRoot version="[\d\.]+">/
+
+		# Get firmware version and build
+		if body =~ /<version><!\[CDATA\[([^\]]+)\]\]><\/version>/ and body =~ /<build><!\[CDATA\[([^\]]+)\]\]><\/build>/
+			firmware=body.scan(/<version><!\[CDATA\[([^\]]+)\]\]><\/version>/)[0][0]+" build "+body.scan(/<build><!\[CDATA\[([^\]]+)\]\]><\/build>/)[0][0]
+			m << { :firmware=>firmware }
+		end
+
+		# Get model
+		if body =~ /<internalModelName><!\[CDATA\[([^\]]+)\]\]><\/internalModelName>/
+			model=body.scan(/<internalModelName><!\[CDATA\[([^\]]+)\]\]><\/internalModelName>/)[0][0]
+			m << { :model=>model }
+		end
+
+		# Get enabled modules
+		if body =~ /<webFSEnabled><!\[CDATA\[1\]\]><\/webFSEnabled>/ then m << { :modules=>"WebFS" } end
+		if body =~ /<QMultimediaEnabled><!\[CDATA\[1\]\]><\/QMultimediaEnabled>/ then m << { :modules=>"Multimedia Station" } end
+		if body =~ /<MSV2Supported><!\[CDATA\[1\]\]><\/MSV2Supported>/ then m << { :modules=>"MSV2" } end
+		if body =~ /<MSV2WebEnabled><!\[CDATA\[1\]\]><\/MSV2WebEnabled>/ then m << { :modules=>"MSV2 Web" } end
+		if body =~ /<QDownloadEnabled><!\[CDATA\[1\]\]><\/QDownloadEnabled>/ then m << { :modules=>"Download Station" } end
+		if body =~ /<QWebEnabled><!\[CDATA\[1\]\]><\/QWebEnabled>/ then m << { :modules=>"QWeb Server" } end
+		if body =~ /<QWebSSLEnabled><!\[CDATA\[1\]\]><\/QWebSSLEnabled>/ then m << { :modules=>"Qweb Server SSL" } end
+		if body =~ /<NVREnabled><!\[CDATA\[1\]\]><\/NVREnabled>/ then m << { :modules=>"NVR" } end
+		if body =~ /<WFM2><!\[CDATA\[1\]\]><\/WFM2>/ then m << { :modules=>"Web File Manager 2" } end
 
 	end
 

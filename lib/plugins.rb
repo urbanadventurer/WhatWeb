@@ -72,7 +72,7 @@ class Plugin
 			r=[]
 
 			unless match[:regexp].nil?
-				r << match if @body =~ match[:regexp]
+				r << match if @body =~ match[:regexp_compiled]
 			end
 
 			unless match[:ghdb].nil?
@@ -91,50 +91,15 @@ class Plugin
 				r << match if @tagpattern == match[:tagpattern]
 			end
 
-			if !match[:version].nil? and match[:version].class==Regexp
-				if @body =~ match[:version]
-					m = match.dup
-					m[:version] = @body.scan(match[:version])[0][match[:regexp_offset]]
-					r << m
-				end
-			end
-
-			# Model
-			if !match[:model].nil? and match[:model].class==Regexp
-
-				if @body =~ match[:model]
-					m = match.dup
-					m[:model] = @body.scan(match[:model])[0][match[:regexp_offset]]
-					r << m
-				end
-			end
-
-			# String
-			if !match[:string].nil? and match[:string].class==Regexp
-
-				if @body =~ match[:string]
-					m = match.dup
-					m[:string] = @body.scan(match[:string])[0][match[:regexp_offset]]
-					r << m
-				end
-			end
-
-			# Firmware
-			if !match[:firmware].nil? and match[:firmware].class==Regexp
-				if @body =~ match[:firmware]
-					m = match.dup
-					m[:firmware] = @body.scan(match[:firmware])[0][match[:regexp_offset]]
-					r << m
-				end
-			end
-
-			# Filepath
-			if !match[:filepath].nil? and match[:filepath].class==Regexp
-				if @body =~ match[:filepath]
-					m = match.dup
-					m[:filepath] = @body.scan(match[:filepath])[0][match[:regexp_offset]]
-					r << m
-				end
+			[:version,:model,:string,:firmware,:filepath].each do |symbol|
+		                if !match[symbol].nil? and match[symbol].class==Regexp
+		                        if @body =~ match[:regexp_compiled]
+		                                regexpmatch = $~
+		                                m = match.dup
+		                                m[symbol] = regexpmatch[match[:regexp_offset]+1]
+		                                r << m
+		                        end
+		                end
 			end
 
 			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
@@ -177,8 +142,10 @@ class Plugin
 					thistagpattern = make_tag_pattern(thisbody)
 				end
 				
-				unless match[:regexp].nil?
-					r << match if thisbody =~ match[:regexp]
+			
+
+				unless match[:regexp_compiled].nil?
+					r << match if thisbody =~ match[:regexp_compiled]
 				end
 
 				unless match[:ghdb].nil?
@@ -196,45 +163,16 @@ class Plugin
 				unless match[:tagpattern].nil?
 					r << match if thistagpattern == match[:tagpattern]
 				end
-
-				if !match[:version].nil? and match[:version].class==Regexp
-					if thisbody =~ match[:version]
-						m = match.dup
-						m[:version] = thisbody.scan(match[:version])[0][match[:regexp_offset]]
-						r << m
-					end
-				end
-
-				if !match[:model].nil? and match[:model].class==Regexp
-					if thisbody =~ match[:model]
-						m = match.dup
-						m[:model] = thisbody.scan(match[:model])[0][match[:regexp_offset]]
-						r << m
-					end
-				end
-
-				if !match[:string].nil? and match[:string].class==Regexp
-					if thisbody =~ match[:string]
-						m = match.dup
-						m[:string] = thisbody.scan(match[:string])[0][match[:regexp_offset]]
-						r << m
-					end
-				end
-
-				if !match[:firmware].nil? and match[:firmware].class==Regexp
-					if thisbody =~ match[:firmware]
-						m = match.dup
-						m[:firmware] = thisbody.scan(match[:firmware])[0][match[:regexp_offset]]
-						r << m
-					end
-				end
-
-				if !match[:filepath].nil? and match[:filepath].class==Regexp
-					if thisbody =~ match[:filepath]
-						m = match.dup
-						m[:filepath] = thisbody.scan(match[:filepath])[0][match[:regexp_offset]]
-						r << m
-					end
+		
+				[:version,:model,:string,:firmware,:filepath].each do |symbol|
+				        if !match[symbol].nil? and match[symbol].class==Regexp
+				                if @body =~ match[:regexp_compiled]
+				                        regexpmatch = $~
+				                        m = match.dup
+				                        m[symbol] = regexpmatch[match[:regexp_offset]+1]
+				                        r << m
+				                end
+				        end
 				end
 
 				results +=r						
@@ -278,15 +216,20 @@ class Plugin
 	end
 
 
+	
 	# check for CVE stuff
-	# for each plugin
+
 		# if has CVE array
 			# get final version. just use longest version for now, eg. 3.0.15 over 3.0
 				# for each CVE version / version range
 					# does version fit thisversion?
 						# match CVE
-
-
+	unless results.empty?
+		if defined?(self.vulnerabilities)
+			v=self.vulnerabilities(results)
+			pp v
+		end
+	end
 	# take CVE version, split into comma delimited list
 	# for each
 	# it's a range if it has - or x
@@ -304,7 +247,7 @@ class Plugin
   end
 
   extend PluginSugar
-  def_field :author, :version, :examples, :description, :matches, :extra_urls
+  def_field :author, :version, :examples, :description, :matches, :cve, :extra_urls
 end
 
 

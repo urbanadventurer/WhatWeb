@@ -4,14 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Added form action extraction
+##
 Plugin.define "Links" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
-version "0.1"
+version "0.2"
 description "This plugin attempts to extract all the links from the HTML source."
 
 examples %w|
 itsecuritysolutions.org
 morningstarsecurity.com
+whatweb.net
 yehg.net
 |
 
@@ -20,16 +24,13 @@ def passive
 	m=[]
 
 	# href
-	if @body =~ /<[^>]+href[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]*>/i
-		modules=@body.scan(/<[^>]+href[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]*>/i).uniq
-		m << { :modules=>modules }
-	end
+	m << { :modules=>@body.scan(/<[^>]+href[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i).uniq } if @body =~ /<[^>]+href[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i
 
 	# src
-	if @body =~ /<[^>]+src[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]*>/i
-		modules=@body.scan(/<[^>]+src[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]*>/i).uniq
-		m << { :modules=>modules }
-	end
+	m << { :modules=>@body.scan(/<[^>]+src[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i).uniq } if @body =~ /<[^>]+src[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i
+
+	# form action
+	m << { :string=>@body.scan(/<[^>]*form[^>]+action[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i).uniq } if @body =~ /<[^>]*form[^>]+action[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i
 
 	m
 

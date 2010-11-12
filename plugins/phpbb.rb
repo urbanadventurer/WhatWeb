@@ -8,10 +8,12 @@
 
 # Version 0.2
 # remove :certainty and :name, change :regexp to :text
+# Version 0.3
+# Fixed Changelog version detection now prefixed with >
 
 Plugin.define "phpBB" do
 author "Andrew Horton"
-version "0.2"
+version "0.3"
 description "phpBB is a free forum phpbb.org"
 examples %w|http://phpbbmodders.net/board/ http://smartor.is-root.com/forum/ http://narutoc.phpbbnow.com/ http://www.bikeradar.com/forum/index.php http://forum.djmag.com/ http://www.rotationz.be/forum/ http://www.sgscwelisten.com/forum/ http://www.globalhardstyle.com/forum/ http://www.soapforum.co.uk/ www.ostriches.org/forum/ forum.comicostrich.com forum.ectune.com pokerforums.fulltiltpoker.com www.bettertransport.org.nz/forum/ back2basics.hiphopnz.com/ www.oldschool.co.nz/|
 
@@ -76,7 +78,7 @@ def aggressive
 		# <li><a href="#2018">Changes since 2.0.18</a></li>
 		if body =~ /<li><a href="[^"]+">Changes since ([0-9\.]+)<\/a><\/li>/
 			v=body.scan(/<li><a href="[^"]+">Changes since ([0-9\.]+)<\/a><\/li>/)[0].to_s
-			m << {:name=>"phpbb changelog", :version=>v }
+			m << {:name=>"phpbb changelog", :version=>">"+v }
 		end
 	end	
 	m
