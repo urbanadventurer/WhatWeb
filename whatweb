@@ -644,10 +644,12 @@ end
 run_plugins_list=nil
 input_file=nil
 output_list = []
+quiet = false
 
 opts = GetoptLong.new(
       [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
       [ '-v','--verbose', GetoptLong::NO_ARGUMENT ],
+      [ '-q','--quiet', GetoptLong::NO_ARGUMENT],
       [ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
       [ '-p','--run-plugins', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
@@ -780,13 +782,15 @@ begin
 		            exit
 			when '-v','--verbose'
 		         	$verbose=$verbose+1
+		  when '-q','--quiet'
+		          quiet=true
 			when '--version'
 		         	puts "WhatWeb version #{$VERSION} ( http://www.morningstarsecurity.com/research/whatweb/ )"
 		         	exit
 		end
 	end
-	if output_list.length == 0
-	  output_list = [ OutputBrief.new ] # by default output brief
+	unless quiet
+	  output_list  << OutputBrief.new
   end
 rescue GetoptLong::Error => err
 	puts
