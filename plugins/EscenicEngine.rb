@@ -1,8 +1,8 @@
 Plugin.define "EscenicEngine" do
-author "Nk"
+author "nk@dsigned.gr"
 version "0.1"
 description "Identifies Escenic Engine CMS eg. Escenic.rb"
-examples %w| vizrt.com |
+examples %w| thetimes.co.uk |
 
 # a comment block here is a good place to make notes for yourself and others
 
