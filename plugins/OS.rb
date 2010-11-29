@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
+# Version 0.2 # Brendan Coles <bcoles@gmail.com>
 # Added HTTP Server Header catch all
 ##
 Plugin.define "OS" do
@@ -59,16 +59,17 @@ def passive
 	# Servlet-Engine: Tomcat Web Server/3.2.4 (JSP 1.1; Servlet 2.2; Java 1.3.0; Linux 2.4.2-SGI_XFS_1.0smp x86; java.vendor=IBM Corporation) 
 	m << { :string=>@meta['servlet-engine'].scan(/\((.*?); java.vendor=IBM Corporation\)/) } if @meta['servlet-engine'] =~ /\((.*?); (.*?); (.*?); (.*?); java.vendor=IBM Corporation\)/
 
-	# HTTP Server Header # Content wrapped in ( ) brackets
-	m << { :string=>@meta['server'].scan(/\(([^;^\)]+)\)/) } if @meta['server'] =~ /\(([^;^\)]+)\)/
-
 	# HTTP Server Header # Catch-All
 	if m.size == 0
+
+		# Windows family
+		m << { :string=>"Windows (32 bit)" } if @meta["server"] =~ /Win32/i
 		m << { :string=>"Windows" } if @meta["server"] =~ /Windows/i
 		m << { :string=>"Windows Vista" } if @meta["server"] =~ /Windows Vista/i
 		m << { :string=>@meta["server"].scan(/Windows ([0-9]{4})/i) } if @meta["server"] =~ /Windows ([0-9]{4})/i
 		m << { :string=>@meta["server"].scan(/Windows Server ([0-9]{4})/i) } if @meta["server"] =~ /Windows Server ([0-9]{4})/i
 		m << { :string=>"Windows XP" } if @meta["server"] =~ /Windows XP/i
+		# Unix family
 		m << { :string=>"Linux" } if @meta["server"] =~ /Linux/i
 		m << { :string=>"Unix" } if @meta["server"] =~ /UNIX/i
 		m << { :string=>"FreeBSD" } if @meta["server"] =~ /FreeBSD/i
@@ -86,7 +87,8 @@ def passive
 		m << { :string=>"SUSE Linux" } if @meta["server"] =~ /Linux\/SUSE/i
 		m << { :string=>"Slackware Linux" } if @meta["poweredby"] =~ /Slackware/i
 		m << { :string=>"Gentoo Linux" } if @meta["x-powered-by"] =~ /Gentoo/i
-		m << { :string=>"Red Hat" } if @meta["server"] =~ /Red[-]?Hat/i
+		m << { :string=>"Red Hat Linux" } if @meta["server"] =~ /Red Hat/i
+		m << { :string=>"Red-Hat Linux" } if @meta["server"] =~ /Red-Hat/i
 	end
 
 	m
