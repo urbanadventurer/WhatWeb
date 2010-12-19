@@ -507,7 +507,7 @@ modules should return a static list of types of objects:
 
 extract more info from https certificates, like hostnames
 
-include IP in logs
+[x] include IP in logs
 
 more output types, like YAML
 

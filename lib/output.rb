@@ -69,6 +69,14 @@ class OutputVerbose < Output
 end
 
 class OutputBrief < Output
+
+	def escape(s)
+		t=s.clone
+		t.gsub!("[","%5B")
+		t.gsub!("]","%5D")
+		t
+	end
+
 # don't use colours if not to STDOUT
 	def out(target, status, results)
 		brief_results=[]
@@ -94,6 +102,7 @@ class OutputBrief < Output
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
 				if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
+					 string=escape(string)
 					 coloured_string = yellow(string)
 					 coloured_string = cyan(string) if plugin_name == "HTTPServer"
  				 	 coloured_string = dark_green(string) if plugin_name == "Title"
@@ -113,13 +122,13 @@ class OutputBrief < Output
 					 coloured_plugin = grey(plugin_name) if plugin_name == "Tag-Hash"
   					 					 
 					 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
-					   coloured_plugin + (!version.empty? ? "["+green(version)+"]" : "") +
+					   coloured_plugin + (!version.empty? ? "["+green(escape(version))+"]" : "") +
 					   (!string.empty? ? "[" + coloured_string+"]" : "") +
-					   (!accounts.empty? ? "["+ accounts+"]" : "" ) +
-					   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
-					   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
-					   (!filepath.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
-					   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
+					   (!accounts.empty? ? "["+ escape(accounts)+"]" : "" ) +
+					   (!model.empty? ? "["+ dark_green(escape(model))+"]" : "" ) +
+					   (!firmware.empty? ? "["+ dark_green(escape(firmware))+"]" : "" ) +
+					   (!filepath.empty? ? "["+ dark_green(escape(filepath))+"]" : "" ) +
+					   (!modules.empty? ? "["+ magenta(escape(modules))+"]" : "" )
 
 					 
 					 brief_results << p
