@@ -3,6 +3,7 @@ Version 0.4.6 Released ? 2010
 * Added Escenic CMS plugin from Erik Inge Bolsø
 * Added Ruby on Rails, Magento, IP, Country (GeoIP), Charset (required for MongoDB) plugins by Andrew Horton
 * Added www-authenticate, OS plugin by Aung Khant
+* Added EscenicEngine5 plugin by nikosk
 * Updated Mambo plugin with changes from Andrew Horton and Aung Khant
 * Updated phpBB plugin
 * Changed $ANEMONE_SKIP_REGEX=Regexp.union line to be compatible with Ruby 1.8.6. Thanks to Michal Ambroz
