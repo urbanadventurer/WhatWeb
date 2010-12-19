@@ -7,6 +7,16 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 [x] JSON output plugin
 [x] bug in verbose output. closing file
 [x] fix DMOZ plugin error with trailing /
+[x] dont load plugins if no args, just show help
+
+
+
+for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
+
+
+netgear-router.rb:{ :model=>'WAG302', :status=>200, :url=>'/images/../settingsWAG302.gif', :certainty=>75 },
+becomes: morningstarsecurity.com/settingsRH340.gif [301]
+
 
 need some kind of plugin dependencies, eg. 
 	def depends
@@ -14,17 +24,12 @@ need some kind of plugin dependencies, eg.
 	end
 etc..
 
+remove log-json-versbose?  does anyone use this?
 
-dont load plugins if no args, just show help
-
-
-for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
 
 maybe there should be a different location for data such as country-ips.dat. eg. /data/
 
 [x] add plugin init & close.
-add alexa plugin
-add dmoz plugin
 
 add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
 --plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
