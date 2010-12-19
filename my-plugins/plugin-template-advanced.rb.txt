@@ -45,6 +45,53 @@ matches [
 {:url=>"favicon.ico", :md5sum=>'f420dc2c7d90d7873a90d82cd7fde315'} # not common, seen on http://s.wordpress.org/favicon.ico
 ]
 
+# this always runs
+def passive
+	# make a matches array
+	m=[]
+	
+	# you should learn by example :)
+
+
+	# want some debugging? maybe you'd like to view some variables	
+=begin
+  	@body
+  	@meta
+  	@cookies
+  	@status
+  	@base_uri
+	@md5sum
+	@tagpattern
+	@ip
+=end
+	pp @meta
+	pp @status
+	pp @body
+	puts @base_uri.to_s
+
+	# return the matches array, even if it's emtpy
+	m
+end
+
+# this runs :
+# at aggressive level 3 if passive matches
+# at aggressive level 4
+def aggressive
+	# make a matches array. this returns the equivalent of the matches[] block above
+	m=[]
+
+
+	# return the matches array, even if it's emtpy
+	m
+end
+
+# this runs when the plugin is first loaded
+def startup
+end
+
+# this runs when the plugin is closed on whatweb shutdown
+def shutdown
+end
 
 end
 
