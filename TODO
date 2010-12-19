@@ -11,6 +11,8 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 flatten arrays in json, like mongo output
 
 
+use Charset for JSON logging to convert to UTF-8
+
 
 need some kind of plugin dependencies, eg. 
 	def depends

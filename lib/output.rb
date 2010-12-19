@@ -261,7 +261,6 @@ end
 class OutputMongo < Output
 
 	def initialize(collection)
-#		$KCODE='u'
 	# should make databse and collection comma or fullstop delimited, eg. test,scan
 		@db = Mongo::Connection.new("0.0.0.0").db("test") # resolve-replace means we can't connect to localhost by name
 		@coll=@db.collection(collection)
@@ -351,7 +350,7 @@ class OutputMongo < Output
 			utf8_elements!(foo) # convert foo to utf-8
 			flatten_elements!(foo)
 			@coll.insert(foo)
-			pp foo
+			#pp foo
 		end
 	end
 end
