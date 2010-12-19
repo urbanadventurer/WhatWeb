@@ -6,15 +6,7 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 [x] put whatweb on github
 [x] JSON output plugin
 [x] bug in verbose output. closing file
-
 [x] fix DMOZ plugin error with trailing /
-flatten arrays in json, like mongo output
-
-why does whatweb startup slowly
-
-
-use Charset for JSON logging to convert to UTF-8
-
 
 need some kind of plugin dependencies, eg. 
 	def depends

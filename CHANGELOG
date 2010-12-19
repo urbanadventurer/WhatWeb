@@ -31,7 +31,6 @@ Version 0.4.6 Released ? 2010
 * All logs are now flushed/synced
 * Moved Plugin class into lib/plugins.rb
 * Added startup and shutdown for plugins
-* Added IP plugin
 * Moved some plugins into disabled-plugins, as they clutter output. adobe_flash.rb, footer-hash.rb, frame.rb, header-hash.rb, md5.rb, script.rb, shortcut-icon.rb, tagpattern-hash.rb
 * Model and Firmware results now display in dark green
 * Changed :version_regexp_offset, :modules_regexp_offset, etc to :regexp_offset. Updated 86 plugins.
@@ -53,6 +52,8 @@ Version 0.4.6 Released ? 2010
 * Added advanced plugin template
 * Removed How to write whatweb plugins text file as it's deprecated by the wiki
 * Escape [] in brief output by URL encoding square brackets
+* Added --quiet, -q to suppress Brief Output on stdout by default. Thanks to cdybedahl for this idea.
+* Improved OSX compatibility with a patch from matti for symlinks
 
 
 Version 0.4.5 Released August 17th 2010
