@@ -37,11 +37,14 @@ You should have received a copy of the GNU General Public License
 along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
+
+# encoding: utf-8
+# coding: utf-8
+
 #require 'profile' # for debugging
 require 'getoptlong'
 require 'pp'
 require 'net/http'
-require 'net/https'
 require 'open-uri'
 require 'cgi'
 require 'thread'
@@ -94,6 +97,7 @@ if RUBY_VERSION =~ /^1.9/
         require 'digest/md5'
 else
         require 'md5'
+	require 'net/https'
 end
 
 
@@ -115,7 +119,6 @@ require 'lib/colour.rb'
 require 'lib/anemone/anemone.rb'
 require 'tempfile'
 
-$KCODE = ''
 
 #unless opts.size
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
@@ -173,23 +176,6 @@ def precompile_regular_expressions
 		end		
 	end
 
-=begin
-	# check
-	Plugin.registered_plugins.each do |thisplugin|
-		matches=thisplugin[1].matches
-		unless matches.nil?
-			matches.each do |thismatch|
-				unless thismatch[:regexp].nil?
-					pp thismatch
-					pp thismatch[:regexp_compiled].class
-					#thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
-				end
-			end
-		end		
-	end
-	exit
-=end
-	
 end
 
 def plugin_list
