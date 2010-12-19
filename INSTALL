@@ -1,11 +1,18 @@
 INSTALL
 
-Packages are available for:
-
+WhatWeb packages are available for:
 * Arch Linux
 * Mandriva Linux
 * FreeBSD
 * Gentoo
+* OpenSUSE
+
+WhatWeb is bundled with:
+* BackTrack (The Default Penetration Testing Distro)
+* PenToo (Gentoo Penetrating Testing Distro)
+* Blackbuntu Linux
+
+
 
 Please note that these packages may not be up to date.
 
