@@ -217,6 +217,42 @@ end
 
 class OutputJSON < Output
 
+	def flatten_elements!(obj)
+		if obj.class == Hash
+			obj.each_value {|x| 
+				flatten_elements!(x)
+			}
+		end
+
+		if obj.class == Array
+			obj.flatten!
+		end
+
+#		if obj.class == String
+
+#		end
+	end
+
+	def utf8_elements!(obj)
+		if obj.class == Hash
+			obj.each_value {|x| 
+				utf8_elements!(x)
+			}
+		end
+
+		if obj.class == Array
+			obj.each {|x| 
+				utf8_elements!(x)
+			}
+		end
+
+		if obj.class == String
+#			obj=obj.upcase!
+#			obj=Iconv.iconv("UTF-8",@charset,obj).join
+			obj=obj.gsub!(/^.*$/,Iconv.iconv("UTF-8",@charset,obj).join) # this is a bad way to do this but it works			
+		end
+	end
+
 	def out(target, status, results)
 		# nice
 		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
@@ -252,6 +288,11 @@ class OutputJSON < Output
 			end
 		end
 
+		@charset=results.map {|n,r| r[0][:string] if n=="Charset" }.compact.first
+		unless @charset.nil? or @charset == "Failed"
+			utf8_elements!(foo) # convert foo to utf-8
+			flatten_elements!(foo)			
+		end
 		@f.puts JSON::fast_generate(foo)
 	end
 end
@@ -340,17 +381,12 @@ class OutputMongo < Output
 				foo[:plugins][plugin_name.to_sym] = thisplugin
 			end
 		end
-		#data=JSON::fast_generate(foo)
 
-		# extract charset from charset plugin		
 		@charset=results.map {|n,r| r[0][:string] if n=="Charset" }.compact.first
-#		pp @charset
 		unless @charset.nil? or @charset == "Failed"
-#			puts "here"
 			utf8_elements!(foo) # convert foo to utf-8
 			flatten_elements!(foo)
 			@coll.insert(foo)
-			#pp foo
 		end
 	end
 end
