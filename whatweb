@@ -141,7 +141,7 @@ $ANEMONE_SKIP_EXTENSIONS = %w|zip gz tar jpg exe png pdf|
 $ANEMONE_SKIP_REGEX=nil
 $WAIT=nil
 $OUTPUT_ERRORS=nil
-
+$QUIET=false
 
 def precompile_regular_expressions
 	# precompile regular expressions in plugins
@@ -643,8 +643,7 @@ end
 
 run_plugins_list=nil
 input_file=nil
-output_list = [ OutputBrief.new ] # by default output brief
-
+output_list = []
 
 opts = GetoptLong.new(
       [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
@@ -680,7 +679,8 @@ opts = GetoptLong.new(
       [ '--spider-skip-extensions', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--debug', GetoptLong::NO_ARGUMENT ],
-      [ '--version', GetoptLong::NO_ARGUMENT ]
+      [ '--version', GetoptLong::NO_ARGUMENT ],
+      [ '-q','--quiet', GetoptLong::NO_ARGUMENT]
     )
 
 begin    
@@ -756,6 +756,8 @@ begin
 			when '--proxy-user'
 					$PROXY_USER=arg.to_s.split(":")[0]
 					$PROXY_PASS=arg.to_s.split(":")[1] if arg.to_s.include?(":")
+			when '-q','--quiet'
+					$QUIET=true
 			when '--url-prefix'
 					$URL_PREFIX=arg
 			when '--url-suffix'
@@ -792,12 +794,14 @@ rescue GetoptLong::Error => err
 	exit
 end
 
+output_list << OutputBrief.new unless $QUIET # by default output brief
+
+
 pp "Use_color:"+$use_colour if $verbose >1
 pp "loading plugins" if $verbose > 1
 load_plugins # load all the plugins
 
 $plugins_to_use = select_plugins(run_plugins_list) # make the list of selected plugins
-pp $plugins_to_use if $verbose >1 
 
 # are the no plugins?
 if $plugins_to_use.size == 0
