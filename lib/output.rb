@@ -74,6 +74,8 @@ class OutputBrief < Output
 		t=s.clone
 		t.gsub!("[","%5B")
 		t.gsub!("]","%5D")
+		t.gsub!("\n","%0A")
+		t.gsub!("\r","%0D")
 		t
 	end
 

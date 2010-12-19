@@ -55,7 +55,7 @@ Version 0.4.6 Released ? 2010
 * Escape [] in brief output by URL encoding square brackets
 * Added --quiet, -q to suppress Brief Output on stdout by default. Thanks to cdybedahl for this idea.
 * Improved OSX compatibility with a patch from matti for symlinks
-
+* Escaping \r and \n in Brief Output. Converting to encoded URL versions, eg. %0a and %0d. This isn't elegant, got a better idea?
 
 
 Version 0.4.5 Released August 17th 2010
