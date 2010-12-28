@@ -23,7 +23,6 @@ Installation instructions for Ubuntu Linux
 
 1. Install Ruby
 ---------------------------------------
-commands:
 `sudo apt-get install ruby ruby-dev libopenssl-ruby`
 
 Please contact me if these installation instructions don't work for you.
