@@ -91,6 +91,10 @@ class Plugin
 				r << match if @tagpattern == match[:tagpattern]
 			end
 
+			unless match[:status].nil? and match[:url] == @base_uri.path
+				r << match if @status == match[:status]
+			end		
+
 			[:version,:model,:string,:firmware,:filepath].each do |symbol|
 		                if !match[symbol].nil? and match[symbol].class==Regexp
 		                        if @body =~ match[:regexp_compiled]
@@ -103,7 +107,14 @@ class Plugin
 			end
 
 			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
-			results +=r if match[:url].nil? or (!match[:url].nil? and !@base_uri.nil? and match[:url] == @base_uri.path)
+			# if :status is present then check that @status matches
+
+			if match[:url].nil? or (!match[:url].nil? and !@base_uri.nil? and match[:url] == @base_uri.path)
+				if match[:status].nil? or (!match[:status].nil? and @status == match[:status] and !match[:url].nil?)					
+					results +=r 
+				end
+			end
+
 		end
 	end
 
@@ -164,6 +175,10 @@ class Plugin
 					r << match if thistagpattern == match[:tagpattern]
 				end
 		
+				unless match[:status].nil? and match[:url] == thisbase_uri.path
+					r << match if @status == match[:status]
+				end
+
 				[:version,:model,:string,:firmware,:filepath].each do |symbol|
 				        if !match[symbol].nil? and match[symbol].class==Regexp
 				                if @body =~ match[:regexp_compiled]
@@ -175,7 +190,7 @@ class Plugin
 				        end
 				end
 
-				results +=r						
+				results +=r					
 			end
 		end
 #=end

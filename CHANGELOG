@@ -1,7 +1,9 @@
 Version 0.4.6 Released ? 2010
 * Added x plugins from Brendan Coles. They are: ClipShare, PhpMesFilms, wpQuiz, phpQuestionnaire, RevSense, linkSpheric, WebspotBlogging, XchangeBoard, SazCart, AirvaeCommerce, Cartweaver, BosClassifieds, zFeeder, CMScout, Ultrastats, Connectix-Boards
 * Added Escenic CMS plugin from Erik Inge Bolsø
-* Added Ruby on Rails and Magento plugins by Andrew Horton
+* Added Ruby on Rails, Magento, IP, Country (GeoIP), Charset (required for MongoDB) plugins by Andrew Horton
+* Added www-authenticate, OS plugin by Aung Khant
+* Added EscenicEngine5 plugin by nikosk
 * Updated Mambo plugin with changes from Andrew Horton and Aung Khant
 * Updated phpBB plugin
 * Changed $ANEMONE_SKIP_REGEX=Regexp.union line to be compatible with Ruby 1.8.6. Thanks to Michal Ambroz
@@ -30,7 +32,6 @@ Version 0.4.6 Released ? 2010
 * All logs are now flushed/synced
 * Moved Plugin class into lib/plugins.rb
 * Added startup and shutdown for plugins
-* Added IP plugin
 * Moved some plugins into disabled-plugins, as they clutter output. adobe_flash.rb, footer-hash.rb, frame.rb, header-hash.rb, md5.rb, script.rb, shortcut-icon.rb, tagpattern-hash.rb
 * Model and Firmware results now display in dark green
 * Changed :version_regexp_offset, :modules_regexp_offset, etc to :regexp_offset. Updated 86 plugins.
@@ -49,6 +50,13 @@ Version 0.4.6 Released ? 2010
 * Added --debug to raise errors found in plugins
 * Usage displays faster when no arguments are provided
 * Added version string to the help usage
+* Added advanced plugin template
+* Removed How to write whatweb plugins text file as it's deprecated by the wiki
+* Escape [] in brief output by URL encoding square brackets
+* Added --quiet, -q to suppress Brief Output on stdout by default. Thanks to cdybedahl for this idea.
+* Improved OSX compatibility with a patch from matti for symlinks
+* Escaping \r and \n in Brief Output. Converting to encoded URL versions, eg. %0a and %0d. This isn't elegant, got a better idea?
+* Added :status for HTTP Status codes to match[]. :status has a logical AND with a :url, it can't be by itself.
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman

@@ -37,11 +37,14 @@ You should have received a copy of the GNU General Public License
 along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
+
+# encoding: utf-8
+# coding: utf-8
+
 #require 'profile' # for debugging
 require 'getoptlong'
 require 'pp'
 require 'net/http'
-require 'net/https'
 require 'open-uri'
 require 'cgi'
 require 'thread'
@@ -94,20 +97,28 @@ if RUBY_VERSION =~ /^1.9/
         require 'digest/md5'
 else
         require 'md5'
+	require 'net/https'
 end
+
 
 # add the directory of the file currently being executed to the load path
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless
     $:.include?(File.dirname(__FILE__)) || $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
 $LOAD_PATH << "/usr/share/whatweb/"
 
+# if __FILE__ is a symlink then follow *every* symlink
+if File.symlink?(__FILE__)
+  require 'pathname'
+  $LOAD_PATH << File.dirname( Pathname.new(__FILE__).realpath )
+end
+
+require 'lib/plugins.rb'
 require 'lib/plugins.rb'
 require 'lib/output.rb'
 require 'lib/colour.rb'
 require 'lib/anemone/anemone.rb'
 require 'tempfile'
 
-$KCODE = ''
 
 #unless opts.size
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
@@ -141,7 +152,7 @@ $ANEMONE_SKIP_EXTENSIONS = %w|zip gz tar jpg exe png pdf|
 $ANEMONE_SKIP_REGEX=nil
 $WAIT=nil
 $OUTPUT_ERRORS=nil
-
+$QUIET=false
 
 def precompile_regular_expressions
 	# precompile regular expressions in plugins
@@ -165,23 +176,6 @@ def precompile_regular_expressions
 		end		
 	end
 
-=begin
-	# check
-	Plugin.registered_plugins.each do |thisplugin|
-		matches=thisplugin[1].matches
-		unless matches.nil?
-			matches.each do |thismatch|
-				unless thismatch[:regexp].nil?
-					pp thismatch
-					pp thismatch[:regexp_compiled].class
-					#thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
-				end
-			end
-		end		
-	end
-	exit
-=end
-	
 end
 
 def plugin_list
@@ -643,8 +637,7 @@ end
 
 run_plugins_list=nil
 input_file=nil
-output_list = [ OutputBrief.new ] # by default output brief
-
+output_list = []
 
 opts = GetoptLong.new(
       [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
@@ -680,7 +673,8 @@ opts = GetoptLong.new(
       [ '--spider-skip-extensions', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--debug', GetoptLong::NO_ARGUMENT ],
-      [ '--version', GetoptLong::NO_ARGUMENT ]
+      [ '--version', GetoptLong::NO_ARGUMENT ],
+      [ '-q','--quiet', GetoptLong::NO_ARGUMENT]
     )
 
 begin    
@@ -756,6 +750,8 @@ begin
 			when '--proxy-user'
 					$PROXY_USER=arg.to_s.split(":")[0]
 					$PROXY_PASS=arg.to_s.split(":")[1] if arg.to_s.include?(":")
+			when '-q','--quiet'
+					$QUIET=true
 			when '--url-prefix'
 					$URL_PREFIX=arg
 			when '--url-suffix'
@@ -792,12 +788,14 @@ rescue GetoptLong::Error => err
 	exit
 end
 
+output_list << OutputBrief.new unless $QUIET # by default output brief
+
+
 pp "Use_color:"+$use_colour if $verbose >1
 pp "loading plugins" if $verbose > 1
 load_plugins # load all the plugins
 
 $plugins_to_use = select_plugins(run_plugins_list) # make the list of selected plugins
-pp $plugins_to_use if $verbose >1 
 
 # are the no plugins?
 if $plugins_to_use.size == 0
