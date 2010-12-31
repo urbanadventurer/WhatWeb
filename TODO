@@ -44,7 +44,34 @@ this matches on morningstarsecurity.com/research/whatweb
 [x] add IP plugin <-- can't get IP out of http object
 [x] add geoIP country plugin
 
-precompile regular expressions for matching speed
+
+It would be nice if we didn't have to repeat matches from the passive section in the aggressive section. This would be *much* cleaner and really, really cool.
+
+I'll try to demonstrate with pseudo code.
+
+
+ABCsoftware plugin (pseudo):
+
+matches [
+# Get account
+{ :account=>/^ABCsoftwarePASS=([^\r^\n]*), :regexp_offset=>0 }
+]
+
+def passive
+# If current URL is /secret, get software version
+if base_url == /secret
+m << { :version=>@body.scan(/^ABCsoftwareVER=([\d\.]+)/) } if @body =~ /^ABCsoftwareVER=([\d\.]+)/
+end
+end
+
+def aggressive
+# If we're in aggressive mode and the current URL is not /secret, then load /secret and have WhatWeb fingerprint it passively.
+target_open(base_url+/secret) if base_url != /secret
+end
+
+
+
+
 
 [x] escape output in logs. <>"& for xml logs.
 [x] add XML log initialisation and termination: 
