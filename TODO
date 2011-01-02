@@ -9,11 +9,7 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 [x] fix DMOZ plugin error with trailing /
 [x] dont load plugins if no args, just show help
 
-
-
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
-
-
 netgear-router.rb:{ :model=>'WAG302', :status=>200, :url=>'/images/../settingsWAG302.gif', :certainty=>75 },
 becomes: morningstarsecurity.com/settingsRH340.gif [301]
 

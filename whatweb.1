@@ -1,6 +1,6 @@
 .TH WHATWEB 1 "August 17, 2010"
 .SH NAME
-WhatWeb \- web scanner. Identify what websites are running.
+WhatWeb \- Web scanner to identify what websites are running.
 .SH SYNOPSIS
 .B whatweb
 .RI [ options ] 
@@ -16,18 +16,6 @@ the webserver is set up and what software is delivering the webpage.
 Some of these hints are obvious, eg. “Powered by XYZ” and others are more
 subtle. WhatWeb recognises these hints and reports what it finds.
 
-WhatWeb has over 290 plugins and needs community support to develop more. 
-Plugins can identify systems with obvious signs removed by looking for subtle
-clues. For example, a WordPress site might remove the tag but the WordPress
-plugin also looks for “wp-content” which is less easy to disguise. Plugins
-are flexible and can return any datatype, for example plugins can return
-version numbers, email addresses, account ID’s and more.
-
-There are both passive and aggressive plugins, passive plugins use information
-on the page, in cookies and in the URL to identify the system. A passive
-request is as light weight as a simple GET / HTTP/1.1 request. Aggressive
-plugins guess URLs and request more files. Plugins are easy to write, you
-don’t need to know ruby to make them.
 .SH OPTIONS
 .TP
 .B \<URLs\>
@@ -65,7 +53,7 @@ List the plugins
 Run comma delimited list of plugins. Default is to run all
 .TP
 .B \-\-info-plugins \-I
-Display information about a comma delimited list of plugins. Default is all
+Display information for all plugins. Optionally search with keywords in a comma delimited list.
 .TP
 .B \-\-example-urls \-e
 Add example urls for each plugin to the target list
@@ -81,6 +69,18 @@ Log brief, one-line output
 .TP
 .B \-\-log-xml=FILE
 Log XML format
+.TP
+.B \-\-log-json=FILE
+Log JSON format
+.TP
+.B \-\-log-json-verbose=FILE
+Log JSON Verbose format
+.TP
+.B \-\-log-mongo=Collection
+Log to a Mongo DB on localhost
+.TP
+.B \-\-log-errors=FILE
+Log errors
 .TP
 .B \-\-user-agent \-U
 Identify as user-agent instead of WhatWeb/VERSION.
@@ -102,6 +102,9 @@ Time in seconds
 .TP
 .B \-\-read-timeout
 Time in seconds
+.TP
+.B \-\-wait=SECONDS
+Wait SECONDS between connections (combine with threads = 1)
 .TP
 .B \-\-custom-plugin
 Define a custom plugin call Custom,
@@ -126,11 +129,14 @@ This help
 .B \-\-verbose \-v
 Increase verbosity (recommended), use twice for debugging.
 .TP
+.B \-\-debug
+Raise errors in plugins.
+.TP
 .B \-\-version
 Display verion information.
 
 .SH AUTHOR
-whatweb was written by Andrew Horton aka urbanadventurer
+WhatWeb was written by Andrew Horton aka urbanadventurer.
 
 This manual page was originally written by Michal Ambroz <rebus AT seznam.cz>
 for the Fedora project (and may be used by others). Updated by Andrew Horton.
