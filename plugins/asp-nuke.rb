@@ -16,9 +16,7 @@ Plugin.define "ASP-Nuke" do
 author "Andrew Horton"
 version "0.3"
 description "ASP Nuke  homepage: www.aspnuke.com
-
-ASP Nuke is an open-source software application for running a community-based web site on a web server. The requirements for the ASP Nuke content management system are: 1. Microsoft SQL Server 2000 and 2. Microsoft Internet Information Server (IIS) 5.0
-"
+ASP Nuke is an open-source software application for running a community-based web site on a web server. The requirements for the ASP Nuke content management system are: 1. Microsoft SQL Server 2000 and 2. Microsoft Internet Information Server (IIS) 5.0"
 
 examples %w| http://www.ilc.fezalar.org/articles.asp?cat=8 http://www.starchefweb.com http://www.asbru.dk/technet/ http://www.gpspassion.com http://www.lustignano.it/  http://www.mazaratour.it/Erice-Vacanze.asp http://www.portal.fezalar.org/ http://www.calga.it/ http://www.fiei.it  |
 

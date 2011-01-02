@@ -178,11 +178,15 @@ def precompile_regular_expressions
 end
 
 def plugin_list
-	puts "Plugins Loaded"
-	puts "-" * 30
-	Plugin.registered_plugins.sort.each do |n,p|
-		puts [n, p.version].join(",")		
+	puts "WhatWeb Plugin List"
+	puts
+	puts ["Plugin Name".ljust(25),"Description"].join(" ")
+	puts "-" * 79
+	Plugin.registered_plugins.delete_if {|n,p| n == "¿" }.sort.each do |n,p|
+		puts [n.ljust(25), (p.description.delete("\n\r") unless p.description.nil?)].join(" ")[0..78]
 	end
+	puts "-" * 30
+	puts "#{Plugin.registered_plugins.size} Plugins Loaded"
 	puts
 end
 

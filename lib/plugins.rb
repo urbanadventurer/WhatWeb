@@ -13,6 +13,7 @@ module PluginSugar
   end
 end
 
+
 class Plugin
   attr_accessor :base_uri
   @registered_plugins = {}
