@@ -182,7 +182,7 @@ def plugin_list
 	puts
 	puts ["Plugin Name".ljust(25),"Description"].join(" ")
 	puts "-" * 79
-	Plugin.registered_plugins.delete_if {|n,p| n == "¿" }.sort.each do |n,p|
+	Plugin.registered_plugins.delete_if {|n,p| n == "¿" }.sort_by {|a,b| a.downcase }.each do |n,p|
 		puts [n.ljust(25), (p.description.delete("\n\r") unless p.description.nil?)].join(" ")[0..78]
 	end
 	puts "-" * 30
@@ -190,44 +190,66 @@ def plugin_list
 	puts
 end
 
-def plugin_info(keywords= nil)
-	puts "Plugin Information"
-	puts "Searching for " + keywords.join(",") unless keywords.nil?
-	puts "-" * 30
+# takes a string and returns an array of lines
+def word_wrap(s,width=10)
+	ret=[]
+	line=""
+	s.split.map {|x|
+		word=x
+		if line.size + x.size + 1 <= width
+			line += x + " "
+		else
+			if word.size > width
+				ret << line
+				line = ""
+				w=word.clone
+				while w.size > width
+					ret << w[0..(width-1)]
+					w=w[width.to_i..-1]
+				end
+				ret << w unless w.size == 0
+			else
+				ret << line
+				line=x + " "
+			end
+		end		
+ 	}
+	ret << line
+	ret
+end
 
-	
-	Plugin.registered_plugins.sort_by {|a,b| a }.each do |name,plugin|
+
+def plugin_info(keywords= nil)
+	puts "WhatWeb Plugin Information"
+	puts "Searching for " + keywords.join(",") unless keywords.nil?
+	puts "-" * 80
+
+	puts ["Plugin Name".ljust(25),"Details"].join(" ")
+	count=0
+	Plugin.registered_plugins.delete_if {|n,p| n == "¿" }.sort_by {|a,b| a.downcase }.each do |name,plugin|
 		# not include examples	
 		dump=[name,plugin.author,plugin.description,plugin.matches].flatten.compact.to_a.join.downcase
 		if keywords.empty? or keywords.map {|k| dump.include?(k.downcase) }.compact.include?(true)
-
-			puts "#{name} version " + plugin.version + " by " + plugin.author
-		       
-			print plugin.examples.is_a?(Array) ? "[#{plugin.examples.size}]" : "[ ]"
-			print " examples, "
-
-			print plugin.matches.is_a?(Array) ? "[#{plugin.matches.size}]" : "[ ]"
-			print " matches, "
+			puts name
+			puts "\tAuthor:".ljust(22) + plugin.author
+			puts "\tVersion:".ljust(22) +plugin.version
+			puts "\tExamples:".ljust(22) +plugin.examples.size.to_s if plugin.examples
+			puts "\tMatches:".ljust(22) +plugin.matches.size.to_s if plugin.matches
+			puts "\tPassive function: ".ljust(22) + (defined?(plugin.passive) ? "Yes" : "No")
+			puts "\tAggressive function: ".ljust(22) + (defined?(plugin.aggressive) ? "Yes" : "No")
+			puts "\tVersion detection: ".ljust(22) + (plugin.version_detection? ? "Yes" : "No")
 		
-			print defined?(plugin.aggressive) ? "[x]" : "[ ]"		
-			print " aggressive, "
-
-			print defined?(plugin.passive) ? "[x]" : "[ ]"
-			print " passive, "
-		
-		
-			if !plugin.matches.nil? and !plugin.matches.empty? and !plugin.matches.map {|m| m[:version] }.compact.empty?
-				print "[x]"
-			else
-				print "[ ]"
+			if plugin.description
+				puts "\tDescription: "
+				word_wrap(plugin.description,72).each {|line| puts "\t" + line }
 			end
-			puts " version."
-		
-			puts "Description: "+( plugin.description.nil? ? "" : plugin.description)
+
 			puts
 			puts "-" * 80
+			count+=1
 		end
 	end
+	puts "#{count} plugins found"
 	puts
 end
 

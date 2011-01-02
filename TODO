@@ -26,6 +26,8 @@ etc..
 
 remove log-json-versbose?  does anyone use this?
 
+improve  def version_detection?	for Plugins
+
 
 maybe there should be a different location for data such as country-ips.dat. eg. /data/
 
