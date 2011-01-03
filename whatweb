@@ -257,9 +257,21 @@ end
 def load_plugins(plugin_list = nil)
 	plugins=PLUGIN_DIRS.map {|x| "#{x}/*.rb" }
 	if plugin_list.nil?
-	   plugins.each {|folder| Dir.glob(folder).each {|x| load x } }
+	   plugins.each {|folder| Dir.glob(folder).each {|x| 
+		begin
+			load x
+		rescue SyntaxError
+			error("Error: Failed to load #{x}. This is probably a Ruby1.9 compatibility issue")
+		end
+		} }
 	else
-	   plugins.each {|folder| Dir.glob(folder).each {|x| load x if plugin_list.include?(x)}}
+	   plugins.each {|folder| Dir.glob(folder).each {|x| 
+		begin
+			load x if plugin_list.include?(x)
+		rescue SyntaxError
+			error("Error: Failed to load #{x}. This is probably a Ruby1.9 compatibility issue")
+		end
+		}}
 	end
 end
 
@@ -883,8 +895,7 @@ Thread.main["targets"]=[]
 #Thread.main["targets"] << "http://www.apple.com"
 
 while thistarget = next_target
-		puts "thread starting for #{thistarget}" if $verbose>1
-
+		puts "thread starting for #{thistarget}" if $verbose>1		
 		Thread.new do
 			target = thistarget # we set the target within the thread
 			sleep $WAIT unless $WAIT.nil? # wait
