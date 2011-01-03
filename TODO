@@ -9,6 +9,43 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 [x] fix DMOZ plugin error with trailing /
 [x] dont load plugins if no args, just show help
 
+
+
+add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
+--plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
+--plugins +/tmp/moo.rb
+--plugins foobar (only select foobar)
+
+
+take plugins list
+	plugin order of operations = neither, add, minus
+
+
+	# $LOAD_PATH <-- locations to find plugins, my-plugins such as /usr/share/whatweb (top)
+	# PLUGIN_DIRS -- locations of folders that contains plugins. uses $LOAD_PATH
+
+	# load_plugins <-- loads the plugins from PLUGIN_DIRS (line 825)
+	# $plugins_to_use = select_plugins(run_plugins_list) # make the list of selected plugins (line 827)
+
+
+
+	a = make list of dir & filenames
+	b = make list of assumed pluginnames
+
+	a.each
+		sort by neither, add, minus
+		if neither minus or plus -- set load path
+		if plus, add to PLUGIN_DIRS
+		if minus, remove from PLUGIN_DIRS
+
+	b.each
+		sort by neither, add, minus
+		if neither minus or plus -- set plugin set from 0
+		if plus, add to plugin set
+		if minus, remove from plugin set
+		
+
+
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
 netgear-router.rb:{ :model=>'WAG302', :status=>200, :url=>'/images/../settingsWAG302.gif', :certainty=>75 },
 becomes: morningstarsecurity.com/settingsRH340.gif [301]
@@ -29,10 +66,7 @@ maybe there should be a different location for data such as country-ips.dat. eg.
 
 [x] add plugin init & close.
 
-add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
---plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
---plugins +/tmp/moo.rb
---plugins foobar (only select foobar)
+
 
 open_target({:method=>"POST"})
 
