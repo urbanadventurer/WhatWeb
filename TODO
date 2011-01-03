@@ -16,39 +16,11 @@ Ruby1.9 compatability
 	thistarget variable doesn't make it across the Thread.new do  line
 
 
-add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
---plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
---plugins +/tmp/moo.rb
---plugins foobar (only select foobar)
+[x] add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
+[x]	--plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
+[x]	--plugins +/tmp/moo.rb
+[x]	--plugins foobar (only select foobar)
 
-
-take plugins list
-	plugin order of operations = neither, add, minus
-
-
-	# $LOAD_PATH <-- locations to find plugins, my-plugins such as /usr/share/whatweb (top)
-	# PLUGIN_DIRS -- locations of folders that contains plugins. uses $LOAD_PATH
-
-	# load_plugins <-- loads the plugins from PLUGIN_DIRS (line 825)
-	# $plugins_to_use = select_plugins(run_plugins_list) # make the list of selected plugins (line 827)
-
-
-
-	a = make list of dir & filenames
-	b = make list of assumed pluginnames
-
-	a.each
-		sort by neither, add, minus
-		if neither minus or plus -- set load path
-		if plus, add to PLUGIN_DIRS
-		if minus, remove from PLUGIN_DIRS
-
-	b.each
-		sort by neither, add, minus
-		if neither minus or plus -- set plugin set from 0
-		if plus, add to plugin set
-		if minus, remove from plugin set
-		
 
 
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200

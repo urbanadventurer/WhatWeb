@@ -153,8 +153,9 @@ $WAIT=nil
 $OUTPUT_ERRORS=nil
 $QUIET=false
 
+
+# precompile regular expressions in plugins for performance
 def precompile_regular_expressions
-	# precompile regular expressions in plugins
 	Plugin.registered_plugins.each do |thisplugin|
 		matches=thisplugin[1].matches
 		unless matches.nil?
@@ -190,7 +191,7 @@ def plugin_list
 	puts
 end
 
-# takes a string and returns an array of lines
+# takes a string and returns an array of lines. used by plugin_info
 def word_wrap(s,width=10)
 	ret=[]
 	line=""
@@ -254,49 +255,150 @@ def plugin_info(keywords= nil)
 end
 
 
-def load_plugins(plugin_list = nil)
-	plugins=PLUGIN_DIRS.map {|x| "#{x}/*.rb" }
-	if plugin_list.nil?
-	   plugins.each {|folder| Dir.glob(folder).each {|x| 
-		begin
-			load x
-		rescue SyntaxError
-			error("Error: Failed to load #{x}. This is probably a Ruby1.9 compatibility issue")
+
+
+
+
+
+# This is used in plugin selection by load_plugins
+class PluginChoice
+	attr_accessor :modifier, :type, :name
+
+	def <=>(s)
+		x = -1 if self.modifier.nil?
+		x = 0 if self.modifier=="+"
+		x = 1 if self.modifier=="-"
+		x
+	end
+
+	def fill(s)
+		self.modifier = nil
+		self.modifier=s[0].chr if ["+","-"].include?(s[0].chr)
+
+		if self.modifier
+			self.name=s[1..-1]
+		else
+			self.name=s
 		end
-		} }
-	else
-	   plugins.each {|folder| Dir.glob(folder).each {|x| 
-		begin
-			load x if plugin_list.include?(x)
-		rescue SyntaxError
-			error("Error: Failed to load #{x}. This is probably a Ruby1.9 compatibility issue")
+
+		# figure out and store the filename or pluginname
+		if File.exists?(File.expand_path(self.name))
+			self.type = "file"
+			self.name = File.expand_path(self.name)
+		else
+			self.name.downcase!
+			self.type = "plugin"
 		end
-		}}
 	end
 end
 
 
-def select_plugins(requested_plugin_names = nil)
-	# run all plugins, or run the specific set
-	# convert cmdline list of plugins to lowercase
-	plugins_to_use = (
-		unless requested_plugin_names.nil?
-			# find unrecognised, requested plugins
-			requested_plugin_names.each {|x| x.downcase! }
-			names_of_loaded_plugins = Plugin.registered_plugins.map {|n,p| n.downcase }
-		
-			requested_plugin_names.each do |cmdplugin|
-				unless names_of_loaded_plugins.include?(cmdplugin)
-					puts "Plugin: #{cmdplugin} not recognised."
-				end
-			end		
-			# case insensitive selection
-			Plugin.registered_plugins.map {|name,plugin| [name,plugin] if requested_plugin_names.include?(name.downcase) }.compact.sort
-		else
-			Plugin.registered_plugins.sort_by {|x| x[0] }
-		end
-	)
+def load_plugin(f)
+	begin
+		load f
+	rescue
+		error("Error: failed to load #{f}")
+	rescue SyntaxError
+		error("Error: Failed to load #{f}. This is probably a Ruby1.9 compatibility issue")
+	end
 end
+
+
+=begin
+for adding/removing sets of plugins.
+
+--plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
+--plugins +/tmp/moo.rb
+--plugins foobar (only select foobar)
+--plugins ./plugins-disabled,-md5 (select only plugins from the plugins-disabled folder, remove the md5 plugin from the selected list)
+=end
+def load_plugins(list=nil)
+	# separate l into a and b
+	#	a = make list of dir & filenames
+	#	b = make list of assumed pluginnames
+	a=[];b=[]
+
+	plugin_dirs=PLUGIN_DIRS.clone
+
+	plugin_dirs.map {|p| p=File.expand_path(p) }
+
+	if list		
+		list=list.split(",")
+		list.each do |p|
+			choice=PluginChoice.new
+			choice.fill(p)
+			a << choice if choice.type == "file"
+			b << choice if choice.type == "plugin"
+		end
+
+		# sort by neither, add, minus
+		a=a.sort
+
+#		pp "files:", a.sort
+#		pp "pluginnames:",b.sort
+
+		if a.map {|c| c.modifier }.include?(nil)
+#			puts "reset plugin_dirs"
+			plugin_dirs=[]
+		end
+
+		minus_files = [] # make list of files not to load
+		a.map {|c|
+			plugin_dirs << c.name if c.modifier.nil? or c.modifier == "+"
+			plugin_dirs -= [c.name] if c.modifier == "-" # for Dirs
+			minus_files << c.name if c.modifier == "-"    # for files
+		}
+		
+		# load files from plugin_dirs unless a file is minused
+		plugin_dirs.each do |d|
+			# if a folder, then load all files
+			if File.directory?(d)
+				(Dir.glob("#{d}/*.rb")-minus_files).each {|x| load_plugin(x) }
+			elsif File.exists?(d)
+				load_plugin(d)
+			else
+				error("Error: #{d} is not Dir or File")
+			end
+		end
+		
+		# make list of plugins to run
+		# go through all plugins, remove from list any that match b minus
+		selected_plugin_names=[]
+
+		if b.map {|c| c.modifier }.include?(nil)
+			selected_plugin_names=[]
+		else
+			selected_plugin_names = Plugin.registered_plugins.map {|n,p| n.downcase }
+		end
+
+		b.map {|c| 
+			selected_plugin_names << c.name if c.modifier.nil? or c.modifier=="+"
+			selected_plugin_names -= [c.name] if c.modifier == "-"
+		}
+		plugins_to_use = Plugin.registered_plugins.map {|n,p| [n,p] if selected_plugin_names.include?(n.downcase) }.compact
+
+		# report on plugins that couldn't be found
+		unfound_plugins = selected_plugin_names - plugins_to_use.map {|n,p| n.downcase }
+		unless unfound_plugins.empty?
+			puts "Error: The following plugins were not found: " + unfound_plugins.join(",")
+		end
+
+	else
+		# no selection, so it's default
+		plugin_dirs.each do |d|
+			Dir.glob("#{d}/*.rb").each {|x|
+				load_plugin(x)
+			}
+		end
+		plugins_to_use = Plugin.registered_plugins
+	end
+
+	plugins_to_use
+end
+
+
+
+
 
 
 def custom_plugin(c)
@@ -625,7 +727,12 @@ puts "
 --spider-skip-extensions Redefine extensions to skip.
 \t\t\t(default: #{$ANEMONE_SKIP_EXTENSIONS.join(",")})
 --list-plugins, -l\tList the plugins
---run-plugins, -p\tRun comma delimited list of plugins. Default is all
+--plugins, -p\t\tComma delimited set of selected plugins. Default is all.
+\t\t\tEach element can be a directory, file or plugin name and
+\t\t\tcan optionally have a modifier, eg. + or -
+\t\t\tExamples: +/tmp/moo.rb,+/tmp/foo.rb
+\t\t\ttitle,md5,+./plugins-disabled/
+\t\t\t./plugins-disabled,-md5
 --info-plugins, -I\tDisplay information for all plugins. Optionally search
 \t\t\twith keywords in a comma delimited list.
 --example-urls, -e\tAdd example urls for each plugin to the target list
@@ -677,7 +784,7 @@ if ARGV.size==0 # faster usage info
 	exit 
 end
 
-run_plugins_list=nil
+plugin_selection=nil
 input_file=nil
 output_list = []
 
@@ -685,7 +792,7 @@ opts = GetoptLong.new(
       [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
       [ '-v','--verbose', GetoptLong::NO_ARGUMENT ],
       [ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
-      [ '-p','--run-plugins', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
       [ '-e','--example-urls', GetoptLong::NO_ARGUMENT ],
       [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
@@ -729,7 +836,7 @@ begin
 				plugin_list
 				exit
 			when '-p','--run-plugins'
-				run_plugins_list=arg.split(",")
+				plugin_selection=arg
 			when '-I','--info-plugins'                
 				load_plugins
 				plugin_info(arg.split(","))
@@ -837,8 +944,7 @@ output_list <<  OutputVerbose.new() if $verbose > 0 # full output if -v
 
 
 ### PLUGINS
-load_plugins # load all the plugins
-$plugins_to_use = select_plugins(run_plugins_list) # make the list of selected plugins
+$plugins_to_use = load_plugins(plugin_selection) # load all the plugins
 
 # are the no plugins?
 if $plugins_to_use.size == 0
