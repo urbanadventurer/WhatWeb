@@ -10,10 +10,20 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 [x] dont load plugins if no args, just show help
 
 
+Ruby1.9 compatability
+  [x] -- rescue and ignore all plugins with unkonwn characters
+  -- targets don't seem to get passed between threads the same as ruby1.8
+	thistarget variable doesn't make it across the Thread.new do  line
+
+
+[x] add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
+[x]	--plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
+[x]	--plugins +/tmp/moo.rb
+[x]	--plugins foobar (only select foobar)
+
+
 
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
-
-
 netgear-router.rb:{ :model=>'WAG302', :status=>200, :url=>'/images/../settingsWAG302.gif', :certainty=>75 },
 becomes: morningstarsecurity.com/settingsRH340.gif [301]
 
@@ -26,15 +36,14 @@ etc..
 
 remove log-json-versbose?  does anyone use this?
 
+improve  def version_detection?	for Plugins
+
 
 maybe there should be a different location for data such as country-ips.dat. eg. /data/
 
 [x] add plugin init & close.
 
-add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
---plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
---plugins +/tmp/moo.rb
---plugins foobar (only select foobar)
+
 
 open_target({:method=>"POST"})
 
@@ -44,7 +53,34 @@ this matches on morningstarsecurity.com/research/whatweb
 [x] add IP plugin <-- can't get IP out of http object
 [x] add geoIP country plugin
 
-precompile regular expressions for matching speed
+
+It would be nice if we didn't have to repeat matches from the passive section in the aggressive section. This would be *much* cleaner and really, really cool.
+
+I'll try to demonstrate with pseudo code.
+
+
+ABCsoftware plugin (pseudo):
+
+matches [
+# Get account
+{ :account=>/^ABCsoftwarePASS=([^\r^\n]*), :regexp_offset=>0 }
+]
+
+def passive
+# If current URL is /secret, get software version
+if base_url == /secret
+m << { :version=>@body.scan(/^ABCsoftwareVER=([\d\.]+)/) } if @body =~ /^ABCsoftwareVER=([\d\.]+)/
+end
+end
+
+def aggressive
+# If we're in aggressive mode and the current URL is not /secret, then load /secret and have WhatWeb fingerprint it passively.
+target_open(base_url+/secret) if base_url != /secret
+end
+
+
+
+
 
 [x] escape output in logs. <>"& for xml logs.
 [x] add XML log initialisation and termination: 

@@ -13,6 +13,7 @@ module PluginSugar
   end
 end
 
+
 class Plugin
   attr_accessor :base_uri
   @registered_plugins = {}
@@ -29,6 +30,16 @@ class Plugin
     p.instance_eval(&block)
     p.startup
     Plugin.registered_plugins[name] = p
+  end
+
+  def version_detection?	
+	r=false
+	if @matches and !@matches.empty?
+		if !@matches.map {|m| m[:version] }.compact.empty?
+			r=true
+		end
+	end
+	r
   end
 
   def startup
