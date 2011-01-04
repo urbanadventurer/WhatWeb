@@ -24,9 +24,14 @@ Ruby1.9 compatability
 
 
 Change usage:
---follow-frames never,frame-only,iframe-only,same-site,same-domain,always
---follow-redirect never,http-only,meta-only,same-site,same-domain,always
+--follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)
 
+--follow-redirect never,http-only,meta-only,same-site,same-domain,always (default: always)
+
+
+
+
+colour the verbose output
 
 
 

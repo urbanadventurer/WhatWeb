@@ -32,7 +32,7 @@ class Plugin
     Plugin.registered_plugins[name] = p
   end
 
-  def version_detection?	
+  def version_detection?
 	r=false
 	if @matches and !@matches.empty?
 		if !@matches.map {|m| m[:version] }.compact.empty?
