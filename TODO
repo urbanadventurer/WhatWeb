@@ -23,6 +23,13 @@ Ruby1.9 compatability
 
 
 
+Change usage:
+--follow-frames never,frame-only,iframe-only,same-site,same-domain,always
+--follow-redirect never,http-only,meta-only,same-site,same-domain,always
+
+
+
+
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
 netgear-router.rb:{ :model=>'WAG302', :status=>200, :url=>'/images/../settingsWAG302.gif', :certainty=>75 },
 becomes: morningstarsecurity.com/settingsRH340.gif [301]
