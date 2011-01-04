@@ -1015,7 +1015,6 @@ while thistarget = next_target
 			target_is_a_file=File.exists?(target)
 		
 			if $RECURSIVE == true and target_is_a_file == false
-
 				Anemone.crawl(target,
 				{"threads"=>1, "user_agent"=>$USER_AGENT, "depth_limit"=>$RECURSIVE_DEPTH}) do |anemone|
 				anemone.skip_links_like $ANEMONE_SKIP_REGEX					
@@ -1052,9 +1051,7 @@ while thistarget = next_target
 		
 			else
 			# Recursive is false
-
-			
-
+		
 			# follow redirects
 			no_redirects =false
 			num_redirects = 0
@@ -1097,8 +1094,8 @@ while thistarget = next_target
 					end
 				end
 			begin		
-				if status == 301 or status == 302 or status == 307 or body =~ /<meta[^>]*http\-equiv[^>]*refresh[^>]*url=([^\"]*)/i
-					if [301,302,307].include?(status)
+				if ((300..399) === status and headers["location"]) or body =~ /<meta[^>]*http\-equiv[^>]*refresh[^>]*url=([^\"]*)/i
+					if (300..399) === status and headers["location"]
 						target=URI.join(target,headers["location"]).to_s
 						num_redirects+=1
 					else

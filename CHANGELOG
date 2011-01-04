@@ -57,7 +57,8 @@ Version 0.4.6 Released ? 2010
 * Improved OSX compatibility with a patch from matti for symlinks
 * Added :status for HTTP Status codes to match[]. :status has a logical AND with a :url, it can't be by itself.
 * Updated plugin list and plugin info output
-
+* Updated Mailto plugin, renamed to Email
+* Bug fix: Now redirects for HTTP statuses 300 through 399. Previously redirected for 301,302 and 307.
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman
