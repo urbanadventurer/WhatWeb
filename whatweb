@@ -292,7 +292,7 @@ class PluginChoice
 	end
 end
 
-
+# this is used by load_plugins
 def load_plugin(f)
 	begin
 		load f
@@ -424,14 +424,18 @@ def custom_plugin(c)
 	end
 	"
 
-	# open tmp file
-	f=Tempfile.new('whatweb-custom-plugin')
-	# write
-	f.write(custom)
-	f.close
-	# load
-	load f.path
-	f.unlink
+	begin
+		# open tmp file
+		f=Tempfile.new('whatweb-custom-plugin')
+		# write
+		f.write(custom)
+		f.close
+		# load
+		load f.path
+		f.unlink
+	rescue
+		error("Error: Cannot load custom plugin")
+	end
 end
 
 
