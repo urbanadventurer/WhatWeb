@@ -24,12 +24,18 @@ Ruby1.9 compatability
 
 
 Change usage:
+
+[x] --follow-redirect never,http-only,meta-only,same-site,same-domain,always (default: always)
+	same-domain --	? use tld.rb from urlcrazy ??
+
+
+
 --follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)
 
---follow-redirect never,http-only,meta-only,same-site,same-domain,always (default: always)
 
 
 
+set num of max redirects, instead of hard coded value of 10
 
 colour the verbose output
 
