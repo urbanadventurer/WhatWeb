@@ -134,8 +134,8 @@ $AGGRESSION=1
 $RECURSIVE=false
 $RECURSIVE_DEPTH=10
 $MAX_LINKS_TO_FOLLOW=250
-$NO_REDIRECT=false
 
+$FOLLOW_REDIRECT="always"
 $USE_PROXY=false
 $PROXY_HOST=nil
 $PROXY_PORT=8080
@@ -720,7 +720,8 @@ puts "
 --aggression, -a\t1 passive - on-page
 \t\t\t2 polite - unimplemented
 \t\t\t3 impolite - guess URLs when plugin matches
-\t\t\t(smart, guess a few urls)
+\t\t\t(smart, guess a few urls by triggering aggressive when
+\t\t\tpassive matches)
 \t\t\t4 aggressive - guess URLs for every plugin
 \t\t\t(guess a lot of urls like nikto)
 --recursion, -r\t\tFollow links recursively. Only follows links under the
@@ -751,7 +752,9 @@ puts "
 --log-errors=FILE\tLog errors
 --user-agent, -U\tIdentify as user-agent instead of WhatWeb/#{$VERSION}.
 --max-threads, -t\tNumber of simultaneous threads. Default is #{$MAX_THREADS}.
---no-redirect\t\tDo not follow HTTP 3xx or meta-refresh redirects 
+--follow-redirect=WHEN\tControl when to follow redirects. WHEN may be `never',
+\t\t\t`http-only', `meta-only', `same-site', `same-domain'
+\t\t\t(not implemented), or `always'
 --proxy\t\t\t<hostname[:port]> Set proxy hostname and port
 \t\t\t(default: #{$PROXY_PORT})
 --proxy-user\t\t<username:password> Set proxy user and password
@@ -814,7 +817,7 @@ opts = GetoptLong.new(
       [ '-m','--max-links', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-r','--recursive', GetoptLong::NO_ARGUMENT ],
       [ '-d','--depth', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--no-redirect', GetoptLong::NO_ARGUMENT ],
+      [ '--follow-redirect', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--proxy', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--proxy-user', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--url-prefix', GetoptLong::REQUIRED_ARGUMENT ],
@@ -913,8 +916,12 @@ begin
 				$URL_PATTERN=arg
 			when '--custom-plugin'
 				custom_plugin(arg)
-			when '--no-redirect'					
-				$NO_REDIRECT=true
+			when '--follow-redirect'	
+				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
+					$FOLLOW_REDIRECT=arg.downcase
+				else
+					error("Invalid --follow-redirect parameter.")
+				end
 			when '--open-timeout'					
 				$HTTP_OPEN_TIMEOUT=arg.to_i
 			when '--read-timeout'					
@@ -1093,31 +1100,55 @@ while thistarget = next_target
 						end
 					end
 				end
-			begin		
-				if ((300..399) === status and headers["location"]) or body =~ /<meta[^>]*http\-equiv[^>]*refresh[^>]*url=([^\"]*)/i
-					if (300..399) === status and headers["location"]
-						target=URI.join(target,headers["location"]).to_s
-						num_redirects+=1
-					else
-						# meta refresh						
-                				metarefresh=body.scan(/<meta[^>]*http\-equiv[^>]*refresh[^>]*url=([^\"]*)/i)[0].to_s
-						newtarget=URI.join(target,metarefresh).to_s # this works for relative and absolute
-						if newtarget != target # don't redirect to self
-							num_redirects+=1
-							target=newtarget
+
+				# REDIRECTION
+				begin
+					newtarget_m=nil
+					newtarget_h=nil
+					newtarget=nil
+					if body =~ /<meta[^>]*http\-equiv[^>]*refresh[^>]*url=([^\"]*)/i
+						metarefresh=body.scan(/<meta[^>]*http\-equiv[^>]*refresh[^>]*url=([^\"]*)/i)[0].to_s
+						newtarget_m=URI.join(target,metarefresh).to_s # this works for relative and absolute
+					end
+					newtarget_h=URI.join(target,headers["location"]).to_s if (300..399) === status and headers["location"]
+					# if both meta refresh location and HTTP location are set, then the HTTP location overrides
+
+					if newtarget_m or newtarget_h
+						case $FOLLOW_REDIRECT
+						when "never"
+							no_redirects=true
+						when "http-only"
+							newtarget = newtarget_h
+						when "meta-only"
+							newtarget = newtarget_m
+						when "same-site"
+							newtarget = newtarget_h or newtarget_m if URI.parse((newtarget_h or newtarget_m)).host == URI.parse(target).host # defaults to _h if both are present
+						when "same-domain"
+							# not implemented, sorry
+						when "always"
+							newtarget = newtarget_h or newtarget_m
 						else
-							no_redirects=true # punishment for redirecting to self
+							error("Error: Invalid REDIRECT mode")
 						end
 					end
-				else
+
+					# if we found a new target to following, then set it and increment our redirect counter
+					if newtarget
+						unless newtarget == target
+							num_redirects+=1 
+							target=newtarget
+						else
+							no_redirects=true
+						end
+					else
+						# no redirects is set to true because we've failed to set a redirect
+						no_redirects=true 
+					end
+				rescue => err
+					error("new redirecting broken: #{err}")
 					no_redirects=true
 				end
-			rescue => err
-				error(target + " ERROR: #{err}")
-				no_redirects=true
-			end
-			
-			no_redirects = true if $NO_REDIRECT==true
+
 			end # while no_redirects
 			end # if $RECURSIVE
 	
