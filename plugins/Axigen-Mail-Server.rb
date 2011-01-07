@@ -36,7 +36,6 @@ webmail.iie.es
 webmail.loxley.co.th
 my126.org
 mail.jasoneng.com.hk:81
-jiepnet.com:8082
 mail.nordtroms.net
 samaphone.net
 mail.ttaf.com.hk
@@ -56,7 +55,6 @@ www.stampq.lv:9001
 albaniaonline.net
 pop3.interclan.net
 pop3.nckcn.com
-axitest.pl
 interclan.net
 correopersonal.es
 mi-correo.es
@@ -71,6 +69,8 @@ matches [
 
 # Powered by text
 { :text=>'<div>Powered by <a href="http://www.axigen.com" target="_blank" class="gray">Axigen Mail Server</a></div>' },
+
+# Powered by text
 { :text=>'Powered by <a href="http://www.axigen.com/" target="_blank">Axigen Mail Server</a>' },
 
 # "Javascript required" HTML
@@ -87,9 +87,8 @@ def passive
 
 	# Version Detection # Powered by text
 	# Tested versions: 7.3.1, 7.3.2, 7.3.3, 7.4.0, 7.4.2, 7.5.0, 7.5.0.30.1
-	if @body =~ /<p>Powered by <a href="http:\/\/www.axigen.com[\/]*" target="_blank">Axigen Mail Server<\/a><\/p>/
-		version=@body.scan(/<p>Version ([\d\.]+)<\/p>/)[0][0]
-		m << { :version=>version }
+	if @body =~ /<p>Powered by <a href="http:\/\/www.axigen.com[\/]*" target="_blank">Axigen Mail Server<\/a><\/p>[\s\r\n]*<p>Version ([\d\.]+)<\/p>/
+		m << { :version=>@body.scan(/<p>Version ([\d\.]+)<\/p>/)[0][0] }
 	end
 
 	m
