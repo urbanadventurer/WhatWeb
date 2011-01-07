@@ -4,10 +4,22 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-07 #
+# Updated version detection
+# Updated matches
+# Added model detection
+# Added module detection
+##
 Plugin.define "Axis-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
-version "0.1"
+version "0.2"
 description "Axis network camera - homepage: http://www.axis.com/"
+
+# 312 results for allintitle: Axis 2.10 OR 2.12 OR 2.30 OR 2.31 OR 2.32 OR 2.33 OR 2.34 OR 2.40 OR 2.42 OR 2.43 "Network Camera" @ 2010-06-27
+# 475 results for intitle:"Live View / . AXIS" | inurl:view/view.shtml OR inurl:view/indexFrame.shtml | intitle:"MJPG Live Demo" | "intext:Select preset position" @ 2010-06-27
+# 23 results for inurl:indexFrame.shtml intitle:Axis -inurl @ 2010-06-27
+
+# Examples #
 examples %w|
 64.29.78.157/indexFrame.shtml
 209.113.157.25/indexFrame.shtml
@@ -108,111 +120,54 @@ gotchacams.com/camviews.php
 193.40.110.163/view/view.shtml
 |
 
+# Matches #
 matches [
 
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1812
-# 312 results @ 2010-06-27
+# Certainty: 75 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1812
 # This ghdb syntax is not supported in whatweb 0.4.4
-{:name=>'GHDB: allintitle: Axis 2.10 OR 2.12 OR 2.30 OR 2.31 OR 2.32 OR 2.33 OR 2.34 OR 2.40 OR 2.42 OR 2.43 "Network Camera"',
-:certainty=>75,
-:ghdb=>'allintitle: Axis 2.10 OR 2.12 OR 2.30 OR 2.31 OR 2.32 OR 2.33 OR 2.34 OR 2.40 OR 2.42 OR 2.43 "Network Camera"'
-},
+{ :ghdb=>'allintitle: Axis 2.10 OR 2.12 OR 2.30 OR 2.31 OR 2.32 OR 2.33 OR 2.34 OR 2.40 OR 2.42 OR 2.43 "Network Camera"', :certainty=>75 },
 
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1811
-# 475 results @ 2010-06-27
+# Certainty: 75 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1811
 # This ghdb syntax is not supported in whatweb 0.4.4
-{:name=>'GHDB: intitle:"Live View / . AXIS" | inurl:view/view.shtml OR inurl:view/indexFrame.shtml | intitle:"MJPG Live Demo" | "intext:Select preset position"',
-:certainty=>75,
-:ghdb=>'intitle:"Live View / . AXIS" | inurl:view/view.shtml OR inurl:view/indexFrame.shtml | intitle:"MJPG Live Demo" | "intext:Select preset position"'
-},
+{ :ghdb=>'intitle:"Live View / . AXIS" | inurl:view/view.shtml OR inurl:view/indexFrame.shtml | intitle:"MJPG Live Demo" | "intext:Select preset position"', :certainty=>75 },
 
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=287
-# 23 results @ 2010-06-27
-{:name=>'GHDB: inurl:indexFrame.shtml intitle:Axis -inurl',
-:certainty=>75,
-:ghdb=>'inurl:indexFrame.shtml intitle:Axis -inurl'
-},
+# Certainty: 75 # http://www.hackersforcharity.org/ghdb/?function=detail&id=287
+{ :ghdb=>'inurl:indexFrame.shtml intitle:Axis', :certainty=>75 },
 
-{:name=>'default video server title #1',
-:certainty=>100,
-:text=>'<TITLE>AXIS Video Server</TITLE>'
-},
+# Default video server title
+{ :text=>'<TITLE>AXIS Video Server</TITLE>' },
 
-{:name=>'default video server title #2',
-:certainty=>100,
-:regexp=>/<TITLE>Live View [\/]* - AXIS [0-9a-zA-Z\+]+ Video Server<\/TITLE>/i
-},
+# Frameset # Default frame HTML
+{ :text=>'<FRAME NAME="WhatEver" SRC="/incl/whatever.shtml" SCROLLING=NO MARGINGHEIGHT=0 MARGINWIDTH=0>' },
 
-{:name=>'default frame html',
-:certainty=>100,
-:text=>'<FRAME NAME="WhatEver" SRC="/incl/whatever.shtml" SCROLLING=NO MARGINGHEIGHT=0 MARGINWIDTH=0>'
-},
+# Frameset # Default trash frame
+{ :text=>'	<FRAME NAME="Trash" SRC="/view/trash.shtml" SCROLLING=NO MARGINGHEIGHT=0 MARGINWIDTH=0>' },
 
-{:name=>'default trash frame',
-:certainty=>100,
-:text=>'	<FRAME NAME="Trash" SRC="/view/trash.shtml" SCROLLING=NO MARGINGHEIGHT=0 MARGINWIDTH=0>'
-},
+# Frameset # Default temp frame
+{ :text=>'      <FRAME NAME="Temp" SRC="/view/temp.shtml" SCROLLING=NO MARGINGHEIGHT=0 MARGINWIDTH=0>' },
 
-{:name=>'default temp frame',
-:certainty=>100,
-:text=>'      <FRAME NAME="Temp" SRC="/view/temp.shtml" SCROLLING=NO MARGINGHEIGHT=0 MARGINWIDTH=0>'
-},
+# Default noscript text
+{ :text=>'Your browser has JavaScript turned off.<br>For the user interface to work effectively, you must enable JavaScript in your browser and reload/refresh this page.' },
 
-{:name=>'default noscript text',
-:certainty=>100,
-:text=>'Your browser has JavaScript turned off.<br>For the user interface to work effectively, you must enable JavaScript in your browser and reload/refresh this page.'
-},
+# Default img src
+{ :text=>'<img SRC="/pics/AxisLogo.gif" WIDTH="95" HEIGHT="40" BORDER="0" ALIGN="right" ALT="' },
 
-{:name=>'default video view title',
-:certainty=>100,
-:regexp=>/<TITLE>Live View [\/]* - AXIS [\da-zA-Z+]+ [MPEG\-2]*Network[\ Dome]* Camera[\ version]*[\ \d\.]*<\/TITLE>/i
-},
+# Model Detection # Default video server title
+{ :model=>/<TITLE>Live View [\/]* - AXIS ([^<]*) Video Server<\/TITLE>/i, :regexp_offset=>0, :modules=>"Live View" },
 
-{:name=>'default camera title',
-:certainty=>100,
-:regexp=>/<TITLE>[AXIS|Axis]+ [0-9]+ Network Camera<\/TITLE>/
-},
+# Model Detection # Default network camera title
+{ :model=>/<TITLE>Axis ([0-9]+) [^<]*Network Camera[^<]*<\/TITLE>/i, :regexp_offset=>0 },
 
-{:name=>'default img src',
-:certainty=>100,
-:regexp=>/<[IMG|img]+ SRC="\/pics\/AxisLogo.gif" WIDTH="95" HEIGHT="40" BORDER="0" ALIGN="right" ALT="[AXIS Website - www.axis.com]*">/
-},
+# Version Detection # Default title for AXIS 2000 series
+{ :version=>/<TITLE>Axis [0-9]+ [^<]*Network Camera ([\d\.]+)<\/TITLE>/i, :regexp_offset=>0 },
 
+# Version Detection # Default live view title for AXIS 200 series
+{ :version=>/<TITLE>Live View[\/\s]*- AXIS [\da-z]+ [^<]*version ([\d\.]+)<\/TITLE>/i, :regexp_offset=>0, :modules=>"Live View" },
+
+# Model Detection # Default live view title for AXIS 200 series
+{ :model=>/<TITLE>Live View[\/\s]*- AXIS ([\da-z]+) [^<]*<\/TITLE>/i, :regexp_offset=>0, :modules=>"Live View" },
 
 ]
-
-def passive
-        m=[]
-
-
-	# <TITLE>Axis 2100 Network Camera 2.34</TITLE>
-	# <TITLE>Axis 2120 Network Camera 2.42</TITLE>
-	# <TITLE>Axis 2120 Network Camera 2.43</TITLE>
-	# <TITLE>Axis 2120 Network Camera 2.33</TITLE>
-	# <TITLE>AXIS 2420 Network Camera 2.43</TITLE>
-	# <TITLE>Axis 2120 Network Camera 2.40</TITLE>
-	# <TITLE>Axis 2100 Network Camera 2.42</TITLE>
-
-        if @body =~ /<TITLE>[AXIS|Axis]+ [0-9]+ Network Camera [\d\.]+<\/TITLE>/
-                version=@body.scan(/<TITLE>[AXIS|Axis]+ [0-9]+ Network Camera ([\d\.]+)<\/TITLE>/)[0].to_s
-                m << {:certainty=>100,:name=>"default title for AXIS 2000 series",:version=>version}
-        end
-
-
-	# <title>Live view  - AXIS 231D+ Network Dome Camera</title>
-	# <TITLE>Live view / - AXIS 205 Network Camera version 4.05</TITLE>
-	# <title>Live view  - AXIS 206W Network Camera version 4.11</title>
-
-        if @body =~ /<TITLE>Live View [\/]* - AXIS [\da-zA-Z]+ [MPEG\-2]*[Network Camera ]*version [\d\.]+<\/TITLE>/i
-                version=@body.scan(/<TITLE>Live View [\/]* - AXIS [\da-zA-Z]+ [MPEG\-2]*[Network Camera ]*version ([\d\.]+)<\/TITLE>/i)[0][0]
-                m << {:certainty=>100,:name=>"default title for AXIS 200 series",:version=>version}
-        end
-
-
-        m
-
-end
-
 
 end
 
