@@ -4,12 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-07 #
+# Updated version detection
+##
 Plugin.define "Axigen-Mail-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
-version "0.1"
+version "0.2"
 description "Axigen is an integrated email, calendaring & collaboration platform, masterfully built on our unique Linux mail server technology, for increased speed & security. - homepage: http://www.axigen.com/"
 
 # 67 results for "powered by Axigen Mail Server" @ 2010-09-17
+
+# Examples #
 examples %w|
 194.105.7.2:8000
 mail.realtyweb.net
@@ -58,6 +63,7 @@ mi-correo.es
 mail.arquinetmty.com
 |
 
+# Matches #
 matches [
 
 # Login redirect page # Javascript
@@ -70,31 +76,25 @@ matches [
 # "Javascript required" HTML
 { :text=>'<div class="nojsContainer"><h1>In order to access AXIGEN Webmail, <br />you must enable Javascript in your browser!</h1></div>' },
 
+# Version Detection # Default title
+{ :version=>/<title>AXIGEN Webmail - v([\d\.]+)<\/title>/, :regexp_offset=>0 },
+
 ]
 
-# Version detection
-# Tested versions: 7.3.1, 7.3.2, 7.3.3, 7.4.0, 7.4.2, 7.5.0, 7.5.0.30.1
+# Passive #
 def passive
         m=[]
 
-	# Default title
-        if @body =~ /<title>AXIGEN Webmail - v([\d\.]+)<\/title>/
-                version=@body.scan(/<title>AXIGEN Webmail - v([\d\.]+)<\/title>/)[0][0]
-                m << {:version=>version}
-        end
-
-	# Powered by text
+	# Version Detection # Powered by text
+	# Tested versions: 7.3.1, 7.3.2, 7.3.3, 7.4.0, 7.4.2, 7.5.0, 7.5.0.30.1
 	if @body =~ /<p>Powered by <a href="http:\/\/www.axigen.com[\/]*" target="_blank">Axigen Mail Server<\/a><\/p>/
-		if @body =~ /        <p>Version ([\d\.]+)<\/p>/
-			version=@body.scan(/        <p>Version ([\d\.]+)<\/p>/)[0][0]
-			m << {:version=>version}	
-		end 
-        end
+		version=@body.scan(/<p>Version ([\d\.]+)<\/p>/)[0][0]
+		m << { :version=>version }
+	end
 
 	m
 
 end
-
 
 end
 
