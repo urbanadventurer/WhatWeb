@@ -4,12 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-07 #
+# Updated version detection method
+##
 Plugin.define "ArticlePublisherPRO" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
-version "0.1"
+version "0.2"
 description "The Flexible and Easy Article Publishing System - homepage: http://article-publisher-pro.phparticlescript.com/"
 
 # 31 results for "powered by Article Publisher PRO" -Vulnerability @ 2010-08-30
+
+# Examples #
 examples %w|
 article-publisher-pro.phparticlescript.com
 article-publisher-pro.phparticlescript.com/admin/admin.php
@@ -28,6 +33,7 @@ www.tucanatech.com
 www.valuedarticles.com/article/
 |
 
+# Matches #
 matches [
 
 # Admin page
@@ -39,21 +45,10 @@ matches [
 # Error page
 { :text=>'<br><br><center><b>Please use a proper method to browse article(s) - The method you are using is not allowed...</b></center>' },
 
+# Version detection # Powered by text
+{ :version=>/<div class="powered">Powered by <a href="http:\/\/www.ArticlePublisherPRO.com" target="_blank">Article Publisher PRO<\/a>  v([\d\.]+)/, :regexp_offset=>0 },
+
 ]
-
-# Version detection using powered by text
-def passive
-        m=[]
-
-        if @body =~ /<div class="powered">Powered by <a href="http:\/\/www.ArticlePublisherPRO.com" target="_blank">Article Publisher PRO<\/a>  v([\d\.]+)/
-                version=@body.scan(/<div class="powered">Powered by <a href="http:\/\/www.ArticlePublisherPRO.com" target="_blank">Article Publisher PRO<\/a>  v([\d\.]+)/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
