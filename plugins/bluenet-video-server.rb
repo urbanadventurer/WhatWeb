@@ -4,37 +4,35 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-08 #
+# Updated version detection
+##
 Plugin.define "BlueNet-Video-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
-version "0.1"
-description "video camera web interface"
+version "0.2"
+description "BlueNet Video Server - video camera web interface"
 
 # 2 results for intitle:"BlueNet Video Viewer" @ 2010-07-18
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1813
+
+# Examples #
 examples %w|
 75.15.47.149:7831/cgi-bin/client_execute.cgi?tUD=0
-74.94.146.105:8888/cgi-bin/client_execute.cgi?tUD=0
+68.185.14.34:8087/cgi-bin/client_execute.cgi?tUD=0
 |
 
+# Matches #
 matches [
 
-{ :text=>"window.location.href='/cgi-bin/client_execute.cgi?tUD=0';" },
+	# Default JavaScript redirect
+	{ :text=>"window.location.href='/cgi-bin/client_execute.cgi?tUD=0';" },
+
+	# Version Detection # Default title
+	{ :version=>/<title>BlueNet Video Viewer Version ([\d\.a-z]+)<\/title>/, :regexp_offset=>0 },
 
 ]
 
-# an aggresive plugin could get the version from /cgi-bin/client_execute.cgi?tUD=0
-def passive
-        m=[]
-
-        if @body =~ /<title>BlueNet Video Viewer Version [\d\.a-z]+<\/title>/
-                version=@body.scan(/<title>BlueNet Video Viewer Version ([\d\.a-z]+)<\/title>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
 end
 
-
-end
+# An aggresive plugin could get the version from /cgi-bin/client_execute.cgi?tUD=0
 
