@@ -4,12 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-08 #
+# Updated version detection method
+##
 Plugin.define "BosClassifieds" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
-version "0.1"
+version "0.2"
 description "The BosClassifieds Classified Ad System will allow your web site visitors to place their own classified ads to your web site into categories which you specify. All BosDev, Inc products require a web server running PHP version 4.10 or higher, MySQL 3.23 or higher, and the GD2 graphics library. - homepage: http://www.bosdev.com/bosclassifieds/"
 
 # 47 results for "powered by BosClassifieds Classified Ads System" @ 2010-08-22
+
+# Examples #
 examples %w|
 cjrayburn.com/clas/index.php
 nameokivillagemarine.com/inventory1/index.php
@@ -34,26 +39,16 @@ www.equinetc.com/horsefairclassifieds/index.php
 www.balsamquarter.com/classifieds/index.php
 |
 
+# Matches #
 matches [
 
-# Powered by text
-{ :text=>'Powered by <a href="http://www.bosdev.com/" target="_blank">BosClassifieds</a> <a href="http://www.bosdev.com/" target="_blank">Classified Ads</a> System<br>Copyright 2002-2006. All Rights Reserved' },
+	# Powered by text
+	{ :text=>'Powered by <a href="http://www.bosdev.com/" target="_blank">BosClassifieds</a> <a href="http://www.bosdev.com/" target="_blank">Classified Ads</a> System<br>Copyright' },
+
+	# Version Detection # Meta generator
+	{ :version=>/  <meta name="generator" content="BosClassifieds ([\d\.]+) by BosDev">/, :regexp_offset=>0 },
 
 ]
-
-# Version detection using meta generator
-def passive
-        m=[]
-
-        if @body =~ /  <meta name="generator" content="BosClassifieds [\d\.]+ by BosDev">/
-                version=@body.scan(/  <meta name="generator" content="BosClassifieds ([\d\.]+) by BosDev">/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
