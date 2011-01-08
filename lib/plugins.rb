@@ -109,9 +109,9 @@ class Plugin
 			[:version,:model,:string,:firmware,:filepath].each do |symbol|
 		                if !match[symbol].nil? and match[symbol].class==Regexp
 		                        if @body =~ match[:regexp_compiled]
-		                                regexpmatch = $~
+						regexpmatch = @body.scan(match[:regexp_compiled])
 		                                m = match.dup
-		                                m[symbol] = regexpmatch[match[:regexp_offset]+1]
+		                                m[symbol] = regexpmatch.map {|eachmatch|  eachmatch[match[:regexp_offset]] }.flatten.sort.uniq
 		                                r << m
 		                        end
 		                end
@@ -193,9 +193,9 @@ class Plugin
 				[:version,:model,:string,:firmware,:filepath].each do |symbol|
 				        if !match[symbol].nil? and match[symbol].class==Regexp
 				                if @body =~ match[:regexp_compiled]
-				                        regexpmatch = $~
+							regexpmatch = @body.scan(match[:regexp_compiled])
 				                        m = match.dup
-				                        m[symbol] = regexpmatch[match[:regexp_offset]+1]
+				                        m[symbol] = regexpmatch.map {|eachmatch|  eachmatch[match[:regexp_offset]] }.flatten.sort.uniq
 				                        r << m
 				                end
 				        end
