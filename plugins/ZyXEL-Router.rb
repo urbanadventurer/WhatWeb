@@ -4,17 +4,38 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-09 #
+# Updated model detection
+##
 Plugin.define "ZyXEL-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
-version "0.1"
-description "ZyXEL VSG-1200 V2 is access server that recognizes new users on network and re-routes all the different IP settings pre-configured on users' computers. - homepage: http://www.zyxel.com/"
-# P-330W EE # Default Login:
-# admin/password
+version "0.2"
+description "This plugin indentifies ZyXEL router models"
+# Tested on models: P-660H-D1, P-660HW-D1, P-660R-D1, P-662H-D1, P-662HW-D3, P-2602H-D1A, P-2602HW-D1A, P-2802HWL-I1, P660RU2, P660HT2, Prestige 660H61
+# ZyXEL VSG-1200 V2 is access server that recognizes new users on network and re-routes all the different IP settings pre-configured on users' computers. - homepage: http://www.zyxel.com/"
+# P-330W EE # Default Login # admin/password
 
 # About 195 ShodanHQ results for WWW-Authenticate: Basic realm="P-330W EE (username: admin)" @ 2010-11-01
 # 33 results for intitle:Top "Vantage Service Gateway" -inurl:zyxel @ 2010-07-24
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1853
+# 90 results for "Welcome to the Web-Based Configurator" "Welcome to your router Configuration Interface" @ 2011-01-09
+
+# Examples #
 examples %w|
+spamdns.com
+www.scholiast.org
+195.210.177.1
+www.d-xtra.net
+195.210.180.229
+124.104.101.211
+bilgiset.net
+worldtours-rentacar.com
+www.brts.webhop.net
+66.178.129.151
+www.sagaheilsa.is
+213.180.170.149
+www.stripstyle24h.ee
+78.186.250.202
 70.169.169.199/top.htm
 210.176.164.58/top.htm
 24.153.183.242/top.htm
@@ -39,7 +60,23 @@ https://207.190.252.194/top.htm
 188.186.132.91
 |
 
+# Matches #
 matches [
+
+# Meta generator
+{ :text=>'<meta name="generator" content="GoLive CyberStudio 3">' },
+
+# Default title
+{ :text=>"<title>.:: Welcome to the Web-Based Configurator::.</title><meta http-equiv='content-type' content='text/html;charset=iso-8859-1'>" },
+
+# Default form HTML
+{ :text=>'<form method="post" action="/Forms/rpAuth_1" onSubmit="LoginClick(document.forms[0].hiddenPassword, document.forms[0].LoginPassword);"><p>&nbsp;</p>' },
+
+# Default welcome message HTML
+{ :text=>'Welcome to your router Configuration Interface<p></p>Enter your password and press enter or click "Login"<p></p><img src="Images/i_key.gif" width="11" height="17"  align="absmiddle"> <strong>' },
+
+# Model Detection # Login page HTML
+{ :model=>/<td align=center><p class="style1">[\r\n\s]*([^<^\s]+)[\s]*<br \/><br \/><\/p><\/td><\/tr><tr>/, :regexp_offset=>0 },
 
 # Vantage Service Gateway # Default HTML
 { :text=>'<font size="3" color="3366CC" face="Arial"><b><i>Vantage Service Gateway</i>&nbsp;</b></font>', :model=>"Vantage Service Gateway" },
