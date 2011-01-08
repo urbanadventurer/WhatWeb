@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-09 #
+# Updated model detection
+##
 Plugin.define "Unknown-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
-version "0.1"
-description "This plugin identifies routers for which the vendor is unknown or are hard to fingerprint specifically."
+version "0.2"
+description "This plugin identifies routers for which the vendor is unknown or where fingerprinting is exceptionally difficult."
 
+# Examples #
 examples %w|
+80.179.16.172
+212.143.118.102
 82.35.80.76
 95.87.199.169
 81.104.44.67
@@ -31,6 +37,7 @@ examples %w|
 216.1.6.199
 |
 
+# Matches #
 matches [
 
 # Arris Touchstone Device # Default Favicon
@@ -70,19 +77,24 @@ matches [
 
 # Passive #
 def passive
-    m=[]
+	m=[]
 
 	# About 62 ShodanHQ results for WWW-Authenticate: Basic realm="LOGIN Enter Password (default is private)"
 	# Probably D-Link # HTTP Server Header and WWW-Authenticate Realm
 	m << { :model=>"Probably D-Link", :name=>"HTTP Server Header and WWW-Authenticate Realm", :status=>401 } if @meta["server"] =~ /Boa\/[\d\.]+ \(with Intersil Extensions\)/ and @meta["www-authenticate"] =~ /Basic realm="LOGIN Enter Password (default is private)"/
 
-	# 3020 ShodanHQ results for set-cookie: niagara_audit=guest; path=/
 	# Unknown Router 0001 # Check HTTP Server Header
+	# 3020 ShodanHQ results for set-cookie: niagara_audit=guest; path=/
 	if @meta["server"] =~ /Niagara Web Server\/([\d\.]+)/
 		m << { :name=>"niagara_audit=guest Cookie" } if @meta["set-cookie"] =~ /niagara_audit=guest; path=\//
 	end
 
-    m
+	# Unknown Router 0002 # ADSL2+ # HTTP Server and WWW Authenticate Realm
+	# 3361 ShodanHQ results for Server: RomPager WWW-Authenticate: Basic realm="Default Admin.= admin/admin"
+	# Find model info: /status/status_deviceinfo.htm
+	m << { :model=>"ADSL2+" } if @meta["www-authenticate"] =~ /Basic realm="Default Admin.= admin\/admin"/ and @meta["server"] =~ /RomPager/i
+
+	m
 
 end
 
