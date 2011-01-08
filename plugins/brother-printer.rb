@@ -4,16 +4,22 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-08 #
+# Updated model detection
+# Added frameset match
+##
 Plugin.define "Brother-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
-version "0.1"
-description "Brother HL printer web interface - homepage: http://www.brother.com/"
+version "0.2"
+description "Brother printer web interface - homepage: http://www.brother.com/"
 # Default login: Admin/Access
 
 # 57 results for intitle:"Brother" intext:"View Configuration" intext:"Brother Industries, Ltd." @ 2010-07-22
 # 23 results for inurl:"printer/main.html" intext:"settings" @ 2010-07-22
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=872
 # About 1,661 shodan results for printer Server:debut @ 2010-07-22
+
+# Examples #
 examples %w|
 144.214.177.35
 133.50.196.101
@@ -61,41 +67,32 @@ www.shadowmonkey.com
 128.125.23.96
 www.byraquel.com
 129.25.59.157
-www.optimum.tu-berlin.de
 141.26.71.159
 212.182.1.37
-www.oldstock.nl
 130.209.164.166
 h200137209222.ufg.br
 130.236.72.32
-www.fremantlestpatricks.com.au
 129.22.210.100
 |
 
+# Matches #
 matches [
 
-# HL-40xx series
-{ :text=>'<IMG src="/common/image/HL4040CN.gif" border=0>', :version=>"HL-4040CN" },
-{ :text=>'<IMG src="/common/image/HL4040CDN.gif" border=0>', :version=>"HL-4040CDN" },
-{ :text=>'<IMG src="/common/image/HL4050CDN.gif" border=0>', :version=>"HL-4050CDN" },
-{ :text=>'<IMG src="/common/image/HL4070CDW.gif" border=0>', :version=>"HL-4070CDW" },
+	# Framset # Header frame
+	{ :text=>'<FRAME SRC="/printer/inc_head.html" NAME="header" NORESIZE SCROLLING="no">' },
+
+	# Model Detection # HL-40xx series # Default image HTML
+	{ :text=>'<IMG src="/common/image/HL4040CN.gif" border=0>', :model=>"HL-4040CN" },
+	{ :text=>'<IMG src="/common/image/HL4040CDN.gif" border=0>', :model=>"HL-4040CDN" },
+	{ :text=>'<IMG src="/common/image/HL4050CDN.gif" border=0>', :model=>"HL-4050CDN" },
+	{ :text=>'<IMG src="/common/image/HL4070CDW.gif" border=0>', :model=>"HL-4070CDW" },
+
+	# Model Detection # HL-1x / HL-2x / HL-5x / HL-6x series
+	# Tested models: HL-6050D_DN / HL-5370DW / HL-5250DN / HL-5250DN /  HL-5270DN / HL-5370DW / HL-1650_1670N / HL-2150N / HL-2460 / HL-2170W / HL-2070N
+	# This regex could be improved
+	{ :model=>/<TITLE>Brother ([0-9A-Z\-\_]+) series[\ \(\ SLEEP\ \)|\ \(\ PAUSE\ \)|\ \(\ READY\ \)]*<\/TITLE>/, :regexp_offset=>0 },
 
 ]
-
-# HL-1x / HL-2x / HL-5x / HL-6x series
-# Tested models: HL-6050D_DN / HL-5370DW / HL-5250DN / HL-5250DN /  HL-5270DN / HL-5370DW / HL-1650_1670N / HL-2150N / HL-2460 / HL-2170W / HL-2070N
-def passive
-        m=[]
-
-        if @body =~ /<TITLE>Brother HL-[0-9A-Z\-\_]+ series[\ \(\ SLEEP\ \)|\ \(\ PAUSE\ \)|\ \(\ READY\ \)]*<\/TITLE>/
-                version=@body.scan(/<TITLE>Brother HL-([0-9A-Z\-\_]+) series[\ \(\ SLEEP\ \)|\ \(\ PAUSE\ \)|\ \(\ READY\ \)]*<\/TITLE>/)[0][0]
-                m << {:version=>"HL-"+version }
-        end
-
-        m
-
-end
-
 
 end
 
