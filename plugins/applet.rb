@@ -4,31 +4,34 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-07 #
+# Updated URL extraction method
+##
 Plugin.define "Applet" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
-version "0.1"
-description "This plugin detects instances of applet HTML elements and grabs the URL. - homepage: http://en.wikipedia.org/wiki/Java_applet"
+version "0.2"
+description "This plugin detects instances of applet HTML elements and retrieves the URL from the code parameter. - homepage: http://en.wikipedia.org/wiki/Java_applet"
 
 # 183 results for "this site requires java" @ 2010-10-15
+
+# Examples #
 examples %w|
-www.co.ozaukee.wi.us/sheriff/
+java.sun.com/applets/jdk/1.4/demo/applets/ArcTest/example1.html
+java.sun.com/applets/jdk/1.4/demo/applets/BarChart/example1.html
+java.sun.com/applets/jdk/1.4/demo/applets/TicTacToe/example1.html
+java.sun.com/applets/jdk/1.4/demo/applets/Clock/example1.html
 www.htmlcodetutorial.com/applets/applets.html
 www.htmlcodetutorial.com/applets/_APPLET.html
 www.whitehavenchargers.com
 |
 
-# URL Extraction
-def passive
-	m=[]
+# Matches #
+matches [
 
-	if @body =~ /<[\s]*applet[^code]+code[\s]*=[\s]*[\"|\']?([^>^\"]+)/i
-		version=@body.scan(/<[\s]*applet[^code]+code[\s]*=[\s]*[\"|\']?([^>^\"]+)/i)
-		m << { :version=>version }
-	end
+	# URL Extraction
+	{ :filepath=>/<[\s]*applet[^>]*code[\s]*=[\s]*[\"|\']?([^>^\"]+)/i, :regexp_offset=>0 },
 
-	m
-
-end
+]
 
 end
 

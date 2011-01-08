@@ -4,12 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-07 #
+# Updated HTTP Server Header match
+##
 Plugin.define "Akamai-Global-Host" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
-version "0.1"
+version "0.2"
 description "Akamai-Global-Host HTTPd"
 
 # About 624447 ShodanHQ results for "server: AkamaiGHost" @ 2010-10-26
+
+# Examples #
 examples %w|
 24.200.239.8
 184.87.51.66
@@ -23,16 +28,14 @@ examples %w|
 173.223.26.104
 |
 
-# HTTP Header
+# Passive #
 def passive
 	m=[]
 
-	# Server
+	# HTTP Server Header #
 	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /^[\s]*AkamaiGHost/
-	m << { :name=>"HTTP Server Header" } if @meta["Server"].to_s =~ /^[\s]*AkamaiGHost/
 
 	m
-
 end
 
 end
