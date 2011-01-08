@@ -5,7 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 # Version 0.2 # 2011-01-08 #
-# Updated HTTP Server Header match
+# Updated version detection
 ##
 Plugin.define "BXR" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
