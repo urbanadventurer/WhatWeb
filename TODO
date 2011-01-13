@@ -22,6 +22,8 @@ Ruby1.9 compatability
 [x]	--plugins foobar (only select foobar)
 
 
+currently regex's like :modules only return the first instance - should be all.
+
 
 Change usage:
 
@@ -33,6 +35,9 @@ Change usage:
 --follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)
 
 
+
+move this block to a pre output stage, be more DRY:
+  string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq.join(",")
 
 
 set num of max redirects, instead of hard coded value of 10
