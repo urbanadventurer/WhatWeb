@@ -592,8 +592,7 @@ def open_target(target)
 			http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
 		end
 		
-		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) ,{"User-Agent"=>$USER_AGENT})
-		
+		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) ,{"User-Agent"=>$USER_AGENT})	
 		res=http.request(req)
 		
 		headers={}; res.each_header {|x,y| headers[x]=y }
@@ -607,6 +606,9 @@ def open_target(target)
 		return [0, nil, nil, nil,nil]
 	rescue TimeoutError => err
 		error(target + " ERROR: Timed out #{err}")
+		return [0, nil, nil, nil,nil]
+	rescue Errno::ETIMEDOUT	=>err # for ruby 1.8.7 patch level 249
+		error(target + " ERROR: Timed out (ETIMEDOUT) #{err}")
 		return [0, nil, nil, nil,nil]
 	rescue EOFError => err
 		error(target + " ERROR: EOF error #{err}")
@@ -748,7 +750,9 @@ puts "
 --log-xml=FILE\t\tLog XML format
 --log-json=FILE\t\tLog JSON format
 --log-json-verbose=FILE\tLog JSON Verbose format
---log-mongo=Collection\tLog to a Mongo DB on localhost
+--log-mongo-database\tName of the MongoDB database
+--log-mongo-collection\tName of the MongoDB collection. Default: whatweb
+--log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
 --log-errors=FILE\tLog errors
 --user-agent, -U\tIdentify as user-agent instead of WhatWeb/#{$VERSION}.
 --max-threads, -t\tNumber of simultaneous threads. Default is #{$MAX_THREADS}.
@@ -776,14 +780,17 @@ puts "
 --verbose, -v\t\tIncrease verbosity, use twice for debugging.
 --debug\t\t\tRaise errors in plugins
 --version\t\tDisplay version information. (WhatWeb #{$VERSION})\n\n"
+
+	suggestions=""
+	suggestions << "To boost performance during long scans install the em-resolve-replace gem.\n" unless Gem.available?('em-resolv-replace')
+	suggestions << "To enable JSON logging install the json gem.\n" unless Gem.available?('json')
+	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless Gem.available?('mongo')
+	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless Gem.available?('rchardet')
+
+	unless suggestions.empty?
+		print "\nOptional dependencies:\n" + suggestions + "\n"
+	end
 end
-
-
-
-
-
-
-
 
 
 if ARGV.size==0 # faster usage info
@@ -794,6 +801,10 @@ end
 plugin_selection=nil
 input_file=nil
 output_list = []
+mongo={}
+mongo[:use_mongo_log]=false
+
+
 
 opts = GetoptLong.new(
       [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
@@ -808,7 +819,9 @@ opts = GetoptLong.new(
       [ '--log-xml', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-json', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-json-verbose', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-mongo-collection', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-mongo-host', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-i','--input-file', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
@@ -879,9 +892,26 @@ begin
 				else
 					abort("Sorry. The JSON gem is required for JSONVerbose output")
 				end
-			when '--log-mongo'
+			when '--log-mongo-collection'
 				if defined?(Mongo) and defined?(CharDet)
-			 		output_list << OutputMongo.new(arg)
+					mongo[:collection]=arg
+					mongo[:use_mongo_log]=true
+				else
+					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+				end
+
+			when '--log-mongo-host'
+				if defined?(Mongo) and defined?(CharDet)
+			 		mongo[:host]=arg
+					mongo[:use_mongo_log]=true
+				else
+					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+				end
+
+			when '--log-mongo-database'
+				if defined?(Mongo) and defined?(CharDet)
+			 		mongo[:database]=arg
+					mongo[:use_mongo_log]=true
 				else
 					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
@@ -948,11 +978,6 @@ rescue GetoptLong::Error => err
 	exit
 end
 
-### OUTPUT
-output_list << OutputBrief.new unless $QUIET # by default output brief
-output_list << OutputFull.new() if $verbose > 1 # full output if -vv
-output_list <<  OutputVerbose.new() if $verbose > 0 # full output if -v
-
 
 ### PLUGINS
 $plugins_to_use = load_plugins(plugin_selection) # load all the plugins
@@ -963,6 +988,21 @@ if $plugins_to_use.size == 0
 	exit
 end
 precompile_regular_expressions # optimise plugins
+
+
+### OUTPUT
+output_list << OutputBrief.new unless $QUIET # by default output brief
+output_list << OutputFull.new() if $verbose > 1 # full output if -vv
+output_list <<  OutputVerbose.new() if $verbose > 0 # full output if -v
+
+if mongo[:use_mongo_log]
+	if $plugins_to_use.map { |a,b| a }.include?("Charset")
+		output_list << OutputMongo.new(mongo) 
+	else
+		error("MongoDB logging requires the Charset plugin to be activated. It is not included by default for speed considerations.")
+		exit
+	end
+end
 
 
 ### TARGETS
