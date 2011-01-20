@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+
+# Version 0.2 Haiku edits by Andrew Horton
+
 Plugin.define "mysql_connect" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-19
-version "0.1"
+version "0.2"
 description "This plugin detects instances of the mysql_connect() function in PHP source code and retrieves the mysql server hostname, username and password if it's in plain-text. Alternatively, if the connection details are stored in variables it will return the variable names with possible values for those variables returned in :string=>"
 
 # 338 results for mysql_connect ext:inc  @ 2011-01-19
@@ -33,43 +36,52 @@ http://www.newinti.edu.my/mid-year-scholarship/scholarship.bak
 
 # Passive #
 # Detect instances of the mysql_connect function and extract details
-# The code is pretty ugly but it gets the job done. Improvements welcomed.
 def passive
 	m=[]
+	hup={}; hup[:host] = []; hup[:user] = []; hup[:pass] = []
+
+	stuff={
+		:host=>/mysql_connect\([\s]*([^\r^\n^\)]*),[\s]*[^\r^\n^\)]*,[\s]*[^\r^\n^\)]*\)[^\r^\n^;]*;/,
+		:user=>/mysql_connect\([\s]*[^\r^\n^\)]*,[\s]*([^\r^\n^\)]*),[\s]*[^\r^\n^\)]*\)[^\r^\n^;]*;/,
+		:pass=>/mysql_connect\([\s]*[^\r^\n^\)]*,[\s]*[^\r^\n^\)]*,[\s]*([^\r^\n^\)]*)\)[^\r^\n^;]*;/
+	}
 
 	# Detect mysql_connect() function
 	if @body =~ /mysql_connect\([^\r^\n^\)]*,[\s]*[^\r^\n^\)]*,[\s]*[^\r^\n^\)]*\)[^\r^\n^;]*;/
 
-		# Extract host(s)
-		hosts=@body.scan(/mysql_connect\([\s]*([^\r^\n^\)]*),[\s]*[^\r^\n^\)]*,[\s]*[^\r^\n^\)]*\)[^\r^\n^;]*;/)
-		hosts.each do |line|
-			m << { :model=>line }
-			if line.to_s =~ /^[\s]*\$[\w_]+/
-				r=Regexp.new("[\s]*"+Regexp.escape(line.to_s)+"[\s]*=[\s]*([^\r^\n]*);")
-				m << { :string=>@body.scan(r) } if @body =~ r
+		stuff.each do |symbol,regex|
+			@body.scan(regex).each do |line|
+				hup[symbol] << line
+				if line.to_s =~ /^[\s]*\$[\w_]+/
+					r=Regexp.new("[\s]*"+Regexp.escape(line.to_s)+"[\s]*=[\s]*([^\r^\n]*);")
+					if @body =~ r
+						found=@body.scan(r)
+						if found.size > 1
+							hup[symbol] << found.join("+") # u want to change this?
+						else
+							hup[symbol] << found.first
+						end
+					end
+				end
 			end
 		end
+		
+		unless hup[:user].empty?
+			# haiku
 
-		# Extract username(s)
-		usernames=@body.scan(/mysql_connect\([\s]*[^\r^\n^\)]*,[\s]*([^\r^\n^\)]*),[\s]*[^\r^\n^\)]*\)[^\r^\n^;]*;/)
-		usernames.each do |line|
-			m << { :firmware=>line }
-			if line.to_s =~ /^[\s]*\$[\w_]+/
-				r=Regexp.new("[\s]*"+Regexp.escape(line.to_s)+"[\s]*=[\s]*([^\r^\n]*);")
-				m << { :string=>@body.scan(r) } if @body =~ r
-			end
+			# plugin changed, edit
+			# rewritten sourcecode patterns
+			# succint, better now
+
+# hup ends up like this:
+# {:pass=>[["\"\""], ["'680dgg%y'"]], :host=>[["\"localhost\""], ["'localhost'"]], :user=>[["\"root\""], ["'root'"]]}
+
+			hup.values.each {|x| x.each {|y| y.first.gsub!(/^['"]|['"]$/,'') }} # remove the ' and "
+
+			ret=(0..hup[:host].size-1).map {|x|
+				[hup[:host][x],hup[:user][x],hup[:pass][x]].join(",") }.map {|x| '(' + x + ')' }.join(",")
+			m << { :string=>ret }
 		end
-
-		# Extract password(s)
-		passwords=@body.scan(/mysql_connect\([\s]*[^\r^\n^\)]*,[\s]*[^\r^\n^\)]*,[\s]*([^\r^\n^\)]*)\)[^\r^\n^;]*;/)
-		passwords.each do |line|
-			m << { :filepath=>line }
-			if line.to_s =~ /^[\s]*\$[\w_]+/
-				r=Regexp.new("[\s]*"+Regexp.escape(line.to_s)+"[\s]*=[\s]*([^\r^\n]*);")
-				m << { :string=>@body.scan(r) } if @body =~ r
-			end
-		end
-
 	end
 
 	m

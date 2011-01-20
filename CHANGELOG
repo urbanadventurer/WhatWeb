@@ -40,7 +40,7 @@ Version 0.4.6 Released ? 2010
 * Updated mailto plugin
 * Updated Mambo and Joomla plugins with suggestions from Aung Khant
 * Bug fix: Updated WordPress plugin
-* Added mongo support - MongoOutput and --log-mongo
+* Added MongoDB logging. Use with --log-mongo-database, --log-mongo-host and --log-mongo-collection. Only database has no default.
 * Added Charset plugin, required for conversion to UTF-8 which is required for MongoDB. Optionally requires rchardet gem
 * Added vulnerability matching support, this is still in the experimental phase
 * Added vulerability matching code to awstats.
@@ -59,6 +59,7 @@ Version 0.4.6 Released ? 2010
 * Updated plugin list and plugin info output
 * Updated Mailto plugin, renamed to Email
 * Bug fix: Now redirects for HTTP statuses 300 through 399. Previously redirected for 301,302 and 307.
+
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman

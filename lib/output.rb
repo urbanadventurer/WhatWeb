@@ -28,6 +28,18 @@ class Output
 	def close
 		@f.close unless @f.class == IO
 	end
+
+	# perform sort, uniq and join on each plugin result
+	def suj(plugin_results)
+		suj={} 
+		[:certainty, :version, :string, :account, :accounts, :model, :firmware, :modules, :filepath].map do  |thissymbol|
+			t=plugin_results.map {|x| x[thissymbol] unless x[thissymbol].class==Regexp }.compact.sort.uniq.join(",")
+			suj[thissymbol] = t
+		end
+		suj[:certainty] = plugin_results.map {|x| x[:certainty] }.compact.sort.last.to_i # this is different, it's a number
+		suj
+	end
+
 end
 
 class OutputFull < Output
@@ -43,7 +55,7 @@ class OutputVerbose < Output
 	def out(target, status, results)
 		results.each do |plugin_name,plugin_results|
 			unless plugin_results.empty?
-				@f.print plugin_name + " " * (30- plugin_name.size )+   " => "
+				@f.print plugin_name + " " * (40- plugin_name.size )+   " => "
 				matches = plugin_results.map do |pr|					
 					if pr[:name]
 						name_of_match = pr[:name]
@@ -90,16 +102,10 @@ end
 
 		results.each do |plugin_name,plugin_results|
 			unless plugin_results.empty?
-				# important info in brief mode is version, type and ?
-				# what's the highest probability for the match?
-				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
-				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq.join(",")
-				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq.join(",")
-				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq.join(",")
-				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq.join(",")
-				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq.join(",")
-				modules = plugin_results.map {|x| x[:modules] unless x[:modules].class==Regexp }.compact.sort.uniq.join(",")
-				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.compact.sort.uniq.join(",")
+				suj = suj(plugin_results)
+
+				certainty, version, string, accounts,model,firmware,modules,filepath = suj[:certainty],suj[:version],suj[:string], suj[:accounts],suj[:model],suj[:firmware],suj[:modules],suj[:filepath]
+
 
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
@@ -303,9 +309,13 @@ end
 # basically the same as OutputJSON
 class OutputMongo < Output
 
-	def initialize(collection)
-	# should make databse and collection comma or fullstop delimited, eg. test,scan
-		@db = Mongo::Connection.new("0.0.0.0").db("test") # resolve-replace means we can't connect to localhost by name
+	def initialize(s)		
+		host=s[:host] || "0.0.0.0"
+		database=s[:database] || raise("Missing MongoDB database name")
+		collection=s[:collection] || "whatweb"
+
+		# should make databse and collection comma or fullstop delimited, eg. test,scan
+		@db = Mongo::Connection.new(host).db(database) # resolve-replace means we can't connect to localhost by name and must use 0.0.0.0
 		@coll=@db.collection(collection)
 		@charset=nil
 	end
@@ -385,11 +395,15 @@ class OutputMongo < Output
 		end
 
 		@charset=results.map {|n,r| r[0][:string] if n=="Charset" }.compact.first
+		
 		unless @charset.nil? or @charset == "Failed"
 			utf8_elements!(foo) # convert foo to utf-8
 			flatten_elements!(foo)
 			@coll.insert(foo)
+		else
+			error("#{target}: Failed to detect Character set and log to MongoDB")
 		end
+
 	end
 end
 

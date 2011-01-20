@@ -64,7 +64,7 @@ def passive
 		if @body =~ /^Event Log: Writing new session log \(SSH packets mode\) to file: /
 			if @body =~ /^Event Log: Looking up host "([^\"]+)"/
 				account=@body.scan(/^Event Log: Looking up host "([^\"]+)"/)
-				m << {:account=>account}
+				m << {:accounts=>account}
 			end
 			if @body =~ /^Event Log: Server version:[\s]+([^\s]+)/
 				version=@body.scan(/^Event Log: Server version:[\s]+([^\s]+)/)

@@ -21,8 +21,16 @@ Ruby1.9 compatability
 [x]	--plugins +/tmp/moo.rb
 [x]	--plugins foobar (only select foobar)
 
+[x] currently regex's like :modules only return the first instance - should be all.
+[x] add more mongo logging options  --mongo-host  default: 0.0.0.0   --mongo-database  default: test  --mongo-collection
 
-currently regex's like :modules only return the first instance - should be all.
+
+
+update lib/output.rb verbose logging. some plugin names are longer than 30
+optino 1)  truncate output name
+option 2) wrap plugin name to two lines
+option 3) break columns with that 1 plugin name
+
 
 
 Change usage:
@@ -39,6 +47,11 @@ Change usage:
 move this block to a pre output stage, be more DRY:
   string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq.join(",")
 
+diff output plugins require - joined by , or not
+
+
+
+deprecate :account in favour of :accounts
 
 set num of max redirects, instead of hard coded value of 10
 
