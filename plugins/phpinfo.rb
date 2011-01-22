@@ -4,17 +4,27 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-21 #
+# Updated version detection
+# Updated examples
+# Added OS detection
+# Added document root detection
+# Added cpanel credentials detection
+##
 Plugin.define "phpinfo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-07 
-version "0.1"
-description "Find instances of phpinfo()"
+version "0.2"
+description "This plugin detects instances of phpinfo() results and extracts the operating system, PHP version, document root and remote cpanel credentials."
+
+# Google Results as at 2011-01-21 #
+# 52 results for intitle:"phpinfo()" "mysql.default_password" "Zend Scripting Language Engine"
+# 33 results for inurl:"phpinfo.php" intitle:"phpinfo()" "mysql.default_password"
+
+# Examples #
 examples %w|
 www.jtlnet.com/phpinfo.php
 www.lufthavn.com
 www.nskor.com
-getoutofcomputertroublefree.com
-open-com.com/info.php
-famidev.info
 www.bali-bungalows.com/info.php
 www.no-debris.org
 topheadsets.com/jk.php
@@ -26,43 +36,67 @@ lynneberg.com/mod-php/phpinfo.php
 www.superhosting.com.au
 www.cac.com.au/phpinfo.php
 www.chainwirefm.com.au/test/php/php_info.php
-confusioseco.com
 linked.viper007bond.com/local_phpinfo.htm
 www.weblinks.com.au
-www.yow778.net
 www.yourname.com.au
-sedofile1.sedorz.net
+php.ultraserver.co.uk
+www.london-pc-support.co.uk/test.php
+www.finnie.org/software/ncsa-httpd/phpinfo.php
+www.iddc.org.uk/info/dfid_policy.pdf
+www.host.sk/phpinfo.html
+hydromet.ru/docs/inf.php
+php.scripts.psu.edu/users/t/p/tpp5004/phpinfo.php
+icecreamcakes.com.au/scripts/phpinfo.php
+iskaldt.com/su-php/phpinfo.php
+www.marketingtactics.com/PHP_Tutorials/PHP_RequestInfo_Primer/Lessons/Lesson_00/phpinfo.php
+oicjapan.org/phpinfo.php
+norgesbakeriene.com/mod-php/phpinfo.php
+hosting.iptcom.net/phpinfo.php
+www.idcuk.co.uk/info.php
+members.iinet.net.au/~isabelle/public_html/public_html/phpinfo.php
+members.iinet.net.au/~isabelle/phpinfo.php
+www.hwaccess.net/phpinfo.php
+www.beloze.com/test/index.php
+www.o4e.com/public/phpinfo.php
 |
 
-matches [
-
-# johnny.ihackstuff.com/ghdb/?function=summary&cat=13
-# About 90,400 results @ 2010-06-07
-{:name=>'intitle:"phpinfo()" +"mysql.default_password" +"Zend Scripting Language Engine"',
-:certainty=>75,
-:ghdb=>'intitle:"phpinfo()" +"mysql.default_password" +"Zend Scripting Language Engine"'
-},
-
-{:name=>"default title", 
-:certainty=>75,
-:regexp=>/<title>phpinfo\(\)<\/title>/
-}
-
-]
-
+# Passive #
 def passive
         m=[]
 
-        if @body =~ /<h1 class="p">PHP Version [a-zA-Z0-9\.-_]+<\/h1>/
-                        v=@body.scan(/<h1 class="p">PHP Version ([a-zA-Z0-9\.-_]+)<\/h1>/)[0].to_s
-                        m << {:name=>"php version p", :version=>v }
-        end
-        if @body =~ /<h1>PHP Version [a-zA-Z0-9\.-_]+<\/h1>/
-                        v=@body.scan(/<h1>PHP Version ([a-zA-Z0-9\.-_]+)<\/h1>/)[0].to_s
-                        m << {:name=>"php version h1", :version=>v }
-        end
-        
-m
+	# Check if the document is a valid phpinfo() file
+        if @body =~ /<title>phpinfo\(\)<\/title>/ and (@body =~ /<h1 class="p">PHP Version [^<]{3,40}<\/h1>/ or @body =~ /<h1>PHP Version [^<]{3,40}<\/h1>/)
+
+		# PHP Version Detection
+		m << { :version=>@body.scan(/<h1 class="p">PHP Version ([^<]{3,40})<\/h1>/)[0].to_s } if @body =~ /<h1 class="p">PHP Version [^<]{3,40}<\/h1>/
+		m << { :version=>@body.scan(/<h1>PHP Version ([^<]{3,40})<\/h1>/)[0].to_s } if @body =~ /<h1>PHP Version [^<]{3,40}<\/h1>/
+
+		# OS Detection
+		m << { :string=>"OS:"+@body.scan(/<tr><td class="e">System[\s]?<\/td><td class="v">([^<]{10,256})[\s]?<\/td><\/tr>/)[0].to_s } if @body =~ /<tr><td class="e">System[\s]?<\/td><td class="v">[^<]{10,256}[\s]?<\/td><\/tr>/
+
+		# cpanel Detection
+		m << { :modules=>"cpanel" } if @body =~ /<tr><td class="e">SERVER_SOFTWARE[\s]?<\/td><td class="v">cpaneld[\s]?<\/td><\/tr>/
+
+		# REMOTE_PASSWORD
+		m << { :modules=>"cpanel", :accounts=>@body.scan(/<tr><td class="e">REMOTE_PASSWORD[\s]?<\/td><td class="v">([^<]{3,256})[\s]?<\/td><\/tr>/) } if @body =~ /<tr><td class="e">REMOTE_PASSWORD[\s]?<\/td><td class="v">[^<]{3,256}[\s]?<\/td><\/tr>/
+		m << { :modules=>"cpanel", :accounts=>@body.scan(/<tr><td class="e">[_A-Z]{3,16}\["REMOTE_PASSWORD"\]<\/td><td class="v">([^<]{3,256})<\/td><\/tr>/) } if @body =~ /<tr><td class="e">[_A-Z]{3,16}\["REMOTE_PASSWORD"\]<\/td><td class="v">[^<]{3,256}<\/td><\/tr>/
+
+		# REMOTE_USER
+		m << { :modules=>"cpanel", :accounts=>@body.scan(/<tr><td class="e">REMOTE_USER[\s]?<\/td><td class="v">([^<]{3,256})[\s]?<\/td><\/tr>/) } if @body =~ /<tr><td class="e">REMOTE_USER[\s]?<\/td><td class="v">([^<]{3,256})[\s]?<\/td><\/tr>/
+		m << { :modules=>"cpanel", :accounts=>@body.scan(/<tr><td class="e">[_A-Z]{3,16}\["REMOTE_USER"\]<\/td><td class="v">([^<]{3,256})<\/td><\/tr>/) } if @body =~ /<tr><td class="e">[_A-Z]{3,16}\["REMOTE_USER"\]<\/td><td class="v">[^<]{3,256}<\/td><\/tr>/
+
+		# REMOTE_HOST
+		m << { :modules=>"cpanel", :accounts=>@body.scan(/<tr><td class="e">REMOTE_HOST[\s]?<\/td><td class="v">([^<]{3,256})[\s]?<\/td><\/tr>/) } if @body =~ /<tr><td class="e">REMOTE_HOST[\s]?<\/td><td class="v">[^<]{3,256}[\s]?<\/td><\/tr>/
+		m << { :modules=>"cpanel", :accounts=>@body.scan(/<tr><td class="e">[_A-Z]{3,16}\["REMOTE_HOST"\]<\/td><td class="v">([^<]{3,256})<\/td><\/tr>/) } if @body =~ /<tr><td class="e">[_A-Z]{3,16}\["REMOTE_HOST"\]<\/td><td class="v">[^<]{3,256}<\/td><\/tr>/
+
+		# DOCUMENT_ROOT
+		m << { :filepath=>@body.scan(/<tr><td class="e">DOCUMENT_ROOT[\s]?<\/td><td class="v">([^<]{3,256})[\s]?<\/td><\/tr>/) } if @body =~ /<tr><td class="e">DOCUMENT_ROOT[\s]?<\/td><td class="v">[^<]{3,256}[\s]?<\/td><\/tr>/
+		m << { :filepath=>/<tr><td class="e">[_A-Z]{3,16}\["DOCUMENT_ROOT"\]<\/td><td class="v">([^<]{3,256})<\/td><\/tr>/ } if @body =~ /<tr><td class="e">[_A-Z]{3,16}\["DOCUMENT_ROOT"\]<\/td><td class="v">[^<]{3,256}<\/td><\/tr>/
+
+	end
+
+	m
+
 end
 
 end
