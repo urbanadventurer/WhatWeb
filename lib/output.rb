@@ -316,6 +316,7 @@ class OutputMongo < Output
 
 		# should make databse and collection comma or fullstop delimited, eg. test,scan
 		@db = Mongo::Connection.new(host).db(database) # resolve-replace means we can't connect to localhost by name and must use 0.0.0.0
+		auth = @db.authenticate(s[:username], s[:password]) if s[:username]
 		@coll=@db.collection(collection)
 		@charset=nil
 	end

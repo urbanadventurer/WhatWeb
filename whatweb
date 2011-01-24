@@ -753,6 +753,8 @@ puts "
 --log-mongo-database\tName of the MongoDB database
 --log-mongo-collection\tName of the MongoDB collection. Default: whatweb
 --log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
+--log-mongo-username\tMongoDB username. Default: nil
+--log-mongo-password\tMongoDB password. Default: nil
 --log-errors=FILE\tLog errors
 --user-agent, -U\tIdentify as user-agent instead of WhatWeb/#{$VERSION}.
 --max-threads, -t\tNumber of simultaneous threads. Default is #{$MAX_THREADS}.
@@ -822,6 +824,8 @@ opts = GetoptLong.new(
       [ '--log-mongo-collection', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-host', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-mongo-username', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-mongo-password', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-i','--input-file', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
@@ -911,6 +915,20 @@ begin
 			when '--log-mongo-database'
 				if defined?(Mongo) and defined?(CharDet)
 			 		mongo[:database]=arg
+					mongo[:use_mongo_log]=true
+				else
+					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+				end
+			when '--log-mongo-username'
+				if defined?(Mongo) and defined?(CharDet)
+			 		mongo[:username]=arg
+					mongo[:use_mongo_log]=true
+				else
+					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+				end
+			when '--log-mongo-password'
+				if defined?(Mongo) and defined?(CharDet)
+			 		mongo[:password]=arg
 					mongo[:use_mongo_log]=true
 				else
 					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
