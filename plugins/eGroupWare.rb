@@ -67,10 +67,10 @@ matches [
 	{ :text=>"<!-- we don't need body tags anymore, do we?) we do!!! onload!! LK -->", :version=>"1.3 - 1.6" },
 
 	# Expresso Livre # powered by eGroupWare
-	{ :text=>'<META NAME="description" CONTENT="Expresso Livre login screen, working environment powered by eGroupWare">', :modules=>"Expresso Livre" },
-	{ :text=>'<META NAME="keywords" CONTENT="Expresso Livre login screen, eGroupWare, groupware, groupware suite">', :modules=>"Expresso Livre" },
-	{ :text=>'<br><a title="eGroupWare" target="_blank" href="http://www.egroupware.org/"> Powered by eGroupWare </a></div></td>', :modules=>"Expresso Livre" },
-	{ :text=>"<TITLE>Expresso Livre - Login</TITLE>", :modules=>"Expresso Livre" }
+	{ :text=>'<META NAME="description" CONTENT="Expresso Livre login screen, working environment powered by eGroupWare">', :module=>"Expresso Livre" },
+	{ :text=>'<META NAME="keywords" CONTENT="Expresso Livre login screen, eGroupWare, groupware, groupware suite">', :module=>"Expresso Livre" },
+	{ :text=>'<br><a title="eGroupWare" target="_blank" href="http://www.egroupware.org/"> Powered by eGroupWare </a></div></td>', :module=>"Expresso Livre" },
+	{ :text=>"<TITLE>Expresso Livre - Login</TITLE>", :module=>"Expresso Livre" }
 
 ]
 

@@ -35,13 +35,13 @@ def passive
 	# Get user IDs
 	if @body =~ /<meta property="fb:admins" content="([^\"^>]+)"/
 		accounts=@body.scan(/<meta property="fb:admins" content="([^\"^>]+)"/)
-		m << { :accounts=>accounts }
+		m << { :account=>accounts }
 	end
 
 	# Get app IDs
 	if @body =~ /<meta property="fb:app_id" content="([^\"^>]+)"/
 		modules=@body.scan(/<meta property="fb:app_id" content="([^\"^>]+)"/)
-		m << { :modules=>modules }
+		m << { :module=>modules }
 	end
 
 	m

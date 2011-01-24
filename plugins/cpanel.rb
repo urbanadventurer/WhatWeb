@@ -35,7 +35,7 @@ matches [
 { :text=>'<div id="footer_images"><img src="sys_cpanel/images/powered_by.gif" />' },
 
 # Welcome page # Default text
-{ :text=>"Apache is working on your cPanel<sup>&reg;</sup> and WHM&#8482; Server", :modules=>"Apache" },
+{ :text=>"Apache is working on your cPanel<sup>&reg;</sup> and WHM&#8482; Server", :module=>"Apache" },
 
 # Login page # Default CSS
 { :regexp=>/<link rel="stylesheet" href="[^>]*\/unprotected\/cpanel\/style_optimized.css" type="text\/css" \/>/ },

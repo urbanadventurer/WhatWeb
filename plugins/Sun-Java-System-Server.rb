@@ -50,18 +50,18 @@ def passive
 
 	# Proxy-Agent
 	if @meta["Proxy-Agent"].to_s =~ /^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/
-		m << { :version=>@meta["Proxy-Agent"].scan(/^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/).to_s, :modules=>"Proxy" }
+		m << { :version=>@meta["Proxy-Agent"].scan(/^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/).to_s, :module=>"Proxy" }
 	end
 	if @meta["proxy-agent"].to_s =~ /^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/
-		m << { :version=>@meta["proxy-agent"].scan(/^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/).to_s, :modules=>"Proxy" }
+		m << { :version=>@meta["proxy-agent"].scan(/^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/).to_s, :module=>"Proxy" }
 	end
 
 	# Server
 	if @meta["Server"].to_s =~ /^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/
-		m << { :version=>@meta["Server"].scan(/^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/).to_s, :modules=>"Web" }
+		m << { :version=>@meta["Server"].scan(/^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/).to_s, :module=>"Web" }
 	end
 	if @meta["server"].to_s =~ /^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/
-		m << { :version=>@meta["server"].scan(/^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/).to_s, :modules=>"Web" }
+		m << { :version=>@meta["server"].scan(/^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/).to_s, :module=>"Web" }
 	end
 
 	m

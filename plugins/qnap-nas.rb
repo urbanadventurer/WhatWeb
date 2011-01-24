@@ -94,19 +94,19 @@ http://yaohaiping.net:8080/cgi-bin/
 matches [
 
 # Multimedia Station # URL pattern
-{ :ghdb=>"inurl:Qmultimedia +thumb_index", :modules=>"Multimedia Station" },
+{ :ghdb=>"inurl:Qmultimedia +thumb_index", :module=>"Multimedia Station" },
 
 # Photo Station module # Default title
-{ :text=>"<title>QNAP Photo Station</title>", :modules=>"Photo Station" },
+{ :text=>"<title>QNAP Photo Station</title>", :module=>"Photo Station" },
 
 # Download Station module # Default title
-{ :text=>"<title>QNAP Download Station</title>", :modules=>"Download Station" },
+{ :text=>"<title>QNAP Download Station</title>", :module=>"Download Station" },
 
 # Qmultimedia module # Default title
-{ :text=>"<TITLE>QNAP Multimedia Station (Photo Album)</TITLE>", :modules=>"Multimedia Station" },
+{ :text=>"<TITLE>QNAP Multimedia Station (Photo Album)</TITLE>", :module=>"Multimedia Station" },
 
 # Qmultimedia module # Default title
-{ :text=>"<TITLE>Multimedia Station</TITLE>", :modules=>"Multimedia Station", :certainty=>75 },
+{ :text=>"<TITLE>Multimedia Station</TITLE>", :module=>"Multimedia Station", :certainty=>75 },
 
 # Login page # Default JavaScript
 { :text=>'NavPage("http://"+ location_hostname_for_ipv6(location.hostname) +":"+ qweb_port +"/", 0);' },
@@ -118,11 +118,11 @@ matches [
 { :text=>'<table width="100%" border="0" background="/v3_menu/images/admin_header.jpg" cellpadding="0" cellspacing="0" class="12-blue">', :model=>"Uknown (not TS Series)" },
 
 # Login page # /cgi-bin/html/login.html # Extract modules
-{ :text=>'<img id="img_webserver" src="/ajax_obj/images/login_main_2.jpg" longdesc="javascript:onQuickLinkChange(2);" alt="Web Server" />', :modules=>"QWeb Server" },
-{ :text=>'<img id="img_multimedia" src="/ajax_obj/images/login_main_3.jpg" longdesc="javascript:onQuickLinkChange(3);" alt="Multimedia Station" />', :modules=>"Multimedia Station" },
-{ :text=>'<img id="img_download" src="/ajax_obj/images/login_main_4.jpg" longdesc="javascript:onQuickLinkChange(4);" alt="Download Station" />', :modules=>"Download Station" },
-{ :text=>'<img id="img_webfile" src="/ajax_obj/images/login_main_5.jpg" longdesc="javascript:onQuickLinkChange(5);" alt="Web File Manager" />', :modules=>"Web File Manager" },
-{ :text=>'<img id="img_surveillance" src="/ajax_obj/images/login_main_6.jpg" longdesc="javascript:onQuickLinkChange(6);" alt="Surveillance Station" />', :modules=>"Surveillance Station" },
+{ :text=>'<img id="img_webserver" src="/ajax_obj/images/login_main_2.jpg" longdesc="javascript:onQuickLinkChange(2);" alt="Web Server" />', :module=>"QWeb Server" },
+{ :text=>'<img id="img_multimedia" src="/ajax_obj/images/login_main_3.jpg" longdesc="javascript:onQuickLinkChange(3);" alt="Multimedia Station" />', :module=>"Multimedia Station" },
+{ :text=>'<img id="img_download" src="/ajax_obj/images/login_main_4.jpg" longdesc="javascript:onQuickLinkChange(4);" alt="Download Station" />', :module=>"Download Station" },
+{ :text=>'<img id="img_webfile" src="/ajax_obj/images/login_main_5.jpg" longdesc="javascript:onQuickLinkChange(5);" alt="Web File Manager" />', :module=>"Web File Manager" },
+{ :text=>'<img id="img_surveillance" src="/ajax_obj/images/login_main_6.jpg" longdesc="javascript:onQuickLinkChange(6);" alt="Surveillance Station" />', :module=>"Surveillance Station" },
 
 ]
 
@@ -146,15 +146,15 @@ def passive
 		end
 
 		# Get enabled modules
-		if @body =~ /<webFSEnabled><!\[CDATA\[1\]\]><\/webFSEnabled>/ then m << { :modules=>"WebFS" } end
-		if @body =~ /<QMultimediaEnabled><!\[CDATA\[1\]\]><\/QMultimediaEnabled>/ then m << { :modules=>"Multimedia Station" } end
-		if @body =~ /<MSV2Supported><!\[CDATA\[1\]\]><\/MSV2Supported>/ then m << { :modules=>"MSV2" } end
-		if @body =~ /<MSV2WebEnabled><!\[CDATA\[1\]\]><\/MSV2WebEnabled>/ then m << { :modules=>"MSV2 Web" } end
-		if @body =~ /<QDownloadEnabled><!\[CDATA\[1\]\]><\/QDownloadEnabled>/ then m << { :modules=>"Download Station" } end
-		if @body =~ /<QWebEnabled><!\[CDATA\[1\]\]><\/QWebEnabled>/ then m << { :modules=>"QWeb Server" } end
-		if @body =~ /<QWebSSLEnabled><!\[CDATA\[1\]\]><\/QWebSSLEnabled>/ then m << { :modules=>"Qweb Server SSL" } end
-		if @body =~ /<NVREnabled><!\[CDATA\[1\]\]><\/NVREnabled>/ then m << { :modules=>"NVR" } end
-		if @body =~ /<WFM2><!\[CDATA\[1\]\]><\/WFM2>/ then m << { :modules=>"Web File Manager 2" } end
+		if @body =~ /<webFSEnabled><!\[CDATA\[1\]\]><\/webFSEnabled>/ then m << { :module=>"WebFS" } end
+		if @body =~ /<QMultimediaEnabled><!\[CDATA\[1\]\]><\/QMultimediaEnabled>/ then m << { :module=>"Multimedia Station" } end
+		if @body =~ /<MSV2Supported><!\[CDATA\[1\]\]><\/MSV2Supported>/ then m << { :module=>"MSV2" } end
+		if @body =~ /<MSV2WebEnabled><!\[CDATA\[1\]\]><\/MSV2WebEnabled>/ then m << { :module=>"MSV2 Web" } end
+		if @body =~ /<QDownloadEnabled><!\[CDATA\[1\]\]><\/QDownloadEnabled>/ then m << { :module=>"Download Station" } end
+		if @body =~ /<QWebEnabled><!\[CDATA\[1\]\]><\/QWebEnabled>/ then m << { :module=>"QWeb Server" } end
+		if @body =~ /<QWebSSLEnabled><!\[CDATA\[1\]\]><\/QWebSSLEnabled>/ then m << { :module=>"Qweb Server SSL" } end
+		if @body =~ /<NVREnabled><!\[CDATA\[1\]\]><\/NVREnabled>/ then m << { :module=>"NVR" } end
+		if @body =~ /<WFM2><!\[CDATA\[1\]\]><\/WFM2>/ then m << { :module=>"Web File Manager 2" } end
 
 	end
 
@@ -186,15 +186,15 @@ def aggressive
 		end
 
 		# Get enabled modules
-		if body =~ /<webFSEnabled><!\[CDATA\[1\]\]><\/webFSEnabled>/ then m << { :modules=>"WebFS" } end
-		if body =~ /<QMultimediaEnabled><!\[CDATA\[1\]\]><\/QMultimediaEnabled>/ then m << { :modules=>"Multimedia Station" } end
-		if body =~ /<MSV2Supported><!\[CDATA\[1\]\]><\/MSV2Supported>/ then m << { :modules=>"MSV2" } end
-		if body =~ /<MSV2WebEnabled><!\[CDATA\[1\]\]><\/MSV2WebEnabled>/ then m << { :modules=>"MSV2 Web" } end
-		if body =~ /<QDownloadEnabled><!\[CDATA\[1\]\]><\/QDownloadEnabled>/ then m << { :modules=>"Download Station" } end
-		if body =~ /<QWebEnabled><!\[CDATA\[1\]\]><\/QWebEnabled>/ then m << { :modules=>"QWeb Server" } end
-		if body =~ /<QWebSSLEnabled><!\[CDATA\[1\]\]><\/QWebSSLEnabled>/ then m << { :modules=>"Qweb Server SSL" } end
-		if body =~ /<NVREnabled><!\[CDATA\[1\]\]><\/NVREnabled>/ then m << { :modules=>"NVR" } end
-		if body =~ /<WFM2><!\[CDATA\[1\]\]><\/WFM2>/ then m << { :modules=>"Web File Manager 2" } end
+		if body =~ /<webFSEnabled><!\[CDATA\[1\]\]><\/webFSEnabled>/ then m << { :module=>"WebFS" } end
+		if body =~ /<QMultimediaEnabled><!\[CDATA\[1\]\]><\/QMultimediaEnabled>/ then m << { :module=>"Multimedia Station" } end
+		if body =~ /<MSV2Supported><!\[CDATA\[1\]\]><\/MSV2Supported>/ then m << { :module=>"MSV2" } end
+		if body =~ /<MSV2WebEnabled><!\[CDATA\[1\]\]><\/MSV2WebEnabled>/ then m << { :module=>"MSV2 Web" } end
+		if body =~ /<QDownloadEnabled><!\[CDATA\[1\]\]><\/QDownloadEnabled>/ then m << { :module=>"Download Station" } end
+		if body =~ /<QWebEnabled><!\[CDATA\[1\]\]><\/QWebEnabled>/ then m << { :module=>"QWeb Server" } end
+		if body =~ /<QWebSSLEnabled><!\[CDATA\[1\]\]><\/QWebSSLEnabled>/ then m << { :module=>"Qweb Server SSL" } end
+		if body =~ /<NVREnabled><!\[CDATA\[1\]\]><\/NVREnabled>/ then m << { :module=>"NVR" } end
+		if body =~ /<WFM2><!\[CDATA\[1\]\]><\/WFM2>/ then m << { :module=>"Web File Manager 2" } end
 
 	end
 

@@ -36,7 +36,7 @@ m=[]
 
 	if @body =~ /<a href="[^"]*index.php\?option=com_/
 		modules = @body.scan(/<a href="[^"]*index.php\?option=(com_[^&"]+)/).flatten.compact.sort.uniq
-		m << {:certainty=>25,:modules=>modules}
+		m << {:certainty=>25,:module=>modules}
 	end
 
 	m << {:name=>"mosvisitor cookie" } if @meta["set-cookie"] =~ /mosvisitor=[0-9]+/ 

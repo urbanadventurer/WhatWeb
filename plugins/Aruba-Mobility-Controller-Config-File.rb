@@ -41,19 +41,19 @@ def passive
 		# Get enabled services and ports
 		if @body =~ /^netservice svc-([^\n]+)/
 			modules=@body.scan(/^netservice svc-([^\n]+)/)
-			m << { :modules=>modules }
+			m << { :module=>modules }
 		end
 
 		# Get admin username and password hash
 		if @body =~ /^mgmt-user admin ([^\n]+)/
 			accounts=@body.scan(/^mgmt-user admin ([^\n]+)/)
-			m << { :accounts=>accounts }
+			m << { :account=>accounts }
 		end
 
 		# Get WPA passphrase
 		if @body =~ /wpa-passphrase ([^\n^\ ]+)/
 			accounts=@body.scan(/wpa-passphrase ([^\n^\ ]+)/).to_s
-			m << { :accounts=>"WPA-Passphrase:"+accounts }
+			m << { :account=>"WPA-Passphrase:"+accounts }
 		end
 
 	end

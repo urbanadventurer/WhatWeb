@@ -86,27 +86,27 @@ def passive
 		# Binaries
 		if @body =~ /[\s]*FPShtmlScriptUrl="([^\"]+)"/i
 			accounts=@body.scan(/[\s]*FtpServerName="([^\"]+)"/i)
-			m << { :accounts=>accounts }
+			m << { :account=>accounts }
 		end
 		if @body =~ /[\s]*FPAuthorScriptUrl="([^\"]+)"/i
 			accounts=@body.scan(/[\s]*FPAuthorScriptUrl="([^\"]+)"/i)
-			m << { :accounts=>accounts }
+			m << { :account=>accounts }
 		end
 		if @body =~ /[\s]*FPAdminScriptUrl="([^\"]+)"/i
 			accounts=@body.scan(/[\s]*FPAdminScriptUrl="([^\"]+)"/i)
-			m << { :accounts=>accounts }
+			m << { :account=>accounts }
 		end
 
 		# XferType
 		if @body =~ /[\s]*XferType="([^\"]+)"/i
 			 modules=@body.scan(/[\s]*XferType="([^\"]+)"/i)
-			m << { :modules=>modules }
+			m << { :module=>modules }
 		end
 
 		# FTP
 		if @body =~ /[\s]*FtpServerName="([^\"]+)"/i
 			modules=@body.scan(/[\s]*FtpServerName="([^\"]+)"/i)
-			m << { :modules=>modules }
+			m << { :module=>modules }
 		end
 
 	end

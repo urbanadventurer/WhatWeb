@@ -25,12 +25,12 @@ def passive
 	m << { :version=>@meta["X-Kazaa-IP"].to_s.scan(/[\s]*([\d\.\:]+)/) } if @meta["X-Kazaa-IP"].to_s =~ /[\s]*([\d\.\:]+)/
 
 	# X-Kazaa-Network
-	m << { :modules=>@meta["x-kazaa-network"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["x-kazaa-network"].to_s =~ /[\s]*([^\r^\n]+)/
+	m << { :module=>@meta["x-kazaa-network"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["x-kazaa-network"].to_s =~ /[\s]*([^\r^\n]+)/
 	m << { :version=>@meta["X-Kazaa-Network"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["X-Kazaa-Network"].to_s =~ /[\s]*([^\r^\n]+)/
 
 	# X-Kazaa-Username
-	m << { :accounts=>@meta["x-kazaa-username"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["x-kazaa-username"].to_s =~ /[\s]*([^\r^\n]+)/
-	m << { :accounts=>@meta["X-Kazaa-Username"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["X-Kazaa-Username"].to_s =~ /[\s]*([^\r^\n]+)/
+	m << { :account=>@meta["x-kazaa-username"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["x-kazaa-username"].to_s =~ /[\s]*([^\r^\n]+)/
+	m << { :account=>@meta["X-Kazaa-Username"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["X-Kazaa-Username"].to_s =~ /[\s]*([^\r^\n]+)/
 
 	m
 

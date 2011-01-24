@@ -95,46 +95,46 @@ def passive
 	m << { :version=>@meta["server"].to_s.scan(/[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i) } if @meta["server"].to_s =~ /[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i
 
 	# About 2172233 ShodanHQ results for "server: mod_ssl"
-	m << { :modules=>"mod_ssl/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :module=>"mod_ssl/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 691816 ShodanHQ results for "server: mod_auth_passthrough"
-	m << { :modules=>"mod_auth_passthrough/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :module=>"mod_auth_passthrough/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 753880 ShodanHQ results for "server: mod_bwlimited"
-	m << { :modules=>"mod_bwlimited/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :module=>"mod_bwlimited/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 177808 ShodanHQ results for "Server: mod_jk"
-	m << { :modules=>"mod_jk/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :module=>"mod_jk/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 25076 ShodanHQ results for "Server: mod_fcgid"
-	m << { :modules=>"mod_fcgid/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :module=>"mod_fcgid/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 165191 ShodanHQ results for "Server: mod_log_bytes"
-	m << { :modules=>"mod_log_bytes/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i
+	m << { :module=>"mod_log_bytes/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i
 
 	# About 75655 ShodanHQ results for "Server: mod_gzip"
-	m << { :modules=>"mod_gzip/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i
+	m << { :module=>"mod_gzip/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i
 
 	# About 559 ShodanHQ results for "Server: mod_security"
-	m << { :modules=>"mod_security/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_security\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_security\/([^\s^\r^\n]+)/i
+	m << { :module=>"mod_security/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_security\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_security\/([^\s^\r^\n]+)/i
 
 	# About 450117 ShodanHQ results for "Server: mod_perl"
-	m << { :modules=>"mod_perl/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_perl\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_perl\/([^\s^\r^\n]+)/i
+	m << { :module=>"mod_perl/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_perl\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_perl\/([^\s^\r^\n]+)/i
 
 	# About 154334 ShodanHQ results for "Server: mod_python"
-	m << { :modules=>"mod_python/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_python\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_python\/([^\s^\r^\n]+)/i
+	m << { :module=>"mod_python/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_python\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_python\/([^\s^\r^\n]+)/i
 
 	# About 87454 ShodanHQ results for "Server: mod_fastcgi"
-	m << { :modules=>"mod_fastcgi/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_fastcgi\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_fastcgi\/([^\s^\r^\n]+)/i
+	m << { :module=>"mod_fastcgi/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_fastcgi\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_fastcgi\/([^\s^\r^\n]+)/i
 
 	# About 45696 ShodanHQ results for "Server: mod_psoft_traffic"
-	m << { :modules=>"mod_psoft_traffic/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_psoft_traffic\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_psoft_traffic\/([^\s^\r^\n]+)/i
+	m << { :module=>"mod_psoft_traffic/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_psoft_traffic\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_psoft_traffic\/([^\s^\r^\n]+)/i
 
 	# About 34854 ShodanHQ results for "Server: mod_macro"
-	m << { :modules=>"mod_macro/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_macro\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_macro\/([^\s^\r^\n]+)/i
+	m << { :module=>"mod_macro/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_macro\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_macro\/([^\s^\r^\n]+)/i
 
 	# About 61692 ShodanHQ results for "Server: mod_throttle"
-	m << { :modules=>"mod_throttle/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_throttle\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_throttle\/([^\s^\r^\n]+)/i
+	m << { :module=>"mod_throttle/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_throttle\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_throttle\/([^\s^\r^\n]+)/i
 
 	m
 

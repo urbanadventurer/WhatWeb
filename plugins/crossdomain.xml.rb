@@ -26,10 +26,10 @@ matches [
 	# Default text
 	{ :text=>'<cross-domain-policy>', :path=>"crossdomain.xml" },
 
-	{ :text=>'<site-control permitted-cross-domain-policies="none"/>', :string=>"none", :modules=>"Permit", :path=>"crossdomain.xml" },
+	{ :text=>'<site-control permitted-cross-domain-policies="none"/>', :string=>"none", :module=>"Permit", :path=>"crossdomain.xml" },
 
 	# Extract allowed domains
-	{ :string=>/<allow-access-from domain="([^"]+)"/, :regexp_offset=>0, :path=>"crossdomain.xml", :modules=>"Allow" },
+	{ :string=>/<allow-access-from domain="([^"]+)"/, :regexp_offset=>0, :path=>"crossdomain.xml", :module=>"Allow" },
 
 ]
 

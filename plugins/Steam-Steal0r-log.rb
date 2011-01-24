@@ -22,7 +22,7 @@ def passive
 
 		if @body =~ /^ Possible Accountnames: [^\r^\n]+[\s]+Password: ([^\r^\n]+)/
 			accounts=@body.scan(/^ Possible Accountnames: [^\r^\n]+[\s]+Password: ([^\r^\n]+)/)
-			m << {:accounts=>accounts}
+			m << {:account=>accounts}
 		end
 
 	end

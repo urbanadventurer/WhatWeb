@@ -56,7 +56,7 @@ matches [
 	{ :model=>/<dt>Date of birth<\/dt>[\W]*<dd>([0-9\/]{10})[\W]*</, :regexp_offset=>0 },
 
 	# Friends :
-	{ :filepath=>/<a href="\/([^\"]*)" title="[^\"]*" class="nick person" rel="friend">/, :regexp_offset=>0, :modules=>"Public Profile" },
+	{ :filepath=>/<a href="\/([^\"]*)" title="[^\"]*" class="nick person" rel="friend">/, :regexp_offset=>0, :module=>"Public Profile" },
 
 ]
 

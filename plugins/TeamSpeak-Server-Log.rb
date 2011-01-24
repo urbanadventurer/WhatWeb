@@ -43,7 +43,7 @@ def passive
 
 		if @body =~ /^[0-9]{2}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2},WARNING,Info,SERVER,	[super]*admin account info: username: [^\s]+ password: ([^\r^\n]+)/
 			accounts=@body.scan(/^[0-9]{2}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2},WARNING,Info,SERVER,	[super]*admin account info: username: [^\s]+ password: ([^\r^\n]+)/)
-			m << {:accounts=>accounts}
+			m << {:account=>accounts}
 		end
 
 	end

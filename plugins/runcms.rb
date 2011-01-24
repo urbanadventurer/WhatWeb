@@ -44,7 +44,7 @@ www.agifish.com.vn/home_en/modules/photo/viewcat.php?cid=1
 matches [
 
 # 57 results @ 2010-07-11
-{ :ghdb=>'"powered by RunCMS" -Vulnerability -exploit inurl:modules inurl:viewcat.php' },
+{ :ghdb=>'"powered by RunCMS" -Vulnerability -exploit inurl:module inurl:viewcat.php' },
 
 ]
 

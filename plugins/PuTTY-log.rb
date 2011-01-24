@@ -49,22 +49,22 @@ def passive
 		# Telnet
 		if @body =~ /^Connected to ([^\s]+)[\s]+Escape character is '\^\]'/
 			modules=@body.scan(/^Connected to ([^\s]+)[\s]+Escape character is '\^\]'/)
-			m << {:modules=>modules}
+			m << {:module=>modules}
 		end
 
 		# SSH
 		if @body =~ /^([0-9a-zA-Z\-\.\@_]+)'s password:/
 			modules=@body.scan(/^([0-9a-zA-Z\-\.\@_]+)'s password:/)
-			m << {:modules=>modules}
+			m << {:module=>modules}
 		elsif @body =~ /^login as: ([0-9a-zA-Z\-\._]+)/
 			modules=@body.scan(/^login as: ([0-9a-zA-Z\-\._]+)/)
-			m << {:modules=>modules}
+			m << {:module=>modules}
 		end
 
 		if @body =~ /^Event Log: Writing new session log \(SSH packets mode\) to file: /
 			if @body =~ /^Event Log: Looking up host "([^\"]+)"/
 				account=@body.scan(/^Event Log: Looking up host "([^\"]+)"/)
-				m << {:accounts=>account}
+				m << {:account=>account}
 			end
 			if @body =~ /^Event Log: Server version:[\s]+([^\s]+)/
 				version=@body.scan(/^Event Log: Server version:[\s]+([^\s]+)/)

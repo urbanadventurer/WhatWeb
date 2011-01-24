@@ -106,7 +106,7 @@ class Plugin
 				r << match if @status == match[:status]
 			end		
 
-			[:account,:accounts,:version,:model,:string,:firmware,:filepath].each do |symbol|
+			[:account,:version,:module,:model,:string,:firmware,:filepath].each do |symbol|
 		                if !match[symbol].nil? and match[symbol].class==Regexp
 		                        if @body =~ match[:regexp_compiled]
 						regexpmatch = @body.scan(match[:regexp_compiled])
@@ -190,7 +190,7 @@ class Plugin
 					r << match if @status == match[:status]
 				end
 
-				[:account,:accounts,:version,:model,:string,:firmware,:filepath].each do |symbol|
+				[:account,:module,:version,:model,:string,:firmware,:filepath].each do |symbol|
 				        if !match[symbol].nil? and match[symbol].class==Regexp
 				                if @body =~ match[:regexp_compiled]
 							regexpmatch = @body.scan(match[:regexp_compiled])

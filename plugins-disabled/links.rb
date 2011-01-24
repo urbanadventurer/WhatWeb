@@ -24,10 +24,10 @@ def passive
 	m=[]
 
 	# href
-	m << { :modules=>@body.scan(/<[^>]+href[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i).uniq } if @body =~ /<[^>]+href[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i
+	m << { :module=>@body.scan(/<[^>]+href[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i).uniq } if @body =~ /<[^>]+href[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i
 
 	# src
-	m << { :modules=>@body.scan(/<[^>]+src[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i).uniq } if @body =~ /<[^>]+src[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i
+	m << { :module=>@body.scan(/<[^>]+src[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i).uniq } if @body =~ /<[^>]+src[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i
 
 	# form action
 	m << { :string=>@body.scan(/<[^>]*form[^>]+action[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i).uniq } if @body =~ /<[^>]*form[^>]+action[\s]*=[\s]*['|"]?([^\"^\']+)[^>]*>/i

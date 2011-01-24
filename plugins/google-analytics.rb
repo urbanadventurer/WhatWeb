@@ -22,7 +22,7 @@ def passive
 		
 		result=@body.scan(/_uacct = "UA-([0-9]+)-[0-9]+";/)
 		accounts = result.flatten if result
-		m << {:name=>"urchin.js",:accounts=>accounts.sort.uniq, :string=>"urchin"}
+		m << {:name=>"urchin.js",:account=>accounts.sort.uniq, :string=>"urchin"}
 	end
 	
 	# detects google analytics GA version
@@ -32,14 +32,14 @@ def passive
 	if @body =~ /var pageTracker = _gat._getTracker\("UA-([0-9]+)-([0-9]+)"\);/
 		result=@body.scan(/var pageTracker = _gat._getTracker\("UA-([0-9]+)-([0-9]+)"\);/)
 		accounts = result.map {|x| x[0] }
-		m << {:name=>"pageTracker = ...UA-123-1231", :string=>"GA",:accounts=>accounts.sort.uniq}
+		m << {:name=>"pageTracker = ...UA-123-1231", :string=>"GA",:account=>accounts.sort.uniq}
 	end
 	
 	if @body =~ /window.google_analytics_uacct = "UA-[0-9]+-[0-9]+";/
 		match=true
 		result=@body.scan(/window.google_analytics_uacct = "UA-([0-9]+)-([0-9]+)";/)
 		accounts = result.map {|x| x[0] }		
-		m << {:name=>"window.google_analytics_uacct = UA-123-1231",:string=>"GA", :accounts=>accounts.sort.uniq}
+		m << {:name=>"window.google_analytics_uacct = UA-123-1231",:string=>"GA", :account=>accounts.sort.uniq}
 	end
 	
 	m

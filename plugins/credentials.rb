@@ -48,7 +48,7 @@ def passive
 		# user{2-255}:pass{1-80} combination # sha1, md4, md5, plaintext
 		if @body =~ /^([0-9a-z\-_]{2,255}:[^\r^\n^\s^:]{1,80})[\r\n\s:]*/
 			accounts=@body.scan(/^([0-9a-z\-_]{2,255}:[^\r^\n^\s^:]{1,80})[\r\n\s:]*/)
-			m << { :accounts=>accounts }
+			m << { :account=>accounts }
 		end
 	end
 	m
