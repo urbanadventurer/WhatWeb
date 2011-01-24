@@ -55,7 +55,13 @@ class OutputVerbose < Output
 	def out(target, status, results)
 		results.each do |plugin_name,plugin_results|
 			unless plugin_results.empty?
-				@f.print plugin_name + " " * (40- plugin_name.size )+   " => "
+
+				if plugin_name.size > 40
+					@f.print[0..40] + " => "
+				else
+					@f.print plugin_name + " " * (40- plugin_name.size )+   " => "
+				end
+
 				matches = plugin_results.map do |pr|					
 					if pr[:name]
 						name_of_match = pr[:name]
