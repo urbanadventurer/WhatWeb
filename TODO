@@ -25,23 +25,11 @@ Ruby1.9 compatability
 [x] add more mongo logging options  --mongo-host  default: 0.0.0.0   --mongo-database  default: test  --mongo-collection
 [x] color for :accounts=>//
 [x] add mongo username and password
-
-change :symbols to singular. :account,:module, etc
-
-
-change all plugins.
-
-
-
-update lib/output.rb verbose logging. some plugin names are longer than 30
-optino 1)  truncate output name
-option 2) wrap plugin name to two lines
-option 3) break columns with that 1 plugin name
-
+[x] change :symbols to singular. :account,:module, etc. update plugins.
+[x] update lib/output.rb verbose logging. some plugin names are longer than 30
 
 
 Change usage:
-
 [x] --follow-redirect never,http-only,meta-only,same-site,same-domain,always (default: always)
 	same-domain --	? use tld.rb from urlcrazy ??
 
