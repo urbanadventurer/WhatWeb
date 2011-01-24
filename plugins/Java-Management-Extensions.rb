@@ -35,7 +35,7 @@ def passive
 	# Extract username and password
 	if @body =~ /jmx.username=([^,^\}^\s^\n]+)/ and @body =~ /jmx.password=([^,^\}^\s^\n]+)/
 		modules=@body.scan(/jmx.username=([^,^\}^\s^\n]+)/)[0][0]+":"+@body.scan(/jmx.password=([^,^\}^\s^\n]+)/)[0][0]
-		m << {:modules=>modules}
+		m << {:module=>modules}
 	end
 
 	m

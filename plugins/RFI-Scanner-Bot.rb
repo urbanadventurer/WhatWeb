@@ -53,28 +53,28 @@ def passive
 		# Servers
 		if @body =~ /^my @servers[\s]*=[\s]*\(([^\)]+)/
 			modules=@body.scan(/^my @servers[\s]*=[\s]*\(([^\)]+)/)
-			m << {:modules=>modules}
+			m << {:module=>modules}
 		end
 
 		# Port
 		if @body =~ /^my @ports[\s]*=[\s]*\(([^\)]+)/
 			modules=@body.scan(/^my @ports[\s]*=[\s]*\(([^\)]+)/)
-			m << {:modules=>modules}
+			m << {:module=>modules}
 		elsif @body =~ /^[\s]+port[\s]*=>[\s]*([^\r^\n]+)/
 			modules=@body.scan(/^[\s]+port[\s]*=>[\s]*([^\r^\n]+)/)
-			m << {:modules=>modules}
+			m << {:module=>modules}
 		end
 
 		# Channels
 		if @body =~ /^[\s]+chan[\s]*=>[\s]*([^\r^\n]+)/
 			modules=@body.scan(/^[\s]+chan[\s]*=>[\s]*([^\r^\n]+)/)
-			m << {:modules=>modules}
+			m << {:module=>modules}
 		end
 
 		# Accounts
 		if @body =~ /^[\s]*pass[\s]*=>[\s]*([^,^\r^\n]+)/
 			accounts=@body.scan(/^[\s]*pass[\s]*=>[\s]*([^,^\r^\n]+)/)
-			m << {:accounts=>accounts}
+			m << {:account=>accounts}
 		end
 
 		# Version

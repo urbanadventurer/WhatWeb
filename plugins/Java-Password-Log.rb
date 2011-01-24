@@ -34,7 +34,7 @@ def passive
 
 		if @body =~ /^name: = "([^\"]+)";[\r]?\npassword: = "([^\"]+)";[\r]?\nURL: = "([^\"]+)";/
 			modules=@body.scan(/^name: = "([^\"]+)";[\r]?\npassword: = "([^\"]+)";[\r]?\nURL: = "([^\"]+)";/)
-			m << {:modules=>modules}
+			m << {:module=>modules}
 		end
 
 	end

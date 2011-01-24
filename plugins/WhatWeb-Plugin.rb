@@ -29,7 +29,7 @@ def passive
 		# Extract plugin name
 		if @body =~ /^Plugin.define "([^\"]+)" do/
 			modules=@body.scan(/^Plugin.define "([^\"]+)" do/)
-			m<<{:modules=>modules}
+			m<<{:module=>modules}
 		end
 
 	end

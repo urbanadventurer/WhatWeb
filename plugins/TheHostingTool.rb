@@ -82,7 +82,7 @@ def passive
 	# Module detection
 	if @body =~ /<td align="center"><strong>([^<]+)<\/strong><\/td>/
 		modules=@body.scan(/<td align="center"><strong>([^<]+)<\/strong><\/td>/)
-		m << { :modules=>modules }
+		m << { :module=>modules }
 	end
 
 	m

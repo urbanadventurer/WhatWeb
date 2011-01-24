@@ -10,7 +10,7 @@
 # Version 0.3
 # changed DotNetNuke� to DotNetNuke.{3} 
 # Version 0.4
-# uses :modules now
+# uses :module now
 
 Plugin.define "DotNetNuke" do
 author "Andrew Horton"
@@ -94,7 +94,7 @@ def passive
 
 	if @body =~ /"\/DesktopModules\/[^\/]+/
 		modules = @body.scan(/"\/DesktopModules\/([^\/]+)/).flatten.compact.sort.uniq
-		m << {:name=>"passive",:modules=>modules}
+		m << {:name=>"passive",:module=>modules}
 	end	
 	
 # copyright year

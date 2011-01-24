@@ -47,7 +47,7 @@ def passive
 	m << { :name=>"IBM_HTTP_Server" } if @meta["Server"].to_s =~ /^[\s]*IBM_HTTP_Server/
 
 	# srvrname
-	m << { :modules=>@meta["srvrname"].to_s } unless @meta["srvrname"].nil?
+	m << { :module=>@meta["srvrname"].to_s } unless @meta["srvrname"].nil?
 
 	m
 

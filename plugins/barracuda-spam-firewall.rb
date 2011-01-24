@@ -38,7 +38,7 @@ spampolice.nijinet.ad.jp:8000/cgi-bin/index.cgi
 matches [
 
 # Default title
-{ :text=>'<title>Barracuda Spam & Virus Firewall: Welcome</title>', :modules=>"Virus Firewall" },
+{ :text=>'<title>Barracuda Spam & Virus Firewall: Welcome</title>', :module=>"Virus Firewall" },
 
 # Default title and stylesheet HTML
 { :text=>'<title>Barracuda Spam Firewall: Welcome</title><link rel="stylesheet" type="text/css" href="/barracuda.css">' },
@@ -50,7 +50,7 @@ matches [
 { :text=>'<a href="http://www.barracudanetworks.com?track=asg"><img src="/images/powered_by.gif" border=0' },
 
 # Barracuda Spam & Virus Firewall
-{ :version=>/<link rel="stylesheet" type="text\/css" href="\/barracuda.css\?v=([\d\.]+)">/, :regexp_offset=>0, :modules=>"Virus Firewall" },
+{ :version=>/<link rel="stylesheet" type="text\/css" href="\/barracuda.css\?v=([\d\.]+)">/, :regexp_offset=>0, :module=>"Virus Firewall" },
 
 # Barracuda Spam Firewall
 { :version=>/<script language=javascript src="\/js_functions.([\d\.]+).js" type="text\/javascript"><\/script>/, :regexp_offset=>0 },

@@ -8,7 +8,7 @@
 # Version 0.2
 # remove :certainty
 # Version 0.3
-# uses :modules
+# uses :module
 
 Plugin.define "PHPNuke" do
 author "Andrew Horton"
@@ -63,7 +63,7 @@ def passive
 	if @body =~ /<a href="[^"]*modules.php\?name=[a-zA-Z0-9_]+[^"]*">/
 #		pp @body.scan(/<a href="modules.php\?name=([a-zA-Z0-9_]+)">[a-zA-Z0-9_]+<\/a>/)
 		modules = @body.scan(/<a href="[^"]*modules.php\?name=([a-zA-Z0-9_]+)[^"]*">/).flatten.compact.sort.uniq.join(",")
-		m << {:certainty=>75,:modules=>modules}
+		m << {:certainty=>75,:module=>modules}
 	end
 	m
 end

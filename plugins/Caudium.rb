@@ -34,7 +34,7 @@ def passive
 	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /^[\s]*Caudium[^\s^\r^\n]*/i
 
 	# Pike Version Detection # HTTP X-Got-Fish Header
-	m << { :modules=>"Pike:"+@meta["x-got-fish"].to_s.scan(/^[\s]*Pike v([^\r^\n]+)/i).to_s } if @meta["x-got-fish"].to_s =~ /^[\s]*Pike v([^\r^\n]+)/i
+	m << { :module=>"Pike:"+@meta["x-got-fish"].to_s.scan(/^[\s]*Pike v([^\r^\n]+)/i).to_s } if @meta["x-got-fish"].to_s =~ /^[\s]*Pike v([^\r^\n]+)/i
 
 	m
 

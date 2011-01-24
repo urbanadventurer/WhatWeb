@@ -31,7 +31,7 @@ def passive
 	m << { :version=>@meta["server"].scan(/Zope\/\(([^,]*)/) } if @meta["server"] =~ /Zope\/\(([^,]*)/
 
 	# Python # HTTP Server Header
-	m << { :modules=>@meta["server"].scan(/Zope\/\([^,]*, ([^,]*)/) } if @meta["server"] =~ /Zope\/\([^,]*, ([^,]*)/
+	m << { :module=>@meta["server"].scan(/Zope\/\([^,]*, ([^,]*)/) } if @meta["server"] =~ /Zope\/\([^,]*, ([^,]*)/
 
 	# OS # HTTP Server Header
 	m << { :string=>@meta["server"].scan(/Zope\/\([^,]*, [^,]*, ([^\)^\s]*)/) } if @meta["server"] =~ /Zope\/\([^,]*, [^,]*, ([^\)^\s]*)/

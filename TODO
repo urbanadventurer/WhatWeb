@@ -23,6 +23,13 @@ Ruby1.9 compatability
 
 [x] currently regex's like :modules only return the first instance - should be all.
 [x] add more mongo logging options  --mongo-host  default: 0.0.0.0   --mongo-database  default: test  --mongo-collection
+[x] color for :accounts=>//
+[x] add mongo username and password
+
+change :symbols to singular. :account,:module, etc
+
+
+change all plugins.
 
 
 

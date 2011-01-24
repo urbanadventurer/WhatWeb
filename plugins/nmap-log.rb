@@ -44,7 +44,7 @@ def passive
 		# Operating System
 		if @body =~ /Remote operating system guess: ([^\r^\n]*)/
 			accounts=@body.scan(/^Remote operating system guess: ([^\r^\n]*)/)[0][0]
-			m << { :accounts=>accounts }
+			m << { :account=>accounts }
 		end
 
 		# Ports
@@ -52,7 +52,7 @@ def passive
 
 			if @body =~ /^([\d]{1,5})\/([udp|tcp]{3})[\s]+open[\s]+([a-z]+)/
 				modules=@body.scan(/^([\d]{1,5})\/([udp|tcp]{3})[\s]+open[\s]+([a-z]+)/)
-				m << { :modules=>modules }
+				m << { :module=>modules }
 			end
 
 		end

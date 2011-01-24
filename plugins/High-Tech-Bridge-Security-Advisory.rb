@@ -25,21 +25,21 @@ www.htbridge.ch/advisory/authentication_bypass_in_phpliteradmin.html
 matches [
 
 	# Vulnerability Type # Path Disclosure
-	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%><a href="http://www.htbridge.ch/security_glossary/path_disclosure.html">Path disclosure</a></td></tr>', :modules=>"Path Disclosure" },
+	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%><a href="http://www.htbridge.ch/security_glossary/path_disclosure.html">Path disclosure</a></td></tr>', :module=>"Path Disclosure" },
 
 	# Vulnerability Type # SQL Injection
-	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%><a href="http://www.htbridge.ch/security_glossary/sql_injection.html">SQL Injection</a></td></tr>', :modules=>"SQL Injection" },
+	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%><a href="http://www.htbridge.ch/security_glossary/sql_injection.html">SQL Injection</a></td></tr>', :module=>"SQL Injection" },
 
 	# Vulnerability Type # XSS (Cross Site Scripting)
-	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%><a href="http://www.htbridge.ch/security_glossary/xss.html">XSS (Cross Site Scripting)</a></td></tr>', :modules=>"XSS (Cross Site Scripting)" },
+	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%><a href="http://www.htbridge.ch/security_glossary/xss.html">XSS (Cross Site Scripting)</a></td></tr>', :module=>"XSS (Cross Site Scripting)" },
 
 	# Vulnerability Type # Local File Inclusion
-	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%>Local File Inclusion</td></tr>', :modules=>"Local File Inclusion" },
+	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%>Local File Inclusion</td></tr>', :module=>"Local File Inclusion" },
 
 	# Vulnerability Type # Directory Traversal
-	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%>Directory Traversal Vulnerability</td></tr>', :modules=>"Directory Traversal" },
+	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%>Directory Traversal Vulnerability</td></tr>', :module=>"Directory Traversal" },
 	# Vulnerability Type # Authentication Bypass
-	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%>Authentication bypass</td></tr>', :modules=>"Authentication Bypass" },
+	{ :text=>'<tr><td width=21%><b>Vulnerability Type:</b></td><td width=79%>Authentication bypass</td></tr>', :module=>"Authentication Bypass" },
 
 ]
 

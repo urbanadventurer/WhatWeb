@@ -28,13 +28,13 @@ def passive
 		# Disallow
 		if @body =~ /^Disallow:[\s]+([^\r^\n]*)/i
 			modules=@body.scan(/^Disallow:[\s]+([^\r^\n]*)/i)
-			m << { :modules=>modules.uniq }
+			m << { :module=>modules.uniq }
 		end
 
 		# Allow
 		if @body =~ /^Allow:[\s]+([^\r^\n]*)/i
 			modules=@body.scan(/^Allow:[\s]+([^\r^\n]*)/i)
-			m << { :modules=>modules.uniq }
+			m << { :module=>modules.uniq }
 		end
 
 	end
@@ -53,13 +53,13 @@ def aggressive
 	# Disallow
 	if body =~ /^Disallow:[\s]+([^\r^\n]*)/i
 		modules=body.scan(/^Disallow:[\s]+([^\r^\n]*)/i)
-		m << { :modules=>modules.uniq }
+		m << { :module=>modules.uniq }
 	end
 
 	# Allow
 	if body =~ /^Allow:[\s]+([^\r^\n]*)/i
 		modules=body.scan(/^Allow:[\s]+([^\r^\n]*)/i)
-		m << { :modules=>modules.uniq }
+		m << { :module=>modules.uniq }
 	end
 
 	m

@@ -25,19 +25,19 @@ www.asp.net
 matches [
 
 # Site Not Found # From iis-site-not-found.rb by Andrew Horton
-{ :text=>"<html><head><title>Site Not Found</title></head>.<body>No web site is configured at this address.</body></html>", :modules=>"Site Not Found" },
+{ :text=>"<html><head><title>Site Not Found</title></head>.<body>No web site is configured at this address.</body></html>", :module=>"Site Not Found" },
 
 # Under Construction # 5.x # Error Text # From iis-underconstruction.rb by Andrew Horton
-{ :text=>'<id id="Comment1"><!--Problem--></id><id id="errorText">Under Construction</id></h1>', :modules=>"Under Construction" },
+{ :text=>'<id id="Comment1"><!--Problem--></id><id id="errorText">Under Construction</id></h1>', :module=>"Under Construction" },
 
 # Under Construction # 6.x # Error Text # From iis-underconstruction.rb by Andrew Horton
-{ :text=>'<P ID=Comment1><!--Problem--><P ID="errorText">Under Construction</h1>', :modules=>"Under Construction" },
+{ :text=>'<P ID=Comment1><!--Problem--><P ID="errorText">Under Construction</h1>', :module=>"Under Construction" },
 
 # Under Construction # 6.x # If you are the Web site administrator text # From iis-underconstruction.rb by Andrew Horton
-{ :text=>'If you are the Web site administrator and feel you have received this message in error, please see &quot;Enabling and Disabling Dynamic Content&quot; in IIS Help.', :modules=>"Under Construction" },
+{ :text=>'If you are the Web site administrator and feel you have received this message in error, please see &quot;Enabling and Disabling Dynamic Content&quot; in IIS Help.', :module=>"Under Construction" },
 
 # Under Construction # 7.x # Welcome image link # From iis-underconstruction.rb by Andrew Horton
-{ :text=>'<a href="http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409"><img src="welcome.png" alt="IIS7" width="571" height="411" /></a>', :modules=>"Under Construction" },
+{ :text=>'<a href="http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409"><img src="welcome.png" alt="IIS7" width="571" height="411" /></a>', :module=>"Under Construction" },
 
 ]
 

@@ -32,7 +32,7 @@ class Output
 	# perform sort, uniq and join on each plugin result
 	def suj(plugin_results)
 		suj={} 
-		[:certainty, :version, :string, :account, :accounts, :model, :firmware, :modules, :filepath].map do  |thissymbol|
+		[:certainty, :version, :string, :account, :model, :firmware, :module, :filepath].map do  |thissymbol|
 			t=plugin_results.map {|x| x[thissymbol] unless x[thissymbol].class==Regexp }.compact.sort.uniq.join(",")
 			suj[thissymbol] = t
 		end
@@ -68,8 +68,8 @@ class OutputVerbose < Output
 					stuff << "string: #{pr[:string]}" if pr[:string]
 					stuff << "model: #{pr[:model]}" if pr[:model]
 					stuff << "firmware: #{pr[:firmware]}" if pr[:firmware]
-					stuff << "modules: #{pr[:modules]}" if pr[:modules]
-					stuff << "accounts: #{pr[:accounts]}" if pr[:accounts]
+					stuff << "modules: #{pr[:module]}" if pr[:module]
+					stuff << "accounts: #{pr[:account]}" if pr[:account]
 					stuff << "filepath: #{pr[:filepath]}" if pr[:filepath]
 					stuff << "url: #{pr[:url]}" if pr[:url]
 					name_of_match + ( !stuff.empty? ? " (" + stuff.join(",") +")" : "" )
@@ -104,7 +104,7 @@ end
 			unless plugin_results.empty?
 				suj = suj(plugin_results)
 
-				certainty, version, string, accounts,model,firmware,modules,filepath = suj[:certainty],suj[:version],suj[:string], suj[:accounts],suj[:model],suj[:firmware],suj[:modules],suj[:filepath]
+				certainty, version, string, accounts,model,firmware,modules,filepath = suj[:certainty],suj[:version],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
 
 
 				# be more DRY		
@@ -132,7 +132,7 @@ end
 					 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
 					   coloured_plugin + (!version.empty? ? "["+green(escape(version))+"]" : "") +
 					   (!string.empty? ? "[" + coloured_string+"]" : "") +
-					   (!accounts.empty? ? "["+ escape(accounts)+"]" : "" ) +
+					   (!accounts.empty? ? "["+ cyan(escape(accounts))+"]" : "" ) +
 					   (!model.empty? ? "["+ dark_green(escape(model))+"]" : "" ) +
 					   (!firmware.empty? ? "["+ dark_green(escape(firmware))+"]" : "" ) +
 					   (!filepath.empty? ? "["+ dark_green(escape(filepath))+"]" : "" ) +
@@ -199,16 +199,16 @@ class OutputXML < Output
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
-				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq.join(",")
+				accounts = plugin_results.map {|x| [x[:account]] }.flatten.compact.sort.uniq.join(",")
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.compact.sort.uniq.join(",")
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.compact.sort.uniq.join(",")
-				modules = plugin_results.map {|x| x[:modules] unless x[:modules].class==Regexp}.flatten.compact.sort.uniq
+				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq
 				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
 
 				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
 				version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
 				string.map   {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
-				accounts.map {|x| @f.puts "\t\t<accounts>#{escape(x)}</accounts>" }
+				accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
 				model.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
 				firmware.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
 				filepath.map {|x| @f.puts "\t\t<filepath>#{escape(x)}</filepath>" }
@@ -276,20 +276,20 @@ class OutputJSON < Output
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
-				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| [x[:account]] }.flatten.compact.sort.uniq
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
-				modules = plugin_results.map {|x| x[:modules] unless x[:modules].class==Regexp }.compact.sort.uniq
+				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.compact.sort.uniq
 				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.compact.sort.uniq
 
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?
 				thisplugin[:string] = string unless string.empty?
-				thisplugin[:accounts] = accounts unless accounts.empty?
+				thisplugin[:account] = accounts unless accounts.empty?
 				thisplugin[:model] = model unless model.empty?
 				thisplugin[:firmware] = firmware unless firmware.empty?
-				thisplugin[:modules] = modules unless modules.empty?
+				thisplugin[:module] = modules unless modules.empty?
 				thisplugin[:filepath] = filepath unless filepath.empty?
 #				foo[:plugins] << thisplugin
 				foo[:plugins][plugin_name.to_sym] = thisplugin
@@ -316,6 +316,7 @@ class OutputMongo < Output
 
 		# should make databse and collection comma or fullstop delimited, eg. test,scan
 		@db = Mongo::Connection.new(host).db(database) # resolve-replace means we can't connect to localhost by name and must use 0.0.0.0
+		auth = @db.authenticate(s[:username], s[:password]) if s[:username]
 		@coll=@db.collection(collection)
 		@charset=nil
 	end
@@ -375,19 +376,19 @@ class OutputMongo < Output
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
-				accounts = plugin_results.map {|x| [x[:account],x[:accounts] ] }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| [x[:account] ] }.flatten.compact.sort.uniq
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
-				modules = plugin_results.map {|x| x[:modules] unless x[:modules].class==Regexp }.compact.sort.uniq
+				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.compact.sort.uniq
 				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.compact.sort.uniq
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?
 				thisplugin[:string] = string unless string.empty?
-				thisplugin[:accounts] = accounts unless accounts.empty?
+				thisplugin[:account] = accounts unless accounts.empty?
 				thisplugin[:model] = model unless model.empty?
 				thisplugin[:firmware] = firmware unless firmware.empty?
-				thisplugin[:modules] = modules unless modules.empty?
+				thisplugin[:module] = modules unless modules.empty?
 				thisplugin[:filepath] = filepath unless filepath.empty?
 #				foo[:plugins] << thisplugin
 				foo[:plugins][plugin_name.to_sym] = thisplugin

@@ -33,7 +33,7 @@ def passive
 	m=[]
 
 	# Allow HTTP Header
-	m << { :modules=>@meta["allow"].to_s } unless @meta["allow"].nil?
+	m << { :module=>@meta["allow"].to_s } unless @meta["allow"].nil?
 
 	m
 

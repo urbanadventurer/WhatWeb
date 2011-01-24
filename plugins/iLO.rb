@@ -66,7 +66,7 @@ def passive
 
 		if @body =~ /^nicName="([^\"]+)";/
 			modules=@body.scan(/^nicName="([^\"]+)";/)
-			m << {:modules=>modules}
+			m << {:module=>modules}
 		end
 
 	end

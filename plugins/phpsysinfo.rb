@@ -71,7 +71,7 @@ def passive
 	# Operating System
 	if @body =~ /<td style="width:160px; "><span>Kernel Version<\/span><\/td><td>([^<]+)<\/td><\/tr>/
 		modules=@body.scan(/<td style="width:160px; "><span>Kernel Version<\/span><\/td><td>([^<]+)<\/td><\/tr>/)
-		m << { :modules=>modules }
+		m << { :module=>modules }
 	end
 
 	m

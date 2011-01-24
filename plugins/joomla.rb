@@ -9,7 +9,7 @@
 # Version 0.4
 # removed :probability & :name
 # Version 0.5
-# uses :modules instead of :string, changed the 3rd regexp from 75 certainty to 25.
+# uses :module instead of :string, changed the 3rd regexp from 75 certainty to 25.
 # Version 0.6
 # added seconds since epoch match from the mambo plugin
 
@@ -49,7 +49,7 @@ def passive
 	# get modules, doesn't work in SEO mode
 	if @body =~ /<a href="[^"]*index.php\?option=com_/
 		modules = @body.scan(/<a href="[^"]*index.php\?option=(com_[^&"]+)/).flatten.compact.sort.uniq		
-		m << {:certainty=>75,:modules=>modules}
+		m << {:certainty=>75,:module=>modules}
 	end
 	
 	# phpcake has this string too	

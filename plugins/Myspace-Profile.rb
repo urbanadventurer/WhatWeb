@@ -61,7 +61,7 @@ matches [
 	{ :filepath=>/<div class="miniProfile" data-friendid="[0-9]+" data-title="([\"]*)"/, :regexp_offset=>0 },
 
 	# Private Profile :
-	{ :regexp=>/<p class="sitesCommonSprite sitesComLock sizeS">Sorry,  the profile of [^<]* is only viewable by friends.<\/p>/, :modules=>"Private Profile" },
+	{ :regexp=>/<p class="sitesCommonSprite sitesComLock sizeS">Sorry,  the profile of [^<]* is only viewable by friends.<\/p>/, :module=>"Private Profile" },
 
 ]
 

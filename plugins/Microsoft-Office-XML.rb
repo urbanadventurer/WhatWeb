@@ -50,18 +50,18 @@ def passive
 		# Get company
 		if @body =~ /<Company>([^<]+)<\/Company>/
 			accounts=@body.scan(/<Company>([^<]+)<\/Company>/)[0][0]
-			m << {:accounts=>"Company:"+accounts}
+			m << {:account=>"Company:"+accounts}
 		end
 
 		# Get usernames
 		if @body =~ /<Author>([^<]+)<\/Author>/
 			accounts=@body.scan(/<Author>([^<]+)<\/Author>/)[0][0]
-			m << {:accounts=>accounts}
+			m << {:account=>accounts}
 		end
 
 		if @body =~ /<LastAuthor>([^<]+)<\/LastAuthor>/
 			accounts=@body.scan(/<LastAuthor>([^<]+)<\/LastAuthor>/)[0][0]
-			m << {:accounts=>accounts}
+			m << {:account=>accounts}
 		end
 
 	end
@@ -78,18 +78,18 @@ def passive
 		# Get company
 		if @body =~ /<o:Company>([^<]+)<\/o:Company>/
 			accounts=@body.scan(/<o:Company>([^<]+)<\/o:Company>/)[0][0]
-			m << {:accounts=>"Company:"+accounts}
+			m << {:account=>"Company:"+accounts}
 		end
 
 		# Get usernames
 		if @body =~ /<o:Author>([^<]+)<\/o:Author>/
 			accounts=@body.scan(/<o:Author>([^<]+)<\/o:Author>/)[0][0]
-			m << {:accounts=>accounts}
+			m << {:account=>accounts}
 		end
 
 		if @body =~ /<o:LastAuthor>([^<]+)<\/o:LastAuthor>/
 			accounts=@body.scan(/<o:LastAuthor>([^<]+)<\/o:LastAuthor>/)[0][0]
-			m << {:accounts=>accounts}
+			m << {:account=>accounts}
 		end
 
 	end
@@ -100,18 +100,18 @@ def passive
 		# Get usernames
 		if @body =~ /<dc:creator>([^<]+)<\/creator>/
 			accounts=@body.scan(/<dc:creator>([^<]+)<\/creator>/)[0][0]
-			m << {:accounts=>accounts}
+			m << {:account=>accounts}
 		end
 
 		if @body =~ /<dc:lastModifiedBy>([^<]+)<\/creator>/
 			accounts=@body.scan(/<dc:lastModifiedBy>([^<]+)<\/creator>/)[0][0]
-			m << {:accounts=>accounts}
+			m << {:account=>accounts}
 		end
 
 		# Get company
 		if @body =~ /<Company>([^<]+)<\/Company>/
 			accounts=@body.scan(/<Company>([^<]+)<\/Company>/)[0][0]
-			m << {:accounts=>"Company:"+accounts}
+			m << {:account=>"Company:"+accounts}
 		end
 
 		# Get version

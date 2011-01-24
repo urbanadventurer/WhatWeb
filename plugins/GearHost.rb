@@ -33,8 +33,8 @@ examples %w|
 def passive
 	m=[]
 
-	m << { :version=>"Windows", :modules=>"ASP.NET, ColdFusion, PHP, Perl" } if @meta["Hosted-With"] =~ /[\s]*GearHost Inc. \(www.gearhost.com\)/
-	m << { :version=>"Windows", :modules=>"ASP.NET, ColdFusion, PHP, Perl" } if @meta["hosted-with"] =~ /[\s]*GearHost Inc. \(www.gearhost.com\)/
+	m << { :version=>"Windows", :module=>"ASP.NET, ColdFusion, PHP, Perl" } if @meta["Hosted-With"] =~ /[\s]*GearHost Inc. \(www.gearhost.com\)/
+	m << { :version=>"Windows", :module=>"ASP.NET, ColdFusion, PHP, Perl" } if @meta["hosted-with"] =~ /[\s]*GearHost Inc. \(www.gearhost.com\)/
 
 	m
 
