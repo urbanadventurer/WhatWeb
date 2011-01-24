@@ -651,7 +651,7 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 		results=[]		
 		$plugins_to_use.each do |name,plugin|
 			begin
-				pp "Trying plugin " + name + " against " + target.to_s if $verbose>1
+				pp "Trying plugin " + name + " against " + target.to_s if $verbose>2
 				
 				while plugin.locked?
 					sleep 0.5
