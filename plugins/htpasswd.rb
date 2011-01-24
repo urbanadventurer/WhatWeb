@@ -96,32 +96,32 @@ if @base_uri.path =~ /htpasswd/i and @body =~ /^([0-9a-z\-_]{2,255}:[^\r^\n^\s^:
 
 		# Common passwords # SHA1
 		if line.to_s == "admin:$apr1$Ev0Cp...$6R55smBmW.t.uDr01ao5Q."
-			m << { :accounts=>"admin:admin" }
+			m << { :account=>"admin:admin" }
 		elsif line.to_s == "admin:$apr1$XNQFp...$HCpZx9aTaQOD1vVFeGXUF1"
-			m << { :accounts=>"admin:password" }
+			m << { :account=>"admin:password" }
 		elsif line.to_s == "admin:$apr1$94APp...$Vs/UEEdcnanhzIvFweeVd."
-			m << { :accounts=>"admin:password1" }
+			m << { :account=>"admin:password1" }
 		elsif line.to_s == "admin:$apr1$WqFQp...$xgPFU8Ao92A7eYg8J2cYx/"
-			m << { :accounts=>"admin:Password" }
+			m << { :account=>"admin:Password" }
 		elsif line.to_s == "admin:$apr1$3fdSp...$qq4wV9G75szLU/hJsGHYQ1"
-			m << { :accounts=>"admin:12345" }
+			m << { :account=>"admin:12345" }
 		elsif line.to_s == "admin:$apr1$b5XTp...$BcezBLeXvd7QT5Rlw.8Ki1"
-			m << { :accounts=>"admin:123456" }
+			m << { :account=>"admin:123456" }
 		elsif line.to_s == "admin:$apr1$WRMUp...$THfv/Ixp9HKpKH34dtzO3."
-			m << { :accounts=>"admin:qwerty" }
+			m << { :account=>"admin:qwerty" }
 		elsif line.to_s == "admin:$apr1$cT/Vp...$aOLWPBRTibzuNEhVpiw7V1"
-			m << { :accounts=>"admin:abc123" }
+			m << { :account=>"admin:abc123" }
 		elsif line.to_s == "admin:$apr1$5PaVp...$gYaTwDl0yviTysvEY4REn0"
-			m << { :accounts=>"admin:letmein" }
+			m << { :account=>"admin:letmein" }
 
 		# Display hash if unknown
 		else
-			m << { :accounts=>line.to_s }
+			m << { :account=>line.to_s }
 		end
 
 	# Display hash if user is not "admin"
 	else
-		m << { :accounts=>line.to_s }
+		m << { :account=>line.to_s }
 	end
 
 	end
