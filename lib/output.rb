@@ -132,7 +132,7 @@ end
 					 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
 					   coloured_plugin + (!version.empty? ? "["+green(escape(version))+"]" : "") +
 					   (!string.empty? ? "[" + coloured_string+"]" : "") +
-					   (!accounts.empty? ? "["+ escape(accounts)+"]" : "" ) +
+					   (!accounts.empty? ? "["+ cyan(escape(accounts))+"]" : "" ) +
 					   (!model.empty? ? "["+ dark_green(escape(model))+"]" : "" ) +
 					   (!firmware.empty? ? "["+ dark_green(escape(firmware))+"]" : "" ) +
 					   (!filepath.empty? ? "["+ dark_green(escape(filepath))+"]" : "" ) +
