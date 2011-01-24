@@ -112,9 +112,9 @@ if File.symlink?(__FILE__)
 end
 
 require 'lib/plugins.rb'
-require 'lib/plugins.rb'
 require 'lib/output.rb'
 require 'lib/colour.rb'
+require 'lib/tld.rb'
 require 'lib/anemone/anemone.rb'
 require 'tempfile'
 
@@ -1182,7 +1182,8 @@ while thistarget = next_target
 						when "same-site"
 							newtarget = newtarget_h or newtarget_m if URI.parse((newtarget_h or newtarget_m)).host == URI.parse(target).host # defaults to _h if both are present
 						when "same-domain"
-							# not implemented, sorry
+							newtarget = (newtarget_h or newtarget_m) if TLD.same_domain?(
+								URI.parse(target).host, URI.parse((newtarget_h or newtarget_m)).host)
 						when "always"
 							newtarget = newtarget_h or newtarget_m
 						else
