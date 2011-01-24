@@ -4,12 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-25 #
+# Updated version detection
+##
 Plugin.define "GetSimple" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
-version "0.1"
+version "0.2"
 description "GetSimple is an open source CMS that utilizes the speed and convenience of XML, a best-in-class UI and the easiest learning curve of any simple Content Management System out there. - homepage: http://get-simple.info/"
 
 # 389 results for "powered by getsimple Version" @ 2010-08-28
+
+# Examples #
 examples %w|
 get-simple.info
 demo.opensourcecms.com/getsimple/
@@ -87,26 +92,19 @@ www.pugdogstudio.com
 roadsideconcerts.com
 |
 
-# Version detection
-def passive
-        m=[]
+# Matches #
+matches [
 
-	# Meta generator
-        if @body =~ /	<meta name="generator" content="GetSimple - ([\d\.\_A-Z]+)" \/>/
-                version=@body.scan(/	<meta name="generator" content="GetSimple - ([\d\.\_A-Z]+)" \/>/)[0][0]
-                m << {:version=>version}
-        end
+	# Version Detection # Meta Generator
+	{ :version=>/	<meta name="generator" content="GetSimple \- ([\d\.\_A-Z]+)" \/>/, :regexp_offset=>0 },
 
-	# Powered by text
-	if @body =~ /<a href="http:\/\/get-simple.info\/" title="Open Source and Free CMS" >Powered by GetSimple<\/a> Version ([\d\.\_A-Z]+)/
-		version=@body.scan(/<a href="http:\/\/get-simple.info\/" title="Open Source and Free CMS" >Powered by GetSimple<\/a> Version ([\d\.\_A-Z]+)/)[0][0]
-		m << {:version=>version}
-	end
+	# Version Detection # Powered by text
+	{ :version=>/<a href="http:\/\/get-simple.info\/" title="Open Source and Free CMS" >Powered by GetSimple<\/a> Version ([\d\.\_A-Z]+)/, :regexp_offset=>0 },
 
-        m
+	# Admin Page # Version Detection # Powered by text
+	{ :version=>/<a href="http:\/\/get-simple.info\/">Powered by GetSimple<\/a> Version ([\d\.\_A-Z]+)/, :regexp_offset=>0 },
 
-end
-
+]
 
 end
 
