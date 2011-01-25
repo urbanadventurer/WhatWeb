@@ -4,29 +4,29 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.3 # 2011-01-26 #
+# Updated regex
+##
 # Version 0.2
 # remove :certainty
-
+##
 Plugin.define "MetaGenerator" do
 author "Andrew Horton"
-version "0.2"
-description "meta generator tag"
-examples %w| foo |
+version "0.3"
+description "This plugin identifies meta generator tags and extracts its value."
 
-#<meta name="generator" content="Plone - http://plone.org" />
-#<meta name="generator" content="Movable Type Pro 4.21-en" />
-#<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" >
+# Examples #
+examples %w|
+www.morningstarsecurity.com
+|
 
+# Matches #
+matches [
 
-def passive
-	m=[]
- 	if @body =~ /<meta name="generator"[^>]+content="[^"]+"/i
-                content=@body.scan(/<meta name="generator"[^>]+content="([^"]+)"/i)[0][0]                
-                m << {:name=>"meta generator tag",:string=>content} 
-    end
- 	m
-end
+	# Extract value from the content param
+	{ :string=>/<meta[^>]+name[\s]*=[\s]*"generator"[^>]+content[\s]*=[\s]*"([^"]+)"/i, :regexp_offset=>0 },
+
+]
 
 end
 
