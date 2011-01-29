@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-29 #
+# Updated version detection
+##
 Plugin.define "Glossword" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
-version "0.1"
+version "0.2"
 description "Glossword helps you to create and publish online multilingual dictionary, glossary, or reference. - homepage: http://glossword.biz/"
 
-# 120 results for "Powered by Glossword" @ 2010-08-01
+# Google results as at 2010-08-01 #
+# 120 for "Powered by Glossword"
+
+# Examples #
 examples %w|
 65.254.78.72/php/glossword/
 abbrevs.com
@@ -72,29 +78,17 @@ www.wikapinoy.com/glossary/
 www.wingeo.org/lexicon/
 |
 
-# Version detection
-def passive
-        m=[]
+# Matches #
+matches [
 
-        # Meta generator
-        if @body =~ /<meta name="generator" content="Glossword version [\d\.\-a-z]+" \/>/
-                version=@body.scan(/<meta name="generator" content="Glossword version ([\d\.\-a-z]+)" \/>/)[0][0]
-                m << {:version=>version}
-        elsif @body =~ /<meta content="Glossword version [\d\.\-a-z]+" name="generator" \/>/
-                version=@body.scan(/<meta content="Glossword version ([\d\.\-a-z]+)" name="generator" \/>/)[0][0]
-                m << {:version=>version}
-        end
+	# Version Detection # Meta generator
+	{ :version=>/<meta name="generator" content="Glossword version ([\d\.\-a-z]+)" \/>/, :regexp_offset=>0 },
+	{ :version=>/<meta content="Glossword version ([\d\.\-a-z]+)" name="generator" \/>/, :regexp_offset=>0 },
 
-        # Powered by text
-        if @body =~ /<p>Powered by <a href="http:\/\/glossword.info\/" style="text-decoration:underline">Glossword<\/a> [\d\.]+<\/p>/
-                version=@body.scan(/<p>Powered by <a href="http:\/\/glossword.info\/" style="text-decoration:underline">Glossword<\/a> ([\d\.]+)<\/p>/)[0][0]
-                m << {:version=>version}
-        end
+	# Version Detection # Powered by text
+	{ :version=>/<p>Powered by <a href="http:\/\/glossword.info\/" style="text-decoration:underline">Glossword<\/a> ([\d\.]+)<\/p>/, :regexp_offset=>0 },
 
-        m
-
-end
-
+]
 
 end
 
