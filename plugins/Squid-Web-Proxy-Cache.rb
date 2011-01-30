@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-30 #
+# Updated regex
+##
 Plugin.define "Squid-Web-Proxy-Cache" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
-version "0.1"
+version "0.2"
 description "Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. - homepage: http://www.squid-cache.org/"
 
-# About 115253 ShodanHQ results for "Server: squid"
+# ShodanHQ results as at 2010-10-25 #
+# 115,253 for "Server: squid"
+
+# Examples #
 examples %w|
 184.82.40.169
 200.112.202.56
@@ -22,18 +28,17 @@ examples %w|
 121.120.79.43
 |
 
-# HTTP Header
+# Passive #
 def passive
 	m=[]
 
 	# X-Squid-Error # Also used by iPrism, CachePower, and MecGuard 
-	m << { :name=>"X-Squid-Error", :certainty=>25 } unless @meta["X-Squid-Error"].nil?
 	m << { :name=>"x-squid-error", :certainty=>25 } unless @meta["x-squid-error"].nil?
 
 	# Server
-	m << { :version=>@meta["Server"].to_s.scan(/[\s]*Squid\/([^\r^\n]+)/i) } if @meta["Server"] =~ /[\s]*Squid\/([^\r^\n]+)/i
 	m << { :version=>@meta["server"].to_s.scan(/[\s]*Squid\/([^\r^\n]+)/i) } if @meta["server"] =~ /[\s]*Squid\/([^\r^\n]+)/i
 
+	# Return passive results
 	m
 
 end
