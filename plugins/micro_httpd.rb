@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-12 #
+# Updated regex match
+##
 Plugin.define "micro_httpd" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
-version "0.1"
+version "0.2"
 description "micro_httpd is a very small Unix-based HTTP server. It runs from inetd, which means its performance is poor. But for low-traffic sites, it's quite adequate. It implements all the basic features of an HTTP server. - homepage: http://www.acme.com/software/micro_httpd/"
 
-# About 957229 ShodanHQ results for "server: micro_httpd" @ 2010-10-26
+# ShodanHQ results as at 2010-10-26 #
+# 957,229 for "server: micro_httpd"
+
+# Examples #
 examples %w|
 78.162.53.58
 197.224.112.230
@@ -22,16 +28,15 @@ examples %w|
 89.249.219.51
 |
 
-# HTTP Header
+# Passive #
 def passive
 	m=[]
 
-	# Server
+	# HTTP Server Header
 	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /^[\s]*micro_httpd/i
-	m << { :name=>"HTTP Server Header" } if @meta["Server"].to_s =~ /^[\s]*micro_httpd/i
 
+	# Return passive matches
 	m
-
 end
 
 end
