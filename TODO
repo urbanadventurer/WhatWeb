@@ -34,7 +34,6 @@ Change usage:
 	same-domain --	? use tld.rb from urlcrazy ??
 
 
-
 --follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)
 
 

@@ -112,9 +112,9 @@ if File.symlink?(__FILE__)
 end
 
 require 'lib/plugins.rb'
-require 'lib/plugins.rb'
 require 'lib/output.rb'
 require 'lib/colour.rb'
+require 'lib/tld.rb'
 require 'lib/anemone/anemone.rb'
 require 'tempfile'
 
@@ -165,7 +165,7 @@ def precompile_regular_expressions
 					thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
 				end
 
-				[:version,:model, :firmware, :string, :filepath].each do |label|
+				[:version, :string, :account, :model, :firmware, :module, :filepath].each do |label|
 					if !thismatch[label].nil? and thismatch[label].class==Regexp
 						thismatch[:regexp_compiled]=Regexp.new(thismatch[label])
 						#pp thismatch
@@ -651,7 +651,7 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 		results=[]		
 		$plugins_to_use.each do |name,plugin|
 			begin
-				pp "Trying plugin " + name + " against " + target.to_s if $verbose>1
+				pp "Trying plugin " + name + " against " + target.to_s if $verbose>2
 				
 				while plugin.locked?
 					sleep 0.5
@@ -760,7 +760,7 @@ puts "
 --max-threads, -t\tNumber of simultaneous threads. Default is #{$MAX_THREADS}.
 --follow-redirect=WHEN\tControl when to follow redirects. WHEN may be `never',
 \t\t\t`http-only', `meta-only', `same-site', `same-domain'
-\t\t\t(not implemented), or `always'
+\t\t\tor `always'
 --proxy\t\t\t<hostname[:port]> Set proxy hostname and port
 \t\t\t(default: #{$PROXY_PORT})
 --proxy-user\t\t<username:password> Set proxy user and password
@@ -1182,7 +1182,8 @@ while thistarget = next_target
 						when "same-site"
 							newtarget = newtarget_h or newtarget_m if URI.parse((newtarget_h or newtarget_m)).host == URI.parse(target).host # defaults to _h if both are present
 						when "same-domain"
-							# not implemented, sorry
+							newtarget = (newtarget_h or newtarget_m) if TLD.same_domain?(
+								URI.parse(target).host, URI.parse((newtarget_h or newtarget_m)).host)
 						when "always"
 							newtarget = newtarget_h or newtarget_m
 						else
