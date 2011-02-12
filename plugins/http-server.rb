@@ -22,7 +22,6 @@ def passive
 	unless @meta.nil?
 		server=nil	
 		server=@meta["server"] if @meta.keys.include?("server")
-		server=@meta["Server"] if @meta.keys.include?("Server")
 	
 		unless server.nil?		
 			m << {:name=>"server string",:string=>server}
