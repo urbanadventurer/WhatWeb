@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-12 #
+# Updated regex match
+##
 Plugin.define "CSCSSM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
-version "0.1"
+version "0.2"
 description "CSCSSM Proxy server"
 
-# About 117 ShodanHQ results for Proxy-agent:CSCSSM @ 2010-10-23
+# ShodanHQ results as at 2010-10-23
+# 117 for Proxy-agent:CSCSSM
+
+# Examples #
 examples %w|
 121.242.158.211
 12.6.226.98
@@ -20,12 +26,13 @@ examples %w|
 74.143.243.168
 |
 
-# HTTP Header
+# Passive #
 def passive
 	m=[]
-	if @meta["Proxy-Agent"].to_s =~ /^[\s]*CSCSSM/ or @meta["proxy-agent"].to_s =~ /^[\s]*CSCSSM/
-		m << { :name=>"HTTP Header" }
-	end
+
+	# Proxy-Agent HTTP Header
+	m << { :name=>"Proxy-Agent HTTP Header" } if @meta["proxy-agent"].to_s =~ /^[\s]*CSCSSM/
+	# Return passive matches
 	m
 end
 
