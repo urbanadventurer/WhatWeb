@@ -32,6 +32,9 @@ matches [
 # Powered by footer
 { :text=>'<div id="footer">R&eacute;alisation phpMySport' },
 
+# Default logo HTML
+{ :text=>'/tpl_image/by_phpmysport.gif" border="0"' },
+
 ]
 
 end
