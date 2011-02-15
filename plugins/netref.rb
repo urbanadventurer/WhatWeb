@@ -4,47 +4,42 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-15 #
+# Updated version detection
+##
 Plugin.define "Netref" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
-version "0.1"
+version "0.2"
 description "homepage: http://www.netref.net/"
 
-# 178 results for "powered by Netref" @ 2010-08-31
+# Google results as at 2011-02-15 #
+# 197 for "powered by Netref"
+# 29 for "Powered by Netref 5"
+
+# Examples #
 examples %w|
-kaledonie.com
-transport.annugratuit.net
-www.autocross-france.net/Divers/Netref4/index.php
-www.gratuit-du-net.net
-www.2aazaide.com/annuaire/ajoutcat.php
-www.ressources-formation.com/Psychologie.php
-www.puget-passion.fr/Annuaire/
 annuaires.massage-cachemirien.org
-www.milouchouchou.com/milannu/
+circul.arts.free.fr/annuaire/
+transport.annugratuit.net
+www.gratuit-du-net.net
+www.2aazaide.com/annuaire/
+www.puget-passion.fr/Annuaire/
+www.entrenous74.com/netref/
+www.vacances-faciles.net/annuaire/
+www.novazis.com
+www.autocross-france.net/Divers/Netref4/
 |
 
+# Matches #
 matches [
 
-# Powered by text
-{ :regexp=>/<a href='http:\/\/www.netref.net' class='lienp'[\ target="_Blank"]*>Powered by Netref/i },
-
 # HTML Comment
-{ :text=>'Annuaire Netref : http://www.netref.net' }
+{ :text=>'Annuaire Netref : http://www.netref.net' },
+
+# Version Detection # Powered by text
+{ :version=>/<a href=['|"]?http:\/\/www.netref.(fr|net)['|"]? class=['|"]?lienp['|"]?[^>]*>Powered by Netref ([\d\.]+) &copy; [0-9]{4}<\/a>/, :regexp_offset=>1 },
 
 ]
-
-# Version detection using powered by text
-def passive
-        m=[]
-
-        if @body =~ /<a href=[\"|\']+http:\/\/www.netref.[fr|net]+[\"|\']+ class=[\"|\']+lienp[\"|\']+[\ target="_Blank"]*>Powered by Netref ([\d\.]+) &copy; [0-9]{4}<\/a>/
-                version=@body.scan(/<a href=[\"|\']+http:\/\/www.netref.[fr|net]+[\"|\']+ class=[\"|\']+lienp[\"|\']+[\ target="_Blank"]*>Powered by Netref ([\d\.]+) &copy; [0-9]{4}<\/a>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
