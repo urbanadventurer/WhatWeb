@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-16 #
+# Updated version detection
+##
 Plugin.define "E-Xoopport" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
-version "0.1"
+version "0.2"
 description "CMS - homepage: http://www.e-xoopport.it/modules/news/"
 
-# 159 results for "powered by E-Xoopport" @ 2010-09-18
+# Google results as at 2010-09-18 #
+# 159 for "powered by E-Xoopport"
+
+# Examples #
 examples %w|
 www.e-xoopport.it/modules/news/
 courages.awardspace.info/modules/news/index.php
@@ -56,26 +62,16 @@ www.immagicaweb.com/delazzari.com/modules/catalogo/
 www.lcimmagine.it/samsara/modules/news/
 |
 
-# Version detection
-def passive
-        m=[]
+# Matches #
+matches [
 
-	# Powered by text
-        if @body =~ /<div align='center'>Powered by E-Xoopport ([^&]+)&copy; 2004[\-0-9]* <a href='http:\/\/www.e-xoopport.it\/' target='_blank'>The E-Xoopport Project<\/a><\/div>/
-                version=@body.scan(/<div align='center'>Powered by E-Xoopport ([^&]+)&copy; 2004[\-0-9]* <a href='http:\/\/www.e-xoopport.it\/' target='_blank'>The E-Xoopport Project<\/a><\/div>/).to_s
-                m << {:version=>version}
-        end
+# Version Detection # Powered by text
+{ :version=>/<div align='center'>Powered by E-Xoopport ([^&]+)&copy; 2004[\-0-9]{0,5} <a href='http:\/\/www.e-xoopport.it\/' target='_blank'>The E-Xoopport Project<\/a><\/div>/, :regexp_offset=>0 },
 
-	# Meta generator
-	if @body =~ /<meta name="generator" content="E-Xoopport ([^\"]+)">/
-		version=@body.scan(/<meta name="generator" content="E-Xoopport ([^\"]+)">/).to_s
-		 m << {:version=>version}
-	end
+# Version Detection # Meta generator
+{ :version=>/<meta name="generator" content="E-Xoopport ([^"]+)">/, :regexp_offset=>0 },
 
-        m
-
-end
-
+]
 
 end
 
