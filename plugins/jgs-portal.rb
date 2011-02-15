@@ -4,10 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-16 #
+# Updated version detection
+##
 Plugin.define "JGS-Portal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
-version "0.1"
+version "0.2"
 description "CMS - homepage: http://www.jgs-xa.de"
+
+# Google results as at 2010-06-26 #
+# 4,580,000 for "Powered by JGS-Portal Version"
+
+# Examples #
 examples %w|
 www.net-city.eu
 icemans-spielbude.de/wbb2/jgs_portal.php
@@ -82,30 +90,16 @@ jamaican-clan.com
 www.phantasybar.com
 |
 
+# Matches #
 matches [
 
-# About 4,580,000 results @ 2010-06-26
-{:name=>'GHDB: "Powered by JGS-Portal Version"',
-:certainty=>75,
-:ghdb=>'"Powered by JGS-Portal Version"'
-},
+# GHDB Match # Powered by text
+{ :certainty=>75, :ghdb=>'"Powered by JGS-Portal Version"' },
+
+# Version Detection # Powered by text
+{ :version=>/Powered by <b>JGS-Portal Version ([\d\.]+)<\/b> &copy; /, :regexp_offset=>0 },
 
 ]
-
-# Powered by <b>JGS-Portal Version 3.0.0</b> &copy; 2002-2005 <b><a href="http://www.tierboard.org" >www.jgs-xa.de</a></b></span></td>
-# Powered by <b>JGS-Portal Version 3.1.0</b> &copy; 2002-2005 <b><a href="http://www.jgs-xa.de" target="_blank">www.jgs-xa.de</a></b></span></td>
-def passive
-        m=[]
-
-        if @body =~ /Powered by <b>JGS-Portal Version [\d\.]+<\/b> &copy; /
-                version=@body.scan(/Powered by <b>JGS-Portal Version ([\d\.]+)<\/b> &copy; /)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text",:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
