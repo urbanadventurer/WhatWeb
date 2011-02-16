@@ -4,13 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-16 #
+# Updated version detection
+##
 Plugin.define "Ultrastats" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
-version "0.1"
+version "0.2"
 description "UltraStats is a php based gamelog parser for the famous Call of Duty franchise supporting Call of Duty, Call of Duty: United Office, Call of Duty2, Call of Duty 4: Modern Warfare and Call of Duty: World at War. In order to fully support UltraStats, you need a Apache or IIS Webserver with PHP5 ( PHP4 should still work ) installed. You also need a MySQL Database to store the data into. - homepage: http://www.ultrastats.org/"
 
-# 50  results for "powered by Ultrastats" intitle:Ultrastats
-# 383 results for intitle:"Ultrastats :: Home"
+# Google results as at 2010-08-22 #
+# 50  for "powered by Ultrastats" intitle:Ultrastats
+# 383 for intitle:"Ultrastats :: Home"
+
+# Examples #
 examples %w|
 codwwdemo.ultrastats.org
 cod2demo.ultrastats.org
@@ -165,6 +171,7 @@ ul.j-zone.ru/cod2/
 www.ttc-dorla.de/nightmode/ultrastats/
 |
 
+# Matches #
 matches [
 
 # Powered by text
@@ -179,20 +186,10 @@ matches [
 # Error page
 { :text=>'<title>UltraStats :: Critical Error occured</title>' },
 
+# Version Detection
+{ :version=>/ &nbsp;<a href="http:\/\/www.ultrastats.org[\/]?" target="_blank">Ultrastats<\/a> Version ([\d\.]+)/i, :regexp_offset=>0 },
+
 ]
-
-def passive
-        m=[]
-
-        if @body =~ / &nbsp;<a href="http:\/\/www.ultrastats.org[\/]*" target="_blank">Ultrastats<\/a> Version [\d\.]+/i
-                version=@body.scan(/ &nbsp;<a href="http:\/\/www.ultrastats.org[\/]*" target="_blank">Ultrastats<\/a> Version ([\d\.]+)/i)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
