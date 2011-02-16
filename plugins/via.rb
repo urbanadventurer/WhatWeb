@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-16 #
+# Removed redundant @meta["Via"] match
+##
 Plugin.define "Via-Proxy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
-version "0.1"
+version "0.2"
 description "This plugin extracts the proxy server details from the Via param of the HTTP header."
 
-# About 131646 ShodanHQ results for "Via: "
+# ShodanHQ results as at 2010-10-14 #
+# 131,646 for "Via: "
+
+# Examples #
 examples %w|
 12.149.157.79
 122.152.135.214
@@ -28,11 +34,14 @@ examples %w|
 83.147.205.234
 |
 
-# HTTP Header
+# Passive #
 def passive
 	m=[]
-	m << { :version=>@meta["Via"].to_s } unless @meta["Via"].nil?
-	m << { :version=>@meta["via"].to_s } unless @meta["via"].nil?
+
+	# Via HTTP header
+	m << { :string=>@meta["via"].to_s } unless @meta["via"].nil?
+
+	# Return passive matches
 	m
 end
 
