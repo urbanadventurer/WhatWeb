@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-18 #
+# Updated version detection
+##
 Plugin.define "My-PHP-Indexer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
-version "0.1"
+version "0.2"
 description "PHP file indexer - homepage: http://www.mafiatic.com"
 
-# 34 results for "powered by My PHP Indexer" @ 2010-08-01
+# Google results as at 2010-08-01 #
+# 34 for "powered by My PHP Indexer"
+
+# Examples #
 examples %w|
 www.amevasc.org/diplomas/
 manuals.aonly.com
@@ -22,18 +28,13 @@ www.pa1kh.nl/cmsimple/downloads/
 gallery.bramandityo.com
 |
 
-def passive
-        m=[]
+# Matches #
+matches [
 
-        if @body =~ /<!--Copyright--><a target="_blank" class="l" href="http:\/\/www.mafiatic.com">Powered by My PHP Indexer [\d\.]+ \| Copyright &copy; [0-9]{4}\-[0-9]{4} Mafiatic Inc.<\/a><!--Copyright-->/
-                version=@body.scan(/<!--Copyright--><a target="_blank" class="l" href="http:\/\/www.mafiatic.com">Powered by My PHP Indexer ([\d\.]+) \| Copyright &copy; [0-9]{4}\-[0-9]{4} Mafiatic Inc.<\/a><!--Copyright-->/)[0][0]
-                m << {:version=>version}
-        end
+# Version Detectioon # Powered by text
+{ :version=>/<!--Copyright--><a target="_blank" class="l" href="http:\/\/www.mafiatic.com">Powered by My PHP Indexer ([\d\.]+) \| Copyright &copy; [0-9]{4}\-[0-9]{4} Mafiatic Inc.<\/a><!--Copyright-->/, :regexp_offset=>0 },
 
-        m
-
-end
-
+]
 
 end
 
