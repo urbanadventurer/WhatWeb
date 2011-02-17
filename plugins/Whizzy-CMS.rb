@@ -4,18 +4,22 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-18 #
+# Updated version detection
+##
 Plugin.define "Whizzy-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
-version "0.1"
-description "CMS - homepage: http://unverse.net/"
+version "0.2"
+description "Whizzy-CMS - homepage: http://unverse.net/"
 
-# 37 results for "powered by Whizzy CMS" @ 2010-09-18
+# Google results as at 2010-09-18 #
+# 37 for "powered by Whizzy CMS"
+
+# Examples #
 examples %w|
+unverse.net
 bruehler.net
 hardmanhydroponics.com
-planweboffice.com
-premierbchina.com
-unverse.net
 websitesmade.co.uk
 www.jorogo.co.uk
 www.royalberks.info
@@ -24,20 +28,13 @@ www.ubi-sunt.com
 www.woodleytheatre.org
 |
 
-# Passive version detection
-def passive
-        m=[]
+# Matches #
+matches [
 
-	# HTML comment
-        if @body =~ /Powered by Whizzy CMS <big>&spades;<\/big> <\/a><\/div><!-- \[Whizzy CMS:Whizzy CMS ([^\]]+)/
-                version=@body.scan(/Powered by Whizzy CMS <big>&spades;<\/big> <\/a><\/div><!-- \[Whizzy CMS:Whizzy CMS ([^\]]+)/)[0][0]
-                m << {:version=>version}
-        end
+# Version Detection # HTML comment
+{ :version=>/Powered by Whizzy CMS <big>&spades;<\/big> <\/a><\/div><!-- \[Whizzy CMS:Whizzy CMS ([^\]]+)/, :regexp_offset=>0 },
 
-        m
-
-end
-
+]
 
 end
 
