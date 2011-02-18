@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-19 #
+# Updated version detection
+##
 Plugin.define "PHPDirector" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-24
-version "0.1"
+version "0.2"
 description "PHPDirector is a content management system that allows users to create there own video sharing websites. - homepage: http://www.phpdirector.co.uk/"
 
-# 181 results for "powered by PHP Director" @ 2010-07-24
+# Google results as at 2010-07-24 #
+# 181 for "powered by PHP Director"
+
+# Examples #
 examples %w|
 clips-videos.meteou.biz
 dentistabolzano.com
@@ -20,16 +26,12 @@ fun-video.meteou.biz
 hellerovo.cz
 hljs.cn
 jaguar.pc-taitaja.com/phpdirector/
-jovianmedia.com
-kaerntenguide.com/localtv/archive/
-kissing-girls.amateur-sexy.biz
 lalucha.com.do/phpdirector/
 metalvideotube.com
 nonamedpro.com/media/
 oldgobbler.com/Videos/
 ots.orgreality.com
 papamikes.net/cinetube/
-paris-hilton-video-clips.xtubes.de
 reovdo.com
 shockme.info
 shock.xtubes.de
@@ -69,23 +71,16 @@ www.smartlanka.net/videos/
 www.starcatalog.ro/vid/
 www.tuppies.net
 www.tuppys.net
-www.vatanbir.org/vatanbirmedya/
 www.w3bfly.com/Flash/
-www.xboxhornet.com
 |
 
-def passive
-        m=[]
+# Matches #
+matches [
 
-        if @body =~ /<a href="http:\/\/www.phpdirector.co.uk\/">Powered by PHP Director [\d\.]+<\/a>/
-                version=@body.scan(/<a href="http:\/\/www.phpdirector.co.uk\/">Powered by PHP Director ([\d\.]+)<\/a>/)[0][0]
-                m << {:version=>version}
-        end
+# Version Detection # Powered by text
+{ :version=>/<a href="http:\/\/www.phpdirector.co.uk\/">Powered by PHP Director ([\d\.]+)<\/a>/, :regexp_offset=>0 },
 
-        m
-
-end
-
+]
 
 end
 
