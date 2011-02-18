@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-19 #
+# Updated version detection
+##
 Plugin.define "Webmatic" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
-version "0.1"
-description "CMS - homepage: http://www.webmatic.it/it/"
+version "0.2"
+description "Webmatic CMS - homepage: http://www.webmatic.it/it/"
 
-# 173 results for "powered by Webmatic" @ 2010-08-29
+# Google results as at 2010-08-29 #
+# 173 for "powered by Webmatic"
+
+# Examples #
 examples %w|
 urldomini.altervista.org
 europacarsrl.com
@@ -68,27 +74,16 @@ www.ravennanotizie.it/info/pezzoli/
 www.kmm.matrik.net/index.php
 |
 
+# Macthes #
 matches [
 
 # Powered by text
 { :text=>'Powered&nbsp;by&nbsp;<a href="http://www.webmatic.it">Webmatic</a>' },
 
+# Version Detection # Powered by text
+{ :version=>/ href="http:\/\/www.valarsoft.com"[^>]+>Powered by: Webmatic ([^<]+)<\/a>/i, :regexp_offset=>0 },
+
 ]
-
-# Version detection powered by text
-def passive
-        m=[]
-
-	# Version 2.8 and prior uses "TARGET" as opposed to "target"
-        if @body =~ / href="http:\/\/www.valarsoft.com" [TARGET|target]+=[^>]+>Powered by: Webmatic ([\d\.\ a-zA-Z]+)<\/a>/
-                version=@body.scan(/ href="http:\/\/www.valarsoft.com" [TARGET|target]+=[^>]+>Powered by: Webmatic ([\d\.\ a-zA-Z]+)<\/a>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
