@@ -4,14 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-19 #
+# Updated version detection
+##
 Plugin.define "xGB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
-version "0.1"
+version "0.2"
 description "xGB guestbook - homepage: http://www.x-gfx.de/"
 
-# 126 results for allinurl:"xGb.php" @ 2010-08-14
+# Google rsults as at 2010-08-14 #
+# 126 for allinurl:"xGb.php"
+
+# Examples #
 examples %w|
-www.oranienschule-abi95.de/xGB_20/xGB.php
 www.mosaik-projekt.de/xGB_2_1/xGB.php
 www.milestoneband.de/gb/xGB.php
 tus-levern.de/gaesteb/xGB.php
@@ -38,27 +43,17 @@ members.multimania.co.uk/poets/diwan/includes/gu/xGB.php
 www.cyberfunks.de/page/home/xGB_20/xGB.php
 |
 
+# Matches #
 matches [
 
 { :text=>'	<title>xGB</title>' },
 { :text=>'<!-- start xGB dynamic content -->' },
 { :text=>"powered by <a href='http://www.x-gfx.de' target='blank' title='Script by x-gfx.de'>xGB" },
 
+# Version Detection # Powered by footer text
+{ :version=>/<p align='center'><span id='copyright'>\[ powered by <a href='http:\/\/www.x-gfx.de' target='blank' title='Script by x-gfx.de'>xGB ([\d\.]+)<\/a>/, :regexp_offset=>0 },
+
 ]
-
-# Version detection using powered by footer text
-def passive
-        m=[]
-
-        if @body =~ /<p align='center'><span id='copyright'>\[ powered by <a href='http:\/\/www.x-gfx.de' target='blank' title='Script by x-gfx.de'>xGB [\d\.]+<\/a>/
-                version=@body.scan(/<p align='center'><span id='copyright'>\[ powered by <a href='http:\/\/www.x-gfx.de' target='blank' title='Script by x-gfx.de'>xGB ([\d\.]+)<\/a>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
