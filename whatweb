@@ -886,7 +886,7 @@ begin
 			 	output_list << OutputBrief.new(arg)
 			when '--log-xml'
 			 	output_list << OutputXML.new(arg)
-			when '--log-magictree-xml'
+			when '--log-magictree'
 				output_list << OutputMagicTreeXML.new(arg)
 			when '--log-json'
 				if defined?(JSON)
