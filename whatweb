@@ -750,6 +750,7 @@ puts "
 --log-xml=FILE\t\tLog XML format
 --log-json=FILE\t\tLog JSON format
 --log-json-verbose=FILE\tLog JSON Verbose format
+--log-magictree=FILE\tLog MagicTree XML format
 --log-mongo-database\tName of the MongoDB database
 --log-mongo-collection\tName of the MongoDB collection. Default: whatweb
 --log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
@@ -821,6 +822,7 @@ opts = GetoptLong.new(
       [ '--log-xml', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-json', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-json-verbose', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-magictree', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-collection', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-host', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
@@ -884,6 +886,8 @@ begin
 			 	output_list << OutputBrief.new(arg)
 			when '--log-xml'
 			 	output_list << OutputXML.new(arg)
+			when '--log-magictree-xml'
+				output_list << OutputMagicTreeXML.new(arg)
 			when '--log-json'
 				if defined?(JSON)
 			 		output_list << OutputJSON.new(arg)

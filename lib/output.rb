@@ -233,6 +233,86 @@ class OutputXML < Output
 	end
 end
 
+# Output XML files in MagicTree format # Currently only works for one target
+class OutputMagicTreeXML < Output
+	def initialize(f=STDOUT)
+		super
+		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
+		@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
+		@f.puts '<magictree class="MtBranchObject">'
+	end
+
+	def close
+		@f.close
+	end
+
+	def escape(t)		
+		text=t.to_s.dup
+		# use sort_by so that & is before &quot;, etc.
+		@substitutions.sort_by {|a,b| a=="&" ? 0 : 1 }.map{|from,to| text.gsub!(from,to) }
+		text
+	end
+
+	def out(target, status, results)	
+		@f.puts "<target>"
+		@f.puts "\t<uri>#{escape(target)}</uri>"
+		@f.puts "\t<http-status>#{escape(status)}</http-status>"
+		
+		results.each do |plugin_name,plugin_results|
+			@f.puts '<matches>'
+			@f.puts "\t\t<#{escape(plugin_name)}>"
+
+			unless plugin_results.empty?
+
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
+				versions = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.to_a
+				strings = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.to_a
+				models = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.compact.sort.uniq.to_a
+				firmwares = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.compact.sort.uniq.to_a
+				filepaths = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.to_a
+				accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
+				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
+
+				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
+
+				if versions.size > 0
+					versions.map {|x| @f.puts "\t\t<version status=\"interesting\">#{escape(x)}</version>" }
+					#@f.puts "\t\t<versions>\n" + versions.map {|x| "\t\t\t<versions>#{escape(x)}</versions>" }.join("\n") + "\n\t\t</versions>"
+				end
+
+				if strings.size > 0
+					strings.map {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
+				end
+
+				if models.size > 0
+					models.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
+				end
+
+				if firmwares.size > 0
+					firmwares.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
+				end
+
+				if modules.size > 0
+					modules.map {|x| @f.puts "\t\t<module>#{escape(x)}</module>" }
+				end
+
+				if accounts.size > 0
+					accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
+				end
+
+				if filepaths.size > 0
+					filepaths.map {|x| @f.puts "\t\t<filepath>#{escape(x)}</filepath>" }
+				end
+
+			end
+			@f.puts "\t\t</#{escape(plugin_name)}>"
+			@f.puts '</matches>'
+		end
+		@f.puts '</target>'
+		@f.puts '</magictree>'
+	end
+end
+
 class OutputJSON < Output
 
 	def flatten_elements!(obj)
