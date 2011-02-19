@@ -4,17 +4,22 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-02-19 #
+# Added AnonymousIdentificationModule detection
+##
 # Version 0.2 # 2011-01-28 #
 # Added version detection
 ##
 Plugin.define "ASP.NET" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
-version "0.2"
+version "0.3"
 description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world. - homepage: http://www.asp.net/"
 
 # The Global.asa file is an optional file that can contain declarations of objects, variables, and methods that can be accessed by every page in an ASP application. All valid browser scripts (JavaScript, VBScript, JScript, PerlScript, etc.) can be used within Global.asa. The Global.asa file must be stored in the root directory of the ASP application, and each application can only have one Global.asa file. - http://www.w3schools.com/ASP/asp_globalasa.asp
 
 # Web.config is the main settings and configuration file for an ASP.NET web application. The file is an XML document  that defines configuration information regarding the web application. The web.config file contains information that control module loading, security configuration, session state  configuration, and application language and compilation settings. Web.config files can also contain application specific items such as database connection strings. - http://en.wikipedia.org/wiki/Web.config
+
+# AnonymousIdentificationModule - http://msdn.microsoft.com/en-us/library/system.web.security.anonymousidentificationmodule.aspx
 
 # Google results as at 2010-09-28 #
 # 29 for inurl:web.config ext:config "ConnectionString"
@@ -22,13 +27,24 @@ description "ASP.NET is a free web framework that enables great Web applications
 
 # ShodanHQ results as at 2011-01-28 #
 # 3,356,722 for "asp.net"
-# 2,4582 for "asp.net" -IIS
 # 254,949 for X-AspNet-Version
+# 7,460 for Set-Cookie chkvalues anonymousID
+# 2,4582 for "asp.net" -IIS
 
 # Examples #
 examples %w|
 www.microsoft.com
 www.asp.net
+205.178.163.82
+205.178.185.168
+206.188.222.247
+205.178.158.154
+205.178.172.179
+205.178.175.96
+205.178.180.82
+205.178.166.182
+205.178.159.235
+69.161.209.78
 80.169.204.34
 216.58.235.82
 81.17.69.182
@@ -136,6 +152,10 @@ def passive
 
 	# Version Detection # X-AspNet-Version HTTP header
 	m << { :version=>@meta['x-aspnet-version'].to_s } unless @meta['x-aspnet-version'].nil?
+
+	# AnonymousIdentificationModule
+	m << { :module=>"AnonymousIdentificationModule" } if @meta['set-cookie'] =~ /anonymousID=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
+	m << { :module=>"AnonymousIdentificationModule" } if @meta['set-cookie'] =~ /chkvalues=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
 
 	# Return passive results
 	m
