@@ -233,7 +233,7 @@ class OutputXML < Output
 	end
 end
 
-# Output XML files in MagicTree format # Currently only works for one target
+# Output XML file in MagicTree XML semantic format
 class OutputMagicTreeXML < Output
 	def initialize(f=STDOUT)
 		super
@@ -243,6 +243,7 @@ class OutputMagicTreeXML < Output
 	end
 
 	def close
+		@f.puts '</magictree>'
 		@f.close
 	end
 
@@ -253,14 +254,25 @@ class OutputMagicTreeXML < Output
 		text
 	end
 
-	def out(target, status, results)	
-		@f.puts "<target>"
-		@f.puts "\t<uri>#{escape(target)}</uri>"
-		@f.puts "\t<http-status>#{escape(status)}</http-status>"
-		
+	def out(target, status, results)
+
+		# TODO # Parse target URL properly # Handle protocl (HTTP/HTTPS) properly # Extract port properly
+		@host_port = ""
+		# Loop through plugin results and initialize host node
 		results.each do |plugin_name,plugin_results|
-			@f.puts '<matches>'
-			@f.puts "\t\t<#{escape(plugin_name)}>"
+			unless plugin_results.empty?
+				# Extract host IP
+				@host_ip = plugin_results.map {|x| x[:string] unless x[:string].empty?}.to_s if plugin_name =~ /^IP$/
+				@host_country = plugin_results.map {|x| x[:string] unless x[:string].empty?}.to_s if plugin_name =~ /^Country$/
+			end
+		end
+
+		@f.puts '<testdata class="MtBranchObject">'
+		# Print <host> node and IP if present
+		@f.puts "<host>#{escape(@host_ip.to_s)}<country title=\"#{escape(@host_country)}\">#{escape(@host_country)}</country><ipproto>tcp<port>#{escape(@host_port)}"
+
+		# Loop through remaining results
+		results.each do |plugin_name,plugin_results|
 
 			unless plugin_results.empty?
 
@@ -273,44 +285,65 @@ class OutputMagicTreeXML < Output
 				accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
 				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
 
-				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
+				# Print certainty if not certain
+				@f.puts "<service>http<software>#{escape(plugin_name)}<string><text title=\"certainty\">#{escape(certainty)}</text></software></service>" if certainty and certainty < 100
 
-				if versions.size > 0
-					versions.map {|x| @f.puts "\t\t<version status=\"interesting\">#{escape(x)}</version>" }
-					#@f.puts "\t\t<versions>\n" + versions.map {|x| "\t\t\t<versions>#{escape(x)}</versions>" }.join("\n") + "\n\t\t</versions>"
-				end
-
+				# Strings
 				if strings.size > 0
-					strings.map {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
+					strings.map {|x| @f.puts "<service>http<software>#{escape(plugin_name)}<string title=\"#{escape(plugin_name)}\">#{escape(x)}</string></software></service>" }
 				end
 
+				# Versions
+				if versions.size > 0
+					versions.map {|x| @f.puts "<service>http<software>#{escape(plugin_name)}<version status=\"interesting\" title=\"#{escape(plugin_name)}\">#{escape(x)}</version></software></service>" }
+				end
+
+				# Models
 				if models.size > 0
-					models.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
+					models.map {|x| @f.puts "<service>http<software>#{escape(plugin_name)}<model title=\"#{escape(plugin_name)}\">#{escape(x)}</model></software></service>" }
 				end
 
+				# Firmware
 				if firmwares.size > 0
-					firmwares.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
+					firmwares.map {|x| @f.puts "<service>http<software>#{escape(plugin_name)}<firmware title=\"#{escape(plugin_name)}\">#{escape(x)}</firmware></software></service>" }
 				end
 
+				# Modules
 				if modules.size > 0
-					modules.map {|x| @f.puts "\t\t<module>#{escape(x)}</module>" }
+					modules.map {|x| @f.puts "<service>http<software>#{escape(plugin_name)}<module title=\"#{escape(plugin_name)}\">#{escape(x)}</module></software></service>" }
 				end
 
+				# Accounts
 				if accounts.size > 0
-					accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
+					accounts.map {|x| @f.puts "<service>http<software>#{escape(plugin_name)}<account title=\"#{escape(plugin_name)}\">#{escape(x)}</account></software></service>" }
 				end
 
+				# Filepaths
 				if filepaths.size > 0
-					filepaths.map {|x| @f.puts "\t\t<filepath>#{escape(x)}</filepath>" }
+					filepaths.map {|x| @f.puts "<service>http<software>#{escape(plugin_name)}<filepath title=\"#{escape(plugin_name)}\">#{escape(x)}</filepath></software></service>" }
 				end
 
 			end
-			@f.puts "\t\t</#{escape(plugin_name)}>"
-			@f.puts '</matches>'
+
 		end
-		@f.puts '</target>'
-		@f.puts '</magictree>'
+
+		# URLs # Probably should go elsewhere # Perhaps under each of the above nodes which returns a result?
+		@f.puts "<service>http<software>url<url>#{escape(target)}</url><http-status>#{escape(status)}</http-status></software></service>"
+
+		# Close host
+		@f.puts "</port></ipproto></host>"
+		@f.puts '</testdata>'
+
+		# Report # Detailed Output
+		# TODO # Add WhatWeb version and command-line arguments to source node
+		@f.puts "<report class=\"MtBranchObject\"><output title=\"#{escape(target)}\"><text title=\"#{escape(target)}\" class=\"MtTextObject\">"
+		@f.puts "Identifying: #{escape(target)}"
+		@f.puts "HTTP-Status: #{escape(status)}"
+		@f.puts "#{escape(results.pretty_inspect)}" unless results.empty?	
+		@f.puts '<source class="MtSimpleObject">WhatWeb</source></text></output></report>'
+
 	end
+
 end
 
 class OutputJSON < Output
