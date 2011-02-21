@@ -32,7 +32,7 @@ class Output
 	# perform sort, uniq and join on each plugin result
 	def suj(plugin_results)
 		suj={} 
-		[:certainty, :version, :string, :account, :model, :firmware, :module, :filepath].map do  |thissymbol|
+		[:certainty, :version, :os, :string, :account, :model, :firmware, :module, :filepath].map do  |thissymbol|
 			t=plugin_results.map {|x| x[thissymbol] unless x[thissymbol].class==Regexp }.compact.sort.uniq.join(",")
 			suj[thissymbol] = t
 		end
@@ -71,6 +71,7 @@ class OutputVerbose < Output
 					stuff =[] 
 					stuff << "certainty: #{pr[:certainty]}" if pr[:certainty] != 100
 					stuff << "version: #{pr[:version]}" if pr[:version]
+					stuff << "os: #{pr[:os]}" if pr[:os]
 					stuff << "string: #{pr[:string]}" if pr[:string]
 					stuff << "model: #{pr[:model]}" if pr[:model]
 					stuff << "firmware: #{pr[:firmware]}" if pr[:firmware]
@@ -110,7 +111,7 @@ end
 			unless plugin_results.empty?
 				suj = suj(plugin_results)
 
-				certainty, version, string, accounts,model,firmware,modules,filepath = suj[:certainty],suj[:version],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
+				certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty],suj[:version],suj[:os],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
 
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
@@ -135,6 +136,7 @@ end
   					 					 
 					 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
 					   coloured_plugin + (!version.empty? ? "["+green(escape(version))+"]" : "") +
+					   (!os.empty? ? "[" + red(escape(os))+"]" : "") +	
 					   (!string.empty? ? "[" + coloured_string+"]" : "") +
 					   (!accounts.empty? ? "["+ cyan(escape(accounts))+"]" : "" ) +
 					   (!model.empty? ? "["+ dark_green(escape(model))+"]" : "" ) +
@@ -147,6 +149,7 @@ end
 				else
 					brief_results << ((certainty and certainty < 100) ? certainty_to_words(certainty)+ " " : "")  +
 					   plugin_name + (!version.empty? ? "[" + version +"]" : "") +
+					   (!os.empty? ? "[" + os+"]" : "") +
 					   (!string.empty? ? "[" + string+"]" : "") +
 					   (!accounts.empty? ? " ["+ accounts+"]" : "" ) +
 					   (!model.empty? ? "["+ model+"]" : "" ) +
@@ -203,6 +206,7 @@ class OutputXML < Output
 
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
+				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp}.compact.sort.uniq.join(",")
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.compact.sort.uniq.join(",")
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.compact.sort.uniq.join(",")
@@ -213,6 +217,7 @@ class OutputXML < Output
 
 				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
 				version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
+				os.map {|x| @f.puts "\t\t<os>#{escape(x)}</os>" }
 				string.map   {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
 				model.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
 				firmware.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
@@ -264,7 +269,7 @@ class OutputMagicTreeXML < Output
 
 	def out(target, status, results)
 
-		# Parse target URL # TODO : Handle HTTPS with tunnel node
+		# Parse target URL # TODO : Create host object. Handle HTTPS with tunnel node
 		uri = URI.parse(target)
 		if uri.host =~ /^[\d]{1,3}.[\d]{1,3}.[\d]{1,3}.[\d]{1,3}$/i
 			@host_ip = uri.host
@@ -274,14 +279,17 @@ class OutputMagicTreeXML < Output
 		end
 		@host_port = uri.port
 		@host_scheme = uri.scheme
+		@host_os=[]
 
-		# Loop through plugin results # get host ip and country
+		# Loop through plugin results # get host IP, country and OS
 		results.each do |plugin_name,plugin_results|
 			unless plugin_results.empty?
 				# Host IP
-				@host_ip = plugin_results.map {|x| x[:string] unless x[:string].empty?}.to_s if plugin_name =~ /^IP$/
+				@host_ip = plugin_results.map {|x| x[:string] unless x[:string].nil?}.to_s if plugin_name =~ /^IP$/
 				# Host Country
-				@host_country = plugin_results.map {|x| x[:string] unless x[:string].empty?}.to_s if plugin_name =~ /^Country$/
+				@host_country = plugin_results.map {|x| x[:string] unless x[:string].nil?}.to_s if plugin_name =~ /^Country$/
+				# Host OS
+				@host_os << plugin_results.map {|x| x[:os] unless x[:os].class==Regexp}.to_s
 			end
 		end
 
@@ -294,8 +302,11 @@ class OutputMagicTreeXML < Output
 		# fqdn
 		@f.puts "\t<host title=\"#{escape(@host_ip)}\">#{escape(@host_ip)}<fqdn title=\"#{escape(@host_fqdn)}\">#{escape(@host_fqdn)}</fqdn></host>" unless @host_fqdn.nil?
 
+		# os
+		@host_os.compact.sort.uniq.map {|x| @f.puts "\t<host title=\"#{escape(@host_ip)}\">#{escape(@host_ip)}<os title=\"#{escape(x.to_s)}\">#{escape(x.to_s)}<source>WhatWeb<url>#{escape(target)}<http-status>#{escape(status)}</http-status></url></source></os></host>" unless x.empty? } unless @host_os.empty?
+
 		# country and port nodes
-		@f.puts "\t<host title=\"#{escape(@host_ip)}\">#{escape(@host_ip)}<location><country title=\"#{escape(@host_country)}\">#{escape(@host_country)}</country></location><ipproto>tcp<port>#{escape(@host_port)}"
+		@f.puts "\t<host title=\"#{escape(@host_ip)}\">#{escape(@host_ip)}<location><country title=\"#{escape(@host_country)}\">#{escape(@host_country)}</country></location><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
 
 		# Loop through remaining results
 		results.each do |plugin_name,plugin_results|
@@ -422,6 +433,7 @@ class OutputJSON < Output
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
 
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
+				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp }.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
 				accounts = plugin_results.map {|x| x[:account] unless x[:account].class=Regexp }.flatten.compact.sort.uniq
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
@@ -432,6 +444,7 @@ class OutputJSON < Output
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?
+				thisplugin[:os] = os unless os.empty?
 				thisplugin[:string] = string unless string.empty?
 				thisplugin[:account] = accounts unless accounts.empty?
 				thisplugin[:model] = model unless model.empty?
@@ -522,6 +535,7 @@ class OutputMongo < Output
 
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
+				os = plugin_results.map {|x| x[:os] unless x[:os].class=Regexp }.flatten.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
 				accounts = plugin_results.map {|x| x[:account] unless x[:account].class=Regexp }.flatten.compact.sort.uniq
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
@@ -531,6 +545,7 @@ class OutputMongo < Output
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?
+				thisplugin[:os] = os unless os.empty?
 				thisplugin[:string] = string unless string.empty?
 				thisplugin[:account] = accounts unless accounts.empty?
 				thisplugin[:model] = model unless model.empty?

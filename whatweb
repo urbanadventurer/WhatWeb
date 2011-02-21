@@ -165,7 +165,7 @@ def precompile_regular_expressions
 					thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
 				end
 
-				[:version, :string, :account, :model, :firmware, :module, :filepath].each do |label|
+				[:version, :os, :string, :account, :model, :firmware, :module, :filepath].each do |label|
 					if !thismatch[label].nil? and thismatch[label].class==Regexp
 						thismatch[:regexp_compiled]=Regexp.new(thismatch[label])
 						#pp thismatch
