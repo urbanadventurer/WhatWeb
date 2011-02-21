@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-21 #
+# Updated version detection
+##
 Plugin.define "VS-Panel" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
-version "0.1"
-description "homepage: http://www.vertigostudios.com"
+version "0.2"
+description "VS-Panel - homepage: http://www.vertigostudios.com"
 
-# 56 results for "powered by VS PANEL" -Vulnerability @ 2010-08-29
+# Google results as at 2010-08-29 #
+# 56 for "powered by VS PANEL" -Vulnerability
+
+# Examples #
 examples %w|
 arapispro.gr
 dasyllas-markos.gr/index.php
@@ -33,6 +39,7 @@ www.tzaki.com.gr/en/
 www.wireland.gr/index.php
 |
 
+# Matches #
 matches [
 
 # Made in Vertigo Studios text and logo
@@ -41,22 +48,13 @@ matches [
 # Default logo
 { :md5=>'54ab59aeb78202bc2ec96abb0c6cff7c', :url=>'images/vs_white.gif' },
 
+# Version Detection # < 10 # Powered by text
+{ :version=>/&copy; [0-9]{4} \| Powered by VS PANEL v.([\d\.]+)<\/div><\/td>/, :regexp_offset=>0 },
+
+# Version detection # 10.x # Powered by text
+{ :version=>/&copy; [0-9]{4} \| Powered by VS PANEL v.([\d\.]+)(<\/span>)<\/div><\/td>/, :regexp_offset=>0 },
+
 ]
-
-# Version detection
-def passive
-        m=[]
-
-	# Versions 7 and 10 tested. Version 10 uses the </span> tag
-        if @body =~ /&copy; [0-9]{4} \| Powered by VS PANEL v([\d\.]+)[<\/span>]*<\/div><\/td>/
-                version=@body.scan(/&copy; [0-9]{4} \| Powered by VS PANEL v([\d\.]+)[<\/span>]*<\/div><\/td>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
