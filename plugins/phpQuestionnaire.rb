@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-21 #
+# Updated version detection
+##
 Plugin.define "phpQuestionnaire" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
-version "0.1"
-description " - homepage: http://www.chumpsoft.com/products/phpq/"
+version "0.2"
+description "phpQuestionnaire - homepage: http://www.chumpsoft.com/products/phpq/"
 
-# 56 results for "powered by phpQuestionnaire" @ 2010-08-21
+# Google results as at 2010-08-21 #
+# 56 for "powered by phpQuestionnaire"
+
+# Examples #
 examples %w|
 www.chumpsoft.com/products/phpq/demo/
 blindferret.com/surveys/
@@ -47,6 +53,7 @@ www.school4educationalassistants.com/phpQ/
 www.juniorconsult.com/survey/
 |
 
+# Matches #
 matches [
 
 # Survey list page
@@ -62,23 +69,12 @@ matches [
 { :text=>'			<td align="right">powered by phpQuestionnaire</td>' },
 
 # default logo
-{ :md5=>'feae34c62729c85af0b4114bd02d634a', :url=>'templates/default/images/logo.gif' }
+{ :md5=>'feae34c62729c85af0b4114bd02d634a', :url=>'templates/default/images/logo.gif' },
+
+# Version Detection # default link HTML
+{ :version=>/      <TD ALIGN=right><NOBR><B><A HREF="http:\/\/www.chumpsoft.com\/products\/phpq\/" class=link>phpQuestionnaire<\/A> ([\d\.]+) &copy [0-9]{4}-[0-9]{4}/, :regexp_offset=>0 },
 
 ]
-
-# Version detection using powered by footer
-def passive
-        m=[]
-
-        if @body =~ /      <TD ALIGN=right><NOBR><B><A HREF="http:\/\/www.chumpsoft.com\/products\/phpq\/" class=link>phpQuestionnaire<\/A> [\d\.]+ &copy [0-9]{4}-[0-9]{4}/
-                version=@body.scan(/      <TD ALIGN=right><NOBR><B><A HREF="http:\/\/www.chumpsoft.com\/products\/phpq\/" class=link>phpQuestionnaire<\/A> ([\d\.]+) &copy [0-9]{4}-[0-9]{4}/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
