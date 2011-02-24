@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-24 #
+# Updated version detection
+##
 Plugin.define "MyPHP-Forum" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-31
-version "0.1"
-description "Forum - homepage: http://www.myphp.ws/"
+version "0.2"
+description "MyPHP-Forum - homepage: http://www.myphp.ws/"
 
-# 23 results for "powered by MyPHP Forum" -Vulnerability @ 2010-08-31
+# Google results as at 2010-08-31 #
+# 23 for "powered by MyPHP Forum" -Vulnerability
+
+# Examples #
 examples %w|
 dance.pl/old/pl/forum/topic.php
 life-log.dk/kemi2/menu/pages/forum3/faq.php
@@ -22,27 +28,16 @@ www.studentkm.net/forums/topic.php
 www.uck.at/forum/search.php
 |
 
+# Matches #
 matches [
 
+# Version Detection # Powered by text
+
+{ :version=>/    <td width="50%" class="copy" height="24">Powered by: MyPHP Forum v([\d\.]+)/, :regexp_offset=>0 },
+
+{ :version=>/    <td width="50%" class="copy" height="24">Powered by: <a href="http:\/\/www.myphp.ws">MyPHP Forum v([\d\.]+)/, :regexp_offset=>0 },
+
 ]
-
-# Version detection using powered by text
-def passive
-        m=[]
-
-#    <td width="50%" class="copy" height="24">Powered by: <a href="http://www.myphp.ws">MyPHP Forum v3.0 (Final)</a></td>
-#    <td width="50%" class="copy" height="24">Powered by: MyPHP Forum v3.1 (nuova versione by Max Pezzali)</td>
-#    <td width="50%" class="copy" height="24">Powered by: <a href="http://www.myphp.ws">MyPHP Forum v3.0</a></td>
-
-        if @body =~ /    <td width="50%" class="copy" height="24">Powered by: [<a href="http:\/\/www.myphp.ws">]*MyPHP Forum v([\d\.]+)/
-                version=@body.scan(/    <td width="50%" class="copy" height="24">Powered by: [<a href="http:\/\/www.myphp.ws">]*MyPHP Forum v([\d\.]+)/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
