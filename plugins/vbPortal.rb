@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-24 #
+# Updated version detection
+##
 Plugin.define "vbPortal" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
-version "0.1"
-description "Portal and CMS for vBulletin - hoempage: http://www.vbportal.com/"
+author "Brendan Coles <bcoles@gmail.com>"
+version "0.2"
+description "Portal and CMS for vBulletin - homepage: http://www.vbportal.com/"
 
-# 154 results for "Portal By vbPortal Version " @ 2010-08-27
+# Google results as for 2010-08-27 #
+# 154 for "Portal By vbPortal Version "
+
+# Examples #
 examples %w|
 horrordvds.com
 bytephoto.com
@@ -53,33 +59,22 @@ www.db-forum.de
 www.bghelp.net
 |
 
+# Matches #
 matches [
 
+# Meta Generator
 { :text=>'<meta name="generator" content="vbPortal - Copyright 2010" />' },
+
+# HTML Comment
 { :text=>'	<!-- Do not remove  or your scheduled tasks will cease to function -->' },
 
+# Version Detection # Meta generator
+{ :version=>/<meta name="generator" content="vbPortal ([\d\.]+)" \/>/, :regexp_offset=>0 },
+
+# Version Detection # Portal by text
+{ :version=>/Portal By vbPortal Version ([\d\.]+)<br \/>/, :regexp_offset=>0 },
+
 ]
-
-# Version detection
-def passive
-        m=[]
-
-	# Meta generator
-        if @body =~ /<meta name="generator" content="vbPortal [\d\.]+" \/>/
-                version=@body.scan(/<meta name="generator" content="vbPortal ([\d\.]+)" \/>/)[0][0]
-                m << {:version=>version}
-        end
-
-	# Portal by text
-	if @body =~ /Portal By vbPortal Version [\d\.]+<br \/>/
-		version=@body.scan(/Portal By vbPortal Version ([\d\.]+)<br \/>/)[0][0]
-		m << {:version=>version}
-	end
-
-        m
-
-end
-
 
 end
 
