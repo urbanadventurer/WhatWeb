@@ -4,15 +4,20 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-24 #
+# Updated version detection
+# Added WWW-Authenticate match
+##
 Plugin.define "NetBotz-Network-Monitoring-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
-version "0.1"
+version "0.2"
 description "NetBotz monitoring and management web front end - homepage: http://www.netbotz.com/products/index.html"
 
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1774
-# 12 Google results for intitle:"Device Status Summary Page" -demo @ 2010-07-20
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1451
-# 21 Google results for intitle:"netbotz appliance" -inurl:.php -inurl:.asp -inurl:.pdf -inurl:securitypipeline -announces @ 2010-07-20
+# Google results as at 2010-07-20 #
+# 12 for intitle:"Device Status Summary Page" -demo
+# 21 for intitle:"netbotz appliance" -inurl:.php -inurl:.asp -inurl:.pdf -inurl:securitypipeline -announces
+
+# Examples #
 examples %w|
 155.101.3.213
 216.157.144.161
@@ -33,27 +38,39 @@ nb500.optrics.net
 71.168.66.58:5190/pages/index.html
 |
 
+# Matches #
 matches [
 
-{ :regexp=>/<TITLE>NetBotz[\ Network Monitoring]* Appliance - [a-zA-Z0-9\s\-_\(\)]*<\/TITLE>/ },
+# Default Title
+{ :regexp=>/<TITLE>NetBotz( Network Monitoring) Appliance - [^<]*<\/TITLE>/ },
 
+# Default CSS HTML
+{ :text=>'<LINK REL="StyleSheet" TYPE="text/css" HREF="/netbotz.css">' },
+
+# Applet Launch Page # Default HTML Comment
+{ :text=>'<!-- Launch the NetBotz Applications.  This will require Java 1.3.0 OR ANYTHING NEWER -->' },
+
+# Logo Frame # Default logo HTML
+{ :text=>'<a href="http://www.netbotz.com" target="_top"><img border="0" src="/colorlogo.gif"></a>' },
+
+# Status Page # Default Title
 { :text=>'	<TITLE>Device Status Summary Page</TITLE>' },
 
+# Version Detection # statusHeader.html
+{ :url=>"/statusHeader.html", :version=>/<a href="http:\/\/updates.netbotz.com\/releases\/([\d\.]+)\/install.html" target="_instAV">\(Install Advanced View Application\)<\/a>/, :regexp_offset=>0 },
 
 ]
 
+# Passive #
 def passive
-        m=[]
+	m=[]
 
-        if @body =~ /		<title>NetBotz Advanced View [\d\.]+ \(InstallAnywhere Web Installer\)<\/title>/
-                version=@body.scan(/		<title>NetBotz Advanced View ([\d\.]+) \(InstallAnywhere Web Installer\)<\/title>/)[0][0]
-                m << {:version=>version}
-        end
+	# HTTP WWW Authenticate header
+	m << { :name=>'HTTP WWW Authenticate header' } if @meta['www-authenticate'] =~ /NetBotz Appliance/
 
-        m
-
+	# Return Passive Matches
+	m
 end
-
 
 end
 
