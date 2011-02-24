@@ -19,7 +19,7 @@ description "HTTP server header string"
 def passive
 	m=[]
 	
-	unless @meta["server"].empty?
+	unless @meta["server"].nil?
 
 		# OS Detection # Windows family
 		m << { :os=>"Windows (32 bit)" } if @meta["server"] =~ /Win32/i
