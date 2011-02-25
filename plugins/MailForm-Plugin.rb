@@ -4,36 +4,36 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "MailForm-Plugin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
-version "0.1"
+version "0.2"
 description "PHP contact form - homepage: http://www.h-fj.com/blog/mtplgdoc/"
 
-# 24 results for "powered by MailForm" @ 2010-09-18
+# Google results as at 2010-09-18 #
+# 24 for "powered by MailForm"
+
+# Examples #
 examples %w|
 www.mt-j.info/contact.html
 ono-eye.jpmd.org/mailform.html
 soramame.com.au/en/mail-form.php
-yurakucho-cpa.jp/yurakucho_cpa_office/mailform.html
 www.another-here-i-am.com/mailform.php
 www.clover8.com/mailform.html
 www.jatts.jp/admissionform.html
 |
 
-# Version detection
-def passive
-        m=[]
+# Matches #
+matches [
 
-	# Powered by text
-        if @body =~ /<a href="http:\/\/www.h-fj.com\/blog\/mtplgdoc\/mailformv[\d\.\_]+.php"[^>]*>Powered by Mailform[\ plugin]*[s]* V([\d\.]+)<\/a>/i
-                version=@body.scan(/<a href="http:\/\/www.h-fj.com\/blog\/mtplgdoc\/mailformv[\d\.\_]+.php"[^>]*>Powered by Mailform[\ plugin]*[s]* V([\d\.]+)<\/a>/i).to_s
-                m << {:version=>version}
-        end
+# Version Detection # Powered by text
+{ :version=>/<a href="http:\/\/www.h-fj.com\/blog\/mtplgdoc\/mailformv[\d\.\_]+.php"[^>]*>Powered by Mailform plugin[s]? V([\d\.]+)<\/a>/i, :regexp_offset=>0 },
 
-        m
+{ :version=>/<a href="http:\/\/www.h-fj.com\/blog\/mtplgdoc\/mailformv[\d\.\_]+.php"[^>]*>Powered by Mailform V([\d\.]+)<\/a>/i, :regexp_offset=>0 },
 
-end
-
+]
 
 end
 
