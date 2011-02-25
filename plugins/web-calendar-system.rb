@@ -4,10 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "Web-Calendar-System" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15
-version "0.1"
-description "web calendar"
+version "0.2"
+description "web calendar system"
+
+# Google results as at 2010-06-15 #
+# 18,000,000 for +intitle:"Web Calendar system v" inurl:.asp
+
+# Examples #
 examples %w|
 www.southforkwatershed.org/Calendar/calendar.asp
 www.quispamsis.ca/calendar/sample2.asp
@@ -36,27 +44,16 @@ www.cardiff.info/eventscalendar/CALENDAR_PRINT.asp
 www.boosnet.com/calendario/CALENDAR_PRINT.asp
 |
 
+# Matches #
 matches [
 
-# About 18,000,000 results @ 2010-06-15
-{:name=>'GHDB: +intitle:"Web Calendar system v" inurl:.asp',
-:certainty=>25,
-:ghdb=>'+intitle:"Web Calendar system v" inurl:.asp'
-}
+# GHDB Match
+{ :certainty=>25, :ghdb=>'+intitle:"Web Calendar system v" inurl:.asp' },
+
+# Version Detection # Default Title
+{ :version=>/<TITLE>Web Calendar system v ([\.\d]+)<\/TITLE>/, :regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /<TITLE>Web Calendar system v ([\.\d]+)<\/TITLE>/
-                version=@body.scan(/<TITLE>Web Calendar system v ([\.\d]+)<\/TITLE>/)[0][0]
-                m << {:name=>"default title version",:version=>version}
-        end
-
-        m
-end
-
 
 end
 
