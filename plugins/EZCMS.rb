@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "EZCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
-version "0.1"
+version "0.2"
 description "Building your own website is easy with the EZ Websites Builder - homepage: http://www.ezwebsites.com.au"
 
-# 20 results for "powered by EZCMS" -Vulnerabilities @ 2010-08-28
+# Google results as at 2010-08-28 #
+# 20 for "powered by EZCMS" -Vulnerabilities
+
+# Examples #
 examples %w|
 ezcms.eztechhelp.com
 www.eztechhelp.com/ezcms/
@@ -18,6 +24,7 @@ www.liverpoolwebdesign.com.au
 www.ezwebsites.com.au
 |
 
+# Matches #
 matches [
 
 # Powered by text
@@ -32,28 +39,13 @@ matches [
 # Default title
 { :text=>'<title>EZCMS Content Management System</title>' },
 
+# Version Detection # Admin page
+{ :version=>/<center><strong>EZCMS ([\d\.]+) /, :regexp_offset=>0 },
+
+# Version Detection # Powered by text
+{ :version=>/Powered by <a href="http:\/\/ezcms.eztechhelp.com\/">EZCMS ([\d\.]+)<\/a>/, :regexp_offset=>0 },
+
 ]
-
-# Version detection
-def passive
-        m=[]
-
-	# Admin page
-        if @body =~ /<center><strong>EZCMS ([\d\.]+) /
-                version=@body.scan(/<center><strong>EZCMS ([\d\.]+) /)
-                m << {:version=>version}
-        end
-
-	# Powered by text
-	if @body =~ /Powered by <a href="http:\/\/ezcms.eztechhelp.com\/">EZCMS ([\d\.]+)<\/a>/
-		version=@body.scan(/Powered by <a href="http:\/\/ezcms.eztechhelp.com\/">EZCMS ([\d\.]+)<\/a>/)[0][0]
-		 m << {:version=>version}
-	end
-
-        m
-
-end
-
 
 end
 
