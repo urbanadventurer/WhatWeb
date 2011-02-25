@@ -4,18 +4,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "Mobotix-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
-version "0.1"
+version "0.2"
 description "MOBOTIX network camera web interface - homepage: http://www.mobotix.com/"
 # Default login: admin/meinsm
 
-# 335 Google results for intext:"MOBOTIX M1" | intext:"MOBOTIX M10") intext:"Open Menu" Shift-Reload -intext @ 2010-07-20
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=352
-# 83 Google results for (intitle:MOBOTIX intitle:PDAS) | (intitle:MOBOTIX intitle:Seiten) | (inurl:/pda/index.html +camera) -intitle @ 2010-07-20
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1735
-# 42 results for inurl:/en/help.cgi "ID=*"
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1151
+# Google results as at 2010-07-20 #
+# 335 for intext:"MOBOTIX M1" | intext:"MOBOTIX M10") intext:"Open Menu" Shift-Reload -intext
+# 83 for (intitle:MOBOTIX intitle:PDAS) | (intitle:MOBOTIX intitle:Seiten) | (inurl:/pda/index.html +camera) -intitle
+# 42 for inurl:/en/help.cgi "ID=*"
+
+# Examples #
 examples %w|
 128.176.146.244
 130.37.9.12
@@ -146,28 +149,21 @@ www.zaugghans.dyndns.org
 zfw003-cccsd.selfip.com
 |
 
+# Matches #
 matches [
 
+# Meta Tags
 { :text=>'<meta name="publisher" content="MOBOTIX AG, Germany">' },
 { :text=>'<meta name="copyright" content="MOBOTIX AG, Germany">' },
 { :text=>'<meta name="author" content="Daniel Kabs, MOBOTIX AG, Kaiserslautern, Germany.">' },
 
-{ :regexp=>/<font face="Helvetica,Arial" size="-2">	&copy;2001[\-0-9]* <a href="\/about.html">MOBOTIX AG<\/a>, Germany  &middot; <a href="http:\/\/www.mobotix.com\/">http:\/\/www.mobotix.com\/<\/a>/ },
+# About Footer
+{ :regexp=>/<font face="Helvetica,Arial" size="-2">	&copy;2001[\-0-9]{0,5} <a href="\/about.html">MOBOTIX AG<\/a>, Germany  &middot; <a href="http:\/\/www.mobotix.com\/">http:\/\/www.mobotix.com\/<\/a>/ },
+
+# Firmware Detection # Default JavaScript
+{ :firmware=>/var filesystem__version="[M0-1\-]*V([\d\.]+)";/, :regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /var filesystem__version="[M0-1\-]*V[\d\.]+";/
-		version=@body.scan(/var filesystem__version="[M0-1\-]*V([\d\.]+)";/)[0].to_s
-                m << {:version=>version }
-        end
-
-        m
-
-end
-
 
 end
 
