@@ -4,47 +4,39 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated model detection
+##
 Plugin.define "Dell-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
-version "0.1"
+version "0.2"
 description "Dell printer web frontend - http://www.dell.com/" 
 
-# 1 result for intitle:"Dell *" inurl:port_0 @ 2010-07-22
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1281
-# 1 result for intitle:"configuration" inurl:port_0 @ 2010-07-22
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1318
-# 4 results for "Online Help" "Order Supplies" intitle:"Laser Printer" intitle:dell @ 2010-07-22
-# 2 results for inurl:"port_255" -htm intitle:"Printer Settings" @ 2010-07-22
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1221
+# Google results as at 2010-07-22 #
+# 1 for intitle:"Dell *" inurl:port_0
+# 1 for intitle:"configuration" inurl:port_0
+# 4 for "Online Help" "Order Supplies" intitle:"Laser Printer" intitle:dell
+# 2 for inurl:"port_255" -htm intitle:"Printer Settings"
+
+# Examples #
 examples %w|
 128.192.89.71
-www.perris-world.com
 128.125.132.215
-141.20.43.243
 129.25.9.220
 biomech-va.media.mit.edu
 et000400757849.emporia.edu
 |
 
-def passive
-        m=[]
+# Matches #
+matches [
 
-	# Tested models: 3100cn / 5100cn / M5200 / 1710n
-        if @body =~ /<[TITLE|title]*>Dell Laser Printer [A-Z]*[\d]{4}[a-z]*<\/[TITLE|title]*>/
-                version=@body.scan(/<[TITLE|title]*>Dell Laser Printer ([A-Z]*[\d]{4}[a-z]*)<\/[TITLE|title]*>/)[0][0]
-                m << {:version=>version }
-        end
+# Model Detection # Tested models: 3100cn / 5100cn / M5200 / 1710n
+{ :model=>/<title>Dell Laser Printer ([A-Z]?[\d]{4}[a-z]{0,2})<\/title>/i, :regexp_offset=>0 },
 
-	# Tested model: 2330dn
-        if @body =~ /<TITLE>Dell [\d]{4}[a-z]+ Laser Printer<\/TITLE>/
-                version=@body.scan(/<TITLE>Dell ([\d]{4}[a-z]+) Laser Printer<\/TITLE>/)[0][0]
-                m << {:version=>version }
-        end
+# Model Detection # Tested model: 2330dn
+{ :model=>/<TITLE>Dell ([\d]{4}[a-z]+) Laser Printer<\/TITLE>/, :regexp_offset=>0 },
 
-        m
-
-end
-
+]
 
 end
 
