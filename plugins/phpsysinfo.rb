@@ -4,15 +4,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-02-25 #
+# Updated OS detection
+##
 # Version 0.2 #
 # Updated version detection. Added OS extraction.
 ##
 Plugin.define "phpSysInfo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
-version "0.2"
+version "0.3"
 description "PHPSysInfo is a customizable PHP Script that parses /proc, and formats information nicely. It will display information about system facts like Uptime, CPU, Memory, PCI devices, SCSI devices, IDE devices, Network adapters, Disk usage, and more. - homepage:http://phpsysinfo.sourceforge.net/"
 
-# About 16,400 results for "Created by phpSysInfo" @ 2010-06-09
+# Google results as at 2010-06-09 #
+# 16,400 for "Created by phpSysInfo"
+
+# Examples #
 examples %w|
 phpsysinfo.sourceforge.net/phpsysinfo/
 fountainalleylofts.com
@@ -45,6 +51,7 @@ protcluster.biotec.or.th/phpSysInfo/
 cbrc.musc.edu/phpSysInfo/
 |
 
+# Matches #
 matches [
 
 # GHDB Match
@@ -62,21 +69,16 @@ matches [
 # Version detection # index.php?disp=static # Created by text
 { :version=>/<span>Created by <\/span><a href="http:\/\/phpsysinfo.sourceforge.net\/"><span>phpSysInfo - <\/span><span>([^<]+)<\/span>/, :regexp_offset=>0 },
 
+# Operating System Kernel Version Detection # phpSysInfo 3.x # index.php?disp=static
+{ :os=>/<td style="width:160px; "><span>Kernel Version<\/span><\/td><td>([^<]+)<\/td><\/tr>/, :regexp_offset=>0 },
+
+# Operating System Detection # index.php?disp=static
+{ :os=>/<td valign="top"><font size="-1">Distro Name<\/font><\/td>[\r\n\s]*<td><img[^>]+>[\s&nbsp;]*<font size="-1">([^<]+)<\/font><\/td>/, :regexp_offset=>0 },
+
+# Operating System Kernel Version Detection # index.php?disp=static
+{ :os=>/<td valign="top"><font size="-1">Kernel Version<\/font><\/td>[\r\n\s]*<td><font size="-1">([^<]+)<\/font><\/td>/, :regexp_offset=>0 },
+
 ]
-
-# Extract details # index.php?disp=static
-def passive
-	m=[]
-
-	# Operating System
-	if @body =~ /<td style="width:160px; "><span>Kernel Version<\/span><\/td><td>([^<]+)<\/td><\/tr>/
-		modules=@body.scan(/<td style="width:160px; "><span>Kernel Version<\/span><\/td><td>([^<]+)<\/td><\/tr>/)
-		m << { :module=>modules }
-	end
-
-	m
-
-end
 
 end
 
