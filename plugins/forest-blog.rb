@@ -4,13 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "Forest-Blog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-12
-version "0.1"
+version "0.2"
 description "Forest Blog - homepage: http://www.hostforest.co.uk/Products/blog.asp"
 
-# 243 results for "powered by Forest Blog" @ 2010-08-11
-# 15 results for intitle:"Forest Blog Administration" @ 2010-08-11
+# Google results as at 2010-08-11 #
+# 243 for "powered by Forest Blog"
+# 15  for intitle:"Forest Blog Administration"
+
+# Examples #
 examples %w|
 www.jonathantokeley.com/Admin/
 poweron.mobile88.com/Admin/
@@ -77,28 +83,22 @@ ellen.illinoisffa.org
 blog.biggerplate.com
 |
 
+# Matches #
 matches [
 
-{ :regexp=>/Powered [B|b]+y: <a href="http:\/\/www.hostforest.co.uk\/[Products\/blog.asp|Blog]+" [class|rel]*="external" title="Forest Blog[\ \(link opens in a new window\)]*"/ },
+# Powered by text
+{ :regexp=>/Powered [B|b]?y[:]? <a href="http:\/\/www.hostforest.co.uk\/[^"]*"[^>]+title="Forest Blog"[^>]*>/ },
 
-# Admin Page
+# Admin Page # Default Title
 { :text=>'<title>Forest Blog Administration</title>' },
+
+# Admin Page # Default h1 Heading
 { :text=>'			<h1>Forest Blog Administration</h1>' },
 
+# Version Detection # Powered by text
+{ :version=>/Powered [B|b]?y[:]? <a href="http:\/\/www.hostforest.co.uk\/[^"]*"[^>]+title="Forest Blog"[^>]*>Forest Blog<\/a> v([\d\.]+)/, :regexp_offset=>0 },
+
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /Powered [B|b]+y: <a href="http:\/\/www.hostforest.co.uk\/[Products\/blog.asp|Blog]+" [class|rel]*="external" title="Forest Blog[\ \(link opens in a new window\)]*">Forest Blog<\/a> v[\d\.]+/
-                version=@body.scan(/Powered [B|b]+y: <a href="http:\/\/www.hostforest.co.uk\/[Products\/blog.asp|Blog]+" [class|rel]*="external" title="Forest Blog[\ \(link opens in a new window\)]*">Forest Blog<\/a> v([\d\.]+)/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 
