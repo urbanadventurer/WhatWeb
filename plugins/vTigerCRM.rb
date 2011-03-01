@@ -35,7 +35,7 @@ matches [
 
 { :version => /<span style='color: rgb\([\d]{1,3}, [\d]{1,3}, [\d]{1,3}\);'>vtiger CRM ([^<]*)<\/span>/, :regexp_offset => 0},
 
-{ :name=>'copyright footer', :regexp => /&copy; 2004\-\d{4} <a href='http:\/\/www.vtiger.com' target='_blank'>vtiger.com<\/a>/},
+{ :name=>'copyright footer', :regexp => /&copy; 200[\d]{1}\-\d{4} <a href='http:\/\/www.vtiger.com' target='_blank'>vtiger.com<\/a>/},
 
 { :name=>'html body favicon', :text=>'/vtigercrm_icon.ico">'}
 
