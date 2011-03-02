@@ -4,14 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-03-02 #
+# Updated version detection
+##
 Plugin.define "Koobi" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
-version "0.1"
-description "German Shop/CMS software - homepage: http://www.Dream4.de/"
+version "0.2"
+description "Shop/CMS software [German] - homepage: http://www.Dream4.de/"
 
-# 262 results for "powered by Koobi PRO|SHOP|CMS" -"SQL Injection" @ 2010-08-28
+# Google results as at 2010-08-28 #
+# 262 for "powered by Koobi PRO|SHOP|CMS" -"SQL Injection"
+
+# Examples #
 examples %w|
-aluminiumlot.com
 archiwum.wrzesnia.info.pl
 baumkuchen-cottbus.de
 communitypower.info/online/linkverzeichnis/
@@ -64,70 +69,40 @@ maximum-network.com/atelier/shop/produkte/
 www.auroraworld.de/shop/shop/produkte/
 |
 
+# Matches #
 matches [
 
 # powered by text
-{ :regexp=>/Powered by <a title="Koobi ist ein komfortables und leistungsf&auml;higes Content-Management-System \(CMS\) f&uuml;r Privatpersonen, Vereine, kleine und mittelst&auml;ndische Unternehmen, die einen professionellen Internetauftritt realisieren m&ouml;chten."[^>]+>Koobi[\ :]*[PRO|CMS|SHOP]*/i },
+{ :regexp=>/Powered by <a title="Koobi ist ein komfortables und leistungsf&auml;higes Content-Management-System \(CMS\) f&uuml;r Privatpersonen, Vereine, kleine und mittelst&auml;ndische Unternehmen, die einen professionellen Internetauftritt realisieren m&ouml;chten."[^>]+>Koobi[\ :]*/i },
 
-# HTML comemnt
+# HTML Comment
 { :text=>'<!-- powered by koobi - do not remove this info! -->' },
 
+# Version Detection # Koobie Pro Powered by text
+{ :version=>/powered by <a class="foot" href="http:\/\/www.dream4.de\/[^>]+>Koobi Pro ([\d\.]+)<\/a>/i, :module=>["Pro"], :regexp_offset=>0 },
+
+# Version Detection # Meta generator
+{ :version=>/<meta name="generator" content="\(c\) Koobi ([\d\.]+), http:\/\/www.dream4.de" \/>/, :regexp_offset=>0 },
+
+# Version Detection # Powered by text
+{ :version=>/Powered by <a title="Koobi ist ein komfortables und leistungsf&auml;higes Content-Management-System \(CMS\) f&uuml;r Privatpersonen, Vereine, kleine und mittelst&auml;ndische Unternehmen, die einen professionellen Internetauftritt realisieren m&ouml;chten."[^>]*>Koobi[\ :]*(SHOP|PRO|CMS)<\/a> ([\d\.]+)/i, :regexp_offset=>1 },
+
+# Version Detection # Powered by text
+{ :version=>/Powered by <a[^>]+href="http:\/\/www.dream4.de\/cms\/content\/6\/koobi\/1\/">Koobi<\/a> (PRO|SHOP|CMS)[\s]*([\d\.\ a-z]+)/i, :regexp_offset=>1 },
+
+# Version Detection # Old Koobi CMS powered by text
+{ :version=>/powered by <a[^>]+href="http:\/\/www.dream4.de\/[^>]+>koobi-cms<\/a> ([\d\.]+)/i, :regexp_offset=>0 },
+
+# Version Detection # Powered by text
+{ :version=>/<div class="copyright">powered by Koobi CMS ([\d\.]+)/, :regexp_offset=>0 },
+
+# Version Detection # HTML comment
+{ :version=>/    Diese Webseite wurde mit Koobi[\ :]*(SHOP|PRO|CMS)[\ \-]*([\d\.\ a-z]+) erstellt./, :regexp_offset=>1 },
+
+# Version Detection # Nulled script by antichat.ru # Powered by text
+{ :version=>/powered by <a class="foot" href="http:\/\/www.antichat.ru" target="_blank">Koobi Pro ([\d\.]+) \[nulled by censored! from antichat.ru\]<\/a>/, :module=>["Nulled"], :regexp_offset=>0 },
+
 ]
-
-# Version detection
-def passive
-        m=[]
-
-	# Koobie Pro Powered by text
-	if @body =~ /powered by <a class="foot" href="http:\/\/www.dream4.de\/[^>]+>Koobi Pro ([\d\.]+)<\/a>/i
-		version=@body.scan(/powered by <a class="foot" href="http:\/\/www.dream4.de\/[^>]+>Koobi Pro ([\d\.]+)<\/a>/i)[0][0]
-		 m << {:version=>version}
-	end
-
-	# Meta generator
-	if @body =~ /<meta name="generator" content="\(c\) Koobi ([\d\.]+), http:\/\/www.dream4.de" \/>/
-		version=@body.scan(/<meta name="generator" content="\(c\) Koobi ([\d\.]+), http:\/\/www.dream4.de" \/>/)[0][0]
-		m << {:version=>version}
-	end
-
-	# Powered by text
-	if @body =~ /Powered by <a title="Koobi ist ein komfortables und leistungsf&auml;higes Content-Management-System \(CMS\) f&uuml;r Privatpersonen, Vereine, kleine und mittelst&auml;ndische Unternehmen, die einen professionellen Internetauftritt realisieren m&ouml;chten.[\ target="_blank"]*[\ href="http:\/\/www.dream4.de\/cms\/content\/6\/koobi\/1\/"]*>Koobi[\ :]*[SHOP|PRO|CMS]+<\/a> ([\d\.]+)/i
-		version=@body.scan(/Powered by <a title="Koobi ist ein komfortables und leistungsf&auml;higes Content-Management-System \(CMS\) f&uuml;r Privatpersonen, Vereine, kleine und mittelst&auml;ndische Unternehmen, die einen professionellen Internetauftritt realisieren m&ouml;chten."[\ target="_blank"]*[\ href="http:\/\/www.dream4.de\/cms\/content\/6\/koobi\/1\/"]*>Koobi[\ :]*[SHOP|PRO|CMS]+<\/a> ([\d\.]+)/i)[0][0]
-		m << {:version=>version}
-	end
-
-	if @body =~ /Powered by <a[\ target="_blank"]* href="http:\/\/www.dream4.de\/cms\/content\/6\/koobi\/1\/">Koobi<\/a> [PRO|SHOP|CMS]*[\s]*([\d\.\ a-z]+)/i
-		version=@body.scan(/Powered by <a[\ target="_blank"]* href="http:\/\/www.dream4.de\/cms\/content\/6\/koobi\/1\/">Koobi<\/a> [PRO|SHOP|CMS]*[\s]*([\d\.\ a-z]+)/i)[0][0]
-		m << {:version=>version}
-	end
-
-	# Old Koobi CMS powered by text
-	if @body =~ /powered by <a[^href]+href="http:\/\/www.dream4.de\/[^>]+>koobi-cms<\/a> ([\d\.]+)/i
-		version=@body.scan(/powered by <a[^href]+href="http:\/\/www.dream4.de\/[^>]+>koobi-cms<\/a> ([\d\.]+)/i)[0][0]
-		m << {:version=>version}
-	end
-
-	if @body =~ /<div class="copyright">powered by Koobi CMS ([\d\.]+)/
-		version=@body.scan(/<div class="copyright">powered by Koobi CMS ([\d\.]+)/)[0][0]
-		 m << {:version=>version}
-	end
-
-	# HTML comment
-	if @body =~ /    Diese Webseite wurde mit Koobi[\ :]*[SHOP|PRO|CMS]+[\ \-\ ]*([\d\.\ a-z]+) erstellt./
-		version=@body.scan(/    Diese Webseite wurde mit Koobi[\ :]*[SHOP|PRO|CMS]+[\ \-\ ]*([\d\.\ a-z]+) erstellt./)[0][0]
-		 m << {:version=>version}
-	end
-
-	# Nulled script by antichat.ru powered by text
-	if @body =~ /powered by <a class="foot" href="http:\/\/www.antichat.ru" target="_blank">Koobi Pro ([\d\.]+) \[nulled by censored! from antichat.ru\]<\/a>/
-		version=@body.scan(/powered by <a class="foot" href="http:\/\/www.antichat.ru" target="_blank">Koobi Pro ([\d\.]+) \[nulled by censored! from antichat.ru\]<\/a>/)[0][0]
-		m << {:version=>version+" - nulled by antichat.ru"}
-	end
-
-        m
-
-end
-
 
 end
 
