@@ -4,12 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-03-02 #
+# Removed false positives
+##
 # Version 0.2 # 2011-01-09 #
 # Updated model detection
 ##
 Plugin.define "Unknown-Router" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
-version "0.2"
+author "Brendan Coles <bcoles@gmail.com>" # 2011-02-03
+version "0.3"
 description "This plugin identifies routers for which the vendor is unknown or where fingerprinting is exceptionally difficult."
 
 # Examples #
@@ -51,21 +54,6 @@ matches [
 
 # i3micro VRG # Default Favicon
 { :model=>'i3micro VRG', :url=>"/favicon.ico", :md5=>"e4a509e78afca846cd0e6c0672797de5" },
-
-# 2Wire # Default Model Logo
-{ :model=>'2Wire 1000 Series', :status=>200, :url=>'/base/web/def/def/images/nav_sl_logo.gif', :certainty=>75 },
-
-# DI524 # Default Model Logo
-{ :model=>'Probably DI524', :status=>200, :url=>'/m524.gif', :certainty=>75 },
-
-# Thomson Cable Modem A801 # Default Logo
-{ :model=>'Probably Thomson Cable Modem A801', :status=>200, :url=>'/images/thomson.gif', :certainty=>75 },
-
-# SurfinBird 313 # Default Logo
-{ :model=>'Probably SurfinBird 313', :status=>200, :url=>'/images/help_p.gif', :certainty=>75 },
-
-# Unknown Router 0001 # Login page # Default Title
-{ :url=>"/login", :text=>" <title>Login</title>", :certainty=>75 },
 
 # Unknown Router 0001 # Login page # Default favicon
 { :md5=>"d8d705cef8dbf67357ee908f42fd1baa", :url=>"/favicon.ico" },
