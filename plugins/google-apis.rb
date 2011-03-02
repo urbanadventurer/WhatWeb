@@ -4,26 +4,38 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.2 # 2011-03-02 #
+# Updated regex
+# Added dynamic match
+##
 Plugin.define "Google-API" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09 
-version "0.1"
-description "finds references to ajax.googleapis.com in <script> src."
+version "0.2"
+description "This plugin identifies references to Google API in <script>."
 
-def passive
+# Examples #
+examples %w|
+jquery
+scriptsrc.net
+css-tricks.com
+googleajaxsearchapi.blogspot.com
+getclicky.com
+jqueryui.com
+encosia.com
+telerik.com
+nivo.dev7studios.com
+|
 
-        m=[]
-        result=""
-        if @body =~/<[\s]*script[\s]*src=[\"\']*http:\/\/ajax.googleapis.com\/[a-zA-Z0-9\/\.\'-_]+"[\s]*[type="text\/javascript"]*[\s]*>[\s]*<[\s]*\/script[\s]*>/i 
-		v=@body.scan(/<[\s]*script[\s]*src=[\"\']*http:\/\/ajax.googleapis.com\/([a-zA-Z0-9\/\.\'-_]+)"[\s]*[type="text\/javascript"]*[\s]*>[\s]*<[\s]*\/script[\s]*>/i) { |match|
-  result << "#{match} "
-}
-                m << {:name=>"google javascript API", :version=>result }
-	end
+# Matches #
+matches [
 
-        m
+# Dynamic
+{ :regexp=>/<script[^>]+src[\s]*=[\s]*["|']?http:\/\/www.google.com\/jsapi[^>]*>[\s]*<\/script[\s]*>/i, :module=>["Dynamic"] },
 
-end
+# Extract source path
+{ :string=>/<script[^>]+src[\s]*=[\s]*["|']?http:\/\/ajax.googleapis.com\/([a-zA-Z0-9\/\.-_]+)["|']?[^>]*>[\s]*<\/script[\s]*>/i, :regexp_offset=>0 },
+
+]
 
 end
 
