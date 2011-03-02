@@ -4,21 +4,32 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
+# Version 0.2 # 2011-03-02 #
+# Added favicon and beefmagic.js.php matches
+##
 Plugin.define "BeEF" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04
-version "0.1"
+version "0.2"
 description "BeEF - Browser Exploitation Framework - homepage: http://www.bindshell.net/tools/beef/"
+
+# Examples #
 examples %w|
 stage3i.free.fr/ui/
 showcase1.se/sosse/beef/ui/
+manyeikshramit.com/beef/ui/
 |
 
+# Matches #
 matches [
-{:name=>"default logo", :text=>'<img src="../images/beef.gif" onclick="new Effect.Shake(\'sidebar\');"></div> BeEF</h1>'
-}
 
+# Default Logo HTML
+{ :name=>"default logo", :text=>'<img src="../images/beef.gif" onclick="new Effect.Shake(\'sidebar\');"></div> BeEF</h1>' },
+
+# Favicon
+{ :url=>"favicon.ico", :md5=>"749749ba87e84d48b44b69ed2241987c" },
+
+# Injected script
+{ :regexp=>/<script[^>]+src=['|"]?[^>^=]+\/hook\/beefmagic.js.php['|"]?[^>]+>/, :certainty=>75 },
 
 ]
 
