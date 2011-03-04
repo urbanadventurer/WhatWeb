@@ -4,54 +4,57 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.2 # 2011-03-05 # Brendan Coles <bcoles@gmail.com>
+# Updated version detection
+##
 Plugin.define "Mailman" do
 author "Tonmoy Saikia"
-version "0.1"
+version "0.2"
 description "Mailman is free software for managing electronic mail discussion and e-newsletter lists. WEB:http://www.gnu.org/software/mailman/index.html"
+
+# Google results as at 2011-03-05 #
+# 443 for inurl:mailman "Delivered by Mailman"
+# 300 for inurl:mailman "Delivered by Mailman" inurl:edu
+# 205 for inurl:mailman "Delivered by Mailman" inurl:gov
+# 25  for inurl:mailman "Delivered by Mailman" inurl:mil
+
+# Examples #
 examples %w|
 http://mail.opensolaris.org/mailman/listinfo
 https://dev.eclipse.org/mailman/listinfo/
 http://lists.hosef.org/listinfo.cgi
-http://lists.apple.com/
+http://lists.apple.com/mailman/
 http://mailman.metu.edu.tr/mailman/listinfo/
 http://lists.natureserve.org/mailman/listinfo
 http://mail.gnome.org/mailman/listinfo
-http://ncsi.iisc.ernet.in/mailman/listinfo/lis-forum
-http://www.daa.com.au/mailman/listinfo/pygtk
+http://ncsi.iisc.ernet.in/mailman/listinfo/
+http://www.daa.com.au/mailman/listinfo/
 http://www.itk.org/mailman/listinfo/
 http://lists.macosforge.org/mailman/listinfo.cgi
+http://listas.datasus.gov.br/cgi-bin/mailman/listinfo
+https://correo.ingeominas.gov.co/mailman/listinfo/
+http://lists.cendoj.ramajudicial.gov.co/mailman/listinfo/
+http://lists.lsc.gov/mailman/listinfo/
+http://gov.gov1.us/mailman/listinfo
+http://mailman.pge.rs.gov.br/mailman/listinfo
 |
 
-#<td><img src="/icons/mailman.jpg" alt="Delivered by Mailman" border=0><br>version 2.1.12</td>
-#<td><a href="http://mailman.metu.edu.tr/mailman/listinfo/top-list"><strong>TOP-LIST</strong></a></td>
-#<td><a href="http://mailman.metu.edu.tr/mailman/listinfo/ncc-yy"><strong>NCC-YY</strong></a></td>
-#<td><a href="http://mailman.metu.edu.tr/mailman/listinfo/kayitsil"><strong>kayitsil</strong></a></td>
-
+# Matches #
 matches [
-{:name=>"ghdb match",
-:ghdb=>'inurl:mailman "Delivered by Mailman"'},
 
-{:name=>"default text",
-:text=>'<td><img src="/icons/mailman.jpg" alt="Delivered by Mailman" border=0><br>version'},
+# GHDB Match
+{ :certainty=>25, :ghdb=>'inurl:mailman "Delivered by Mailman"'},
 
-{:name=>"mailing list links",
-:regexp=>/<a[^>]+href="http(s*):\/\/[^"]+mailman[^"]+"/}
+# Mailing list listinfo links
+{ :regexp=>/<td><a[^>]+href="[^"]+\/listinfo\/[^"]+"><strong>[^<]+<\/strong><\/a><\/td>/ },
+
+# Version Detection # Delivered by logo
+{ :version=>/<td><img src="[^"]+\/mailman.jpg" alt="Delivered by Mailman"[^>]+><br>version (\d.\d.[0-9a-z]+)/, :regexp_offset=>0 },
+
+# Version Detection # Delivered by text
+{ :version=>/<td><a href="http:\/\/www.gnu.org\/software\/mailman\/index.html">Delivered by Mailman<br>version (\d.\d.[0-9a-z]+)<\/a>/, :regexp_offset=>0 },
 
 ]
-
-#<td><img src="/icons/mailman.jpg" alt="Delivered by Mailman" border=0><br>version 2.1.13</td>
-def passive
-        m=[]
-
-        if @body =~ /alt="Delivered by Mailman"[^>]+><br>version\s(\d.\d.[0-9a-z]+)/
-                version=@body.scan(/alt="Delivered by Mailman"[^>]+><br>version\s(\d.\d.[0-9a-z]+)/)[0][0]
-                m << {:name=>"powered by version text",:version=>version}
-        end
-
-        m
-end
-
 
 end
 
