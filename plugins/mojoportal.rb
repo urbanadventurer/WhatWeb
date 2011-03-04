@@ -4,10 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-03-04 #
+# Added match for setup page
+##
 Plugin.define "mojoPortal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09 
-version "0.1"
+version "0.2"
 description "mojoPortal is Free and Open Source. Create accessible, standards compliant web pages and content right in the browser. Powerful content management, easy to learn, easy to use. - homepage:http://www.mojoportal.com/"
+
+# Google results as at 2011-03-04 #
+# 392 for "Powered by mojoPortal"
+# 22  for "Welcome to mojoPortal Setup" intitle:"mojoPortal Setup"
+
+# Examples #
 examples %w|
 www.mojoportal.com
 storedemo.mojoportal.com
@@ -33,31 +42,33 @@ www.chartwellstables.co.za
 www.riovara.net
 pocketcigarguide.com
 kellyfurnitureservice.com/cms/
+agro-house.com/Setup/Default.aspx
+www.cssiofma.com
+www.scdpmonline.org/Setup/Default.aspx
+es.positionlogic.com/Setup/Default.aspx
+www.creoconstruction.com/default.aspx
+www.medinarcraceway.com
 |
 
+# Matches #
 matches [
 
-# About 178,000 results @ 2010-06-09
-{:name=>'GHDB: "Powered by mojoPortal"',
-:certainty=>25,
-:ghdb=>'"Powered by mojoPortal"'
-},
+# GHDB: "Powered by mojoPortal"
+{ :certainty=>25, :ghdb=>'"Powered by mojoPortal"' },
 
-# powered by text with unique HTML structure
-{:name=>"powered by text 1", 
-:text=>"<a href='http://www.mojoportal.com' >Powered by mojoPortal</a>"
-},
+# Powered by text
+{ :text=>"<a href='http://www.mojoportal.com' >Powered by mojoPortal</a>" },
 
-# powered by text with unique HTML structure
-{:name=>"powered by text 2",
-:text=>"<a href='http://www.mojoportal.com'  title='mojoPortal.com'>Powered by mojoPortal</a>"
-},
+{ :text=>"<a href='http://www.mojoportal.com'  title='mojoPortal.com'>Powered by mojoPortal</a>" },
 
-# default title html
-{:name=>"default title html",
-:certainty=>25,
-:regexp=>/<head id="ct[0-9]+_Head[0-9]+"><title>/i
-}
+# Default Head+Title HTML
+{ :certainty=>25, :regexp=>/<head id="ct[0-9]+_Head[0-9]+"><title>/i },
+
+# Setup Page # Default logo HTML
+{ :text=>'	<img src="../Data/SiteImages/mojoportal-logo-med.gif" alt="mojoPortal Content Management System" />' },
+
+# Setup Page # Default CSS
+{ :text=>'<link id="Link1" runat="server" rel="stylesheet" href="../Data/style/setup.css" type="text/css"  />' },
 
 ]
 
