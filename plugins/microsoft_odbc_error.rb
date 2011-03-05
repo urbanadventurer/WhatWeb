@@ -4,30 +4,43 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-Plugin.define "MicrosoftODBCError" do
+# Version 0.2 # 2011-03-05 # Brendan Coles <bcoles@gmail.com>
+# Updated error code string detection to reduce false positives
+##
+Plugin.define "Microsoft-ODBC-Error" do
 author "Caleb Anderson"
-version "0.1"
-description "Microsoft odbc error message"
+version "0.2"
+description "This plugin identifies Microsoft ODBC error codes."
 
-examples %w| http://www.nutragold.co.nz/main.cfm?id=5843&sid=916&id2=964 http://www.sitefinder.co.nz/entertainment/10/|
+# Error code list :
+# http://www.easysoft.com/developer/interfaces/odbc/sqlstate_status_return_codes.html
 
-matches [
-{:name=>"odbc error message'",
-:regexp=>/ODBC Error Code = [a-zA-Z0-9]+/ },
+# Google results as at 2011-03-05 #
+# 100 for "ODBC Error Code = 37000 (Syntax error or access violation)" ext:cfm
 
-]
+# Examples #
+examples %w|
+www.nutragold.co.nz/main.cfm?id=5843&sid=916&id2=964
+careers.terrywhitechemists.com.au/pharmacist.cfm?jobID=
+www.fishbase.us/country/CountrySpeciesSummary.cfm?id=
+www.generationproducts.com/index.cfm?fuseaction=displaysitecategory&category=
+www.athealth.com/ClintonClay.cfm?list=741
+www.nepalisite.com/fashion/ramp/ramp.cfm
+www.organicitta.org/materici/Materici.cfm?Cod=7
+|
 
+# Passive #
 def passive
-	re=/ODBC Error Code = ([a-zA-Z0-9]+)/
-	if @body =~ re
-		error=@body.scan(re).first.first
-	end
-    	return [{:name=>"odbc error code",:string=>error}] unless error.nil?
-    	return []
-end
+	m=[]
 
+	# ODBC Error Code
+	if @body =~ /\[ODBC/
+		m << { :certainty=>25, :string=>@body.scan(/ODBC Error Code = ([a-zA-Z0-9]{3,5}) \(/), :regexp_offset=>0 }
+	end
+
+	# Return passive matches
+	m
+end
 
 end
 
