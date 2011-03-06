@@ -19,12 +19,12 @@ www.bhosted.net
 matches [
 
 # Default Stylesheets
-{ :regexp=>/<link rel='stylesheet' id='NextGEN-css'  href='[^']*\/wp-content\/themes\/default_ngg\/nggallery.css\?ver=[\d\.]+' type='text\/css' media='screen' \/>/, :module=>["Wordpress"] },
-{ :regexp=>/<link rel='stylesheet' id='shutter-css'  href='[^']*\/wp-content\/plugins\/nextgen-gallery\/shutter\/shutter-reloaded.css\?ver=[\d\.]+' type='text\/css' media='screen' \/>/, :module=>["Wordpress"] },
-{ :regexp=>/<link rel='stylesheet' id='galleryview-css'  href='[^']*\/wp-content\/plugins\/nggGalleryview\/galleryview.css\?ver=[\d\.]+' type='text\/css' media='screen' \/>/, :module=>["Wordpress"] },
+{ :regexp=>/<link rel='stylesheet' id='NextGEN-css'  href='[^']*\/wp-content\/themes\/default_ngg\/nggallery.css\?ver=[\d\.]+' type='text\/css' media='screen' \/>/, :string=>"Wordpress" },
+{ :regexp=>/<link rel='stylesheet' id='shutter-css'  href='[^']*\/wp-content\/plugins\/nextgen-gallery\/shutter\/shutter-reloaded.css\?ver=[\d\.]+' type='text\/css' media='screen' \/>/, :string=>"Wordpress" },
+{ :regexp=>/<link rel='stylesheet' id='galleryview-css'  href='[^']*\/wp-content\/plugins\/nggGalleryview\/galleryview.css\?ver=[\d\.]+' type='text\/css' media='screen' \/>/, :string=>"Wordpress" },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name='NextGEN' content='([\d\.]+)' \/>/, :regexp_offset=>0, :module=>["Wordpress"] },
+{ :version=>/<meta name='NextGEN' content='([\d\.]+)' \/>/, :regexp_offset=>0, :string=>"Wordpress" },
 
 ]
 
