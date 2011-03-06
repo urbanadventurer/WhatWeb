@@ -1179,8 +1179,11 @@ while thistarget = next_target
 					if body =~ meta_refresh_regex
 						metarefresh=body.scan(meta_refresh_regex).first.to_s
 						newtarget_m=URI.join(target,metarefresh).to_s # this works for relative and absolute
+					end					
+
+					unless status.nil? or headers.nil?
+						newtarget_h=URI.join(target,headers["location"]).to_s if (300..399) === status and headers["location"]
 					end
-					newtarget_h=URI.join(target,headers["location"]).to_s if (300..399) === status and headers["location"]
 					# if both meta refresh location and HTTP location are set, then the HTTP location overrides
 
 					if newtarget_m or newtarget_h

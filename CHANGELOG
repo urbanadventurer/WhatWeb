@@ -13,8 +13,8 @@ Version 0.4.6 Released ? 2010
 * Modified XML logging to record modules separately
 * Added --wait SECONDS between connections. Combine with -t 1 if preferred.
 * Added meta-refresh redirect support. eg. <meta http-equiv="refresh" content="0;url=../default/mail/index.html">. Only for non-spidering
-* Added {:version=>/regexp/, :version_regexp_offset} to remove cargo cult programming. eg.
-{:version=>/<meta name="Generator" (content|CONTENT)="(ASPNUKE|ASP-Nuke) ([^->"]+)/, :version_regexp_offset=>2,  :name=>"meta generator tag" }
+* Added {:version=>/regexp/, :offset} to remove cargo cult programming. eg.
+{:version=>/<meta name="Generator" (content|CONTENT)="(ASPNUKE|ASP-Nuke) ([^->"]+)/, :offset=>2,  :name=>"meta generator tag" }
 * Updated plugins to use :version=>/regexp/: Advanced-Guestbook, ASP-Nuke, Concrete5, Coppermine, FormMail, InvisionPowerBoard, FormMail, MikroTik, MovableType, SearchFitShoppingCart, SquirrelMail, VBulletin, VP-ASP, VSNSLemon, WordPress
 * Replaced :probability with :certainty in my-plugins/plugin-template.rb.txt. Thanks Erik Inge Bolsø
 * Added support for em-resolv-replace which speeds up whatweb many times. http://github.com/mperham/em-resolv-replace
@@ -34,7 +34,6 @@ Version 0.4.6 Released ? 2010
 * Added startup and shutdown for plugins
 * Moved some plugins into disabled-plugins, as they clutter output. adobe_flash.rb, footer-hash.rb, frame.rb, header-hash.rb, md5.rb, script.rb, shortcut-icon.rb, tagpattern-hash.rb
 * Model and Firmware results now display in dark green
-* Changed :version_regexp_offset, :modules_regexp_offset, etc to :regexp_offset. Updated 86 plugins.
 * Added :filepath match type
 * Renamed disabled-plugins/ to plugins-disabled/
 * Updated mailto plugin
@@ -63,7 +62,7 @@ Version 0.4.6 Released ? 2010
 * Changed :modules to :module, deprecated :accounts to :account
 * Added redirect control. options are 'never',`http-only', `meta-only', `same-site', `same-domain', 'always'
 * Added --max-redirects. Control the maximum number of contiguous redirects followed
-
+* 
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman
