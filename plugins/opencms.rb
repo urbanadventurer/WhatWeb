@@ -4,12 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+
+# Version 0.2
+# fixed examples= bug
+
 Plugin.define "OpenCms" do
 author "Emilio Casbas" #mostly
-version "0.1"
+version "0.2"
 description "OpenCms, professional and eassy to use CMS. Homepage: http://www.opencms.org"
 
-examples=%w|
+examples %w|
 http://www.opencms.org/
 http://www.ccbh.net/
 http://www.edgebox.net/
