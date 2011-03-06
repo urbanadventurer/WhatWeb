@@ -96,13 +96,13 @@ roadsideconcerts.com
 matches [
 
 	# Version Detection # Meta Generator
-	{ :version=>/	<meta name="generator" content="GetSimple \- ([\d\.\_A-Z]+)" \/>/, :regexp_offset=>0 },
+	{ :version=>/	<meta name="generator" content="GetSimple \- ([\d\.\_A-Z]+)" \/>/ },
 
 	# Version Detection # Powered by text
-	{ :version=>/<a href="http:\/\/get-simple.info\/" title="Open Source and Free CMS" >Powered by GetSimple<\/a> Version ([\d\.\_A-Z]+)/, :regexp_offset=>0 },
+	{ :version=>/<a href="http:\/\/get-simple.info\/" title="Open Source and Free CMS" >Powered by GetSimple<\/a> Version ([\d\.\_A-Z]+)/ },
 
 	# Admin Page # Version Detection # Powered by text
-	{ :version=>/<a href="http:\/\/get-simple.info\/">Powered by GetSimple<\/a> Version ([\d\.\_A-Z]+)/, :regexp_offset=>0 },
+	{ :version=>/<a href="http:\/\/get-simple.info\/">Powered by GetSimple<\/a> Version ([\d\.\_A-Z]+)/ },
 
 ]
 

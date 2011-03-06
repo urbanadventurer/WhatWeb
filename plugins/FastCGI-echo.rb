@@ -108,9 +108,9 @@ matches [
 { :text=>'REQUEST_URI=/fcgi-bin/echo' },
 
 # Version detection
-{ :version=>/HTTP_ORACLE_CACHE_VERSION=([\d\.]+)/, :regexp_offset=>0 },
-{ :version=>/SERVER_SOFTWARE=([^\n]+)/, :regexp_offset=>0 },
-{ :version=>/SERVER_SIGNATURE=<ADDRESS>([^<]+)/, :regexp_offset=>0 },
+{ :version=>/HTTP_ORACLE_CACHE_VERSION=([\d\.]+)/ },
+{ :version=>/SERVER_SOFTWARE=([^\n]+)/ },
+{ :version=>/SERVER_SIGNATURE=<ADDRESS>([^<]+)/ },
 
 ]
 

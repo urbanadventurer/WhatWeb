@@ -33,11 +33,11 @@ matches [
 { :text=>'    <td colspan=2 align=center><h3>Advanced Image Host Script</h3></td>' },
 
 # Version detection # Powered by text
-{ :version=>/Powered by: <B><a href="http:\/\/yabsoft.com">AIH v([\d\.]+)<\/a><\/B>/, :regexp_offset=>0 },
+{ :version=>/Powered by: <B><a href="http:\/\/yabsoft.com">AIH v([\d\.]+)<\/a><\/B>/ },
 
 # Version detection # Install page
-{ :version=>/<center><b>Welcome to install AIHS Script ([\d\.]+)<\/b><\/center>/, :regexp_offset=>0 },
-{ :version=>/<tr><td class=info width=100%>Welcome to install Advanced Image Hosting Script Pro ([\d\.]+) on your server<\/td><\/tr>/, :regexp_offset=>0 },
+{ :version=>/<center><b>Welcome to install AIHS Script ([\d\.]+)<\/b><\/center>/ },
+{ :version=>/<tr><td class=info width=100%>Welcome to install Advanced Image Hosting Script Pro ([\d\.]+) on your server<\/td><\/tr>/ },
 
 ]
 

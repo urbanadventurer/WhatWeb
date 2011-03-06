@@ -26,7 +26,7 @@ www.turismoaventura.com
 matches [
 
 	# Version Detection # powered by text
-	{ :version=>/<td align="center"><font face=Arial size=1>News powered by <a href=http:\/\/projects.ashwebstudio.com>ashnews v([\d\.]+)<\/a><\/font><\/td>/, :regexp_offset=>0 },
+	{ :version=>/<td align="center"><font face=Arial size=1>News powered by <a href=http:\/\/projects.ashwebstudio.com>ashnews v([\d\.]+)<\/a><\/font><\/td>/ },
 
 ]
 

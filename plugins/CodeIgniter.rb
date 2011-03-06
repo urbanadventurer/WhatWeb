@@ -7,10 +7,12 @@
 
 # v1.0
 # not so foolproof if the site uses its own custom 404 and custom cookie name
+# v2.0 by Andrew Horton
+# new random string
 
 Plugin.define "CodeIgniter-PHP-Framework" do
 author "Aung Khant <YGN Ethical Hacker Group, Myanmar, http://yehg.net>"
-version "0.1"
+version "0.2"
 description "CodeIgniter PHP Framework - http://codeigniter.com/ "
 
 # more http://codeigniter.com/projects/
@@ -33,8 +35,7 @@ www.enerdata.com
 |	
 
 def randstr
- chars = ("a".."z").to_a + ("1".."9").to_a
- return Array.new(8,'').collect{chars[rand(chars.size)]}.join
+ (0..8).map { (('a'..'z').to_a + (0..9).to_a).choice }.join
 end 
 
 matches [

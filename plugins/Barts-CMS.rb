@@ -26,10 +26,10 @@ cms.ccsdemo.nl/Users/
 matches [
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a style="color:#ccc;" href="http:\/\/trinityhome.org(\/|\/barts_cms\/)"  title="Bart's CMS \[Business Edition\] Version ([\d\.]{1,10}) \[(Stable|Beta)\]" >Bart's CMS<\/a>/, :regexp_offset=>1 },
+{ :version=>/Powered by <a style="color:#ccc;" href="http:\/\/trinityhome.org(\/|\/barts_cms\/)"  title="Bart's CMS \[Business Edition\] Version ([\d\.]{1,10}) \[(Stable|Beta)\]" >Bart's CMS<\/a>/, :offset=>1 },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="Bart's CMS \[Business Edition\] ([\d\.]{1,10}) [Stable][^>]*">/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator" content="Bart's CMS \[Business Edition\] ([\d\.]{1,10}) [Stable][^>]*">/ },
 
 # Meta Author
 { :certainty=>75, :text=>'<meta name="author" content="Bart Verstricht" />' },

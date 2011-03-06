@@ -43,7 +43,7 @@ matches [
 { :regexp=>/<a href="http:\/\/www.phplinkdirectory.com[^>]*Phplinkdirectory/i },
 
 # Version detection # Meta generator
-{ :version=>/<meta name="generator"[^>]*content="PHP Link Directory ([0-9\.]+)"/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator"[^>]*content="PHP Link Directory ([0-9\.]+)"/ },
 
 ]
 

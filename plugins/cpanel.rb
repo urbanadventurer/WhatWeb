@@ -41,7 +41,7 @@ matches [
 { :regexp=>/<link rel="stylesheet" href="[^>]*\/unprotected\/cpanel\/style_optimized.css" type="text\/css" \/>/ },
 
 # Version detection # Login page # Default title
-{ :version=>/<title>cPanel&reg;[\s]*([\d\.]+)<\/title>/, :regexp_offset=>0 },
+{ :version=>/<title>cPanel&reg;[\s]*([\d\.]+)<\/title>/ },
 
 ]
 

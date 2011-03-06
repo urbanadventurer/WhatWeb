@@ -31,7 +31,7 @@ matches [
 {:name=>"smflogo gif", :regexp=>/<img class="floatright" id="smflogo" src="[^"]*\/images\/smflogo.gif" alt="Simple Machines Forum" \/>/},
 
 # Version Detection # Powered by text
-{ :version=>/<a href="http:\/\/www.simplemachines.org\/" title="Simple Machines Forum" target="_blank"( class="new_win")?>Powered by SMF ([^<]+)/, :regexp_offset=>1 },
+{ :version=>/<a href="http:\/\/www.simplemachines.org\/" title="Simple Machines Forum" target="_blank"( class="new_win")?>Powered by SMF ([^<]+)/, :offset=>1 },
 
 ]
 

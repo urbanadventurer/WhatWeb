@@ -8,13 +8,15 @@
 # 0.1 
 # detection works mainly for default installation state 
 # tomatocms is based on zend framework
+# v2.0 by Andrew Horton
+# Added meta generator match and vendor matches. bug fixes. new random string function
 
 Plugin.define "Zend" do
 author "Aung Khant <http://yehg.net>"
-version "0.1"
+version "0.2"
 description "Zend PHP Framework (http://framework.zend.com/) and Zend Server (http://zend.com) Detection"
 
-examples=%w|
+examples %w|
 framework.zend.com
 www.zend.com
 http://andries.systray.be/zf-demos/feed-reader/feed/
@@ -23,9 +25,9 @@ demo.tomatocms.com
 www.shoretotaloffice.com
 |	
 
+
 def randstr
- chars = ("a".."z").to_a + ("1".."9").to_a
- return Array.new(8,'').collect{chars[rand(chars.size)]}.join
+ (0..8).map { (('a'..'z').to_a + (0..9).to_a).choice }.join
 end 
 
 matches [
@@ -35,13 +37,18 @@ matches [
 {:name=>'GHDB: "Powered by Zend Framework"',:certainty=>75,:ghdb=>'"Powered by Zend Framework"'},
 {:string=>'PoweredBy Image',:url=>'images/PoweredBy_ZF.gif',:md5=>'eecf384879cde19f8f7f80c768c12295'},
 {:string=>'Zend Logo Small',:url=>'images/logo_small.gif',:md5=>'0f76017aa12a3dcb9cabbff26e37ff5c'},
-{:string=>'Footer Link',:text=>' alt="Powerd by Zend Framework!" />'},
+{:string=>'Footer Link',:text=>' alt="Powered by Zend Framework!" />'},
+
+
 {:string=>'Null Controller',:url=>randstr(),:text=>'controllers/images/PoweredBy_ZF.gif" alt="Powerd by Zend Framework!" />'},
 {:string=>'Null Controller',:url=>randstr(),:regexp=>/<h1>Controller\/action not found!<\/h1>(\r\n|\n)<p>Controller\/action not found!<\/p>/},
 {:string=>'Zend_Controller_Dispatcher_Exception',:url=>randstr(),:text=>'( ! )</span> Zend_Controller_Dispatcher_Exception: Invalid controller specified (application) in'},
 {:string=>'Zend_Controller_Dispatcher_Exception',:url=>randstr(),:text=>"<b>Fatal error</b>:  Uncaught exception 'Zend_Controller_Dispatcher_Exception"},
 {:string=>'Zend_Controller_Router_Exception',:url=>randstr(),:text=>"Uncaught exception 'Zend_Controller_Router_Exception' with message 'No route matched the request'"},
 {:string=>'Zend_Controller_Router_Exception',:url=>randstr(),:text=>"/Zend/Controller/Router/Rewrite.php</b> on line <b>"},
+
+{:version=>/<meta name="generator" content="Zend.com CMS ([\d\.]+)"/ },
+{:text=>'<meta name="vendor" content="Zend Technologies'}
 
 ]
 
@@ -116,9 +123,8 @@ def http_request(target,method='post',post_data='whatweb')
 
 	[status,uri,ip,body,headers,cookies]
 end
+
 def passive
-
-
 # X-Powered-By=Zend Framework
 # X-Powered-By=Zend Framework 1.10
 # Server: Zend Core/2.5.0
@@ -126,33 +132,27 @@ def passive
       m=[]
       version = ''
       unless @meta.nil?
-                xpoweredby=''      
-		server=''                
-                xpoweredby=@meta["x-powered-by"] if @meta.keys.include?("x-powered-by")                
-		server=@meta["server"] if @meta.keys.include?("server")
-
-                if xpoweredby =~ /Zend Framework/i
-			m << {:string=>'X-Powered-By'}
-                end		
-                if xpoweredby =~ /Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/i
-			version = 'Framework: ' + xpoweredby.scan(/Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s
-                end	
+           
+		unless @meta["x-powered-by"].nil?
+		        if @meta["x-powered-by"] =~ /Zend Framework/i
+				m << {:name=>'X-Powered-By'}
+		        end
+		        if @meta["x-powered-by"] =~ /Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/i
+				version = 'Framework: ' + @meta["x-powered-by"].scan(/Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s
+				m << {:version=>version}
+		        end	
 		
-		if xpoweredby =~ /Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i			
-			if version != ''
-				version += ', Zend Server: ' + xpoweredby.scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s 
-			else
-				version += 'Zend Server: ' + xpoweredby.scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s 
+			if @meta["x-powered-by"] =~ /Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i			
+				version = 'Core: ' + @meta["x-powered-by"].scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s 
+				m << {:version=>version}
 			end
-		elsif server =~ /Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i
-			if version != ''
-				version += ', Zend Server: ' + server.scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s 
-			else
-				version += 'Zend Server: ' + server.scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s 
+		end
+	
+		unless @meta["server"].nil?
+			if @meta["server"] =~ /Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i
+				version = 'Core: ' + @meta["server"].scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s 
+				m << {:version=>version}
 			end
-		end 
-		if version.length != 0
-			m << {:version=>version}	
 		end
       end
      m

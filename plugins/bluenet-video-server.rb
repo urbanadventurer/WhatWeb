@@ -28,7 +28,7 @@ matches [
 	{ :text=>"window.location.href='/cgi-bin/client_execute.cgi?tUD=0';" },
 
 	# Version Detection # Default title
-	{ :version=>/<title>BlueNet Video Viewer Version ([\d\.a-z]+)<\/title>/, :regexp_offset=>0 },
+	{ :version=>/<title>BlueNet Video Viewer Version ([\d\.a-z]+)<\/title>/ },
 
 ]
 

@@ -24,7 +24,7 @@ matches [
 {:text=>'<a href="http://www.vpasp.com">Shopping Cart</a> powered by VP-ASP</p>'},
 {:text=>'<a href="http://www.vpasp.com">Powered By VP-ASP Shopping Cart</a>'},
 {:certainty=>75, :text=>'shopdisplayproducts.asp?id='},
-{:version=>/<title>VP-ASP Shopping Cart ([^ <]*)/, :regexp_offset=>0,  :name=>"powered by title" }
+{:version=>/<title>VP-ASP Shopping Cart ([^ <]*)/,  :name=>"powered by title" }
 ]
 
 # <title>VP-ASP Shopping Cart 6.00</title>

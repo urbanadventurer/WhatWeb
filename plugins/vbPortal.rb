@@ -69,10 +69,10 @@ matches [
 { :text=>'	<!-- Do not remove  or your scheduled tasks will cease to function -->' },
 
 # Version Detection # Meta generator
-{ :version=>/<meta name="generator" content="vbPortal ([\d\.]+)" \/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator" content="vbPortal ([\d\.]+)" \/>/ },
 
 # Version Detection # Portal by text
-{ :version=>/Portal By vbPortal Version ([\d\.]+)<br \/>/, :regexp_offset=>0 },
+{ :version=>/Portal By vbPortal Version ([\d\.]+)<br \/>/ },
 
 ]
 

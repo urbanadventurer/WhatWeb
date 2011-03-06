@@ -82,7 +82,7 @@ matches [
 { :text=>'	<title>Connectix Boards Error</title>' },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/www.connectix-boards.org"[^>]*>Connectix Boards<\/a> ([^&]+) &copy; [0-9]{4}-[0-9]{4}/, :regexp_offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/www.connectix-boards.org"[^>]*>Connectix Boards<\/a> ([^&]+) &copy; [0-9]{4}-[0-9]{4}/ },
 
 ]
 

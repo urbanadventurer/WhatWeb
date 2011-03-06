@@ -30,13 +30,13 @@ matches [
 { :text=>'	<TITLE>iGuard Fingerprint Security System</TITLE>' },
 
 # Version Detection # Meta Generator
-{ :firmware=>/	<meta content="Lucky-Tech iGuard ([\d\.]{1,5})" name="GENERATOR">/, :regexp_offset=>0 },
+{ :firmware=>/	<meta content="Lucky-Tech iGuard ([\d\.]{1,5})" name="GENERATOR">/ },
 
 # Firmware Detection
-{ :firmware=>/<td>[^<]*iGuard Security[^<]+<\/td><\/tr><tr><td>Firmware Version<\/td><td>([^<]+)<\/td>/, :regexp_offset=>0 },
+{ :firmware=>/<td>[^<]*iGuard Security[^<]+<\/td><\/tr><tr><td>Firmware Version<\/td><td>([^<]+)<\/td>/ },
 
 # Count Users
-{ :string=>/<tr><td>Registered Automatch<\/td><td>([^<]+)<\/td><\/tr>/, :regexp_offset=>0 },
+{ :string=>/<tr><td>Registered Automatch<\/td><td>([^<]+)<\/td><\/tr>/ },
 
 ]
 

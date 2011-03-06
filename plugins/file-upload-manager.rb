@@ -50,7 +50,7 @@ matches [
 { :text=>'<a href="http://www.mtnpeak.net" style="text-decoration: none; color: #C0C0C0; font-size: 9px; cursor: default";>&copy; thepeak</a>' },
 
 # Version Detection # Default HTML Comment
-{ :version=>/<!-- File Upload Manager v([\d\.]+[^>]+) -->/, :regexp_offset=>0 },
+{ :version=>/<!-- File Upload Manager v([\d\.]+[^>]+) -->/ },
 
 ]
 

@@ -50,7 +50,7 @@ matches [
 { :text=>'<title>allinta.com- aCMS Content Manager</title>' },
 
 # Version detection # HTML comment
-{ :version=>/<!-- allintaCMS V([\d\.]+) - http:\/\/www.allinta.com\/ -->/, :regexp_offset=>0 },
+{ :version=>/<!-- allintaCMS V([\d\.]+) - http:\/\/www.allinta.com\/ -->/ },
 
 ]
 

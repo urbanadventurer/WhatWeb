@@ -42,7 +42,7 @@ matches [
 { :text=>'<TITLE>INTELLINET NETWORK SOLUTIONS: Professional Series Wireless Network IP Camera Homepage</TITLE>', :model=>["Wireless"] },
 
 # Firmware Version Detection
-{ :firmware=>/<font size="1" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;FIRMWARE VERSION: ([A-Z0-9\.]+)[\s]*</, :regexp_offset=>0 },
+{ :firmware=>/<font size="1" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;FIRMWARE VERSION: ([A-Z0-9\.]+)[\s]*</ },
 
 ]
 

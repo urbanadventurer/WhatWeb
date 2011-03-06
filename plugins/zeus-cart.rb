@@ -43,7 +43,7 @@ matches [
 { :text=>'<title>:: Zeuscart Admin Panel</title>' },
 
 # Version Detection # Default Title
-{ :version=>/<title>[\s]+ZeusCart V([\d\.]+)[\s]+<\/title>/, :regexp_offset=>0 },
+{ :version=>/<title>[\s]+ZeusCart V([\d\.]+)[\s]+<\/title>/ },
 
 ]
 

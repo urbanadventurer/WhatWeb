@@ -40,7 +40,7 @@ matches [
 { :text=>'<td><a href="http://www.flaxweb.com/products/articles">For more details about Flax article manager (CMS) please click ' },
 
 # Version Detection # Copyright footer text
-{ :version=>/[\s]+Copyright [0-9]{4} &copy; Flax Article Manager v([\d\.]+)<\/div>/, :regexp_offset=>0 },
+{ :version=>/[\s]+Copyright [0-9]{4} &copy; Flax Article Manager v([\d\.]+)<\/div>/ },
 
 ]
 

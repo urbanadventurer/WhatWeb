@@ -39,22 +39,22 @@ http://www.tagged.com/red_1432
 matches [
 
 	# Name :
-	{ :version=>/<h1><span id="page_displayname_text">([^<]*)<\/span><\/h1>/, :regexp_offset=>0 },
+	{ :version=>/<h1><span id="page_displayname_text">([^<]*)<\/span><\/h1>/ },
 
 	# Photos :
-	{ :model=>/<li id="item_view_photos"><a class="icon photos" id="link_view_photos" href="\/photo_gallery.html\?uid=[0-9]*" title="View ([^\"]*)"/, :regexp_offset=>0 },
+	{ :model=>/<li id="item_view_photos"><a class="icon photos" id="link_view_photos" href="\/photo_gallery.html\?uid=[0-9]*" title="View ([^\"]*)"/ },
 
 	# Gender :
-	{ :string=>/<p><label>Gender:<\/label> <span id="basic_info_genderString">([^<]*)<\/span><\/p>/, :regexp_offset=>0, :module=>"Public Profile" },
+	{ :string=>/<p><label>Gender:<\/label> <span id="basic_info_genderString">([^<]*)<\/span><\/p>/, :module=>"Public Profile" },
 
 	# Ethnicity :
-	{ :string=>/<p><label>Ethnicity:<\/label> <span id="basic_info_userEthnicities">([^<]*)<\/span><\/p>/, :regexp_offset=>0, :module=>"Public Profile" },
+	{ :string=>/<p><label>Ethnicity:<\/label> <span id="basic_info_userEthnicities">([^<]*)<\/span><\/p>/, :module=>"Public Profile" },
 
 	# Religion :
-	{ :string=>/<p><label>Religion:<\/label> <span id="basic_info_religion">([^<]*)<\/span><\/p>/, :regexp_offset=>0, :module=>"Public Profile" },
+	{ :string=>/<p><label>Religion:<\/label> <span id="basic_info_religion">([^<]*)<\/span><\/p>/, :module=>"Public Profile" },
 
 	# Orientation :
-	{ :string=>/<p><label>Orientation:<\/label> <span id="basic_info_orientation">([^<]*)<\/span><\/p>/, :regexp_offset=>0, :module=>"Public Profile" },
+	{ :string=>/<p><label>Orientation:<\/label> <span id="basic_info_orientation">([^<]*)<\/span><\/p>/, :module=>"Public Profile" },
 
 ]
 

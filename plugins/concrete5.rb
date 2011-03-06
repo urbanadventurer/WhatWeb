@@ -21,7 +21,7 @@ www.formcreative.com.au www.around.ch www.smallspaces.ie/ www.clinicasantamaria.
 
 matches [
 {:text=>"concrete/js/jquery.js"},
-{:version=>/<meta name=\"generator\" content=\"concrete5[ \-]+([0-9\.a-z]+)\"/, :regexp_offset=>0,  :name=>"meta generator tag" } #"
+{:version=>/<meta name=\"generator\" content=\"concrete5[ \-]+([0-9\.a-z]+)\"/,  :name=>"meta generator tag" } #"
 ]
 
 # <meta name="generator" content="concrete5 - 5.4.0.6a1" />

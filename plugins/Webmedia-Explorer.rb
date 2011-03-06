@@ -25,7 +25,7 @@ www.webmediaexplorer.com
 matches [
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/www.webmediaexplorer.com[^>]*>webmedia explorer ([\d\.]+)<\/a>/i, :regexp_offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/www.webmediaexplorer.com[^>]*>webmedia explorer ([\d\.]+)<\/a>/i },
 
 ]
 

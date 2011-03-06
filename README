@@ -350,18 +350,12 @@ The methods are:
 	* :url			The URL has to match this. Used for passive and agressive testing
 	* :certainty		Optional, defaults to 100. Values are maybe (25), probably (75) and certain (100).
 
-	* :version		As a string or number this is a version returned when other methods match
-	* :version		As a regular expression, this extracts the version information from the HTML. Also requires :regexp_offset=>1
-	* :model		As a string or number this is a device model returned when other methods match
-	* :model		As a regular expression, this extracts the device model information from the HTML. Also requires :regexp_offset=>11
-	* :module		As a string or number this is a web application module returned when other methods match
-	* :module		As a regular expression, this extracts the web application module information from the HTML. Also requires :regexp_offset=>1
-	* :firmware		As a string or number this is a device firmware version returned when other methods match
-	* :firmware		As a regular expression, this extracts the device firmware version information from the HTML. Also requires :regexp_offset=>1
-	* :filepath		As a string or number this is a file path returned when other methods match
-	* :filepath		As a regular expression, this extracts the file path information from the HTML. Also requires :regexp_offset=>1
-	* :account		As a string or number this is a user credential returned when other methods match
-	* :account		As a regular expression, this extracts the user credential information from the HTML. Also requires :regexp_offset=>1
+	* :version		a version as a string or number or regular expression.
+	* :model		device model as a string or number or regular expression.
+	* :module		web application module as a string or number or regular expression.
+	* :firmware		device firmware as a string or number or regular expression.
+	* :filepath		file path as a string or number or regular expression.
+	* :account		user credential as a string or number or regular expression.
 
 
 If you port a GHDB match, use :ghdb. I usually rewrite the GHDB matches with regular expressions, especially if they require inurl:

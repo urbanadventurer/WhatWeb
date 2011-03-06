@@ -64,7 +64,7 @@ matches [
 { :text=>'Powered by UCenter Home</title>' },
 
 # Version detection # Powered by text
-{ :version=>/Powered by <a  href="http:\/\/u.discuz.net" target="_blank"><strong>UCenter Home<\/strong><\/a> <span title="[0-9]{8}">([\d\.]+)<\/span>/, :regexp_offset=>0 },
+{ :version=>/Powered by <a  href="http:\/\/u.discuz.net" target="_blank"><strong>UCenter Home<\/strong><\/a> <span title="[0-9]{8}">([\d\.]+)<\/span>/ },
 
 ]
 

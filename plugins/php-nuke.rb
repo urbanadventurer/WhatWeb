@@ -54,7 +54,7 @@ matches [
 :text=>"<a href='http://www.phpnuke.org'><img src='images/powered/phpnuke.gif' title=\"The engine code is copyright of PHP-Nuke.\" border='0'></a>"},
 
 # Module Detection
-{ :certainty=>75, :module=>/<a href="[^"]*modules.php\?name=([a-zA-Z0-9_]+)[^"]*">/, :regexp_offset=>0 },
+{ :certainty=>75, :module=>/<a href="[^"]*modules.php\?name=([a-zA-Z0-9_]+)[^"]*">/ },
 
 ]
 

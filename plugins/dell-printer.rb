@@ -31,10 +31,10 @@ et000400757849.emporia.edu
 matches [
 
 # Model Detection # Tested models: 3100cn / 5100cn / M5200 / 1710n
-{ :model=>/<title>Dell Laser Printer ([A-Z]?[\d]{4}[a-z]{0,2})<\/title>/i, :regexp_offset=>0 },
+{ :model=>/<title>Dell Laser Printer ([A-Z]?[\d]{4}[a-z]{0,2})<\/title>/i },
 
 # Model Detection # Tested model: 2330dn
-{ :model=>/<TITLE>Dell ([\d]{4}[a-z]+) Laser Printer<\/TITLE>/, :regexp_offset=>0 },
+{ :model=>/<TITLE>Dell ([\d]{4}[a-z]+) Laser Printer<\/TITLE>/ },
 
 ]
 

@@ -19,7 +19,7 @@ intraxxion.com
 matches [
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="Intraxxion CMS ([\d\.]{1,5})" \/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator" content="Intraxxion CMS ([\d\.]{1,5})" \/>/ },
 
 # HTML Comment
 { :text=>'<!-- site built by Intraxxion, www.intraxxion.com, info@intraxxion.com, tel: +31 45 5650207, fax: +31 45 5650123' },

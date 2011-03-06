@@ -29,7 +29,7 @@ matches [
 	{ :text=>'<site-control permitted-cross-domain-policies="none"/>', :string=>"none", :module=>"Permit", :path=>"crossdomain.xml" },
 
 	# Extract allowed domains
-	{ :string=>/<allow-access-from domain="([^"]+)"/, :regexp_offset=>0, :path=>"crossdomain.xml", :module=>"Allow" },
+	{ :string=>/<allow-access-from domain="([^"]+)"/, :path=>"crossdomain.xml", :module=>"Allow" },
 
 ]
 

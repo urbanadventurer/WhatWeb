@@ -39,10 +39,10 @@ matches [
 { :regexp=>/rsc\/img\/powered-by-b2evolution-150t.gif" alt="Powered by b2evolution"/i },
 
 # Version detection # Login page
-{ :version=>/<p class="footer"><a href="http:\/\/b2evolution.net\/" title="visit b2evolution's website"><strong>b2evolution ([^<]+)<\/strong><\/a>/, :regexp_offset=>0 },
+{ :version=>/<p class="footer"><a href="http:\/\/b2evolution.net\/" title="visit b2evolution's website"><strong>b2evolution ([^<]+)<\/strong><\/a>/ },
 
 # Version detection # Meta generator
-{ :version=>/<meta name="generator" content="b2evolution ([^\"]+)" \/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator" content="b2evolution ([^\"]+)" \/>/ },
 
 # Powered by text
 { :regexp=>/Powered by <a href="http:\/\/b2evolution.net[\/]*"[^>]+>b2evolution<\/a>/ },

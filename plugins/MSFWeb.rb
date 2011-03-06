@@ -13,8 +13,8 @@ description "Metasploit Framework Web Console - Homepage: http://www.metasploit.
 matches [
 
 # Version Detection # Default Title
-{ :version=>/<title>Metasploit Framework Web Console [v]?([\d\.]{1,6})-(dev|release)<\/title>/, :regexp_offset=>0 },
-{ :version=>/<title>Metasploit Framework Web Console [v]?([\d\.]{1,6})-(dev|release)<\/title>/, :regexp_offset=>1 },
+{ :version=>/<title>Metasploit Framework Web Console [v]?([\d\.]{1,6})-(dev|release)<\/title>/ },
+{ :version=>/<title>Metasploit Framework Web Console [v]?([\d\.]{1,6})-(dev|release)<\/title>/, :offset=>1 },
 
 # Meta Author
 { :text=>'<meta name="Author" content="Mike Whitehead (mwhite22[at]caledonian.ac.uk), Metasploit LLC" />' },

@@ -32,7 +32,7 @@ www.alaskri.com/photo/
 matches [
 
 # Version Detection # Powered by text
-{ :version=>/<p>Copyright &copy; [\d]{4}  All rights reserved. Powered By : <a href="http:\/\/www.yamamah.org" title="Yamamah">Yamamah Version ([\d\.]{1,5})<\/a><\/p>/, :regexp_offset=>0 },
+{ :version=>/<p>Copyright &copy; [\d]{4}  All rights reserved. Powered By : <a href="http:\/\/www.yamamah.org" title="Yamamah">Yamamah Version ([\d\.]{1,5})<\/a><\/p>/ },
 
 # Meta Author
 { :text=>'<meta name="Author" content="Majed Al-Mulihani - majed@modernsys.net" />' },

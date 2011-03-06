@@ -59,7 +59,7 @@ matches [
 { :text=>'                              color=#008000 face="Arial,Helvetica" size=2>Phaser 8400DP-1</font></td>', :model=>["Phaser 8400DP-1"] },
 
 # Model Detection # Default Title
-{ :model=>/<title>(FX[0-9A-Z]{6})-Home<\/title>/, :regexp_offset=>0 },
+{ :model=>/<title>(FX[0-9A-Z]{6})-Home<\/title>/ },
 
 ]
 

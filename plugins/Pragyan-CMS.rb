@@ -27,7 +27,7 @@ matches [
 { :text=>'powered by <a href="http://sourceforge.net/projects/pragyan">Pragyan CMS</a>' },
 
 # Version Detection # Powered by text
-{ :version=>/powered by <a href="http:\/\/sourceforge.net\/projects\/pragyan" title="(Praygan|Probe) CMS">Pragyan CMS v([\d\.]+)<\/a>/, :regexp_offset=>1 },
+{ :version=>/powered by <a href="http:\/\/sourceforge.net\/projects\/pragyan" title="(Praygan|Probe) CMS">Pragyan CMS v([\d\.]+)<\/a>/, :offset=>1 },
 
 ]
 

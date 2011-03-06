@@ -111,7 +111,13 @@ class Plugin
 		                        if @body =~ match[:regexp_compiled]
 						regexpmatch = @body.scan(match[:regexp_compiled])
 		                                m = match.dup
-		                                m[symbol] = regexpmatch.map {|eachmatch|  eachmatch[match[:regexp_offset]] }.flatten.sort.uniq
+		                                m[symbol] = regexpmatch.map {|eachmatch|
+										if match[:offset]
+											eachmatch[match[:offset]]
+										else
+											eachmatch.first
+										end
+									}.flatten.sort.uniq
 		                                r << m
 		                        end
 		                end
@@ -195,7 +201,7 @@ class Plugin
 				                if @body =~ match[:regexp_compiled]
 							regexpmatch = @body.scan(match[:regexp_compiled])
 				                        m = match.dup
-				                        m[symbol] = regexpmatch.map {|eachmatch|  eachmatch[match[:regexp_offset]] }.flatten.sort.uniq
+				                        m[symbol] = regexpmatch.map {|eachmatch|  eachmatch[match[:offset]] }.flatten.sort.uniq
 				                        r << m
 				                end
 				        end

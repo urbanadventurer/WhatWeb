@@ -32,7 +32,7 @@ www.essex.ac.uk/sociology/student_journals/ug_journal/
 matches [
 
 # Widget Detection # Iframe version
-{ :string=>/<[^>]+src[\s]*="http:\/\/(www|apps)\.facebook.com\/plugins\/([^\.]+)\.php\?[^>]+>/i, :regexp_offset=>1 },
+{ :string=>/<[^>]+src[\s]*="http:\/\/(www|apps)\.facebook.com\/plugins\/([^\.]+)\.php\?[^>]+>/i, :offset=>1 },
 
 ]
 

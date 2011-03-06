@@ -27,7 +27,7 @@ matches [
 { :text=>'title="Sitefinity ASP.NET CMS" class="poweredBySitefinity" href="http://www.sitefinity.com">Powered by Sitefinity ASP.NET CMS</a></p>' },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="Generator" content="Sitefinity ([\d\.:]{1,20})" \/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="Generator" content="Sitefinity ([\d\.:]{1,20})" \/>/ },
 
 ]
 

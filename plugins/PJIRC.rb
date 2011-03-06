@@ -37,7 +37,7 @@ matches [
 { :regexp=>/				<form name="login" action="[^"]*index.php" method="post" onsubmit="return CheckForm('[^']*index.php?page=advanced')">/ },
 
 # Version Detection # Login Page
-{ :version=>/	<td align="left">PJIRC Login Page Version ([\d\.]{1,5})<\/td>/, :regexp_offset=>0 },
+{ :version=>/	<td align="left">PJIRC Login Page Version ([\d\.]{1,5})<\/td>/ },
 
 ]
 

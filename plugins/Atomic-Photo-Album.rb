@@ -31,7 +31,7 @@ www.jimmysamuelsson.com/photo_album/photo.php
 matches [
 
 	# Version Detection # Powered by text
-	{ :version=>/Powered by <a href="http:\/\/atomicpa.sourceforge.net\/" target="_blank">Atomic Photo Album ([\d\.a-z]+)<\/a>/, :regexp_offset=>0 },
+	{ :version=>/Powered by <a href="http:\/\/atomicpa.sourceforge.net\/" target="_blank">Atomic Photo Album ([\d\.a-z]+)<\/a>/ },
 
 ]
 

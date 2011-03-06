@@ -33,7 +33,7 @@ matches [
 
 { :name=>'stats img', :text=>'<img src=\'http://stats.vtiger.com/stats.php?uid=' },
 
-{ :version => /<span style='color: rgb\([\d]{1,3}, [\d]{1,3}, [\d]{1,3}\);'>vtiger CRM ([^<]*)<\/span>/, :regexp_offset => 0},
+{ :version => /<span style='color: rgb\([\d]{1,3}, [\d]{1,3}, [\d]{1,3}\);'>vtiger CRM ([^<]*)<\/span>/},
 
 { :name=>'copyright footer', :regexp => /&copy; 200[\d]{1}\-\d{4} <a href='http:\/\/www.vtiger.com' target='_blank'>vtiger.com<\/a>/},
 

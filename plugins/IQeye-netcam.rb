@@ -29,7 +29,7 @@ ocwx.com
 matches [
 
 # Model detection # Default title
-{ :model=>/<title>IQeye([^:]+): Live Images[^<]*<\/title>/i, :regexp_offset=>0 },
+{ :model=>/<title>IQeye([^:]+): Live Images[^<]*<\/title>/i },
 
 ]
 

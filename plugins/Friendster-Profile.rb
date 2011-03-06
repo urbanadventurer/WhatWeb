@@ -26,13 +26,13 @@ http://profiles.friendster.com/82411881
 matches [
 
 	# Name
-	{ :version=>/<title>Friendster - ([^<]*)<\/title><meta name="description" content="/, :regexp_offset=>0 },
+	{ :version=>/<title>Friendster - ([^<]*)<\/title><meta name="description" content="/ },
 
 	# Keywords
-	{ :string=>/<meta name="keywords" content="Friendster profile,([^\"]+)">/, :regexp_offset=>0 },
+	{ :string=>/<meta name="keywords" content="Friendster profile,([^\"]+)">/ },
 
 	# Friends :
-	{ :filepath=>/<div class="friendName"><a href="http:\/\/profiles.friendster.com\/[^>]*">([^<]*)<\/a><\/div>/, :regexp_offset=>0 },
+	{ :filepath=>/<div class="friendName"><a href="http:\/\/profiles.friendster.com\/[^>]*">([^<]*)<\/a><\/div>/ },
 
 ]
 

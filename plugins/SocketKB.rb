@@ -24,8 +24,8 @@ www.classiclandscapes.com/socketkb/
 matches [
 
 # Version Detection # Powered by text
-{ :version=>/<a[^>]*href="http:\/\/www.socketkb.com[^>]*>Powered by SocketKB version ([\d\.]+)<\/a>/, :regexp_offset=>0 },
-{ :version=>/<a[^>]*href=[^>]*>Powered by SocketKB version ([\d\.]+)<\/a>/, :regexp_offset=>0, :certainty=>75 },
+{ :version=>/<a[^>]*href="http:\/\/www.socketkb.com[^>]*>Powered by SocketKB version ([\d\.]+)<\/a>/ },
+{ :version=>/<a[^>]*href=[^>]*>Powered by SocketKB version ([\d\.]+)<\/a>/, :certainty=>75 },
 
 ]
 

@@ -47,7 +47,7 @@ matches [
 { :url=>"favicon.ico", :md5=>"e95aa1d29e576c9ebdb08e0c5160cdfa" },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="Generator" content="fastpublish CMS ([^"]{1,15})">/, :regexp_offset=>0 },
+{ :version=>/<meta name="Generator" content="fastpublish CMS ([^"]{1,15})">/ },
 
 ]
 

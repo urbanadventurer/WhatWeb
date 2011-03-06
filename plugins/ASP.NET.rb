@@ -141,12 +141,12 @@ matches [
 	{ :text=>'vti_title:SR|Web Settings for Active Server Pages' },
 
 	# Get connection strings # global.asa
-	{ :string=>/connectionstring=DRIVER=([^\n]+)/, :regexp_offset=>0 },
-	{ :string=>/connectionstring=Provider=([^\n]+)/, :regexp_offset=>0 },
+	{ :string=>/connectionstring=DRIVER=([^\n]+)/ },
+	{ :string=>/connectionstring=Provider=([^\n]+)/ },
 
 	# Get connection strings # web.config
-	{ :string=>/connectionString="([^\"]+)/, :regexp_offset=>0 },
-	{ :string=>/<add key="ConnectionString" value="([^\"]+)/, :regexp_offset=>0 },
+	{ :string=>/connectionString="([^\"]+)/ },
+	{ :string=>/<add key="ConnectionString" value="([^\"]+)/ },
 
 ]
 

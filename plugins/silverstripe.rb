@@ -33,7 +33,7 @@ matches [
 {:certainty=>75, :regexp=>/<img src="\/assets\/[^\/]+\/_resampled\/[^"]+.jpg"/ },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator"[^>]*content="SilverStripe ([0-9\.]+)/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator"[^>]*content="SilverStripe ([0-9\.]+)/ },
 
 ] 
 

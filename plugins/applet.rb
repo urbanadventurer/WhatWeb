@@ -29,7 +29,7 @@ www.whitehavenchargers.com
 matches [
 
 	# URL Extraction
-	{ :filepath=>/<[\s]*applet[^>]*code[\s]*=[\s]*[\"|\']?([^>^\"]+)/i, :regexp_offset=>0 },
+	{ :filepath=>/<[\s]*applet[^>]*code[\s]*=[\s]*[\"|\']?([^>^\"]+)/i },
 
 ]
 

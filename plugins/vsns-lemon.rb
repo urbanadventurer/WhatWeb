@@ -38,7 +38,7 @@ matches [
 
 {:regexp=>/<img[^>]*alt="VSNS Lemon"[^>]*title="Blog powered by VSNS Lemon"[^>]*>/},
 
-{:version=>/<p>Powered by <abbr title="very simple news system">VSNS<\/abbr> (Lemon) ([0-9.a-z]*) by <a href="http:\/\/tachyondecay.net\/">Tachyon<\/a>/, :regexp_offset=>1,  :name=>"powered by link" }
+{:version=>/<p>Powered by <abbr title="very simple news system">VSNS<\/abbr> (Lemon) ([0-9.a-z]*) by <a href="http:\/\/tachyondecay.net\/">Tachyon<\/a>/, :offset=>1,  :name=>"powered by link" }
 ]
 
 

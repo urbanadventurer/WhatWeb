@@ -30,10 +30,10 @@ matches [
 { :text=>'			&copy; <a href="http://www.powerwd.com">SaroSoftware</a><br />', :certainty=>75 },
 
 # Version Detection # Powered by text
-{ :version=>/Powered By WhiteBoard ([\d\.]+)<br \/>/, :regexp_offset=>0 },
+{ :version=>/Powered By WhiteBoard ([\d\.]+)<br \/>/ },
 
 # Version Detection # Powered by text HTML
-{ :version=>/Powered By WhiteBoard <span id="version">([\d\.]+)<\/span><br \/>/, :regexp_offset=>0 },
+{ :version=>/Powered By WhiteBoard <span id="version">([\d\.]+)<\/span><br \/>/ },
 
 ]
 

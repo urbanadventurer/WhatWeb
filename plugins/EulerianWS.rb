@@ -34,7 +34,7 @@ examples %w|
 matches [
 
 	# Version Detection # Version footer HTML
-	{ :version=>/<td align="right"><address>EulerianWS\/([\d\.]+)<\/address><\/td><\/tr>/, :regexp_offset=>0 },
+	{ :version=>/<td align="right"><address>EulerianWS\/([\d\.]+)<\/address><\/td><\/tr>/ },
 
 ]
 

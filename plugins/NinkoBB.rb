@@ -40,7 +40,7 @@ matches [
 { :text=>'Powered by <a href="http://ninkobb.com">NinkoBB</a>' },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/ninkobb.com\/">NinkoBB<\/a> v. ([\d\.]{1,5}) t./, :regexp_offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/ninkobb.com\/">NinkoBB<\/a> v. ([\d\.]{1,5}) t./ },
 
 ]
 

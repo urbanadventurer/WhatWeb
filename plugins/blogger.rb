@@ -5,12 +5,15 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
+# Version 0.2
+# fixed examples= bug
+
 Plugin.define "Blogger" do
 author "Andrew Horton"
-version "0.1"
+version "0.2"
 description "Blogger.com free blogging site"
 
-examples=%w|
+examples %w|
 http://examples-blogger.blogspot.com/
 http://xprograf.blogspot.com/
 http://anukrati.blogspot.com/

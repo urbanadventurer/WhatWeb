@@ -41,7 +41,7 @@ matches [
 { :text=>'<p>Please try again by pressing the <a href="javascript:window.location=window.location;">refresh</a> button in your browser. An e-mail message has been dispatched to the <a href="mailto:' },
 
 # Version Detection
-{ :version=>/<a style="color: #EEEEFF;" href="http:\/\/www.ovbb.org">Powered by OvBB V([\d\.a-z]+)<\/a><br \/><br \/>/, :regexp_offset=>0 },
+{ :version=>/<a style="color: #EEEEFF;" href="http:\/\/www.ovbb.org">Powered by OvBB V([\d\.a-z]+)<\/a><br \/><br \/>/ },
 
 ]
 

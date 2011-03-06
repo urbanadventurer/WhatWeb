@@ -38,7 +38,7 @@ matches [
 { :text=>'<meta name="generator" content="CustomCMS Gaming" />' },
 
 # Version Detection # Logo alt text
-{ :version=>/power.png" border="0" style="margin-top: 7px;" alt="" title="Powered by CCMS v([\d\.]+)" \/><\/a>/, :regexp_offset=>0 },
+{ :version=>/power.png" border="0" style="margin-top: 7px;" alt="" title="Powered by CCMS v([\d\.]+)" \/><\/a>/ },
 
 ]
 

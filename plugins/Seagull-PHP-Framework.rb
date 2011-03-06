@@ -68,7 +68,7 @@ matches [
 { :url=>"/themes/default/images/logo.png", :md5=>"4986dcbd7b531e29c58b5808b1f8cdd3" },
 
 # Version Detection # Powered by text
-{ :version=>/    Powered by <a href="http:\/\/seagullproject.org[\/]?" title="Seagull PHP Framework">Seagull PHP Framework<\/a> v([\d\.]+)/, :regexp_offset=>0 },
+{ :version=>/    Powered by <a href="http:\/\/seagullproject.org[\/]?" title="Seagull PHP Framework">Seagull PHP Framework<\/a> v([\d\.]+)/ },
 
 ]
 

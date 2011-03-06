@@ -28,7 +28,7 @@ www.harvestdream.org
 matches [
 
 # Matches poweredby, powered-by, and powered by
-{ :string=>/<meta[^>]+name=["']powered[\- ]?by["'][^>]+content=["']([^"]+)["']/i, :regexp_offset=>0 },
+{ :string=>/<meta[^>]+name=["']powered[\- ]?by["'][^>]+content=["']([^"]+)["']/i },
 
 ]
 

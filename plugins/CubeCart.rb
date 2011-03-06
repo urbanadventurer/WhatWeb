@@ -42,7 +42,7 @@ matches [
 	{ :regexp=>/<title>[^<]{1,256} \(Powered by CubeCart\)<\/title>/ },
 
 	# Version Detection # Powered by text
-	{ :version=>/<p class="defaultText">Powered by CubeCart version ([\d\.]+)<br \/>/, :regexp_offset=>0 },
+	{ :version=>/<p class="defaultText">Powered by CubeCart version ([\d\.]+)<br \/>/ },
 
 ]
 

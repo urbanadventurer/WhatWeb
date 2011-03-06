@@ -45,7 +45,7 @@ www.sayme.tk
 matches [
 
 # Version detection # Powered by footer
-{ :version=>/Powered by <a href="http:\/\/pagecookery.com\/" target="_blank">PageCookery<\/a> Microblog ([\d\.]{1,5})/, :regexp_offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/pagecookery.com\/" target="_blank">PageCookery<\/a> Microblog ([\d\.]{1,5})/ },
 
 ]
 

@@ -43,8 +43,8 @@ matches [
 	{ :ghdb=>'intitle:"adding new user" "ArGoSoft Mail Server" inurl:addnewuser', :certainty=>75 },
 
 	# Version and OS detection
-	{ :version=>/ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)<\/p>/, :regexp_offset=>0, :string=>"OS:Windows NT/2000" },
-	{ :version=>/ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)<\/p>/, :regexp_offset=>0, :string=>"OS:Windows NT/2000/XP" },
+	{ :version=>/ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)<\/p>/, :string=>"OS:Windows NT/2000" },
+	{ :version=>/ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)<\/p>/, :string=>"OS:Windows NT/2000/XP" },
 
 ]
 

@@ -67,10 +67,10 @@ matches [
 { :text=>'<a href="http://www.nukedit.com" target=_blank title="Fast web portal, friendly with search engines"><span class="footer">Powered by Nukedit</span></a><span class="footer"> |' },
 
 # Version Detection # Powered by text
-{ :version=>/				Powered by <a href="http:\/\/www.nukedit.com" target="_blank" title="Fast web portal, friendly with search engines">Nukedit<\/a> ([\d\.]+) /, :regexp_offset=>0 },
+{ :version=>/				Powered by <a href="http:\/\/www.nukedit.com" target="_blank" title="Fast web portal, friendly with search engines">Nukedit<\/a> ([\d\.]+) / },
 
 # Version Detection # Powered by footer
-{ :version=>/					<span class=footer><center>Powered by Nukedit ([\d\.]+)<\/a> -/, :regexp_offset=>0 },
+{ :version=>/					<span class=footer><center>Powered by Nukedit ([\d\.]+)<\/a> -/ },
 
 ]
 

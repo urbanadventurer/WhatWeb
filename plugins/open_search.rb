@@ -27,9 +27,9 @@ matches [
 :regexp=>/<link .*?type=["']application\/opensearchdescription\+xml['"].*?>/im},
 
 # Extract URL
-{ :string=>/<link[^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]+type[\s]*=[\s]*["']application\/opensearchdescription\+xml['"][^>]*>/i, :regexp_offset=>0 },
+{ :string=>/<link[^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]+type[\s]*=[\s]*["']application\/opensearchdescription\+xml['"][^>]*>/i },
 
-{ :string=>/<link[^>]+type[\s]*=[\s]*["']application\/opensearchdescription\+xml['"][^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]*>/i, :regexp_offset=>0 },
+{ :string=>/<link[^>]+type[\s]*=[\s]*["']application\/opensearchdescription\+xml['"][^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]*>/i },
 
 ]
 

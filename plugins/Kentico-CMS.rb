@@ -19,7 +19,7 @@ www.groupsuaptrujillo.com
 matches [
 
 # Version Detection # Meta Generator
-{ :version=>/<\/title><meta name="generator" content="Kentico CMS [^\(^>]{1,5} \(build ([\d\.]{1,10})\) [^"^>]*" \/>/, :regexp_offset=>0 },
+{ :version=>/<\/title><meta name="generator" content="Kentico CMS [^\(^>]{1,5} \(build ([\d\.]{1,10})\) [^"^>]*" \/>/ },
 
 ]
 

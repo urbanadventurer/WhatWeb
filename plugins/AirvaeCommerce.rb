@@ -35,7 +35,7 @@ matches [
 	{ :text=>'<link href="/conf/minify/f=imgs/store.css&142" rel="stylesheet" media="screen">', :version=>"3.x" },
 
 	# Version Detection # Powered by footer
-	{ :version=>/<a href="http:\/\/www.airvaecommerce.com">Powered by AirvaeCommerce ([\d\.]+) - E-Commerce Shopping Cart Software<\/a><br><br>/, :regexp_offset=>0 },
+	{ :version=>/<a href="http:\/\/www.airvaecommerce.com">Powered by AirvaeCommerce ([\d\.]+) - E-Commerce Shopping Cart Software<\/a><br><br>/ },
 
 ]
 

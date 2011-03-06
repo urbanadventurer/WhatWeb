@@ -30,11 +30,11 @@ http://sourceforge.net/users/kymara/
 matches [
 
 	# Location :
-	{ :string=>/<li class="item"><label>Location:<\/label> ([^<]*)<\/li>/, :regexp_offset=>0 },
+	{ :string=>/<li class="item"><label>Location:<\/label> ([^<]*)<\/li>/ },
 
 	# Name :
-	{ :version=>/<li class="item"><label>Public Name:<\/label> ([^<]*) <\/li>/, :regexp_offset=>0 },
-	{ :version=>/<title>SourceForge.net: ([^<]*) - User Profile<\/title>/, :regexp_offset=>0 },
+	{ :version=>/<li class="item"><label>Public Name:<\/label> ([^<]*) <\/li>/ },
+	{ :version=>/<title>SourceForge.net: ([^<]*) - User Profile<\/title>/ },
 
 ]
 

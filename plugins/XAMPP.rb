@@ -49,10 +49,10 @@ matches [
 	{ :text=>'<meta name="author" content="Kai Oswald Seidler">', :certainty=>75 },
 
 	# Version Detection # Default title
-	{ :version=>/<title>XAMPP Version ([^\r^\n^<]+)[\s]*<\/title>/, :regexp_offset=>0 },
+	{ :version=>/<title>XAMPP Version ([^\r^\n^<]+)[\s]*<\/title>/ },
 
 	# OS Detection # Default title
-	{ :module=>/<title>XAMPP for ([^\r^\n^<]{5,8}) [\d\.a-z]{3,6}[\s]*<\/title>/, :regexp_offset=>0 },
+	{ :module=>/<title>XAMPP for ([^\r^\n^<]{5,8}) [\d\.a-z]{3,6}[\s]*<\/title>/ },
 
 	# Windows # Default logo
 	{ :url=>"img/head-windows.gif", :md5=>"567ebe64625942cbb8244eca918b06a0", :string=>"OS:Windows" },

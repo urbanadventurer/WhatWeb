@@ -64,19 +64,19 @@ matches [
 { :text=>'eval("page" + id + " = window.open(URL, \'" + id + "\', \'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=650,height=400,left = 199.5,top = 196.5\');");', :version=>["10.x"] },
 
 # Version Detection # Version 9
-{ :version=>/Pc4Uploader <font color="#000080"> <b>v([\d\.]+)<\/b><\/font>/, :regexp_offset=>0 },
+{ :version=>/Pc4Uploader <font color="#000080"> <b>v([\d\.]+)<\/b><\/font>/ },
 
 # Version Detection # Pro # Version 9
-{ :version=>/Pc4Uploader <font color="#000080"> <b>v([\d\.]+) Pro<\/b><\/font>/, :regexp_offset=>0, :string=>"Pro" },
+{ :version=>/Pc4Uploader <font color="#000080"> <b>v([\d\.]+) Pro<\/b><\/font>/, :string=>"Pro" },
 
 # Version Detection # Powered by text
-{ :version=>/<p id="legal" style="text-align: center">Powered by Pc4Uploader v<span lang="en-us">([\d\.]+)<\/span><\/p>/, :regexp_offset=>0 },
+{ :version=>/<p id="legal" style="text-align: center">Powered by Pc4Uploader v<span lang="en-us">([\d\.]+)<\/span><\/p>/ },
 
 # Version Detection # Version 10
-{ :version=>/Powered by Pc4Uploader <b>v([\d\.]+)<\/b>&nbsp; Copyright <b>/, :regexp_offset=>0 },
+{ :version=>/Powered by Pc4Uploader <b>v([\d\.]+)<\/b>&nbsp; Copyright <b>/ },
 
 # Version Detection # Pro # Version 10
-{ :version=>/Powered by Pc4Uploader <b>v([\d\.]+) Pro<\/b>&nbsp; Copyright <b>/, :regexp_offset=>0, :string=>"Pro" },
+{ :version=>/Powered by Pc4Uploader <b>v([\d\.]+) Pro<\/b>&nbsp; Copyright <b>/, :string=>"Pro" },
 
 ]
 

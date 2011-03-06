@@ -28,8 +28,8 @@ matches [
 	{ :text=>"<!-- the following meta tag is important to avoid cross site scripting attacks: -->" },
 
 	# Version Detection # Powered by footer
-	{ :version=>/Powered by <a href="http:\/\/perlfect.com\/freescripts\/search\/">Perlfect Search ([a-z\.\d]+)<\/a>/, :regexp_offset=>0 },
-	{ :version=>/<a href="http:\/\/perlfect.com\/freescripts\/search\/">Perlfect Search ([a-z\.\d]+) \(c\) Perlfect Solutions 1998-[\d]{4}<\/a>/i, :regexp_offset=>0 },
+	{ :version=>/Powered by <a href="http:\/\/perlfect.com\/freescripts\/search\/">Perlfect Search ([a-z\.\d]+)<\/a>/ },
+	{ :version=>/<a href="http:\/\/perlfect.com\/freescripts\/search\/">Perlfect Search ([a-z\.\d]+) \(c\) Perlfect Solutions 1998-[\d]{4}<\/a>/i },
 
 ]
 

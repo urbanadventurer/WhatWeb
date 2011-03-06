@@ -51,7 +51,7 @@ matches [
 { :certainty=>25, :ghdb=>'+intitle:"Web Calendar system v" inurl:.asp' },
 
 # Version Detection # Default Title
-{ :version=>/<TITLE>Web Calendar system v ([\.\d]+)<\/TITLE>/, :regexp_offset=>0 },
+{ :version=>/<TITLE>Web Calendar system v ([\.\d]+)<\/TITLE>/ },
 
 ]
 

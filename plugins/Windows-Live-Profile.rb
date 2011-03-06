@@ -31,17 +31,17 @@ cid-6841b2f6eae3dd6b.profile.live.com
 matches [
 
 	# Name :
-	{ :version=>/<span  id="ic3" class="c_ic_i"><span  class="c_ic_name" id="ic3_name" title="([^\"]*)">/, :regexp_offset=>0, :url=>"/details" },
-	{ :version=>/<div  id="ic[0-9]+"  class="c_ic c_ic_h_xl"><div class="c_ic_img_h c_ic_img_xl"><div class="c_ic_img_sub c_ic_img_xl" id="ic[0-9]+_usertilecontainer"><a  id="ic2_frame_clip" title="Picture of ([^\"]+)" class="c_ic_frame_clip c_ml" target="_top" href="/, :regexp_offset=>0 },
+	{ :version=>/<span  id="ic3" class="c_ic_i"><span  class="c_ic_name" id="ic3_name" title="([^\"]*)">/, :url=>"/details" },
+	{ :version=>/<div  id="ic[0-9]+"  class="c_ic c_ic_h_xl"><div class="c_ic_img_h c_ic_img_xl"><div class="c_ic_img_sub c_ic_img_xl" id="ic[0-9]+_usertilecontainer"><a  id="ic2_frame_clip" title="Picture of ([^\"]+)" class="c_ic_frame_clip c_ml" target="_top" href="/ },
 
 	# Friends
-	{ :filepath=>/<div class="L_FloatLeft frex_friend"><div  id="ic[0-9]+"  class="c_ic c_ic_v_m_t"><div class="c_ic_img_v c_ic_img_m"><div class="c_ic_img_sub c_ic_img_m" id="ic[0-9]+_usertilecontainer"><a  id="ic[0-9]+_frame_clip" title="Picture of ([^\"]*)" class="c_ic_frame_clip c_ml" target="_top" href="/, :regexp_offset=>0 },
+	{ :filepath=>/<div class="L_FloatLeft frex_friend"><div  id="ic[0-9]+"  class="c_ic c_ic_v_m_t"><div class="c_ic_img_v c_ic_img_m"><div class="c_ic_img_sub c_ic_img_m" id="ic[0-9]+_usertilecontainer"><a  id="ic[0-9]+_frame_clip" title="Picture of ([^\"]*)" class="c_ic_frame_clip c_ml" target="_top" href="/ },
 
 	# Birthday :
-	{ :model=>/<div class="sn_aboutme_heading" >Birthday<\/div><div class="sn_aboutme_text sn_aboutme_textOverflow" title="">([^<]*)<\/div>/, :regexp_offset=>0 },
+	{ :model=>/<div class="sn_aboutme_heading" >Birthday<\/div><div class="sn_aboutme_text sn_aboutme_textOverflow" title="">([^<]*)<\/div>/ },
 
 	# Interests :
-	{ :string=>/Interests&#58;[\W]*<\/td>[\W]*<td id="intVal" class="cd_value cd_rowElementPadding">[\W]*([^<^\r^\n]*)[\W]*<\/td>/, :regexp_offset=>0, :url=>"/details" },
+	{ :string=>/Interests&#58;[\W]*<\/td>[\W]*<td id="intVal" class="cd_value cd_rowElementPadding">[\W]*([^<^\r^\n]*)[\W]*<\/td>/, :url=>"/details" },
 
 ]
 

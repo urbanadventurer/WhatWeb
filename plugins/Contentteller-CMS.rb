@@ -33,7 +33,7 @@ matches [
 { :text=>'<meta name="generator" content="Esselbach Contentteller CMS" />' },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/www.contentteller.com">Contentteller&reg; (Business Edition|Standard Edition)<\/a><img src="index.php\?ct=core&amp;action=tasks" alt="" \/>/, :regexp_offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/www.contentteller.com">Contentteller&reg; (Business Edition|Standard Edition)<\/a><img src="index.php\?ct=core&amp;action=tasks" alt="" \/>/ },
 
 ]
 

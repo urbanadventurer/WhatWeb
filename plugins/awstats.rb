@@ -48,10 +48,10 @@ matches [
 {:text=>'<meta http-equiv="description" content="Awstats - Advanced Web Statistics for'},
 {:name=>"default logo", :text=>'<a href="http://awstats.sourceforge.net" target="_newawstats"><img src="/icon/other/awstats_logo1.png" border=0 alt="awstats Official Web Site" title="awstats Official Web Site"></a>'},
 
-{:version=>/<meta name="generator" content="AWStats ([0-9\.]+ \(build [0-9\.]+\))/, :regexp_offset=>0}, #" good for 6.7
-{:version=>/<FONT COLOR="#000000"><b>Advanced Web Statistics ([0-9\.]+ \(build [0-9\.]+\))/, :regexp_offset=>0},
+{:version=>/<meta name="generator" content="AWStats ([0-9\.]+ \(build [0-9\.]+\))/}, #" good for 6.7
+{:version=>/<FONT COLOR="#000000"><b>Advanced Web Statistics ([0-9\.]+ \(build [0-9\.]+\))/},
 
-{:url=>'awstats.pl?framename=mainright', :version=>/<FONT COLOR="#000000"><b>Advanced Web Statistics ([0-9\.]+ \(build [0-9\.]+\))/, :regexp_offset=>0}
+{:url=>'awstats.pl?framename=mainright', :version=>/<FONT COLOR="#000000"><b>Advanced Web Statistics ([0-9\.]+ \(build [0-9\.]+\))/}
 ]
 
 # Version examples for 3.1, 5.5 and 6.7.

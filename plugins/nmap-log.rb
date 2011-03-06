@@ -25,10 +25,10 @@ www.ataliba.eti.br/sections/old-hacking/unsekurity/texto1/detonakiddies.txt
 matches [
 
 # Get Nmap version # older version # 2.x +
-{ :version=>/^Starting nmap V. ([\d\.]+) by fyodor@insecure.org/, :regexp_offset=>0 },
+{ :version=>/^Starting nmap V. ([\d\.]+) by fyodor@insecure.org/ },
 
 # Get Nmap version # newer versions # 4.x +
-{ :version=>/^Starting Nmap ([\d\.]+) \( http:\/\/nmap.org \) at /, :regexp_offset=>0 },
+{ :version=>/^Starting Nmap ([\d\.]+) \( http:\/\/nmap.org \) at / },
 
 ]
 

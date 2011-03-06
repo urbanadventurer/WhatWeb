@@ -39,7 +39,7 @@ matches [
 	{ :text=>'powered by <a href="http://campsite.sourcefabric.org" target="_blank">Campsite</a>' },
 
 	# Version Detection # Meta generator
-        { :version=>/<meta name="generator" content="Campsite ([\d\.a-z]+)" \/>/, :regexp_offset=>0 },
+        { :version=>/<meta name="generator" content="Campsite ([\d\.a-z]+)" \/>/ },
 
 ]
 

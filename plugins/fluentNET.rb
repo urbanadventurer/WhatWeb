@@ -26,7 +26,7 @@ matches [
 { :ghdb=>'"powered by FluentCMS from DotContent"', :certainty=>75 },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="GENERATOR" content="Fluent[CMS|NET]+ ([\d\.]+) /, :regexp_offset=>0 },
+{ :version=>/<meta name="GENERATOR" content="Fluent[CMS|NET]+ ([\d\.]+) / },
 
 ]
 

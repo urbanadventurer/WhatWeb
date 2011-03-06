@@ -35,11 +35,11 @@ matches [
 	{ :text=>'<title>Login To eSyndiCat Admin Panel</title>' },
 
 	# Version Detection # Meta Generator
-	{ :version=>/<meta name="generator" content="eSyndiCat Web Directory Software ([\d\.]+)" \/>/, :regexp_offset=>0 },
+	{ :version=>/<meta name="generator" content="eSyndiCat Web Directory Software ([\d\.]+)" \/>/ },
 
 	# Version Detection # Powered by text
-	{ :version=>/Powered by <a href="http:\/\/www.esyndicat.com\/">eSyndiCat Pro v([\d\.]+)<\/a><br \/>/, :regexp_offset=>0 },
-	{ :version=>/Powered by <a href="http:\/\/www.esyndicat.com\/">eSyndiCat<\/a> Version ([\d\.]+)<br \/>/, :regexp_offset=>0 },
+	{ :version=>/Powered by <a href="http:\/\/www.esyndicat.com\/">eSyndiCat Pro v([\d\.]+)<\/a><br \/>/ },
+	{ :version=>/Powered by <a href="http:\/\/www.esyndicat.com\/">eSyndiCat<\/a> Version ([\d\.]+)<br \/>/ },
 
 ]
 

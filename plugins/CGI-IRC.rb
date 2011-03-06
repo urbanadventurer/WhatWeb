@@ -61,28 +61,28 @@ matches [
 { :text=>'<small><a href="irc.cgi?adv=1">Advanced..</a></small>' },
 
 # Version Detection # Default HTML Comment
-{ :version=>/^<!-- This is part of CGI:IRC ([\d\.]+)/, :regexp_offset=>0 },
+{ :version=>/^<!-- This is part of CGI:IRC ([\d\.]+)/ },
 
 # Version Detection # cgiirc.org build # Powered by text
-{ :version=>/^<small id="ietest"><a href="http:\/\/cgiirc.org\/">CGI:IRC<\/a> ([^<]{3,25})<br \/>/, :regexp_offset=>0 },
+{ :version=>/^<small id="ietest"><a href="http:\/\/cgiirc.org\/">CGI:IRC<\/a> ([^<]{3,25})<br \/>/ },
 
 # Version Detection # Sourceforge build # Powered by text
-{ :version=>/^<small id="ietest"><a href="http:\/\/cgiirc.sourceforge.net\/">CGI:IRC<\/a> ([^<]{3,25})<br \/>/, :regexp_offset=>0 },
+{ :version=>/^<small id="ietest"><a href="http:\/\/cgiirc.sourceforge.net\/">CGI:IRC<\/a> ([^<]{3,25})<br \/>/ },
 
 # Nickname Detection
-{ :string=>/^bgcolor="#f1f1f1"><input type="text" name="Nickname" value="([^"]+)"><\/td><\/tr>/, :regexp_offset=>0 },
+{ :string=>/^bgcolor="#f1f1f1"><input type="text" name="Nickname" value="([^"]+)"><\/td><\/tr>/ },
 
 # Channel Detection # Input HTML
-{ :string=>/^bgcolor="#f1f1f1"><input type="text" name="Channel" value="([^"]+)"[^>]*><\/td><\/tr>/, :regexp_offset=>0 },
+{ :string=>/^bgcolor="#f1f1f1"><input type="text" name="Channel" value="([^"]+)"[^>]*><\/td><\/tr>/ },
 
 # Channel Detection # Select HTML
-{ :string=>/^bgcolor="#f1f1f1"><select name="Channel" style="width: 100%"[^>]*><option[^>]*>([^<]*)<\/option>/, :regexp_offset=>0 },
+{ :string=>/^bgcolor="#f1f1f1"><select name="Channel" style="width: 100%"[^>]*><option[^>]*>([^<]*)<\/option>/ },
 
 # Server Detection # Input HTML
-{ :string=>/^bgcolor="#f1f1f1"><input type="text" name="Server" value="([^"]+)"[^>]*><\/td><\/tr>/, :regexp_offset=>0 },
+{ :string=>/^bgcolor="#f1f1f1"><input type="text" name="Server" value="([^"]+)"[^>]*><\/td><\/tr>/ },
 
 # Server Detection # Select HTML
-{ :string=>/^bgcolor="#f1f1f1"><select name="Server" style="width: 100%"[^>]*><option[^>]*>([^<]*)<\/option>/, :regexp_offset=>0 },
+{ :string=>/^bgcolor="#f1f1f1"><select name="Server" style="width: 100%"[^>]*><option[^>]*>([^<]*)<\/option>/ },
 
 ]
 

@@ -97,7 +97,7 @@ matches [
 { :certainty=>75, :ghdb=>'"Powered by JGS-Portal Version"' },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <b>JGS-Portal Version ([\d\.]+)<\/b> &copy; /, :regexp_offset=>0 },
+{ :version=>/Powered by <b>JGS-Portal Version ([\d\.]+)<\/b> &copy; / },
 
 ]
 

@@ -43,10 +43,10 @@ matches [
 	{ :regexp=>/   <td align="center"><small>Powered by CaupoShop Classic[\s]?<\/small><\/td>/ },
 
 	# Powered by text # Version Detection
-	{ :version=>/   <td align="center"><small>Powered by CaupoShop Classic Ver. ([\d\.]+)<\/small><\/td>/, :regexp_offset=>0 },
+	{ :version=>/   <td align="center"><small>Powered by CaupoShop Classic Ver. ([\d\.]+)<\/small><\/td>/ },
 
 	# HTML Comment
-	{ :version=>/<!-- CaupoShop Classic Ver. ([\d\.]+) \([\d]{4}-[\d]{2}-[\d]{2}\) [^>]*-->/, :regexp_offset=>0 },
+	{ :version=>/<!-- CaupoShop Classic Ver. ([\d\.]+) \([\d]{4}-[\d]{2}-[\d]{2}\) [^>]*-->/ },
 
 ]
 

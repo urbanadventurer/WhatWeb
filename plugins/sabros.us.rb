@@ -70,7 +70,7 @@ matches [
 { :text=>'		<p class="powered">powered by: <a title="sabros.us" href="http://sourceforge.net/projects/sabrosus/">sabros.us</a></p>', :version=>["1.7"] },
 
 # Version Detection # Meta Generator
-{ :version=>/	<meta name="generator" content="sabros.us ([\d\.]+)" \/>/, :regexp_offset=>0 },
+{ :version=>/	<meta name="generator" content="sabros.us ([\d\.]+)" \/>/ },
 
 ]
 

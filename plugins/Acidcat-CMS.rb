@@ -64,7 +64,7 @@ matches [
 { :text=>"<br><center><table border=1 class=errorTable><tr><td class='login_view'><img src=images/acidcat_logo.gif><td colspan=1 class='login_view'><b>Acidcat CMS Error" },
 
 # Version Detection # Powered by footer
-{ :version=>/<a href="http:\/\/www.acidcat.com">Powered by Acidcat CMS v ([\d\.a-z]+)<\/a>/, :regexp_offset=>0 },
+{ :version=>/<a href="http:\/\/www.acidcat.com">Powered by Acidcat CMS v ([\d\.a-z]+)<\/a>/ },
 
 ]
 
