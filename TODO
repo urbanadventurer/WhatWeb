@@ -29,6 +29,9 @@ Ruby1.9 compatability
 [x] update lib/output.rb verbose logging. some plugin names are longer than 30
 
 
+-e doesn't work!
+
+
 Change usage:
 [x] --follow-redirect never,http-only,meta-only,same-site,same-domain,always (default: always)
 	same-domain --	? use tld.rb from urlcrazy ??
