@@ -4,15 +4,22 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-03-02 #
+# Updated model detection
+##
 Plugin.define "Sony-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
-version "0.1"
+version "0.2"
 description "SONY network video camera web interface - homepage: http://www.sony.com/"
 
-# 29 Google results for intitle:"SONY Network Camera SNC-P1" @ 2010-06-29
-# 7 Google results forinurl:home/homej.html intitle:"SNC-RZ30 home" @ 2010-06-29
-# About 543 Shodan results for Server:NetEVI @ 2010-07-22
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=349
+# Google results as at 2010-06-29 #
+# 29 for intitle:"SONY Network Camera SNC-P1"
+#  7 for inurl:home/homej.html intitle:"SNC-RZ30 home"
+
+# ShodanHQ results as at 2010-07-22 #
+# 543 for Server:NetEVI
+
+# Examples #
 examples %w|
 128.233.172.35
 222.147.168.35
@@ -49,35 +56,24 @@ www.7-milemarina.com/home/homeJ.html
 66.191.76.78:8088/home/homeJ.html
 |
 
+# Matches #
 matches [
 
 # SNC-M
-{ :text=>'	setWindowVar = window.open("/adm/file.cgi?next_file=setting.htm", "adminWin", setWinoptions);' },
+{ :text=>'	setWindowVar = window.open("/adm/file.cgi?next_file=setting.htm", "adminWin", setWinoptions);', :model=>["SNC-M"] },
 
-# SNC-RZ
+# SNC-RZ / SNC-Z
 { :text=>'<TITLE>Server Push Viewer</TITLE>' },
 { :regexp=>/<FRAME SRC="bar.html" SCROLLING="NO" NAME="sonyhome[0-9]*" NORESIZE[\ MARGINHEIGHT="0-9"]* MARGINWIDTH="0">/i },
 
+# Model Detection # SNC-P / SNC-M
+{ :model=>/<TITLE>Sony Network Camera ([0-9A-Z\-]+)<\/TITLE>/i, :regexp_offset=>0 },
+
+# Model Detection # SNC-RZ / SNC-Z
+{ :model=>/<TITLE>(SNC\-[R]?Z[0-9]+)<\/TITLE>/, :regexp_offset=>0 },
+{ :model=>/<TITLE>(SNC\-[R]?Z[0-9]+) HOME<\/TITLE>/, :regexp_offset=>0 },
+
 ]
-
-def passive
-        m=[]
-
-	# SNC-P / SNC-M
-        if @body =~ /<TITLE>SONY Network Camera [0-9A-Z\-]+<\/TITLE>/i
-                version=@body.scan(/<TITLE>Sony Network Camera ([0-9A-Z\-]+)<\/TITLE>/i)[0][0]
-                m << {:version=>version }
-        end
-
-        if @body =~ /<TITLE>SNC-RZ[0-9]+[\ HOME]*<\/TITLE>/
-                version=@body.scan(/<TITLE>SNC-RZ([0-9]+)[\ HOME]*<\/TITLE>/)[0][0]
-                m << {:version=>"SNC-RZ"+version }
-        end
-
-        m
-
-end
-
 
 end
 

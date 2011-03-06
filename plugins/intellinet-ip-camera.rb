@@ -4,44 +4,47 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-03-02 #
+# Updated firmware version detection
+##
 Plugin.define "Intellinet-IP-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
-version "0.1"
+version "0.2"
 description "Intellinet IP camera - homepage: http://www.intellinet-network.com"
 # default login: admin/admin
 
-# 5 results for intitle:"INTELLINET" intitle:"IP Camera Homepage" @ 2010-07-18
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1395
+# Google results as at 2010-07-18 #
+# 5 for intitle:"INTELLINET" intitle:"IP Camera Homepage"
+
+# Examples #
 examples %w|
 216.114.121.12
-www.networkipcamera.com/550710_demo/index.html
+193.95.229.234
+193.164.133.130
+78.86.204.2:84/index.cgi
 imst.selfip.net:88
-83.235.226.116
 tcl.dyndns.info
+webcam.vanree.com/index.cgi
 |
 
+# Matches #
 matches [
 
+# Default HTML
 { :text=>'    <font size="4" color="#FFFFFF" face="Arial">NETWORK IP CAMERA<br>' },
 
+# Default Title
 { :text=>'<TITLE>::::: INTELLINET IP Camera Homepage :::::</TITLE>' },
 { :text=>'<title>::::: INTELLINET ACTIVE NETWORKING Network IP Camera Homepage :::::</title>' },
 { :text=>'<TITLE>INTELLINET NETWORK SOLUTIONS: Professional Series Network IP Camera Homepage</TITLE>' },
 
+# Default Title # Wireless
+{ :text=>'<TITLE>INTELLINET NETWORK SOLUTIONS: Professional Series Wireless Network IP Camera Homepage</TITLE>', :model=>["Wireless"] },
+
+# Firmware Version Detection
+{ :firmware=>/<font size="1" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;FIRMWARE VERSION: ([A-Z0-9\.]+)[\s]*</, :regexp_offset=>0 },
+
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /&nbsp;FIRMWARE VERSION: [A-Z0-9\.]+[\s]*<\/font>/
-                version=@body.scan(/&nbsp;FIRMWARE VERSION: ([A-Z0-9\.]+)[\s]*<\/font>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

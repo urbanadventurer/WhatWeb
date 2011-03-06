@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "Nukedit" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
-version "0.1"
+version "0.2"
 description "Nukedit CMS - homepage: http://www.nukedit.com/"
 
-# 122 results for "powered by Nukedit" @ 2010-07-25
+# Google results as at 2010-07-25 #
+# 122 for "powered by Nukedit"
+
+# Examples #
 examples %w|
 catalystinfotech.com/cms/
 crutial.erse-web.it
@@ -46,35 +52,27 @@ www.weddingcompare.com
 www.xn--ellebksmalerservice-pxb.dk
 |
 
+# Matches #
 matches [
 
-{ :regexp=>/Powered by Nukedit - <a href="http:\/\/[www\.]*nukedit.com" target=_blank title="[Start\ your\ own\ Free\ CMS|Fast\ web\ portal|Free\ open\ source\ CMS]+[,\ friendly\ with\ search\ engines]*"><span class=footer><u>[Web\ Content\ Management|Open\ Source\ CMS]+<\/u><\/a><br>/ },
+{ :regexp=>/Powered by Nukedit - <a href="(http:\/\/www.|http:\/\/)nukedit.com" target=_blank title="[^"]*"><span class=footer><u>(Web Content Management|Open Source CMS)<\/u><\/a><br>/ },
 
+# Powered by text
 { :text=>'<a href="http://www.nukedit.com" target=_blank title="Fast web portal, friendly with search engines">Powered by Nukedit</a>' },
 
+# HTML Comment
 { :text=>'							You can move it anywhere you want. -->' },
 
+# Powered by text
 { :text=>'<a href="http://www.nukedit.com" target=_blank title="Fast web portal, friendly with search engines"><span class="footer">Powered by Nukedit</span></a><span class="footer"> |' },
 
+# Version Detection # Powered by text
+{ :version=>/				Powered by <a href="http:\/\/www.nukedit.com" target="_blank" title="Fast web portal, friendly with search engines">Nukedit<\/a> ([\d\.]+) /, :regexp_offset=>0 },
+
+# Version Detection # Powered by footer
+{ :version=>/					<span class=footer><center>Powered by Nukedit ([\d\.]+)<\/a> -/, :regexp_offset=>0 },
+
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /				Powered by <a href="http:\/\/www.nukedit.com" target="_blank" title="Fast web portal, friendly with search engines">Nukedit<\/a> [\d\.]+ /
-                version=@body.scan(/				Powered by <a href="http:\/\/www.nukedit.com" target="_blank" title="Fast web portal, friendly with search engines">Nukedit<\/a> ([\d\.]+) /)[0][0]
-                m << {:version=>version}
-        end
-
-        if @body =~ /					<span class=footer><center>Powered by Nukedit [\d\.]+<\/a> -/
-                version=@body.scan(/					<span class=footer><center>Powered by Nukedit ([\d\.]+)<\/a> -/)[0][0] 
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

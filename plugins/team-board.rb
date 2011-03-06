@@ -4,29 +4,24 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-24 #
+# Updated version detection
+##
 Plugin.define "Team-Board" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
-version "0.1"
+version "0.2"
 description "Team Board forum [Chinese] - homepage: http://www.team5.cn/"
 # Default Login: admin/123
 
-# 215 results for "team5 studio all rights reserved" site:cn @ 2010-07-25
+# Google results as at 2010-07-25 #
+# 215 for "team5 studio all rights reserved" site:cn
+
+# Examples #
 examples %w|
 www.team5.cn
-cg.sjtu.edu.cn/talk/
 cg.sjtu.edu.cn/talk1/
-nanjing.soyoco.cn/bbs/
-jinan.soyoco.cn/bbs/
-sjz.soyoco.cn/bbs/
-guangzhou.soyoco.cn/bbs/
-shanghai.soyoco.cn/bbs/
-chongqing.soyoco.cn/bbs/
-chengdu.soyoco.cn/bbs/
-hainan.soyoco.cn/bbs/
-hhht.soyoco.cn/bbs/
 bbs.gigabyte.cn
 bbs.ite68.cn
-nanjing.soyoco.cn/bbs/
 smkxxy.hutc.zj.cn/wjhx/bbs/
 tophr.cn/bbs/
 www.02412316.cn/xys/bbs/
@@ -59,29 +54,21 @@ www.xlzl.com.cn/bbs/default.asp
 www.xmonecard.cn/bbs/default.asp
 |
 
+# Matches #
 matches [
 
+# Meta Copyright
 { :regexp=>/<meta name="copyright" content="Copyright [0-9]{4}-[0-9]{4} - TEAM5.cn By DayMoon" \/>/ },
 
+# Version Detection # Powered By HTML
+
+{ :version=>/[\s]+Powered by <a target=_blank 	href=http:\/\/www.team5.cn><b>TEAM ([\d\.]+) Release<\/b><\/a> - <a href=Licence.asp><b style='color:#FF9900'>ACC<\/b><\/a> &copy; [0-9]{4} Team5 Studio All rights reserved/, :regexp_offset=>0 },
+
+{ :version=>/Powered by <a target=_blank[\s]+href=http:\/\/www.team5.cn><b>TEAM ([\d\.]+)<\/b><\/a>/, :regexp_offset=>0 },
+
+{ :version=>/[\s]+Powered by <a target="_blank" href="http:\/\/www.team5.cn"><b>TEAM ([\d\.]+) Release<\/b><\/a> - <a href="Licence.asp"><b style='color:#FF9900'>SQL<\/b><\/a> &copy; [0-9]{4} Team5 Studio All rights reserved/, :regexp_offset=>0 },
+
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /[\s]+Powered by <a target=_blank 	href=http:\/\/www.team5.cn><b>TEAM [\d\.]+ Release<\/b><\/a> - <a href=Licence.asp><b style='color:#FF9900'>ACC<\/b><\/a> &copy; [0-9]{4} Team5 Studio All rights reserved/
-                version=@body.scan(/[\s]+Powered by <a target=_blank 	href=http:\/\/www.team5.cn><b>TEAM ([\d\.]+) Release<\/b><\/a> - <a href=Licence.asp><b style='color:#FF9900'>ACC<\/b><\/a> &copy; [0-9]{4} Team5 Studio All rights reserved/)[0][0]
-                m << {:version=>version}
-        end
-
-        if @body =~ /[\s]+Powered by <a target="_blank" href="http:\/\/www.team5.cn"><b>TEAM [\d\.]+ Release<\/b><\/a> - <a href="Licence.asp"><b style='color:#FF9900'>SQL<\/b><\/a> &copy; [0-9]{4} Team5 Studio All rights reserved/
-                version=@body.scan(/[\s]+Powered by <a target="_blank" href="http:\/\/www.team5.cn"><b>TEAM ([\d\.]+) Release<\/b><\/a> - <a href="Licence.asp"><b style='color:#FF9900'>SQL<\/b><\/a> &copy; [0-9]{4} Team5 Studio All rights reserved/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

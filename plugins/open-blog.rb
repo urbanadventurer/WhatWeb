@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-24 #
+# Updated version detection
+##
 Plugin.define "Open-Blog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
-version "0.1"
+version "0.2"
 description "Open blog is a free and open source blogging platform built using the CodeIgniter PHP framework and released under the GPL v3 license. - homepage: http://www.open-blog.info/"
 
-# 107 results for "powered by Open blog" @ 2010-08-06
+# Google results for 2010-08-06 #
+# 107 for "powered by Open blog"
+
+# Examples #
 examples %w|
 www.open-blog.info/demo/
 anfyjen.a.gp/blog/install/
@@ -72,25 +78,18 @@ koleksipermai.com/openb/
 dragoshsproducts.comunitateamea.com
 |
 
+# Matches #
 matches [
 
+# Powered by text
 { :regexp=>/Powered by <a href="http:\/\/www.open-blog.info[\/]*" target="_blank">Open Blog<\/a>/ },
 { :text=>'Powered by <a href="http://www.open-blog.info"' },
 { :text=>'    	Powered by <a href="http://www.open-blog.info" target="_blank">Open Blog</a>' },
 
+# Version Detection # Install Page # Install Link
+{ :version=>/			<a href="install.php">Install Open Blog<\/a> - choose this option, if you would like to install Open Blog ([\d\.]+)<br \/>/, :regexp_offset=>0 },
+
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /			<a href="install.php">Install Open Blog<\/a> - choose this option, if you would like to install Open Blog ([\d\.]+)<br \/>/
-                version=@body.scan(/			<a href="install.php">Install Open Blog<\/a> - choose this option, if you would like to install Open Blog ([\d\.]+)<br \/>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
 
 end
 

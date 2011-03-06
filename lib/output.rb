@@ -32,7 +32,7 @@ class Output
 	# perform sort, uniq and join on each plugin result
 	def suj(plugin_results)
 		suj={} 
-		[:certainty, :version, :string, :account, :model, :firmware, :module, :filepath].map do  |thissymbol|
+		[:certainty, :version, :os, :string, :account, :model, :firmware, :module, :filepath].map do  |thissymbol|
 			t=plugin_results.map {|x| x[thissymbol] unless x[thissymbol].class==Regexp }.compact.sort.uniq.join(",")
 			suj[thissymbol] = t
 		end
@@ -71,6 +71,7 @@ class OutputVerbose < Output
 					stuff =[] 
 					stuff << "certainty: #{pr[:certainty]}" if pr[:certainty] != 100
 					stuff << "version: #{pr[:version]}" if pr[:version]
+					stuff << "os: #{pr[:os]}" if pr[:os]
 					stuff << "string: #{pr[:string]}" if pr[:string]
 					stuff << "model: #{pr[:model]}" if pr[:model]
 					stuff << "firmware: #{pr[:firmware]}" if pr[:firmware]
@@ -102,7 +103,7 @@ end
 		brief_results=[]
 
 # sort results so plugins that are less important at a glance are last
-		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Div-Span-Structure Tag-Hash|
+		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Tag-Hash|
 		results=results.sort_by {|x,y| last_plugins.include?(x) ? 1 : 0 }
 
 
@@ -110,8 +111,7 @@ end
 			unless plugin_results.empty?
 				suj = suj(plugin_results)
 
-				certainty, version, string, accounts,model,firmware,modules,filepath = suj[:certainty],suj[:version],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
-
+				certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty],suj[:version],suj[:os],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
 
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
@@ -120,16 +120,15 @@ end
 					 coloured_string = yellow(string)
 					 coloured_string = cyan(string) if plugin_name == "HTTPServer"
  				 	 coloured_string = dark_green(string) if plugin_name == "Title"
+
  				 	 coloured_string = grey(string) if plugin_name == "MD5" 				 	 
- 				 	 coloured_string = grey(string) if plugin_name == "Div-Span-Structure" 				 	 
  				 	 coloured_string = grey(string) if plugin_name == "Header-Hash"
  				 	 coloured_string = grey(string) if plugin_name == "Footer-Hash"
  				 	 coloured_string = grey(string) if plugin_name == "CSS"
 					 coloured_string = grey(string) if plugin_name == "Tag-Hash"
- 				 	  				 	  				 	 					 
+ 					 
 					 coloured_plugin = white(plugin_name)
 					 coloured_plugin = grey(plugin_name) if plugin_name == "MD5"
- 					 coloured_plugin = grey(plugin_name) if plugin_name == "Div-Span-Structure"
   					 coloured_plugin = grey(plugin_name) if plugin_name == "Header-Hash"
   					 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"  					 
   					 coloured_plugin = grey(plugin_name) if plugin_name == "CSS"
@@ -137,6 +136,7 @@ end
   					 					 
 					 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
 					   coloured_plugin + (!version.empty? ? "["+green(escape(version))+"]" : "") +
+					   (!os.empty? ? "[" + red(escape(os))+"]" : "") +	
 					   (!string.empty? ? "[" + coloured_string+"]" : "") +
 					   (!accounts.empty? ? "["+ cyan(escape(accounts))+"]" : "" ) +
 					   (!model.empty? ? "["+ dark_green(escape(model))+"]" : "" ) +
@@ -149,6 +149,7 @@ end
 				else
 					brief_results << ((certainty and certainty < 100) ? certainty_to_words(certainty)+ " " : "")  +
 					   plugin_name + (!version.empty? ? "[" + version +"]" : "") +
+					   (!os.empty? ? "[" + os+"]" : "") +
 					   (!string.empty? ? "[" + string+"]" : "") +
 					   (!accounts.empty? ? " ["+ accounts+"]" : "" ) +
 					   (!model.empty? ? "["+ model+"]" : "" ) +
@@ -164,7 +165,7 @@ end
 		else
 			@f.puts target.to_s + " [#{status}] " + brief_results.join(", ")
 		end		
-		@f.flush
+		
 	end
 end
 
@@ -202,22 +203,30 @@ class OutputXML < Output
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
+
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
+				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp}.compact.sort.uniq.join(",")
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
-				accounts = plugin_results.map {|x| [x[:account]] }.flatten.compact.sort.uniq.join(",")
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.compact.sort.uniq.join(",")
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.compact.sort.uniq.join(",")
-				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq
 				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
+				accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
+				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
+
 
 				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
 				version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
+				os.map {|x| @f.puts "\t\t<os>#{escape(x)}</os>" }
 				string.map   {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
-				accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
 				model.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
 				firmware.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
 				filepath.map {|x| @f.puts "\t\t<filepath>#{escape(x)}</filepath>" }
+
+				if accounts.size > 0
+					accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
+					@f.puts "\t\t<accounts>\n" + accounts.map {|x| "\t\t\t<accounts>#{escape(x)}</accounts>" }.join("\n") + "\n\t\t</accounts>"
+				end
 
 				if modules.size > 0
 					@f.puts "\t\t<modules>\n" + modules.map {|x| "\t\t\t<module>#{escape(x)}</module>" }.join("\n") + "\n\t\t</modules>"
@@ -227,6 +236,160 @@ class OutputXML < Output
 		end
 		@f.puts "</target>"
 	end
+end
+
+# Output XML file in MagicTree XML semantic format # TODO : Fix logging in `--recursive`
+class OutputMagicTreeXML < Output
+	def initialize(f=STDOUT)
+		super
+		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
+		@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
+		@f.puts '<magictree class="MtBranchObject">'
+	end
+
+	def close
+		@f.puts '</magictree>'
+		@f.close
+	end
+
+	def escape(t)		
+		text=t.to_s.dup
+		# use sort_by so that & is before &quot;, etc.
+		@substitutions.sort_by {|a,b| a=="&" ? 0 : 1 }.map{|from,to| text.gsub!(from,to) }
+
+		# escape [] and all characters up to space.
+		#r=/[\[\]\001\002\003\004\005\006\a\b\t\n\v\f\r\016\017\020\021\022\023\024\025\026\027\030\031\032\e\034\035\036\037]/
+		# based on code for CGI.escape
+		#text.gsub(r) do |x|
+		#	'%' + x.unpack('H2' * x.size).join('%').upcase
+		#end
+
+		text
+	end
+
+	def out(target, status, results)
+
+		# Parse target URL # TODO : Create host object. Handle HTTPS with tunnel node
+		uri = URI.parse(target)
+		if uri.host =~ /^[\d]{1,3}.[\d]{1,3}.[\d]{1,3}.[\d]{1,3}$/i
+			@host_ip = uri.host
+		else
+			@host_name = uri.host
+      # hostname is sufficient. fqdn nodes are used when the host IP address is not known yet
+		end
+
+    @host_port = uri.port
+    @host_scheme = uri.scheme
+		
+		@host_os=[]
+
+		# Loop through plugin results # get host IP, country and OS
+		results.each do |plugin_name,plugin_results|
+			unless plugin_results.empty?
+				# Host IP
+				@host_ip = plugin_results.map {|x| x[:string] unless x[:string].nil?}.to_s if plugin_name =~ /^IP$/
+				# Host Country
+				@host_country = plugin_results.map {|x| x[:string] unless x[:string].nil?}.to_s if plugin_name =~ /^Country$/
+				# Host OS
+				@host_os << plugin_results.map {|x| x[:os] unless x[:os].class==Regexp}.to_s
+			end
+		end
+
+		# testdata branch
+		@f.write '<testdata class="MtBranchObject">'
+
+		# hostname
+		@f.write "<host>#{escape(@host_ip)}<hostname>#{escape(@host_name)}</hostname></host>" unless @host_name.nil?
+        # title attribute is not used in simple nodes  
+
+		# os
+		@host_os.compact.sort.uniq.map {|x| @f.write "<host>#{escape(@host_ip)}<os>#{escape(x.to_s)}</os></host>" unless x.empty? } unless @host_os.empty?
+        # We generally don't create "source" nodes for command-line tools
+        # If the tool is executed from MagicTree, MT will automatically track
+        # the source of the data
+
+		# country and port nodes
+		@f.write "<host>#{escape(@host_ip)}<country>#{escape(@host_country)}</country><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
+
+    if @host_scheme == 'https'
+      @f.write "<tunnel>ssl";
+    end
+
+    @f.puts "<service>http";
+		# Loop through remaining results
+		results.each do |plugin_name,plugin_results|
+
+			unless plugin_results.empty?
+
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
+				versions = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.to_a
+				strings = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.to_a
+				models = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.compact.sort.uniq.to_a
+				firmwares = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.compact.sort.uniq.to_a
+				filepaths = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.to_a
+				accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
+				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
+
+				# Print certainty if uncertain
+				@f.write "<software>#{escape(plugin_name)}<certainty>#{escape(certainty)}</certainty></#{escape(plugin_name)}></software>" if certainty and certainty < 100
+
+        # Some restructuring - software, headers, firmware, modules, etc. are all related to a specific URL
+        # and therefore are placed under the url node
+				# Strings
+				if strings.size > 0
+					strings.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}>#{escape(x)}</#{escape(plugin_name)}></url>" } unless plugin_name =~ /^IP$/ or plugin_name =~ /^Country$/
+				end
+
+				# Versions
+				if versions.size > 0
+					versions.map {|x| @f.write "<url>#{escape(target)}<software>#{escape(plugin_name)}<version>#{escape(x)}</version></software></url>" }
+				end
+
+				# Models
+				if models.size > 0
+					models.map {|x| @f.puts "<url>#{escape(target)}<#{escape(plugin_name)}><model>#{escape(x)}</model></#{escape(plugin_name)}></url>" }
+				end
+
+				# Firmware
+				if firmwares.size > 0
+					firmwares.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><firmware>#{escape(x)}</firmware></#{escape(plugin_name)}></url>" }
+				end
+
+				# Modules
+				if modules.size > 0
+					modules.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><module>#{escape(x)}</module></#{escape(plugin_name)}></url>" }
+				end
+
+				# Accounts
+        # MT generally uses "user" nodes for account 
+				if accounts.size > 0
+					accounts.map {|x| @f.write "<url>#{escape(target)}<user>#{escape(x)}</user></url>" }
+				end
+
+				# Filepaths
+				if filepaths.size > 0
+					filepaths.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><filepath>#{escape(x)}<http-status>#{escape(status)}</http-status></filepath></#{escape(plugin_name)}></url>" }
+				end
+
+       # Output goes back under <url>
+       @f.write "<url>#{escape(target)}<output title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
+    	 # display detailed results
+       @f.write "#{escape(results.pretty_inspect)}" unless results.empty?
+       @f.write "</output></url>"
+			end
+
+		end
+
+    @f.write "</service>";
+
+    if @host_scheme == 'https'
+      @f.write "</tunnel>"
+    end
+
+		# testdata # close port, host and testdata nodes
+		@f.write "</port></ipproto></host></testdata>"
+	end
+
 end
 
 class OutputJSON < Output
@@ -279,10 +442,12 @@ class OutputJSON < Output
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
 
-				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
+
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
+				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp }.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
-				accounts = plugin_results.map {|x| [x[:account]] }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| x[:account] unless x[:account].class=Regexp }.flatten.compact.sort.uniq
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
 				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.compact.sort.uniq
@@ -291,6 +456,7 @@ class OutputJSON < Output
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?
+				thisplugin[:os] = os unless os.empty?
 				thisplugin[:string] = string unless string.empty?
 				thisplugin[:account] = accounts unless accounts.empty?
 				thisplugin[:model] = model unless model.empty?
@@ -381,8 +547,9 @@ class OutputMongo < Output
 
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
+				os = plugin_results.map {|x| x[:os] unless x[:os].class=Regexp }.flatten.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
-				accounts = plugin_results.map {|x| [x[:account] ] }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| x[:account] unless x[:account].class=Regexp }.flatten.compact.sort.uniq
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
 				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.compact.sort.uniq
@@ -390,6 +557,7 @@ class OutputMongo < Output
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?
+				thisplugin[:os] = os unless os.empty?
 				thisplugin[:string] = string unless string.empty?
 				thisplugin[:account] = accounts unless accounts.empty?
 				thisplugin[:model] = model unless model.empty?

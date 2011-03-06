@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.4 # 2011-03-03 #
+# Merged x-aspnetmvc-version plugin
+##
 # Version 0.3 # 2011-02-19 #
 # Added AnonymousIdentificationModule detection
 ##
@@ -12,7 +15,7 @@
 ##
 Plugin.define "ASP.NET" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
-version "0.3"
+version "0.4"
 description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world. - homepage: http://www.asp.net/"
 
 # The Global.asa file is an optional file that can contain declarations of objects, variables, and methods that can be accessed by every page in an ASP application. All valid browser scripts (JavaScript, VBScript, JScript, PerlScript, etc.) can be used within Global.asa. The Global.asa file must be stored in the root directory of the ASP application, and each application can only have one Global.asa file. - http://www.w3schools.com/ASP/asp_globalasa.asp
@@ -35,6 +38,10 @@ description "ASP.NET is a free web framework that enables great Web applications
 examples %w|
 www.microsoft.com
 www.asp.net
+gymbox.co.uk
+playnextlevel.com
+rabotadoma-perm.ru
+howlingsword.co.kr
 205.178.163.82
 205.178.185.168
 206.188.222.247
@@ -153,9 +160,12 @@ def passive
 	# Version Detection # X-AspNet-Version HTTP header
 	m << { :version=>@meta['x-aspnet-version'].to_s } unless @meta['x-aspnet-version'].nil?
 
+	# Version Detection # X-AspNetmvc-version HTTP header
+	m << { :string=>"MVC"+@meta['x-aspnetmvc-version'].to_s } unless @meta['x-aspnetmvc-version'].nil?
+
 	# AnonymousIdentificationModule
-	m << { :module=>"AnonymousIdentificationModule" } if @meta['set-cookie'] =~ /anonymousID=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
-	m << { :module=>"AnonymousIdentificationModule" } if @meta['set-cookie'] =~ /chkvalues=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
+	m << { :module=>"AnonymousIdentificationModule" } if @meta['set-cookie'] =~ /^anonymousID=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
+	m << { :module=>"AnonymousIdentificationModule" } if @meta['set-cookie'] =~ /^chkvalues=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
 
 	# Return passive results
 	m

@@ -4,14 +4,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "i-Catcher-Console" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
-version "0.1"
+version "0.2"
 description "i-Catcher is a Digital CCTV system for security, surveillance and remote monitoring applications. - homepage: http://www.icode.co.uk/icatcher/"
 
-# 22 results for "please visit" intitle:"i-Catcher Console" Copyright "iCode Systems" @ 2010-07-20
-# About 189 Shodan results for Server:i-Catcher Console @ 2010-07-20
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=751
+# Google results as at 2010-07-20 #
+# 22 for "please visit" intitle:"i-Catcher Console" Copyright "iCode Systems"
+
+# ShodanHQ results as at 2010-07-20 #
+# 189 for Server:i-Catcher Console
+
+# Examples #
 examples %w|
 cctv.icode.co.uk
 cctv.rockwellcottage.com:82
@@ -29,28 +36,22 @@ cctv.rockwellcottage.com:82
 81.149.107.89
 |
 
+# Matches #
 matches [
 
+# Default JavaScript Comment
 { :text=>'   // These vars will be filled in by i-Catcher Console' },
 
+# Default Title
 { :text=>' <title>i-Catcher Console - Live view</title>' },
 
-{ :regexp=>/     i-Catcher Console is Copyright [\d]{4}-[\d]{4} <a[\ class="footer"]* href="http:\/\/www.icode.co.uk\/">iCode Systems<\/a>./ },
+# Copyright Text
+{ :regexp=>/     i-Catcher Console is Copyright [\d]{4}-[\d]{4} <a[^>]+href="http:\/\/www.icode.co.uk\/">iCode Systems<\/a>./ },
+
+# Version Detection # Copyright Footer
+{ :version=>/     i-Catcher Console ([\d\.]+) is Copyright [\d]{4}-[\d]{4} <a class="footer" href="http:\/\/www.icode.co.uk\/">iCode Systems<\/a>./, :regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /     i-Catcher Console [\d\.]+ is Copyright [\d]{4}-[\d]{4} <a class="footer" href="http:\/\/www.icode.co.uk\/">iCode Systems<\/a>./
-                version=@body.scan(/     i-Catcher Console ([\d\.]+) is Copyright [\d]{4}-[\d]{4} <a class="footer" href="http:\/\/www.icode.co.uk\/">iCode Systems<\/a>./)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

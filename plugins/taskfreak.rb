@@ -4,33 +4,31 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "TaskFreak" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
-version "0.1"
+version "0.2"
 description "TaskFreak! Original is a simple but efficient web based task manager written in PHP. - homepage: http://www.taskfreak.com/original/"
+
+# Examples #
 examples %w|
 demo.taskfreak.com
 support.djs-consulting.com
 pz-dev.de/tasks/login.php
 |
 
-def passive
-        m=[]
+# Matches #
+matches [
 
-        if @body =~ /<br>Powered by <a href="http:\/\/www.taskfreak.com">TaskFreak <\/a> v[\d\.]+ - Released on [\d\-]+ under GNU General Public License/
-                version=@body.scan(/<br>Powered by <a href="http:\/\/www.taskfreak.com">TaskFreak <\/a> v([\d\.]+) - Released on [\d\-]+ under GNU General Public License/)[0][0]
-                m << {:version=>version}
-        end
+# Version Detection # Powered by text
+{ :version=>/<br>Powered by <a href="http:\/\/www.taskfreak.com">TaskFreak <\/a> v([\d\.]+) - Released on [\d\-]+ under GNU General Public License/, :regexp_offset=>0 },
 
-        if @body =~ /    <a href="http:\/\/www.taskfreak.com">TaskFreak! multi user<\/a> v[\d\.]+ - Released on [\d\-]+ under GNU General Public License/
-                version=@body.scan(/    <a href="http:\/\/www.taskfreak.com">TaskFreak! multi user<\/a> v([\d\.]+) - Released on [\d\-]+ under GNU General Public License/)[0][0]
-                m << {:version=>version}
-        end
+# Version Detection # Powered by text
+{ :version=>/    <a href="http:\/\/www.taskfreak.com">TaskFreak! multi user<\/a> v([\d\.]+) - Released on [\d\-]+ under GNU General Public License/, :regexp_offset=>0 },
 
-        m
-
-end
-
+]
 
 end
 

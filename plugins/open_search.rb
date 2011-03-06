@@ -4,31 +4,34 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
+# Version 0.2 # 2011-03-05 #
+# Updated string detection
+##
 Plugin.define "OpenSearch" do
 author "Caleb Anderson"
-version "0.1"
-description "open search"
+version "0.2"
+description "This plugin identifies open search and extracts the URL. OpenSearch is a collection of simple formats for the sharing of search results."
+# More Info: http://www.opensearch.org/ 
 
-examples %w| www.facebook.com www.amazon.com|
+# Examples #
+examples %w|
+www.opensearch.org/Home
+www.nature.com
+|
 
+# Matches #
 matches [
+
+# Link tag
 {:name=>"open search",
 :regexp=>/<link .*?type=["']application\/opensearchdescription\+xml['"].*?>/im},
 
+# Extract URL
+{ :string=>/<link[^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]+type[\s]*=[\s]*["']application\/opensearchdescription\+xml['"][^>]*>/i, :regexp_offset=>0 },
+
+{ :string=>/<link[^>]+type[\s]*=[\s]*["']application\/opensearchdescription\+xml['"][^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]*>/i, :regexp_offset=>0 },
+
 ]
 
-
-def passive
-    m=[]
-    @body.scan(/<link [^>]*?type=["']application\/opensearchdescription\+xml['"].*?>/im).each do |link|
-        url=link.scan(/href=["'](.*?)["']/i).first.first rescue nil
-        m << {:name=>"search link",:string=>url} unless url.nil?
-    end
-    return m
 end
-
-end
-
 

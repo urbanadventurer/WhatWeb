@@ -4,12 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MAXdev" do
+# Version 0.2 # 2011-03-02 #
+# Updated version detection
+# Renamed from MAXdev to MD-Pro
+##
+Plugin.define "MD-Pro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
-version "0.1"
+version "0.2"
 description "MaxDev is proud to introduce MD-Pro, the most complete, flexible and reliable CMS available on the market. - homepage: http://www.maxdev.com/AboutMD.phtml"
 
-# 64 results for "powered by MAXdev" @ 2010-08-28
+# Google results as at 2010-08-28 #
+# 64 for "powered by MAXdev"
+
+# Examples #
 examples %w|
 demo.opensourcecms.com/mdpro/
 demaciro.altervista.org
@@ -46,6 +53,7 @@ www.fclefstore.com
 www.apoolgame.com
 |
 
+# Matches #
 matches [
 
 # DB Error page
@@ -53,30 +61,19 @@ matches [
 
 # Powered by text
 { :text=>'<a href="http://www.maxdev.it" target="_blank">Powered by MAXDev</a>' },
-{ :regexp=>/<div class="poweredtext"><a href="javascript:opencredits\(\)">Credit[i|s]+<\/a> <a href="http:\/\/www.maxdev[.it|italia.com]+">Powered by MAXdev<\/a><\/div>/ },
+{ :regexp=>/<div class="poweredtext"><a href="javascript:opencredits\(\)">Credit(i|s)<\/a> <a href="http:\/\/www.maxdev(.it|italia.com)">Powered by MAXdev<\/a><\/div>/ },
 
 # HTML comments
 { :text=>'************** MAXdev - MAXdev (http://www.maxdev.it) ***********' },
 { :text=>'************** MAXdev - MAXdev (http://www.maxdev.com) ***********' },
 
 # Default logo
-{ :md5=>'0caf204c07776c652de251a1eb74447a', :url=>'images/logo.gif' }
+{ :md5=>'0caf204c07776c652de251a1eb74447a', :url=>'images/logo.gif' },
+
+# Version Detection # Meta Generator
+{ :version=>/<meta name="generator" content="MAXdev ([\d\.]+) - http:\/\/www.maxdev.(com|it)">/, :regexp_offset=>0 },
 
 ]
-
-# Version detection using meta generator
-def passive
-        m=[]
-
-        if @body =~ /<meta name="generator" content="MAXdev ([\d\.]+) - http:\/\/www.maxdev.[com|it]*">/
-                version=@body.scan(/<meta name="generator" content="MAXdev ([\d\.]+) - http:\/\/www.maxdev.[com|it]*">/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

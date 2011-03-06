@@ -4,13 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-24 #
+# Updated version detection
+##
 Plugin.define "phpScheduleIt" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
-version "0.1"
+version "0.2"
 description "A web-based resource scheduling system that allows administered management of reservations on any number of resources. Typical applications are conference room or machine reservation management. Written in PHP and tested on MySQL.  - homepage: http://phpscheduleit.sourceforge.net"
 # Default login: admin/admin
 
-# 9 results for "powered by phpScheduleIt" @ 2010-08-01
+# Google results as at 2010-08-01 #
+# 9 for "powered by phpScheduleIt"
+
+# Examples #
 examples %w|
 php.brickhost.com/demo/
 www.wherehealthbegins.com/onlinebooking/roschedule.php
@@ -21,38 +27,27 @@ https://reservation.cs.iastate.edu
 labschedule.cabfablab.nl/roschedule.php
 |
 
+# Matches #
 matches [
+
+# Default Logo
+{ :text=>'<div align="left"><img src="img/phpScheduleIt.png" alt="logo" vspace="5"/></div>' },
 
 # Powered by text
 { :text=>'<p align="center">Powered by <a href="http://phpscheduleit.sourceforge.net">phpScheduleIt</a></p>' },
 { :text=>'<p align="right"><a href="http://phpscheduleit.sourceforge.net">Powered By phpScheduleIt' },
-{ :text=>'<br>Powered By: phpScheduleIt</p>' },
+{ :text=>'<br>Powered By: phpScheduleIt</p>', :certainty=>75 },
+
+# Version Detection # Powered by text
+{ :version=>/<p align="center">[<!\-]*<a href="http:\/\/phpscheduleit.sourceforge.net">[\->]*Powered By phpScheduleIt v([\d\.]+)[<!\-]*<\/a>[\->]*<\/p>/, :regexp_offset=>0 },
+
+{ :version=>/<p align="center"><a href="http:\/\/phpscheduleit.sourceforge.net">phpScheduleIt v([\d\.]+)<\/a><\/p>/, :regexp_offset=>0 },
+
+{ :version=>/<p align="center">Powered by <a href="http:\/\/phpscheduleit.sourceforge.net">phpScheduleIt v([\d\.]+)<\/a><\/p>/, :regexp_offset=>0 },
+
+{ :version=>/[P|p]?owered by <a href="http:\/\/phpscheduleit.sourceforge.net"[^>]*>phpScheduleIt v([\d\.]+)<\/a>/, :regexp_offset=>0 },
 
 ]
-
-# Version detection using powered by text
-def passive
-        m=[]
-
-        if @body =~ /<p align="center">[<!\-]*<a href="http:\/\/phpscheduleit.sourceforge.net">[\->]*Powered By phpScheduleIt v[\d\.]+[<!\-]*<\/a>[\->]*<\/p>/
-                version=@body.scan(/<p align="center">[<!\-]*<a href="http:\/\/phpscheduleit.sourceforge.net">[\->]*Powered By phpScheduleIt v([\d\.]+)[<!\-]*<\/a>[\->]*<\/p>/)[0][0]
-                m << {:version=>version}
-        end
-
-        if @body =~ /<p align="center">[\ Powered\ by\ ]*<a href="http:\/\/phpscheduleit.sourceforge.net">phpScheduleIt v[\d\.]+<\/a><\/p>/
-                version=@body.scan(/<p align="center">[\ Powered\ by\ ]*<a href="http:\/\/phpscheduleit.sourceforge.net">phpScheduleIt v([\d\.]+)<\/a><\/p>/)[0][0]
-                m << {:version=>version}
-        end
-
-        if @body =~ /[P|p]?owered by <a href="http:\/\/phpscheduleit.sourceforge.net"[\ target="_blank"]*>phpScheduleIt v[\d\.]+<\/a>/
-                version=@body.scan(/[P|p]?owered by <a href="http:\/\/phpscheduleit.sourceforge.net"[\ target="_blank"]*>phpScheduleIt v([\d\.]+)<\/a>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

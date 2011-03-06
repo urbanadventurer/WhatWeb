@@ -4,45 +4,38 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "Realtor-747" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
-version "0.1"
+version "0.2"
 description "IT747.COM is proudly presenting a property listings management system REALTOR 747 for real estate agents which adopted template based design so that web site designers can fully express their own imagination. - homepage: http://www.it747.com/realtor747/"
 
-# 10 results for "powered by Realtor 747" @ 2010-08-27
+# Google results as at 2010-08-27 #
+# 10 for "powered by Realtor 747"
+
+# Examples #
 examples %w|
 www.it747.com/realtor747/demo/admin_demo/admin/index.php
 webdesign.jejusoft.com/demo/admin_demo/admin/index.php
 louisvillehighlights.com/admin/index.php
 |
 
+# Matches #
 matches [
 
-# Admin page
+# Admin Page
 { :text=>'<body onload="start_realtor747_admin();" onunload="stop_realtor747_admin();">' },
+
+# Version Detection # Powered by text
+{ :version=>/    <a href="http:\/\/www.it747.com\/realtor747" target="_blank"><span style="color: green;">Powered by REALTOR 747 - The Property Listings Management System - Version ([\d\.]+)<\/span><\/a><br>/, :regexp_offset=>0 },
+
+# Version Detection # Admin Page # Default Title
+{ :version=>/<title>REALTOR 747 - The Property Listings Management System - Administration  - Version ([\d\.]+)<\/title>/, :regexp_offset=>0 },
 
 ]
 
-# Version detection
-def passive
-        m=[]
-
-	# Powered by text
-        if @body =~ /    <a href="http:\/\/www.it747.com\/realtor747" target="_blank"><span style="color: green;">Powered by REALTOR 747 - The Property Listings Management System - Version ([\d\.]+)<\/span><\/a><br>/
-                version=@body.scan(/    <a href="http:\/\/www.it747.com\/realtor747" target="_blank"><span style="color: green;">Powered by REALTOR 747 - The Property Listings Management System - Version ([\d\.]+)<\/span><\/a><br>/)[0][0]
-                m << {:version=>version}
-        end
-
-	# Admin title
-	if @body =~ /<title>REALTOR 747 - The Property Listings Management System - Administration  - Version ([\d\.]+)<\/title>/
-		version=@body.scan(/<title>REALTOR 747 - The Property Listings Management System - Administration  - Version ([\d\.]+)<\/title>/)[0][0]
-		m << {:version=>version}
-	end
-
-        m
-
 end
 
-
-end
 

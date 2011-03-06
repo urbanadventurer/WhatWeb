@@ -4,10 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHPraid" do
+# Version 0.2 # 2011-02-21 #
+# Updated version detection
+##
+Plugin.define "phpRaid" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
-version "0.1"
+version "0.2"
 description "phpRaid is a raid management tool for World of Warcraft - a MMORPG developed by Blizzard. - homepage: http://www.spiffyjr.com/"
+
+# Google results as at 2010-06-16 #
+# 32,800 for "Raid Management Provided by phpRaid"
+
+# Examples #
 examples %w|
 www.trollbane.net/phpraid/
 www.tenusoft.net/a5o/phpraid/
@@ -57,28 +65,18 @@ www.demolicniceta.eu/phpraid/
 www.legions-guild.com/signup/
 |
 
+# Matches #
 matches [
 
-# 32,800 results @ 2010-06-16
-{:name=>'GHDB: "Raid Management Provided by phpRaid"',
-:certainty=>75,
-:ghdb=>'"Raid Management Provided by phpRaid"'
-}
+# Provided by text
+{ :certainty=>75, :text=>'Raid Management Provided by phpRaid' },
+
+# Version Detection # provided by text
+{ :version=>/Raid Management Provided by <a href="http:\/\/www.spiffyjr.com\/">phpRaid<\/a> v([\d\.]+)/, :regexp_offset=>0 },
 
 ]
 
+end
+
 # an aggressive plugin could check for /docs/phpRaid_install_doc.pdf
-def passive
-        m=[]
-
-        if @body =~ /Raid Management Provided by <a href="http:\/\/www.spiffyjr.com\/">phpRaid<\/a> v[\d\.]+/
-                version=@body.scan(/Raid Management Provided by <a href="http:\/\/www.spiffyjr.com\/">phpRaid<\/a> v([\d\.]+)/)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text",:version=>version}
-        end
-
-        m
-end
-
-
-end
 

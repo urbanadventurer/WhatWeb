@@ -4,10 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "Piwik" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
-version "0.1"
+version "0.2"
 description "Piwik is a downloadable, open source (GPL licensed) real time web analytics software program. - homepage: http://piwik.org/"
+
+# Google results as at 2010-06-06 #
+# 250,000 for +intitle:Piwik "JavaScript must be enabled in order for you to use Piwik in standard view"
+
+# Examples #
 examples %w|
 piwik.org/demo/
 web.grc.nasa.gov/piwik/
@@ -29,44 +37,32 @@ bittelbrunner.org/piwik/
 araponics.com/piwik/
 |
 
+# Matches #
 matches [
 
-# About 250,000 results @ 2010-06-06
-{:name=>'GHDB: +intitle:Piwik "JavaScript must be enabled in order for you to use Piwik in standard view"',
-:certainty=>75,
-:ghdb=>'+intitle:Piwik "JavaScript must be enabled in order for you to use Piwik in standard view"'
-},
+# GHDB Match
+{ :certainty=>75, :ghdb=>'+intitle:Piwik "JavaScript must be enabled in order for you to use Piwik in standard view"' },
 
-{:name=>"default title", 
-:text=>'<title>Piwik &rsaquo; Web Analytics Reports</title>'
-},
+# Default title
+{ :text=>'<title>Piwik &rsaquo; Web Analytics Reports</title>' },
 
-{:name=>"default loading image",
-:text=>'<img src="themes/default/images/loading-blue.gif" alt="" /> Loading data'
-}
+# Default loading image
+{ :text=>'<img src="themes/default/images/loading-blue.gif" alt="" /> Loading data' },
+
+# Version Detection # Meta Generator
+{ :version=>/<meta name=\"generator\"[^>]*content=\"Piwik ([0-9\.]+)/, :regexp_offset=>0 },
 
 ]
 
-# <meta name="generator" content="Piwik 0.6.2" />
-# <meta name="generator" content="Piwik 0.5.5" />
-# <meta name="generator" content="Piwik 0.6.1" />
-# <meta name="generator" content="Piwik 0.5.4" />
-# <meta name="generator" content="Piwik 0.5" />
-# <meta name="generator" content="Piwik 0.4.3" />
+# Passive #
 def passive
         m=[]
 
-        if @meta["set-cookie"] =~ /PIWIK_SESSID/
-		m << {:name=>"PIWIK_SESSID Cookie", :certainty=>100 }
-	end 
+	# PIWIK_SESSID Cookie
+	m << { :name=>"PIWIK_SESSID Cookie" } if @meta["set-cookie"] =~ /PIWIK_SESSID/
         
-	if @body =~ /<meta name=\"generator\"[^>]*content=\"Piwik [0-9\.]+/
-		v=@body.scan(/<meta name=\"generator\"[^>]*content=\"Piwik ([0-9\.]+)/)[0].to_s
-		m << {:name=>"meta generator version", :version=>v }
-        end
-
-        m
-
+	# Return passive matches
+	m
 end
 
 end

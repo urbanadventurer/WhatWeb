@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-24 #
+# Updated version detection
+##
 Plugin.define "SyndeoCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
-version "0.1"
+version "0.2"
 description "A Content Management System (CMS) for primary schools, which helps you manage and maintain your website. It can also be a very usefull CMS for small companies or non profit organizations.  - homepage: http://www.syndeocms.org"
 
-# 117 results for "powered by SyndeoCMS" @ 2010-08-06
+# Google results as at 2010-08-06 #
+# 117 for "powered by SyndeoCMS"
+
+# Examples #
 examples %w|
 www.syndeocms.org/demo/
 www.delahey.org.au
@@ -60,29 +66,24 @@ www.familiegroenen.nl
 www.bongerd.edu.almere.nl
 |
 
+# Matches #
 matches [
 
-{ :regexp=>/Powered by <a href="http:\/\/www.syndeocms.org[\/]*" target="_blank">/ },
-{ :text=>'Powered by <a href="http://www.syndeoCMS.org/" target="_blank">SyndeoCMS</a>' },
-{ :text=>'<!-- Please don\'t remove my credits! I worked hard to create this theme and distribute it freely. Thanks! -->' },
-{ :regexp=>/Powered by <a href="http:\/\/www.syndeo[CMS|cms]*.org[\/]*"[\ title="SyndeoCMS"]*>SyndeoCMS<\/a>/ },
-{ :text=>'			<div class="right">Powered by <a href="http://www.syndeocms.org/">SyndeoCMS</a></div>' },
-{ :regexp=>/Site created with <a href="http:\/\/www.syndeocms.org[\/]*">SyndeoCMS<\/a>/ },
-{ :text=>'Powered by <a href="http://syndeo_logo.png/" target="_blank">SyndeoCMS</a>' },
+# Powered by text
+{ :regexp=>/Powered by <a href="http:\/\/www.syndeocms.org[\/]?" target="_blank">/i },
+{ :regexp=>/Powered by <a href="http:\/\/www.syndeocms.org[\/]?" title="SyndeoCMS">/i },
+{ :regexp=>/Powered by <a href="http:\/\/www.syndeocms.org[\/]?"[^>]*>SyndeoCMS<\/a>/i },
+
+# Site created with text
+{ :regexp=>/Site created with <a href="http:\/\/www.syndeocms.org[\/]?">SyndeoCMS<\/a>/ },
+
+# Version Detection # Powered by text
+{ :version=>/<div class="meta"><center>Powered by <a href="http:\/\/www.syndeoCMS.org\/" target="_blank">SyndeoCMS ([\d\.]+)<\/a>/, :regexp_offset=>0 },
+
+# HTML Comment
+{ :text=>"<!-- Please don't remove my credits! I worked hard to create this theme and distribute it freely. Thanks! -->" },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /<div class="meta"><center>Powered by <a href="http:\/\/www.syndeoCMS.org\/" target="_blank">SyndeoCMS ([\d\.]+)<\/a>/
-                version=@body.scan(/<div class="meta"><center>Powered by <a href="http:\/\/www.syndeoCMS.org\/" target="_blank">SyndeoCMS ([\d\.]+)<\/a>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
 
 end
 

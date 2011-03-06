@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-03-02 #
+# Removed redundant capitalized @meta["Server"] match
+##
 Plugin.define "Cisco-IOS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
-version "0.1"
+version "0.2"
 description "Cisco IOS (originally Internetwork Operating System) is the software used on the vast majority of Cisco Systems routers and current Cisco network switches. (Earlier switches ran CatOS.) IOS is a package of routing, switching, internetworking and telecommunications functions tightly integrated with a multitasking operating system. - More info: http://en.wikipedia.org/wiki/Cisco_IOS"
 
-# About 284567 ShodanHQ results for "server: cisco-IOS" @ 2010-10-26
+# ShodanHQ results as at 2010-10-26 #
+# 284,567 for "server: cisco-IOS"
+
+# Examples #
 examples %w|
 96.61.214.8
 122.227.189.246
@@ -23,14 +29,13 @@ examples %w|
 195.133.224.193
 |
 
-# HTTP Header
+# Passive #
 def passive
 	m=[]
 
-	# Server
+	# HTTP Server Header
 	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /^[\s]*cisco-IOS/
-	m << { :name=>"HTTP Server Header" } if @meta["Server"].to_s =~ /^[\s]*cisco-IOS/
-
+	# Return passive matches
 	m
 
 end

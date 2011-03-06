@@ -4,10 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "WoW-Raid-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
-version "0.1"
+version "0.2"
 description "WoW Raid Manager or WRM for short is a PHP based application supporting World of Warcraft guilds. - homepage: http://www.wowraidmanager.net/"
+
+# Google results as at 2010-06-16 #
+# 108,000 for "Raid Management Provided by WoW Raid Manager"
+
+# Examples #
 examples %w|
 converge-guild.net/raid/
 www.ghosty.dk/ar/phpraid/
@@ -47,27 +55,16 @@ www.bdsg.eu/raid/
 www.wowsentient.com/raid/
 |
 
+# Matches #
 matches [
 
-# About 108,000 results @ 2010-06-16
-{:name=>'GHDB: "Raid Management Provided by WoW Raid Manager"',
-:certainty=>75,
-:ghdb=>'"Raid Management Provided by WoW Raid Manager"'
-}
+# GHDB Match
+{ :certainty=>75, :ghdb=>'"Raid Management Provided by WoW Raid Manager"' },
+
+# Version Detection # Provided by text
+{ :version=>/Raid Management Provided by <a href="http:\/\/www.wowraidmanager.net\/">WoW Raid Manager<\/a> v([\d\.]+)/, :regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /Raid Management Provided by <a href="http:\/\/www.wowraidmanager.net\/">WoW Raid Manager<\/a> v[\d\.]+/
-                version=@body.scan(/Raid Management Provided by <a href="http:\/\/www.wowraidmanager.net\/">WoW Raid Manager<\/a> v([\d\.]+)/)[0][0]
-                m << {:certainty=>100,:name=>"powered by version text",:version=>version}
-        end
-
-        m
-end
-
 
 end
 

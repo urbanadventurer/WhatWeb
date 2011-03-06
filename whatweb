@@ -134,8 +134,8 @@ $AGGRESSION=1
 $RECURSIVE=false
 $RECURSIVE_DEPTH=10
 $MAX_LINKS_TO_FOLLOW=250
+
 $FOLLOW_REDIRECT="always"
-$MAX_REDIRECTS=10
 $USE_PROXY=false
 $PROXY_HOST=nil
 $PROXY_PORT=8080
@@ -165,7 +165,7 @@ def precompile_regular_expressions
 					thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
 				end
 
-				[:version, :string, :account, :model, :firmware, :module, :filepath].each do |label|
+				[:version, :os, :string, :account, :model, :firmware, :module, :filepath].each do |label|
 					if !thismatch[label].nil? and thismatch[label].class==Regexp
 						thismatch[:regexp_compiled]=Regexp.new(thismatch[label])
 						#pp thismatch
@@ -559,7 +559,6 @@ def error(s)
 	else
 		STDERR.puts s
 	end
-	STDERR.flush
 	unless $OUTPUT_ERRORS.nil?
 		$OUTPUT_ERRORS.out(s)
 	end
@@ -751,6 +750,7 @@ puts "
 --log-xml=FILE\t\tLog XML format
 --log-json=FILE\t\tLog JSON format
 --log-json-verbose=FILE\tLog JSON Verbose format
+--log-magictree=FILE\tLog MagicTree XML format
 --log-mongo-database\tName of the MongoDB database
 --log-mongo-collection\tName of the MongoDB collection. Default: whatweb
 --log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
@@ -762,7 +762,6 @@ puts "
 --follow-redirect=WHEN\tControl when to follow redirects. WHEN may be `never',
 \t\t\t`http-only', `meta-only', `same-site', `same-domain'
 \t\t\tor `always'
---max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
 --proxy\t\t\t<hostname[:port]> Set proxy hostname and port
 \t\t\t(default: #{$PROXY_PORT})
 --proxy-user\t\t<username:password> Set proxy user and password
@@ -823,6 +822,7 @@ opts = GetoptLong.new(
       [ '--log-xml', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-json', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-json-verbose', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-magictree', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-collection', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-host', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
@@ -837,7 +837,6 @@ opts = GetoptLong.new(
       [ '-r','--recursive', GetoptLong::NO_ARGUMENT ],
       [ '-d','--depth', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--follow-redirect', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--max-redirects', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--proxy', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--proxy-user', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--url-prefix', GetoptLong::REQUIRED_ARGUMENT ],
@@ -887,6 +886,8 @@ begin
 			 	output_list << OutputBrief.new(arg)
 			when '--log-xml'
 			 	output_list << OutputXML.new(arg)
+			when '--log-magictree'
+				output_list << OutputMagicTreeXML.new(arg)
 			when '--log-json'
 				if defined?(JSON)
 			 		output_list << OutputJSON.new(arg)
@@ -950,8 +951,6 @@ begin
 				$RECURSIVE_DEPTH=arg.to_i
 			when '-m','--max-links'	    		
 				$MAX_LINKS_TO_FOLLOW=arg.to_i
-			when '--max-redirects'
-				$MAX_REDIRECTS=arg.to_i
 			when '--proxy'
 				$USE_PROXY=true
 				$PROXY_HOST = arg.to_s.split(":")[0]
@@ -1045,6 +1044,7 @@ end
 $ANEMONE_SKIP_REGEX=Regexp.union($ANEMONE_SKIP_EXTENSIONS.map{|x| "/\.#{" + x + "}$/"  }.to_s())
 
 
+
 # for each target, we try each plugin then print the results
 semaphore=Mutex.new
 Thread.abort_on_exception = true
@@ -1125,8 +1125,8 @@ while thistarget = next_target
 			no_redirects =false
 			num_redirects = 0
 			while no_redirects == false do
-				# if we redirect X times we give up
-				if num_redirects == $MAX_REDIRECTS
+				# if we redirect 10 times we give up
+				if num_redirects == 10
 					error(target + " ERROR: Too many redirects")
 					no_redirects=true
 					next

@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-24 #
+# Updated version detection
+##
 Plugin.define "easyLink-Web-Solutions" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
-version "0.1"
+version "0.2"
 description "homepage: http://www.mountaingrafix.at/"
 
-# 308 results for "powered by easyLink" @ 2010-09-03
+# Google rsults as at 2010-09-03 #
+# 308 for "powered by easyLink"
+
+# Examples #
 examples %w|
 7zwerge.org
 anwalt24.name
@@ -66,33 +72,19 @@ www.viwc.net
 www.wir-in-neukoelln.de
 |
 
+# Matches #
 matches [
 
-# HTML comment
+# HTML Comment # This may be removed only with permission of the developer
 { :text=>'Dieser Abschnitt darf nur mit Genehmigung des Entwicklers entfernt werden und bedarf einer' },
 
+# Version Detection # Meta generator
+{ :version=>/<meta name="generator" content="easyLink v([\d\.]+)" \/>/, :regexp_offset=>0 },
+
+# Version Detection # Powered by text
+{ :version=>/[P|p]?owered by easyLink v([\d\.]+)/, :regexp_offset=>0 },
+
 ]
-
-# Version detection
-def passive
-        m=[]
-
-	# Meta generator
-        if @body =~ /<meta name="generator" content="easyLink v([\d\.]+)" \/>/
-                version=@body.scan(/<meta name="generator" content="easyLink v([\d\.]+)" \/>/)[0][0]
-                m << {:version=>version}
-        end
-
-	# Powered by text
-	if @body =~ /[Engine\ ]*[P|p]+owered by easyLink v([\d\.]+)/
-		version=@body.scan(/[Engine\ ]*[P|p]+owered by easyLink v([\d\.]+)/)[0][0]
-		m << {:version=>version}
-	end
-
-        m
-
-end
-
 
 end
 

@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "Subrion-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
-version "0.1"
+version "0.2"
 description "Subrion CMS unites the functionality of articles script, auto classifieds script, realty classifieds script, and web directory script all in one package. - homepage: http://www.subrion.com/"
 
-# 88 results for "powered by Subrion CMS" @ 2010-08-08
+# Google results as at 2010-08-08 #
+# 88 for "powered by Subrion CMS"
+
+# Examples #
 examples %w|
 demo.subrion.com
 publishing.subrion.com
@@ -47,39 +53,24 @@ www.waterfilterdealers.com
 www.webconcepts.co.il
 |
 
+# Matches #
 matches [
 
+# Powered by text
 { :text=>'Powered by <a href="http://www.subrion.com">Subrion CMS</a>' },
 { :text=>'Powered by <strong><a href="http://www.subrion.com/" title="Subrion CMS" target="_blank">Subrion CMS</a>' },
 { :text=>'powered by <a href="http://www.subrion.com/" title="Site powered by Subrion CMS">Subrion CMS</a>' },
 
+# Version Detection # Meta generator
+{ :version=>/	<meta name="generator" content="Subrion CMS ([\d\.a-zA-Z]+)" \/>/, :regexp_offset=>0 },
+
+# Version Detection # Install Page # Default Title
+{ :version=>/	<title>Subrion CMS ([\d\.a-zA-Z]+) - Web Installer<\/title>/, :regexp_offset=>0 },
+
+# Version Detection # Powered by text
+{ :version=>/	Powered by <a href="http:\/\/www.subrion.com\/" title="Classifieds Software">Subrion CMS<\/a> Version ([\d\.a-zA-Z]+)<br \/>/, :regexp_offset=>0 },
+
 ]
-
-# Version detection
-def passive
-        m=[]
-
-	# Meta generator
-        if @body =~ /	<meta name="generator" content="Subrion CMS [\d\.a-zA-Z]+" \/>/
-                version=@body.scan(/	<meta name="generator" content="Subrion CMS ([\d\.a-zA-Z]+)" \/>/)[0][0]
-                m << {:version=>version}
-        end
-
-	# Install page
-        if @body =~ /	<title>Subrion CMS [\d\.a-zA-Z]+ - Web Installer<\/title>/
-                version=@body.scan(/	<title>Subrion CMS ([\d\.a-zA-Z]+) - Web Installer<\/title>/)[0][0]
-                m << {:version=>version}
-        end
-
-        if @body =~ /	Powered by <a href="http:\/\/www.subrion.com\/" title="Classifieds Software">Subrion CMS<\/a> Version [\d\.a-zA-Z]+<br \/>/
-                version=@body.scan(/	Powered by <a href="http:\/\/www.subrion.com\/" title="Classifieds Software">Subrion CMS<\/a> Version ([\d\.a-zA-Z]+)<br \/>/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

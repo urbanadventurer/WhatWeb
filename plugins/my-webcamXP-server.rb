@@ -4,16 +4,22 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-19 #
+# Updated version detection
+##
 Plugin.define "My-WebCamXP-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-24
-version "0.1"
+version "0.2"
 description "WebCamXP web interface - homepage: http://www.webcamxp.com"
 
+# Google results as at 2010-07-24 #
 # 332 Google results for "powered by webcamXP"
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=382
 # 56 Google results for intitle:"my webcamXP server!" inurl:":8080"
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=642
-# About 94 Shodan results for Server:webcamXP @ 2010-07-24
+
+# ShodanHQ results as at 2010-07-24 #
+# About 94 Shodan results for Server:webcamXP
+
+# Examples #
 examples %w|
 angelpage.dyndns.tv:8080
 212.91.164.28:8080
@@ -59,59 +65,43 @@ server1.richardselectronics.net:8185
 live.pravoslav.tv:8080
 |
 
+# Matches #
 matches [
 
+# Default Title
 { :text=>'<html><head><title>my webcamXP server!</title>' },
 
+# Default h1 Heading HTML
 { :text=>'			<h1><span>webcamXP 5</span></h1>' },
 
+# Default JavaScript
 { :text=>"newWindow = window.open(camstr, winstr, 'toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=' + width + ',height=' + height);" },
 
+# Default Logo HTML
 { :text=>'<br><br><table border="1" cellpadding="0" cellspacing="0" bordercolor="#579A48"><tr><td><a href="http://www.webcamXP.com"><img src="http://www.darkwet.net/banners/webcamxp2.gif" width="88" height="31" border="0"></a>' },
 
 # 401 unauthorized error page
 { :text=>'<html><head><title>webcamXP :: unauthorized access</title></head>' },
 
+# Version Detection # Meta Generator
+{ :version=>/<meta name="generator" content="webcamXP [^"]{0,15}v([\d\.]+)">/, :regexp_offset=>0 },
+
+# Version Detection # Link HTML
+{ :version=>/mXP.com" target="_blank">webcamXP 5<\/a> v([\d\.]+)/, :regexp_offset=>0 },
+
+# Version Detection # Powered by text
+{ :version=>/powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP<\/a>[\ \d]* v([\d\.a-z\ ]+)<\/div>/, :regexp_offset=>0 },
+
+# Version Detection # Powered by text
+{ :version=>/<\/td><\/tr><\/table><br>powered by webcamXP PRO[\ \d]* v([\d\.]+)<br><br><br><\/font><\/center><\/body><\/html>/, :regexp_offset=>0 },
+
+# Version Detection # Powered by text
+{ :version=>/			powered by <a href="http:\/\/www.webcamxp.com" title="www.webcamxp.com">webcamxp 5<\/a> v([\d\.]+)/, :regexp_offset=>0 },
+
+# webcamXP 5 # 401 unauthorized error page
+{ :version=>/powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP 5<\/a> v([\d\.]+)<\/a>/, :regexp_offset=>0 },
+
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /<meta name="generator" content="webcamXP [free|Private|PRO|myvideochat\ edition]+[\ TRIAL]*[\ \d]* v([\d\.]+)">/
-                version=@body.scan(/<meta name="generator" content="webcamXP [free|Private|PRO|myvideochat\ edition]+[\ TRIAL]*[\ \d]* v([\d\.]+)">/)[0][0]
-                m << { :version=>version }
-        end
-
-	if @body =~ /mXP.com" target="_blank">webcamXP 5<\/a> v[\d\.]+/
-                version=@body.scan(/mXP.com" target="_blank">webcamXP 5<\/a> v([\d\.]+)/)[0][0]
-                m << { :version=>version }
-	end
-
-        if @body =~ /powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP<\/a>[\ \d]* v[\d\.a-z\ ]+<\/div>/
-                version=@body.scan(/powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP<\/a>[\ \d]* v([\d\.a-z\ ]+)<\/div>/)[0][0]
-                m << { :version=>version }
-        end
-
-        if @body =~ /<\/td><\/tr><\/table><br>powered by webcamXP PRO[\ \d]* v[\d\.]+<br><br><br><\/font><\/center><\/body><\/html>/
-                version=@body.scan(/<\/td><\/tr><\/table><br>powered by webcamXP PRO[\ \d]* v([\d\.]+)<br><br><br><\/font><\/center><\/body><\/html>/)[0][0]
-                m << { :version=>version }
-        end
-
-        if @body =~ /			powered by <a href="http:\/\/www.webcamxp.com" title="www.webcamxp.com">webcamxp 5<\/a> v[\d\.]+/
-                version=@body.scan(/			powered by <a href="http:\/\/www.webcamxp.com" title="www.webcamxp.com">webcamxp 5<\/a> v([\d\.]+)/)[0][0]
-                m << { :version=>version }
-        end
-
-	# 401 unauthorized error page for webcamXP 5
-        if @body =~ /powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP 5<\/a> v[\d\.]+<\/a>/
-                version=@body.scan(/powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP 5<\/a> v([\d\.]+)<\/a>/)[0][0]
-                m << { :version=>version }
-	end
-
-        m
-
-end
-
 
 end
 

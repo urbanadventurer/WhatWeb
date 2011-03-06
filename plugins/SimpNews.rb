@@ -4,11 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-25 #
+# Updated version detection
+##
 Plugin.define "SimpNews" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
-version "0.1"
-description "Simply a Newssystem - homepage: http://www.boesch-it.de/"
-# 79 results for "powered by SimpNews" @ 2010-07-11
+version "0.2"
+description "Simply a News system - homepage: http://www.boesch-it.de/"
+
+# Google results as at 2010-07-11 #
+# 79 for "powered by SimpNews"
+
+# Examples #
 examples %w|
 www.boesch-it.de/simpnews/admin/
 www.esquirecaucasians.com/simpnews/news.php
@@ -43,34 +50,35 @@ www.matzemantzke.de/news/news.php
 asff-badminton.com/news/news.php
 |
 
+# Matches #
+matches [
+
+# Meta Generator
+{ :version=>/<meta name="generator" content="SimpNews v([\d\.]+), \(c\)[\d]{4}[\-,]*[\d]{4} by Boesch EDV-Consulting"[^>]*>/, :regexp_offset=>0 },
+
+# Admin Panel
+{ :version=>/ href="http:\/\/www.boesch-it.de[\/]*">SimpNews<\/a> V([\d\.]+) &copy;[\d]{4}[\-,]*[\d]{4} B&ouml;sch EDV-Consulting<\/div>/, :regexp_offset=>0 },
+
+# Powered by text link
+{ :version=>/<br>Powered by <a class="copyright" target="_blank" href="http:\/\/www.boesch-it.de">SimpNews<\/a> V([\d\.]+) &copy;[\d]{4}[\-,]*[\d]{4} B&ouml;sch EDV-Consulting<\/font><\/td><\/tr><\/table><\/td><\/tr><\/table><\/div>/, :regexp_offset=>0 },
+
+# Powered by text
+{ :version=>/<br>Powered by SimpNews V([\d\.]+) &copy;[\d]{4}[\-,]*[\d]{4} B&ouml;sch EDV-Consulting<\/font><\/td><\/tr><\/table><\/td><\/tr><\/table><\/div>/, :regexp_offset=>0 },
+
+]
+
+# Passive #
 def passive
-        m=[]
-
-	# meta generator
-        if @body =~ /<meta name="generator" content="SimpNews v[\d\.]+, \(c\)[\d]{4}[\-,]*[\d]{4} by Boesch EDV-Consulting"[\ \/]*>/
-                version=@body.scan(/<meta name="generator" content="SimpNews v([\d\.]+), \(c\)[\d]{4}[\-,]*[\d]{4} by Boesch EDV-Consulting"[\ \/]*>/)[0][0]
-                m << {:version=>version}
-        end
-
-	# admin panel
-        if @body =~ / href="http:\/\/www.boesch-it.de[\/]*">SimpNews<\/a> V[\d\.]+ &copy;[\d]{4}[\-,]*[\d]{4} B&ouml;sch EDV-Consulting<\/div>/
-                version=@body.scan(/ href="http:\/\/www.boesch-it.de[\/]*">SimpNews<\/a> V([\d\.]+) &copy;[\d]{4}[\-,]*[\d]{4} B&ouml;sch EDV-Consulting<\/div>/)[0][0]
-                m << {:version=>version}
-        end
-
-	# powered by text
-        if @body =~ /<br>Powered by [<a class="copyright" target="_blank" href="http:\/\/www.boesch-it.de">]*SimpNews[<\/a>]* V[\d\.]+ &copy;[\d]{4}[\-,]*[\d]{4} B&ouml;sch EDV-Consulting<\/font><\/td><\/tr><\/table><\/td><\/tr><\/table><\/div>/
-                version=@body.scan(/<br>Powered by [<a class="copyright" target="_blank" href="http:\/\/www.boesch-it.de">]*SimpNews[<\/a>]* V([\d\.]+) &copy;[\d]{4}[\-,]*[\d]{4} B&ouml;sch EDV-Consulting<\/font><\/td><\/tr><\/table><\/td><\/tr><\/table><\/div>/)[0][0]
-                m << {:version=>version}
-        end
+	m=[]
 
 	# cookie
         m << { :name=>"simpnews[lastvisit] Cookie" } if @meta["set-cookie"] =~ /simpnews\[lastvisit\]=/
 
+	# Return passive matches
         m
 
 end
 
-
 end
+
 
