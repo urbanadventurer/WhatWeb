@@ -59,13 +59,13 @@ matches [
 {:text=>'<input name="__dnnVariable" type="hidden" id="__dnnVariable"'},
 
 # Version Detection # Meta Generator
-{ :version=>/<META[^>]+NAME="GENERATOR" CONTENT="DotNetNuke ([\d\.]{1,10})">/i, :regexp_offset=>0 },
+{ :version=>/<META[^>]+NAME="GENERATOR" CONTENT="DotNetNuke ([\d\.]{1,10})">/i, :offset=>0 },
 
 # Module Detection # modules are in the path /DesktopModules/xxx
-{ :module=>/(href|src)="\/DesktopModules\/([^\/]+)\//, :regexp_offset=>1 },
+{ :module=>/(href|src)="\/DesktopModules\/([^\/]+)\//, :offset=>1 },
 
 # Copyright year
-{ :string=>/<!-- DotNetNuke[^<]*<!-- Copyright \(c\) 2002-([0-9]{4})/, :regexp_offset=>0 },
+{ :string=>/<!-- DotNetNuke[^<]*<!-- Copyright \(c\) 2002-([0-9]{4})/, :offset=>0 },
 
 ]
 

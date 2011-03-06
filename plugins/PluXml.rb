@@ -34,7 +34,7 @@ www.zeroadteam.com/core/admin/
 matches [
 
 # Version detection
-{ :version=>/<a href="http:\/\/pluxml.org" title="Blog ou Cms sans base de donn&eacute;es">Pluxml<\/a>[\s]+([\d\.]+)/, :regexp_offset=>0 },
+{ :version=>/<a href="http:\/\/pluxml.org" title="Blog ou Cms sans base de donn&eacute;es">Pluxml<\/a>[\s]+([\d\.]+)/, :offset=>0 },
 
 # Login page # Powered by text
 { :text=>'par <a href="http://pluxml.org">Pluxml</a></p>' },

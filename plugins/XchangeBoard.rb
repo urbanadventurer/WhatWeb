@@ -40,7 +40,7 @@ matches [
 { :text=>'h1,h2,h3,h4,p,ul,ol,li,div,td,th,address,blockquote,nobr,b,i {' },
 
 # Version Detection # Powered by footer text
-{ :version=>/	<div align="center"><small>Powered by <a href="http:\/\/www.xchangeboard.de">XchangeBoard<\/a> ver ([\d\.a-z]+) - /, :regexp_offset=>0 },
+{ :version=>/	<div align="center"><small>Powered by <a href="http:\/\/www.xchangeboard.de">XchangeBoard<\/a> ver ([\d\.a-z]+) - /, :offset=>0 },
 
 ]
 

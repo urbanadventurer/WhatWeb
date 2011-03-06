@@ -16,8 +16,8 @@ http://www.gigablast.com/tagsdemo.html
 matches [
 
 # Extract zipcode
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?zipcode[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :regexp_offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?zipcode/i, :regexp_offset=>0 },
+{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?zipcode[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :offset=>0 },
+{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?zipcode/i, :offset=>0 },
 
 ]
 

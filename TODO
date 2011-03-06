@@ -29,7 +29,6 @@ Ruby1.9 compatability
 [x] update lib/output.rb verbose logging. some plugin names are longer than 30
 
 
--e doesn't work!
 
 
 Change usage:

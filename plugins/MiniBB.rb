@@ -49,7 +49,7 @@ matches [
 { :regexp=>/Powered by <a[^>]+href="http:\/\/www.minibb.(com|net)"[^>]*>miniBB[^<]{0,15}<\/a>/i },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a[^>]+href="http:\/\/www.miniBB.(com|net)"[^>]*>miniBB ([^<]{1,7})<\/a>/i, :regexp_offset=>1 },
+{ :version=>/Powered by <a[^>]+href="http:\/\/www.miniBB.(com|net)"[^>]*>miniBB ([^<]{1,7})<\/a>/i, :offset=>1 },
 
 ]
 

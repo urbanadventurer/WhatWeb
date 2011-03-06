@@ -65,7 +65,7 @@ matches [
 { :text=>'<font color="#FF0000">[Configuration Error: config files not found!] Exiting' },
 
 # Version Detection # Powered by text
-{ :version=>/	<div id="copyright">Powered by <a href='http:\/\/www.phplivesupport.com\/\?link' target='newwin'>PHP Live\!<\/a>  v([\d\.]+) &copy; OSI Codes Inc.<\/div>/, :regexp_offset=>0 },
+{ :version=>/	<div id="copyright">Powered by <a href='http:\/\/www.phplivesupport.com\/\?link' target='newwin'>PHP Live\!<\/a>  v([\d\.]+) &copy; OSI Codes Inc.<\/div>/, :offset=>0 },
 
 ]
 

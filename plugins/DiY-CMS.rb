@@ -51,10 +51,10 @@ matches [
 { :text=>"<td valign='middle'><img border='0' src=\"admin_skin/default/images//admin_login.png\"></a></td>" },
 
 # Version Detection # Meta generator
-{ :version=>/<META content="Powered by DiY-CMS ([\d\.]+) [0-9]{4} " name="description">/, :regexp_offset=>0 },
+{ :version=>/<META content="Powered by DiY-CMS ([\d\.]+) [0-9]{4} " name="description">/, :offset=>0 },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/www.pghost.eu[^>]+>DIY-CMS v ([\d\.]+)<\/a>/, :regexp_offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/www.pghost.eu[^>]+>DIY-CMS v ([\d\.]+)<\/a>/, :offset=>0 },
 
 ]
 

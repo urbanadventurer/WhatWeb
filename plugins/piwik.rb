@@ -50,7 +50,7 @@ matches [
 { :text=>'<img src="themes/default/images/loading-blue.gif" alt="" /> Loading data' },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name=\"generator\"[^>]*content=\"Piwik ([0-9\.]+)/, :regexp_offset=>0 },
+{ :version=>/<meta name=\"generator\"[^>]*content=\"Piwik ([0-9\.]+)/, :offset=>0 },
 
 ]
 

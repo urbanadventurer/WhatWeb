@@ -44,7 +44,7 @@ matches [
 	# Version Detection # Powered by footer
 	# The "brand removal" option is a one-off fee per license. There is a link within your client area to allow you to purchase a "brand removal" option.
 	# http://www.censura.info/support/kb/article/000001
-	{ :version=>/Powered by: <a[^>]* href="http:\/\/www.censura.info">Censura<\/a> version ([\d\.]+)/, :regexp_offset=>0 },
+	{ :version=>/Powered by: <a[^>]* href="http:\/\/www.censura.info">Censura<\/a> version ([\d\.]+)/, :offset=>0 },
 
 ]
 

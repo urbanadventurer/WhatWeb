@@ -28,7 +28,7 @@ matches [
 { :text=>'<tr><td>Language</td><td><select id="ddlLanguage" onchange="location.href=\'admin.aspx?lang=\'+SelectedValue(\'ddlLanguage\')"><option value="English" selected="selected">English</option>' },
 
 # Login Page # Version Detection # Powered by logo alt text
-{ :version=>/<a href="http:\/\/www.developerinabox.com" target="_blank"><img src="Img\/poweredby.png" style="position:absolute;right:0px;bottom:-30px;margin-top:2px;border:0px" title="SQLCMS v([\d\.]+)"\/><\/a>/, :regexp_offset=>0 },
+{ :version=>/<a href="http:\/\/www.developerinabox.com" target="_blank"><img src="Img\/poweredby.png" style="position:absolute;right:0px;bottom:-30px;margin-top:2px;border:0px" title="SQLCMS v([\d\.]+)"\/><\/a>/, :offset=>0 },
 
 ]
 

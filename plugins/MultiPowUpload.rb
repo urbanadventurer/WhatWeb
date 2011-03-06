@@ -34,8 +34,8 @@ matches [
 { :text=>'Upload result:<br><pre>No files sent. Script is OK!Here is some more debugging info:Array' },
 
 # Version Detection # Readme
-{ :version=>/		<title>Element-It MultiPowUpload ([\d\.]+) Examples<\/title>/, :regexp_offset=>0 },
-{ :version=>/		<h2>Element-<font color="#de0000">It<\/font> MultiPowUpload ([\d\.]+) Examples<\/h2>/, :regexp_offset=>0 },
+{ :version=>/		<title>Element-It MultiPowUpload ([\d\.]+) Examples<\/title>/, :offset=>0 },
+{ :version=>/		<h2>Element-<font color="#de0000">It<\/font> MultiPowUpload ([\d\.]+) Examples<\/h2>/, :offset=>0 },
 
 # Support info link
 { :text=>'		Visit <a href="http://www.element-it.com/MultiPowUpload.aspx">MultiPowUpload</a> web site for new release and support information.' },
@@ -48,7 +48,7 @@ matches [
 { :text=>'<embed bgcolor=[^>]+src="ElementITMultiPowUpload.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"' },
 
 # Version Detection # embed tag
-{ :version=>/<embed bgcolor=[^>]+src="ElementITMultiPowUpload([\d\.]{1,5}).swf" quality="high" pluginspage="http:\/\/www.macromedia.com\/shockwave\/download\/index.cgi\?P1_Prod_Version=ShockwaveFlash"/, :regexp_offset=>0 },
+{ :version=>/<embed bgcolor=[^>]+src="ElementITMultiPowUpload([\d\.]{1,5}).swf" quality="high" pluginspage="http:\/\/www.macromedia.com\/shockwave\/download\/index.cgi\?P1_Prod_Version=ShockwaveFlash"/, :offset=>0 },
 
 ]
 

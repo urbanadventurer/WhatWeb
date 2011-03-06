@@ -35,7 +35,7 @@ matches [
 	{ :text=>' - powered by bSpeak</TITLE>' },
 
 	# Version Detection # Powered by text
-	{ :version=>/<br><div align="center"><span class="tinytext">Powered by <\/span><a href="http:\/\/www.bspeak.com" class="tinylink" target="bspeak_window">bSpeak ([\d\.]+)<\/a><\/div>/, :regexp_offset=>0 },
+	{ :version=>/<br><div align="center"><span class="tinytext">Powered by <\/span><a href="http:\/\/www.bspeak.com" class="tinylink" target="bspeak_window">bSpeak ([\d\.]+)<\/a><\/div>/, :offset=>0 },
 
 ]
 

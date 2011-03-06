@@ -62,7 +62,7 @@ matches [
 { :certainty=>75, :ghdb=>'"Raid Management Provided by WoW Raid Manager"' },
 
 # Version Detection # Provided by text
-{ :version=>/Raid Management Provided by <a href="http:\/\/www.wowraidmanager.net\/">WoW Raid Manager<\/a> v([\d\.]+)/, :regexp_offset=>0 },
+{ :version=>/Raid Management Provided by <a href="http:\/\/www.wowraidmanager.net\/">WoW Raid Manager<\/a> v([\d\.]+)/, :offset=>0 },
 
 ]
 

@@ -30,7 +30,7 @@ examples %w|
 matches [
 
 	# meta http-equiv tag
-	{ :string=>/<meta http-equiv[\s]*=[^>]*X-UA-Compatible[^>]*[\s]+content[\s]*=[\s]*['|"]?([a-z0-9=]+)[^>]*>/i, :regexp_offset=>0 },
+	{ :string=>/<meta http-equiv[\s]*=[^>]*X-UA-Compatible[^>]*[\s]+content[\s]*=[\s]*['|"]?([a-z0-9=]+)[^>]*>/i, :offset=>0 },
 
 ]
 

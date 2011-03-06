@@ -37,10 +37,10 @@ matches [
 { :text=>'<title>Network Storage Link for USB 2.0 Disks</title>' },
 
 # Firmware Detection
-{ :firmware=>/          Version: &nbsp;V([\d\.\-a-zA-Z]+)<\/span> &nbsp;&nbsp;<\/td>/, :regexp_offset=>0 },
+{ :firmware=>/          Version: &nbsp;V([\d\.\-a-zA-Z]+)<\/span> &nbsp;&nbsp;<\/td>/, :offset=>0 },
 
 # Model Detection
-{ :model=>/	 <td align="center" width="100" class="mname">([^<]+)<\/td>/, :regexp_offset=>0 },
+{ :model=>/	 <td align="center" width="100" class="mname">([^<]+)<\/td>/, :offset=>0 },
 
 ]
 

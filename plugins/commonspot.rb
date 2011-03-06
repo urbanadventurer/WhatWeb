@@ -48,7 +48,7 @@ matches [
 { :regexp=>/<link[^>]+href="[^"]commonspot\/commonspot\.css"[^>]+\/>/ },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta[^>]+name="Generator"[^>]+content="CommonSpot[^\d^"]+([\d\.]+)"[^>]*\/>/, :regexp_offset=>0 },
+{ :version=>/<meta[^>]+name="Generator"[^>]+content="CommonSpot[^\d^"]+([\d\.]+)"[^>]*\/>/, :offset=>0 },
 
 ]
 

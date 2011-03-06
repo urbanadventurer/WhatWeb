@@ -39,13 +39,13 @@ matches [
 	{ :text=>'<td class="more"><a href="javascript:ExpandOptions()"><img src="imgs/login-more.gif" alt="more" border="none"></a></td>' },
 
 	# Version Detection # Login page # Default title
-	{ :version=>/<title>Atmail ([\d\.]+) - Login Page<\/title>/, :regexp_offset=>0 },
+	{ :version=>/<title>Atmail ([\d\.]+) - Login Page<\/title>/, :offset=>0 },
 
 	# Version Detection # Login page # Powered by text
-	{ :version=>/<a href="http:\/\/www.atmail.com\/" target="_blank">Powered by Atmail ([\d\.]+)/, :regexp_offset=>0 },
+	{ :version=>/<a href="http:\/\/www.atmail.com\/" target="_blank">Powered by Atmail ([\d\.]+)/, :offset=>0 },
 
 	# MailServer Detection # Login Page # Input box HTML
-	{ :string=>/<input id="Mailserverinput" class="input" type="text" name="MailServer" value="([^>]*)"/, :regexp_offset=>0 },
+	{ :string=>/<input id="Mailserverinput" class="input" type="text" name="MailServer" value="([^>]*)"/, :offset=>0 },
 
 ]
 

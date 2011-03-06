@@ -41,7 +41,7 @@ forums.cpanel.net
 matches [
 
 	# Powered by text
-	{ :string=>/powered[ -]?by[ ]?([^\s<>'".]+)/i, :regexp_offset=>0 },
+	{ :string=>/powered[ -]?by[ ]?([^\s<>'".]+)/i, :offset=>0 },
 
 ]
 

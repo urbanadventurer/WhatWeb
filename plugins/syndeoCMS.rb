@@ -78,7 +78,7 @@ matches [
 { :regexp=>/Site created with <a href="http:\/\/www.syndeocms.org[\/]?">SyndeoCMS<\/a>/ },
 
 # Version Detection # Powered by text
-{ :version=>/<div class="meta"><center>Powered by <a href="http:\/\/www.syndeoCMS.org\/" target="_blank">SyndeoCMS ([\d\.]+)<\/a>/, :regexp_offset=>0 },
+{ :version=>/<div class="meta"><center>Powered by <a href="http:\/\/www.syndeoCMS.org\/" target="_blank">SyndeoCMS ([\d\.]+)<\/a>/, :offset=>0 },
 
 # HTML Comment
 { :text=>"<!-- Please don't remove my credits! I worked hard to create this theme and distribute it freely. Thanks! -->" },

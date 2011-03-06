@@ -31,10 +31,10 @@ www.wilayahnetwork.com/igallery/login.asp
 matches [
 
 # Version detection # Default title
-{ :version=>/<title>.:: i-Gallery ([\d\.]+) -[^:]+:.<\/title>/, :regexp_offset=>0 },
+{ :version=>/<title>.:: i-Gallery ([\d\.]+) -[^:]+:.<\/title>/, :offset=>0 },
 
 # Version detection # Powered by text
-{ :version=>/<font class="textsm">Powered By:&nbsp;<a class="linksm" href="http:\/\/www.b-cp.com\/igallery" target="_blank">i-Gallery ([\d\.]+)<\/a>/i, :regexp_offset=>0 },
+{ :version=>/<font class="textsm">Powered By:&nbsp;<a class="linksm" href="http:\/\/www.b-cp.com\/igallery" target="_blank">i-Gallery ([\d\.]+)<\/a>/i, :offset=>0 },
 
 # Main Page # Default JavaScript
 { :text=>'var verify = confirm("Are you sure you want to permanently delete the selected \"Item\" from the i-Gallery database?  All information will be lost!");' },

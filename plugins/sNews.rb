@@ -41,7 +41,7 @@ matches [
 { :text=>'<p><label for="uname">Username</label>:<br /><input type="text" name="uname" id="uname" class="text" value="" /></p><p><label for="pass">Password</label>:<br /><input type="password" name="pass" id="pass" class="text" value="" /></p>' },
 
 # Version detection # Meta generator
-{ :version=>/<meta name="Generator" content="sNews ([\d\.]+)" \/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="Generator" content="sNews ([\d\.]+)" \/>/, :offset=>0 },
 
 ]
 

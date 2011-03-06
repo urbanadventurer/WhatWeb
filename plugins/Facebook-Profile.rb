@@ -38,20 +38,20 @@ http://www.facebook.com/msi
 matches [
 
 	# Name :
-	{ :version=>/<meta name="description" content="([^>]*) is on Facebook.  Join Facebook to connect with [^>]* and others you may know.  Facebook gives people the power to share and makes the world more open and connected. [^>]* has [0-9]* friends on Facebook/i, :regexp_offset=>0 },
-	{ :version=>/<meta name="description" content="Welcome to the official Facebook Page about ([^>]*). Join Facebook to start connecting with [^>]*." \/>/,:regexp_offset=>0, :module=>"Public Profile" },
+	{ :version=>/<meta name="description" content="([^>]*) is on Facebook.  Join Facebook to connect with [^>]* and others you may know.  Facebook gives people the power to share and makes the world more open and connected. [^>]* has [0-9]* friends on Facebook/i, :offset=>0 },
+	{ :version=>/<meta name="description" content="Welcome to the official Facebook Page about ([^>]*). Join Facebook to start connecting with [^>]*." \/>/,:offset=>0, :module=>"Public Profile" },
 
 	# Likes :
-	{ :string=>/<li><a class="psl" href="[^\"]*">([^<]+)<\/a><\/li>/, :regexp_offset=>0 },
+	{ :string=>/<li><a class="psl" href="[^\"]*">([^<]+)<\/a><\/li>/, :offset=>0 },
 
 	# Homepage :
-	{ :firmware=>/<div><a rel="me" href="([^\"]+)" class="url">/, :regexp_offset=>0 },
+	{ :firmware=>/<div><a rel="me" href="([^\"]+)" class="url">/, :offset=>0 },
 
 	# DOB :
-	{ :model=>/<dt>Birthday:<\\\/dt><dd>([^<]*)<\\\/dd>/, :regexp_offset=>0, :module=>"Public Profile" },
+	{ :model=>/<dt>Birthday:<\\\/dt><dd>([^<]*)<\\\/dd>/, :offset=>0, :module=>"Public Profile" },
 
 	# Friends :
-	{ :filepath=>/<div class="UIPortrait_Text"><a class="title" [^>]*rel="friend" title="([^>]*)"/i, :regexp_offset=>0 },
+	{ :filepath=>/<div class="UIPortrait_Text"><a class="title" [^>]*rel="friend" title="([^>]*)"/i, :offset=>0 },
 
 ]
 

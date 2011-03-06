@@ -60,7 +60,7 @@ matches [
 { :regexp=>/Powered by <a href="http:\/\/www.phpshop.org"[^>]*>phpShop<\/a>/i },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/www.phpshop.org"[^>]*>phpShop<\/a>[\r\n\s]+([\d\.]+) /, :regexp_offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/www.phpshop.org"[^>]*>phpShop<\/a>[\r\n\s]+([\d\.]+) /, :offset=>0 },
 
 ]
 

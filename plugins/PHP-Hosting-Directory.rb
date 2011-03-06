@@ -21,13 +21,13 @@ www.helmhosts.com
 matches [
 
 # Version detection # Default title
-{:version=>/<title>PHP Hosting Directory ([\d\.]+) Powered by JnSHosts.com<\/title>/, :regexp_offset=>0 },
+{:version=>/<title>PHP Hosting Directory ([\d\.]+) Powered by JnSHosts.com<\/title>/, :offset=>0 },
 
 # Version detection # Powered by text
-{:version=>/<a href="http:\/\/www.jnshosts.com\/php-hosting-directory-([\d\.]+).php"[^>]+>PHP Hosting Directory<\/a>/, :regexp_offset=>0 },
+{:version=>/<a href="http:\/\/www.jnshosts.com\/php-hosting-directory-([\d\.]+).php"[^>]+>PHP Hosting Directory<\/a>/, :offset=>0 },
 
 # Version detection # Default HTML
-{:version=>/<font size="6"><b>PHP Hosting Directory ([\d\.]+)<\/b><\/font>/, :regexp_offset=>0 },
+{:version=>/<font size="6"><b>PHP Hosting Directory ([\d\.]+)<\/b><\/font>/, :offset=>0 },
 
 ]
 

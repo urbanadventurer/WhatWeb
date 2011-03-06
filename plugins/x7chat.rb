@@ -48,10 +48,10 @@ matches [
 { :certainty=>75, :ghdb=>'inurl:x7chat "Please enter your username and password to login"' },
 
 # Version Detection # Powered by text # new versions
-{ :version=>/Powered By <a href="http:\/\/www.x7chat.com\/" target="_blank">X7 Chat<\/a> ([\d\.A-Z]+)[\s]*[^&]*&copy; 2004 By The <a href="http:\/\/www.x7chat.com\/" target="_blank">X7 Group<\/a>/, :regexp_offset=>0 },
+{ :version=>/Powered By <a href="http:\/\/www.x7chat.com\/" target="_blank">X7 Chat<\/a> ([\d\.A-Z]+)[\s]*[^&]*&copy; 2004 By The <a href="http:\/\/www.x7chat.com\/" target="_blank">X7 Group<\/a>/, :offset=>0 },
 
 # Version Detection # Powered by text # old versions
-{ :version=>/<Br><font size="2">Powered By X7 Chat Version ([^<]+)<\/font>/, :regexp_offset=>0 },
+{ :version=>/<Br><font size="2">Powered By X7 Chat Version ([^<]+)<\/font>/, :offset=>0 },
 
 ]
 

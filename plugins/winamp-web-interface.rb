@@ -29,7 +29,7 @@ matches [
 {:text=>'<noframes><p><b>Frames are required for this site!<b></p><p>If no-frames operation is required, check the <b>No Frames Mode</b> box in the Options screen.</p>' },
 
 # Version Detection
-{ :version=>/<a href="JavaScript:about\(\)">About Winamp Web Interface v([\.\d]+)<\/a><\/h6><hr>/, :regexp_offset=>0 },
+{ :version=>/<a href="JavaScript:about\(\)">About Winamp Web Interface v([\.\d]+)<\/a><\/h6><hr>/, :offset=>0 },
 
 ]
 

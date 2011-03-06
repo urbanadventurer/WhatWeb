@@ -31,7 +31,7 @@ www.eastwick.ic.cz/server.log
 matches [
 
 # Server version detection
-{ :version=>/^[0-9]{2}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2},ALL,Info,server,[\s]+Server version: ([^\r^\n]+)/, :regexp_offset=>0 },
+{ :version=>/^[0-9]{2}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2},ALL,Info,server,[\s]+Server version: ([^\r^\n]+)/, :offset=>0 },
 
 ]
 

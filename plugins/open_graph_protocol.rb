@@ -28,13 +28,13 @@ matches [
 { :regexp=>/<meta[^>]+property="og:title"[^>]*>/i },
 
 # Get type # og:type
-{ :version=>/<meta[^>]+property="og:type"[^>]+content="([^"^>]+)"/, :regexp_offset=>0 },
+{ :version=>/<meta[^>]+property="og:type"[^>]+content="([^"^>]+)"/, :offset=>0 },
 
 # Get user IDs # fb:admins
-{ :account=>/<meta[^>]+property="fb:admins"[^>]+content="([^"^>]+)"/, :regexp_offset=>0 },
+{ :account=>/<meta[^>]+property="fb:admins"[^>]+content="([^"^>]+)"/, :offset=>0 },
 
 # Get app IDs # fb:app_id
-{ :module=>/<meta[^>]+property="fb:app_id"[^>]+content="([^"^>]+)"/, :regexp_offset=>0 },
+{ :module=>/<meta[^>]+property="fb:app_id"[^>]+content="([^"^>]+)"/, :offset=>0 },
 
 ]
 

@@ -28,7 +28,7 @@ matches [
 { :regexp=>/<!--COPYRIGHT 1997-[0-9]{4} WEBSIDESTORY,INC. ALL RIGHTS RESERVED. U.S.PATENT No. 6,393,479B1. MORE INFO:http:\/\/websidestory.com\/privacy-->/ },
 
 # Version detection # HTML comments
-{ :version=>/<!--WEBSIDESTORY CODE ([^\ ]+) /, :regexp_offset=>0 },
+{ :version=>/<!--WEBSIDESTORY CODE ([^\ ]+) /, :offset=>0 },
 
 # Powered by text
 

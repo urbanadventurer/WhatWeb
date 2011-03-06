@@ -35,7 +35,7 @@ def passive
 
 	# ODBC Error Code
 	if @body =~ /\[ODBC/
-		m << { :certainty=>25, :string=>@body.scan(/ODBC Error Code = ([a-zA-Z0-9]{3,5}) \(/), :regexp_offset=>0 }
+		m << { :certainty=>25, :string=>@body.scan(/ODBC Error Code = ([a-zA-Z0-9]{3,5}) \(/), :offset=>0 }
 	end
 
 	# Return passive matches

@@ -16,8 +16,8 @@ http://www.gigablast.com/tagsdemo.html
 matches [
 
 # Extract city
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?city[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :regexp_offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?city/i, :regexp_offset=>0 },
+{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?city[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :offset=>0 },
+{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?city/i, :offset=>0 },
 
 ]
 

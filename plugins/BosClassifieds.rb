@@ -46,7 +46,7 @@ matches [
 	{ :text=>'Powered by <a href="http://www.bosdev.com/" target="_blank">BosClassifieds</a> <a href="http://www.bosdev.com/" target="_blank">Classified Ads</a> System<br>Copyright' },
 
 	# Version Detection # Meta generator
-	{ :version=>/  <meta name="generator" content="BosClassifieds ([\d\.]+) by BosDev">/, :regexp_offset=>0 },
+	{ :version=>/  <meta name="generator" content="BosClassifieds ([\d\.]+) by BosDev">/, :offset=>0 },
 
 ]
 

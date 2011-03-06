@@ -23,7 +23,7 @@ www.alhinduniques.com
 matches [
 
 	# Version Detection # Meta Generator
-	{ :version=>/<meta name="generator" content="Allomani Store v([\d\.]+)" \/>/, :regexp_offset=>0 },
+	{ :version=>/<meta name="generator" content="Allomani Store v([\d\.]+)" \/>/, :offset=>0 },
 
 ]
 

@@ -84,22 +84,22 @@ matches [
 { :text=>'<html><head><title>webcamXP :: unauthorized access</title></head>' },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="webcamXP [^"]{0,15}v([\d\.]+)">/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator" content="webcamXP [^"]{0,15}v([\d\.]+)">/, :offset=>0 },
 
 # Version Detection # Link HTML
-{ :version=>/mXP.com" target="_blank">webcamXP 5<\/a> v([\d\.]+)/, :regexp_offset=>0 },
+{ :version=>/mXP.com" target="_blank">webcamXP 5<\/a> v([\d\.]+)/, :offset=>0 },
 
 # Version Detection # Powered by text
-{ :version=>/powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP<\/a>[\ \d]* v([\d\.a-z\ ]+)<\/div>/, :regexp_offset=>0 },
+{ :version=>/powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP<\/a>[\ \d]* v([\d\.a-z\ ]+)<\/div>/, :offset=>0 },
 
 # Version Detection # Powered by text
-{ :version=>/<\/td><\/tr><\/table><br>powered by webcamXP PRO[\ \d]* v([\d\.]+)<br><br><br><\/font><\/center><\/body><\/html>/, :regexp_offset=>0 },
+{ :version=>/<\/td><\/tr><\/table><br>powered by webcamXP PRO[\ \d]* v([\d\.]+)<br><br><br><\/font><\/center><\/body><\/html>/, :offset=>0 },
 
 # Version Detection # Powered by text
-{ :version=>/			powered by <a href="http:\/\/www.webcamxp.com" title="www.webcamxp.com">webcamxp 5<\/a> v([\d\.]+)/, :regexp_offset=>0 },
+{ :version=>/			powered by <a href="http:\/\/www.webcamxp.com" title="www.webcamxp.com">webcamxp 5<\/a> v([\d\.]+)/, :offset=>0 },
 
 # webcamXP 5 # 401 unauthorized error page
-{ :version=>/powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP 5<\/a> v([\d\.]+)<\/a>/, :regexp_offset=>0 },
+{ :version=>/powered by <a href="http:\/\/www.webcamXP.com" target="_blank">webcamXP 5<\/a> v([\d\.]+)<\/a>/, :offset=>0 },
 
 ]
 

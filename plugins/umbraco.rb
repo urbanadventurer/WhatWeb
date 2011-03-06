@@ -48,13 +48,13 @@ matches [
 { :regexp=>/Powered by[^<]*<a[\s]+href="http:\/\/[www.]*umbraco.org[^>]*>Umbraco<\/a>/i },
 
 # Version detection # Powered by text
-{ :version=>/powered by[^<]*<a[\s]+href="http:\/\/[www.]*umbraco.org[^>]*>umbraco v([^<]+)<\/a>/i, :regexp_offset=>0 },
+{ :version=>/powered by[^<]*<a[\s]+href="http:\/\/[www.]*umbraco.org[^>]*>umbraco v([^<]+)<\/a>/i, :offset=>0 },
 
 # Version detection # Powered by text # 4.x
 { :regexp=>/powered by[^<]*<a[\s]+href="http:\/\/[www.]*umbraco.org[^>]*>umbraco v4<\/a>/i, :version=>"4.x" },
 
 # Version detection # Meta generator
-{ :version=>/<meta name="generator"[^>]*content="umbraco[\s]+([0-9\.]+)"/i, :regexp_offset=>0 },
+{ :version=>/<meta name="generator"[^>]*content="umbraco[\s]+([0-9\.]+)"/i, :offset=>0 },
 
 ]
 

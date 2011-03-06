@@ -57,7 +57,7 @@ matches [
 { :text=>'	<TITLE>Device Status Summary Page</TITLE>' },
 
 # Version Detection # statusHeader.html
-{ :url=>"/statusHeader.html", :version=>/<a href="http:\/\/updates.netbotz.com\/releases\/([\d\.]+)\/install.html" target="_instAV">\(Install Advanced View Application\)<\/a>/, :regexp_offset=>0 },
+{ :url=>"/statusHeader.html", :version=>/<a href="http:\/\/updates.netbotz.com\/releases\/([\d\.]+)\/install.html" target="_instAV">\(Install Advanced View Application\)<\/a>/, :offset=>0 },
 
 ]
 

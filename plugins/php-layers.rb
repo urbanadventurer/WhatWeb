@@ -49,10 +49,10 @@ matches [
 { :text=>'.png" alt="Powered by PHP Layers Menu" height="31" width="88" /></a>' },
 
 # Version Detection # HTML Comment
-{ :version=>/<!-- end of menu header - PHP Layers Menu ([\d\.\-a-z]+) \(C\) [0-9]{4}-[0-9]{4} Marco Pratesi/, :regexp_offset=>0 },
+{ :version=>/<!-- end of menu header - PHP Layers Menu ([\d\.\-a-z]+) \(C\) [0-9]{4}-[0-9]{4} Marco Pratesi/, :offset=>0 },
 
 # Version Detection # JavaScript Comment
-{ :version=>/\/\/ PHP Layers Menu ([\d\.\-a-z]+) \(C\) [0-9]{4}-[0-9]{4} Marco Pratesi/, :regexp_offset=>0 },
+{ :version=>/\/\/ PHP Layers Menu ([\d\.\-a-z]+) \(C\) [0-9]{4}-[0-9]{4} Marco Pratesi/, :offset=>0 },
 
 ]
 

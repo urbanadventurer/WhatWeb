@@ -19,10 +19,10 @@ www.geo-tag.de
 matches [
 
 # Meta geo.*
-{ :string=>/<meta name="geo.[^"]+" content="([^"]+)"[^>]*>/,:regexp_offset=>0 },
+{ :string=>/<meta name="geo.[^"]+" content="([^"]+)"[^>]*>/,:offset=>0 },
 
 # ICBM tag
-{ :string=>/<meta name="ICBM" content="([^"]+)"[^>]*>/, :regexp_offset=>0 },
+{ :string=>/<meta name="ICBM" content="([^"]+)"[^>]*>/, :offset=>0 },
 
 ]
 

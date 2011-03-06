@@ -24,8 +24,8 @@ matches [
 { :text=>"<a class='slink' title='phpInvoice Home' href='http://www.ecorak.de/phpRechnung/' target='_blank'>" },
 
 # Version detection # Title
-{ :version=>/<title>phpRechnung ([^-]+) - Login<\/title>/, :regexp_offset=>0 },
-{ :version=>/<title>phpInvoice ([^-]+) - Login<\/title>/, :regexp_offset=>0 },
+{ :version=>/<title>phpRechnung ([^-]+) - Login<\/title>/, :offset=>0 },
+{ :version=>/<title>phpInvoice ([^-]+) - Login<\/title>/, :offset=>0 },
 
 ]
 

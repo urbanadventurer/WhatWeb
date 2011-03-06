@@ -70,7 +70,7 @@ matches [
 { :text=>'<b style="color: #F00;">Warning:</b> Using this installer will erase any already existing Mihalism Multi Host installation.' },
 
 # Version Detection # Meta Version
-{ :version=>/    <meta name="version" content="Mihalism Multi Host v([\d\.]+)" \/>/, :regexp_offset=>0 },
+{ :version=>/    <meta name="version" content="Mihalism Multi Host v([\d\.]+)" \/>/, :offset=>0 },
 
 ]
 

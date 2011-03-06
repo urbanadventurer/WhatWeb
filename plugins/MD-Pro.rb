@@ -71,7 +71,7 @@ matches [
 { :md5=>'0caf204c07776c652de251a1eb74447a', :url=>'images/logo.gif' },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="MAXdev ([\d\.]+) - http:\/\/www.maxdev.(com|it)">/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator" content="MAXdev ([\d\.]+) - http:\/\/www.maxdev.(com|it)">/, :offset=>0 },
 
 ]
 

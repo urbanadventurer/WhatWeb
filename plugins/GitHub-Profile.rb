@@ -26,13 +26,13 @@ https://github.com/pawal
 matches [
 
 	# Homepage :
-	{ :filepath=>/<dd class="url"><a rel="nofollow me" [^<]* class="url">([^<]*)<\/a><\/dd>/, :regexp_offset=>0 },
+	{ :filepath=>/<dd class="url"><a rel="nofollow me" [^<]* class="url">([^<]*)<\/a><\/dd>/, :offset=>0 },
 
 	# Full Name :
-	{ :version=>/<dd class="fn">([^<]*)<\/dd>/, :regexp_offset=>0 },
+	{ :version=>/<dd class="fn">([^<]*)<\/dd>/, :offset=>0 },
 
 	# Username :
-	{ :model=>/GitHub.profileName = GitHub.profileName \|\| '([^\']*)';/, :regexp_offset=>0 },
+	{ :model=>/GitHub.profileName = GitHub.profileName \|\| '([^\']*)';/, :offset=>0 },
 
 ]
 

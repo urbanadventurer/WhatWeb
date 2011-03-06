@@ -33,7 +33,7 @@ madisehpub.ir/mail/
 matches [
 
 # Version Detection
-{ :version=>/					<td class="info">Uebimiau Webmail v([^<]{1,15})<\/td>/, :regexp_offset=>0 },
+{ :version=>/					<td class="info">Uebimiau Webmail v([^<]{1,15})<\/td>/, :offset=>0 },
 
 # Install Page # Default Title
 { :text=>'<title>Uebimiau ( Installer )</title>', :module=>"Install Page" },

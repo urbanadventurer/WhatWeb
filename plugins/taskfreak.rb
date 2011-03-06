@@ -23,10 +23,10 @@ pz-dev.de/tasks/login.php
 matches [
 
 # Version Detection # Powered by text
-{ :version=>/<br>Powered by <a href="http:\/\/www.taskfreak.com">TaskFreak <\/a> v([\d\.]+) - Released on [\d\-]+ under GNU General Public License/, :regexp_offset=>0 },
+{ :version=>/<br>Powered by <a href="http:\/\/www.taskfreak.com">TaskFreak <\/a> v([\d\.]+) - Released on [\d\-]+ under GNU General Public License/, :offset=>0 },
 
 # Version Detection # Powered by text
-{ :version=>/    <a href="http:\/\/www.taskfreak.com">TaskFreak! multi user<\/a> v([\d\.]+) - Released on [\d\-]+ under GNU General Public License/, :regexp_offset=>0 },
+{ :version=>/    <a href="http:\/\/www.taskfreak.com">TaskFreak! multi user<\/a> v([\d\.]+) - Released on [\d\-]+ under GNU General Public License/, :offset=>0 },
 
 ]
 

@@ -39,10 +39,10 @@ matches [
 { :text=>'Powered by </font><font size="1" color="#000000" face="Arial">YWP</font>' },
 
 # Version Detection # Powered bt HTML comment
-{ :version=>/<!-- Powered by YWP ([\d\.]+) -->/, :regexp_offset=>0 },
+{ :version=>/<!-- Powered by YWP ([\d\.]+) -->/, :offset=>0 },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="YWP ([\d\.]+)">/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator" content="YWP ([\d\.]+)">/, :offset=>0 },
 
 ]
 

@@ -136,10 +136,10 @@ matches [
 { :text=>'hp 9200C Digital Sender</title>', :model=>"9200C Digital Sender" },
 
 # Model Detection
-{ :model=>/<title>[\r\n]*(HP|hp) LaserJet ([^<]+)<\/title>/, :regexp_offset=>1 },
+{ :model=>/<title>[\r\n]*(HP|hp) LaserJet ([^<]+)<\/title>/, :offset=>1 },
 
 # Model Detection # Color
-{ :model=>/<title>[\r\n]*(HP|hp) Color LaserJet ([^<]+)<\/title>/i, :regexp_offset=>1, :module=>"color" },
+{ :model=>/<title>[\r\n]*(HP|hp) Color LaserJet ([^<]+)<\/title>/i, :offset=>1, :module=>"color" },
 
 ]
 

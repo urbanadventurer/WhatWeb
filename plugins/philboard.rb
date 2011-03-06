@@ -35,7 +35,7 @@ matches [
 { :ghdb=>'"powered by philboard" inurl:philboard.asp', :certainty=>75 },
 
 # Version detection # Default logo HTML
-{ :version=>/<img src="images\/philboard_small.gif" alt="powered by philboard [v]*([\d\.]+)" width="76" height="21" border="0" align="middle">/, :regexp_offset=>0 },
+{ :version=>/<img src="images\/philboard_small.gif" alt="powered by philboard [v]*([\d\.]+)" width="76" height="21" border="0" align="middle">/, :offset=>0 },
 
 ]
 

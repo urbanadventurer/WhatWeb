@@ -26,7 +26,7 @@ matches [
 	{ :text=>'<meta name="generator" content="BXR::Web" />' },
 
 	# Version Detection # Powered by text
-	{ :version=>/<div class="bxrlogo">Powered by <a href="http:\/\/sourceforge.net\/projects\/bxr\/">BXR<\/a> ([\d\.]+)<\/div>/, :regexp_offset=>0 },
+	{ :version=>/<div class="bxrlogo">Powered by <a href="http:\/\/sourceforge.net\/projects\/bxr\/">BXR<\/a> ([\d\.]+)<\/div>/, :offset=>0 },
 
 ]
 

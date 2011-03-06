@@ -30,8 +30,8 @@ matches [
 	{ :text=>"<a href='http://artis.imag.fr/Software/Basilic'>Powered by Basilic</a></span>" },
 
 	# Version Detection # Powered by footer text
-	{ :version=>/<span>Powered by <a href='http:\/\/artis.imag.fr\/Software\/Basilic'>Basilic ([\d\.]+)<\/a><\/span>/, :regexp_offset=>0 },
-	{ :version=>/<a href='http:\/\/artis.imag.fr\/Software\/Basilic'[^>]+>&copy; Powered by Basilic ([\d\.]+)/, :regexp_offset=>0 },
+	{ :version=>/<span>Powered by <a href='http:\/\/artis.imag.fr\/Software\/Basilic'>Basilic ([\d\.]+)<\/a><\/span>/, :offset=>0 },
+	{ :version=>/<a href='http:\/\/artis.imag.fr\/Software\/Basilic'[^>]+>&copy; Powered by Basilic ([\d\.]+)/, :offset=>0 },
 
 ]
 

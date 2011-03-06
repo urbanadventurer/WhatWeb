@@ -32,7 +32,7 @@ www.woodleytheatre.org
 matches [
 
 # Version Detection # HTML comment
-{ :version=>/Powered by Whizzy CMS <big>&spades;<\/big> <\/a><\/div><!-- \[Whizzy CMS:Whizzy CMS ([^\]]+)/, :regexp_offset=>0 },
+{ :version=>/Powered by Whizzy CMS <big>&spades;<\/big> <\/a><\/div><!-- \[Whizzy CMS:Whizzy CMS ([^\]]+)/, :offset=>0 },
 
 ]
 

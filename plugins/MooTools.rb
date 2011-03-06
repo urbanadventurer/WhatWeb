@@ -23,8 +23,8 @@ matches [
 { :regexp=>/^\/\/ Load your build at: http:\/\/mootools.net\/core\// },
 
 # Verson Detection # mootools.core.js
-{ :version=>/^MooTools.More[\s]*=[\s]*\{[\s]*version:[\s]*["']?([^\"^\']+)["']?/, :regexp_offset=>0 },
-{ :version=>/^var MooTools[\s]*=[\s]*\{[\s]*version:[\s]*["']?([^\"^\']+)/, :regexp_offset=>0 },
+{ :version=>/^MooTools.More[\s]*=[\s]*\{[\s]*version:[\s]*["']?([^\"^\']+)["']?/, :offset=>0 },
+{ :version=>/^var MooTools[\s]*=[\s]*\{[\s]*version:[\s]*["']?([^\"^\']+)/, :offset=>0 },
 
 # mootools.more.js
 { :regexp=>/^\/\/MooTools More, <http:\/\/mootools.net\/more>. Copyright \(c\) 2006-2008 Valerio Proietti, <http:\/\/mad4milk.net>, MIT Style License./ },

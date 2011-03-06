@@ -79,10 +79,10 @@ matches [
 { :text=>'Dieser Abschnitt darf nur mit Genehmigung des Entwicklers entfernt werden und bedarf einer' },
 
 # Version Detection # Meta generator
-{ :version=>/<meta name="generator" content="easyLink v([\d\.]+)" \/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator" content="easyLink v([\d\.]+)" \/>/, :offset=>0 },
 
 # Version Detection # Powered by text
-{ :version=>/[P|p]?owered by easyLink v([\d\.]+)/, :regexp_offset=>0 },
+{ :version=>/[P|p]?owered by easyLink v([\d\.]+)/, :offset=>0 },
 
 ]
 

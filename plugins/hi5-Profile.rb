@@ -40,16 +40,16 @@ matches [
 	{ :regexp=>/<h1>Private Profile<\/h1>[\W]*<div>[\W]*This user has restricted access to their profile. This means you cannot view their profile unless you are a friend. If you know this person, use the links to the left under the profile photo to send a friend request or a message to them.[\W]*<\/div>/, :module=>"Private Profile" },
 
 	# Name :
-	{ :version=>/<meta name="description" content="hi5 Profile page for ([^\(]*) \(/, :regexp_offset=>0, :module=>"Public Profile" },
+	{ :version=>/<meta name="description" content="hi5 Profile page for ([^\(]*) \(/, :offset=>0, :module=>"Public Profile" },
 
 	# Location :
-	{ :string=>/<meta name="description" content="hi5 Profile page for [^\"]* \(([^\)]*)\)/, :regexp_offset=>0, :module=>"Public Profile" },
+	{ :string=>/<meta name="description" content="hi5 Profile page for [^\"]* \(([^\)]*)\)/, :offset=>0, :module=>"Public Profile" },
 
 	# Age :
-	{ :model=>/<h4 class="box_profile_info_small_heading">[\W]*Age[\W]*<\/h4>[\W]*<div class="box_profile_info_small_content">[\W]*([0-9]+)[\W]*<\/div>/, :regexp_offset=>0, :module=>"Public Profile" },
+	{ :model=>/<h4 class="box_profile_info_small_heading">[\W]*Age[\W]*<\/h4>[\W]*<div class="box_profile_info_small_content">[\W]*([0-9]+)[\W]*<\/div>/, :offset=>0, :module=>"Public Profile" },
 
 	# Birthday :
-	{ :model=>/<h4 class="box_profile_info_small_heading">[\W]*Birthday[\W]*<\/h4>[\W]*<div class="box_profile_info_small_content">[\W]*([^\r^\n]*)[\W]*<\/div>/, :regexp_offset=>0, :module=>"Public Profile" },
+	{ :model=>/<h4 class="box_profile_info_small_heading">[\W]*Birthday[\W]*<\/h4>[\W]*<div class="box_profile_info_small_content">[\W]*([^\r^\n]*)[\W]*<\/div>/, :offset=>0, :module=>"Public Profile" },
 
 ]
 

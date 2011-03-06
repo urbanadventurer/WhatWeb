@@ -23,7 +23,7 @@ description "MikroTik router. Homepage: http://www.mikrotik.com"
 
 matches [
 {:text=>"<title>mikrotik routeros > administration</title>"},
-{:version=>/<div class="top">mikrotik routeros ([^ ]+) configuration page</, :regexp_offset=>0,  :name=>"mikrotik routeros ([^ ]+) configuration page" } 
+{:version=>/<div class="top">mikrotik routeros ([^ ]+) configuration page</, :offset=>0,  :name=>"mikrotik routeros ([^ ]+) configuration page" } 
 ]
 
 

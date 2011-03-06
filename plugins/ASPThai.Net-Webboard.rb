@@ -29,10 +29,10 @@ matches [
 { :text=>'<meta name="copyright" content="Copyright (C) 2002-2005 Supap Wanawan" />' },
 
 # Version Detection # Powered by text
-{ :version=>/  <br \/><br \/><span class="text" style="font-size:10px">Powered by <a href="http:\/\/www.aspthai.net\/" target="_blank" style="font-size:10px">ASPThai.Net Webboard<\/a> version ([\d\.]+)<\/span><br \/>/, :regexp_offset=>0 },
+{ :version=>/  <br \/><br \/><span class="text" style="font-size:10px">Powered by <a href="http:\/\/www.aspthai.net\/" target="_blank" style="font-size:10px">ASPThai.Net Webboard<\/a> version ([\d\.]+)<\/span><br \/>/, :offset=>0 },
 
 # Version Detection # HTML comment
-{ :version=>/<!-- ASPThai.Net Webboard ver. ([\d\.]+) is written and produced by Supap Wanawan/, :regexp_offset=>0 },
+{ :version=>/<!-- ASPThai.Net Webboard ver. ([\d\.]+) is written and produced by Supap Wanawan/, :offset=>0 },
 
 ]
 

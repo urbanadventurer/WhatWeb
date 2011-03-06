@@ -67,11 +67,11 @@ matches [
 { :regexp=>/<FRAME SRC="bar.html" SCROLLING="NO" NAME="sonyhome[0-9]*" NORESIZE[\ MARGINHEIGHT="0-9"]* MARGINWIDTH="0">/i },
 
 # Model Detection # SNC-P / SNC-M
-{ :model=>/<TITLE>Sony Network Camera ([0-9A-Z\-]+)<\/TITLE>/i, :regexp_offset=>0 },
+{ :model=>/<TITLE>Sony Network Camera ([0-9A-Z\-]+)<\/TITLE>/i, :offset=>0 },
 
 # Model Detection # SNC-RZ / SNC-Z
-{ :model=>/<TITLE>(SNC\-[R]?Z[0-9]+)<\/TITLE>/, :regexp_offset=>0 },
-{ :model=>/<TITLE>(SNC\-[R]?Z[0-9]+) HOME<\/TITLE>/, :regexp_offset=>0 },
+{ :model=>/<TITLE>(SNC\-[R]?Z[0-9]+)<\/TITLE>/, :offset=>0 },
+{ :model=>/<TITLE>(SNC\-[R]?Z[0-9]+) HOME<\/TITLE>/, :offset=>0 },
 
 ]
 

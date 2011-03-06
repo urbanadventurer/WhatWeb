@@ -82,15 +82,15 @@ matches [
 { :text=>'Cannot connect to the database. Possibly, the X10Media Mp3 Search engine is not installed. Click <a href="install/">here</a>, to install it.' },
 
 # Version Detection
-{ :version=>/<meta name="publisher" content="x10media`s Mp3 Search Engine V\.([\d\.]+)"\/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="publisher" content="x10media`s Mp3 Search Engine V\.([\d\.]+)"\/>/, :offset=>0 },
 
-{ :version=>/<meta name="dc\.rights" content="x10media`s Mp3 Search Engine V\.([\d\.]+)"\/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="dc\.rights" content="x10media`s Mp3 Search Engine V\.([\d\.]+)"\/>/, :offset=>0 },
 
-{ :version=>/<meta name="dc\.publisher" content="x10media`s Mp3 Search Engine V\.([\d\.]+)"\/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="dc\.publisher" content="x10media`s Mp3 Search Engine V\.([\d\.]+)"\/>/, :offset=>0 },
 
-{ :version=>/<meta name="owner" content="x10media`s Mp3 Search Engine V\.([\d\.]+)"\/>/, :regexp_offset=>0 },
+{ :version=>/<meta name="owner" content="x10media`s Mp3 Search Engine V\.([\d\.]+)"\/>/, :offset=>0 },
 
-{ :version=>/<title>x10media`s Mp3 Search Engine V\.([\d\.]+)[\ Installer]*<\/title>/, :regexp_offset=>0 },
+{ :version=>/<title>x10media`s Mp3 Search Engine V\.([\d\.]+)[\ Installer]*<\/title>/, :offset=>0 },
 
 ]
 

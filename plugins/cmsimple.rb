@@ -53,7 +53,7 @@ matches [
 { :text=>'<meta name="generator" content="CMSimple' },
 
 # Version detection # Meta generator
-{ :version=>/<meta name="generator" content="CMSimple ([\d\.]+)[^>]*>/, :regexp_offset=>0 },
+{ :version=>/<meta name="generator" content="CMSimple ([\d\.]+)[^>]*>/, :offset=>0 },
 
 ]
 

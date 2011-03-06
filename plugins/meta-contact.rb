@@ -12,8 +12,8 @@ description "This plugin retrieves the contact name or email from the meta conta
 matches [
 
 # Get contact details
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?author[^>]+contact[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :regexp_offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?contact/i, :regexp_offset=>0 },
+{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?author[^>]+contact[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :offset=>0 },
+{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?contact/i, :offset=>0 },
 
 ]
 

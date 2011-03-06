@@ -24,7 +24,7 @@ www.morningstarsecurity.com
 matches [
 
 	# Extract value from the content param
-	{ :string=>/<meta[^>]+name[\s]*=[\s]*"generator"[^>]+content[\s]*=[\s]*"([^"]+)"/i, :regexp_offset=>0 },
+	{ :string=>/<meta[^>]+name[\s]*=[\s]*"generator"[^>]+content[\s]*=[\s]*"([^"]+)"/i, :offset=>0 },
 
 ]
 

@@ -42,23 +42,23 @@ http://www.myspace.com/5659
 matches [
 
 	# Name :
-	{ :version=>/<meta name="description" content="([^&]*)&#39;s profile on Myspace, the leading social entertainment destination powered by the passion of our fans." \/>/, :regexp_offset=>0 },
+	{ :version=>/<meta name="description" content="([^&]*)&#39;s profile on Myspace, the leading social entertainment destination powered by the passion of our fans." \/>/, :offset=>0 },
 
 	# Age :
-	{ :string=>/<li class="tags even"><span class="age">([0-9]+)<\/span> \/ <span class="gender">[^<]*<\/span><\/li><li class="adr odd">/, :regexp_offset=>0 },
+	{ :string=>/<li class="tags even"><span class="age">([0-9]+)<\/span> \/ <span class="gender">[^<]*<\/span><\/li><li class="adr odd">/, :offset=>0 },
 
 	# Gender :
-	{ :string=>/<li class="tags even"><span class="age">[0-9]+<\/span> \/ <span class="gender">([^<]*)<\/span><\/li><li class="adr odd">/, :regexp_offset=>0 },
+	{ :string=>/<li class="tags even"><span class="age">[0-9]+<\/span> \/ <span class="gender">([^<]*)<\/span><\/li><li class="adr odd">/, :offset=>0 },
 
 	# Location :
-	{ :string=>/<li class="tags even"><span class="age">[0-9]+<\/span> \/ <span class="gender">[^<]*<\/span><\/li><li class="adr odd"><span class="locality">([^<]*)<\/span>/, :regexp_offset=>0 },
+	{ :string=>/<li class="tags even"><span class="age">[0-9]+<\/span> \/ <span class="gender">[^<]*<\/span><\/li><li class="adr odd"><span class="locality">([^<]*)<\/span>/, :offset=>0 },
 
 	# Region :
-	{ :string=>/<li class="tags even"><span class="age">[0-9]+<\/span> \/ <span class="gender">[^<]*<\/span><\/li><li class="adr odd"><span class="region">([^<]*)<\/span>/, :regexp_offset=>0 },
+	{ :string=>/<li class="tags even"><span class="age">[0-9]+<\/span> \/ <span class="gender">[^<]*<\/span><\/li><li class="adr odd"><span class="region">([^<]*)<\/span>/, :offset=>0 },
 
 	# Friends :
-	{ :filepath=>/<span class="hcard fn n"><a class="url uid nickname" href="\/[^\"]*">([^<]*)<\/a>/, :regexp_offset=>0 },
-	{ :filepath=>/<div class="miniProfile" data-friendid="[0-9]+" data-title="([\"]*)"/, :regexp_offset=>0 },
+	{ :filepath=>/<span class="hcard fn n"><a class="url uid nickname" href="\/[^\"]*">([^<]*)<\/a>/, :offset=>0 },
+	{ :filepath=>/<div class="miniProfile" data-friendid="[0-9]+" data-title="([\"]*)"/, :offset=>0 },
 
 	# Private Profile :
 	{ :regexp=>/<p class="sitesCommonSprite sitesComLock sizeS">Sorry,  the profile of [^<]* is only viewable by friends.<\/p>/, :module=>"Private Profile" },

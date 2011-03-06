@@ -48,27 +48,27 @@ www.jeffshelton.us
 matches [
 
 # IP Phone # Model Detection
-{ :model=>/<td HEIGHT="50" bgcolor="#003031"><p ALIGN=center><B><font color="#FFFFFF" size="6">[^<]{5,50}<\/FONT><\/B><p ALIGN=center><B><font color="#FFFFFF" size="4">Cisco[^\(]{0,15} IP Phone ([^\(]{4,20}) \( [^\)]{15} \)[\s]?<\/FONT><\/FONT><\/B><\/TD>/, :regexp_offset=>0 },
+{ :model=>/<td HEIGHT="50" bgcolor="#003031"><p ALIGN=center><B><font color="#FFFFFF" size="6">[^<]{5,50}<\/FONT><\/B><p ALIGN=center><B><font color="#FFFFFF" size="4">Cisco[^\(]{0,15} IP Phone ([^\(]{4,20}) \( [^\)]{15} \)[\s]?<\/FONT><\/FONT><\/B><\/TD>/, :offset=>0 },
 
 # IP Phone # Hostname Detection
-{ :string=>/<td HEIGHT="50" bgcolor="#003031"><p ALIGN=center><B><font color="#FFFFFF" size="6">[^<]{5,50}<\/FONT><\/B><p ALIGN=center><B><font color="#FFFFFF" size="4">Cisco[^\(]{0,15} IP Phone [^\(]{4,20} \( ([^\)]{15}) \)[\s]?<\/FONT><\/FONT><\/B><\/TD>/, :regexp_offset=>0 },
+{ :string=>/<td HEIGHT="50" bgcolor="#003031"><p ALIGN=center><B><font color="#FFFFFF" size="6">[^<]{5,50}<\/FONT><\/B><p ALIGN=center><B><font color="#FFFFFF" size="4">Cisco[^\(]{0,15} IP Phone [^\(]{4,20} \( ([^\)]{15}) \)[\s]?<\/FONT><\/FONT><\/B><\/TD>/, :offset=>0 },
 
 
 # Unified IP Phone # CP-7961G # Model Detection
-{ :model=>/<td HEIGHT="50" bgcolor="#003031"><p ALIGN=center><B><font color="#FFFFFF" size="6">[^<]{5,50}<\/FONT><\/B><p ALIGN=center><B><font color="#FFFFFF" size="4">Cisco Unified IP Phone ([^\(]{4,20}) \( [^\)]{15} \)[\s]?<\/FONT><\/FONT><\/B><\/TD>/, :regexp_offset=>0, :version=>"Unified" },
+{ :model=>/<td HEIGHT="50" bgcolor="#003031"><p ALIGN=center><B><font color="#FFFFFF" size="6">[^<]{5,50}<\/FONT><\/B><p ALIGN=center><B><font color="#FFFFFF" size="4">Cisco Unified IP Phone ([^\(]{4,20}) \( [^\)]{15} \)[\s]?<\/FONT><\/FONT><\/B><\/TD>/, :offset=>0, :version=>"Unified" },
 
 # Unified IP Phone # CP-7961G # Hostname Detection
-{ :string=>/<td HEIGHT="50" bgcolor="#003031"><p ALIGN=center><B><font color="#FFFFFF" size="6">[^<]{5,50}<\/FONT><\/B><p ALIGN=center><B><font color="#FFFFFF" size="4">Cisco Unified IP Phone [^\(]{4,20} \( ([^\)]{15}) \)[\s]?<\/FONT><\/FONT><\/B><\/TD>/, :regexp_offset=>0, :version=>"Unified" },
+{ :string=>/<td HEIGHT="50" bgcolor="#003031"><p ALIGN=center><B><font color="#FFFFFF" size="6">[^<]{5,50}<\/FONT><\/B><p ALIGN=center><B><font color="#FFFFFF" size="4">Cisco Unified IP Phone [^\(]{4,20} \( ([^\)]{15}) \)[\s]?<\/FONT><\/FONT><\/B><\/TD>/, :offset=>0, :version=>"Unified" },
 
 
 # Unified Wireless IP Phone # Model Detection
-{ :model=>/<title>Cisco Unified Wireless IP Phone ([^<]{4,20})<\/title><link href="\/style.css" type=text\/css rel=stylesheet><\/head>/, :regexp_offset=>0, :version=>"Unified Wireless" },
+{ :model=>/<title>Cisco Unified Wireless IP Phone ([^<]{4,20})<\/title><link href="\/style.css" type=text\/css rel=stylesheet><\/head>/, :offset=>0, :version=>"Unified Wireless" },
 
 # Unified Wireless IP Phone # Model Detection
-{ :model=>/<p align=center style='text-align:center'><b><span style='font-size:13.5pt; color:white'>Cisco Unified Wireless IP Phone ([^\(]{4,20}) \( [^\)]{15} \)<\/span><\/b><\/p>/, :regexp_offset=>0, :version=>"Unified Wireless" },
+{ :model=>/<p align=center style='text-align:center'><b><span style='font-size:13.5pt; color:white'>Cisco Unified Wireless IP Phone ([^\(]{4,20}) \( [^\)]{15} \)<\/span><\/b><\/p>/, :offset=>0, :version=>"Unified Wireless" },
 
 # Unified Wireless IP Phone # Hostname Detection
-{ :string=>/<p align=center style='text-align:center'><b><span style='font-size:13.5pt; color:white'>Cisco Unified Wireless IP Phone [^\(]{4,20} \( ([^\)]{15}) \)<\/span><\/b><\/p>/, :regexp_offset=>0, :version=>"Unified Wireless" },
+{ :string=>/<p align=center style='text-align:center'><b><span style='font-size:13.5pt; color:white'>Cisco Unified Wireless IP Phone [^\(]{4,20} \( ([^\)]{15}) \)<\/span><\/b><\/p>/, :offset=>0, :version=>"Unified Wireless" },
 
 
 ]

@@ -57,16 +57,16 @@ rtime.felk.cvut.cz/gitweb/
 matches [
 
 	# Version Detection # Meta Generator
-	{ :version=>/<meta name="generator" content="gitweb\/([\d\.a-z]{1,25}) git\/[\d\.a-z]{1,25}"\/>/, :regexp_offset=>0 },
+	{ :version=>/<meta name="generator" content="gitweb\/([\d\.a-z]{1,25}) git\/[\d\.a-z]{1,25}"\/>/, :offset=>0 },
 
 	# Version Detection # HTML Comment
-	{ :version=>/<!\-\- git web interface version ([\d\.a-z]{1,25}), \(C\) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke \-\->/, :regexp_offset=>0 },
+	{ :version=>/<!\-\- git web interface version ([\d\.a-z]{1,25}), \(C\) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke \-\->/, :offset=>0 },
 
 	# Git Version Detection # HTML Comment
-	{ :module=>/<!\-\- git core binaries version ([\d\.a-z]{1,25}) \-\->/, :regexp_offset=>0 },
+	{ :module=>/<!\-\- git core binaries version ([\d\.a-z]{1,25}) \-\->/, :offset=>0 },
 
 	# Git Version Detection # Meta Generator
-	{ :module=>/<meta name="generator" content="gitweb\/[\d\.a-z]{1,25} git\/([\d\.a-z]{1,25})"\/>/, :regexp_offset=>0 },
+	{ :module=>/<meta name="generator" content="gitweb\/[\d\.a-z]{1,25} git\/([\d\.a-z]{1,25})"\/>/, :offset=>0 },
 
 ]
 

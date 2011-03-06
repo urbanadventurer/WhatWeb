@@ -47,7 +47,7 @@ matches [
 {:string=>'Zend_Controller_Router_Exception',:url=>randstr(),:text=>"Uncaught exception 'Zend_Controller_Router_Exception' with message 'No route matched the request'"},
 {:string=>'Zend_Controller_Router_Exception',:url=>randstr(),:text=>"/Zend/Controller/Router/Rewrite.php</b> on line <b>"},
 
-{:version=>/<meta name="generator" content="Zend.com CMS ([\d\.]+)"/, :regexp_offset=>0 },
+{:version=>/<meta name="generator" content="Zend.com CMS ([\d\.]+)"/, :offset=>0 },
 {:text=>'<meta name="vendor" content="Zend Technologies'}
 
 ]

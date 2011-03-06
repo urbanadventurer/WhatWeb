@@ -91,7 +91,7 @@ http://www.shopsanctuaryt.com/
 # Matches are enclosed in {} brackets and separated by commas
 matches [
 {:text=>'images/logo.gif" alt="Magento Commerce" /></a></h1>' ,:name=>'default logo alt-text'},
-{:version=>/<a href="http:\/\/www.magentocommerce.com\/bug-tracking" id="bug_tracking_link"><strong>Report All Bugs<\/strong><\/a> \(ver. ([0-9\.]+)\)/, :regexp_offset=>0, :name=>"Bug tracking link" },
+{:version=>/<a href="http:\/\/www.magentocommerce.com\/bug-tracking" id="bug_tracking_link"><strong>Report All Bugs<\/strong><\/a> \(ver. ([0-9\.]+)\)/, :offset=>0, :name=>"Bug tracking link" },
 {:regexp=>/<link rel="stylesheet" type="text\/css" href="[^"]+\/skin\/frontend\/[^ "]+\/css\/boxes.css" media="all"/, :name=>"/skin/front/*/css/boxes.xss"},
 {:text=>'<meta name="keywords" content="Magento, Varien, E-commerce" />'},
 {:text=>"var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Search entire store here...'"},

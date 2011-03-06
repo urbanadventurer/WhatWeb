@@ -47,7 +47,7 @@ matches [
 	{ :text=>"<title>Calendarix User Login</title>" },
 
 	# Version Detection # Logo alt text
-	{ :version=>/<img src="images\/calendarix.gif" Alt="About Calendarix ([\d\.a-z]+)" border=0 width=88 height=31  \/>/, :regexp_offset=>0 },
+	{ :version=>/<img src="images\/calendarix.gif" Alt="About Calendarix ([\d\.a-z]+)" border=0 width=88 height=31  \/>/, :offset=>0 },
 
 ]
 

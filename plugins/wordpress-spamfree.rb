@@ -19,7 +19,7 @@ description "Wordpress SpamFree module. Get your WordPress Blog Spam-Free with t
 matches [
 
 # Version Detection # HTML Comments
-{ :version=>/<!-- Protected by \(WP-SpamFree\) v([\d\.]+) :: JS BEGIN -->/, :regexp_offset=>0 },
+{ :version=>/<!-- Protected by \(WP-SpamFree\) v([\d\.]+) :: JS BEGIN -->/, :offset=>0 },
 
 ]
 
