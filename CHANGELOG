@@ -62,6 +62,7 @@ Version 0.4.6 Released ? 2010
 * Bug fix: :account didn't have regular expression support
 * Changed :modules to :module, deprecated :accounts to :account
 * Added redirect control. options are 'never',`http-only', `meta-only', `same-site', `same-domain', 'always'
+* Added --max-redirects. Control the maximum number of contiguous redirects followed
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman
