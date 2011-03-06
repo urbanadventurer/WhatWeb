@@ -134,8 +134,8 @@ $AGGRESSION=1
 $RECURSIVE=false
 $RECURSIVE_DEPTH=10
 $MAX_LINKS_TO_FOLLOW=250
-
 $FOLLOW_REDIRECT="always"
+$MAX_REDIRECTS=10
 $USE_PROXY=false
 $PROXY_HOST=nil
 $PROXY_PORT=8080
@@ -559,6 +559,7 @@ def error(s)
 	else
 		STDERR.puts s
 	end
+	STDERR.flush
 	unless $OUTPUT_ERRORS.nil?
 		$OUTPUT_ERRORS.out(s)
 	end
@@ -762,6 +763,7 @@ puts "
 --follow-redirect=WHEN\tControl when to follow redirects. WHEN may be `never',
 \t\t\t`http-only', `meta-only', `same-site', `same-domain'
 \t\t\tor `always'
+--max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
 --proxy\t\t\t<hostname[:port]> Set proxy hostname and port
 \t\t\t(default: #{$PROXY_PORT})
 --proxy-user\t\t<username:password> Set proxy user and password
@@ -837,6 +839,7 @@ opts = GetoptLong.new(
       [ '-r','--recursive', GetoptLong::NO_ARGUMENT ],
       [ '-d','--depth', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--follow-redirect', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--max-redirects', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--proxy', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--proxy-user', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--url-prefix', GetoptLong::REQUIRED_ARGUMENT ],
@@ -946,7 +949,7 @@ begin
 			when '-a','--aggression'
 				$AGGRESSION=arg.to_i
 			when '-r','--recursive'
-				$RECURSIVE=true	    		
+				$RECURSIVE=true
 			when '-d','--depth'
 				$RECURSIVE_DEPTH=arg.to_i
 			when '-m','--max-links'	    		
@@ -974,6 +977,8 @@ begin
 				else
 					error("Invalid --follow-redirect parameter.")
 				end
+			when '--max-redirects'
+				$MAX_REDIRECTS=arg.to_i
 			when '--open-timeout'					
 				$HTTP_OPEN_TIMEOUT=arg.to_i
 			when '--read-timeout'					
@@ -1126,7 +1131,7 @@ while thistarget = next_target
 			num_redirects = 0
 			while no_redirects == false do
 				# if we redirect 10 times we give up
-				if num_redirects == 10
+				if num_redirects == $MAX_REDIRECTS
 					error(target + " ERROR: Too many redirects")
 					no_redirects=true
 					next
