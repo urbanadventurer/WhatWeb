@@ -1173,8 +1173,11 @@ while thistarget = next_target
 					newtarget_m=nil
 					newtarget_h=nil
 					newtarget=nil
-					if body =~ /<meta[^>]*http\-equiv[^>]*refresh[^>]*url=([^\"]*)/i
-						metarefresh=body.scan(/<meta[^>]*http\-equiv[^>]*refresh[^>]*url=([^\"]*)/i)[0].to_s
+
+					meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
+
+					if body =~ meta_refresh_regex
+						metarefresh=body.scan(meta_refresh_regex).first.to_s
 						newtarget_m=URI.join(target,metarefresh).to_s # this works for relative and absolute
 					end
 					newtarget_h=URI.join(target,headers["location"]).to_s if (300..399) === status and headers["location"]
@@ -1189,12 +1192,12 @@ while thistarget = next_target
 						when "meta-only"
 							newtarget = newtarget_m
 						when "same-site"
-							newtarget = newtarget_h or newtarget_m if URI.parse((newtarget_h or newtarget_m)).host == URI.parse(target).host # defaults to _h if both are present
+							newtarget = (newtarget_h or newtarget_m) if URI.parse((newtarget_h or newtarget_m)).host == URI.parse(target).host # defaults to _h if both are present
 						when "same-domain"
 							newtarget = (newtarget_h or newtarget_m) if TLD.same_domain?(
 								URI.parse(target).host, URI.parse((newtarget_h or newtarget_m)).host)
 						when "always"
-							newtarget = newtarget_h or newtarget_m
+							newtarget = (newtarget_h or newtarget_m)
 						else
 							error("Error: Invalid REDIRECT mode")
 						end
