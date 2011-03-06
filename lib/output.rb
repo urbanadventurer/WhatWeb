@@ -165,7 +165,7 @@ end
 		else
 			@f.puts target.to_s + " [#{status}] " + brief_results.join(", ")
 		end		
-		
+		@f.flush
 	end
 end
 
