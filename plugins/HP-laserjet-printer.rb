@@ -4,15 +4,33 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-19 #
+# Updated model detection
+##
 Plugin.define "HP-LaserJet-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
-version "0.1"
+version "0.2"
 description "HP LaserJet printer web interface - homepage: http://www.hp.com/"
 
 # 109 Google results for inurl:hp/device/this.LCDispatcher @ 2010-07-22
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=615
-# About 21,276 Shodan results for Server:HP-ChaiSOE ONNECTION @ 2010-07-22
+
+# ShodanHQ results #
+# 21,276 for Server:HP-ChaiSOE ONNECTION @ 2010-07-22
+# 17,235 for Server ChaiServer @ 2011-02-19
+
+# Examples #
 examples %w|
+211.181.56.6
+143.248.134.156
+128.205.136.130
+131.188.202.79
+216.127.125.150
+161.6.37.222
+159.149.25.113
+129.237.236.68
+198.128.44.216
+66.213.4.3
 128.125.4.223
 68.181.150.65
 137.229.181.35
@@ -104,29 +122,41 @@ www.cbld.com
 www.cahillwealth.com
 |
 
+# Matches #
 matches [
 
+# Default logo HTML
 { :text=>'<img src="images/logo.gif" alt="Click this Hewlett-Packard logo to open a new browser window, which takes you to the external HP.com Web site." /></a>' },
 
+# Default Navigation HTML
 { :text=>'<a href="#skipnavigation" title="Jump to main content. Please activate this if you would like to skip the navigation and jump directly to the main content."></a><a href="http://www.hp.com" onclick="target = new Date().valueOf().toString(); if (window.open) window.open(\'http://www.hp.com\',target,\'resizable=yes,scrollbars=yes,menubar=yes,location=yes,toolbar=yes,status=yes\'); return false;" title="Go to HP corporate web site: external link">' },
 
-{ :text=>'<head><title>HP LaserJet P4515', :version=>"P4515" },
-{ :text=>'<head><title>HP LaserJet P4015', :version=>"P4015" },
+{ :text=>'HP 9250C Digital Sender Series</title>', :model=>"9250C Digital Sender" },
 
-{ :text=>'HP 9250C Digital Sender Series</title>', :version=>"9250C Digital Sender" },
+{ :text=>'hp 9200C Digital Sender</title>', :model=>"9200C Digital Sender" },
 
-{ :text=>'hp 9200C Digital Sender</title>', :version=>"9200C Digital Sender" },
+# Model Detection
+{ :model=>/<title>[\r\n]*(HP|hp) LaserJet ([^<]+)<\/title>/, :regexp_offset=>1 },
+
+# Model Detection # Color
+{ :model=>/<title>[\r\n]*(HP|hp) Color LaserJet ([^<]+)<\/title>/i, :regexp_offset=>1, :module=>"color" },
 
 ]
 
+# Passive #
 def passive
         m=[]
 
-        if @body =~ /[HP|hp]*[\ Color]* LaserJet [A-Z]*[\d]{4}[A-Z]*[\ a-zA-Z]*[\ Series|\ Printers]*<\/title>/
-                version=@body.scan(/[HP|hp]*[\ Color]* LaserJet ([A-Z]*[\d]{4}[A-Z]*)[\ a-zA-Z]*[\ Series|\ Printers]*<\/title>/)[0][0]
-                m << {:version=>version }
-        end
+	# Server: HP-ChaiServer
+	m << { :version=>@meta['server'].scan(/HP-ChaiServer\/([\d\.]+)/) } if @meta['server'] =~ /HP-ChaiServer\/([\d\.]+)/
 
+	# Server: HP-ChaiSOE
+	m << { :version=>@meta['server'].scan(/HP-ChaiSOE\/([\d\.]+)/) } if @meta['server'] =~ /HP-ChaiSOE\/([\d\.]+)/
+
+	# Location: hp/device/this.LCDispatcher
+	m << { :name=>"HTTP Location Header" } if @meta['location'] =~ /hp\/device\/this.LCDispatcher/
+
+	# Return passive matches
         m
 
 end

@@ -4,13 +4,27 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Symphony" do
+# Version 0.2 # 2011-01-31 #
+# Renamed from "symphony" to "Symphony-CMS"
+# Updated version detection
+##
+Plugin.define "Symphony-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.1"
-description "XSLT-powered open source content management system - homepage: http://symphony-cms.com/"
+description "Symphony CMS - XSLT-powered open source content management system - Homepage: http://symphony-cms.com/"
 
-# 115 results for "powered by Symphony" @ 2010-09-12
+# Google results as at 2011-01-31 #
+# 13 for "powered by symphony CMS 3"
+# Google results as at 2010-09-12 #
+# 115 for "powered by Symphony"
+
+# Examples #
 examples %w|
+symphony-cms.com
+www.iivs.org
+tech.carsonsasser.com
+keatonbrandt.grotonma.net
+www.portfolioni.info
 aramdavid.com
 carsonsasser.com
 sonocs.com
@@ -22,21 +36,31 @@ www.truthmove.org
 www.truthmove.org/symphony/
 |
 
+# Matches #
 matches [
 
 # Admin page
 { :text=>'	<title>Symphony | Login</title>' },
 
+# Meta Generator
+{ :text=>'<meta name="generator" content="Symphony CMS" />' },
+
 # Powered by text
+{ :regexp=>/Powered by <a[^>]+href="http:\/\/www.symphony-cms.com[\/]?">Symphony CMS<\/a>/ },
+{ :regexp=>/Powered by <a[^>]+href="http:\/\/symphony-cms.com[\/]?">Symphony CMS<\/a>/ },
 { :text=>'powered by <a href="http://www.symphony21.com">SYMPHONY</a>.' },
 { :text=>'Powered by <a href="http://symphony21.com/">Symphony</a>' },
 { :text=>'Powered by <a class="symphony" href="http://symphony21.com/">Symphony</a>' },
 { :text=>'Powered by <a class="symphony" href="http://symphony-cms.com/">Symphony</a>' },
-{ :text=>'<div class="powered">Powered by <a class="symphony" href="http://symphony-cms.com/">Symphony CMS</a></div>' },
 { :text=>'Site powered by <a href="http://www.symphony-cms.com" class="external">Symphony</a>' },
 { :text=>'Powered by <a href="http://symphony-cms.com/" rel="external">Symphony</a>' },
+
+# Version Detection # Powered by text
+{ :version=>/Powered by <a[^>]+href="http:\/\/www.symphony-cms.com[\/]?">Symphony CMS ([\d\.]{1,3})<\/a>/, :regexp_offset=>0 },
+{ :version=>/Powered by <a[^>]+href="http:\/\/symphony-cms.com[\/]?">Symphony CMS ([\d\.]{1,3})<\/a>/, :regexp_offset=>0 },
 
 ]
 
 end
+
 

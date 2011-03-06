@@ -4,42 +4,56 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-19 #
+# Updated version detection
+##
 Plugin.define "Lucky-Tech-iGuard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
-version "0.1"
+version "0.2"
 description "iGuard security system, based on latest biometric fingerprint technology. - homepage: http://www.lucky-tech.com/"
 
-# 2 results for intitle:"iGuard Fingerprint Security System" @ 2010-07-18
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1782
+# Google results as at 2010-07-18 #
+# 2 results for intitle:"iGuard Fingerprint Security System"
+
+# Examples #
 examples %w|
 66.208.250.26
-43.244.235.47:1081/Admins/index.html
+66.208.250.26/Admins/Content.vtml
+www.bionanoresearch.chem.ufl.edu
+www.bionanoresearch.chem.ufl.edu/Admins/Content.vtml
 |
 
+# Matches #
 matches [
 
+# Default Title
 { :text=>'	<TITLE>iGuard Fingerprint Security System</TITLE>' },
+
+# Version Detection # Meta Generator
+{ :firmware=>/	<meta content="Lucky-Tech iGuard ([\d\.]{1,5})" name="GENERATOR">/, :regexp_offset=>0 },
+
+# Firmware Detection
+{ :firmware=>/<td>[^<]*iGuard Security[^<]+<\/td><\/tr><tr><td>Firmware Version<\/td><td>([^<]+)<\/td>/, :regexp_offset=>0 },
+
+# Count Users
+{ :string=>/<tr><td>Registered Automatch<\/td><td>([^<]+)<\/td><\/tr>/, :regexp_offset=>0 },
 
 ]
 
-# an aggresive plugin could get the version from /Admins/Content.vtml
+# Passive #
 def passive
-        m=[]
+	m=[]
 
-        if @body =~ /	<meta content="Lucky-Tech iGuard [\d\.]+" name="GENERATOR">/
-                version=@body.scan(/	<meta content="Lucky-Tech iGuard ([\d\.]+)" name="GENERATOR">/)[0][0]
-                m << {:version=>version}
-        end
+	# Server: iGuard Embedded Web Server
+	m << { :version=>@meta['server'].scan(/iGuard Embedded Web Server\/([^\s]{1,15})/) } if @meta['server'] =~ /iGuard Embedded Web Server\/([^\s]{1,15})/
 
-        if @body =~ /<td>iGuard Security System<\/td><\/tr><tr><td>Firmware Version<\/td><td>[0-9A-Z]+/
-                version=@body.scan(/<td>iGuard Security System<\/td><\/tr><tr><td>Firmware Version<\/td><td>([0-9A-Z]+)/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
+	# Return passive matches
+	m
 
 end
 
-
 end
+
+# An aggresive plugin could get the version from /Admins/Content.vtml
+
 

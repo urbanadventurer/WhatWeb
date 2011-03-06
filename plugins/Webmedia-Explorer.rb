@@ -4,27 +4,30 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-12 #
+# Updated version detection
+##
 Plugin.define "Webmedia-Explorer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-07
-version "0.1"
-description "Webmedia Explorer scans and indexes everything under a folder called 'media' under the document root and builds a website automaticaly, generating file and folder listings, image galleries, message boards, news or simply text, anywhere it finds the corresponding data. And all this information can be managed using a contextual menu (right mouse button) just like you do it with your file explorer on your PC (copy, paste, edit, etc...) so, there is no need for an admin backend and administrating a site has never been so easy! - homepage: http://www.webmediaexplorer.com/"
+version "0.2"
+description "Webmedia Explorer scans and indexes everything under a folder called 'media' under the document root and builds a website automaticaly, generating file and folder listings, image galleries, message boards, news or simply text, anywhere it finds the corresponding data. - Homepage: http://www.webmediaexplorer.com/"
 
-# 51 Google results for "Powered by webmedia explorer" "Marc Salmurri"
+# Google results as at 2010-11-07 #
+# 51 for "Powered by webmedia explorer" "Marc Salmurri"
+
+# Examples #
 examples %w|
 demo.webmediaexplorer.com
 www.webmediaexplorer.com
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Version Detection # Powered by text
-	m << { :version=>@body.scan(/Powered by <a href="http:\/\/www.webmediaexplorer.com[^>]*>webmedia explorer ([\d\.]+)<\/a>/i) } if @body =~ /Powered by <a href="http:\/\/www.webmediaexplorer.com[^>]*>webmedia explorer ([\d\.]+)<\/a>/i
+# Version Detection # Powered by text
+{ :version=>/Powered by <a href="http:\/\/www.webmediaexplorer.com[^>]*>webmedia explorer ([\d\.]+)<\/a>/i, :regexp_offset=>0 },
 
-	m
-
-end
+]
 
 end
 

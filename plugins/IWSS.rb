@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-10 #
+# Updated regex match
+##
 Plugin.define "IWSS-Proxy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
-version "0.1"
-description "IWSS Proxy server"
+version "0.2"
+description "Trend Micro InterScan Web Security Suite (IWSS) Proxy server - homepage: http://us.trendmicro.com/us/products/enterprise/interscan-web-security-suite/"
 
-# About 270 ShodanHQ results for Proxy-agent:IWSS @ 2010-10-23
+# ShodanHQ results as at 2010-10-23 #
+# 270 for Proxy-agent:IWSS
+
+# Examples #
 examples %w|
 202.41.220.166
 205.241.31.80
@@ -23,12 +29,14 @@ examples %w|
 12.200.16.15
 |
 
-# Extract version # HTTP Header
+# Passive #
 def passive
 	m=[]
-	if @meta["Proxy-Agent"].to_s =~ /^[\s]*IWSS/ or @meta["proxy-agent"].to_s =~ /^[\s]*IWSS/
-		m << { :name=>"HTTP Header" }
-	end
+
+	# Proxy-Agent HTTP Header
+	m << { :name=>"Proxy-Agent HTTP Header" } if @meta["proxy-agent"].to_s =~ /^[\s]*IWSS/
+
+	# Return Passive Matches
 	m
 end
 

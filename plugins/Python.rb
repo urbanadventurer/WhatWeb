@@ -29,7 +29,6 @@ def passive
 
 	# Server # Version Detection
 	m << { :version=>@meta["server"].to_s.scan(/[^\r^\n]* Python\/([^\s^\r^\n]+)/).to_s } if @meta["server"].to_s =~ /[^\r^\n]* Python\/([^\s^\r^\n]+)/
-	m << { :version=>@meta["Server"].to_s.scan(/[^\r^\n]* Python\/([^\s^\r^\n]+)/).to_s } if @meta["Server"].to_s =~ /[^\r^\n]* Python\/([^\s^\r^\n]+)/
 
 	m
 

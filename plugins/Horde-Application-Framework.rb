@@ -4,13 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-31 #
+# Updated version detection
+##
 Plugin.define "Horde-Application-Framework" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-08
-version "0.1"
+version "0.2"
 description "A web application framework. Projects using the framework include webmail, a wiki and groupware. (Mostly PHP) - homepage: http://www.horde.org/"
 
-# 13 results for "powered by Horde Application Framework" @ 2010-09-08
-# 64 results for inurl:util/icon_browser.php?subdir= @ 2010-09-08
+# Google results as at 2010-09-08 #
+# 13 for "powered by Horde Application Framework"
+# 64 for inurl:util/icon_browser.php?subdir=
+
+# Examples #
 examples %w|
 netex.net.ua/horde/
 netex.net.ua/horde/util/icon_browser.php?subdir=alerts
@@ -27,6 +33,7 @@ www.infs.de/mails/imp/login.php
 www.infs.de/mails/util/icon_browser.php?subdir=weatherdotcom
 |
 
+# Matches #
 matches [
 
 # Powered by text
@@ -45,6 +52,7 @@ matches [
 
 # Default Javascript # Webmail login page
 { :text=>"if (typeof(_setHordeTitle) == 'undefined' && document.title && parent.frames.horde_main) parent.document.title = document.title;" },
+
 # HTML comment # Webmail login page
 { :text=>'<!-- This file contains any "Message Of The Day" Type information -->' },
 
@@ -54,20 +62,10 @@ matches [
 # default my account HTML # icon_browser.php
 { :text=>'<html><body bgcolor="#aaaaaa"><a href="icon_browser.php">Application List</a><br /><br /><h2>Icons for My Account</h2>' },
 
+# Version Detection # /config/conf.xml XML
+{ :version=>/<!-- \$Horde: horde\/config\/conf.xml,v ([\d\.]+) /, :regexp_offset=>0 },
+
 ]
-
-# Version detection using /config/conf.xml XML
-def passive
-	m=[]
-
-	if @body =~ /<!-- \$Horde: horde\/config\/conf.xml,v ([\d\.]+) /
-		version=@body.scan(/<!-- \$Horde: horde\/config\/conf.xml,v ([\d\.]+) /)[0][0]
-		m << {:version=>version}
-	end
-
-	m
-
-end
 
 end
 

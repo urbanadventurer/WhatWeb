@@ -4,23 +4,46 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.3 # 2011-02-15 # Brendan Coles < bcoles at gmail dot com >
+# Updated regex match
+##
 # Version 0.2
 # removed :certainty
-
+##
 Plugin.define "PoweredBy" do
 author "Andrew Horton"
-version "0.2"
-description "Powered by xxx. This needs improvement to strip out <tags>."
+version "0.3"
+description "This plugin identifies instances of 'Powered by x' text and attempts to extract the value for x."
 
-def passive
-	m=[]
- 	if @body =~ /powered[ -]?by[ ]?([^ <>]+)/i
-                title=@body.scan(/powered[ -]?by[ ]?([^ <>]+)/i)[0][0]
-                m << {:name=>"powered by xxx",:string=>title}
-    end
-    m
-end
+# Google results as at 2011-02-15 #
+# 11,360,000,000 for allintext:"powered by"
+
+# Examples #
+examples %w|
+www.conduit.com
+www.cnet.com
+www.pliner.net
+www.weather.com
+www.aol.com
+www.myspace.com
+www.adobe.com
+poweredbywp.com
+xoops.org
+zen-cart.com
+forums.cpanel.net
+|
+
+# Matches could be improved by:
+#   Stripping HTML and CSS tags
+#   Handling whitespace more effectively
+
+# Matches #
+matches [
+
+	# Powered by text
+	{ :string=>/powered[ -]?by[ ]?([^\s<>'".]+)/i, :regexp_offset=>0 },
+
+]
 
 end
 

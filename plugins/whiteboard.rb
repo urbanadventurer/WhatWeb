@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-19 #
+# Updated version detection
+##
 Plugin.define "WhiteBoard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
-version "0.1"
+version "0.2"
 description "WhiteBoard is a fast, powerful, and free open source discussion board solution. - homepage: http://sarosoftware.com/"
 
-# 21 results for "powered by Whiteboard" @ 2010-08-15
+# Google rsults as at 2010-08-15 #
+# 21 for "powered by Whiteboard"
+
+# Examples #
 examples %w|
 community.sarosoftware.com
 designbyhand.net/community/index.php
@@ -17,29 +23,19 @@ aduhaii-hp.com/forum/index.php
 moresms.org/forum/index.php
 |
 
+# Matches #
 matches [
 
-{ :text=>'			&copy; <a href="http://www.powerwd.com">SaroSoftware</a><br />' },
+# Copyright text
+{ :text=>'			&copy; <a href="http://www.powerwd.com">SaroSoftware</a><br />', :certainty=>75 },
+
+# Version Detection # Powered by text
+{ :version=>/Powered By WhiteBoard ([\d\.]+)<br \/>/, :regexp_offset=>0 },
+
+# Version Detection # Powered by text HTML
+{ :version=>/Powered By WhiteBoard <span id="version">([\d\.]+)<\/span><br \/>/, :regexp_offset=>0 },
 
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /Powered By WhiteBoard [\d\.]+<br \/>/
-                version=@body.scan(/Powered By WhiteBoard ([\d\.]+)<br \/>/)[0][0]
-                m << {:version=>version}
-        end
-
-	if @body =~ /Powered By WhiteBoard <span id="version">([\d\.]+)<\/span><br \/>/
-		version=@body.scan(/Powered By WhiteBoard <span id="version">([\d\.]+)<\/span><br \/>/)[0][0]
-		m << {:version=>version}
-	end
-
-        m
-
-end
-
 
 end
 

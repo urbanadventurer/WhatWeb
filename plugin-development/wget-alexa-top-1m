@@ -1,0 +1,21 @@
+#!/bin/sh
+##
+# This file is part of WhatWeb and may be subject to
+# redistribution and commercial restrictions. Please see the WhatWeb
+# web site for more information on licensing and terms of use.
+# http://www.morningstarsecurity.com/research/whatweb
+##
+#  wget-alexa-top-1m
+#  - Download and extract the Alexa top one million domains in newline format
+#  - Written by : Brendan Coles <bcoles@gmail.com> 2011-01-25
+##
+echo "[*] Downloading http://s3.amazonaws.com/alexa-static/top-1m.csv.zip"
+wget http://s3.amazonaws.com/alexa-static/top-1m.csv.zip && unzip top-1m.csv.zip && cat top-1m.csv | cut -d, -f2- > alexa-top-1m.txt
+echo "[*] Wrote alexa-top-1m.txt"
+
+head -n 1000 alexa-top-1m.txt > alexa-top-1000.txt
+echo "[*] Wrote alexa-top-1000.txt"
+
+head -n 100 alexa-top-1m.txt > alexa-top-100.txt
+echo "[*] Wrote alexa-top-100.txt"
+

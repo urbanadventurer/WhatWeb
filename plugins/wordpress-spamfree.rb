@@ -4,28 +4,24 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.3 # 2011-02-18 # Brendan Coles <bcoles@gmail.com>
+# Updated version detection
+##
 # Version 0.2
 # removed :certainty=>100
-
+##
 Plugin.define "WordPressSpamFree" do
 author "Andrew Horton"
-version "0.2"
-description "Wordpress SpamFree module."
+version "0.3"
+description "Wordpress SpamFree module. Get your WordPress Blog Spam-Free with this plugin. Normal users doesnt even know your using it. But it keeps away the spammers. - Homepage: http://wordpress.org/extend/plugins/spam-free/"
 
-# identifying strings
-# <!-- Protected by WP-SpamFree v1.9.6.6 :: JS BEGIN -->
+# Matches #
+matches [
 
-def passive
-	m=[]
-	
-	if @body =~ /<!-- Protected by WP-SpamFree v[0-9\.]+ :: JS BEGIN -->/	
-		match=true
-		v=@body.scan(/<!-- Protected by (WP-SpamFree) v([0-9\.]+) :: JS BEGIN -->/)[0][1]
-		m << {:name=>"html comments", :version=>v} 
-	end
+# Version Detection # HTML Comments
+{ :version=>/<!-- Protected by \(WP-SpamFree\) v([\d\.]+) :: JS BEGIN -->/, :regexp_offset=>0 },
 
-	m
-end
+]
 
 end
+
