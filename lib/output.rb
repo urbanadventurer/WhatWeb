@@ -102,7 +102,7 @@ end
 		brief_results=[]
 
 # sort results so plugins that are less important at a glance are last
-		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Tag-Hash|
+		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Div-Span-Structure Tag-Hash|
 		results=results.sort_by {|x,y| last_plugins.include?(x) ? 1 : 0 }
 
 
@@ -112,6 +112,7 @@ end
 
 				certainty, version, string, accounts,model,firmware,modules,filepath = suj[:certainty],suj[:version],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
 
+
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
 				if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
@@ -119,15 +120,16 @@ end
 					 coloured_string = yellow(string)
 					 coloured_string = cyan(string) if plugin_name == "HTTPServer"
  				 	 coloured_string = dark_green(string) if plugin_name == "Title"
-
  				 	 coloured_string = grey(string) if plugin_name == "MD5" 				 	 
+ 				 	 coloured_string = grey(string) if plugin_name == "Div-Span-Structure" 				 	 
  				 	 coloured_string = grey(string) if plugin_name == "Header-Hash"
  				 	 coloured_string = grey(string) if plugin_name == "Footer-Hash"
  				 	 coloured_string = grey(string) if plugin_name == "CSS"
 					 coloured_string = grey(string) if plugin_name == "Tag-Hash"
- 					 
+ 				 	  				 	  				 	 					 
 					 coloured_plugin = white(plugin_name)
 					 coloured_plugin = grey(plugin_name) if plugin_name == "MD5"
+ 					 coloured_plugin = grey(plugin_name) if plugin_name == "Div-Span-Structure"
   					 coloured_plugin = grey(plugin_name) if plugin_name == "Header-Hash"
   					 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"  					 
   					 coloured_plugin = grey(plugin_name) if plugin_name == "CSS"
@@ -200,28 +202,22 @@ class OutputXML < Output
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
-
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
+				accounts = plugin_results.map {|x| [x[:account]] }.flatten.compact.sort.uniq.join(",")
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.compact.sort.uniq.join(",")
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.compact.sort.uniq.join(",")
+				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq
 				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
-				accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
-				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
-
 
 				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
 				version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
 				string.map   {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
+				accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
 				model.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
 				firmware.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
 				filepath.map {|x| @f.puts "\t\t<filepath>#{escape(x)}</filepath>" }
-
-				if accounts.size > 0
-					accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
-					@f.puts "\t\t<accounts>\n" + accounts.map {|x| "\t\t\t<accounts>#{escape(x)}</accounts>" }.join("\n") + "\n\t\t</accounts>"
-				end
 
 				if modules.size > 0
 					@f.puts "\t\t<modules>\n" + modules.map {|x| "\t\t\t<module>#{escape(x)}</module>" }.join("\n") + "\n\t\t</modules>"
@@ -283,11 +279,10 @@ class OutputJSON < Output
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
 
-				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
-
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
-				accounts = plugin_results.map {|x| x[:account] unless x[:account].class=Regexp }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| [x[:account]] }.flatten.compact.sort.uniq
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
 				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.compact.sort.uniq
@@ -387,7 +382,7 @@ class OutputMongo < Output
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
-				accounts = plugin_results.map {|x| x[:account] unless x[:account].class=Regexp }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| [x[:account] ] }.flatten.compact.sort.uniq
 				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
 				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
 				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.compact.sort.uniq
