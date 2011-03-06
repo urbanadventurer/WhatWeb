@@ -15,7 +15,7 @@ description "This plugin identifies references to Google API in <script>."
 
 # Examples #
 examples %w|
-jquery
+jquery.com
 scriptsrc.net
 css-tricks.com
 googleajaxsearchapi.blogspot.com
