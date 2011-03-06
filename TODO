@@ -31,6 +31,10 @@ Ruby1.9 compatability
 [x] set num of max redirects, instead of hard coded value of 10
 
 
+
+modules are weird. it is currently used for multiple meanings.
+
+
 --follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)
 
 
