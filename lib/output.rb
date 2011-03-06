@@ -275,10 +275,12 @@ class OutputMagicTreeXML < Output
 			@host_ip = uri.host
 		else
 			@host_name = uri.host
-			@host_fqdn = uri.host+"."
+      # hostname is sufficient. fqdn nodes are used when the host IP address is not known yet
 		end
-		@host_port = uri.port
-		@host_scheme = uri.scheme
+
+    @host_port = uri.port
+    @host_scheme = uri.scheme
+		
 		@host_os=[]
 
 		# Loop through plugin results # get host IP, country and OS
@@ -294,20 +296,26 @@ class OutputMagicTreeXML < Output
 		end
 
 		# testdata branch
-		@f.puts '<testdata class="MtBranchObject">'
+		@f.write '<testdata class="MtBranchObject">'
 
 		# hostname
-		@f.puts "\t<host title=\"#{escape(@host_ip)}\">#{escape(@host_ip)}<hostname title=\"#{escape(@host_name)}\">#{escape(@host_name)}</hostname></host>" unless @host_name.nil?
-
-		# fqdn
-		@f.puts "\t<host title=\"#{escape(@host_ip)}\">#{escape(@host_ip)}<fqdn title=\"#{escape(@host_fqdn)}\">#{escape(@host_fqdn)}</fqdn></host>" unless @host_fqdn.nil?
+		@f.write "<host>#{escape(@host_ip)}<hostname>#{escape(@host_name)}</hostname></host>" unless @host_name.nil?
+        # title attribute is not used in simple nodes  
 
 		# os
-		@host_os.compact.sort.uniq.map {|x| @f.puts "\t<host title=\"#{escape(@host_ip)}\">#{escape(@host_ip)}<os title=\"#{escape(x.to_s)}\">#{escape(x.to_s)}<source>WhatWeb<url>#{escape(target)}<http-status>#{escape(status)}</http-status></url></source></os></host>" unless x.empty? } unless @host_os.empty?
+		@host_os.compact.sort.uniq.map {|x| @f.write "<host>#{escape(@host_ip)}<os>#{escape(x.to_s)}</os></host>" unless x.empty? } unless @host_os.empty?
+        # We generally don't create "source" nodes for command-line tools
+        # If the tool is executed from MagicTree, MT will automatically track
+        # the source of the data
 
 		# country and port nodes
-		@f.puts "\t<host title=\"#{escape(@host_ip)}\">#{escape(@host_ip)}<location><country title=\"#{escape(@host_country)}\">#{escape(@host_country)}</country></location><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
+		@f.write "<host>#{escape(@host_ip)}<country>#{escape(@host_country)}</country><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
 
+    if @host_scheme == 'https'
+      @f.write "<tunnel>ssl";
+    end
+
+    @f.puts "<service>http";
 		# Loop through remaining results
 		results.each do |plugin_name,plugin_results|
 
@@ -323,59 +331,63 @@ class OutputMagicTreeXML < Output
 				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
 
 				# Print certainty if uncertain
-				@f.puts "\t\t<service>http<software><#{escape(plugin_name)} title=\"#{escape(plugin_name)}\"><certainty title=\"#{escape(plugin_name)}\">#{escape(certainty)}</certainty></#{escape(plugin_name)}></software></service>" if certainty and certainty < 100
+				@f.write "<software>#{escape(plugin_name)}<certainty>#{escape(certainty)}</certainty></#{escape(plugin_name)}></software>" if certainty and certainty < 100
 
+        # Some restructuring - software, headers, firmware, modules, etc. are all related to a specific URL
+        # and therefore are placed under the url node
 				# Strings
 				if strings.size > 0
-					strings.map {|x| @f.puts "\t\t<service>http<software><#{escape(plugin_name)} title=\"#{escape(plugin_name)}\"><string title=\"#{escape(plugin_name)}\">#{escape(x)}<source>WhatWeb<url>#{escape(target)}<http-status>#{escape(status)}</http-status></url></source></string></#{escape(plugin_name)}></software></service>" } unless plugin_name =~ /^IP$/ or plugin_name =~ /^Country$/
+					strings.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}>#{escape(x)}</#{escape(plugin_name)}></url>" } unless plugin_name =~ /^IP$/ or plugin_name =~ /^Country$/
 				end
 
 				# Versions
 				if versions.size > 0
-					versions.map {|x| @f.puts "\t\t<service>http<software><#{escape(plugin_name)} title=\"#{escape(plugin_name)}\"><version status=\"interesting\" title=\"#{escape(plugin_name)}\">#{escape(x)}<source>WhatWeb<url>#{escape(target)}<http-status>#{escape(status)}</http-status></url></source></version></#{escape(plugin_name)}></software></service>" }
+					versions.map {|x| @f.write "<url>#{escape(target)}<software>#{escape(plugin_name)}<version>#{escape(x)}</version></software></url>" }
 				end
 
 				# Models
 				if models.size > 0
-					models.map {|x| @f.puts "\t\t<service>http<software><#{escape(plugin_name)} title=\"#{escape(plugin_name)}\"><model status=\"interesting\" title=\"#{escape(plugin_name)}\">#{escape(x)}<source>WhatWeb<url>#{escape(target)}<http-status>#{escape(status)}</http-status></url></source></model></#{escape(plugin_name)}></software></service>" }
+					models.map {|x| @f.puts "<url>#{escape(target)}<#{escape(plugin_name)}><model>#{escape(x)}</model></#{escape(plugin_name)}></url>" }
 				end
 
 				# Firmware
 				if firmwares.size > 0
-					firmwares.map {|x| @f.puts "\t\t<service>http<software><#{escape(plugin_name)} title=\"#{escape(plugin_name)}\"><firmware title=\"#{escape(plugin_name)}\">#{escape(x)}<source>WhatWeb<url>#{escape(target)}<http-status>#{escape(status)}</http-status></url></source></firmware></#{escape(plugin_name)}></software></service>" }
+					firmwares.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><firmware>#{escape(x)}</firmware></#{escape(plugin_name)}></url>" }
 				end
 
 				# Modules
 				if modules.size > 0
-					modules.map {|x| @f.puts "\t\t<service>http<software><#{escape(plugin_name)} title=\"#{escape(plugin_name)}\"><module status=\"interesting\" title=\"#{escape(plugin_name)}\">#{escape(x)}<source>WhatWeb<url>#{escape(target)}<http-status>#{escape(status)}</http-status></url></source></module></#{escape(plugin_name)}></software></service>" }
+					modules.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><module>#{escape(x)}</module></#{escape(plugin_name)}></url>" }
 				end
 
 				# Accounts
+        # MT generally uses "user" nodes for account 
 				if accounts.size > 0
-					accounts.map {|x| @f.puts "\t\t<service>http<software><#{escape(plugin_name)} title=\"#{escape(plugin_name)}\"><account status=\"interesting\" title=\"#{escape(plugin_name)}\">#{escape(x)}<source>WhatWeb<url>#{escape(target)}<http-status>#{escape(status)}</http-status></url></source></account></#{escape(plugin_name)}></software></service>" }
+					accounts.map {|x| @f.write "<url>#{escape(target)}<user>#{escape(x)}</user></url>" }
 				end
 
 				# Filepaths
 				if filepaths.size > 0
-					filepaths.map {|x| @f.puts "\t\t<service>http<software><#{escape(plugin_name)} title=\"#{escape(plugin_name)}\"><filepath status=\"interesting\" title=\"#{escape(plugin_name)}\">#{escape(x)}<source>WhatWeb<url>#{escape(target)}<http-status>#{escape(status)}</http-status></url></source></filepath></#{escape(plugin_name)}></software></service>" }
+					filepaths.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><filepath>#{escape(x)}<http-status>#{escape(status)}</http-status></filepath></#{escape(plugin_name)}></url>" }
 				end
 
+       # Output goes back under <url>
+       @f.write "<url>#{escape(target)}<output title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
+    	 # display detailed results
+       @f.write "#{escape(results.pretty_inspect)}" unless results.empty?
+       @f.write "</output></url>"
 			end
 
 		end
 
+    @f.write "</service>";
+
+    if @host_scheme == 'https'
+      @f.write "</tunnel>"
+    end
+
 		# testdata # close port, host and testdata nodes
-		@f.puts "</port></ipproto></host></testdata>"
-
-		# report # open report node
-		@f.puts "<report class=\"MtBranchObject\"><findings title=\"#{escape(target)}\"><target title=\"#{escape(target)}\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
-
-		# display detailed results
-		@f.puts "#{escape(results.pretty_inspect)}" unless results.empty?
-
-		# http status and source # close report # TODO : Add WhatWeb version and command-line arguments to source node
-		@f.puts "<http-status>#{escape(status)}<source>WhatWeb</source></http-status></target></findings></report>"
-
+		@f.write "</port></ipproto></host></testdata>"
 	end
 
 end
