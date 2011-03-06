@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-03-06 #
+# Updated OS detection
+##
 # Version 0.2 # 2011-01-21 #
 # Updated version detection
 # Updated examples
@@ -13,12 +16,12 @@
 ##
 Plugin.define "phpinfo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-07 
-version "0.2"
+version "0.3"
 description "This plugin detects instances of phpinfo() results and extracts the operating system, PHP version, document root and remote cpanel credentials."
 
 # Google Results as at 2011-01-21 #
-# 52 results for intitle:"phpinfo()" "mysql.default_password" "Zend Scripting Language Engine"
-# 33 results for inurl:"phpinfo.php" intitle:"phpinfo()" "mysql.default_password"
+# 52 for intitle:"phpinfo()" "mysql.default_password" "Zend Scripting Language Engine"
+# 33 for inurl:"phpinfo.php" intitle:"phpinfo()" "mysql.default_password"
 
 # Examples #
 examples %w|
@@ -72,7 +75,7 @@ def passive
 		m << { :version=>@body.scan(/<h1>PHP Version ([^<]{3,40})<\/h1>/)[0].to_s } if @body =~ /<h1>PHP Version [^<]{3,40}<\/h1>/
 
 		# OS Detection
-		m << { :string=>"OS:"+@body.scan(/<tr><td class="e">System[\s]?<\/td><td class="v">([^<]{10,256})[\s]?<\/td><\/tr>/)[0].to_s } if @body =~ /<tr><td class="e">System[\s]?<\/td><td class="v">[^<]{10,256}[\s]?<\/td><\/tr>/
+		m << { :os=>@body.scan(/<tr><td class="e">System[\s]?<\/td><td class="v">([^<]{10,256})[\s]?<\/td><\/tr>/)[0].to_s } if @body =~ /<tr><td class="e">System[\s]?<\/td><td class="v">[^<]{10,256}[\s]?<\/td><\/tr>/
 
 		# cpanel Detection
 		m << { :modules=>"cpanel" } if @body =~ /<tr><td class="e">SERVER_SOFTWARE[\s]?<\/td><td class="v">cpaneld[\s]?<\/td><\/tr>/
