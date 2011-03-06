@@ -32,8 +32,8 @@ matches [
 {:certainty=>50, :regexp=>/Copyright &copy;2000 - [0-9]+, Jelsoft Enterprises Ltd./},
 
 {:version=>/Powered by(:)? vBulletin(&reg;)? Version ([0-9a-z.]+)/, :offset=>2,  :name=>"version" },
-{:version=>/<meta name="generator" content="vBulletin ([0-9a-z.]+)" \/>/, :offset=>0,  :name=>"version" },
-{:version=>/\* vBulletin ([0-9a-z.]+) CSS/, :offset=>0,  :name=>"version" }
+{:version=>/<meta name="generator" content="vBulletin ([0-9a-z.]+)" \/>/,  :name=>"version" },
+{:version=>/\* vBulletin ([0-9a-z.]+) CSS/,  :name=>"version" }
 
 
 ]

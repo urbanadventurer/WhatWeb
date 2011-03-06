@@ -64,7 +64,7 @@ matches [
 { :regexp=>/<td class='footer_right'><a href='http:\/\/www.tftgallery.org\/' target='_blank'><img src="[^"]*images\/TFTgallery.png" alt="TFTgallery" border="0" \/><\/a><\/td>/ },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="TFTgallery ([\d\.]{1,5}) http:\/\/www.tftgallery.org\/" \/>/, :offset=>0 },
+{ :version=>/<meta name="generator" content="TFTgallery ([\d\.]{1,5}) http:\/\/www.tftgallery.org\/" \/>/ },
 
 ]
 

@@ -79,10 +79,10 @@ matches [
 { :text=>'<!-- powered by koobi - do not remove this info! -->' },
 
 # Version Detection # Koobie Pro Powered by text
-{ :version=>/powered by <a class="foot" href="http:\/\/www.dream4.de\/[^>]+>Koobi Pro ([\d\.]+)<\/a>/i, :module=>["Pro"], :offset=>0 },
+{ :version=>/powered by <a class="foot" href="http:\/\/www.dream4.de\/[^>]+>Koobi Pro ([\d\.]+)<\/a>/i, :module=>["Pro"] },
 
 # Version Detection # Meta generator
-{ :version=>/<meta name="generator" content="\(c\) Koobi ([\d\.]+), http:\/\/www.dream4.de" \/>/, :offset=>0 },
+{ :version=>/<meta name="generator" content="\(c\) Koobi ([\d\.]+), http:\/\/www.dream4.de" \/>/ },
 
 # Version Detection # Powered by text
 { :version=>/Powered by <a title="Koobi ist ein komfortables und leistungsf&auml;higes Content-Management-System \(CMS\) f&uuml;r Privatpersonen, Vereine, kleine und mittelst&auml;ndische Unternehmen, die einen professionellen Internetauftritt realisieren m&ouml;chten."[^>]*>Koobi[\ :]*(SHOP|PRO|CMS)<\/a> ([\d\.]+)/i, :offset=>1 },
@@ -91,16 +91,16 @@ matches [
 { :version=>/Powered by <a[^>]+href="http:\/\/www.dream4.de\/cms\/content\/6\/koobi\/1\/">Koobi<\/a> (PRO|SHOP|CMS)[\s]*([\d\.\ a-z]+)/i, :offset=>1 },
 
 # Version Detection # Old Koobi CMS powered by text
-{ :version=>/powered by <a[^>]+href="http:\/\/www.dream4.de\/[^>]+>koobi-cms<\/a> ([\d\.]+)/i, :offset=>0 },
+{ :version=>/powered by <a[^>]+href="http:\/\/www.dream4.de\/[^>]+>koobi-cms<\/a> ([\d\.]+)/i },
 
 # Version Detection # Powered by text
-{ :version=>/<div class="copyright">powered by Koobi CMS ([\d\.]+)/, :offset=>0 },
+{ :version=>/<div class="copyright">powered by Koobi CMS ([\d\.]+)/ },
 
 # Version Detection # HTML comment
 { :version=>/    Diese Webseite wurde mit Koobi[\ :]*(SHOP|PRO|CMS)[\ \-]*([\d\.\ a-z]+) erstellt./, :offset=>1 },
 
 # Version Detection # Nulled script by antichat.ru # Powered by text
-{ :version=>/powered by <a class="foot" href="http:\/\/www.antichat.ru" target="_blank">Koobi Pro ([\d\.]+) \[nulled by censored! from antichat.ru\]<\/a>/, :module=>["Nulled"], :offset=>0 },
+{ :version=>/powered by <a class="foot" href="http:\/\/www.antichat.ru" target="_blank">Koobi Pro ([\d\.]+) \[nulled by censored! from antichat.ru\]<\/a>/, :module=>["Nulled"] },
 
 ]
 

@@ -40,10 +40,10 @@ matches [
 { :text=>'<p>Powered by <a href="http://www.openautoclassifieds.com/index.php">Open Auto Classifieds</a>' },
 
 # Version Detection # Powered by text
-{ :version=>/			<p>Powered by <a href="http:\/\/www.openautoclassifieds.com[^"]*">Open Auto Classifieds v([\d\.a-z]+)/, :offset=>0 },
+{ :version=>/			<p>Powered by <a href="http:\/\/www.openautoclassifieds.com[^"]*">Open Auto Classifieds v([\d\.a-z]+)/ },
 
 # Version Detection # Powered by text
-{ :version=>/			<p>Powered by Open Auto Classifieds v([\d\.a-z]+)/, :offset=>0 },
+{ :version=>/			<p>Powered by Open Auto Classifieds v([\d\.a-z]+)/ },
 
 ]
 

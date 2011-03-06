@@ -29,7 +29,7 @@ bans.gp-emerica.ru
 matches [
 
 # Version Detection # Powered by footer HTML # English
-{ :version=>/		<a href="http:\/\/www.sourcebans.net" target="_blank"><img src="images\/sb.png" alt="SourceBans" border="0" \/><\/a><br\/>\n		<div id="footqversion">Version ([\d\.]+) <\/div>/, :offset=>0 },
+{ :version=>/		<a href="http:\/\/www.sourcebans.net" target="_blank"><img src="images\/sb.png" alt="SourceBans" border="0" \/><\/a><br\/>\n		<div id="footqversion">Version ([\d\.]+) <\/div>/ },
 
 # Default Logo HTML
 { :text=>'		<a href="http://www.sourcebans.net" target="_blank"><img src="images/sb.png" alt="SourceBans" border="0" /></a><br/>' },

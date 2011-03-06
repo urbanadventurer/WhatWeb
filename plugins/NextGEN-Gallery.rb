@@ -24,7 +24,7 @@ matches [
 { :regexp=>/<link rel='stylesheet' id='galleryview-css'  href='[^']*\/wp-content\/plugins\/nggGalleryview\/galleryview.css\?ver=[\d\.]+' type='text\/css' media='screen' \/>/, :string=>"Wordpress" },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name='NextGEN' content='([\d\.]+)' \/>/, :offset=>0, :string=>"Wordpress" },
+{ :version=>/<meta name='NextGEN' content='([\d\.]+)' \/>/, :string=>"Wordpress" },
 
 ]
 

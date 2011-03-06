@@ -33,10 +33,10 @@ matches [
 { :ghdb=>'"powered by uportal"', :certainty=>75 },
 
 # Version detection # Default logo HTML
-{ :version=>/<img[^>]*alt="Powered by uPortal ([\d\.]+)"[^>]*>/, :offset=>0 },
+{ :version=>/<img[^>]*alt="Powered by uPortal ([\d\.]+)"[^>]*>/ },
 
 # Version detection # Powered by text
-{ :version=>/<a target="_blank" title="Powered by \$" href="http:\/\/www.uportal.org">Powered by uPortal ([^<]+)<\/a>/, :offset=>0 },
+{ :version=>/<a target="_blank" title="Powered by \$" href="http:\/\/www.uportal.org">Powered by uPortal ([^<]+)<\/a>/ },
 
 ]
 

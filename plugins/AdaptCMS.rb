@@ -21,7 +21,7 @@ www.insanevisions.com
 matches [
 
 # Version detection
-{ :version=>/Powered by <a href="http:\/\/www.adaptcms.com">[<b>]*AdaptCMS([^<]*)<\/a>/, :offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/www.adaptcms.com">[<b>]*AdaptCMS([^<]*)<\/a>/ },
 
 # Powered by <a href="http://www.adaptcms.com">AdaptCMS</a>, <a href="http://www.adaptbb.com">AdaptBB</a>.
 # Powered by <a href="http://www.adaptcms.com"><b>AdaptCMS</a>

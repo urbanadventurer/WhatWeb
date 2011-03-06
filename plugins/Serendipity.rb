@@ -56,10 +56,10 @@ www.bradrippe.com/serendipity/
 matches [
 
 # Version Detection # Meta Powered-By
-{ :version=>/<meta name="Powered-By" content="Serendipity v.([^"]+)" \/>/i, :offset=>0 },
+{ :version=>/<meta name="Powered-By" content="Serendipity v.([^"]+)" \/>/i },
 
 # Version Detection # Proudly powered by text
-{ :version=>/My weblog is proudly powered by <a href="http:\/\/www.s9y.org">Serendipity ([^<]+)<\/a>.<br \/>/, :offset=>0 },
+{ :version=>/My weblog is proudly powered by <a href="http:\/\/www.s9y.org">Serendipity ([^<]+)<\/a>.<br \/>/ },
 
 # Powered by text
 { :text=>'<p>Powered by <a href="http://www.s9y.org" target="_blank">Serendipity</a>' },

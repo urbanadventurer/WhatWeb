@@ -29,7 +29,7 @@ matches [
 { :certainty=>25, :ghdb=>'"Powered By AJ Auction Pro"' },
 
 # Version Detection # Powered by text
-{ :version=>/<td width="16%" class="site_statistics" align="left"><a class="site_statistics" href="http:\/\/www.ajauctionpro.com">Powered By AJ Auction Pro OOPD V([\d\.]{1,5})<\/a><\/td>/, :offset=>0 },
+{ :version=>/<td width="16%" class="site_statistics" align="left"><a class="site_statistics" href="http:\/\/www.ajauctionpro.com">Powered By AJ Auction Pro OOPD V([\d\.]{1,5})<\/a><\/td>/ },
 
 ]
 

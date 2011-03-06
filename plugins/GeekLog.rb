@@ -40,7 +40,7 @@ matches [
 { :text=>'<!--If you want the splash, uncomment the last line. If you want no splash, make sure it is commented out.-->' },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/www.geeklog.net\/">Geeklog ([\d\.a-z]{1,10})<\/a>/, :offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/www.geeklog.net\/">Geeklog ([\d\.a-z]{1,10})<\/a>/ },
 
 ]
 

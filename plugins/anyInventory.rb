@@ -45,7 +45,7 @@ matches [
 
 # Version detection # default whitespace and version
 # Tested versions: 1.9.1 / 1.9.2 / 2.0
-{ :version=>/								anyInventory ([\d\.]+)/, :offset=>0 },
+{ :version=>/								anyInventory ([\d\.]+)/ },
 
 ]
 

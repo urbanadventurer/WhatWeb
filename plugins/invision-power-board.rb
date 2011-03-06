@@ -93,10 +93,10 @@ matches [
 {:regexp=>/<a href="[^"]+index.php?s=[a-z0-9]+&amp;act=Login&amp;CODE=[0-9]+">Log In<\/a>/ }, # "
 
 
-{:version=>/Powered by <a [^>]+>Invision Power Board<\/a>([^&]+) &copy; 20[0-9]+/, :offset=>0,  :name=>"powered by 1" },
-{:version=>/([0-9\.]+) &copy; 20[0-9]+ &nbsp;<a href='http:\/\/www.invisionpower.com'[^>]+>IPS/, :offset=>0,  :name=>"powered by 2" },
-{:version=>/Invision Power Board<\/a>[\s]+v([0-9\.]+) &copy;/, :offset=>0,  :name=>"powered by 3" },
-{:version=>/Invision Power Board<\/a>([^&]+)&copy; 20[0-9]+ &nbsp;<a href='http:\/\/www.invisionpower.com'/, :offset=>0,  :name=>"powered by 4" }
+{:version=>/Powered by <a [^>]+>Invision Power Board<\/a>([^&]+) &copy; 20[0-9]+/,  :name=>"powered by 1" },
+{:version=>/([0-9\.]+) &copy; 20[0-9]+ &nbsp;<a href='http:\/\/www.invisionpower.com'[^>]+>IPS/,  :name=>"powered by 2" },
+{:version=>/Invision Power Board<\/a>[\s]+v([0-9\.]+) &copy;/,  :name=>"powered by 3" },
+{:version=>/Invision Power Board<\/a>([^&]+)&copy; 20[0-9]+ &nbsp;<a href='http:\/\/www.invisionpower.com'/,  :name=>"powered by 4" }
 
 ]
 

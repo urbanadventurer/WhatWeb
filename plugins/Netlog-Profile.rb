@@ -47,16 +47,16 @@ http://en.netlog.com/emo_girl66621
 matches [
 
 	# Name :
-	{ :version=>/<dt>Name<\/dt>[\W]*<dd>[\W]*([^<]*)[\W]*</, :offset=>0 },
+	{ :version=>/<dt>Name<\/dt>[\W]*<dd>[\W]*([^<]*)[\W]*</ },
 
 	# Location :
-	{ :string=>/<dt>Location<\/dt>[\W]*<dd>[\s]*([^<^\r^\n]*)</, :offset=>0 },
+	{ :string=>/<dt>Location<\/dt>[\W]*<dd>[\s]*([^<^\r^\n]*)</ },
 
 	# DOB :
-	{ :model=>/<dt>Date of birth<\/dt>[\W]*<dd>([0-9\/]{10})[\W]*</, :offset=>0 },
+	{ :model=>/<dt>Date of birth<\/dt>[\W]*<dd>([0-9\/]{10})[\W]*</ },
 
 	# Friends :
-	{ :filepath=>/<a href="\/([^\"]*)" title="[^\"]*" class="nick person" rel="friend">/, :offset=>0, :module=>"Public Profile" },
+	{ :filepath=>/<a href="\/([^\"]*)" title="[^\"]*" class="nick person" rel="friend">/, :module=>"Public Profile" },
 
 ]
 

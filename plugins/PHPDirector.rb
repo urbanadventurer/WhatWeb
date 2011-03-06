@@ -78,7 +78,7 @@ www.w3bfly.com/Flash/
 matches [
 
 # Version Detection # Powered by text
-{ :version=>/<a href="http:\/\/www.phpdirector.co.uk\/">Powered by PHP Director ([\d\.]+)<\/a>/, :offset=>0 },
+{ :version=>/<a href="http:\/\/www.phpdirector.co.uk\/">Powered by PHP Director ([\d\.]+)<\/a>/ },
 
 ]
 

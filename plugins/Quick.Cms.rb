@@ -55,7 +55,7 @@ matches [
 { :text=>'  <meta name="Author" content="OpenSolution.org" />' },
 
 # Version Detection # Admin Page # Version Footer
-{ :version=>/      <div id="version"><a href="http:\/\/opensolution.org\/">Quick.Cms v([\d\.]+)<\/a><\/div>/, :offset=>0 },
+{ :version=>/      <div id="version"><a href="http:\/\/opensolution.org\/">Quick.Cms v([\d\.]+)<\/a><\/div>/ },
 
 ]
 

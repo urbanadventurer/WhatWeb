@@ -49,10 +49,10 @@ matches [
 { :md5=>'54ab59aeb78202bc2ec96abb0c6cff7c', :url=>'images/vs_white.gif' },
 
 # Version Detection # < 10 # Powered by text
-{ :version=>/&copy; [0-9]{4} \| Powered by VS PANEL v.([\d\.]+)<\/div><\/td>/, :offset=>0 },
+{ :version=>/&copy; [0-9]{4} \| Powered by VS PANEL v.([\d\.]+)<\/div><\/td>/ },
 
 # Version detection # 10.x # Powered by text
-{ :version=>/&copy; [0-9]{4} \| Powered by VS PANEL v.([\d\.]+)(<\/span>)<\/div><\/td>/, :offset=>0 },
+{ :version=>/&copy; [0-9]{4} \| Powered by VS PANEL v.([\d\.]+)(<\/span>)<\/div><\/td>/ },
 
 ]
 

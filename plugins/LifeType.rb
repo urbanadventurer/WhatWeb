@@ -41,7 +41,7 @@ matches [
 	{ :text=>'Powered by <a href="http://www.lifetype.net">LifeType</a>' },
 
 	# Version Detection # Default meta generator
-	{ :version=>/<meta name="generator" content="lifetype-([\w\.]+)"/, :offset=>0 },
+	{ :version=>/<meta name="generator" content="lifetype-([\w\.]+)"/ },
 
 	# Not Installed message HTML
 	{ :text=>'LifeType has not been installed yet, you\'ll have to <font color="red"><b><a href="wizard.php" title="Install LifeType">Install LifeType</a></b></font> first!' },

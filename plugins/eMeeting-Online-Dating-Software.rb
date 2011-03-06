@@ -35,7 +35,7 @@ matches [
 { :text=>'<a href="http://www.datingscripts.org" alt="Dating Software by eMeeting Ltd" target="_blank">Dating Software Powered by eMeeting Ltd</a>' },
 
 # Version Detection # Powered by text
-{ :version=>/<p>eMeeting Dating Software <strong>Version ([\d\.]+)<\/strong>/, :offset=>0 },
+{ :version=>/<p>eMeeting Dating Software <strong>Version ([\d\.]+)<\/strong>/ },
 
 ]
 

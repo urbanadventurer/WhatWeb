@@ -85,7 +85,7 @@ matches [
 { :text=>'<form action="/scripts/webmail.exe" method="post" name="reloginform">' },
 
 # Version detection # /scripts/webmail.exe # Copyright text
-{ :version=>/<a target="_top" href="http:\/\/netwinsite.com\/ref.htm"> WebMail v([^\ ]+) Copyright &copy; <i>NetWin Ltd<\/i>/, :offset=>0 },
+{ :version=>/<a target="_top" href="http:\/\/netwinsite.com\/ref.htm"> WebMail v([^\ ]+) Copyright &copy; <i>NetWin Ltd<\/i>/ },
 
 ]
 

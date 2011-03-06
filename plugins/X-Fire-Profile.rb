@@ -37,16 +37,16 @@ matches [
 { :text=>"<meta name='keywords' content='gaming history, personal info, game hours, screenshots, " },
 
 # System details
-{ :string=>/<td><div class="gaming_rig_content">(.*)<\/div><\/td>/, :offset=>0 },
+{ :string=>/<td><div class="gaming_rig_content">(.*)<\/div><\/td>/ },
 
 # Username
-{ :version=>/	<span class="profile_label">\n		Username:\n	<\/span>\n	<span class="profile_data">\n		<a href="\/profile\/[^\/]*\/">([^<]+)<\/a>\n	<\/span>/, :offset=>0 },
+{ :version=>/	<span class="profile_label">\n		Username:\n	<\/span>\n	<span class="profile_data">\n		<a href="\/profile\/[^\/]*\/">([^<]+)<\/a>\n	<\/span>/ },
 
 # Nickname
-{ :version=>/	<span class="profile_label">\n		Nickname:\n	<\/span>\n	<span class="profile_data">\n		<a href="\/profile\/[^\/]*\/">([^<]+)<\/a>\n	<\/span>/, :offset=>0 },
+{ :version=>/	<span class="profile_label">\n		Nickname:\n	<\/span>\n	<span class="profile_data">\n		<a href="\/profile\/[^\/]*\/">([^<]+)<\/a>\n	<\/span>/ },
 
 # Real Name
-{ :version=>/	<span class="profile_label">\n		Real Name:\n	<\/span>\n	<span class="profile_data">\n		([^\r^\n]+)\n	<\/span>/, :offset=>0 },
+{ :version=>/	<span class="profile_label">\n		Real Name:\n	<\/span>\n	<span class="profile_data">\n		([^\r^\n]+)\n	<\/span>/ },
 
 ]
 

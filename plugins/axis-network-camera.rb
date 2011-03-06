@@ -153,19 +153,19 @@ matches [
 { :text=>'<img SRC="/pics/AxisLogo.gif" WIDTH="95" HEIGHT="40" BORDER="0" ALIGN="right" ALT="' },
 
 # Model Detection # Default video server title
-{ :model=>/<TITLE>Live View [\/]* - AXIS ([^<]*) Video Server<\/TITLE>/i, :offset=>0, :module=>"Live View" },
+{ :model=>/<TITLE>Live View [\/]* - AXIS ([^<]*) Video Server<\/TITLE>/i, :module=>"Live View" },
 
 # Model Detection # Default network camera title
-{ :model=>/<TITLE>Axis ([0-9]+) [^<]*Network Camera[^<]*<\/TITLE>/i, :offset=>0 },
+{ :model=>/<TITLE>Axis ([0-9]+) [^<]*Network Camera[^<]*<\/TITLE>/i },
 
 # Version Detection # Default title for AXIS 2000 series
-{ :version=>/<TITLE>Axis [0-9]+ [^<]*Network Camera ([\d\.]+)<\/TITLE>/i, :offset=>0 },
+{ :version=>/<TITLE>Axis [0-9]+ [^<]*Network Camera ([\d\.]+)<\/TITLE>/i },
 
 # Version Detection # Default live view title for AXIS 200 series
-{ :version=>/<TITLE>Live View[\/\s]*- AXIS [\da-z]+ [^<]*version ([\d\.]+)<\/TITLE>/i, :offset=>0, :module=>"Live View" },
+{ :version=>/<TITLE>Live View[\/\s]*- AXIS [\da-z]+ [^<]*version ([\d\.]+)<\/TITLE>/i, :module=>"Live View" },
 
 # Model Detection # Default live view title for AXIS 200 series
-{ :model=>/<TITLE>Live View[\/\s]*- AXIS ([\da-z]+) [^<]*<\/TITLE>/i, :offset=>0, :module=>"Live View" },
+{ :model=>/<TITLE>Live View[\/\s]*- AXIS ([\da-z]+) [^<]*<\/TITLE>/i, :module=>"Live View" },
 
 ]
 

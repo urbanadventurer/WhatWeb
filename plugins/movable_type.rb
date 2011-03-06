@@ -58,7 +58,7 @@ matches [
 
 {:name=>"Powered by link", :regexp=>/<a href="http:\/\/sixapart.com">Powered by Movable Type<\/a>/},
 
-{:version=>/<meta name="generator" content="Movable Type ([^"]*)/, :offset=>0,  :name=>"meta generator tag" } 
+{:version=>/<meta name="generator" content="Movable Type ([^"]*)/,  :name=>"meta generator tag" } 
 ] 
 
 

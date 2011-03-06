@@ -26,7 +26,7 @@ www.googlemapsrealestate.com.au
 matches [
 
 # Version detection # Default title
-{ :version=>/<title>Open-Realty ([\d\.]+) - [^<]+<\/title>/, :offset=>0 },
+{ :version=>/<title>Open-Realty ([\d\.]+) - [^<]+<\/title>/ },
 
 # Meta generator
 { :text=>'<meta name="Generator" content="Open-Realty" />' },

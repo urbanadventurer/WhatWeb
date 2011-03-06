@@ -32,22 +32,22 @@ http://www.bebo.com/Profile.jsp?MemberId=3445438819
 matches [
 
 	# Name :
-	{ :version=>/<title>bebo.com - Profile from ([^&]*) &lt;[^&]*&gt;<\/title>/, :offset=>0 },
+	{ :version=>/<title>bebo.com - Profile from ([^&]*) &lt;[^&]*&gt;<\/title>/ },
 
 	# Username :
-	{ :model=>/<title>bebo.com - Profile from [^&]* &lt;([^&]*)&gt;<\/title>/, :offset=>0 },
+	{ :model=>/<title>bebo.com - Profile from [^&]* &lt;([^&]*)&gt;<\/title>/ },
 
 	# Gender :
-	{ :string=>/DynamicValues = \{"FacebookConnect":\{"appId":"[0-9]+"\},"Viximo":\{"memberLocale":"[^\"]*","creatorUid":"[0-9]+","creatorName":"[^\"]*","memberCountry":"[^\"]*","creatorGender":"([^\"]*)"/, :offset=>0 },
+	{ :string=>/DynamicValues = \{"FacebookConnect":\{"appId":"[0-9]+"\},"Viximo":\{"memberLocale":"[^\"]*","creatorUid":"[0-9]+","creatorName":"[^\"]*","memberCountry":"[^\"]*","creatorGender":"([^\"]*)"/ },
 
 	# Country :
-	{ :string=>/DynamicValues = \{"FacebookConnect":\{"appId":"[0-9]+"\},"Viximo":\{"memberLocale":"[^\"]*","creatorUid":"[0-9]+","creatorName":"[^\"]*","memberCountry":"([^\"]*)","creatorGender":"[^\"]*"/, :offset=>0 },
+	{ :string=>/DynamicValues = \{"FacebookConnect":\{"appId":"[0-9]+"\},"Viximo":\{"memberLocale":"[^\"]*","creatorUid":"[0-9]+","creatorName":"[^\"]*","memberCountry":"([^\"]*)","creatorGender":"[^\"]*"/ },
 
 	# Friends :
-	{ :filepath=>/<span class="thumb-label"><a href="\/Profile\.jsp\?MemberId=[0-9]+" title="([^\"]*)">[^\<]*<\/a><\/span>/, :offset=>0 },
+	{ :filepath=>/<span class="thumb-label"><a href="\/Profile\.jsp\?MemberId=[0-9]+" title="([^\"]*)">[^\<]*<\/a><\/span>/ },
 
 	# Number of Friends :
-	{ :string=>/<li class="first">[0-9]+ of <a href="\/FriendList\.jsp\?MemberId=[0-9]+">([^<]*)<\/a><\/li>/, :offset=>0 },
+	{ :string=>/<li class="first">[0-9]+ of <a href="\/FriendList\.jsp\?MemberId=[0-9]+">([^<]*)<\/a><\/li>/ },
 
 
 ]

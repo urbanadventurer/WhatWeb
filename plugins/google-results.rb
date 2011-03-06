@@ -13,10 +13,10 @@ description "This plugin identifies Google search results pages and extracts the
 matches [
 
 	# Detect Google search query
-	{ :module=>/<title>([^<]{1,256}) \- Google Search<\/title>/, :offset=>0 },
+	{ :module=>/<title>([^<]{1,256}) \- Google Search<\/title>/ },
 
 	# Extract number of results
-	{ :module=>/Advanced search<\/a><\/div><div><div id=resultStats>([^<]{1,40}) results<nobr>/, :offset=>0 },
+	{ :module=>/Advanced search<\/a><\/div><div><div id=resultStats>([^<]{1,40}) results<nobr>/ },
 
 ]
 

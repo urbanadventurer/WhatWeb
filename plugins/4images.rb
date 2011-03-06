@@ -30,7 +30,7 @@ matches [
 { :regexp=>/Copyright &copy; 2002-[0-9]{4} <a href="http:\/\/www.4homepages.de[\>]*>4homepages.de<\/a>/ },
 
 # Version detection # Powered by text
-{ :version=>/Powered by <b>4images<\/b> ([\d\.]+)/, :offset=>0 },
+{ :version=>/Powered by <b>4images<\/b> ([\d\.]+)/ },
 
 ]
 

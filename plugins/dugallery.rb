@@ -38,7 +38,7 @@ matches [
 { :text=>'<img src="assets/title.gif" alt="Powered by DUportal" width="269" height="62" border="0">' },
 
 # Version detection # Default title
-{ :version=>/<title>DUgallery ([\d\.]+)<\/title>/, :offset=>0 },
+{ :version=>/<title>DUgallery ([\d\.]+)<\/title>/ },
 
 ]
 

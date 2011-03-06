@@ -31,7 +31,7 @@ matches [
 { :text=>'<title>Start Using CGIProxy</title>' },
 
 # Vesion detection
-{ :version=>/<a href="http:\/\/www.jmarshall.com\/tools\/cgiproxy\/"><i>CGIProxy ([^<]+)<\/i><\/a>/, :offset=>0 },
+{ :version=>/<a href="http:\/\/www.jmarshall.com\/tools\/cgiproxy\/"><i>CGIProxy ([^<]+)<\/i><\/a>/ },
 
 ]
 

@@ -31,7 +31,7 @@ matches [
 { :regexp=>/<a[^>]+href="http:\/\/www.getpixie.co.uk" title="Get Pixie">(Powered by Pixie|Pixie)<\/a><\/li>/ },
 
 # Version Detection # Meta Generator
-{ :version=>/	<meta name="generator" content="Pixie ([\d\.]+) - Copyright \(C\) [\d]{4} - [\d]{4}." \/>/, :offset=>0 },
+{ :version=>/	<meta name="generator" content="Pixie ([\d\.]+) - Copyright \(C\) [\d]{4} - [\d]{4}." \/>/ },
 
 ]
 

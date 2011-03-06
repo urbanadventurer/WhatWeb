@@ -29,10 +29,10 @@ www.webyog.com/faq/index.php
 matches [
 
 # Version detection # Default title
-{ :version=>/<meta name="generator" content="phpMyFAQ ([\d\.]+)" \/>/, :offset=>0 },
+{ :version=>/<meta name="generator" content="phpMyFAQ ([\d\.]+)" \/>/ },
 
 # Version detection # Powered by text
-{ :version=>/<p id="copyrightnote">powered by <a href="http:\/\/www.phpmyfaq.de[\/]*" target="_blank">phpMyFAQ<\/a> ([\d\.]+)/, :offset=>0 },
+{ :version=>/<p id="copyrightnote">powered by <a href="http:\/\/www.phpmyfaq.de[\/]*" target="_blank">phpMyFAQ<\/a> ([\d\.]+)/ },
 
 # Default logo
 { :md5=>"8390bf2d1fe24799bbd381d1b7d6d00b",  :url=>"template/favicon.ico" },

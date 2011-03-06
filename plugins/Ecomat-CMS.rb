@@ -19,7 +19,7 @@ http://ecomatdemo.codefabrik.ch/index.php
 matches [
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="Generator" content="ECOMAT CMS ([\d\.]{1,5})">/, :offset=>0 },
+{ :version=>/<meta name="Generator" content="ECOMAT CMS ([\d\.]{1,5})">/ },
 
 ]
 

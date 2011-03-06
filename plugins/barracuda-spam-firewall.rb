@@ -50,13 +50,13 @@ matches [
 { :text=>'<a href="http://www.barracudanetworks.com?track=asg"><img src="/images/powered_by.gif" border=0' },
 
 # Barracuda Spam & Virus Firewall
-{ :version=>/<link rel="stylesheet" type="text\/css" href="\/barracuda.css\?v=([\d\.]+)">/, :offset=>0, :module=>"Virus Firewall" },
+{ :version=>/<link rel="stylesheet" type="text\/css" href="\/barracuda.css\?v=([\d\.]+)">/, :module=>"Virus Firewall" },
 
 # Barracuda Spam Firewall
-{ :version=>/<script language=javascript src="\/js_functions.([\d\.]+).js" type="text\/javascript"><\/script>/, :offset=>0 },
+{ :version=>/<script language=javascript src="\/js_functions.([\d\.]+).js" type="text\/javascript"><\/script>/ },
 
 # Version Detection # It seems only cuda.netpluscom.com:8000/cgi-bin/index.cgi uses this HTML
-{ :firmware=>/<td align=left class=config_module valign=top><font size=-2 color=#aaaaaa>Serial #[A-Z]+-[A-Z]+-[\d]+<br>Firmware v([\d\.]+) <font color=#ffffff>/, :offset=>0 },
+{ :firmware=>/<td align=left class=config_module valign=top><font size=-2 color=#aaaaaa>Serial #[A-Z]+-[A-Z]+-[\d]+<br>Firmware v([\d\.]+) <font color=#ffffff>/ },
 
 ]
 

@@ -87,7 +87,7 @@ matches [
 { :text=>'    	Powered by <a href="http://www.open-blog.info" target="_blank">Open Blog</a>' },
 
 # Version Detection # Install Page # Install Link
-{ :version=>/			<a href="install.php">Install Open Blog<\/a> - choose this option, if you would like to install Open Blog ([\d\.]+)<br \/>/, :offset=>0 },
+{ :version=>/			<a href="install.php">Install Open Blog<\/a> - choose this option, if you would like to install Open Blog ([\d\.]+)<br \/>/ },
 
 ]
 

@@ -30,7 +30,7 @@ matches [
 { :text=>'<div class="autoindex_small" style="text-align: right;">Powered by <a class="autoindex_a" href="autoindex.sourceforge.net/" target="_blank">AutoIndex PHP Script</a></div>' },
 
 # Version Detection # HTML Comment
-{ :version=>/<!--[\r\n]*Powered by AutoIndex PHP Script \(version ([\d\.]+)\)[\r\n]*Copyright \(C\) 2002-[\d]{4} Justin Hagstrom[\r\n]*http:\/\/autoindex.sourceforge.net[\/]?/, :offset=>0 },
+{ :version=>/<!--[\r\n]*Powered by AutoIndex PHP Script \(version ([\d\.]+)\)[\r\n]*Copyright \(C\) 2002-[\d]{4} Justin Hagstrom[\r\n]*http:\/\/autoindex.sourceforge.net[\/]?/ },
 
 ]
 

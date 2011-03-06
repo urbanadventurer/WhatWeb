@@ -161,7 +161,7 @@ matches [
 { :regexp=>/<font face="Helvetica,Arial" size="-2">	&copy;2001[\-0-9]{0,5} <a href="\/about.html">MOBOTIX AG<\/a>, Germany  &middot; <a href="http:\/\/www.mobotix.com\/">http:\/\/www.mobotix.com\/<\/a>/ },
 
 # Firmware Detection # Default JavaScript
-{ :firmware=>/var filesystem__version="[M0-1\-]*V([\d\.]+)";/, :offset=>0 },
+{ :firmware=>/var filesystem__version="[M0-1\-]*V([\d\.]+)";/ },
 
 ]
 

@@ -49,10 +49,10 @@ matches [
 { :ghdb=>'"powered by RunCMS" inurl:module inurl:viewcat.php' },
 
 # Version Detection # Powered by text
-{ :version=>/<div align='center'><a href='http:\/\/www.runcms.org\/' target='_blank'> Powered by  RunCms ([\d\.a-z]+)[^&]* &copy; [\d]{4}-[\d]{4} /, :offset=>0 },
+{ :version=>/<div align='center'><a href='http:\/\/www.runcms.org\/' target='_blank'> Powered by  RunCms ([\d\.a-z]+)[^&]* &copy; [\d]{4}-[\d]{4} / },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="[\s^"]*RUNCMS ([\d\.a-z]+)[^"]*"/i, :offset=>0 },
+{ :version=>/<meta name="generator" content="[\s^"]*RUNCMS ([\d\.a-z]+)[^"]*"/i },
 
 ]
 

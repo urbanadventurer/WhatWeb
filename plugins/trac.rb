@@ -60,7 +60,7 @@ matches [
 { :ghdb=>'"Powered by Trac" +intitle:Trac', :certainty=>75 },
 
 # Version detection # Powered by text
-{ :version=>/Powered by <a[^>]*><strong>Trac ([^<]+)<\/strong><\/a><br \/>/, :offset=>0 },
+{ :version=>/Powered by <a[^>]*><strong>Trac ([^<]+)<\/strong><\/a><br \/>/ },
 
 ]
 

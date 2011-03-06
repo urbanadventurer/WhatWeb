@@ -64,13 +64,13 @@ matches [
 { :regexp=>/Powered by <a href="http:\/\/www.woltlab.de[^>]*>Burning Board[\s]*<\/a>/ },
 
 # Version Detection # 1.x # Powered by text
-{ :version=>/Powered by <b><a href="http:\/\/www.woltlab.de" target="_blank">Burning Board ([^<]+)<\/a><\/b>/, :offset=>0 },
+{ :version=>/Powered by <b><a href="http:\/\/www.woltlab.de" target="_blank">Burning Board ([^<]+)<\/a><\/b>/ },
 
 # Version Detection # 2.x # Powered by text
-{ :version=>/Powered by <b>Burning Board ([\d\.]+)<\/b>/, :offset=>0 },
+{ :version=>/Powered by <b>Burning Board ([\d\.]+)<\/b>/ },
 
 # Version Detection # 3.x # Copyright text
-{ :version=>/<p class="copyright"><a href="http:\/\/www.woltlab.com">Forum Software: <strong>Burning Board&reg; ([\d\.]*)<\/strong>, developed by <strong>WoltLab&reg; GmbH<\/strong><\/a><\/p>/, :offset=>0 },
+{ :version=>/<p class="copyright"><a href="http:\/\/www.woltlab.com">Forum Software: <strong>Burning Board&reg; ([\d\.]*)<\/strong>, developed by <strong>WoltLab&reg; GmbH<\/strong><\/a><\/p>/ },
 
 ]
 

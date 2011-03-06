@@ -32,7 +32,7 @@ www.riia.ro
 matches [
 
 # Version detection # Version detection
-{ :version=>/<meta name="Generator" content="Exponent Content Management System - ([^\"]+)"/, :offset=>0 },
+{ :version=>/<meta name="Generator" content="Exponent Content Management System - ([^\"]+)"/ },
 
 # Meta generator
 { :text=>'<meta name="Generator" content="Exponent Content Management System' },

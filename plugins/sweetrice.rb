@@ -25,7 +25,7 @@ rodiono.net
 matches [
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="SweetRice ([\d\.]{1,5})" \/>/, :offset=>0 },
+{ :version=>/<meta name="generator" content="SweetRice ([\d\.]{1,5})" \/>/ },
 
 
 # Powered by text

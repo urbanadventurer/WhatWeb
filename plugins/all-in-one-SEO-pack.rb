@@ -26,7 +26,7 @@ matches [
 
 # Version Detection # HTML comment
 
-{ :version=>/<!-- All in One SEO Pack ([\d\.]+) by Michael Torbert of Semper Fi Web Design/, :offset=>0 },
+{ :version=>/<!-- All in One SEO Pack ([\d\.]+) by Michael Torbert of Semper Fi Web Design/ },
 
 ]
 

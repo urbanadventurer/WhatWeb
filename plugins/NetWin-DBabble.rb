@@ -21,7 +21,7 @@ matches [
 # Version detection
 { :version=>/^DBabble ([^Server]+)Server Version ([^\ ]+) /, :offset=>1 },
 # OS detection
-{ :version=>/^DBabble ([^Server]+)Server Version ([^\(]+)\(/, :offset=>0 },
+{ :version=>/^DBabble ([^Server]+)Server Version ([^\(]+)\(/ },
 
 # Default Title
 { :text=>'<title>DBabble login</title>' },

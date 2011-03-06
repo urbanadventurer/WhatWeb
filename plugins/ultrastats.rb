@@ -187,7 +187,7 @@ matches [
 { :text=>'<title>UltraStats :: Critical Error occured</title>' },
 
 # Version Detection
-{ :version=>/ &nbsp;<a href="http:\/\/www.ultrastats.org[\/]?" target="_blank">Ultrastats<\/a> Version ([\d\.]+)/i, :offset=>0 },
+{ :version=>/ &nbsp;<a href="http:\/\/www.ultrastats.org[\/]?" target="_blank">Ultrastats<\/a> Version ([\d\.]+)/i },
 
 ]
 

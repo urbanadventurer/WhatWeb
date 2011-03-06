@@ -63,7 +63,7 @@ matches [
 { :text=>'<html><body bgcolor="#aaaaaa"><a href="icon_browser.php">Application List</a><br /><br /><h2>Icons for My Account</h2>' },
 
 # Version Detection # /config/conf.xml XML
-{ :version=>/<!-- \$Horde: horde\/config\/conf.xml,v ([\d\.]+) /, :offset=>0 },
+{ :version=>/<!-- \$Horde: horde\/config\/conf.xml,v ([\d\.]+) / },
 
 ]
 

@@ -44,7 +44,7 @@ matches [
 { :regexp=>/<meta name="author" content="[^"]+--Powered by MetInfo">/ },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/www.MetInfo.cn" target="_blank" title="MetInfo enterprise website manager system"><b>[^<]+<\/b><\/a> ([\d\.]+)/, :offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/www.MetInfo.cn" target="_blank" title="MetInfo enterprise website manager system"><b>[^<]+<\/b><\/a> ([\d\.]+)/ },
 
 ]
 

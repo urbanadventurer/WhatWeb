@@ -49,7 +49,7 @@ matches [
 { :text=>'<meta name="description" content="powered by DeluxeBB - www.deluxebb.com" />' },
 
 # Version Detection # Copyright link text
-{ :version=>/<p><a href="http:\/\/www.deluxebb.com" target="_blank">DeluxeBB ([\d\.]+)<\/a> is copyrighted to the DeluxeBB team '05/, :offset=>0 },
+{ :version=>/<p><a href="http:\/\/www.deluxebb.com" target="_blank">DeluxeBB ([\d\.]+)<\/a> is copyrighted to the DeluxeBB team '05/ },
 
 ]
 

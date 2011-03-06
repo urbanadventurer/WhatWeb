@@ -28,7 +28,7 @@ matches [
 	{ :text=>'<meta name="description" content="eLitius Affiliate Management Software" />' },
 
 	# Version Detection # Powered by text
-	{ :version=>/[\s]+Powered by <a href="http:\/\/www.elitius.com\/" target="_blank" title="Affiliate [^>]{8,10} Software">eLitius<\/a> Version ([\d\.]+)<br \/>/, :offset=>0 },
+	{ :version=>/[\s]+Powered by <a href="http:\/\/www.elitius.com\/" target="_blank" title="Affiliate [^>]{8,10} Software">eLitius<\/a> Version ([\d\.]+)<br \/>/ },
 
 ]
 

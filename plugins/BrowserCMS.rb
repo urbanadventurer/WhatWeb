@@ -45,7 +45,7 @@ matches [
 { :regexp=>/<input type="hidden" name="failure_uri" value="[^>]*\/page.ww\?name=[^>]*\&section=[^>]*"\/>/ },
 
 # Version detection # Meta generator
-{ :version=>/<meta name="generator" content="BrowserCMS ([^\"]+)"/, :offset=>0 },
+{ :version=>/<meta name="generator" content="BrowserCMS ([^\"]+)"/ },
 
 ]
 

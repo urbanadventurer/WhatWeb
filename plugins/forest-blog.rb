@@ -96,7 +96,7 @@ matches [
 { :text=>'			<h1>Forest Blog Administration</h1>' },
 
 # Version Detection # Powered by text
-{ :version=>/Powered [B|b]?y[:]? <a href="http:\/\/www.hostforest.co.uk\/[^"]*"[^>]+title="Forest Blog"[^>]*>Forest Blog<\/a> v([\d\.]+)/, :offset=>0 },
+{ :version=>/Powered [B|b]?y[:]? <a href="http:\/\/www.hostforest.co.uk\/[^"]*"[^>]+title="Forest Blog"[^>]*>Forest Blog<\/a> v([\d\.]+)/ },
 
 ]
 

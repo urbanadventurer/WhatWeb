@@ -72,7 +72,7 @@ matches [
 { :md5=>'feae34c62729c85af0b4114bd02d634a', :url=>'templates/default/images/logo.gif' },
 
 # Version Detection # default link HTML
-{ :version=>/      <TD ALIGN=right><NOBR><B><A HREF="http:\/\/www.chumpsoft.com\/products\/phpq\/" class=link>phpQuestionnaire<\/A> ([\d\.]+) &copy [0-9]{4}-[0-9]{4}/, :offset=>0 },
+{ :version=>/      <TD ALIGN=right><NOBR><B><A HREF="http:\/\/www.chumpsoft.com\/products\/phpq\/" class=link>phpQuestionnaire<\/A> ([\d\.]+) &copy [0-9]{4}-[0-9]{4}/ },
 
 ]
 

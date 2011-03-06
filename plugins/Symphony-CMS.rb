@@ -56,8 +56,8 @@ matches [
 { :text=>'Powered by <a href="http://symphony-cms.com/" rel="external">Symphony</a>' },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a[^>]+href="http:\/\/www.symphony-cms.com[\/]?">Symphony CMS ([\d\.]{1,3})<\/a>/, :offset=>0 },
-{ :version=>/Powered by <a[^>]+href="http:\/\/symphony-cms.com[\/]?">Symphony CMS ([\d\.]{1,3})<\/a>/, :offset=>0 },
+{ :version=>/Powered by <a[^>]+href="http:\/\/www.symphony-cms.com[\/]?">Symphony CMS ([\d\.]{1,3})<\/a>/ },
+{ :version=>/Powered by <a[^>]+href="http:\/\/symphony-cms.com[\/]?">Symphony CMS ([\d\.]{1,3})<\/a>/ },
 
 ]
 

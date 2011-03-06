@@ -44,7 +44,7 @@ matches [
 { :ghdb=>'"powered by boastMachine" +"Recent posts"', :certainty=>75 },
 
 # Version detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/boastology.com">boastMachine v([\d\.]+)<\/a>/, :offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/boastology.com">boastMachine v([\d\.]+)<\/a>/ },
 
 # Default logo HTML
 { :regexp=>/<a href="http:\/\/boastology.com"><img src="http:\/\/[^>]*alt="Powered by boastMachine" \/><\/a>/ },

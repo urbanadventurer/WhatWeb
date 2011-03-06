@@ -38,8 +38,8 @@ matches [
 { :text=>'<a href="gridsite-admin.cgi?cmd=print&amp;file=index.html">Print&nbsp;View</a>' },
 
 # Version Detection # Built with text
-{ :version=>/Built with <a href="http:\/\/www.gridsite.org\/">GridSite<\/a>&nbsp;([\d\.]+)/, :offset=>0 },
-{ :version=>/Built with <a href="http:\/\/www.gridsite.org\/">GridSite<\/a> ([\d\.]+)/, :offset=>0 },
+{ :version=>/Built with <a href="http:\/\/www.gridsite.org\/">GridSite<\/a>&nbsp;([\d\.]+)/ },
+{ :version=>/Built with <a href="http:\/\/www.gridsite.org\/">GridSite<\/a> ([\d\.]+)/ },
 
 # FAQ # HTML Comment
 { :text=>"<!-- start of gridsitefoot.txt -->" },

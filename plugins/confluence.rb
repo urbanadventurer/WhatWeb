@@ -48,7 +48,7 @@ matches [
 { :text=>'<li class="noprint"><a href="http://www.atlassian.com/software/confluence" class="hover-footer-link">Atlassian Confluence</a>' },
 
 # Version detection # Powered by text
-{ :version=>/<a href="http:\/\/www.atlassian.com\/software\/confluence" class="hover-footer-link">Atlassian Confluence<\/a> ([0-9_\.]+)/, :offset=>0 },
+{ :version=>/<a href="http:\/\/www.atlassian.com\/software\/confluence" class="hover-footer-link">Atlassian Confluence<\/a> ([0-9_\.]+)/ },
 
 ]
 

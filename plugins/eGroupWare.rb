@@ -40,10 +40,10 @@ matches [
 	{ :text=>'<meta name="author" content="eGroupWare http://www.egroupware.org" />' },
 
 	# Version Detection # PoweredBy footer
-	{ :version=>/<div id="divPoweredBy>[^<]*<a href="http:\/\/www.egroupware.org">eGroupWare<\/a> version ([\d\.]+)<\/span><\/div>/, :offset=>0 },
+	{ :version=>/<div id="divPoweredBy>[^<]*<a href="http:\/\/www.egroupware.org">eGroupWare<\/a> version ([\d\.]+)<\/span><\/div>/ },
 
 	# Version Detection # PoweredBy footer
-	{ :version=>/<a href="http:\/\/www.egroupware.org" target="_blank">eGroupWare<\/a> ([\d\.]+)[^<]*<\/div>/, :offset=>0 },
+	{ :version=>/<a href="http:\/\/www.egroupware.org" target="_blank">eGroupWare<\/a> ([\d\.]+)[^<]*<\/div>/ },
 
 	# Login page # session expired # french
 	{ :text=>'<div align="center"><font color="#FF0000">Votre session n\'est pas valide.</font></div>', :string=>"Language:French" },
@@ -61,7 +61,7 @@ matches [
 	{ :text=>"<title>EGroupware [Login]</title>" },
 
 	# meta copyright
-	{ :string=>/<meta name="copyright" content="eGroupWare http:\/\/www.egroupware.org \(c\) ([\d\.]+)" \/>/i, :offset=>0 },
+	{ :string=>/<meta name="copyright" content="eGroupWare http:\/\/www.egroupware.org \(c\) ([\d\.]+)" \/>/i },
 
 	# 1.3 - 1.6 # HTML Comment
 	{ :text=>"<!-- we don't need body tags anymore, do we?) we do!!! onload!! LK -->", :version=>"1.3 - 1.6" },

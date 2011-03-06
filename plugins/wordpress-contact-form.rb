@@ -17,7 +17,7 @@ www.morningstarsecurity.com/contact
 matches [
 
 # Version detection
-{ :version=>/<input type="hidden" name="_wpcf([\d\.]+)" value="1" \/>/, :offset=>0 }
+{ :version=>/<input type="hidden" name="_wpcf([\d\.]+)" value="1" \/>/ }
 
 ]
 

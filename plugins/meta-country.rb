@@ -16,8 +16,8 @@ http://www.gigablast.com/tagsdemo.html
 matches [
 
 # Extract country
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?country[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?country/i, :offset=>0 },
+{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?country[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
+{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?country/i },
 
 ]
 

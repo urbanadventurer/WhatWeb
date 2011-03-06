@@ -31,7 +31,7 @@ matches [
 	{ :text=>"<br>Login to phpBazar with Admin- or Moderator-Level & use the Administration-Functions! ->" },
 
 	# Version Detection # Footer text
-	{ :version=>/<p><div class="footer">phpBazar Ver. ([\d\.]+) &copy 2001\-[\d]{4} by <a href="http:\/\/www.smartisoft.com[\/]?" target="_blank">SmartISoft<\/a><\/div>/, :offset=>0 },
+	{ :version=>/<p><div class="footer">phpBazar Ver. ([\d\.]+) &copy 2001\-[\d]{4} by <a href="http:\/\/www.smartisoft.com[\/]?" target="_blank">SmartISoft<\/a><\/div>/ },
 
 ]
 

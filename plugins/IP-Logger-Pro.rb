@@ -26,7 +26,7 @@ matches [
 { :certainty=>75, :ghdb=>'"Logdaten - Bitte hier klicken." inurl:"iplog.php?action=show"' },
 
 # Version Detection # Licensed to text
-{ :version=>/<br \/><br \/>&nbsp;debilsoft IP-Logger PRO Version ([\d\.]{1,5}) is licensed to [^<]+<\/div><\/body><\/html>/, :offset=>0 },
+{ :version=>/<br \/><br \/>&nbsp;debilsoft IP-Logger PRO Version ([\d\.]{1,5}) is licensed to [^<]+<\/div><\/body><\/html>/ },
 
 # Default Title
 { :text=>'<title>debilsoft IP-Logger PRO Besucherdaten</title>' },

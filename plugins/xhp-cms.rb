@@ -38,10 +38,10 @@ matches [
 { :text=>'<title>XHP installation</title>' },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="GENERATOR" content="XHP - eXpandable Home Page v([\d\.]+)"\/>/, :offset=>0 },
+{ :version=>/<meta name="GENERATOR" content="XHP - eXpandable Home Page v([\d\.]+)"\/>/ },
 
 # Version Detection # Powered by footer
-{ :version=>/<a href="http:\/\/xhp.targetit.ro\/">Powered by XHP CMS v([\d\.]+)<\/a><br\/><a href="http:\/\/lars.targetit.ro\/">Site engine is copyright/, :offset=>0 },
+{ :version=>/<a href="http:\/\/xhp.targetit.ro\/">Powered by XHP CMS v([\d\.]+)<\/a><br\/><a href="http:\/\/lars.targetit.ro\/">Site engine is copyright/ },
 
 ]
 

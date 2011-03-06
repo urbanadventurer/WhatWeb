@@ -48,7 +48,7 @@ www.boutiquedujour.com/you_bid/v607/admin/login.php
 matches [
 
 # Version Detection # Copyright text
-{ :version=>/            <div class="version">Current Version:[\r\n]+               ([\d\.]{1,5})            <\/div>[\r\n]+/, :offset=>0 },
+{ :version=>/            <div class="version">Current Version:[\r\n]+               ([\d\.]{1,5})            <\/div>[\r\n]+/ },
 
 # Admin Page # Login text
 { :regexp=>/<td colspan="2" bgcolor="#[^"]{3,6}" style="color: #ffffff; font-weight: bold;">PLEASE LOGIN TO THE ADMIN AREA<\/td>/ },

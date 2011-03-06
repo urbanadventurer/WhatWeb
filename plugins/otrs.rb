@@ -35,7 +35,7 @@ matches [
 { :text=>'<title>OTRS  :: Login</title>' },
 
 # Version detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/otrs.org[\/]*" class="small">OTRS ([^<]+)<\/a>/, :offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/otrs.org[\/]*" class="small">OTRS ([^<]+)<\/a>/ },
 
 ]
 

@@ -26,7 +26,7 @@ matches [
 	{ :text=>'Powered by <a style="color:#555555;" href="http://webmanager-pro.com/">CMS Webmanager-pro</a>' },
 
 	# Version detection # Meta generator
-	{ :version=>/<meta name="generator" content="Webmanager-pro v([\d\.]+)" \/>/, :offset=>0 },
+	{ :version=>/<meta name="generator" content="Webmanager-pro v([\d\.]+)" \/>/ },
 
 ]
 

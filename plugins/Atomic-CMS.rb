@@ -28,7 +28,7 @@ matches [
 { :text=>'Powered by AtomicCms <a href="http://atomiccms.com/" target="_blank">content management' },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by AtomicCms ([\d\.]{1,15}) <a href="http:\/\/atomiccms.com\/" target="_blank">content management/, :offset=>0 },
+{ :version=>/Powered by AtomicCms ([\d\.]{1,15}) <a href="http:\/\/atomiccms.com\/" target="_blank">content management/ },
 
 # favicon.ico
 { :url=>"favicon.ico", :md5=>"9f500a24ccbdda88cf8ae3ec7b61fc40" },

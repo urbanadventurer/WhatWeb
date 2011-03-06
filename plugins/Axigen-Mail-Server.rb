@@ -77,7 +77,7 @@ matches [
 { :text=>'<div class="nojsContainer"><h1>In order to access AXIGEN Webmail, <br />you must enable Javascript in your browser!</h1></div>' },
 
 # Version Detection # Default title
-{ :version=>/<title>AXIGEN Webmail - v([\d\.]+)<\/title>/, :offset=>0 },
+{ :version=>/<title>AXIGEN Webmail - v([\d\.]+)<\/title>/ },
 
 ]
 

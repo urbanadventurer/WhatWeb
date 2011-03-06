@@ -36,7 +36,7 @@ matches [
 { :text=>'<!-- Inizio righe di indicizzazione nei motori di ricerca -->' },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href='http:\/\/www.matteoiammarrone.com\/public\/s-cms' target='_blank'>S-Cms ([\d\.]+)<\/a>/, :offset=>0 },
+{ :version=>/Powered by <a href='http:\/\/www.matteoiammarrone.com\/public\/s-cms' target='_blank'>S-Cms ([\d\.]+)<\/a>/ },
 
 ]
 

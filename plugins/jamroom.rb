@@ -141,7 +141,7 @@ matches [
 { :regexp=>/<a href="http:\/\/www.jamroom.net"><img src="[^"]*" alt="Powered by Jamroom - the Powerful Social Media Platform" title="Powered by Jamroom - the Powerful Social Media Platform" border="0"><\/a>/ },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="Jamroom ([\d\.]+)">/, :offset=>0 },
+{ :version=>/<meta name="generator" content="Jamroom ([\d\.]+)">/ },
 
 ]
 

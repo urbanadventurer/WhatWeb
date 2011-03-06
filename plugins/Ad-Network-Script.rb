@@ -20,10 +20,10 @@ spendoo.co.uk/admin/
 matches [
 
 # Version detection # Admin page # Powered by text
-{ :version=>/<td width="100%" height="33" bgcolor="#ED7900" class="copyright">&copy; Web Administration Panel .v([\d\.]+) by <a href="http:\/\/www.kaonsoftwares.com\/" class="copyright" target="_blank">Kaon Softwares<\/a>. All Rights Reserved.<\/td>/, :offset=>0 },
+{ :version=>/<td width="100%" height="33" bgcolor="#ED7900" class="copyright">&copy; Web Administration Panel .v([\d\.]+) by <a href="http:\/\/www.kaonsoftwares.com\/" class="copyright" target="_blank">Kaon Softwares<\/a>. All Rights Reserved.<\/td>/ },
 
 # Version detection # Admin page # Powered by text
-{ :version=>/<td height="70%" valign="bottom" align="right"><font face="verdana" size="1" color="gray">&copy; Web Administration Panel .v([\d\.]+) by <a href="http:\/\/www.kaonsoftwares.com\/" class="" target="_blank">Kaon Softwares<\/a>. All Rights Reserved.<\/font><\/td>/, :offset=>0 },
+{ :version=>/<td height="70%" valign="bottom" align="right"><font face="verdana" size="1" color="gray">&copy; Web Administration Panel .v([\d\.]+) by <a href="http:\/\/www.kaonsoftwares.com\/" class="" target="_blank">Kaon Softwares<\/a>. All Rights Reserved.<\/font><\/td>/ },
 
 ]
 

@@ -62,13 +62,13 @@ matches [
 { :text=>'powered by <a href="http://www.subrion.com/" title="Site powered by Subrion CMS">Subrion CMS</a>' },
 
 # Version Detection # Meta generator
-{ :version=>/	<meta name="generator" content="Subrion CMS ([\d\.a-zA-Z]+)" \/>/, :offset=>0 },
+{ :version=>/	<meta name="generator" content="Subrion CMS ([\d\.a-zA-Z]+)" \/>/ },
 
 # Version Detection # Install Page # Default Title
-{ :version=>/	<title>Subrion CMS ([\d\.a-zA-Z]+) - Web Installer<\/title>/, :offset=>0 },
+{ :version=>/	<title>Subrion CMS ([\d\.a-zA-Z]+) - Web Installer<\/title>/ },
 
 # Version Detection # Powered by text
-{ :version=>/	Powered by <a href="http:\/\/www.subrion.com\/" title="Classifieds Software">Subrion CMS<\/a> Version ([\d\.a-zA-Z]+)<br \/>/, :offset=>0 },
+{ :version=>/	Powered by <a href="http:\/\/www.subrion.com\/" title="Classifieds Software">Subrion CMS<\/a> Version ([\d\.a-zA-Z]+)<br \/>/ },
 
 ]
 

@@ -40,10 +40,10 @@ matches [
 { :text=>'<title>EZCMS Content Management System</title>' },
 
 # Version Detection # Admin page
-{ :version=>/<center><strong>EZCMS ([\d\.]+) /, :offset=>0 },
+{ :version=>/<center><strong>EZCMS ([\d\.]+) / },
 
 # Version Detection # Powered by text
-{ :version=>/Powered by <a href="http:\/\/ezcms.eztechhelp.com\/">EZCMS ([\d\.]+)<\/a>/, :offset=>0 },
+{ :version=>/Powered by <a href="http:\/\/ezcms.eztechhelp.com\/">EZCMS ([\d\.]+)<\/a>/ },
 
 ]
 

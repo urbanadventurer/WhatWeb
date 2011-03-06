@@ -58,7 +58,7 @@ matches [
 { :text=>'<a href="/Login.asp"><u><b>Retry Login<b><u></a>' },
 
 # Version detection # Copyright text
-{ :version=>/<div id="footer">[^S]*SolarWinds Orion Network Performance Monitor ([^&]+)&copy; 1995-[0-9]{4} All Rights Reserved[^<]*<\/div>/, :offset=>0 },
+{ :version=>/<div id="footer">[^S]*SolarWinds Orion Network Performance Monitor ([^&]+)&copy; 1995-[0-9]{4} All Rights Reserved[^<]*<\/div>/ },
 
 ]
 
