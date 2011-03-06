@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-24 #
+# Updated version detection
+# Added match for 403 error page
+##
 Plugin.define "XAMPP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-21
-version "0.1"
+version "0.2"
 description "XAMPP is an easy to install Apache distribution containing MySQL, PHP and Perl. XAMPP is really very easy to install and to use - just download, extract and start. - homepage: http://www.apachefriends.org/en/xampp.html"
 
 # Search results as of 2011-01-21 :
@@ -48,7 +52,7 @@ matches [
 	{ :version=>/<title>XAMPP Version ([^\r^\n^<]+)[\s]*<\/title>/, :regexp_offset=>0 },
 
 	# OS Detection # Default title
-	{ :modules=>/<title>XAMPP for ([^\r^\n^<]{5,8}) [\d\.a-z]{3,6}[\s]*<\/title>/, :regexp_offset=>0 },
+	{ :module=>/<title>XAMPP for ([^\r^\n^<]{5,8}) [\d\.a-z]{3,6}[\s]*<\/title>/, :regexp_offset=>0 },
 
 	# Windows # Default logo
 	{ :url=>"img/head-windows.gif", :md5=>"567ebe64625942cbb8244eca918b06a0", :string=>"OS:Windows" },
@@ -63,6 +67,9 @@ matches [
 	# Solaris # Default logo
 	{ :url=>"img/head-solaris.gif", :md5=>"b18490e1a42d7293cbca353100d6d787", :string=>"OS:Solaris" },
 
+	# 403 Error page
+	{ :text=>'<p style="margin-left: 2.6em; font-size: 1.2em; color: red;">New XAMPP security concept:</p>' },
+
 ]
 
 # Passive #
@@ -70,7 +77,7 @@ def passive
 	m=[]
 
 	# HTTP Redirect Location #
-	m << { :certainty=>25 } if @meta["location"] =~ /^http:\/\/[\d\.a-z]{1,253}\/xampp\/$/i
+	m << { :certainty=>25 } if @meta["location"] =~ /^http:\/\/[\d\.a-z]{1,256}\/xampp\/$/i
 
 	m
 end
@@ -89,11 +96,11 @@ def aggressive
 	status,url,ip,body,headers=open_target(target)
 
 	# Check if the document is a valid XAMPP phpinfo() page
-	if body =~ /<title>phpinfo\(\)<\/title>/ and body =~ /XAMPP/i and (body =~ /<h1>PHP Version [a-zA-Z0-9\.-_]+<\/h1>/ or body =~ /<h1 class="p">PHP Version [a-zA-Z0-9\.-_]+<\/h1>/)
+	if body =~ /<title>phpinfo\(\)<\/title>/ and body =~ /XAMPP/i and (body =~ /<h1 class="p">PHP Version [^<]{3,40}<\/h1>/ or body =~ /<h1>PHP Version [^<]{3,40}<\/h1>/)
 
 		# Extract PHP Version
-		m << { :string=>"PHP:"+body.scan(/<h1 class="p">PHP Version ([a-zA-Z0-9\.-_]+)<\/h1>/)[0].to_s } if body =~ /<h1 class="p">PHP Version [a-zA-Z0-9\.-_]+<\/h1>/
-		m << { :string=>"PHP:"+body.scan(/<h1>PHP Version ([a-zA-Z0-9\.-_]+)<\/h1>/)[0].to_s } if body =~ /<h1>PHP Version [a-zA-Z0-9\.-_]+<\/h1>/
+		m << { :string=>"PHP:"+body.scan(/<h1 class="p">PHP Version ([^<]{3,40})<\/h1>/)[0].to_s } if body =~ /<h1 class="p">PHP Version [^<]{3,40}<\/h1>/
+		m << { :string=>"PHP:"+body.scan(/<h1>PHP Version ([^<]{3,40})<\/h1>/)[0].to_s } if body =~ /<h1>PHP Version [^<]{3,40}<\/h1>/
 
 		# OS Detection
 		m << { :string=>"OS:"+body.scan(/<tr><td class="e">System <\/td><td class="v">([^<]{4,256})[\s]?<\/td><\/tr>/)[0].to_s } if body =~ /<tr><td class="e">System <\/td><td class="v">[^<]{4,256}[\s]?<\/td><\/tr>/

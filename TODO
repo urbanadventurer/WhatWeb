@@ -1,5 +1,6 @@
 TO-DO
 
+
 Good luck understanding these notes for myself :) Some of this stuff has already been done.
 
 [x] precompile regular expressions for speed if target size >1
@@ -27,15 +28,15 @@ Ruby1.9 compatability
 [x] add mongo username and password
 [x] change :symbols to singular. :account,:module, etc. update plugins.
 [x] update lib/output.rb verbose logging. some plugin names are longer than 30
-
-
-Change usage:
 [x] --follow-redirect never,http-only,meta-only,same-site,same-domain,always (default: always)
-	same-domain --	? use tld.rb from urlcrazy ??
+[x] set num of max redirects, instead of hard coded value of 10
+
+
+
+modules are weird. it is currently used for multiple meanings.
 
 
 --follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)
-
 
 
 move this block to a pre output stage, be more DRY:
@@ -44,14 +45,7 @@ move this block to a pre output stage, be more DRY:
 diff output plugins require - joined by , or not
 
 
-
-deprecate :account in favour of :accounts
-
-set num of max redirects, instead of hard coded value of 10
-
 colour the verbose output
-
-
 
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
 netgear-router.rb:{ :model=>'WAG302', :status=>200, :url=>'/images/../settingsWAG302.gif', :certainty=>75 },
@@ -73,6 +67,8 @@ maybe there should be a different location for data such as country-ips.dat. eg.
 
 [x] add plugin init & close.
 
+
+Length - fairly useful in burp intruder results
 
 
 open_target({:method=>"POST"})

@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-10 #
+# Updated version detection
+##
 Plugin.define "GuppY" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
-version "0.1"
+version "0.2"
 description "An easy, free web portal, GuppY will allow you to generate very easily a complete and interactive web site. It requires no database. - homepage: http://www.freeguppy.org/?lng=en"
 
-# 326 results for "Powered by GuppY" "CeCILL Free License" @ 2010-08-06
+# Google results as at 2010-08-06 #
+# 326 for "Powered by GuppY" "CeCILL Free License"
+
+# Examples #
 examples %w|
 www.freeguppy.org
 www.freeguppy.nl
@@ -110,27 +116,19 @@ health.roots.free.fr/mobile/
 sexy-live-center.com/sexy-streming/
 |
 
+# Matches #
 matches [
+
+# Meta Generator
 { :text=>'<meta name="Generator" content="GuppY">' },
+
+# Version Detection # Copyright Footer HTML
+{ :version=>/<div class="foot"><span class='copyright'>&nbsp; <a class='copyright' href='http:\/\/www.freeguppy.org\/' title='GuppY site' target='_blank'> Site powered by GuppY v([\d\.]+) <\/a>/, :regexp_offset=>0 },
+
+# Version Detection # HTML Comment
+{ :version=>/  <!--\[  GuppY v([\d\.]+) CeCILL Copyright \(C\) [\d]{4}\-[\d]{4} by Laurent Duveau \- http:\/\/www.freeguppy.org\/  \]-->/, :regexp_offset=>0 },
+
 ]
-
-def passive
-        m=[]
-
-        if @body =~ /<div class="foot"><span class='copyright'>&nbsp; <a class='copyright' href='http:\/\/www.freeguppy.org\/' title='GuppY site' target='_blank'> Site powered by GuppY v([\d\.]+) <\/a>/
-                version=@body.scan(/<div class="foot"><span class='copyright'>&nbsp; <a class='copyright' href='http:\/\/www.freeguppy.org\/' title='GuppY site' target='_blank'> Site powered by GuppY v([\d\.]+) <\/a>/)[0][0]
-                m << {:version=>version}
-        end
-
-        if @body =~ /  <!--\[  GuppY v([\d\.]+) CeCILL Copyright \(C\) [\d]{4}\-[\d]{4} by Laurent Duveau \- http:\/\/www.freeguppy.org\/  \]-->/
-                version=@body.scan(/  <!--\[  GuppY v([\d\.]+) CeCILL Copyright \(C\) [\d]{4}\-[\d]{4} by Laurent Duveau \- http:\/\/www.freeguppy.org\/  \]-->/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

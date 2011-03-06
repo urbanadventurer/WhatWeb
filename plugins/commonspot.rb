@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-17 # Brendan Coles <bcoles@gmail.com>
+# Updated version detection
+##
 Plugin.define "CommonSpot" do
 author "Tonmoy Saikia"
-version "0.1"
-description "CommonSpot is CMS. Site-http://www.paperthin.com/"
+version "0.2"
+description "The CommonSpot Web content management solution (Web CMS) increases the value of content by creating engaging Web experiences that generate high impact results. - Homepage: http://www.paperthin.com/"
+
+# Examples #
 examples %w|
 http://www.scu.edu/
 http://www.orlandoinfo.com/
@@ -16,7 +21,6 @@ http://www.ohio.edu/bicentennial/
 http://www.ohio.edu/
 http://www3.sanmita.com/
 http://www.engineering.cornell.edu/
-http://alumni.library.cornell.edu/
 http://www.orie.cornell.edu/
 http://www.iccd.cornell.edu/
 http://www.uwrf.edu/
@@ -31,33 +35,22 @@ http://www.riversideonline.com/
 http://tulane.edu/
 |
 
-#<meta name="Generator" id="Generator" content="CommonSpot Content Server Build 5.0.2.56" />
-#<img src="/commonspot/images/menu-pagegallery.gif" border="0" width="16" height="12" alt="" />
-#<link rel="stylesheet" href="/commonspot/commonspot.css" type="text/css" id="cs_maincss" /> 
+# Matches #
 matches [
-{:name=>"Generator",
- :regexp=>/<meta[^>]+name="Generator"[^>]+content="CommonSpot[^"]+"[^>]*\/>/ }, #"
 
-{:name=>"img tags",
- :regexp=>/<img[^>]+src="[^"]+commonspot[^"]+"[^>]*\/>/
-},
+# Meta Generator
+{ :regexp=>/<meta[^>]+name="Generator"[^>]+content="CommonSpot[^"]+"[^>]*\/>/ },
 
-{:name=>"commonspot.css",
- :regexp=>/<link[^>]+href="[^"]commonspot\/commonspot\.css"[^>]+\/>/ #"
-}
+# img tags
+{ :regexp=>/<img[^>]+src="[^"]+commonspot[^"]+"[^>]*\/>/ },
+
+# commonspot.css
+{ :regexp=>/<link[^>]+href="[^"]commonspot\/commonspot\.css"[^>]+\/>/ },
+
+# Version Detection # Meta Generator
+{ :version=>/<meta[^>]+name="Generator"[^>]+content="CommonSpot[^\d^"]+([\d\.]+)"[^>]*\/>/, :regexp_offset=>0 },
 
 ]
 
-
-def passive
-        m=[]
-		
-	if @body =~/<meta[^>]+name="Generator"[^>]+content="CommonSpot[^\d]+([\d\.]+)/
-                version=@body.scan(/<meta[^>]+name="Generator"[^>]+content="CommonSpot[^\d]+([\d\.]+)/)
-                m << {:name=>"meta generator",:version=>version}
-        end
-        m
 end
 
-
-end

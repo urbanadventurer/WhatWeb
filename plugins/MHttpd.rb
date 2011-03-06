@@ -38,28 +38,16 @@ def passive
 	m=[]
 
 	# Server # Short
-	if @meta["Server"] =~ /[\s]*mhttpd v([\d\.]+)/i
-		m << { :version=>@meta["Server"].to_s.scan(/[\s]*mhttpd v([\d\.]+)/i) }
-	end
-
 	if @meta["server"] =~ /[\s]*mhttpd v([\d\.]+)/i
 		m << { :version=>@meta["server"].to_s.scan(/[\s]*mhttpd v([\d\.]+)/i) }
 	end
 
 	# Server # Long
-	if @meta["Server"] =~ /[\s]*MHttpd\/([\d\.]+) \([^;]+; [^;]+; Meta-HTML\/[\d\.]+\)/
-		m << { :version=>@meta["Server"].to_s.scan(/[\s]*MHttpd\/([\d\.]+) \([^\;]+; [^\;]+; Meta-HTML\/[\d\.]+\)/), :module=>@meta["Server"].to_s.scan(/[\s]*MHttpd\/[\d\.]+ \([^\;]+; ([^\;]+); Meta-HTML\/[\d\.]+\)/) }
-	end
-
 	if @meta["server"] =~ /[\s]*MHttpd\/([\d\.]+) \([^;]+; [^;]+; Meta-HTML\/[\d\.]+\)/
 		m << { :version=>@meta["server"].to_s.scan(/[\s]*MHttpd\/([\d\.]+) \([^\;]+; [^\;]+; Meta-HTML\/[\d\.]+\)/), :module=>@meta["server"].to_s.scan(/[\s]*MHttpd\/[\d\.]+ \([^\;]+; ([^\;]+); Meta-HTML\/[\d\.]+\)/) }
 	end
 
 	# Meta-HTML-Engine
-	if @meta["Meta-HTML-Engine"] =~ /[\s]*MHttpd\/([\d\.]+) \([^;]+; [^;]+; Meta-HTML\/[\d\.]+\)/
-		m << { :version=>@meta["Meta-HTML-Engine"].to_s.scan(/[\s]*MHttpd\/([\d\.]+) \([^\;]+; [^\;]+; Meta-HTML\/[\d\.]+\)/), :module=>@meta["Meta-HTML-Engine"].to_s.scan(/[\s]*MHttpd\/[\d\.]+ \([^\;]+; ([^\;]+); Meta-HTML\/[\d\.]+\)/) }
-	end
-
 	if @meta["meta-html-engine"] =~ /[\s]*MHttpd\/([\d\.]+) \([^;]+; [^;]+; Meta-HTML\/[\d\.]+\)/
 		m << { :version=>@meta["meta-html-engine"].to_s.scan(/[\s]*MHttpd\/([\d\.]+) \([^\;]+; [^\;]+; Meta-HTML\/[\d\.]+\)/), :module=>@meta["meta-html-engine"].to_s.scan(/[\s]*MHttpd\/[\d\.]+ \([^\;]+; ([^\;]+); Meta-HTML\/[\d\.]+\)/) }
 	end

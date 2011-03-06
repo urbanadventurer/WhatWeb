@@ -4,34 +4,38 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-01-25 #
+# Updated regex
+##
 Plugin.define "KaZaA" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
-version "0.1"
-description "This plugin retrieves the KaZaA ip, network and username from the HTTP headers."
+version "0.2"
+description "This plugin retrieves the KaZaA IP:port combination, network and username from the HTTP headers."
 
 # About 74 ShodanHQ results for X-Kazaa-Username
+# About 112 ShodanHQ results for X-Kazaa-Network
+
+# Examples #
 examples %w|
-24.175.151.163
-68.41.212.206
-68.202.95.27
+67.240.153.145
+76.97.90.33
+98.235.134.5
 |
 
-# HTTP Header
+# Passive #
 def passive
 	m=[]
 
 	# X-Kazaa-IP
-	m << { :version=>@meta["x-kazaa-ip"].to_s.scan(/[\s]*([\d\.\:]+)/) } if @meta["x-kazaa-ip"].to_s =~ /[\s]*([\d\.\:]+)/
-	m << { :version=>@meta["X-Kazaa-IP"].to_s.scan(/[\s]*([\d\.\:]+)/) } if @meta["X-Kazaa-IP"].to_s =~ /[\s]*([\d\.\:]+)/
+	m << { :string=>@meta["x-kazaa-ip"] } unless @meta["x-kazaa-ip"].nil?
 
 	# X-Kazaa-Network
-	m << { :module=>@meta["x-kazaa-network"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["x-kazaa-network"].to_s =~ /[\s]*([^\r^\n]+)/
-	m << { :version=>@meta["X-Kazaa-Network"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["X-Kazaa-Network"].to_s =~ /[\s]*([^\r^\n]+)/
+	m << { :module=>@meta["x-kazaa-network"] } unless @meta["x-kazaa-network"].nil?
 
 	# X-Kazaa-Username
-	m << { :account=>@meta["x-kazaa-username"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["x-kazaa-username"].to_s =~ /[\s]*([^\r^\n]+)/
-	m << { :account=>@meta["X-Kazaa-Username"].to_s.scan(/[\s]*([^\r^\n]+)/) } if @meta["X-Kazaa-Username"].to_s =~ /[\s]*([^\r^\n]+)/
+	m << { :account=>@meta["x-kazaa-username"] } unless @meta["x-kazaa-username"].nil?
 
+	# Return passive matches
 	m
 
 end

@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-18 #
+# Updated version detection
+##
 Plugin.define "Connectix-Boards" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
-version "0.1"
-description "Forum - homepage: http://www.connectix-boards.org/index.php"
+version "0.2"
+description "Connectix-Boards Forum - homepage: http://www.connectix-boards.org/index.php"
 
-# 99 results for "powered by Connectix Boards" -Vulnerability @ 2010-08-22
+# Google results as at 2010-08-22 #
+# 99 for "powered by Connectix Boards" -Vulnerability
+
+# Examples #
 examples %w|
 beta.connectix-boards.org/index.php
 animavatars.net78.net/forums/admin.php
@@ -65,6 +71,7 @@ www.risque-professionnel.fr/forum-inforisque/index.php
 www.zeperfs.com/forum/index.php
 |
 
+# Matches #
 matches [
 
 # Install page
@@ -74,21 +81,10 @@ matches [
 { :text=>'    <title>Connectix Boards - Fatal Error</title>' },
 { :text=>'	<title>Connectix Boards Error</title>' },
 
+# Version Detection # Powered by text
+{ :version=>/Powered by <a href="http:\/\/www.connectix-boards.org"[^>]*>Connectix Boards<\/a> ([^&]+) &copy; [0-9]{4}-[0-9]{4}/, :regexp_offset=>0 },
+
 ]
-
-# Version detection using powered by text
-def passive
-        m=[]
-
-        if @body =~ /Powered by <a href="http:\/\/www.connectix-boards.org"[\ target="_blank"]*>Connectix Boards<\/a> [\d\.\ a-zA-Z]+ &copy; [0-9]{4}-[0-9]{4}/
-                version=@body.scan(/Powered by <a href="http:\/\/www.connectix-boards.org"[\ target="_blank"]*>Connectix Boards<\/a> ([\d\.\ a-zA-Z]+) &copy; [0-9]{4}-[0-9]{4}/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

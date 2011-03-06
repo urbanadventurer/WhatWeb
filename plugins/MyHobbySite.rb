@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-16 #
+# Updated version detection
+##
 Plugin.define "MyHobbySite" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
-version "0.1"
+version "0.2"
 description "MyHobbySite is a website Content Management System (CMS) programmed in PHP and tailored specifically for collectors of live music. Like any other CMS, MyHobbySite supports page creation, file management, and dynamic text editing via a WYSIWYG editor. - homepage: http://www.myhobbysite.net/"
 
-# 71 results for "Powered by MyHobbySite" @  2010-09-12
+# Google results as at 2010-09-12 #
+# 71 for "Powered by MyHobbySite"
+
+# Examples #
 examples %w|
 www.myhobbysite.net
 www.demo.myhobbysite.net
@@ -45,6 +51,7 @@ metallicavideoarchive.net
 www.deadonetrading.com/cms/
 |
 
+# Matches #
 matches [
 
 # Default title
@@ -56,21 +63,10 @@ matches [
 # HTML comment
 { :text=>'		<a name="top"></a> <!-- Necessary for the "jump to the top of the page" links -->' },
 
+# Version Detection # Powered by text
+{ :version=>/Powered by <a href="http:\/\/www.myhobbysite.net" target="_blank">MyHobbySite<\/a> ([\d\.]+) /, :regexp_offset=>0 },
+
 ]
-
-# Versiondetection using powered by text
-def passive
-        m=[]
-
-        if @body =~ /Powered by <a href="http:\/\/www.myhobbysite.net" target="_blank">MyHobbySite<\/a> ([\d\.]+) /
-                version=@body.scan(/Powered by <a href="http:\/\/www.myhobbysite.net" target="_blank">MyHobbySite<\/a> ([\d\.]+) /)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

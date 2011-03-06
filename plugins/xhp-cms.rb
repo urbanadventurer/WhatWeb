@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-02-19 #
+# Updated version detection
+##
 Plugin.define "XHP-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
-version "0.1"
+version "0.2"
 description "XHP CMS - eXpandable Home Page is an easy to install, easy to use, easy to expand content management system (CMS) written in PHP and using MySQL as the database engine. - homepage: http://xhp.targetit.ro/"
 
-# 22 results for "powered by XHP CMS" "Site engine is copyright" @ 2010-08-08
+# Google results as at 2010-08-08 #
+# 22 for "powered by XHP CMS" "Site engine is copyright"
+
+# Examples #
 examples %w|
 xhp.targetit.ro
 eclipse-sdcc.sourceforge.net
@@ -25,30 +31,19 @@ darkrula.net46.net
 www.nicolai.jellevedel.dk
 |
 
+# Matches #
 matches [
 
-# Versions 0.5+ have been spotted with this meta generator tag:
-# <meta name="GENERATOR" content="XHP - eXpandable Home Page v0.4"/>
-{ :regexp=>/<meta name="GENERATOR" content="XHP - eXpandable Home Page v[\d\.]+"\/>/ },
-
 # Installation page
-{ :text=>'<title>XHP installation</title>' }
+{ :text=>'<title>XHP installation</title>' },
+
+# Version Detection # Meta Generator
+{ :version=>/<meta name="GENERATOR" content="XHP - eXpandable Home Page v([\d\.]+)"\/>/, :regexp_offset=>0 },
+
+# Version Detection # Powered by footer
+{ :version=>/<a href="http:\/\/xhp.targetit.ro\/">Powered by XHP CMS v([\d\.]+)<\/a><br\/><a href="http:\/\/lars.targetit.ro\/">Site engine is copyright/, :regexp_offset=>0 },
 
 ]
-
-# Version detection with "Powered By" footer
-def passive
-        m=[]
-
-        if @body =~ /<a href="http:\/\/xhp.targetit.ro\/">Powered by XHP CMS v[\d\.]+<\/a><br\/><a href="http:\/\/lars.targetit.ro\/">Site engine is copyright/
-                version=@body.scan(/<a href="http:\/\/xhp.targetit.ro\/">Powered by XHP CMS v([\d\.]+)<\/a><br\/><a href="http:\/\/lars.targetit.ro\/">Site engine is copyright/)[0][0]
-                m << {:version=>version}
-        end
-
-        m
-
-end
-
 
 end
 

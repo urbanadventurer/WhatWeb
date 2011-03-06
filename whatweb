@@ -134,8 +134,8 @@ $AGGRESSION=1
 $RECURSIVE=false
 $RECURSIVE_DEPTH=10
 $MAX_LINKS_TO_FOLLOW=250
-
 $FOLLOW_REDIRECT="always"
+$MAX_REDIRECTS=10
 $USE_PROXY=false
 $PROXY_HOST=nil
 $PROXY_PORT=8080
@@ -559,6 +559,7 @@ def error(s)
 	else
 		STDERR.puts s
 	end
+	STDERR.flush
 	unless $OUTPUT_ERRORS.nil?
 		$OUTPUT_ERRORS.out(s)
 	end
@@ -760,7 +761,8 @@ puts "
 --max-threads, -t\tNumber of simultaneous threads. Default is #{$MAX_THREADS}.
 --follow-redirect=WHEN\tControl when to follow redirects. WHEN may be `never',
 \t\t\t`http-only', `meta-only', `same-site', `same-domain'
-\t\t\t(not implemented), or `always'
+\t\t\tor `always'
+--max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
 --proxy\t\t\t<hostname[:port]> Set proxy hostname and port
 \t\t\t(default: #{$PROXY_PORT})
 --proxy-user\t\t<username:password> Set proxy user and password
@@ -835,6 +837,7 @@ opts = GetoptLong.new(
       [ '-r','--recursive', GetoptLong::NO_ARGUMENT ],
       [ '-d','--depth', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--follow-redirect', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--max-redirects', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--proxy', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--proxy-user', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--url-prefix', GetoptLong::REQUIRED_ARGUMENT ],
@@ -947,6 +950,8 @@ begin
 				$RECURSIVE_DEPTH=arg.to_i
 			when '-m','--max-links'	    		
 				$MAX_LINKS_TO_FOLLOW=arg.to_i
+			when '--max-redirects'
+				$MAX_REDIRECTS=arg.to_i
 			when '--proxy'
 				$USE_PROXY=true
 				$PROXY_HOST = arg.to_s.split(":")[0]
@@ -1040,7 +1045,6 @@ end
 $ANEMONE_SKIP_REGEX=Regexp.union($ANEMONE_SKIP_EXTENSIONS.map{|x| "/\.#{" + x + "}$/"  }.to_s())
 
 
-
 # for each target, we try each plugin then print the results
 semaphore=Mutex.new
 Thread.abort_on_exception = true
@@ -1121,8 +1125,8 @@ while thistarget = next_target
 			no_redirects =false
 			num_redirects = 0
 			while no_redirects == false do
-				# if we redirect 10 times we give up
-				if num_redirects == 10
+				# if we redirect X times we give up
+				if num_redirects == $MAX_REDIRECTS
 					error(target + " ERROR: Too many redirects")
 					no_redirects=true
 					next
