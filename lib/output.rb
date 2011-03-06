@@ -31,12 +31,12 @@ class Output
 
 	# perform sort, uniq and join on each plugin result
 	def suj(plugin_results)
-		suj={} 
+		suj={}
 		[:certainty, :version, :os, :string, :account, :model, :firmware, :module, :filepath].map do  |thissymbol|
-			t=plugin_results.map {|x| x[thissymbol] unless x[thissymbol].class==Regexp }.compact.sort.uniq.join(",")
+			t=plugin_results.map {|x| x[thissymbol] unless x[thissymbol].class==Regexp }.flatten.compact.sort.uniq.join(",")
 			suj[thissymbol] = t
 		end
-		suj[:certainty] = plugin_results.map {|x| x[:certainty] }.compact.sort.last.to_i # this is different, it's a number
+		suj[:certainty] = plugin_results.map {|x| x[:certainty] }.flatten.compact.sort.last.to_i # this is different, it's a number
 		suj
 	end
 
@@ -171,6 +171,7 @@ end
 
 
 # Hey, do u actually use this XML output? Then I'd love to hear from you for suggestions, changes, etc.
+# Does it bother you that some types of output are joined by commas but other types aren't?
 class OutputXML < Output
 	def initialize(f=STDOUT)
 		super
@@ -204,15 +205,25 @@ class OutputXML < Output
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
 
-				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
-				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
-				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp}.compact.sort.uniq.join(",")
-				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
-				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.compact.sort.uniq.join(",")
-				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.compact.sort.uniq.join(",")
-				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
-				accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
-				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
+				certainty = plugin_results.map {|x|
+	x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
+				version = plugin_results.map {|x|
+	x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
+				os = plugin_results.map {|x|
+	x[:os] unless x[:os].class==Regexp}.flatten.compact.sort.uniq.join(",")
+				string = plugin_results.map {|x|
+	x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
+				model = plugin_results.map {|x|
+	x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq.join(",")
+				firmware = plugin_results.map {|x|
+	x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq.join(",")
+				filepath = plugin_results.map {|x|
+	x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
+
+				accounts = plugin_results.map {|x|
+	x[:account] unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
+				modules = plugin_results.map {|x|
+	x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
 
 
 				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
@@ -278,8 +289,8 @@ class OutputMagicTreeXML < Output
       # hostname is sufficient. fqdn nodes are used when the host IP address is not known yet
 		end
 
-    @host_port = uri.port
-    @host_scheme = uri.scheme
+		@host_port = uri.port
+		@host_scheme = uri.scheme
 		
 		@host_os=[]
 
@@ -321,11 +332,11 @@ class OutputMagicTreeXML < Output
 
 			unless plugin_results.empty?
 
-				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
 				versions = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.to_a
 				strings = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.to_a
-				models = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.compact.sort.uniq.to_a
-				firmwares = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.compact.sort.uniq.to_a
+				models = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq.to_a
+				firmwares = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq.to_a
 				filepaths = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.to_a
 				accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
 				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
@@ -404,10 +415,6 @@ class OutputJSON < Output
 		if obj.class == Array
 			obj.flatten!
 		end
-
-#		if obj.class == String
-
-#		end
 	end
 
 	def utf8_elements!(obj)
@@ -442,16 +449,16 @@ class OutputJSON < Output
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
 
-				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
 
-				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
-				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp }.compact.sort.uniq
-				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
-				accounts = plugin_results.map {|x| x[:account] unless x[:account].class=Regexp }.flatten.compact.sort.uniq
-				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
-				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
-				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.compact.sort.uniq
-				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.compact.sort.uniq
+				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq
+				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp }.flatten.compact.sort.uniq
+				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| x[:account] unless x[:account].class==Regexp }.flatten.compact.sort.uniq
+				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.flatten.compact.sort.uniq
+				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.flatten.compact.sort.uniq
+				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.flatten.compact.sort.uniq
+				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.flatten.compact.sort.uniq
 
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
@@ -508,9 +515,6 @@ class OutputMongo < Output
 			obj.flatten!
 		end
 
-#		if obj.class == String
-
-#		end
 	end
 
 	def utf8_elements!(obj)
@@ -546,14 +550,14 @@ class OutputMongo < Output
 				# what's the highest probability for the match?
 
 				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
-				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.compact.sort.uniq
+				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq
 				os = plugin_results.map {|x| x[:os] unless x[:os].class=Regexp }.flatten.compact.sort.uniq
-				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq
-				accounts = plugin_results.map {|x| x[:account] unless x[:account].class=Regexp }.flatten.compact.sort.uniq
-				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.compact.sort.uniq
-				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.compact.sort.uniq
-				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.compact.sort.uniq
-				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.compact.sort.uniq
+				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| x[:account] unless x[:account].class==Regexp }.flatten.compact.sort.uniq
+				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.flatten.compact.sort.uniq
+				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.flatten.compact.sort.uniq
+				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.flatten.compact.sort.uniq
+				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.flatten.compact.sort.uniq
 
 				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?

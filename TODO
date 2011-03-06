@@ -73,6 +73,7 @@ maybe there should be a different location for data such as country-ips.dat. eg.
 
 [x] add plugin init & close.
 
+review logging. xml logging will combine versions with ,'s but json will keep them separate.
 
 
 open_target({:method=>"POST"})
