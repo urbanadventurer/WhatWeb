@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-03-06 #
+# Updated OS detection
+##
 Plugin.define "SegPub" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-19
-version "0.1"
+version "0.2"
 description "SegPub, a hosting solutions provider based in Sydney, Australia - Homepage: http://segpub.net/"
 
 # ShodanHQ resuls as at 2011-02-19 #
@@ -34,13 +37,13 @@ def passive
 	m=[]
 
 	# Server: SegPache
-	m << { :string=>"OS:FreeBSD7" } if @meta['server'] =~ /SegPache/
+	m << { :os=>"FreeBSD7" } if @meta['server'] =~ /SegPache/
 
 	# X-Powered-By: SegPub
-	m << { :string=>"OS:FreeBSD7" } if @meta['x-powered-by'] =~ /SegPub/
+	m << { :os=>"FreeBSD7" } if @meta['x-powered-by'] =~ /SegPub/
 
 	# X-Powered-By: SegPod
-	m << { :string=>"OS:FreeBSD7" } if @meta['x-powered-by'] =~ /SegPod/
+	m << { :os=>"FreeBSD7" } if @meta['x-powered-by'] =~ /SegPod/
 
 	# Return passive matches
 	m
