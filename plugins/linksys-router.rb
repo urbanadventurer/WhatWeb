@@ -12,14 +12,23 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-28
 version "0.2"
 description "Linksys router - homepage: http://www.linksys.com/"
 
+# Matches #
 matches [
 
-{ :model=>'WRT54GL', :status=>200, :url=>'/WRT56GL.gif', :certainty=>75 },
+# WRT54GC # Logo
 { :model=>'WRT54GC', :md5=>"0b749361e0c9ab37b9f8875b0667d713", :url=>'/UI_Linksys.gif' },
-{ :model=>'WRT54G', :status=>200, :url=>'/WRT54G.gif', :certainty=>75 },
-{ :model=>'WRT54GS', :status=>200, :url=>'/UILinksys.gif', :certainty=>75 },
 
 ]
 
 end
+
+=begin
+
+md5 hashes are required for these images:
+
+{ :model=>'WRT54GL', :url=>'/WRT56GL.gif' },
+{ :model=>'WRT54G', :url=>'/WRT54G.gif' },
+{ :model=>'WRT54GS', :url=>'/UILinksys.gif' },
+
+=end
 

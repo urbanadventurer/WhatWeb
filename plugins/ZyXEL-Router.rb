@@ -15,10 +15,12 @@ description "This plugin indentifies ZyXEL router models"
 # ZyXEL VSG-1200 V2 is access server that recognizes new users on network and re-routes all the different IP settings pre-configured on users' computers. - homepage: http://www.zyxel.com/"
 # P-330W EE # Default Login # admin/password
 
-# About 195 ShodanHQ results for WWW-Authenticate: Basic realm="P-330W EE (username: admin)" @ 2010-11-01
-# 33 results for intitle:Top "Vantage Service Gateway" -inurl:zyxel @ 2010-07-24
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1853
-# 90 results for "Welcome to the Web-Based Configurator" "Welcome to your router Configuration Interface" @ 2011-01-09
+# ShodanHQ results as at 2010-11-01 #
+# 195 for WWW-Authenticate: Basic realm="P-330W EE (username: admin)"
+
+# Google results as at 2011-01-09 #
+# 33 for intitle:Top "Vantage Service Gateway" -inurl:zyxel
+# 90 for "Welcome to the Web-Based Configurator" "Welcome to your router Configuration Interface"
 
 # Examples #
 examples %w|
@@ -84,9 +86,6 @@ matches [
 # Vantage Service Gateway # Default Frameset
 { :text=>'<frameset rows="75,97%,25" framespacing="0" border="0" frameborder="0">', :model=>"Vantage Service Gateway" },
 
-# Prestige 660H61 # Default Logo
-{ :model=>'Prestige 660H61', :status=>200, :url=>'/dslroutery/imgshop/full/NETZ1431.jpg' },
-
 ]
 
 # Passive #
@@ -104,4 +103,12 @@ def passive
 end
 
 end
+
+=begin
+
+md5 hashes are required for these images:
+
+{ :model=>'Prestige 660H61', :url=>'/dslroutery/imgshop/full/NETZ1431.jpg' },
+
+=end
 
