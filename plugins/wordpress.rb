@@ -32,7 +32,7 @@ matches [
 {:url=>"/readme.html", :md5=>'a73cac84b8b9a99377917a6974c9eea2', :version=>"3.0.1"}, # url exists & the hash is ...
 
 
-{:url=>"/admin/", :full=>true }, # full means that whatweb will run all plugins against this url - this isn't yet implemented as of 0.4.6
+#{:url=>"/admin/", :full=>true }, # full means that whatweb will run all plugins against this url - this isn't yet implemented as of 0.4.6
 
 {:url=>"/wp-login.php", :text=>'<a title="Powered by WordPress" href="http://wordpress.org/">'}, # url exists & contains a string
 {:url=>"/wp-login.php", :text=>'<a href="http://wordpress.org/" title="Powered by WordPress">', :name=>'wp3 login page'}, # url exists & contains a string
