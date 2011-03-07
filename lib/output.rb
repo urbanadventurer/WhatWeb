@@ -52,7 +52,6 @@ class OutputFull < Output
 end
 
 class OutputVerbose < Output
-
 	def coloured(s,colour)
 		use_colour = ((@f == STDOUT and $use_colour=="auto") or ($use_colour=="always"))
 

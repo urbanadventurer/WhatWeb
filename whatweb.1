@@ -49,7 +49,7 @@ Redefine extensions to skip. (default: zip,gz,tar,jpg,exe,png,pdf)
 .B \-\-list-plugins \-l
 List the plugins
 .TP
-.B \-\-run-plugins \-p
+.B \-\-plugins \-p
 Run comma delimited list of plugins. Default is to run all
 .TP
 .B \-\-info-plugins \-I
@@ -76,8 +76,20 @@ Log JSON format
 .B \-\-log-json-verbose=FILE
 Log JSON Verbose format
 .TP
-.B \-\-log-mongo=Collection
-Log to a Mongo DB on localhost
+.B \-\-log-mongo-database=NAME
+Name of the MongoDB database
+.TP
+.B \-\-log-mongo-collection=NAME
+Name of the MongoDB collection. Default: whatweb
+.TP
+.B \-\-log-mongo-host=NAME
+MongoDB hostname or IP address. Default: 0.0.0.0
+.TP
+.B \-\-log-mongo-username=NAME
+MongoDB username. Default: nil
+.TP
+.B \-\-log-mongo-password=NAME
+MongoDB password. Default: nil
 .TP
 .B \-\-log-errors=FILE
 Log errors
@@ -87,9 +99,12 @@ Identify as user-agent instead of WhatWeb/VERSION.
 .TP
 .B \-\-max-threads \-t
 Number of simultaneous threads. Default is 25.
+.TP--max-redirects=NUM	
+.B \-\-follow-redirect=WHEN
+Control when to follow redirects. WHEN may be `never', `http-only', `meta-only', `same-site', `same-domain' or `always'
 .TP
-.B \-\-no-redirect
-Do not follow HTTP 3xx redirects.
+.B \-\-max-redirects=NUM	
+Maximum number of contiguous redirects. Default: 10
 .TP
 .B \-\-proxy <hostname[:port]>
 Set proxy hostname and port (default: 8080)
@@ -138,8 +153,6 @@ Display verion information.
 .SH AUTHOR
 WhatWeb was written by Andrew Horton aka urbanadventurer.
 
-This manual page was originally written by Michal Ambroz <rebus AT seznam.cz>
-for the Fedora project (and may be used by others). Updated by Andrew Horton.
 .SH HOMEPAGE
 http://www.morningstarsecurity.com/research/whatweb
 .PP

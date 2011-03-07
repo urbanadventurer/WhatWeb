@@ -2,38 +2,12 @@ TO-DO
 
 Good luck understanding these notes for myself :) Some of this stuff has already been done.
 
-[x] precompile regular expressions for speed if target size >1
-[x] put whatweb on github
-[x] JSON output plugin
-[x] bug in verbose output. closing file
-[x] fix DMOZ plugin error with trailing /
-[x] dont load plugins if no args, just show help
-
-
 Ruby1.9 compatability
   [x] -- rescue and ignore all plugins with unkonwn characters
   -- targets don't seem to get passed between threads the same as ruby1.8
 	thistarget variable doesn't make it across the Thread.new do  line
 
-
-[x] add stuff for adding/removing sets of plugins. maybe select additional plugin directories to include/exclude
-[x]	--plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
-[x]	--plugins +/tmp/moo.rb
-[x]	--plugins foobar (only select foobar)
-
-[x] currently regex's like :modules only return the first instance - should be all.
-[x] add more mongo logging options  --mongo-host  default: 0.0.0.0   --mongo-database  default: test  --mongo-collection
-[x] color for :accounts=>//
-[x] add mongo username and password
-[x] change :symbols to singular. :account,:module, etc. update plugins.
-[x] update lib/output.rb verbose logging. some plugin names are longer than 30
-
-
 country should be both a country name and an iso code
-
-Change usage:
-[x] --follow-redirect never,http-only,meta-only,same-site,same-domain,always (default: always)
-	same-domain --	? use tld.rb from urlcrazy ??
 
 
 --follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)
@@ -47,12 +21,12 @@ diff output plugins require - joined by , or not
 
 
 
-deprecate :account in favour of :accounts
+
 
 set num of max redirects, instead of hard coded value of 10
 
-colour the verbose output
 
+have colour schemes - use on white background, etc.
 
 
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
