@@ -88,6 +88,8 @@ class OutputVerbose < Output
 
 					pr.each do |key,value|
 						next if [:name, :regexp, :text, :md5, :offset, :ghdb, :certainty,:regexp_compiled].include?(key)
+						next if value.class==Regexp
+
 						@f.print "\t" + key.to_s.capitalize.ljust(11) + ": "
 
 						c = case key
