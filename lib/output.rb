@@ -52,15 +52,33 @@ class OutputFull < Output
 end
 
 class OutputVerbose < Output
-	def out(target, status, results)
-		results.each do |plugin_name,plugin_results|
-			unless plugin_results.empty?
 
-				if plugin_name.size > 40
-					@f.print[0..40] + " => "
-				else
-					@f.print plugin_name + " " * (40- plugin_name.size )+   " => "
-				end
+	def coloured(s,colour)
+		use_colour = ((@f == STDOUT and $use_colour=="auto") or ($use_colour=="always"))
+
+		if use_colour
+			send colour, s
+		else
+			s
+		end
+	end
+
+	def out(target, status, results)	
+		@f.puts "URL".ljust(7)+": #{coloured(target,'blue')}"
+		@f.puts "Status".ljust(7)+": #{status}"
+		results.sort.each do |plugin_name,plugin_results|
+			unless plugin_results.empty?
+				
+				@f.puts "   "+coloured(plugin_name,"white")+ " " + coloured("-"*(80-5-plugin_name.size),"dark_blue")
+
+				d=Plugin.registered_plugins[plugin_name].description[0..350]
+				d+="..." if d.size==251
+
+				description=word_wrap(d, 60)
+				@f.puts "\tDescription: " + description.first
+				description[1..-1].each {|line|
+					@f.puts "\t" + " "*13 + line
+				}
 
 				matches = plugin_results.map do |pr|					
 					if pr[:name]
@@ -68,20 +86,39 @@ class OutputVerbose < Output
 					else
 						name_of_match = [pr[:text],pr[:regexp].to_s,pr[:ghdb],pr[:md5],pr[:tagpattern]].compact.join("|")
 					end
-					stuff =[] 
-					stuff << "certainty: #{pr[:certainty]}" if pr[:certainty] != 100
-					stuff << "version: #{pr[:version]}" if pr[:version]
-					stuff << "os: #{pr[:os]}" if pr[:os]
-					stuff << "string: #{pr[:string]}" if pr[:string]
-					stuff << "model: #{pr[:model]}" if pr[:model]
-					stuff << "firmware: #{pr[:firmware]}" if pr[:firmware]
-					stuff << "modules: #{pr[:module]}" if pr[:module]
-					stuff << "accounts: #{pr[:account]}" if pr[:account]
-					stuff << "filepath: #{pr[:filepath]}" if pr[:filepath]
-					stuff << "url: #{pr[:url]}" if pr[:url]
-					name_of_match + ( !stuff.empty? ? " (" + stuff.join(",") +")" : "" )
+
+					pr.each do |key,value|
+						next if [:name, :regexp, :text, :md5, :offset, :ghdb, :certainty,:regexp_compiled].include?(key)
+						@f.print "\t" + key.to_s.capitalize.ljust(11) + ": "
+
+						c = case key
+							when :version then "green"
+							when :string then "yellow"
+							when :certainty then "grey"
+							when :os then "red"
+							when :account then "cyan"
+							when :model then "dark_green"
+							when :firmware then "dark_green"
+							when :module then "magenta"
+							when :filepath then "dark_green"
+							else "grey"
+						end
+
+						@f.print coloured(value.to_s,c)
+						
+						unless name_of_match.empty?
+							@f.print " (from #{name_of_match})"
+						end
+						unless pr[:certainty] == 100
+							@f.print " (Certainty: #{pr[:certainty]} )"
+						end
+
+						@f.puts
+					end
+
+					@f.puts "\t"+ coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
 				end
-				puts matches.join(", ")
+				@f.puts			
 			end
 		end
 	end

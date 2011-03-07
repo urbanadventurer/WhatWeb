@@ -7,7 +7,7 @@
 Plugin.define "Country" do
 author "Andrew Horton"
 version "0.1"
-description "GeoIP IP2Country lookup. To refresh DB, replace IpToCountry.csv and remove country-ips.dat. GeoIP database from http://software77.net/geo-ip/. Lookup code developed by Matthias Wachter for rubyquiz.com and used with permission."
+description "GeoIP IP2Country lookup. To refresh DB, replace IpToCountry.csv and remove country-ips.dat. GeoIP database from http://software77.net/geo-ip/. Local IPv4 addresses are represented as ZZ according to an ISO convention. Lookup code developed by Matthias Wachter for rubyquiz.com and used with permission."
 
 # Keep country-ips.dat in the same location as country.rb
 # For first time use, drop IpToCountry.csv in the same folder as country.rb
@@ -87,7 +87,7 @@ m=[]
 		high=mid-1           # binary search: reduce upper limit
 	      end
 	      if low>high            # no entries left? nothing found
-		m << {:string=>"No country"}	
+			#m << {:string=>"No country"}	
 		break
 	      end
 	    end

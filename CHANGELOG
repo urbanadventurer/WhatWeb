@@ -1,20 +1,27 @@
 Version 0.4.6 Released ? 2010
-* Added x plugins from Brendan Coles. They are: ClipShare, PhpMesFilms, wpQuiz, phpQuestionnaire, RevSense, linkSpheric, WebspotBlogging, XchangeBoard, SazCart, AirvaeCommerce, Cartweaver, BosClassifieds, zFeeder, CMScout, Ultrastats, Connectix-Boards
+* Added x plugins from Brendan Coles. 
 * Added Escenic CMS plugin from Erik Inge Bolsø
 * Added Ruby on Rails, Magento, IP, Country (GeoIP), Charset (required for MongoDB) plugins by Andrew Horton
 * Added www-authenticate, OS plugin by Aung Khant
 * Added EscenicEngine5 plugin by nikosk
 * Updated Mambo plugin with changes from Andrew Horton and Aung Khant
 * Updated phpBB plugin
-* Changed $ANEMONE_SKIP_REGEX=Regexp.union line to be compatible with Ruby 1.8.6. Thanks to Michal Ambroz
-* Added plugin reporting support for  :model=>, :firmware=>, :module=>
 * Modified Joomla plugin to use :modules instead of :string, changed certainty of a regexp
 * Modified PHP-Nuke plugin to use :modules
+* Updated Mailto plugin, renamed to Email
+* Moved some plugins into disabled-plugins, as they clutter output. adobe_flash.rb, footer-hash.rb, frame.rb, header-hash.rb, md5.rb, script.rb, shortcut-icon.rb, tagpattern-hash.rb
+* Updated mailto plugin
+* Updated Mambo and Joomla plugins with suggestions from Aung Khant
+* Bug fix: Updated WordPress plugin
+* Added Charset plugin, required for conversion to UTF-8 which is required for MongoDB. Optionally requires rchardet gem
+* Renamed disabled-plugins/ to plugins-disabled/
+* Changed $ANEMONE_SKIP_REGEX=Regexp.union line to be compatible with Ruby 1.8.6. Thanks to Michal Ambroz
+* Added plugin reporting support for  :model=>, :firmware=>, :module=>
 * Modified XML logging to record modules separately
 * Added --wait SECONDS between connections. Combine with -t 1 if preferred.
 * Added meta-refresh redirect support. eg. <meta http-equiv="refresh" content="0;url=../default/mail/index.html">. Only for non-spidering
-* Added {:version=>/regexp/, :version_regexp_offset} to remove cargo cult programming. eg.
-{:version=>/<meta name="Generator" (content|CONTENT)="(ASPNUKE|ASP-Nuke) ([^->"]+)/, :version_regexp_offset=>2,  :name=>"meta generator tag" }
+* Added {:version=>/regexp/, :offset} to remove cargo cult programming. eg.
+{:version=>/<meta name="Generator" (content|CONTENT)="(ASPNUKE|ASP-Nuke) ([^->"]+)/, :offset=>2,  :name=>"meta generator tag" }
 * Updated plugins to use :version=>/regexp/: Advanced-Guestbook, ASP-Nuke, Concrete5, Coppermine, FormMail, InvisionPowerBoard, FormMail, MikroTik, MovableType, SearchFitShoppingCart, SquirrelMail, VBulletin, VP-ASP, VSNSLemon, WordPress
 * Replaced :probability with :certainty in my-plugins/plugin-template.rb.txt. Thanks Erik Inge Bolsø
 * Added support for em-resolv-replace which speeds up whatweb many times. http://github.com/mperham/em-resolv-replace
@@ -32,16 +39,9 @@ Version 0.4.6 Released ? 2010
 * All logs are now flushed/synced
 * Moved Plugin class into lib/plugins.rb
 * Added startup and shutdown for plugins
-* Moved some plugins into disabled-plugins, as they clutter output. adobe_flash.rb, footer-hash.rb, frame.rb, header-hash.rb, md5.rb, script.rb, shortcut-icon.rb, tagpattern-hash.rb
 * Model and Firmware results now display in dark green
-* Changed :version_regexp_offset, :modules_regexp_offset, etc to :regexp_offset. Updated 86 plugins.
 * Added :filepath match type
-* Renamed disabled-plugins/ to plugins-disabled/
-* Updated mailto plugin
-* Updated Mambo and Joomla plugins with suggestions from Aung Khant
-* Bug fix: Updated WordPress plugin
 * Added MongoDB logging. Use with --log-mongo-database, --log-mongo-host, --log-mongo-collection, --log-mongo-username, --log-mongo-password. Only database has no default.
-* Added Charset plugin, required for conversion to UTF-8 which is required for MongoDB. Optionally requires rchardet gem
 * Added vulnerability matching support, this is still in the experimental phase and not supported.
 * Added vulerability matching code to the awstats plugin.
 * Added logging failure error messages
@@ -57,13 +57,12 @@ Version 0.4.6 Released ? 2010
 * Improved OSX compatibility with a patch from matti for symlinks
 * Added :status for HTTP Status codes to match[]. :status has a logical AND with a :url, it can't be by itself.
 * Updated plugin list and plugin info output
-* Updated Mailto plugin, renamed to Email
 * Bug fix: Now redirects for HTTP statuses 300 through 399. Previously redirected for 301,302 and 307.
 * Bug fix: :account didn't have regular expression support
 * Changed :modules to :module, deprecated :accounts to :account
 * Added redirect control. options are 'never',`http-only', `meta-only', `same-site', `same-domain', 'always'
 * Added --max-redirects. Control the maximum number of contiguous redirects followed
-
+* Changed verbose output
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman

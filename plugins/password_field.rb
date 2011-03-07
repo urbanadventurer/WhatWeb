@@ -14,9 +14,7 @@ description "find password fields"
 examples %w|www.twitter.com  www.facebook.com|
 
 matches [
-{:name=>"rss link type",
-:regexp=>/<input [^>]*?type=["']password["'].*?>/i
-},
+{:name=>"rss link type", :regexp=>/<input [^>]*?type=["']password["'].*?>/i }
 
 ]
 
@@ -24,7 +22,7 @@ def passive
     m=[]
     fields=@body.scan(/<input [^>]*?type=["']password["'].*?>/i)
     fields.each do |field|
-        name=field.scan(/name=["'](.*?)["']/i).first.first rescue nil
+        name=field.scan(/name=["'](.*?)["']/i).first.first rescue nil # rescues when there is no name= element
         m << {:name=>"field name",:string=>name} unless name.nil?
     end
     return m

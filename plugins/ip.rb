@@ -16,7 +16,7 @@ description "IP address of the target, if available."
 def passive
 m=[]
 
-m << {:string=>@ip,:name=>"IP" } unless @ip.empty?
+m << {:string=>@ip } unless @ip.empty?
 m
 end
 
