@@ -24,7 +24,7 @@ http://ghh.sourceforge.net/demo/GHH%20-%20PHP%20Ping/php-ping.php
 matches [
 
 	# Default HTML
-        { :regexp=>/<title>The WorldsEnd.NET - Free Ping Script, written in PHP<\/title><\/head><body bgcolor="#FFFFFF" text="#000000"><\/body><p><font size="2">Your IP is: [\d\.]*<\/font><\/p><form methode="post" action="[^\"]*">   Enter IP or Host <input type="text" name="host" value="127.0.0.1"><\/input>   Enter Count <input type="text" name="count" size="2" value="4"><\/input>   <input type="submit" name="submit" value="Ping!"><\/input><\/form><br><b><\/b><\/body><\/html>/, :modules=>"PHP-Ping" },
+        { :regexp=>/<title>The WorldsEnd.NET - Free Ping Script, written in PHP<\/title><\/head><body bgcolor="#FFFFFF" text="#000000"><\/body><p><font size="2">Your IP is: [\d\.]*<\/font><\/p><form methode="post" action="[^\"]*">   Enter IP or Host <input type="text" name="host" value="127.0.0.1"><\/input>   Enter Count <input type="text" name="count" size="2" value="4"><\/input>   <input type="submit" name="submit" value="Ping!"><\/input><\/form><br><b><\/b><\/body><\/html>/, :module=>"PHP-Ping" },
 
 ]
 

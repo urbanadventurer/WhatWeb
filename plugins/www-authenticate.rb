@@ -119,7 +119,7 @@ def passive
 		if @meta['www-authenticate'].to_s =~ /realm=/
 
 			# Extract Authentication Method
-			m << { :modules=>@meta['www-authenticate'].scan(/([a-z]{3,20})[^\r^\n]{1,256}realm="/i) } if @meta['www-authenticate'].to_s =~ /[a-z]{3,20}[^\r^\n]{1,256}realm="/i
+			m << { :module=>@meta['www-authenticate'].scan(/([a-z]{3,20})[^\r^\n]{1,256}realm="/i) } if @meta['www-authenticate'].to_s =~ /[a-z]{3,20}[^\r^\n]{1,256}realm="/i
 
 			# Extract Authentication Realm
 			m << { :string=>@meta['www-authenticate'].scan(/realm="([^\"]{1,256})"/i) } if @meta['www-authenticate'].to_s =~ /realm="[^\"]{1,256}"/i
@@ -127,7 +127,7 @@ def passive
 		else
 
 			# No Realm # Extract Authentication Method
-			m << { :modules=>@meta['www-authenticate'].to_s }
+			m << { :module=>@meta['www-authenticate'].to_s }
 
 		end
 
