@@ -123,14 +123,20 @@ class Plugin
 		                end
 			end
 
+
 			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
 			# if :status is present then check that @status matches
-
 			if match[:url].nil? or (!match[:url].nil? and !@base_uri.nil? and match[:url] == @base_uri.path)
 				if match[:status].nil? or (!match[:status].nil? and @status == match[:status] and !match[:url].nil?)					
 					results +=r 
 				end
 			end
+
+			# :url isn't required now but status is
+#			if match[:status].nil? or @status == match[:status]
+#				results +=r 
+#			end
+
 
 		end
 	end

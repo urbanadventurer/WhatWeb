@@ -762,7 +762,7 @@ puts "
 --max-threads, -t\tNumber of simultaneous threads. Default is #{$MAX_THREADS}.
 --follow-redirect=WHEN\tControl when to follow redirects. WHEN may be `never',
 \t\t\t`http-only', `meta-only', `same-site', `same-domain'
-\t\t\tor `always'
+\t\t\tor `always'. Default is #{$FOLLOW_REDIRECT}
 --max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
 --proxy\t\t\t<hostname[:port]> Set proxy hostname and port
 \t\t\t(default: #{$PROXY_PORT})
