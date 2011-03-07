@@ -68,7 +68,7 @@ class OutputVerbose < Output
 		results.sort.each do |plugin_name,plugin_results|
 			unless plugin_results.empty?
 				
-				@f.puts "   "+coloured(plugin_name,"white")+ " " + coloured("-"*(80-5-plugin_name.size),"dark_blue")
+				@f.puts "   "+coloured(plugin_name,"yellow")+ " " + coloured("-"*(80-5-plugin_name.size),"dark_blue")
 
 				d=Plugin.registered_plugins[plugin_name].description[0..350]
 				d+="..." if d.size==251
@@ -92,7 +92,7 @@ class OutputVerbose < Output
 
 						c = case key
 							when :version then "green"
-							when :string then "yellow"
+							when :string then "white"
 							when :certainty then "grey"
 							when :os then "red"
 							when :account then "cyan"
