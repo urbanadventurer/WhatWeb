@@ -4,20 +4,25 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-03-06 #
+# Updated OS detection
+##
 # Version 0.2 # 2011-01-24 #
 # Updated version detection
 # Added match for 403 error page
 ##
 Plugin.define "XAMPP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-21
-version "0.2"
+version "0.3"
 description "XAMPP is an easy to install Apache distribution containing MySQL, PHP and Perl. XAMPP is really very easy to install and to use - just download, extract and start. - homepage: http://www.apachefriends.org/en/xampp.html"
 
-# Search results as of 2011-01-21 :
-# About 21,462 ShodanHQ results for location xampp
-# 15 Google results for "You have successfully installed XAMPP on this system!" intitle:"XAMPP Version"
-# 2 Google image results for inurl:"head-macosx.gif" xampp
-# 3 Google image results for inurl:"head-windows.gif" xampp
+# ShodanHQ results as at 2011-01-21 #
+# 21,462 for location xampp
+
+# Google results as at 2011-01-21 #
+# 15 for "You have successfully installed XAMPP on this system!" intitle:"XAMPP Version"
+# 2 image results for inurl:"head-macosx.gif" xampp
+# 3 image results for inurl:"head-windows.gif" xampp
 
 # Examples #
 examples %w|
@@ -52,20 +57,20 @@ matches [
 	{ :version=>/<title>XAMPP Version ([^\r^\n^<]+)[\s]*<\/title>/ },
 
 	# OS Detection # Default title
-	{ :module=>/<title>XAMPP for ([^\r^\n^<]{5,8}) [\d\.a-z]{3,6}[\s]*<\/title>/ },
+	{ :os=>/<title>XAMPP for ([^\r^\n^<]{5,8}) [\d\.a-z]{3,6}[\s]*<\/title>/ },
 
 	# Windows # Default logo
-	{ :url=>"img/head-windows.gif", :md5=>"567ebe64625942cbb8244eca918b06a0", :string=>"OS:Windows" },
+	{ :url=>"img/head-windows.gif", :md5=>"567ebe64625942cbb8244eca918b06a0", :os=>"Windows" },
 
 	# Linux # Default logo
-	{ :url=>"img/head-linux.jpg", :md5=>"bca095ec432fe08f90866d2e6c149590", :string=>"OS:Linux" },
+	{ :url=>"img/head-linux.jpg", :md5=>"bca095ec432fe08f90866d2e6c149590", :os=>"Linux" },
 
 	# Mac OSX # Default logo
-	{ :url=>"img/head-macosx.gif", :md5=>"1fbd850a328026104cd7caa9e3bdaf4e", :string=>"OS:Mac OSX" },
-	{ :url=>"img/head-macosx.gif", :md5=>"df859a3c31b7ed2b75d78f78889107b2", :string=>"OS:Mac OSX" },
+	{ :url=>"img/head-macosx.gif", :md5=>"1fbd850a328026104cd7caa9e3bdaf4e", :os=>"Mac OSX" },
+	{ :url=>"img/head-macosx.gif", :md5=>"df859a3c31b7ed2b75d78f78889107b2", :os=>"Mac OSX" },
 
 	# Solaris # Default logo
-	{ :url=>"img/head-solaris.gif", :md5=>"b18490e1a42d7293cbca353100d6d787", :string=>"OS:Solaris" },
+	{ :url=>"img/head-solaris.gif", :md5=>"b18490e1a42d7293cbca353100d6d787", :os=>"Solaris" },
 
 	# 403 Error page
 	{ :text=>'<p style="margin-left: 2.6em; font-size: 1.2em; color: red;">New XAMPP security concept:</p>' },
@@ -103,7 +108,7 @@ def aggressive
 		m << { :string=>"PHP:"+body.scan(/<h1>PHP Version ([^<]{3,40})<\/h1>/)[0].to_s } if body =~ /<h1>PHP Version [^<]{3,40}<\/h1>/
 
 		# OS Detection
-		m << { :string=>"OS:"+body.scan(/<tr><td class="e">System <\/td><td class="v">([^<]{4,256})[\s]?<\/td><\/tr>/)[0].to_s } if body =~ /<tr><td class="e">System <\/td><td class="v">[^<]{4,256}[\s]?<\/td><\/tr>/
+		m << { :os=>body.scan(/<tr><td class="e">System <\/td><td class="v">([^<]{4,256})[\s]?<\/td><\/tr>/)[0].to_s } if body =~ /<tr><td class="e">System <\/td><td class="v">[^<]{4,256}[\s]?<\/td><\/tr>/
 
 	end
 

@@ -4,15 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-03-06 #
+# Updated OS detection
+##
 # Version 0.2 # 2011-01-25 #
 # Updated version detection
 ##
 Plugin.define "lighttpd" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
-version "0.2"
+version "0.3"
 description "Lightweight open-source web server - Homepage: http://www.lighttpd.net/"
 
-# About 124972 ShodanHQ results for "server: lighttpd" @ 2010-10-26
+# ShodanHQ results as at 2010-10-26 #
+# 124,972 for "server: lighttpd"
 
 # Examples #
 examples %w|
@@ -32,7 +36,7 @@ def passive
 	m << { :version=>@meta["server"].to_s.scan(/^[\s]*lighttpd\/([^\s^\r^\n]+)/).to_s } if @meta["server"].to_s =~ /^[\s]*lighttpd\/([^\s^\r^\n]+)/
 
 	# OS Detection # Server HTTP header
-	m << { :string=>"OS:"+@meta["server"].to_s.scan(/^[\s]*lighttpd \(([^\)]+)\)/).to_s } if @meta["server"].to_s =~ /^[\s]*lighttpd \(([^\)]+)\)/
+	m << { :os=>@meta["server"].scan(/^[\s]*lighttpd \(([^\)]+)\)/).to_s } if @meta["server"] =~ /^[\s]*lighttpd \(([^\)]+)\)/
 
 	# Return passive results
 	m
