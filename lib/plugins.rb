@@ -75,7 +75,6 @@ class Plugin
 
 # execute plugin
   def x
-  	# find the regular expressions in the matches array
   	results=[]
 
 	unless @matches.nil?
@@ -107,6 +106,7 @@ class Plugin
 			end		
 
 			[:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
+				# if each of these symbols is not a Regexp but a String then it is returning data not matching it
 		                if !match[symbol].nil? and match[symbol].class==Regexp
 		                        if @body =~ match[:regexp_compiled]
 						regexpmatch = @body.scan(match[:regexp_compiled])
@@ -199,15 +199,22 @@ class Plugin
 				end
 		
 				unless match[:status].nil? and match[:url] == thisbase_uri.path
-					r << match if @status == match[:status]
+					r << match if thisstatus == match[:status]
 				end
 
-				[:version,:os,:string,:account,:module,:model,:firmware,:filepath].each do |symbol|
+		
+				[:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
 				        if !match[symbol].nil? and match[symbol].class==Regexp
-				                if @body =~ match[:regexp_compiled]
-							regexpmatch = @body.scan(match[:regexp_compiled])
+				                if thisbody =~ match[:regexp_compiled]
+							regexpmatch = thisbody.scan(match[:regexp_compiled])
 				                        m = match.dup
-				                        m[symbol] = regexpmatch.map {|eachmatch|  eachmatch[match[:offset]] }.flatten.sort.uniq
+							m[symbol] = regexpmatch.map {|eachmatch|
+										if match[:offset]
+											eachmatch[match[:offset]]
+										else
+											eachmatch.first
+										end
+									}.flatten.sort.uniq
 				                        r << m
 				                end
 				        end
@@ -236,6 +243,7 @@ class Plugin
 				#pp Thread.main["targets"]
 			end
 		end
+
 
 	end
 	
