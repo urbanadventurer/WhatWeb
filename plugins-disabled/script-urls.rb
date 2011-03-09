@@ -12,7 +12,10 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.2"
 description "This plugin detects instances of script HTML elements and grabs the URL."
 
-# 384 results for "your browser does not support javascript" @ 2010-10-14
+# Google results as at 2010-10-14 #
+# 384 for "your browser does not support javascript"
+
+# Examples #
 examples %w|
 github.com
 morningstarsecurity.com
@@ -21,17 +24,13 @@ wordpress.com
 www.microsoft.com
 |
 
-# URL Extraction
-def passive
-	m=[]
-		if @body =~ /<[\s]*script[^src]+src[\s]*=[\s]*[\"|\']*([^>^\"]+)/i
-		version=@body.scan(/<[\s]*script[^src]+src[\s]*=[\s]*[\"|\']*([^>^\"]+)/i)
-		m << { :version=>version }
-	end
+# Matches #
+matches [
 
-	m
+# Extract source URL
+{ :string=>/<[\s]*script[^>]+src[\s]*=[\s]*["|']?([^>^"]+)/i },
 
-end
+]
 
 end
 

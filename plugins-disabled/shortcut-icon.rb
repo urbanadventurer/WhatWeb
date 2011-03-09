@@ -9,6 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
 description "This plugin retrieves the favicon path."
 
+# Examples #
 examples %w|
 www.deviantart.com
 www.mainstreet.com
@@ -21,11 +22,12 @@ www.wikipedia.org
 www.yehg.net
 |
 
+# Matches #
 matches [
 
 # Get shortcut icon link
-{ :version=>/<link[^rel]+rel[\s]*=[\s]*[\'|\"]?[shortcut\ ]*icon[^href]+href[\s]*=[\s]*[\'|\"]?([^\"^\'^>]+)/i, :version_regexp_offset=>0 },
-{ :version=>/<link[^href]+href[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^rel]+rel[\s]*=[\s]*[\'|\"]?[shortcut\ ]*icon/i, :version_regexp_offset=>0 },
+{ :string=>/<link[^>]+rel[\s]*=[\s]*['|"]?(shortcut\ )?icon[^>]+href[\s]*=[\s]*[\'|\"]?([^\"^\'^>]+)/i, :offset=>1 },
+{ :string=>/<link[^>]+href[\s]*=[\s]*['|"]?([^"^']+)[^>]+rel[\s]*=[\s]*['|"]?(shortcut\ )?icon/i },
 
 ]
 
