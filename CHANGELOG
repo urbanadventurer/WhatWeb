@@ -17,7 +17,6 @@ Version 0.4.6 Released ? 2010
 * Renamed disabled-plugins/ to plugins-disabled/
 * Changed $ANEMONE_SKIP_REGEX=Regexp.union line to be compatible with Ruby 1.8.6. Thanks to Michal Ambroz
 * Added plugin reporting support for  :model=>, :firmware=>, :module=>
-* Modified XML logging to record modules separately
 * Added --wait SECONDS between connections. Combine with -t 1 if preferred.
 * Added meta-refresh redirect support. eg. <meta http-equiv="refresh" content="0;url=../default/mail/index.html">. Only for non-spidering
 * Added {:version=>/regexp/, :offset} to remove cargo cult programming. eg.
@@ -29,22 +28,23 @@ Version 0.4.6 Released ? 2010
 * Added reporting of version detection with matches to the Plugin Info, eg. whatweb -I
 * Changed whatweb -I behaviour to search plugins for keywords. eg. './whatweb -I nuke' brings up ASP-Nuke, PHPNuke, DotNetNuke, etc.
 * Bugfix: Changed webpage data for when working with files, not URIs. Now it passes empty hashes, etc instead of nil which caused plugins to report errors.
+* Added MongoDB logging. Use with --log-mongo-database, --log-mongo-host, --log-mongo-collection, --log-mongo-username, --log-mongo-password. Only database has no default.
 * Added JSON logging. Must have the json ruby gem installed or be using Ruby 1.9
+* Added MagicTree logging from Brendan Coles
 * Added error logging.
 * Added XML header and footer to XML logs
+* Modified XML logging to record modules separately
 * Bug fix: Escaping the XML log properly for &, <, >, "
+* All logs are now flushed/synced
 * Bug fix: References to :probability instead of :certainty in some logging
 * Changed error message for non resolving hostnames from "undefined method `closed?' for nil:NilClass" to "Cannot resolve hostname"
 * Added ascii whatweb logo
-* All logs are now flushed/synced
 * Moved Plugin class into lib/plugins.rb
 * Added startup and shutdown for plugins
 * Model and Firmware results now display in dark green
 * Added :filepath match type
-* Added MongoDB logging. Use with --log-mongo-database, --log-mongo-host, --log-mongo-collection, --log-mongo-username, --log-mongo-password. Only database has no default.
 * Added vulnerability matching support, this is still in the experimental phase and not supported.
 * Added vulerability matching code to the awstats plugin.
-* Added logging failure error messages
 * Precompiled regular expressions in matches[] for speed improvement
 * Changed internal sleep times from 1s to 0.5s
 * Added --debug to raise errors found in plugins
