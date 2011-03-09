@@ -79,15 +79,21 @@ class OutputVerbose < Output
 					@f.puts "\t" + " "*13 + line
 				}
 
+				top_certainty= suj(plugin_results)[:certainty].to_i
+				@f.puts "\t"+"Certainty".ljust(11)+": " + certainty_to_words(top_certainty)
+
 				matches = plugin_results.map do |pr|					
 					if pr[:name]
 						name_of_match = pr[:name]
 					else
-						name_of_match = [pr[:text],pr[:regexp].to_s,pr[:ghdb],pr[:md5],pr[:tagpattern]].compact.join("|")
+						name_of_match = [pr[:regexp_compiled],pr[:text],pr[:regexp].to_s,
+									pr[:ghdb],pr[:md5],pr[:tagpattern]].compact.join("|")
 					end
 
 					pr.each do |key,value|
-						next if [:name, :regexp, :text, :md5, :offset, :ghdb, :certainty,:regexp_compiled].include?(key)
+						next unless [:version, :os, :string, :account, :model, 
+								:firmware, :module, :filepath].include?(key)
+
 						next if value.class==Regexp
 
 						@f.print "\t" + key.to_s.capitalize.ljust(11) + ": "
@@ -111,7 +117,7 @@ class OutputVerbose < Output
 							@f.print " (from #{name_of_match})"
 						end
 						unless pr[:certainty] == 100
-							@f.print " (Certainty: #{pr[:certainty]} )"
+							@f.print " (Certainty: #{ certainty_to_words pr[:certainty]} )"
 						end
 
 						@f.puts
