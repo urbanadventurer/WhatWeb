@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.6 #
+# Updated module detection
+##
 # Version 0.5 #
 # Added module detection
 ##
@@ -12,11 +15,31 @@
 ##
 Plugin.define "Apache" do
 author "Andrew Horton & Brendan Coles"
-version "0.5"
+version "0.6"
 description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards. - homepage: http://httpd.apache.org/"
 
-# 190 results for intitle:"Test Page for Apache Installation" @ 2010-10-26
-# About 8146697 ShodanHQ results for "server: Apache" @ 2010-10-26
+# Google results as at 2010-10-26 #
+# 190 for intitle:"Test Page for Apache Installation"
+
+# ShodanHQ results as at 2010-10-26 #
+# 8,146,697 for "server: Apache"
+# 217,2233 for "server: mod_ssl"
+# 691,816 for "server: mod_auth_passthrough"
+# 753,880 for "server: mod_bwlimited"
+# 177,808 for "Server: mod_jk"
+# 177,808 for "Server: mod_jk"
+# 25,076 for "Server: mod_fcgid"
+# 165,191 for "Server: mod_log_bytes"
+# 75,655 for "Server: mod_gzip"
+# 559 for for "Server: mod_security"
+# 450,117 for "Server: mod_perl"
+# 154,334 for "Server: mod_python"
+# 87,454 for "Server: mod_fastcgi"
+# 45,696 for "Server: mod_psoft_traffic"
+# 34,854 for "Server: mod_macro"
+# 61,692 for "Server: mod_throttle"
+
+# Examples #
 examples %w|
 www.eu.archive.org
 121.72.245.103
@@ -58,11 +81,15 @@ https://ls.berkeley.edu
 129.121.100.8
 |
 
+# Matches #
 matches [
 
 # Default page # Default title
 {:text=>"<title>Test Page for Apache Installation</title>", :string=>"Default" },
 {:text=>"<TITLE>Test Page for the SSL/TLS-aware Apache Installation on Web Site</TITLE>", :string=>"Default" },
+
+# cPanel # Default Page
+{ :text=>'<p class="troubleshoot">It may be possible to restore access to this site by <a href="http://www.cpanel.net/docs/dnscache/cleardns.html">following these instructions</a> for clearing your dns cache.</p>', :string=>"cPanel Default" },
 
 # Default page # Default HTML
 {:text=>"<html><body><h1>It works!</h1></body></html>", :string=>"Default" },
@@ -84,60 +111,26 @@ matches [
 
 ]
 
-# HTTP Header
+# Passive #
 def passive
 	m=[]
 
-	# Server
-	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /[^\r^\n]*Apache[^\r^\n]*/i
+	# HTTP Server Header
+	if @meta["server"] =~ /^Apache/i
 
-	# Version detection
-	m << { :version=>@meta["server"].to_s.scan(/[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i) } if @meta["server"].to_s =~ /[^\r^\n]*Apache\/([\d\.]+)[^\r^\n]*/i
+		# Server Detection
+		m << { :name=>"HTTP Server Header" }
 
-	# About 2172233 ShodanHQ results for "server: mod_ssl"
-	m << { :module=>"mod_ssl/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_ssl\/([\d\.]+)[^\s^\r^\n]*/i
+		# Version Detection
+		m << { :version=>@meta["server"].scan(/^Apache\/([\d\.]+)/i) } if @meta["server"] =~ /^Apache\/([\d\.]+)/i
 
-	# About 691816 ShodanHQ results for "server: mod_auth_passthrough"
-	m << { :module=>"mod_auth_passthrough/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_auth_passthrough\/([\d\.]+)[^\s^\r^\n]*/i
+		# Module Detection
+		m << { :module=>@meta["server"].scan(/[\s](mod_[^\s^\r^\n]+)/) } if @meta["server"] =~ /[\s](mod_[^\s^\r^\n]+)/
 
-	# About 753880 ShodanHQ results for "server: mod_bwlimited"
-	m << { :module=>"mod_bwlimited/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_bwlimited\/([\d\.]+)[^\s^\r^\n]*/i
+	end
 
-	# About 177808 ShodanHQ results for "Server: mod_jk"
-	m << { :module=>"mod_jk/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_jk\/([\d\.]+)[^\s^\r^\n]*/i
-
-	# About 25076 ShodanHQ results for "Server: mod_fcgid"
-	m << { :module=>"mod_fcgid/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_fcgid\/([\d\.]+)[^\s^\r^\n]*/i
-
-	# About 165191 ShodanHQ results for "Server: mod_log_bytes"
-	m << { :module=>"mod_log_bytes/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_log_bytes\/([\d\.]+)[^\s^\r^\n]*/i
-
-	# About 75655 ShodanHQ results for "Server: mod_gzip"
-	m << { :module=>"mod_gzip/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_gzip\/([^\s^\r^\n]+)/i
-
-	# About 559 ShodanHQ results for "Server: mod_security"
-	m << { :module=>"mod_security/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_security\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_security\/([^\s^\r^\n]+)/i
-
-	# About 450117 ShodanHQ results for "Server: mod_perl"
-	m << { :module=>"mod_perl/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_perl\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_perl\/([^\s^\r^\n]+)/i
-
-	# About 154334 ShodanHQ results for "Server: mod_python"
-	m << { :module=>"mod_python/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_python\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_python\/([^\s^\r^\n]+)/i
-
-	# About 87454 ShodanHQ results for "Server: mod_fastcgi"
-	m << { :module=>"mod_fastcgi/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_fastcgi\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_fastcgi\/([^\s^\r^\n]+)/i
-
-	# About 45696 ShodanHQ results for "Server: mod_psoft_traffic"
-	m << { :module=>"mod_psoft_traffic/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_psoft_traffic\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_psoft_traffic\/([^\s^\r^\n]+)/i
-
-	# About 34854 ShodanHQ results for "Server: mod_macro"
-	m << { :module=>"mod_macro/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_macro\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_macro\/([^\s^\r^\n]+)/i
-
-	# About 61692 ShodanHQ results for "Server: mod_throttle"
-	m << { :module=>"mod_throttle/"+@meta["server"].to_s.scan(/[^\r^\n]*mod_throttle\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*mod_throttle\/([^\s^\r^\n]+)/i
-
+	# Return passive matches
 	m
-
 end
 
 end
