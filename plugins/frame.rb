@@ -10,12 +10,14 @@
 Plugin.define "Frame" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-13
 version "0.2"
-description "This plugin detects instances of frame and iframe HTML elements and grabs the URL."
+description "This plugin detects instances of frame and iframe HTML elements."
 
-# 213 results for "your browser does not support frames" @ 2010-10-13
+# Google results as at 2010-10-13 #
+# 213 for "your browser does not support frames"
+
+# Examples #
 examples %w|
 crowd.webhop.org
-fleckerika.sytes.net
 frenchtownalive.com
 movies.sky.com
 tv.sky.com
@@ -27,18 +29,13 @@ www.ornatopia.com
 www.usbornebooksandmore.com/?NewID=NEW
 |
 
-# URL Extraction
-def passive
-	m=[]
+# Passive #
+matches [
 
-	if @body =~ /<[\s]*[i]*frame[^>]+src[\s]*=[\s]*[\"|\']*([^>^\"^\'^\s]+)/i
-		version=@body.scan(/<[\s]*[i]*frame[^>]+src[\s]*=[\s]*[\"|\']*([^>^\"^\'^\s]+)/i)
-		m << { :version=>version }
-	end
+# Detect (i)frame
+{ :regexp=>/<[\s]*[i]?frame[^>]+src[\s]*=[\s]*["|']?([^>^"^'^\s]+)/i },
 
-	m
-
-end
+]
 
 end
 

@@ -10,12 +10,15 @@
 # Added <embed> element detection
 # Added flash file path retrieval
 ##
-Plugin.define "Adobe-Flash" do
+Plugin.define "Adobe-Flash-URLs" do
 author "Caleb Anderson"
 version "0.2"
 description "This plugin identifies instances of embedded adobe flash files and attempts to retrieve the flash file path."
 
-# 244 results for "your browser does not support flash" @ 2010-10-14
+# Google results as at 2010-10-14 #
+# 244 for "your browser does not support flash"
+
+# Examples #
 examples %w|
 www.arride.com
 www.benchmarktravel.co.uk
@@ -27,21 +30,23 @@ www.plunkettcooney.com
 www.sachsbikes.co.uk
 |
 
+# Matches #
 matches [
 
 # Object tag
-{ :regexp=>/<object.*?>*?application\/x-shockwave-flash.*?<\/object>/i },
+{ :regexp=>/<object[^>]+application\/x-shockwave-flash[^>]+>.*?<\/object>/im },
 
 # Extract flash file path from <embed> elements
-{ :version=>/<embed[^>]+src[\s]*=[\s]*([^\ ]+)/i, :version_regexp_offset=>0 },
+{ :string=>/<embed[^>]+src[\s]*=[\s]*'([^\s^'^>]+)/i },
+{ :string=>/<embed[^>]+src[\s]*=[\s]*"([^\s^"^>]+)/i },
 
 # Extract flash file path from Javascript
-{ :version=>/new[\s]+FlashObject[\s]*\([\s]*'([^\']+)/, :version_regexp_offset=>0 },
-{ :version=>/new[\s]+FlashObject[\s]*\([\s]*"([^\"]+)/, :version_regexp_offset=>0 },
-{:version=>/new[\s]+SWFObject[\s]*\([\s]*'([^\']+)/, :version_regexp_offset=>0},
-{:version=>/new[\s]+SWFObject[\s]*\([\s]*"([^\"]+)/, :version_regexp_offset=>0},
-{ :version=>/.embedSWF[\s]*\([\s]*'([^\']+)/, :version_regexp_offset=>0 },
-{ :version=>/.embedSWF[\s]*\([\s]*"([^\"]+)/, :version_regexp_offset=>0 },
+{ :string=>/new[\s]+FlashObject[\s]*\([\s]*'([^\']+)/ },
+{ :string=>/new[\s]+FlashObject[\s]*\([\s]*"([^\"]+)/ },
+{ :string=>/new[\s]+SWFObject[\s]*\([\s]*'([^\']+)/ },
+{ :string=>/new[\s]+SWFObject[\s]*\([\s]*"([^\"]+)/ },
+{ :string=>/.embedSWF[\s]*\([\s]*'([^\']+)/},
+{ :string=>/.embedSWF[\s]*\([\s]*"([^\"]+)/ },
 
 ]
 
