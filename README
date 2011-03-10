@@ -100,66 +100,23 @@ Usage: whatweb [options] <URLs>
 
 
 
-VERBOSE OUTPUT
 
-./whatweb -v www.morningstarsecurity.com
-www.morningstarsecurity.com/ [200]
-http://www.morningstarsecurity.com [200] Apache, Country[NZ], Google-API[ajax/libs/jquery/1.3.2/jquery.min.js ], Google-Analytics[GA][791888], HTTPServer[Apache], IP[210.48.71.202], JQuery[1.4.2], MetaGenerator[WordPress 3.0.1], Subdomains[www], Title[MorningStar Security], UncommonHeaders[x-pingback], WordPress[3.0.1], x-pingback[http://www.morningstarsecurity.com/xmlrpc.php,]
-Apache                         => HTTP Server Header
-Country                        =>  (string: NZ)
-Google-API                     => google javascript API (version: ajax/libs/jquery/1.3.2/jquery.min.js )
-Google-Analytics               => pageTracker = ...UA-123-1231 (string: GA,accounts: 791888)
-HTTPServer                     => server string (string: Apache)
-IP                             => IP (string: 210.48.71.202)
-JQuery                         => script (version: 1.4.2)
-MetaGenerator                  => meta generator tag (string: WordPress 3.0.1)
-Subdomains                     =>  (version: www)
-Title                          => page title (string: MorningStar Security)
-UncommonHeaders                => headers (string: x-pingback)
-WordPress                      => wp-content (certainty: 75), meta generator tag (version: 3.0.1), Relative /wp-content/ link
-x-pingback                     =>  (string: http://www.morningstarsecurity.com/xmlrpc.php)
+LOGGING & OUTPUT
 
-
-
-
-LOG OUTPUT
-
-There are currently 6 types of log output. They are:
-	--log-brief=FILE	Log brief, one-line output. Default output.
-	--log-full=FILE		Log verbose output (might be removed in future)
-	--log-xml=FILE		Log XML format
-	--log-json=FILE		Log JSON format
-	--log-json-verbose=FILE	Log JSON Verbose format
+There types of logging are:
+	--log-brief=FILE	Brief, one-line, greppable format
+	--log-full=FILE		Verbose
+	--log-xml=FILE		XML format
+	--log-json=FILE		JSON format
+	--log-json-verbose=FILE	JSON verbose format
+	--log-mongo		MongoDB
+	--log-magictree		MagicTree XML format
 	--log-errors=FILE	Log errors. This is usually printed to the screen in red.
 
 You can output to multiple logs simulatenously by specifying muliple command line logging options.
 
-Brief Logging.
-
-Example usage: ./whatweb --log-brief b.log digg.com
-
-http://digg.com [302] Apache, Cookies[d,imp_id,traffic_control], Country[US], HTTPServer[Apache], IP[64.191.203.30], PHP[5.2.9-digg8], RedirectLocation[/news], UncommonHeaders[x-digg-time,keep-alive], X-Powered-By[PHP/5.2.9-digg8]
-http://digg.com/news [200] Apache, Cookies[d,imp_id,traffic_control], Country[US], HTML5, HTTPServer[Apache], IP[64.191.203.30], Mobile-Website[Apple iPhone], PHP[5.2.9-digg8], PasswordField[password], Subdomains[dads.new,about,developers,jobs], Title[Digg                    - All Topics                 - The Latest News Headlines, Videos and Images], UncommonHeaders[x-digg-time,keep-alive], X-Powered-By[PHP/5.2.9-digg8]
-
-This is one connection per line and is searchable with grep.
 
 
-
-
-
-PLUGINS
-
-Plugins are easy to make.
-
-Matches are made with:
-	* Text strings (case sensitive)
-	* Regular expressions
-	* Google Hack Database queries (limited set of keywords)
-	* MD5 hashes
-	* URL recognition
-	* HTML tag patterns
-	* Custom ruby code for passive and aggressive operations
-	* and more...
 
 To list the plugins supported:
 
@@ -189,103 +146,18 @@ To view more detail about a plugin or search plugins for a keyword:
 	--------------------------------------------------------------------------------
 
 
-WRITING PLUGINS
-
-To get started modify plugin-template.rb.txt in the my-plugins folder. Also read the (out of date) tutorial on writing WhatWeb plugins at www.morningstarsecurity.com/downloads/How-to-develop-WhatWeb-plugins-1.1.txt.
-
-A typical plugin looks like this:
-
-	Plugin.define "Plone" do
-	author "Andrew Horton"
-	version "0.2"
-	description "CMS http://plone.org"
-	examples %w| www.norden.org www.trolltech.com www.plone.net www.smeal.psu.edu|
-
-	matches [
-	{:name=>"meta generator tag",
-	:regexp=>/<meta name="generator" content="[^>]*http:\/\/plone.org" \/>/},
-
-	{:name=>"plone css",
-	:regexp=>/(@import url|text\/css)[^>]*portal_css\/.*plone.*css(\)|")/}, #"
-
-	{:name=>"plone javascript",
-	:regexp=>/src="[^"]*ploneScripts[0-9]+.js"/}, #"
-
-	{:text=>'<div class="visualIcon contenttype-plone-site">'},
-
-	{:name=>"div tag, visual-portal-wrapper",
-	:certainty=>75,
-	:text=>'<div id="visual-portal-wrapper">'},
-	]
-
-	def passive
-		m=[]
-		#X-Caching-Rule-Id: plone-content-types
-		#X-Cache-Rule: plone-content-types
-		m << {:name=>"X-Caching-Rule-Id: plone-content-types" } if @meta["x-caching-rule-id"] =~ /plone-content-types/i
-		m << {:name=>"X-Cache-Rule: plone-content-types" } if @meta["x-cache-rule"] =~ /plone-content-types/i
-		m
-	end
-
-
-	end
-
-There are 3 levels to a plugin. Simple matches, passive and agressive tests. You don't need to know ruby to write plugins with simple matches. Passive and aggressive tests are written in ruby.
-
-
-The matches [] array contains a set of ways to match a website to a system.
-The methods are:
-
-	* :text			Matches text within the webpage
-	* :regexp		A regular expression. Append /i for case insensitive matches
-	* :ghdb			Like a google query
-	* :md5			MD5 hash of the HTML page
-	* :tagpattern		Pattern of HTML tags
-	* :name			This is the name of the match, and is optional.
-	* :url			The URL has to match this. Used for passive and agressive testing
-	* :certainty		Optional, defaults to 100. Values are maybe (25), probably (75) and certain (100).
-
-	* :version		a version as a string or number or regular expression.
-	* :model		device model as a string or number or regular expression.
-	* :module		web application module as a string or number or regular expression.
-	* :firmware		device firmware as a string or number or regular expression.
-	* :filepath		file path as a string or number or regular expression.
-	* :account		user credential as a string or number or regular expression.
-
-
-If you port a GHDB match, use :ghdb. I usually rewrite the GHDB matches with regular expressions, especially if they require inurl:
-
-Example:
-	# http://johnny.ihackstuff.com/ghdb?function=detail&id=1840
-	{ :ghdb=>'"Powered by Vsns Lemon" intitle:"Vsns Lemon"' }
-
-Note the GHDB queries are case insensitive, as a Google query is.
-
-Supported GHDB codes are:
-	* intitle:
-	* inurl:
-	* filetype:
-
-
-Each plugin can access @body, @meta, @status, @base_uri, @md5 and @tagpattern variables. 
-
-Passive tests add matches to the m array, each match is a hash containing the name of the match, probability and more.
-The entire hash is returned with Full output, Brief output returns just the match, :version and :string
-
-To discover the regular expressions to match against, wget about 20-30 examples into the tests/ folder. Be aware that some software can have dramatic variations between versions.
-
-
 
 AGGRESSIVE PLUGINS
 
-There are currently aggressive plugins for Joomla, phpBB, FluxBB, OSCommerce and Tomcat.
+Aggressive plugins will guess more URLs and perform actions that are potentially unsuitable without permission.
+
 With the passive plugin we know that smartor.is-root.com/forum/ is running phpBB version 2
 
 $ ./whatweb smartor.is-root.com/forum/
 http://smartor.is-root.com/forum/ [200] Apache[2.2.15], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Country[DE], HTTPServer[Apache/2.2.15], IP[88.198.177.36], PHP[5.2.13], PasswordField[password], PoweredBy[phpBB], Title[Smartors Mods Forums - Reloaded], X-Powered-By[PHP/5.2.13], phpBB[2]
 
 
-With the aggressive plugin we know that ardentcreative.co.nz is running phpBB version 2.0.20
+With the aggressive plugin we know that the same website is running phpBB version 2.0.20
 
 $ ./whatweb -a 3 smartor.is-root.com/forum/
 http://smartor.is-root.com/forum/ [200] Apache[2.2.15], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Country[DE], HTTPServer[Apache/2.2.15], IP[88.198.177.36], PHP[5.2.13], PasswordField[password], PoweredBy[phpBB], Title[Smartors Mods Forums - Reloaded], X-Powered-By[PHP/5.2.13], phpBB[2,2.0.20]
@@ -312,15 +184,6 @@ Limitations of the spidering. This follows links in <a> tags, these are the HTML
 The spider is provided by Anemone, a third party ruby gem. It doesn't follow redirects. For example the URL treshna.com will fail and www.treshna.com will produce results.
 
 
-KNOWN ISSUES OR BUGS
-
-* The web spider, Anemone doesn't following 302 redirects
-* Don't use aggressive modes with website spidering as it will repeat the tests and URL requests.
-* :text matches are case sensitive
-* :regexp matches are case sensitive, you can make then case insensitive by appending i, eg. /foobar/i
-* The MD5 hashing algorithm is used not for it's security but for it's speed as a hashing algorithm especially compared to SHA1
-* Timeout settings do not apply to the Anemone spider
-* Meta refresh redirects do not apply to the Anemone spider
 
 
 RELATED PROJECTS
@@ -407,11 +270,15 @@ Homepage: http://anemone.rubyforge.org/
 License: MIT
 
 
-COMMUNITY PLUGINS
+DEVELOPERS
+
+Andrew Horton
+Brendan Coles
+
+
+CONTRIBUTORS
 
 Thank you to the following people who have contributed plugins to WhatWeb.
-
-Brendan Coles (Major contributor!)
 Emilio Casbas
 Louis Nyffenegger
 Patrik Wallström

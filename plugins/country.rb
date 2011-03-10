@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+
+# version 0.2
+# display full country names
+
 Plugin.define "Country" do
 author "Andrew Horton"
-version "0.1"
+version "0.2"
 description "GeoIP IP2Country lookup. To refresh DB, replace IpToCountry.csv and remove country-ips.dat. GeoIP database from http://software77.net/geo-ip/. Local IPv4 addresses are represented as ZZ according to an ISO convention. Lookup code developed by Matthias Wachter for rubyquiz.com and used with permission."
 
 # Keep country-ips.dat in the same location as country.rb
@@ -19,7 +23,7 @@ def startup
 	country_db = whatweb_folder + "/country-ips.dat"
 
 	if File.exists?(country_db)
-		@rfile=File.open(country_db,"rb")		
+		@rfile=File.open(country_db,"rb")
 	else		
 		if File.exists?(whatweb_folder + "/IpToCountry.csv")
 		# pack that file & do it once
@@ -54,7 +58,10 @@ def startup
 			@rfile=File.open(country_db,"rb")
 		end
 	end
-	
+
+	f = whatweb_folder + "/country-codes.txt"
+	@ccnames={};
+	File.read(f).each {|line| x=line.split(","); @ccnames[x[1]] = x[0]  }
 end
 
 def passive
@@ -78,7 +85,9 @@ m=[]
 	      if ipstr>=str[0,4]     # is this IP not below the current range?
 		if ipstr<=str[4,4]   # is this IP not above the current range?
 		  #puts  # a perfect match, voila!
-		  m << {:string=>@rfile.read(2)}
+		  cc=@rfile.read(2)
+		  m << {:string=>@ccnames[cc], :module=>cc}
+
 		  break
 		else
 		  low=mid+1          # binary search: raise lower limit
@@ -86,8 +95,8 @@ m=[]
 	      else
 		high=mid-1           # binary search: reduce upper limit
 	      end
-	      if low>high            # no entries left? nothing found
-			#m << {:string=>"No country"}	
+	      if low>high            # no entries left? nothing found		
+		#m << {:string=>"No country"}	
 		break
 	      end
 	    end
