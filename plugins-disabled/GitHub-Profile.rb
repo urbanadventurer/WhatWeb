@@ -9,7 +9,8 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-01-16
 version "0.1"
 description "This plugin extracts a person's name, username, e-mail address and homepage from their GitHub profile - homepage: http://github.com/"
 
-# About 23,500 results for "You're not logged in!" intitle:Profile site:github.com @ 2011-01-16
+# Google results as at 2011-01-16 #
+# 23,500 for "You're not logged in!" intitle:Profile site:github.com
 
 # Examples #
 examples %w|
@@ -32,7 +33,7 @@ matches [
 	{ :version=>/<dd class="fn">([^<]*)<\/dd>/ },
 
 	# Username :
-	{ :model=>/GitHub.profileName = GitHub.profileName \|\| '([^\']*)';/ },
+	{ :account=>/GitHub.profileName = GitHub.profileName \|\| '([^\']*)';/ },
 
 ]
 

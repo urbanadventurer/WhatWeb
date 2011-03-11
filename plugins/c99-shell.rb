@@ -9,8 +9,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-08
 version "0.1"
 description "c99 PHP Backdoor"
 
-# 272 results for inurl:c99.php ext:php @ 2010-10-08
-# 117 results for inurl:c99.php ext:php +uname @ 2010-10-08
+# Google results as at 2010-10-08 #
+# 272 for inurl:c99.php ext:php
+# 117 for inurl:c99.php ext:php +uname
+
+# Examples #
 examples %w|
 attacker.securecrash.org/shellz/c99.php
 freewebs.com/grove/c99.php
@@ -31,22 +34,18 @@ matches [
 
 ]
 
-# Get local file path
+# Passive #
 def passive
         m=[]
 
-	# Check for value starting with "/" so as to skip c99 shell source code
-        if @body =~ /<input type=hidden name=act value="cmd"><input type=hidden name="d" value="\//
-		if @body =~ /<input type=hidden name=act value="cmd"><input type=hidden name="d" value="([^\"]+)/
-                	version=@body.scan(/<input type=hidden name=act value="cmd"><input type=hidden name="d" value="([^\"]+)/)[0][0]
-       			m << {:version=>version}
-		end
-        end
+	# Get local file path # Must start with "/" to avoid c99 source
+	if @body =~ /<input type=hidden name=act value="cmd"><input type=hidden name="d" value="\//
+		m << { :filepath=>@body.scan(/<input type=hidden name=act value="cmd"><input type=hidden name="d" value="([^\"]+)/) } if @body =~ /<input type=hidden name=act value="cmd"><input type=hidden name="d" value="([^\"]+)/
+	end
 
-        m
-
+	# Return passive matches
+	m
 end
-
 
 end
 
