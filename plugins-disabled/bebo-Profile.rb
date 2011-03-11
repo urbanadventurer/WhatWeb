@@ -9,7 +9,8 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-01-16
 version "0.1"
 description "This plugin extracts a person's name, country, gender and their friends' names from their bebo profile - homepage: http://bebo.com/"
 
-# About 144 results for intitle:"bebo.com - Profile from" @ 2011-01-16
+# Google results as at 2011-01-16 #
+# 144 for intitle:"bebo.com - Profile from"
 
 # Examples #
 examples %w|
@@ -35,7 +36,7 @@ matches [
 	{ :version=>/<title>bebo.com - Profile from ([^&]*) &lt;[^&]*&gt;<\/title>/ },
 
 	# Username :
-	{ :model=>/<title>bebo.com - Profile from [^&]* &lt;([^&]*)&gt;<\/title>/ },
+	{ :account=>/<title>bebo.com - Profile from [^&]* &lt;([^&]*)&gt;<\/title>/ },
 
 	# Gender :
 	{ :string=>/DynamicValues = \{"FacebookConnect":\{"appId":"[0-9]+"\},"Viximo":\{"memberLocale":"[^\"]*","creatorUid":"[0-9]+","creatorName":"[^\"]*","memberCountry":"[^\"]*","creatorGender":"([^\"]*)"/ },

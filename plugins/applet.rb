@@ -12,7 +12,8 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
 version "0.2"
 description "This plugin detects instances of applet HTML elements and retrieves the URL from the code parameter. - homepage: http://en.wikipedia.org/wiki/Java_applet"
 
-# 183 results for "this site requires java" @ 2010-10-15
+# Google results as at 2010-10-15 #
+# 183 for "this site requires java"
 
 # Examples #
 examples %w|
@@ -29,7 +30,7 @@ www.whitehavenchargers.com
 matches [
 
 	# URL Extraction
-	{ :filepath=>/<[\s]*applet[^>]*code[\s]*=[\s]*[\"|\']?([^>^\"]+)/i },
+	{ :string=>/<[\s]*applet[^>]*code[\s]*=[\s]*[\"|\']?([^>^\"]+)/i },
 
 ]
 
