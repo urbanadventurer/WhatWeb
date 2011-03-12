@@ -28,7 +28,7 @@ examples %w|http://tachyondecay.net/blog/ www.mollysgusher.net/blog http://www.b
 matches [
 # http://johnny.ihackstuff.com/ghdb?function=detail&id=1840
 {:ghdb=>'"Powered by Vsns Lemon" intitle:"Vsns Lemon"'},
-{:ghdb=>'<p>Powered by <abbr title="very simple news system">'},
+{:text=>'<p>Powered by <abbr title="very simple news system">'},
 {:name=>"powered by link",
 :regexp=>/<p>Powered by <abbr title="very simple news system">VSNS<\/abbr> Lemon [0-9.a-z]* by <a href="http:\/\/tachyondecay.net\/">Tachyon<\/a>/},
 
