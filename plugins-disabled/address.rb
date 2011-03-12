@@ -9,7 +9,8 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-01-25
 version "0.1"
 description "This plugin identifies the 'address' (X)HTML/XML element and extracts its value."
 
-# About 124,000,000 results for "Apache" "Server at" intitle:"index of" @ 2011-01-25
+# Google rsults as at 2011-01-25 #
+# 124,000,000 for "Apache" "Server at" intitle:"index of"
 
 # Examples #
 examples %w|
@@ -43,8 +44,8 @@ http://www.inertia.com/
 matches [
 
 	# Extract address value
-	{ :string=>/<address>([^<]*)<\/address>/i, :regexp_offset=>0 },
-	{ :string=>/<address value="([^\"]*)"[^>]*>/i, :regexp_offset=>0 },
+	{ :string=>/<address>([^<]*)<\/address>/i },
+	{ :string=>/<address value="([^"]+)"[^>]*>/i },
 
 ]
 
