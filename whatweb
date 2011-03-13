@@ -784,7 +784,9 @@ puts "
 --url-suffix\t\tAdd a suffix to target URLs
 --url-pattern\t\tInsert the targets into a URL. Requires --input-file,
 \t\t\teg. www.example.com/%insert%/robots.txt 
---header, -H\t\tAdd or update an HTTP header. eg \"Foo:Bar\"
+--header, -H\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a default
+\t\t\theader will replace it. Specifying an empty value, eg.
+\t\t\t\"User-Agent:\" will remove the header.
 --help, -h\t\tThis help
 --verbose, -v\t\tIncrease verbosity, use twice for debugging.
 --debug\t\t\tRaise errors in plugins
