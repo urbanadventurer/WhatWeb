@@ -720,14 +720,19 @@ puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
 puts
 puts "Usage: whatweb [options] <URLs>"
 puts "
-TARGETING:
+TARGET SELECTION:
   <URLs>\t\tEnter URLs or filenames. Use /dev/stdin to pipe HTML
   \t\t\tdirectly
   --input-file=FILE, -i\tIdentify URLs found in FILE, eg. -i /dev/stdin
-  --example-urls, -e\tAdd example URLs for selected plugins to the target list
+  --url-prefix\t\tAdd a prefix to target URLs
+  --url-suffix\t\tAdd a suffix to target URLs
+  --url-pattern\t\tInsert the targets into a URL. Requires --input-file,
+\t\t\teg. www.example.com/%insert%/robots.txt 
+  --example-urls, -e\tAdd example URLs for each selected plugin to the target
+\t\t\tlist. By default will add example URLs for all plugins.
 
-REQUESTS:
-  --aggression, -a=LEVEL The aggression level controls the tradeoff between
+AGGRESSION LEVELS:
+  --aggression, -a=LEVEL The aggression level controls the trade-off between
 \t\t\tspeed/stealth and reliability. Default: 1
 \t\t\tAggression levels are:
 \t1 (Passive)\tMake one HTTP request per target. Except for redirects.
@@ -737,6 +742,7 @@ REQUESTS:
 \t4 (Heavy)\tTrigger aggressive functions for all plugins. Guess a
 \t\t\tlot of URLs like Nikto.
 
+HTTP OPTIONS:
   --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/#{$VERSION}.
   --header, -H\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a default
 \t\t\theader will replace it. Specifying an empty value, eg.
@@ -745,10 +751,20 @@ REQUESTS:
 \t\t\t`http-only', `meta-only', `same-site', `same-domain'
 \t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}
   --max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
-  --url-prefix\t\tAdd a prefix to target URLs
-  --url-suffix\t\tAdd a suffix to target URLs
-  --url-pattern\t\tInsert the targets into a URL. Requires --input-file,
-\t\t\teg. www.example.com/%insert%/robots.txt 
+
+SPIDERING:
+  --recursion, -r\tFollow links recursively. Only follow links under the
+\t\t\tpath (default: off)
+  --depth, -d\t\tMaximum recursion depth. Default: #{$RECURSIVE_DEPTH}
+  --max-links, -m\tMaximum number of links to follow on one page
+\t\t\t(default: #{$MAX_LINKS_TO_FOLLOW})
+  --spider-skip-extensions Redefine extensions to skip.
+\t\t\tDefault: #{$ANEMONE_SKIP_EXTENSIONS.join(",")}
+
+PROXY:
+  --proxy\t\t<hostname[:port]> Set proxy hostname and port
+\t\t\tDefault: #{$PROXY_PORT}
+  --proxy-user\t\t<username:password> Set proxy user and password
 
 PLUGINS:
   --plugins, -p\t\tComma delimited set of selected plugins. Default is all.
@@ -766,15 +782,6 @@ PLUGINS:
 \t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
 \t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
 \t\t\t\"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}\"
-
-SPIDERING:
-  --recursion, -r\tFollow links recursively. Only follow links under the
-\t\t\tpath (default: off)
-  --depth, -d\t\tMaximum recursion depth. Default: #{$RECURSIVE_DEPTH}
-  --max-links, -m\tMaximum number of links to follow on one page
-\t\t\t(default: #{$MAX_LINKS_TO_FOLLOW})
-  --spider-skip-extensions Redefine extensions to skip.
-\t\t\tDefault: #{$ANEMONE_SKIP_EXTENSIONS.join(",")}
 
 LOGGING & OUTPUT:
   --verbose, -v\t\tIncrease verbosity, use twice for plugin development.
@@ -798,14 +805,9 @@ PERFORMANCE & STABILITY:
   --open-timeout\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}
   --read-timeout\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}
   --wait=SECONDS\tWait SECONDS between connections
-\t\t\t(combine with threads = 1).
+\t\t\tThis is useful when using a single thread.
 
-PROXY:
-  --proxy\t\t<hostname[:port]> Set proxy hostname and port
-\t\t\t(default: #{$PROXY_PORT})
-  --proxy-user\t\t<username:password> Set proxy user and password
-
-HELP & MISC:
+HELP & MISCELLANEOUS:
   --help, -h\t\tThis help
   --debug\t\tRaise errors in plugins
   --version\t\tDisplay version information. (WhatWeb #{$VERSION})
@@ -814,7 +816,7 @@ EXAMPLE USAGE:
   whatweb example.com
   whatweb -v example.com
   whatweb -a 3 example.com
-\n\n"
+\n"
 
 	suggestions=""
 	suggestions << "To boost performance during long scans install the em-resolve-replace gem.\n" unless Gem.available?('em-resolv-replace')
