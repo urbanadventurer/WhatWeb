@@ -788,11 +788,12 @@ LOGGING & OUTPUT:
   --colour,--color=WHEN\tcontrol whether colour is used. WHEN may be `never',
 \t\t\t`always', or `auto'
   --log-brief=FILE\tLog brief, one-line output
+  --log-verbose=FILE\tLog verbose output
   --log-xml=FILE\tLog XML format
   --log-json=FILE\tLog JSON format
   --log-json-verbose=FILE Log JSON Verbose format
   --log-magictree=FILE\tLog MagicTree XML format
-  --log-full=FILE\tLog verbose output in Ruby object inspection format
+  --log-object=FILE\tLog Ruby object inspection format
   --log-mongo-database\tName of the MongoDB database
   --log-mongo-collection Name of the MongoDB collection. Default: whatweb
   --log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
