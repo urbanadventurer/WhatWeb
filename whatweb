@@ -720,16 +720,14 @@ puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
 puts
 puts "Usage: whatweb [options] <URLs>"
 puts "
-TARGETING
---------------------------------------------------------------------------------
-<URLs>\t\t\tEnter URLs or filenames. Use /dev/stdin to pipe HTML
-\t\t\tdirectly
---input-file=FILE, -i\tIdentify URLs found in FILE, eg. -i /dev/stdin
---example-urls, -e\tAdd example URLs for selected plugins to the target list
+TARGETING:
+  <URLs>\t\tEnter URLs or filenames. Use /dev/stdin to pipe HTML
+  \t\t\tdirectly
+  --input-file=FILE, -i\tIdentify URLs found in FILE, eg. -i /dev/stdin
+  --example-urls, -e\tAdd example URLs for selected plugins to the target list
 
-REQUESTS
---------------------------------------------------------------------------------
---aggression, -a=LEVEL\tThe aggression level controls the tradeoff between
+REQUESTS:
+  --aggression, -a=LEVEL The aggression level controls the tradeoff between
 \t\t\tspeed/stealth and reliability. Default: 1
 \t\t\tAggression levels are:
 \t1 (Passive)\tMake one HTTP request per target. Except for redirects.
@@ -739,90 +737,83 @@ REQUESTS
 \t4 (Heavy)\tTrigger aggressive functions for all plugins. Guess a
 \t\t\tlot of URLs like Nikto.
 
---user-agent, -U=AGENT\tIdentify as AGENT instead of WhatWeb/#{$VERSION}.
---header, -H\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a default
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/#{$VERSION}.
+  --header, -H\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a default
 \t\t\theader will replace it. Specifying an empty value, eg.
 \t\t\t\"User-Agent:\" will remove the header.
---follow-redirect=WHEN\tControl when to follow redirects. WHEN may be `never',
+  --follow-redirect=WHEN Control when to follow redirects. WHEN may be `never',
 \t\t\t`http-only', `meta-only', `same-site', `same-domain'
 \t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}
---max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
---url-prefix\t\tAdd a prefix to target URLs
---url-suffix\t\tAdd a suffix to target URLs
---url-pattern\t\tInsert the targets into a URL. Requires --input-file,
+  --max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
+  --url-prefix\t\tAdd a prefix to target URLs
+  --url-suffix\t\tAdd a suffix to target URLs
+  --url-pattern\t\tInsert the targets into a URL. Requires --input-file,
 \t\t\teg. www.example.com/%insert%/robots.txt 
 
-PLUGINS
---------------------------------------------------------------------------------
---plugins, -p\t\tComma delimited set of selected plugins. Default is all.
+PLUGINS:
+  --plugins, -p\t\tComma delimited set of selected plugins. Default is all.
 \t\t\tEach element can be a directory, file or plugin name and
 \t\t\tcan optionally have a modifier, eg. + or -
 \t\t\tExamples: +/tmp/moo.rb,+/tmp/foo.rb
 \t\t\ttitle,md5,+./plugins-disabled/
 \t\t\t./plugins-disabled,-md5
---list-plugins, -l\tList the plugins
---info-plugins, -I\tDisplay information for all plugins. Optionally search
+  --list-plugins, -l\tList the plugins
+  --info-plugins, -I\tDisplay information for all plugins. Optionally search
 \t\t\twith keywords in a comma delimited list.
---custom-plugin\t\tDefine a custom plugin called Custom-Plugin,
+  --custom-plugin\tDefine a custom plugin called Custom-Plugin,
 \t\t\tExamples: \":text=>'powered by abc'\"
 \t\t\t\":regexp=>/powered[ ]?by ab[0-9]/\"
 \t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
 \t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
 \t\t\t\"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}\"
 
-SPIDERING
---------------------------------------------------------------------------------
---recursion, -r\t\tFollow links recursively. Only follow links under the
+SPIDERING:
+  --recursion, -r\tFollow links recursively. Only follow links under the
 \t\t\tpath (default: off)
---depth, -d\t\tMaximum recursion depth. Default: #{$RECURSIVE_DEPTH}
---max-links, -m\t\tMaximum number of links to follow on one page
+  --depth, -d\t\tMaximum recursion depth. Default: #{$RECURSIVE_DEPTH}
+  --max-links, -m\tMaximum number of links to follow on one page
 \t\t\t(default: #{$MAX_LINKS_TO_FOLLOW})
---spider-skip-extensions Redefine extensions to skip.
+  --spider-skip-extensions Redefine extensions to skip.
 \t\t\tDefault: #{$ANEMONE_SKIP_EXTENSIONS.join(",")}
 
-LOGGING & OUTPUT
---------------------------------------------------------------------------------
---verbose, -v\t\tIncrease verbosity, use twice for plugin development.
---colour=[WHEN],\n--color=[WHEN]\t\tcontrol whether colour is used. WHEN may be `never',
+LOGGING & OUTPUT:
+  --verbose, -v\t\tIncrease verbosity, use twice for plugin development.
+  --colour,--color=WHEN\tcontrol whether colour is used. WHEN may be `never',
 \t\t\t`always', or `auto'
---log-brief=FILE\tLog brief, one-line output
---log-xml=FILE\t\tLog XML format
---log-json=FILE\t\tLog JSON format
---log-json-verbose=FILE\tLog JSON Verbose format
---log-magictree=FILE\tLog MagicTree XML format
---log-full=FILE\t\tLog verbose output in Ruby object inspection format
---log-mongo-database\tName of the MongoDB database
---log-mongo-collection\tName of the MongoDB collection. Default: whatweb
---log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
---log-mongo-username\tMongoDB username. Default: nil
---log-mongo-password\tMongoDB password. Default: nil
---log-errors=FILE\tLog errors
+  --log-brief=FILE\tLog brief, one-line output
+  --log-xml=FILE\tLog XML format
+  --log-json=FILE\tLog JSON format
+  --log-json-verbose=FILE Log JSON Verbose format
+  --log-magictree=FILE\tLog MagicTree XML format
+  --log-full=FILE\tLog verbose output in Ruby object inspection format
+  --log-mongo-database\tName of the MongoDB database
+  --log-mongo-collection Name of the MongoDB collection. Default: whatweb
+  --log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
+  --log-mongo-username\tMongoDB username. Default: nil
+  --log-mongo-password\tMongoDB password. Default: nil
+  --log-errors=FILE\tLog errors
 
-PERFORMANCE & STABILITY
---------------------------------------------------------------------------------
---max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
---open-timeout\t\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}
---read-timeout\t\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}
---wait=SECONDS\t\tWait SECONDS between connections
+PERFORMANCE & STABILITY:
+  --max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
+  --open-timeout\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}
+  --read-timeout\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}
+  --wait=SECONDS\tWait SECONDS between connections
 \t\t\t(combine with threads = 1).
 
-PROXY
---------------------------------------------------------------------------------
---proxy\t\t\t<hostname[:port]> Set proxy hostname and port
+PROXY:
+  --proxy\t\t<hostname[:port]> Set proxy hostname and port
 \t\t\t(default: #{$PROXY_PORT})
---proxy-user\t\t<username:password> Set proxy user and password
+  --proxy-user\t\t<username:password> Set proxy user and password
 
-HELP & MISC
---------------------------------------------------------------------------------
---help, -h\t\tThis help
---debug\t\t\tRaise errors in plugins
---version\t\tDisplay version information. (WhatWeb #{$VERSION})
+HELP & MISC:
+  --help, -h\t\tThis help
+  --debug\t\tRaise errors in plugins
+  --version\t\tDisplay version information. (WhatWeb #{$VERSION})
 
-EXAMPLE USAGE
---------------------------------------------------------------------------------
-whatweb example.com
-whatweb -v example.com
-whatweb -a 3 example.com
+EXAMPLE USAGE:
+  whatweb example.com
+  whatweb -v example.com
+  whatweb -a 3 example.com
 \n\n"
 
 	suggestions=""
