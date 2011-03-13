@@ -64,6 +64,7 @@ Version 0.4.6 Released ? 2010
 * Added redirect control. options are 'never',`http-only', `meta-only', `same-site', `same-domain', 'always'
 * Added --max-redirects. Control the maximum number of contiguous redirects followed
 * Added custom headers. Can be used multiple times. Examples: --header or -H. eg. "foo:bar" or "user-agent: blinky". Specifying a default header will replace it. Specifying an empty value removes hte header, eg. "User-Agent:"
+* Added support for HTTP basic authentication. -u and --user
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman
