@@ -7,19 +7,18 @@ Ruby1.9 compatability
   -- targets don't seem to get passed between threads the same as ruby1.8
 	thistarget variable doesn't make it across the Thread.new do  line
 
-country should be both a country name and an iso code
+[x] country should be both a country name and an iso code
+
 
 
 --follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)
 
 
-move this block to a pre output stage, be more DRY:
-  string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.compact.sort.uniq.join(",")
+rewrite output functions to be more DRY
+	diff output plugins require - joined by , or not
 
-diff output plugins require - joined by , or not
-
-have colour schemes - use on white background, etc.
-
+	have colour schemes - use on white background, etc.
+	review logging. xml logging will combine versions with ,'s but json will keep them separate.
 
 for ppl who just want to test the presence of a url, use :url=>'' and :status=>200
 netgear-router.rb:{ :model=>'WAG302', :status=>200, :url=>'/images/../settingsWAG302.gif', :certainty=>75 },
@@ -33,7 +32,7 @@ need some kind of plugin dependencies, eg.
 etc..
 
 remove log-json-versbose?  does anyone use this?
-
+	--log-full=FILE		Log verbose output (might be removed in future)
 improve  def version_detection?	for Plugins
 
 
@@ -41,7 +40,7 @@ maybe there should be a different location for data such as country-ips.dat. eg.
 
 [x] add plugin init & close.
 
-review logging. xml logging will combine versions with ,'s but json will keep them separate.
+
 
 
 open_target({:method=>"POST"})
@@ -84,7 +83,6 @@ end
 [x] escape output in logs. <>"& for xml logs.
 [x] add XML log initialisation and termination: 
 
-	--log-full=FILE		Log verbose output (might be removed in future)
 
 Add CVE array and version matching:
 

@@ -152,6 +152,7 @@ $ANEMONE_SKIP_REGEX=nil
 $WAIT=nil
 $OUTPUT_ERRORS=nil
 $QUIET=false
+$CUSTOM_HEADERS={}
 
 
 # precompile regular expressions in plugins for performance
@@ -593,7 +594,9 @@ def open_target(target)
 			http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
 		end
 		
-		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) ,{"User-Agent"=>$USER_AGENT})	
+		
+
+		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) , $CUSTOM_HEADERS)	
 		res=http.request(req)
 		
 		headers={}; res.each_header {|x,y| headers[x]=y }
@@ -781,6 +784,9 @@ puts "
 --url-suffix\t\tAdd a suffix to target URLs
 --url-pattern\t\tInsert the targets into a URL. Requires --input-file,
 \t\t\teg. www.example.com/%insert%/robots.txt 
+--header, -H\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a default
+\t\t\theader will replace it. Specifying an empty value, eg.
+\t\t\t\"User-Agent:\" will remove the header.
 --help, -h\t\tThis help
 --verbose, -v\t\tIncrease verbosity, use twice for debugging.
 --debug\t\t\tRaise errors in plugins
@@ -849,6 +855,7 @@ opts = GetoptLong.new(
       [ '--open-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--spider-skip-extensions', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--header','-H', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--debug', GetoptLong::NO_ARGUMENT ],
       [ '--version', GetoptLong::NO_ARGUMENT ],
@@ -895,20 +902,20 @@ begin
 				if defined?(JSON)
 			 		output_list << OutputJSON.new(arg)
 				else
-					abort("Sorry. The JSON gem is required for JSON output")
+					raise("Sorry. The JSON gem is required for JSON output")
 				end
 			when '--log-json-verbose'
 				if defined?(JSON)
 			 		output_list << OutputJSONVerbose.new(arg)
 				else
-					abort("Sorry. The JSON gem is required for JSONVerbose output")
+					raise("Sorry. The JSON gem is required for JSONVerbose output")
 				end
 			when '--log-mongo-collection'
 				if defined?(Mongo) and defined?(CharDet)
 					mongo[:collection]=arg
 					mongo[:use_mongo_log]=true
 				else
-					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 
 			when '--log-mongo-host'
@@ -916,7 +923,7 @@ begin
 			 		mongo[:host]=arg
 					mongo[:use_mongo_log]=true
 				else
-					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 
 			when '--log-mongo-database'
@@ -924,21 +931,21 @@ begin
 			 		mongo[:database]=arg
 					mongo[:use_mongo_log]=true
 				else
-					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 			when '--log-mongo-username'
 				if defined?(Mongo) and defined?(CharDet)
 			 		mongo[:username]=arg
 					mongo[:use_mongo_log]=true
 				else
-					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 			when '--log-mongo-password'
 				if defined?(Mongo) and defined?(CharDet)
 			 		mongo[:password]=arg
 					mongo[:use_mongo_log]=true
 				else
-					abort("Sorry. The mongo and rchardet gems are required for Mongo output")
+					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 			when '--log-errors'
 			 	$OUTPUT_ERRORS = OutputErrors.new(arg)
@@ -975,7 +982,7 @@ begin
 				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
 					$FOLLOW_REDIRECT=arg.downcase
 				else
-					error("Invalid --follow-redirect parameter.")
+					raise("Invalid --follow-redirect parameter.")
 				end
 			when '--max-redirects'
 				$MAX_REDIRECTS=arg.to_i
@@ -987,6 +994,15 @@ begin
 				$ANEMONE_SKIP_EXTENSIONS = arg.split(",")
 			when '--wait'
 				$WAIT = arg.to_i
+			when 'H','--header'
+				begin
+					x=arg.scan(/([^:]+):(.*)/).flatten
+					raise if x.empty?
+					$CUSTOM_HEADERS[x.first]=x.last
+				rescue
+					raise("Invalid --header parameter.")
+				end
+				
 			when '--debug'
 				$DEBUG = true
 			when '-h','--help'
@@ -999,9 +1015,10 @@ begin
 				exit
 		end
 	end		
-rescue GetoptLong::Error => err
+rescue StandardError, GetoptLong::Error => err
 	puts
 	usage
+	puts err
 	exit
 end
 
@@ -1030,6 +1047,10 @@ if mongo[:use_mongo_log]
 		exit
 	end
 end
+
+## Headers
+$CUSTOM_HEADERS["User-Agent"]=$USER_AGENT unless $CUSTOM_HEADERS["User-Agent"]
+$CUSTOM_HEADERS.delete_if {|k,v| v=="" }
 
 
 ### TARGETS
