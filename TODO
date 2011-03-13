@@ -32,7 +32,7 @@ need some kind of plugin dependencies, eg.
 etc..
 
 remove log-json-versbose?  does anyone use this?
-
+	--log-full=FILE		Log verbose output (might be removed in future)
 improve  def version_detection?	for Plugins
 
 
@@ -83,7 +83,6 @@ end
 [x] escape output in logs. <>"& for xml logs.
 [x] add XML log initialisation and termination: 
 
-	--log-full=FILE		Log verbose output (might be removed in future)
 
 Add CVE array and version matching:
 

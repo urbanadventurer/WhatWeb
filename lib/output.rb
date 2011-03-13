@@ -100,7 +100,7 @@ class OutputVerbose < Output
 
 						c = case key
 							when :version then "green"
-							when :string then "white"
+							when :string then "cyan"
 							when :certainty then "grey"
 							when :os then "red"
 							when :account then "cyan"
