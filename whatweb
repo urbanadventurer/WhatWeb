@@ -857,6 +857,7 @@ opts = GetoptLong.new(
       [ '--log-json', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-json-verbose', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-magictree', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-verbose', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-collection', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-host', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
@@ -924,6 +925,8 @@ begin
 			 	output_list << OutputXML.new(arg)
 			when '--log-magictree'
 				output_list << OutputMagicTreeXML.new(arg)
+			when '--log-verbose'
+				output_list << OutputVerbose.new(arg)
 			when '--log-json'
 				if defined?(JSON)
 			 		output_list << OutputJSON.new(arg)
@@ -1062,7 +1065,7 @@ precompile_regular_expressions # optimise plugins
 
 ### OUTPUT
 output_list << OutputBrief.new unless $QUIET # by default output brief
-output_list << OutputFull.new() if $verbose > 1 # full output if -vv
+output_list << OutputObject.new() if $verbose > 1 # full output if -vv
 output_list <<  OutputVerbose.new() if $verbose > 0 # full output if -v
 
 if mongo[:use_mongo_log]
