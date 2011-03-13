@@ -851,7 +851,7 @@ opts = GetoptLong.new(
       [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
       [ '-e','--example-urls', GetoptLong::NO_ARGUMENT ],
       [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-full', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-brief', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-xml', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-json', GetoptLong::REQUIRED_ARGUMENT ],
@@ -916,8 +916,8 @@ begin
 					else
 						raise("--colour argument not recognized")
 					end
-			when '--log-full'
-				output_list << OutputFull.new(arg)
+			when '--log-object'
+				output_list << OutputObject.new(arg)
 			when '--log-brief'
 			 	output_list << OutputBrief.new(arg)
 			when '--log-xml'

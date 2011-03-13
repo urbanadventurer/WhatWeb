@@ -42,7 +42,7 @@ class Output
 
 end
 
-class OutputFull < Output
+class OutputObject < Output
 	def out(target, status, results) 
 		@f.puts "Identifying: "+ target.to_s
 		@f.puts "HTTP-Status: "+ status.to_s
