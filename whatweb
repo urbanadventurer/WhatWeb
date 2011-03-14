@@ -153,6 +153,8 @@ $WAIT=nil
 $OUTPUT_ERRORS=nil
 $QUIET=false
 $CUSTOM_HEADERS={}
+$BASIC_AUTH_USER=nil
+$BASIC_AUTH_PASS=nil
 
 
 # precompile regular expressions in plugins for performance
@@ -596,7 +598,11 @@ def open_target(target)
 		
 		
 
-		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) , $CUSTOM_HEADERS)	
+		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) , $CUSTOM_HEADERS)
+
+		if $BASIC_AUTH_USER	
+			req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
+		end
 		res=http.request(req)
 		
 		headers={}; res.each_header {|x,y| headers[x]=y }
@@ -744,6 +750,7 @@ AGGRESSION LEVELS:
 
 HTTP OPTIONS:
   --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/#{$VERSION}.
+  --user, -u=<user:password> HTTP basic authentication
   --header, -H\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a default
 \t\t\theader will replace it. Specifying an empty value, eg.
 \t\t\t\"User-Agent:\" will remove the header.
@@ -754,10 +761,10 @@ HTTP OPTIONS:
 
 SPIDERING:
   --recursion, -r\tFollow links recursively. Only follow links under the
-\t\t\tpath (default: off)
+\t\t\tpath Default: off
   --depth, -d\t\tMaximum recursion depth. Default: #{$RECURSIVE_DEPTH}
   --max-links, -m\tMaximum number of links to follow on one page
-\t\t\t(default: #{$MAX_LINKS_TO_FOLLOW})
+\t\t\tDefault: #{$MAX_LINKS_TO_FOLLOW}
   --spider-skip-extensions Redefine extensions to skip.
 \t\t\tDefault: #{$ANEMONE_SKIP_EXTENSIONS.join(",")}
 
@@ -884,6 +891,7 @@ opts = GetoptLong.new(
       [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--spider-skip-extensions', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--header','-H', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--user','-u', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--debug', GetoptLong::NO_ARGUMENT ],
       [ '--version', GetoptLong::NO_ARGUMENT ],
@@ -1024,7 +1032,7 @@ begin
 				$ANEMONE_SKIP_EXTENSIONS = arg.split(",")
 			when '--wait'
 				$WAIT = arg.to_i
-			when 'H','--header'
+			when '-H','--header'
 				begin
 					x=arg.scan(/([^:]+):(.*)/).flatten
 					raise if x.empty?
@@ -1032,7 +1040,9 @@ begin
 				rescue
 					raise("Invalid --header parameter.")
 				end
-				
+			when '-u','--user'
+				$BASIC_AUTH_USER=arg.split(":").first
+				$BASIC_AUTH_PASS=arg.split(":").last
 			when '--debug'
 				$DEBUG = true
 			when '-h','--help'
