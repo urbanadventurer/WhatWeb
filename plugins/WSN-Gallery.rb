@@ -32,10 +32,10 @@ matches [
 { :text=>'<title>WSN Gallery Administration Panel</title>' },
 
 # Admin # Version Detection # adminlogin.php
-{ :version=>/<span class="group" style="margin-left: 8px;">WSN Gallery ([\d\.]+) Admin Login<\/span>/ },
+{ :version=>/<span class="(topbar|group)" style="margin-left: 8px;">WSN Gallery ([\d\.]+) Admin Login<\/span>/, :offset=>1 },
 
 # Admin # Version Detection # adminlogin.php
-{ :version=>/<span class="group">WSN Gallery ([\d\.]+) Admin Panel<\/span>/ },
+{ :version=>/<span class="(topbar|group)">WSN Gallery ([\d\.]+) Admin Panel<\/span>/, :offset=>1 },
 
 # HTML Comment # Shared with other WSN Software products
 { :certainty=>25, :text=>'<!-- place any jquery-dependent script tags that need to be before the /head tag in here -->' },
