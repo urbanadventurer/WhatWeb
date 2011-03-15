@@ -9,6 +9,9 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
 version "0.1"
 description "Cype MSCMS - a CMS for managing MapleStory server stats - http://cypedev.com/"
 
+# Google results as at 2011-03-15 #
+# 30 for intitle:"Powered By Cype" intext:"Powered By Cype MSCMS"
+
 # Examples #
 examples %w|
 z99.no-ip.org
