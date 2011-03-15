@@ -30,7 +30,7 @@ Version 0.4.6 Released ? 2010
 * Bugfix: Changed webpage data for when working with files, not URIs. Now it passes empty hashes, etc instead of nil which caused plugins to report errors.
 * Added MongoDB logging. Use with --log-mongo-database, --log-mongo-host, --log-mongo-collection, --log-mongo-username, --log-mongo-password. Only database has no default.
 * Added JSON logging. Must have the json ruby gem installed or be using Ruby 1.9
-* Added MagicTree logging from Brendan Coles
+* Added MagicTree logging from Brendan Coles & Gremwell
 * Added error logging.
 * Added Verbose logging.
 * Added XML header and footer to XML logs
