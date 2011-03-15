@@ -48,11 +48,11 @@ matches [
 # Admin # Version Detection # adminlogin.php
 { :version=>/<span class="group">WSN Links ([\d\.]+) Admin Panel<\/span>/ },
 
-# HTML Comment
-{ :text=>'<!-- place any jquery-dependent script tags that need to be before the /head tag in here -->' },
+# HTML Comment # Shared with other WSN Software products
+{ :certainty=>25, :text=>'<!-- place any jquery-dependent script tags that need to be before the /head tag in here -->' },
 
-# boxtitle
-{ :regexp=>/<div class="boxtitle" on[c|C]lick="minmax\('[a-z]+box'\)"><img src=/ },
+# boxtitle # Shared with other WSN Software products
+{ :certainty=>25, :regexp=>/<div class="boxtitle" on[c|C]lick="minmax\('[a-z]+box'\)"><img src=/ },
 
 # License Agreement # setup.php
 { :text=>'<textarea readonly rows="20" cols="75">WSN Links License Agreement' },
