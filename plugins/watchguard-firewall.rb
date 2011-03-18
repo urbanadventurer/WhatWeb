@@ -4,13 +4,31 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.2 # 2011-03-18 # Brendan Coles <bcoles@gmail.com>
+# Updated regex
+# Added HTTP Server Header match
+# Added string extraction from www-authenticate realm
+##
 Plugin.define "WatchGuard-Firewall" do
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
-version "0.1"
+version "0.2"
 description "WatchGuard Firewall - http://www.watchguard.com/products/edge-e/overview.asp"
 
+# ShodanHQ results as at 2011-03-18 #
+# 4,976 for WatchGuard Firewall
+
+# Examples #
 examples %w|
+http://70.91.220.169/
+http://208.180.252.118/
+http://76.205.188.242/
+http://173.14.242.29/
+http://203.232.90.253/
+http://67.167.120.91/
+http://64.232.118.26/
+http://74.222.222.160/
+http://78.70.110.42/
+http://24.227.203.135/
 http://119.192.80.242/
 http://119.196.217.76/
 http://121.133.227.94/
@@ -20,10 +38,8 @@ http://173.162.75.189/
 http://173.165.228.17/
 http://173.25.141.99/
 http://193.253.214.176/
-http://202.168.66.26/
 http://206.255.36.198/
 http://207.109.253.97/
-http://209.254.21.90/
 http://211.192.91.27/
 http://216.163.77.138/
 http://216.223.141.17/
@@ -61,16 +77,25 @@ http://99.38.136.54/
 |
 
 
+# Passive #
 def passive
 	m = []
 
-	m << {:name=>"http www-authenticate" } if @meta["www-authenticate"] =~ /realm="WatchGuard Firebox/i
-	m << {:name=>"http server header" } if @meta["www-authenticate"] =~ /WatchGuard Firewall/i
-       
+	# HTTP Server Header
+	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^WatchGuard Firewall$/
+
+	# WWW-Authenticate
+	m << { :name=>"WWW-Authenticate Header" } if @meta["www-authenticate"] =~ /^(Basic|Digest) realm="WatchGuard (SOHO|Firebox)/i
+
+	# SOHO
+	m << { :string=>@meta["www-authenticate"].scan(/^Digest realm="WatchGuard (SOHO [^"]+) Configuration"/) } if @meta["www-authenticate"] =~ /Digest realm="WatchGuard (SOHO [^"]+) Configuration"/
+
+	# Firebox
+	m << { :string=>"Firebox" } if @meta["www-authenticate"] =~ /^Digest realm="WatchGuard Firebox Local User"/
+
+	# Return passive matches       
 	m
-
 end
-
 
 end
 
