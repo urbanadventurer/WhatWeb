@@ -18,20 +18,20 @@ lars.nocrew.org
 matches [
 
 # Get geography
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geography[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geography/i },
+{ :string=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geography[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
+{ :string=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geography/i },
 
 # Get geo.position
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.position[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.position/i },
+{ :string=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.position[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
+{ :string=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.position/i },
 
 # Get geo.placename
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.placename[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.placename/i },
+{ :string=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.placename[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
+{ :string=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.placename/i },
 
 # Get geo.region
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.region[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.region/i },
+{ :string=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?geo.region[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
+{ :string=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?geo.region/i },
 
 ]
 

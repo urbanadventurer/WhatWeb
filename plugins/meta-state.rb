@@ -16,8 +16,8 @@ http://www.gigablast.com/tagsdemo.html
 matches [
 
 # Extract state
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?state[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?state/i },
+{ :string=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?state[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i },
+{ :string=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?state/i },
 
 ]
 
