@@ -32,18 +32,13 @@ www.maxim.com
 www.cms.il.gov/iisradio/
 |
 
-# Passive #
-def passive
-        m=[]
+# Matches #
+matches [
 
-	# Extract URL from Meta Tag
-	m << { :string=>@body.scan(/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i)[0][0] } if @body =~ /<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
+# Extract URL from Meta Tag
+{ :string=>/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i },
 
-	# Return passive results
-	m
-
-end
-
+]
 
 end
 
