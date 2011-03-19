@@ -77,6 +77,10 @@ class Plugin
   def x
   	results=[]
 
+	# Initialize @body variable if the connection is terminated prematurely
+	# This is usually caused by HTTP status codes: 101, 102, 204, 205, 305
+	@body="" if @body.nil?
+	
 	unless @matches.nil?
 	  	@matches.map do |match|
 			r=[]
