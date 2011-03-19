@@ -111,7 +111,13 @@ class OutputVerbose < Output
 							else "grey"
 						end
 
-						@f.print coloured(value.to_s,c)
+						if value.is_a?(String)
+							@f.print coloured(value.to_s,c)
+						elsif value.is_a?(Array)
+							@f.print coloured(value.join(",").to_s,c)
+						else
+						end
+
 						
 						unless name_of_match.empty?
 							@f.print " (from #{name_of_match})"
