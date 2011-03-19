@@ -97,9 +97,7 @@ class OutputVerbose < Output
 				top_certainty= suj(plugin_results)[:certainty].to_i
 				@f.puts "\t"+"Certainty".ljust(11)+": " + certainty_to_words(top_certainty)
 
-				plugin_results.map do |pr|
-
-					pr=sortuniq(pr)
+				plugin_results.map {|x| sortuniq(x) }.each do |pr|
 
 					if pr[:name]
 						name_of_match = pr[:name]
@@ -134,8 +132,8 @@ class OutputVerbose < Output
 						elsif value.is_a?(Array)
 							@f.print coloured(value.join(",").to_s,c)
 						else
+							@f.print coloured(value.inspect,c)
 						end
-
 						
 						unless name_of_match.empty?
 							@f.print " (from #{name_of_match})"
