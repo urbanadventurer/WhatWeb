@@ -424,6 +424,7 @@ def custom_plugin(c)
 
 	custom="Plugin.define \"Custom-Plugin\" do
 	author \"Unknown\"
+	description \"User defined\"
 	#{matches}
 	end
 	"
