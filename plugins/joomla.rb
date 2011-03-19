@@ -4,6 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.7 # 2011-03-19 # Brendan Coles <bcoles@gmail.com>
+# Added aggressive match for /administrator/
+# Updated matches to remove false positives
+##
 # Version 0.6
 # added seconds since epoch match from the mambo plugin
 ##
@@ -15,7 +19,7 @@
 ##
 Plugin.define "Joomla" do
 author "Andrew Horton"
-version "0.6"
+version "0.7"
 description "Opensource CMS written in PHP. Homepage: http://joomla.org. Plugin can aggresively identify version by comparing md5 hashes of 4 files. Valid up to version 1.5.15."
 
 # Google results as at 2011-03-19 #
@@ -27,7 +31,6 @@ examples %w|
 biokolchuga.com
 cosmicfantasia.net.au
 rustedfables.com
-turning2joomla.com
 www.1000usi.ch
 www.azrul.com
 www.bittdesign.nl
@@ -63,9 +66,14 @@ matches [
 def passive
 	m=[]
 
+	# /administrator # Confirm the presence of Joomla with 100% certainty
+	if @base_uri.path =~ /\/administrator\// and (@body =~ /<div id="joomla"><img src="[^"]*\/images\/header_text.png" alt="Joomla! Logo" \/><\/div>/ or @body =~ /<a href="http:\/\/www.joomla.org" target="_blank">Joomla!<\/a>/)
+		m << { :name=>"Joomla Administration Page" }
+	end
+
 	# HTML Comment # seconds since epoch # Also used by mambo
-	if @body =~ /<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/ and !@body.scan(/mambo/i)
-		m << {:name=>"seconds since epoch in html comment after </html>",:version=>"1.0",:certainty=>25}
+	if @body =~ /<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/ and @body !~ /mambo/i
+		m << {:name=>"seconds since epoch in html comment after </html>",:certainty=>25}
 	end
 
 	# Module Detection # Doesn't work in SEO mode # Also used by mambo
@@ -79,6 +87,9 @@ def passive
 
 	end
 
+	# mosvisitor cookie # Also used by mambo
+	m << { :certainty=>75, :name=>"mosvisitor cookie" } if @meta["set-cookie"] =~ /mosvisitor=[0-9]+/ 
+
 	# P3P Privacy Headers # Also used by phpcake
 	m << { :name=>"P3P Privacy Headers", :certainty=>25 } if @meta["p3p"] == 'CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"'
 
@@ -89,6 +100,17 @@ end
 # Aggressive #
 def aggressive
 	m=[]
+
+	# Open base_uri + /administrator/
+	status,url,ip,body,headers=open_target(@base_uri.to_s+"/administrator/")
+
+	# Confirm the presence of Joomla with 100% certainty
+	if (body =~ /<div id="joomla"><img src="[^"]*\/images\/header_text.png" alt="Joomla! Logo" \/><\/div>/ or body =~ /<a href="http:\/\/www.joomla.org" target="_blank">Joomla!<\/a>/)
+		m << { :name=>"Joomla Administration Page" }
+	end
+
+	# Version Detection # /administrator/ # Meta Generator
+	m << { :version=>body.scan(/<meta name="generator" content="Joomla! (\d\.\d) - Open Source Content Management" \/>/) } if body =~ /<meta name="generator" content="Joomla! (\d\.\d) - Open Source Content Management" \/>/
 
 	# Download and md5 hash additional files
 	to_download = %w| language/en-GB/en-GB.ini administrator/language/en-GB/en-GB.ini administrator/language/en-GB/en-GB.xml plugins/editors/tinymce.xml|
