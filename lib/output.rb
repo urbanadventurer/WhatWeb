@@ -40,7 +40,22 @@ class Output
 		suj
 	end
 
+	# sort and uniq but no join. just for one plugin result
+	def sortuniq(p)
+		su={}
+		[:certainty, :version, :os, :string, :account, :model, :firmware, :module, :filepath].map do |thissymbol|
+			unless p[thissymbol].class==Regexp
+				t=p[thissymbol]
+				t=t.flatten.compact.sort.uniq if t.is_a?(Array)
+				su[thissymbol] = t unless t.nil?
+			end					
+		end
+		# certainty is different, it's a number
+		su[:certainty] = p[:certainty].to_i
+		su
+	end
 end
+
 
 class OutputObject < Output
 	def out(target, status, results) 
@@ -82,7 +97,10 @@ class OutputVerbose < Output
 				top_certainty= suj(plugin_results)[:certainty].to_i
 				@f.puts "\t"+"Certainty".ljust(11)+": " + certainty_to_words(top_certainty)
 
-				matches = plugin_results.map do |pr|					
+				plugin_results.map do |pr|
+
+					pr=sortuniq(pr)
+
 					if pr[:name]
 						name_of_match = pr[:name]
 					else
