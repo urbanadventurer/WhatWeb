@@ -4,40 +4,54 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-# Version 0.2
-# removed :certainty, end at an optional ?, return the email address as a :string
-# Version 0.3
-# added \' to regex
-# Version 0.4
-# Updated regex, added > and comments
+# Version 0.6 # 2011-03-19 # Brendan Coles <bcoles@gmail.com>
+# Updated regex
+##
 # Version 0.5
 # find all email addresses, return only unique addresses, rename to email
-
+##
+# Version 0.4
+# Updated regex, added > and comments
+##
+# Version 0.3
+# added \' to regex
+##
+# Version 0.2
+# removed :certainty
+# end at an optional ?, return the email address as a :string
+##
 Plugin.define "Email" do
 author "Andrew Horton"
-version "0.5"
+version "0.6"
 description "Extract email addresses. Find valid email address and syntactically invalid email addresses from mailto: link tags. We match syntactically invalid links containing mailto: to catch anti-spam email addresses, eg. bob at gmail.com. This uses the simplified email regular expression from http://www.regular-expressions.info/email.html for valid email address matching."
 
-# identifying strings
-# mailto: email@address
-# A regex for valid email addresses is not included so that anti-spam email addresses can be returned, eg bob at gmail dot com.
+# More Info:
+# The regex will only detect anti-spam e-mail addresses if present in "mailto:"
+# The regex does not validate e-mail addresses in "mailto:"
+#
+# Example:
+# <a href="mailto:bob at gmail dot com"> will return "bob at gmail dot com"
+# <p>Contact me:  bob at gmail dot com</p> will not be detected
+# <p>Contact me:  bob@gmail.com</p> will return "bob@gmail.com"
 
-def passive
-	m=[]
-	emails=@body.scan(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i) # valid email address in the page
-	emails += @body.scan(/<[^>]+href=[^>]*mailto:([^\'\"\?>]+)[^>]*>/) # any emial address in a mailto: tag
-	unless emails.empty?
-		emails.flatten!
-		emails.map! {|e| CGI.unescapeHTML(e)  }
-		emails.map! {|e| CGI.unescape(e)  }
-		emails.map! {|e| e.strip }
-		emails.sort!.uniq!
-		m << {:string=>emails}
-	end
-	m		
-end
+# Google results as at 2011-03-19 #
+# 902 for "contact me" ("@hotmail.com"|"@gmail.com"|"@yahoo.com")
+
+# Examples #
+examples %w|
+plugins/mailto.rb
+|
+
+# Matches #
+matches [
+
+	# Detect valid email address in the page
+	{ :string=>/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i },
+
+	# Detect any email address in a mailto: tag
+	{ :string=>/<[^>]+href=[^>]*mailto:([^\'\"\?>]+)[^>]*>/i },
+
+]
 
 end
 
