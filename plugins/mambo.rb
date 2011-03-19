@@ -4,6 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.6 # 2011-03-19 # Brendan Coles <bcoles@gmail.com>
+# Added aggressive match for /administrator/
+# Updated matches to remove false positives
+##
 # Version 0.5 # 2011-03-06 # Brendan Coles <bcoles@gmail.com>
 # Updated module detection
 ##
@@ -19,14 +23,31 @@
 ##
 Plugin.define "Mambo" do
 author "Andrew Horton"
-version "0.5"
+version "0.6"
 description "Mambo CMS (http://mambo-foundation.org)"
 
 # Google results as at 2011-03-06 #
 # 3,420,000 results for "powered by mambo" inurl:option=com_content
 
 # Examples #
-examples %w|http://historycouncilvic.org.au/ http://www.turksandcaicosproperty.com/ http://www.moneydepot.com.au/md/  http://www.fuzzytoad.com/mambo/ http://www.ultimatescrapbooksite.com/ http://wreathsbydesign.com/portal/ http://www.xpec.co.uk/|
+examples %w|
+http://www.mamboserver.com/
+http://news.mamboserver.com/
+http://historycouncilvic.org.au/
+http://www.turksandcaicosproperty.com/
+http://www.moneydepot.com.au/md/
+http://www.fuzzytoad.com/mambo/
+http://wreathsbydesign.com/portal/
+http://www.xpec.co.uk/
+http://www.everydayrobots.com/
+http://www.sistematics.net/
+http://acl.arts.usyd.edu.au/
+http://interweby.com/web/
+http://myalbangera.com/bp/
+http://www.thedealaa.com/mambofolder/
+http://aribs.com.au/Mambo/
+http://www.osteopath.net.au/
+|
 
 # Matches #
 matches [
@@ -43,47 +64,55 @@ matches [
 # administrator/templates/mambo_admin/templateDetails.xml
 {:url=>'administrator/templates/mambo_admin/templateDetails.xml', :regexp=> /(<name>Mambo Admin<\/name>|<authorUrl>http:\/\/www\.mambo\-foundation\.org<\/authorUrl>)/ },
 
-# Module Detection
-{ :module=>/<a href="[^"]*index.php\?option=(com_[^&^"]+)/, :certainty=>25 },
-
 ]
 
 # Passive #
 def passive
 	m=[]
 
-	# HTML Comment # Seconds since epoch # joomla 1.0 + mambo have this
-	if @body.scan(/<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/) and !@body.scan(/joomla/i)
-		m << {:name=>"seconds since epoch in html comment afer </html>",:certainty=>25}
+	# /administrator/ # Confirm the presence of Mambo with 100% certainty
+	if @base_uri.path =~ /\/administrator\// and (@body =~ /<div id="mambo"><img src="[^"]*\/images\/header_text.png" alt="Mambo Logo" \/><\/div>/ or @body =~ /<a href="http:\/\/mambo-foundation.org">Mambo<\/a> is Free Software released under the GNU\/GPL License.<\/div>/ or @body =~ /<title>[^<]+ Administration \[Mambo( Open Source)?\]<\/title>/)
+		m << { :name=>"Mambo Administration Page" }
 	end
 
-	# mosvisitor cookie
-	m << {:name=>"mosvisitor cookie" } if @meta["set-cookie"] =~ /mosvisitor=[0-9]+/ 
+	# HTML Comment # seconds since epoch # Also used by joomla
+	if @body =~ /<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/ and @body !~ /joomla/i
+		m << {:name=>"seconds since epoch in html comment after </html>",:certainty=>25}
+	end
+
+	# Module Detection # Doesn't work in SEO mode # Also used by joomla
+	if @body =~ /<a href="[^"]*index.php\?option=(com_[^&^"]+)/
+
+		# Absolute URL
+		m << { :certainty=>75, :module=>@body.scan(/<a href="https?:\/\/#{Regexp.escape(@base_uri.host)}[^"]*index.php\?option=(com_[^&^"]+)/) } if @body =~ /<a href="https?:\/\/#{Regexp.escape(@base_uri.host)}[^"]*index.php\?option=(com_[^&^"]+)/
+
+		# Relative URL
+		m << { :certainty=>75, :module=>@body.scan(/<a href="[^"^:]*index.php\?option=(com_[^&^"]+)/) } if @body =~ /<a href="[^"^:]*index.php\?option=(com_[^&^"]+)/
+
+	end
+
+	# mosvisitor cookie # Also used by joomla
+	m << { :certainty=>75, :name=>"mosvisitor cookie" } if @meta["set-cookie"] =~ /mosvisitor=[0-9]+/ 
 
 	# Return passive matches
 	m
 end
 
+# Aggressive #
+def aggressive
+	m=[]
 
-# identifying strings
-# <meta name="Generator" content="Mambo - Copyright 2000 - 2005 Miro International Pty Ltd.  All rights reserved." />
-#
-# mambo.css
-#
-# can also identify default installs from favicon
-#
-# at the end of the page it's got hte seconds since epoch - gives away the unix time
-# </html><!-- 1242913058 -->
-# </html>
-#<!-- 1242913053 -->
-# </html><!-- 1242913087 -->
-# <!-- 1242913070  option:com_frontpage -->
+	# Open base_uri + /administrator/
+	status,url,ip,body,headers=open_target(@base_uri.to_s+"/administrator/")
 
-# sometimes -- Set-Cookie: mosvisitor=1
-# sometimes -- Expires: Mon, 26 Jul 1997 05:00:00 GMT
+	# Confirm the presence of Mambo with 100% certainty
+	if (body =~ /<div id="mambo"><img src="[^"]*\/images\/header_text.png" alt="Mambo Logo" \/><\/div>/ or body =~ /<a href="http:\/\/mambo-foundation.org">Mambo<\/a> is Free Software released under the GNU\/GPL License.<\/div>/ or body =~ /<title>[^<]+ Administration \[Mambo( Open Source)?\]<\/title>/)
+		m << { :name=>"Mambo Administration Page" }
+	end
 
-# to be sure, go to /administrator
-
+	# Return aggressive matches
+	m
 end
 
+end
 
