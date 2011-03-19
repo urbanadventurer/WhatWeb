@@ -4,13 +4,28 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
 # Version 0.2
 # removed :name & :probability
+##
 Plugin.define "NovellGroupwise" do
 author "Andrew Horton"
 version "0.2"
+description "GroupWise collaboration software is a premier collaboration tool for large enterprise. - Homepage: http://www.novell.com/products/groupwise/"
+
+# Matches #
+matches [
+
+# HTML Comments
+{:text=>"<!-- START NOVELL SERVICES -->"},
+{:text=>"<!-- START GROUPWISE WEBACCESS -->"},
+
+# Title
+{:text=>"<title>Novell Web Services</title>"}
+
+]
+
+end
+
 # identifying strings
 # <!-- START NOVELL SERVICES -->
 # <!-- START GROUPWISE WEBACCESS -->
@@ -19,13 +34,4 @@ version "0.2"
 # &copy; Copyright 1993-2006 Novell, Inc. All rights reserved
 # <title>Novell Web Services</title>
 
-
-matches [
-{:text=>"<!-- START NOVELL SERVICES -->"},
-{:text=>"<!-- START GROUPWISE WEBACCESS -->"},
-{:text=>"<title>Novell Web Services</title>"}
-]
-
-
-end
 

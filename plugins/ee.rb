@@ -4,9 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "¿" do # In celebration of our 500th plugin - 2010-10-18
-
-
+Plugin.define "?" do
+author "Brendan Coles"
+description "In celebration of our 500th plugin - 2010-10-18"
+version "1.0"
 
 
 
@@ -24,7 +25,7 @@ Plugin.define "¿" do # In celebration of our 500th plugin - 2010-10-18
 
 def passive
 	m=[]
-	if @base_uri.to_s =~ /^http:\/\/[www\.]*morningstarsecurity.com\/research\/whatweb/i then m << { :version=>"When you look into an abyss, the abyss also looks into you."} end
+	m << { :version=>"When you look into an abyss, the abyss also looks into you."} if @base_uri.to_s =~ /^http:\/\/(www\.)?morningstarsecurity.com\/research\/whatweb/i
 	m
 end
 end
