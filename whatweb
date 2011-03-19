@@ -325,8 +325,9 @@ def load_plugins(list=nil)
 
 	plugin_dirs.map {|p| p=File.expand_path(p) }
 
-	if list		
+	if list
 		list=list.split(",")
+
 		list.each do |p|
 			choice=PluginChoice.new
 			choice.fill(p)
@@ -436,8 +437,10 @@ def custom_plugin(c)
 		# load
 		load f.path
 		f.unlink
-	rescue
+		true
+	rescue SyntaxError
 		error("Error: Cannot load custom plugin")
+		false
 	end
 end
 
@@ -844,6 +847,7 @@ if ARGV.size==0 # faster usage info
 end
 
 plugin_selection=nil
+use_custom_plugin=false
 input_file=nil
 output_list = []
 mongo={}
@@ -1014,8 +1018,8 @@ begin
 				$URL_SUFFIX=arg
 			when '--url-pattern'
 				$URL_PATTERN=arg
-			when '--custom-plugin'
-				custom_plugin(arg)
+			when '--custom-plugin'				
+				use_custom_plugin=true if custom_plugin(arg)
 			when '--follow-redirect'	
 				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
 					$FOLLOW_REDIRECT=arg.downcase
@@ -1064,7 +1068,10 @@ end
 
 
 ### PLUGINS
-$plugins_to_use = load_plugins(plugin_selection) # load all the plugins
+
+plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection  
+
+$plugins_to_use = load_plugins(plugin_selection ) # load all the plugins
 
 # are the no plugins?
 if $plugins_to_use.size == 0
@@ -1224,7 +1231,7 @@ while thistarget = next_target
 							o.out(target, status, results)
 						rescue
 							#srsly, logging failed
-							error(target + "ERROR: Logging failed.")
+							error("Error: Logging failed for "+ target)
 						end
 					end
 				end
