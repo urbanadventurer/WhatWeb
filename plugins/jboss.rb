@@ -7,7 +7,9 @@
 Plugin.define "Jboss" do
 	author "Louis Nyffenegger"
 	version "0.1"
+	description "JBoss Application Server is the #1 most widely used Java application server on the market. A Java EE certified platform for developing and deploying enterprise Java applications, Web applications, and Portals, JBoss Application Server provides the full range of Java EE 5 features as well as extended enterprise services including clustering, caching, and persistence. - Homepaeg: http://www.jboss.org/jbossas/"
 
+	# Matches #
 	matches [
 		# 
 		# Default title from Jboss homepage
@@ -33,3 +35,4 @@ Plugin.define "Jboss" do
 	]
 
 end
+
