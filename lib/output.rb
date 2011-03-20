@@ -84,11 +84,14 @@ class OutputVerbose < Output
 			unless plugin_results.empty?
 				
 				@f.puts "   "+coloured(plugin_name,"yellow")+ " " + coloured("-"*(80-5-plugin_name.size),"dark_blue")
+				
+				description=[""]
+				unless Plugin.registered_plugins[plugin_name].description.nil?
+					d=Plugin.registered_plugins[plugin_name].description[0..350] 
+					d+="..." if d.size==251
+					description=word_wrap(d, 60)
+				end
 
-				d=Plugin.registered_plugins[plugin_name].description[0..350]
-				d+="..." if d.size==251
-
-				description=word_wrap(d, 60)
 				@f.puts "\tDescription: " + description.first
 				description[1..-1].each {|line|
 					@f.puts "\t" + " "*13 + line
