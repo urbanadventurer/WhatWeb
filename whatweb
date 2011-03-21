@@ -1102,6 +1102,7 @@ $CUSTOM_HEADERS.delete_if {|k,v| v=="" }
 ### TARGETS
 # clean up urls, add example urls if needed
 $targets=make_target_list(ARGV, input_file, $plugins_to_use)
+$recent_targets=[]
 pp "Targets: " ,$targets if $verbose>1
 
 # fail & show usage if no targets.
@@ -1121,33 +1122,54 @@ $ANEMONE_SKIP_REGEX=Regexp.union($ANEMONE_SKIP_EXTENSIONS.map{|x| "/\.#{" + x + 
 semaphore=Mutex.new
 Thread.abort_on_exception = true
 
-#	while !$new_target_stack.empty?  # plugins can add targets to the new target stack
-#		target = $new_target_stack.pop
-#	end # new target stack
+
+
 
 def next_target
-#	pp  Thread.main["targets"]
+	# this isn't elegant or fast but it works.
+	t=nil
+	#pp $targets
 
-	if Thread.main["targets"].size >0
-		new=Thread.main["targets"].pop
-		$targets << new
+	while $recent_targets.include?(t) or t.nil?
+		t=$targets.pop
+		#puts t
+
+		# t at the end of the $targets list
+		if t.nil?
+			if $targets.empty?
+				if Thread.main["targets"].size >0
+					new=Thread.main["targets"].pop
+					$targets << new
+				elsif Thread.list.size > 1
+					#puts "Thread list size: #{Thread.list.size}"
+					sleep 0.5
+				else
+					break
+				end
+			end
+		end
 	end
 
- 	$targets.pop
+	if t.nil?
+		# threads must be 1 with no more targets
+		# puts "threads must be 1 with no more targets"
+	end
+
+	#puts "Recent Targets:" + $recent_targets.join(",")
+	unless $recent_targets.include?(t)
+		$recent_targets.push t
+		$recent_targets.pop if $recent_targets.size > 100 # we dont need to care about mroe than 100
+	end
+
+	#puts "next target: #{t}"
+	t
 end
 
-
-#$targets.each do |target|
-#target=next_target
-#while !target.nil?
-#target=0
-
 Thread.main["targets"]=[]
-#Thread.main["targets"] << "http://www.apple.com"
 
 while thistarget = next_target
-		puts "thread starting for #{thistarget}" if $verbose>1		
 		Thread.new do
+			puts Thread.current.to_s + " started for " + thistarget if $verbose>1
 			target = thistarget # we set the target within the thread
 
 			sleep $WAIT unless $WAIT.nil? # wait
@@ -1312,13 +1334,9 @@ while thistarget = next_target
 			end
 end # targets.each
 
-while Thread.list.length>1
-	puts "waiting for #{Thread.list.size-1} threads to exit" if $verbose>1
-	sleep 0.5
-end
 
 # close output logs
-output_list.each {|o|  o.close }
+output_list.each {|o| o.close }
 
 # shutdown plugins
 Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }
