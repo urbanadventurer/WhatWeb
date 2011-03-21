@@ -11,6 +11,12 @@ Ruby1.9 compatability
 
 make redirect functions use next_target and check recent_targets
 
+check extra_urls:
+the wordpress plugin should suggest u also check /blog, /wordpress, /wp to find a wordpress install.
+this should only trigger on -a 3 if the plugin hasn't matched
+
+the oscommerce plugin, if matched, should suggest u check /admin so that another match can trigger
+
 
 --follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)
 

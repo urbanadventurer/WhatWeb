@@ -5,9 +5,12 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
+# Version 0.2 by Andrew Horton
+# Removed the aggressive function as it causes false postives
+
 Plugin.define "Textpattern" do
 author "Tonmoy Saikia"
-version "0.1"
+version "0.2"
 description "A flexible, elegant and easy-to-use CMS. Homepage:http://textpattern.com/"
 examples %w|aidesign-dz.com
 	    decisign.se
@@ -43,19 +46,13 @@ matches [
 
 {:name=>"css.php",
 :regexp=>/<link[^>]+href=\"[^"]+textpattern\/css.php[^"]*" \/>/
-}
+},
 
+{:name=>"/textpattern",
+:text=>'<td id="view-site" class="tabdown">',
+:url=>"/textpattern"}
 ]
 
-def aggressive
-	target = "http://#{@base_uri.host}:#{@base_uri.port.to_s}/textpattern/"
-	info = []
-		
-	status, url, ip, body, headers = open_target(target)
-	if status == 200		
-			info <<  {:name=>"default login"}
-	end
-	info
-end
+
 end
 
