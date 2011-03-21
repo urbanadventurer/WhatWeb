@@ -238,7 +238,7 @@ end
 	end
 end
 
-
+# XML Output #
 # Hey, do u actually use this XML output? Then I'd love to hear from you for suggestions, changes, etc.
 # Does it bother you that some types of output are joined by commas but other types aren't?
 class OutputXML < Output
@@ -318,7 +318,9 @@ class OutputXML < Output
 	end
 end
 
-# Output XML file in MagicTree XML semantic format # TODO : Fix logging in `--recursive`
+
+# MagicTree #
+# Output XML file in MagicTree XML format
 class OutputMagicTreeXML < Output
 	def initialize(f=STDOUT)
 		super
@@ -336,32 +338,23 @@ class OutputMagicTreeXML < Output
 		text=t.to_s.dup
 		# use sort_by so that & is before &quot;, etc.
 		@substitutions.sort_by {|a,b| a=="&" ? 0 : 1 }.map{|from,to| text.gsub!(from,to) }
-
-		# escape [] and all characters up to space.
-		#r=/[\[\]\001\002\003\004\005\006\a\b\t\n\v\f\r\016\017\020\021\022\023\024\025\026\027\030\031\032\e\034\035\036\037]/
-		# based on code for CGI.escape
-		#text.gsub(r) do |x|
-		#	'%' + x.unpack('H2' * x.size).join('%').upcase
-		#end
-
 		text
 	end
 
 	def out(target, status, results)
 
-		# Parse target URL # TODO : Create host object. Handle HTTPS with tunnel node
-		uri = URI.parse(target)
+		# Parse target URL and initialize host node details
+		uri = URI.parse(target.to_s)
+		@host_os=[]
+		@host_port = uri.port
+		@host_scheme = uri.scheme
+
 		if uri.host =~ /^[\d]{1,3}.[\d]{1,3}.[\d]{1,3}.[\d]{1,3}$/i
 			@host_ip = uri.host
 		else
+			# hostname # fqdn nodes are only used when the host IP address is not known yet
 			@host_name = uri.host
-      # hostname is sufficient. fqdn nodes are used when the host IP address is not known yet
 		end
-
-		@host_port = uri.port
-		@host_scheme = uri.scheme
-		
-		@host_os=[]
 
 		# Loop through plugin results # get host IP, country and OS
 		results.each do |plugin_name,plugin_results|
@@ -378,25 +371,27 @@ class OutputMagicTreeXML < Output
 		# testdata branch
 		@f.write '<testdata class="MtBranchObject">'
 
-		# hostname
+		# hostname # title attribute is not used in simple nodes  
 		@f.write "<host>#{escape(@host_ip)}<hostname>#{escape(@host_name)}</hostname></host>" unless @host_name.nil?
-        # title attribute is not used in simple nodes  
 
 		# os
 		@host_os.compact.sort.uniq.map {|x| @f.write "<host>#{escape(@host_ip)}<os>#{escape(x.to_s)}</os></host>" unless x.empty? } unless @host_os.empty?
-        # We generally don't create "source" nodes for command-line tools
-        # If the tool is executed from MagicTree, MT will automatically track
-        # the source of the data
+
+		# We generally don't create "source" nodes for command-line tools
+		# If the tool is executed from MagicTree, MT will automatically track
+		# the source of the data
 
 		# country and port nodes
 		@f.write "<host>#{escape(@host_ip)}<country>#{escape(@host_country)}</country><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
 
-    if @host_scheme == 'https'
-      @f.write "<tunnel>ssl";
-    end
+		# https
+		if @host_scheme == 'https'
+			@f.write "<tunnel>ssl";
+		end
 
-    @f.puts "<service>http";
-		# Loop through remaining results
+		# Service node # Loop through remaining results
+		# software, headers, firmware, modules, etc. are all related to a specific URL and therefore are placed under the url node
+		@f.puts "<service>http";
 		results.each do |plugin_name,plugin_results|
 
 			unless plugin_results.empty?
@@ -410,11 +405,11 @@ class OutputMagicTreeXML < Output
 				accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
 				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
 
-				# Print certainty if uncertain
-				@f.write "<software>#{escape(plugin_name)}<certainty>#{escape(certainty)}</certainty></#{escape(plugin_name)}></software>" if certainty and certainty < 100
+				# Print certainty if certainty < 100
+				if certainty and certainty < 100
+					@f.write "<url>#{escape(target)}<software>#{escape(plugin_name)}<certainty>#{escape(certainty)}</certainty></software></url>"
+				end
 
-        # Some restructuring - software, headers, firmware, modules, etc. are all related to a specific URL
-        # and therefore are placed under the url node
 				# Strings
 				if strings.size > 0
 					strings.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}>#{escape(x)}</#{escape(plugin_name)}></url>" } unless plugin_name =~ /^IP$/ or plugin_name =~ /^Country$/
@@ -437,41 +432,42 @@ class OutputMagicTreeXML < Output
 
 				# Modules
 				if modules.size > 0
-					modules.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><module>#{escape(x)}</module></#{escape(plugin_name)}></url>" }
+					modules.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><module>#{escape(x)}</module></#{escape(plugin_name)}></url>" } unless plugin_name =~ /^Country$/
 				end
 
-				# Accounts
-        # MT generally uses "user" nodes for account 
+				# Accounts # MagicTree generally uses "user" nodes for account 
 				if accounts.size > 0
 					accounts.map {|x| @f.write "<url>#{escape(target)}<user>#{escape(x)}</user></url>" }
 				end
 
-				# Filepaths
+				# Local File Filepaths # Not to be confused with file paths in the web root which are returned in Strings
 				if filepaths.size > 0
 					filepaths.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><filepath>#{escape(x)}<http-status>#{escape(status)}</http-status></filepath></#{escape(plugin_name)}></url>" }
 				end
 
-       # Output goes back under <url>
-       @f.write "<url>#{escape(target)}<output title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
-    	 # display detailed results
-       @f.write "#{escape(results.pretty_inspect)}" unless results.empty?
-       @f.write "</output></url>"
+				# Output node under url node # display detailed results
+				@f.write "<url>#{escape(target)}<output title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
+				@f.write "#{escape(results.pretty_inspect)}" unless results.empty?
+				@f.write "</output></url>"
+
 			end
 
 		end
+		@f.write "</service>";
 
-    @f.write "</service>";
-
-    if @host_scheme == 'https'
-      @f.write "</tunnel>"
-    end
+		# end https node
+		if @host_scheme == 'https'
+			@f.write "</tunnel>"
+		end
 
 		# testdata # close port, host and testdata nodes
 		@f.write "</port></ipproto></host></testdata>"
+
 	end
 
 end
 
+# JSON Output #
 class OutputJSON < Output
 
 	def flatten_elements!(obj)
