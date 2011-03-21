@@ -665,11 +665,11 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 		results=[]		
 		$plugins_to_use.each do |name,plugin|
 			begin
-				pp "Trying plugin " + name + " against " + target.to_s if $verbose>2
+				puts "Trying plugin " + name + " against " + target.to_s if $verbose>2
 				
 				while plugin.locked?
 					sleep 0.5
-					puts "waiting for plugin:#{name} to unlock" if $verbose > 2
+					puts "Waiting for plugin:#{name} to unlock" if $verbose > 2
 				end
 				plugin.lock
 
@@ -1069,9 +1069,7 @@ end
 
 
 ### PLUGINS
-
 plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection  
-
 $plugins_to_use = load_plugins(plugin_selection ) # load all the plugins
 
 # are the no plugins?
@@ -1169,8 +1167,7 @@ while thistarget = next_target
 
 				Anemone.crawl(target,
 				{"threads"=>1, "user_agent"=>$USER_AGENT, "depth_limit"=>$RECURSIVE_DEPTH}) do |anemone|
-				anemone.skip_links_like $ANEMONE_SKIP_REGEX					
-#				anemone.skip_links_like /\.zip$/,/\.gz$/,/\.tar$/,/\.jpg$/,/\.exe$/,/\.png$/,/\.html$/,/\.pdf$/
+				anemone.skip_links_like $ANEMONE_SKIP_REGEX
 						anemone.focus_crawl { |page| page.links.slice(0..$MAX_LINKS_TO_FOLLOW) }
 						anemone.on_every_page do |page|
 							sleep $WAIT unless $WAIT.nil? # wait if required
@@ -1179,13 +1176,11 @@ while thistarget = next_target
 							unless page.headers.nil?
 								page.headers.each {|k,v| headers[k]=v.to_s }
 							end
-												
-							#pp target,page.doc,page.headers,page.code,page.url
-					
+
+							#pp target,page.doc,page.headers,page.code,page.url				
 							unless page.original_doc.nil?
 								doc=page.original_doc
 								status=page.code
-#								url=URI::parse(page.url.to_s)
 								url=page.url
 # no @cookies for anemone :(
 								results = run_plugins(url.to_s,doc,headers,nil,status,url,ip)
@@ -1193,7 +1188,12 @@ while thistarget = next_target
 								# multiple output plugins simultaneously, some stdout, some files
 								semaphore.synchronize do # mutex is right?
 									output_list.each do |o|
-										o.out(url, status, results)
+										begin
+											o.out(url, status, results)
+										rescue
+											#srsly, logging failed
+											error("Error: Logging failed for "+ target)
+										end
 									end
 								end
 							end
