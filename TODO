@@ -9,6 +9,7 @@ Ruby1.9 compatability
 
 [x] country should be both a country name and an iso code
 
+make redirect functions use next_target and check recent_targets
 
 
 --follow-frames never,frame-only,iframe-only,same-site,same-domain,always (default: same-domain)

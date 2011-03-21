@@ -247,8 +247,6 @@ class Plugin
 				#pp Thread.main["targets"]
 			end
 		end
-
-
 	end
 	
 	# clean up results

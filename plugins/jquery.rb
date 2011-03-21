@@ -25,10 +25,6 @@ matches [{:regexp=>/<script [^>]*jquery/},
 {:version=>/jquery.js\?ver=([0-9\.]+)['"]/}
 ]
 
-extra_urls ["/js/jquery.js"]
-
-
-
 end
 
 
