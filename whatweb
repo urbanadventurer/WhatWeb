@@ -1151,6 +1151,7 @@ while thistarget = next_target
 		puts "thread starting for #{thistarget}" if $verbose>1		
 		Thread.new do
 			target = thistarget # we set the target within the thread
+
 			sleep $WAIT unless $WAIT.nil? # wait
 			# get the webpage	
 			# get the file/webpage, and return statuscode, base url, html body, html headers
@@ -1158,6 +1159,14 @@ while thistarget = next_target
 			target_is_a_file=File.exists?(target)
 		
 			if $RECURSIVE == true and target_is_a_file == false
+
+				begin		
+					ip=IPSocket.getaddress(URI::parse(target).host)
+				rescue StandardError => err		
+					err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
+					ip=""
+				end
+
 				Anemone.crawl(target,
 				{"threads"=>1, "user_agent"=>$USER_AGENT, "depth_limit"=>$RECURSIVE_DEPTH}) do |anemone|
 				anemone.skip_links_like $ANEMONE_SKIP_REGEX					
@@ -1179,7 +1188,7 @@ while thistarget = next_target
 #								url=URI::parse(page.url.to_s)
 								url=page.url
 # no @cookies for anemone :(
-								results = run_plugins(url.to_s,doc,headers,nil,status,url)
+								results = run_plugins(url.to_s,doc,headers,nil,status,url,ip)
 								# reporting
 								# multiple output plugins simultaneously, some stdout, some files
 								semaphore.synchronize do # mutex is right?
