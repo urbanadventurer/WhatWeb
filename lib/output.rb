@@ -43,7 +43,7 @@ class Output
 	# sort and uniq but no join. just for one plugin result
 	def sortuniq(p)
 		su={}
-		[:certainty, :version, :os, :string, :account, :model, :firmware, :module, :filepath].map do |thissymbol|
+		[:name, :certainty, :version, :os, :string, :account, :model, :firmware, :module, :filepath].map do |thissymbol|
 			unless p[thissymbol].class==Regexp
 				t=p[thissymbol]
 				t=t.flatten.compact.sort.uniq if t.is_a?(Array)
