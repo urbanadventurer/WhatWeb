@@ -1007,10 +1007,10 @@ begin
 			when '--proxy'
 				$USE_PROXY=true
 				$PROXY_HOST = arg.to_s.split(":")[0]
-				$PROXY_PORT = arg.to_s.split(":")[1] if arg.to_s.include?(":")		
+				$PROXY_PORT = arg.to_s.split(":")[1].to_i if arg.to_s.include?(":")		
 			when '--proxy-user'
 				$PROXY_USER=arg.to_s.split(":")[0]
-				$PROXY_PASS=arg.to_s.split(":")[1] if arg.to_s.include?(":")
+				$PROXY_PASS=arg.to_s.scan(/^[^:]+:(.+)/).to_s if arg =~ /^[^:]+:(.+)/
 			when '-q','--quiet'
 				$QUIET=true
 			when '--url-prefix'
