@@ -19,7 +19,7 @@ Homepage: http://www.morningstarsecurity.com/research/whatweb
 
 
 
-Copyright 2009, 2010 Andrew Horton <andrew.horton at security-assessment dot com>
+Copyright 2009-2011 Andrew Horton <andrew.horton at security-assessment dot com>
 
 This file is part of WhatWeb.
 
@@ -92,7 +92,7 @@ end
 
 
 
-if RUBY_VERSION =~ /^1.9/
+if RUBY_VERSION =~ /^1\.9/
         require 'digest/md5'
 else
         require 'md5'
