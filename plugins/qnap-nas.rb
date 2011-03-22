@@ -4,9 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Tested on TS Models:
-# TS-109 PRO, TS-109 PRO II, TS-119, TS-209 PRO, TS-209 PRO II,
-# TS-219, TS-239, TS-259, TS-409, TS-410U, TS-419P, TS-509, TS-559, TS-639
+# Version 0.4 # 2011-03-22 #
+# Added extra_urls
+# Removed aggressive section in favor of using passive with extra_urls
 ##
 # Version 0.3 #
 # Added aggressive model, firmware and module extraction from /cgi-bin/authLogin.cgi
@@ -16,13 +16,27 @@
 ## 
 Plugin.define "QNAP-NAS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
-version "0.3"
+version "0.4"
 description "QNAP provides a series of network attached storage (NAS) products - homepage:http://www.qnap.com/"
 
-# 3,990 results for inurl:Qmultimedia +thumb_index @ 2010-06-01
+# Tested on TS Models:
+#   TS-109 PRO, TS-109 PRO II, TS-119, TS-209 PRO, TS-209 PRO II,
+#   TS-219, TS-239, TS-259, TS-409, TS-410U, TS-419P, TS-509, TS-559, TS-639
+
+# Google results as at 2011-03-22 #
+# 229 for inurl:Qmultimedia/cgi-bin/thumb_index.cgi
+
+# Examples #
 examples %w|
+http://140.113.74.103:8080/cgi-bin/
+http://203.72.160.21:8080/cgi-bin/
+http://163.19.88.200:8080/cgi-bin/
+http://140.123.174.172:8080/cgi-bin/
+http://163.22.115.180:8080/cgi-bin/
+http://120.107.162.9:8080/cgi-bin/
 http://www.guillerault.eu:8080/cgi-bin/
 http://119.247.13.81:8080/cgi-bin/
+http://sousedi.cz:8088/cgi-bin/
 http://www.jgirado.com/cgi-bin/
 http://www.belleandku.info:8080/cgi-bin/
 http://dasistsehr.net:8080/cgi-bin/
@@ -75,26 +89,22 @@ http://www.jr1186.com:8000/cgi-bin/
 http://www.patvibes.com:6000/cgi-bin/
 https://www.cpcupload.com/cgi-bin/
 http://www.qwe4.net:8080/cgi-bin/
-https://www.campatuk.com/cgi-bin/
-http://89.249.13.85:8080/cgi-bin/
-https://www.netzwerk-24.info/cgi-bin/
-http://163.27.89.170:6000/cgi-bin/
 https://www.girlguide.org.sg/cgi-bin/
 http://www.qwe4.com:8080/cgi-bin/
-http://www.mechnaplex.com:8080/cgi-bin/
 https://www.fluehmann.net/cgi-bin/
-http://ftp.peng.biz:8080/cgi-bin/
-http://www.laluo.com:1975/cgi-bin/
-http://87.254.33.5:8080/cgi-bin/
 https://bahaykubo.info:8443/cgi-bin/
 http://kwlo.webhop.net:8080/cgi-bin/
 http://yaohaiping.net:8080/cgi-bin/
 |
 
+# Aggressive # Extra URLs #
+extra_urls ["/cgi-bin/authLogin.cgi"]
+
+# Matches #
 matches [
 
 # Multimedia Station # URL pattern
-{ :ghdb=>"inurl:Qmultimedia +thumb_index", :module=>"Multimedia Station" },
+{ :ghdb=>'inurl:"Qmultimedia/cgi-bin/thumb_index.cgi" filetype:cgi', :module=>"Multimedia Station" },
 
 # Photo Station module # Default title
 { :text=>"<title>QNAP Photo Station</title>", :module=>"Photo Station" },
@@ -109,13 +119,18 @@ matches [
 { :text=>"<TITLE>Multimedia Station</TITLE>", :module=>"Multimedia Station", :certainty=>75 },
 
 # Login page # Default JavaScript
-{ :text=>'NavPage("http://"+ location_hostname_for_ipv6(location.hostname) +":"+ qweb_port +"/", 0);' },
+{ :certainty=>75, :text=>'NavPage("http://"+ location_hostname_for_ipv6(location.hostname) +":"+ qweb_port +"/", 0);' },
+
+# Index redirect page # Default JavaScript
+{ :certainty=>75, :text=>'location.href=pr+"://["+location.hostname+"]"+pt+redirect_suffix;' },
+{ :regexp=>/^\/\/window.location = '\/indexnas\.cgi\?counter=' \+ Math\.floor\(\(diff1-diff2\)\/1000\);[\r\n]^window.location.replace\('\/indexnas\.cgi\?counter=' \+ Math\.floor\(\(diff1-diff2\)\/1000\)\);$/ },
 
 # Login page # Default logo HTML
 { :text=>'<a href="http://www.qnap.com"><img src="/ajax_obj/images/qnap_logo_w.gif" alt="QNAP Turbo NAS" title="QNAP Turbo NAS"' },
+{ :text=>'<td class="header_tb_logo"><img id=\'qlogo\' src="/ajax_obj/images/qnap_logo_dark.gif" width="158" height="75"></td>' },
 
 # QNAP NAS # Not TS Series # Default table HTML
-{ :text=>'<table width="100%" border="0" background="/v3_menu/images/admin_header.jpg" cellpadding="0" cellspacing="0" class="12-blue">', :model=>"Unknown (not TS Series)" },
+{ :text=>'<table width="100%" border="0" background="/v3_menu/images/admin_header.jpg" cellpadding="0" cellspacing="0" class="12-blue">', :model=>"Unknown Model (not TS Series)" },
 
 # Login page # /cgi-bin/html/login.html # Extract modules
 { :text=>'<img id="img_webserver" src="/ajax_obj/images/login_main_2.jpg" longdesc="javascript:onQuickLinkChange(2);" alt="Web Server" />', :module=>"QWeb Server" },
@@ -130,74 +145,29 @@ matches [
 def passive
 	m=[]
 
-	# Check document is QNAP XML
-	if @body =~ /<QDocRoot version="[\d\.]+">/
+	# /cgi-bin/authLogin.cgi # Check document is QNAP XML
+	if @base_uri.path == "/cgi-bin/authLogin.cgi" and @body =~ /^<QDocRoot version="[\d\.]+">$/
 
-		# Get firmware version and build
-		if @body =~ /<version><!\[CDATA\[([^\]]+)\]\]><\/version>/ and @body =~ /<build><!\[CDATA\[([^\]]+)\]\]><\/build>/
-			firmware=@body.scan(/<version><!\[CDATA\[([^\]]+)\]\]><\/version>/)[0][0]+" build "+@body.scan(/<build><!\[CDATA\[([^\]]+)\]\]><\/build>/)[0][0]
-			m << { :firmware=>firmware }
-		end	
+		# Firmware Version Detection
+		m << { :firmware=>@body.scan(/<version>(<!\[CDATA\[)?([^\]]+)(\]\]>)?<\/version>/)[0][1]+" build "+@body.scan(/<build>(<!\[CDATA\[)?([^\]]+)(\]\]>)?<\/build>/)[0][1] } if @body =~ /<version>(<!\[CDATA\[)?([^\]]+)(\]\]>)?<\/version>/ and @body =~ /<build>(<!\[CDATA\[)?([^\]]+)(\]\]>)?<\/build>/
 
-		# Get model
-		if @body =~ /<internalModelName><!\[CDATA\[([^\]]+)\]\]><\/internalModelName>/
-			model=@body.scan(/<internalModelName><!\[CDATA\[([^\]]+)\]\]><\/internalModelName>/)[0][0]
-			m << { :model=>model }
-		end
+		# Model Detection
+		m << { :model=>@body.scan(/<internalModelName>(<!\[CDATA\[)?([^\]]+)(\]\]>)?<\/internalModelName>/)[0][1] } if @body =~ /<internalModelName>(<!\[CDATA\[)?([^\]]+)(\]\]>)?<\/internalModelName>/
 
-		# Get enabled modules
-		if @body =~ /<webFSEnabled><!\[CDATA\[1\]\]><\/webFSEnabled>/ then m << { :module=>"WebFS" } end
-		if @body =~ /<QMultimediaEnabled><!\[CDATA\[1\]\]><\/QMultimediaEnabled>/ then m << { :module=>"Multimedia Station" } end
-		if @body =~ /<MSV2Supported><!\[CDATA\[1\]\]><\/MSV2Supported>/ then m << { :module=>"MSV2" } end
-		if @body =~ /<MSV2WebEnabled><!\[CDATA\[1\]\]><\/MSV2WebEnabled>/ then m << { :module=>"MSV2 Web" } end
-		if @body =~ /<QDownloadEnabled><!\[CDATA\[1\]\]><\/QDownloadEnabled>/ then m << { :module=>"Download Station" } end
-		if @body =~ /<QWebEnabled><!\[CDATA\[1\]\]><\/QWebEnabled>/ then m << { :module=>"QWeb Server" } end
-		if @body =~ /<QWebSSLEnabled><!\[CDATA\[1\]\]><\/QWebSSLEnabled>/ then m << { :module=>"Qweb Server SSL" } end
-		if @body =~ /<NVREnabled><!\[CDATA\[1\]\]><\/NVREnabled>/ then m << { :module=>"NVR" } end
-		if @body =~ /<WFM2><!\[CDATA\[1\]\]><\/WFM2>/ then m << { :module=>"Web File Manager 2" } end
+		# Module Detection
+		m << { :module=>"WebFS" } if @body =~ /<webFSEnabled>(<!\[CDATA\[)?1(\]\]>)?<\/webFSEnabled>/
+		m << { :module=>"Multimedia Station" } if @body =~ /<QMultimediaEnabled>(<!\[CDATA\[)?1(\]\]>)?<\/QMultimediaEnabled>/
+		m << { :module=>"MSV2" } if @body =~ /<MSV2Supported>(<!\[CDATA\[)?1(\]\]>)?<\/MSV2Supported>/
+		m << { :module=>"MSV2 Web" } if @body =~ /<MSV2WebEnabled>(<!\[CDATA\[)?1(\]\]>)?<\/MSV2WebEnabled>/
+		m << { :module=>"Download Station" } if @body =~ /<QDownloadEnabled>(<!\[CDATA\[)?1(\]\]>)?<\/QDownloadEnabled>/
+		m << { :module=>"QWeb Server" } if @body =~ /<QWebEnabled>(<!\[CDATA\[)?1(\]\]>)?<\/QWebEnabled>/
+		m << { :module=>"Qweb Server SSL" } if @body =~ /<QWebSSLEnabled>(<!\[CDATA\[)?1(\]\]>)?<\/QWebSSLEnabled>/
+		m << { :module=>"NVR" } if @body =~ /<NVREnabled>(<!\[CDATA\[)?1(\]\]>)?<\/NVREnabled>/
+		m << { :module=>"Web File Manager 2" } if @body =~ /<WFM2>(<!\[CDATA\[)?1(\]\]>)?<\/WFM2>/
 
 	end
 
-	m
-
-end
-
-# Aggressive #
-def aggressive
-	m=[]
-
-	# Extract details from /cgi-bin/authLogin.cgi (in XML format)
-	target = URI.join(@base_uri.to_s,"/cgi-bin/authLogin.cgi").to_s
-	status,url,ip,body,headers=open_target(target)
-
-	# Check document is QNAP XML
-	if body =~ /<QDocRoot version="[\d\.]+">/
-
-		# Get firmware version and build
-		if body =~ /<version><!\[CDATA\[([^\]]+)\]\]><\/version>/ and body =~ /<build><!\[CDATA\[([^\]]+)\]\]><\/build>/
-			firmware=body.scan(/<version><!\[CDATA\[([^\]]+)\]\]><\/version>/)[0][0]+" build "+body.scan(/<build><!\[CDATA\[([^\]]+)\]\]><\/build>/)[0][0]
-			m << { :firmware=>firmware }
-		end
-
-		# Get model
-		if body =~ /<internalModelName><!\[CDATA\[([^\]]+)\]\]><\/internalModelName>/
-			model=body.scan(/<internalModelName><!\[CDATA\[([^\]]+)\]\]><\/internalModelName>/)[0][0]
-			m << { :model=>model }
-		end
-
-		# Get enabled modules
-		if body =~ /<webFSEnabled><!\[CDATA\[1\]\]><\/webFSEnabled>/ then m << { :module=>"WebFS" } end
-		if body =~ /<QMultimediaEnabled><!\[CDATA\[1\]\]><\/QMultimediaEnabled>/ then m << { :module=>"Multimedia Station" } end
-		if body =~ /<MSV2Supported><!\[CDATA\[1\]\]><\/MSV2Supported>/ then m << { :module=>"MSV2" } end
-		if body =~ /<MSV2WebEnabled><!\[CDATA\[1\]\]><\/MSV2WebEnabled>/ then m << { :module=>"MSV2 Web" } end
-		if body =~ /<QDownloadEnabled><!\[CDATA\[1\]\]><\/QDownloadEnabled>/ then m << { :module=>"Download Station" } end
-		if body =~ /<QWebEnabled><!\[CDATA\[1\]\]><\/QWebEnabled>/ then m << { :module=>"QWeb Server" } end
-		if body =~ /<QWebSSLEnabled><!\[CDATA\[1\]\]><\/QWebSSLEnabled>/ then m << { :module=>"Qweb Server SSL" } end
-		if body =~ /<NVREnabled><!\[CDATA\[1\]\]><\/NVREnabled>/ then m << { :module=>"NVR" } end
-		if body =~ /<WFM2><!\[CDATA\[1\]\]><\/WFM2>/ then m << { :module=>"Web File Manager 2" } end
-
-	end
-
+	# Return passive matches
 	m
 
 end
