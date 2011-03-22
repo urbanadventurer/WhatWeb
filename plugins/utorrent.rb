@@ -18,6 +18,9 @@ def passive
 	m<< {:name=>"Page body is 'invalid request'" } if @body == "invalid request"
 	m<< {:name=>'Basic realm="uTorrent"' } if @meta['www-authenticate'] == 'Basic realm="uTorrent"'
 
+#	alternatives to using extra_urls[]
+#	Thread.main["targets"] << URI.join(@base_uri.scheme + "://" + @base_uri.host + ":"+@base_uri.port.to_s + "/gui").to_s
+#	Thread.main["targets"] << ( x=@base_uri.clone; x.path="/gui"; x.to_s)
 	m
 end
 
