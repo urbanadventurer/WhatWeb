@@ -8,36 +8,79 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-WhatWeb - Next generation web scanner.
+Readme for WhatWeb - Next generation web scanner.
 By urbanadventurer aka Andrew Horton from Security-Assessment.com
 Version : 0.4.6, Unreleased Development Version
-Homepage: http://www.morningstarsecurity.com/research/whatweb
-License: GPLv2
+License : GPLv2
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This product is subject to the terms detailed in the license agreement. For more information about WhatWeb visit:
+
+	Homepage:	http://www.morningstarsecurity.com/research/whatweb
+	Wiki:		https://github.com/urbanadventurer/WhatWeb/wiki/
+
+If you have any questions, comments or concerns regarding WhatWeb, please consult the documentation prior to contacting one of the developers. Your feedback is always welcome. 
 
 
-Identify content management systems (CMS), blogging platforms, stats/analytics packages, javascript libraries, servers and more. When you visit a website in your browser the transaction includes many unseen hints about how the webserver is set up and what software is delivering the webpage. Some of these hints are obvious, eg. "Powered by XYZ" and others are more subtle. WhatWeb recognises these cues and reports what it finds.
+	Contents
+	========================================================================
+	1.  About WhatWeb
+	2.  Example Usage
+	3.  Usage
+	4.  Logging & Output
+	5.  Plugins
+	6.  Aggression
+	7.  Recursive Spidering
+	8.  Performance & Stability
+	9.  Related Projects
+	10. Release History
+	11. Credits
+	12. Updates & Additional Information
+	========================================================================
 
-WhatWeb has over 500 plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
+
+
+1. About WhatWeb
+================================================================================
+
+WhatWeb identifies content management systems (CMS), blogging platforms, stats/analytics packages, javascript libraries, servers, embedded devices and more. When you visit a website in your browser the transaction includes many unseen hints about how the webserver is set up and what software is delivering the webpage. Some of these hints are obvious, eg. "Powered by XYZ" and others are more subtle. WhatWeb recognises these cues and reports what it finds.
+
+WhatWeb has over 850 plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
 
 There are both passive and aggressive plugins. Passive plugins use information on the page, in cookies and in the URL to identify the system. A passive request is as light weight as a simple GET / HTTP/1.1 request. Aggressive plugins guess URLs and request more files. Plugins are easy to write, you don't need to know ruby to make them.
 
+Matches in the HTML source and HTTP headers are made with:
 
-EXAMPLE USAGE
+    * Text strings (case sensitive)
+    * Regular expressions
+    * Google Hack Database queries (limited set of keywords)
+    * MD5 hashes
+    * URL patterns
+    * HTML tag patterns
+    * Custom ruby code for passive and aggressive operations
+    * and more...
 
-Using WhatWeb on a handful of websites, standard WhatWeb output is in colour.
+
+2. Example Usage
+================================================================================
+
+Using WhatWeb on a handful of websites (standard WhatWeb output is in colour):
 
 $ ./whatweb slashdot.org reddit.com digg.com http://www.engadget.com/ www.whitehouse.gov
-http://reddit.com [302] Akamai-Global-Host, Country[US], HTTPServer[AkamaiGHost], IP[24.29.138.57], RedirectLocation[http://www.reddit.com/]
-http://www.whitehouse.gov [200] Cookies[d], Country[US], Drupal, Google-Analytics[GA][10791350], HTTPServer[White House], IP[206.57.116.170], OpenSearch[http://www.whitehouse.gov/opensearch/apachesolr_search], Subdomains[www], Title[The White House]
-http://digg.com [302] Apache, Cookies[d,imp_id,traffic_control], Country[US], HTTPServer[Apache], IP[64.191.203.30], PHP[5.2.9-digg8], RedirectLocation[/news], UncommonHeaders[x-digg-time,keep-alive], X-Powered-By[PHP/5.2.9-digg8]
-http://slashdot.org [200] Apache[1.3.42], Country[US], Google-Analytics[GA][32013], HTTPServer[Apache/1.3.42 (Unix) mod_perl/1.31], IP[216.34.181.45], OpenGraphProtocol[100000696822412], PasswordField[upasswd], Subdomains[rss,books], Title[Slashdot - News for nerds, stuff that matters], UncommonHeaders[x-varnish,x-bender,x-xrds-location,slash_log_data], X-Powered-By[Slash 2.005001]
-http://www.engadget.com/ [200] Apache[2.2], probably BlogSmithMedia, Cookies[GEO-64_251_29_84], Country[US], HTTPServer[Apache/2.2], IP[64.12.173.101], Mobile-Website[Apple iPhone], PasswordField[login-pw,newkey], Subdomains[www,mobile,hd,alt,es,chinese,cn,japanese,kr,de,pl], Title[Engadget], UncommonHeaders[keep-alive]
-http://www.reddit.com/ [200] Cookies[reddit_first], Country[US], Google-Analytics[GA][12131688], HTTPServer['; DROP TABLE servertypes; --], IP[206.57.116.160], JQuery, PasswordField[passwd,passwd2], Subdomains[www,thumbs,pixel,blog], Title[reddit: the voice of the internet -- news before it happens]
-http://digg.com/news [200] Apache, Cookies[d,imp_id,traffic_control], Country[US], HTML5, HTTPServer[Apache], IP[64.191.203.30], Mobile-Website[Apple iPhone], PHP[5.2.9-digg8], PasswordField[password], Subdomains[dads.new,about,developers,jobs], Title[Digg                    - All Topics                 - The Latest News Headlines, Videos and Images], UncommonHeaders[x-digg-time,keep-alive], X-Powered-By[PHP/5.2.9-digg8]
+http://reddit.com [302] HTTPServer[AkamaiGHost], RedirectLocation[http://www.reddit.com/], IP[24.143.196.32], Akamai-Global-Host, Country[UNITED STATES][US]
+http://slashdot.org [200] Script, HTTPServer[Unix][Apache/1.3.42 (Unix) mod_perl/1.31], Google-Analytics[GA][32013], UncommonHeaders[x-varnish,x-bender,x-xrds-location,slash_log_data], Apache[1.3.42][mod_perl/1.31], HTML5, IP[216.34.181.45], OpenGraphProtocol[100000696822412], test[Slashdot: News for nerds, stuff that matters], X-Powered-By[Slash 2.005001], Title[Slashdot: News for nerds, stuff that matters], Email[FourteenerCleaner@yahoo.com,mcooney@nww.com], Country[UNITED STATES][US]
+http://www.engadget.com/ [200] Frame, PasswordField[login-pw,newkey], Script, HTTPServer[Apache/2.2], UncommonHeaders[keep-alive], Apache[2.2], IP[205.188.192.100], JQuery, Mobile-Website[Apple iPhone], probably BlogSmithMedia, test[Engadget], Cookies[GEO-64_251_29_84], Title[Engadget], Country[UNITED STATES][US]
+http://www.whitehouse.gov [200] Script, HTTPServer[White House], Google-Analytics[GA][10791350], IP[217.156.169.152], test[Home | The White House], Drupal, Cookies[d], Title[Home | The White House], OpenSearch[http://www.whitehouse.gov/opensearch/apachesolr_search], Country[UNITED KINGDOM][GB]
+http://www.reddit.com/ [200] Frame, PasswordField[passwd,passwd2], Script, HTTPServer['; DROP TABLE servertypes; --], IP[72.246.25.32], JQuery, test[reddit: the voice of the internet -- news before it happens], Cookies[reddit_first], Title[reddit: the voice of the internet -- news before it happens], Country[UNITED STATES][US]
+http://digg.com [200] Frame, PasswordField[password], Script, HTTPServer[Apache], UncommonHeaders[x-digg-time,keep-alive], Apache, HTML5, IP[64.191.203.30], PHP[5.2.9-digg8], X-Powered-By[PHP/5.2.9-digg8], Title[Digg                    - All Topics                 - The Latest News Headlines, Videos and Images], Country[UNITED STATES][US]
 
 
-HELP
+
+3. Usage
+================================================================================
 
 WhatWeb - Next generation web scanner.
 Version 0.4.6 by Andrew Horton aka urbanadventurer from Security-Assessment.com
@@ -45,153 +88,259 @@ Homepage: http://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
 
-<URLs>			Enter URLs or filenames. Use /dev/stdin to pipe HTML
-			directly
---input-file=FILE, -i	Identify URLs found in FILE, eg. -i /dev/stdin
---aggression, -a	1 passive - on-page
-			2 polite - unimplemented
-			3 impolite - guess URLs when plugin matches
-			(smart, guess a few urls)
-			4 aggressive - guess URLs for every plugin
-			(guess a lot of urls like nikto)
---recursion, -r		Follow links recursively. Only follows links under the
-			path (default: off)
---depth, -d		Maximum recursion depth (default: 10)
---max-links, -m		Maximum number of links to follow on one page
-			(default: 250)
---spider-skip-extensions Redefine extensions to skip.
-			(default: zip,gz,tar,jpg,exe,png,pdf)
---list-plugins, -l	List the plugins
---run-plugins, -p	Run comma delimited list of plugins. Default is all
---info-plugins, -I	Display information for all plugins. Optionally search with
-			keywords in a comma delimited list.
---example-urls, -e	Add example urls for each plugin to the target list
---colour=[WHEN],
---color=[WHEN]		control whether colour is used. WHEN may be `never',
-			`always', or `auto'
---log-full=FILE		Log verbose output
---log-brief=FILE	Log brief, one-line output
---log-xml=FILE		Log XML format
---log-json=FILE		Log JSON format
---log-json-verbose=FILE	Log JSON Verbose format
---log-errors=FILE	Log errors
---user-agent, -U	Identify as user-agent instead of WhatWeb/0.4.6.
---max-threads, -t	Number of simultaneous threads. Default is 25.
---no-redirect		Do not follow HTTP 3xx or meta-refresh redirects 
---proxy			<hostname[:port]> Set proxy hostname and port
-			(default: 8080)
---proxy-user		<username:password> Set proxy user and password
---open-timeout		Time in seconds
---read-timeout		Time in seconds
---wait=SECONDS		Wait SECONDS between connections (combine with threads = 1).
---custom-plugin		Define a custom plugin call Custom,
-			Examples: ":text=>'powered by abc'"
-			":regexp=>/powered[ ]?by ab[0-9]/"
-			":ghdb=>'intitle:abc \"powered by abc\"'"
-			":md5=>'8666257030b94d3bdb46e05945f60b42'"
-			"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
---url-prefix		Add a prefix to target URLs
---url-suffix		Add a suffix to target URLs
---url-pattern		Insert the targets into a URL. Requires --input-file,
-			eg. www.example.com/%insert%/robots.txt 
---help, -h		This help
---verbose, -v		Increase verbosity, use twice for debugging.
---version		Display version information.
+TARGET SELECTION:
+  <URLs>                Enter URLs or filenames. Use /dev/stdin to pipe HTML
+                        directly
+  --input-file=FILE, -i Identify URLs found in FILE, eg. -i /dev/stdin
+  --url-prefix          Add a prefix to target URLs
+  --url-suffix          Add a suffix to target URLs
+  --url-pattern         Insert the targets into a URL. Requires --input-file,
+                        eg. www.example.com/%insert%/robots.txt
+  --example-urls, -e    Add example URLs for each selected plugin to the target
+                        list. By default will add example URLs for all plugins.
+
+AGGRESSION LEVELS:
+  --aggression, -a=LEVEL The aggression level controls the trade-off between
+                        speed/stealth and reliability. Default: 1
+                        Aggression levels are:
+        1 (Passive)     Make one HTTP request per target. Except for redirects.
+        2 (Polite)      Reserved for future use
+        3 (Aggressive)  Triggers aggressive plugin functions only when a
+                        plugin matches passively.
+        4 (Heavy)       Trigger aggressive functions for all plugins. Guess a
+                        lot of URLs like Nikto.
+
+HTTP OPTIONS:
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.6.
+  --user, -u=<user:password> HTTP basic authentication
+  --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
+                        header will replace it. Specifying an empty value, eg.
+                        "User-Agent:" will remove the header.
+  --follow-redirect=WHEN Control when to follow redirects. WHEN may be `never',
+                        `http-only', `meta-only', `same-site', `same-domain'
+                        or `always'. Default: always
+  --max-redirects=NUM   Maximum number of contiguous redirects. Default: 10
+
+SPIDERING:
+  --recursion, -r       Follow links recursively. Only follow links under the
+                        path Default: off
+  --depth, -d           Maximum recursion depth. Default: 10
+  --max-links, -m       Maximum number of links to follow on one page
+                        Default: 250
+  --spider-skip-extensions Redefine extensions to skip.
+                        Default: zip,gz,tar,jpg,exe,png,pdf
+
+PROXY:
+  --proxy               <hostname[:port]> Set proxy hostname and port
+                        Default: 8080
+  --proxy-user          <username:password> Set proxy user and password
+
+PLUGINS:
+  --plugins, -p         Comma delimited set of selected plugins. Default is all.
+                        Each element can be a directory, file or plugin name and
+                        can optionally have a modifier, eg. + or -
+                        Examples: +/tmp/moo.rb,+/tmp/foo.rb
+                        title,md5,+./plugins-disabled/
+                        ./plugins-disabled,-md5
+  --list-plugins, -l    List the plugins
+  --info-plugins, -I    Display information for all plugins. Optionally search
+                        with keywords in a comma delimited list.
+  --custom-plugin       Define a custom plugin called Custom-Plugin,
+                        Examples: ":text=>'powered by abc'"
+                        ":regexp=>/powered[ ]?by ab[0-9]/"
+                        ":ghdb=>'intitle:abc \"powered by abc\"'"
+                        ":md5=>'8666257030b94d3bdb46e05945f60b42'"
+                        "{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
+
+LOGGING & OUTPUT:
+  --verbose, -v         Increase verbosity, use twice for plugin development.
+  --colour,--color=WHEN control whether colour is used. WHEN may be `never',
+                        `always', or `auto'
+  --log-brief=FILE      Log brief, one-line output
+  --log-verbose=FILE    Log verbose output
+  --log-xml=FILE        Log XML format
+  --log-json=FILE       Log JSON format
+  --log-json-verbose=FILE Log JSON Verbose format
+  --log-magictree=FILE  Log MagicTree XML format
+  --log-object=FILE     Log Ruby object inspection format
+  --log-mongo-database  Name of the MongoDB database
+  --log-mongo-collection Name of the MongoDB collection. Default: whatweb
+  --log-mongo-host      MongoDB hostname or IP address. Default: 0.0.0.0
+  --log-mongo-username  MongoDB username. Default: nil
+  --log-mongo-password  MongoDB password. Default: nil
+  --log-errors=FILE     Log errors
+
+PERFORMANCE & STABILITY:
+  --max-threads, -t     Number of simultaneous threads. Default: 25.
+  --open-timeout        Time in seconds. Default: 60
+  --read-timeout        Time in seconds. Default: 120
+  --wait=SECONDS        Wait SECONDS between connections
+                        This is useful when using a single thread.
+
+HELP & MISCELLANEOUS:
+  --help, -h            This help
+  --debug               Raise errors in plugins
+  --version             Display version information. (WhatWeb 0.4.6)
+
+EXAMPLE USAGE:
+  whatweb example.com
+  whatweb -v example.com
+  whatweb -a 3 example.com
 
 
 
+4. Logging & Output
+================================================================================
 
-LOGGING & OUTPUT
-
-There types of logging are:
+The following types of logging are supported:
 	--log-brief=FILE	Brief, one-line, greppable format
-	--log-full=FILE		Verbose
-	--log-xml=FILE		XML format
+	--log-verbose=FILE	Verbose
+	--log-xml=FILE		XML format. XSL stylesheet is provided
 	--log-json=FILE		JSON format
 	--log-json-verbose=FILE	JSON verbose format
-	--log-mongo		MongoDB
-	--log-magictree		MagicTree XML format
+	--log-magictree=FILE	MagicTree XML format
+	--log-object=FILE	Ruby object inspection format
+	--log-mongo-database	Name of the MongoDB database
+	--log-mongo-collection	Name of the MongoDB collection. Default: whatweb
+	--log-mongo-host	MongoDB hostname or IP address. Default: 0.0.0.0
+	--log-mongo-username	MongoDB username. Default: nil
+	--log-mongo-password	MongoDB password. Default: nil
 	--log-errors=FILE	Log errors. This is usually printed to the screen in red.
 
-You can output to multiple logs simulatenously by specifying muliple command line logging options.
+You can output to multiple logs simultaneously by specifying muliple command line logging options.
 
 
-
+5. Plugins
+================================================================================
 
 To list the plugins supported:
 
 $ ./whatweb -l
 
-Plugins Loaded
-------------------------------
-1024-CMS,0.1
-360-Web-Manager,0.2
-4images,0.1
-AChecker,0.1
-ACollab,0.1
-... (there are a lot)
+WhatWeb Plugin List
+
+Plugin Name               Description
+-------------------------------------------------------------------------------
+1024-CMS                  1024 is one of a few CMS's leading the way with the i
+360-Web-Manager           360-Web-Manager - homepage: http://www.360webmanager.
+4images                   4images is a powerful web-based image gallery managem
+... (truncated - there are a lot)
 
 
 
 To view more detail about a plugin or search plugins for a keyword:
 
-	./whatweb -I joomla
-	Plugin Information
-	Searching for joomla
-	------------------------------
-	Joomla version 0.6 by Andrew Horton
-	[14] examples, [3] matches, [x] aggressive, [x] passive, [x] version.
-	Description: Opensource CMS written in PHP. Homepage: http://joomla.org. Plugin can aggresively identify version by comparing md5 hashes of 4 files. Valid up to version 1.5.15.
+$ ./whatweb -I phpBB
+WhatWeb Plugin Information
+Searching for phpBB
+--------------------------------------------------------------------------------
+Plugin Name               Details
+phpBB
+        Author:              Andrew Horton
+        Version:             0.3
+        Examples:            16
+        Matches:             7
+        Passive function:    Yes
+        Aggressive function: Yes
+        Version detection:   Yes
+        Description:
+        phpBB is a free forum phpbb.org
 
-	--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+1 plugins found
 
 
+All plugins are loaded by default.
 
-AGGRESSIVE PLUGINS
+Plugins can be selected by directories, files or plugin names as a comma delimited list with the -p or --plugin command line option.
 
-Aggressive plugins will guess more URLs and perform actions that are potentially unsuitable without permission.
+Each list item may have a modifier: + adds to the full set, - removes from the fullset and no modifier overrides the defaults.
 
-With the passive plugin we know that smartor.is-root.com/forum/ is running phpBB version 2
+Examples :
+
+	--plugins +plugins-disabled,-foobar
+	--plugins +/tmp/moo.rb
+	--plugins foobar (only select foobar)
+	-p title,md5,+./plugins-disabled/
+	-p ./plugins-disabled,-md5
+
+
+6. Aggression
+================================================================================
+
+WhatWeb features several levels of aggression. By default the aggression level is set to 1 (passive) which sends a single HTTP GET request.
+
+--aggression, -a
+
+	1 (Passive)	Make one HTTP request per target. Except for redirects.
+	2 (Polite)	Reserved for future use
+	3 (Aggressive)	Triggers aggressive plugin functions only when a
+			plugin matches passively.
+	4 (Heavy)	Trigger aggressive functions for all plugins. Guess a
+			lot of URLs like Nikto.
+
+If aggression is enabled the aggressive plugins will guess more URLs and perform actions that are potentially unsuitable without permission.
+
+With the passive matches we know that smartor.is-root.com/forum/ is running phpBB version 2:
 
 $ ./whatweb smartor.is-root.com/forum/
-http://smartor.is-root.com/forum/ [200] Apache[2.2.15], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Country[DE], HTTPServer[Apache/2.2.15], IP[88.198.177.36], PHP[5.2.13], PasswordField[password], PoweredBy[phpBB], Title[Smartors Mods Forums - Reloaded], X-Powered-By[PHP/5.2.13], phpBB[2]
+http://smartor.is-root.com/forum/ [200] PasswordField[password], HTTPServer[Apache/2.2.15], PoweredBy[phpBB], Apache[2.2.15], IP[88.198.177.36], phpBB[2], PHP[5.2.13], test[Smartors Mods Forums - Reloaded], X-Powered-By[PHP/5.2.13], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Title[Smartors Mods Forums - Reloaded], Country[GERMANY][DE]
 
 
-With the aggressive plugin we know that the same website is running phpBB version 2.0.20
+With the aggressive matches in the phpBB plugin we know that the same website is running phpBB version 2.0.20 or higher:
 
-$ ./whatweb -a 3 smartor.is-root.com/forum/
-http://smartor.is-root.com/forum/ [200] Apache[2.2.15], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Country[DE], HTTPServer[Apache/2.2.15], IP[88.198.177.36], PHP[5.2.13], PasswordField[password], PoweredBy[phpBB], Title[Smartors Mods Forums - Reloaded], X-Powered-By[PHP/5.2.13], phpBB[2,2.0.20]
+$ ./whatweb -p plugins/phpbb.rb -a 3 smartor.is-root.com/forum/
+http://smartor.is-root.com/forum/ [200] phpBB[2,>2.0.20]
+
+Note the use of the -p argument to select only the phpBB plugin. It is advisable, but not mandatory, to select a specific plugin when attempting to fingerprint software versions in aggressive mode. This approach is far more stealthy as it will limit the number of requests.
 
 Do not use aggressive plugins with recursive site crawling. WhatWeb has no understanding of a website, instead it currently treats each URL separately. 
+
 It also has no caching so if you use aggressive plugins with recursion you will fetch the same files multiple times. The same is true for aggressive modes on redirecting URLs.
 
 
 
-RECURSIVE SPIDER
+7. Recursive Spidering
+================================================================================
 
-The recursion option is used to scan some or all of a website with whatweb. Recursive spidering will follow each link on a webpage if it is within the same website, then repeat the process on the followed pages.
+The recursion option is used to scan some or all of a website with WhatWeb. Recursive spidering will follow each link on a webpage if it is within the same website, then repeat the process on the followed pages.
 
 The configurable settings for recursive spidering are:
 	--recursion, -r		Follow links recursively. Only follows links under the path (default: off)
-	--depth, -d		Maximum recursion depth (default: 3)
-	--max-links, -m		Maximum number of links to follow on one page (default: 25)
-
-The spider skips this hardcoded list of file extensions:
-/\.zip$/,/\.gz$/,/\.tar$/,/\.jpg$/,/\.exe$/,/\.png$/,/\.pdf$/
+	--depth, -d		Maximum recursion depth (default: 10)
+	--max-links, -m		Maximum number of links to follow on one page (default: 250)
+	--spider-skip-extensions Redefine extensions to skip. (Default: zip,gz,tar,jpg,exe,png,pdf)
 
 Limitations of the spidering. This follows links in <a> tags, these are the HTML tags designed specifically for links. The spider does not obtain urls from other sources. Some good choices for future improvement are image tags, eg. <img src="/images/boats.jpg">, form tags, eg. <form action="/vote.php">, url paths in CSS files, etc.
 
 The spider is provided by Anemone, a third party ruby gem. It doesn't follow redirects. For example the URL treshna.com will fail and www.treshna.com will produce results.
 
 
+8. Performance & Stability
+================================================================================
+
+WhatWeb features several options to increase performance and stability.
+
+  --max-threads, -t     Number of simultaneous threads. Default: 25.
+  --open-timeout        Time in seconds. Default: 60
+  --read-timeout        Time in seconds. Default: 120
+  --wait=SECONDS        Wait SECONDS between connections
+                        This is useful when using a single thread.
+
+The --wait and --max-threads commands can be used to assist in IDS evasion.
+
+Furthermore, changing the user-agent using the -U or --user-agent command line option will avoid the Snort IDS rule for WhatWeb.
 
 
-RELATED PROJECTS
+9. Related Projects
+================================================================================
 
 WhatWeb is unique however there are some web projects with the same goal of identifying a website.
 
-www.whatweb.net
-Brendan Coles has set up a web frontend to WhatWeb. No registration required.
+An extremely simplistic comparison between WhatWeb and a few other open source web application fingerprinting tools is available here : http://whatweb.net/fingerprinting.php
+
+WhatWeb.net
+A web front-end for WhatWeb/0.4.5-stable. Aggression is set to passive 1 with no recursive spidering. No registration required.
 http://www.whatweb.net/
 
 Blind Elephant
@@ -199,17 +348,23 @@ The BlindElephant Web Application Fingerprinter attempts to discover the version
 http://blindelephant.sourceforge.net/
 
 WAFP - Web Application Finger Printing
-Wafp identifies systems by requesting a large quantity of URLs and comparing md5 sums of the results against a database. This method is reliable for known systems in the database and it is simple to add new ones. Unlike whatweb, this method is intrusive and will create a lot of webserver log entries.
+Wafp identifies systems by requesting a large quantity of URLs and comparing md5 sums of the results against a database. This method is reliable for known systems in the database and it is simple to add new ones. Unlike whatweb, this method is intrusive and will create a lot of webserver log entries. Although WAFP is similar to WhatWeb's aggressive mode, the main purpose of WhatWeb is to identify as many as applications as possible regardless of versioning information.
 http://www.mytty.org/wafp
 
 Wappalyzer
-This is the most similar project to WhatWeb.
-Firefox plugin identifies sites using 1 regexp each. Only looks for obvious identifiers like meta generator tags. Sends all recognized urls to a DB. Has nice icons
+This is the most similar project to WhatWeb. Wappalyzer, a firefox plugin, identifies software using one regexp for each app. Only looks for obvious identifiers like meta generator tags. Sends all recognized URLs to a DB. Has nice icons. Although WhatWeb covers more depth of checks than Wappalyzer's database, Wappalyzer has some client side checks that WhatWeb is planned to cover in the future.
 https://addons.mozilla.org/en-US/firefox/addon/10229
 
 w3af
 http://w3af.sourceforge.net
-Very slight overlap of features in the grep and discovery scripts section.
+The purpose of WhatWeb is the same as that of the grep and discovery scripts sections in w3af. However, w3af focuses more on application auditing. Currently, there are a few overlapping features such as errorPages, error500, metaTags, favicon_identification, serverHeader, serverStatus...etc.
+
+Metoscan
+WhatWeb enumerates the allowed HTTP methods by passively checking for the optional HTTP "allow:" header, where as Metoscan works by testing a URL and checking the responses for the different probes.
+
+hscan
+hscan is a multithreaded http scanner, written in perl by MasterCJ. It fingerprints web servers/devices, tries very simple dictionary password attacks and identifies some common web apps. It is designed to be easy to use, add data to and update. Unlike WhatWeb, hscan fingerprints using only the HTTP server header which can be spoofed, however it works as described for embedded devices.
+http://mastercj.net/blog/e/2/hscan_v0.1/
 
 HTTPRecon
 No feature overlap, fingerprints the HTTP Server
@@ -221,22 +376,25 @@ Nmap version scan
 Nmap shows some info about HTTP servers when using version scan, eg. nmap -sV -p80 treshna.com
 
 Shodan Computer Search Engine
-ShodanHQ returns the HTTP header, country and model for some devices. Full results requires registration.
+ShodanHQ maintains a database of HTTP headers for a huge number of public IP addresses. ShodanHQ allows you to search the database and returns the HTTP header and country for IP addresses with headers matching your query. Obtaining more than 10 results per query requires free registration, however this is limited to the first 50 results. Full results requires a payment of US$20.
 
 THC's Amap
 This tool is an application fingerprint scanner which can identify an HTTP protocol server. It doesn't identify types of HTTP servers.
 
 What's that web server running 1.0 (whatweb.exe)
-This shares the same name and goal but is shit. It ONLY uses the HTTP Server string. For example 'Apache/2.0.55 (Ubuntu) PHP/5.1.2'
+This shares the same name and goal as WhatWeb but ONLY uses the HTTP Server string. For example 'Apache/2.0.55 (Ubuntu) PHP/5.1.2'. This is similar to hscan however hscan has a far superior fingerprint collection.
 http://www.spambutcher.com/whatweb.html
 
-http-stats.com
+HTTP-Stats.com
 Lots of info about HTTP server names
 
-Builtwith.com
+BuiltWith.com
 Stats of popularity of web stuff.
 
-FUNNY & UNUSUAL
+
+9. Funny & Unusual
+================================================================================
+
 Slashdot.org
 X-Fry: You mean Bender is the evil Bender? I'm shocked! Shocked! Well not that shocked.
 
@@ -248,9 +406,10 @@ HTTPServer:'; DROP TABLE servertypes; --
 
 
 
-NOTES
+10. Release History
+================================================================================
 
-Version 0.3 Released at Kiwicon III (kiwicon.org), 2009.
+Version 0.3 Released at Kiwicon III (kiwicon.org), November 2nd, 2009
 Version 0.4 Released March 14th, 2010
 Version 0.4.1 Released April 28th, 2010
 Version 0.4.2 Released April 30th, 2010
@@ -259,7 +418,9 @@ Version 0.4.4 Released June 29th, 2010
 Version 0.4.5 Released August 17th, 2010
 Version 0.4.6 Unreleased Development Version
 
-CREDITS
+
+11. Credits
+================================================================================
 
 Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
 Homepage: http://www.morningstarsecurity.com/research/whatweb
@@ -279,6 +440,7 @@ Brendan Coles
 CONTRIBUTORS
 
 Thank you to the following people who have contributed to WhatWeb
+
 Emilio Casbas
 Louis Nyffenegger
 Patrik Wallström
@@ -287,8 +449,20 @@ Tonmoy Saikia
 Aung Khant
 Erik Inge Bolsø
 nk@dsigned.gr
-Michal Ambroz for writing the Makefile and Man pages, not plugins.
-Gremwell
+Michal Ambroz for writing the Makefile and Man pages
+Gremwell for improving the MagicTree logging
 
+
+12. Updates & Additional Information
+================================================================================
+
+The WhatWeb development build features regular updates.
+
+	* WhatWeb-dev:		https://github.com/urbanadventurer/WhatWeb/
+	* WhatWeb-dev-unstable:	https://github.com/bcoles/WhatWeb/
+
+Browse the wiki for more documentation and advanced usage techniques.
+
+	* Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
 
 
