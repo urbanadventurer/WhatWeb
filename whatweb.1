@@ -9,12 +9,13 @@ WhatWeb \- Web scanner to identify what websites are running.
 .br
 .SH DESCRIPTION
 .PP
-Identify content management systems (CMS), blogging platforms, stats/analytics
-packages, javascript libraries, servers and more. When you visit a website
-in your browser the transaction includes many unseen hints about how
-the webserver is set up and what software is delivering the webpage.
-Some of these hints are obvious, eg. “Powered by XYZ” and others are more
-subtle. WhatWeb recognises these hints and reports what it finds.
+WhatWeb identifies content management systems (CMS), blogging
+ platforms, stats/analytics packages, javascript libraries, servers,
+ embedded devices and more. When you visit a website in your browser
+ the transaction includes many unseen hints about how the webserver
+ is set up and what software is delivering the webpage. Some of these
+ hints are obvious, eg. "Powered by XYZ" and others are more subtle.
+ WhatWeb recognises these cues and reports what it finds.
 
 .SH OPTIONS
 .TP
@@ -25,13 +26,15 @@ Enter URLs or filenames. Use /dev/stdin to pipe HTML directly
 Identify URLs found in FILE
 .TP
 .B \-\-aggression \-a
-1 passive - on-page
+1 (Passive) - Make one HTTP request per target. Except
+ for redirects.
 
-2 polite - unimplemented
+2 (Polite) - Reserved for future use
 
-3 impolite - guess URLs when plugin matches (smart, guess a few URLs)
+3 (Aggressive) - Triggers aggressive plugin functions only when
+ a plugin matches passively.
 
-4 aggressive - guess URLs for every plugin (guess a lot of urls like nikto)
+4 (Heavy) - Trigger aggressive functions for all plugins. Guess a lot of URLs like Nikto.
 
 .TP
 .B \-\-recursion \-r
@@ -50,18 +53,24 @@ Redefine extensions to skip. (default: zip,gz,tar,jpg,exe,png,pdf)
 List the plugins
 .TP
 .B \-\-plugins \-p
-Run comma delimited list of plugins. Default is to run all
+Comma delimited set of selected plugins. Default is all.
+ Each element can be a directory, file or plugin name and
+ can optionally have a modifier, eg. + or -
+ Examples: +/tmp/moo.rb,+/tmp/foo.rb
+ title,md5,+./plugins-disabled/
+ ./plugins-disabled,-md5
 .TP
 .B \-\-info-plugins \-I
-Display information for all plugins. Optionally search with keywords in a comma delimited list.
+Display information for all plugins. Optionally search
+ with keywords in a comma delimited list.
 .TP
 .B \-\-example-urls \-e
 Add example urls for each plugin to the target list
 .TP
 .B \-\-colour=[WHEN] \-\-color=[WHEN]
-control whether colour is used. WHEN may be `never', `always', or `auto'
+control whether colour is used. WHEN may be "never", "always", or "auto"
 .TP
-.B \-\-log-full=FILE
+.B \-\-log-verbose=FILE
 Log verbose output
 .TP
 .B \-\-log-brief=FILE
@@ -78,6 +87,9 @@ Log JSON Verbose format
 .TP
 .B \-\-log-magictree=FILE
 Log MagicTree XML format
+.TP
+.B \-\-log-object=FILE
+Log Ruby object inspection format
 .TP
 .B \-\-log-mongo-database=NAME
 Name of the MongoDB database
@@ -100,11 +112,19 @@ Log errors
 .B \-\-user-agent \-U
 Identify as user-agent instead of WhatWeb/VERSION.
 .TP
+.B \-\-user \-u <user:password>
+HTTP basic authentication
+.TP
+.B \-\-header \-H
+Add an HTTP header. eg "Foo:Bar". Specifying a default
+ header will replace it. Specifying an empty value, eg.
+ "User-Agent:" will remove the header.
+.TP
 .B \-\-max-threads \-t
 Number of simultaneous threads. Default is 25.
-.TP--max-redirects=NUM	
+.TP
 .B \-\-follow-redirect=WHEN
-Control when to follow redirects. WHEN may be `never', `http-only', `meta-only', `same-site', `same-domain' or `always'
+Control when to follow redirects. WHEN may be "never", "http-only", "meta-only", "same-site", "same-domain" or "always"
 .TP
 .B \-\-max-redirects=NUM	
 Maximum number of contiguous redirects. Default: 10
@@ -116,21 +136,23 @@ Set proxy hostname and port (default: 8080)
 Set proxy user and password
 .TP
 .B \-\-open-timeout
-Time in seconds
+Time in seconds. Default: 60
 .TP
 .B \-\-read-timeout
-Time in seconds
+Time in seconds. Default: 120
 .TP
 .B \-\-wait=SECONDS
-Wait SECONDS between connections (combine with threads = 1)
+Wait SECONDS between connections.
+This is useful when using a single thread.
 .TP
 .B \-\-custom-plugin
 Define a custom plugin call Custom,
 Examples: ":text=>'powered by abc'"
 ":regexp=>/powered[ ]?by ab[0-9]/"
-":ghdb=>'intitle:abc \"powered by abc\"'"
+":ghdb=>'intitle:abc "powered by abc"'"
 ":md5=>'8666257030b94d3bdb46e05945f60b42'"
 "{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
+.TP
 .B \-\-url-prefix
 Add a prefix to target URLs
 .TP
@@ -142,7 +164,7 @@ Insert the targets into a URL. Requires --input-file,
 eg. www.example.com/%insert%/robots.txt
 .TP
 .B \-\-help \-h
-This help
+Display usage
 .TP
 .B \-\-verbose \-v
 Increase verbosity (recommended), use twice for debugging.
@@ -151,7 +173,27 @@ Increase verbosity (recommended), use twice for debugging.
 Raise errors in plugins.
 .TP
 .B \-\-version
-Display verion information.
+Display version information.
+
+.SH EXAMPLES
+.TP
+.B Passive:
+ whatweb example.com
+.TP
+.B Passive (Verbose):
+ whatweb -v example.com
+.TP
+.B Aggressive:
+ whatweb -a 3 example.com
+
+.SH BUGS
+WhatWeb is not compatible with Ruby 1.9
+
+Do not use aggressive plugins with recursive site crawling. WhatWeb has no understanding of a website, instead it currently treats each URL separately.
+
+Logging modes append to the user-selected log file by default.
+ Appending will result in malformed XML due to multiple \<xml\> tags
+ in XML and MagicTree logging modes.
 
 .SH AUTHOR
 WhatWeb was written by Andrew Horton aka urbanadventurer.
