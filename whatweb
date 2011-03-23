@@ -338,11 +338,7 @@ def load_plugins(list=nil)
 		# sort by neither, add, minus
 		a=a.sort
 
-#		pp "files:", a.sort
-#		pp "pluginnames:",b.sort
-
 		if a.map {|c| c.modifier }.include?(nil)
-#			puts "reset plugin_dirs"
 			plugin_dirs=[]
 		end
 
@@ -1118,49 +1114,54 @@ $ANEMONE_SKIP_REGEX=Regexp.union($ANEMONE_SKIP_EXTENSIONS.map{|x| "/\.#{" + x + 
 
 
 # for each target, we try each plugin then print the results
-semaphore=Mutex.new
+$semaphore=Mutex.new
 Thread.abort_on_exception = true
 
 
 
 
 def next_target
-	# this isn't elegant or fast but it works.
 	t=nil
+
 	#pp $targets
+
+	# this semaphore may not be required
+	$semaphore.synchronize do
+		while !Thread.main["targets"].empty?
+			$targets.push Thread.main["targets"].pop
+		end
+	end
 
 	while $recent_targets.include?(t) or t.nil?
 		t=$targets.pop
-		#puts t
+		#puts "t is ...#{t}" 
 
 		# t at the end of the $targets list
 		if t.nil?
+			puts "t is nil" if $verbose > 2
 			if $targets.empty?
+				#puts "yes, targets are emtpy"
 				if Thread.main["targets"].size >0
 					new=Thread.main["targets"].pop
 					$targets << new
 				elsif Thread.list.size > 1
-					#puts "Thread list size: #{Thread.list.size}"
-					sleep 0.5
+					puts "Thread list size: #{Thread.list.size}" if $verbose > 2
+					sleep 1
 				else
+					puts "breaking now" if $verbose > 2
 					break
 				end
 			end
 		end
 	end
 
-	if t.nil?
-		# threads must be 1 with no more targets
-		# puts "threads must be 1 with no more targets"
-	end
+	puts "Recent Targets:" + $recent_targets.join(",") if $verbose > 2
 
-	#puts "Recent Targets:" + $recent_targets.join(",")
-	unless $recent_targets.include?(t)
-		$recent_targets.push t
-		$recent_targets.pop if $recent_targets.size > 100 # we dont need to care about mroe than 100
-	end
+	$recent_targets.push t
+	$recent_targets.pop if $recent_targets.size > 100 # we dont need to care about mroe than 100
 
 	#puts "next target: #{t}"
+
 	t
 end
 
@@ -1207,7 +1208,7 @@ while thistarget = next_target
 								results = run_plugins(url.to_s,doc,headers,nil,status,url,ip)
 								# reporting
 								# multiple output plugins simultaneously, some stdout, some files
-								semaphore.synchronize do # mutex is right?
+								$semaphore.synchronize do # mutex is right?
 									output_list.each do |o|
 										begin
 											o.out(url, status, results)
@@ -1256,7 +1257,7 @@ while thistarget = next_target
 			
 				# reporting
 				# multiple output plugins simultaneously, some stdout, some files
-				semaphore.synchronize do # mutex is right?
+				$semaphore.synchronize do # mutex is right?
 					output_list.each do |o|
 						begin
 							o.out(target, status, results)

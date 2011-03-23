@@ -229,22 +229,13 @@ class Plugin
 		end
 #=end
 		
-		#puts "."
 		# if the plugin has extra URLs then use them if aggressive		
 		# we're obviously in the business of guessing URLs now
-		#pp @extra_urls
 
-		# this is broken
-
-		unless @extra_urls.nil?		
-			#puts "extra_urls, not nil"
-			@extra_urls.map do |x|
-			
-				#pp Thread.main["targets"]
+		unless @extra_urls.nil?	or @extra_urls.empty?	
+			@extra_urls.map do |x|			
 				target = URI.join(@base_uri.to_s,x).to_s
 				Thread.main["targets"] << target
-				#puts "added #{target}"
-				#pp Thread.main["targets"]
 			end
 		end
 	end
