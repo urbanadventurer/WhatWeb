@@ -1122,44 +1122,45 @@ Thread.abort_on_exception = true
 
 def next_target
 	t=nil
-	# this isn't elegant or fast but it works.
 
-	pp $targets
+	#pp $targets
+
+	# this semaphore may not be required
 	$semaphore.synchronize do
-
 		while !Thread.main["targets"].empty?
 			$targets.push Thread.main["targets"].pop
 		end
 	end
-		while $recent_targets.include?(t) or t.nil?
-			t=$targets.pop
-			puts "t is ...#{t}" 
 
-			# t at the end of the $targets list
-			if t.nil?
-				puts "yes, t is nil"
-				if $targets.empty?
-					puts "yes, targets are emtpy"
-					if Thread.main["targets"].size >0
-						new=Thread.main["targets"].pop
-						$targets << new
-					elsif Thread.list.size > 1
-						puts "Thread list size: #{Thread.list.size}"
-						sleep 1
-					else
-						puts "breaking now"
-						break
-					end
+	while $recent_targets.include?(t) or t.nil?
+		t=$targets.pop
+		#puts "t is ...#{t}" 
+
+		# t at the end of the $targets list
+		if t.nil?
+			puts "t is nil" if $verbose > 2
+			if $targets.empty?
+				#puts "yes, targets are emtpy"
+				if Thread.main["targets"].size >0
+					new=Thread.main["targets"].pop
+					$targets << new
+				elsif Thread.list.size > 1
+					puts "Thread list size: #{Thread.list.size}" if $verbose > 2
+					sleep 1
+				else
+					puts "breaking now" if $verbose > 2
+					break
 				end
 			end
 		end
+	end
 
-		puts "Recent Targets:" + $recent_targets.join(",")
+	puts "Recent Targets:" + $recent_targets.join(",") if $verbose > 2
 
-		$recent_targets.push t
-		$recent_targets.pop if $recent_targets.size > 100 # we dont need to care about mroe than 100
+	$recent_targets.push t
+	$recent_targets.pop if $recent_targets.size > 100 # we dont need to care about mroe than 100
 
-		puts "next target: #{t}"
+	#puts "next target: #{t}"
 
 	t
 end
