@@ -805,10 +805,32 @@ $ ./whatweb  --log-brief=asdf.log -a 1
 
 collecting random hosts
 -----------------------
+
+attempt #1
 nmap -p 80 -PN -sT -oG random-port80.log --open -iR 1000
 egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}" random-port80.log > random-port80.log2
 mv random-port80.log2 random-port80.log
 cat random-port80.log | sort -u > random-port80.log2
 
 
+when dealing with hosts that may not have HTTP, eg. just port 80 open, it's slow as the bottle neck is not cpu but network and sockets
 
+
+attempt #2
+#Targets
+-p 80 	Port 80 for HTTP
+-iR	Choose 1000 random ports
+#Speed
+-sT 	TCP scan is faster behind the Telstra HTTP proxy.
+-PN	Don't use a probe first
+-n	Do not resolve hostnames
+#Output
+-oG	Output greppable format
+--open	Only show open ports
+
+
+
+
+ ./whatweb  -i ./random-port80.log is unsuitable.
+ ./whatweb -t 500  -i ./random-port80.log is better
+\
