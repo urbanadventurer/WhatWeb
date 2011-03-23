@@ -798,3 +798,17 @@ $ ./whatweb  --log-brief=asdf.log -a 1
 
 
 
+
+
+
+
+
+collecting random hosts
+-----------------------
+nmap -p 80 -PN -sT -oG random-port80.log --open -iR 1000
+egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}" random-port80.log > random-port80.log2
+mv random-port80.log2 random-port80.log
+cat random-port80.log | sort -u > random-port80.log2
+
+
+
