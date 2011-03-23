@@ -236,15 +236,18 @@ class Plugin
 
 		# this is broken
 
-		unless @extra_urls.nil?		
-			#puts "extra_urls, not nil"
+		puts "here!!!!!!!"
+		pp @extra_urls
+
+		unless @extra_urls.nil?	or @extra_urls.empty?	
+			puts "extra_urls is not nil"
 			@extra_urls.map do |x|
 			
-				#pp Thread.main["targets"]
+				pp Thread.main["targets"]
 				target = URI.join(@base_uri.to_s,x).to_s
 				Thread.main["targets"] << target
-				#puts "added #{target}"
-				#pp Thread.main["targets"]
+				puts "added #{target}"
+				pp Thread.main["targets"]
 			end
 		end
 	end
