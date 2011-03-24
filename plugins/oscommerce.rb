@@ -94,10 +94,12 @@ matches [
 
 {:name=>"Security warnings",
 :string=>"warning",
-:text=>'<td class="messageStackWarning"><img src="images/icons/warning.gif"'}
+:text=>'<td class="messageStackWarning"><img src="images/icons/warning.gif"'},
+
+{:version=>/<img src="images\/oscommerce.png" border="0" alt="osCommerce ([^"]+)"/, :url=>"/admin/login.php",:name=>"admin page version" } #"
 ]
 
-extra_urls = ["admin/login.php"]
+
 
 def passive
 	m=[]
@@ -115,18 +117,6 @@ def passive
 	m
 end
 
-def aggressive
-	m=[]
-	
-	target = URI.join(@base_uri.to_s,"admin/login.php").to_s
-	status,url,ip,body,headers=open_target(target)
-	
-	if body =~ /<img src="images\/oscommerce.png" border="0" alt="osCommerce ([^"]+)"/
-		version=body.scan(/<img src="images\/oscommerce.png" border="0" alt="osCommerce ([^"]+)"/)[0][0]
-		m << {:name=>"admin page version", :version=>version}
-	end
-	m
-end
 
 end
 
