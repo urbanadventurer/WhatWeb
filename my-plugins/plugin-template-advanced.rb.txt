@@ -42,7 +42,7 @@ matches [
 :tagpattern=>"!DOCTYPE,html,head,title,/title,meta,link,link,script,/script,meta,/head,body,div,h1,a,/a,/h1,form,p,label,br,input,/label,/p,p,label,br,input,/label,/p,p,label,input,/label,/p,p,input,input,input,/p,/form,p,a,/a,/p,p,a,/a,/p,/div,script,/script,/body,/html"},
 # tags are delimited by commas. fuzzy matching is coming in the future
 
-{:url=>"favicon.ico", :md5sum=>'f420dc2c7d90d7873a90d82cd7fde315'} # not common, seen on http://s.wordpress.org/favicon.ico
+{:url=>"favicon.ico", :md5=>'f420dc2c7d90d7873a90d82cd7fde315'} # not common, seen on http://s.wordpress.org/favicon.ico
 ]
 
 # this always runs
