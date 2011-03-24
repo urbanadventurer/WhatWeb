@@ -1,21 +1,9 @@
-Version 0.4.6 Released ? 2011
-* Added a total of 592 new plugins:
-*   Added ~570 plugins by Brendan Coles.
-*   Added Escenic CMS plugin from Erik Inge Bolsø
-*   Added EscenicEngine5 plugin by nikosk
-*   Added Ruby on Rails, Magento, IP, Country (GeoIP), uTorrent plugins by Andrew Horton
-*   Added Charset plugin by Andrew Horton. Required for conversion to UTF-8 which is required for MongoDB. Optionally requires rchardet gem
-*   Added barracuda-load-balancer, binarysec-firewall, citrix-netscaler, cloudflare, juniper-netscreen-secure-access, profense-firewall, vTigerCRM, watchguard-firewall, www-authenticate plugins by Aung Khant
-* Updated a total of 223 plugins:
-*   Updated plugins to use :version=>/regexp/
-*   More than 150 plugins updated by Brendan Coles. I refuse to count them.
-*   Updated Mambo plugin with changes from Andrew Horton and Aung Khant
-*   Updated phpBB plugin
-*   Modified Joomla plugin to use :modules instead of :string, changed certainty of a regexp
-*   Modified PHP-Nuke plugin to use :modules
-*   Updated Mailto plugin, renamed to Email
-*   Updated Mambo and Joomla plugins with suggestions from Aung Khant
-*   Bug fix: Updated WordPress plugin
+Version 0.4.6 Released March 24th 2011
+* Updated ~230 plugins
+* Added ~600 new plugins
+* Added Escenic CMS plugin from Erik Inge Bolsø
+* Added EscenicEngine5 plugin by nikosk
+* Added barracuda-load-balancer, binarysec-firewall, citrix-netscaler, cloudflare, evercookie, juniper-netscreen-secure-access, juniper-load-balancer, profense-firewall, vTigerCRM, watchguard-firewall, www-authenticate plugins by Aung Khant
 * Moved some plugins into disabled-plugins, as they clutter output. adobe_flash.rb, footer-hash.rb, frame.rb, header-hash.rb, md5.rb, script.rb, shortcut-icon.rb, tagpattern-hash.rb
 * Renamed disabled-plugins/ to plugins-disabled/
 * Changed $ANEMONE_SKIP_REGEX=Regexp.union line to be compatible with Ruby 1.8.6. Thanks to Michal Ambroz
@@ -26,13 +14,14 @@ Version 0.4.6 Released ? 2011
 {:version=>/<meta name="Generator" (content|CONTENT)="(ASPNUKE|ASP-Nuke) ([^->"]+)/, :offset=>2,  :name=>"meta generator tag" }
 * Replaced :probability with :certainty in my-plugins/plugin-template.rb.txt. Thanks Erik Inge Bolsø
 * Added support for em-resolv-replace which speeds up whatweb many times. http://github.com/mperham/em-resolv-replace
-* Added XML stylesheet "whatweb.xsl" for XML reports, by Brendan Coles
+* Added XML stylesheet "whatweb.xsl" for XML reports
 * Added reporting of version detection with matches to the Plugin Info, eg. whatweb -I
 * Changed whatweb -I behaviour to search plugins for keywords. eg. './whatweb -I nuke' brings up ASP-Nuke, PHPNuke, DotNetNuke, etc.
 * Bugfix: Changed webpage data for when working with files, not URIs. Now it passes empty hashes, etc instead of nil which caused plugins to report errors.
 * Added MongoDB logging. Use with --log-mongo-database, --log-mongo-host, --log-mongo-collection, --log-mongo-username, --log-mongo-password. Only database has no default.
 * Added JSON logging. Must have the json ruby gem installed or be using Ruby 1.9
-* Added MagicTree logging from Brendan Coles & Gremwell
+* Added MagicTree logging.
+* MagicTree logging updated by Gremwell.
 * Added error logging.
 * Added Verbose logging.
 * Added XML header and footer to XML logs
