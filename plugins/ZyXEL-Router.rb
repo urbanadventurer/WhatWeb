@@ -6,10 +6,14 @@
 ##
 # Version 0.2 # 2011-01-09 #
 # Updated model detection
+#
+# Version 0.3
+# Added signatures by Andrew Horton
+
 ##
 Plugin.define "ZyXEL-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
-version "0.2"
+version "0.3"
 description "This plugin indentifies ZyXEL router models"
 # Tested on models: P-660H-D1, P-660HW-D1, P-660R-D1, P-662H-D1, P-662HW-D3, P-2602H-D1A, P-2602HW-D1A, P-2802HWL-I1, P660RU2, P660HT2, Prestige 660H61
 # ZyXEL VSG-1200 V2 is access server that recognizes new users on network and re-routes all the different IP settings pre-configured on users' computers. - homepage: http://www.zyxel.com/"
@@ -85,6 +89,10 @@ matches [
 
 # Vantage Service Gateway # Default Frameset
 { :text=>'<frameset rows="75,97%,25" framespacing="0" border="0" frameborder="0">', :model=>"Vantage Service Gateway" },
+
+{ :text=>'loginPassword.value = "ZyXEL ZyWALL Series";'},
+
+{ :version=>/<td height="40" colspan="4" class="Auth">Prestige ([^<]+)<\/td>/}
 
 ]
 
