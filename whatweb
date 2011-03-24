@@ -1042,7 +1042,7 @@ begin
 				end
 			when '-u','--user'
 				$BASIC_AUTH_USER=arg.split(":").first
-				$BASIC_AUTH_PASS=arg.split(":").last
+				$BASIC_AUTH_PASS=arg.to_s.scan(/^[^:]+:(.+)/).to_s if arg =~ /^[^:]+:(.+)/
 			when '--debug'
 				$DEBUG = true
 			when '-h','--help'
