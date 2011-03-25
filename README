@@ -69,13 +69,11 @@ Matches in the HTML source and HTTP headers are made with:
 
 Using WhatWeb on a handful of websites (standard WhatWeb output is in colour):
 
-$ ./whatweb slashdot.org reddit.com digg.com http://www.engadget.com/ www.whitehouse.gov
-http://reddit.com [302] HTTPServer[AkamaiGHost], RedirectLocation[http://www.reddit.com/], IP[24.143.196.32], Akamai-Global-Host, Country[UNITED STATES][US]
-http://slashdot.org [200] Script, HTTPServer[Unix][Apache/1.3.42 (Unix) mod_perl/1.31], Google-Analytics[GA][32013], UncommonHeaders[x-varnish,x-bender,x-xrds-location,slash_log_data], Apache[1.3.42][mod_perl/1.31], HTML5, IP[216.34.181.45], OpenGraphProtocol[100000696822412], test[Slashdot: News for nerds, stuff that matters], X-Powered-By[Slash 2.005001], Title[Slashdot: News for nerds, stuff that matters], Email[FourteenerCleaner@yahoo.com,mcooney@nww.com], Country[UNITED STATES][US]
-http://www.engadget.com/ [200] Frame, PasswordField[login-pw,newkey], Script, HTTPServer[Apache/2.2], UncommonHeaders[keep-alive], Apache[2.2], IP[205.188.192.100], JQuery, Mobile-Website[Apple iPhone], probably BlogSmithMedia, test[Engadget], Cookies[GEO-64_251_29_84], Title[Engadget], Country[UNITED STATES][US]
-http://www.whitehouse.gov [200] Script, HTTPServer[White House], Google-Analytics[GA][10791350], IP[217.156.169.152], test[Home | The White House], Drupal, Cookies[d], Title[Home | The White House], OpenSearch[http://www.whitehouse.gov/opensearch/apachesolr_search], Country[UNITED KINGDOM][GB]
-http://www.reddit.com/ [200] Frame, PasswordField[passwd,passwd2], Script, HTTPServer['; DROP TABLE servertypes; --], IP[72.246.25.32], JQuery, test[reddit: the voice of the internet -- news before it happens], Cookies[reddit_first], Title[reddit: the voice of the internet -- news before it happens], Country[UNITED STATES][US]
-http://digg.com [200] Frame, PasswordField[password], Script, HTTPServer[Apache], UncommonHeaders[x-digg-time,keep-alive], Apache, HTML5, IP[64.191.203.30], PHP[5.2.9-digg8], X-Powered-By[PHP/5.2.9-digg8], Title[Digg                    - All Topics                 - The Latest News Headlines, Videos and Images], Country[UNITED STATES][US]
+$ ./whatweb slashdot.org reddit.com
+http://reddit.com [302] HTTPServer[AkamaiGHost], RedirectLocation[http://www.reddit.com/], Via-Proxy[1.1 bc1], IP[173.223.232.64], Akamai-Global-Host, Country[UNITED STATES][US]
+http://slashdot.org [200] Script, HTTPServer[Unix][Apache/1.3.42 (Unix) mod_perl/1.31], Google-Analytics[GA][32013], Via-Proxy[1.1 bc5], UncommonHeaders[x-fry,x-varnish,x-xrds-location,slash_log_data], Apache[1.3.42][mod_perl/1.31], HTML5, IP[216.34.181.45], OpenGraphProtocol[100000696822412], X-Powered-By[Slash 2.005001], Title[Slashdot: News for nerds, stuff that matters], Email[canadaboy@nOspam.gmail.com,jbort@nww.com], Country[UNITED STATES][US]
+http://www.reddit.com/ [200] Frame, PasswordField[passwd,passwd2], Script, HTTPServer['; DROP TABLE servertypes; --], IP[203.97.86.202], JQuery, Cookies[reddit_first], Title[reddit: the voice of the internet -- news before it happens], Country[NEW ZEALAND][NZ]
+
 
 
 
@@ -316,6 +314,7 @@ Limitations of the spidering. This follows links in <a> tags, these are the HTML
 The spider is provided by Anemone, a third party ruby gem. It doesn't follow redirects. For example the URL treshna.com will fail and www.treshna.com will produce results.
 
 
+
 8. Performance & Stability
 ================================================================================
 
@@ -331,8 +330,33 @@ The --wait and --max-threads commands can be used to assist in IDS evasion.
 
 Furthermore, changing the user-agent using the -U or --user-agent command line option will avoid the Snort IDS rule for WhatWeb.
 
+Without the em-resolve-replace gem performance is significantly degraded.
 
-9. Related Projects
+If you are scanning ranges of IP addresses, it is much more efficient to use a port scanner like nmap to discover which have port 80 open
+before scanning with WhatWeb.
+
+Character set detection, with the Charset plugin, required by JSON and MongoDB logging uses more CPU than otherwise.
+
+
+
+9. Optional Dependencies
+================================================================================
+
+Without the em-resolve-replace gem performance is significantly degraded.
+	gem install em-resolve-replace
+
+To enable JSON logging install the json gem.
+	gem install json
+
+To enable MongoDB logging install the mongo gem.
+	gem install mongo
+
+To enable character set detection and MongoDB logging install the rchardet gem.
+	gem install rchardet
+
+
+
+10. Related Projects
 ================================================================================
 
 WhatWeb is unique however there are some web projects with the same goal of identifying a website.
@@ -392,7 +416,7 @@ BuiltWith.com
 Stats of popularity of web stuff.
 
 
-9. Funny & Unusual
+11. Funny & Unusual
 ================================================================================
 
 Slashdot.org
@@ -406,7 +430,7 @@ HTTPServer:'; DROP TABLE servertypes; --
 
 
 
-10. Release History
+12. Release History
 ================================================================================
 
 Version 0.3 Released at Kiwicon III (kiwicon.org), November 2nd, 2009
@@ -419,7 +443,7 @@ Version 0.4.5 Released August 17th, 2010
 Version 0.4.6 Released March 25th, 2011
 
 
-11. Credits
+13. Credits
 ================================================================================
 
 Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
@@ -453,7 +477,7 @@ Michal Ambroz for writing the Makefile and Man pages
 Gremwell for improving the MagicTree logging
 
 
-12. Updates & Additional Information
+14. Updates & Additional Information
 ================================================================================
 
 The WhatWeb development build features regular updates.
