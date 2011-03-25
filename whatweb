@@ -456,6 +456,21 @@ def make_target_list(cmdline_args, inputfile=nil,pluginlist = nil)
 		url_list += pluginlist.map {|name,plugin| plugin.examples unless plugin.examples.nil? }.compact.flatten
 	end
 
+        genrange=url_list.map do |x|
+	  range=nil
+	  if x =~ /^[0-9\.\-*\/]+$/ and not x =~ /^[\d\.]+$/
+	    # check for nmap
+	    error "Target ranges require nmap to be in the path" if `which nmap` == ""
+	    range=`nmap -n -sL #{x} 2>&1 | egrep -o "([0-9]{1,3}\\.){3}[0-9]{1,3}"`
+	    range=range.split("\n")
+	  end
+	  range
+	end.compact.flatten
+	
+	url_list= url_list.select {|x| not x =~ /^[0-9\.\-*\/]+$/ or x =~ /^[\d\.]+$/ }
+	url_list += genrange unless genrange.empty?
+     
+
 	#make urls friendlier, test if it's a file, if test for not assume it's http://
 	# http, https, ftp, etc
 	url_list=url_list.map do |x|   
@@ -726,8 +741,8 @@ puts
 puts "Usage: whatweb [options] <URLs>"
 puts "
 TARGET SELECTION:
-  <URLs>\t\tEnter URLs or filenames. Use /dev/stdin to pipe HTML
-  \t\t\tdirectly
+  <URLs>\t\tEnter URLs, filenames or nmap-format IP ranges.
+\t\t\tUse /dev/stdin to pipe HTML directly
   --input-file=FILE, -i\tIdentify URLs found in FILE, eg. -i /dev/stdin
   --url-prefix\t\tAdd a prefix to target URLs
   --url-suffix\t\tAdd a suffix to target URLs
@@ -823,10 +838,11 @@ EXAMPLE USAGE:
   whatweb example.com
   whatweb -v example.com
   whatweb -a 3 example.com
+  whatweb 192.168.1.0/24
 \n"
 
 	suggestions=""
-	suggestions << "To boost performance during long scans install the em-resolve-replace gem.\n" unless Gem.available?('em-resolv-replace')
+	suggestions << "WARNING: Without the em-resolve-replace gem performance is significantly degraded.\n" unless Gem.available?('em-resolv-replace')
 	suggestions << "To enable JSON logging install the json gem.\n" unless Gem.available?('json')
 	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless Gem.available?('mongo')
 	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless Gem.available?('rchardet')
