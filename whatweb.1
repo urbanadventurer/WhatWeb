@@ -20,7 +20,7 @@ WhatWeb identifies content management systems (CMS), blogging
 .SH OPTIONS
 .TP
 .B \<URLs\>
-Enter URLs or filenames. Use /dev/stdin to pipe HTML directly
+Enter URLs, filenames or nmap-format IP ranges. Use /dev/stdin to pipe HTML directly
 .TP
 .B \-\-input-file=FILE \-i
 Identify URLs found in FILE
@@ -185,6 +185,9 @@ Display version information.
 .TP
 .B Aggressive:
  whatweb -a 3 example.com
+.TP
+.B IP Ranges
+ whatweb 192.168.1.0/24
 
 .SH BUGS
 WhatWeb is not compatible with Ruby 1.9

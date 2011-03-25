@@ -89,8 +89,8 @@ Homepage: http://www.morningstarsecurity.com/research/whatweb
 Usage: whatweb [options] <URLs>
 
 TARGET SELECTION:
-  <URLs>                Enter URLs or filenames. Use /dev/stdin to pipe HTML
-                        directly
+  <URLs>                Enter URLs, filenames or nmap-format IP ranges.
+                        Use /dev/stdin to pipe HTML directly
   --input-file=FILE, -i Identify URLs found in FILE, eg. -i /dev/stdin
   --url-prefix          Add a prefix to target URLs
   --url-suffix          Add a suffix to target URLs
@@ -186,7 +186,7 @@ EXAMPLE USAGE:
   whatweb example.com
   whatweb -v example.com
   whatweb -a 3 example.com
-
+  whatweb 192.168.1.0/24
 
 
 4. Logging & Output
