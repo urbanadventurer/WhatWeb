@@ -124,7 +124,7 @@ require 'tempfile'
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
 $DEBUG = false # raise exceptions in plugins, etc
-$VERSION="0.4.6"
+$VERSION="0.4.7"
 $verbose=0
 $USE_EXAMPLE_URLS=false
 $use_colour="auto"
@@ -571,13 +571,15 @@ end
 
 
 def error(s)
-	# if colour
-	if ($use_colour=="auto") or ($use_colour=="always")
-		STDERR.puts red(s)
-	else
-		STDERR.puts s
+	$semaphore.synchronize do
+		# if colour
+		if ($use_colour=="auto") or ($use_colour=="always")
+			STDERR.puts red(s)
+		else
+			STDERR.puts s
+		end
+		STDERR.flush
 	end
-	STDERR.flush
 	unless $OUTPUT_ERRORS.nil?
 		$OUTPUT_ERRORS.out(s)
 	end
@@ -1131,9 +1133,7 @@ $ANEMONE_SKIP_REGEX=Regexp.union($ANEMONE_SKIP_EXTENSIONS.map{|x| "/\.#{" + x + 
 
 # for each target, we try each plugin then print the results
 $semaphore=Mutex.new
-Thread.abort_on_exception = true
-
-
+Thread.abort_on_exception = true if $DEBUG
 
 
 def next_target
@@ -1273,7 +1273,7 @@ while thistarget = next_target
 			
 				# reporting
 				# multiple output plugins simultaneously, some stdout, some files
-				$semaphore.synchronize do # mutex is right?
+#				$semaphore.synchronize do # mutex is right?
 					output_list.each do |o|
 						begin
 							o.out(target, status, results)
@@ -1282,7 +1282,7 @@ while thistarget = next_target
 							error("Error: Logging failed for "+ target)
 						end
 					end
-				end
+#				end
 
 				# REDIRECTION
 				begin

@@ -3,6 +3,10 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
+
+# Vesion 0.8 # Andrew
+#  Added aggressive match for /administrator/. Use match now
+#  
 ##
 # Version 0.7 # 2011-03-19 # Brendan Coles <bcoles@gmail.com>
 # Added aggressive match for /administrator/
@@ -20,7 +24,7 @@
 Plugin.define "Joomla" do
 author "Andrew Horton"
 version "0.7"
-description "Opensource CMS written in PHP. Homepage: http://joomla.org. Plugin can aggresively identify version by comparing md5 hashes of 4 files. Valid up to version 1.5.15."
+description "Opensource CMS written in PHP. Aggressive version detection compares just 5 files, valid for versions 1.5.0-1.5.22 and 1.6.0-1.6.1. Homepage: http://joomla.org."
 
 # Google results as at 2011-03-19 #
 # 602 for "powered by joomla" inurl:option=com_content
@@ -50,31 +54,28 @@ www.johngiczewski.com
 
 # Matches #
 matches [
-
-# Meta Generator # 1.0
 { :version=>"1.0", :regexp=>/<meta name="Generator" content="Joomla! - Copyright \(C\) 200[0-9] - 200[0-9] Open Source Matters. All rights reserved." \/>/ },
-
-# Version Detection # Meta Generator
 { :version=>/<meta name="generator" content="Joomla! (\d\.\d) - Open Source Content Management" \/>/ },
-
-# Powered by link
 { :text=>'Powered by <a href="http://www.joomla.org">Joomla!</a>.' },
 
+{ :url=>'/administrator/', :regexp=>/<div id="joomla"><img src="[^"]*\/images\/header_text.png" alt="Joomla! Logo"/ , :name=>'admin page'} #"
 ]
 
 # Passive #
 def passive
 	m=[]
 
-	# /administrator # Confirm the presence of Joomla with 100% certainty
-	if @base_uri.path =~ /\/administrator\// and (@body =~ /<div id="joomla"><img src="[^"]*\/images\/header_text.png" alt="Joomla! Logo" \/><\/div>/ or @body =~ /<a href="http:\/\/www.joomla.org" target="_blank">Joomla!<\/a>/)
-		m << { :name=>"Joomla Administration Page" }
-	end
+	# mosvisitor cookie # Also used by mambo
+	m << { :certainty=>75, :name=>"mosvisitor cookie" } if @meta["set-cookie"] =~ /mosvisitor=[0-9]+/ 
+
+	# P3P Privacy Headers # Also used by phpcake
+	m << { :name=>"P3P Privacy Headers", :certainty=>25 } if @meta["p3p"] == 'CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"'
 
 	# HTML Comment # seconds since epoch # Also used by mambo
 	if @body =~ /<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/ and @body !~ /mambo/i
 		m << {:name=>"seconds since epoch in html comment after </html>",:certainty=>25}
 	end
+
 
 	# Module Detection # Doesn't work in SEO mode # Also used by mambo
 	if @body =~ /<a href="[^"]*index.php\?option=(com_[^&^"]+)/
@@ -87,11 +88,6 @@ def passive
 
 	end
 
-	# mosvisitor cookie # Also used by mambo
-	m << { :certainty=>75, :name=>"mosvisitor cookie" } if @meta["set-cookie"] =~ /mosvisitor=[0-9]+/ 
-
-	# P3P Privacy Headers # Also used by phpcake
-	m << { :name=>"P3P Privacy Headers", :certainty=>25 } if @meta["p3p"] == 'CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"'
 
 	# Return passive matches
 	m
@@ -100,20 +96,13 @@ end
 # Aggressive #
 def aggressive
 	m=[]
-
-	# Open base_uri + /administrator/
-	status,url,ip,body,headers=open_target(@base_uri.to_s+"/administrator/")
-
-	# Confirm the presence of Joomla with 100% certainty
-	if (body =~ /<div id="joomla"><img src="[^"]*\/images\/header_text.png" alt="Joomla! Logo" \/><\/div>/ or body =~ /<a href="http:\/\/www.joomla.org" target="_blank">Joomla!<\/a>/)
-		m << { :name=>"Joomla Administration Page" }
-	end
+	
 
 	# Version Detection # /administrator/ # Meta Generator
 	m << { :version=>body.scan(/<meta name="generator" content="Joomla! (\d\.\d) - Open Source Content Management" \/>/) } if body =~ /<meta name="generator" content="Joomla! (\d\.\d) - Open Source Content Management" \/>/
 
 	# Download and md5 hash additional files
-	to_download = %w| language/en-GB/en-GB.ini administrator/language/en-GB/en-GB.ini administrator/language/en-GB/en-GB.xml plugins/editors/tinymce.xml|
+	to_download = %w| language/en-GB/en-GB.ini administrator/language/en-GB/en-GB.ini administrator/language/en-GB/en-GB.xml plugins/editors/tinymce.xml components/com_contact/metadata.xml|
 	downloads={}
 	to_download.each do |d|	
 		target = URI.join(@base_uri.to_s,d).to_s	
@@ -137,10 +126,19 @@ def aggressive
 	version = "1.5.12" if downloads["plugins/editors/tinymce.xml"][:md5sum] == "88c25322c0e878b6944cf9ea462c5071"
 	version = "1.5.13 - 1.5.14" if downloads["plugins/editors/tinymce.xml"][:md5sum] == "e6537f60fc9e6a04eda14d55f852a9d8"
 	version = "1.5.15" if downloads["language/en-GB/en-GB.ini"][:md5sum] == "449d7bb356fcefa1343d72d203297438"
+	version = "1.5.16" if downloads["language/en-GB/en-GB.ini"][:md5sum] == "5a17bbf04d1e3fb4177dfa429b8e52b9"
+
+	version = "1.5.17" if downloads["language/en-GB/en-GB.ini"][:md5sum] == "685fdb13400fb459490c72f829427685"
+	version = "1.5.18" if downloads["language/en-GB/en-GB.ini"][:md5sum] == "5a17bbf04d1e3fb4177dfa429b8e52b9" and downloads["components/com_contact/metadata.xml"][:md5sum] == "9ea9550db4b1ae1eb7af7d7770301d16"
+
+	version = "1.5.19 - 1.5.22" if downloads["language/en-GB/en-GB.ini"][:md5sum] == "5a17bbf04d1e3fb4177dfa429b8e52b9" and downloads["components/com_contact/metadata.xml"][:md5sum] == "24095af7fbd32685fe2c817544df5117"
+
+	version = "1.6.0" if downloads["language/en-GB/en-GB.ini"][:md5sum] == "e3b7be6d318f23c22e0248bfe72d39f9"
+	version = "1.6.1" if downloads["language/en-GB/en-GB.ini"][:md5sum] == "ce8bc2340afc690f1fedf6808284c201"
 
 	# Return version matches from md5 hashes, if present
 	unless version.nil?
-		m << {:name=>"md5sums of 4 files", :version=>version}
+		m << {:name=>"MD5 sums", :version=>version}
 	end	
 
 	# Return aggressive matches
@@ -148,40 +146,4 @@ def aggressive
 end
 
 end
-
-=begin
-
-# FILE MD5 HASH REFERENCE #
-
-Version	/language/en-GB/en-GB.ini		/administrator/language/en-GB/en-GB.ini	/administrator/language/en-GB/en-GB.xml		/plugins/editors/tinymce.xml
-Joomla-1.5.0	903fb75f4369d78373b7b00db1c86c20	d80eae132ce6388dec5d0358304e1d01		97dc186a935a9934ffea258cea80ccf3			ff546c69031508003813804477e4d656
-Joomla-1.5.1 	be9408d25f37e91111caefca9b07f7d9 	f29d32a0e552fa97ffa1ff734d993c33		97dc186a935a9934ffea258cea80ccf3			ff546c69031508003813804477e4d656
-Joomla-1.5.2 	630486389fb8b81bd17417acdf82534d 	557efbb161ba45b07cdf1b524b8e261e		ff479e4f49c099208728077a6cc02f39			ff546c69031508003813804477e4d656
-Joomla-1.5.3 	7ce67c338528faac3870827d439daa8e 	d31cbdea7fcfddf450319f333ff75d79		ff479e4f49c099208728077a6cc02f39			ff546c69031508003813804477e4d656
-Joomla-1.5.4 	18bcc3be286f5c9ee03b211c3fcc02f6	d7961bdd2528bf4bfc505b1d44920edd 		ff479e4f49c099208728077a6cc02f39			ff546c69031508003813804477e4d656
-Joomla-1.5.5 	18bcc3be286f5c9ee03b211c3fcc02f6	36a0b9af0fb86d84f51d2cfeef7577e8		ff479e4f49c099208728077a6cc02f39 [5&6]		ff546c69031508003813804477e4d656
-Joomla-1.5.6 	18bcc3be286f5c9ee03b211c3fcc02f6	36a0b9af0fb86d84f51d2cfeef7577e8		ff479e4f49c099208728077a6cc02f39			ff546c69031508003813804477e4d656
-Joomla-1.5.7 	18bcc3be286f5c9ee03b211c3fcc02f6  	36a0b9af0fb86d84f51d2cfeef7577e8		2629ad61fae0ff36fd2b2715a8defbcf			ff546c69031508003813804477e4d656
-Joomla-1.5.8	fb5fcb1739656a7056573a1f04feb294	619004137db98efca550609eac13204e		3747e98219b70ae68510c54246029735			ff546c69031508003813804477e4d656
-Joomla-1.5.9	75586cfdf36020bdbfe66bd90072fb07	5516cf074a67bb54bbdb4fd9c340574d		f0ba735dd9f9ffe238a2acf296a38611			ff546c69031508003813804477e4d656
-Joomla-1.5.10	75586cfdf36020bdbfe66bd90072fb07	a8b4a2477bc332f9039828c45aea92c2		f0ba735dd9f9ffe238a2acf296a38611			ff546c69031508003813804477e4d656
-Joomla-1.5.11	75586cfdf36020bdbfe66bd90072fb07  	c42788d652d97e2a103a7dcd3d507789		f0ba735dd9f9ffe238a2acf296a38611			ff546c69031508003813804477e4d656
-Joomla-1.5.12	45907aad7ad3fae5b2859caff35e68fe  	1af3cb82c9a106a9479c1915bae512e1		f0ba735dd9f9ffe238a2acf296a38611			88c25322c0e878b6944cf9ea462c5071
-Joomla-1.5.13	45907aad7ad3fae5b2859caff35e68fe  	1af3cb82c9a106a9479c1915bae512e1		f0ba735dd9f9ffe238a2acf296a38611			e6537f60fc9e6a04eda14d55f852a9d8
-Joomla-1.5.14	45907aad7ad3fae5b2859caff35e68fe  	1af3cb82c9a106a9479c1915bae512e1		f0ba735dd9f9ffe238a2acf296a38611			e6537f60fc9e6a04eda14d55f852a9d8
-Joomla-1.5.15	449d7bb356fcefa1343d72d203297438  	dedb7fdc930f76d32def6c89523711f1		ca05270bb8b29fa22bc43ada00a89eb6			376593ec7b3fa8378e4338d105619090
-
-1.5.0 - 1.5.3   X
-1.5.4												X
-1.5.5 (1.5.6)	X									X										X
-1.5.7																						X
-1.5.8			X
-1.5.9												X
-1.5.10												X
-1.5.11												X
-1.5.12																																	X
-1.5.13 (1.5.14)																															X
-1.5.15			X
-
-=end
 

@@ -59,10 +59,12 @@ end
 
 class OutputObject < Output
 	def out(target, status, results) 
-		@f.puts "Identifying: "+ target.to_s
-		@f.puts "HTTP-Status: "+ status.to_s
-		@f.puts results.pretty_inspect unless results.empty?	
-		@f.puts
+		$semaphore.synchronize do 
+			@f.puts "Identifying: "+ target.to_s
+			@f.puts "HTTP-Status: "+ status.to_s
+			@f.puts results.pretty_inspect unless results.empty?	
+			@f.puts
+		end
 	end
 end
 
@@ -77,80 +79,82 @@ class OutputVerbose < Output
 		end
 	end
 
-	def out(target, status, results)	
-		@f.puts "URL".ljust(7)+": #{coloured(target,'blue')}"
-		@f.puts "Status".ljust(7)+": #{status}"
-		results.sort.each do |plugin_name,plugin_results|
-			unless plugin_results.empty?
+	def out(target, status, results)
+		$semaphore.synchronize do
+			@f.puts "URL".ljust(7)+": #{coloured(target,'blue')}"
+			@f.puts "Status".ljust(7)+": #{status}"
+			results.sort.each do |plugin_name,plugin_results|
+				unless plugin_results.empty?
 				
-				@f.puts "   "+coloured(plugin_name,"yellow")+ " " + coloured("-"*(80-5-plugin_name.size),"dark_blue")
+					@f.puts "   "+coloured(plugin_name,"yellow")+ " " + coloured("-"*(80-5-plugin_name.size),"dark_blue")
 				
-				description=[""]
-				unless Plugin.registered_plugins[plugin_name].description.nil?
-					d=Plugin.registered_plugins[plugin_name].description[0..350] 
-					d+="..." if d.size==251
-					description=word_wrap(d, 60)
-				end
-
-				@f.puts "\tDescription: " + description.first
-				description[1..-1].each {|line|
-					@f.puts "\t" + " "*13 + line
-				}
-
-				top_certainty= suj(plugin_results)[:certainty].to_i
-				@f.puts "\t"+"Certainty".ljust(11)+": " + certainty_to_words(top_certainty)
-
-				plugin_results.map {|x| sortuniq(x) }.each do |pr|
-
-					if pr[:name]
-						name_of_match = pr[:name]
-					else
-						name_of_match = [pr[:regexp_compiled],pr[:text],pr[:regexp].to_s,
-									pr[:ghdb],pr[:md5],pr[:tagpattern]].compact.join("|")
+					description=[""]
+					unless Plugin.registered_plugins[plugin_name].description.nil?
+						d=Plugin.registered_plugins[plugin_name].description[0..350] 
+						d+="..." if d.size==251
+						description=word_wrap(d, 60)
 					end
 
-					pr.each do |key,value|
-						next unless [:version, :os, :string, :account, :model, 
-								:firmware, :module, :filepath].include?(key)
+					@f.puts "\tDescription: " + description.first
+					description[1..-1].each {|line|
+						@f.puts "\t" + " "*13 + line
+					}
 
-						next if value.class==Regexp
+					top_certainty= suj(plugin_results)[:certainty].to_i
+					@f.puts "\t"+"Certainty".ljust(11)+": " + certainty_to_words(top_certainty)
 
-						@f.print "\t" + key.to_s.capitalize.ljust(11) + ": "
+					plugin_results.map {|x| sortuniq(x) }.each do |pr|
 
-						c = case key
-							when :version then "green"
-							when :string then "cyan"
-							when :certainty then "grey"
-							when :os then "red"
-							when :account then "cyan"
-							when :model then "dark_green"
-							when :firmware then "dark_green"
-							when :module then "magenta"
-							when :filepath then "dark_green"
-							else "grey"
-						end
-
-						if value.is_a?(String)
-							@f.print coloured(value.to_s,c)
-						elsif value.is_a?(Array)
-							@f.print coloured(value.join(",").to_s,c)
+						if pr[:name]
+							name_of_match = pr[:name]
 						else
-							@f.print coloured(value.inspect,c)
+							name_of_match = [pr[:regexp_compiled],pr[:text],pr[:regexp].to_s,
+										pr[:ghdb],pr[:md5],pr[:tagpattern]].compact.join("|")
 						end
+
+						pr.each do |key,value|
+							next unless [:version, :os, :string, :account, :model, 
+									:firmware, :module, :filepath].include?(key)
+
+							next if value.class==Regexp
+
+							@f.print "\t" + key.to_s.capitalize.ljust(11) + ": "
+
+							c = case key
+								when :version then "green"
+								when :string then "cyan"
+								when :certainty then "grey"
+								when :os then "red"
+								when :account then "cyan"
+								when :model then "dark_green"
+								when :firmware then "dark_green"
+								when :module then "magenta"
+								when :filepath then "dark_green"
+								else "grey"
+							end
+
+							if value.is_a?(String)
+								@f.print coloured(value.to_s,c)
+							elsif value.is_a?(Array)
+								@f.print coloured(value.join(",").to_s,c)
+							else
+								@f.print coloured(value.inspect,c)
+							end
 						
-						unless name_of_match.empty?
-							@f.print " (from #{name_of_match})"
-						end
-						unless pr[:certainty] == 100
-							@f.print " (Certainty: #{ certainty_to_words pr[:certainty]} )"
+							unless name_of_match.empty?
+								@f.print " (from #{name_of_match})"
+							end
+							unless pr[:certainty] == 100
+								@f.print " (Certainty: #{ certainty_to_words pr[:certainty]} )"
+							end
+
+							@f.puts
 						end
 
-						@f.puts
+						@f.puts "\t"+ coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
 					end
-
-					@f.puts "\t"+ coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
+					@f.puts			
 				end
-				@f.puts			
 			end
 		end
 	end
@@ -229,12 +233,13 @@ end
 			end
 		end
 		
-		if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
-			@f.puts blue(target) + " [#{status}] " + brief_results.join(", ")
-		else
-			@f.puts target.to_s + " [#{status}] " + brief_results.join(", ")
-		end		
-		@f.flush
+		$semaphore.synchronize do 
+			if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
+				@f.puts blue(target) + " [#{status}] " + brief_results.join(", ")
+			else
+				@f.puts target.to_s + " [#{status}] " + brief_results.join(", ")
+			end		
+		end
 	end
 end
 
@@ -262,59 +267,61 @@ class OutputXML < Output
 	end
 
 	def out(target, status, results)	
-		@f.puts "<target>"
-		@f.puts "\t<uri>#{escape(target)}</uri>"
-		@f.puts "\t<http-status>#{escape(status)}</http-status>"
+		$semaphore.synchronize do 
+			@f.puts "<target>"
+			@f.puts "\t<uri>#{escape(target)}</uri>"
+			@f.puts "\t<http-status>#{escape(status)}</http-status>"
 		
-		results.each do |plugin_name,plugin_results|		
-			@f.puts "\t<plugin>"
-			@f.puts "\t\t<name>#{escape(plugin_name)}</name>"
+			results.each do |plugin_name,plugin_results|		
+				@f.puts "\t<plugin>"
+				@f.puts "\t\t<name>#{escape(plugin_name)}</name>"
 			
-			unless plugin_results.empty?
-				# important info in brief mode is version, type and ?
-				# what's the highest probability for the match?
+				unless plugin_results.empty?
+					# important info in brief mode is version, type and ?
+					# what's the highest probability for the match?
 
-				certainty = plugin_results.map {|x|
-	x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
-				version = plugin_results.map {|x|
-	x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
-				os = plugin_results.map {|x|
-	x[:os] unless x[:os].class==Regexp}.flatten.compact.sort.uniq.join(",")
-				string = plugin_results.map {|x|
-	x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
-				model = plugin_results.map {|x|
-	x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq.join(",")
-				firmware = plugin_results.map {|x|
-	x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq.join(",")
-				filepath = plugin_results.map {|x|
-	x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
+					certainty = plugin_results.map {|x|
+		x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
+					version = plugin_results.map {|x|
+		x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
+					os = plugin_results.map {|x|
+		x[:os] unless x[:os].class==Regexp}.flatten.compact.sort.uniq.join(",")
+					string = plugin_results.map {|x|
+		x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
+					model = plugin_results.map {|x|
+		x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq.join(",")
+					firmware = plugin_results.map {|x|
+		x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq.join(",")
+					filepath = plugin_results.map {|x|
+		x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
 
-				accounts = plugin_results.map {|x|
-	x[:account] unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
-				modules = plugin_results.map {|x|
-	x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
+					accounts = plugin_results.map {|x|
+		x[:account] unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
+					modules = plugin_results.map {|x|
+		x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
 
 
-				@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
-				version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
-				os.map {|x| @f.puts "\t\t<os>#{escape(x)}</os>" }
-				string.map   {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
-				model.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
-				firmware.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
-				filepath.map {|x| @f.puts "\t\t<filepath>#{escape(x)}</filepath>" }
+					@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
+					version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
+					os.map {|x| @f.puts "\t\t<os>#{escape(x)}</os>" }
+					string.map   {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
+					model.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
+					firmware.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
+					filepath.map {|x| @f.puts "\t\t<filepath>#{escape(x)}</filepath>" }
 
-				if accounts.size > 0
-					accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
-					@f.puts "\t\t<accounts>\n" + accounts.map {|x| "\t\t\t<accounts>#{escape(x)}</accounts>" }.join("\n") + "\n\t\t</accounts>"
+					if accounts.size > 0
+						accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
+						@f.puts "\t\t<accounts>\n" + accounts.map {|x| "\t\t\t<accounts>#{escape(x)}</accounts>" }.join("\n") + "\n\t\t</accounts>"
+					end
+
+					if modules.size > 0
+						@f.puts "\t\t<modules>\n" + modules.map {|x| "\t\t\t<module>#{escape(x)}</module>" }.join("\n") + "\n\t\t</modules>"
+					end
 				end
-
-				if modules.size > 0
-					@f.puts "\t\t<modules>\n" + modules.map {|x| "\t\t\t<module>#{escape(x)}</module>" }.join("\n") + "\n\t\t</modules>"
-				end
+				@f.puts "\t</plugin>"
 			end
-			@f.puts "\t</plugin>"
+			@f.puts "</target>"
 		end
-		@f.puts "</target>"
 	end
 end
 
@@ -368,97 +375,99 @@ class OutputMagicTreeXML < Output
 			end
 		end
 
-		# testdata branch
-		@f.write '<testdata class="MtBranchObject">'
+		$semaphore.synchronize do 
+			# testdata branch
+			@f.write '<testdata class="MtBranchObject">'
 
-		# hostname # title attribute is not used in simple nodes  
-		@f.write "<host>#{escape(@host_ip)}<hostname>#{escape(@host_name)}</hostname></host>" unless @host_name.nil?
+			# hostname # title attribute is not used in simple nodes  
+			@f.write "<host>#{escape(@host_ip)}<hostname>#{escape(@host_name)}</hostname></host>" unless @host_name.nil?
 
-		# os
-		@host_os.compact.sort.uniq.map {|x| @f.write "<host>#{escape(@host_ip)}<os>#{escape(x.to_s)}</os></host>" unless x.empty? } unless @host_os.empty?
+			# os
+			@host_os.compact.sort.uniq.map {|x| @f.write "<host>#{escape(@host_ip)}<os>#{escape(x.to_s)}</os></host>" unless x.empty? } unless @host_os.empty?
 
-		# country and port nodes
-		@f.write "<host>#{escape(@host_ip)}<country>#{escape(@host_country)}</country><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
+			# country and port nodes
+			@f.write "<host>#{escape(@host_ip)}<country>#{escape(@host_country)}</country><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
 
-		# https
-		if @host_scheme == 'https'
-			@f.write "<tunnel>ssl";
-		end
-
-		# Service node # Loop through remaining results
-		# software, headers, firmware, modules, etc. are all related to a specific URL and therefore are placed under the url node
-		@f.puts "<service>http";
-		results.each do |plugin_name,plugin_results|
-
-			unless plugin_results.empty?
-
-				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
-				versions = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.to_a
-				strings = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.to_a
-				models = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq.to_a
-				firmwares = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq.to_a
-				filepaths = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.to_a
-				accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
-				modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
-
-				# Print certainty if certainty < 100
-				if certainty and certainty < 100
-					@f.write "<url>#{escape(target)}<software>#{escape(plugin_name)}<certainty>#{escape(certainty)}</certainty></software></url>"
-				end
-
-				# Strings
-				if strings.size > 0
-					strings.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}>#{escape(x)}</#{escape(plugin_name)}></url>" } unless plugin_name =~ /^IP$/ or plugin_name =~ /^Country$/
-				end
-
-				# Versions
-				if versions.size > 0
-					versions.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><version>#{escape(x)}</version></#{escape(plugin_name)}></url>" }
-				end
-
-				# Models
-				if models.size > 0
-					models.map {|x| @f.puts "<url>#{escape(target)}<#{escape(plugin_name)}><model>#{escape(x)}</model></#{escape(plugin_name)}></url>" }
-				end
-
-				# Firmware
-				if firmwares.size > 0
-					firmwares.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><firmware>#{escape(x)}</firmware></#{escape(plugin_name)}></url>" }
-				end
-
-				# Modules
-				if modules.size > 0
-					modules.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><module>#{escape(x)}</module></#{escape(plugin_name)}></url>" } unless plugin_name =~ /^Country$/
-				end
-
-				# Accounts # MagicTree generally uses "user" nodes for account 
-				if accounts.size > 0
-					accounts.map {|x| @f.write "<url>#{escape(target)}<user>#{escape(x)}</user></url>" }
-				end
-
-				# Local File Filepaths # Not to be confused with file paths in the web root which are returned in Strings
-				if filepaths.size > 0
-					filepaths.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><filepath>#{escape(x)}<http-status>#{escape(status)}</http-status></filepath></#{escape(plugin_name)}></url>" }
-				end
-
-				# debug node # Uncomment to debug
-				# @f.write "<url>#{escape(target)}<debug title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
-				# @f.write "#{escape(results.pretty_inspect)}" unless results.empty?
-				# @f.write "</debug></url>"
-
+			# https
+			if @host_scheme == 'https'
+				@f.write "<tunnel>ssl";
 			end
 
+			# Service node # Loop through remaining results
+			# software, headers, firmware, modules, etc. are all related to a specific URL and therefore are placed under the url node
+			@f.puts "<service>http";
+			results.each do |plugin_name,plugin_results|
+
+				unless plugin_results.empty?
+
+					certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
+					versions = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.to_a
+					strings = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.to_a
+					models = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq.to_a
+					firmwares = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq.to_a
+					filepaths = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.to_a
+					accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
+					modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
+
+					# Print certainty if certainty < 100
+					if certainty and certainty < 100
+						@f.write "<url>#{escape(target)}<software>#{escape(plugin_name)}<certainty>#{escape(certainty)}</certainty></software></url>"
+					end
+
+					# Strings
+					if strings.size > 0
+						strings.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}>#{escape(x)}</#{escape(plugin_name)}></url>" } unless plugin_name =~ /^IP$/ or plugin_name =~ /^Country$/
+					end
+
+					# Versions
+					if versions.size > 0
+						versions.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><version>#{escape(x)}</version></#{escape(plugin_name)}></url>" }
+					end
+
+					# Models
+					if models.size > 0
+						models.map {|x| @f.puts "<url>#{escape(target)}<#{escape(plugin_name)}><model>#{escape(x)}</model></#{escape(plugin_name)}></url>" }
+					end
+
+					# Firmware
+					if firmwares.size > 0
+						firmwares.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><firmware>#{escape(x)}</firmware></#{escape(plugin_name)}></url>" }
+					end
+
+					# Modules
+					if modules.size > 0
+						modules.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><module>#{escape(x)}</module></#{escape(plugin_name)}></url>" } unless plugin_name =~ /^Country$/
+					end
+
+					# Accounts # MagicTree generally uses "user" nodes for account 
+					if accounts.size > 0
+						accounts.map {|x| @f.write "<url>#{escape(target)}<user>#{escape(x)}</user></url>" }
+					end
+
+					# Local File Filepaths # Not to be confused with file paths in the web root which are returned in Strings
+					if filepaths.size > 0
+						filepaths.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><filepath>#{escape(x)}<http-status>#{escape(status)}</http-status></filepath></#{escape(plugin_name)}></url>" }
+					end
+
+					# debug node # Uncomment to debug
+					# @f.write "<url>#{escape(target)}<debug title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
+					# @f.write "#{escape(results.pretty_inspect)}" unless results.empty?
+					# @f.write "</debug></url>"
+
+				end
+
+			end
+			@f.write "</service>";
+
+			# end https node
+			if @host_scheme == 'https'
+				@f.write "</tunnel>"
+			end
+
+			# testdata # close port, host and testdata nodes
+			@f.write "</port></ipproto></host></testdata>"
+
 		end
-		@f.write "</service>";
-
-		# end https node
-		if @host_scheme == 'https'
-			@f.write "</tunnel>"
-		end
-
-		# testdata # close port, host and testdata nodes
-		@f.write "</port></ipproto></host></testdata>"
-
 	end
 
 end
@@ -541,7 +550,10 @@ class OutputJSON < Output
 			utf8_elements!(foo) # convert foo to utf-8
 			flatten_elements!(foo)			
 		end
-		@f.puts JSON::fast_generate(foo)
+
+		$semaphore.synchronize do 
+			@f.puts JSON::fast_generate(foo)
+		end
 	end
 end
 
@@ -652,14 +664,17 @@ end
 class OutputJSONVerbose < Output
 	def out(target, status, results)
 		# brutal and simple
-		@f.puts JSON::fast_generate([target,status,results])
+		$semaphore.synchronize do 
+			@f.puts JSON::fast_generate([target,status,results])
+		end
 	end
 end
 
 class OutputErrors < Output
 	def out(error)
-		@f.puts error
-	end
-	
+		$semaphore.synchronize do 
+			@f.puts error
+		end
+	end	
 end
 
