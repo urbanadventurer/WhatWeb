@@ -2,6 +2,8 @@ TO-DO
 
 Good luck understanding these notes for myself :) Some of this stuff has already been done.
 
+give each output type it's own mutex
+
 Ruby1.9 compatability
   [x] -- rescue and ignore all plugins with unkonwn characters
   -- targets don't seem to get passed between threads the same as ruby1.8
