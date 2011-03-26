@@ -445,10 +445,11 @@ class OutputMagicTreeXML < Output
 					filepaths.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><filepath>#{escape(x)}<http-status>#{escape(status)}</http-status></filepath></#{escape(plugin_name)}></url>" }
 				end
 
-				# Output node under url node # display detailed results
-				@f.write "<url>#{escape(target)}<output title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
-				@f.write "#{escape(results.pretty_inspect)}" unless results.empty?
-				@f.write "</output></url>"
+				# output node # Removed to speed up logging
+				# Uncomment for brief output under output node
+#				@f.write "<url>#{escape(target)}<output title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
+#				@f.write "#{escape(results.pretty_inspect)}" unless results.empty?
+#				@f.write "</output></url>"
 
 			end
 
