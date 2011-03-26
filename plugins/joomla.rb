@@ -98,9 +98,6 @@ def aggressive
 	m=[]
 	
 
-	# Version Detection # /administrator/ # Meta Generator
-	m << { :version=>body.scan(/<meta name="generator" content="Joomla! (\d\.\d) - Open Source Content Management" \/>/) } if body =~ /<meta name="generator" content="Joomla! (\d\.\d) - Open Source Content Management" \/>/
-
 	# Download and md5 hash additional files
 	to_download = %w| language/en-GB/en-GB.ini administrator/language/en-GB/en-GB.ini administrator/language/en-GB/en-GB.xml plugins/editors/tinymce.xml components/com_contact/metadata.xml|
 	downloads={}
