@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-03-26 #
+# Added version detection
+##
 # Version 0.2 # 2011-03-02 #
 # Added favicon and beefmagic.js.php matches
 ##
@@ -29,9 +32,20 @@ matches [
 { :url=>"favicon.ico", :md5=>"749749ba87e84d48b44b69ed2241987c" },
 
 # Injected script
-{ :regexp=>/<script[^>]+src=['|"]?[^>^=]+\/hook\/beefmagic.js.php['|"]?[^>]+>/, :certainty=>75 },
+{ :regexp=>/<script[^>]+src=['|"]?[^>^=]+\/hook\/beefmagic.js.php['|"]?[^>]+>/, :certainty=>75, :string=>"Injected Script" },
 
 ]
+
+# Passive #
+def passive
+	m=[]
+
+	# HTTP # Server # Version Detection
+	m << { :version=>@meta["server"].scan(/^BeEF ([^\s]+)$/).to_s } if @meta["server"] =~ /^BeEF ([^\s]+)$/
+
+	# Return passive matches
+	m
+end
 
 end
 
