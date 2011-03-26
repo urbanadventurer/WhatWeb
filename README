@@ -74,7 +74,7 @@ Features:
 2. Example Usage
 ================================================================================
 
-Using WhatWeb on a handful of websites (standard WhatWeb output is in colour):
+Using WhatWeb on a couple of websites (standard WhatWeb output is in colour):
 
 $ ./whatweb slashdot.org reddit.com
 http://reddit.com [302] HTTPServer[AkamaiGHost], RedirectLocation[http://www.reddit.com/], Via-Proxy[1.1 bc1], IP[173.223.232.64], Akamai-Global-Host, Country[UNITED STATES][US]
@@ -217,6 +217,22 @@ You can output to multiple logs simultaneously by specifying multiple command li
 
 5. Plugins
 ================================================================================
+
+Matches are made with:
+        * Text strings (case sensitive)
+        * Regular expressions
+        * Google Hack Database queries (limited set of keywords)
+        * MD5 hashes
+        * URL recognition
+        * HTML tag patterns
+        * Custom ruby code for passive and aggressive operationsMatches are made with:
+        * Text strings (case sensitive)
+        * Regular expressions
+        * Google Hack Database queries (limited set of keywords)
+        * MD5 hashes
+        * URL recognition
+        * HTML tag patterns
+        * Custom ruby code for passive and aggressive operations
 
 To list the plugins supported:
 
