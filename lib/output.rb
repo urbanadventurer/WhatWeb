@@ -377,10 +377,6 @@ class OutputMagicTreeXML < Output
 		# os
 		@host_os.compact.sort.uniq.map {|x| @f.write "<host>#{escape(@host_ip)}<os>#{escape(x.to_s)}</os></host>" unless x.empty? } unless @host_os.empty?
 
-		# We generally don't create "source" nodes for command-line tools
-		# If the tool is executed from MagicTree, MT will automatically track
-		# the source of the data
-
 		# country and port nodes
 		@f.write "<host>#{escape(@host_ip)}<country>#{escape(@host_country)}</country><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
 
@@ -417,7 +413,7 @@ class OutputMagicTreeXML < Output
 
 				# Versions
 				if versions.size > 0
-					versions.map {|x| @f.write "<url>#{escape(target)}<software>#{escape(plugin_name)}<version>#{escape(x)}</version></software></url>" }
+					versions.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><version>#{escape(x)}</version></#{escape(plugin_name)}></url>" }
 				end
 
 				# Models
@@ -445,10 +441,10 @@ class OutputMagicTreeXML < Output
 					filepaths.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><filepath>#{escape(x)}<http-status>#{escape(status)}</http-status></filepath></#{escape(plugin_name)}></url>" }
 				end
 
-				# Output node under url node # display detailed results
-				@f.write "<url>#{escape(target)}<output title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
-				@f.write "#{escape(results.pretty_inspect)}" unless results.empty?
-				@f.write "</output></url>"
+				# debug node # Uncomment to debug
+				# @f.write "<url>#{escape(target)}<debug title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
+				# @f.write "#{escape(results.pretty_inspect)}" unless results.empty?
+				# @f.write "</debug></url>"
 
 			end
 
