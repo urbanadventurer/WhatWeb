@@ -57,7 +57,8 @@ Version 0.4.6 Released March 25th 2011
 * Added custom headers. Can be used multiple times. Examples: --header or -H. eg. "foo:bar" or "user-agent: blinky". Specifying a default header will replace it. Specifying an empty value removes hte header, eg. "User-Agent:"
 * Added support for HTTP basic authentication. -u and --user
 * Added plugin-development/get-pattern by Aung Khant
-* Added to plugin-development/: wget-alexa-top-1m, wget-ip-to-country, wafp_to_whatweb, alexa-top-1000.txt, alexa-top-100.txt, wikipedia-top-1000.txt
+* Added to plugin-development/: wget-alexa-top-1m, wget-ip-to-country, alexa-top-1000.txt, alexa-top-100.txt, wikipedia-top-1000.txt
+* Added nmap-style IP address range support
 
 Version 0.4.5 Released August 17th 2010
 * Added 5 plugins from Tonmoy Saikia. They are: Commonspot, TextPattern, Mediawiki, DUclassified and Mailman
