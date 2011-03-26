@@ -12,8 +12,8 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 Readme for WhatWeb - Next generation web scanner.
 By urbanadventurer aka Andrew Horton from Security-Assessment.com
-Version : 0.4.6. March 25th, 2011
-License : GPLv2
+Version: 0.4.6. March 25th, 2011
+License: GPLv2
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -36,10 +36,9 @@ If you have any questions, comments or concerns regarding WhatWeb, please consul
 	7.  Recursive Spidering
 	8.  Performance & Stability
 	9.  Optional Dependencies
-	10. Related Projects
-	11. Release History
-	12. Credits
-	13. Updates & Additional Information
+	10. Release History
+	11. Credits
+	12. Updates & Additional Information
 	========================================================================
 
 
@@ -47,22 +46,29 @@ If you have any questions, comments or concerns regarding WhatWeb, please consul
 1. About WhatWeb
 ================================================================================
 
-WhatWeb identifies content management systems (CMS), blogging platforms, stats/analytics packages, javascript libraries, servers, embedded devices and more. When you visit a website in your browser the transaction includes many unseen hints about how the webserver is set up and what software is delivering the webpage. Some of these hints are obvious, eg. "Powered by XYZ" and others are more subtle. WhatWeb recognises these cues and reports what it finds.
+WhatWeb identifies websites. It's goal is to answer the question, "What is that Website?". WhatWeb recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. WhatWeb has over 900 plugins, each to recognise something different. WhatWeb also identifies version numbers, email addresses, account ID's, web framework modules, SQL errors, and more.
 
-WhatWeb has over 900 plugins and needs community support to develop more. Plugins can identify systems with obvious identifying hints removed by also looking for subtle clues. For example, a WordPress site might remove the tag <meta name="generator" content="WordPress 2.6.5"> but the WordPress plugin also looks for "wp-content" which is less easy to disguise. Plugins are flexible and can return any datatype, for example plugins can return version numbers, email addresses, account ID's and more.
+WhatWeb can be stealthy and fast, or thorough but slow. WhatWeb supports an aggression level to control the trade off between speed and reliability. When you visit a website in your browser, the transaction includes many hints of what web technologies are powering that website. Sometimes a single webpage visit contains enough information to identify a website but when it does not, WhatWeb can interrogate the website further. The default level of aggression, called 'passive', is the fastest and requires only one HTTP request of a website. This is suitable for scanning public websites. More aggressive modes were developed for in penetration tests.
 
-There are both passive and aggressive plugins. Passive plugins use information on the page, in cookies and in the URL to identify the system. A passive request is as light weight as a simple GET / HTTP/1.1 request. Aggressive plugins guess URLs and request more files. Plugins are easy to write, you don't need to know ruby to make them.
+Most WhatWeb plugins are thorough and recognise a range of cues from subtle to obvious. For example, most WordPress websites can be identified by the meta HTML tag, e.g. '<meta name="generator" content="WordPress 2.6.5">', but a minority of WordPress websites remove this identifying tag but this does not thwart WhatWeb. The WordPress WhatWeb plugin has over 15 tests, which include checking the favicon, default installation files, login pages, and checking for "/wp-content/" within relative links.
 
-Matches in the HTML source and HTTP headers are made with:
 
-    * Text strings (case sensitive)
-    * Regular expressions
-    * Google Hack Database queries (limited set of keywords)
-    * MD5 hashes
-    * URL patterns
-    * HTML tag patterns
-    * Custom ruby code for passive and aggressive operations
-    * and more...
+Features:
+	* Over 900 plugins
+	* Control the trade off between speed/stealth and reliability
+	* Plugins include example URLs
+	* Performance tuning. Control how many websites to scan concurrently.
+	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB.
+	* Recursive web spidering
+	* Proxy support including TOR
+	* Custom HTTP headers
+	* Basic HTTP authentication
+	* Control over webpage redirection
+	* Nmap-style IP ranges
+	* Fuzzy matching
+	* Result certainty awareness
+	* Custom plugins defined on the command line
+
 
 
 2. Example Usage
@@ -90,11 +96,11 @@ Usage: whatweb [options] <URLs>
 TARGET SELECTION:
   <URLs>                Enter URLs, filenames or nmap-format IP ranges.
                         Use /dev/stdin to pipe HTML directly
-  --input-file=FILE, -i Identify URLs found in FILE, eg. -i /dev/stdin
+  --input-file=FILE, -i Identify URLs found in FILE, e.g. -i /dev/stdin
   --url-prefix          Add a prefix to target URLs
   --url-suffix          Add a suffix to target URLs
   --url-pattern         Insert the targets into a URL. Requires --input-file,
-                        eg. www.example.com/%insert%/robots.txt
+                        e.g. www.example.com/%insert%/robots.txt
   --example-urls, -e    Add example URLs for each selected plugin to the target
                         list. By default will add example URLs for all plugins.
 
@@ -113,7 +119,7 @@ HTTP OPTIONS:
   --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.6.
   --user, -u=<user:password> HTTP basic authentication
   --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
-                        header will replace it. Specifying an empty value, eg.
+                        header will replace it. Specifying an empty value, e.g.
                         "User-Agent:" will remove the header.
   --follow-redirect=WHEN Control when to follow redirects. WHEN may be `never',
                         `http-only', `meta-only', `same-site', `same-domain'
@@ -137,7 +143,7 @@ PROXY:
 PLUGINS:
   --plugins, -p         Comma delimited set of selected plugins. Default is all.
                         Each element can be a directory, file or plugin name and
-                        can optionally have a modifier, eg. + or -
+                        can optionally have a modifier, e.g. + or -
                         Examples: +/tmp/moo.rb,+/tmp/foo.rb
                         title,md5,+./plugins-disabled/
                         ./plugins-disabled,-md5
@@ -206,7 +212,7 @@ The following types of logging are supported:
 	--log-mongo-password	MongoDB password. Default: nil
 	--log-errors=FILE	Log errors. This is usually printed to the screen in red.
 
-You can output to multiple logs simultaneously by specifying muliple command line logging options.
+You can output to multiple logs simultaneously by specifying multiple command line logging options.
 
 
 5. Plugins
@@ -253,7 +259,7 @@ All plugins are loaded by default.
 
 Plugins can be selected by directories, files or plugin names as a comma delimited list with the -p or --plugin command line option.
 
-Each list item may have a modifier: + adds to the full set, - removes from the fullset and no modifier overrides the defaults.
+Each list item may have a modifier: + adds to the full set, - removes from the full set and no modifier overrides the defaults.
 
 Examples :
 
@@ -310,7 +316,7 @@ The configurable settings for recursive spidering are:
 	--max-links, -m		Maximum number of links to follow on one page (default: 250)
 	--spider-skip-extensions Redefine extensions to skip. (Default: zip,gz,tar,jpg,exe,png,pdf)
 
-Limitations of the spidering. This follows links in <a> tags, these are the HTML tags designed specifically for links. The spider does not obtain urls from other sources. Some good choices for future improvement are image tags, eg. <img src="/images/boats.jpg">, form tags, eg. <form action="/vote.php">, url paths in CSS files, etc.
+Limitations of the spidering. This follows links in <a> tags, these are the HTML tags designed specifically for links. The spider does not obtain URLs from other sources. Some good choices for future improvement are image tags, e.g. <img src="/images/boats.jpg">, form tags, e.g. <form action="/vote.php">, URL paths in CSS files, etc.
 
 The spider is provided by Anemone, a third party ruby gem. It doesn't follow redirects. For example the URL treshna.com will fail and www.treshna.com will produce results.
 
@@ -357,81 +363,7 @@ To enable character set detection and MongoDB logging install the rchardet gem.
 
 
 
-10. Related Projects
-================================================================================
-
-WhatWeb is unique however there are some web projects with the same goal of identifying a website.
-
-An extremely simplistic comparison between WhatWeb and a few other open source web application fingerprinting tools is available here : http://whatweb.net/fingerprinting.php
-
-WhatWeb.net
-A web front-end for WhatWeb/0.4.5-stable. Aggression is set to passive 1 with no recursive spidering. No registration required.
-http://www.whatweb.net/
-
-Blind Elephant
-The BlindElephant Web Application Fingerprinter attempts to discover the version of a (known) web application by comparing static files at known locations against precomputed hashes for versions of those files in all all available releases. The technique is fast, low-bandwidth, non-invasive, generic, and highly automatable.
-http://blindelephant.sourceforge.net/
-
-WAFP - Web Application Finger Printing
-Wafp identifies systems by requesting a large quantity of URLs and comparing md5 sums of the results against a database. This method is reliable for known systems in the database and it is simple to add new ones. Unlike whatweb, this method is intrusive and will create a lot of webserver log entries. Although WAFP is similar to WhatWeb's aggressive mode, the main purpose of WhatWeb is to identify as many as applications as possible regardless of versioning information.
-http://www.mytty.org/wafp
-
-Wappalyzer
-This is the most similar project to WhatWeb. Wappalyzer, a firefox plugin, identifies software using one regexp for each app. Only looks for obvious identifiers like meta generator tags. Sends all recognized URLs to a DB. Has nice icons. Although WhatWeb covers more depth of checks than Wappalyzer's database, Wappalyzer has some client side checks that WhatWeb is planned to cover in the future.
-https://addons.mozilla.org/en-US/firefox/addon/10229
-
-w3af
-http://w3af.sourceforge.net
-The purpose of WhatWeb is the same as that of the grep and discovery scripts sections in w3af. However, w3af focuses more on application auditing. Currently, there are a few overlapping features such as errorPages, error500, metaTags, favicon_identification, serverHeader, serverStatus...etc.
-
-Metoscan
-WhatWeb enumerates the allowed HTTP methods by passively checking for the optional HTTP "allow:" header, where as Metoscan works by testing a URL and checking the responses for the different probes.
-
-hscan
-hscan is a multithreaded http scanner, written in perl by MasterCJ. It fingerprints web servers/devices, tries very simple dictionary password attacks and identifies some common web apps. It is designed to be easy to use, add data to and update. Unlike WhatWeb, hscan fingerprints using only the HTTP server header which can be spoofed, however it works as described for embedded devices.
-http://mastercj.net/blog/e/2/hscan_v0.1/
-
-HTTPRecon
-No feature overlap, fingerprints the HTTP Server
-http://w3dt.net/tools/httprecon/
-http://www.net-square.com/httprint/httprint_paper.html
-http://www.darknet.org.uk/2007/09/httprint-v301-web-server-fingerprinting-tool-download/
-
-Nmap version scan
-Nmap shows some info about HTTP servers when using version scan, eg. nmap -sV -p80 treshna.com
-
-Shodan Computer Search Engine
-ShodanHQ maintains a database of HTTP headers for a huge number of public IP addresses. ShodanHQ allows you to search the database and returns the HTTP header and country for IP addresses with headers matching your query. Obtaining more than 10 results per query requires free registration, however this is limited to the first 50 results. Full results requires a payment of US$20.
-
-THC's Amap
-This tool is an application fingerprint scanner which can identify an HTTP protocol server. It doesn't identify types of HTTP servers.
-
-What's that web server running 1.0 (whatweb.exe)
-This shares the same name and goal as WhatWeb but ONLY uses the HTTP Server string. For example 'Apache/2.0.55 (Ubuntu) PHP/5.1.2'. This is similar to hscan however hscan has a far superior fingerprint collection.
-http://www.spambutcher.com/whatweb.html
-
-HTTP-Stats.com
-Lots of info about HTTP server names
-
-BuiltWith.com
-Stats of popularity of web stuff.
-
-
-11. Funny & Unusual
-================================================================================
-
-Slashdot.org
-X-Fry: You mean Bender is the evil Bender? I'm shocked! Shocked! Well not that shocked.
-
-popurls.com
-X-popurls-a: in the future every url will be popular for 1.5 seconds
-
-reddit.com
-HTTPServer:'; DROP TABLE servertypes; --
-
-
-
-12. Release History
+10. Release History
 ================================================================================
 
 Version 0.3 Released at Kiwicon III (kiwicon.org), November 2nd, 2009
@@ -444,7 +376,7 @@ Version 0.4.5 Released August 17th, 2010
 Version 0.4.6 Released March 25th, 2011
 
 
-13. Credits
+11. Credits
 ================================================================================
 
 Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
@@ -478,7 +410,7 @@ Michal Ambroz for writing the Makefile and Man pages
 Gremwell for improving the MagicTree logging
 
 
-14. Updates & Additional Information
+12. Updates & Additional Information
 ================================================================================
 
 The WhatWeb development build features regular updates.

@@ -53,7 +53,7 @@ def passive
 
 	if @body =~ /(href|src)="[^"]*\/wp-content\/[^"]*/
 		# is it a relative link or on the same site?
-		links= @body.scan(/(href|src)="([^"]*\/wp-content\/[^"]*)/).map {|x| x[1] }.flatten
+		links= @body.scan(/(href|src)="([^"]*\/wp-content\/[^"]*)/).map {|x| x[1].strip }.flatten
 		links.each do |thislink|
 			# join this link wtih target, check if host part is ==, if so, it's relative
 			joined_uri=URI.join(@base_uri.to_s,thislink)
@@ -67,11 +67,6 @@ def passive
 	end
 
 
-# 	This is replaced with :version=//
-#	if @body =~ /<meta name=\"generator\" content=\"WordPress[ ]?[0-9\.]+\"/
-#		version=@body.scan(/<meta name=\"generator\" content=\"(WordPress)[ ]?([0-9\.]+)\"/)[0][1]
-#		m << {:name=>"meta generator tag",:version=>version} 
-#	end	
 	m
 end
 
