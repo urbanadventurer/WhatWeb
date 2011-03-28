@@ -94,6 +94,7 @@ class OutputVerbose < Output
 						d+="..." if d.size==251
 						description=word_wrap(d, 60)
 					end
+					@f.puts "\tCategory   : " + Plugin.registered_plugins[plugin_name].category.first unless Plugin.registered_plugins[plugin_name].category.nil?
 
 					@f.puts "\tDescription: " + description.first
 					description[1..-1].each {|line|
