@@ -76,18 +76,10 @@ class Plugin
 # execute plugin
   def x
   	results=[]
-
-	# Initialize @body variable if the connection is terminated prematurely
-	# This is usually caused by HTTP status codes: 101, 102, 204, 205, 305
-	@body="" if @body.nil?
 	
 	unless @matches.nil?
-	  	@matches.map do |match|
+	  	@matches.each do |match|
 			r=[]
-
-			unless match[:regexp].nil?
-				r << match if @body =~ match[:regexp_compiled]
-			end
 
 			unless match[:ghdb].nil?
 				r << match if match_ghdb(match[:ghdb], @body, @meta, @status, @base_uri)
@@ -109,24 +101,24 @@ class Plugin
 				r << match if @status == match[:status]
 			end		
 
-			[:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
-				# if each of these symbols is not a Regexp but a String then it is returning data not matching it
-		                if !match[symbol].nil? and match[symbol].class==Regexp
-		                        if @body =~ match[:regexp_compiled]
+			unless match[:regexp_compiled].nil?
+				[:regexp,:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
+					if !match[symbol].nil? and match[symbol].class==Regexp
 						regexpmatch = @body.scan(match[:regexp_compiled])
-		                                m = match.dup
-		                                m[symbol] = regexpmatch.map {|eachmatch|
-										if match[:offset]
-											eachmatch[match[:offset]]
-										else
-											eachmatch.first
-										end
-									}.flatten.sort.uniq
-		                                r << m
-		                        end
-		                end
+				                unless regexpmatch.empty?
+				                        m = match.dup
+				                        m[symbol] = regexpmatch.map {|eachmatch|
+									if match[:offset]
+										eachmatch[match[:offset]]
+									else
+										eachmatch.first
+									end
+								}.flatten.sort.uniq
+				                        r << m
+				                end
+					end
+				end
 			end
-
 
 			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
 			# if :status is present then check that @status matches
@@ -135,13 +127,6 @@ class Plugin
 					results +=r 
 				end
 			end
-
-			# :url isn't required now but status is
-#			if match[:status].nil? or @status == match[:status]
-#				results +=r 
-#			end
-
-
 		end
 	end
 
@@ -180,11 +165,6 @@ class Plugin
 					thistagpattern = make_tag_pattern(thisbody)
 				end
 				
-			
-
-				unless match[:regexp_compiled].nil?
-					r << match if thisbody =~ match[:regexp_compiled]
-				end
 
 				unless match[:ghdb].nil?
 					r << match if match_ghdb(match[:ghdb], thisbody, {}, thisstatus, thisbase_uri)
@@ -206,23 +186,25 @@ class Plugin
 					r << match if thisstatus == match[:status]
 				end
 
-		
-				[:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
-				        if !match[symbol].nil? and match[symbol].class==Regexp
-				                if thisbody =~ match[:regexp_compiled]
+
+				unless match[:regexp_compiled].nil?
+					[:regexp, :account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
+						if !match[symbol].nil? and match[symbol].class==Regexp
 							regexpmatch = thisbody.scan(match[:regexp_compiled])
-				                        m = match.dup
-							m[symbol] = regexpmatch.map {|eachmatch|
+						        unless regexpmatch.empty?
+						                m = match.dup
+						                m[symbol] = regexpmatch.map {|eachmatch|
 										if match[:offset]
 											eachmatch[match[:offset]]
 										else
 											eachmatch.first
 										end
 									}.flatten.sort.uniq
-				                        r << m
-				                end
-				        end
-				end
+						                r << m
+						        end
+						end
+					end
+				end		
 
 				results +=r					
 			end
@@ -243,20 +225,11 @@ class Plugin
 	# clean up results
 	unless results.empty?
 		results.each do |r|
-
-			if !r[:string].nil?
-				if r[:string].is_a?(String)
-					r[:string].delete!("\n\x0d\x09\x0a") # why did i include this?
-					r[:string].strip!
-				end	
-			end
 			r [:certainty]=100 if r[:certainty].nil?
 		end
 	end
 
-
 	# check for CVE stuff
-
 		# if has CVE array
 			# get final version. just use longest version for now, eg. 3.0.15 over 3.0
 				# for each CVE version / version range

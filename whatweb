@@ -668,30 +668,28 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 		if body.nil?
 			md5sum=nil
 			tagpattern=nil
+			# Initialize @body variable if the connection is terminated prematurely
+			# This is usually caused by HTTP status codes: 101, 102, 204, 205, 305
+			body=""
 		else
 			md5sum=Digest::MD5.hexdigest(body) 		
 			tagpattern = make_tag_pattern(body)
 		end
 		#########################################
 
-		results=[]		
+		results=[]
 		$plugins_to_use.each do |name,plugin|
-			begin
-				puts "Trying plugin " + name + " against " + target.to_s if $verbose>2
-				
+			begin			
 				while plugin.locked?
-					sleep 0.5
+					sleep 0.1
 					puts "Waiting for plugin:#{name} to unlock" if $verbose > 2
 				end
 				plugin.lock
 
-				if target =~ /^[a-z]+:\/\//
-					pp "target is a string url" if $verbose > 2
-					# it's a uri, with meta data, etc - #status,url,body,headers
-
+				if target.include?("://")
+					#plugin.init(ObjectSpace._id2ref(body.object_id),headers,cookies,status,url,ip,md5sum,tagpattern)
 					plugin.init(body,headers,cookies,status,url,ip,md5sum,tagpattern)
 				else
-					puts "target is a file" if $verbose > 2
 					# it's a file
 					plugin.init(body,{},nil,0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
 				end
@@ -705,8 +703,7 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 				plugin.unlock
 				raise if $DEBUG==true
 			end
-			pp [name,result] if $verbose > 2
-			results << [name, result ] unless result.nil? or result.empty?
+			results << [name, result] unless result.nil? or result.empty?
 		end
 	results
 end
@@ -1268,7 +1265,7 @@ while thistarget = next_target
 						next
 					end
 				end
-
+				#results = run_plugins(target,ObjectSpace._id2ref(body.object_id),headers,cookies,status,url,ip)
 				results = run_plugins(target,body,headers,cookies,status,url,ip)
 			
 				# reporting
