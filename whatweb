@@ -807,6 +807,7 @@ LOGGING & OUTPUT:
   --verbose, -v\t\tIncrease verbosity, use twice for plugin development.
   --colour,--color=WHEN\tcontrol whether colour is used. WHEN may be `never',
 \t\t\t`always', or `auto'
+  --quiet, -q\t\tDo not display brief logging to STDOUT
   --log-brief=FILE\tLog brief, one-line output
   --log-verbose=FILE\tLog verbose output
   --log-xml=FILE\tLog XML format
