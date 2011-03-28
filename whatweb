@@ -1224,16 +1224,16 @@ while thistarget = next_target
 								results = run_plugins(url.to_s,doc,headers,nil,status,url,ip)
 								# reporting
 								# multiple output plugins simultaneously, some stdout, some files
-								$semaphore.synchronize do # mutex is right?
-									output_list.each do |o|
-										begin
-											o.out(url, status, results)
-										rescue
-											#srsly, logging failed
-											error("Error: Logging failed for "+ target)
-										end
+
+								output_list.each do |o|
+									begin
+										o.out(url, status, results)
+									rescue
+										#srsly, logging failed
+										error("Error: Logging failed for "+ target)
 									end
 								end
+
 							end
 
 						end
@@ -1266,23 +1266,22 @@ while thistarget = next_target
 					if status == 0 or status.nil?
 						no_redirects=true
 						next
-					end	
+					end
 				end
 
 				results = run_plugins(target,body,headers,cookies,status,url,ip)
 			
 				# reporting
 				# multiple output plugins simultaneously, some stdout, some files
-#				$semaphore.synchronize do # mutex is right?
-					output_list.each do |o|
-						begin
-							o.out(target, status, results)
-						rescue
-							#srsly, logging failed
-							error("Error: Logging failed for "+ target)
-						end
+
+				output_list.each do |o|
+					begin
+						o.out(target, status, results)
+					rescue
+						#srsly, logging failed
+						error("Error: Logging failed for "+ target)
 					end
-#				end
+				end
 
 				# REDIRECTION
 				begin
