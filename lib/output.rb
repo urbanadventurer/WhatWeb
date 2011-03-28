@@ -399,8 +399,7 @@ class OutputMagicTreeXML < Output
 			@f.puts "<service>http";
 			results.each do |plugin_name,plugin_results|
 
-				unless plugin_results.empty?
-
+				if !plugin_results.empty? and plugin_name !~ /^IP$/ and plugin_name !~ /^Country$/
 					certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
 					versions = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.to_a
 					strings = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.to_a
@@ -410,50 +409,58 @@ class OutputMagicTreeXML < Output
 					accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
 					modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
 
+					# URL node # plugin node
+					@f.write "<url>#{escape(target)}<#{escape(plugin_name)}>"
+
 					# Print certainty if certainty < 100
 					if certainty and certainty < 100
-						@f.write "<url>#{escape(target)}<software>#{escape(plugin_name)}<certainty>#{escape(certainty)}</certainty></software></url>"
+						@f.write "<certainty>#{escape(certainty)}</certainty>"
 					end
 
 					# Strings
 					if strings.size > 0
-						strings.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}>#{escape(x)}</#{escape(plugin_name)}></url>" } unless plugin_name =~ /^IP$/ or plugin_name =~ /^Country$/
+						strings.map {|x| @f.write "#{escape(x)}" } unless plugin_name =~ /^IP$/ or plugin_name =~ /^Country$/
 					end
 
 					# Versions
 					if versions.size > 0
-						versions.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><version>#{escape(x)}</version></#{escape(plugin_name)}></url>" }
+						versions.map {|x| @f.write "<version>#{escape(x)}</version>" }
 					end
 
 					# Models
 					if models.size > 0
-						models.map {|x| @f.puts "<url>#{escape(target)}<#{escape(plugin_name)}><model>#{escape(x)}</model></#{escape(plugin_name)}></url>" }
+						models.map {|x| @f.puts "<model>#{escape(x)}</model>" }
 					end
 
 					# Firmware
 					if firmwares.size > 0
-						firmwares.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><firmware>#{escape(x)}</firmware></#{escape(plugin_name)}></url>" }
+						firmwares.map {|x| @f.write "<firmware>#{escape(x)}</firmware>" }
 					end
 
 					# Modules
 					if modules.size > 0
-						modules.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><module>#{escape(x)}</module></#{escape(plugin_name)}></url>" } unless plugin_name =~ /^Country$/
+						modules.map {|x| @f.write "<module>#{escape(x)}</module>" } unless plugin_name =~ /^Country$/
 					end
 
 					# Accounts # MagicTree generally uses "user" nodes for account 
 					if accounts.size > 0
-						accounts.map {|x| @f.write "<url>#{escape(target)}<user>#{escape(x)}</user></url>" }
+						accounts.map {|x| @f.write "<user>#{escape(x)}</user>" }
 					end
 
 					# Local File Filepaths # Not to be confused with file paths in the web root which are returned in Strings
 					if filepaths.size > 0
-						filepaths.map {|x| @f.write "<url>#{escape(target)}<#{escape(plugin_name)}><filepath>#{escape(x)}<http-status>#{escape(status)}</http-status></filepath></#{escape(plugin_name)}></url>" }
+						filepaths.map {|x| @f.write "<filepath>#{escape(x)}</filepath>" }
 					end
 
 					# debug node # Uncomment to debug
-					# @f.write "<url>#{escape(target)}<debug title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
+					# @f.write "<debug title=\"WhatWeb\" class=\"MtTextObject\">Identifying: #{escape(target)}\nHTTP-Status: #{escape(status)}"
 					# @f.write "#{escape(results.pretty_inspect)}" unless results.empty?
-					# @f.write "</debug></url>"
+					# @f.write "</debug>"
+
+
+					# Close plugin name and URL nodes
+
+					@f.write "</#{escape(plugin_name)}></url>"
 
 				end
 
