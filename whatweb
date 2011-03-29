@@ -1181,8 +1181,9 @@ Thread.main["targets"]=[]
 
 while thistarget = next_target
 		Thread.new do
-			puts Thread.current.to_s + " started for " + thistarget if $verbose>1
+			# if u swap around the following lines the target gets confused. idk why.
 			target = thistarget # we set the target within the thread
+			puts Thread.current.to_s + " started for " + target if $verbose>1
 
 			sleep $WAIT unless $WAIT.nil? # wait
 			# get the webpage	
@@ -1339,7 +1340,7 @@ while thistarget = next_target
 	
 			end # Thread.new
 
-			while Thread.list.length>($MAX_THREADS+1)
+			while Thread.list.size>($MAX_THREADS+1)
 				puts "sleeping" if $verbose>1
 				sleep 0.5
 			end

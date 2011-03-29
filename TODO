@@ -11,6 +11,8 @@ matches like {:md5=>"300b5c3f134d7ec0bca862cf113149d8", :url=>"/favicon.ico" } a
 
 change verbose - remove certainty if 100
 
+bug: ./whatweb -vv -p title slashdot.org www.morningstarsecurity.com reddit.com  -- double verbose bug
+
 give each output type it's own mutex
 
 change output width of verbose output. it's 1 char too wide for a standard terminal
