@@ -19,7 +19,7 @@ description "Google Analytics is the enterprise-class web analytics solution tha
 
 matches [
 {:account=>/_gaq\.push\(\['_setAccount', '([^)]+)'\]\);/,:name=>"gaq.push" }, # works
-{:account=>/var pageTracker = _gat._getTracker\("[^"]+"\);/, :name=>"_gat"}, #" works
+{:account=>/var pageTracker = _gat._getTracker\("([^"]+)"\);/, :name=>"_gat"}, #" works
 {:account=>/urchin.*_uacct = "([^"]+)";/m, :name=>"urchin"}, #"
 {:account=>/window.google_analytics_uacct = "([^"]+)";/, :name=>"window.google_analytics_uacct"}, #"
 ]

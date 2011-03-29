@@ -117,7 +117,7 @@ class OutputVerbose < Output
 
 						pr.each do |key,value|
 							next unless [:version, :os, :string, :account, :model, 
-									:firmware, :module, :filepath].include?(key)
+									:firmware, :module, :filepath, :url].include?(key)
 
 							next if value.class==Regexp
 
