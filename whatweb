@@ -302,7 +302,7 @@ def load_plugin(f)
 	rescue
 		error("Error: failed to load #{f}")
 	rescue SyntaxError
-		error("Error: Failed to load #{f}. This is probably a Ruby1.9 compatibility issue")
+		error("Error: Failed to load #{f}.")
 	end
 end
 
@@ -571,15 +571,13 @@ end
 
 
 def error(s)
-	$semaphore.synchronize do
-		# if colour
-		if ($use_colour=="auto") or ($use_colour=="always")
-			STDERR.puts red(s)
-		else
-			STDERR.puts s
-		end
-		STDERR.flush
+	# if colour
+	if ($use_colour=="auto") or ($use_colour=="always")
+		STDERR.puts red(s)
+	else
+		STDERR.puts s
 	end
+	STDERR.flush
 	unless $OUTPUT_ERRORS.nil?
 		$OUTPUT_ERRORS.out(s)
 	end
