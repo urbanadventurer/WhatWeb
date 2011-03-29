@@ -4,7 +4,10 @@ Good luck understanding these notes for myself :) Some of this stuff has already
 
 plugin selection, using + doesnt use $LOAD_PATH
 
-blazingly fast / light mode - only check 1st match in matches. should be sorted by likliness of matching.
+blazingly fast / light mode
+	- only check 1st match in matches. matches array should be sorted by likliness of matching.
+	- ignore tag pattern
+
 
 matches like {:md5=>"300b5c3f134d7ec0bca862cf113149d8", :url=>"/favicon.ico" } are not well named in verbose output
 
