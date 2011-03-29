@@ -669,30 +669,28 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 		if body.nil?
 			md5sum=nil
 			tagpattern=nil
+			# Initialize @body variable if the connection is terminated prematurely
+			# This is usually caused by HTTP status codes: 101, 102, 204, 205, 305
+			body=""
 		else
 			md5sum=Digest::MD5.hexdigest(body) 		
 			tagpattern = make_tag_pattern(body)
 		end
 		#########################################
 
-		results=[]		
+		results=[]
 		$plugins_to_use.each do |name,plugin|
-			begin
-				puts "Trying plugin " + name + " against " + target.to_s if $verbose>2
-				
+			begin			
 				while plugin.locked?
-					sleep 0.5
+					sleep 0.1
 					puts "Waiting for plugin:#{name} to unlock" if $verbose > 2
 				end
 				plugin.lock
 
-				if target =~ /^[a-z]+:\/\//
-					pp "target is a string url" if $verbose > 2
-					# it's a uri, with meta data, etc - #status,url,body,headers
-
+				if target.include?("://")
+					#plugin.init(ObjectSpace._id2ref(body.object_id),headers,cookies,status,url,ip,md5sum,tagpattern)
 					plugin.init(body,headers,cookies,status,url,ip,md5sum,tagpattern)
 				else
-					puts "target is a file" if $verbose > 2
 					# it's a file
 					plugin.init(body,{},nil,0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
 				end
@@ -706,8 +704,7 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 				plugin.unlock
 				raise if $DEBUG==true
 			end
-			pp [name,result] if $verbose > 2
-			results << [name, result ] unless result.nil? or result.empty?
+			results << [name, result] unless result.nil? or result.empty?
 		end
 	results
 end
@@ -811,6 +808,7 @@ LOGGING & OUTPUT:
   --verbose, -v\t\tIncrease verbosity, use twice for plugin development.
   --colour,--color=WHEN\tcontrol whether colour is used. WHEN may be `never',
 \t\t\t`always', or `auto'
+  --quiet, -q\t\tDo not display brief logging to STDOUT
   --log-brief=FILE\tLog brief, one-line output
   --log-verbose=FILE\tLog verbose output
   --log-xml=FILE\tLog XML format
@@ -1225,16 +1223,16 @@ while thistarget = next_target
 								results = run_plugins(url.to_s,doc,headers,nil,status,url,ip)
 								# reporting
 								# multiple output plugins simultaneously, some stdout, some files
-								$semaphore.synchronize do # mutex is right?
-									output_list.each do |o|
-										begin
-											o.out(url, status, results)
-										rescue
-											#srsly, logging failed
-											error("Error: Logging failed for "+ target)
-										end
+
+								output_list.each do |o|
+									begin
+										o.out(url, status, results)
+									rescue
+										#srsly, logging failed
+										error("Error: Logging failed for "+ target)
 									end
 								end
+
 							end
 
 						end
@@ -1267,23 +1265,22 @@ while thistarget = next_target
 					if status == 0 or status.nil?
 						no_redirects=true
 						next
-					end	
+					end
 				end
-
+				#results = run_plugins(target,ObjectSpace._id2ref(body.object_id),headers,cookies,status,url,ip)
 				results = run_plugins(target,body,headers,cookies,status,url,ip)
 			
 				# reporting
 				# multiple output plugins simultaneously, some stdout, some files
-#				$semaphore.synchronize do # mutex is right?
-					output_list.each do |o|
-						begin
-							o.out(target, status, results)
-						rescue
-							#srsly, logging failed
-							error("Error: Logging failed for "+ target)
-						end
+
+				output_list.each do |o|
+					begin
+						o.out(target, status, results)
+					rescue
+						#srsly, logging failed
+						error("Error: Logging failed for "+ target)
 					end
-#				end
+				end
 
 				# REDIRECTION
 				begin
