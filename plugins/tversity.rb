@@ -23,6 +23,8 @@ def passive
 		else
 			[{:name=>"server header"}]
 		end
+	else
+		[]
 	end
 end
 
