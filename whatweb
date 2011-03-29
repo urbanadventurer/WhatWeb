@@ -328,6 +328,10 @@ def load_plugins(list=nil)
 	if list
 		list=list.split(",")
 
+		plugins_disabled_location = ["plugins-disabled"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
+
+		list.each {|x| x.gsub!(/^\+$/,"+#{plugins_disabled_location}") } # + is short for +plugins-disabled
+
 		list.each do |p|
 			choice=PluginChoice.new
 			choice.fill(p)
@@ -791,6 +795,7 @@ PLUGINS:
 \t\t\tExamples: +/tmp/moo.rb,+/tmp/foo.rb
 \t\t\ttitle,md5,+./plugins-disabled/
 \t\t\t./plugins-disabled,-md5
+\t\t\t-p + is a shortcut for -p +plugins-disabled
   --list-plugins, -l\tList the plugins
   --info-plugins, -I\tDisplay information for all plugins. Optionally search
 \t\t\twith keywords in a comma delimited list.

@@ -2,16 +2,13 @@ TO-DO
 
 Good luck understanding these notes for myself :) Some of this stuff has already been done.
 
-need a short cut for: -p +./plugins-disabled/  maybe -p+, -p +
-
+plugin selection, using + doesnt use $LOAD_PATH
 
 blazingly fast / light mode - only check 1st match in matches. should be sorted by likliness of matching.
 
 matches like {:md5=>"300b5c3f134d7ec0bca862cf113149d8", :url=>"/favicon.ico" } are not well named in verbose output
 
 change verbose - remove certainty if 100
-
-bug: ./whatweb -vv -p title slashdot.org www.morningstarsecurity.com reddit.com  -- double verbose bug
 
 give each output type it's own mutex
 
