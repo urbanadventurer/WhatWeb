@@ -4,14 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-03-30 #
+# Updated regex
+##
 Plugin.define "Mobile-Website" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
-version "0.1"
+version "0.2"
 description "This plugin detects websites designed for mobile devices."
 
 # About 210,000,000 results for inurl:.mobi @ 2010-08-27
 # About 3,840,000 results for inurl:.mobi +filetype:wml @ 2010-08-27
 # 245 results for "for your mobile" inurl:m. @ 2010-08-27
+
+# Examples #
 examples %w|
 devfiles.myopera.com/articles/1551/mq-viewport.html
 m.bing.com
@@ -50,27 +55,26 @@ frontfoot.mobi
 mobile.netbank.com.au/iPhone.html
 |
 
+# Matches #
 matches [
 
 # Doctype
-{ :regexp=>/<!DOCTYPE [wml|html]+ PUBLIC "-\/\/WAPFORUM\/\/DTD [XHTML\ Mobile|WML]+ 1.[0-9]{1}\/\/[A-Z]+"/i },
+{ :regexp=>/<!DOCTYPE (wml|html) PUBLIC "-\/\/WAPFORUM\/\/DTD (XHTML Mobile|WML) 1\.[0-9]\/\/[A-Z]+"/i },
 
 # Meta tags
-{ :regexp=>/<meta[^name]+name=[\"]*MobileOptimized[\"]*[^>]+>/i },
-{ :regexp=>/<meta[^name]+name=[\"]*HandheldFriendly[\"]*[^>]+>/i },
+{ :regexp=>/<meta[^>]+name[\s]*=[\s]*("|')?(HandheldFriendly|MobileOptimized)("|')?[^>]*>/i },
 
 # Apple handheld
-{ :text=>'<meta name="apple-mobile-web-app-capable" content="yes" />', :version=>"Apple Handheld" },
+{ :text=>'<meta name="apple-mobile-web-app-capable" content="yes" />', :string=>"Apple Handheld" },
 
 # Apple iPhone
-{ :text=>'<link rel="apple-touch-icon"', :version=>"Apple iPhone" },
+{ :text=>'<link rel="apple-touch-icon"', :string=>"Apple Handheld" },
 
 # Mobile Safari
-{ :regexp=>/<meta[^name]+name[\s]*=[\s]*[\"|\']*viewport[\"|\']*[^>]+>/i, :version=>"Mobile Safari" },
+{ :regexp=>/<meta[^>]+name[\s]*=[\s]*("|')?viewport('|")?[^>]*>/i },
 
 # CSS
-{ :regexp=>/<style[\s]+type[\s]*=[\s]*text\/css[\s]+media[\s]*=[\s]*[\"|\']*[^>]+>/i },
-{ :regexp=>/<link[\s]+rel[\s]*=[\s]*[\"|\']*stylesheet[\"|\']*[\s]+media[\s]*=[\s]*[\"|\']*screen/i },
+{ :regexp=>/<style[\s]+(rel|type)[\s]*=[\s]*("|')?(stylesheet|text\/css)("|')?[\s]+media[\s]*=[^>]+>/i },
 
 ]
 
