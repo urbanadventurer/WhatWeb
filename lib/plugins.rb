@@ -74,7 +74,7 @@ class Plugin
   end
 
 # execute plugin
-  def x
+  def x	
   	results=[]
 	
 	unless @matches.nil?
@@ -85,8 +85,10 @@ class Plugin
 				r << match if match_ghdb(match[:ghdb], @body, @meta, @status, @base_uri)
 			end
 
+			
 			unless match[:text].nil?
-				r << match if @body.include?(match[:text])
+				#r << match if @body.include?(match[:text])
+				r << match if match[:regexp_compiled] =~ @body
 			end
 
 			unless match[:md5].nil?
