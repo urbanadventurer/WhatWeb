@@ -27,26 +27,21 @@ www.jijauamalner.org
 www.nexavar-international.com/scripts/pages/en/home/index.php
 www.pizzahut.co.nz
 www.plunkettcooney.com
-www.sachsbikes.co.uk
 |
 
 # Matches #
 matches [
 
 # Object tag
-{ :regexp=>/<object[^>]+application\/x-shockwave-flash[^>]+>.*?<\/object>/im },
+{ :regexp=>/<object[^>]+application\/x-shockwave-flash[^>]+>/i },
 
-# Extract flash file path from <embed> elements
-{ :regexp=>/<embed[^>]+src[\s]*=[\s]*'([^\s^'^>]+)/i },
-{ :regexp=>/<embed[^>]+src[\s]*=[\s]*"([^\s^"^>]+)/i },
+# flash file path from <embed> elements
+{ :regexp=>/<embed[^>]+src[\s]*=[\s]*["']?[^\s^'^"^>]+/i },
 
-# Extract flash file path from Javascript
-{ :regexp=>/new[\s]+FlashObject[\s]*\([\s]*'([^\']+)/ },
-{ :regexp=>/new[\s]+FlashObject[\s]*\([\s]*"([^\"]+)/ },
-{ :regexp=>/new[\s]+SWFObject[\s]*\([\s]*'([^\']+)/ },
-{ :regexp=>/new[\s]+SWFObject[\s]*\([\s]*"([^\"]+)/ },
-{ :regexp=>/.embedSWF[\s]*\([\s]*'([^\']+)/},
-{ :regexp=>/.embedSWF[\s]*\([\s]*"([^\"]+)/ },
+# flash file path from Javascript
+{ :regexp=>/new[\s]+FlashObject[\s]*\([\s]*['"]?[^'^"]+/ },
+{ :regexp=>/new[\s]+SWFObject[\s]*\([\s]*['"]?[^'^"]+/ },
+{ :regexp=>/\.embedSWF[\s]*\([\s]*["']?[^'^"]+/ },
 
 ]
 

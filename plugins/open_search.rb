@@ -24,12 +24,12 @@ matches [
 
 # Link tag
 {:name=>"open search",
-:regexp=>/<link .*?type=["']application\/opensearchdescription\+xml['"].*?>/im},
+:regexp=>/<link[^>]+type=["']?application\/opensearchdescription\+xml['"]?[^>]*>/i },
 
 # Extract URL
-{ :string=>/<link[^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]+type[\s]*=[\s]*["']application\/opensearchdescription\+xml['"][^>]*>/i },
+{ :string=>/<link[^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]+type[\s]*=[\s]*["']?application\/opensearchdescription\+xml['"]?[^>]*>/i },
 
-{ :string=>/<link[^>]+type[\s]*=[\s]*["']application\/opensearchdescription\+xml['"][^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]*>/i },
+{ :string=>/<link[^>]+type[\s]*=[\s]*["']?application\/opensearchdescription\+xml['"]?[^>]+href[\s]*=[\s]*["']([^'^"^>]+)["'][^>]*>/i },
 
 ]
 

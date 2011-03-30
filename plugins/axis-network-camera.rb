@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-03-31 #
+# Updated regex
+##
 # Version 0.2 # 2011-01-07 #
 # Updated version detection
 # Updated matches
@@ -15,9 +18,10 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
 version "0.2"
 description "Axis network camera - homepage: http://www.axis.com/"
 
-# 312 results for allintitle: Axis 2.10 OR 2.12 OR 2.30 OR 2.31 OR 2.32 OR 2.33 OR 2.34 OR 2.40 OR 2.42 OR 2.43 "Network Camera" @ 2010-06-27
-# 475 results for intitle:"Live View / . AXIS" | inurl:view/view.shtml OR inurl:view/indexFrame.shtml | intitle:"MJPG Live Demo" | "intext:Select preset position" @ 2010-06-27
-# 23 results for inurl:indexFrame.shtml intitle:Axis -inurl @ 2010-06-27
+# Google results as at 2010-06-27 #
+# 312 for allintitle: Axis 2.10 OR 2.12 OR 2.30 OR 2.31 OR 2.32 OR 2.33 OR 2.34 OR 2.40 OR 2.42 OR 2.43 "Network Camera"
+# 475 for intitle:"Live View / . AXIS" | inurl:view/view.shtml OR inurl:view/indexFrame.shtml | intitle:"MJPG Live Demo" | "intext:Select preset position"
+# 23  for inurl:indexFrame.shtml intitle:Axis -inurl
 
 # Examples #
 examples %w|
@@ -123,17 +127,6 @@ gotchacams.com/camviews.php
 # Matches #
 matches [
 
-# Certainty: 75 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1812
-# This ghdb syntax is not supported in whatweb 0.4.4
-{ :ghdb=>'allintitle: Axis 2.10 OR 2.12 OR 2.30 OR 2.31 OR 2.32 OR 2.33 OR 2.34 OR 2.40 OR 2.42 OR 2.43 "Network Camera"', :certainty=>75 },
-
-# Certainty: 75 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1811
-# This ghdb syntax is not supported in whatweb 0.4.4
-{ :ghdb=>'intitle:"Live View / . AXIS" | inurl:view/view.shtml OR inurl:view/indexFrame.shtml | intitle:"MJPG Live Demo" | "intext:Select preset position"', :certainty=>75 },
-
-# Certainty: 75 # http://www.hackersforcharity.org/ghdb/?function=detail&id=287
-{ :ghdb=>'inurl:indexFrame.shtml intitle:Axis', :certainty=>75 },
-
 # Default video server title
 { :text=>'<TITLE>AXIS Video Server</TITLE>' },
 
@@ -153,19 +146,19 @@ matches [
 { :text=>'<img SRC="/pics/AxisLogo.gif" WIDTH="95" HEIGHT="40" BORDER="0" ALIGN="right" ALT="' },
 
 # Model Detection # Default video server title
-{ :model=>/<TITLE>Live View [\/]* - AXIS ([^<]*) Video Server<\/TITLE>/i, :module=>"Live View" },
+{ :model=>/<TITLE>Live View \/? - AXIS ([^<]*) Video Server<\/TITLE>/i, :module=>"Live View" },
 
 # Model Detection # Default network camera title
-{ :model=>/<TITLE>Axis ([0-9]+) [^<]*Network Camera[^<]*<\/TITLE>/i },
+{ :model=>/<TITLE>Axis ([0-9]+)[^<]*Network Camera[^<]*<\/TITLE>/i },
 
 # Version Detection # Default title for AXIS 2000 series
-{ :version=>/<TITLE>Axis [0-9]+ [^<]*Network Camera ([\d\.]+)<\/TITLE>/i },
+{ :version=>/<TITLE>Axis [0-9]+[^<]*Network Camera ([\d\.]+)<\/TITLE>/i },
 
 # Version Detection # Default live view title for AXIS 200 series
-{ :version=>/<TITLE>Live View[\/\s]*- AXIS [\da-z]+ [^<]*version ([\d\.]+)<\/TITLE>/i, :module=>"Live View" },
+{ :version=>/<TITLE>Live View \/? - AXIS [\da-z]+ [^<]*version ([\d\.]+)<\/TITLE>/i, :module=>"Live View" },
 
 # Model Detection # Default live view title for AXIS 200 series
-{ :model=>/<TITLE>Live View[\/\s]*- AXIS ([\da-z]+) [^<]*<\/TITLE>/i, :module=>"Live View" },
+{ :model=>/<TITLE>Live View \/? - AXIS ([\da-z]+) [^<]*<\/TITLE>/i, :module=>"Live View" },
 
 ]
 
