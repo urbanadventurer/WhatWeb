@@ -156,6 +156,7 @@ $CUSTOM_HEADERS={}
 $BASIC_AUTH_USER=nil
 $BASIC_AUTH_PASS=nil
 
+$PLUGIN_TIMES=Hash.new(0)
 
 # precompile regular expressions in plugins for performance
 def precompile_regular_expressions
@@ -175,10 +176,12 @@ def precompile_regular_expressions
 					end
 				end
 
+				unless thismatch[:text].nil?
+					thismatch[:regexp_compiled]=Regexp.new(Regexp.escape(thismatch[:text]))
+				end
 			end
 		end		
 	end
-
 end
 
 def plugin_list
@@ -697,8 +700,12 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 					plugin.init(body,{},nil,0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
 				end
 				
-				# eXecute the plugin
+				# eXecute the plugin			
+				#start_time = Time.now
 				result=plugin.x
+				#end_time = Time.now
+				#$PLUGIN_TIMES[name] += end_time - start_time
+
 				plugin.unlock
 
 			rescue StandardError => err
@@ -1359,4 +1366,4 @@ output_list.each {|o| o.close }
 # shutdown plugins
 Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }
 
-
+#pp $PLUGIN_TIMES.sort_by {|x,y|y }
