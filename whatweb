@@ -683,6 +683,10 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 		end
 		#########################################
 
+		# is the target a file or URL?
+		target_is_file=false
+		target_is_file=true if target =~ /^http[s]?:\/\//
+
 		results=[]
 		$plugins_to_use.each do |name,plugin|
 			begin			
@@ -692,7 +696,7 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 				end
 				plugin.lock
 
-				if target.include?("://")
+				unless target_is_file
 					#plugin.init(ObjectSpace._id2ref(body.object_id),headers,cookies,status,url,ip,md5sum,tagpattern)
 					plugin.init(body,headers,cookies,status,url,ip,md5sum,tagpattern)
 				else
