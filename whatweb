@@ -240,7 +240,7 @@ def plugin_info(keywords= nil)
 			puts name
 			puts "\tAuthor:".ljust(22) + plugin.author
 			puts "\tVersion:".ljust(22) +plugin.version
-			puts "\tCategory:".ljust(22) +plugin.category.to_s unless plugin.category.nil?
+#			puts "\tCategory:".ljust(22) +plugin.category.to_s unless plugin.category.nil?
 			puts "\tExamples:".ljust(22) +plugin.examples.size.to_s if plugin.examples
 			puts "\tMatches:".ljust(22) +plugin.matches.size.to_s if plugin.matches
 			puts "\tPassive function: ".ljust(22) + (defined?(plugin.passive) ? "Yes" : "No")
