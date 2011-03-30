@@ -303,7 +303,7 @@ def load_plugin(f)
 	rescue
 		error("Error: failed to load #{f}")
 	rescue SyntaxError
-		error("Error: Failed to load #{f}. This is probably a Ruby1.9 compatibility issue")
+		error("Error: Failed to load #{f}.")
 	end
 end
 
@@ -328,6 +328,10 @@ def load_plugins(list=nil)
 
 	if list
 		list=list.split(",")
+
+		plugins_disabled_location = ["plugins-disabled"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
+
+		list.each {|x| x.gsub!(/^\+$/,"+#{plugins_disabled_location}") } # + is short for +plugins-disabled
 
 		list.each do |p|
 			choice=PluginChoice.new
@@ -572,15 +576,13 @@ end
 
 
 def error(s)
-	$semaphore.synchronize do
-		# if colour
-		if ($use_colour=="auto") or ($use_colour=="always")
-			STDERR.puts red(s)
-		else
-			STDERR.puts s
-		end
-		STDERR.flush
+	# if colour
+	if ($use_colour=="auto") or ($use_colour=="always")
+		STDERR.puts red(s)
+	else
+		STDERR.puts s
 	end
+	STDERR.flush
 	unless $OUTPUT_ERRORS.nil?
 		$OUTPUT_ERRORS.out(s)
 	end
@@ -794,6 +796,7 @@ PLUGINS:
 \t\t\tExamples: +/tmp/moo.rb,+/tmp/foo.rb
 \t\t\ttitle,md5,+./plugins-disabled/
 \t\t\t./plugins-disabled,-md5
+\t\t\t-p + is a shortcut for -p +plugins-disabled
   --list-plugins, -l\tList the plugins
   --info-plugins, -I\tDisplay information for all plugins. Optionally search
 \t\t\twith keywords in a comma delimited list.
@@ -1184,8 +1187,9 @@ Thread.main["targets"]=[]
 
 while thistarget = next_target
 		Thread.new do
-			puts Thread.current.to_s + " started for " + thistarget if $verbose>1
+			# if u swap around the following lines the target gets confused. idk why.
 			target = thistarget # we set the target within the thread
+			puts Thread.current.to_s + " started for " + target if $verbose>1
 
 			sleep $WAIT unless $WAIT.nil? # wait
 			# get the webpage	
@@ -1342,7 +1346,7 @@ while thistarget = next_target
 	
 			end # Thread.new
 
-			while Thread.list.length>($MAX_THREADS+1)
+			while Thread.list.size>($MAX_THREADS+1)
 				puts "sleeping" if $verbose>1
 				sleep 0.5
 			end

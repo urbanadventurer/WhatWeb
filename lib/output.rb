@@ -101,8 +101,11 @@ class OutputVerbose < Output
 						@f.puts "\t" + " "*13 + line
 					}
 
+
 					top_certainty= suj(plugin_results)[:certainty].to_i
-					@f.puts "\t"+"Certainty".ljust(11)+": " + certainty_to_words(top_certainty)
+					unless top_certainty == 100
+						@f.puts "\t"+"Certainty".ljust(11)+": " + certainty_to_words(top_certainty)
+					end
 
 					plugin_results.map {|x| sortuniq(x) }.each do |pr|
 
@@ -115,7 +118,7 @@ class OutputVerbose < Output
 
 						pr.each do |key,value|
 							next unless [:version, :os, :string, :account, :model, 
-									:firmware, :module, :filepath].include?(key)
+									:firmware, :module, :filepath, :url].include?(key)
 
 							next if value.class==Regexp
 
