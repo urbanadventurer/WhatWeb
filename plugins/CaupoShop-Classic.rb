@@ -23,7 +23,6 @@ www.ugg.de/shop/csc_article_details.php
 www.sievers-verlag.de/shop/en/csc_articles.php
 www.iskh.de/demoshop/csc_articles.php
 shop.sesamnet.ch/shop/csc_articles.php
-www.batikkarten.ch/csc_articles.php
 www.topfkraeuter.de/WebShop/csc_articles.php
 www.western-union-band.de/shop/csc_articles.php
 www.eurokursmuenzen-schach.de/shop/csc_articles.php
@@ -37,16 +36,16 @@ matches [
 	{ :ghdb=>'inurl:csc_articles.php', :certainty=>25 },
 
 	# Powered by text
-	{ :regexp=>/   <td align="center"><small>&copy; 1998[\-0-9]{0,5} <a href="http:\/\/www.caupo.net" target="_blank">CaupoNet<\/a>/ },
+	{ :regexp=>/<td align="center"><small>&copy; 1998\-?[0-9]{0,4} <a href="http:\/\/www.caupo.net" target="_blank">CaupoNet<\/a>/ },
 
 	# Powered by text
-	{ :regexp=>/   <td align="center"><small>Powered by CaupoShop Classic[\s]?<\/small><\/td>/ },
+	{ :regexp=>/<td align="center"><small>Powered by CaupoShop Classic[\s]?<\/small><\/td>/ },
 
 	# Powered by text # Version Detection
-	{ :version=>/   <td align="center"><small>Powered by CaupoShop Classic Ver. ([\d\.]+)<\/small><\/td>/ },
+	{ :version=>/<td align="center"><small>Powered by CaupoShop Classic Ver\. ([\d\.]+)<\/small><\/td>/ },
 
 	# HTML Comment
-	{ :version=>/<!-- CaupoShop Classic Ver. ([\d\.]+) \([\d]{4}-[\d]{2}-[\d]{2}\) [^>]*-->/ },
+	{ :version=>/<!-- CaupoShop Classic Ver\. ([\d\.]+) \([\d]{4}-[\d]{2}-[\d]{2}\)/ },
 
 ]
 

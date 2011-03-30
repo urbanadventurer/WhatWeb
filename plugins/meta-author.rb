@@ -9,17 +9,19 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
 description "This plugin retrieves the author name from the meta name tag - info: http://www.webmarketingnow.com/tips/meta-tags-uncovered.html#author"
 
+# Examples #
 examples %w|
 htmlhelp.com
 www.codeproject.com
 www.webmarketingnow.com
 |
 
+# Matches #
 matches [
 
 # Get author's name
-{ :string=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?author[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"^\/^>]+)/i },
-{ :string=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']*)[^>]+name[\s]*=[\s]*[\'|\"]?author/i },
+{ :string=>/<meta[^>^=]+name[\s]*=[\s]*['"]?author['"]?[^>^=]+content[\s]*=[\s]*['"]([^'^"^>]+)/i },
+{ :string=>/<meta[^>^=]+content[\s]*=[\s]*['"]([^"^'^>]+)['"][^>^=]+name[\s]*=[\s]*['"]?author['"]?/i },
 
 ]
 

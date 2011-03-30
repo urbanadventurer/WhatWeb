@@ -4,28 +4,31 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-03-31 #
+# Updated regex
+##
 Plugin.define "SocketKB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-08
-version "0.1"
+version "0.2"
 description "Deploy your own professional knowledge base or knowledge repository. Provide your customers the answers to their questions with SocketKB. Increase customer satisfaction and confidence. Easy and fast to install. - homepage: http://socketkb.com/site/home/"
 
-# 15 results for "Powered by SocketKB version" -intext
+# Google results as at 2010-11-08 #
+# 15 for "Powered by SocketKB version" -intext
+
+# Examples #
 examples %w|
 socketkb.com/site/home/demo_coolblue.php
-socketmail.info/kb/home/
 socketkb.com/site/home/demo_default.php
-ask.simul8.com/home/
-support.simul8.com/kb/
 kb.c-comsat.com
 kb2.c-comsat.com/home/
 www.classiclandscapes.com/socketkb/
 |
 
+# Matches #
 matches [
 
 # Version Detection # Powered by text
-{ :version=>/<a[^>]*href="http:\/\/www.socketkb.com[^>]*>Powered by SocketKB version ([\d\.]+)<\/a>/ },
-{ :version=>/<a[^>]*href=[^>]*>Powered by SocketKB version ([\d\.]+)<\/a>/, :certainty=>75 },
+{ :version=>/>Powered by SocketKB version ([\d\.]+)<\/a>/ },
 
 ]
 

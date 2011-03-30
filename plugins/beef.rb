@@ -18,7 +18,6 @@ description "BeEF - Browser Exploitation Framework - homepage: http://www.bindsh
 # Examples #
 examples %w|
 stage3i.free.fr/ui/
-showcase1.se/sosse/beef/ui/
 manyeikshramit.com/beef/ui/
 |
 
@@ -26,13 +25,13 @@ manyeikshramit.com/beef/ui/
 matches [
 
 # Default Logo HTML
-{ :name=>"default logo", :text=>'<img src="../images/beef.gif" onclick="new Effect.Shake(\'sidebar\');"></div> BeEF</h1>' },
+{ :text=>'<img src="../images/beef.gif" onclick="new Effect.Shake(\'sidebar\');"></div> BeEF</h1>' },
 
-# Favicon
-{ :url=>"favicon.ico", :md5=>"749749ba87e84d48b44b69ed2241987c" },
+# Title
+{ :certainty=>75, :text=>'<title>Browser Exploitation Framework</title>' },
 
 # Injected script
-{ :regexp=>/<script[^>]+src=['|"]?[^>^=]+\/hook\/beefmagic.js.php['|"]?[^>]+>/, :certainty=>75, :string=>"Injected Script" },
+{ :regexp=>/<script[^>]+src=['"]?[^>^="'^"]+\/hook\/beefmagic\.js\.php['"]?/, :certainty=>75, :string=>"Injected Script" },
 
 ]
 
