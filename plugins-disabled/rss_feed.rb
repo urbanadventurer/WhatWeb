@@ -12,6 +12,7 @@ author "Caleb Anderson"
 version "0.2"
 description "This plugin detects RSS feeds and extracts the RSS feed source."
 
+# Examples #
 examples %w|
 itsecuritysolutions.org
 morningstarsecurity.com
@@ -21,11 +22,12 @@ adrianlamologs.blogspot.com
 www.wired.com
 |
 
+# Matches #
 matches [
 
 # Extract RSS feed source
-{ :version=>/<link[^>]*href[\s]*=[\s]*["']([^\'^\"^\s^>]+)[^>]*type[\s]*=[\s]*["']application\/rss\+xml["'][^>]*/i, :version_regexp_offset=>0 },
-{ :version=>/<link[^>]*type[\s]*=[\s]*["']application\/rss\+xml["'][^>]*href[\s]*=[\s]*["']([^\'^\"^\s^>]+)[^>]*/i, :version_regexp_offset=>0 },
+{ :version=>/<link[^>]*href[\s]*=[\s]*["']([^'^"^\s^>]+)[^>]*type[\s]*=[\s]*["']application\/rss\+xml["'][^>]*/i },
+{ :version=>/<link[^>]*type[\s]*=[\s]*["']application\/rss\+xml["'][^>]*href[\s]*=[\s]*["']([^'^"^\s^>]+)[^>]*/i },
 
 ]
 
