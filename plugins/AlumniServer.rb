@@ -30,7 +30,7 @@ thekovalfactor.com/Alumni/AlumniServerProject.php
 matches [
 
 # GHDB
-{ :certainty=>75, :ghdb=>'"AlumniServer project" inurl:AlumniServerProject.php' },
+{ :certainty=>75, :ghdb=>'inurl:AlumniServerProject.php "AlumniServer project"' },
 
 # AlumniServer project footer link
 { :text=>'<div style="float:right;"><a href="AlumniServerProject.php" style="color:#c6cccd;margin:2px;margin-right:10px;">AlumniServer project</a></div>' },
