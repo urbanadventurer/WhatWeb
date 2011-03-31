@@ -38,6 +38,7 @@ description "The Apache HTTP Server Project is an effort to develop and maintain
 # 45,696 for "Server: mod_psoft_traffic"
 # 34,854 for "Server: mod_macro"
 # 61,692 for "Server: mod_throttle"
+# 3,553 for NOYB
 
 # Examples #
 examples %w|
@@ -79,6 +80,10 @@ https://ls.berkeley.edu
 208.43.165.236
 174.36.241.50
 129.121.100.8
+80.84.255.150
+76.12.54.162
+69.73.146.200
+66.113.103.79
 |
 
 # Matches #
@@ -125,9 +130,12 @@ def passive
 		m << { :version=>@meta["server"].scan(/^Apache\/([\d\.]+)/i) } if @meta["server"] =~ /^Apache\/([\d\.]+)/i
 
 		# Module Detection
-		m << { :module=>@meta["server"].scan(/[\s](mod_[^\s^\r^\n]+)/) } if @meta["server"] =~ /[\s](mod_[^\s^\r^\n]+)/
+		m << { :module=>@meta["server"].scan(/[\s](mod_[^\s]+)/) } if @meta["server"] =~ /[\s](mod_[^\s]+)/
 
 	end
+
+	# mod_security
+	m << { :module=>"mod_security" } if @meta["server"] == "NOYB"
 
 	# Return passive matches
 	m
