@@ -84,6 +84,9 @@ https://ls.berkeley.edu
 76.12.54.162
 69.73.146.200
 66.113.103.79
+69.163.219.199
+212.94.66.59
+202.201.242.91
 |
 
 # Matches #
@@ -136,6 +139,9 @@ def passive
 
 	# mod_security
 	m << { :module=>"mod_security" } if @meta["server"] == "NOYB"
+
+	# mod_pagespeed
+	m << { :module=>"mod_pagespeed\/"+@meta["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).to_s } if @meta["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
 
 	# Return passive matches
 	m
