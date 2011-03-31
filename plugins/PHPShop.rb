@@ -54,7 +54,7 @@ www.chmp-kenya.org/phpshop/
 matches [
 
 # GHDB Match
-{ :certainty=>25, :ghdb=>'"Powered by phpShop"' },
+{ :certainty=>25, :regexp=>/Powered by phpShop/i },
 
 # Powered by text
 { :regexp=>/Powered by <a href="http:\/\/www.phpshop.org"[^>]*>phpShop<\/a>/i },

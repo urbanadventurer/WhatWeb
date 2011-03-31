@@ -27,11 +27,10 @@ www.indigoenergies.co.nz
 matches [
 
 # Powered by text
-{ :regexp=>/<a[^>]+href="http:\/\/www.getpixie.co.uk" title="Get Pixie">Pixie Powered<\/a><\/li>/ },
-{ :regexp=>/<a[^>]+href="http:\/\/www.getpixie.co.uk" title="Get Pixie">(Powered by Pixie|Pixie)<\/a><\/li>/ },
+{ :regexp=>/href="http:\/\/www.getpixie.co.uk" title="Get Pixie">(Pixie Powered|Powered by Pixie|Pixie)<\/a>/ },
 
 # Version Detection # Meta Generator
-{ :version=>/	<meta name="generator" content="Pixie ([\d\.]+) - Copyright \(C\) [\d]{4} - [\d]{4}." \/>/ },
+{ :version=>/<meta name="generator" content="Pixie ([\d\.]+) - Copyright \(C\) [\d]{4} - [\d]{4}\." \/>/ },
 
 ]
 
