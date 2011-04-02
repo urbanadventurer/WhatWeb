@@ -4,27 +4,36 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.3 # 2011-04-02 #
+# Updated regex
+##
 # Version 0.2
 # removed :certainty=>100
-
+##
 Plugin.define "X-Powered-By" do
 author "Andrew Horton"
-version "0.2"
-description "HTTP header, x-powered-by"
-# identifying strings
-# X-Powered-By: PHP/5.1.6
+version "0.3"
+description "X-Powered-By HTTP header"
 
+# ShodanHQ results as at 2011-04-02 #
+# 7,122,968 for x-powered-by
+
+# Examples #
+examples %w|
+66.79.186.42
+219.76.176.30
+|
+
+# Passive #
 def passive
 	m=[]
-	
-	unless @meta.nil?
-		serverkey= %w|x-powered-by X-Powered-By|.map {|x| x if @meta.keys.include?(x) }.compact.first
-		
-		unless serverkey.nil?
-			m << {:name=>"x-powered-by string",:string=>@meta[serverkey]}
-		end
+
+	# X-Powered-By Headers
+	unless @meta["x-powered-by"].nil?
+		m << { :name=>"x-powered-by string", :string=>@meta["x-powered-by"] }
 	end
+
+	# Return passive matches
 	m
 end
 

@@ -4,12 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.2 # 2011-04-02 #
+# Updated regex
+##
 Plugin.define "BinarySec-Firewall" do
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
-version "0.1"
+version "0.2"
 description "BinarySec Web Application Firewall - http://www.binarysec.com"
 
+# Examples #
 examples %w|
 www.binarysec.com
 195.98.231.142
@@ -27,23 +30,32 @@ www.rer.re
 www.occasions-guadeloupe.com
 |
 
-
+# Passive #
 def passive
-    m = []
+	m = []
 
-    m << {:name=>"X-BinarySEC-Via header "} if @meta.keys.include?("X-BinarySEC-Via".downcase())
-    m << {:name=>"X-BinarySEC-NoCache header "} if @meta.keys.include?("X-BinarySEC-NoCache".downcase())
-        
-    m << {:name=>"server header "} if @meta['server'] =~ /BinarySec/i
-    
-    if @meta['server'] =~ /BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/i
-        version=@meta['server'].scan(/BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/i)
-        m << {:version=>version.to_s}
-    end
-    m
+	# X-BinarySEC-Via header
+	unless @meta["x-binarysec-via"].nil?
+		m << { :name=>"X-BinarySEC-Via header" }
+	end
 
+	# X-BinarySEC-NoCache
+	unless @meta["x-binarysec-nocache"].nil?
+		m << { :name=>"X-BinarySEC-NoCache header" }
+	end
+
+	# Server Header
+	if @meta['server'] =~ /BinarySec/i
+
+		m << { :name=>"server header" }
+
+		# Version Detection # HTTP Server header
+        	m << { :version=>@meta['server'].scan(/BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/i) } if @meta['server'] =~ /BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/i
+	end
+
+	# Return passive matches
+	m
 end
-
 
 end
 
