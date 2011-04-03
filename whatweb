@@ -578,6 +578,14 @@ end
 
 
 def error(s)
+	# We want the output mutex locked.
+	# Has our current thread already locked the Mutex?
+	begin
+		$semaphore.lock
+	rescue ThreadError
+		# we're already locked. Nice.
+	end
+
 	# if colour
 	if ($use_colour=="auto") or ($use_colour=="always")
 		STDERR.puts red(s)
@@ -588,6 +596,7 @@ def error(s)
 	unless $OUTPUT_ERRORS.nil?
 		$OUTPUT_ERRORS.out(s)
 	end
+	$semaphore.unlock
 end
 
 
