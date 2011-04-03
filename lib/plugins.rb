@@ -84,7 +84,6 @@ class Plugin
 			unless match[:ghdb].nil?
 				r << match if match_ghdb(match[:ghdb], @body, @meta, @status, @base_uri)
 			end
-
 			
 			unless match[:text].nil?
 				#r << match if @body.include?(match[:text])

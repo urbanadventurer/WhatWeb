@@ -155,7 +155,6 @@ $QUIET=false
 $CUSTOM_HEADERS={}
 $BASIC_AUTH_USER=nil
 $BASIC_AUTH_PASS=nil
-
 $PLUGIN_TIMES=Hash.new(0)
 
 # precompile regular expressions in plugins for performance
@@ -579,6 +578,14 @@ end
 
 
 def error(s)
+	# We want the output mutex locked.
+	# Has our current thread already locked the Mutex?
+	begin
+		$semaphore.lock
+	rescue ThreadError
+		# we're already locked. Nice.
+	end
+
 	# if colour
 	if ($use_colour=="auto") or ($use_colour=="always")
 		STDERR.puts red(s)
@@ -589,6 +596,7 @@ def error(s)
 	unless $OUTPUT_ERRORS.nil?
 		$OUTPUT_ERRORS.out(s)
 	end
+	$semaphore.unlock
 end
 
 
@@ -1142,11 +1150,10 @@ end
 # turn an array of extensions into a regexp
 $ANEMONE_SKIP_REGEX=Regexp.union($ANEMONE_SKIP_EXTENSIONS.map{|x| "/\.#{" + x + "}$/"  }.to_s())
 
-
-
 # for each target, we try each plugin then print the results
 $semaphore=Mutex.new
 Thread.abort_on_exception = true if $DEBUG
+meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
 
 
 def next_target
@@ -1301,14 +1308,12 @@ while thistarget = next_target
 				begin
 					newtarget_m=nil
 					newtarget_h=nil
-					newtarget=nil
+					newtarget=nil			
 
-					meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
-
-					if body =~ meta_refresh_regex
+					if meta_refresh_regex =~ body
 						metarefresh=body.scan(meta_refresh_regex).first.to_s
 						newtarget_m=URI.join(target,metarefresh).to_s # this works for relative and absolute
-					end					
+					end
 
 					unless status.nil? or headers.nil?
 						newtarget_h=URI.join(target,headers["location"]).to_s if (300..399) === status and headers["location"]
