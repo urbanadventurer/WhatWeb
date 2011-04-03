@@ -177,8 +177,8 @@ LOGGING & OUTPUT:
 
 PERFORMANCE & STABILITY:
   --max-threads, -t     Number of simultaneous threads. Default: 25.
-  --open-timeout        Time in seconds. Default: 60
-  --read-timeout        Time in seconds. Default: 120
+  --open-timeout        Time in seconds. Default: 15
+  --read-timeout        Time in seconds. Default: 30
   --wait=SECONDS        Wait SECONDS between connections
                         This is useful when using a single thread.
 
@@ -344,8 +344,8 @@ The spider is provided by Anemone, a third party ruby gem. It doesn't follow red
 WhatWeb features several options to increase performance and stability.
 
   --max-threads, -t     Number of simultaneous threads. Default: 25.
-  --open-timeout        Time in seconds. Default: 60
-  --read-timeout        Time in seconds. Default: 120
+  --open-timeout        Time in seconds. Default: 15
+  --read-timeout        Time in seconds. Default: 30
   --wait=SECONDS        Wait SECONDS between connections
                         This is useful when using a single thread.
 
