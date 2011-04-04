@@ -541,8 +541,10 @@ class OutputJSON < Output
 				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.flatten.compact.sort.uniq
 				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.flatten.compact.sort.uniq
 
+				if !certainty.nil? and certainty != 100
+					thisplugin[:certainty] = certainty
+				end
 
-				certainty.nil? ? thisplugin[:certainty] = 100 : thisplugin[:certainty] = certainty
 				thisplugin[:version] = version unless version.empty?
 				thisplugin[:os] = os unless os.empty?
 				thisplugin[:string] = string unless string.empty?
