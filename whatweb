@@ -578,15 +578,15 @@ end
 
 
 def error(s)
-	# We want the output mutex locked.
-	# Has our current thread already locked the Mutex?
-	begin
-		$semaphore.lock
-	rescue ThreadError
-		# we're already locked. Nice.
+	if defined?($semaphore)
+		# We want the output mutex locked.
+		# Has our current thread already locked the Mutex?
+		begin
+			$semaphore.lock
+		rescue ThreadError
+			# we're already locked. Nice.		
+		end
 	end
-
-	# if colour
 	if ($use_colour=="auto") or ($use_colour=="always")
 		STDERR.puts red(s)
 	else
@@ -596,7 +596,7 @@ def error(s)
 	unless $OUTPUT_ERRORS.nil?
 		$OUTPUT_ERRORS.out(s)
 	end
-	$semaphore.unlock
+	$semaphore.unlock if defined?($semaphore)
 end
 
 
@@ -1101,6 +1101,11 @@ rescue StandardError, GetoptLong::Error => err
 	exit
 end
 
+# sanity checks
+if $AGGRESSION >= 3 and $RECURSIVE
+	error("Aggressive levels 3 or higher are not compatible with recursive spidering.")
+	exit 1
+end
 
 ### PLUGINS
 plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection  
@@ -1108,8 +1113,8 @@ $plugins_to_use = load_plugins(plugin_selection ) # load all the plugins
 
 # are the no plugins?
 if $plugins_to_use.size == 0
-	puts "No plugins selected, exiting."
-	exit
+	error "No plugins selected, exiting."
+	exit 1
 end
 precompile_regular_expressions # optimise plugins
 
@@ -1141,8 +1146,9 @@ pp "Targets: " ,$targets if $verbose>1
 
 # fail & show usage if no targets.
 if $targets.size <1
+	error "No targets selected"	
 	usage
-	exit
+	exit 1
 end
 
 
@@ -1353,7 +1359,7 @@ while thistarget = next_target
 						no_redirects=true 
 					end
 				rescue => err
-					error("new redirecting broken: #{err}")
+					error("Redirection broken: #{err}")
 					no_redirects=true
 				end
 
@@ -1376,3 +1382,4 @@ output_list.each {|o| o.close }
 Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }
 
 #pp $PLUGIN_TIMES.sort_by {|x,y|y }
+
