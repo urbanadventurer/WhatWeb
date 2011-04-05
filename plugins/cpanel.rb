@@ -4,15 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.4 # 2011-04-06 # Brendan Coles <bcoles@gmail.com>
+# Added /cgi-sys/defaultwebpage.cgi and /img-sys/header.jpg aggressive matches
+##
 # Version 0.3 # Brendan Coles <bcoles@gmail.com>
 # Added version detection. Added OS detection.
 ##
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "CPanel" do
+Plugin.define "cPanel" do
 author "Andrew Horton"
-version "0.3"
+version "0.4"
 description "Site configuration and management software application. Supporting many operating systems while allowing endusers to control every aspect of their webhosting experience. - homepage: http://www.cpanel.net/"
 
 examples %w|
@@ -26,36 +29,43 @@ cpanel.il-toys.com
 il-kamasutra.com
 |
 
+# Matches #
 matches [
 
-# Welcome page # Default title
-{:text=>"<title>cPanel&reg;</title>" },
+# Welcome Page # Default title
+{ :text=>"<title>cPanel&reg;</title>" },
 
-# Welcome page # Default logo HTML
+# Welcome Page # Default logo HTML
 { :text=>'<div id="footer_images"><img src="sys_cpanel/images/powered_by.gif" />' },
 
-# Welcome page # Default text
-{ :text=>"Apache is working on your cPanel<sup>&reg;</sup> and WHM&#8482; Server", :module=>"Apache" },
+# Welcome Page # Default text
+{ :text=>"Apache is working on your cPanel<sup>&reg;</sup> and WHM&#8482; Server" },
 
-# Login page # Default CSS
-{ :regexp=>/<link rel="stylesheet" href="[^>]*\/unprotected\/cpanel\/style_optimized.css" type="text\/css" \/>/ },
+# Login Page # Default CSS
+{ :regexp=>/<link rel="stylesheet" href="[^>^"]*\/unprotected\/cpanel\/style_optimized\.css" type="text\/css" \/>/ },
 
-# Version detection # Login page # Default title
-{ :version=>/<title>cPanel&reg;[\s]*([\d\.]+)<\/title>/ },
+# Version Detection # Login page # Default title
+{ :version=>/<title>cPanel&reg;[\s]{0,2}([\d\.]+)<\/title>/ },
+
+# Aggressive # /cgi-sys/defaultwebpage.cgi
+{ :url=>"/cgi-sys/defaultwebpage.cgi", :text=>'<p class="troubleshoot">It may be possible to restore access to this site by <a href="http://www.cpanel.net/docs/dnscache/cleardns.html">following these instructions</a> for clearing your dns cache.</p>' },
+
+# Aggressive # /img-sys/header.jpg
+{ :url=>"/img-sys/header.jpg", :md5=>"b0f3863b68ff707c3fb586bd87b4f9c6" },
 
 ]
 
-# Version detection # HTTP Server header
+# Passive #
 def passive
 	m=[]
 
-	if @meta["server"].to_s =~ /cpsrvd\/([\d\.]+)/
-		version=@meta["server"].scan(/cpsrvd\/([\d\.]+)/).to_s
-		m << { :version=>version }
+	# Version Detection # HTTP Server header
+	if @meta["server"].to_s =~ /^cpsrvd\/([\d\.]+)$/
+		m << { :version=>@meta["server"].scan(/^cpsrvd\/([\d\.]+)$/) }
 	end
 
+	# Return passive matches
 	m
-
 end
 
 end
