@@ -11,7 +11,8 @@ Version 0.4.7 Released April 5th 2011
 * Changed default open and read timeouts to 15 and 30 seconds respectively
 * Updated slow plugins
 * Added plugins: TVersity, Ultimate-Bulletin-Board, 
-* Moved plugins to plugins-disabled, atom_feed and meta_geography
+* Moved plugins to plugins-disabled: atom_feed, meta-city, meta-contact, meta-country, meta-geography, meta-state, meta-zipcode and script
+* Renamed mailto plugin to email
 
 Version 0.4.6 Released March 25th 2011
 * Updated ~230 plugins
