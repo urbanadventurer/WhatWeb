@@ -12,7 +12,7 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 Readme for WhatWeb - Next generation web scanner.
 By urbanadventurer aka Andrew Horton from Security-Assessment.com
-Version: 0.4.7. Unreleased
+Version: 0.4.7. April 5th, 2011
 License: GPLv2
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,111 +87,124 @@ http://www.reddit.com/ [200] Frame, PasswordField[passwd,passwd2], Script, HTTPS
 3. Usage
 ================================================================================
 
+.$$$     $.                                   .$$$     $.         
+$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
+$ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
+$ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
+$. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
+$::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
+$;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
+$$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
+
 WhatWeb - Next generation web scanner.
-Version 0.4.6 by Andrew Horton aka urbanadventurer from Security-Assessment.com
+Version 0.4.7 by Andrew Horton aka urbanadventurer from Security-Assessment.com
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
 
 TARGET SELECTION:
-  <URLs>                Enter URLs, filenames or nmap-format IP ranges.
-                        Use /dev/stdin to pipe HTML directly
-  --input-file=FILE, -i Identify URLs found in FILE, e.g. -i /dev/stdin
-  --url-prefix          Add a prefix to target URLs
-  --url-suffix          Add a suffix to target URLs
-  --url-pattern         Insert the targets into a URL. Requires --input-file,
-                        e.g. www.example.com/%insert%/robots.txt
-  --example-urls, -e    Add example URLs for each selected plugin to the target
-                        list. By default will add example URLs for all plugins.
+  <URLs>		Enter URLs, filenames or nmap-format IP ranges.
+			Use /dev/stdin to pipe HTML directly
+  --input-file=FILE, -i	Identify URLs found in FILE, eg. -i /dev/stdin
+  --url-prefix		Add a prefix to target URLs
+  --url-suffix		Add a suffix to target URLs
+  --url-pattern		Insert the targets into a URL. Requires --input-file,
+			eg. www.example.com/%insert%/robots.txt 
+  --example-urls, -e	Add example URLs for each selected plugin to the target
+			list. By default will add example URLs for all plugins.
 
 AGGRESSION LEVELS:
   --aggression, -a=LEVEL The aggression level controls the trade-off between
-                        speed/stealth and reliability. Default: 1
-                        Aggression levels are:
-        1 (Passive)     Make one HTTP request per target. Except for redirects.
-        2 (Polite)      Reserved for future use
-        3 (Aggressive)  Triggers aggressive plugin functions only when a
-                        plugin matches passively.
-        4 (Heavy)       Trigger aggressive functions for all plugins. Guess a
-                        lot of URLs like Nikto.
+			speed/stealth and reliability. Default: 1
+			Aggression levels are:
+	1 (Passive)	Make one HTTP request per target. Except for redirects.
+	2 (Polite)	Reserved for future use
+	3 (Aggressive)	Triggers aggressive plugin functions only when a
+			plugin matches passively.
+	4 (Heavy)	Trigger aggressive functions for all plugins. Guess a
+			lot of URLs like Nikto.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.6.
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.7.
   --user, -u=<user:password> HTTP basic authentication
-  --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
-                        header will replace it. Specifying an empty value, e.g.
-                        "User-Agent:" will remove the header.
+  --header, -H		Add an HTTP header. eg "Foo:Bar". Specifying a default
+			header will replace it. Specifying an empty value, eg.
+			"User-Agent:" will remove the header.
   --follow-redirect=WHEN Control when to follow redirects. WHEN may be `never',
-                        `http-only', `meta-only', `same-site', `same-domain'
-                        or `always'. Default: always
-  --max-redirects=NUM   Maximum number of contiguous redirects. Default: 10
+			`http-only', `meta-only', `same-site', `same-domain'
+			or `always'. Default: always
+  --max-redirects=NUM	Maximum number of contiguous redirects. Default: 10
 
 SPIDERING:
-  --recursion, -r       Follow links recursively. Only follow links under the
-                        path Default: off
-  --depth, -d           Maximum recursion depth. Default: 10
-  --max-links, -m       Maximum number of links to follow on one page
-                        Default: 250
+  --recursion, -r	Follow links recursively. Only follow links under the
+			path Default: off
+  --depth, -d		Maximum recursion depth. Default: 10
+  --max-links, -m	Maximum number of links to follow on one page
+			Default: 250
   --spider-skip-extensions Redefine extensions to skip.
-                        Default: zip,gz,tar,jpg,exe,png,pdf
+			Default: zip,gz,tar,jpg,exe,png,pdf
 
 PROXY:
-  --proxy               <hostname[:port]> Set proxy hostname and port
-                        Default: 8080
-  --proxy-user          <username:password> Set proxy user and password
+  --proxy		<hostname[:port]> Set proxy hostname and port
+			Default: 8080
+  --proxy-user		<username:password> Set proxy user and password
 
 PLUGINS:
-  --plugins, -p         Comma delimited set of selected plugins. Default is all.
-                        Each element can be a directory, file or plugin name and
-                        can optionally have a modifier, e.g. + or -
-                        Examples: +/tmp/moo.rb,+/tmp/foo.rb
-                        title,md5,+./plugins-disabled/
-                        ./plugins-disabled,-md5
-  --list-plugins, -l    List the plugins
-  --info-plugins, -I    Display information for all plugins. Optionally search
-                        with keywords in a comma delimited list.
-  --custom-plugin       Define a custom plugin called Custom-Plugin,
-                        Examples: ":text=>'powered by abc'"
-                        ":regexp=>/powered[ ]?by ab[0-9]/"
-                        ":ghdb=>'intitle:abc \"powered by abc\"'"
-                        ":md5=>'8666257030b94d3bdb46e05945f60b42'"
-                        "{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
+  --plugins, -p		Comma delimited set of selected plugins. Default is all.
+			Each element can be a directory, file or plugin name and
+			can optionally have a modifier, eg. + or -
+			Examples: +/tmp/moo.rb,+/tmp/foo.rb
+			title,md5,+./plugins-disabled/
+			./plugins-disabled,-md5
+			-p + is a shortcut for -p +plugins-disabled
+  --list-plugins, -l	List the plugins
+  --info-plugins, -I	Display information for all plugins. Optionally search
+			with keywords in a comma delimited list.
+  --custom-plugin	Define a custom plugin called Custom-Plugin,
+			Examples: ":text=>'powered by abc'"
+			":regexp=>/powered[ ]?by ab[0-9]/"
+			":ghdb=>'intitle:abc \"powered by abc\"'"
+			":md5=>'8666257030b94d3bdb46e05945f60b42'"
+			"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
 
 LOGGING & OUTPUT:
-  --verbose, -v         Increase verbosity, use twice for plugin development.
-  --colour,--color=WHEN control whether colour is used. WHEN may be `never',
-                        `always', or `auto'
-  --log-brief=FILE      Log brief, one-line output
-  --log-verbose=FILE    Log verbose output
-  --log-xml=FILE        Log XML format
-  --log-json=FILE       Log JSON format
+  --verbose, -v		Increase verbosity, use twice for plugin development.
+  --colour,--color=WHEN	control whether colour is used. WHEN may be `never',
+			`always', or `auto'
+  --quiet, -q		Do not display brief logging to STDOUT
+  --log-brief=FILE	Log brief, one-line output
+  --log-verbose=FILE	Log verbose output
+  --log-xml=FILE	Log XML format
+  --log-json=FILE	Log JSON format
   --log-json-verbose=FILE Log JSON Verbose format
-  --log-magictree=FILE  Log MagicTree XML format
-  --log-object=FILE     Log Ruby object inspection format
-  --log-mongo-database  Name of the MongoDB database
+  --log-magictree=FILE	Log MagicTree XML format
+  --log-object=FILE	Log Ruby object inspection format
+  --log-mongo-database	Name of the MongoDB database
   --log-mongo-collection Name of the MongoDB collection. Default: whatweb
-  --log-mongo-host      MongoDB hostname or IP address. Default: 0.0.0.0
-  --log-mongo-username  MongoDB username. Default: nil
-  --log-mongo-password  MongoDB password. Default: nil
-  --log-errors=FILE     Log errors
+  --log-mongo-host	MongoDB hostname or IP address. Default: 0.0.0.0
+  --log-mongo-username	MongoDB username. Default: nil
+  --log-mongo-password	MongoDB password. Default: nil
+  --log-errors=FILE	Log errors
 
 PERFORMANCE & STABILITY:
-  --max-threads, -t     Number of simultaneous threads. Default: 25.
-  --open-timeout        Time in seconds. Default: 15
-  --read-timeout        Time in seconds. Default: 30
-  --wait=SECONDS        Wait SECONDS between connections
-                        This is useful when using a single thread.
+  --max-threads, -t	Number of simultaneous threads. Default: 25.
+  --open-timeout	Time in seconds. Default: 15
+  --read-timeout	Time in seconds. Default: 30
+  --wait=SECONDS	Wait SECONDS between connections
+			This is useful when using a single thread.
 
 HELP & MISCELLANEOUS:
-  --help, -h            This help
-  --debug               Raise errors in plugins
-  --version             Display version information. (WhatWeb 0.4.6)
+  --help, -h		This help
+  --debug		Raise errors in plugins
+  --version		Display version information. (WhatWeb 0.4.7)
 
 EXAMPLE USAGE:
   whatweb example.com
   whatweb -v example.com
   whatweb -a 3 example.com
   whatweb 192.168.1.0/24
+
+
 
 
 4. Logging & Output
@@ -355,8 +368,7 @@ Furthermore, changing the user-agent using the -U or --user-agent command line o
 
 Without the em-resolve-replace gem performance is significantly degraded.
 
-If you are scanning ranges of IP addresses, it is much more efficient to use a port scanner like nmap to discover which have port 80 open
-before scanning with WhatWeb.
+If you are scanning ranges of IP addresses, it is much more efficient to use a port scanner like nmap to discover which have port 80 open before scanning with WhatWeb.
 
 Character set detection, with the Charset plugin, required by JSON and MongoDB logging uses more CPU than otherwise.
 
@@ -390,6 +402,7 @@ Version 0.4.3 Released May 24th, 2010
 Version 0.4.4 Released June 29th, 2010
 Version 0.4.5 Released August 17th, 2010
 Version 0.4.6 Released March 25th, 2011
+Version 0.4.7 Released April 5th, 2011
 
 
 11. Credits

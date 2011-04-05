@@ -1,7 +1,17 @@
-Version 0.4.7 Unreleased
-* Fix Makefile
-
-
+Version 0.4.7 Released April 5th 2011
+* Performance enhancements & bug fixes
+* Added -p + as a shortcut for -p +plugins-disabled
+* Added --quiet, -q - to not display brief logging to STDOUT
+* Fix Makefile - you can now install whatweb over an old version
+* Removed certainty from Mongo and JSON output unless certainty < 100
+* Removed certainty info from verbose output unless certainty <100
+* Bugfixes for error reporting
+* Updated some error messages
+* Disallow simultaneous use of aggressive level 3+ and recursive spidering
+* Changed default open and read timeouts to 15 and 30 seconds respectively
+* Updated slow plugins
+* Added plugins: TVersity, Ultimate-Bulletin-Board, 
+* Moved plugins to plugins-disabled, atom_feed and meta_geography
 
 Version 0.4.6 Released March 25th 2011
 * Updated ~230 plugins
