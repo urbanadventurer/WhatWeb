@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.7 # 2011-04-06 #
+# Removed favicon matches in favor of /icons/ matches
+##
 # Version 0.6 #
 # Updated module detection
 ##
@@ -15,7 +18,7 @@
 ##
 Plugin.define "Apache" do
 author "Andrew Horton & Brendan Coles"
-version "0.6"
+version "0.7"
 description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards. - homepage: http://httpd.apache.org/"
 
 # Google results as at 2010-10-26 #
@@ -96,26 +99,17 @@ matches [
 {:text=>"<title>Test Page for Apache Installation</title>", :string=>"Default" },
 {:text=>"<TITLE>Test Page for the SSL/TLS-aware Apache Installation on Web Site</TITLE>", :string=>"Default" },
 
-# cPanel # Default Page
-{ :text=>'<p class="troubleshoot">It may be possible to restore access to this site by <a href="http://www.cpanel.net/docs/dnscache/cleardns.html">following these instructions</a> for clearing your dns cache.</p>', :string=>"cPanel Default" },
-
 # Default page # Default HTML
-{:text=>"<html><body><h1>It works!</h1></body></html>", :string=>"Default" },
-{:text=>"<html>Apache is functioning normally</html>", :string=>"Default" },
+{:text=>"<html><body><h1>It works!</h1></body></html>" },
+{:text=>"<html>Apache is functioning normally</html>" },
 {:name=>"This IP is being shared among many domains.", 
-:text=>"<body><center>This IP is being shared among many domains.<br>\nTo view the domain you are looking for, simply enter the domain name in the location bar of your web browser.<br>", :string=>"Default" },
+:text=>"<body><center>This IP is being shared among many domains.<br>\nTo view the domain you are looking for, simply enter the domain name in the location bar of your web browser.<br>" },
+{ :text=>"Apache is working on your cPanel<sup>&reg;</sup> and WHM&#8482; Server" },
 
-# Shortcut Icon # Apache on Redhat
-{ :url=>"/favicon.ico", :md5=>"71e30c507ca3fa005e2d1322a5aa8fb2" },
-
-# Shortcut Icon # Apache (seen on CentOS/Debian/Fedora)
-{ :url=>"/favicon.ico", :md5=>"dcea02a5797ce9e36f19b7590752563e" },
-
-# Shortcut Icon # Apache on Red Hat/Fedora
-{ :url=>"/favicon.ico", :md5=>"d99217782f41e71bcaa8e663e6302473" },
-
-# Shortcut Icon # Apache Tomcat
-{ :url=>"/favicon.ico", :md5=>"4644f2d45601037b8423d45e13194c93" },
+# /icons/apache_pb2.gif
+{ :url=>"/icons/apache_pb.gif", :md5=>"48bc8b181b36c9289866a2e30f6afedd" },
+{ :url=>"/icons/apache_pb2.gif", :md5=>"36ccabeb1ad841c6af37660c3865a9c9", :version=>"2" },
+{ :url=>"/icons/apache_pb2.gif", :md5=>"726dac78d3a989a360fc405452a798ee", :version=>"2.2" },
 
 ]
 
@@ -133,7 +127,7 @@ def passive
 		m << { :version=>@meta["server"].scan(/^Apache\/([\d\.]+)/i) } if @meta["server"] =~ /^Apache\/([\d\.]+)/i
 
 		# Module Detection
-		m << { :module=>@meta["server"].scan(/[\s](mod_[^\s]+)/) } if @meta["server"] =~ /[\s](mod_[^\s]+)/
+		m << { :module=>@meta["server"].scan(/[\s](mod_[^\s^\(]+)/) } if @meta["server"] =~ /[\s](mod_[^\s^\(]+)/
 
 	end
 
