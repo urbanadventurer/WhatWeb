@@ -1,6 +1,7 @@
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
 * Added -p + as a shortcut for -p +plugins-disabled
+* Added --quiet, -q - to not display brief logging to STDOUT
 * Fix Makefile - you can now install whatweb over an old version
 * Removed certainty from Mongo and JSON output unless certainty < 100
 * Removed certainty info from verbose output unless certainty <100
