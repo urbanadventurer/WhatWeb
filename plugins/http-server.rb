@@ -3,6 +3,9 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
+#
+# Version 0.4 # 2011-04-08 # Brendan Coles <bcoles@gmail.com>
+# Updated OS detection
 ##
 # Version 0.3 # 2011-02-21 # Brendan Coles <bcoles@gmail.com>
 # Added OS detection
@@ -12,8 +15,8 @@
 ##
 Plugin.define "HTTPServer" do
 author "Andrew Horton"
-version "0.3"
-description "HTTP server header string"
+version "0.4"
+description "HTTP server header string. This plugin also attempts to identify the operating system from the server header."
 
 # Passive #
 def passive
@@ -25,14 +28,14 @@ def passive
 		m << { :os=>"Windows (32 bit)" } if @meta["server"] =~ /Win32/i
 		if @meta["server"] =~ /Windows/i
 			m << { :os=>"Windows Vista" } if @meta["server"] =~ /Windows Vista/i
-			m << { :os=>@meta["server"].scan(/Windows ([0-9]{4})/i) } if @meta["server"] =~ /Windows ([0-9]{4})/i
-			m << { :os=>@meta["server"].scan(/Windows (Server [0-9]{4})/i) } if @meta["server"] =~ /Windows (Server [0-9]{4})/i
+			m << { :os=>@meta["server"].scan(/(Windows [0-9]{4})/i) } if @meta["server"] =~ /Windows [0-9]{4}/i
+			m << { :os=>@meta["server"].scan(/(Windows Server [0-9]{4})/i) } if @meta["server"] =~ /Windows Server [0-9]{4}/i
 			m << { :os=>"Windows XP" } if @meta["server"] =~ /Windows XP/i
 			m << { :os=>"Windows" } if m.empty?
 		end
 	
 		# OS Detection # Unix family
-		m << { :os=>"Unix" } if @meta["server"] =~ /UNIX/i
+		m << { :os=>"MontaVista Hard Hat Linux" } if @meta["server"] =~ /MontaVista Software Hard Hat Linux/i
 		m << { :os=>"FreeBSD" } if @meta["server"] =~ /FreeBSD/i
 		m << { :os=>"Solaris" } if @meta["server"] =~ /Solaris/i
 		m << { :os=>"MacOSX" } if @meta["server"] =~ /MacOSX/i
@@ -49,7 +52,18 @@ def passive
 		m << { :os=>"Slackware Linux" } if @meta["poweredby"] =~ /Slackware/i
 		m << { :os=>"Gentoo Linux" } if @meta["x-powered-by"] =~ /Gentoo/i
 		m << { :os=>"Red Hat Linux" } if @meta["server"] =~ /Red[-| ]?Hat/i
-		m << { :os=>"Linux" } if m.empty? and @meta["server"] =~ /Linux/i
+
+		# Unix catch-all
+		if m.empty? and @meta["server"] =~ /UNIX/i
+			m << { :os=>"Unix" }
+		end
+
+		# OS Detection # Linux catch-all # Kernel Version Detection
+		if m.empty? and @meta["server"] =~ /Linux\/[^\s]+/
+			m << { :os=>@meta["server"].scan(/(Linux\/[^\s]+)/) }
+		elsif m.empty? and @meta["server"] =~ /Linux/
+			m << { :os=>"Linux" }
+		end
 
 		# Return server string
 		m << {:name=>"server string",:string=>@meta['server'].to_s}
