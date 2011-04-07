@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "NeXpose Security Console" do
+Plugin.define "NeXpose-Security-Console" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-05
 version "0.1"
 description "NeXpose Security Console - Identifying vulnerabilities across networks, operating systems, databases, Web applications and a wide-range of system platforms through an integrated, intelligent scan engine, Rapid7 NeXpose prioritizes vulnerabilities using exploit risk scoring and asset criticality ratings. As a result, NeXpose customers benefit from lower risk exposure and remediation costs. - homepage: http://www.rapid7.com/products/vulnerability-management.jsp"
@@ -57,8 +57,9 @@ def aggressive
 	target = URI.join(@base_uri.to_s,"/style/").to_s
 	status,url,ip,body,headers=open_target(target)
 	m << { :name=>"Default Error Page Title" } if body =~ /<title>NeXpose Security Console :: Error<\/title>/
-        m
 
+	# Return passive matches
+        m
 end
 
 end

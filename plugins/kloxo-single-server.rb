@@ -4,10 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Kloxo Single Server" do # aka HyperVM aka LxAdmin
+Plugin.define "Kloxo-Single-Server" do # aka HyperVM aka LxAdmin
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
 version "0.1"
-description "Kloxo is a fully scriptable, distributed and a 100% object oriented hosting platform - homepage:http://www.lxcenter.org/kloxo.htm"
+description "Kloxo (aka HyperVM aka LxAdmin) is a fully scriptable, distributed and a 100% object oriented hosting platform - Homepage: http://www.lxcenter.org/kloxo.htm"
+
+# Examples #
 examples %w|
 http://demo.kloxo.com:7778/login/
 https://78.46.99.21:8887/login/
@@ -25,33 +27,25 @@ http://breyn.be:7778/login/
 http://zerghosting.hu:7778/login/
 |
 
-# matches are fairly straight forward
-
+# Matches #
 matches [
 
-{:name=>"default hypervm title", 
-:text=>"<title> HyperVM 2.0 </title>" },
+{ :text=>"<title> HyperVM 2.0 </title>" },
 
-{:name=>"default kloxo title",
-:text=>"<title> Kloxo </title>" },
+{ :text=>"<title> Kloxo </title>" },
 
-{:name=>"default lxadmin title",
-:text=>"<title> Lxadmin </title>" },
+# default lxadmin title",
+{ :text=>"<title> Lxadmin </title>" },
 
-{:name=>"default logo", 
-:text=>'<img id=main_logo width=84 height=23 src="/img/hypervm-logo.gif">'
+# default logo html
+{ :text=>'<img id=main_logo width=84 height=23 src="/img/hypervm-logo.gif">'
 },
 
-# joomla and mambo use this string but without "</b>" 
-{:name=>"login text", 
-:certainty=>75,
-:text=>"Use a valid username and password to gain access to the console</b>" 
-},
+# login text # joomla and mambo use this string but without "</b>" 
+{ :certainty=>75, :text=>"Use a valid username and password to gain access to the console</b>" },
 
-# fairly specific directory structure - no false positives on google
-{:name=>"login css",
-:text=>'@import url("/htmllib/lib/admin_login.css");'
-},
+# login css # fairly specific directory structure - no false positives on google
+{ :text=>'@import url("/htmllib/lib/admin_login.css");' },
 
 # fairly specific directory structure - no false positives on google 
 {:name=>"login javascript",
