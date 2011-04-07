@@ -4,24 +4,36 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2011-04-08 # Brendan Coles <bcoles@gmail.com>
+# Added PHP HTTP Header filepath detection
+##
 # Version 0.4 # Brendan Coles <bcoles@gmail.com>
 # Added username extraction
+##
 # Version 0.3 # Brendan Coles <bcoles@gmail.com>
+##
 # Added local file path extraction
 # Version 0.2
 # removed :certainty
 ##
 Plugin.define "PHP-Error" do
 author "Andrew Horton"
-version "0.4"
+version "0.5"
 description "This plugin identifies PHP errors and extracts the local file path and username if present."
 
 # Google results as at 2011-01-29 #
 # 150,000,000 for PHP warning|error "in /home/*.php on line" ext:php -forum
 # 15 for PHP warning|error "in C:\Documents and Settings\*.php on line" ext:php -forum
 
+# ShodanHQ results as at 2011-04-08 #
+# 29 for Error parsing on line
+
 # Examples #
 examples %w|
+http://65.181.183.138/
+http://216.92.197.111/
+http://202.172.29.61/
+http://76.75.214.230/
 88.250.196.41
 portal.ics.kagoshima-u.ac.jp/~pcp/main.php
 www.rajawillem.org/master.php?nav=info
@@ -58,6 +70,25 @@ matches [
 	{ :string=>/<b>(Warning|Fatal error)<\/b>: .* in <b>[A-Z]{1}:\\(Documents and Settings|Users)\\([^<^\\]+)\\[^<]*<\/b> on line <b>[0-9]+<\/b><br \/>/i, :offset=>2 },
 
 ]
+
+# Passive #
+def passive
+	m=[]
+
+	# PHP HTTP Header
+	if @meta["php"] =~ /^Error parsing (.+) on line [\d]+$/
+
+		# Local Filethpath Detection
+		m << { :filepath=>@meta["php"].scan(/^Error parsing (.+) on line [\d]+$/) } unless @meta["php"] =~ /^Error parsing \/php\.ini on line [\d]+$/
+
+		# Account Detection
+		m << { :account=>@meta["php"].scan(/^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/) } if @meta["php"] =~ /^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/
+
+	end
+
+	# Return passive matches
+	m
+end
 
 end
 
