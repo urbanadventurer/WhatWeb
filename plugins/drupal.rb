@@ -4,13 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.3 # 2011-04-09 # Brendan Coles <bcoles@gmail.com>
+# Added aggressive md5 matches
+##
 # Version 0.2
 # removed :name and :certainty=>100
-
+##
 Plugin.define "Drupal" do
 author "Andrew Horton"
-version "0.2"
+version "0.3"
 description "Drupal is an opensource CMS written in PHP. Homepage: http://www.drupal.org"
 
 # hard to identify
@@ -22,24 +24,112 @@ description "Drupal is an opensource CMS written in PHP. Homepage: http://www.dr
 # Set-Cookie: SESS6bdd09d4debccdc3a0f49becc449e8d5=2sq674vjn6vig48e3podh3j8e2; expires=Fri, 11 Dec 2009 15:37:52 GMT; path=/; domain=.moby.com
 # Set-Cookie: SESS9795bcd4ea70e3f846e84f29f9491636=57eafcca6400d894772a136fb5889b92; expires=Fri, 11-Dec-2009 15:38:25 GMT; path=/; domain=.save-your-future.com
 
-
+# Examples #
 examples %w| amnesty.org/ appel.nasa.gov/ beta.worldbank.org/ entergy.pewclimate.org/ labs.divx.com/ lindenlab.com/ littlestarprints.com moby.com/ myplay.com/ sequelnaturals.com/ teen.secondlife.com/ www.artwaves.de www.asys.com.br/ www.atomicbop.net www.cristal.com.pe/?adulto=si www.dutchbutnotfromholland.eu/ www.elespectador.com/ www.ensembles.com.ph/ www.foxsearchlight.com/index.php www.freshbrain.org/ www.icsalabs.com/ www.johnnycashonline.com/ www.journalismcenter.org/ www.jovenscriativos.com.br/ www.koalafoundation.org.au/ www.la2day.com/ www.moove.be www.mtv.co.uk/channel/flux www.mulinobianco.it/ www.multiways.com/ www.nowpublic.com/ www.pravda.lt/ www.realismssoftware.com/ www.save-your-future.com www.shock.com.co/ www.sosojuicy.com/ www.spreadfirefox.com/ www.tidningenresultat.se www.ubuntu.com/ www.universitytowers.net/ www.warnerbrosrecords.com |
 
+# Matches #
 matches [
+
 {:regexp=>/<script type="text\/javascript" src="[^\"]*\/misc\/drupal.js[^\"]*"><\/script>/},
 {:regexp=>/<[^>]+alt="Powered by Drupal, an open source content management system"/},
 {:regexp=>/@import "[^\"]*\/misc\/drupal.css"/},
 {:text=>'jQuery.extend(Drupal.settings,'},
 {:text=>'Drupal.extend('}
+
 ]
 
+# Passive #
 def passive
 	m=[]
-	#SESS 9795bcd4ea70e3f846e84f29f9491636 =6b74f8aff4bf7d34d181a6a380d1ec7b; expires=Tue, 15-Dec-2009 15:21:24 GMT; path=/; domain=.save-your-future.com
+
+	# SESS Drupal Cookie
 	m << {:name=>"SESS Drupal Cookie", :certainty=>75 } if @meta["set-cookie"] =~ /^SESS[a-z0-9]{32}=[a-z0-9]{32}/
+
+	# Return passive matches
 	m
 end
 
+# Aggressive #
+def aggressive
+	m=[]
+
+# the paths are relative to the url path if they don't start with /
+# this path, with this md5 = this version
+files=[
+
+{ :md5=>'dc0fbe017fd1cc3d97b8c12bc45dde41', :version=>'4.7.x', :path=>'misc/drupal.js' },
+{ :md5=>'f151220aded688adf35c623a17a0147a', :version=>'4.7.0-beta3', :path=>'misc/drupal.js' },
+{ :md5=>'476482ca90e5ba941b43cdfbde04d03c', :version=>'4.7.0-beta4', :path=>'misc/drupal.js' },
+{ :md5=>'c25d79ddd0ab2ed014e19918955ba305', :version=>'4.7.0-beta5 or 4.7.0-beta6', :path=>'misc/drupal.js' },
+{ :md5=>'179dc761149f23569d95011cc816e981', :version=>'4.7.0-rc1', :path=>'misc/drupal.js' },
+{ :md5=>'316dc20843384ab2760022694ad46ab5', :version=>'4.7.0-rc2 or 4.7.0-rc3', :path=>'misc/drupal.js' },
+{ :md5=>'98cd0c4c8bde66a3227ce1d583f433f4', :version=>'4.7.2 or 4.7.3', :path=>'misc/drupal.js' },
+{ :md5=>'3130d555431177091ff7ac5b4f3fe19e', :version=>'4.7.4', :path=>'misc/drupal.js' },
+{ :md5=>'dd465695d5ae35ecc33c8cad33f7880c', :version=>'4.7.5 - 4.7.11', :path=>'misc/drupal.js' },
+{ :md5=>'afd188dc6cd982d37463209679ab01ec', :version=>'5.0 - 5.1', :path=>'misc/drupal.js' },
+{ :md5=>'9e557006e956d365119eb2ebd2169051', :version=>'5.2 - 5.9', :path=>'misc/drupal.js' },
+{ :md5=>'2c5e4277fec6afac333e913744e0408f', :version=>'5.10 - 5.16', :path=>'misc/drupal.js' },
+{ :md5=>'4677b027fed107133090dabccee2b4f5', :version=>'5.17 - 5.21', :path=>'misc/drupal.js' },
+{ :md5=>'ebbcc0156242a08a25c596432ca92f67', :version=>'6.0', :path=>'misc/drupal.js' },
+{ :md5=>'1c264213d843edbb232494511a1041b9', :version=>'6.0-beta1', :path=>'misc/drupal.js' },
+{ :md5=>'e383c0fdd397c0f12d57fdf6dd9c4ab0', :version=>'6.0-x', :path=>'misc/drupal.js' },
+{ :md5=>'7082fbcedd60f675111cfa387dd59b00', :version=>'6.0-rc2 or 6.0-rc3', :path=>'misc/drupal.js' },
+{ :md5=>'ebbcc0156242a08a25c596432ca92f67', :version=>'6.0-rc4', :path=>'misc/drupal.js' },
+{ :md5=>'2ff7dc985e57d1139ce4dc844b06bc64', :version=>'6.1 or 6.2', :path=>'misc/drupal.js' },
+{ :md5=>'398b3832c2de0a0ebd08cb7f2afe1545', :version=>'6.3 - 6.13', :path=>'misc/drupal.js' },
+{ :md5=>'88682723723be277fb57c0d8e341c0cf', :version=>'6.14 - 6.20', :path=>'misc/drupal.js' },
+{ :md5=>'cb392dbb30f9d1f60ad9111ff04ec76f', :version=>'7.x', :path=>'misc/drupal.js' },
+{ :md5=>'847afc6e14d280e66a564194e166a66e', :version=>'7.x', :path=>'misc/drupal.js' },
+
+{ :md5=>'049b663495feb2dd2711cd15ced57c33', :version=>'4.2.0', :path=>'misc/drupal.css' },
+{ :md5=>'86ee0ad8c19c96802f58f7d3c80a1bfa', :version=>'4.3.0 - 4.3.2', :path=>'misc/drupal.css' },
+{ :md5=>'1ac2a22c7c0ce23abe186d76c4d251c3', :version=>'4.4.0 - 4.4.3', :path=>'misc/drupal.css' },
+{ :md5=>'b9034cf9306d869c36616c5813eef31c', :version=>'4.5.0 or 4.5.1', :path=>'misc/drupal.css' },
+{ :md5=>'041b90405d369eb5953ebf39317b94a3', :version=>'4.5.2 - 4.5.6', :path=>'misc/drupal.css' },
+{ :md5=>'b690fd502bbd3770508ba9c552f9b8a7', :version=>'4.5.7', :path=>'misc/drupal.css' },
+{ :md5=>'041b90405d369eb5953ebf39317b94a3', :version=>'4.5.8', :path=>'misc/drupal.css' },
+{ :md5=>'1e94fde1440a3a5fc3235e85ae4ec264', :version=>'4.6.0', :path=>'misc/drupal.css' },
+{ :md5=>'bddf11eb117a1729906797bd22e3436b', :version=>'4.6.x', :path=>'misc/drupal.css' },
+{ :md5=>'94c5a7d8807b9ea6a6123751f3b6ab9d', :version=>'4.6.5', :path=>'misc/drupal.css' },
+{ :md5=>'4dede1e52c41cbdbc81889375e0a9728', :version=>'4.7.0', :path=>'misc/drupal.css' },
+{ :md5=>'f8448a4d6c6f0a1a0dd910fc7fc54377', :version=>'4.7.0-beta3', :path=>'misc/drupal.css' },
+{ :md5=>'bbd97ab6662c17313dc779d08237b845', :version=>'4.7.0-beta4', :path=>'misc/drupal.css' },
+{ :md5=>'e89eec8214eb000899279e49470da4cc', :version=>'4.7.0-beta5', :path=>'misc/drupal.css' },
+{ :md5=>'106c3de80afec82dc572dddcd6fec44f', :version=>'4.7.0-beta6', :path=>'misc/drupal.css' },
+{ :md5=>'e68496c423508e04f62f049c78432432', :version=>'4.7.0-rc1', :path=>'misc/drupal.css' },
+{ :md5=>'07195254c1be0303f0638f25333e9b74', :version=>'4.7.0-rc2', :path=>'misc/drupal.css' },
+{ :md5=>'4dede1e52c41cbdbc81889375e0a9728', :version=>'4.7.0-rc3 or 4.7.0-rc4', :path=>'misc/drupal.css' },
+{ :md5=>'a10833aa1fa69cf9cb94ff9f129bdefe', :version=>'4.7.1 or 4.7.2', :path=>'misc/drupal.css' },
+{ :md5=>'717d81e5ba0b3248111eb64043efbd4e', :version=>'4.7.3 or 4.7.4', :path=>'misc/drupal.css' },
+{ :md5=>'f08a47da41387a1d2f4dff983369ec17', :version=>'4.7.5 - 4.7.11', :path=>'misc/drupal.css' },
+
+]
+
+	# Fetch and hash files
+	to_download = files.map {|x| x[:path]}.sort.uniq
+	downloads={}
+	to_download.each do |d|
+		target = URI.join(@base_uri.to_s,d).to_s	
+		status,url,ip,body,headers=open_target(target)
+		downloads[d] = {:md5sum=>MD5.new(body).to_s}	
+	end
+
+	# Compare file hashes to known hashes
+	version=nil
+	files.each do |thisfile|
+		unless downloads[thisfile[:path]].nil?
+			version=thisfile[:version] if downloads[thisfile[:path]][:md5sum] == thisfile[:md5]
+		end
+	end
+
+	# Set version if present
+	unless version.nil?
+		m << {:name=>"md5 sums of files", :version=>version}
+	end
+
+	# Return aggressive matches
+	m
+end
 
 end
 
