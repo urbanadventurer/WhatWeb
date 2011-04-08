@@ -35,9 +35,6 @@ campusweb.morningside.edu/cgi-bin/web.asp
 # Matches #
 matches [
 
-# GHDB # URL pattern
-{ :certainty=>75, :ghdb=>"inurl:/cgi-bin/web.asp?title=*home" },
-
 # Version Detection # Powered by logo+url+text
 { :version=>/Powered by the <br \/><img src='http:\/\/www.[^\/]+\/images\/zestlogo\.gif' style='border:0 ; ' alt='Zest Web Engine' \/><br \/>Zest web engine<br \/>V([\d\.]+)<br \/>/ },
 
