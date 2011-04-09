@@ -1,3 +1,7 @@
+Version 0.4.8-dev Unreleased
+* Added aggressive version detection using md5 static file matches to several plugins
+* Added support for raw HTTP headers when scanning local files
+
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
 * Added -p + as a shortcut for -p +plugins-disabled
