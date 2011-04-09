@@ -704,12 +704,19 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 				end
 				plugin.lock
 
+				# Target is a URL
 				if target_is_url
 					#plugin.init(ObjectSpace._id2ref(body.object_id),headers,cookies,status,url,ip,md5sum,tagpattern)
 					plugin.init(body,headers,cookies,status,url,ip,md5sum,tagpattern)
 				else
-					# it's a file
-					plugin.init(body,{},nil,0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
+					if headers.nil?
+						# Target is a local file
+						plugin.init(body,{},nil,0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
+					else
+						# Target is a local HTTP packet file
+						plugin.init(body,headers,cookies,status,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
+					end
+
 				end
 				
 				# eXecute the plugin			
@@ -1247,7 +1254,8 @@ while thistarget = next_target
 								doc=page.original_doc
 								status=page.code
 								url=page.url
-# no @cookies for anemone :(
+
+								# no @cookies for anemone :(
 								results = run_plugins(url.to_s,doc,headers,nil,status,url,ip)
 								# reporting
 								# multiple output plugins simultaneously, some stdout, some files
@@ -1282,10 +1290,36 @@ while thistarget = next_target
 		
 				# either not recursive, or a file
 				if target_is_a_file == true
+
 					# target is a file
 					doc=open(target)
 					body=doc.read
 					no_redirects=true
+
+					# target is a http packet file
+					if body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
+
+						# extract http header
+						headers=Hash.new
+						cookies = Array.new
+						pageheaders = body.to_s.split(/\r\n\r\n/).first.to_s.split(/\r\n/)
+						status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /)
+						for k in 1...pageheaders.length
+							section=pageheaders[k].split(/: /).first.to_s.downcase
+							if section =~ /^set-cookie$/
+								cookies << pageheaders[k].scan(/set-cookie: (.+)/i)
+							else
+								headers[section]=pageheaders[k].scan(/: (.+)$/).to_s
+							end
+						end
+
+						# extract html source
+						if body =~ /^HTTP\/1\.\d [\d]{3} .+\r\n\r\n(.+)/m
+							body = body.scan(/^HTTP\/1\.\d [\d]{3} .+\r\n\r\n(.+)/m).to_s
+						else
+							body = ""
+						end
+					end
 				else
 					# not a file, not recursive
 					#status,url,body,headers = open_with_openuri(target)
@@ -1295,9 +1329,10 @@ while thistarget = next_target
 						next
 					end
 				end
+
 				#results = run_plugins(target,ObjectSpace._id2ref(body.object_id),headers,cookies,status,url,ip)
 				results = run_plugins(target,body,headers,cookies,status,url,ip)
-			
+
 				# reporting
 				# multiple output plugins simultaneously, some stdout, some files
 
