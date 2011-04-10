@@ -7,6 +7,11 @@ plugin folders
 
 [x]plugin selection, using + doesnt use $LOAD_PATH
 
+# make this work:
+curl -k -i  slashdot.org  >/tmp/s.html
+./whatweb /tmp/s.html 
+
+update plugin-development scripts to collcet headers, etc
 
 sql output
 

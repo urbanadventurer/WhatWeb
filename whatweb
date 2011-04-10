@@ -626,7 +626,7 @@ def open_target(target)
 			http.use_ssl = true	
 			http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
 		end
-		
+	
 		
 
 		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) , $CUSTOM_HEADERS)
@@ -1314,8 +1314,8 @@ while thistarget = next_target
 						end
 
 						# extract html source
-						if body =~ /^HTTP\/1\.\d [\d]{3} .+\r\n\r\n(.+)/m
-							body = body.scan(/^HTTP\/1\.\d [\d]{3} .+\r\n\r\n(.+)/m).to_s
+						if body =~ /^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m
+							body = body.scan(/^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m).to_s
 						else
 							body = ""
 						end
