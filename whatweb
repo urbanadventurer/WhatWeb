@@ -1305,11 +1305,11 @@ while thistarget = next_target
 						pageheaders = body.to_s.split(/\r\n\r\n/).first.to_s.split(/\r\n/)
 						status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /)
 						for k in 1...pageheaders.length
-							section=pageheaders[k].split(/: /).first.to_s.downcase
+							section=pageheaders[k].split(/:/).first.to_s.downcase
 							if section =~ /^set-cookie$/
-								cookies << pageheaders[k].scan(/set-cookie: (.+)/i)
+								cookies << pageheaders[k].scan(/set-cookie:[\s]*(.+)/i)
 							else
-								headers[section]=pageheaders[k].scan(/: (.+)$/).to_s
+								headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).to_s
 							end
 						end
 
