@@ -7,6 +7,35 @@ plugin folders
 
 [x]plugin selection, using + doesnt use $LOAD_PATH
 
+# make this work:
+curl -k -i  slashdot.org  >/tmp/s.html
+./whatweb /tmp/s.html 
+
+update plugin-development scripts to collcet headers, etc
+
+sql output
+
+
+cmd line argument to extract google/shodan queries for an app
+
+a definitive, clean way to find the base url of an app and then launch aggressive matches from there, for:
+
+	* md5 version detection
+	* exploiting FPD
+	* finding the logon page to post credentials
+
+a clean way to launch new http requests, with custom headers, from within a plugin.
+
+a sql db that's not mongodb. i was considering implementing sqlite3 support, but haven't really thought about column/table names.
+
+vulnerability inference based on version
+
+load a directory as input.
+
+
+
+
+
 
 blazingly fast / light mode
 	- only check 1st match in matches. matches array should be sorted by likliness of matching.

@@ -124,7 +124,7 @@ require 'tempfile'
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
 $DEBUG = false # raise exceptions in plugins, etc
-$VERSION="0.4.7"
+$VERSION="0.4.8"
 $verbose=0
 $USE_EXAMPLE_URLS=false
 $use_colour="auto"
@@ -626,7 +626,7 @@ def open_target(target)
 			http.use_ssl = true	
 			http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
 		end
-		
+	
 		
 
 		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) , $CUSTOM_HEADERS)
@@ -1314,8 +1314,8 @@ while thistarget = next_target
 						end
 
 						# extract html source
-						if body =~ /^HTTP\/1\.\d [\d]{3} .+\r\n\r\n(.+)/m
-							body = body.scan(/^HTTP\/1\.\d [\d]{3} .+\r\n\r\n(.+)/m).to_s
+						if body =~ /^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m
+							body = body.scan(/^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m).to_s
 						else
 							body = ""
 						end
