@@ -1108,11 +1108,18 @@ rescue StandardError, GetoptLong::Error => err
 	exit
 end
 
-# sanity checks
+# sanity check # Disable colours in Windows environments
+require 'rbconfig'
+if Config::CONFIG['host_os'] =~ /mswin|mingw/
+	$use_colour = false
+end
+
+# sanity check # Aggressive modes are not compatable with recursive mode
 if $AGGRESSION >= 3 and $RECURSIVE
 	error("Aggressive levels 3 or higher are not compatible with recursive spidering.")
 	exit 1
 end
+
 
 ### PLUGINS
 plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection  
