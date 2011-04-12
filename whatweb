@@ -225,16 +225,19 @@ def word_wrap(s,width=10)
 end
 
 # Show Google Dorks
-def plugin_dorks(keywords)
+def plugin_dorks(plugin_name)
+	dorks=[]
 
+	# Loop through plugins
 	Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.each do |n,p|
-		keywords.map do |k|
-			if n.downcase.include?(k.downcase)
-				pp "Google Dorks for #{n}:" if $verbose > 2
-				puts p.dorks unless p.dorks.nil?
-			end
+		if n.downcase == plugin_name.downcase
+			pp "Google Dorks for #{n}:" if $verbose > 2
+			dorks << p.dorks unless p.dorks.nil?
 		end
 	end
+
+	# Show results if present, else show error message
+	dorks.size > 0 ? puts(dorks) : error("Google dork lookup failed: Invalid plugin name or no dorks available")
 
 end
 
@@ -846,6 +849,7 @@ PLUGINS:
 \t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
 \t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
 \t\t\t\"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}\"
+  --dorks, -g <plugin name>\tReturns google dorks for the selected plugin
 
 LOGGING & OUTPUT:
   --verbose, -v\t\tIncrease verbosity, use twice for plugin development.
@@ -976,7 +980,7 @@ begin
 				exit
 			when '-g','--dorks'
 				load_plugins
-				plugin_dorks(arg.split(","))
+				plugin_dorks(arg)
 				exit
 			when '-e','--example-urls'
 				$USE_EXAMPLE_URLS=true
@@ -1155,7 +1159,7 @@ precompile_regular_expressions # optimise plugins
 ### OUTPUT
 output_list << OutputBrief.new unless $QUIET # by default output brief
 output_list << OutputObject.new() if $verbose > 1 # full output if -vv
-output_list <<  OutputVerbose.new() if $verbose > 0 # full output if -v
+output_list << OutputVerbose.new() if $verbose > 0 # full output if -v
 
 if mongo[:use_mongo_log]
 	if $plugins_to_use.map { |a,b| a }.include?("Charset")
