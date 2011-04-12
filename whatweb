@@ -259,6 +259,7 @@ def plugin_info(keywords= nil)
 #			puts "\tCategory:".ljust(22) +plugin.category.to_s unless plugin.category.nil?
 			puts "\tExamples:".ljust(22) +plugin.examples.size.to_s if plugin.examples
 			puts "\tMatches:".ljust(22) +plugin.matches.size.to_s if plugin.matches
+			puts "\tDorks:".ljust(22) +plugin.dorks.size.to_s if plugin.dorks
 			puts "\tPassive function: ".ljust(22) + (defined?(plugin.passive) ? "Yes" : "No")
 			puts "\tAggressive function: ".ljust(22) + (defined?(plugin.aggressive) ? "Yes" : "No")
 			puts "\tVersion detection: ".ljust(22) + (plugin.version_detection? ? "Yes" : "No")
@@ -1165,7 +1166,7 @@ if mongo[:use_mongo_log]
 	if $plugins_to_use.map { |a,b| a }.include?("Charset")
 		output_list << OutputMongo.new(mongo) 
 	else
-		error("MongoDB logging requires the Charset plugin to be activated. It is not included by default for speed considerations.")
+		error("MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/Charset.rb to enable it.")
 		exit
 	end
 end
