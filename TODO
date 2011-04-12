@@ -2,31 +2,30 @@ TO-DO
 
 Good luck understanding these notes for myself :) Some of this stuff has already been done.
 
+
 plugin folders
 
+[x] plugin selection, using + doesnt use $LOAD_PATH
 
-[x]plugin selection, using + doesnt use $LOAD_PATH
-
-# make this work:
+[x] make this work:
 curl -k -i  slashdot.org  >/tmp/s.html
 ./whatweb /tmp/s.html 
 
-update plugin-development scripts to collcet headers, etc
+update plugin-development scripts to collect headers, etc
 
 sql output
 
+[x] cmd line argument to extract google queries for an app
 
-cmd line argument to extract google/shodan queries for an app
-
-a definitive, clean way to find the base url of an app and then launch aggressive matches from there, for:
+A definitive, clean way to find the base url of an app and then launch aggressive matches from there, for the purpose of:
 
 	* md5 version detection
 	* exploiting FPD
 	* finding the logon page to post credentials
 
-a clean way to launch new http requests, with custom headers, from within a plugin.
+A clean way to launch new http requests, with custom headers, from within a plugin.
 
-a sql db that's not mongodb. i was considering implementing sqlite3 support, but haven't really thought about column/table names.
+A sql db that's not mongodb. i was considering implementing sqlite3 support, but haven't really thought about column/table names.
 
 vulnerability inference based on version
 
@@ -88,7 +87,7 @@ need some kind of plugin dependencies, eg.
 	end
 etc..
 
-remove log-json-versbose?  does anyone use this?
+remove log-json-verbose?  does anyone use this?
 	--log-full=FILE		Log verbose output (might be removed in future)
 improve  def version_detection?	for Plugins
 
@@ -99,11 +98,7 @@ maybe there should be a different location for data such as country-ips.dat. eg.
 
 
 
-
 open_target({:method=>"POST"})
-
-{ :ghdb=>"powered by JAMM CMS", :certainty=>75 },
-this matches on morningstarsecurity.com/research/whatweb
 
 [x] add IP plugin <-- can't get IP out of http object
 [x] add geoIP country plugin
@@ -484,7 +479,7 @@ show which plugin is requesting a URL
 
 add option to not thread - need to rewrite main loop 1st
 
-option to not display hashes? Hashes are most useful with a large dataset to find similar systems or when manually pentesting. maybe leave it in
+option to not display hashes? Hashes are most useful with a large dataset to find similar systems or when manually pentesting. current in the plugins-disabled directory
 
 why does it crash with low connect timeouts? eg. 1 second
 /usr/lib/ruby/1.8/timeout.rb:60:in `timeout': execution expired	from /usr/lib/ruby/1.8/net/http.rb:560:in `connect'
@@ -498,11 +493,11 @@ why does it crash with low connect timeouts? eg. 1 second
 	from ./whatweb:830
 
 
-#start using a new convention so this issue can be avoided when people learn by example:
-pattern=/<meta name=\"generator\" content=\"WordPress[ ]?[0-9\.]+\"/
+# start using a new convention so this issue can be avoided when people learn by example:
+pattern=/<meta name=\"generator\" content=\"WordPress[ ]?([0-9\.]+)\"/
 if @body =~ pattern
-	version=@body.scan(pattern)[0][1]
-	m << ....
+	m << { :version=@body.scan(pattern)[0][1] }
+end
 
 option to not output hash plugins, footer, header, tag pattern, div span, md5. --- maybe use plugin groups? categories?
 
@@ -722,7 +717,9 @@ use curl lib, curb for:
 	change agent behaviour
 	timeouts 
 
-let people pipe html + meta data straight from stdin, eg. curl -v securityfocus.com | ./whatweb --stdin
+[x] let people pipe http headers + html straight from stdin, eg.
+	curl -s -k -i securityfocus.com | ./whatweb /dev/stdin
+	wget --save-headers -qO- whatweb.net | ./whatweb /dev/stdin
 
 cache pages with sqlite or in files so they only have to be fetched once
 
@@ -764,10 +761,9 @@ Fingerprinting using HTTP headers would be much cleaner if shodan style searches
 
 For example, instead of using:
 
-server=@meta["server"] if @meta.keys.include?("server")
-server=@meta["Server"] if @meta.keys.include?("Server")
-                if server =~ /GoAhead-Webs/i
-                        m << {:name=>"server string",:string=>server}
+		m=[]
+                if @meta["server"] =~ /GoAhead-Webs/i
+                        m << {:name=>"server string",:string=>@meta["server"]}
                 end
 
 
@@ -777,13 +773,13 @@ You could use:
 {:name=>"server string", :shodan=>/[server|Server]+:[\s]*GoAhead-Webs/ },
 
 # or perhaps plaintext style, case insensitive
-{:name=>"server string", :shodan=>"Server: GoAhead-Webs/ },
+{:name=>"server string", :shodan=>"Server: GoAhead-Webs" },
 
 
 The same applies to cookies:
 
-m=[]
-m << {:name=>"PastVisitor Cookie" } if @meta["set-cookie"] =~ /PastVisitor=[0-9]+.*/
+	m=[]
+	m << {:name=>"PastVisitor Cookie" } if @meta["set-cookie"] =~ /PastVisitor=[0-9]+.*/
 
 becomes:
 
@@ -792,7 +788,7 @@ becomes:
 
 I've noted a few plugins where this could be useful:
 
-~/proj/whatweb-0.4.4$ cat plugins/*.rb | grep -i Shodan
+whatweb$ cat plugins/*.rb | grep -i Shodan
 # About 13,446 Shodan results for Server:"AV787 Video Web Server" @ 2010-07-20
 # About 1,002 Shodan results for Server:BarracudaHTTP @ 2010-07-24
 # About 1,661 shodan results for printer Server:debut @ 2010-07-22
@@ -823,20 +819,19 @@ different HTTP 200 OK messages. is there some way to fix this of even
 use it for fingerprinting, rather than aborting the request?
 
 
-$ ./whatweb  --log-brief=asdf.log -a 1
-
+ $ ./whatweb 100.m2radio.fr:8000
  100.m2radio.fr:8000 <http://100.m2radio.fr:8000>
  http://100.m2radio.fr:8000 ERROR: wrong status line: "ICY 200 OK"
 
- ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
+ $ ./whatweb 128relay1.gothmetal.net:6666
  128relay1.gothmetal.net:6666 <http://128relay1.gothmetal.net:6666>
  http://128relay1.gothmetal.net:6666 ERROR: wrong status line: "ICY 200 OK"
 
- ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
+ $ ./whatweb 160.79.128.30:7702
  160.79.128.30:7702 <http://160.79.128.30:7702>
  http://160.79.128.30:7702 ERROR: wrong status line: "ICY 400 Server Full"
 
- ~/proj/whatweb-0.4.4dev$ ./whatweb  --log-brief=asdf.log -a 1
+ $ ./whatweb aol-relay2.chuckeh.com:8026
  aol-relay2.chuckeh.com:8026 <http://aol-relay2.chuckeh.com:8026>
  http://aol-relay2.chuckeh.com:8026 [302] Title[Redirect],
  RedirectLocation[http://scfire-ntc-aa03.stream.aol.com:80/stream/1051],
