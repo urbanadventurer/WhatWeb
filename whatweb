@@ -1255,8 +1255,19 @@ while thistarget = next_target
 			sleep $WAIT unless $WAIT.nil? # wait
 			# get the webpage	
 			# get the file/webpage, and return statuscode, base url, html body, html headers
+
 			# if target is a file
-			target_is_a_file=File.exists?(target)
+			if File.exists?(target)
+				target_is_a_file=true
+				if File.directory?(target)
+					error "Error: #{target} is a directory"
+					next
+				end
+				if File.readable?(target) == false
+					error "Error: You do not have permission to view #{target}"
+					next
+				end
+			end
 		
 			if $RECURSIVE == true and target_is_a_file == false
 
