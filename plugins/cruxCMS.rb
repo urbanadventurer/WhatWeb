@@ -8,6 +8,15 @@ Plugin.define "CruxCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
 version "0.1"
 description "CruxCMS - Online Content Manager - homepage: http://www.cruxsoftware.co.uk/"
+
+# 10 results for "powered by Crux CMS" -vulnerability @ 2010-07-10
+
+# Dorks #
+dorks [
+'"powered by Crux CMS" -vulnerability'
+]
+
+# Examples #
 examples %w|
 www.cruxsoftware.co.uk
 cms.cruxsoftware.co.uk
@@ -16,9 +25,9 @@ www.christian-housesitters.com
 www.web-pa.co.uk/image-gallery/
 |
 
+# Matches #
 matches [
 
-# 10 results for "powered by Crux CMS" -vulnerability @ 2010-07-10
 {:text=>'<font color="#666666"><center>Powered by <a href="http://www.cruxcms.co.uk">Crux CMS</a></center> </font>' },
 
 {:text=>'<font color="#666666"><center>Powered by <a href="http://www.cruxsoftware.co.uk">Crux CMS</a></center> </font>' },

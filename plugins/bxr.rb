@@ -14,6 +14,11 @@ description "BXR is an interface to manage a Blosxom-Based blog through the web 
 
 # 1 result for "BXR Web Login" intitle:"Please Enter Password" @ 2010-08-06
 
+# Dorks #
+dorks [
+'"BXR Web Login" intitle:"Please Enter Password"'
+]
+
 # Examples #
 examples %w|
 r.ookee.com/cgi-bin/rookee-xmlrpc.cgi

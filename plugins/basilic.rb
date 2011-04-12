@@ -14,6 +14,11 @@ description "Basilic is a bibliography server for research laboratories. It auto
 
 # 14 results for "powered by basilic" @ 2010-08-14
 
+# Dorks #
+dorks [
+'"powered by basilic"'
+]
+
 # Examples #
 examples %w|
 www.lifl.fr/GRAPHIX/publications.php

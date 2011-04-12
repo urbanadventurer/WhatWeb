@@ -14,6 +14,11 @@ description "Campsite is a multilingual content management system (CMS) for news
 
 # 28 results for "powered by campsite" @ 2010-08-15
 
+# Dorks #
+dorks [
+'"powered by campsite"'
+]
+
 # Examples #
 examples %w|
 campsite-demo.sourcefabric.org

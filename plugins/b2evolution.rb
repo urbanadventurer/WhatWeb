@@ -9,7 +9,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
 version "0.1"
 description "b2evolution is a powerful blog tool you can install on your own website. - homepage: http://b2evolution.net/"
 
+# Dorks #
+dorks [
+'"Powered by b2evolution"'
+]
+
 # 482 results for "Powered by b2evolution" @ 2010-10-11
+
+# Examples #
 examples %w|
 b2evolution.net/admin.php
 demo1.b2evolution.net/stable/admin.php

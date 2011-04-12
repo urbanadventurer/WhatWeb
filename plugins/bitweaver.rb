@@ -12,6 +12,11 @@ description "Bitweaver is a free and open source web application framework and c
 # Google results as at 2011-02-24 #
 # 151 for "powered by bitweaver"
 
+# Dorks #
+dorks [
+'"powered by bitweaver"'
+]
+
 # Examples #
 examples %w|
 www.bitweaver.org

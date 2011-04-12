@@ -15,6 +15,11 @@ description "BlueNet Video Server - video camera web interface"
 # 2 results for intitle:"BlueNet Video Viewer" @ 2010-07-18
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1813
 
+# Dorks #
+dorks [
+'intitle:"BlueNet Video Viewer"'
+]
+
 # Examples #
 examples %w|
 75.15.47.149:7831/cgi-bin/client_execute.cgi?tUD=0

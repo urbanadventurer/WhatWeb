@@ -14,6 +14,11 @@ description "bSpeak is 26th Avenue's threaded message board application. It is f
 
 # 23 results for "powered by bSpeak" @ 2010-08-27
 
+# Dorks #
+dorks [
+'"powered by bSpeak"'
+]
+
 # Examples #
 examples %w|
 www.26thavenue.com/bspeakdemo/

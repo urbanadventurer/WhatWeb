@@ -14,6 +14,11 @@ description "Censura - the flexible, robust, reviews and ratings application. - 
 
 # 70 results for "Powered by: Censura" @ 2010-08-01
 
+# Dorks #
+dorks [
+'"Powered by: Censura"'
+]
+
 # Examples #
 examples %w|
 www.censurademo.com

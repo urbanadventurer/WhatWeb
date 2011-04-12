@@ -12,6 +12,11 @@ description "bbPress is forum software with a twist from the creators of WordPre
 # Google results as at 2011-04-06 #
 # 534 for "is proudly powered by bbPress"
 
+# Dorks #
+dorks [
+'"is proudly powered by bbPress"'
+]
+
 # Examples #
 examples %w|
 abudawoodtc.com/bbpress/

@@ -13,6 +13,13 @@ version "0.2"
 description "CMSimple is a simple content management system for smart maintainance of small commercial or private sites. - homepage:http://www.cmsimple.org/"
 
 # About 70,800 results for "Powered by CMSimple.dk" +welcome @ 2010-06-04
+
+# Dorks #
+dorks [
+'"Powered by CMSimple.dk" +welcome'
+]
+
+# Examples #
 examples %w|
 www.cmsimple.org/demo/
 www.musicmaulindustries.com/
