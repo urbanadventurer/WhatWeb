@@ -259,8 +259,9 @@ class Plugin
   end
 
   extend PluginSugar
-  def_field :author, :version, :examples, :description, :matches, :cve, :extra_urls
-  #, :category
+  def_field :author, :version, :examples, :description, :matches, :cve, :extra_urls, :dorks
+#, :category
+
 end
 
 

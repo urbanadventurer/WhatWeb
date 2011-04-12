@@ -224,7 +224,21 @@ def word_wrap(s,width=10)
 	ret
 end
 
+# Show Google Dorks
+def plugin_dorks(keywords)
 
+	Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.each do |n,p|
+		keywords.map do |k|
+			if n.downcase.include?(k.downcase)
+				pp "Google Dorks for #{n}:" if $verbose > 2
+				puts p.dorks unless p.dorks.nil?
+			end
+		end
+	end
+
+end
+
+# Show plugin information
 def plugin_info(keywords= nil)
 	puts "WhatWeb Plugin Information"
 	puts "Searching for " + keywords.join(",") unless keywords.nil?
@@ -903,6 +917,7 @@ opts = GetoptLong.new(
       [ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
       [ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
+      [ '-g','--dorks', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-e','--example-urls', GetoptLong::NO_ARGUMENT ],
       [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
@@ -958,6 +973,10 @@ begin
 			when '-I','--info-plugins'                
 				load_plugins
 				plugin_info(arg.split(","))
+				exit
+			when '-g','--dorks'
+				load_plugins
+				plugin_dorks(arg.split(","))
 				exit
 			when '-e','--example-urls'
 				$USE_EXAMPLE_URLS=true

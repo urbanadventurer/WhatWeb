@@ -4,14 +4,24 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 # Version 0.2 by Andrew Horton
 # Added version detection
-
+##
 Plugin.define "AWStats" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04
 version "0.2"
 description "AWStats - Free log file analyzer for advanced statistics (GNU GPL). - homepage:http://awstats.sourceforge.net/"
+
+# Dorks #
+dorks [
+'inurl:awstats ext:pl +intitle:"Statistics for"',
+'intitle:"statistics of" "advanced web statistics"'
+]
+
+# Google results as at 2010-6-04 #
+# 676,000 for inurl:awstats ext:pl +intitle:"Statistics for"
+
+# Examples #
 examples %w|
 alfven.princeton.edu/cgi-bin/awstats.pl
 www.2server.amazound.com.ar/awstats/cgi-bin/awstats.pl
@@ -40,6 +50,7 @@ http://aria.org/webstats/awstats.pl
 http://crowned.org/webstats/awstats.pl
 |
 
+# Matches #
 matches [
 
 # About 676,000 results @ 2010-6-04
