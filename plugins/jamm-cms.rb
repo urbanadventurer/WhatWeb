@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-04-12 #
+# Updated regex
+##
 # Version 0.2 #
 # Fixed regex and ghdb matches
 ##
@@ -12,7 +15,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.2"
 description "JAMM CMS - homepage: http://www.branchen-plz.de/"
 
-# 6 results for "powered by JAMM CMS" @ 2010-08-08 
+# Google results as at 2010-08-08 #
+# 6 for "powered by JAMM CMS"
+
+# Dorks #
+dorks [
+'"powered by JAMM CMS"'
+]
+
+# Examples #
 examples %w|
 www.branchen-plz.de/de/cms/index.php?id=1
 www.optik-stockhausen.de/de/cms/
@@ -21,11 +32,14 @@ www.miko-heizungsbau.de/cms/index.php?id=1
 www.mondzorgvaals.nl/cms/
 |
 
+# Matches #
 matches [
 
-# Powered by text
+# GHDB # Powered by text
 { :ghdb=>'"powered by JAMM CMS"', :certainty=>75 },
-{ :regexp=>/<a[^>]*href="http:\/\/jammcms.jamm-media.de?ref=[0-9]*"[^>]*>powered by JAMM CMS/i },
+
+# Powered by link
+{ :regexp=>/<a[^>]+href="http:\/\/jammcms\.jamm-media\.de\?ref=[^>]+>powered by JAMM CMS/i },
 
 # Meta author
 { :text=>"<META NAME='Author' CONTENT='JAMM MEDIA Technologies Team 2005'>" },
