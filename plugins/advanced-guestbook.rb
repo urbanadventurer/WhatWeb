@@ -12,8 +12,15 @@ author "Andrew Horton"
 version "0.3"
 description "Web guestbook script. Homepage: http://proxy2.de/scripts.php. http://johnny.ihackstuff.com/ghdb/?function=detail&id=228 Version 2.2 is vulnerable http://www.securityfocus.com/bid/10209/info"
 
+# Dorks #
+dorks [
+'inurl:guestbook.php "Advanced GuestBook" "powered by phpbb"'
+]
+
+# Examples #
 examples %w|http://proxy2.de/demo/guestbook/index.php http://www.tennapel.net/advancedguestbook/ http://www.gawronski.net/guestbook/ www.rhydins-holiday-cottages.co.uk/gbook/ http://www.tjparker.net/guestbook/ |
 
+# Matches #
 matches [
 {:certainty=>75, :ghdb=>'intitle:guestbook "advanced guestbook 2.2" powered'},
 {:certainty=>75, :text=>"Thank you for stopping by my site. Here you can leave your mark."},

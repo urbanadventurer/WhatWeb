@@ -43,6 +43,13 @@ description "The Apache HTTP Server Project is an effort to develop and maintain
 # 61,692 for "Server: mod_throttle"
 # 3,553 for NOYB
 
+# Dorks #
+dorks [
+'intitle:"Test Page for the Apache HTTP Server on Fedora Core" intext:"Fedora Core Test Page"',
+'intitle:"Welcome to Your New Home Page!" "by the Debian release"',
+'intitle:"Test Page for Apache" "It Worked!"'
+]
+
 # Examples #
 examples %w|
 www.eu.archive.org

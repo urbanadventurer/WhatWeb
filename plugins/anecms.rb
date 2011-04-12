@@ -12,6 +12,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15
 version "0.2"
 description "ANECMS - homepage: http://anecms.com/"
 
+# Dorks #
+dorks [
+'"powered by anecms"'
+]
+
 # 11 results for "powered by anecms" @ 2010-06-15
 examples %w|
 anecms.com

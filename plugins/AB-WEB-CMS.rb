@@ -12,6 +12,11 @@ description "AB WEB CMS [French] - Homepage: http://www.aeline-informatique.com/
 # Google results as at 2011-03-13 #
 # 73 for inurl:ab_fct.php?fct=
 
+# Dorks #
+dorks [
+"inurl:ab_fct.php?fct="
+]
+
 # Examples #
 examples %w|
 www.sud-paradise-immo.com/en/ab_fct.php

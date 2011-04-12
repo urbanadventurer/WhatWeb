@@ -22,6 +22,12 @@ description "ArGoSoft-Mail-Server web interface - homepage: http://www.argosoft.
 # Google results as at 2010-06-13 #
 # 26 for +intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser -inurl 
 
+# Dorks #
+dorks [
+'+intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser -inurl',
+'"adding new user" inurl:addnewuser -"there are no domains"'
+]
+
 # Examples #
 examples %w|
 www.mecmont.info/addnewuser

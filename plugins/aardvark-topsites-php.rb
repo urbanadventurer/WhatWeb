@@ -12,6 +12,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
 version "0.2"
 description "Aardvark Topsites PHP is a free topsites script built on PHP and MySQL. - homepage: http://www.aardvarktopsitesphp.com/topsites/"
 
+# Dorks #
+dorks [
+'"Powered by Aardvark Topsites PHP"'
+]
+
 # About 330,000 results for "Powered by Aardvark Topsites PHP" @ 2010-06-26
 examples %w|
 www.aardvarktopsitesphp.com/topsites/

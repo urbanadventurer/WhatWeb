@@ -7,15 +7,21 @@
 Plugin.define "Antiboard" do
 author "Andrew Horton"
 version "0.1"
-
 description "PHP forum. homepage (gone):http://www.resynthesize.com/code/antiboard.php."
 
+# Dorks #
+dorks [
+'inurl: antiboard.php'
+]
+
+# Examples #
 examples %w|http://www.cultos.org/board/antiboard.php http://www.mishpouka.com/web/antiboard.php http://www.munichmela.de/php/main/bulletinboard.php www.abertillerycricket.com/board.php |
 
 # inurl: antiboard.php
 #  <form method="post" action="/antiboard/antiboard.php">
 # <a href="http://www.resynthesize.com/code/antiboard.php">Powered by antiboard 0.7.2</a>
 
+# Matches #
 matches [
 {:name=>"inurl", :ghdb=>"inurl:antiboard.php" },
 {:name=>"powered by", :text=>"<a href=\"http://www.resynthesize.com/code/antiboard.php\">Powered by antiboard" }

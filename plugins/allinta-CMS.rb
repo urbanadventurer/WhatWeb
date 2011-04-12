@@ -12,6 +12,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.2"
 description "Allinta - easy to use ASP CMS (Content Management System) - professional features & superior value. - homepage: http://www.allinta.com/"
 
+# Dorks #
+dorks [
+'"powered by allinta CMS"'
+]
+
 # 31 results for "powered by allinta CMS" @ 2010-08-15
 examples %w|
 www.allinta.com

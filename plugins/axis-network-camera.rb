@@ -23,6 +23,13 @@ description "Axis network camera - homepage: http://www.axis.com/"
 # 475 for intitle:"Live View / . AXIS" | inurl:view/view.shtml OR inurl:view/indexFrame.shtml | intitle:"MJPG Live Demo" | "intext:Select preset position"
 # 23  for inurl:indexFrame.shtml intitle:Axis -inurl
 
+# Dorks #
+dorks [
+'allintitle: Axis 2.10 OR 2.12 OR 2.30 OR 2.31 OR 2.32 OR 2.33 OR 2.34 OR 2.40 OR 2.42 OR 2.43 "Network Camera"',
+'intitle:"Live View / . AXIS" | inurl:view/view.shtml OR inurl:view/indexFrame.shtml | intitle:"MJPG Live Demo" | "intext:Select preset position"',
+'inurl:indexFrame.shtml intitle:Axis -inurl'
+]
+
 # Examples #
 examples %w|
 64.29.78.157/indexFrame.shtml
