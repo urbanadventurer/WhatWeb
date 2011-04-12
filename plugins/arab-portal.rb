@@ -12,6 +12,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
 description "Arab-Portal"
 
+# Dorks #
+dorks [
+'"powered by Arab Portal" -exploit'
+]
+
 # 308 results for "powered by Arab Portal" -exploit @ 2010-07-25
 examples %w|
 www.2dab.org

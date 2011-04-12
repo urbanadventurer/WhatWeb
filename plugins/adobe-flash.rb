@@ -18,6 +18,10 @@ description "This plugin identifies instances of embedded adobe flash files."
 # Google results as at 2010-10-14 #
 # 244 for "your browser does not support flash"
 
+# Dorks #
+dorks [
+'filetype:swf'
+]
 # Examples #
 examples %w|
 www.arride.com

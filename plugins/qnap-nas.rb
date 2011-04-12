@@ -26,6 +26,12 @@ description "QNAP provides a series of network attached storage (NAS) products -
 # Google results as at 2011-03-22 #
 # 229 for inurl:Qmultimedia/cgi-bin/thumb_index.cgi
 
+# Dorks #
+dorks [
+'inurl:Qmultimedia/cgi-bin/thumb_index.cgi',
+'inurl:/cgi-bin/authLogin.cgi'
+]
+
 # Examples #
 examples %w|
 http://140.113.74.103:8080/cgi-bin/

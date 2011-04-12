@@ -9,6 +9,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
 description "AMX Mod X is a versatile Half-Life metamod plugin which is targetted toward server administration. - homepage http://www.amxmodx.org/"
 
+# Dorks #
+dorks [
+'ext:cfg "Linux users may encounter problems if they specify"'
+]
+
 # 4 results for ext:cfg "Linux users may encounter problems if they specify" @ 2010-09-04
 examples %w|
 www.ciberinc.cl/dod/publico/dod/addons/amxmodx/configs/sql.cfg
@@ -16,6 +21,7 @@ amxmodx.ucoz.ru/_fr/25/0749705.cfg
 amxmodx.ucoz.ru/_fr/25/sql.cfg
 |
 
+# Matches #
 matches [
 
 { :text=>'// *NOTE* amx_sql_type specifies the DEFAULT database type which admin.sma will use.' },

@@ -18,6 +18,12 @@ author "Andrew Horton"
 version "0.4"
 description "Site configuration and management software application. Supporting many operating systems while allowing endusers to control every aspect of their webhosting experience. - homepage: http://www.cpanel.net/"
 
+# Dorks #
+dorks [
+'inurl::2082/frontend -demo'
+]
+
+# Examples #
 examples %w|
 demo.cpanel.net
 202.191.40.29
