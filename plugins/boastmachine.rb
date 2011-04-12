@@ -12,7 +12,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
 version "0.2"
 description "boastMachine blog - homepage: http://boastology.com/"
 
-# 217 results for "powered by boastMachine" +"Recent posts" -exploit' @ 2010-06-16
+# 217 results for "powered by boastMachine" +"Recent posts" -exploit @ 2010-06-16
+
+# Dorks #
+dorks [
+'"powered by boastMachine" +"Recent posts" -exploit'
+]
+
+# Examples #
 examples %w|
 www.coolzen.com
 www.askdatabaseblogs.com

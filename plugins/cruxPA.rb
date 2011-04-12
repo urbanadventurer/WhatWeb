@@ -8,10 +8,18 @@ Plugin.define "CruxPA" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
 version "0.1"
 description "CruxPA - Simple, easy to use task list/CRM - homepage: http://www.cruxsoftware.co.uk/"
+
+# Dorks #
+dorks [
+'"Powered By CruxPA"'
+]
+
+# Examples #
 examples %w|
 pa.cruxsoftware.co.uk
 |
 
+# Matches #
 matches [
 
 {:text=>'<div id="copy"><center>Powered By <a href="http://www.cruxsoftware.co.uk">CruxPA</a><br>' },

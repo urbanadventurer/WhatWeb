@@ -10,7 +10,13 @@ version "0.1"
 description "Biromsoft webcam web interface - http://www.biromsoft.com/"
 
 # 164 results for intitle:"Biromsoft WebCam" -download -serial -crack -the -a @ 2010-07-22
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1491
+
+# Dorks #
+dorks [
+'intitle:"Biromsoft WebCam" -download -serial -crack -the -a'
+]
+
+# Examples #
 examples %w|
 69.62.143.103:6565
 www.arcanis-webcam.friko.pl
@@ -22,6 +28,7 @@ www.hardebeck.net/index2.htm
 valledelaserena.com/camara/
 |
 
+# Matches #
 matches [
 
 { :text=>'<title>Biromsoft WebCam</title>', :certainty=>75 },

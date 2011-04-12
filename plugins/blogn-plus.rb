@@ -13,6 +13,13 @@ version "0.2"
 description "BlognPlus - homepage: http://www.blogn.org/"
 
 # 106 results for "powered by BlognPlus" @ 2010-06-15
+
+# Dorks #
+dorks [
+'"powered by BlognPlus"'
+]
+
+# Examples #
 examples %w|
 fuc.byethost2.com/blog/
 www.acute-girls.com/nega/renew/

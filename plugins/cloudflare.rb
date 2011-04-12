@@ -9,6 +9,15 @@ author "Aung Khant <http://yehg.net/>" # 2011-02-04
 version "0.1"
 description "ClouldFlare - https://www.cloudflare.com/"
 
+# Google results as at 2011-04-12 #
+# 14 for "Performance & Security by Cloudflare"
+
+# Dorks #
+dorks [
+'"Performance & Security by Cloudflare"'
+]
+
+# Examples #
 examples %w|
 http://yehg.net/
 http://www.ornagai.com/
@@ -60,7 +69,7 @@ http://jonesdoug.com/
 199.27.130.55
 |
 
-
+# Matches #
 matches [
 
 {:name => 'access restricted iframe', :text => '<iframe frameborder="0" width="100%" height="100%" src="http://anti-virus.cloudflare.com/cdn-cgi/anti-virus-challenge?h='},
@@ -69,16 +78,16 @@ matches [
 
 ]
 
-
+# Passive #
 def passive
 	m=[]
 
 	m << {:name=>"__cfduid cookie" } if @meta["set-cookie"] =~ /__cfduid/i
 	m << {:name=>"server header" } if @meta["server"] =~ /cloudflare\-nginx/i
 
+	# Return passive matches
 	m
 end
-
 
 end
 

@@ -15,6 +15,12 @@ description "Calendarix is a powerful and easy to use web-based calendar that ru
 # 14 results for "powered by Calendarix" @ 2010-09-18
 # 45 results for intitle:"Calendarix User Login" intext:"Calendarix User Login" +Username +Password @ 2010-09-18
 
+# Dorks #
+dorks [
+'intitle:"Calendarix User Login" intext:"Calendarix User Login" +Username +Password',
+'"powered by Calendarix"'
+]
+
 # Examples #
 examples %w|
 www.calendarix.com/advanced/calendar.php

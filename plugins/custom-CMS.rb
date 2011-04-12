@@ -15,6 +15,11 @@ description "Custom CMS Gaming is a Content Management System geared towards all
 # Google results as at 2010-09-03 #
 # 165 for "powered by CCMS"
 
+# Dorks #
+dorks [
+'"powered by CCMS"'
+]
+
 # Examples #
 examples %w|
 gameworldcheats.com

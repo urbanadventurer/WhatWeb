@@ -9,6 +9,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.1"
 description "A complete classifieds site ready to run in 15 minutes. - homepage: http://www.bmscripts.com/"
 
+# Dorks #
+dorks [
+'"powered by BM Classifieds"'
+]
+
 # 97 results for "powered by BM Classifieds" @ 2010-08-08
 examples %w|
 classifieds.bmscripts.com

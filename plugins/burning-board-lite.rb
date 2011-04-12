@@ -12,7 +12,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
 version "0.2"
 description "Burning Board 3 is the modern, secure and user friendly solution for your discussion board! - homepage: http://www.woltlab.com/products/burning_board/index_en.php"
 
-# 309 results for "Powered by Burning Board" -exploit -dork -johnny' @ 2010-06-26
+# 309 results for "Powered by Burning Board" -exploit -dork -johnny @ 2010-06-26
+
+# Dorks #
+dorks [
+'"Powered by Burning Board" -exploit -dork -johnny'
+]
+
+# Examples #
 examples %w|
 demo.woltlab.com
 board.devision-music.com

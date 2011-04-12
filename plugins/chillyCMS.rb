@@ -11,6 +11,14 @@ description "chillyCMS is a Content Management System. This is a software which 
 
 # 8 results for "powered by chillyCMS" @ 2010-09-08
 # 5 results for inurl:chillyCMS/core/show.site.php @ 2010-09-08
+
+# Dorks #
+dorks [
+'inurl:chillyCMS/core/show.site.php',
+'"powered by chillyCMS"'
+]
+
+# Examples #
 examples %w|
 chillycms.bplaced.net/chillyCMS/core/show.site.php
 demo.opensourcecms.com/chillycms/core/show.site.php
