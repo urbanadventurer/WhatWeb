@@ -1268,6 +1268,8 @@ while thistarget = next_target
 					error "Error: You do not have permission to view #{target}"
 					next
 				end
+			else
+				target_is_a_file=false
 			end
 		
 			if $RECURSIVE == true and target_is_a_file == false
