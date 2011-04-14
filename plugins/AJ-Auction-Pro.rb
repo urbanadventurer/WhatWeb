@@ -12,6 +12,11 @@ description "AJ Auction is a PHP-based Auction portal software which is a simple
 # Google results as at 2011-02-28 #
 # 25 for "Powered By AJ Auction Pro" -dork
 
+# Dorks #
+dorks [
+'"Powered By AJ Auction Pro" -dork'
+]
+
 # Examples #
 examples %w|
 www.ajdemos.com/demo/ajauctionpro/oopdv3.1/

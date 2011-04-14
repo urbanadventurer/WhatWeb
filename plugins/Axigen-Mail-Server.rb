@@ -12,7 +12,13 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.2"
 description "Axigen is an integrated email, calendaring & collaboration platform, masterfully built on our unique Linux mail server technology, for increased speed & security. - homepage: http://www.axigen.com/"
 
-# 67 results for "powered by Axigen Mail Server" @ 2010-09-17
+# Google results as at 2010-09-17 #
+# 67 for "powered by Axigen Mail Server"
+
+# Dorks #
+dorks [
+'"powered by Axigen Mail Server"'
+]
 
 # Examples #
 examples %w|

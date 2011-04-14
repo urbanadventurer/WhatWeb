@@ -12,6 +12,11 @@ description "DeluxeBB is a powerful open source bulletin board, which helps you 
 # Google results as at 2011-02-27 #
 # 69 for "DeluxeBB 1.3 is copyrighted to the DeluxeBB team '05-08"
 
+# Dorks #
+dorks [
+'"DeluxeBB 1.3 is copyrighted to the DeluxeBB team \'05-08"'
+]
+
 # Examples #
 examples %w|
 www.deluxebb.com/demo/index.php

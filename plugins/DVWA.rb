@@ -11,6 +11,9 @@ description "Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that 
 
 # Google results as at 2011-03-05 #
 # 1 for intutle:"Damn Vulnerable Web App (DVWA) - Login"
+dorks [
+'intutle:"Damn Vulnerable Web App (DVWA) - Login"'
+]
 
 # Examples #
 examples %w|

@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
 version "0.1"
 description "CMScout is a free and open-source CMS (Content management system) for Scouting related groups from around the world. A CMS is a piece of web software that makes it easy for you to install, and manage a website without needing to know any programming languages. - homepage: http://www.cmscout.co.za/"
 
-# 93 results for "powered by CMScout" @ 2010-08-22
+# Google results as at 2010-08-22 #
+# 93 for "powered by CMScout"
+
+# Dorks #
+dorks [
+'"powered by CMScout"'
+]
+
+# Examples #
 examples %w|
 demo.opensourcecms.com/cmscout/index.php
 thunderwolfdistrict.com

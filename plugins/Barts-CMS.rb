@@ -12,6 +12,11 @@ description "Bart's CMS is a website Content Management System that is build wit
 # Google results as at 2011-03-03 #
 # 93 for "powered by Bart's CMS"
 
+# Dorks #
+dorks [
+'"powered by Bart\'s CMS"'
+]
+
 # Examples #
 examples %w|
 trinityhome.org

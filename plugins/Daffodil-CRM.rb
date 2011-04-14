@@ -12,6 +12,11 @@ description "Daffodil CRM is a software that enables seamless coordination betwe
 # Google results as at 2011-04-02 #
 # 3 for "Daffodil" inurl:app=forgot_passwd
 
+# Dorks #
+dorks [
+'"Daffodil" inurl:app=forgot_passwd'
+]
+
 # Examples #
 examples %w|
 www.dis.edu.bd/vus/

@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-11-08
 version "0.1"
 description "Before you spend thousands on an E-Commerce site, check out our feature rich web site and e-commerce/shopping cart solution. The power of Enterprise, the simplicity of basic carts & the usefulness you expect. - homepage: http://www.pilotcart.com/"
 
-# 51 Google results for "Powered by Pilot Cart V" -vulnerabilities
+# Google results as at 2010-11-08 #
+# 51 for "Powered by Pilot Cart V" -vulnerabilities
+
+# Dorks #
+dorks [
+'"Powered by Pilot Cart V" -vulnerabilities'
+]
+
+# Examples #
 examples %w|
 www.PilotCart.com
 www.roguecreamery.com

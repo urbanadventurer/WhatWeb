@@ -9,10 +9,13 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
 version "0.1"
 description "Bobo is a light-weight framework for creating WSGI web applications. It's goal is to be easy to use and remember. It addresses 2 problems: 1) mapping URLs to objects and 2) calling objects to generate HTTP responses. Bobo doesn't have a templating language, a database integration layer, or a number of other features that are better provided by WSGI middle-ware or application-specific libraries. Bobo builds on other frameworks, most notably WSGI and WebOb. - homepage: http://bobo.digicool.com/"
 
-# 95 ShodanHQ results for X-Ksscommands:
-# 441 ShodanHQ results for Bobo-Exception-Line
-# 441 ShodanHQ results for Bobo-Exception-Value
-# 441 ShodanHQ results for Bobo-Exception-Type
+# ShodanHQ results as at 2010-11-02 #
+# 95  for X-Ksscommands:
+# 441 for Bobo-Exception-Line
+# 441 for Bobo-Exception-Value
+# 441 for Bobo-Exception-Type
+
+# Examples #
 examples %w|
 78.47.94.29
 83.175.124.83

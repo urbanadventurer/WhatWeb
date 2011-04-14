@@ -15,6 +15,11 @@ description "A simple easy to use standalone image hosting script. This script a
 # Google results as at 2010-09-17 #
 # 224 for "powered by CF Image Hosting Script"
 
+# Dorks #
+dorks [
+'"powered by CF Image Hosting Script"'
+]
+
 # Examples #
 examples %w|
 www.chiccosite.de

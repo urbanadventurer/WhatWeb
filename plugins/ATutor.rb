@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.1"
 description "ATutor is a free Open Source Web-based elearning environment designed with accessibility and adaptability in mind. - homepage: http://www.atutor.ca/"
 
-# 34 results for intitle:"ATutor: Learning Management System:" @ 2010-09-17
+# Google results as at 2010-09-17 #
+# 34 for intitle:"ATutor: Learning Management System:"
+
+# Dorks #
+dorks [
+'intitle:"ATutor: Learning Management System:"'
+]
+
+# Examples #
 examples %w|
 demo.opensourcecms.com/atutor/login.php
 dev.atutor.ca/atutor/demo.php

@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.1"
 description "AChecker  is an open source Web accessibility evaluation tool. It can be used to review the accessibility of Web pages based on a variety international accessibility guidelines. - homepage: http://www.atutor.ca/achecker/"
 
-# 6 results for intitle:"AChecker : ATRC Accessibility Checker:" @ 2010-09-17
+# Google results as at 2010-09-17 #
+# 6 for intitle:"AChecker : ATRC Accessibility Checker:"
+
+# Dorks #
+dorks [
+'intitle:"AChecker : ATRC Accessibility Checker:"'
+]
+
+# Examples #
 examples %w|
 www.atutor.ca/achecker/demo.php
 dev.atutor.ca/achecker/demo.php

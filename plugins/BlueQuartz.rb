@@ -13,6 +13,12 @@ description "Server Appliances and Software - BlueOnyx is a Linux distribution (
 # 518 for "Welcome to the Web Site of" "Use your favorite FTP application to move your website to the web server."
 # 561 for (intitle:Login BlueOnyx|intitle:Login BlueQuartz)
 
+# Dorks #
+dorks [
+'"Welcome to the Web Site of" "Use your favorite FTP application to move your website to the web server."',
+'(intitle:Login BlueOnyx|intitle:Login BlueQuartz)'
+]
+
 # Examples #
 examples %w|
 94.76.198.16

@@ -15,6 +15,11 @@ description "AxCMS.net - the free ASP.NET CMS by Axinom - Homepage: http://en.ax
 # ShodanHQ results as at 2011-03-04 #
 # 8 for X-Powered-By: AxCMS.net
 
+# Dorks #
+dorks [
+'"powered by axcms"'
+]
+
 # Examples #
 examples %w|
 88.217.156.146

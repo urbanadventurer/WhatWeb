@@ -10,6 +10,13 @@ version "0.1"
 description "DT Centrepiece is a free open-source content management system (CMS) for commercial or personal use. - homepage: www.dt.net.nz/centrepiece/"
 
 # 14 results for "powered by DT Centrepiece" @ 2010-08-06
+
+# Dorks #
+dorks [
+'"powered by DT Centrepiece"'
+]
+
+# Examples #
 examples %w|
 www.dt.net.nz
 www.talktracy.com

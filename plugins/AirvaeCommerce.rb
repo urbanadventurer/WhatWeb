@@ -13,7 +13,13 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
 version "0.2"
 description "Airvae Commerce 3.0 is a flexible, powerful, e-commerce shopping cart software offering clients, web developers, and I.T. professionals the perfect solution to deploy sophisticated, extensible, e-commerce solutions. - homepage: http://www.airvaecommerce.com/"
 
-# 43 results for "powered by AirvaeCommerce" -Vulnerability @ 2010-08-22
+# Google results as at 2010-08-22 #
+# 43 for "powered by AirvaeCommerce" -Vulnerability
+
+# Dorks #
+dorks [
+'"powered by AirvaeCommerce" -Vulnerability'
+]
 
 # Examples #
 examples %w|

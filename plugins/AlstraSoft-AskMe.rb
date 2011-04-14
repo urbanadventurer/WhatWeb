@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
 description "AskMe Pro is an expert knowledge management system that allows site owners to setup an expert advice service similar to highly popular sites like   Google Answers, Yahoo Answers and Kasamba.com. - homepage : http://www.alstrasoft.com/askme.htm"
 
-# 21 results for "powered by AlstraSoft AskMe Pro" -vulnerability @ 2010-10-12
+# Google results as at 2010-10-12 #
+# 21 for "powered by AlstraSoft AskMe Pro" -vulnerability
+
+# Dorks #
+dorks [
+'"powered by AlstraSoft AskMe Pro" -vulnerability'
+]
+
+# Examples #
 examples %w|
 www.blizsoft.com/ask/
 www.blizsoft.com/ask/admin/

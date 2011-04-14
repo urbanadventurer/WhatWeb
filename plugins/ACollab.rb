@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.1"
 description "ACollab is an accessible, open source, multi-group, Web-based collaborative work environment. ACollab is available as a work groups addon for ATutor 1.4+ , and as a standalone collaborative work environment that will run on its own. - homepage: http://www.atutor.ca/acollab/"
 
-# 7 results for intitle:"ACollab : Accessible Collaboration Environment:" @ 2010-09-17
+# Google results as at 2010-09-17 #
+# 7 for intitle:"ACollab : Accessible Collaboration Environment:"
+
+# Dorks #
+dorks [
+'intitle:"ACollab : Accessible Collaboration Environment:"'
+]
+
+# Examples #
 examples %w|
 www.atutor.ca/acollab/demo.php
 dev.atutor.ca/acollab/demo.php

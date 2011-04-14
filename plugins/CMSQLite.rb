@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.1"
 description "CMSQLite is a small, fast, flexible and complete Content-Management-System (CMS).  - homepage: http://cmsqlite.net/"
 
-# 25 results for +"powered by CMSQLite" @ 2010-07-18
+# Google results as at 2010-07-18 #
+# 25 results for "powered by CMSQLite"
+
+# Dorks #
+dorks [
+'"powered by CMSQLite"'
+]
+
+# Examples #
 examples %w|
 cmsqlite.net
 demo.opensourcecms.com/cmsqlite/

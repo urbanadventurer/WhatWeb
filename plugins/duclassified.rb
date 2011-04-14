@@ -4,12 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define "DUclassified" do
 author "Tonmoy Saikia"
 version "0.1"
-description "DUclassified is a free Classified Ad Management system"
+description "DUclassified is a free Classified Ad Management system - Homepage: http://www.duware.com/"
 
+# Dorks #
+dorks [
+'"powered by DUclassified" intitle:DUclassified'
+]
+
+# Examples #
 examples %w|
 http://www.whwebandgraphics.com/DUclassified/
 http://www.mamamx.com/classified/

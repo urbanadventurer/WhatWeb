@@ -12,6 +12,11 @@ description "deV!L`z Clanportal - Homepage: http://www.dzcp.de"
 # Google results as at 2011-02-27 #
 # 419 for "2011 by deV!L`z Clanportal"
 
+# Dorks #
+dorks [
+'"2011 by deV!L`z Clanportal"'
+]
+
 # Examples #
 examples %w|
 www.dzcp.de

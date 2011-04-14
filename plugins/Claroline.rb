@@ -12,6 +12,11 @@ description "Claroline is an Open Source eLearning and eWorking platform allowin
 # Google results as at 2011-03-24 #
 # 466 for "Powered by Claroline"
 
+# Dorks #
+dorks [
+'"Powered by Claroline"'
+]
+
 # Examples #
 examples %w|
 demo.claroline.net

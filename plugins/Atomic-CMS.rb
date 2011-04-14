@@ -12,6 +12,11 @@ description "Atomic CMS is a powerful and free open source ASP.NET CMS (content 
 # Google results as at 2011-03-04 #
 # 24 for "Powered by AtomicCms"
 
+# Dorks #
+dorks [
+'"Powered by AtomicCms"'
+]
+
 # Examples #
 examples %w|
 atomiccms.com

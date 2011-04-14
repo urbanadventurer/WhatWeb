@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-18
 version "0.1"
 description "The newly redesigned BrowserCMS 2.0 is an easy, affordable way to control, edit, and organize website content. - homepage: http://www.browsercms.com/"
 
-# 96 results for "powered by BrowserCMS" @ 2010-10-18
+# Google results as at 2010-10-18 #
+# 96 for "powered by BrowserCMS"
+
+# Dorks #
+dorks [
+'"powered by BrowserCMS"'
+]
+
+# Examples #
 examples %w|
 www.browsercms.com
 www.browsermedia.com
@@ -24,6 +32,7 @@ www.sheehanassociates.com
 www.usra.edu
 |
 
+# Matches #
 matches [
 
 # Default HTML comment

@@ -12,9 +12,12 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.1"
 description "The RomPager suite of products enable your engineering team to leverage proven Web-based technologies in your networked embedded device. - homepage: http://www.allegrosoft.com/rpproduct.html"
 
-# About 2247816 ShodanHQ results for "server: RomPager" @ 2010-10-26
-# About 190212 ShodanHQ results for "server: Allegro-Software-RomPager" @ 2010-10-26
-# About 2087647 ShodanHQ results for "EXT: " @ 2010-10-30
+# ShodanHQ results as at 2010-10-26 #
+# 2,247,816 for "server: RomPager"
+# 190,212   for "server: Allegro-Software-RomPager" 
+# 2,087,647 for "EXT: "
+
+# Examples #
 examples %w|
 74.189.97.193
 68.68.104.145
@@ -51,8 +54,8 @@ def passive
 	# EXT
 	m << { :name=>"EXT HTTP Header" } if @meta["ext"] =~ //
 
+	# Return passive matches
 	m
-
 end
 
 end

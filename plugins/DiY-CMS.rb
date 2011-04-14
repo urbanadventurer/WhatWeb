@@ -16,6 +16,12 @@ description "Do It Yourself Content Management System is a feature-rich, php-bui
 # 41 results for "powered by DiY-CMS"
 # 6  results for intitle:"DIY-CMS Database Error"
 
+# Dorks #
+dorks [
+'"powered by DiY-CMS"',
+'intitle:"DIY-CMS Database Error"'
+]
+
 # Examples #
 examples %w|
 www.diy-cms.com

@@ -12,6 +12,11 @@ description "DnP Firewall Gateway Modification - Homepage: http://www.silveryhat
 # Google results as at 2011-02-25 #
 # 12 for "Protected by DnP Firewall" intitle:"Forum Gateway - Powered by DnP Firewall"
 
+# Dorks #
+dorks [
+'"Protected by DnP Firewall" intitle:"Forum Gateway - Powered by DnP Firewall"'
+]
+
 # Examples #
 examples %w|
 svptit.org/forum.php

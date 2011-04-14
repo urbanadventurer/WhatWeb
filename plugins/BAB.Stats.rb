@@ -13,6 +13,12 @@ description "BAB.Stats is a statistics system for the Delta Force series of game
 # 137 for intitle:"Powered by BAB.Stats"
 # 12 for "BAB.Stats is a statistics system for the Delta Force series of games by Novalogic" inurl:"index.php?action=about"
 
+# Dorks #
+dorks [
+'intitle:"Powered by BAB.Stats"',
+'"BAB.Stats is a statistics system for the Delta Force series of games by Novalogic" inurl:"index.php?action=about"'
+]
+
 # Examples #
 examples %w|
 www.trailerparksquad.com/babstats/babstats5/index.php?action=player_stats&id=10663

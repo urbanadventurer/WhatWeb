@@ -15,6 +15,14 @@ description "CalendarScript is a fully customizable event-publishing solution. I
 # 10 for "Powered by CalendarScript" inurl:calendar_admin.pl intitle:"Calendar Administration : Login"
 # 9 for "CGISession: Session file" "could not be opened for writing!"
 
+# Dorks #
+dorks [
+'"Powered by CalendarScript"',
+'inurl:calendar_admin.pl intitle:"Calendar Administration : Login"',
+'"Powered by CalendarScript" inurl:calendar_admin.pl intitle:"Calendar Administration : Login"',
+'"CGISession: Session file" "could not be opened for writing!"'
+]
+
 # Examples #
 examples %w|
 www.calendarscript.com/demo/calendar_admin.pl

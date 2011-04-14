@@ -12,6 +12,11 @@ description "The DBHcms is a small free Open Source content management system fo
 # Google results as at 2011-02-27 #
 # 65 for "powered by DBHcms" -dork
 
+# Dorks #
+dorks [
+'"powered by DBHcms" -dork'
+]
+
 # Examples #
 examples %w|
 matix.ro/index.php

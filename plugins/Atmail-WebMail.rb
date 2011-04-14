@@ -13,7 +13,13 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-26
 version "0.2"
 description "Atmail allows users to access IMAP Mailboxes on any server of your choice. You and your users can experience webmail via a fluid, intuitive interface that excels aesthetically and functionally; a benchmark that very few webmail clients have achieved. - homepage: http://www.atmail.com/webmail-client/"
 
-# 3 results for "powered by Atmail WebMail" @ 2010-09-26
+# Google results as at 2010-09-26 #
+# 3 results for "powered by Atmail WebMail"
+
+# Dorks #
+dorks [
+'"powered by Atmail WebMail"'
+]
 
 # Examples #
 examples %w|

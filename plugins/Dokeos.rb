@@ -13,6 +13,12 @@ description "Dokeos is an open source online learning suite. It provides all the
 # 3   for intitle:"Dokeos has not been installed"
 # 578 for "Portal Dokeos"
 
+# Dorks #
+dorks [
+'intitle:"Dokeos has not been installed"',
+'"Portal Dokeos"'
+]
+
 # Examples #
 examples %w|
 demo.dokeos.com

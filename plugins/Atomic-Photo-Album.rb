@@ -12,8 +12,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
 description "Photo album software - homepage: http://atomicpa.sourceforge.net/"
 
-# 12 results for "powered by Atomic Photo Album" -Vulnerabilities inurl:apa_album_ID @ 2010-09-18
-# 31 results for "powered by Atomic Photo Album" -Vulnerabilities -inurl @ 2010-09-18
+# Google results as at 2010-09-18 #
+# 12 for "powered by Atomic Photo Album" -Vulnerabilities inurl:apa_album_ID
+# 31 for "powered by Atomic Photo Album" -Vulnerabilities -inurl
+
+# Dorks #
+dorks [
+'"powered by Atomic Photo Album" -Vulnerabilities -inurl inurl:apa_album_ID'
+]
 
 # Examples #
 examples %w|

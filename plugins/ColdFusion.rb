@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.1"
 description "Adobe ColdFusion application server and software enables developers to rapidly build, deploy, and maintain robust Internet applications for the enterprise. - homepage: http://www.adobe.com/products/coldfusion/"
 
-# 30 results for intitle:"ColdFusion Administrator Login" @ 2010-08-15
+# Google results as at 2010-08-15 #
+# 30 for intitle:"ColdFusion Administrator Login"
+
+# Dorks #
+dorks [
+'intitle:"ColdFusion Administrator Login"'
+]
+
+# Examples #
 examples %w|
 asb.co.uk
 online.ctcd.edu/cfadmin/datasources/

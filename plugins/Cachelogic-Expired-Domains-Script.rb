@@ -13,6 +13,12 @@ description "Expired Domains Script runs daily and updates the database with the
 # 40 for "Developed by Cachelogic.net" "Domain contains(keyword):" "All TLDs" -inurl:"cachelogic.net"
 # 36 for allinurl:page domain ext filter hyphen numbers ncharacter
 
+# Dorks #
+dorks [
+'"Developed by Cachelogic.net" "Domain contains(keyword):" "All TLDs" -inurl:"cachelogic.net"',
+'allinurl:page domain ext filter hyphen numbers ncharacter'
+]
+
 # Examples #
 examples %w|
 cachelogic.net/demo/index.php

@@ -9,6 +9,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
 version "0.1"
 description "AutoIndex PHP Script - A Website Directory Indexer and File Manager - Homepage: autoindex.sourceforge.net"
 
+# Dorks #
+dorks [
+'"Powered by AutoIndex PHP Script"'
+]
+
 # Examples #
 examples %w|
 opi.mt.gov/pub/index.php

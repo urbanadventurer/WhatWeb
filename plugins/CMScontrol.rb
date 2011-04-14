@@ -12,7 +12,15 @@ author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
 version "0.2"
 description "CMScontrol - homepage: http://www.cmscontrol.com/"
 
-# 79 results for +CMScontrol -"SQL Injection" -exploit +inurl:"index.php?id_menu=" @ 2010-06-15
+# Google results as at 2010-06-15 #
+# 79 for +CMScontrol -"SQL Injection" -exploit +inurl:"index.php?id_menu="
+
+# Dorks #
+dorks [
+'+CMScontrol -"SQL Injection" -exploit +inurl:"index.php?id_menu="'
+]
+
+# Examples #
 examples %w|
 www.cmscontrol.com
 www.galsi.it

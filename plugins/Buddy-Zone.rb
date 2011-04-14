@@ -10,6 +10,13 @@ version "0.1"
 description "Buddy Zone is a social network script which has all latest technologies needed to run a new version 2.0 Social Network Website. - homepage: http://www.vastal.com/buddy-zone-social-networking-script.html"
 
 # No results for "Powered By Buddy Zone" @ 2010-09-04
+
+# Dorks #
+dorks [
+'"Powered By Buddy Zone"'
+]
+
+# Examples #
 examples %w|
 www.phpvid.com/buddy_zone/
 |

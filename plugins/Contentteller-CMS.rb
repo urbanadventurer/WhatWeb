@@ -12,6 +12,11 @@ description "Contentteller - A powerful Content Management System with 20 module
 # Google results as at 2011-03-03 #
 # 39 for "powered by Contentteller"
 
+# Dorks #
+dorks [
+'"powered by Contentteller"'
+]
+
 # Examples #
 examples %w|
 www.contentteller.com

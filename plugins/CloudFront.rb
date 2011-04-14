@@ -9,8 +9,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
 version "0.1"
 description "CloudFront Server"
 
-# 3530 ShodanHQ results for X-Cache: Error from cloudfront
-# 3532 ShodanHQ results for server cloudfront
+# ShodanHQ results as at 2010-11-02 #
+# 3,530 for X-Cache: Error from cloudfront
+# 3,532 for server cloudfront
+
+# Examples #
 examples %w|
 216.137.33.137
 216.137.39.87
