@@ -16,6 +16,12 @@ description "CubeCart is an out of the box ecommerce shopping cart software solu
 # 492 results for intitle:"powered by cubecart"
 # 643 results for "powered by cubecart"
 
+# Dorks #
+dorks [
+'intitle:"powered by cubecart"',
+'"powered by cubecart"'
+]
+
 # Examples #
 examples %w|
 demo.cubecart.com/cc3/

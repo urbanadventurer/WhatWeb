@@ -18,6 +18,11 @@ description "Dell printer web frontend - http://www.dell.com/"
 # 4 for "Online Help" "Order Supplies" intitle:"Laser Printer" intitle:dell
 # 2 for inurl:"port_255" -htm intitle:"Printer Settings"
 
+# Dorks #
+dorks [
+'"Online Help" "Order Supplies" intitle:"Laser Printer" intitle:dell'
+]
+
 # Examples #
 examples %w|
 128.192.89.71

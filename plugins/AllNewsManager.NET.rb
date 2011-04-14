@@ -12,6 +12,11 @@ description "AllNewsManager.NET is a free news/article management system for ASP
 # Google results as at 2011-03-04 #
 # 80 for "Powered by AllNewsManager.NET"
 
+# Dorks #
+dorks [
+'"Powered by AllNewsManager.NET"'
+]
+
 # Examples #
 examples %w|
 anmdemo.allnewsmanager.net

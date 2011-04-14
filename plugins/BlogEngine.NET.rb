@@ -12,6 +12,11 @@ description "BlogEngine.NET is an open source .NET blogging project that was bor
 # Google results as at 2011-03-04 #
 # 483 for "Powered by BlogEngine.NET"
 
+# Dorks #
+dorks [
+'"Powered by BlogEngine.NET"'
+]
+
 # Examples #
 examples %w|
 www.dotnetblogengine.net

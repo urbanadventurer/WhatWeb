@@ -9,6 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
 version "0.1"
 description "Alter-Native - IBM UniVerse database and Client/Server solutions provider. SPID Product provider, creating dynamic Web servers using database links on Unix systems. - Homepage [Offline] : http://www.alternative.fr/"
 
+# ShodanHQ results as at 2010-12-28 #
 # 20 for SPID HTTP Server -apache -IIS -nginx
 # All results are from France
 

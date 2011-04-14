@@ -12,7 +12,13 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
 description "The Flexible and Easy Article Publishing System - homepage: http://article-publisher-pro.phparticlescript.com/"
 
-# 31 results for "powered by Article Publisher PRO" -Vulnerability @ 2010-08-30
+# Google results as at 2010-08-30 #
+# 31 for "powered by Article Publisher PRO" -Vulnerability
+
+# Dorks #
+dorks [
+'"powered by Article Publisher PRO" -Vulnerability'
+]
 
 # Examples #
 examples %w|

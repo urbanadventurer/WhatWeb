@@ -12,6 +12,11 @@ description "CGI:IRC is a Perl/CGI program to use IRC from a web browser. This p
 # Google results as at 2011-02-08 #
 # 224 for intitle:"CGI:IRC Login" Nickname Server Channel
 
+# Dorks #
+dorks [
+'intitle:"CGI:IRC Login" Nickname Server Channel'
+]
+
 # Examples #
 examples %w|
 cgiirc.org/demo/

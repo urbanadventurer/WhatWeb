@@ -12,6 +12,11 @@ description "DoceboLMS is a SCORM compliant Open Source e-Learning platform used
 # Google results as at  2011-03-24 #
 # 253 for "Powered by Docebo"
 
+# Dorks #
+dorks [
+'"Powered by Docebo"'
+]
+
 # Examples #
 examples %w|
 demo.docebo.org

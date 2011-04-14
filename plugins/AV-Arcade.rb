@@ -7,9 +7,17 @@
 Plugin.define "AV-Arcade" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description " - homepage: http://www.avscripts.net/avarcade/"
+description "AV-Arcade. Requires PHP - Homepage: http://www.avscripts.net/avarcade/"
 
-# 284 results for "powered by AV Arcade" -Vulnerability @ 2010-09-18
+# Google results as at 2010-09-18 #
+# 284 for "powered by AV Arcade" -Vulnerability
+
+# Dorks #
+dorks [
+'"powered by AV Arcade" -Vulnerability'
+]
+
+# Examples #
 examples %w|
 www.demo.avarcadepro.com
 ahliang.com/arcade/
@@ -27,6 +35,7 @@ www.ninjaclanarcade.com
 www.zupergames.net
 |
 
+# Matches #
 matches [
 
 # HTML comment

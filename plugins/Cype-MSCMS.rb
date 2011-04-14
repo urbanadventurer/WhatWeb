@@ -12,6 +12,11 @@ description "Cype MSCMS - a CMS for managing MapleStory server stats - http://cy
 # Google results as at 2011-03-15 #
 # 30 for intitle:"Powered By Cype" intext:"Powered By Cype MSCMS"
 
+# Dorks #
+dorks [
+'intitle:"Powered By Cype" intext:"Powered By Cype MSCMS"'
+]
+
 # Examples #
 examples %w|
 z99.no-ip.org

@@ -10,6 +10,13 @@ version "0.1"
 description "DiamondList is a free open source ruby on rails wishlist management program. It allows you to track one or more wishlists for one or more people, for any kind of event! - homepage: http://www.hulihanapplications.com/projects/diamondlist"
 
 # 11 results for "powered by DiamondList" @ 2010-09-18
+
+# Dorks #
+dorks [
+'"powered by DiamondList"'
+]
+
+# Examples #
 examples %w|
 diamondlist.demos.hulihanapplications.com
 |

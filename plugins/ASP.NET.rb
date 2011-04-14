@@ -34,6 +34,12 @@ description "ASP.NET is a free web framework that enables great Web applications
 # 7,460 for Set-Cookie chkvalues anonymousID
 # 2,4582 for "asp.net" -IIS
 
+# Dorks #
+dorks [
+'inurl:web.config ext:config "ConnectionString"',
+'inurl:global.asa ext:asa "ConnectionString"'
+]
+
 # Examples #
 examples %w|
 www.microsoft.com

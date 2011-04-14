@@ -10,6 +10,13 @@ version "0.1"
 description "Diferior is a multi-purpose content management system, meaning that it provides all the necessary tools to easily publish and organize your content. - homepage: http://diferior.com/"
 
 # 62 results for "Powered by Diferior, Copyright" @ 2010-09-18
+
+# Dorks #
+dorks [
+'"Powered by Diferior, Copyright"'
+]
+
+# Examples #
 examples %w|
 diferior.com
 diferior.lt

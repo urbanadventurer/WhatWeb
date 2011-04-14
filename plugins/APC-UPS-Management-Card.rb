@@ -9,6 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
 version "0.1"
 description "APC UPS Network Management Cards allow for secure monitoring and control of an individual APC UPS via web browser, command line interface, or SNMP. - Homepage: http://www.apc.com/products/family/index.cfm?id=98"
 
+# ShodanHQ results as at 2011-03-12 #
 # 6,524 for APC Management Card realm
 # 2,064 for APC Management Card -realm
 

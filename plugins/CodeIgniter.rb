@@ -17,7 +17,8 @@ description "CodeIgniter PHP Framework - http://codeigniter.com/ "
 
 # more http://codeigniter.com/projects/
 
-examples=%w| 
+# Examples #
+examples %w| 
 dearie6.com  
 www.foodrunner.nl
 www.kunststofoveral.nl
@@ -38,6 +39,7 @@ def randstr
  (0..8).map { (('a'..'z').to_a + (0..9).to_a).choice }.join
 end 
 
+# Matches #
 matches [
 {:string=>'404 Signature',:url=>randstr(),:md5=>'e087ab5729efdfa939ba620e4593bd99'},
 {:string=>'404 Signature',:url=>'index.php/'+randstr(),:md5=>'e087ab5729efdfa939ba620e4593bd99'},
@@ -47,6 +49,7 @@ matches [
 {:string=>'Invalid Character Filter',:url=>randstr()+'!!!',:text=>'The URI you submitted has disallowed characters.'}
 ]
 
+# Passive #
 def passive
         m=[]
         m << {:string=>"ci_session Cookie" } if @meta["set-cookie"] =~ /ci_session=/

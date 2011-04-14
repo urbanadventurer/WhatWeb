@@ -12,6 +12,11 @@ description "BIGACE is not just an easy to use Web Content Management System (CM
 # Google results as at 2011-03-15 #
 # 344 for "Powered by BIGACE" -dork
 
+# Dorks #
+dorks [
+'"Powered by BIGACE" -dork'
+]
+
 # Examples #
 examples %w|
 www.bigace.de

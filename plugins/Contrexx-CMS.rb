@@ -12,6 +12,11 @@ description "Contrexx CMS [Swiss] - Homepage: http://www.contrexx.com/"
 # Google results as at 2011-03-06 #
 # 28 for "Powered by Contrexx Software"
 
+# Dorks #
+dorks [
+'"Powered by Contrexx Software"'
+]
+
 # Examples #
 examples %w|
 www.contrexx.com/admin/

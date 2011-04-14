@@ -13,6 +13,12 @@ description "Open Source Alumni software (PHP) for universities, schools and oth
 # 9 for "AlumniServer project" inurl:AlumniServerProject.php
 # 5 for "This Alumni website runs with open source software from the AlumniServer project."
 
+# Dorks #
+dorks [
+'"AlumniServer project" inurl:AlumniServerProject.php',
+'"This Alumni website runs with open source software from the AlumniServer project."'
+]
+
 # Examples #
 examples %w|
 www.reasoninfo.net/alumniserver/AlumniServerProject.php

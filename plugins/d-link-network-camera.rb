@@ -9,10 +9,17 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.1"
 description "D-Link network camera web interface - homepage: http://www.dlink.com/"
 
-# 1 Google result for inurl:setdo.cgi intext:"Set DO OK" @ 2010-07-22
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1625
-# 2 Google results for intitle:"DCS" Camera inurl:web inurl:login @ 2010-07-22
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1593
+# Google results as at 2010-07-22 #
+# 1 for inurl:setdo.cgi intext:"Set DO OK"
+# 2 for intitle:"DCS" Camera inurl:web inurl:login
+
+# Dorks #
+dorks [
+'inurl:setdo.cgi intext:"Set DO OK"',
+'intitle:"DCS" Camera inurl:web inurl:login'
+]
+
+# Examples #
 examples %w|
 220.229.22.122
 |

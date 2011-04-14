@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
 version "0.1"
 description "The ad network script is a comprehensive solution to let you start your own professional ad network website. The script comes with bells and whistles to make you start and run your ad network website and to monitor the daily sales and delivery of ads on regular basis. - homepage: http://www.kaonsoftwares.com/ad-network-script.html"
 
-# 32 results for "Web Administration Panel" "by Kaon Softwares. All Rights Reserved." @ 2010-10-11
+# Google results as at 2010-10-11 #
+# 32 for "Web Administration Panel" "by Kaon Softwares. All Rights Reserved."
+
+# Dorks #
+dorks [
+'"Web Administration Panel" "by Kaon Softwares. All Rights Reserved."'
+]
+
+# Examples #
 examples %w|
 products.kaonsoftwares.com/adbrite-clone/admin/
 spendoo.se/__old/admin/

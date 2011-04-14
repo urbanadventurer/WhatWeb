@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.1"
 description "AContent  is an open source learning content authoring system and respository used to create interoperable, accessible, adaptive Web-based learning content. - homepage: http://www.atutor.ca/acontent/"
 
-# 1 result for intitle:"AContent: Learning Content Repository:" @ 2010-09-17
+# Google results as at 2010-09-17 #
+# 1 for intitle:"AContent: Learning Content Repository:"
+
+# Dorks #
+dorks [
+'intitle:"AContent: Learning Content Repository:"'
+]
+
+# Examples #
 examples %w|
 www.atutor.ca/acontent/demo.php
 |

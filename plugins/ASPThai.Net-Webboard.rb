@@ -12,7 +12,13 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
 description "ASPThai.Net Webboard - homepage: http://www.aspthai.net/"
 
-# 5 results for "powered by ASPThai.Net Webboard version" @ 2010-08-30
+# Google results as at 2010-08-30 #
+# 5 for "powered by ASPThai.Net Webboard version"
+
+# Dorks #
+dorks [
+'"powered by ASPThai.Net Webboard version"'
+]
 
 # Examples #
 examples %w|

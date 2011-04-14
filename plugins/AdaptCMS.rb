@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
 description "AdaptCMS is a PHP CMS that is made for complete control of your website, easiness of use and easily adaptable to any type of website - homepage: http://www.adaptsoftware.org/article/1/Projects/AdaptCMS/"
 
-# 7 results for "powered by AdaptCMS" @ 2010-10-12
+# Google results as at 2010-10-12 #
+# 7 for "powered by AdaptCMS"
+
+# Dorks #
+dorks [
+'"powered by AdaptCMS"'
+]
+
+# Examples #
 examples %w|
 www.24quotes.com
 www.charliepage88.com

@@ -10,6 +10,13 @@ version "0.1"
 description "With Auto CMS you can have a website in 1 minute!, upload the package by FTP to your Hosting, and do click on simbol (*) in the footer, and enjoy of your own website, with the minimal requeriments for your presence on Internet. - homepage: http://ventics.com/autocms/"
 
 # 1 result for "Powered by Auto CMS" @ 2010-10-12
+
+# Dorks #
+dorks [
+'"Powered by Auto CMS"'
+]
+
+# Examples #
 examples %w|
 http://ventics.com/autocms/
 |

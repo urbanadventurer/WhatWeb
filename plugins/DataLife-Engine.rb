@@ -12,6 +12,11 @@ description "DataLife Engine CMS - Homepage: http://dle-news.ru"
 # Google results at 2011-03-18 #
 # 374 for "powered by DataLife Engine"
 
+# Dorks #
+dorks [
+'"powered by DataLife Engine"'
+]
+
 # Examples #
 examples %w|
 pc.m7shsh.com

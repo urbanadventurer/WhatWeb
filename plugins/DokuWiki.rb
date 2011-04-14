@@ -12,6 +12,11 @@ description "DokuWiki is a standards compliant, simple to use Wiki, mainly aimed
 # Google results as at 2011-03-20 #
 # 176 for "powered by DokuWiki" inurl:doku.php filetype:php
 
+# Dorks #
+dorks [
+'"powered by DokuWiki" inurl:doku.php filetype:php'
+]
+
 # Examples #
 examples %w|
 www.dokuwiki.org/dokuwiki/

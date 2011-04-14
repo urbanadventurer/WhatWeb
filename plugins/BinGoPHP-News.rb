@@ -9,8 +9,16 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
 version "0.1"
 description "News administration web app - homepage: http://bingophp.free.fr"
 
-# 18 results for "Script réiséar BinGo PHP" -Vulnerability @ 2010-08-29
-# 15 results for inurl:bnadmin.php @ 2010-08-29
+# Google results as at 2010-08-29 #
+# 18 for "Script réiséar BinGo PHP" -Vulnerability @
+# 15 for inurl:bnadmin.php
+
+# Dorks #
+dorks [
+'inurl:bnadmin.php'
+]
+
+# Examples #
 examples %w|
 metalhardrock1.free.fr/bb/new.php
 membres.multimania.fr/robossprog/bnaffiche.php

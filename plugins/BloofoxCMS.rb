@@ -12,6 +12,11 @@ description "bloofoxCMS is a free open source content management system (CMS). b
 # Google results as at 2011-02-27 #
 # 167 for "Powered by bloofoxCMS"
 
+# Dorks #
+dorks [
+'"Powered by bloofoxCMS"'
+]
+
 # Examples #
 examples %w|
 bloofox.com

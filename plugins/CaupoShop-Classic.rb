@@ -13,9 +13,15 @@ version "0.2"
 description "homepage: http://www.caupo.net"
 
 # Google results as at 2010-08-29 #
-# 6 results for "powered by CaupoShop Classic ver" @ 2010-08-29
-# 121 results for "powered by CaupoShop Classic" @ 2010-08-29
-# 217 results for inurl:csc_articles.php @ 2010-08-29
+# 6   for "powered by CaupoShop Classic ver"
+# 121 for "powered by CaupoShop Classic"
+# 217 for inurl:csc_articles.php
+
+# DOrks #
+dorks [
+'"powered by CaupoShop Classic"',
+'inurl:csc_articles.php'
+]
 
 # Examples #
 examples %w|

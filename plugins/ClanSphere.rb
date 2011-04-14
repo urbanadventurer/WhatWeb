@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
 description "Free OpenSource Clan CMS - homepage: www.csphere.eu/index/clansphere/about"
 
-# 45 results for "powered by ClanSphere" @ 2010-09-18
+# Google results as at 2010-09-18 #
+# 45 for "powered by ClanSphere"
+
+# Dorks #
+dorks [
+'"powered by ClanSphere"'
+]
+
+# Examples #
 examples %w|
 demo.csphere.eu
 acg.anicode.info
@@ -30,6 +38,7 @@ www.unity-esports.net
 www.unity-esports.org
 |
 
+# Matches #
 matches [
 
 # Default title

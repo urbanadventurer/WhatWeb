@@ -12,7 +12,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05
 version "0.2"
 description "DUgallery - PHP powered photo gallery - homepage: http://www.duware.com/"
 
-# About 1,490 results for ext:asp inurl:DUgallery intitle:"3.0" @ 2010-06-05
+# Google results as at 2010-06-05 #
+# 1,490 results for ext:asp inurl:DUgallery intitle:"3.0"
+
+# Dorks #
+dorks [
+'ext:asp inurl:DUgallery intitle:"3.0"'
+]
+
+# Examples #
 examples %w|
 www.unitybham.org/dugallery/
 www.jermerica.net/dugallery/

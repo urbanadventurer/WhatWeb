@@ -12,7 +12,13 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.2"
 description "CMS WebManager-Pro - is a software product for creating and maintaining websites of any complexity. - homepage: http://webmanager-pro.com/"
 
-# 2 results for "powered by CMS WebManager-Pro" @ 2010-09-04
+# Google results as at 2010-09-04 #
+# 2 for "powered by CMS WebManager-Pro"
+
+# Dorks #
+dorks [
+'"powered by CMS WebManager-Pro"'
+]
 
 # Examples #
 examples %w|

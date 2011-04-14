@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.1"
 description "With a huge variety of features and options, at an extremely affordable price, ClipShare is the ultimate video script for starting your highly profitable video sharing community website just like the big boys: Youtube, DailyMotion, Metacafe, or Google Video. - homepage: http://www.clip-share.com/"
 
-# 204 results for "powered by ClipShare" @ 2010-08-21
+# Google results as at 2010-08-21 #
+# 204 for "powered by ClipShare"
+
+# Dorks #
+dorks [
+'"powered by ClipShare"'
+]
+
+# Examples #
 examples %w|
 darkorange.clipsharedemo.com
 clearwater.clipsharedemo.com

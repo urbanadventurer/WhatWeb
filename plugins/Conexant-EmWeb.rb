@@ -9,10 +9,20 @@ version "0.1"
 description "This plugin identifies the Conexant-EmWeb DSL router web interface - homepage: http://www.conexant.com/"
 # Flexor 151 user Manual: http://www.voiptalk.org/products/pdf/Flexor_151_User_Manual.pdf
 
-# About 54859 ShodanHQ results for Conexant-EmWeb @ 2010-10-30
-# 4 Google result for "The Login page is where you enter the Broadband User Name and" inurl:"/help.html" intitle:"help" @ 2010-10-30
-# 1 Google result for intitle:"AT-iMG634WA" "System Information" @ 2010-10-30
-# 3 Google results for intitle:"AT" "System Information" "Model Type" "Software Release" "Recovery Release" @ 2010-10-30
+# ShodanHQ results as at 2010-10-30 #
+# 54,859 ShodanHQ results for Conexant-EmWeb
+
+# Google results as at 2010-10-30 #
+# 4 for "The Login page is where you enter the Broadband User Name and" inurl:"/help.html" intitle:"help"
+# 1 for intitle:"AT-iMG634WA" "System Information"
+# 3 for intitle:"AT" "System Information" "Model Type" "Software Release" "Recovery Release"
+
+# Dorks #
+dorks [
+'"The Login page is where you enter the Broadband User Name and" inurl:"/help.html" intitle:"help"'
+]
+
+# Examples #
 examples %w|
 196.211.3.121
 219.95.129.133
@@ -32,6 +42,7 @@ examples %w|
 200.110.172.157
 |
 
+# Matches #
 matches [
 
 # Authentication failed # Default table HTML and 401 status code

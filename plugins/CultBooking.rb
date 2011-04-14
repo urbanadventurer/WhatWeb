@@ -12,6 +12,11 @@ description "A comprehensive and free-of-charge Internet Booking Engine (IBE) - 
 # Google results as at 2011-03-13 #
 # 29 for inurl:cultbooking.php filetype:php
 
+# Dorks #
+dorks [
+'inurl:cultbooking.php filetype:php'
+]
+
 # Examples #
 examples %w|
 cultbooking.com/cultbooking.php

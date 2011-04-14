@@ -12,6 +12,11 @@ description "E-Store with shopping cart for online shopping websites , hosting &
 # Google results as at 2011-02-08 #
 # 71 for "Programmed By Allomani"
 
+# Dorks #
+dorks [
+'"Programmed By Allomani"'
+]
+
 # Examples #
 examples %w|
 demos.allomani.com/store_en/

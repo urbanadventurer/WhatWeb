@@ -12,6 +12,11 @@ description "Dada Mail is a Contemporary Mailing List Manager. Dada Mail works b
 # Google results as at 2011-03-18 #
 # 469 for "Powered by Dada Mail" ext:cgi inurl:mail.cgi
 
+# Dorks #
+dorks [
+'"Powered by Dada Mail" ext:cgi inurl:mail.cgi'
+]
+
 # Examples #
 examples %w|
 demo.dadamailproject.com/cgi-bin/dada/mail.cgi
