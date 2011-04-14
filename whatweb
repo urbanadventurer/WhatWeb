@@ -1351,7 +1351,7 @@ while thistarget = next_target
 						for k in 1...pageheaders.length
 							section=pageheaders[k].split(/:/).first.to_s.downcase
 							if section =~ /^set-cookie$/
-								cookies << pageheaders[k].scan(/set-cookie:[\s]*(.+)/i)
+								cookies << pageheaders[k].scan(/set-cookie:[\s]*(.+)/i).to_s
 							else
 								headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).to_s
 							end
