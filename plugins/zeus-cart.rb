@@ -15,6 +15,11 @@ description "Control every facet of your store, from merchandising to promotions
 # Google results as at 2010-08-06 #
 # 43 for "powered by ZeusCart"
 
+# Dorks #
+dorks [
+'"powered by ZeusCart"'
+]
+
 # Examples #
 examples %w|
 points-goo.com

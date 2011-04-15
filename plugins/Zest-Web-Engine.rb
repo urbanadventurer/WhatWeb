@@ -15,6 +15,11 @@ description "Zest Web Engine - Homepage: http://www.zest-leisure.com/"
 # ShodanHQ results as at 2011-04-08 #
 # 13 for /cgi-bin/web.asp
 
+# Dorks #
+dorks [
+'inurl:/cgi-bin/web.asp'
+]
+
 # Examples #
 examples %w|
 www.zest-leisure.com

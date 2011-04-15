@@ -9,7 +9,10 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
 version "0.1"
 description "Zope is an open source web application server primarily written in the Python programming language. It features a transactional object database which can store not only content and custom data, but also dynamic HTML templates, scripts, a search engine, and relational database (RDBMS) connections and code. - homepage: http://www.zope.org/"
 
-# About 6219 ShodanHQ results for Server: Zope
+# ShodanHQ results as at 2010-11-02 #
+# 6,219 for Server: Zope
+
+# Examples #
 examples %w|
 146.193.41.154
 80.121.217.35

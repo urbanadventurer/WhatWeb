@@ -15,6 +15,11 @@ description "Zimplit CMS: The easiest Open Source Content Management System for 
 # Google results as at 2010-10-11 #
 # 187 for "powered by Zimplit CMS"
 
+# Dorks #
+dorks [
+'"powered by Zimplit CMS"'
+]
+
 # Examples #
 examples %w|
 www.zimplit.com

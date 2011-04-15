@@ -10,6 +10,13 @@ version "0.1"
 description "Blog - homepage: http://www.zomp.nl/zomplog/index.php"
 
 # 72 results for "powered by Zomplog" -Vulnerability -exploit @ 2010-09-18
+
+# Dorks #
+dorks [
+'"powered by Zomplog" -Vulnerability -exploit'
+]
+
+# Examples #
 examples %w|
 annegret.intensiverleben.at/blogme/
 annegret.intensiverleben.at/blogme/login.php
