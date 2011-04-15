@@ -26,6 +26,12 @@ description "This plugin indentifies ZyXEL router models"
 # 33 for intitle:Top "Vantage Service Gateway" -inurl:zyxel
 # 90 for "Welcome to the Web-Based Configurator" "Welcome to your router Configuration Interface"
 
+# Dorks #
+dorks [
+'intitle:Top "Vantage Service Gateway" -inurl:zyxel',
+'"Welcome to the Web-Based Configurator" "Welcome to your router Configuration Interface"'
+]
+
 # Examples #
 examples %w|
 spamdns.com

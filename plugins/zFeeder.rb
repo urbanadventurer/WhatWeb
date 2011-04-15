@@ -9,8 +9,16 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
 version "0.1"
 description "check zFeeder if you want to show other's RSS content (news and much more) on your website, wapsite or use it on your PC (or intranet) as a news reader. - homepage: http://zvonnews.sourceforge.net/"
 
-# 319 results for "powered by zFeeder" @ 2010-08-22
-# 148 results for "powered by zFeeder" inurl:zfposition|zfcategory @ 2010-08-22
+# Google results as at 2010-08-22 #
+# 319 for "powered by zFeeder"
+# 148 for "powered by zFeeder" inurl:zfposition|zfcategory
+
+# Dorks #
+dorks [
+'"powered by zFeeder" inurl:zfposition|zfcategory'
+]
+
+# Examples #
 examples %w|
 skiing.newsonly.org
 wine.newsonly.org
@@ -103,6 +111,7 @@ www.gotzmanngroup.net/news.php
 www.biovane.com/intellectual_property_news.php
 |
 
+# Matches #
 matches [
 
 # From the homepage: please keep the link: "powered by.." or use the logo

@@ -8,6 +8,13 @@ Plugin.define "Zikula" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
 version "0.1"
 description "Zikula is a Web Application Toolkit, which allows you to run impressive websites and build powerful online applications. - homepage: http://zikula.org"
+
+# Dorks #
+dorks [
+'"Powered by Zikula"'
+]
+
+# Examples #
 examples %w|
 zikula.org
 demo.zikula.org
@@ -20,6 +27,7 @@ www.zikulaplus.com
 zikula.at
 |
 
+# Matches #
 matches [
 
 # <meta name="Generator" content="Zikula - www.zikula.org" />

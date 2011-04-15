@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
 description "homepage: http://www.zylone.com/"
 
-# 50 results for "powered by Zylone IT" -Vulnerability @ 2010-10-12
+# Google results as at 2010-10-12 $
+# 50 for "powered by Zylone IT" -Vulnerability
+
+# Dorks #
+dorks [
+'"powered by Zylone IT" -Vulnerability'
+]
+
+# Examples #
 examples %w|
 agape-gean.com.sg
 demo3.zylone.com/genetic-cms/

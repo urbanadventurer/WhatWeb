@@ -12,6 +12,11 @@ description "Zoom is a software package that creates a search engine for your we
 # Google results as at 2011-04-11 #
 # 337 for inurl:zoom_per_page
 
+# Dorks #
+dorks [
+'inurl:zoom_per_page'
+]
+
 # Examples #
 examples %w|
 www.usmd.edu/search/index.php

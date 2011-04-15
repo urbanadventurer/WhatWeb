@@ -12,8 +12,17 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01
 version "0.2"
 description "Zen Cart. truly is the art of e-commerce; free, user-friendly, open source shopping cart software. - homepage:http://www.zen-cart.com/"
 
-# About 31,400,000 results for +intitle:"Powered by Zen Cart!, The Art of E-commerce" @ 2010-06-01
 # Find more shops here: http://www.zen-cart.com/index.php?main_page=showcase
+
+# Google results as at 2011-04-15 #
+# 361 for "Powered by Zen Cart!, The Art of E-commerce"
+
+# Dorks #
+dorks [
+'"Powered by Zen Cart!, The Art of E-commerce"'
+]
+
+# Examples #
 examples %w|
 http://demo.opensourcecms.com/zencart/
 http://www.livedemo.com/scripts/zencart/

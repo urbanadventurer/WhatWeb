@@ -12,6 +12,11 @@ description "With ZIPBOX start selling digital music, images, videos, books and 
 # Google results as at 2011-03-13 #
 # 34 for "POWERED BY ZIPBOX MEDIA" inurl:"album.php"
 
+# Dorks #
+dorks [
+'"POWERED BY ZIPBOX MEDIA" inurl:"album.php"'
+]
+
 # Examples #
 examples %w|
 www.stetsonlooks.com/album.php

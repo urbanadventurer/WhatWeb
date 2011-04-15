@@ -9,17 +9,19 @@
 ##
 # Version 0.3
 # Now using :version=>// instead of a passive function, added description, examples and included relative /wp-content/ link detection
-
+##
 Plugin.define "WordPress" do
 author "Andrew Horton"
 version "0.4"
 description "WordPress is an opensource blogging system commonly used as a CMS. Homepage: http://www.wordpress.org/ "
+
+# Examples #
 examples %w| http://lonnroth.info/ http://mattbrett.com/ http://www.komodomedia.com/ http://bestwebgallery.com/ http://cssremix.com/ http://www.cssbloom.net/ http://www.screenz.de/ http://www.kineda.com/ http://ifelse.co.uk/ http://fadtastic.net/ http://www.funci.org/en/ |
 
-# identifying strings
-# <meta name="generator" content="WordPress 2.5.1" />
-# <meta name="generator" content="WordPress 2.6.5" />
-# <meta name="generator" content="WordPress.com" />
+# Dorks #
+dorks [
+'"is proudly powered by WordPress"'
+]
 
 # Matches #
 matches [
