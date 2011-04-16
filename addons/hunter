@@ -22,15 +22,15 @@ USERAGENT="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) Apple
 PROXYUSER=""  # "username:password" Set proxy user and password
 PROXY=""      # "hostname:port"     Set proxy hostname and port
 
-# Check if WhatWeb is installed
-WHATWEB=`which whatweb 2>/dev/null`
-if [[ -z "$WHATWEB" ]]; then
-	# Check for WhatWeb in the current working directory
-	WHATWEB="./whatweb"
+# Check for WhatWeb in the current working directory
+WHATWEB="./whatweb"
+if [[ ! -e "$WHATWEB" ]]; then
+	# Check for WhatWeb in the parent directory
+	WHATWEB="../whatweb"
 	if [[ ! -e "$WHATWEB" ]]; then
-		# Check for WhatWeb in the parent directory
-		WHATWEB="../whatweb"
-		if [[ ! -e "$WHATWEB" ]]; then
+		# Check if WhatWeb is installed
+		WHATWEB=`which whatweb 2>/dev/null`
+		if [[ -z "$WHATWEB" ]]; then
 			echo "[!] Fatal Error: WhatWeb must be installed, in the parent directory or in the current working directory. Homepage: http://www.morningstarsecurity.com/research/whatweb"
 			exit 1
 		fi
@@ -44,8 +44,8 @@ if [[ ! -e "$GOOGLESCAN" ]]; then
 	exit 1
 fi
 
-# Show usage and quit if no arguments are provided
-if [[ -z "$1" ]]; then
+# Show usage and quit
+if [[ -z "$1" || "$1" == "-h" || "$1" == "--help" ]]; then
 echo "______               _____
 ___  /_____  __________  /_____________
 __  __ \  / / /_  __ \  __/  _ \_  ___/
@@ -57,7 +57,8 @@ Version $VERSION by $AUTHOR
 
 Usage:
   $0 <Application Name>    Find and fingerprint a web application.
-  $0 -l [keyword]          List applications. Filter by optional keyword.
+  $0 --list,-l [keyword]   List applications. Filter by optional keyword.
+  $0 --help,-h             This help info
 
 Example: $0 wordpress
 "
@@ -65,7 +66,7 @@ exit
 fi
 
 # List plugins
-if [[ "$1" == "-l" ]]; then
+if [[ "$1" == "-l" || "$1" == "--list" ]]; then
 	if [[ -z "$2" ]]; then
 		"$WHATWEB" -I | grep Dork -B 5 | egrep "^(\S)"
 	else
@@ -75,6 +76,9 @@ if [[ "$1" == "-l" ]]; then
 fi
 
 # Get dorks from WhatWeb
+if [[ "$VERBOSE" == "YES" ]]; then
+	echo "[+] Loading google queries for $1"
+fi
 DORKS=`"$WHATWEB" -g "$1"`
 
 # Quit if no dorks were returned
