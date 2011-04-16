@@ -1,0 +1,92 @@
+#!/bin/bash
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# ______               _____
+# ___  /_____  __________  /_____________
+# __  __ \  / / /_  __ \  __/  _ \_  ___/
+# _  / / / /_/ /_  / / / /_ /  __/  /
+# /_/ /_/\__,_/ /_/ /_/\__/ \___//_/
+#
+# Finds web applications with Google then fingerprints them with WhatWeb
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# This file is part of WhatWeb and may be subject to
+# redistribution and commercial restrictions. Please see the WhatWeb
+# web site for more information on licensing and terms of use.
+# http://www.morningstarsecurity.com/research/whatweb
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+VERSION="0.1-dev 20110417"
+AUTHOR="Brendan Coles [+] itsecuritysolutions.org"
+VERBOSE="NO"
+
+# WhatWeb settings
+USERAGENT="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341"
+PROXYUSER=""  # "username:password" Set proxy user and password
+PROXY=""      # "hostname:port"     Set proxy hostname and port
+
+# Check if WhatWeb is installed
+WHATWEB=`which whatweb 2>/dev/null`
+if [[ -z "$WHATWEB" ]]; then
+	# Check for WhatWeb in the current working directory
+	WHATWEB="./whatweb"
+	if [[ ! -e "$WHATWEB" ]]; then
+		# Check for WhatWeb in the parent directory
+		WHATWEB="../whatweb"
+		if [[ ! -e "$WHATWEB" ]]; then
+			echo "[!] Fatal Error: WhatWeb must be installed, in the parent directory or in the current working directory. Homepage: http://www.morningstarsecurity.com/research/whatweb"
+			exit 1
+		fi
+	fi
+fi
+
+# Quit if gggooglescan is not in the current working directory
+GOOGLESCAN="./gggooglescan"
+if [[ ! -e "$GOOGLESCAN" ]]; then
+	echo "[!] Fatal Error: Could not locate gggooglescan in the current working directory. Homepage: http://www.morningstarsecurity.com/research"
+	exit 1
+fi
+
+# Show usage and quit if no arguments are provided
+if [[ -z "$1" ]]; then
+echo "______               _____
+___  /_____  __________  /_____________
+__  __ \  / / /_  __ \  __/  _ \_  ___/
+_  / / / /_/ /_  / / / /_ /  __/  /
+/_/ /_/\__,_/ /_/ /_/\__/ \___//_/
+
+Hunter - Finds web applications with Google then fingerprints them with WhatWeb
+Version $VERSION by $AUTHOR
+
+Usage:
+  $0 <Application Name>    Find and fingerprint a web application.
+  $0 -l [keyword]          List applications. Filter by optional keyword.
+
+Example: $0 wordpress
+"
+exit
+fi
+
+# List plugins
+if [[ "$1" == "-l" ]]; then
+	if [[ -z "$2" ]]; then
+		"$WHATWEB" -I | grep Dork -B 5 | egrep "^(\S)"
+	else
+		"$WHATWEB" -I | grep Dork -B 5 | egrep "^(\S)" | grep -i "$2"
+	fi
+	exit
+fi
+
+# Get dorks from WhatWeb
+DORKS=`"$WHATWEB" -g "$1"`
+
+# Quit if no dorks were returned
+if [[ -z "$DORKS" ]]; then
+	exit 1
+fi
+
+# Pipe dorks to gggooglescan then pipe the results to WhatWeb
+echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$1.log" -p "$1" | grep -i "$1"
+
+# Show log message
+if [[ "$VERBOSE" == "YES" ]]; then
+	echo "[+] Wrote output to $1.log"
+fi
+
