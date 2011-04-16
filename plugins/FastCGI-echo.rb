@@ -10,9 +10,17 @@ version "0.1"
 description "Many Oracle web server installations have a fcgi-bin/echo script left over from default demo (google for inurl:fcgi-bin/echo). This file should have been removed as per: http://download.oracle.com/docs/cd/B14099_19/core.1012/b13999/checklist.htm#BABIBCIC"
 # Vulnerable to XSS: /fcgi-bin/echo?<script>alert(1)</script>
 
-# 247 results for inurl:fcgi-bin/echo intitle:"FastCGI echo" @ 2010-10-10
-# 53 results for inurl:fcgi-bin/echo intitle:"FastCGI echo" inurl:.gov @ 2010-10-10
-# 46 results for inurl:fcgi-bin/echo intitle:"FastCGI echo" inurl:.edu @ 2010-10-10
+# Google results as at 2010-10-10 #
+# 247 for inurl:fcgi-bin/echo intitle:"FastCGI echo"
+# 53  for inurl:fcgi-bin/echo intitle:"FastCGI echo" inurl:.gov
+# 46  for inurl:fcgi-bin/echo intitle:"FastCGI echo" inurl:.edu
+
+# Dorks #
+dorks [
+'inurl:fcgi-bin/echo intitle:"FastCGI echo"'
+]
+
+# Examples #
 examples %w|
 www2.city.yokohama.jp/fcgi-bin/echo
 tfcorclmail.teijin.co.id:7778/fcgi-bin/echo

@@ -19,6 +19,11 @@ description "Open Source forum written in PHP - Homepage: http://fluxbb.org/ - A
 # Google results as at 2011-04-06 #
 # 357 for "Powered by FluxBB"
 
+# Dorks #
+dorks [
+'"Powered by FluxBB"'
+]
+
 # Examples #
 examples %w|
 fluxbb.org/forums/

@@ -13,6 +13,12 @@ description "gCards is a free PHP-based eCard system that is easy to setup and u
 # 359 for "powered by gcards"
 # 11 for intitle:"eCards Administration Console Login" inurl:login.php
 
+# Dorks #
+dorks [
+'"powered by gcards"',
+'intitle:"eCards Administration Console Login" inurl:login.php'
+]
+
 # Examples #
 examples %w|
 demo.centipaid.com/gcards/

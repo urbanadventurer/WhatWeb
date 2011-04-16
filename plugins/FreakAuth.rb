@@ -15,6 +15,11 @@ description "FreakAuth is a simple authentication library for the Code Igniter P
 # ShodanHQ results as at 2011-04-11 #
 # 129 for Location: /framework/index.php
 
+# Dorks #
+dorks [
+'intitle:"FreakAuth" "Welcome on board ! / Login"'
+]
+
 # Examples #
 examples %w|
 toughta.info

@@ -12,6 +12,11 @@ description "Gitweb is a Git web interface, the one working on http://www.kernel
 # Google results as at 2011-01-24 #
 # 228 results for "Project" "Description" "Owner" "Last Change" "Search" "summary" "shortlog" "log" "tree" "TXT" "OPML" intitle:git
 
+# Dorks #
+dorks [
+'"Project" "Description" "Owner" "Last Change" "Search" "summary" "shortlog" "log" "tree" "TXT" "OPML" intitle:git'
+]
+
 # Examples #
 examples %w|
 gitweb.samba.org

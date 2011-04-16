@@ -12,6 +12,11 @@ description "fastpublish CMS proudly presents the new Content Management System 
 # Google results as at 2011-03-03 #
 # 51 for "Securitycode: (please insert the numbers from the picture into the following field)"
 
+# Dorks #
+dorks [
+'"Securitycode: (please insert the numbers from the picture into the following field)"'
+]
+
 # Examples #
 examples %w|
 www.fastpublish.org

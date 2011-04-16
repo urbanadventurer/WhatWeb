@@ -11,6 +11,14 @@ description "X10 Torrent Script is a bittorrent search engine, users fill in a k
 
 # 29 results for "Powered by x10media Torrent Search Engine Script" @ 2010-08-01
 # 196 results for "This search engine is in no way intended for illegal downloads. " @ 2010-08-01
+
+# Dorks #
+dorks [
+'"This search engine is in no way intended for illegal downloads. "',
+'"Powered by x10media Torrent Search Engine Script"'
+]
+
+# Examples #
 examples %w|
 www.x10torrent.com
 hitsandfree.com

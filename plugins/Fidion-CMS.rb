@@ -10,12 +10,20 @@ version "0.1"
 description "CMS - homepage: http://www.fidion.de/"
 
 # 14 results for "powered by FCMS Copyright" @ 2010-09-12
+
+# Dorks #
+dorks [
+'"powered by FCMS Copyright"'
+]
+
+# Examples #
 examples %w|
 www.aichacher-zeitung.de
 www.fidion.de
 www.main.de
 |
 
+# Matches #
 matches [
 
 # HTML Comment

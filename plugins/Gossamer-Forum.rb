@@ -12,6 +12,11 @@ description "Gossamer Forum is the ideal software solution to create, or enhance
 # Google results as at 2011-03-19 #
 # 74 for "Powered by Gossamer Forum" filetype:cgi inurl:gforum.cgi
 
+# Dorks #
+dorks [
+'"Powered by Gossamer Forum" filetype:cgi inurl:gforum.cgi'
+]
+
 # Examples #
 examples %w|
 www.freepcb.com/cgi-bin/gforum.cgi

@@ -24,6 +24,11 @@ description "XAMPP is an easy to install Apache distribution containing MySQL, P
 # 2 image results for inurl:"head-macosx.gif" xampp
 # 3 image results for inurl:"head-windows.gif" xampp
 
+# Dorks #
+dorks [
+'"You have successfully installed XAMPP on this system!" intitle:"XAMPP Version"'
+]
+
 # Examples #
 examples %w|
 https://www.funproins.com

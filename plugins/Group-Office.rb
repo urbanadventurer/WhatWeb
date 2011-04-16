@@ -10,6 +10,13 @@ version "0.1"
 description "Share projects, calendars, files and e-mail online with co-workers and clients. Easy to use and fully customizable, Group-Office takes online collaboration to the next level. - homepage: http://www.group-office.com/"
 
 # 53 results for "powered by Group Office" @ 2010-09-18
+
+# Dorks #
+dorks [
+'"powered by Group Office"'
+]
+
+# Examples #
 examples %w|
 demo.group-office.com/groupoffice/
 demo.group-office.eu

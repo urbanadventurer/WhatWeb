@@ -12,6 +12,11 @@ description "Gallarific is a fully customizable PHP photo gallery script that le
 # Google results as at 2011-03-14 #
 # 5 for intitle:Gallarific "Sign in to Gallarific"
 
+# Dorks #
+dorks [
+'intitle:Gallarific "Sign in to Gallarific"'
+]
+
 # Examples #
 examples %w|
 www.gallarific.com/demo/index.php

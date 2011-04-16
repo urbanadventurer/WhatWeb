@@ -12,6 +12,11 @@ description "Hot Banana is an award-winning, easy-to-use Web Content Management 
 # Google results as at 2011-03-03 #
 # 42 for "powered by hot banana"
 
+# Dorks #
+dorks [
+'"powered by hot banana"'
+]
+
 # Examples #
 examples %w|
 www.visitgrey.ca

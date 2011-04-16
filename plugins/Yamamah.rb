@@ -9,6 +9,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
 version "0.1"
 description "Yamamah - Free photo Gallery - homepage: www.yamamah.org/home/"
 
+# Google results as at 2011-01-29 #
+# 89 for "Powered By : Yamamah Version 1.00" -dork -exploit
+
+# Dorks #
+dorks [
+'"Powered By : Yamamah Version 1.00" -dork -exploit'
+]
+
 # Examples #
 examples %w|
 www.gam-adv.com/y/index.php
@@ -24,9 +32,6 @@ xn--mgbqr5cjvt.com
 www.imtroodi.com/Gallery/
 www.alaskri.com/photo/
 |
-
-# Google results as at 2011-01-29 #
-# 89 for "Powered By : Yamamah Version 1.00" -dork -exploit 
 
 # Matches #
 matches [

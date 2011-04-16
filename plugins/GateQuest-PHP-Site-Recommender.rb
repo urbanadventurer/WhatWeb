@@ -12,6 +12,11 @@ description "GateQuest php Site Recommender is a simple recommendation software 
 # Google results as at 2011-02-18 #
 # 62 for intitle:"GateQuest php Site Recommender - Include Method" "Recipient Email Addresses"
 
+# Dorks #
+dorks [
+'intitle:"GateQuest php Site Recommender - Include Method" "Recipient Email Addresses"'
+]
+
 # Examples #
 examples %w|
 carlsauter.com/srecommender/Include_Method/recommend.php

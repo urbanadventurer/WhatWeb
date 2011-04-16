@@ -16,6 +16,12 @@ description "X10media MP3 search engine - homepage: http://www.x10media.com/mp3-
 # 134 for "powered by x10media.com a MP3 Search Script"
 # 196 for "This search engine is in no way intended for illegal downloads. "
 
+# Dorks #
+dorks [
+'"powered by x10media.com a MP3 Search Script"',
+'"This search engine is in no way intended for illegal downloads. "'
+]
+
 # Examples #
 examples %w|
 x10media.com/mp3/

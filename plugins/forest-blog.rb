@@ -16,6 +16,13 @@ description "Forest Blog - homepage: http://www.hostforest.co.uk/Products/blog.a
 # 243 for "powered by Forest Blog"
 # 15  for intitle:"Forest Blog Administration"
 
+
+# Dorks #
+dorks [
+'"powered by Forest Blog"',
+'intitle:"Forest Blog Administration"'
+]
+
 # Examples #
 examples %w|
 www.jonathantokeley.com/Admin/

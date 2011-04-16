@@ -15,6 +15,11 @@ description "XHP CMS - eXpandable Home Page is an easy to install, easy to use, 
 # Google results as at 2010-08-08 #
 # 22 for "powered by XHP CMS" "Site engine is copyright"
 
+# Dorks #
+dorks [
+'"powered by XHP CMS" "Site engine is copyright"'
+]
+
 # Examples #
 examples %w|
 xhp.targetit.ro

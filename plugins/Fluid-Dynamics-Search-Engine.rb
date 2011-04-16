@@ -12,6 +12,11 @@ description "FDSE is an easy-to-install search engine for local and remote sites
 # Google results as at 2011-03-17 #
 # 180 for "Powered by the Fluid Dynamics Search Engine"
 
+# Dorks #
+dorks [
+'"Powered by the Fluid Dynamics Search Engine"'
+]
+
 # Examples #
 examples %w|
 www.cmrb.vic.gov.au/cgi-bin/search/search.pl

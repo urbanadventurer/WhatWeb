@@ -13,6 +13,13 @@ version "0.2"
 description "FluentNET, DotContent's powerful content management software, empowers business users to create, manage and publish web content for both general public access as well as internal use, and maximises the value of web-based information. - homepage: http://www.dotcontent.net"
 
 # 14 results for "powered by FluentCMS from DotContent" @ 2010-08-08
+
+# Dorks #
+dorks [
+'"powered by FluentCMS from DotContent"'
+]
+
+# Examples #
 examples %w|
 www.eepublishers.co.za
 www.resolve.co.za

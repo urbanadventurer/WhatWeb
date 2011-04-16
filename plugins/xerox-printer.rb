@@ -16,6 +16,12 @@ description "Xerox printers web interface - homepage: http://www.xerox.com/"
 # 28 for "Phaser 6250" "Printer Neighborhood" "XEROX CORPORATION" -intitle
 # 25 for intext:centreware inurl:status
 
+# Dorks #
+dorks [
+'"Phaser 6250" "Printer Neighborhood" "XEROX CORPORATION" -intitle',
+'intext:centreware inurl:status'
+]
+
 # Examples #
 examples %w|
 130.236.83.191

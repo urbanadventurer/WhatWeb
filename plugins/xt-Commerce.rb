@@ -13,6 +13,11 @@ description "xt-Commerce is a powerfull Opensource e-Commerce Solution, written 
 # Google results as at 2011-02-15 #
 # 22 for inurl:"xtc_check_stock_attributes.inc.php"
 
+# Dorks #
+dorks [
+'inurl:"xtc_check_stock_attributes.inc.php"'
+]
+
 # Examples #
 examples %w|
 die-glasperle.de/shop/
