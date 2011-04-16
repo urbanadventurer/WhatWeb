@@ -1125,6 +1125,8 @@ begin
 				exit
 		end
 	end		
+rescue Errno::EPIPE
+	exit
 rescue StandardError, GetoptLong::Error => err
 	puts
 	usage
