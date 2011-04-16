@@ -9,8 +9,16 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-07-15
 version "0.1"
 description "EvoCam is the ultimate webcam software for Mac OS X - homepage: http://www.evological.com/evocam.html"
 
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=809
-# 35 results for intitle:"EvoCam" inurl:"webcam.html" -intitle @ 2010-07-15
+# Google results as at 2010-07-15 #
+# 35 for intitle:"EvoCam" inurl:"webcam.html" -intitle
+
+# Dorks #
+dorks [
+'intitle:"EvoCam" inurl:"webcam.html" -intitle'
+]
+
+
+# Examples #
 examples %w|
 www.xs4all.nl/~radavi/webcam.html
 www.imomsite.com/pages/yard/robin/webcam.html

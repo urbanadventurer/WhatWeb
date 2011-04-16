@@ -15,6 +15,11 @@ description "eZ Publish is an Open Source Content Management System chosen by th
 # Google results as at 2011-03-17 #
 # 58 for Admin intitle:"eZ publish administration"
 
+# Dorks #
+dorks [
+'Admin intitle:"eZ publish administration"'
+]
+
 # Examples #
 examples %w|
 admin.rfidjournal.com

@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
 version "0.1"
 description "Elxis is powerful open source content management system (CMS) released for free under the GNU/GPL license. - homepage: http://www.elxis.org/"
 
-# 200 results for "powered by Elxis CMS" @ 2010-10-11
+# Google results as at 2010-10-11 #
+# 200 for "powered by Elxis CMS"
+
+# Dorks #
+dorks [
+'"powered by Elxis CMS"'
+]
+
+# Examples #
 examples %w|
 www.elxis.org
 www.elxis-demo.com

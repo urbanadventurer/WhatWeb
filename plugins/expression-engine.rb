@@ -4,16 +4,20 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
 # Version 0.2
 # removed :name and :certainty=>100
-
+##
 Plugin.define "ExpressionEngine" do
 author "Andrew Horton"
 version "0.2"
 description "ExpressionEngine is CMS written in PHP. Free and commercial versions. Homepage: http://expressionengine.com"
 
+# Dorks #
+dorks [
+'"Powered by ExpressionEngine"'
+]
+
+# Examples #
 examples %w|
 http://5pieces.com
 http://clinician1.com/

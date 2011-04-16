@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
 version "0.1"
 description "Out of thebox, Exponent Content Management System touts a feature-rich assortment of tools to assist you in your online content management. Requirements: Apache 1.3, 2.0, or 2.2, PHP 4.4 or later, PHP GD Image Library extension, MySQL 4.1.22 or later - homepage: http://www.exponentcms.org/index.php?section=116"
 
-# 94 results for "powered by Exponent CMS" @ 2010-10-15
+# Google results as at 2010-10-15 #
+# 94 for "powered by Exponent CMS"
+
+# Dorks #
+dorks [
+'"powered by Exponent CMS"'
+]
+
+# Examples #
 examples %w|
 beyondthebeatenpath.com
 fortwayneworkingdog.org

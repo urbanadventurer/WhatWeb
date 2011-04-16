@@ -15,6 +15,11 @@ description "CMS - homepage: http://www.e-xoopport.it/modules/news/"
 # Google results as at 2010-09-18 #
 # 159 for "powered by E-Xoopport"
 
+# Dorks #
+dorks [
+'"powered by E-Xoopport"'
+]
+
 # Examples #
 examples %w|
 www.e-xoopport.it/modules/news/

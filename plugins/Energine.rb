@@ -12,6 +12,11 @@ description "Energine Content Management Framework - XML based PHP5 content mana
 # Google results as at 2011-02-27 #
 # 85 for "Powered by Energine"
 
+# Dorks #
+dorks [
+'"Powered by Energine"'
+]
+
 # Examples #
 examples %w|
 demo.energine.org

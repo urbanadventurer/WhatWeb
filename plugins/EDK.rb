@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
 description "EDK is an Open Source Killboard for EVE-Online, maintained by the EVE Development Network. Requirements: PHP >= version 5, the GD Library, MySQL >= version 5 - homepage: http://wiki.eve-id.net/EDK"
 
-# 355 results for (inurl:alliance_detail | inurl:pilot_detail | inurl:corp_detail) @ 2010-09-04
+# Google results as at 2010-09-04 #
+# 355 for (inurl:alliance_detail | inurl:pilot_detail | inurl:corp_detail)
+
+# Dorks #
+dorks [
+'(inurl:alliance_detail | inurl:pilot_detail | inurl:corp_detail)'
+]
+
+# Examples #
 examples %w|
 bdeal-eve.info/kb/
 cow.hosti.fi/kb/

@@ -15,6 +15,11 @@ description "Escenic is a commercial CMS popular in the Nordic region. - Homepag
 # Google results as at 2011-03-19 #
 # 273 for filetype:ece
 
+# Dorks #
+dorks [
+'filetype:ece'
+]
+
 # Examples #
 examples %w|
 escenic.com
