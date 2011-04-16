@@ -15,6 +15,11 @@ description "Dating Software by eMeeting Ltd - homepage: http://www.datingscript
 # Google results as at 2010-08-30 #
 # 53 for "eMeeting Dating Software Version"
 
+# Dorks #
+dorks [
+'"eMeeting Dating Software Version"'
+]
+
 # Examples #
 examples %w|
 datingscripts.co.uk/dating-software-demo/

@@ -14,6 +14,11 @@ description "eSyndiCat is a professional, affordable directory software solution
 
 # 8 results for "Powered by eSyndiCat Web Directory" @ 2010-08-08
 
+# Dorks #
+dorks [
+'"Powered by eSyndiCat Web Directory"'
+]
+
 # Examples #
 examples %w|
 www.esyndicat.com/demo/

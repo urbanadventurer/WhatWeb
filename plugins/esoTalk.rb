@@ -12,6 +12,11 @@ description "esoTalk is a simple, fast, free web-forum. - homepage: http://esota
 # Google results as at 2011-01-29 #
 # 93 for "Powered by esoTalk"
 
+# Dorks #
+dorks [
+'"Powered by esoTalk"'
+]
+
 # Examples #
 examples %w|
 forum.esotalk.com

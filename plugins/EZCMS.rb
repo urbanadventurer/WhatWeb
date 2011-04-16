@@ -15,6 +15,11 @@ description "Building your own website is easy with the EZ Websites Builder - ho
 # Google results as at 2010-08-28 #
 # 20 for "powered by EZCMS" -Vulnerabilities
 
+# Dorks #
+dorks [
+'"powered by EZCMS" -Vulnerabilities'
+]
+
 # Examples #
 examples %w|
 ezcms.eztechhelp.com

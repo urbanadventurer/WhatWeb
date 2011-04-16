@@ -15,6 +15,11 @@ description "homepage: http://www.mountaingrafix.at/"
 # Google rsults as at 2010-09-03 #
 # 308 for "powered by easyLink"
 
+# Dorks #
+dorks [
+'"powered by easyLink"'
+]
+
 # Examples #
 examples %w|
 7zwerge.org

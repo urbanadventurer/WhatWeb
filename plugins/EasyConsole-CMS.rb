@@ -13,6 +13,11 @@ Text, documents, media and virtually any type of information can be securely sha
 # Google results as at 2011-03-03 #
 # 66 for "powered by EasyConsole-CMS" inurl:"easyconsole.cfm" ext:cfm
 
+# Dorks #
+dorks [
+'"powered by EasyConsole-CMS" inurl:"easyconsole.cfm" ext:cfm'
+]
+
 # Examples #
 examples %w|
 www.cnpmarfinlife.com/easyconsole.cfm

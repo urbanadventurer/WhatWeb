@@ -10,6 +10,13 @@ version "0.1"
 description "Open source CMS - homepage: http://www.phome.net/"
 
 # 371 results for "powered by EmpireCMS" @ 2010-08-04
+
+# Dorks #
+dorks [
+'"powered by EmpireCMS"'
+]
+
+# Examples #
 examples %w|
 www.top-pwr.com
 www.0000h.net

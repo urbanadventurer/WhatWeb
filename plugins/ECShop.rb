@@ -12,6 +12,11 @@ description "Ecshop is an Open Source Ecommerce Platform - Homepage: http://www.
 # Google results as at 2011-03-18 #
 # 485 for "powered by ECSHOP"
 
+# Dorks #
+dorks [
+'"powered by ECSHOP"'
+]
+
 # Examples #
 examples %w|
 www.iamfashion2u.com

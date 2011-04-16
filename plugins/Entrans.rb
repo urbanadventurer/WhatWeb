@@ -12,6 +12,11 @@ description "Entrans is an online translation tool. The tool can be used by the 
 # Google results as at 2011-02-27 #
 # 6 for "View All Strings" "The tool can be used by the online community"
 
+# Dorks #
+dorks [
+'"View All Strings" "The tool can be used by the online community"'
+]
+
 # Examples #
 examples %w|
 entrans.sourceforge.net/demo/

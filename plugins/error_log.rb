@@ -13,6 +13,11 @@ description "This plugin identifies PHP error_logs and and extracts the local fi
 # 847,000 for warning|error inurl:error_log +PHP "on line"
 # 269 for warning|error inurl:error_log +PHP "on line" inurl:".gov"
 
+# Dorks #
+dorks [
+'warning|error inurl:error_log +PHP "on line"'
+]
+
 # Examples #
 examples %w|
 azgs.az.gov/az-shakes/concrete/blocks/image/error_log

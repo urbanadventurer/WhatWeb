@@ -10,6 +10,13 @@ version "0.1"
 description "envezion~MEDIA makes it possible for the small business owner to you reach your goals through our consulting services. - homepage: http://envezion.com/"
 
 # 15 results for "powered by envezion~media" @ 2010-08-15
+
+# Dorks #
+dorks [
+'"powered by envezion~media"'
+]
+
+# Examples #
 examples %w|
 envezion.com
 123searchonline.com/blog/

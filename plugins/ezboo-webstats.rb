@@ -7,7 +7,16 @@
 Plugin.define "ezBOO-WebStats" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.1"
-description "ezBOO WebStats is a high level statistical tool for web sites monitoring. - homepage:http://www.ezboo.com/softs/"
+description "ezBOO WebStats is a high level statistical tool for web sites monitoring. - Homepage: http://www.ezboo.com/softs/"
+
+# 624 results for +"Administrator Panel" +intitle:"ezBOO WebStats" @ 2010-06-05
+
+# Dorks #
+dorks [
+'+"Administrator Panel" +intitle:"ezBOO WebStats"'
+]
+
+# Examples #
 examples %w|
 jcoder.com/sitetraff/
 www.paddi.net/index.php3
@@ -20,27 +29,20 @@ gilda.it/dsx/old/counter2.php3
 www.numericshop.be/administration_temp/stats/
 |
 
+# Matches #
 matches [
 
-# http://johnny.ihackstuff.com/ghdb/?function=detail&id=625
-# About 624 results @ 2010-06-05
-{:name=>'GHDB: +"Administrator Panel" +intitle:"ezBOO WebStats"',
-:certainty=>75,
-:ghdb=>'+"Administrator Panel" +intitle:"ezBOO WebStats"'
-},
+# GHDB # Administrator Panel title
+{ :certainty=>75, :ghdb=>'+"Administrator Panel" +intitle:"ezBOO WebStats"' },
 
-{:name=>"default title",
-:certainty=>100,
-:text=>'<title>ezBOO WebStats</title>'
-},
+# default title
+{ :text=>'<title>ezBOO WebStats</title>' },
 
-{:name=>"default text", 
-:text=>'<div align="center" class="titre"><font color="#FFFFFF">&gt;&gt; Administrator Panel        &lt;&lt; </font></div>'
-},
+# Administrator Panel html
+{ :text=>'<div align="center" class="titre"><font color="#FFFFFF">&gt;&gt; Administrator Panel        &lt;&lt; </font></div>' },
 
-{:name=>"default logo",
-:text=>'<td height="60" valign="top" align="center"><img src="image/logo_ez1.gif" border="0"></td>'
-}
+# default logo
+{ :text=>'<td height="60" valign="top" align="center"><img src="image/logo_ez1.gif" border="0"></td>' },
 
 ]
 
