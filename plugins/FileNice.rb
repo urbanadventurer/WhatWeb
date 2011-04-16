@@ -12,6 +12,11 @@ description "fileNice is a free php file browser, particularly useful if you hav
 # Google results as at 2011-03-03 #
 # 12 for "Files in" "Free open source file browser available from fileNice.com"
 
+# Dorks #
+dorks [
+'"Files in" "Free open source file browser available from fileNice.com"'
+]
+
 # Examples #
 examples %w|
 filenice.com/demo/

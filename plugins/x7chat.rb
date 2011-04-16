@@ -15,6 +15,11 @@ description "X7 Chat is a free script that can be modified and redistributed in 
 # Google results as at 2010-06-13 #
 # 30 for inurl:x7chat "Please enter your username and password to login"
 
+# Dorks #
+dorks [
+'inurl:x7chat "Please enter your username and password to login"'
+]
+
 # Examples #
 examples %w|
 help.x7chat.com

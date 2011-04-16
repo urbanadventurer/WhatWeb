@@ -15,6 +15,11 @@ description "An easy, free web portal, GuppY will allow you to generate very eas
 # Google results as at 2010-08-06 #
 # 326 for "Powered by GuppY" "CeCILL Free License"
 
+# Dorks #
+dorks [
+'"Powered by GuppY" "CeCILL Free License"'
+]
+
 # Examples #
 examples %w|
 www.freeguppy.org

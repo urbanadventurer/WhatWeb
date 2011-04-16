@@ -7,9 +7,16 @@
 Plugin.define "HoloCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
-description "PHP powered CMS"
+description "HoloCMS. Requires PHP."
 
 # 44 results for "powered by HoloCMS" +Meth0d @ 2010-10-14
+
+# Dorks #
+dorks [
+'"powered by HoloCMS" +Meth0d'
+]
+
+# Examples #
 examples %w|
 bobba-story.free-h.fr
 bsshotel.no-ip.biz
@@ -26,6 +33,7 @@ www.enriick.0fees.net
 www.habbok.com
 |
 
+# Matches #
 matches [
 
 # Version detection # Meta generator

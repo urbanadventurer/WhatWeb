@@ -16,6 +16,12 @@ description "A web application framework. Projects using the framework include w
 # 13 for "powered by Horde Application Framework"
 # 64 for inurl:util/icon_browser.php?subdir=
 
+# Dorks #
+dorks [
+'"powered by Horde Application Framework"',
+'inurl:util/icon_browser.php?subdir='
+]
+
 # Examples #
 examples %w|
 netex.net.ua/horde/

@@ -15,6 +15,11 @@ description "Glossword helps you to create and publish online multilingual dicti
 # Google results as at 2010-08-01 #
 # 120 for "Powered by Glossword"
 
+# Dorks #
+dorks [
+'"Powered by Glossword"'
+]
+
 # Examples #
 examples %w|
 65.254.78.72/php/glossword/

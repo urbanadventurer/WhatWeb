@@ -10,6 +10,13 @@ version "0.1"
 description "India's first CMS. Free and open-source PHP based CMS. - homepage: http://www.hycus.com/"
 
 # 1 result for "powered by Hycus CMS" @ 2010-09-12
+
+# Dorks #
+dorks [
+'"powered by Hycus CMS"'
+]
+
+# Examples #
 examples %w|
 www.quacku.com
 |

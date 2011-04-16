@@ -12,8 +12,13 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
 description "xGB guestbook - homepage: http://www.x-gfx.de/"
 
-# Google rsults as at 2010-08-14 #
+# Google results as at 2010-08-14 #
 # 126 for allinurl:"xGb.php"
+
+# Dorks #
+dorks [
+'allinurl:"xGb.php"'
+]
 
 # Examples #
 examples %w|

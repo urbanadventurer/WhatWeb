@@ -15,6 +15,11 @@ description "Web based file upload manager written in PHP. - homepage:http://www
 # Google results as at 2010-06-05 #
 # 559 for +intitle:"File Upload Manager" "rename to" "file types allowed"
 
+# Dorks #
+dorks [
+'+intitle:"File Upload Manager" "rename to" "file types allowed"'
+]
+
 # Examples #
 examples %w|
 www.ancea.org/fileupload/

@@ -13,11 +13,15 @@ version "0.2"
 description "HP LaserJet printer web interface - homepage: http://www.hp.com/"
 
 # 109 Google results for inurl:hp/device/this.LCDispatcher @ 2010-07-22
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=615
 
 # ShodanHQ results #
 # 21,276 for Server:HP-ChaiSOE ONNECTION @ 2010-07-22
 # 17,235 for Server ChaiServer @ 2011-02-19
+
+# Dorks #
+dorks [
+'inurl:hp/device/this.LCDispatcher'
+]
 
 # Examples #
 examples %w|

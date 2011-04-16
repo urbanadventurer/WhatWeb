@@ -10,6 +10,13 @@ version "0.1"
 description "XMB is a lightweight PHP forum software with all the features you need to support a growing community. - homepage: http://www.xmbforum.com/"
 
 # 304 results for "powered by XMB" @ 2010-10-12
+
+# Dorks #
+dorks [
+'"powered by XMB"'
+]
+
+# Examples #
 examples %w|
 blissmb.net
 forum.julnowrimo.com

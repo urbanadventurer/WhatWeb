@@ -26,6 +26,13 @@ description ".htpasswd is a flat-file used to store usernames and password for b
 # 2 results for ext:htpasswd1
 # 2 results for inurl:"htpasswd" ext:bak
 
+# Dorks #
+dorks [
+'inurl:htpasswd ext:txt',
+'filetype:htpasswd htpasswd',
+'filetype:htpasswd inurl:htpasswd'
+]
+
 # Examples #
 examples %w|
 doro999.piranho.de/neuer%20Versuch/htpasswd.txt

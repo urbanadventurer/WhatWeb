@@ -10,6 +10,13 @@ version "0.1"
 description "Free Simple Software - homepages: http://www.freesimpleshop.com/ http://www.freesimplecms.com/ http://www.freesimpleblog.com/ http://www.freesimplehost.com/"
 
 # 24 results for "Powered by Free Simple Software (Free Simple CMS / Free Simple Shop / Free Simple Blog / Free Simple Host)" @ 2010-09-26
+
+# Dorks #
+dorks [
+'"Powered by Free Simple Software (Free Simple CMS / Free Simple Shop / Free Simple Blog / Free Simple Host)"'
+]
+
+# Examples #
 examples %w|
 www.freesimpleshop.com/index.php?login=admin
 www.freesimplecms.com/index.php?login=admin

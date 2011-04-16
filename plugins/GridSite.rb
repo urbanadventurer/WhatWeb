@@ -12,6 +12,11 @@ description "In its simplest application, GridSite uses X.509 certificates loade
 # Google results as at 2011-01-31 #
 # 87,100 for inurl:gridsite-admin.cgi filetype:cgi -inurl
 
+# Dorks #
+dorks [
+'inurl:gridsite-admin.cgi filetype:cgi -inurl'
+]
+
 # Examples #
 examples %w|
 www.gridsite.org
