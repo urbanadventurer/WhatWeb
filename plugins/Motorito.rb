@@ -10,6 +10,13 @@ version "0.1"
 description "Motorito - homepage: http://www.motorito.com/"
 
 # 77 results for inurl:mmod=staticContent @ 2010-09-25
+
+# Dorks #
+dorks [
+'inurl:mmod=staticContent'
+]
+
+# Examples #
 examples %w|
 www.motorito.com
 www.starmyname.com

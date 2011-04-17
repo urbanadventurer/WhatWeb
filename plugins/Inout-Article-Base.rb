@@ -10,6 +10,13 @@ version "0.1"
 description "Inout Article Base is a powerful, feature rich, fully customizable article script from inoutscripts.com. This is a highly Search Engine Optimized script which helps you to publish unlimited number of articles. - homepage: http://www.inoutscripts.com/products/inout_article_base/"
 
 # 154 results for "Powered by Inoutscripts" @ 2010-10-12
+
+# Dorks #
+dorks [
+'"Powered by Inoutscripts"'
+]
+
+# Examples #
 examples %w|
 www.inoutdemo.com/inout_article_base_ultimate/admin/
 www.inoutdemo.com/inout_article_base_ultimate/member/login/

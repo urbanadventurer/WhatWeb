@@ -15,6 +15,11 @@ description "PHP file indexer - homepage: http://www.mafiatic.com"
 # Google results as at 2010-08-01 #
 # 34 for "powered by My PHP Indexer"
 
+# Dorks #
+dorks [
+'"powered by My PHP Indexer"'
+]
+
 # Examples #
 examples %w|
 www.amevasc.org/diplomas/

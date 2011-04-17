@@ -15,6 +15,11 @@ description "Locazolist v2.02b is a text based classifieds ad system based on AS
 # Google results as at 2010-08-14 #
 # 24 for "powered by LocazoList" -exploit
 
+# Dorks #
+dorks [
+'"powered by LocazoList" -exploit'
+]
+
 # Examples #
 examples %w|
 thescrapmeet.com

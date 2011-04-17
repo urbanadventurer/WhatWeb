@@ -12,6 +12,11 @@ description "Kandidat-CMS [Russian] - Homepage http://www.kan-studio.ru/"
 # Google results as at 2011-02-24 #
 # 410 for "Powered by Kandidat CMS"
 
+# Dorks #
+dorks [
+'"Powered by Kandidat CMS"'
+]
+
 # Examples #
 examples %w|
 sajansk.net.ru

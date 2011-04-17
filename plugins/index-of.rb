@@ -12,6 +12,13 @@ Plugin.define "Index-Of" do
 author "Andrew Horton"
 version "0.2"
 description "Index of"
+
+# Dorks #
+dorks [
+'name "last modified" size description'
+]
+
+# Examples #
 examples %w| http://203.167.225.160 http://www.ibiblio.org/pub/ http://www.w3.org/Icons/ loop-aes.sourceforge.net http://www.gap-system.org/~history/Mathematicians/ http://www.lightrail.com/ http://download.opensuse.org/repositories/ |
 
 # Apache2 http://www.ibiblio.org/pub/
@@ -29,6 +36,7 @@ examples %w| http://203.167.225.160 http://www.ibiblio.org/pub/ http://www.w3.or
 # Apache/1.3.26 Server at www.czyborra.com
 # <A HREF="?N=D">Name</A>                    <A HREF="?M=A">Last modified</A>
 
+# Matches #
 matches [
 {:text=>'<title>Index of /' },
 {:certainty=>75, :ghdb=>'name "last modified" size description' },

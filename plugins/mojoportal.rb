@@ -16,6 +16,11 @@ description "mojoPortal is Free and Open Source. Create accessible, standards co
 # 392 for "Powered by mojoPortal"
 # 22  for "Welcome to mojoPortal Setup" intitle:"mojoPortal Setup"
 
+# Dorks #
+dorks [
+'"Powered by mojoPortal"'
+]
+
 # Examples #
 examples %w|
 www.mojoportal.com

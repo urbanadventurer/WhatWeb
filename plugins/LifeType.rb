@@ -12,6 +12,11 @@ author "Aung Khant, http://yehg.net"
 version "0.2"
 description "LifeType is an open-source blogging platform with support for multiple blogs and users in a single installation. - homepage: http://lifetype.net"
 
+# Dorks #
+dorks [
+'"Powered by LifeType"'
+]
+
 # Examples #
 examples %w|
 demo.opensourcecms.com/lifetype/

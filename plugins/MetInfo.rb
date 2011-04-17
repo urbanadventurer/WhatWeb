@@ -12,6 +12,11 @@ description "MetInfo - Homepage: http://www.metinfo.cn/"
 # Google results as at 2011-02-26 #
 # 409 for "Powered by MetInfo"
 
+# Dorks #
+dorks [
+'"Powered by MetInfo"'
+]
+
 # Examples #
 examples %w|
 cqscfphscom.hk2.mydns1.biz

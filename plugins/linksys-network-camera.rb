@@ -13,6 +13,13 @@ version "0.2"
 description "Linksys network camera web interface - homepage: http://www.linksys.com/"
 
 # 14 Google results for inurl:/img/main.cgi inurl:next_file @ 2010-07-22
+
+# Dorks #
+dorks [
+'inurl:/img/main.cgi inurl:next_file'
+]
+
+# Examples #
 examples %w|
 189.254.227.7
 216.167.184.100:6360

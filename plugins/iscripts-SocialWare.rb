@@ -10,6 +10,13 @@ version "0.1"
 description "iScripts SocialWare is an open source social networking script with customizable features like blogs, albums, gift shop, classifieds ,chat, storefront etc. - homepage: http://www.iscripts.com/socialware/"
 
 # 82 results for "powered by iScripts SocialWare" "A premium product from iScripts.com" @ 2010-07-11
+
+# Dorks #
+dorks [
+'"powered by iScripts SocialWare" "A premium product from iScripts.com"'
+]
+
+# Examples #
 examples %w|
 www.iscripts.com/socialware/demo/confessions.php
 www.welcomeecuador.com/social/confessions.php

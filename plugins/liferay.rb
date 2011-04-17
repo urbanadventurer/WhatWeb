@@ -13,6 +13,13 @@ version "0.2"
 description "Liferay Portal is an enterprise web platform for building business solutions that deliver immediate results and long-term value. - homepage: http://www.liferay.com/"
 
 # 26 results for "Powered by Liferay Portal" @ 2010-06-13
+
+# Dorks #
+dorks [
+'"Powered by Liferay Portal"'
+]
+
+# Examples #
 examples %w|
 www.liferay.com
 www.optionsnet.gr/c/portal/

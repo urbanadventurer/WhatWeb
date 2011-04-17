@@ -12,6 +12,11 @@ description "Micro CMS - Homepage: http://www.micro-cms.com/"
 # Google results as at 2011-02-26 #
 # 23 for "Powered by Micro CMS"
 
+# Dorks #
+dorks [
+'"Powered by Micro CMS"'
+]
+
 # Examples #
 examples %w|
 www.micro-cms.com

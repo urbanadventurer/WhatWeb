@@ -13,6 +13,11 @@ description "LiveZilla, the Next Generation Live Help and Live Support System co
 # 14 for "LiveZilla - Freeware Live Support" intitle:"LiveZilla - Freeware Live Support - http://www.livezilla.net"
 # 12 for filetype:php inurl:server.php "Thank you for using LiveZilla!"
 
+# Dorks #
+dorks [
+'"LiveZilla - Freeware Live Support" intitle:"LiveZilla - Freeware Live Support - http://www.livezilla.net"'
+]
+
 # Examples #
 examples %w|
 www.livezilla.net/livezilla/server.php

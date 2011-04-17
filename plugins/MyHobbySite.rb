@@ -15,6 +15,11 @@ description "MyHobbySite is a website Content Management System (CMS) programmed
 # Google results as at 2010-09-12 #
 # 71 for "Powered by MyHobbySite"
 
+# Dorks #
+dorks [
+'"Powered by MyHobbySite"'
+]
+
 # Examples #
 examples %w|
 www.myhobbysite.net

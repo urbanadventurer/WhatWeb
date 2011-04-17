@@ -14,6 +14,11 @@ description "MantisBT is a popular free web-based bug tracking system. It is wri
 # 11  for intitle:"MantisBT Administration" "Checking Installation"
 # 4   for intitle:"MantisBT Administration - Installation" ext:php "Checking Installation"
 
+# Dorks #
+dorks [
+'"Powered by Mantis Bugtracker"'
+]
+
 # Examples #
 examples %w|
 www.defianceinteractive.com/projects/admin/install.php

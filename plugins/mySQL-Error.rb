@@ -12,10 +12,17 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.2"
 description "This plugin detects mySQL errors and grabs the username, server and database details."
 
-# Googleresults as at 2010-08-28 #
+# Google results as at 2010-08-28 #
 # 318 for mySQL "Error: Access denied for user" "using password: YES"|"using password: NO"|"to database"
 # 304 for Warning mysql_connect "function.mysql-connect" "Access denied for user"
 # 162 for "Warning: mysql_connect" "function.mysql-connect" "Lost connection to MySQL server at 'reading initial communication packet'" +ext:php
+
+# Dorks #
+dorks [
+'mySQL "Error: Access denied for user" "using password: YES"|"using password: NO"|"to database"',
+'Warning mysql_connect "function.mysql-connect" "Access denied for user"',
+'"Warning: mysql_connect" "function.mysql-connect" "Lost connection to MySQL server at \'reading initial communication packet\'" +ext:php'
+]
 
 # Examples #
 examples %w|

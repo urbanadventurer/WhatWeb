@@ -6,7 +6,6 @@
 
 # Vesion 0.8 # Andrew
 #  Added aggressive match for /administrator/. Use match now
-#  
 ##
 # Version 0.7 # 2011-03-19 # Brendan Coles <bcoles@gmail.com>
 # Added aggressive match for /administrator/
@@ -29,6 +28,11 @@ description "Opensource CMS written in PHP. Aggressive version detection compare
 # Google results as at 2011-03-19 #
 # 602 for "powered by joomla" inurl:option=com_content
 # 537 for "powered by joomla"
+
+# Dorks #
+dorks [
+'"powered by joomla" inurl:option=com_content'
+]
 
 # Examples #
 examples %w|

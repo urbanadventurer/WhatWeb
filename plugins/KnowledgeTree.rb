@@ -12,6 +12,13 @@ description "Document Management Software - homepage: http://www.knowledgetree.c
 # 13 results for "powered by KnowledgeTree" "KnowledgeTree Version" @ 2010-09-18
 # 71 results for inurl:kt_path_info="ktcore.actions.document.assist" @ 2010-09-18
 # 77 results for "powered by KnowledgeTree" @ 2010-09-18
+
+# DOrks #
+dorks [
+'"powered by KnowledgeTree"'
+]
+
+# Examples #
 examples %w|
 168.250.53.67/dashboard.php
 168.250.53.67/login.php

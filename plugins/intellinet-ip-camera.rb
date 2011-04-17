@@ -16,6 +16,11 @@ description "Intellinet IP camera - homepage: http://www.intellinet-network.com"
 # Google results as at 2010-07-18 #
 # 5 for intitle:"INTELLINET" intitle:"IP Camera Homepage"
 
+# Dorks #
+dorks [
+'intitle:"INTELLINET" intitle:"IP Camera Homepage"'
+]
+
 # Examples #
 examples %w|
 216.114.121.12

@@ -15,6 +15,11 @@ description "AjaxPortal is based on Sajax technology - an open source tool to ma
 # Google results as at 2010-08-14 #
 # 20 for "powered by Ajax Portal"
 
+# Dorks #
+dorks [
+'"powered by Ajax Portal"'
+]
+
 # Examples #
 examples %w|
 myiosoft.com/products/AjaxPortal/demo/

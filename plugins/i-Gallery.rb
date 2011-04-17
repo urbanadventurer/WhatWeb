@@ -10,6 +10,13 @@ version "0.1"
 description "i-Gallery is a complete online photo gallery. Easy to navigate thumbnails with paging. Enlarged views offer print & email buttons. - homepage: http://www.b-cp.com/igallery"
 
 # 276 results for "powered by i-Gallery" @ 2010-10-14
+
+# Dorks #
+dorks [
+'"powered by i-Gallery"'
+]
+
+# Examples #
 examples %w|
 hoaithuy.phans.info
 hoaithuy.phans.info/login.asp

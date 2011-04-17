@@ -15,6 +15,11 @@ description "CMS - homepage: http://www.jgs-xa.de"
 # Google results as at 2010-06-26 #
 # 4,580,000 for "Powered by JGS-Portal Version"
 
+# Dorks #
+dorks [
+'"Powered by JGS-Portal Version"'
+]
+
 # Examples #
 examples %w|
 www.net-city.eu

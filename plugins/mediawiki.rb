@@ -4,12 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define "MediaWiki" do
 author "Tonmoy Saikia"
 version "0.1"
 description "MediaWiki is a free software wiki  package written in PHP, originally for use on Wikipedia http://www.mediawiki.org/wiki/MediaWiki"
 
+# Dorks #
+dorks [
+'"Powered by MediaWiki"'
+]
+
+# Examples #
 examples %w|
 http://meta.wikimedia.org/Main_Page
 http://en.wikipedia.org/wiki/Main_Page
@@ -27,6 +32,8 @@ http://desciclopedia.org/wiki/Main_Page
 http://celestia.pl/Wiki/Main_Page
 http://www.boincatpoland.org/wiki/Main_Page
 |
+
+# Matches #
 matches [
 {:text=>'alt="Powered by MediaWiki"'},
 {:ghdb=>'inurl:wiki MediaWiki'}

@@ -12,6 +12,12 @@ description "The IP Logger PRO provides a straightforward and efficient way to r
 # Google results as at 2011-03-03 #
 # 50 for "Logdaten - Bitte hier klicken." inurl:"iplog.php?action=show"
 
+# Dorks #
+dorks [
+'"Logdaten - Bitte hier klicken." inurl:"iplog.php?action=show"'
+]
+
+
 # Examples #
 examples %w|
 www.franztransporte.de/iplog.php?action=show

@@ -15,6 +15,11 @@ description "Extracts MySQL host, database and server version from MySQL-dump .s
 # Google results as at 2010-10-15 #
 # 468 for "MySQL dump" ext:sql +Host +"Table structure for table"
 
+# Dorks #
+dorks [
+'"MySQL dump" ext:sql +Host +"Table structure for table"'
+]
+
 # Examples #
 examples %w|
 bio16j.lbl.gov/dcs/config2.sql

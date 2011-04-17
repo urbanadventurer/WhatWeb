@@ -15,6 +15,11 @@ description "Microsoft SharePoint 2010 makes it easier for people to work togeth
 # About 39,000 Google results for +"Please enable scripts and reload this page. If your browser does not support script, then you can visit the minimal version of this site at" @ 2010-06-05
 # About 35,110 ShodanHQ for MicrosoftSharePointTeamServices @ 2011-01-24
 
+# Dorks #
+dorks [
+'+"Please enable scripts and reload this page. If your browser does not support script, then you can visit the minimal version of this site at"'
+]
+
 # Examples #
 examples %w|
 94.55.60.5

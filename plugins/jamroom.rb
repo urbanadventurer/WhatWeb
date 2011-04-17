@@ -15,6 +15,11 @@ description "Jamroom specializes in building web communities centered around med
 # Google results as at 2010-07-25 #
 # 201 for "Powered by Jamroom"
 
+# Dorks #
+dorks [
+'"Powered by Jamroom"'
+]
+
 # Examples #
 examples %w|
 demo.jamroom.net

@@ -19,6 +19,12 @@ description "WebCamXP web interface - homepage: http://www.webcamxp.com"
 # ShodanHQ results as at 2010-07-24 #
 # About 94 Shodan results for Server:webcamXP
 
+# Dorks #
+dorks [
+'"powered by webcamXP"',
+'intitle:"my webcamXP server!" inurl:":8080"'
+]
+
 # Examples #
 examples %w|
 angelpage.dyndns.tv:8080

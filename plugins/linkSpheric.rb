@@ -10,6 +10,13 @@ version "0.1"
 description "linkSpheric. Possibly the world's coolest free online directory software that's absolutely free, no advertising, no spyware, just good old PHP-MySQL. - homepage: http://dataspheric.com/services/software/ls/"
 
 # 61 results for "powered by linkSpheric" -Vulnerability @ 2010-08-21
+
+# Dorks #
+dorks [
+'"powered by linkSpheric" -Vulnerability'
+]
+
+# Examples #
 examples %w|
 dataspheric.com/directory/install.php
 fingx.com/install.php

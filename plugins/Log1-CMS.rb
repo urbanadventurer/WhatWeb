@@ -12,6 +12,11 @@ description "The Idea of this CMS is simplicity and fast web development with no
 # Google results as at 2011-03-14 #
 # 18 for "POWERED BY LOG1 CMS" -dork
 
+# Dorks #
+dorks [
+'"POWERED BY LOG1 CMS" -dork'
+]
+
 # Examples #
 examples %w|
 log1cms.sourceforge.net

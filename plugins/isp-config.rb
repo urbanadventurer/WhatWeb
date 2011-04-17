@@ -13,14 +13,21 @@ Plugin.define "ISPConfig" do
 author "Andrew Horton"
 version "0.2"
 description "ISPConfig is a free, opensource hosting control panel"
+
+# Examples #
 examples %w| http://118.93.56.121/ |
 
-#powered by <a HREF="http://www.ispconfig.org">ISPConfig</a>
+# Dorks #
+dorks [
+'powered by ISPConfig'
+]
 
-
+# Matches #
 matches [
+
 {:text=>'powered by <a HREF="http://www.ispconfig.org">ISPConfig</a>' },
 {:certainty=>75, :text=>'This IP address is shared. For access to the web site which you look for, enter its address instead of its IP.' }
+
 ]
 
 end

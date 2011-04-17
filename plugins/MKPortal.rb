@@ -12,6 +12,11 @@ description "MKPortal blog and forum software - Homepage [offline] : http://www.
 # Google results as at 2011-03-05 #
 # 307 for inurl:"index.php?ind=blog"
 
+# Dorks #
+dorks [
+'inurl:"index.php?ind=blog"'
+]
+
 # Examples #
 examples %w|
 www.abadan.net

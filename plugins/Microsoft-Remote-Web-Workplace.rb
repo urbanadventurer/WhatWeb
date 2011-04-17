@@ -12,6 +12,11 @@ description "The Remote Web Workplace is a feature of Microsoft's Windows Small 
 # 48 Google results for "In order to use all of the features available in Remote Web Workplace, you must enable JavaScript for your Web browser." @ 2010-12-30
 # 6 ShodanHQ results for /Remote/logon.aspx ReturnUrl=%2fRemote @ 2010-12-30
 
+# Dorks #
+dorks [
+'"In order to use all of the features available in Remote Web Workplace, you must enable JavaScript for your Web browser."'
+]
+
 # Examples #
 examples %w|
 https://paineirasinvestimentos.com.br/remote/

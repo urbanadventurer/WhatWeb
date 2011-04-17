@@ -12,6 +12,11 @@ description "MyBB is a powerful, efficient and free forum package developed in P
 # Google results as at 2011-02-26 #
 # 289 for "Powered By MyBB"
 
+# Dorks #
+dorks [
+'"Powered By MyBB"'
+]
+
 # Examples #
 examples %w|
 hlurb.gov.ph/forum/

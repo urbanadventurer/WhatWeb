@@ -16,6 +16,11 @@ description "MaxDev is proud to introduce MD-Pro, the most complete, flexible an
 # Google results as at 2010-08-28 #
 # 64 for "powered by MAXdev"
 
+# Dorks #
+dorks [
+'"powered by MAXdev"'
+]
+
 # Examples #
 examples %w|
 demo.opensourcecms.com/mdpro/

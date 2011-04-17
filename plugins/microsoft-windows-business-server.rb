@@ -24,6 +24,12 @@ description "Microsoft Small/Essential Business Server - homepage: http://www.mi
 # 6 ShodanHQ results for /Remote/logon.aspx ReturnUrl=%2fRemote @ 2010-12-30
 # 139 results for intitle:"Welcome to Windows Small Business Server 2003" @ 2011-01-03
 
+# Dorks #
+dorks [
+'intitle:"Welcome to Windows Small Business Server 2003"'
+]
+
+# Examples #
 examples %w|
 210.54.213.143
 cgamining.com
@@ -82,6 +88,7 @@ http://remote.teamkuptz.com/
 http://mail.popmanufacturing.com/
 |
 
+# Matches #
 matches [
 
 # 2003 # Default title

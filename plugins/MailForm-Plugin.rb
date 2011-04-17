@@ -15,6 +15,11 @@ description "PHP contact form - homepage: http://www.h-fj.com/blog/mtplgdoc/"
 # Google results as at 2010-09-18 #
 # 24 for "powered by MailForm"
 
+# Dorks #
+dorks [
+'"powered by MailForm"'
+]
+
 # Examples #
 examples %w|
 www.mt-j.info/contact.html

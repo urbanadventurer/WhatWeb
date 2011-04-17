@@ -12,6 +12,11 @@ description "LuCI was founded in March 2008 as 'FFLuCI' as part of the efforts t
 # Google results as at 2011-03-07 #
 # 70 for "Powered by LuCI" inurl:"/cgi-bin/luci/"
 
+# Dorks #
+dorks [
+'"Powered by LuCI" inurl:"/cgi-bin/luci/"'
+]
+
 # Examples #
 examples %w|
 203.142.40.46

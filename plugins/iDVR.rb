@@ -19,6 +19,11 @@ description "iDVR (formerly Devloution Security System) is a video surveillance 
 # Google results as at 2010-07-20 #
 # 247 for intitle:iDVR -intitle:"com | net | shop" -inurl:"asp | htm | pdf | html | php | shtml | com | at | cgi | tv"
 
+# Dorks #
+dorks [
+'intitle:iDVR -intitle:"com | net | shop" -inurl:"asp | htm | pdf | html | php | shtml | com | at | cgi | tv"'
+]
+
 # Examples #
 examples %w|
 68.15.38.73
