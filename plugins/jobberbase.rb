@@ -13,6 +13,13 @@ version "0.2"
 description "jobberBase is the open-source job board software that helps you set up a jobsite in minutes! - homepage: http://www.jobberbase.com/"
 
 # About 116,000 results for +Companies +Sitemap "Proudly powered by jobberBase" @ 2010-60-06
+
+# Dorks #
+dorks [
+'+Companies +Sitemap "Proudly powered by jobberBase"'
+]
+
+# Examples #
 examples %w|
 www.jobberbase.com/demo/
 jobs.murexusers.org

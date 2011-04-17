@@ -15,6 +15,11 @@ description "Shop/CMS software [German] - homepage: http://www.Dream4.de/"
 # Google results as at 2010-08-28 #
 # 262 for "powered by Koobi PRO|SHOP|CMS" -"SQL Injection"
 
+# Dorks #
+dorks [
+'"powered by Koobi PRO|SHOP|CMS" -"SQL Injection"'
+]
+
 # Examples #
 examples %w|
 archiwum.wrzesnia.info.pl

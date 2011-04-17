@@ -13,6 +13,13 @@ version "0.2"
 description "Loggix is a really simple, lightweight PHP and SQlite driven weblog/cms engine. - homepage: http://loggix.gotdns.org/"
 
 # 22 results for "Powered by Loggix" @ 2010-06-15
+
+# Dorks #
+dorks [
+'"Powered by Loggix"'
+]
+
+# Examples #
 examples %w|
 loggix.gotdns.org
 jamlog.podzone.org

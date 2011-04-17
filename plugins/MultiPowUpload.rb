@@ -13,6 +13,11 @@ description "MultiPowUpload is a Flash movie that has been created to replace th
 # 5 for inurl:"FileProcessingScripts/PHP/uploadfiles.php"
 # 11 for "Visit MultiPowUpload web site for new release and support information." intitle:"Element-It MultiPowUpload"
 
+# Dorks #
+dorks [
+'"Visit MultiPowUpload web site for new release and support information." intitle:"Element-It MultiPowUpload"'
+]
+
 # Examples #
 examples %w|
 www.yandara.com/ysounds/upload/FileProcessingScripts/PHP/uploadfiles.php

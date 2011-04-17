@@ -10,6 +10,13 @@ version "0.1"
 description "iScripts CyberMatch is an open source online dating software with features like background check ,chat alerts, integrated payment system etc. - homepage: http://www.iscripts.com/cybermatch/"
 
 # 26 results for "powered by iScripts CyberMatch" "A premium product from iScripts.com" @ 2010-07-11
+
+# Dorks #
+dorks [
+'"powered by iScripts CyberMatch" "A premium product from iScripts.com"'
+]
+
+# Examples #
 examples %w|
 ebonyalt.com
 thecybermatch.com

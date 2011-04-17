@@ -8,6 +8,13 @@ Plugin.define "Lime-Survey" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06 
 version "0.1"
 description "LimeSurvey basically contains everything you need for doing nearly every survey with grace. - homepage: http://www.limesurvey.org/"
+
+# Dorks #
+dorks [
+'+"The following surveys are available" +"The Online Survey Tool - Free & Open Source"'
+]
+
+# Examples #
 examples %w|
 demo.limesurvey.org
 smartnewmedia.com

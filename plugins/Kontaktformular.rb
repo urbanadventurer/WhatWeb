@@ -10,6 +10,13 @@ version "0.1"
 description "PHP contact form - homepage: http://www.radbekleidung.eu/gratis-kontaktformular.html"
 
 # 49 results for "Script Powered by Kontaktformular" @ 2010-09-13
+
+# Dorks #
+dorks [
+'"Script Powered by Kontaktformular"'
+]
+
+# Examples #
 examples %w|
 aerobic-stabilized-oxygen.de/Ordner/kontakt.php
 bootsschulung.de/anmelden/anmelden/anmelden.php

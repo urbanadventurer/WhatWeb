@@ -12,6 +12,11 @@ description "MemHT Portal is a Free PHP CMS and Blog. It permits the creation an
 # Google results as at 2011-02-08 #
 # 152 for "MemHT Portal is a free software released under the GNU/GPL License by Miltenovik Manojlo"
 
+# Dorks #
+dorks [
+'"MemHT Portal is a free software released under the GNU/GPL License by Miltenovik Manojlo"'
+]
+
 # Examples #
 examples %w|
 www.memht.com

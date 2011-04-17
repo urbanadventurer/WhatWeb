@@ -12,6 +12,11 @@ description "PHP powered forum - Homepage [offline] : http://www.ikonboard.com"
 # Google results as at 2011-03-17 #
 # 238 for "Powered by Ikonboard" ext:cgi
 
+# Dorks #
+dorks [
+'"Powered by Ikonboard" ext:cgi'
+]
+
 # Examples #
 examples %w|
 david.abcc.ncifcrf.gov/forum/cgi-bin/ikonboard.cgi

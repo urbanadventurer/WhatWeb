@@ -11,6 +11,13 @@ description "Interspire Shopping Cart is an all-in-one e-commerce and shopping c
 
 # 139 results for "Powered by Interspire Shopping Cart" intitle:"Shopping Cart" inurl:cart.php @ 2010-08-06
 # 307 results for "Powered by Interspire Shopping Cart' @ 2010-08-06
+
+# Dorks #
+dorks [
+'"Powered by Interspire Shopping Cart"'
+]
+
+# Examples #
 examples %w|
 shoppingcart.interspire-demo.com/demo_72767580/
 store.weismannweb.com

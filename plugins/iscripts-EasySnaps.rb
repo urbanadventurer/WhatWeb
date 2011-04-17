@@ -10,6 +10,13 @@ version "0.1"
 description "iScripts EasySnaps is an open source image hosting script. - homepage: http://www.iscripts.com/gallery/"
 
 # 20 results for "powered by iScripts EasySnaps" "A premium product from iScripts.com" @ 2010-07-11
+
+# Dorks #
+dorks [
+'"powered by iScripts EasySnaps" "A premium product from iScripts.com"'
+]
+
+# Examples #
 examples %w|
 www.flashshare.co.uk
 photoking.org

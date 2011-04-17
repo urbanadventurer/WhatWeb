@@ -12,6 +12,11 @@ description "LEAP is a Content Management System (LEAP CMS), yet so much more th
 # Google results as at 2011-03-15 #
 # 113 for inurl:LEAP/error.lasso
 
+# Dorks #
+dorks [
+'inurl:LEAP/error.lasso'
+]
+
 # Examples #
 examples %w|
 www.leapcms.com

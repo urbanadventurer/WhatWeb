@@ -13,6 +13,11 @@ description "LotusCMS (previously ArboroianCMS) brings to the forefront design a
 # 10 for intitle:"LotusCMS Administration"
 # 63 for "Powered by LotusCMS"
 
+# Dorks #
+dorks [
+'"Powered by LotusCMS"'
+]
+
 # Examples #
 examples %w|
 www.lotuscms.org/index.php?system=Admin

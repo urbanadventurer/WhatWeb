@@ -10,6 +10,13 @@ version "0.1"
 description "iRealty is an advanced flexible php real estate software and CMS with open source code. - homepage: http://www.irealtysoft.com/"
 
 # 52 results for "powered by iRealty" @ 2010-08-08
+
+# Dorks #
+dorks [
+'"powered by iRealty"'
+]
+
+# Examples #
 examples %w|
 informasikos.com
 www.sakanonline.com

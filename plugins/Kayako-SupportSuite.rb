@@ -15,6 +15,11 @@ description "We offer all of our helpdesk solutions as licensed products (instal
 # Google results as at 2010-09-24 #
 # 314 for "powered by Kayako eSupport"
 
+# Dorks #
+dorks [
+'"powered by Kayako eSupport"'
+]
+
 # Examples #
 examples %w|
 demo.kayako.com/supportsuite/

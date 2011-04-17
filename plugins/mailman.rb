@@ -18,6 +18,11 @@ description "Mailman is free software for managing electronic mail discussion an
 # 205 for inurl:mailman "Delivered by Mailman" inurl:gov
 # 25  for inurl:mailman "Delivered by Mailman" inurl:mil
 
+# Dorks #
+dorks [
+'inurl:mailman "Delivered by Mailman"'
+]
+
 # Examples #
 examples %w|
 http://mail.opensolaris.org/mailman/listinfo

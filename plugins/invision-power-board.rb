@@ -4,22 +4,24 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-# Version 0.2
-# removed :name & :probability
 # Version 0.3
 # Uses :version=>//
-
+##
+# Version 0.2
+# removed :name & :probability
+##
 Plugin.define "InvisionPowerBoard" do
 author "Andrew Horton"
-version "0.2"
-description "PHP Web Forum  homepage:www.invisionpower.com"
+version "0.3"
+description "Invision Power Board - PHP Web Forum - Homepage: http://www.invisionpower.com/"
 
+# Dorks #
+dorks [
+'intitle:"Powered by Invision Power Board"'
+]
 
+# Examples #
 examples %w| forums.metacafe.com forums.invisionpower.com forum.emule-project.net www.cartotalk.com www.crokergolfsystem.com/ipsforum flecko.net/forums/ www.lutomes.com/capcom/index.php http://www.dixiechicksfans.net/forums/index.php www.wpaconsultants.co.uk/forum www.directgames.net/pumpkin2/forums/ forum.prikolka.ru/ http://forums.inkdropstyles.com http://beeskneesfx.com forums.thegamingsurge.com www.urbanplanet.org|
-
-
 
 # <title>Metacafe Forums (Powered by Invision Power Board)</title>
 # <div id="ipbwrapper">
@@ -78,6 +80,7 @@ examples %w| forums.metacafe.com forums.invisionpower.com forum.emule-project.ne
 # <p id='content_jump'><a id='top'></a><a href='#j_content' title='Jump to content' accesskey='m'>Jump to content</a></p>
 #<form action="http://forum.emule-project.net/index.php?app=core&amp;module=search&amp;do=quick_search&amp;search_filter_app[forums]=1" method="post" id='search-box' >
 
+# Matches #
 matches [
 {:text=>'(Powered by Invision Power Board)</title>' },
 {:text=>'index.php?app=core&amp;module=global&amp;section=rss&amp;type=forums&amp;id=' },
@@ -100,8 +103,9 @@ matches [
 
 ]
 
+# Passive #
 def passive
-m=[]
+	m=[]
 
 #Invision Power Board</a>(U) v1.3 Final &copy; 2003 &nbsp;<a href='http://www.invisionpower.com' target='_blank'>IPS, Inc.</a></div>
 
@@ -111,8 +115,8 @@ m=[]
 #Invision Power Board</a>
 #	v2.1.6 &copy; 2009 &nbsp;IPS, Inc.
 	
-   
-m
+	# Return passive matches 
+	m
 end
 
 end

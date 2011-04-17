@@ -12,6 +12,11 @@ description "KSearch is the easiest website search engine to integrate, implemen
 # Google results as at 2011-03-20 #
 # 159 for "Powered by KSearch" inurl:ksearch.cgi filetype:cgi
 
+# Dorks #
+dorks [
+'"Powered by KSearch" inurl:ksearch.cgi filetype:cgi'
+]
+
 # Examples #
 examples %w|
 www.osc.gov/cgi-bin/ksearch/ksearch.cgi

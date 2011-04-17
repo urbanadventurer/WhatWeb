@@ -12,6 +12,11 @@ description "LISTSERV launched the email list management industry in 1986 and re
 # Google results as at 2011-04-02 #
 # 68 for "Server Administration" "List Management" "List Moderation" "Subscriber's Corner" "Email Lists"
 
+# Dorks #
+dorks [
+'"Server Administration" "List Management" "List Moderation" "Subscriber\'s Corner" "Email Lists"'
+]
+
 # Examples #
 examples %w|
 demo.lsoft.com/Scripts/wa-demo.exe

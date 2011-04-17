@@ -10,11 +10,19 @@ version "0.1"
 description "Guestbook - homepage: http://www.kmsoft.org/"
 
 # 2 results for "KMSoft Guestbook" inurl:form.asp
+
+# Dorks #
+dorks [
+'"KMSoft Guestbook" inurl:form.asp'
+]
+
+# Examples #
 examples %w|
 www.kmsoft.org/demo/KmsoftGB/form.asp
 directmovies.net/form.asp
 |
 
+# Matches #
 matches [
 
 # Version detection # Powered by text

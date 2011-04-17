@@ -10,6 +10,13 @@ version "0.1"
 description "iGaming CMS is a content management system designed for gaming websites. The system is written in PHP and requires a Mysql database for operation.  - homepage: http://www.igamingcms.com/"
 
 # 24 results for "powered by iGaming CMS" @ 2010-09-12
+
+# Dorks #
+dorks [
+'"powered by iGaming CMS"'
+]
+
+# Examples #
 examples %w|
 benforum.com.ar/foro2/games.php
 coruscant.ej.am/games/videogames/gamedetails.php

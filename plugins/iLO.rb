@@ -15,6 +15,11 @@ description "Integrated Lights-Out, or iLO, is an embedded server management tec
 # Google results as at 2011-03-31 #
 # 75 for "select 'Yes' to accept the certificate to access Integrated Lights-Out."
 
+# Dorks #
+dorks [
+'"select \'Yes\' to accept the certificate to access Integrated Lights-Out."'
+]
+
 # Examples #
 examples %w|
 ukpip.com

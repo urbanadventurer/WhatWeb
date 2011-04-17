@@ -10,6 +10,13 @@ version "0.1"
 description "MooTools is a compact, modular, Object-Oriented JavaScript framework designed for the intermediate to advanced JavaScript developer. It allows you to write powerful, flexible, and cross-browser code with its elegant, well documented, and coherent API. - homepage: http://mootools.net/"
 
 # 22 results for ext:js "Copyright (c) 2006-2008 Valerio Proietti" "http://mad4milk.net"
+
+# Dorks #
+dorks [
+'ext:js "Copyright (c) 2006-2008 Valerio Proietti" "http://mad4milk.net"'
+]
+
+# Examples #
 examples %w|
 demos.mootools.net/demos/mootools.js
 mootools.net/assets/scripts/mootools.core.js

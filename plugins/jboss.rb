@@ -9,12 +9,16 @@ Plugin.define "Jboss" do
 	version "0.1"
 	description "JBoss Application Server is the #1 most widely used Java application server on the market. A Java EE certified platform for developing and deploying enterprise Java applications, Web applications, and Portals, JBoss Application Server provides the full range of Java EE 5 features as well as extended enterprise services including clustering, caching, and persistence. - Homepaeg: http://www.jboss.org/jbossas/"
 
+	# Dorks #
+	dorks [
+	'intitle:"Welcome to JBoss AS"'
+	]
+
 	# Matches #
 	matches [
-		# 
+
 		# Default title from Jboss homepage
 		{	:name=>"Jboss default title",
-			:certainty=>100,
 			:regexp=>/<title>Welcome to JBoss AS<\/title>/},
 		
 		# Jboss Homepage contains a link to administration console
@@ -25,12 +29,10 @@ Plugin.define "Jboss" do
 
 		# Jboss Homepage contains a link to web console
 		{	:name =>"link to Web Console",
-			:certainty=>100,
 			:regexp=>/<a href=\"\/web-console\/\">Jboss Web Console<\/a>/},
 	
 		# Jboss Homepage contains a link to  JMX console
 		{	:name =>"link to JMX Console",
-			:certainty=>100,
 			:regexp=>/<a href=\"\/jmx-console\/\">JMX Console<\/a>/}	
 	]
 

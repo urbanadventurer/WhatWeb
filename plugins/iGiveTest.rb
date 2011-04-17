@@ -13,6 +13,11 @@ description "iGiveTest is a comprehensive solution for creating, administering, 
 # 175 for "Powered by iGiveTest"
 # 29 for "Powered by iGiveTest v1.9.7"
 
+# Dorks #
+dorks [
+'"Powered by iGiveTest"'
+]
+
 # Examples #
 examples %w|
 lawquiz.uslegal.com

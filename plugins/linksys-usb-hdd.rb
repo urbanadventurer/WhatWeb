@@ -19,6 +19,11 @@ description "Linksys external USB HDD web frontend - homepage: http://www.linksy
 # Google results as at 2010-06-27 #
 # 7 for intitle:"Network Storage Link for USB 2.0 Disks" Firmware
 
+# Dorks #
+dorks [
+'intitle:"Network Storage Link for USB 2.0 Disks" Firmware'
+]
+
 # Examples #
 examples %w|
 94.224.183.90:8080

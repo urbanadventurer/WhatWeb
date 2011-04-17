@@ -15,6 +15,11 @@ description "MyPHP-Forum - homepage: http://www.myphp.ws/"
 # Google results as at 2010-08-31 #
 # 23 for "powered by MyPHP Forum" -Vulnerability
 
+# Dorks #
+dorks [
+'"powered by MyPHP Forum" -Vulnerability'
+]
+
 # Examples #
 examples %w|
 dance.pl/old/pl/forum/topic.php

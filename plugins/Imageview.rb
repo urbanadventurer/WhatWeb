@@ -15,6 +15,13 @@ description "Imageview 6 is a 4th generation image gallery script, using AJAX to
 # 64 for intitle:"Imageview * :: By Jorge Schrauwen"
 # 67 for intitle:"Imageview * :: Help::"
 
+# Dorks #
+dorks [
+'inurl:imageview5',
+'inurl:imageview6',
+'intitle:"Imageview * :: By Jorge Schrauwen"'
+]
+
 # Examples #
 examples %w|
 www.blackdot.be/files/demo/imageview6/

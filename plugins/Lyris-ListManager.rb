@@ -12,6 +12,11 @@ description "Lyris ListManager email marketing software is a secure, installed s
 # Google results as at 2011-03-21 #
 # 233 for inurl:lyris.pl filetype:pl
 
+# Dorks #
+dorks [
+'inurl:lyris.pl filetype:pl'
+]
+
 # Examples #
 examples %w|
 lists.lyris.net/cgi-bin/lyris.pl

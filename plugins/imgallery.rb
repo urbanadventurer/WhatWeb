@@ -8,6 +8,13 @@ Plugin.define "IMGallery" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-27
 version "0.1"
 description "image gallery web app - homepage: http://www.imgallery.zor.pl"
+
+# Dorks #
+dorks [
+'"Powered by IMGallery -exploit"'
+]
+
+# Examples #
 examples %w|
 www.fototaurus.yoyo.pl
 www.sylviafoto.yoyo.pl
@@ -116,7 +123,6 @@ matches [
 },
 
 {:name=>'powered by text',
-:certainty=>100,
 :text=>'Powered by <a class = "a07" href="http://www.imgallery.zor.pl"><b>IMGallery</b></a> &copy; Dariusz Niemiec'
 },
 

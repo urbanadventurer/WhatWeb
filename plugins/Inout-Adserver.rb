@@ -10,6 +10,13 @@ version "0.1"
 description "Inout Adserver  is powerful, feature rich, fully customizable PayPerClick advertiser/publisher networking script from inoutscripts.com. Advertisers can register into adserver and can post their text/ banner/catalog PayPerClick(PPC) ads. - homepage: http://www.inoutscripts.com/products/adserver/"
 
 # 154 results for "Powered by Inoutscripts" @ 2010-10-12
+
+# Dorks #
+dorks [
+'"Powered by Inoutscripts"'
+]
+
+# Examples #
 examples %w|
 www.420ppc.com/admin/
 www.420ppc.com/ppc-publisher-login.php

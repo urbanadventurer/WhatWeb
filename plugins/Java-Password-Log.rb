@@ -10,6 +10,13 @@ version "0.1"
 description "This plugin detects Java password.log files and retrieves the usernname, password and URL."
 
 # 68 results for password END_FILE ext:log @ 2010-10-15
+
+# Dorks #
+dorks [
+'password END_FILE ext:log'
+]
+
+# Examples #
 examples %w|
 140.116.71.92/cmdme/2/Java_applet2/password.log
 ayura.udea.edu.co/cursos/aprobar/password.log

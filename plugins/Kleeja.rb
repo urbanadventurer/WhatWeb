@@ -11,6 +11,13 @@ description "homepage: http://www.kleeja.com/"
 
 # 55 results for intitle:"(powered by kleeja)" @ 2010-09-18
 # 311 results for "powered by kleeja" @ 2010-09-18
+
+# Dorks #
+dorks [
+'"powered by kleeja"'
+]
+
+# Examples #
 examples %w|
 alfuaim.com/up/
 alwsta.com/up/
