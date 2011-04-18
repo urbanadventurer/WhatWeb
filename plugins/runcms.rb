@@ -15,6 +15,11 @@ description "RunCms is Ease Of Use for webmasters. One of the worlds finest free
 # Google results as at 2010-07-11 #
 # 57 for "powered by RunCMS" -Vulnerability -exploit inurl:module inurl:viewcat.php
 
+# Dorks #
+dorks [
+'"powered by RunCMS" -Vulnerability -exploit inurl:module inurl:viewcat.php'
+]
+
 # Examples #
 examples %w|
 www.runcms.org/modules/links/viewcat.php?cid=2

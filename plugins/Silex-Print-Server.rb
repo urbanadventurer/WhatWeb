@@ -15,6 +15,11 @@ description "Silex Print Server - Print servers connect printers directly to the
 # Google results as at 2011-03-08 #
 # 4 for "System Description:" "silex SX-500"
 
+# Dorks #
+dorks [
+'"System Description:" "silex SX-500"'
+]
+
 # Examples #
 examples %w|
 198.110.201.67

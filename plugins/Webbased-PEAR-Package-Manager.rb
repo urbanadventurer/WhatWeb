@@ -14,6 +14,11 @@ description "Webbased PEAR Package Manager - The most accessible way to manage y
 # 24 for inurl:"index.php?command=list" filetype:php intitle:"PEAR Package Manager"
 # 20 for filetype:php intitle:"PEAR Package Manager" "Warning: This package management website is not protected with a password, this is a MAJOR security risk. Please read the README."
 
+# Dorks #
+dorks [
+'"Installed packages" "Webbased PEAR Package Manager" "Search package by name"'
+]
+
 # Examples #
 examples %w|
 tias.ulyssis.org/frontweb_demo/

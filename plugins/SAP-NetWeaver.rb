@@ -18,6 +18,11 @@ description "SAP NetWeaver provides the technical foundation for SAP application
 # 363 for SAP netweaver
 # 619 for SAP J2EE Engine
 
+# Dorks #
+dorks [
+'intitle:"Logon - SAP Web Application Server"'
+]
+
 # Examples #
 examples %w|
 199.64.216.139

@@ -12,6 +12,11 @@ description "PunBB is a fast and lightweight PHP-powered discussion board. It is
 # Google results as at 2011-04-06
 # 302 for "Powered by PunBB, supported by Informer Technologies"
 
+# Dorks #
+dorks [
+'"Powered by PunBB, supported by Informer Technologies"'
+]
+
 # Examples #
 examples %w|
 demo.opensourcecms.com/punbb/

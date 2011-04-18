@@ -9,7 +9,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-11-08
 version "0.1"
 description "Timesheet NG is a free Open Source online time tracking application. Focusing on ease of use, Timesheet NG allows multiple employees and contractors to track and log their time spent on multiple projects. - homepage: http://www.timesheetng.org/"
 
-# 13 results for "Username" "Timesheet Login" inurl:login ext:php
+# 13 for "Username" "Timesheet Login" inurl:login ext:php
+
+# Dorks #
+dorks [
+'"Username" "Timesheet Login" inurl:login ext:php'
+]
+
+# Examples #
 examples %w|
 demo.timesheetng.org
 sklad.cumc.columbia.edu/timesheets/login.php

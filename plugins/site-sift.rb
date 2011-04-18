@@ -15,6 +15,14 @@ description "Site Sift Listings is a FREE directory script with many features th
 # 96 results for "powered by Site Sift" -exploit -"SQL Injection" @ 2010-06-29
 # 148 results for inurl: "index php go addpage" @ 2010-06-29
 # 68 results for inurl: "index.php?go=detail id=" @ 2010-06-29
+
+# Dorks #
+dorks [
+'inurl: "index php go addpage"',
+'"powered by Site Sift" -exploit -"SQL Injection"'
+]
+
+# Examples #
 examples %w|
 scripts.site-sift.com/demo/
 www.twbdir.com

@@ -11,6 +11,13 @@ description "homepage: http://u.discuz.net"
 
 # 431 results for "powered by UCenter Home" @ 2010-10-12
 # 89 results "powered by UCenter Home" inurl:.gov @ 2010-10-12
+
+# Dorks #
+dorks [
+'"powered by UCenter Home"'
+]
+
+# Examples #
 examples %w|
 bbs.fy.gov.cn/home/
 bbs.pingyao.gov.cn/myhome/space.php

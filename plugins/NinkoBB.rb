@@ -12,6 +12,11 @@ description "NinkoBB - Homepage: http://ninkobb.com/"
 # Google results as at 2011-02-27 #
 # 55 for "Powered by NinkoBB"
 
+# Dorks #
+dorks [
+'"Powered by NinkoBB"'
+]
+
 # Examples #
 examples %w|
 ninkobb.com

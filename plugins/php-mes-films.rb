@@ -10,6 +10,13 @@ version "0.1"
 description "homepage: http://phpmesfilms.dyndns.org/"
 
 # 21 results for "powered by PhpMesFilms" @ 2001-08-21
+
+# Dorks #
+dorks [
+'"powered by PhpMesFilms"'
+]
+
+# Examples #
 examples %w|
 phpmesfilms.dyndns.org/demo/admin/
 www.zikadonf.net/association/bibliotheque/admin/

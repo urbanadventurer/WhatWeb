@@ -10,6 +10,13 @@ version "0.1"
 description "Plogger is the next generation in open-source photo gallery systems. - homepage: http://www.plogger.org/"
 
 # 328 results for "powered by Plogger" @ 2010-09-18
+
+# Dorks #
+dorks [
+'"powered by Plogger"'
+]
+
+# Examples #
 examples %w|
 cantillano.com
 gallery.onetruegem.com

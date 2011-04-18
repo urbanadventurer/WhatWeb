@@ -12,6 +12,11 @@ description "podPress - A dream plugin for Podcastrs using WordPress. - Homepage
 # Google results as at 2011-03-17 #
 # 523 for "Podcast powered by podPress"
 
+# Dorks #
+dorks [
+'"Podcast powered by podPress"'
+]
+
 # Examples #
 examples %w|
 www.mightyseek.com

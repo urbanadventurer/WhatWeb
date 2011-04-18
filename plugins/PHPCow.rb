@@ -12,6 +12,11 @@ description "PHPCow news publishing content management system - Homepage [offlin
 # Google results as at 2011-03-16 #
 # 129 for "powered by PHPCow.com"
 
+# Dorks #
+dorks [
+'"powered by PHPCow.com"'
+]
+
 # Examples #
 examples %w|
 www.babyboomer-magazine.com

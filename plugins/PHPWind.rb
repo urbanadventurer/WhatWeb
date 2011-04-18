@@ -12,6 +12,11 @@ description "BBS [Chinese] - Homepage: http://www.phpwind.net/"
 # Google results as at 2011-03-18 #
 # 602 for "Powered by PHPWind"
 
+# Dorks #
+dorks [
+'"Powered by PHPWind"'
+]
+
 # Examples #
 examples %w|
 www.phpwind.net/index.php

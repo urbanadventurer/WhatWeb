@@ -15,6 +15,11 @@ description "A file manager written in PHP. - homepage:http://www.php-fusion.co.
 # Google results as at 2010-06-09 #
 # 36,400 for "powered by PHPFM" -username
 
+# Dorks #
+dorks [
+'"powered by PHPFM" -username'
+]
+
 # Examples #
 examples %w|
 www.abbahost.net/vinedocs/

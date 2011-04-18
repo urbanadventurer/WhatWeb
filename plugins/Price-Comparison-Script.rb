@@ -10,6 +10,13 @@ version "0.1"
 description "The price comparison script is a comprehensive solution to let you start your own professional price comparison website. The script comes with bells and whistles to make you start and run your price comparison website and keep it updated with the products and prices on regular basis. - homepage: http://www.kaonsoftwares.com/price-comparison-script.html"
 
 # 32 results for "Web Administration Panel" "by Kaon Softwares. All Rights Reserved." @ 2010-10-11
+
+# Dorks #
+dorks [
+'"Web Administration Panel" "by Kaon Softwares. All Rights Reserved."'
+]
+
+# Examples #
 examples %w|
 www.comparemania.co.uk/admin/
 products.kaonsoftwares.com/price-comparison-help/

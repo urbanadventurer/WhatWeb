@@ -15,6 +15,11 @@ description "Nukedit CMS - homepage: http://www.nukedit.com/"
 # Google results as at 2010-07-25 #
 # 122 for "powered by Nukedit"
 
+# Dorks #
+dorks [
+'"powered by Nukedit"'
+]
+
 # Examples #
 examples %w|
 catalystinfotech.com/cms/

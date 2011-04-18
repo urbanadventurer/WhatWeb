@@ -9,7 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
 description "sNews is a completely free, standards compliant, PHP and MySQL driven Content Management System. - homepage: http://www.snewscms.com/"
 
-# 326 results for "powered by sNews" @ 2010-10-14
+# Google results as at 2010-10-14 #
+# 326 for "powered by sNews"
+
+# Dorks #
+dorks [
+'"powered by sNews"'
+]
+
+# Examples #
 examples %w|
 halvard.writeside.net
 halvard.writeside.net/login/

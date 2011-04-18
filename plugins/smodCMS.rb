@@ -10,6 +10,13 @@ version "0.1"
 description "SmodCMS - homepage: http://www.smod.pl/"
 
 # 13 results for "powered by SmodCMS" @ 2010-08-16
+
+# Dorks #
+dorks [
+'"powered by SmodCMS"'
+]
+
+# Examples #
 examples %w|
 www.szkolakorlino.pl
 jaroslawiec24.com

@@ -13,6 +13,11 @@ description "QuickWeb [Italian]"
 # 52 for -intitle:"QWScript Error" filetype:qws
 # 38 for intitle:"QWScript Error" filetype:qws
 
+# Dorks #
+dorks [
+'intitle:"QWScript Error" filetype:qws'
+]
+
 # Examples #
 examples %w|
 194.185.194.91

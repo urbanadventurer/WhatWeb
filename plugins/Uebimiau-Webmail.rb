@@ -12,6 +12,11 @@ description "Uebimiau Webmail - Homepage: http://www.uebimiau.org/download.php"
 # Google results as at 2011-01-29 #
 # 41 for "Uebimiau Webmail v3.2.0-2.0" -disclosure
 
+# Dorks #
+dorks [
+'"Uebimiau Webmail v3.2.0-2.0" -disclosure'
+]
+
 # Examples #
 examples %w|
 www.hostsalive.com/webmail/

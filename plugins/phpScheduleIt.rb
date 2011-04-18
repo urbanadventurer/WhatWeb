@@ -16,6 +16,11 @@ description "A web-based resource scheduling system that allows administered man
 # Google results as at 2010-08-01 #
 # 9 for "powered by phpScheduleIt"
 
+# Dorks #
+dorks [
+'"powered by phpScheduleIt"'
+]
+
 # Examples #
 examples %w|
 php.brickhost.com/demo/

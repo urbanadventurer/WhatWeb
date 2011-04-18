@@ -16,6 +16,11 @@ description "Seagull is a mature OOP framework for building web, command line an
 # 101 for "Powered By Seagull PHP Framework"
 # 34 for intitle:"Seagull Framework :: Installation"
 
+# Dorks #
+dorks [
+'"Powered By Seagull PHP Framework"'
+]
+
 # Examples #
 examples %w|
 s12.delirium.wp.pl

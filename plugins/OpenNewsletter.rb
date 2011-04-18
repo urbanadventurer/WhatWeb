@@ -12,6 +12,11 @@ description "Open source mailing list manager with builds from Self Exile, NetMe
 # Google results as at 2011-03-15 #
 # 9 for "This is a Free & Open Source mailing list manager" -dork
 
+# Dorks #
+dorks [
+'"This is a Free & Open Source mailing list manager" -dork'
+]
+
 # Examples #
 examples %w|
 www.uni-ulm.de/fuese/2008/OpenNewsletter-2.4.2_Erstianmeldung/osd.php

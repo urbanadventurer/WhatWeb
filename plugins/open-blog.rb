@@ -15,6 +15,11 @@ description "Open blog is a free and open source blogging platform built using t
 # Google results for 2010-08-06 #
 # 107 for "powered by Open blog"
 
+# Dorks #
+dorks [
+'"powered by Open blog"'
+]
+
 # Examples #
 examples %w|
 www.open-blog.info/demo/

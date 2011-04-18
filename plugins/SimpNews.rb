@@ -15,6 +15,11 @@ description "Simply a News system - homepage: http://www.boesch-it.de/"
 # Google results as at 2010-07-11 #
 # 79 for "powered by SimpNews"
 
+# Dorks #
+dorks [
+'"powered by SimpNews"'
+]
+
 # Examples #
 examples %w|
 www.boesch-it.de/simpnews/admin/

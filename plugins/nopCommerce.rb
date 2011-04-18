@@ -12,6 +12,11 @@ description "nopCommerce is an open source e-commerce solution that contains bot
 # Google results as at 2011-03-14 #
 # 422 results for "powered by nopCommerce" "You have no items in your shopping cart."
 
+# Dorks #
+dorks [
+'"powered by nopCommerce" "You have no items in your shopping cart."'
+]
+
 # Examples #
 examples %w|
 demo.nopcommerce.com

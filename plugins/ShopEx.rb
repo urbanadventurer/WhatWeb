@@ -9,6 +9,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
 version "0.1"
 description "eCommerce [Chinese] - Homepage: http://www.shopex.cn/"
 
+# Dorks #
+dorks [
+'"Powered by ShopEX"'
+]
+
 # Examples #
 examples %w|
 115.47.109.143

@@ -12,6 +12,11 @@ description "Blog [Chinese] - Homepage: http://www.pagecookery.com/"
 # Google results as at 2011-03-06 #
 # 384 for "Powered by PageCookery Microblog"
 
+# Dorks #
+dorks [
+'"Powered by PageCookery Microblog"'
+]
+
 # Examples #
 examples %w|
 www.pagecookery.com/?act=view

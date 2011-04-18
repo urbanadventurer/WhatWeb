@@ -16,6 +16,11 @@ description "homepage: http://www.netref.net/"
 # 197 for "powered by Netref"
 # 29 for "Powered by Netref 5"
 
+# Dorks #
+dorks [
+'"powered by Netref"'
+]
+
 # Examples #
 examples %w|
 annuaires.massage-cachemirien.org

@@ -12,6 +12,11 @@ description "Bridging the gap between layman's terms and official language to pr
 # Google results as at 2011-03-19 #
 # 40 for "Powered by Semaphore" inurl:semaphoreserver.exe filetype:exe
 
+# Dorks #
+dorks [
+'"Powered by Semaphore" inurl:semaphoreserver.exe filetype:exe'
+]
+
 # Examples #
 examples %w|
 search.sholland.gov.uk/cgi-bin/semaphoreserver.exe?CMD=search.run&SAVEDB=shdc&SAVEQUERY00=valuation&SAVESTYPE=simple&B2=I1counciltaxbanding&PROP00=t%3Di&QUERY01=counciltaxbanding&B2_DESC=Council%20tax%20banding&PROP01=P%3DI1%2CS%3Dnone%2CZ%3Don&THES_REC=2714&TBDB=shdc_taxonomy&HIDECONCEPT=1

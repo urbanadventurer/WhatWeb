@@ -17,6 +17,11 @@ description "PHP Live! enables live help and live customer support communication
 # 7   for "powered by PHP Live!" intitle:"Knowledge BASE (FAQ)" inurl:knowledge_search.php
 # 14  for "powered by PHP Live!" (intitle:"Request Live! Support"|"Please leave a message") inurl:request_email.php
 
+# Dorks #
+dorks [
+'"powered by PHP Live!" -Vulnerability'
+]
+
 # Examples #
 examples %w|
 74.208.90.54:400/rep.ipmanage.net/httpdocs/phplive/admin/traffic/knowledge_search.php

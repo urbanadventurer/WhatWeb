@@ -15,6 +15,11 @@ description "Tivoli Access Manager for e-business software is a highly scalable 
 # Google results as at 2011-03-05 #
 # 35 for intitle:"Access Manager for e-business Login"
 
+# Dorks #
+dorks [
+'intitle:"Access Manager for e-business Login"'
+]
+
 # Examples #
 examples %w|
 12.9.136.152

@@ -10,6 +10,13 @@ version "0.1"
 description "Tribiq CMS is a content management system for websites. Without needing technical skills, you can edit and grow your website. - homepage: http://tribiq.com/"
 
 # 130 results for "powered by Tribiq" @ 2010-09-17
+
+# Dorks #
+dorks [
+'"powered by Tribiq"'
+]
+
+# Examples #
 examples %w|
 demo-probusiness-latest.tribiq.com/admin/adminlogin.php
 demo-probusiness-latest.tribiq.com/admin/storekeeper.php

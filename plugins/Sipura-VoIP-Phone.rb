@@ -14,6 +14,11 @@ description "Sipura VoIP phone. Cisco Systems acquired Sipura Technologies for i
 # 40 for intitle:"Sipura SPA Configuration" inurl:admin -ext:htm
 # 19 for intitle:"Sipura SPA Configuration" inurl:admin "Call History" -ext:htm
 
+# Dorks #
+dorks [
+'intitle:"Sipura SPA Configuration" inurl:admin -ext:htm'
+]
+
 # Examples #
 examples %w|
 www.rikasakha.ru:8085/admin/

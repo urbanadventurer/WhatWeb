@@ -13,6 +13,12 @@ description "PHPKIT WCMS - Web content management system to easily create your p
 # 11,700,000 for "PHPKIT ist eine eingetragene Marke der mxbyte GbR"
 # 12,000,000 for "Diese Website wurde mit PHPKIT WCMS erstellt"
 
+# Dorks #
+dorks [
+'"PHPKIT ist eine eingetragene Marke der mxbyte GbR"',
+'"Diese Website wurde mit PHPKIT WCMS erstellt"'
+]
+
 # Examples #
 examples %w|
 www.phpkit-demo.com/de/pk/

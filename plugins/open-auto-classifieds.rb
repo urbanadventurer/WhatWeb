@@ -15,6 +15,11 @@ description "OAC is a free, open source vehicle classifieds manager. Intended to
 # Google results as at 2010-08-27 #
 # 221 for "powered by Open Auto Classifieds"
 
+# Dorks #
+dorks [
+'"powered by Open Auto Classifieds"'
+]
+
 # Examples #
 examples %w|
 openautoclassifieds.com

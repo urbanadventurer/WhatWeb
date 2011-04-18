@@ -13,6 +13,13 @@ version "0.2"
 description "phpFreeChat is a free, simple to install, fast, customizable and multi languages chat that uses a simple filesystem for message and nickname storage. - homepage: http://www.phpfreechat.net/"
 
 # About 434,000 results for "powered by phpfreechat" @ 2010-06-12
+
+# Dorks #
+dorks [
+'"powered by phpfreechat"'
+]
+
+# Examples #
 examples %w|
 www.phpfreechat.net/demo/
 www.radioambientalfm.com/chat/

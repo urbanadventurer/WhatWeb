@@ -13,6 +13,11 @@ description "SourceBans is a free global administration and banning system for S
 # 10 for inurl:exportbans.php
 # 14 for inurl:web_upload ext:php +steam
 
+# Dorks #
+dorks [
+'inurl:web_upload ext:php +steam'
+]
+
 # Examples #
 examples %w|
 aldarion.bgmeet.com/sourcebans/web_upload/

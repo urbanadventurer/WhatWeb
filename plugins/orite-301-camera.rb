@@ -9,8 +9,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-07-15
 version "0.1"
 description "Orite IC301 web cam interface"
 
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1458
 # 16 results for intitle:"Orite IC301" | intitle:"ORITE Audio IP-Camera IC-301" -the -a @ 2010-07-15
+
+# Dorks #
+dorks [
+'intitle:"Orite IC301" | intitle:"ORITE Audio IP-Camera IC-301" -the -a'
+]
+
+# Examples #
 examples %w|
 88.247.195.215:83
 88.250.175.101:75

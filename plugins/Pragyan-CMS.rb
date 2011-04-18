@@ -12,6 +12,11 @@ description "A simple and fast multiuser content management system to organize c
 # Google results as at 2011-02-27 #
 # 80 for "powered by Pragyan CMS"
 
+# Dorks #
+dorks [
+'"powered by Pragyan CMS"'
+]
+
 # Examples #
 examples %w|
 pragyan.org/11/home/

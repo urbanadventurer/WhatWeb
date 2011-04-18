@@ -10,6 +10,13 @@ version "0.1"
 description "phpMyFAQ - The FAQ system - homepage: http://faq.phpmyfaq.de/"
 
 # 308 results for intitle:"powered by phpMyFAQ" @ 2010-10-12
+
+# Dorks #
+dorks [
+'intitle:"powered by phpMyFAQ"'
+]
+
+# Examples #
 examples %w|
 faq.phpmyfaq.de
 faq.aschool.com.au/Index.php

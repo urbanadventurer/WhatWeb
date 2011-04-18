@@ -16,6 +16,11 @@ description "UltraStats is a php based gamelog parser for the famous Call of Dut
 # 50  for "powered by Ultrastats" intitle:Ultrastats
 # 383 for intitle:"Ultrastats :: Home"
 
+# Dorks #
+dorks [
+'intitle:"Ultrastats :: Home"'
+]
+
 # Examples #
 examples %w|
 codwwdemo.ultrastats.org

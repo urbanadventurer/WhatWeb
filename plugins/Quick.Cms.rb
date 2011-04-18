@@ -15,6 +15,11 @@ description "Freeware, fast and easy to customize Content Management System. - h
 # Google results as at 2010-08-30 #
 # 298 for "powered by Quick.Cms"
 
+# Dorks #
+dorks [
+'"powered by Quick.Cms"'
+]
+
 # Examples #
 examples %w|
 opensolution.org/Quick.Cms/demo_lite/

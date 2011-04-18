@@ -10,6 +10,13 @@ version "0.1"
 description "homepage: http://www.php-update.co.uk"
 
 # 99 results for "powered by PHP-Update"
+
+# Dorks #
+dorks [
+'"powered by PHP-Update"'
+]
+
+# Examples #
 examples %w|
 cubebot.bots-united.com
 fritzbot.bots-united.com

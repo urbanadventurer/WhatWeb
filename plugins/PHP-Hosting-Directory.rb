@@ -7,9 +7,17 @@
 Plugin.define "PHP-Hosting-Directory" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
 version "0.1"
-description "PHP Hosting Directory"
+description "PHP Hosting Directory - Homepage: http://www.jnshosts.com/php-hosting-directory.html"
 
-# 17 results for "powered by PHP Hosting Directory 2.0" -Vulnerability @ 2010-10-10
+# Google results as at 2010-10-10 #
+# 17 for "powered by PHP Hosting Directory 2.0" -Vulnerability
+
+# Dorks #
+dorks [
+'"powered by PHP Hosting Directory 2.0" -Vulnerability'
+]
+
+# Examples #
 examples %w|
 khmerwebhosting.info
 www.buddingnetrepreneur.com
@@ -18,10 +26,11 @@ www.ghandismom.com
 www.helmhosts.com
 |
 
+# Matches #
 matches [
 
 # Version detection # Default title
-{:version=>/<title>PHP Hosting Directory ([\d\.]+) Powered by JnSHosts.com<\/title>/ },
+{:version=>/<title>PHP Hosting Directory ([\d\.]+) Powered by JnSHosts\.com<\/title>/ },
 
 # Version detection # Powered by text
 {:version=>/<a href="http:\/\/www.jnshosts.com\/php-hosting-directory-([\d\.]+).php"[^>]+>PHP Hosting Directory<\/a>/ },

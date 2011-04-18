@@ -17,6 +17,12 @@ description "NetBotz monitoring and management web front end - homepage: http://
 # 12 for intitle:"Device Status Summary Page" -demo
 # 21 for intitle:"netbotz appliance" -inurl:.php -inurl:.asp -inurl:.pdf -inurl:securitypipeline -announces
 
+# Dorks #
+dorks [
+'intitle:"netbotz appliance" -inurl:.php -inurl:.asp -inurl:.pdf -inurl:securitypipeline -announces'
+]
+
+
 # Examples #
 examples %w|
 155.101.3.213

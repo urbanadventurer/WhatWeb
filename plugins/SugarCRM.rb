@@ -12,6 +12,11 @@ description "Commercial open source customer relationship management (CRM). CRM 
 # Google results as at 2011-04-02 #
 # 34 for "Welcome to" intitle:SugarCRM "SugarCRM Inc. The Program is provided AS IS, without warranty. Licensed under AGPLv3."
 
+# Dorks #
+dorks [
+'"Welcome to" intitle:SugarCRM "SugarCRM Inc. The Program is provided AS IS, without warranty. Licensed under AGPLv3."'
+]
+
 # Examples #
 examples %w|
 demos.softaculous.com/SugarCRM/index.php

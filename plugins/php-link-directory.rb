@@ -13,6 +13,13 @@ version "0.2"
 description "phpLD is the most widely used directory script on the internet, installed on over 100,000 websites. phpLD is a great addition to any site, and is easy to install. - homepage: http://www.phplinkdirectory.com/"
 
 # 186 results for "powered by phpLinkDirectory" @ 2010-08-07
+
+# Dorks #
+dorks [
+'"powered by phpLinkDirectory"'
+]
+
+# Examples #
 examples %w|
 www.inclusio.com
 pornocms.com

@@ -12,6 +12,11 @@ description "TFTgallery is a PHP based web image gallery which doesn't need a da
 # Google results as at 2011-02-27 #
 # 39 for intitle:"TFTgallery administration"
 
+# Dorks #
+dorks [
+'intitle:"TFTgallery administration"'
+]
+
 # Examples #
 examples %w|
 www.tftgallery.org/demo/

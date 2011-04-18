@@ -10,6 +10,13 @@ version "0.1"
 description "Netious CMS - http://www.netious.com/"
 
 # 32 results for "Powered by netious.com" @ 2010-08-08
+
+# Dorks #
+dorks [
+'"Powered by netious.com"'
+]
+
+# Examples #
 examples %w|
 www.netious.com
 www.netious.com/demo/

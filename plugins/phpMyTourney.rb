@@ -10,6 +10,13 @@ version "0.1"
 description "homepage: http://phpmytourney.sourceforge.net/"
 
 # 23 results for "Powered by phpmytourney" +Version @ 2010-08-29
+
+# Dorks #
+dorks [
+'"Powered by phpmytourney" +Version'
+]
+
+# Examples #
 examples %w|
 web109.cyberwebserver-12.de/turnier/account.php
 www.clan-drug.de/phpt/grid.php

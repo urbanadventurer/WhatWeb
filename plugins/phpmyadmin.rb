@@ -24,6 +24,11 @@ description "phpMyAdmin is a free software tool written in PHP intended to handl
 # ShodanHQ results as at 2010-10-26 #
 # 1,868 for pma_theme=original
 
+# Dorks #
+dorks [
+'+intitle:phpMyAdmin +"Language: Afrikaans" +"Welcome to phpMyAdmin"'
+]
+
 # Examples #
 examples %w|
 demo.phpmyadmin.net/MAINT_2_11_11/

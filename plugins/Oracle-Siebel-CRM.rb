@@ -12,6 +12,13 @@ description "The world's most complete customer relationship management (CRM) so
 # 3 ShodanHQ results for Set-Cookie: BIGipServerSIEBEL
 # 8 ShodanHQ results for start.swe
 # 138 Google results for filetype:swe inurl:start
+
+# Dorks #
+dorks [
+'filetype:swe inurl:start'
+]
+
+# Examples #
 examples %w|
 67.66.44.17
 70.137.112.170
