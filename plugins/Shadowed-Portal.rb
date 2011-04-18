@@ -12,6 +12,11 @@ description "Shadowed Portal CMS- Homepage [offline] : http://www.shad0wed.com/"
 # Google results as at 2011-03-14 #
 # 21 for "Powered by Shadowed Portal" "These script's code is Copyright" -dork
 
+# Dorks #
+dorks [
+'"Powered by Shadowed Portal" "These script\'s code is Copyright" -dork'
+]
+
 # Examples #
 examples %w|
 mecanica2006.webcindario.com

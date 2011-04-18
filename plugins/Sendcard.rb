@@ -13,6 +13,12 @@ description "Sendcard is a multi-database (It currently supports 9 different dat
 # 255 for scscsc320
 # 141 for "Powered by sendcard - an advanced PHP e-card program" -dork
 
+# Dorks #
+dorks [
+'"scscsc320"',
+'"Powered by sendcard - an advanced PHP e-card program" -dork'
+]
+
 # Examples #
 examples %w|
 www.sendcard.org/sendcard/

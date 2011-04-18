@@ -12,6 +12,11 @@ description "TraceWatch Real Time Web Stats and Traffic Analysis Lets you keep t
 # Google results as at 2011-03-24 #
 # 30 for "TraceWatch" "Website Statistics and Traffic Analysis Software" +author
 
+# Dorks #
+dorks [
+'"TraceWatch" "Website Statistics and Traffic Analysis Software" +author'
+]
+
 # Examples #
 examples %w|
 www.palslimo.com/twatch/

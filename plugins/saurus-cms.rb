@@ -8,6 +8,13 @@ Plugin.define "Saurus-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
 version "0.1"
 description "Web publishing system combining daily content management features with site administration and development tools. - homepage: http://www.saurus.info/"
+
+# Dorks #
+dorks [
+'"powered by saurus cms"'
+]
+
+# Examples #
 examples %w|
 www.saurus.ee
 demo.saurus.ee

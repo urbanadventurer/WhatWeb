@@ -10,6 +10,13 @@ version "0.1"
 description "miniCWB is a Content Management Software and is meant to satisfy the needs of those who do not have access to a database, but want a dynamic website, editable through admin area and most of all, based on a FREE solution. The most important aspect about this software is that it is search engine optimised, and thus very popular. - homepage: http://www.mini-open-cms.com/"
 
 # 51 results for "powered by MiniCWB" @ 2010-08-28
+
+# Dorks #
+dorks [
+'"powered by MiniCWB"'
+]
+
+# Examples #
 examples %w|
 h2o-pics.com
 www.tkpix.com

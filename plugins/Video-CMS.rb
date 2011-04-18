@@ -12,6 +12,11 @@ description "Video CMS is the ultimate online video content publishing tool for 
 # Google results as at 2011-03-03 #
 # 60 for "powered by Video CMS"
 
+# Dorks #
+dorks [
+'"powered by Video CMS"'
+]
+
 # Examples #
 examples %w|
 video.artcrazed.com

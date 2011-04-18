@@ -10,6 +10,13 @@ version "0.1"
 description "Pressflow is a distribution of Drupal with integrated performance, scalability, availability, and testing enhancements. - homepage: http://pressflow.org/"
 
 # 67 results for +"powered by Pressflow" +"an open source content management system" @ 2010-07-18
+
+# Dorks #
+dorks [
+'+"powered by Pressflow" +"an open source content management system"'
+]
+
+# Examples #
 examples %w|
 patprzybilla.me
 gotdrupal.com/videos/

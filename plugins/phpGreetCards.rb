@@ -9,12 +9,19 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.1"
 description "PHP greeting card mailer - homepage: http://www.w2b.ru/webapplications/index.php"
 
+# Dorks #
+dorks [
+'"Powered by phpGreetCards"'
+]
+
+# Examples #
 examples %w|
 counter25.co.funpic.de/phpGreetCards/phpGreetCards/
 www.w2b.ru/demo/phpGreetCards/
 www.sumareclass.infopainel.com/phpcard/phpGreetCards.php
 |
 
+# Matches #
 matches [
 
 # Powered by text

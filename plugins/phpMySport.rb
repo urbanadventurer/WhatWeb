@@ -12,6 +12,11 @@ description "PhpMySport is an open source software designed for all sport clubs 
 # Google results as at 2011-02-01 #
 # 9 for intext:"Powered by phpMySport" -intext
 
+# Dorks #
+dorks [
+'intext:"Powered by phpMySport" -intext'
+]
+
 # Examples #
 examples %w|
 phpmysport.sourceforge.net

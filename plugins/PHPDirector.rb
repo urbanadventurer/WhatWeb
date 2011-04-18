@@ -15,6 +15,11 @@ description "PHPDirector is a content management system that allows users to cre
 # Google results as at 2010-07-24 #
 # 181 for "powered by PHP Director"
 
+# Dorks #
+dorks [
+'"powered by PHP Director"'
+]
+
 # Examples #
 examples %w|
 clips-videos.meteou.biz

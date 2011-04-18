@@ -12,6 +12,11 @@ description "Simple Forum PHP is a script that is very easy to install and admin
 # Google results as at 2011-02-26 #
 # 4 for intitle:"Simple Forum PHP script - Administration"
 
+# Dorks #
+dorks [
+'intitle:"Simple Forum PHP script - Administration"'
+]
+
 # Examples #
 examples %w|
 www.simpleforumphp.com/forum/admin.php

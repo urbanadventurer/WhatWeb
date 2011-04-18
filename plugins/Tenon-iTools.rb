@@ -9,9 +9,11 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.1"
 description "iTools 9 is a web site management system for both small to medium-sized web hosting providers that own or rent dedicated servers, and for large service providers who may wish to bundle iTools into their offerings. iTools is ideal for the professional hosting of multiple companies on a single server; it shortens the time and lessens the expertise needed to deploy new sites. iTools's secure, domain-specific, browser-based Apache administration, using a 9th generation suite of tools, makes Apache on Mac OS X, the easiest Apache in the world to administer. - homepage: http://www.tenon.com/products/itools-osx/"
 
-# About 687 ShodanHQ results for iTools @ 2010-11-01
+# 687 ShodanHQ results for iTools @ 2010-11-01
+
+# Examples #
 examples %w|
-i208.86.167.8
+208.86.167.8
 207.255.26.212
 64.51.57.75
 64.186.244.170

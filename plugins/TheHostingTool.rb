@@ -13,6 +13,13 @@ version "0.2"
 description "homepage: http://thehostingtool.com/"
 
 # 161 results for "powered by TheHostingTool" @ 2010-10-12
+
+# Dorks #
+dorks [
+'"powered by TheHostingTool"'
+]
+
+# Examples #
 examples %w|
 100mb.ca/tht/client/
 billing.freeresellers.com

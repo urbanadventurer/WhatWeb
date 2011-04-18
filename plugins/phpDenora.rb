@@ -12,6 +12,11 @@ description "phpDenora is the Web Frontend to the Denora Stats Server and provid
 # Google results as at 2011-03-13 #
 # 253 for "powered by phpDenora" intitle:"phpDenora"
 
+# Dorks #
+dorks [
+'"powered by phpDenora" intitle:"phpDenora"'
+]
+
 # Examples #
 examples %w|
 www.teranova.net/stats/

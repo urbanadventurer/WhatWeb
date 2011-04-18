@@ -8,6 +8,13 @@ Plugin.define "phpPgAdmin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-14 
 version "0.1"
 description "phpPgAdmin is a web-based administration tool for PostgreSQL. It is perfect for PostgreSQL DBAs, newbies and hosting services - homepage: http://phppgadmin.sourceforge.net/"
+
+# Dorks #
+dorks [
+'+intitle:phpPgAdmin "Welcome to phpPgAdmin"'
+]
+
+# Examples #
 examples %w|
 phppgadmin.kattare.com/phppgadmin4/
 216.157.146.2/phpPgAdmin/index.php

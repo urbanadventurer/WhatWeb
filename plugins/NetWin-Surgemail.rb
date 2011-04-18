@@ -10,6 +10,13 @@ version "0.1"
 description "SurgeMail is the fastest, most robust and secure, full-featured email server on the market today supporting all the protocols and standards. Over 10,000 servers installed, serving millions of email accounts world wide. - homepage: http://netwinsite.com/"
 
 # 91 results for intitle:"Surgemail Welcome Page" @ 2010-10-12
+
+# Dorks #
+dorks [
+'intitle:"Surgemail Welcome Page"'
+]
+
+# Examples #
 examples %w|
 casey.umd.edu
 casey.umd.edu/scripts/webmail.exe

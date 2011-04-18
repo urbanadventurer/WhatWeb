@@ -15,6 +15,11 @@ description "Deploy your own professional knowledge base or knowledge repository
 # Google results as at 2010-11-08 #
 # 15 for "Powered by SocketKB version" -intext
 
+# Dorks #
+dorks [
+'"Powered by SocketKB version" -intext'
+]
+
 # Examples #
 examples %w|
 socketkb.com/site/home/demo_coolblue.php

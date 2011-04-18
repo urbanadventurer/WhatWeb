@@ -15,6 +15,11 @@ description "phpQuestionnaire - homepage: http://www.chumpsoft.com/products/phpq
 # Google results as at 2010-08-21 #
 # 56 for "powered by phpQuestionnaire"
 
+# Dorks #
+dorks [
+'"powered by phpQuestionnaire"'
+]
+
 # Examples #
 examples %w|
 www.chumpsoft.com/products/phpq/demo/

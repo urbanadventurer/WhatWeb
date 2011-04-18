@@ -10,6 +10,13 @@ version "0.1"
 description "PHP121 is a web based instant messenger - written entirely in PHP. This means that it will work in any browser on any operating system including Windows and Linux, anywhere! If traditional messaging programs like MSN Messenger or Yahoo! Messenger are blocked at your school or workplace, PHP121 will still work."
 
 # 112 results for "Powered by PHP121" @ 2010-12-28
+
+# Dorks #
+dorks [
+'"Powered by PHP121"'
+]
+
+# Examples #
 examples %w|
 demo.php121.com/php121/php121login.php
 www.haitisurf.com/netchat/php121/php121login.php

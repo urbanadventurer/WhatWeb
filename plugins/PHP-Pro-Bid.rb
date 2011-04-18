@@ -12,6 +12,11 @@ description "PHP Pro Bid - Auction software - Homepage: http://www.phpprobid.com
 # Google results as at 2011-02-27 #
 # 33 for "PLEASE LOGIN TO THE ADMIN AREA" "Current Version"
 
+# Dorks #
+dorks [
+'"PLEASE LOGIN TO THE ADMIN AREA" "Current Version"'
+]
+
 # Examples #
 examples %w|
 www.phpprobid.com/auction-software-demo/admin/login.php

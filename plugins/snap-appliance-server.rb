@@ -9,9 +9,15 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.1"
 description "Overland NAS - homepage: http://www.overlandstorage.com/"
 
-# 20 results for intitle:"Snap Server" intitle:"Home" "Active Users"
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=1560
-# About 268 shodan results for Server: Snap Appliance, Inc. @ 2010-07-24
+# 20  Google results for intitle:"Snap Server" intitle:"Home" "Active Users"
+# 268 Shodan HQ results for Server: Snap Appliance, Inc. @ 2010-07-24
+
+# Dorks #
+dorks [
+'intitle:"Snap Server" intitle:"Home" "Active Users"'
+]
+
+# Examples #
 examples %w|
 74.221.131.34
 144.118.68.34

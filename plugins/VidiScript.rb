@@ -12,6 +12,11 @@ description "VidiScript - video sharing script - homepage: http://www.VidiScript
 # Google results as at 2011-02-24 #
 # 286 for "powered by VidiScript"
 
+# Dorks #
+dorks [
+'"powered by VidiScript"'
+]
+
 # Examples #
 examples %w|
 www.vidiscript.com/mainstreamdemo/

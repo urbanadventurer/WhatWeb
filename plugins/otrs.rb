@@ -12,7 +12,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
 version "0.2"
 description "OTRS is an Open source Ticket Request System (also well known as trouble ticket system) with many features to manage customer telephone calls and e-mails. - homepage: http://otrs.org/"
 
-# About 529 results for "Powered by OTRS" inurl:customer.pl' @ 2010-60-06
+# About 529 results for "Powered by OTRS" inurl:customer.pl @ 2010-60-06
+
+# Dorks #
+dorks [
+'"Powered by OTRS" inurl:customer.pl'
+]
+
+# Examples #
 examples %w|
 customer.otrs.org
 support.plimus.com/otrs/customer.pl

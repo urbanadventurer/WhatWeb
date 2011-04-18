@@ -12,6 +12,11 @@ description "A complete open source seo control panel for managing search engine
 # Google results as at 2011-02-26 #
 # 9 for intitle:"Seo Panel: Login section"
 
+# Dorks #
+dorks [
+'intitle:"Seo Panel: Login section"'
+]
+
 # Examples #
 examples %w|
 demo.seopanel.in/login.php

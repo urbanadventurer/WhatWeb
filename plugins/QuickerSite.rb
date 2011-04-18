@@ -12,6 +12,11 @@ description "QuickerSite is a Content Management System for Windows Servers. It 
 # Google results as at 2011-03-04 #
 # 111 for "Powered by QuickerSite"
 
+# Dorks #
+dorks [
+'"Powered by QuickerSite"'
+]
+
 # Examples #
 examples %w|
 www.quickersite.com

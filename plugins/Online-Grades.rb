@@ -13,6 +13,11 @@ description "Online Grades is the leading free-software project that allows K-12
 # 100 for "Powered by Online Grades"
 #  70 for "Powered by Online Grades" -dork
 
+# Dorks #
+dorks [
+'"Powered by Online Grades" -dork'
+]
+
 # Examples #
 examples %w|
 demo.onlinegrades.org

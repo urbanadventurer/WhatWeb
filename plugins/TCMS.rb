@@ -10,6 +10,13 @@ version "0.1"
 description "homepage: http://www.tcms-sep.com"
 
 # 26 results for "powered by TCMS" @ 2010-08-28
+
+# Dorks #
+dorks [
+'"powered by TCMS"'
+]
+
+# Examples #
 examples %w|
 image.tanzarine.net
 www.oberhessen.de

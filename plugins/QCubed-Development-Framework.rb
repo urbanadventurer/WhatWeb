@@ -13,6 +13,12 @@ description "The Qcodo Development Framework is an open-source PHP framework tha
 # 11 for "qcodo/_devtools/codegen.php" intitle:"Development Framework - Start Page"
 # 100 results for intitle:"PHP Error" "Qcubed Version" "PHP Version"
 
+# Dorks #
+dorks [
+'"qcodo/_devtools/codegen.php" intitle:"Development Framework - Start Page"',
+'intitle:"PHP Error" "Qcubed Version" "PHP Version"'
+]
+
 # Examples #
 examples %w|
 padhaichannel.com/qcodo/indexqq.php

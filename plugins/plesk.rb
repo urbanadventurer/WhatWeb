@@ -4,17 +4,23 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 #Version 0.2
 # convert :regexp to :text, remove :certainty=>100
 #Version 0.3
 # added more matches for 1999- 2007 version, improved existing matches
-
+##
 Plugin.define "Plesk" do
 author "Andrew Horton"
 version "0.3"
 description "Plesk is a web control panel Homepage: http://www.parallels.com/products/plesk/"
+
+# Examples #
 examples %w| 119.47.117.109 119.47.116.250 124.198.191.234 |
+
+# Dorks #
+dorks [
+'intitle:"Default Parallels Plesk Panel Page"'
+]
 
 # 2006
 # <img src='def_plesk_logo.gif' alt="Plesk logo">

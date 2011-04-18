@@ -10,6 +10,13 @@ version "0.1"
 description "phpRechnung is easy-to-use Web-based multilingual accounting software - homepage: http://www.loenshotel.de/phpRechnung/"
 
 # 4 results for phpRechnung "Edy Corak . All rights reserved." @ 2010-12-28
+
+# Dorks #
+dorks [
+'phpRechnung "Edy Corak . All rights reserved."'
+]
+
+# Examples #
 examples %w|
 http://www.loenshotel.de/demo/phpRechnung/login/login.php
 http://solvemus.com/phpRechnung/

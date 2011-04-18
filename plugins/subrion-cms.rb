@@ -15,6 +15,11 @@ description "Subrion CMS unites the functionality of articles script, auto class
 # Google results as at 2010-08-08 #
 # 88 for "powered by Subrion CMS"
 
+# Dorks #
+dorks [
+'"powered by Subrion CMS"'
+]
+
 # Examples #
 examples %w|
 demo.subrion.com

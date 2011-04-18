@@ -13,6 +13,13 @@ version "0.2"
 description "Trac is an enhanced wiki and issue tracking system for software development projects. - homepage: http://trac.edgewall.org/"
 
 # About 77,000,000 results for "Powered by Trac" +intitle:Trac' @ 2010-06-14
+
+# Dorks #
+dorks [
+'"Powered by Trac" +intitle:Trac'
+]
+
+# Examples #
 examples %w|
 trac.edgewall.org/demo-0.12
 trac.edgewall.org/demo-0.11

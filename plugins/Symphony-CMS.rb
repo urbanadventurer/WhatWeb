@@ -18,6 +18,11 @@ description "Symphony CMS - XSLT-powered open source content management system -
 # Google results as at 2010-09-12 #
 # 115 for "powered by Symphony"
 
+# Dorks #
+dorks [
+'"powered by Symphony"'
+]
+
 # Examples #
 examples %w|
 symphony-cms.com

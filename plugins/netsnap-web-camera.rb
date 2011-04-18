@@ -8,6 +8,15 @@ Plugin.define "Netsnap-Web-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
 version "0.1"
 description "Netsnap java client web interface for video cameras"
+
+# 18 for intitle:"Live NetSnap Cam-Server feed" -intitle @ 2010-07-10
+
+# Dorks #
+dorks [
+'intitle:"Live NetSnap Cam-Server feed" -intitle'
+]
+
+# Examples #
 examples %w|
 65.171.3.102:85/coolpush.htm
 24.118.32.173:86/coolpush.htm
@@ -18,10 +27,9 @@ foxhunter12.tripod.com/webcam/CoolPush.htm
 homepage.hispeed.ch/Bertcam/push100.htm
 |
 
+# Matches #
 matches [
 
-# 18 results for intitle:"Live NetSnap Cam-Server feed" -intitle @ 2010-07-10
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=882
 {:text=>'<title>Live NetSnap Cam-Server feed</title>' },
 
 {:text=>'color="#008080">Live-Webcam</font></big></big></big></strong></em></font></h3>' },

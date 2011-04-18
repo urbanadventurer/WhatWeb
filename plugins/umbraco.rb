@@ -15,6 +15,13 @@ description "umbraco is an open source project with roots back to year 2000 even
 # About 24,400 results for "powered by umbraco" @ 2010-06-08
 # 27 results for "site powered by umbraco" @ 2010-06-08
 # 17 results for "site powered by umbraco v4" @ 2010-06-08
+
+# Dorks #
+dorks [
+'"site powered by umbraco"'
+]
+
+# Examples #
 examples %w|
 store.umbraco.org
 webguruservices.com

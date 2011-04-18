@@ -15,6 +15,11 @@ author "Andrew Horton"
 version "0.3"
 description "phpBB is a free forum - Homepage: http://phpbb.org/"
 
+# Dorks #
+dorks [
+'"Powered by phpBB"'
+]
+
 # Examples #
 examples %w|http://phpbbmodders.net/board/ http://smartor.is-root.com/forum/ http://narutoc.phpbbnow.com/ http://www.bikeradar.com/forum/index.php http://forum.djmag.com/ http://www.rotationz.be/forum/ http://www.sgscwelisten.com/forum/ http://www.globalhardstyle.com/forum/ http://www.soapforum.co.uk/ www.ostriches.org/forum/ forum.comicostrich.com forum.ectune.com pokerforums.fulltiltpoker.com www.bettertransport.org.nz/forum/ back2basics.hiphopnz.com/ www.oldschool.co.nz/|
 

@@ -12,6 +12,11 @@ description "Namazu is a full-text search engine intended for easy use. Not only
 # Google results as at 2011-03-30 #
 # 259 for "powered by Namazu"
 
+# Dorks #
+dorks [
+'"powered by Namazu"'
+]
+
 # Examples #
 examples %w|
 search.namazu.org

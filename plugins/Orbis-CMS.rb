@@ -10,6 +10,13 @@ version "0.1"
 description "Orbis CMS is a simple and stylish management solution for small websites."
 
 # 3 results for "powered by Orbis CMS" intitle:"Orbis CMS > Login" @ 2010-09-18
+
+# Dorks #
+dorks [
+'"powered by Orbis CMS" intitle:"Orbis CMS > Login"'
+]
+
+# Examples #
 examples %w|
 www.bergnersbil.se/admin/login.php
 cpic.webege.com/orbis/admin/login.php

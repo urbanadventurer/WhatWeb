@@ -15,6 +15,11 @@ description "Traidnt UP - homepage: http://www.traidnt.net"
 # Google results as at 2010-09-26 #
 # 470 for "powered by Traidnt UP Version"
 
+# Dorks #
+dorks [
+'"powered by Traidnt UP Version"'
+]
+
 # Examples #
 examples %w|
 shjoonalhajri.net

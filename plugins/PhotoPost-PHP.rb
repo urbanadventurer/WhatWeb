@@ -10,6 +10,13 @@ version "0.1"
 description "PhotoPost is photo sharing gallery software for your site that lets your users upload photos to galleries and to interact in photo discussions. Install it yourself, or let us get your gallery up and running in one day. - homepage: http://www.photopost.com/"
 
 # 262 results for "powered by PhotoPost PHP" @ 2010-09-18
+
+# Dorks #
+dorks [
+'"powered by PhotoPost PHP"'
+]
+
+# Examples #
 examples %w|
 www.photopost.com/photopost/adm-index.php
 www.photographyblog.com/gallery/index.php

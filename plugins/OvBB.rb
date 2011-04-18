@@ -12,6 +12,11 @@ description "Written in PHP and powered by MySQL, OvBB is a light-weight and fas
 # Google results for 2010-09-26 #
 # 34 for "powered by OvBB"
 
+# Dorks #
+dorks [
+'"powered by OvBB"'
+]
+
 # Examples #
 examples %w|
 community.namforum.com

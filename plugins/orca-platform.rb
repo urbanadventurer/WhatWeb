@@ -10,6 +10,13 @@ version "0.1"
 description "Welcome to ORCA Websites... We specialise in designing Professional & Affordable Websites for small to medium sized businesses across the UK. - homepage: http://www.orcawebsites.com/"
 
 # 311 results for "powered by Orca Websites" @ 2010-08-04
+
+# Dorks #
+dorks [
+'"powered by Orca Websites"'
+]
+
+# Examples #
 examples %w|
 www.advancehearing.com
 www.alexandraworsley.com

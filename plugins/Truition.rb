@@ -12,6 +12,11 @@ description "CDC eCommerce - On Demand eCommerce and Online Auction Software - f
 # Google results as at 2011-01-30 #
 # 28 for "powered by Truition" inurl:ExecMacro inurl:cgi-bin
 
+# Dorks #
+dorks [
+'"powered by Truition" inurl:ExecMacro inurl:cgi-bin'
+]
+
 # Examples #
 examples %w|
 www.dellauction.com/cgi-bin/ncommerce3/ExecMacro/static/feature.d2w

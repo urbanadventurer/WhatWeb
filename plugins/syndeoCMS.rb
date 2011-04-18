@@ -15,6 +15,11 @@ description "A Content Management System (CMS) for primary schools, which helps 
 # Google results as at 2010-08-06 #
 # 117 for "powered by SyndeoCMS"
 
+# Dorks #
+dorks [
+'"powered by SyndeoCMS"'
+]
+
 # Examples #
 examples %w|
 www.syndeocms.org/demo/

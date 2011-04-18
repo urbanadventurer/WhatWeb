@@ -8,6 +8,13 @@ Plugin.define "Open-Freeway" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.1"
 description "Freeway is by far the largest and most fully featured Open Source eCommerce platform. It doesn't just sell products but extends to sell in some very fancy new ways and is very configurable. - homepage: http://www.openfreeway.org/"
+
+# Dorks #
+dorks [
+'+"Copyright * Zacware" +"Welcome Guest" +"Advanced Search" +"Shopping Cart" +"Checkout"'
+]
+
+# Examples #
 examples %w|
 openfreeway.org/demo/frontdemo/
 ambicentro.com/openfreeway/
@@ -29,11 +36,10 @@ grahamweighcycles.co.uk
 epowertools.com.au/freeway/
 |
 
+# Matches #
 matches [
 
-# About 138,000 results @ 2010-06-05
-{:name=>'GHDB: +"Copyright * Zacware" +"Welcome Guest" +"Advanced Search" +"Shopping Cart" +"Checkout"',
-:certainty=>75,
+{ :certainty=>75,
 :ghdb=>'+"Copyright * Zacware" +"Welcome Guest" +"Advanced Search" +"Shopping Cart" +"Checkout"'
 },
 

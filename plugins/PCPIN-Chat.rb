@@ -13,6 +13,11 @@ description "PCPIN Chat is a powerful and secure professional instant messaging 
 # 36 for "powered by PCPIN.com"
 # 20 for "powered by PCPIN.com" -dork -exploit
 
+# Dorks #
+dorks [
+'"powered by PCPIN.com" -dork -exploit'
+]
+
 # Examples #
 examples %w|
 demo.chat.pcpin.com

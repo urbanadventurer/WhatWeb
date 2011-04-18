@@ -16,6 +16,11 @@ description "Team Board forum [Chinese] - homepage: http://www.team5.cn/"
 # Google results as at 2010-07-25 #
 # 215 for "team5 studio all rights reserved" site:cn
 
+# Dorks #
+dorks [
+'"team5 studio all rights reserved" site:cn'
+]
+
 # Examples #
 examples %w|
 www.team5.cn

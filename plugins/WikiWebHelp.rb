@@ -10,6 +10,13 @@ version "0.1"
 description "wikiWebHelp - Client side is pure Javascript using mostly original code. Backend is PHP. Database is mySQL. Wiki conversion by Wiky.  Diff processing by simpleDiff. - homepage: http://richardbondi.net/projects.html"
 
 # 8 results for "powered by WikiWebHelp" @ 2010-10-14
+
+# Dorks #
+dorks [
+'"powered by WikiWebHelp"'
+]
+
+# Examples #
 examples %w|
 www.worldwidedancers.com/help/
 www.faq.tsc-hosting.eu

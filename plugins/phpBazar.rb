@@ -12,6 +12,11 @@ description "PHP3/PHP4/mySql Classified AD and/or Matchmaking - homepage: http:/
 # Google results as at 2011-01-29 #
 # 12 for intitle:"phpBazar-AdminPanel" -intitle
 
+# Dorks #
+dorks [
+'intitle:"phpBazar-AdminPanel" -intitle'
+]
+
 # Examples #
 examples %w|
 cometsquare.com/admin/admin.php

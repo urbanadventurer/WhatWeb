@@ -12,6 +12,11 @@ description "SweeRice is a simple website management system ,it is not just free
 # Google results as at 2011-02-26 #
 # 25 for Copyright "Powered By Basic CMS SweetRice" -dork
 
+# Dorks #
+dorks [
+'"Powered By Basic CMS SweetRice" -dork'
+]
+
 # Examples #
 examples %w|
 blog.b-d-soft.com

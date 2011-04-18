@@ -15,6 +15,11 @@ description 'PHP Layers Menu is a hierarchical menu system to prepare "on the fl
 # Google results as at 2010-06-13 #
 # 33 for "Powered by PHP Layers"
 
+# Dorks #
+dorks [
+'"Powered by PHP Layers"'
+]
+
 # Examples #
 examples %w|
 phplayersmenu.sourceforge.net/demo.php

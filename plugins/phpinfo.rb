@@ -23,6 +23,12 @@ description "This plugin detects instances of phpinfo() results and extracts the
 # 52 for intitle:"phpinfo()" "mysql.default_password" "Zend Scripting Language Engine"
 # 33 for inurl:"phpinfo.php" intitle:"phpinfo()" "mysql.default_password"
 
+# Dorks #
+dorks [
+'intitle:"phpinfo()" "mysql.default_password" "Zend Scripting Language Engine"',
+'inurl:"phpinfo.php" intitle:"phpinfo()" "mysql.default_password"'
+]
+
 # Examples #
 examples %w|
 www.jtlnet.com/phpinfo.php

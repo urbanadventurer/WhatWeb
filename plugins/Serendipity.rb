@@ -22,6 +22,12 @@ description "Serendipity - a PHP Weblog/Blog software. Serendipity is a PHP-powe
 # 12 for X-serendipity-ml-sl-reset
 # 5 for x-serendipity-contentlang
 
+# Dorks #
+dorks [
+'"powered by Serendipity"',
+'"My weblog is proudly powered by Serendipity"'
+]
+
 # Examples #
 examples %w|
 213.133.110.49

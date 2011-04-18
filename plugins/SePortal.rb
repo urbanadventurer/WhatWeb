@@ -12,6 +12,11 @@ description "SePortal - The Weblog System - Homepage: http://www.seportal.org/"
 # Google results as at 2011-03-03 #
 # 89 for "Powered by SePortal"
 
+# Dorks #
+dorks [
+'"Powered by SePortal"'
+]
+
 # Examples #
 examples %w|
 www.seportal.org

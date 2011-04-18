@@ -12,6 +12,11 @@ description "MiniBB is a free standalone open source program for building your o
 # Google results as at 2011-02-27 #
 # 210 for "Powered by MiniBB"
 
+# Dorks #
+dorks [
+'"Powered by MiniBB"'
+]
+
 # Examples #
 examples %w|
 minibb.org/minibb-test.php

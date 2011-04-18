@@ -15,6 +15,11 @@ description "PHP Photo Album - homepage: http://www.phphq.net/?script=phPhotoAlb
 # Google results as at 2010-08-14 #
 # 4 for "powered by PHPhotoalbum" intitle:My Picture Album"
 
+# Dorks #
+dorks [
+'"powered by PHPhotoalbum" intitle:My Picture Album"'
+]
+
 # Examples #
 examples %w|
 www.hardmaps.com/BOTD/BOTD/phPhotoAlbum.php

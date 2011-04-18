@@ -8,6 +8,13 @@ Plugin.define "Pligg-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
 version "0.1"
 description "Pligg is an open source CMS (Content Management System) that you can download and use for free. - homepage: http://www.pligg.com/"
+
+# Dorks #
+dorks [
+'"Powered By Pligg CMS"'
+]
+
+# Examples #
 examples %w|
 1indianews.com
 67.20.75.195
@@ -92,6 +99,7 @@ www.we-indians.net
 www.yasnw.com
 |
 
+# Matches #
 matches [
 
 # 144 results for "powered by Pligg CMS" @ 2010-11-07

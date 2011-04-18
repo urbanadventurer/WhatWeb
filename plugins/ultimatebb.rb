@@ -12,6 +12,11 @@ description "Since 1997, thousands of websites have chosen UBB for their forum s
 # Google results as at 2011-03-29 #
 # 511 for "Powered by UBB.threads"
 
+# Dorks #
+dorks [
+'"Powered by UBB.threads"'
+]
+
 # Examples #
 examples %w|
 www.ubbdev.com/forums/

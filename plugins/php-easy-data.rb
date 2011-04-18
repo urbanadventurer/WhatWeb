@@ -12,7 +12,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-16
 version "0.2"
 description "homepage: http://www.phpeasydata.com/"
 
+# Dorks #
+dorks [
+'"powered by PHPEasyData"'
+]
+
 # 12 results for "powered by PHPEasyData" @ 2010-08-15
+
+# Examples #
 examples %w|
 www.phpeasydata.com/annuaire/annuaire.php
 www.marocannonce.org/admin/

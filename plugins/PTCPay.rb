@@ -12,6 +12,11 @@ description "PTCPay is a sofware development company that develops and supports 
 # Google results as at 2011-02-27 #
 # 7 for "Login into your admin panel" "PTCPay.Com" inurl:"admin"
 
+# Dorks #
+dorks [
+'"Login into your admin panel" "PTCPay.Com" inurl:"admin"'
+]
+
 # Examples #
 examples %w|
 ptcpay.com/gen4demo/admin/

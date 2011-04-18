@@ -13,6 +13,13 @@ version "0.2"
 description "uPortal"
 
 # About 1,790 results for "powered by uportal" @ 2010-06-13
+
+# Dorks #
+dorks [
+'"powered by uportal"'
+]
+
+# Examples #
 examples %w|
 https://my.rice.edu/uPortal/
 https://my.nsac.ca/uPortal/

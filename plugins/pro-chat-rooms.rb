@@ -15,6 +15,11 @@ description "An Ideal Solution For Web Conferencing, Dating and all Online Commu
 # Google results as at 2010-08-30 #
 # 4 for "Pro Chat Rooms" "Please enter your login details below." "Select Room"
 
+# Dorks #
+dorks [
+'"Pro Chat Rooms" "Please enter your login details below." "Select Room"'
+]
+
 # Examples #
 examples %w|
 textchat.prochatrooms.com

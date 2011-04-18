@@ -11,6 +11,11 @@ description "Perlfect Search is a free, sophisticated, powerful, versatile, cust
 
 # 20 results for "powered by Perlfect Search" @ 2011-01-16
 
+# Dorks #
+dorks [
+'"powered by Perlfect Search"'
+]
+
 # Examples #
 examples %w|
 http://freeunix.dyndns.org:8088/cgi-bin/perlfect/search/search.pl
