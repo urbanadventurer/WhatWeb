@@ -97,7 +97,7 @@ $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 WhatWeb - Next generation web scanner.
-Version 0.4.7 by Andrew Horton aka urbanadventurer from Security-Assessment.com
+Version 0.4.8 by Andrew Horton aka urbanadventurer from Security-Assessment.com
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
@@ -125,7 +125,7 @@ AGGRESSION LEVELS:
 			lot of URLs like Nikto.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.7.
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.8.
   --user, -u=<user:password> HTTP basic authentication
   --header, -H		Add an HTTP header. eg "Foo:Bar". Specifying a default
 			header will replace it. Specifying an empty value, eg.
@@ -166,6 +166,7 @@ PLUGINS:
 			":ghdb=>'intitle:abc \"powered by abc\"'"
 			":md5=>'8666257030b94d3bdb46e05945f60b42'"
 			"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
+--dorks, -g <plugin name>	Returns google dorks for the selected plugin
 
 LOGGING & OUTPUT:
   --verbose, -v		Increase verbosity, use twice for plugin development.
@@ -196,7 +197,7 @@ PERFORMANCE & STABILITY:
 HELP & MISCELLANEOUS:
   --help, -h		This help
   --debug		Raise errors in plugins
-  --version		Display version information. (WhatWeb 0.4.7)
+  --version		Display version information. (WhatWeb 0.4.8)
 
 EXAMPLE USAGE:
   whatweb example.com
@@ -297,6 +298,11 @@ Examples :
 	--plugins foobar (only select foobar)
 	-p title,md5,+./plugins-disabled/
 	-p ./plugins-disabled,-md5
+
+
+The --dorks, -g <plugin name> command line option returns google dorks for the selected plugin.
+
+For example, -g wordpress returns "is proudly powered by WordPress"
 
 
 6. Aggression
@@ -403,7 +409,7 @@ Version 0.4.4 Released June 29th, 2010
 Version 0.4.5 Released August 17th, 2010
 Version 0.4.6 Released March 25th, 2011
 Version 0.4.7 Released April 5th, 2011
-
+Version 0.4.8-dev Unreleased
 
 11. Credits
 ================================================================================
