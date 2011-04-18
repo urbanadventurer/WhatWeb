@@ -1,26 +1,25 @@
 #!/bin/bash
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# ______               _____
-# ___  /_____  __________  /_____________
-# __  __ \  / / /_  __ \  __/  _ \_  ___/
-# _  / / / /_/ /_  / / / /_ /  __/  /
-# /_/ /_/\__,_/ /_/ /_/\__/ \___//_/
-#
-# Finds web applications with Google then fingerprints them with WhatWeb
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-VERSION="0.1-dev 20110417"
-AUTHOR="Brendan Coles [+] itsecuritysolutions.org"
-VERBOSE="NO"
+# Hunter finds web applications with Google then fingerprints them with WhatWeb
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+VERSION="0.1"
+AUTHOR="Brendan Coles [ itsecuritysolutions.org ]"
 
 # WhatWeb settings
+AGGRESSION="1"
 USERAGENT="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341"
 PROXYUSER=""  # "username:password" Set proxy user and password
 PROXY=""      # "hostname:port"     Set proxy hostname and port
+
+VERBOSE="FALSE"
+WAIT="0"
+LIST=""
+NUMRESULTS="" # Reserved for future use [-n]
 
 # Check for WhatWeb in the current working directory
 WHATWEB="./whatweb"
@@ -37,6 +36,7 @@ if [[ ! -e "$WHATWEB" ]]; then
 	fi
 fi
 
+
 # Quit if gggooglescan is not in the current working directory
 GOOGLESCAN="./gggooglescan"
 if [[ ! -e "$GOOGLESCAN" ]]; then
@@ -44,40 +44,68 @@ if [[ ! -e "$GOOGLESCAN" ]]; then
 	exit 1
 fi
 
+
 # Show usage and quit
-if [[ -z "$1" || "$1" == "-h" || "$1" == "--help" ]]; then
-echo "______               _____
-___  /_____  __________  /_____________
-__  __ \  / / /_  __ \  __/  _ \_  ___/
-_  / / / /_/ /_  / / / /_ /  __/  /
-/_/ /_/\__,_/ /_/ /_/\__/ \___//_/
+function usage {
+echo "
+         @@@  @@@   @@@  @@@   @@@  @@@   @@@@@@@   @@@@@@@@   @@@@@@@ 
+         @@!  @@@   @@!  @@@   @@!@!@@@     @@!     @@!        @@!  @@@
+         @!@!@!@!   @!@  !@!   @!@@!!@!     @!!     @!!!:!     @!@!!@! 
+         !!:  !!!   !!:  !!!   !!:  !!!     !!:     !!:        !!: :!! 
+          :   : :    :.:: :    ::    :       :      : :: :::    :   : :
 
 Hunter - Finds web applications with Google then fingerprints them with WhatWeb
 Version $VERSION by $AUTHOR
 
-Usage:
-  $0 <Application Name>    Find and fingerprint a web application.
-  $0 --list,-l [keyword]   List applications. Filter by optional keyword.
-  $0 --help,-h             This help info
+Usage:   ./hunter [options] <Application Name>
+Example: ./hunter wordpress
 
-Example: $0 wordpress
+Options:
+  <Application Name>	Find and fingerprint a web application
+  -l KEYWORD		List supported applications. Filter by keyword.
+			Use \".\" to list all applications.
+  -a AGGRESSION		Set WhatWeb aggression level. Default: 1 (passive)
+  -u USER-AGENT		Set WhatWeb user agent
+  -w SECONDS		Wait time between google queries
+  -h			This help info
+  -v			Verbose
 "
-exit
-fi
+}
 
-# List plugins
-if [[ "$1" == "-l" || "$1" == "--list" ]]; then
-	if [[ -z "$2" ]]; then
-		"$WHATWEB" -I | grep Dork -B 5 | egrep "^(\S)"
-	else
-		"$WHATWEB" -I | grep Dork -B 5 | egrep "^(\S)" | grep -i "$2"
+
+# Command line options
+while getopts 'a:u:n:w:l:vh' OPTION
+do
+ case $OPTION in
+ h) usage; exit ;;
+ n) NUMRESULTS=$OPTARG ;;
+ a) AGGRESSION=$OPTARG ;;
+ u) USERAGENT=$OPTARG ;;
+ w) WAIT=$OPTARG ;;
+ v) VERBOSE="TRUE" ;;
+ l) LIST=$OPTARG ;;
+ esac
+done
+shift $(($OPTIND -1 ))
+
+# List applications
+if [[ ! -z "$LIST" ]]; then
+	if [[ "$VERBOSE" == "TRUE" ]]; then
+		echo "[+] Listing applications matching \"$LIST\"" >&2
 	fi
+	"$WHATWEB" -I | grep Dork -B 5 | egrep "^(\S)" | grep -i "$LIST"
 	exit
 fi
 
+# Show usage when no arguments are provided
+if [[ -z "$1" ]]; then
+	usage
+        exit 1
+fi
+
 # Get dorks from WhatWeb
-if [[ "$VERBOSE" == "YES" ]]; then
-	echo "[+] Loading google queries for $1"
+if [[ "$VERBOSE" == "TRUE" ]]; then
+	echo "[+] Loading Google queries for $1" >&2
 fi
 DORKS=`"$WHATWEB" -g "$1"`
 
@@ -86,11 +114,16 @@ if [[ -z "$DORKS" ]]; then
 	exit 1
 fi
 
+# Show log message
+if [[ "$VERBOSE" == "TRUE" ]]; then
+	echo "[+] Searching Google for instances of $1" >&2
+fi
+
 # Pipe dorks to gggooglescan then pipe the results to WhatWeb
-echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$1.log" -p "$1" | grep -i "$1"
+echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$1.log" -p "$1" | grep -i "$1"
 
 # Show log message
-if [[ "$VERBOSE" == "YES" ]]; then
-	echo "[+] Wrote output to $1.log"
+if [[ "$VERBOSE" == "TRUE" ]]; then
+	echo "[+] Wrote output to $1.log" >&2
 fi
 
