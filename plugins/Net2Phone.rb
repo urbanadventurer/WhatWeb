@@ -5,10 +5,11 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 Plugin.define "Net2Phone" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
+author "Brendan Coles <bcoles@gmail.com>" # 2011-04-19
 version "0.1"
 description "Net2Phone CommCenter is software that allows you to make phone calls and send faxes to anywhere in the world. - Homepage: http://www.net2phone.com/"
 
+# Google dorks as at 2011-04-19 #
 # 3 for intitle:"Net2Phone Init Page" "Net2Phone, Inc. All Rights Reserved."
 
 # Dorks #
