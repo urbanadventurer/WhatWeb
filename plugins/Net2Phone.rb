@@ -1,0 +1,38 @@
+##
+# This file is part of WhatWeb and may be subject to
+# redistribution and commercial restrictions. Please see the WhatWeb
+# web site for more information on licensing and terms of use.
+# http://www.morningstarsecurity.com/research/whatweb
+##
+Plugin.define "Net2Phone" do
+author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
+version "0.1"
+description "Net2Phone CommCenter is software that allows you to make phone calls and send faxes to anywhere in the world. - Homepage: http://www.net2phone.com/"
+
+# 3 for intitle:"Net2Phone Init Page" "Net2Phone, Inc. All Rights Reserved."
+
+# Dorks #
+dorks [
+'intitle:"Net2Phone Init Page" "Net2Phone, Inc. All Rights Reserved."'
+]
+
+# Examples #
+examples %w|
+85.114.43.166
+200.110.69.178
+|
+
+# Matches #
+matches [
+
+# Default title
+{ :text=>'<HTML><HEAD><TITLE>Net2Phone Init Page</TITLE>' },
+
+# Model Detection
+{ :model=>/<P align=center><IMG border=0[\s]+src="([a-zA-Z]{2}[\d]+[a-zA-Z]?)\.gif" width="/ },
+
+]
+
+end
+
+
