@@ -34,7 +34,7 @@ www.kormt.co.kr/cgi-sys/netboard.cgi
 matches [
 
 # URL pattern
-{ :ghdb=>'inurl:cgi-sys/netboard.cgi filetype:cgi' },
+{ :ghdb=>'inurl:"cgi-sys/netboard.cgi" filetype:cgi' },
 
 # Form tags
 { :text=>'<td><form method=post action="netboard.cgi">' },
