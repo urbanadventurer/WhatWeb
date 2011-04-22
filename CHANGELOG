@@ -1,5 +1,5 @@
 Version 0.4.8-dev Unreleased
-* Added ~50 plugins
+* Added ~80 new plugins
 * Added aggressive version detection using md5 static file matches to several plugins
 * Added support for raw HTTP headers when scanning local files
 * Added --dorks, -g <plugin name> to return google dorks for the selected plugin
