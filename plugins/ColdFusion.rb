@@ -4,13 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-04-25
+# Added cookie matches
+##
 Plugin.define "ColdFusion" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
-version "0.1"
+version "0.2"
 description "Adobe ColdFusion application server and software enables developers to rapidly build, deploy, and maintain robust Internet applications for the enterprise. - homepage: http://www.adobe.com/products/coldfusion/"
 
-# Google results as at 2010-08-15 #
+# Google results as at 2011-04-25 #
 # 30 for intitle:"ColdFusion Administrator Login"
+# 72 for intitle:"Login / Admin Area" ext:cfm
 
 # Dorks #
 dorks [
@@ -30,8 +34,10 @@ www.aarc.org/CFIDE/administrator/index.cfm
 www.frrp.org.uk
 www.gordonresponse.dpc.wa.gov.au
 www.koopa-adv.de
+mawsonlakeseyespecialists.com
 |
 
+# Matches #
 matches [
 
 # Admin page
@@ -48,30 +54,33 @@ matches [
 
 ]
 
+# Passive #
 def passive
         m=[]
 
 	# Cookies
 	m << { :name=>"CFAUTHORIZATION_cfadmin Cookie" } if @meta["set-cookie"] =~ /CFAUTHORIZATION_cfadmin=/
 
+	if @meta["set-cookie"] =~ /CFID=/ and @meta["set-cookie"] =~ /CFTOKEN=/
+		m << { :name=>"CFID and CFTOKEN cookie" }
+	end
+
 	# Version detection using admin panel text
         if @body =~ /Enter your RDS or Admin password below/
 
-		if @body =~ / [0-9\.\,\-_a-z]+<\/strong><br \/>/
-                	version=@body.scan(/ ([0-9\.\,\-_a-z]+)<\/strong><br \/>/)[0][0]
+		if @body =~ / ([^<]+)<\/strong><br \/>/
+                	version=@body.scan(/ ([^<]+)<\/strong><br \/>/)[0][0]
        	        	m << {:version=>version}
 	        end
-		if @body =~ /				Version:([0-9\.\,\-_a-z]+)<\/strong><br \/>/
-			version=@body.scan(/				Version:([0-9\.\,\-_a-z]+)<\/strong><br \/>/)[0][0]
+		if @body =~ /				Version:([^<]+)<\/strong><br \/>/
+			version=@body.scan(/				Version:([^<]+)<\/strong><br \/>/)[0][0]
 			m << {:version=>version}
 		end
-
 	end
 
+	# Return passive matches
         m
-
 end
-
 
 end
 
