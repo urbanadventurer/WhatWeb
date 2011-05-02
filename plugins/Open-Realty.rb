@@ -10,6 +10,13 @@ version "0.1"
 description "Open-Realty is a FREE commercial web based real estate listing management application. - homepage: http://www.open-realty.org/"
 
 # 207 results for "powered by Open-Realty" @ 2010-10-13
+
+# Dorks #
+dorks [
+'"powered by Open-Realty"'
+]
+
+# Examples #
 examples %w|
 www.open-realty.org
 creativerealestateagent.com

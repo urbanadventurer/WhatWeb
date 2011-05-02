@@ -10,6 +10,13 @@ version "0.1"
 description "Turnkey Multilingual Real Estate Website script for Real Estate professionals. - homepage: http://www.realtysoft.pro/realestate/index.php"
 
 # 134 results for "powered by PG Real Estate Solution" @ 2010-09-03
+
+# Dorks #
+dorks [
+'"powered by PG Real Estate Solution"'
+]
+
+# Examples #
 examples %w|
 demo.realtysoft.pro/realestate/
 anapavilla.ru/news/
@@ -19,6 +26,7 @@ www.shtepiajone.com
 www.vip-real-estate.ru
 |
 
+# Matches #
 matches [
 
 # Default title

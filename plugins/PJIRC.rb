@@ -4,13 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP121" do
+Plugin.define "PJIRC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-28
 version "0.1"
 description "PJIRC is the best free java irc client available. It can be run as an applet or stand alone and it is fully opensource. - homepage: http://www.pjirc.it/"
 
 # Google results as at 2011-02-28 #
 # 25 for "Chat Room" "Applet Style" "Nickname" ext:php
+
+# Dorks #
+dorks [
+'"Chat Room" "Applet Style" "Nickname" ext:php'
+]
 
 # Examples #
 examples %w|

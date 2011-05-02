@@ -8,6 +8,16 @@ Plugin.define "PageUp-People" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-03
 version "0.1"
 description "homepage: http://www.pageuppeople.com/"
+
+# Google results as at 2010-07-02 #
+# 216 for "Powered by PageUp People"
+
+# Dorks #
+dorks [
+'"Powered by PageUp People"'
+]
+
+# Examples #
 examples %w|
 aglcareers.com.au
 anglocoal.clients.pageup.com.au
@@ -131,21 +141,27 @@ www.wowjobs.co.za
 yourcareer.rmit.edu.au
 |
 
+# Matches #
 matches [
 
-# 216 results @ 2010-07-02
+# GHDB
 {:ghdb=>'"Powered by PageUp People"', :certainty=>75 },
 
+# Powered by text
 {:text=>'<a class="pageupLink" href="http://www.pageuppeople.com" target="self">Powered by PageUp People</a>' },
 
 ]
 
+# Passive #
 def passive
         m=[]
-        m << {:name=>"sPULastSelectedLanguage Cookie" } if @meta["set-cookie"] =~ /sPULastSelectedLanguage=/
+
+	# sPULastSelectedLanguage Cookie
+        m << { :name=>"sPULastSelectedLanguage Cookie" } if @meta["set-cookie"] =~ /sPULastSelectedLanguage=/
+
+	# Return passive matches
         m
 end
-
 
 end
 

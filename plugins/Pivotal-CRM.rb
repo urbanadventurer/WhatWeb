@@ -12,6 +12,11 @@ description "Pivotal CRM is a customer relationship management (CRM) software sy
 # Google results as at 2011-04-07 #
 # 33 for g_PORTAL_TITLE
 
+# Dorks #
+dorks [
+'g_PORTAL_TITLE'
+]
+
 # Examples #
 examples %w|
 213.30.154.59

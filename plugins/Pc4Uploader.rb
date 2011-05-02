@@ -15,6 +15,11 @@ description "File upload web app - homepage: http://www.pc4arb.com/"
 # Google results as at 2010-09-17 #
 # 266 results for "powered by Pc4Uploader"
 
+# Dorks #
+dorks [
+'"powered by Pc4Uploader"'
+]
+
 # Examples #
 examples %w|
 3yonic.net
