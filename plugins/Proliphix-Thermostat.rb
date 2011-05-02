@@ -12,6 +12,11 @@ description "Network thermostats specifically designed for Internet access and c
 # Google results as at 2011-03-09 #
 # 26 for intitle:"Thermostat" intitle:"Status & Control"
 
+# Dorks #
+dorks [
+'intitle:"Thermostat" intitle:"Status & Control"'
+]
+
 # Examples #
 examples %w|
 128.174.27.99

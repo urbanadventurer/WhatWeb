@@ -12,6 +12,11 @@ description "From simple to complex pixel page advertising system PHP Pixel Scri
 # Google results as at 2011-03-19 #
 # 401 for "Powered by Pixel Script"
 
+# Dorks #
+dorks [
+'"Powered by Pixel Script"'
+]
+
 # Examples #
 examples %w|
 millionpro.texmedia.de

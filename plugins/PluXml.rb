@@ -10,6 +10,13 @@ version "0.1"
 description "PluXml - PHP powered CMS [French] - homepage: http://pluxml.org/"
 
 # 64 results for "powered by PluXml" @ 2010-10-14
+
+# Dorks #
+dorks [
+'"powered by PluXml"'
+]
+
+# Examples #
 examples %w|
 braceletsbijoux.com/core/admin/
 chopin.julien.free.fr/core/admin/

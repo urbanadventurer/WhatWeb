@@ -14,6 +14,12 @@ examples %w|
 www.phpvid.com
 |
 
+# Dorks #
+dorks [
+'"Powered By phpVID"'
+]
+
+# Matches #
 matches [
 
 # Powered by text

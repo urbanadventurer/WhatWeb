@@ -10,11 +10,19 @@ version "0.1"
 description "PithCMS - requirements: Linux, PHP 4.4.4-8 - homepage: http://pithcms.altervista.org/index.php?pagina=data/info.php"
 
 # 23 results for "powered by pithcms" @ 2010-10-14
+
+# Dorks #
+dorks [
+'"powered by pithcms"'
+]
+
+# Examples #
 examples %w|
 pithcms.altervista.org
 pithcms.altervista.org/admin/login.php
 |
 
+# Matches #
 matches [
 
 # Powered by text

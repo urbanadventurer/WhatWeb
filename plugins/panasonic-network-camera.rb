@@ -14,7 +14,14 @@ description "Panasonic network cameras"
 
 # About 18,400 Google results for inurl:"ViewerFrame?Mode=" @ 2010-07-20
 # 288 Google results for inurl:"CgiStart?page=" @ 2010-07-20
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=348
+
+# Dorks #
+dorks [
+'inurl:"ViewerFrame?Mode="',
+'inurl:"CgiStart?page="'
+]
+
+# Examples #
 examples %w|
 196.218.12.174
 213.120.96.122:2000
@@ -170,6 +177,7 @@ magnet-nz.ddns.cyberlabo.jp/Top
 94.82.129.162/Top
 |
 
+# Matches #
 matches [
 
 { :text=>'<HEAD><TITLE>WJ-NT104 MAIN PAGE</TITLE></HEAD>', :version=>"WJ-NT104" },
@@ -188,9 +196,11 @@ matches [
 
 ]
 
+# Passive #
 def passive
         m=[]
 
+	# Version Detection
         if @body =~ /      <FONT FACE="Arial" STYLE="font-size: 16px" COLOR="#ffffff">/
                 if @body =~ /        <B>([\d\-A-Z]+)<\/B>/
                         version=@body.scan(/        <B>([\d\-A-Z]+)<\/B>/)[0][0]
@@ -198,11 +208,9 @@ def passive
                 end
         end
 
+	# Return passive matches
         m
-
 end
 
-
 end
-
 
