@@ -1,9 +1,10 @@
 Version 0.4.8-dev Unreleased
-* Added ~80 new plugins
+* Added ~90 new plugins
 * Added aggressive version detection using md5 static file matches to several plugins
 * Added support for raw HTTP headers when scanning local files
 * Added --dorks, -g <plugin name> to return google dorks for the selected plugin
-* Added google dorks to ~160 plugins
+* Added google dorks to ~470 plugins
+* Added ./addons/hunter
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
