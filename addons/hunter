@@ -30,7 +30,7 @@ if [[ ! -e "$WHATWEB" ]]; then
 		# Check if WhatWeb is installed
 		WHATWEB=`which whatweb 2>/dev/null`
 		if [[ -z "$WHATWEB" ]]; then
-			echo "[!] Fatal Error: WhatWeb must be installed, in the parent directory or in the current working directory. Homepage: http://www.morningstarsecurity.com/research/whatweb"
+			echo "[!] Fatal Error: WhatWeb must be in the parent directory, in the current working directory or installed. Homepage: http://www.morningstarsecurity.com/research/whatweb"
 			exit 1
 		fi
 	fi
@@ -40,7 +40,7 @@ fi
 # Quit if gggooglescan is not in the current working directory
 GOOGLESCAN="./gggooglescan"
 if [[ ! -e "$GOOGLESCAN" ]]; then
-	echo "[!] Fatal Error: Could not locate gggooglescan in the current working directory. Homepage: http://www.morningstarsecurity.com/research"
+	echo "[!] Fatal Error: Could not locate gggooglescan in the current working directory. Homepage: http://www.morningstarsecurity.com/research/gggooglescan"
 	exit 1
 fi
 
@@ -93,7 +93,7 @@ if [[ ! -z "$LIST" ]]; then
 	if [[ "$VERBOSE" == "TRUE" ]]; then
 		echo "[+] Listing applications matching \"$LIST\"" >&2
 	fi
-	"$WHATWEB" -I | grep Dork -B 5 | egrep "^(\S)" | grep -i "$LIST"
+	"$WHATWEB" -I | grep "Dorks:" -B 5 | grep -E "^(\w)" | grep -i "$LIST"
 	exit
 fi
 
