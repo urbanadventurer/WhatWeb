@@ -9,17 +9,19 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
 version "0.1"
 description "This plugin retrieves the description from the meta description tag."
 
+# Examples #
 examples %w|
 itsecuritysolutions.org
 yehg.net
 www.backtrack-linux.org
 |
 
+# Matches #
 matches [
 
 # Get description
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?description[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :version_regexp_offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?description/i, :version_regexp_offset=>0 },
+{ :string=>/<meta[^>]+name[\s]*=[\s]*['"]?description[^>]+content[\s]*=[\s]*['"]?([^'^"^>]+)/i },
+{ :string=>/<meta[^>]+content[\s]*=[\s]*['"]?([^"^']+)[^>]+name[\s]*=[\s]*['"]?description/i },
 
 ]
 

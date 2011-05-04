@@ -9,17 +9,19 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
 version "0.1"
 description "This plugin retrieves the keywords from the meta keywords tag."
 
+# Examples #
 examples %w|
 itsecuritysolutions.org
 yehg.net
 www.backtrack-linux.org
 |
 
+# Matches #
 matches [
 
 # Get keywords
-{ :version=>/<meta[^>]+name[\s]*=[\s]*[\'|\"]?keywords[^>]+content[\s]*=[\s]*[\'|\"]?([^\'^\"\/^>]+)/i, :version_regexp_offset=>0 },
-{ :version=>/<meta[^>]+content[\s]*=[\s]*[\'|\"]?([^\"^\']+)[^>]+name[\s]*=[\s]*[\'|\"]?keywords/i, :version_regexp_offset=>0 },
+{ :string=>/<meta[^>]+name[\s]*=[\s]*['"]?keywords[^>]+content[\s]*=[\s]*['"]?([^'^"^>]+)/i },
+{ :string=>/<meta[^>]+content[\s]*=[\s]*['"]?([^"^']+)[^>]+name[\s]*=[\s]*['"]?keywords/i },
 
 ]
 
