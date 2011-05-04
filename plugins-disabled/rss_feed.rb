@@ -26,8 +26,8 @@ www.wired.com
 matches [
 
 # Extract RSS feed source
-{ :version=>/<link[^>]*href[\s]*=[\s]*["']([^'^"^\s^>]+)[^>]*type[\s]*=[\s]*["']application\/rss\+xml["'][^>]*/i },
-{ :version=>/<link[^>]*type[\s]*=[\s]*["']application\/rss\+xml["'][^>]*href[\s]*=[\s]*["']([^'^"^\s^>]+)[^>]*/i },
+{ :string=>/<link[^>]*href[\s]*=[\s]*["']([^'^"^\s^>]+)[^>]*type[\s]*=[\s]*["']application\/rss\+xml["']/i },
+{ :string=>/<link[^>]*type[\s]*=[\s]*["']application\/rss\+xml["'][^>]*href[\s]*=[\s]*["']([^'^"^\s^>]+)/i },
 
 ]
 
