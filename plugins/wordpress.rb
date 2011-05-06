@@ -126,6 +126,8 @@ files=[
 {:version=>"3.0", :path=>"readme.html", :md5=>'9ea06ab0184049bf4ea2410bf51ce402' },
 {:version=>"3.0.1", :path=>"readme.html", :md5=>'a73cac84b8b9a99377917a6974c9eea2' },
 {:version=>"3.1", :path=>"readme.html", :md5=>'f01635ffca23e49e01f47e98553ea75d' },
+{:version=>"3.1.1", :path=>"readme.html", :md5=>'d74be699794f7fd969232bfe73c0ab04' },
+{:version=>"3.1.2", :path=>"readme.html", :md5=>'20f882b08b2804bc7431c0866a8999d1' },
 
 ]
 
