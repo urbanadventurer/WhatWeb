@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2011-05-14 # Brendan Coles <bcoles@gmail.com>
+# Changed @cookies to @meta["set-cookie"] to support recursive mode
+##
 # Version 0.4 # 2011-04-08 # Brendan Coles <bcoles@gmail.com>
 # Added username and localfile path detection for cookies containing public_html
 ##
@@ -15,7 +18,7 @@
 ##
 Plugin.define "Cookies" do
 author "Andrew Horton"
-version "0.4"
+version "0.5"
 description "Display the names of cookies in the HTTP headers. The values are not returned to save on space."
 
 # ShodanHQ results as at 2011-04-08 #
@@ -27,17 +30,19 @@ description "Display the names of cookies in the HTTP headers. The values are no
 def passive
 	m=[]
 
-	# Extract cookie names #
-	unless @cookies.nil? or @cookies.empty?
-		@cookies.each do |cookie|
+	unless @meta["set-cookie"].nil? or @meta["set-cookie"].empty?
+
+		# Extract cookie names
+		@meta["set-cookie"].each do |cookie|
 			m << { :string=>cookie.split("=")[0] } if cookie =~ /=/
 		end
 
 		# Detect local file paths containing public_html
-		if @cookies.to_s =~ /path=\/home[\d]*\/([^\/]+)\/public_html\//
-			m << { :account=>@cookies.to_s.scan(/path=\/home[\d]*\/([^\/]+)\/public_html\//) }
-			m << { :filepath=>@cookies.to_s.scan(/path=(\/home[\d]*\/[^\/]+\/public_html\/)/) }
+		if @meta["set-cookie"].to_s =~ /path=\/home[\d]*\/([^\/]+)\/public_html\//
+			m << { :account=>@meta["set-cookie"].to_s.scan(/path=\/home[\d]*\/([^\/]+)\/public_html\//) }
+			m << { :filepath=>@meta["set-cookie"].to_s.scan(/path=(\/home[\d]*\/[^\/]+\/public_html\/)/) }
 		end
+
 	end
 
 	# Return passive match
@@ -45,5 +50,4 @@ def passive
 end
 
 end
-
 
