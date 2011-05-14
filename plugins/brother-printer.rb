@@ -14,10 +14,17 @@ version "0.2"
 description "Brother printer web interface - homepage: http://www.brother.com/"
 # Default login: Admin/Access
 
-# 57 results for intitle:"Brother" intext:"View Configuration" intext:"Brother Industries, Ltd." @ 2010-07-22
-# 23 results for inurl:"printer/main.html" intext:"settings" @ 2010-07-22
-# http://www.hackersforcharity.org/ghdb/?function=detail&id=872
-# About 1,661 shodan results for printer Server:debut @ 2010-07-22
+# Google results as at 2010-07-22 #
+# 57 for intitle:"Brother" intext:"View Configuration" intext:"Brother Industries, Ltd."
+# 23 for inurl:"printer/main.html" intext:"settings" @ 2010-07-22
+
+# ShodanHQ results as at 2010-07-22 #
+# 1,661 for printer Server:debut
+
+# Dorks #
+dorks [
+'intitle:"Brother" intext:"View Configuration" intext:"Brother Industries, Ltd."'
+]
 
 # Examples #
 examples %w|
@@ -93,6 +100,18 @@ matches [
 	{ :model=>/<TITLE>Brother ([0-9A-Z\-\_]+) series[\ \(\ SLEEP\ \)|\ \(\ PAUSE\ \)|\ \(\ READY\ \)]*<\/TITLE>/ },
 
 ]
+
+# Passive #
+def passive
+	m=[]
+
+	# Version Detection # HTTP Server Header
+	# This header is also used by brother faxes
+	m << { :certainty=>25, :version=>@meta["server"].scan(/^[Dd]ebut\/([\d\.]+)$/) } if @meta["server"] =~ /^[Dd]ebut\/([\d\.]+)$/
+
+	# Return passive matches
+	m
+end
 
 end
 
