@@ -1,0 +1,47 @@
+##
+# This file is part of WhatWeb and may be subject to
+# redistribution and commercial restrictions. Please see the WhatWeb
+# web site for more information on licensing and terms of use.
+# http://www.morningstarsecurity.com/research/whatweb
+##
+Plugin.define "Nabble" do
+author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
+version "0.1"
+description "Freed embeddable web apps - Homepage: http://www.nabble.com/"
+
+# Google results as at 2011-05-16 #
+# 480 for "powered by Nabble"
+
+# Dorks #
+dorks [
+'"powered by Nabble"'
+]
+
+# Examples #
+examples %w|
+webboard.redradio-online.us
+n5.nabble.com
+bear-talk.989250.n3.nabble.com
+elecraft.365791.n2.nabble.com
+nabble-support.1.n2.nabble.com
+forum.whatisfatmagulsfault.com
+forum.reachingperfection.com
+|
+
+# Matches #
+matches [
+
+# Error Page # div class "nabble"
+{ :text=>'<div class="nabble" id="nabble">' },
+
+# Error Page # Powered by link
+{ :text=>'Powered by <a href="http://www.nabble.com/" target="_top" title="Free forum and other embeddable web apps">Nabble</a>' },
+
+# table class "footer-table shaded-bg-color"
+{ :text=>'<table class="footer-table shaded-bg-color">' },
+
+]
+
+end
+
+
