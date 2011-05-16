@@ -231,7 +231,7 @@ end
 					   (!accounts.empty? ? " ["+ accounts+"]" : "" ) +
 					   (!model.empty? ? "["+ model+"]" : "" ) +
 					   (!firmware.empty? ? "["+ firmware+"]" : "" ) +
-					   (!filepath.empty? ? "["+ firmware+"]" : "" ) +
+					   (!filepath.empty? ? "["+ filepath+"]" : "" ) +
 					   (!modules.empty? ? "["+ modules+"]" : "" )
 				end	
 			end
