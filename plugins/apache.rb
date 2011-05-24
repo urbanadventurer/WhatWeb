@@ -4,6 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.8 # 2011-05-25 #
+# Updated module detection
+# Added htaccess www-authenticate realm detection
+##
 # Version 0.7 # 2011-04-06 #
 # Removed favicon matches in favor of /icons/ matches
 ##
@@ -18,18 +22,17 @@
 ##
 Plugin.define "Apache" do
 author "Andrew Horton & Brendan Coles"
-version "0.7"
+version "0.8"
 description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards. - homepage: http://httpd.apache.org/"
 
 # Google results as at 2010-10-26 #
 # 190 for intitle:"Test Page for Apache Installation"
 
-# ShodanHQ results as at 2010-10-26 #
+# ShodanHQ results #
 # 8,146,697 for "server: Apache"
 # 217,2233 for "server: mod_ssl"
 # 691,816 for "server: mod_auth_passthrough"
 # 753,880 for "server: mod_bwlimited"
-# 177,808 for "Server: mod_jk"
 # 177,808 for "Server: mod_jk"
 # 25,076 for "Server: mod_fcgid"
 # 165,191 for "Server: mod_log_bytes"
@@ -42,6 +45,9 @@ description "The Apache HTTP Server Project is an effort to develop and maintain
 # 34,854 for "Server: mod_macro"
 # 61,692 for "Server: mod_throttle"
 # 3,553 for NOYB
+# 667 for WebSnmp Server Httpd
+# 16,566 for proxy_html
+# 26 for Basic realm "htaccess password prompt"
 
 # Dorks #
 dorks [
@@ -97,6 +103,24 @@ https://ls.berkeley.edu
 69.163.219.199
 212.94.66.59
 202.201.242.91
+64.65.225.169
+222.229.203.182
+93.113.164.198
+131.114.79.15
+64.199.140.194
+95.156.203.82
+71.16.105.101
+193.34.145.171
+12.200.220.2
+128.46.106.2
+77.106.190.84
+213.9.6.84
+173.45.242.63
+173.212.232.209
+92.103.215.34
+188.40.108.209
+74.114.46.152
+209.255.137.144
 |
 
 # Matches #
@@ -124,10 +148,9 @@ matches [
 def passive
 	m=[]
 
-	# HTTP Server Header
+	# Apache HTTP Server Header
 	if @meta["server"] =~ /^Apache/i
 
-		# Server Detection
 		m << { :name=>"HTTP Server Header" }
 
 		# Version Detection
@@ -136,13 +159,24 @@ def passive
 		# Module Detection
 		m << { :module=>@meta["server"].scan(/[\s](mod_[^\s^\(]+)/) } if @meta["server"] =~ /[\s](mod_[^\s^\(]+)/
 
+		# proxy_html Module Detection
+		m << { :module=>@meta["server"].scan(/[\s](proxy_html\/[^\s]+)/) } if @meta["server"] =~ /[\s](proxy_html\/[^\s]+)/
+
+	end
+
+	# Apache WebSnmp module
+	if @meta["server"] =~ /^WebSnmp Server Httpd\/([\d.]+)$/
+		m << { :module=>"WebSnmp/"+@meta["server"].scan(/^WebSnmp Server Httpd\/([\d.]+)$/).to_s }
 	end
 
 	# mod_security
-	m << { :module=>"mod_security" } if @meta["server"] == "NOYB"
+	m << { :certainty=>75, :module=>"mod_security" } if @meta["server"] =~ /^NOYB$/
 
-	# mod_pagespeed
-	m << { :module=>"mod_pagespeed\/"+@meta["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).to_s } if @meta["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
+	# x-mod-pagespeed Header # mod_pagespeed
+	m << { :module=>"mod_pagespeed/"+@meta["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).to_s } if @meta["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
+
+	# WWW-Authenticate: Basic realm="htaccess password prompt"
+	m << { :certainty=>75, :name=>"htacess WWW-Authenticate realm" } if @meta["www-authenticate"] =~ /Basic realm="htaccess password prompt"/
 
 	# Return passive matches
 	m
