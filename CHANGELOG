@@ -1,10 +1,11 @@
 Version 0.4.8-dev Unreleased
-* Added ~90 new plugins
+* Added ~170 new plugins
 * Added aggressive version detection using md5 static file matches to several plugins
 * Added support for raw HTTP headers when scanning local files
 * Added --dorks, -g <plugin name> to return google dorks for the selected plugin
-* Added google dorks to ~470 plugins
+* Added google dorks to more than 500 plugins
 * Added ./addons/hunter
+* Updated whatweb.xsl
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
