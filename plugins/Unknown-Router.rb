@@ -4,15 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.4 # 2011-05-30 #
+# Updated regex
+##
 # Version 0.3 # 2011-03-02 #
 # Removed false positives
 ##
 # Version 0.2 # 2011-01-09 #
 # Updated model detection
 ##
-Plugin.define "Unknown-Router" do
+Plugin.define "Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-03
-version "0.3"
+version "0.4"
 description "This plugin identifies routers for which the vendor is unknown or where fingerprinting is exceptionally difficult."
 
 # Examples #
@@ -49,16 +52,8 @@ matches [
 # ST 605 # Default Favicon
 { :model=>'ST 605', :url=>"/favicon.ico", :md5=>"d16a0da12074dae41980a6918d33f031" },
 
-# SpeedTouch # Default Favicon
-{ :model=>'SpeedTouch', :url=>"/favicon.ico", :md5=>"befcded36aec1e59ea624582fcb3225c" },
-
-# i3micro VRG # Default Favicon
-{ :model=>'i3micro VRG', :url=>"/favicon.ico", :md5=>"e4a509e78afca846cd0e6c0672797de5" },
-
-# Unknown Router 0001 # Login page # Default favicon
+# Unknown Router # Login page
 { :md5=>"d8d705cef8dbf67357ee908f42fd1baa", :url=>"/favicon.ico" },
-
-# Unknown Router 0001 # Login page # Default image
 { :md5=>"129f914b2570b50374ebeb8f1306617d", :url=>"/login/keys.png" },
 
 ]
@@ -69,21 +64,25 @@ def passive
 
 	# About 62 ShodanHQ results for WWW-Authenticate: Basic realm="LOGIN Enter Password (default is private)"
 	# Probably D-Link # HTTP Server Header and WWW-Authenticate Realm
-	m << { :model=>"Probably D-Link", :name=>"HTTP Server Header and WWW-Authenticate Realm", :status=>401 } if @meta["server"] =~ /Boa\/[\d\.]+ \(with Intersil Extensions\)/ and @meta["www-authenticate"] =~ /Basic realm="LOGIN Enter Password (default is private)"/
+	if @meta["server"] =~ /Boa\/[\d\.]+ \(with Intersil Extensions\)/ and @meta["www-authenticate"] =~ /Basic realm="LOGIN Enter Password \(default is private\)"/
+		m << { :certainty=>25, :model=>"D-Link", :name=>"HTTP Server Header and WWW-Authenticate Realm" }
+	end
 
 	# Unknown Router 0001 # Check HTTP Server Header
 	# 3020 ShodanHQ results for set-cookie: niagara_audit=guest; path=/
 	if @meta["server"] =~ /Niagara Web Server\/([\d\.]+)/
-		m << { :name=>"niagara_audit=guest Cookie" } if @meta["set-cookie"] =~ /niagara_audit=guest; path=\//
+		m << { :certainty=>75, :name=>"niagara_audit=guest Cookie" } if @meta["set-cookie"] =~ /niagara_audit=guest; path=\//
 	end
 
 	# Unknown Router 0002 # ADSL2+ # HTTP Server and WWW Authenticate Realm
 	# 3361 ShodanHQ results for Server: RomPager WWW-Authenticate: Basic realm="Default Admin.= admin/admin"
 	# Find model info: /status/status_deviceinfo.htm
-	m << { :model=>"ADSL2+" } if @meta["www-authenticate"] =~ /Basic realm="Default Admin.= admin\/admin"/ and @meta["server"] =~ /RomPager/i
+	if @meta["www-authenticate"] =~ /Basic realm="Default Admin.= admin\/admin"/ and @meta["server"] =~ /RomPager/i
+		m << { :certainty=>25, :model=>"ADSL2+" }
+	end
 
+	# Return passive matches
 	m
-
 end
 
 end
