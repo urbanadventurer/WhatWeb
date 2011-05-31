@@ -41,6 +41,8 @@ examples %w|
 201.151.198.125
 208.90.101.48
 216.1.6.199
+122.116.158.179
+200.206.138.249
 |
 
 # Matches #
@@ -79,6 +81,19 @@ def passive
 	# Find model info: /status/status_deviceinfo.htm
 	if @meta["www-authenticate"] =~ /Basic realm="Default Admin.= admin\/admin"/ and @meta["server"] =~ /RomPager/i
 		m << { :certainty=>25, :model=>"ADSL2+" }
+	end
+
+	# HTTP Server Header # 320 ShodanHQ results for thttpd-alphanetworks
+	# Alpha Networks was founded as a spin-off from the D-Link Corporation
+	# thttpd-alphanetworks is used by D-Link & Planex routers + others
+	if @meta["server"] =~ /^thttpd-alphanetworks\/([\d\.]+)$/
+
+		# Version Detection
+		m << { :version=>@meta["server"].scan(/^thttpd-alphanetworks\/([\d\.]+)$/) }
+
+		# Model Detection
+		m << { :model=>@meta["www-authenticate"].scan(/Basic realm="([^\s^"]+)"/) } if @meta["www-authenticate"] =~ /Basic realm="([^\s^"]+)"/
+
 	end
 
 	# Return passive matches
