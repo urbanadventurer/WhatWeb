@@ -4,35 +4,44 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-06-04 #
+# Updated regex
+# Added matches
+##
 # Version 0.2 # 2011-01-24 #
 # Added HTTP Header match
 ##
 Plugin.define "Microsoft-Sharepoint" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
-version "0.2"
+version "0.3"
 description "Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions. - homepage: http://sharepoint.microsoft.com/"
 
-# About 39,000 Google results for +"Please enable scripts and reload this page. If your browser does not support script, then you can visit the minimal version of this site at" @ 2010-06-05
-# About 35,110 ShodanHQ for MicrosoftSharePointTeamServices @ 2011-01-24
+# Google results as at 2011-06-04 #
+# 371 for "You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page."
+#  40 for "Please enable scripts and reload this page. If your browser does not support script, then you can visit the minimal version of this site at"
+
+# ShodanHQ results as at 2011-06-04 #
+# 43,542 for MicrosoftSharePointTeamServices
+#     18 for exires
+#     13 for x-sharepointhealthscore
 
 # Dorks #
 dorks [
-'+"Please enable scripts and reload this page. If your browser does not support script, then you can visit the minimal version of this site at"'
+'"You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page."'
 ]
 
 # Examples #
 examples %w|
 94.55.60.5
-200.27.67.207
+38.100.244.186
 122.49.77.200
 112.169.172.67
 216.10.246.74
 216.185.69.125
-75.150.39.150
 200.94.102.11
 142.229.228.90
-66.213.178.36
 sharepoint.microsoft.com
+thesharepointblog.com
 www.wssdemo.com
 www.sharepointmadscientist.com
 blog.tedpattison.net
@@ -55,19 +64,30 @@ www.russbasiura.com
 www.blueberryit.co.nz
 www.phillysharepoint.com
 demo2010.binaryrepublik.com
-blogs.rbaconsulting.com
 www.joelstamey.com
 www.baileypoint.com
+www.kroger.com
+www.qresearch.org
 |
 
 # Matches #
 matches [
 
-	# GHDB Match
-	{ :certainty=>75, :ghdb=>'+"Please enable scripts and reload this page. If your browser does not support script, then you can visit the minimal version of this site at"' },
+	# noscript
+	{ :certainty=>75, :text=>"<noscript><div class='noindex'>You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.</div></noscript>" },
+	{ :certainty=>75, :text=>"<noscript><div class='noindex'>Please enable scripts and reload this page. If your browser does not support script, then you can visit the minimal version of this site at <a href=" },
 
-	# Default meta content
-	{ :text=>'<meta name="GENERATOR" content="Microsoft SharePoint" /><meta name="progid" content="SharePoint.WebPartPage.Document" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Expires" content="0" />' },
+	# Meta CollaborationServer
+	{ :certainty=>75, :text=>'<meta name="CollaborationServer" content="SharePoint Team Web Site" />' },
+
+	# MSOWebPartPage_PostbackSource
+	{ :text=>'<input type="hidden" name="MSOWebPartPage_PostbackSource" id="MSOWebPartPage_PostbackSource" value=' },
+
+	# Meta Generator
+	{ :text=>'<meta name="GENERATOR" content="Microsoft SharePoint" />' },
+
+	# Meta progid
+	{ :text=>'<meta name="progid" content="SharePoint.WebPartPage.Document" />' },
 
 ]
 
@@ -78,9 +98,18 @@ def passive
 	# MicrosoftSharePointTeamServices HTTP Header
 	m << { :version=>@meta["microsoftsharepointteamservices"].to_s } unless @meta["microsoftsharepointteamservices"].nil?
 
+	# x-sharepointhealthscore HTTP Header
+	m << { :name=>"x-sharepointhealthscore HTTP header" } unless @meta["x-sharepointhealthscore"].nil?
+
+	# exires HTTP Header # Quality Assurance is for pussies
+	# http://download.microsoft.com/download/8/5/8/858F2155-D48D-4C68-9205-29460FD7698F/%5BMS-WSSHP%5D.PDF
+	# HTTP Windows SharePoint Services Headers Protocol Specification
+	# Section 2.2.1 # Exires Header:
+	# The Exires [sic] header and its value have no meaning. The protocol server SHOULD use the Expires header instead as specified in [RFC2616] section 14.21.
+	m << { :certainty=>25, :name=>"exires HTTP header" } unless @meta["exires"].nil?
+
 	# Return passive matches
 	m
-
 end
 
 end
