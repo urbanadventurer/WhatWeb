@@ -358,43 +358,43 @@ class OutputMagicTreeXML < Output
 
 	def out(target, status, results)
 
-		# Parse target URL and initialize host node details
-		uri = URI.parse(target.to_s)
-		@host_os=[]
-		@host_port = uri.port
-		@host_scheme = uri.scheme
+		$semaphore.synchronize do
 
-		if uri.host =~ /^[\d]{1,3}.[\d]{1,3}.[\d]{1,3}.[\d]{1,3}$/i
-			@host_ip = uri.host
-		else
-			# hostname # fqdn nodes are only used when the host IP address is not known yet
-			@host_name = uri.host
-		end
+			# Parse target URL and initialize host node details
+			uri = URI.parse(target.to_s)
+			@host_os=[]
+			@host_port = uri.port
+			@host_scheme = uri.scheme
 
-		# Loop through plugin results # get host IP, country and OS
-		results.each do |plugin_name,plugin_results|
-			unless plugin_results.empty?
-				# Host IP
-				@host_ip = plugin_results.map {|x| x[:string] unless x[:string].nil?}.to_s if plugin_name =~ /^IP$/
-				# Host Country
-				@host_country = plugin_results.map {|x| x[:string] unless x[:string].nil?}.to_s if plugin_name =~ /^Country$/
-				# Host OS
-				@host_os << plugin_results.map {|x| x[:os] unless x[:os].class==Regexp}.to_s
+			if uri.host =~ /^[\d]{1,3}.[\d]{1,3}.[\d]{1,3}.[\d]{1,3}$/i
+				@host_ip = uri.host
+			else
+				@host_name = uri.host
 			end
-		end
 
-		$semaphore.synchronize do 
+			# Loop through plugin results # get host IP, country and OS
+			results.each do |plugin_name,plugin_results|
+				unless plugin_results.empty?
+					# Host IP
+					@host_ip = plugin_results.map {|x| x[:string] unless x[:string].nil?}.to_s if plugin_name =~ /^IP$/
+					# Host Country
+					@host_country = plugin_results.map {|x| x[:string] unless x[:string].nil?}.to_s if plugin_name =~ /^Country$/
+					# Host OS
+					@host_os << plugin_results.map {|x| x[:os] unless x[:os].class==Regexp}.to_s
+				end
+			end
+
 			# testdata branch
-			@f.write '<testdata class="MtBranchObject">'
+			@f.write "<testdata class=\"MtBranchObject\"><host>#{escape(@host_ip)}"
 
-			# hostname # title attribute is not used in simple nodes  
-			@f.write "<host>#{escape(@host_ip)}<hostname>#{escape(@host_name)}</hostname></host>" unless @host_name.nil?
+			# hostname
+			@f.write "<hostname>#{escape(@host_name)}</hostname>" unless @host_name.nil?
 
 			# os
-			@host_os.compact.sort.uniq.map {|x| @f.write "<host>#{escape(@host_ip)}<os>#{escape(x.to_s)}</os></host>" unless x.empty? } unless @host_os.empty?
+			@host_os.compact.sort.uniq.map {|x| @f.write "<os>#{escape(x.to_s)}</os>" unless x.empty? } unless @host_os.empty?
 
 			# country and port nodes
-			@f.write "<host>#{escape(@host_ip)}<country>#{escape(@host_country)}</country><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
+			@f.write "<country>#{escape(@host_country)}</country><ipproto>tcp<port>#{escape(@host_port)}<state>open</state>"
 
 			# https
 			if @host_scheme == 'https'
