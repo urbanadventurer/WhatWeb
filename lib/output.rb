@@ -167,11 +167,9 @@ end
 class OutputBrief < Output
 
 def escape(s)
-	# [] and all characters up to space.
-	#r=/[\[\]\001\002\003\004\005\006\a\b\t\n\v\f\r\016\017\020\021\022\023\024\025\026\027\030\031\032\e\034\035\036\037]/
 
-	# Encode all special characters
-	r=/[^\x00-\x7E\xC0-\xFF]/
+	# Encode all special characters # More info: http://www.asciitable.com/
+	r=/[^\x20-\x5A\x5E-\x7E]/
 
 	# based on code for CGI.escape
 	s.gsub(r) do |x|
