@@ -4,12 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-06-04 #
+# Updated regex
+##
 Plugin.define "DeleGate" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
-version "0.1"
+version "0.2"
 description "DeleGate is a multi-purpose application level gateway, or a proxy server which runs on multiple platforms (Unix, Windows, MacOS X and OS/2). DeleGate mediates communication of various protocols (HTTP, FTP, NNTP, SMTP, POP, IMAP, LDAP, Telnet, SOCKS, DNS, etc.), applying cache and conversion for mediated data, controlling access from clients and routing toward servers. - homepage: http://www.delegate.org/delegate/"
 
-# About 196 ShodanHQ results for "DeleGate-Ver" @ 2010-10-30
+# ShodanHQ results as at 2011-06-04 #
+# 393 for DeleGate-Ver
+
+# Examples #
 examples %w|
 132.204.42.200
 132.204.42.201
@@ -21,27 +27,26 @@ examples %w|
 132.204.42.208
 132.204.42.209
 132.204.42.234
-217.29.160.12
 211.16.122.162
 122.219.129.12
-114.145.160.210
 132.204.42.220
 62.245.234.141
 168.210.113.61
+210.254.60.70
 |
 
-# Passive # HTTP Header
+# Passive #
 def passive
 	m=[]
 
-	# Server
-	m << { :version=>@meta["server"].scan(/^[\s]*DeleGate\/([\d\.]+)/) } if @meta["server"] =~ /^[\s]*DeleGate\/([\d\.]+)/
+	# Version Detection # HTTP Server Header
+	m << { :version=>@meta["server"].scan(/^DeleGate\/([^\s]+)/) } if @meta["server"] =~ /^DeleGate\/([^\s]+)/
 
-	# DeleGate-Ver
-	m << { :version=>@meta["delegate-ver"].scan(/^[\s]*([\d\.]+) \(delay=[0-9]*\)/) } if @meta["delegate-ver"] =~ /^[\s]*([\d\.]+) \(delay=[0-9]*\)/
+	# Version Detection # HTTP DeleGate-Ver Header
+	m << { :version=>@meta["delegate-ver"].scan(/^([^\s]+) \(delay=/) } if @meta["delegate-ver"] =~ /^([^\s]+) \(delay=/
 
+	# Return passive matches
 	m
-
 end
 
 end
