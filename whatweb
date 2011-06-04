@@ -655,7 +655,7 @@ def open_target(target)
 		res=http.request(req)
 		
 		headers={}; res.each_header {|x,y| headers[x]=y }
-		headers["set-cookie"] = res.get_fields('set-cookie')
+		headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless headers["set-cookie"].nil?
 		body=res.body
 		status=res.code.to_i
 		puts uri.host.to_s + path + (query.nil? ? "" : "?" + query ) + " [#{status}]" if  $verbose > 0 
