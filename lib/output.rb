@@ -250,8 +250,10 @@ end
 end
 
 # XML Output #
-# Hey, do u actually use this XML output? Then I'd love to hear from you for suggestions, changes, etc.
-# Does it bother you that some types of output are joined by commas but other types aren't?
+# Does anyone use XML output?
+# We'd love to hear any suggestions you may have!
+# Does it bother you that some types of output are joined by commas
+# but other types aren't?
 class OutputXML < Output
 	def initialize(f=STDOUT)
 		super
@@ -269,6 +271,16 @@ class OutputXML < Output
 		text=t.to_s.dup
 		# use sort_by so that & is before &quot;, etc.
 		@substitutions.sort_by {|a,b| a=="&" ? 0 : 1 }.map{|from,to| text.gsub!(from,to) }
+
+		# Encode all special characters
+		# More info: http://www.asciitable.com/
+		r=/[^\x20-\x5A\x5E-\x7E]/
+
+		# based on code for CGI.escape
+		text.gsub!(r) do |x|
+			'%' + x.unpack('H2' * x.size).join('%').upcase
+		end
+
 		text
 	end
 
@@ -277,11 +289,11 @@ class OutputXML < Output
 			@f.puts "<target>"
 			@f.puts "\t<uri>#{escape(target)}</uri>"
 			@f.puts "\t<http-status>#{escape(status)}</http-status>"
-		
+
 			results.each do |plugin_name,plugin_results|		
 				@f.puts "\t<plugin>"
 				@f.puts "\t\t<name>#{escape(plugin_name)}</name>"
-			
+
 				unless plugin_results.empty?
 					# important info in brief mode is version, type and ?
 					# what's the highest probability for the match?
@@ -301,28 +313,21 @@ class OutputXML < Output
 					filepath = plugin_results.map {|x|
 		x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
 
-					accounts = plugin_results.map {|x|
-		x[:account] unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
+					account = plugin_results.map {|x|
+		x[:account] unless x[:account].class==Regexp}.flatten.compact.sort.uniq.join(",")
 					modules = plugin_results.map {|x|
-		x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
+		x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq.join(",")
 
-
+					# Output results
 					@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
 					version.map  {|x| @f.puts "\t\t<version>#{escape(x)}</version>"  }
 					os.map {|x| @f.puts "\t\t<os>#{escape(x)}</os>" }
-					string.map   {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
+					string.map {|x| @f.puts "\t\t<string>#{escape(x)}</string>" }
 					model.map {|x| @f.puts "\t\t<model>#{escape(x)}</model>" }
 					firmware.map {|x| @f.puts "\t\t<firmware>#{escape(x)}</firmware>" }
 					filepath.map {|x| @f.puts "\t\t<filepath>#{escape(x)}</filepath>" }
-
-					if accounts.size > 0
-						accounts.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
-						@f.puts "\t\t<accounts>\n" + accounts.map {|x| "\t\t\t<accounts>#{escape(x)}</accounts>" }.join("\n") + "\n\t\t</accounts>"
-					end
-
-					if modules.size > 0
-						@f.puts "\t\t<modules>\n" + modules.map {|x| "\t\t\t<module>#{escape(x)}</module>" }.join("\n") + "\n\t\t</modules>"
-					end
+					account.map {|x| @f.puts "\t\t<account>#{escape(x)}</account>" }
+					modules.map {|x| @f.puts "\t\t<module>#{escape(x)}</module>" }
 				end
 				@f.puts "\t</plugin>"
 			end
@@ -351,6 +356,16 @@ class OutputMagicTreeXML < Output
 		text=t.to_s.dup
 		# use sort_by so that & is before &quot;, etc.
 		@substitutions.sort_by {|a,b| a=="&" ? 0 : 1 }.map{|from,to| text.gsub!(from,to) }
+
+		# Encode all special characters
+		# More info: http://www.asciitable.com/
+		r=/[^\x20-\x5A\x5E-\x7E]/
+
+		# based on code for CGI.escape
+		text.gsub!(r) do |x|
+			'%' + x.unpack('H2' * x.size).join('%').upcase
+		end
+
 		text
 	end
 
