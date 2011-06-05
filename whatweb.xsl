@@ -66,8 +66,8 @@ a{color:#000;}a:hover{color:#000;}a:visited{color:#000;}
 					<xsl:if test="model"><tr bgcolor="#ccffcc"><td>Model: <xsl:value-of select="model"/></td></tr></xsl:if>
 					<xsl:if test="firmware"><tr bgcolor="#ccffcc"><td>Firmware: <xsl:value-of select="firmware"/></td></tr></xsl:if>
 					<xsl:if test="filepath"><tr bgcolor="#ccffcc"><td>Filepath: <xsl:value-of select="filepath"/></td></tr></xsl:if>
-					<xsl:for-each select="accounts"><xsl:if test="account"><tr bgcolor="#ccffcc"><td>Account: <xsl:value-of select="account"/></td></tr></xsl:if></xsl:for-each>
-					<xsl:for-each select="modules"><xsl:if test="module"><tr bgcolor="#ccffcc"><td>Module: <xsl:value-of select="module"/></td></tr></xsl:if></xsl:for-each>
+					<xsl:if test="account"><tr bgcolor="#ccffcc"><td>Account: <xsl:value-of select="account"/></td></tr></xsl:if>
+					<xsl:if test="module"><tr bgcolor="#ccffcc"><td>Module: <xsl:value-of select="module"/></td></tr></xsl:if>
 					</td></tr>
 				</xsl:when>
 				<xsl:otherwise>
@@ -79,8 +79,8 @@ a{color:#000;}a:hover{color:#000;}a:visited{color:#000;}
 					<xsl:if test="model"><tr bgcolor="#bbddbb"><td>Model: <xsl:value-of select="model"/></td></tr></xsl:if>
 					<xsl:if test="firmware"><tr bgcolor="#bbddbb"><td>Firmware: <xsl:value-of select="firmware"/></td></tr></xsl:if>
 					<xsl:if test="filepath"><tr bgcolor="#bbddbb"><td>Filepath: <xsl:value-of select="filepath"/></td></tr></xsl:if>
-					<xsl:for-each select="accounts"><xsl:if test="account"><tr bgcolor="#bbddbb"><td>Account: <xsl:value-of select="account"/></td></tr></xsl:if></xsl:for-each>
-					<xsl:for-each select="modules"><xsl:if test="module"><tr bgcolor="#bbddbb"><td>Module: <xsl:value-of select="module"/></td></tr></xsl:if></xsl:for-each>
+					<xsl:if test="account"><tr bgcolor="#bbddbb"><td>Account: <xsl:value-of select="account"/></td></tr></xsl:if>
+					<xsl:if test="module"><tr bgcolor="#bbddbb"><td>Module: <xsl:value-of select="module"/></td></tr></xsl:if>
 					</td></tr>
 				</xsl:otherwise>
 			</xsl:choose>
