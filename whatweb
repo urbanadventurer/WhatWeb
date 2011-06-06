@@ -1348,10 +1348,16 @@ while thistarget = next_target
 						headers=Hash.new
 						pageheaders = body.to_s.split(/\r\n\r\n/).first.to_s.split(/\r\n/)
 						status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /)
+						cookies=[]
 						for k in 1...pageheaders.length
 							section=pageheaders[k].split(/:/).first.to_s.downcase
-							headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).to_s
+							if section =~ /^set-cookie$/i
+								cookies << pageheaders[k].scan(/:[\s]*(.+)$/).to_s
+							else
+								headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).to_s
+							end
 						end
+						headers["set-cookie"] = cookies.join("\n") unless cookies.nil? or cookies.empty?
 
 						# extract html source
 						if body =~ /^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m
