@@ -4,13 +4,29 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-06-11
+# Added account detection
+##
 Plugin.define "Polycom-SoundPoint" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
-version "0.1"
+version "0.2"
 description "Polycom SoundPoint VOIP phone - Homepage: http://www.polycom.com/products/voice/desktop_solutions/soundpoint/"
 
 # ShodanHQ results as at 2011-03-14 #
 # 6,474 for Polycom SoundPoint IP Telephone HTTPd
+
+# Google results as at 2011-06-11 #
+# 4 for "SoundPoint IP Configuration" intitle:"SoundPoint IP Configuration Utility - Registration" ext:htm
+
+# Aggressive # Extra URLS #
+extra_urls [
+"/reg_1.htm"
+]
+
+# Dorks #
+dorks [
+'"SoundPoint IP Configuration" intitle:"SoundPoint IP Configuration Utility - Registration" ext:htm'
+]
 
 # Examples #
 examples %w|
@@ -30,11 +46,23 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^Polycom SoundPoint IP Telephone HTTPd$/
+	if @meta["server"] =~ /^Polycom SoundPoint IP Telephone HTTPd$/
+
+		m << { :name=>"HTTP Server Header" }
+
+		# Display Name
+		m << { :url=>"/reg_1.htm", :string=>@body.scan(/<td width="200" bgcolor="#999999"><input value="([^"]+)" name="reg\.1\.displayName"\/><\/td>/) } if @body =~ /<td width="200" bgcolor="#999999"><input value="([^"]+)" name="reg\.1\.displayName"\/><\/td>/
+
+		# Account Detection
+		if @body =~ /<td width="200" bgcolor="#999999"><input value="([^"]+)" name="reg\.1\.auth\.userId"\/><\/td>/ and @body =~ /<td width="200" bgcolor="#999999"><input value="([^"]*)" type="password" name="reg\.1\.auth\.password"\/><\/td>/
+			m << { :url=>"/reg_1.htm", :account=>@body.scan(/<td width="200" bgcolor="#999999"><input value="([^"]+)" name="reg\.1\.auth\.userId"\/><\/td>/).to_s + ":" + @body.scan(/<td width="200" bgcolor="#999999"><input value="([^"]*)" type="password" name="reg\.1\.auth\.password"\/><\/td>/).to_s }
+
+		end
+
+	end
 
 	# Return passive matches
 	m
-
 end
 
 end
