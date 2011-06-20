@@ -10,7 +10,7 @@ version "0.1"
 description "GlassFish is an open source application server project led by Sun Microsystems for the Java EE platform. The proprietary version is called Sun GlassFish Enterprise Server. GlassFish supports All Java EE API specifications, such as JDBC, RMI, e-mail, JMS, web services, XML, etc., and defines how to coordinate them. - Homepage: http://glassfish.java.net/"
 
 # More Info #
-http://en.wikipedia.org/wiki/GlassFish
+# http://en.wikipedia.org/wiki/GlassFish
 
 # ShodanHQ results as at 2011-06-19 #
 # 4,489 for GlassFish
