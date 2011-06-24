@@ -10,6 +10,9 @@
 # Version 0.3
 # Now using :version=>// instead of a passive function, added description, examples and included relative /wp-content/ link detection
 ##
+# Version 0.4
+# removed non-relative /wp-content/ match
+
 Plugin.define "WordPress" do
 author "Andrew Horton"
 version "0.4"
@@ -27,8 +30,7 @@ dorks [
 matches [
 
 {:text=>"<meta name=\"generator\" content=\"WordPress.com\" />"},
-{:text=>"<a href=\"http://www.wordpress.com\">Powered by WordPress</a>", :name=>"powered by link"},
-{:regexp=>/"[^"]+\/wp-content\/[^"]+"/, :name=>"wp-content", :certainty=>75 },
+{:text=>"<a href=\"http://www.wordpress.com\">Powered by WordPress</a>", :name=>"powered by link"}
 
 {:version=>/<meta name=\"generator\" content=\"(WordPress)[ ]?([0-9\.]+)\"/, :offset=>1  }, # if offset=>1 were missing then it would report "WordPress" as the version.
 
