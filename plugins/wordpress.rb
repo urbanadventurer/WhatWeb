@@ -30,9 +30,9 @@ dorks [
 matches [
 
 {:text=>"<meta name=\"generator\" content=\"WordPress.com\" />"},
-{:text=>"<a href=\"http://www.wordpress.com\">Powered by WordPress</a>", :name=>"powered by link"}
-
-{:version=>/<meta name=\"generator\" content=\"(WordPress)[ ]?([0-9\.]+)\"/, :offset=>1  }, # if offset=>1 were missing then it would report "WordPress" as the version.
+{:text=>"<a href=\"http://www.wordpress.com\">Powered by WordPress</a>", :name=>"powered by link"},
+# if offset=>1 were missing then it would report "WordPress" as the version.
+{:version=>/<meta name=\"generator\" content=\"(WordPress)[ ]?([0-9\.]+)\"/, :offset=>1  }, #"
 
 # url exists, i.e. returns HTTP status 200
 {:url=>"/wp-cron.php"},
