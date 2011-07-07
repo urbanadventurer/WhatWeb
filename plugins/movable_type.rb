@@ -4,63 +4,127 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# remove :certainty
+# Version 0.4 # 2011-07-07 # Brendan Coles <bcoles@gmail.com>
+# updated regex
+# added example urls, google dorks and version/path detection with mt-check.cgi
+##
 # Version 0.3
 # Uses :version=>//
+##
+# Version 0.2
+# remove :certainty
+##
 
-Plugin.define "MovableType" do
+Plugin.define "Movable-Type" do
 author "Andrew Horton"
-version "0.3"
-description "Blogging platform  http://www.movabletype.org/"
+version "0.4"
+description "Blogging platform - Homepage: http://www.movabletype.org/"
 
+# Google results as at 2011-07-07 #
+# 122 for "Powered by Movable Type"
+#  89 for inurl:/mt-check.cgi intitle:"Movable Type System Check [mt-check.cgi]"
+#  26 for inurl:/mt/mt-check.cgi
+
+# More examples:
+# www.movabletype.com/showcase/
+
+# Dorks #
+dorks [
+'"Powered by Movable Type"',
+'inurl:/mt-check.cgi intitle:"Movable Type System Check [mt-check.cgi]"'
+]
+
+# Aggressive # Extra URLs #
+extra_urls [
+"mt-check.cgi"
+]
+
+# Examples #
+examples %w|
+www.movabletype.org
+blog.comcast.com
+www.ifc.com
+www.treehugger.com
+politicsandsociety.usc.edu
+boeingblogs.com/randy/
+www.mitadmissions.org
+www.seriouseats.com
+talkingpointsmemo.com
+eat.mst.edu
+advisors.it.rit.edu
+blog.ltc.arizona.edu
+www.treehugger.com
+gothamist.com
+nfocentrale.com/status/
+www.ony.unu.edu/news/
+jcet.umbc.edu
+accesspoint.astate.edu
+www.law.wisc.edu
+cssa.dartmouth.edu/blog/
+blog.vcu.edu
+blogs.setonhill.edu/nmj/
+www.plasticmind.com
+blogs.princeton.edu
+blogs.psu.edu
+www.granato.org
+www.discoverborneo.com/blog/
+|
+
+# Matches #
+matches [
+
+# javascript with 'mt' in the filename
+{:name=>"javascript with 'mt' in the name",
+:certainty=>50, :regexp=>/<script type="text\/javascript" src="[^"]+mt(-site)?\.js"><\/script>/},
+
+# mt-tags|mt-tb|mt-cp|mt-search|mt-user-login|mt-recommend cgi
+{:name=>"mt-tags|mt-tb|mt-cp|mt-search|mt-user-login|mt-recommend cgi",
+:certainty=>75,
+:regexp=>/"[^"]+\/mt-(tags|tb|cp|search|user-login|recommend)\.[f]?cgi[^"]*"/},
+
+# Meta Generator
+{:name=>"meta generator tag", :regexp=>/<meta name="generator" content="http:\/\/www\.movabletype\.org\/" \/>/},
+
+# mt-check.cgi # Title
+{ :text=>'<title>Movable Type System Check [mt-check.cgi]</title>' },
+
+# Version Detection # mt-check.cgi
+{ :version=>/<li><strong>Movable Type version:<\/strong> <code>([^<]+)<\/code><\/li>/ },
+
+# Local Path Detection # mt-check.cgi
+{ :filepath=>/<li><strong>Current working directory:<\/strong> <code>([^<]+)<\/code><\/li>/ },
+
+# Powered by link
+{:name=>"Powered by link", :regexp=>/<a href="http:\/\/sixapart\.com">Powered by Movable Type<\/a>/},
+{:name=>"Powered by link", :regexp=>/Powered by <a href="http:\/\/www\.movabletype\.com\/"[^>]*>Movable Type<\/a>/ },
+
+# Version Detection # Meta Generator
+{:version=>/<meta name="generator" content="Movable Type ([^"]*)/,  :name=>"meta generator tag" } 
+
+] 
+
+end
+
+=begin
+
+# An aggressive plugin could check the following paths for confirmation:
+
+# /mt or /mt/mt-check.cgi (discloses versions, paths)
 # /mt/mt-tags.fcgi
 # /mt-tb.fcgi
 # /mt-cp.[f]?cgi
 # /mt-search.cgi
 # /mt-user-login.cgi
 # /mt-recommend.cgi
-#
-# <meta name="generator" content="Movable Type Pro 4.23-en" />
-# <meta name="generator" content="Movable Type Pro 4.24-en" />
-# <meta name="generator" content="Movable Type Enterprise 1.52-en-voltron-r47459-20070213" />
-# <meta name="generator" content="Movable Type 3.2" />
-# <meta name="generator" content="http://www.movabletype.org/" /> seen on Movable Type 3.34
 
-# <script type="text/javascript" src="http://awearnessblog.com/mt.js"></script>
+# can't detect:
+barackobama.com
+blogs.oracle.com
+electricartists.com/corporate
+muledesign.com
+www.radaronline.com
+www.theatlantic.com
+www.thehuffingtonpost.com
 
-# <a href="http://sixapart.com">Powered by Movable Type</a>
-
-#/cgi-bin/mt4/plugins/openid-server/server.cgi
-#
-# example sites:
-# www.movabletype.com/showcase/
-#
-# can't detect tests: boeingblogs.com.randy , .electricartists.com.corporate, filminfocus.com, muledesign.com, www.radaronline.com, 
-# www.theatlantic.com, www.thehuffingtonpost.com, www.plasticmind.com
-#
-
-# mt-site.js
-
-# to detect for sure
-# try /mt, /mt/mt-check.cgi (discloses versions, paths)
-
-matches [
-{:name=>"javascript with 'mt' in the name",
-:certainty=>50, :regexp=>/<script type="text\/javascript" src="[^"]+mt[-site]?.js"><\/script>/}, #"
-
-{:name=>"mt-tags|mt-tb|mt-cp|mt-search|mt-user-login|mt-recommend cgi",
-:certainty=>75,
-:regexp=>/"[^"]+\/(mt-tags|mt-tb|mt-cp|mt-search|mt-user-login|mt-recommend)\.[f]?cgi[^"]*"/},
-
-{:name=>"meta generator tag", :regexp=>/<meta name="generator" content="http:\/\/www.movabletype.org\/" \/>/},
-
-{:name=>"Powered by link", :regexp=>/<a href="http:\/\/sixapart.com">Powered by Movable Type<\/a>/},
-
-{:version=>/<meta name="generator" content="Movable Type ([^"]*)/,  :name=>"meta generator tag" } 
-] 
-
-
-end
+=end
 
