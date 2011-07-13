@@ -7,8 +7,12 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Hunter finds web applications with Google then fingerprints them with WhatWeb
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-VERSION="0.1"
+VERSION="0.1.1"
 AUTHOR="Brendan Coles [ itsecuritysolutions.org ]"
+
+# Hunter settings
+VERBOSE="TRUE"
+LIST=""
 
 # WhatWeb settings
 AGGRESSION="1"
@@ -16,10 +20,11 @@ USERAGENT="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) Apple
 PROXYUSER=""  # "username:password" Set proxy user and password
 PROXY=""      # "hostname:port"     Set proxy hostname and port
 
-VERBOSE="FALSE"
+# GGGooglescan settings
 WAIT="0"
-LIST=""
-NUMRESULTS="" # Reserved for future use [-n]
+DEPTH="5"
+GSCAN_QUIET="" # gggooglescan's quiet mode is broken in v0.4
+#GSCAN_QUIET="-q"
 
 # Check for WhatWeb in the current working directory
 WHATWEB="./whatweb"
@@ -47,13 +52,18 @@ fi
 
 # Show usage and quit
 function usage {
-echo "
-         @@@  @@@   @@@  @@@   @@@  @@@   @@@@@@@   @@@@@@@@   @@@@@@@ 
-         @@!  @@@   @@!  @@@   @@!@!@@@     @@!     @@!        @@!  @@@
-         @!@!@!@!   @!@  !@!   @!@@!!@!     @!!     @!!!:!     @!@!!@! 
-         !!:  !!!   !!:  !!!   !!:  !!!     !!:     !!:        !!: :!! 
-          :   : :    :.:: :    ::    :       :      : :: :::    :   : :
 
+LRED="\033[1;32m"
+DRED="\033[0;32m"
+NOCOLOR="\033[0m"
+
+echo -e "
+$LRED         @@@  @@@   @@@  @@@   @@@  @@@   @@@@@@@   @@@@@@@@   @@@@@@@ 
+$LRED         @@!  @@@   @@!  @@@   @@!@!@@@     @@!     @@!        @@!  @@@
+$DRED         @!@!@!@!   @!@  !@!   @!@@!!@!     @!!     @!!!:!     @!@!!@! 
+$DRED         !!:  !!!   !!:  !!!   !!:  !!!     !!:     !!:        !!: :!! 
+$DRED          :   : :    :.:: :    ::    :       :      : :: :::    :   : :
+$NOCOLOR
 Hunter - Finds web applications with Google then fingerprints them with WhatWeb
 Version $VERSION by $AUTHOR
 
@@ -61,28 +71,28 @@ Usage:   ./hunter [options] <Application Name>
 Example: ./hunter wordpress
 
 Options:
-  <Application Name>	Find and fingerprint a web application
   -l KEYWORD		List supported applications. Filter by keyword.
 			Use \".\" to list all applications.
+  -d NUM		Depth of results. Num of pages to return. Default: 5
   -a AGGRESSION		Set WhatWeb aggression level. Default: 1 (passive)
   -u USER-AGENT		Set WhatWeb user agent
-  -w SECONDS		Wait time between google queries
+  -w SECONDS		Wait for SECONDS between each Google query. Default: 0
   -h			This help info
-  -v			Verbose
+  -q			Quiet. Turn off comment lines.
 "
 }
 
 
 # Command line options
-while getopts 'a:u:n:w:l:vh' OPTION
+while getopts 'd:a:u:w:l:qh' OPTION
 do
  case $OPTION in
  h) usage; exit ;;
- n) NUMRESULTS=$OPTARG ;;
+ d) DEPTH=$OPTARG ;;
  a) AGGRESSION=$OPTARG ;;
  u) USERAGENT=$OPTARG ;;
  w) WAIT=$OPTARG ;;
- v) VERBOSE="TRUE" ;;
+ q) VERBOSE="FALSE" ;;
  l) LIST=$OPTARG ;;
  esac
 done
@@ -107,20 +117,31 @@ fi
 if [[ "$VERBOSE" == "TRUE" ]]; then
 	echo "[+] Loading Google queries for $1" >&2
 fi
+
 DORKS=`"$WHATWEB" -g "$1"`
 
 # Quit if no dorks were returned
 if [[ -z "$DORKS" ]]; then
+	if [[ "$VERBOSE" == "TRUE" ]]; then
+		echo "[-] No Google queries were found. Try ./hunter -l $1" >&2
+	fi
 	exit 1
 fi
 
-# Show log message
+# Show google dorks
 if [[ "$VERBOSE" == "TRUE" ]]; then
-	echo "[+] Searching Google for instances of $1" >&2
+	echo "[+] Found the following Google queries:" >&2
+	echo "$DORKS"
+	echo "[+] Searching Google for instances of $1:" >&2
+fi
+
+# Show google query URLs
+if [[ "$VERBOSE" == "TRUE" ]]; then
+	GSCAN_QUIET=""
 fi
 
 # Pipe dorks to gggooglescan then pipe the results to WhatWeb
-echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$1.log" -p "$1" | grep -i "$1"
+echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" $GSCAN_QUIET -d "$DEPTH" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$1.log" -p "$1" | grep -i "$1"
 
 # Show log message
 if [[ "$VERBOSE" == "TRUE" ]]; then
