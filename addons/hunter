@@ -13,18 +13,20 @@ AUTHOR="Brendan Coles [ itsecuritysolutions.org ]"
 # Hunter settings
 VERBOSE="TRUE"
 LIST=""
+QUERY=""
+APP=""
+LOG="hunter.$(date +"%Y%m%d%H%M%S")-$$.log"
 
 # WhatWeb settings
 AGGRESSION="1"
 USERAGENT="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341"
-PROXYUSER=""  # "username:password" Set proxy user and password
-PROXY=""      # "hostname:port"     Set proxy hostname and port
+PROXYUSER=""
+PROXY=""
 
-# GGGooglescan settings
+# GGGoogleScan settings
 WAIT="0"
 DEPTH="5"
-GSCAN_QUIET="" # gggooglescan's quiet mode is broken in v0.4
-#GSCAN_QUIET="-q"
+GSCAN_QUIET=""
 
 # Check for WhatWeb in the current working directory
 WHATWEB="./whatweb"
@@ -67,33 +69,47 @@ $NOCOLOR
 Hunter - Finds web applications with Google then fingerprints them with WhatWeb
 Version $VERSION by $AUTHOR
 
-Usage:   ./hunter [options] <Application Name>
-Example: ./hunter wordpress
+Usage:   ./hunter [options] <QUERY>
+Example: ./hunter -a wordpress
+	 ./hunter -g \"site:wordpress.org\"
+	 ./hunter -g \"site:wordpress.org\" -a wordpress
 
 Options:
-  -l KEYWORD		List supported applications. Filter by keyword.
+  -g QUERY		Search Google for QUERY
+  -a APPLICATION	Search Google for APPLICATION
+  -l KEYWORD		List supported applications. Filter by KEYWORD.
 			Use \".\" to list all applications.
-  -d NUM		Depth of results. Num of pages to return. Default: 5
-  -a AGGRESSION		Set WhatWeb aggression level. Default: 1 (passive)
-  -u USER-AGENT		Set WhatWeb user agent
-  -w SECONDS		Wait for SECONDS between each Google query. Default: 0
   -h			This help info
   -q			Quiet. Turn off comment lines.
+
+Google Options:
+  -d NUM		Depth of Google results. NUM pages to return. Default: 5
+  -w SECONDS		Wait for SECONDS between each Google query. Default: 0
+
+WhatWeb Options:
+  -n AGGRESSION		Set WhatWeb aggression level. Default: 1 (passive)
+  -u USER-AGENT		Set WhatWeb user agent
+  -p <hostname:port>	Set WhatWeb proxy hostname and port
+  -c <username[:pass]>	Set WhatWeb proxy credentials
 "
 }
 
 
 # Command line options
-while getopts 'd:a:u:w:l:qh' OPTION
+while getopts 'd:a:u:w:n:g:l:p:c:qh' OPTION
 do
  case $OPTION in
  h) usage; exit ;;
  d) DEPTH=$OPTARG ;;
- a) AGGRESSION=$OPTARG ;;
+ n) AGGRESSION=$OPTARG ;;
  u) USERAGENT=$OPTARG ;;
  w) WAIT=$OPTARG ;;
  q) VERBOSE="FALSE" ;;
+ p) PROXY=$OPTARG ;;
+ c) PROXYUSER=$OPTARG ;;
  l) LIST=$OPTARG ;;
+ g) QUERY=$OPTARG ;;
+ a) APP=$OPTARG ;;
  esac
 done
 shift $(($OPTIND -1 ))
@@ -108,43 +124,52 @@ if [[ ! -z "$LIST" ]]; then
 fi
 
 # Show usage when no arguments are provided
-if [[ -z "$1" ]]; then
+if [[ -z "$APP" && -z "$QUERY" ]]; then
 	usage
         exit 1
 fi
 
-# Get dorks from WhatWeb
-if [[ "$VERBOSE" == "TRUE" ]]; then
-	echo "[+] Loading Google queries for $1" >&2
-fi
+# Get dorks from WhatWeb if no Google query was provided
+if [[ -z "$QUERY" ]]; then
 
-DORKS=`"$WHATWEB" -g "$1"`
-
-# Quit if no dorks were returned
-if [[ -z "$DORKS" ]]; then
+	# Get dorks from WhatWeb
 	if [[ "$VERBOSE" == "TRUE" ]]; then
-		echo "[-] No Google queries were found. Try ./hunter -l $1" >&2
+		echo "[-] No query specified. Loading Google queries for $APP" >&2
 	fi
-	exit 1
+
+	DORKS=`"$WHATWEB" -g "$APP"`
+
+	# Quit if no dorks were returned
+	if [[ -z "$DORKS" ]]; then
+		if [[ "$VERBOSE" == "TRUE" ]]; then
+			echo "[-] No Google queries were found." >&2
+		fi
+		exit 1
+	fi
+
+else
+	DORKS="$QUERY"
 fi
 
 # Show google dorks
 if [[ "$VERBOSE" == "TRUE" ]]; then
-	echo "[+] Found the following Google queries:" >&2
+	echo "[+] Using the following Google queries:" >&2
 	echo "$DORKS"
-	echo "[+] Searching Google for instances of $1:" >&2
 fi
 
 # Show google query URLs
-if [[ "$VERBOSE" == "TRUE" ]]; then
-	GSCAN_QUIET=""
+if [[ "$VERBOSE" == "FALSE" ]]; then
+	# gggooglescan's quiet mode is broken in v0.4
+	if [[ ! -z `cat "$GOOGLESCAN" | grep "getopts" | grep q` ]]; then
+		GSCAN_QUIET="-q"
+	fi
 fi
 
 # Pipe dorks to gggooglescan then pipe the results to WhatWeb
-echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" $GSCAN_QUIET -d "$DEPTH" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$1.log" -p "$1" | grep -i "$1"
+echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" $GSCAN_QUIET -d "$DEPTH" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$LOG" -p "$APP" | grep -e " \[[0-9]"
 
 # Show log message
 if [[ "$VERBOSE" == "TRUE" ]]; then
-	echo "[+] Wrote output to $1.log" >&2
+	echo "[+] Wrote output to $LOG" >&2
 fi
 
