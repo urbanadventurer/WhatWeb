@@ -22,6 +22,7 @@ AGGRESSION="1"
 USERAGENT="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341"
 PROXYUSER=""
 PROXY=""
+FILTER=""
 
 # GGGoogleScan settings
 WAIT="0"
@@ -69,14 +70,15 @@ $NOCOLOR
 Hunter - Finds web applications with Google then fingerprints them with WhatWeb
 Version $VERSION by $AUTHOR
 
-Usage:   ./hunter [options] <QUERY>
+Usage:   ./hunter [options]
 Example: ./hunter -a wordpress
-	 ./hunter -g \"site:wordpress.org\"
-	 ./hunter -g \"site:wordpress.org\" -a wordpress
+	 ./hunter -a wordpress -f "wordpress,title,httpserver"
+	 ./hunter -g \"site:wordpress.org\" -f wordpress
 
 Options:
   -g QUERY		Search Google for QUERY
   -a APPLICATION	Search Google for APPLICATION
+  -f APPLICATION	Filter results by comma delimited list of applications
   -l KEYWORD		List supported applications. Filter by KEYWORD.
 			Use \".\" to list all applications.
   -h			This help info
@@ -96,11 +98,12 @@ WhatWeb Options:
 
 
 # Command line options
-while getopts 'd:a:u:w:n:g:l:p:c:qh' OPTION
+while getopts 'd:a:u:f:w:n:g:l:p:c:qh' OPTION
 do
  case $OPTION in
  h) usage; exit ;;
  d) DEPTH=$OPTARG ;;
+ f) FILTER=$OPTARG ;;
  n) AGGRESSION=$OPTARG ;;
  u) USERAGENT=$OPTARG ;;
  w) WAIT=$OPTARG ;;
@@ -166,7 +169,7 @@ if [[ "$VERBOSE" == "FALSE" ]]; then
 fi
 
 # Pipe dorks to gggooglescan then pipe the results to WhatWeb
-echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" $GSCAN_QUIET -d "$DEPTH" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$LOG" -p "$APP" | grep -e " \[[0-9]"
+echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" $GSCAN_QUIET -d "$DEPTH" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$LOG" -p "$FILTER" | grep -e " \[[0-9]"
 
 # Show log message
 if [[ "$VERBOSE" == "TRUE" ]]; then
