@@ -659,8 +659,7 @@ def open_target(target)
 		body=res.body
 		status=res.code.to_i
 		puts uri.host.to_s + path + (query.nil? ? "" : "?" + query ) + " [#{status}]" if  $verbose > 0 
-		cookies=res.get_fields('set-cookie')
-		
+
 	rescue SocketError => err
 		error(target + " ERROR: Socket error #{err}")
 		return [0, nil, nil, nil,nil]
@@ -690,11 +689,11 @@ def open_target(target)
 		error(target + " ERROR: #{err}")
 		return [0, nil, nil, nil,nil]
 	end
-	[status,uri,ip,body,headers,cookies]
+	[status,uri,ip,body,headers]
 end
 
 
-def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
+def run_plugins(target,body,headers=nil,status=nil,url=nil,ip="")
 		#pp target, body, headers, status, url
 
 		# need a webpage model for this stuff
@@ -725,15 +724,15 @@ def run_plugins(target,body,headers=nil,cookies=nil,status=nil,url=nil,ip="")
 
 				# Target is a URL
 				if target_is_url
-					#plugin.init(ObjectSpace._id2ref(body.object_id),headers,cookies,status,url,ip,md5sum,tagpattern)
-					plugin.init(body,headers,cookies,status,url,ip,md5sum,tagpattern)
+					#plugin.init(ObjectSpace._id2ref(body.object_id),headers,status,url,ip,md5sum,tagpattern)
+					plugin.init(body,headers,status,url,ip,md5sum,tagpattern)
 				else
 					if headers.nil?
 						# Target is a local file
-						plugin.init(body,{},nil,0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
+						plugin.init(body,{},0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
 					else
 						# Target is a local HTTP packet file
-						plugin.init(body,headers,cookies,status,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
+						plugin.init(body,headers,status,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
 					end
 
 				end
@@ -1302,8 +1301,7 @@ while thistarget = next_target
 								status=page.code
 								url=page.url
 
-								# no @cookies for anemone :(
-								results = run_plugins(url.to_s,doc,headers,nil,status,url,ip)
+								results = run_plugins(url.to_s,doc,headers,status,url,ip)
 								# reporting
 								# multiple output plugins simultaneously, some stdout, some files
 
@@ -1348,17 +1346,18 @@ while thistarget = next_target
 
 						# extract http header
 						headers=Hash.new
-						cookies = Array.new
 						pageheaders = body.to_s.split(/\r\n\r\n/).first.to_s.split(/\r\n/)
 						status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /)
+						cookies=[]
 						for k in 1...pageheaders.length
 							section=pageheaders[k].split(/:/).first.to_s.downcase
-							if section =~ /^set-cookie$/
-								cookies << pageheaders[k].scan(/set-cookie:[\s]*(.+)/i).to_s
+							if section =~ /^set-cookie$/i
+								cookies << pageheaders[k].scan(/:[\s]*(.+)$/).to_s
 							else
 								headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).to_s
 							end
 						end
+						headers["set-cookie"] = cookies.join("\n") unless cookies.nil? or cookies.empty?
 
 						# extract html source
 						if body =~ /^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m
@@ -1370,15 +1369,15 @@ while thistarget = next_target
 				else
 					# not a file, not recursive
 					#status,url,body,headers = open_with_openuri(target)
-					status,url,ip,body,headers,cookies = open_target(target)
+					status,url,ip,body,headers = open_target(target)
 					if status == 0 or status.nil?
 						no_redirects=true
 						next
 					end
 				end
 
-				#results = run_plugins(target,ObjectSpace._id2ref(body.object_id),headers,cookies,status,url,ip)
-				results = run_plugins(target,body,headers,cookies,status,url,ip)
+				#results = run_plugins(target,ObjectSpace._id2ref(body.object_id),headers,status,url,ip)
+				results = run_plugins(target,body,headers,status,url,ip)
 
 				# reporting
 				# multiple output plugins simultaneously, some stdout, some files

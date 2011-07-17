@@ -62,10 +62,9 @@ class Plugin
   	@locked
   end
 
-  def init (body=nil,meta={},cookies=nil,status=nil,base_uri=nil, ip=nil, md5sum=nil, tagpattern=nil)
+  def init (body=nil,meta={},status=nil,base_uri=nil, ip=nil, md5sum=nil, tagpattern=nil)
   	@body=body
   	@meta=meta
-  	@cookies=cookies
   	@status=status
   	@base_uri=base_uri
 	@md5sum=md5sum
@@ -147,14 +146,14 @@ class Plugin
 		# we have no caching, so we sort the URLs to fetch and only get 1 unique url per plugin. not great..
 		unless @matches.nil?
 			lastbase_uri=nil
-			thisstatus,thisurl,thisbody,thisheaders,thiscookies=nil # this shouldn't be necessary but ruby thinks its a local variable to the if end statement
+			thisstatus,thisurl,thisbody,thisheaders=nil # this shouldn't be necessary but ruby thinks its a local variable to the if end statement
 			@matches.map {|x| x if x[:url]}.compact.sort_by {|x| x[:url] }.map do |match|
 				r=[] # temp results
 
 				# this is messy... need a webpage class
 				thisbase_uri=URI.join(@base_uri.to_s, match[:url])
 				if thisbase_uri != lastbase_uri
-					thisstatus,thisurl,thisip,thisbody,thisheaders,thiscookies = open_target( thisbase_uri.to_s) 
+					thisstatus,thisurl,thisip,thisbody,thisheaders = open_target( thisbase_uri.to_s) 
 				end
 				lastbase_uri=thisbase_uri
 
