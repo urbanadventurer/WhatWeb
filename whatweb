@@ -93,7 +93,9 @@ end
 
 
 if RUBY_VERSION =~ /^1\.9/
-        require 'digest/md5'
+        #require 'digest/md5'
+	print "ERROR: Ruby 1.9.x is not supported\n"
+	exit 1
 else
         require 'md5'
 	require 'net/https'
