@@ -7,7 +7,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Hunter finds web applications with Google then fingerprints them with WhatWeb
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-VERSION="0.1.1"
+VERSION="0.1.2"
 AUTHOR="Brendan Coles [ itsecuritysolutions.org ]"
 
 # Hunter settings
@@ -32,8 +32,8 @@ GSCAN_QUIET=""
 # Check for WhatWeb in the current working directory
 WHATWEB="./whatweb"
 if [[ ! -e "$WHATWEB" ]]; then
-	# Check for WhatWeb in the parent directory
-	WHATWEB="../whatweb"
+	# Check for WhatWeb directory relative to hunter
+	WHATWEB=`dirname $0`"/../whatweb"
 	if [[ ! -e "$WHATWEB" ]]; then
 		# Check if WhatWeb is installed
 		WHATWEB=`which whatweb 2>/dev/null`
@@ -45,10 +45,10 @@ if [[ ! -e "$WHATWEB" ]]; then
 fi
 
 
-# Quit if gggooglescan is not in the current working directory
-GOOGLESCAN="./gggooglescan"
+# expect gggooglescan to be in the addons/ folder
+GOOGLESCAN=`dirname "$0"`"/gggooglescan"
 if [[ ! -e "$GOOGLESCAN" ]]; then
-	echo "[!] Fatal Error: Could not locate gggooglescan in the current working directory. Homepage: http://www.morningstarsecurity.com/research/gggooglescan"
+	echo "[!] Fatal Error: Expected to find gggooglescan in `dirname`. Homepage: http://www.morningstarsecurity.com/research/gggooglescan"
 	exit 1
 fi
 
