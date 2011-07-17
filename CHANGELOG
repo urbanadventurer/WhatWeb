@@ -5,7 +5,9 @@ Version 0.4.8-dev Unreleased
 * Added --dorks, -g <plugin name> to return google dorks for the selected plugin
 * Added google dorks to more than 500 plugins
 * Added ./addons/hunter
+* Added ./addons/gggooglescan
 * Updated whatweb.xsl
+* Fixed bug causing Mongo DB logging to fail
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
