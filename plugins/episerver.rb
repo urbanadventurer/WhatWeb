@@ -8,14 +8,14 @@
 
 # Version 0.2 by Andrew Horton
 # removed VIEWSTATE match as it matches ASP.NET, removed :probability=>100
-# Version 0.3 by Andrew Horton - added version detection with EPiServer logos
+# Version 0.3 by Andrew Horton - added version detection with EPiServer logos and more examples from http://www.episerver.com/en/Customers/
 
 Plugin.define "EPiServer" do
 author "Patrik Wallström"
 version "0.2"
 description "CMS from EPiServer - http://episerver.com/"
 
-examples %w| www.stockholm.se www.sweden.se www.fritidsresor.se|
+examples %w| www.stockholm.se www.sweden.se www.fritidsresor.se www.generationgreen.co.uk www.jerseytelecom.com www.mohive.com|
 
 matches [
 {:name=>"meta generator tag with EPiServer", :text=>"<meta name=\"GENERATOR\" content=\"EPiServer\" />"},
