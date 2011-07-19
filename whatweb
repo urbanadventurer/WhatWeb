@@ -1016,7 +1016,13 @@ begin
 			 	output_list << OutputSQL.new(arg)
 			when '--log-sql-create'
 				load_plugins
+				# delete the file if it already exists
+				begin
+					File.delete(arg)
+				rescue
+				end
 			 	OutputSQL.new(arg).create_tables
+				puts "SQL CREATE statements written to #{arg}"
 				exit
 			when '--log-json'
 				if defined?(JSON)
