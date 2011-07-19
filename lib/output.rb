@@ -710,3 +710,107 @@ class OutputErrors < Output
 	end	
 end
 
+
+class OutputSQL < Output
+	
+	def flatten_elements!(obj)
+		if obj.class == Hash
+			obj.each_value {|x| 
+				flatten_elements!(x)
+			}
+		end
+
+		if obj.class == Array
+			obj.flatten!
+		end
+	end
+
+	def escape_for_sql(s)
+		s=s.to_s
+		if s.nil?
+			"''"
+		else
+			"'"+ s.gsub("'","\'")+"'"
+		end
+	end
+
+	def initialize(f=STDOUT)
+		super
+	end
+	
+	def create_tables
+		# feel free to modify this
+		@f.puts "CREATE TABLE plugins (plugin_id int NOT NULL AUTO_INCREMENT, name varchar(255) NOT NULL,PRIMARY KEY (plugin_id), UNIQUE (name));"
+		@f.puts "CREATE TABLE targets (target_id int NOT NULL AUTO_INCREMENT, target varchar(900) NOT NULL, status varchar(10),PRIMARY KEY (target_id), UNIQUE (target, status) );"
+		@f.puts "CREATE TABLE scans (scan_id int NOT NULL AUTO_INCREMENT, plugin_id INT NOT NULL, target_id INT NOT NULL, version varchar(255), os varchar(255), string varchar(1024), account varchar(1024), model varchar(1024), firmware varchar(1024), module varchar(1024), filepath varchar(1024), certainty varchar(10) ,PRIMARY KEY (scan_id));"
+	
+		# plugins table
+		Plugin::registered_plugins.each do |n,p|
+			@f.puts "INSERT INTO plugins (name) VALUES (#{ escape_for_sql(n) });"
+		end
+	end
+
+	def out(target, status, results)
+
+		# nice
+		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
+		
+		results.each do |plugin_name,plugin_results|		
+			thisplugin = {}
+			
+			unless plugin_results.empty?
+				# important info in brief mode is version, type and ?
+				# what's the highest probability for the match?
+
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
+
+				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq
+				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp }.flatten.compact.sort.uniq
+				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| x[:account] unless x[:account].class==Regexp }.flatten.compact.sort.uniq
+				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.flatten.compact.sort.uniq
+				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.flatten.compact.sort.uniq
+				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.flatten.compact.sort.uniq
+				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.flatten.compact.sort.uniq
+
+				if !certainty.nil? and certainty != 100
+					thisplugin[:certainty] = certainty
+				end
+
+				# empty arrays
+				thisplugin[:version] = version.empty? ? [] : version
+				thisplugin[:os] = os.empty? ? [] : os
+				thisplugin[:string] = string.empty? ? [] : string
+				thisplugin[:account] = accounts.empty? ? [] : accounts
+				thisplugin[:model] = model.empty? ? [] : model
+				thisplugin[:firmware] = firmware.empty? ? [] : firmware
+				thisplugin[:module] = modules.empty? ? [] : modules
+				thisplugin[:filepath] = filepath.empty? ? [] : filepath
+
+				foo[:plugins][plugin_name.to_sym] = thisplugin
+			end
+		end
+
+		flatten_elements!(foo)			
+		
+		i_target = escape_for_sql(foo[:target])
+		insert = [escape_for_sql(foo[:http_status]), i_target].join(",")
+
+		query = "INSERT IGNORE INTO targets (status,target) VALUES (#{ insert });";
+		@f.puts query
+		foo[:plugins].each do |x| 
+
+			plugin_name = escape_for_sql(x.first.to_s)
+
+			insert = [ escape_for_sql(x[1][:version].join(",").to_s), escape_for_sql(x[1][:os].join(",").to_s),
+					escape_for_sql(x[1][:string].join(",").to_s), 	escape_for_sql(x[1][:account].join(",").to_s), escape_for_sql(x[1][:model].join(",").to_s),
+					escape_for_sql(x[1][:firmware].join(",").to_s),	escape_for_sql(x[1][:module].join(",").to_s), escape_for_sql(x[1][:filepath].join(",").to_s),
+					escape_for_sql(x[1][:certainty].to_s) ].join(",")
+
+			query = "INSERT INTO scans (target_id, plugin_id, version, os, string, account, model, firmware, module, filepath, certainty) VALUES ( (SELECT target_id from targets WHERE target = #{i_target}),(SELECT plugin_id from plugins WHERE name = #{plugin_name}), #{insert} );";
+			@f.puts query
+		end
+
+	end
+end
+

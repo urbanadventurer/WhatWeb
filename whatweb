@@ -863,6 +863,8 @@ LOGGING & OUTPUT:
   --log-verbose=FILE\tLog verbose output
   --log-xml=FILE\tLog XML format
   --log-json=FILE\tLog JSON format
+  --log-sql=FILE\tLog SQL INSERT statements
+  --log-sql-create=FILE\tCreate SQL database tables
   --log-json-verbose=FILE Log JSON Verbose format
   --log-magictree=FILE\tLog MagicTree XML format
   --log-object=FILE\tLog Ruby object inspection format
@@ -939,6 +941,8 @@ opts = GetoptLong.new(
       [ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-username', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-password', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-sql', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-sql-create', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-i','--input-file', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
@@ -1008,6 +1012,12 @@ begin
 				output_list << OutputMagicTreeXML.new(arg)
 			when '--log-verbose'
 				output_list << OutputVerbose.new(arg)
+			when '--log-sql'
+			 	output_list << OutputSQL.new(arg)
+			when '--log-sql-create'
+				load_plugins
+			 	OutputSQL.new(arg).create_tables
+				exit
 			when '--log-json'
 				if defined?(JSON)
 			 		output_list << OutputJSON.new(arg)
@@ -1174,6 +1184,7 @@ if mongo[:use_mongo_log]
 		exit
 	end
 end
+
 
 ## Headers
 $CUSTOM_HEADERS["User-Agent"]=$USER_AGENT unless $CUSTOM_HEADERS["User-Agent"]
