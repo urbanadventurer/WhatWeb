@@ -1015,7 +1015,7 @@ begin
 			when '--log-sql'
 			 	output_list << OutputSQL.new(arg)
 			when '--log-sql-create'
-				load_plugins
+				load_plugins("+")
 				# delete the file if it already exists
 				begin
 					File.delete(arg)
