@@ -3,6 +3,12 @@ TO-DO
 Good luck understanding these notes for myself :) Some of this stuff has already been done.
 
 
+option to suppress errors
+
+
+
+
+
 plugin folders
 
 [x] plugin selection, using + doesnt use $LOAD_PATH
