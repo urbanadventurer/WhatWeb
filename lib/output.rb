@@ -745,6 +745,8 @@ class OutputSQL < Output
 		@f.puts "CREATE TABLE scans (scan_id int NOT NULL AUTO_INCREMENT, plugin_id INT NOT NULL, target_id INT NOT NULL, version varchar(255), os varchar(255), string varchar(1024), account varchar(1024), model varchar(1024), firmware varchar(1024), module varchar(1024), filepath varchar(1024), certainty varchar(10) ,PRIMARY KEY (scan_id));"
 	
 		# plugins table
+		@f.puts "INSERT INTO plugins (name) VALUES ('Custom-Plugin');"
+
 		Plugin::registered_plugins.each do |n,p|
 			@f.puts "INSERT INTO plugins (name) VALUES (#{ escape_for_sql(n) });"
 		end
