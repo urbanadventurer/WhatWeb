@@ -4,37 +4,80 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Jboss" do
-	author "Louis Nyffenegger"
-	version "0.1"
-	description "JBoss Application Server is the #1 most widely used Java application server on the market. A Java EE certified platform for developing and deploying enterprise Java applications, Web applications, and Portals, JBoss Application Server provides the full range of Java EE 5 features as well as extended enterprise services including clustering, caching, and persistence. - Homepaeg: http://www.jboss.org/jbossas/"
+# Version 0.2 # 2011-08-02 # Brendan Coles <bcoles@gmail.com>
+# Added example urls and X-Powered-By version+JBossWeb detection
+##
+Plugin.define "JBoss" do
+author "Louis Nyffenegger"
+version "0.2"
+description "JBoss Application Server is the #1 most widely used Java application server on the market. A Java EE certified platform for developing and deploying enterprise Java applications, Web applications, and Portals, JBoss Application Server provides the full range of Java EE 5 features as well as extended enterprise services including clustering, caching, and persistence. - Homepaeg: http://www.jboss.org/jbossas/"
 
-	# Dorks #
-	dorks [
-	'intitle:"Welcome to JBoss AS"'
-	]
+# ShodanHQ results as at 2011-08-02 #
+# 26,691 for JBoss
+# 10,169 for JBossWeb
+#     68 for JBossAS
 
-	# Matches #
-	matches [
+# Google results as at 2011-08-02 #
+# 41 for intitle:"Welcome to JBoss AS"
 
-		# Default title from Jboss homepage
-		{	:name=>"Jboss default title",
-			:regexp=>/<title>Welcome to JBoss AS<\/title>/},
-		
-		# Jboss Homepage contains a link to administration console
-		{	:name =>"link to Administration Console",
-			:certainty=>50,
-			:regexp=>/<a href=\"\/admin-console\/\">Administration Console<\/a>/},
+# Dorks #
+dorks [
+'intitle:"Welcome to JBoss AS"'
+]
 
+# Examples #
+examples %w|
+87.98.234.85
+88.198.119.18
+174.78.147.201
+152.26.34.21
+164.100.72.146
+66.9.60.10
+207.238.143.110
+216.162.88.103
+eul0600541.eu.verio.net:8080
+en.maxiaohui.com
+contracttool.com
+fkts-app02.dyndns.org
+|
 
-		# Jboss Homepage contains a link to web console
-		{	:name =>"link to Web Console",
-			:regexp=>/<a href=\"\/web-console\/\">Jboss Web Console<\/a>/},
+# Matches #
+matches [
+
+	# Default title from Jboss homepage
+	{	:name=>"Jboss default title",
+		:regexp=>/<title>Welcome to JBoss AS<\/title>/},
 	
-		# Jboss Homepage contains a link to  JMX console
-		{	:name =>"link to JMX Console",
-			:regexp=>/<a href=\"\/jmx-console\/\">JMX Console<\/a>/}	
-	]
+	# Jboss Homepage contains a link to administration console
+	{	:name =>"link to Administration Console",
+		:certainty=>50,
+		:regexp=>/<a href=\"\/admin-console\/\">Administration Console<\/a>/},
 
+	# Jboss Homepage contains a link to web console
+	{	:name =>"link to Web Console",
+		:regexp=>/<a href=\"\/web-console\/\">Jboss Web Console<\/a>/},
+
+	# Jboss Homepage contains a link to  JMX console
+	{	:name =>"link to JMX Console",
+		:regexp=>/<a href=\"\/jmx-console\/\">JMX Console<\/a>/}	
+]
+
+# Passive #
+def passive
+	m=[]
+
+	# Version Detection # X-Powered-By Header
+	if @meta["x-powered-by"] =~ /JBoss(AS)?-([^\/^\s]+)/
+		m << { :version=>"#{$2}" }
+	end
+
+	# Module Detection # JBossWeb
+	if @meta["x-powered-by"] =~ /(JBossWeb-[^\/^\s^,]+)/
+		m << { :module=>"#{$1}" }
+	end
+
+	# Return passive matches
+	m
+end
 end
 
