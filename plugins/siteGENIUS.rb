@@ -9,8 +9,13 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
 description "siteGENIUS, a custom website builder that lets you create your own website. - Homepage: http://www.sitegenius.com/"
 
-# Google results as at 2011-03-14 #
-# 56 for inurl:"sitegenius/topic.php"
+# Google results as at 2011-08-03 #
+# 67 for inurl:"sitegenius/topic.php?id="
+
+# Dorks #
+dorks [
+'inurl:"sitegenius/topic.php?id="'
+]
 
 # Examples #
 examples %w|
