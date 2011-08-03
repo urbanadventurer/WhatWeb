@@ -4,22 +4,31 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2011-08-04 #
+# Added matches and passive cookie matches
+##
 # Version 0.2 # 2011-01-31 #
 # Updated version detection
 ##
 Plugin.define "Horde-Application-Framework" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-08
-version "0.2"
+version "0.3"
 description "A web application framework. Projects using the framework include webmail, a wiki and groupware. (Mostly PHP) - homepage: http://www.horde.org/"
 
-# Google results as at 2010-09-08 #
-# 13 for "powered by Horde Application Framework"
-# 64 for inurl:util/icon_browser.php?subdir=
+# ShodanHQ results as at 2011-08-04 #
+# 97 for webmail4prod
+# 88 for webmail_version
+
+# Google results as at 2011-08-04 #
+# 82 for "powered by Horde Application Framework"
+# 101 for inurl:util/icon_browser.php?subdir=
+# 49 for intitle:"WebMail 4.0 LOGIN" "E-mail address" +Password
 
 # Dorks #
 dorks [
 '"powered by Horde Application Framework"',
-'inurl:util/icon_browser.php?subdir='
+'inurl:util/icon_browser.php?subdir=',
+'intitle:"WebMail 4.0 LOGIN" "E-mail address" +Password'
 ]
 
 # Examples #
@@ -37,6 +46,22 @@ www.eltimon.com/horde/util/icon_browser.php?subdir=emoticons
 www.sanctamaria-aarschot.be/horde/util/icon_browser.php
 www.infs.de/mails/imp/login.php
 www.infs.de/mails/util/icon_browser.php?subdir=weatherdotcom
+www.webmail.telushosting.com
+msmediaradio.com
+e-liteusa.com
+keystoneink.com
+webmail.centurytelhosting.com
+webmail.ctchosting.com
+webmail.bthosting.ie
+69.49.108.141
+69.49.109.76
+64.29.147.43
+69.156.243.46
+64.29.147.30
+69.49.113.54
+91.136.10.34
+69.49.108.17
+69.49.111.74
 |
 
 # Matches #
@@ -68,10 +93,32 @@ matches [
 # default my account HTML # icon_browser.php
 { :text=>'<html><body bgcolor="#aaaaaa"><a href="icon_browser.php">Application List</a><br /><br /><h2>Icons for My Account</h2>' },
 
+# Version Detection # Title
+{ :version=>/<title>WebMail ([\d\.]+) LOGIN<\/title>/ },
+
+# JavaScript src="/hunter/js/enter_key_trap.js"
+{ :text=>'<script language="JavaScript" type="text/javascript" src="/hunter/js/enter_key_trap.js"></script>' },
+
+# link href="/mail/mailbox.php?mailbox=INBOX"
+{ :text=>'<link href="/mail/mailbox.php?mailbox=INBOX" rel="Top" />' },
+
 # Version Detection # /config/conf.xml XML
 { :version=>/<!-- \$Horde: horde\/config\/conf.xml,v ([\d\.]+) / },
 
 ]
 
+# Passive #
+def passive
+	m=[]
+
+	# webmail_version Cookie
+	m << { :name=>"webmail_version Cookie" } if @meta["set-cookie"] =~ /webmail_version=(magnum|hunter); /
+
+	# webmail4prod Cookie
+	m << { :name=>"webmail4prod Cookie" } if @meta["set-cookie"] =~ /webmail4prod=[a-f\d]{32}; /
+
+	# Return passive matches
+	m
+end
 end
 
