@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+
+#version 0.2 Andrew Horton - added matches[] for devices without a Server: header, removed out of date examples
+
 Plugin.define "Grandstream-Phone" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
-version "0.1"
+version "0.2"
 description "Grandstream Networks is the leading manufacturer of IP voice/video telephony and video surveillance solutions. - Homepage: http://www.grandstream.com/"
 
 # ShodanHQ results as at 2011-03-14 #
@@ -14,17 +17,17 @@ description "Grandstream Networks is the leading manufacturer of IP voice/video 
 
 # Examples #
 examples %w|
-200.152.68.238
 216.54.149.49
 84.28.128.218
 62.165.255.156
-213.91.127.84
-76.24.77.183
-99.238.119.2
-190.9.211.236
 78.32.89.204
-77.244.135.94
+109.73.41.210
 |
+
+matches [
+{:text=>'<title>Grandstream Device Configuration</title>'},
+{:text=>'All Rights Reserved Grandstream Networks, Inc.', :url=>"/"}
+]
 
 # Passive #
 def passive
