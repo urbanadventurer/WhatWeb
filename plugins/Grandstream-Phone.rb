@@ -5,7 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-#version 0.2 Andrew Horton - added matches[] for device protected by passwords, removed out of date examples
+#version 0.2 Andrew Horton - added matches[] for devices without a Server: header, removed out of date examples
 
 Plugin.define "Grandstream-Phone" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
