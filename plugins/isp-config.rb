@@ -8,14 +8,16 @@
 
 # Version 0.2
 # removed :probability
+# Version 0.3
+# make powered by case insensitive, added 2nd example
 
 Plugin.define "ISPConfig" do
 author "Andrew Horton"
-version "0.2"
-description "ISPConfig is a free, opensource hosting control panel"
+version "0.3"
+description "ISPConfig is a free, opensource hosting control panel. Homepage: http://www.ispconfig.org/"
 
 # Examples #
-examples %w| http://118.93.56.121/ |
+examples %w| 118.93.56.121 92.243.80.27 |
 
 # Dorks #
 dorks [
@@ -25,7 +27,7 @@ dorks [
 # Matches #
 matches [
 
-{:text=>'powered by <a HREF="http://www.ispconfig.org">ISPConfig</a>' },
+{:regexp=>/powered by <a HREF="http:\/\/www.ispconfig.org">ISPConfig<\/a>/i },
 {:certainty=>75, :text=>'This IP address is shared. For access to the web site which you look for, enter its address instead of its IP.' }
 
 ]
