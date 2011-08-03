@@ -4,6 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 Andrew Horton - added version detection for Prestige models
+
 # Version 0.4 # 2011-06-04
 # Updated regex
 # Added www-authenticate HTTP header matches
@@ -17,7 +19,7 @@
 ##
 Plugin.define "ZyXEL-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
-version "0.4"
+version "0.5"
 description "This plugin indentifies ZyXEL routers - Homepage: http://us.zyxel.com/"
 
 # Tested on models: P-660H-D1, P-660HW-D1, P-660R-D1, P-662H-D1, P-662HW-D3, P-2602H-D1A, P-2602HW-D1A, P-2802HWL-I1, P660RU2, P660HT2, Prestige 660H61
@@ -95,10 +97,15 @@ matches [
 { :text=>'<frameset rows="75,97%,25" framespacing="0" border="0" frameborder="0">', :model=>"VSG" },
 
 # JavaScript
-{ :certainty=>75, :text=>'loginPassword.value = "ZyXEL ZyWALL Series";' },
+{:text=>'loginPassword.value = "ZyXEL ZyWALL Series";' },
 
 # Vantage Service Gateway # Version Detection # /top.htm
-{ :url=>"/top.htm", :model=>/<td align="right"><font size="3" color="3366CC" face="Arial"><b><i>(VSG-[\d\ V]+)<\/i>&nbsp;<\/b><\/font><\/td><\/tr>/ }
+{ :url=>"/top.htm", :model=>/<td align="right"><font size="3" color="3366CC" face="Arial"><b><i>(VSG-[\d\ V]+)<\/i>&nbsp;<\/b><\/font><\/td><\/tr>/ },
+
+# Prestige
+{:version=>/<td height="40" colspan="4" class="Auth">Prestige ([^<]+)</},
+{:model=>/<td height="40" colspan="4" class="Auth">(Prestige)</}
+
 
 ]
 
