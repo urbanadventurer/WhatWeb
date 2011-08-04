@@ -878,10 +878,10 @@ EXAMPLE USAGE:
 \n"
 
 	suggestions=""
-	suggestions << "WARNING: Without the em-resolve-replace gem performance is significantly degraded.\n" unless Gem.available?('em-resolv-replace')
-	suggestions << "To enable JSON logging install the json gem.\n" unless Gem.available?('json')
-	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless Gem.available?('mongo')
-	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless Gem.available?('rchardet')
+	suggestions << "WARNING: Without the em-resolve-replace gem performance is significantly degraded.\n" unless gem_available?('em-resolv-replace')
+	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
+	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
+	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
 
 	unless suggestions.empty?
 		print "\nOPTIONAL DEPENDENCIES\n--------------------------------------------------------------------------------\n" + suggestions + "\n"
