@@ -48,49 +48,7 @@ require 'open-uri'
 require 'cgi'
 require 'thread'
 require 'iconv'
-
-# load resolv-replace to see whatweb on speed
-begin
-	require 'rubygems' # rubygems is optional
-	if Gem.available?('em-resolv-replace') # this is much faster
-		require 'resolv'
-		require 'resolv-replace' # does this work with ruby 1.9?
-	end
-rescue LoadError
-	# that failed.. no big deal
-end
-
-# load JSON if it's available. Is this Ruby 1.9 JSON safe? who knows?
-begin
-	require 'rubygems' # rubygems is optional
-	if Gem.available?('json') # 
-		require 'json'
-	end
-rescue LoadError
-	# that failed.. no big deal
-end
-
-# load MongoDB if it's available. Is this Ruby 1.9 JSON safe? who knows?
-begin
-	require 'rubygems' # rubygems is optional
-	if Gem.available?('mongo') # 
-		require 'mongo'
-	end
-rescue LoadError
-	# that failed.. no big deal
-end
-
-# load rchardet -- needed for foreign charsets and mongodb
-begin
-	require 'rubygems' # rubygems is optional
-	if Gem.available?('rchardet') # this detects encodings and is cpu heavy
-		require 'rchardet'
-	end
-rescue LoadError
-	# that failed.. no big deal
-end
-
-
+require 'tempfile'
 
 if RUBY_VERSION =~ /^1\.9/
         #require 'digest/md5'
@@ -100,7 +58,38 @@ else
         require 'md5'
 	require 'net/https'
 end
+### gem detection & loading
 
+def gem_available?(gemname)
+  gem_available_new_rubygems?(gemname) or gem_available_old_rubygems?(gemname)
+end
+
+def gem_available_old_rubygems?(gemname)
+  Gem.available?(gemname)
+end
+
+def gem_available_new_rubygems?(gemname)
+  Gem::Specification.methods.include?(:find_all_by_name) and not Gem::Specification.find_all_by_name(gemname).empty?
+ end
+
+
+gems = %w|json mongo rchardet em-resolv-replace|
+
+gems.each do |thisgem|
+	begin
+		require 'rubygems' # rubygems is optional
+		if gem_available?(thisgem) # 
+			unless thisgem == "em-resolv-replace"
+				require thisgem
+			else
+				require 'resolv'
+				require 'resolv-replace'
+			end
+		end
+	rescue LoadError
+		# that failed.. no big deal
+	end
+end
 
 # add the directory of the file currently being executed to the load path
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless
@@ -118,8 +107,6 @@ require 'lib/output.rb'
 require 'lib/colour.rb'
 require 'lib/tld.rb'
 require 'lib/anemone/anemone.rb'
-require 'tempfile'
-
 
 #unless opts.size
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
@@ -279,10 +266,6 @@ def plugin_info(keywords= nil)
 	puts "#{count} plugins found"
 	puts
 end
-
-
-
-
 
 
 
@@ -895,10 +878,10 @@ EXAMPLE USAGE:
 \n"
 
 	suggestions=""
-	suggestions << "WARNING: Without the em-resolve-replace gem performance is significantly degraded.\n" unless Gem.available?('em-resolv-replace')
-	suggestions << "To enable JSON logging install the json gem.\n" unless Gem.available?('json')
-	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless Gem.available?('mongo')
-	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless Gem.available?('rchardet')
+	suggestions << "WARNING: Without the em-resolve-replace gem performance is significantly degraded.\n" unless gem_available?('em-resolv-replace')
+	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
+	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
+	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
 
 	unless suggestions.empty?
 		print "\nOPTIONAL DEPENDENCIES\n--------------------------------------------------------------------------------\n" + suggestions + "\n"

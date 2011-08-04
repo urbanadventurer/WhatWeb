@@ -4,6 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2011-08-04 Andrew Horton - added default meta refresh page
+#
 # Version 0.4 # 2011-04-06 # Brendan Coles <bcoles@gmail.com>
 # Added /cgi-sys/defaultwebpage.cgi and /img-sys/header.jpg aggressive matches
 ##
@@ -15,7 +17,7 @@
 ##
 Plugin.define "cPanel" do
 author "Andrew Horton"
-version "0.4"
+version "0.5"
 description "Site configuration and management software application. Supporting many operating systems while allowing endusers to control every aspect of their webhosting experience. - homepage: http://www.cpanel.net/"
 
 # Dorks #
@@ -33,6 +35,7 @@ mango.catalyst2.com:2082
 www.bent-palestine.com:2082
 cpanel.il-toys.com
 il-kamasutra.com
+114.111.138.239
 |
 
 # Matches #
@@ -46,6 +49,9 @@ matches [
 
 # Welcome Page # Default text
 { :text=>"Apache is working on your cPanel<sup>&reg;</sup> and WHM&#8482; Server" },
+
+# Default meta refresh redirection webpage
+{ :text=>'<html><head><META HTTP-EQUIV="refresh" CONTENT="0;URL=/cgi-sys/defaultwebpage.cgi"></head><body></body></html>'},
 
 # Login Page # Default CSS
 { :regexp=>/<link rel="stylesheet" href="[^>^"]*\/unprotected\/cpanel\/style_optimized\.css" type="text\/css" \/>/ },
