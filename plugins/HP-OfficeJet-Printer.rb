@@ -19,6 +19,10 @@ description "HP Officejet Pro and Officejet printers. Homepage: http://www.hp.co
 # J4680 series,J6400 series,Pro 8000 A809,Pro 8500 A909g,Pro K5400,
 # Pro K550,Pro K850,Pro K5400Pro K8600,Pro L7500,Pro L7600
 
+dorks [
+'intitle:"HP Officejet" inurl:index.htm'
+]
+
 examples %w| 
 146.48.82.209
 131.188.153.243 
