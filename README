@@ -58,7 +58,7 @@ Features:
 	* Control the trade off between speed/stealth and reliability
 	* Plugins include example URLs
 	* Performance tuning. Control how many websites to scan concurrently.
-	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB.
+	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB, SQL.
 	* Recursive web spidering
 	* Proxy support including TOR
 	* Custom HTTP headers
@@ -177,6 +177,8 @@ LOGGING & OUTPUT:
   --log-verbose=FILE	Log verbose output
   --log-xml=FILE	Log XML format
   --log-json=FILE	Log JSON format
+  --log-sql=FILE	Log SQL INSERT statements
+  --log-sql-create=FILE	Create SQL database tables
   --log-json-verbose=FILE Log JSON Verbose format
   --log-magictree=FILE	Log MagicTree XML format
   --log-object=FILE	Log Ruby object inspection format
@@ -216,6 +218,8 @@ The following types of logging are supported:
 	--log-verbose=FILE	Verbose
 	--log-xml=FILE		XML format. XSL stylesheet is provided
 	--log-json=FILE		JSON format
+	--log-sql=FILE		Log SQL INSERT statements
+	--log-sql-create=FILE	Create SQL database tables
 	--log-json-verbose=FILE	JSON verbose format
 	--log-magictree=FILE	MagicTree XML format
 	--log-object=FILE	Ruby object inspection format
@@ -233,13 +237,6 @@ You can output to multiple logs simultaneously by specifying multiple command li
 ================================================================================
 
 Matches are made with:
-        * Text strings (case sensitive)
-        * Regular expressions
-        * Google Hack Database queries (limited set of keywords)
-        * MD5 hashes
-        * URL recognition
-        * HTML tag patterns
-        * Custom ruby code for passive and aggressive operationsMatches are made with:
         * Text strings (case sensitive)
         * Regular expressions
         * Google Hack Database queries (limited set of keywords)
@@ -324,7 +321,7 @@ If aggression is enabled the aggressive plugins will guess more URLs and perform
 With the passive matches we know that smartor.is-root.com/forum/ is running phpBB version 2:
 
 $ ./whatweb smartor.is-root.com/forum/
-http://smartor.is-root.com/forum/ [200] PasswordField[password], HTTPServer[Apache/2.2.15], PoweredBy[phpBB], Apache[2.2.15], IP[88.198.177.36], phpBB[2], PHP[5.2.13], test[Smartors Mods Forums - Reloaded], X-Powered-By[PHP/5.2.13], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Title[Smartors Mods Forums - Reloaded], Country[GERMANY][DE]
+http://smartor.is-root.com/forum/ [200] PasswordField[password], HTTPServer[Apache/2.2.15], PoweredBy[phpBB], Apache[2.2.15], IP[88.198.177.36], phpBB[2], PHP[5.2.13], X-Powered-By[PHP/5.2.13], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Title[Smartors Mods Forums - Reloaded], Country[GERMANY][DE]
 
 
 With the aggressive matches in the phpBB plugin we know that the same website is running phpBB version 2.0.20 or higher:
