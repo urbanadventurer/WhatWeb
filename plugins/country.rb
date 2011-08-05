@@ -61,7 +61,10 @@ def startup
 
 	f = whatweb_folder + "/country-codes.txt"
 	@ccnames={};
-	File.read(f).each {|line| x=line.split(","); @ccnames[x[1]] = x[0]  }
+	File.open(f,"r:UTF-8").read.split.each do |line|
+		x=line.split(",");
+		@ccnames[x[1]] = x[0]
+	end
 end
 
 def passive
