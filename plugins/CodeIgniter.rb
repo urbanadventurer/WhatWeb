@@ -35,10 +35,6 @@ kennedyhahn.com
 www.enerdata.com
 |	
 
-def randstr
- (0..8).map { (('a'..'z').to_a + (0..9).to_a).choice }.join
-end 
-
 # Matches #
 matches [
 {:string=>'404 Signature',:url=>randstr(),:md5=>'e087ab5729efdfa939ba620e4593bd99'},

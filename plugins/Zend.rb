@@ -25,11 +25,6 @@ demo.tomatocms.com
 www.shoretotaloffice.com
 |	
 
-
-def randstr
- (0..8).map { (('a'..'z').to_a + (0..9).to_a).choice }.join
-end 
-
 matches [
 # 2010-10-14
 # About 1,640,000 results (0.24 seconds) 

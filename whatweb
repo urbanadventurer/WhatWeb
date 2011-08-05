@@ -53,7 +53,7 @@ require 'tempfile'
 if RUBY_VERSION =~ /^1\.9/
         require 'digest/md5'
 	print "ERROR: Ruby 1.9.x is not supported\n"
-	exit 1
+	#exit 1
 else
         require 'md5'
 	require 'net/https'
@@ -516,6 +516,15 @@ def certainty_to_words(p)
 			"certain"
 	end
 end
+
+# some plugins want a random string in URLs
+def randstr
+	if RUBY_VERSION =~ /^1\.9/
+		(0..8).map { (('a'..'z').to_a + (0..9).to_a).sample }.join
+	else
+		(0..8).map { (('a'..'z').to_a + (0..9).to_a).choice }.join
+	end
+end 
 
 def match_ghdb(ghdb, body, meta, status, base_uri)
 	# this could be made faster by creating code to eval once for each plugin
