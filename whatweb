@@ -458,7 +458,7 @@ def make_target_list(cmdline_args, inputfile=nil,pluginlist = nil)
 	# read each line as a url, skipping lines that begin with a #
 	if !inputfile.nil? and File.exists?(inputfile)
 		pp "loading input file: #{inputfile}" if $verbose > 2
-		url_list += File.read(inputfile).to_a.each {|line| line.strip! }.delete_if {|line| line =~ /^#.*/ }.each {|line| line.delete!("\n") }
+		url_list += File.read(inputfile).split.each {|line| line.strip! }.delete_if {|line| line =~ /^#.*/ }.each {|line| line.delete!("\n") }
 	end
 
 	# add example urls to url_list if required. plugins must be loaded already
