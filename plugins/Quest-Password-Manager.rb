@@ -41,11 +41,6 @@ https://keystone.roundarch.com/QPM/User/About/
 https://selfhelp.bpglobal.com/QPM/User/Identification/
 |
 
-# Aggressive # Extra URLS #
-extra_urls [
-"/QPM/User/About/index.aspx"
-]
-
 # Matches #
 matches [
 

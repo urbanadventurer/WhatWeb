@@ -9,16 +9,14 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
 version "0.1"
 description "Homepage: http://socialstrata.com/"
 
-# 3 for "Error u is invalid. Powered by: GroupeeTM"
+# Google results as at 2011-04-21 #
 # 60 for inurl:"/eve/personal?x_myspace_page=profile"
+#  3 for "Error u is invalid. Powered by: GroupeeTM"
 
 # Dorks #
 dorks [
 'inurl:"/eve/personal?x_myspace_page=profile"'
 ]
-
-# Extra URLs # Trigger version disclosure
-extra_urls ['/eve/personal?x_myspace_page=profile&u=$GS_USER_OID']
 
 # Examples #
 examples %w|

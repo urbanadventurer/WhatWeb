@@ -34,11 +34,6 @@ dorks [
 'inurl:/mt-check.cgi intitle:"Movable Type System Check [mt-check.cgi]"'
 ]
 
-# Aggressive # Extra URLs #
-extra_urls [
-"mt-check.cgi"
-]
-
 # Examples #
 examples %w|
 www.movabletype.org

@@ -5,8 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 # Version 0.4 # 2011-03-22 #
-# Added extra_urls
-# Removed aggressive section in favor of using passive with extra_urls
+# Removed aggressive section
 ##
 # Version 0.3 #
 # Added aggressive model, firmware and module extraction from /cgi-bin/authLogin.cgi
@@ -102,9 +101,6 @@ https://bahaykubo.info:8443/cgi-bin/
 http://kwlo.webhop.net:8080/cgi-bin/
 http://yaohaiping.net:8080/cgi-bin/
 |
-
-# Aggressive # Extra URLs #
-extra_urls ["/cgi-bin/authLogin.cgi"]
 
 # Matches #
 matches [
