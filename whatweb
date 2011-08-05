@@ -519,11 +519,7 @@ end
 
 # some plugins want a random string in URLs
 def randstr
-	if RUBY_VERSION =~ /^1\.9/
-		(0..8).map { (('a'..'z').to_a + (0..9).to_a).sample }.join
-	else
-		(0..8).map { (('a'..'z').to_a + (0..9).to_a).choice }.join
-	end
+	rand(36**8).to_s(36)
 end 
 
 def match_ghdb(ghdb, body, meta, status, base_uri)
