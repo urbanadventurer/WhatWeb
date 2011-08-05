@@ -51,9 +51,9 @@ require 'iconv'
 require 'tempfile'
 
 if RUBY_VERSION =~ /^1\.9/
-        #require 'digest/md5'
+        require 'digest/md5'
 	print "ERROR: Ruby 1.9.x is not supported\n"
-	exit 1
+	#exit 1
 else
         require 'md5'
 	require 'net/https'
@@ -458,7 +458,7 @@ def make_target_list(cmdline_args, inputfile=nil,pluginlist = nil)
 	# read each line as a url, skipping lines that begin with a #
 	if !inputfile.nil? and File.exists?(inputfile)
 		pp "loading input file: #{inputfile}" if $verbose > 2
-		url_list += File.read(inputfile).to_a.each {|line| line.strip! }.delete_if {|line| line =~ /^#.*/ }.each {|line| line.delete!("\n") }
+		url_list += File.open(inputfile).readlines.each {|line| line.strip! }.delete_if {|line| line =~ /^#.*/ }.each {|line| line.delete!("\n") }
 	end
 
 	# add example urls to url_list if required. plugins must be loaded already
@@ -516,6 +516,15 @@ def certainty_to_words(p)
 			"certain"
 	end
 end
+
+# some plugins want a random string in URLs
+def randstr
+	if RUBY_VERSION =~ /^1\.9/
+		(0..8).map { (('a'..'z').to_a + (0..9).to_a).sample }.join
+	else
+		(0..8).map { (('a'..'z').to_a + (0..9).to_a).choice }.join
+	end
+end 
 
 def match_ghdb(ghdb, body, meta, status, base_uri)
 	# this could be made faster by creating code to eval once for each plugin
