@@ -27,11 +27,6 @@ examples %w|
 147.66.8.23
 |
 
-# Aggressive # Extra URLs #
-extra_urls [
-"/main.htm"
-]
-
 # Matches #
 matches [
 

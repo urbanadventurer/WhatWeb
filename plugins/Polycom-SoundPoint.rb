@@ -18,11 +18,6 @@ description "Polycom SoundPoint VOIP phone - Homepage: http://www.polycom.com/pr
 # Google results as at 2011-06-11 #
 # 4 for "SoundPoint IP Configuration" intitle:"SoundPoint IP Configuration Utility - Registration" ext:htm
 
-# Aggressive # Extra URLS #
-extra_urls [
-"/reg_1.htm"
-]
-
 # Dorks #
 dorks [
 '"SoundPoint IP Configuration" intitle:"SoundPoint IP Configuration Utility - Registration" ext:htm'

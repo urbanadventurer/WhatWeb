@@ -5,8 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 # Version 0.3 # 2011-03-23 #
-# Added extra_urls
-# Removed aggressive section in favor of using passive with extra_urls
+# Removed aggressive section
 ##
 # Version 0.2 #
 # Added aggressive `/robots.txt` retrieval
@@ -21,13 +20,10 @@ description "This plugin identifies robots.txt files and extracts both allowed a
 
 # Examples #
 examples %w|
-morningstarsecurity.com
-itsecuritysolutions.org
-whatweb.net
+morningstarsecurity.com/robots.txt
+itsecuritysolutions.org/robots.txt
+whatweb.net/robots.txt
 |
-
-# Aggressive # Extra URLs #
-extra_urls ["/robots.txt"]
 
 # Passive #
 def passive
