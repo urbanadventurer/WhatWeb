@@ -1,3 +1,4 @@
+# coding: utf-8
 ##
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
