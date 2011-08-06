@@ -53,7 +53,7 @@ require 'tempfile'
 if RUBY_VERSION =~ /^1\.9/
         require 'digest/md5'
 	print "ERROR: Ruby 1.9.x is not supported\n"
-	exit 1
+	#exit 1
 else
         require 'md5'
 	require 'net/https'
@@ -106,7 +106,7 @@ require 'lib/plugins.rb'
 require 'lib/output.rb'
 require 'lib/colour.rb'
 require 'lib/tld.rb'
-require 'lib/anemone/anemone.rb'
+require 'lib/monkeypatch-http.rb'
 
 #unless opts.size
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
@@ -120,9 +120,6 @@ $use_colour="auto"
 $USER_AGENT="WhatWeb/#{$VERSION}"
 $MAX_THREADS=25
 $AGGRESSION=1
-$RECURSIVE=false
-$RECURSIVE_DEPTH=10
-$MAX_LINKS_TO_FOLLOW=250
 $FOLLOW_REDIRECT="always"
 $MAX_REDIRECTS=10
 $USE_PROXY=false
@@ -136,8 +133,6 @@ $URL_PATTERN=nil
 $NO_THREADS=false
 $HTTP_OPEN_TIMEOUT=15
 $HTTP_READ_TIMEOUT=30
-$ANEMONE_SKIP_EXTENSIONS = %w|zip gz tar jpg exe png pdf|
-$ANEMONE_SKIP_REGEX=nil
 $WAIT=nil
 $OUTPUT_ERRORS=nil
 $QUIET=false
@@ -145,6 +140,7 @@ $CUSTOM_HEADERS={}
 $BASIC_AUTH_USER=nil
 $BASIC_AUTH_PASS=nil
 $PLUGIN_TIMES=Hash.new(0)
+
 
 # precompile regular expressions in plugins for performance
 def precompile_regular_expressions
@@ -635,14 +631,13 @@ def open_target(target)
 			http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
 		end
 	
-		
-
 		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) , $CUSTOM_HEADERS)
 
 		if $BASIC_AUTH_USER	
 			req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
 		end
 		res=http.request(req)
+		rawheaders=http.raw
 		
 		headers={}; res.each_header {|x,y| headers[x]=y }
 		headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless headers["set-cookie"].nil?
@@ -679,11 +674,11 @@ def open_target(target)
 		error(target + " ERROR: #{err}")
 		return [0, nil, nil, nil,nil]
 	end
-	[status,uri,ip,body,headers]
+	[status,uri,ip,body,headers,rawheaders]
 end
 
 
-def run_plugins(target,body,headers=nil,status=nil,url=nil,ip="")
+def run_plugins(target,body,headers=nil,raw_headers=nil,status=nil,url=nil,ip="")
 		#pp target, body, headers, status, url
 
 		# need a webpage model for this stuff
@@ -698,7 +693,7 @@ def run_plugins(target,body,headers=nil,status=nil,url=nil,ip="")
 			tagpattern = make_tag_pattern(body)
 		end
 		#########################################
-
+ 
 		# is the target a file or URL?
 		target_is_file=false
 		target_is_url=true if target =~ /^http[s]?:\/\//
@@ -714,15 +709,14 @@ def run_plugins(target,body,headers=nil,status=nil,url=nil,ip="")
 
 				# Target is a URL
 				if target_is_url
-					#plugin.init(ObjectSpace._id2ref(body.object_id),headers,status,url,ip,md5sum,tagpattern)
-					plugin.init(body,headers,status,url,ip,md5sum,tagpattern)
+					plugin.init(body,headers,raw_headers,status,url,ip,md5sum,tagpattern)
 				else
 					if headers.nil?
 						# Target is a local file
-						plugin.init(body,{},0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
+						plugin.init(body,{},"",0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
 					else
 						# Target is a local HTTP packet file
-						plugin.init(body,headers,status,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
+						plugin.init(body,headers,raw_headers,status,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
 					end
 
 				end
@@ -808,15 +802,6 @@ HTTP OPTIONS:
 \t\t\t`http-only', `meta-only', `same-site', `same-domain'
 \t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}
   --max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
-
-SPIDERING:
-  --recursion, -r\tFollow links recursively. Only follow links under the
-\t\t\tpath Default: off
-  --depth, -d\t\tMaximum recursion depth. Default: #{$RECURSIVE_DEPTH}
-  --max-links, -m\tMaximum number of links to follow on one page
-\t\t\tDefault: #{$MAX_LINKS_TO_FOLLOW}
-  --spider-skip-extensions Redefine extensions to skip.
-\t\t\tDefault: #{$ANEMONE_SKIP_EXTENSIONS.join(",")}
 
 PROXY:
   --proxy\t\t<hostname[:port]> Set proxy hostname and port
@@ -936,9 +921,6 @@ opts = GetoptLong.new(
       [ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-a','--aggression', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-t','--max-threads', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-m','--max-links', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-r','--recursive', GetoptLong::NO_ARGUMENT ],
-      [ '-d','--depth', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--follow-redirect', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--max-redirects', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--proxy', GetoptLong::REQUIRED_ARGUMENT ],
@@ -949,7 +931,6 @@ opts = GetoptLong.new(
       [ '--custom-plugin', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--open-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--spider-skip-extensions', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--header','-H', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--user','-u', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
@@ -1069,12 +1050,6 @@ begin
 				$MAX_THREADS=arg.to_i
 			when '-a','--aggression'
 				$AGGRESSION=arg.to_i
-			when '-r','--recursive'
-				$RECURSIVE=true
-			when '-d','--depth'
-				$RECURSIVE_DEPTH=arg.to_i
-			when '-m','--max-links'	    		
-				$MAX_LINKS_TO_FOLLOW=arg.to_i
 			when '--proxy'
 				$USE_PROXY=true
 				$PROXY_HOST = arg.to_s.split(":")[0]
@@ -1104,8 +1079,6 @@ begin
 				$HTTP_OPEN_TIMEOUT=arg.to_i
 			when '--read-timeout'					
 				$HTTP_READ_TIMEOUT=arg.to_i
-			when '--spider-skip-extensions'
-				$ANEMONE_SKIP_EXTENSIONS = arg.split(",")
 			when '--wait'
 				$WAIT = arg.to_i
 			when '-H','--header'
@@ -1199,10 +1172,6 @@ if $targets.size <1
 end
 
 
-# set up ANEMONE skip regex
-# turn an array of extensions into a regexp
-$ANEMONE_SKIP_REGEX=Regexp.union($ANEMONE_SKIP_EXTENSIONS.map{|x| "/\.#{" + x + "}$/"  }.to_s())
-
 # for each target, we try each plugin then print the results
 $semaphore=Mutex.new
 Thread.abort_on_exception = true if $DEBUG
@@ -1211,8 +1180,6 @@ meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+conten
 
 def next_target
 	t=nil
-
-	#pp $targets
 
 	# this semaphore may not be required
 	$semaphore.synchronize do
@@ -1280,55 +1247,7 @@ while thistarget = next_target
 			else
 				target_is_a_file=false
 			end
-		
-			if $RECURSIVE == true and target_is_a_file == false
 
-				begin		
-					ip=IPSocket.getaddress(URI::parse(target).host)
-				rescue StandardError => err		
-					err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-					ip=""
-				end
-
-				Anemone.crawl(target,
-				{"threads"=>1, "user_agent"=>$USER_AGENT, "depth_limit"=>$RECURSIVE_DEPTH}) do |anemone|
-				anemone.skip_links_like $ANEMONE_SKIP_REGEX
-						anemone.focus_crawl { |page| page.links.slice(0..$MAX_LINKS_TO_FOLLOW) }
-						anemone.on_every_page do |page|
-							sleep $WAIT unless $WAIT.nil? # wait if required
-							# convert headers
-							headers=Hash.new
-							unless page.headers.nil?
-								page.headers.each {|k,v| headers[k]=v.to_s }
-							end
-
-							#pp target,page.doc,page.headers,page.code,page.url				
-							unless page.original_doc.nil?
-								doc=page.original_doc
-								status=page.code
-								url=page.url
-
-								results = run_plugins(url.to_s,doc,headers,status,url,ip)
-								# reporting
-								# multiple output plugins simultaneously, some stdout, some files
-
-								output_list.each do |o|
-									begin
-										o.out(url, status, results)
-									rescue
-										#srsly, logging failed
-										error("Error: Logging failed for "+ target)
-									end
-								end
-
-							end
-
-						end
-				end
-		
-			else
-			# Recursive is false
-		
 			# follow redirects
 			no_redirects =false
 			num_redirects = 0
@@ -1376,7 +1295,7 @@ while thistarget = next_target
 				else
 					# not a file, not recursive
 					#status,url,body,headers = open_with_openuri(target)
-					status,url,ip,body,headers = open_target(target)
+					status,url,ip,body,headers,raw_headers = open_target(target)
 					if status == 0 or status.nil?
 						no_redirects=true
 						next
@@ -1384,7 +1303,7 @@ while thistarget = next_target
 				end
 
 				#results = run_plugins(target,ObjectSpace._id2ref(body.object_id),headers,status,url,ip)
-				results = run_plugins(target,body,headers,status,url,ip)
+				results = run_plugins(target,body,headers,raw_headers,status,url,ip)
 
 				# reporting
 				# multiple output plugins simultaneously, some stdout, some files
@@ -1452,7 +1371,6 @@ while thistarget = next_target
 				end
 
 			end # while no_redirects
-			end # if $RECURSIVE
 	
 			end # Thread.new
 

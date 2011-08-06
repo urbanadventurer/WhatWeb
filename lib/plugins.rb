@@ -62,7 +62,7 @@ class Plugin
   	@locked
   end
 
-  def init (body=nil,meta={},status=nil,base_uri=nil, ip=nil, md5sum=nil, tagpattern=nil)
+  def init (body=nil,meta={},raw_headers=nil,status=nil,base_uri=nil, ip=nil, md5sum=nil, tagpattern=nil)
   	@body=body
   	@meta=meta
   	@status=status
@@ -252,7 +252,6 @@ class Plugin
 	# "2.0.x"
 	# "1.81-"
 	# "3.1"
-
 
 	results
   end
