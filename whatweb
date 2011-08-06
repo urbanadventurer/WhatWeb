@@ -103,6 +103,7 @@ if File.symlink?(__FILE__)
   $LOAD_PATH << File.dirname( Pathname.new(__FILE__).realpath )
 end
 
+require 'lib/target.rb'
 require 'lib/plugins.rb'
 require 'lib/output.rb'
 require 'lib/colour.rb'
@@ -145,7 +146,6 @@ $CUSTOM_HEADERS={}
 $BASIC_AUTH_USER=nil
 $BASIC_AUTH_PASS=nil
 $PLUGIN_TIMES=Hash.new(0)
-
 
 
 
@@ -333,81 +333,14 @@ def next_target
 	t
 end
 
-
-
-def open_target(target)
-	# follow 301's
-	begin
-		uri=URI.parse(target)
-		path=uri.path
-		path="/" if uri.path==""
-		query=uri.query
-		
-		if $USE_PROXY == true
-			http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(uri.host,uri.port)
-		else
-			http=Net::HTTP.new(uri.host,uri.port)
-		end
-		
-		# set timeouts
-		http.open_timeout = $HTTP_OPEN_TIMEOUT
-		http.read_timeout = $HTTP_READ_TIMEOUT
-
-		#puts path -- path doesn't include parameters
-		
-		# if it's https://
-		# i wont worry about certificates, verfication, etc
-		if uri.class == URI::HTTPS
-			http.use_ssl = true	
-			http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
-		end
-	
-		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) , $CUSTOM_HEADERS)
-
-		if $BASIC_AUTH_USER	
-			req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
-		end
-		res=http.request(req)
-		rawheaders=http.raw
-		
-		headers={}; res.each_header {|x,y| headers[x]=y }
-		headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless headers["set-cookie"].nil?
-		body=res.body
-		status=res.code.to_i
-		puts uri.host.to_s + path + (query.nil? ? "" : "?" + query ) + " [#{status}]" if  $verbose > 0 
-
-	rescue SocketError => err
-		error(target + " ERROR: Socket error #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue TimeoutError => err
-		error(target + " ERROR: Timed out #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue Errno::ETIMEDOUT	=>err # for ruby 1.8.7 patch level 249
-		error(target + " ERROR: Timed out (ETIMEDOUT) #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue EOFError => err
-		error(target + " ERROR: EOF error #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue StandardError => err		
-		err = "Not HTTP or cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-		error(target + " ERROR: #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue => err
-		error(target + " ERROR: #{err}")
-		return [0, nil, nil, nil,nil]
-	end
-
-
-	begin		
-		ip=IPSocket.getaddress(uri.host)
-	rescue StandardError => err		
-		err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-		error(target + " ERROR: #{err}")
-		return [0, nil, nil, nil,nil]
-	end
-	[status,uri,ip,body,headers,rawheaders]
+# backwards compatible convenience method for plugins to use
+def open_target(url)
+	newt = Target.new(url)
+	newt.open
+	[newt.status,newt.uri,newt.ip,newt.body,newt.headers,newt.raw_headers]
 end
 
+### output
 
 def error(s)
 	if defined?($semaphore)
@@ -431,29 +364,37 @@ def error(s)
 	$semaphore.unlock if defined?($semaphore)
 end
 
-
-
-
-def run_plugins(target,body,headers=nil,raw_headers=nil,status=nil,url=nil,ip="")
-		#pp target, body, headers, status, url
-
-		# need a webpage model for this stuff
-		if body.nil?
-			md5sum=nil
-			tagpattern=nil
-			# Initialize @body variable if the connection is terminated prematurely
-			# This is usually caused by HTTP status codes: 101, 102, 204, 205, 305
-			body=""
+# takes a string and returns an array of lines. used by plugin_info
+def word_wrap(s,width=10)
+	ret=[]
+	line=""
+	s.split.map {|x|
+		word=x
+		if line.size + x.size + 1 <= width
+			line += x + " "
 		else
-			md5sum=Digest::MD5.hexdigest(body) 		
-			tagpattern = make_tag_pattern(body)
-		end
-		#########################################
- 
-		# is the target a file or URL?
-		target_is_file=false
-		target_is_url=true if target =~ /^http[s]?:\/\//
+			if word.size > width
+				ret << line
+				line = ""
+				w=word.clone
+				while w.size > width
+					ret << w[0..(width-1)]
+					w=w[width.to_i..-1]
+				end
+				ret << w unless w.size == 0
+			else
+				ret << line
+				line=x + " "
+			end
+		end		
+ 	}
+	ret << line
+	ret
+end
 
+### core
+
+def run_plugins(target)
 		results=[]
 		$plugins_to_use.each do |name,plugin|
 			begin			
@@ -463,19 +404,7 @@ def run_plugins(target,body,headers=nil,raw_headers=nil,status=nil,url=nil,ip=""
 				end
 				plugin.lock
 
-				# Target is a URL
-				if target_is_url
-					plugin.init(body,headers,raw_headers,status,url,ip,md5sum,tagpattern)
-				else
-					if headers.nil?
-						# Target is a local file
-						plugin.init(body,{},"",0,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
-					else
-						# Target is a local HTTP packet file
-						plugin.init(body,headers,raw_headers,status,URI.parse('http://example.com/' + target),"",md5sum,tagpattern)
-					end
-
-				end
+				plugin.init(target)
 				
 				# eXecute the plugin			
 				#start_time = Time.now
@@ -864,23 +793,18 @@ if Config::CONFIG['host_os'] =~ /mswin|mingw/
 	$use_colour = false
 end
 
-# sanity check # Aggressive modes are not compatable with recursive mode
-if $AGGRESSION >= 3 and $RECURSIVE
-	error("Aggressive levels 3 or higher are not compatible with recursive spidering.")
-	exit 1
-end
-
-
 ### PLUGINS
-plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection  
+plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection
 $plugins_to_use = PluginSupport.load_plugins(plugin_selection ) # load all the plugins
 
-# are the no plugins?
+# sanity check # no plugins?
 if $plugins_to_use.size == 0
 	error "No plugins selected, exiting."
 	exit 1
 end
-PluginSupport.precompile_regular_expressions # optimise plugins
+
+# optimise plugins
+PluginSupport.precompile_regular_expressions 
 
 
 ### OUTPUT
@@ -888,6 +812,7 @@ output_list << OutputBrief.new unless $QUIET # by default output brief
 output_list << OutputObject.new() if $verbose > 1 # full output if -vv
 output_list << OutputVerbose.new() if $verbose > 0 # full output if -v
 
+## output dependencies
 if mongo[:use_mongo_log]
 	if $plugins_to_use.map { |a,b| a }.include?("Charset")
 		output_list << OutputMongo.new(mongo) 
@@ -907,7 +832,6 @@ $CUSTOM_HEADERS.delete_if {|k,v| v=="" }
 # clean up urls, add example urls if needed
 $targets=make_target_list(ARGV, input_file, $plugins_to_use)
 $recent_targets=[]
-pp "Targets: " ,$targets if $verbose>1
 
 # fail & show usage if no targets.
 if $targets.size <1
@@ -916,171 +840,84 @@ if $targets.size <1
 	exit 1
 end
 
-
-# for each target, we try each plugin then print the results
 $semaphore=Mutex.new
 Thread.abort_on_exception = true if $DEBUG
-meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
-
-
 
 while thistarget = next_target
 		Thread.new do
 			# if u swap around the following lines the target gets confused. idk why.
-			target = thistarget # we set the target within the thread
-			puts Thread.current.to_s + " started for " + target if $verbose>1
-
-			sleep $WAIT unless $WAIT.nil? # wait
-			# get the webpage	
-			# get the file/webpage, and return statuscode, base url, html body, html headers
-
-			# if target is a file
-			if File.exists?(target)
-				target_is_a_file=true
-				if File.directory?(target)
-					error "Error: #{target} is a directory"
-					next
-				end
-				if File.readable?(target) == false
-					error "Error: You do not have permission to view #{target}"
-					next
-				end
-			else
-				target_is_a_file=false
+			
+			begin
+				target = Target.new(thistarget) # we set the target within the thread
+			rescue => err
+				error(err)
+				next
 			end
 
+			puts Thread.current.to_s + " started for " + target.to_s if $verbose>1
+			sleep $WAIT unless $WAIT.nil? # wait
+		
 			# follow redirects
 			no_redirects =false
 			num_redirects = 0
 			while no_redirects == false do
 				# if we redirect 10 times we give up
 				if num_redirects == $MAX_REDIRECTS
-					error(target + " ERROR: Too many redirects")
+					error(target.to_s + " ERROR: Too many redirects")
 					no_redirects=true
 					next
 				end
-		
-				# either not recursive, or a file
-				if target_is_a_file == true
-
-					# target is a file
-					doc=open(target)
-					body=doc.read
-					no_redirects=true
-
-					# target is a http packet file
-					if body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
-
-						# extract http header
-						headers=Hash.new
-						pageheaders = body.to_s.split(/\r\n\r\n/).first.to_s.split(/\r\n/)
-						status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /)
-						cookies=[]
-						for k in 1...pageheaders.length
-							section=pageheaders[k].split(/:/).first.to_s.downcase
-							if section =~ /^set-cookie$/i
-								cookies << pageheaders[k].scan(/:[\s]*(.+)$/).to_s
-							else
-								headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).to_s
-							end
-						end
-						headers["set-cookie"] = cookies.join("\n") unless cookies.nil? or cookies.empty?
-
-						# extract html source
-						if body =~ /^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m
-							body = body.scan(/^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m).to_s
-						else
-							body = ""
-						end
-					end
-				else
-					# not a file, not recursive
-					#status,url,body,headers = open_with_openuri(target)
-					status,url,ip,body,headers,raw_headers = open_target(target)
-					if status == 0 or status.nil?
-						no_redirects=true
-						next
-					end
+				
+				begin
+					target.open
+				rescue
+					error(err)
+					next
 				end
 
-				#results = run_plugins(target,ObjectSpace._id2ref(body.object_id),headers,status,url,ip)
-				results = run_plugins(target,body,headers,raw_headers,status,url,ip)
+				no_redirects=true if target.is_file?
+				if target.is_url? and target.status.nil?
+					# assume all HTTP sites return a status
+					no_redirects=true
+					next
+				end
+
+				results = run_plugins(target)
 
 				# reporting
 				# multiple output plugins simultaneously, some stdout, some files
-
 				output_list.each do |o|
 					begin
-						o.out(target, status, results)
+						o.out(target.to_s, target.status, results)
 					rescue
 						#srsly, logging failed
-						error("Error: Logging failed for "+ target)
+						error("Error: Logging failed for "+ target.to_s)
 					end
 				end
 
 				# REDIRECTION
-				begin
-					newtarget_m=nil
-					newtarget_h=nil
-					newtarget=nil			
-
-					if meta_refresh_regex =~ body
-						metarefresh=body.scan(meta_refresh_regex).first.to_s
-						newtarget_m=URI.join(target,metarefresh).to_s # this works for relative and absolute
-					end
-
-					unless status.nil? or headers.nil?
-						newtarget_h=URI.join(target,headers["location"]).to_s if (300..399) === status and headers["location"]
-					end
-					# if both meta refresh location and HTTP location are set, then the HTTP location overrides
-
-					if newtarget_m or newtarget_h
-						case $FOLLOW_REDIRECT
-						when "never"
-							no_redirects=true
-						when "http-only"
-							newtarget = newtarget_h
-						when "meta-only"
-							newtarget = newtarget_m
-						when "same-site"
-							newtarget = (newtarget_h or newtarget_m) if URI.parse((newtarget_h or newtarget_m)).host == URI.parse(target).host # defaults to _h if both are present
-						when "same-domain"
-							newtarget = (newtarget_h or newtarget_m) if TLD.same_domain?(
-								URI.parse(target).host, URI.parse((newtarget_h or newtarget_m)).host)
-						when "always"
-							newtarget = (newtarget_h or newtarget_m)
-						else
-							error("Error: Invalid REDIRECT mode")
-						end
-					end
-
-					# if we found a new target to following, then set it and increment our redirect counter
-					if newtarget
-						unless newtarget == target
+				unless no_redirects
+					begin
+						if newtarget = target.get_redirection_target		
 							num_redirects+=1 
-							target=newtarget
+							target=Target.new(newtarget)
 						else
-							no_redirects=true
+							no_redirects=true 
 						end
-					else
-						# no redirects is set to true because we've failed to set a redirect
-						no_redirects=true 
+					rescue => err
+						error("Redirection broken: #{err}")
+						no_redirects=true
 					end
-				rescue => err
-					error("Redirection broken: #{err}")
-					no_redirects=true
 				end
-
 			end # while no_redirects
 	
-			end # Thread.new
+		end # Thread.new
 
-			while Thread.list.size>($MAX_THREADS+1)
-				puts "sleeping" if $verbose>1
-				sleep 0.5
-			end
+	while Thread.list.size>($MAX_THREADS+1)
+		puts "sleeping" if $verbose>1
+		sleep 0.5
+	end
 end # targets.each
-
 
 # close output logs
 output_list.each {|o| o.close }

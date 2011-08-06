@@ -70,7 +70,7 @@ end
 def passive
 m=[]
 
-  if @rfile
+  if @rfile and @ip
 	  @rfile.seek(0,IO::SEEK_END)
 	  record_max=@rfile.pos/10-1
 
