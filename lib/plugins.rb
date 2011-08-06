@@ -70,6 +70,7 @@ class Plugin
 	@md5sum=target.md5sum
 	@tagpattern=target.tag_pattern
 	@ip=target.ip
+	@raw_response = target.raw_response
   end
 
 # execute plugin

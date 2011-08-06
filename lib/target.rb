@@ -74,6 +74,11 @@ class Target
 		else
 			@md5sum=Digest::MD5.hexdigest(@body)
 			@tag_pattern = make_tag_pattern(@body)
+			if @raw_headers
+				@raw_response = @raw_headers + @body
+			else
+				@raw_response = @body
+			end
 		end
 	end
 
@@ -87,6 +92,7 @@ class Target
 			# extract http header
 			@headers=Hash.new	
 			pageheaders = body.to_s.split(/\r\n\r\n/).first.to_s.split(/\r\n/)
+			@raw_headers = pageheaders.join("\n") + "\r\n\r\n"
 			@status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /).flatten.first.to_i
 			@cookies=[]
 			for k in 1...pageheaders.length
@@ -131,7 +137,7 @@ class Target
 				req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
 			end
 			res=http.request(req)
-			@raw_headers=http.raw
+			@raw_headers=http.raw.join("\n")
 		
 			@headers={}; res.each_header {|x,y| @headers[x]=y }
 			@headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless @headers["set-cookie"].nil?
