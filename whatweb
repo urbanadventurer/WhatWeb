@@ -49,6 +49,7 @@ require 'cgi'
 require 'thread'
 require 'iconv'
 require 'tempfile'
+require 'rbconfig'  # detect environment, e.g. windows or linux
 
 if RUBY_VERSION =~ /^1\.9/
         require 'digest/md5'
@@ -1114,10 +1115,9 @@ rescue StandardError, GetoptLong::Error => err
 end
 
 # sanity check # Disable colours in Windows environments
-require 'rbconfig'
-if Config::CONFIG['host_os'] =~ /mswin|mingw/
-	$use_colour = false
-end
+#if Config::CONFIG['host_os'] =~ /mswin|mingw/
+#	$use_colour = false
+#end
 
 # sanity check # Aggressive modes are not compatable with recursive mode
 if $AGGRESSION >= 3 and $RECURSIVE
