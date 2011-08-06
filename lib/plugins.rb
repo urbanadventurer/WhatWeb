@@ -62,7 +62,7 @@ class Plugin
   	@locked
   end
 
-  def init (body=nil,meta={},status=nil,base_uri=nil, ip=nil, md5sum=nil, tagpattern=nil)
+  def init (body=nil,meta={},raw_headers=nil,status=nil,base_uri=nil, ip=nil, md5sum=nil, tagpattern=nil)
   	@body=body
   	@meta=meta
   	@status=status
@@ -209,17 +209,7 @@ class Plugin
 				results +=r					
 			end
 		end
-#=end
-		
-		# if the plugin has extra URLs then use them if aggressive		
-		# we're obviously in the business of guessing URLs now
 
-		unless @extra_urls.nil?	or @extra_urls.empty?	
-			@extra_urls.map do |x|			
-				target = URI.join(@base_uri.to_s,x).to_s
-				Thread.main["targets"] << target
-			end
-		end
 	end
 	
 	# clean up results
@@ -253,12 +243,11 @@ class Plugin
 	# "1.81-"
 	# "3.1"
 
-
 	results
   end
 
   extend PluginSugar
-  def_field :author, :version, :examples, :description, :matches, :cve, :extra_urls, :dorks
+  def_field :author, :version, :examples, :description, :matches, :cve, :dorks
 #, :category
 
 end

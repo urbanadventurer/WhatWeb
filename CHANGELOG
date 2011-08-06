@@ -8,6 +8,9 @@ Version 0.4.8-dev Unreleased
 * Added ./addons/gggooglescan
 * Updated whatweb.xsl
 * Fixed bug causing Mongo DB logging to fail
+* Increased Ruby 1.9 support (still not supported)
+* Removed the spidering feature and dependence on the customised and unsupported Anemone gem
+* Added raw header support by monkey patching the net/http library
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
