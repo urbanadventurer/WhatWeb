@@ -1,18 +1,16 @@
 class Target
-	attr_accessor :target
+	attr_reader :target
+	attr_reader :uri, :status, :ip, :body, :headers, :raw_headers, :raw_response
+	attr_reader :cookies
+	attr_reader :md5sum
+	attr_reader :tag_pattern
+	attr_reader :is_url, :is_file
 
-	attr_accessor :url, :status, :ip, :body, :headers, :raw_headers, :raw_response
+	@@meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
 
-	attr_accessor :cookiejar
-
-	attr_accessor :md5sum
-	attr_accessor :tag_pattern
-
-	attr_accessor :is_url, :is_file
-	# add persistent cookies
 
 	def inspect
-		"#{target} " + [@uri,@status,@ip,@body,@headers,@raw_headers,@raw_response,@cookie_jar,@md5sum,@tag_pattern,@is_url,@is_file].join(",")
+		"#{target} " + [@uri,@status,@ip,@body,@headers,@raw_headers,@raw_response,@cookies,@md5sum,@tag_pattern,@is_url,@is_file].join(",")
 	end
 
 	def to_s
@@ -47,6 +45,14 @@ class Target
 		else
 			@is_file=false
 		end
+
+		if self.is_url?
+			@uri=URI.parse(@target)
+
+			# is this taking control away from the user?
+			# [400] http://www.alexa.com  [200] http://www.alexa.com/
+			@uri.path = "/" if @uri.path.empty?
+		end
 	end
 
 	def open
@@ -77,7 +83,7 @@ class Target
 			# extract http header
 			@headers=Hash.new
 			pageheaders = body.to_s.split(/\r\n\r\n/).first.to_s.split(/\r\n/)
-			@status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /)
+			@status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /).flatten.first.to_i
 			@cookies=[]
 			for k in 1...pageheaders.length
 				section=pageheaders[k].split(/:/).first.to_s.downcase
@@ -87,19 +93,116 @@ class Target
 					@headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).to_s
 				end
 			end
-			@headers["set-cookie"] = cookies.join("\n") unless cookies.nil? or cookies.empty?
+			@headers["set-cookie"] = @cookies.join("\n") unless @cookies.nil? or @cookies.empty?
 
 			# extract html source
 			if @body =~ /^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m
 				@body = @body.scan(/^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m).to_s
-			else
-				@body = ""
 			end
 		end
 	end
 
 	def open_url
-		@status,@url,@ip,@body,@headers,@raw_headers = open_target(@target.to_s)
+		begin
+			if $USE_PROXY == true
+				http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(uri.host,uri.port)
+			else
+				http=Net::HTTP.new(@uri.host,@uri.port)
+			end
+		
+			# set timeouts
+			http.open_timeout = $HTTP_OPEN_TIMEOUT
+			http.read_timeout = $HTTP_READ_TIMEOUT
+
+			# if it's https://
+			# i wont worry about certificates, verfication, etc
+			if @uri.class == URI::HTTPS
+				http.use_ssl = true	
+				http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
+			end
+	
+			req=Net::HTTP::Get.new(@uri.to_s, $CUSTOM_HEADERS)
+
+			if $BASIC_AUTH_USER	
+				req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
+			end
+			res=http.request(req)
+			@raw_headers=http.raw
+		
+			@headers={}; res.each_header {|x,y| @headers[x]=y }
+			@headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless @headers["set-cookie"].nil?
+			@body=res.body
+			@status=res.code.to_i
+			puts @uri.to_s + " [#{status}]" if  $verbose > 0 
+
+		rescue SocketError => err
+			error(@target + " ERROR: Socket error #{err}")
+			return
+		rescue TimeoutError => err
+			error(@target + " ERROR: Timed out #{err}")
+			return
+		rescue Errno::ETIMEDOUT	=>err # for ruby 1.8.7 patch level 249
+			error(@target + " ERROR: Timed out (ETIMEDOUT) #{err}")
+			return
+		rescue EOFError => err
+			error(@target + " ERROR: EOF error #{err}")
+			return
+		rescue StandardError => err		
+			err = "Not HTTP or cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
+			error(@target + " ERROR: #{err}")
+			return
+		rescue => err
+			error(@target + " ERROR: #{err}")
+			return
+		end
+
+		begin
+			@ip=IPSocket.getaddress(@uri.host)
+		rescue StandardError => err		
+			err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
+			error(@target + " ERROR: #{err}")
+			return
+		end
 	end
+
+	def get_redirection_target
+		newtarget_m=nil
+		newtarget_h=nil
+		newtarget=nil			
+
+		if @@meta_refresh_regex =~ @body
+			metarefresh=@body.scan(@@meta_refresh_regex).first.to_s
+			newtarget_m=URI.join(@target,metarefresh).to_s # this works for relative and absolute
+		end
+
+		unless @status.nil? or @headers.nil?
+			newtarget_h=URI.join(@target,@headers["location"]).to_s if (300..399) === @status and @headers["location"]
+		end
+
+		# if both meta refresh location and HTTP location are set, then the HTTP location overrides
+		if newtarget_m or newtarget_h
+			case $FOLLOW_REDIRECT
+			when "never"
+				no_redirects=true # this never gets back to main loop but no prob
+			when "http-only"
+				newtarget = newtarget_h
+			when "meta-only"
+				newtarget = newtarget_m
+			when "same-site"
+				newtarget = (newtarget_h or newtarget_m) if URI.parse((newtarget_h or newtarget_m)).host == @uri.host # defaults to _h if both are present
+			when "same-domain"
+				newtarget = (newtarget_h or newtarget_m) if TLD.same_domain?(
+					@uri.host, URI.parse((newtarget_h or newtarget_m)).host)
+			when "always"
+				newtarget = (newtarget_h or newtarget_m)
+			else
+				error("Error: Invalid REDIRECT mode")
+			end
+		end
+		newtarget=nil if newtarget == @uri.to_s # circular redirection not allowed
+
+		newtarget
+	end
+
 end
 

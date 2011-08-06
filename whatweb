@@ -147,7 +147,6 @@ $BASIC_AUTH_USER=nil
 $BASIC_AUTH_PASS=nil
 $PLUGIN_TIMES=Hash.new(0)
 
-meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
 
 
 ### matching
@@ -334,79 +333,12 @@ def next_target
 	t
 end
 
-def open_target(target)
-	# follow 301's
-	begin
-		uri=URI.parse(target)
-		path=uri.path
-		path="/" if uri.path==""
-		query=uri.query
-		
-		if $USE_PROXY == true
-			http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(uri.host,uri.port)
-		else
-			http=Net::HTTP.new(uri.host,uri.port)
-		end
-		
-		# set timeouts
-		http.open_timeout = $HTTP_OPEN_TIMEOUT
-		http.read_timeout = $HTTP_READ_TIMEOUT
-
-		#puts path -- path doesn't include parameters
-		
-		# if it's https://
-		# i wont worry about certificates, verfication, etc
-		if uri.class == URI::HTTPS
-			http.use_ssl = true	
-			http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
-		end
-	
-		req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) , $CUSTOM_HEADERS)
-
-		if $BASIC_AUTH_USER	
-			req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
-		end
-		res=http.request(req)
-		rawheaders=http.raw
-		
-		headers={}; res.each_header {|x,y| headers[x]=y }
-		headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless headers["set-cookie"].nil?
-		body=res.body
-		status=res.code.to_i
-		puts uri.host.to_s + path + (query.nil? ? "" : "?" + query ) + " [#{status}]" if  $verbose > 0 
-
-	rescue SocketError => err
-		error(target + " ERROR: Socket error #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue TimeoutError => err
-		error(target + " ERROR: Timed out #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue Errno::ETIMEDOUT	=>err # for ruby 1.8.7 patch level 249
-		error(target + " ERROR: Timed out (ETIMEDOUT) #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue EOFError => err
-		error(target + " ERROR: EOF error #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue StandardError => err		
-		err = "Not HTTP or cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-		error(target + " ERROR: #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue => err
-		error(target + " ERROR: #{err}")
-		return [0, nil, nil, nil,nil]
-	end
-
-
-	begin		
-		ip=IPSocket.getaddress(uri.host)
-	rescue StandardError => err		
-		err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-		error(target + " ERROR: #{err}")
-		return [0, nil, nil, nil,nil]
-	end
-	[status,uri,ip,body,headers,rawheaders]
+# backwards compatible convenience method for plugins to use
+def open_target(url)
+	newt = Target.new(url)
+	newt.open
+	[newt.status,newt.uri,newt.ip,newt.body,newt.headers,newt.raw_headers]
 end
-
 
 ### output
 
@@ -447,7 +379,7 @@ def run_plugins(target)
 
 				# Target is a URL
 				if target.is_url?
-					plugin.init(target.body,target.headers,target.raw_headers,target.status,target.url,target.ip,target.md5sum,target.tag_pattern)
+					plugin.init(target.body,target.headers,target.raw_headers,target.status,target.uri,target.ip,target.md5sum,target.tag_pattern)
 				else
 					if target.headers.nil?
 						# Target is a local file
@@ -919,8 +851,7 @@ while thistarget = next_target
 					no_redirects=true
 					next
 				end
-				no_redirects=true if target.is_file?
-
+				
 				begin
 					target.open
 				rescue
@@ -928,9 +859,7 @@ while thistarget = next_target
 					next
 				end
 
-				body=target.body; headers=target.headers; raw_headers=target.raw_headers;
-				status=target.status; url=target.url; ip=target.ip
-		
+				no_redirects=true if target.is_file?
 				if target.is_url? and (target.status == 0 or target.status.nil?)
 					no_redirects=true
 					next
@@ -942,66 +871,28 @@ while thistarget = next_target
 				# multiple output plugins simultaneously, some stdout, some files
 				output_list.each do |o|
 					begin
-						o.out(target.to_s, status, results)
+						o.out(target.to_s, target.status, results)
 					rescue
 						#srsly, logging failed
 						error("Error: Logging failed for "+ target.to_s)
 					end
 				end
 
-				# REDIRECTION
-				begin
-					newtarget_m=nil
-					newtarget_h=nil
-					newtarget=nil			
-
-					if meta_refresh_regex =~ body
-						metarefresh=body.scan(meta_refresh_regex).first.to_s
-						newtarget_m=URI.join(target.to_s,metarefresh).to_s # this works for relative and absolute
-					end
-
-					unless status.nil? or headers.nil?
-						newtarget_h=URI.join(target.to_s,headers["location"]).to_s if (300..399) === status and headers["location"]
-					end
-					# if both meta refresh location and HTTP location are set, then the HTTP location overrides
-
-					if newtarget_m or newtarget_h
-						case $FOLLOW_REDIRECT
-						when "never"
-							no_redirects=true
-						when "http-only"
-							newtarget = newtarget_h
-						when "meta-only"
-							newtarget = newtarget_m
-						when "same-site"
-							newtarget = (newtarget_h or newtarget_m) if URI.parse((newtarget_h or newtarget_m)).host == URI.parse(target).host # defaults to _h if both are present
-						when "same-domain"
-							newtarget = (newtarget_h or newtarget_m) if TLD.same_domain?(
-								URI.parse(target.to_s).host, URI.parse((newtarget_h or newtarget_m)).host)
-						when "always"
-							newtarget = (newtarget_h or newtarget_m)
-						else
-							error("Error: Invalid REDIRECT mode")
-						end
-					end
-
-					# if we found a new target to following, then set it and increment our redirect counter
-					if newtarget
-						unless newtarget == target.to_s
+				unless no_redirects
+					# REDIRECTION
+					begin
+						if newtarget = target.get_redirection_target
+						# we found a new target to follow, then set it and increment our redirect counter
 							num_redirects+=1 
 							target=Target.new(newtarget)
 						else
-							no_redirects=true
+							no_redirects=true 
 						end
-					else
-						# no redirects is set to true because we've failed to set a redirect
-						no_redirects=true 
+					rescue => err
+						error("Redirection broken: #{err}")
+						no_redirects=true
 					end
-				rescue => err
-					error("Redirection broken: #{err}")
-					no_redirects=true
 				end
-
 			end # while no_redirects
 	
 			end # Thread.new
@@ -1011,7 +902,6 @@ while thistarget = next_target
 				sleep 0.5
 			end
 end # targets.each
-
 
 # close output logs
 output_list.each {|o| o.close }
