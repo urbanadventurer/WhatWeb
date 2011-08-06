@@ -36,9 +36,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
-
-# encoding: utf-8
 # coding: utf-8
+
 
 #require 'profile' # for debugging
 require 'getoptlong'
@@ -51,6 +50,7 @@ require 'iconv'
 require 'tempfile'
 require 'rbconfig'  # detect environment, e.g. windows or linux
 
+### ruby 1.9 changes
 if RUBY_VERSION =~ /^1\.9/
         require 'digest/md5'
 	print "ERROR: Ruby 1.9.x is not supported\n"
@@ -59,8 +59,8 @@ else
         require 'md5'
 	require 'net/https'
 end
-### gem detection & loading
 
+### gem detection & loading
 def gem_available?(gemname)
   gem_available_new_rubygems?(gemname) or gem_available_old_rubygems?(gemname)
 end
@@ -72,7 +72,6 @@ end
 def gem_available_new_rubygems?(gemname)
   Gem::Specification.methods.include?(:find_all_by_name) and not Gem::Specification.find_all_by_name(gemname).empty?
  end
-
 
 gems = %w|json mongo rchardet em-resolv-replace|
 
@@ -92,6 +91,7 @@ gems.each do |thisgem|
 	end
 end
 
+## set up load paths - must be before loading lib/ files
 # add the directory of the file currently being executed to the load path
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless
     $:.include?(File.dirname(__FILE__)) || $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
@@ -109,13 +109,17 @@ require 'lib/colour.rb'
 require 'lib/tld.rb'
 require 'lib/monkeypatch-http.rb'
 
-#unless opts.size
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
-$DEBUG = false # raise exceptions in plugins, etc
+
+
+
+
+# nothing says pro-developer like using global variables
 $VERSION="0.4.8"
-$verbose=0
+$DEBUG = false # raise exceptions in plugins, etc
+$verbose=0 # $VERBOSE is reserved in ruby
 $USE_EXAMPLE_URLS=false
 $use_colour="auto"
 $USER_AGENT="WhatWeb/#{$VERSION}"
@@ -143,369 +147,22 @@ $BASIC_AUTH_PASS=nil
 $PLUGIN_TIMES=Hash.new(0)
 
 
-# precompile regular expressions in plugins for performance
-def precompile_regular_expressions
-	Plugin.registered_plugins.each do |thisplugin|
-		matches=thisplugin[1].matches
-		unless matches.nil?
-			matches.each do |thismatch|
-				unless thismatch[:regexp].nil?
-					#pp thismatch
-					thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
-				end
-
-				[:version, :os, :string, :account, :model, :firmware, :module, :filepath].each do |label|
-					if !thismatch[label].nil? and thismatch[label].class==Regexp
-						thismatch[:regexp_compiled]=Regexp.new(thismatch[label])
-						#pp thismatch
-					end
-				end
-
-				unless thismatch[:text].nil?
-					thismatch[:regexp_compiled]=Regexp.new(Regexp.escape(thismatch[:text]))
-				end
-			end
-		end		
-	end
-end
-
-def plugin_list
-	puts "WhatWeb Plugin List"
-	puts
-	puts ["Plugin Name".ljust(25),"Description"].join(" ")
-	puts "-" * 79
-	Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |n,p|
-		puts [n.ljust(25), (p.description.delete("\n\r") unless p.description.nil?)].join(" ")[0..78]
-	end
-	puts "-" * 30
-	puts "#{Plugin.registered_plugins.size} Plugins Loaded"
-	puts
-end
-
-# takes a string and returns an array of lines. used by plugin_info
-def word_wrap(s,width=10)
-	ret=[]
-	line=""
-	s.split.map {|x|
-		word=x
-		if line.size + x.size + 1 <= width
-			line += x + " "
-		else
-			if word.size > width
-				ret << line
-				line = ""
-				w=word.clone
-				while w.size > width
-					ret << w[0..(width-1)]
-					w=w[width.to_i..-1]
-				end
-				ret << w unless w.size == 0
-			else
-				ret << line
-				line=x + " "
-			end
-		end		
- 	}
-	ret << line
-	ret
-end
-
-# Show Google Dorks
-def plugin_dorks(plugin_name)
-	dorks=[]
-
-	# Loop through plugins
-	Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.each do |n,p|
-		if n.downcase == plugin_name.downcase
-			pp "Google Dorks for #{n}:" if $verbose > 2
-			dorks << p.dorks unless p.dorks.nil?
-		end
-	end
-
-	# Show results if present, else show error message
-	dorks.size > 0 ? puts(dorks) : error("Google dork lookup failed: Invalid plugin name or no dorks available")
-
-end
-
-# Show plugin information
-def plugin_info(keywords= nil)
-	puts "WhatWeb Plugin Information"
-	puts "Searching for " + keywords.join(",") unless keywords.nil?
-	puts "-" * 80
-
-	puts ["Plugin Name".ljust(25),"Details"].join(" ")
-	count=0
-	Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |name,plugin|
-		# not include examples	
-		dump=[name,plugin.author,plugin.description,plugin.matches].flatten.compact.to_a.join.downcase
-		if keywords.empty? or keywords.map {|k| dump.include?(k.downcase) }.compact.include?(true)
-			puts name
-			puts "\tAuthor:".ljust(22) + plugin.author
-			puts "\tVersion:".ljust(22) +plugin.version
-#			puts "\tCategory:".ljust(22) +plugin.category.to_s unless plugin.category.nil?
-			puts "\tExamples:".ljust(22) +plugin.examples.size.to_s if plugin.examples
-			puts "\tMatches:".ljust(22) +plugin.matches.size.to_s if plugin.matches
-			puts "\tDorks:".ljust(22) +plugin.dorks.size.to_s if plugin.dorks
-			puts "\tPassive function: ".ljust(22) + (defined?(plugin.passive) ? "Yes" : "No")
-			puts "\tAggressive function: ".ljust(22) + (defined?(plugin.aggressive) ? "Yes" : "No")
-			puts "\tVersion detection: ".ljust(22) + (plugin.version_detection? ? "Yes" : "No")
-		
-			if plugin.description
-				puts "\tDescription: "
-				word_wrap(plugin.description,72).each {|line| puts "\t" + line }
-			end
-
-			puts
-			puts "-" * 80
-			count+=1
-		end
-	end
-	puts "#{count} plugins found"
-	puts
-end
 
 
+### matching
 
-# This is used in plugin selection by load_plugins
-class PluginChoice
-	attr_accessor :modifier, :type, :name
+# fuzzy matching ftw
+def make_tag_pattern(b)
+	# remove stuff between script and /script
+	# don't bother with  !--, --> or noscript and /noscript
+	inscript=false;
 
-	def <=>(s)
-		x = -1 if self.modifier.nil?
-		x = 0 if self.modifier=="+"
-		x = 1 if self.modifier=="-"
-		x
-	end
-
-	def fill(s)
-		self.modifier = nil
-		self.modifier=s[0].chr if ["+","-"].include?(s[0].chr)
-
-		if self.modifier
-			self.name=s[1..-1]
-		else
-			self.name=s
-		end
-
-		# figure out and store the filename or pluginname
-		if File.exists?(File.expand_path(self.name))
-			self.type = "file"
-			self.name = File.expand_path(self.name)
-		else
-			self.name.downcase!
-			self.type = "plugin"
-		end
-	end
-end
-
-# this is used by load_plugins
-def load_plugin(f)
-	begin
-		load f
-	rescue
-		error("Error: Failed to load #{f}")
-	rescue SyntaxError
-		error("Error: Failed to load #{f}: syntax error")
-	rescue SystemExit, Interrupt
-		error("ERROR: Failed to load plugins: Interrupted")
-		if $DEBUG==true or $verbose > 1
-			raise
-		end
-		exit 1
-	end
-end
-
-
-=begin
-for adding/removing sets of plugins.
-
---plugins +plugins-disabled,-foobar (+ adds to the full set, -removes from the fullset. items can be directories, files or plugin names)
---plugins +/tmp/moo.rb
---plugins foobar (only select foobar)
---plugins ./plugins-disabled,-md5 (select only plugins from the plugins-disabled folder, remove the md5 plugin from the selected list)
-=end
-def load_plugins(list=nil)
-	# separate l into a and b
-	#	a = make list of dir & filenames
-	#	b = make list of assumed pluginnames
-	a=[];b=[]
-
-	plugin_dirs=PLUGIN_DIRS.clone
-
-	plugin_dirs.map {|p| p=File.expand_path(p) }
-
-	if list
-		list=list.split(",")
-
-		plugins_disabled_location = ["plugins-disabled"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
-
-		list.each {|x| x.gsub!(/^\+$/,"+#{plugins_disabled_location}") } # + is short for +plugins-disabled
-
-		list.each do |p|
-			choice=PluginChoice.new
-			choice.fill(p)
-			a << choice if choice.type == "file"
-			b << choice if choice.type == "plugin"
-		end
-
-		# sort by neither, add, minus
-		a=a.sort
-
-		if a.map {|c| c.modifier }.include?(nil)
-			plugin_dirs=[]
-		end
-
-		minus_files = [] # make list of files not to load
-		a.map {|c|
-			plugin_dirs << c.name if c.modifier.nil? or c.modifier == "+"
-			plugin_dirs -= [c.name] if c.modifier == "-" # for Dirs
-			minus_files << c.name if c.modifier == "-"    # for files
-		}
-		
-		# load files from plugin_dirs unless a file is minused
-		plugin_dirs.each do |d|
-			# if a folder, then load all files
-			if File.directory?(d)
-				(Dir.glob("#{d}/*.rb")-minus_files).each {|x| load_plugin(x) }
-			elsif File.exists?(d)
-				load_plugin(d)
-			else
-				error("Error: #{d} is not Dir or File")
-			end
-		end
-		
-		# make list of plugins to run
-		# go through all plugins, remove from list any that match b minus
-		selected_plugin_names=[]
-
-		if b.map {|c| c.modifier }.include?(nil)
-			selected_plugin_names=[]
-		else
-			selected_plugin_names = Plugin.registered_plugins.map {|n,p| n.downcase }
-		end
-
-		b.map {|c| 
-			selected_plugin_names << c.name if c.modifier.nil? or c.modifier=="+"
-			selected_plugin_names -= [c.name] if c.modifier == "-"
-		}
-		plugins_to_use = Plugin.registered_plugins.map {|n,p| [n,p] if selected_plugin_names.include?(n.downcase) }.compact
-
-		# report on plugins that couldn't be found
-		unfound_plugins = selected_plugin_names - plugins_to_use.map {|n,p| n.downcase }
-		unless unfound_plugins.empty?
-			puts "Error: The following plugins were not found: " + unfound_plugins.join(",")
-		end
-
-	else
-		# no selection, so it's default
-		plugin_dirs.each do |d|
-			Dir.glob("#{d}/*.rb").each {|x|
-				load_plugin(x)
-			}
-		end
-		plugins_to_use = Plugin.registered_plugins
-	end
-
-	plugins_to_use
-end
-
-
-
-
-
-
-def custom_plugin(c)
-	# define a custom plugin on the cmdline
-	# ":text=>'powered by abc'" or
-	# "{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
-
-	# then it's ok..
-	if c =~ /:(text|ghdb|md5|regexp|tagpattern)=>[\/'"].*/
-		matches="matches [\{#{c}\}]"
-	end
-
-	# this isn't checked for sanity... loading plugins = cmd exec anyway
-	if c =~ /\{.*\}/
-		matches="matches [#{c}]"
-	end
-
-	abort("Invalid custom plugin syntax: #{c}") if matches.nil?
-
-	custom="Plugin.define \"Custom-Plugin\" do
-	author \"Unknown\"
-	description \"User defined\"
-	#{matches}
-	end
-	"
-
-	begin
-		# open tmp file
-		f=Tempfile.new('whatweb-custom-plugin')
-		# write
-		f.write(custom)
-		f.close
-		# load
-		load f.path
-		f.unlink
-		true
-	rescue SyntaxError
-		error("Error: Cannot load custom plugin")
-		false
-	end
-end
-
-
-def make_target_list(cmdline_args, inputfile=nil,pluginlist = nil)
-	url_list = cmdline_args
-
-	# read each line as a url, skipping lines that begin with a #
-	if !inputfile.nil? and File.exists?(inputfile)
-		pp "loading input file: #{inputfile}" if $verbose > 2
-		url_list += File.open(inputfile).readlines.each {|line| line.strip! }.delete_if {|line| line =~ /^#.*/ }.each {|line| line.delete!("\n") }
-	end
-
-	# add example urls to url_list if required. plugins must be loaded already
-	if $USE_EXAMPLE_URLS
-		url_list += pluginlist.map {|name,plugin| plugin.examples unless plugin.examples.nil? }.compact.flatten
-	end
-
-        genrange=url_list.map do |x|
-	  range=nil
-	  if x =~ /^[0-9\.\-*\/]+$/ and not x =~ /^[\d\.]+$/
-	    # check for nmap
-	    error "Target ranges require nmap to be in the path" if `which nmap` == ""
-	    range=`nmap -n -sL #{x} 2>&1 | egrep -o "([0-9]{1,3}\\.){3}[0-9]{1,3}"`
-	    range=range.split("\n")
-	  end
-	  range
-	end.compact.flatten
-	
-	url_list= url_list.select {|x| not x =~ /^[0-9\.\-*\/]+$/ or x =~ /^[\d\.]+$/ }
-	url_list += genrange unless genrange.empty?
-     
-
-	#make urls friendlier, test if it's a file, if test for not assume it's http://
-	# http, https, ftp, etc
-	url_list=url_list.map do |x|   
-		if File.exists?(x)
-			x
-		else
-			# use url pattern
-			if $URL_PATTERN
-				x = $URL_PATTERN.gsub('%insert%',x)
-			end
-			# add prefix & suffix
-			x=$URL_PREFIX + x + $URL_SUFFIX
-
-			if x =~ (/^[a-z]+:\/\//)
-				x
-			else
-				x.sub(/^/,"http://")
-			end
-		end	
-	end
-
-	url_list=url_list.flatten #.sort.uniq
+	b.scan(/<([^\s>]*)/).flatten.map {|x| x.downcase!; r=nil;
+			r=x if inscript==false
+			inscript=true if x=="script"
+			(inscript=false; r=x) if x=="/script"
+			r
+		}.compact.join(",")
 end
 
 
@@ -524,6 +181,7 @@ end
 def randstr
 	rand(36**8).to_s(36)
 end 
+
 
 def match_ghdb(ghdb, body, meta, status, base_uri)
 	# this could be made faster by creating code to eval once for each plugin
@@ -588,27 +246,93 @@ def match_ghdb(ghdb, body, meta, status, base_uri)
 end
 
 
-def error(s)
-	if defined?($semaphore)
-		# We want the output mutex locked.
-		# Has our current thread already locked the Mutex?
-		begin
-			$semaphore.lock
-		rescue ThreadError
-			# we're already locked. Nice.		
+
+
+
+
+### targets
+
+def make_target_list(cmdline_args, inputfile=nil,pluginlist = nil)
+	url_list = cmdline_args
+
+	# read each line as a url, skipping lines that begin with a #
+	if !inputfile.nil? and File.exists?(inputfile)
+		pp "loading input file: #{inputfile}" if $verbose > 2
+		url_list += File.open(inputfile).readlines.each {|line| line.strip! }.delete_if {|line| line =~ /^#.*/ }.each {|line| line.delete!("\n") }
+	end
+
+	# add example urls to url_list if required. plugins must be loaded already
+	if $USE_EXAMPLE_URLS
+		url_list += pluginlist.map {|name,plugin| plugin.examples unless plugin.examples.nil? }.compact.flatten
+	end
+
+        genrange=url_list.map do |x|
+	  range=nil
+	  if x =~ /^[0-9\.\-*\/]+$/ and not x =~ /^[\d\.]+$/
+	    # check for nmap
+	    error "Target ranges require nmap to be in the path" if `which nmap` == ""
+	    range=`nmap -n -sL #{x} 2>&1 | egrep -o "([0-9]{1,3}\\.){3}[0-9]{1,3}"`
+	    range=range.split("\n")
+	  end
+	  range
+	end.compact.flatten
+	
+	url_list= url_list.select {|x| not x =~ /^[0-9\.\-*\/]+$/ or x =~ /^[\d\.]+$/ }
+	url_list += genrange unless genrange.empty?
+     
+
+	#make urls friendlier, test if it's a file, if test for not assume it's http://
+	# http, https, ftp, etc
+	url_list=url_list.map do |x|   
+		if File.exists?(x)
+			x
+		else
+			# use url pattern
+			if $URL_PATTERN
+				x = $URL_PATTERN.gsub('%insert%',x)
+			end
+			# add prefix & suffix
+			x=$URL_PREFIX + x + $URL_SUFFIX
+
+			if x =~ (/^[a-z]+:\/\//)
+				x
+			else
+				x.sub(/^/,"http://")
+			end
+		end	
+	end
+
+	url_list=url_list.flatten #.sort.uniq
+end
+
+def next_target
+	t=nil
+
+	while $recent_targets.include?(t) or t.nil?
+		t=$targets.shift
+		# t at the end of the $targets list
+		if t.nil?
+			puts "t is nil" if $verbose > 2
+			if $targets.empty?
+				if Thread.list.size > 1
+					puts "Thread list size: #{Thread.list.size}" if $verbose > 2
+					sleep 1
+				else
+					puts "breaking now" if $verbose > 2
+					break
+				end
+			end
 		end
 	end
-	if ($use_colour=="auto") or ($use_colour=="always")
-		STDERR.puts red(s)
-	else
-		STDERR.puts s
-	end
-	STDERR.flush
-	unless $OUTPUT_ERRORS.nil?
-		$OUTPUT_ERRORS.out(s)
-	end
-	$semaphore.unlock if defined?($semaphore)
+
+	puts "Recent Targets:" + $recent_targets.join(",") if $verbose > 2
+
+	$recent_targets.push t
+	$recent_targets.pop if $recent_targets.size > 100 # we dont need to care about mroe than 100
+
+	t
 end
+
 
 
 def open_target(target)
@@ -685,6 +409,31 @@ def open_target(target)
 end
 
 
+def error(s)
+	if defined?($semaphore)
+		# We want the output mutex locked.
+		# Has our current thread already locked the Mutex?
+		begin
+			$semaphore.lock
+		rescue ThreadError
+			# we're already locked. Nice.		
+		end
+	end
+	if ($use_colour=="auto") or ($use_colour=="always")
+		STDERR.puts red(s)
+	else
+		STDERR.puts s
+	end
+	STDERR.flush
+	unless $OUTPUT_ERRORS.nil?
+		$OUTPUT_ERRORS.out(s)
+	end
+	$semaphore.unlock if defined?($semaphore)
+end
+
+
+
+
 def run_plugins(target,body,headers=nil,raw_headers=nil,status=nil,url=nil,ip="")
 		#pp target, body, headers, status, url
 
@@ -746,18 +495,7 @@ def run_plugins(target,body,headers=nil,raw_headers=nil,status=nil,url=nil,ip=""
 	results
 end
 
-def make_tag_pattern(b)
-	# remove stuff between script and /script
-	# don't bother with  !--, --> or noscript and /noscript
-	inscript=false;
 
-	b.scan(/<([^\s>]*)/).flatten.map {|x| x.downcase!; r=nil;
-			r=x if inscript==false
-			inscript=true if x=="script"
-			(inscript=false; r=x) if x=="/script"
-			r
-		}.compact.join(",")
-end
 
 
 def usage()
@@ -886,6 +624,7 @@ EXAMPLE USAGE:
 end
 
 
+
 if ARGV.size==0 # faster usage info
 	usage
 	exit 
@@ -952,18 +691,18 @@ begin
 			when '-i','--input-file'
 				input_file=arg
 			when '-l','--list-plugins'
-				load_plugins
-				plugin_list
+				PluginSupport.load_plugins
+				PluginSupport.plugin_list
 				exit
 			when '-p','--run-plugins'
 				plugin_selection=arg
 			when '-I','--info-plugins'                
-				load_plugins
-				plugin_info(arg.split(","))
+				PluginSupport.load_plugins
+				PluginSupport.plugin_info(arg.split(","))
 				exit
 			when '-g','--dorks'
-				load_plugins
-				plugin_dorks(arg)
+				PluginSupport.load_plugins
+				PluginSupport.plugin_dorks(arg)
 				exit
 			when '-e','--example-urls'
 				$USE_EXAMPLE_URLS=true
@@ -991,7 +730,7 @@ begin
 			when '--log-sql'
 			 	output_list << OutputSQL.new(arg)
 			when '--log-sql-create'
-				load_plugins("+")
+				PluginSupport.load_plugins("+")
 				# delete the file if it already exists
 				begin
 					File.delete(arg)
@@ -1073,7 +812,7 @@ begin
 			when '--url-pattern'
 				$URL_PATTERN=arg
 			when '--custom-plugin'				
-				use_custom_plugin=true if custom_plugin(arg)
+				use_custom_plugin=true if PluginSupport.custom_plugin(arg)
 			when '--follow-redirect'	
 				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
 					$FOLLOW_REDIRECT=arg.downcase
@@ -1134,14 +873,14 @@ end
 
 ### PLUGINS
 plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection  
-$plugins_to_use = load_plugins(plugin_selection ) # load all the plugins
+$plugins_to_use = PluginSupport.load_plugins(plugin_selection ) # load all the plugins
 
 # are the no plugins?
 if $plugins_to_use.size == 0
 	error "No plugins selected, exiting."
 	exit 1
 end
-precompile_regular_expressions # optimise plugins
+PluginSupport.precompile_regular_expressions # optimise plugins
 
 
 ### OUTPUT
@@ -1182,35 +921,6 @@ end
 $semaphore=Mutex.new
 Thread.abort_on_exception = true if $DEBUG
 meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
-
-
-def next_target
-	t=nil
-
-	while $recent_targets.include?(t) or t.nil?
-		t=$targets.shift
-		# t at the end of the $targets list
-		if t.nil?
-			puts "t is nil" if $verbose > 2
-			if $targets.empty?
-				if Thread.list.size > 1
-					puts "Thread list size: #{Thread.list.size}" if $verbose > 2
-					sleep 1
-				else
-					puts "breaking now" if $verbose > 2
-					break
-				end
-			end
-		end
-	end
-
-	puts "Recent Targets:" + $recent_targets.join(",") if $verbose > 2
-
-	$recent_targets.push t
-	$recent_targets.pop if $recent_targets.size > 100 # we dont need to care about mroe than 100
-
-	t
-end
 
 
 

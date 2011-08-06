@@ -47,6 +47,7 @@ matches [
 
 ]
 
+# Andrew Horton: this really sux. plugins shouldn't need to do this...
 def http_request(target,method='post',post_data='whatweb')
 	# follow 301's
 	begin
@@ -65,8 +66,7 @@ def http_request(target,method='post',post_data='whatweb')
 		http.open_timeout = $HTTP_OPEN_TIMEOUT
 		http.read_timeout = $HTTP_READ_TIMEOUT
 
-		#puts path -- path doesn't include parameters
-		
+
 		# if it's https://
 		# i wont worry about certificates, verfication, etc
 		if uri.class == URI::HTTPS
@@ -86,7 +86,6 @@ def http_request(target,method='post',post_data='whatweb')
 		headers={}; res.each_header {|x,y| headers[x]=y }
 		body=res.body
 		status=res.code.to_i
-		puts uri.host.to_s + path + (query.nil? ? "" : "?" + query ) + " [#{status}]" if  $verbose > 0 
 		cookies=res.get_fields('set-cookie')
 		
 	rescue SocketError => err
@@ -162,10 +161,10 @@ def aggressive
 	target = URI.join(@base_uri.to_s).to_s
 	status,url,ip,body,headers=http_request(target,'post')
 	unless body.nil?
-		if body =~ /<h1>Application error!<\/h1>(\r\n|\n)<p>An application error occured!<\/p>/ 	 
+		if body =~ /<h1>Application error!<\/h1>(\r\n|\n)<p>An application error occured!<\/p>/
 			m << {:string=>"Invalid Post Method"}
 		end
-	end	
+	end
 	m 
 end
 
