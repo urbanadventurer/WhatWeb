@@ -8,6 +8,7 @@ Version 0.4.8-dev Unreleased
 * Added ./addons/gggooglescan
 * Updated whatweb.xsl
 * Fixed bug causing Mongo DB logging to fail
+* Added SQL logging with `--log-sql` and `--log-sql-create` arguments
 * Increased Ruby 1.9 support (still not supported)
 * Removed the spidering feature and dependence on the customised and unsupported Anemone gem
 * Removed the extra_urls feature
