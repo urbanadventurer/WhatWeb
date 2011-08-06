@@ -364,6 +364,33 @@ def error(s)
 	$semaphore.unlock if defined?($semaphore)
 end
 
+# takes a string and returns an array of lines. used by plugin_info
+def word_wrap(s,width=10)
+	ret=[]
+	line=""
+	s.split.map {|x|
+		word=x
+		if line.size + x.size + 1 <= width
+			line += x + " "
+		else
+			if word.size > width
+				ret << line
+				line = ""
+				w=word.clone
+				while w.size > width
+					ret << w[0..(width-1)]
+					w=w[width.to_i..-1]
+				end
+				ret << w unless w.size == 0
+			else
+				ret << line
+				line=x + " "
+			end
+		end		
+ 	}
+	ret << line
+	ret
+end
 
 ### core
 
@@ -377,18 +404,7 @@ def run_plugins(target)
 				end
 				plugin.lock
 
-				# Target is a URL
-				if target.is_url?
-					plugin.init(target.body,target.headers,target.raw_headers,target.status,target.uri,target.ip,target.md5sum,target.tag_pattern)
-				else
-					if target.headers.nil?
-						# Target is a local file
-						plugin.init(target.body,{},"",0,URI.parse('http://example.com/' + target.to_s),"",target.md5sum,target.tag_pattern)
-					else
-						# Target is a local HTTP packet file
-						plugin.init(target.body,target.headers,target.raw_headers,target.status,URI.parse('http://example.com/' + target.to_s),"",target.md5sum,target.tag_pattern)
-					end
-				end
+plugin.init(target.body,target.headers,target.raw_headers,target.status,target.uri,target.ip,target.md5sum,target.tag_pattern)
 				
 				# eXecute the plugin			
 				#start_time = Time.now
@@ -860,8 +876,9 @@ while thistarget = next_target
 				end
 
 				no_redirects=true if target.is_file?
-				if target.is_url? and not target.status
+				if target.is_url? and target.status.nil?
 					# assume all HTTP sites return a status
+					error("Status is nil: "+ target.to_s)
 					no_redirects=true
 					next
 				end

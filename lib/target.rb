@@ -27,6 +27,8 @@ class Target
 
 	def initialize(target=nil)
 		@target=target
+		@headers={}
+#		@status=0
 
 		if @target =~ /^http[s]?:\/\//
 			@is_url=true 
@@ -52,6 +54,8 @@ class Target
 			# is this taking control away from the user?
 			# [400] http://www.alexa.com  [200] http://www.alexa.com/
 			@uri.path = "/" if @uri.path.empty?
+		else
+			@uri=URI.parse("file://"+@target)
 		end
 	end
 
@@ -77,11 +81,11 @@ class Target
 	def open_file
 		# target is a file
 		@body=File.open(@target).read
-
+		
 		# target is a http packet file
 		if @body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
 			# extract http header
-			@headers=Hash.new
+			@headers=Hash.new	
 			pageheaders = body.to_s.split(/\r\n\r\n/).first.to_s.split(/\r\n/)
 			@status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /).flatten.first.to_i
 			@cookies=[]

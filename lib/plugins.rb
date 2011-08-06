@@ -97,9 +97,10 @@ class Plugin
 				r << match if @tagpattern == match[:tagpattern]
 			end
 
-			unless match[:status].nil? and match[:url] == @base_uri.path
+
+			if !match[:status].nil? and match[:url] == @base_uri.path
 				r << match if @status == match[:status]
-			end		
+			end
 
 			unless match[:regexp_compiled].nil?
 				[:regexp,:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
@@ -182,10 +183,9 @@ class Plugin
 					r << match if thistagpattern == match[:tagpattern]
 				end
 		
-				unless match[:status].nil? and match[:url] == thisbase_uri.path
+				if !match[:status].nil? and match[:url] == thisbase_uri.path
 					r << match if thisstatus == match[:status]
 				end
-
 
 				unless match[:regexp_compiled].nil?
 					[:regexp, :account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
@@ -511,34 +511,6 @@ for adding/removing sets of plugins.
 		puts
 	end
 
-
-	# takes a string and returns an array of lines. used by plugin_info
-	def PluginSupport.word_wrap(s,width=10)
-		ret=[]
-		line=""
-		s.split.map {|x|
-			word=x
-			if line.size + x.size + 1 <= width
-				line += x + " "
-			else
-				if word.size > width
-					ret << line
-					line = ""
-					w=word.clone
-					while w.size > width
-						ret << w[0..(width-1)]
-						w=w[width.to_i..-1]
-					end
-					ret << w unless w.size == 0
-				else
-					ret << line
-					line=x + " "
-				end
-			end		
-	 	}
-		ret << line
-		ret
-	end
 
 end
 

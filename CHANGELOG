@@ -14,6 +14,7 @@ Version 0.4.8-dev Unreleased
 * Removed the extra_urls feature
 * Added raw header support by monkey patching the net/http library
 * Targets from input files are now executed ascending order
+* Redesigned whatweb's main loop and introduced the Target class
 
 
 Version 0.4.7 Released April 5th 2011
