@@ -33,12 +33,11 @@ If you have any questions, comments or concerns regarding WhatWeb, please consul
 	4.  Logging & Output
 	5.  Plugins
 	6.  Aggression
-	7.  Recursive Spidering
-	8.  Performance & Stability
-	9.  Optional Dependencies
-	10. Release History
-	11. Credits
-	12. Updates & Additional Information
+	7.  Performance & Stability
+	8.  Optional Dependencies
+	9.  Release History
+	10. Credits
+	11. Updates & Additional Information
 	========================================================================
 
 
@@ -59,7 +58,6 @@ Features:
 	* Plugins include example URLs
 	* Performance tuning. Control how many websites to scan concurrently.
 	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB, SQL.
-	* Recursive web spidering
 	* Proxy support including TOR
 	* Custom HTTP headers
 	* Basic HTTP authentication
@@ -134,15 +132,6 @@ HTTP OPTIONS:
 			`http-only', `meta-only', `same-site', `same-domain'
 			or `always'. Default: always
   --max-redirects=NUM	Maximum number of contiguous redirects. Default: 10
-
-SPIDERING:
-  --recursion, -r	Follow links recursively. Only follow links under the
-			path Default: off
-  --depth, -d		Maximum recursion depth. Default: 10
-  --max-links, -m	Maximum number of links to follow on one page
-			Default: 250
-  --spider-skip-extensions Redefine extensions to skip.
-			Default: zip,gz,tar,jpg,exe,png,pdf
 
 PROXY:
   --proxy		<hostname[:port]> Set proxy hostname and port
@@ -331,30 +320,10 @@ http://smartor.is-root.com/forum/ [200] phpBB[2,>2.0.20]
 
 Note the use of the -p argument to select only the phpBB plugin. It is advisable, but not mandatory, to select a specific plugin when attempting to fingerprint software versions in aggressive mode. This approach is far more stealthy as it will limit the number of requests.
 
-Do not use aggressive plugins with recursive site crawling. WhatWeb has no understanding of a website, instead it currently treats each URL separately. 
-
-It also has no caching so if you use aggressive plugins with recursion you will fetch the same files multiple times. The same is true for aggressive modes on redirecting URLs.
+WhatWeb has no caching so if you use aggressive plugins  on redirecting URLs you will fetch the same files multiple times.
 
 
-
-7. Recursive Spidering
-================================================================================
-
-The recursion option is used to scan some or all of a website with WhatWeb. Recursive spidering will follow each link on a webpage if it is within the same website, then repeat the process on the followed pages.
-
-The configurable settings for recursive spidering are:
-	--recursion, -r		Follow links recursively. Only follows links under the path (default: off)
-	--depth, -d		Maximum recursion depth (default: 10)
-	--max-links, -m		Maximum number of links to follow on one page (default: 250)
-	--spider-skip-extensions Redefine extensions to skip. (Default: zip,gz,tar,jpg,exe,png,pdf)
-
-Limitations of the spidering. This follows links in <a> tags, these are the HTML tags designed specifically for links. The spider does not obtain URLs from other sources. Some good choices for future improvement are image tags, e.g. <img src="/images/boats.jpg">, form tags, e.g. <form action="/vote.php">, URL paths in CSS files, etc.
-
-The spider is provided by Anemone, a third party ruby gem. It doesn't follow redirects. For example the URL treshna.com will fail and www.treshna.com will produce results.
-
-
-
-8. Performance & Stability
+7. Performance & Stability
 ================================================================================
 
 WhatWeb features several options to increase performance and stability.
@@ -377,7 +346,7 @@ Character set detection, with the Charset plugin, required by JSON and MongoDB l
 
 
 
-9. Optional Dependencies
+8. Optional Dependencies
 ================================================================================
 
 Without the em-resolve-replace gem performance is significantly degraded.
@@ -394,7 +363,7 @@ To enable character set detection and MongoDB logging install the rchardet gem.
 
 
 
-10. Release History
+9. Release History
 ================================================================================
 
 Version 0.3 Released at Kiwicon III (kiwicon.org), November 2nd, 2009
@@ -408,7 +377,7 @@ Version 0.4.6 Released March 25th, 2011
 Version 0.4.7 Released April 5th, 2011
 Version 0.4.8-dev Unreleased
 
-11. Credits
+10. Credits
 ================================================================================
 
 Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
@@ -442,7 +411,7 @@ Michal Ambroz for writing the Makefile and Man pages
 Gremwell for improving the MagicTree logging
 
 
-12. Updates & Additional Information
+11. Updates & Additional Information
 ================================================================================
 
 The WhatWeb development build features regular updates.
