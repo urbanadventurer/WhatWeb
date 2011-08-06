@@ -305,7 +305,13 @@ def load_plugin(f)
 	rescue
 		error("Error: failed to load #{f}")
 	rescue SyntaxError
-		error("Error: Failed to load #{f}.")
+		error("Error: Failed to load #{f}: syntax error")
+	rescue SystemExit, Interrupt
+		error("ERROR: Failed to load plugins: Interrupted")
+		if $DEBUG==true or $verbose > 1
+			raise
+		end
+		exit 1
 	end
 end
 
