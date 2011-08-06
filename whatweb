@@ -796,6 +796,7 @@ output_list << OutputBrief.new unless $QUIET # by default output brief
 output_list << OutputObject.new() if $verbose > 1 # full output if -vv
 output_list << OutputVerbose.new() if $verbose > 0 # full output if -v
 
+## output dependencies
 if mongo[:use_mongo_log]
 	if $plugins_to_use.map { |a,b| a }.include?("Charset")
 		output_list << OutputMongo.new(mongo) 
@@ -822,7 +823,6 @@ if $targets.size <1
 	usage
 	exit 1
 end
-
 
 $semaphore=Mutex.new
 Thread.abort_on_exception = true if $DEBUG
@@ -860,7 +860,8 @@ while thistarget = next_target
 				end
 
 				no_redirects=true if target.is_file?
-				if target.is_url? and (target.status == 0 or target.status.nil?)
+				if target.is_url? and not target.status
+					# assume all HTTP sites return a status
 					no_redirects=true
 					next
 				end
@@ -878,11 +879,10 @@ while thistarget = next_target
 					end
 				end
 
+				# REDIRECTION
 				unless no_redirects
-					# REDIRECTION
 					begin
-						if newtarget = target.get_redirection_target
-						# we found a new target to follow, then set it and increment our redirect counter
+						if newtarget = target.get_redirection_target		
 							num_redirects+=1 
 							target=Target.new(newtarget)
 						else
@@ -895,12 +895,12 @@ while thistarget = next_target
 				end
 			end # while no_redirects
 	
-			end # Thread.new
+		end # Thread.new
 
-			while Thread.list.size>($MAX_THREADS+1)
-				puts "sleeping" if $verbose>1
-				sleep 0.5
-			end
+	while Thread.list.size>($MAX_THREADS+1)
+		puts "sleeping" if $verbose>1
+		sleep 0.5
+	end
 end # targets.each
 
 # close output logs
