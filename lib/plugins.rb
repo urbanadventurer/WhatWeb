@@ -62,14 +62,14 @@ class Plugin
   	@locked
   end
 
-  def init (body=nil,meta={},raw_headers=nil,status=nil,base_uri=nil, ip=nil, md5sum=nil, tagpattern=nil)
-  	@body=body
-  	@meta=meta
-  	@status=status
-  	@base_uri=base_uri
-	@md5sum=md5sum
-	@tagpattern=tagpattern
-	@ip=ip
+  def init (target)
+  	@body=target.body
+  	@meta=target.headers
+  	@status=target.status
+  	@base_uri=target.uri
+	@md5sum=target.md5sum
+	@tagpattern=target.tag_pattern
+	@ip=target.ip
   end
 
 # execute plugin

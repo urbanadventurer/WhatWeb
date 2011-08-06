@@ -404,7 +404,7 @@ def run_plugins(target)
 				end
 				plugin.lock
 
-plugin.init(target.body,target.headers,target.raw_headers,target.status,target.uri,target.ip,target.md5sum,target.tag_pattern)
+				plugin.init(target)
 				
 				# eXecute the plugin			
 				#start_time = Time.now
@@ -878,7 +878,6 @@ while thistarget = next_target
 				no_redirects=true if target.is_file?
 				if target.is_url? and target.status.nil?
 					# assume all HTTP sites return a status
-					error("Status is nil: "+ target.to_s)
 					no_redirects=true
 					next
 				end
