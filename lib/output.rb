@@ -379,10 +379,13 @@ class OutputMagicTreeXML < Output
 			@host_port = uri.port
 			@host_scheme = uri.scheme
 
-			if uri.host =~ /^[\d]{1,3}.[\d]{1,3}.[\d]{1,3}.[\d]{1,3}$/i
+			# Set host node details
+			if uri.host =~ /^[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}\.[\d]{1,3}$/i
 				@host_ip = uri.host
+				@host_name = nil
 			else
 				@host_name = uri.host
+				@host_ip = nil
 			end
 
 			# Loop through plugin results # get host IP, country and OS
