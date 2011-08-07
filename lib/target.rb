@@ -131,7 +131,7 @@ class Target
 				http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
 			end
 	
-			req=Net::HTTP::Get.new(@uri.to_s, $CUSTOM_HEADERS)
+			req=Net::HTTP::Get.new("/"+@uri.to_s.split("/")[3..-1].to_s, $CUSTOM_HEADERS)
 
 			if $BASIC_AUTH_USER	
 				req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
