@@ -3,6 +3,56 @@ TO-DO
 Good luck understanding these notes for myself :) Some of this stuff has already been done.
 
 
+
+option to send HTTP/1.0 requests
+
+
+
+(18:06:18) Brendan Coles: $ ./whatweb 82.139.247.98
+http://82.139.247.98 [500] HTTPServer[Web-Server/3.0], IP[82.139.247.98], Title[500 Internal Server Error], Country[GERMANY][DE]
+$ cd ../whatweb-0.4.7/
+$ ./whatweb 82.139.247.98
+http://82.139.247.98 [200] HTTPServer[Web-Server/3.0], IP[82.139.247.98], Cookies[cookieOnOffChecker], Title[Web Image Monitor], Country[GERMANY][DE]
+
+(18:08:30) Brendan Coles: it happens on a bunch of IPs. they're all the same device. some throw 400 and others throw 500. none work.
+(18:21:06) horton.nz@gmail.com/DD541C64: hmm
+(18:21:09) horton.nz@gmail.com/DD541C64: maybe it's adding the /
+(18:21:25) horton.nz@gmail.com/DD541C64: nope... idk
+(18:21:34) Brendan Coles: you're getting the same thing?
+(18:21:46) horton.nz@gmail.com/DD541C64: i think i know what it is
+(18:22:21) Brendan Coles: i'm trying some other devices, and what throws a www-auth prompt in FF is not being shown as 401 with whatweb, rather it's 404
+(18:22:30) horton.nz@gmail.com/DD541C64: 			req=Net::HTTP::Get.new(@uri.to_s, $CUSTOM_HEADERS)=
+(18:22:31) horton.nz@gmail.com/DD541C64: it's that
+(18:22:41) horton.nz@gmail.com/DD541C64: i need to GET / instead of GET http://balh/
+(18:23:11) Brendan Coles: or @uri.path.to_s i guess, depending on context
+(18:24:16) horton.nz@gmail.com/DD541C64: + query
+(18:24:17) horton.nz@gmail.com/DD541C64: i'll fix it
+(18:27:05) horton.nz@gmail.com/DD541C64: fixed and pushed
+(18:27:40) horton.nz@gmail.com/DD541C64: i was...
+(18:27:51) Brendan Coles: born in the 80s?
+(18:28:00) horton.nz@gmail.com/DD541C64: getting the same thing
+(18:28:08) horton.nz@gmail.com/DD541C64: i scrolled up
+(18:28:12) horton.nz@gmail.com/DD541C64: heh
+(18:28:22) horton.nz@gmail.com/DD541C64: i gtg - baby time
+(18:28:53) Brendan Coles: fixed... although, i don't think i should be getting this:
+Redirection broken: bad URI(is not URI?): /web/guest/en/websys/webArch/message.cgi?messageID=MSG_JAVASCRIPTOFF&buttonURL=/; charset=UTF-8
+
+(18:29:29) Brendan Coles: (which is a separate  issue with redirect url detection)
+(18:31:17) Brendan Coles: hmm... i'm getting 404 for what should be 200 ok on:
+http://65.214.201.107/web/guest/en/websys/webArch/header.cgi
+
+
+
+
+
+
+
+
+
+
+
+
+
 option to suppress errors
 
 
