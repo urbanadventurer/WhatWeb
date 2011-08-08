@@ -22,7 +22,7 @@ def passive
 	m=[]
 
 	# Extract conent type
-	m << { :string=>@meta["content-type"].to_s } unless @meta["content-type"].nil?
+	m << { :string=>@headers["content-type"].to_s } unless @headers["content-type"].nil?
 
 	# Return passive matches
 	m

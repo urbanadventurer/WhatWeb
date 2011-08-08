@@ -23,8 +23,8 @@ def passive
 	m=[]
 
 	# Extract Headers
-	unless @meta.nil?
-		@meta.each do|h,v|
+	unless @headers.nil?
+		@headers.each do|h,v|
 			m << { :string=>h.to_s+': '+v.to_s }
 		end
 	end
