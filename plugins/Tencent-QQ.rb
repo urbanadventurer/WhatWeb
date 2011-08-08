@@ -23,17 +23,13 @@ examples %w|
 119.147.15.33
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^HTTP_ME\/\d\.\d Tencent\/HTTP_Magic_Expression$/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^HTTP_ME\/\d\.\d Tencent\/HTTP_Magic_Expression$/ },
 
-	# Return passive matches
-	m
-
-end
+]
 
 end
 

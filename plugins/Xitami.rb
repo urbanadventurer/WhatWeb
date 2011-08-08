@@ -21,19 +21,16 @@ examples %w|
 168.226.217.248
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^Xitami$/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^Xitami$/ },
 
-	# Edition Detection # HTTP Server Header
-	m << { :string=>@headers["server"].scan(/^Xitami\/([^\s]+)$/) } if @headers["server"] =~ /^Xitami\/([^\s]+)$/
+# Version Detection
+{ :search=>"headers[server]", :version=>/^Xitami\/([^\s]+)$/ },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

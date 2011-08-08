@@ -32,24 +32,21 @@ examples %w|
 195.133.224.193
 |
 
+# Matches #
 matches [
+
+# Model Detection
 { :model=>/\ssdmconfig-([^\.]+).cfg/}, 
 { :model=>/\sc(\d+)(nm)?[^\-]*-\S+-mz\S+\.bin/}, 
+
+# Directory
 { :string=>"Dir",     :regexp=>/<input type="hidden" name="DIRINFO" value="\s+Directory of archive:\// },
-{ :string=>"DirFail", :regexp=>/<input type="hidden" name="DIRINFO" value="\s*(Command authorization failed|% Authorization failed)/ }
+{ :string=>"DirFail", :regexp=>/<input type="hidden" name="DIRINFO" value="\s*(Command authorization failed|% Authorization failed)/ },
+
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^cisco-IOS/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"].to_s =~ /^[\s]*cisco-IOS/
-
-	# Return passive matches
-	m
-
-end
 
 end
 

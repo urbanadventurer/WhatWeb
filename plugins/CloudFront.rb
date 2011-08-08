@@ -39,23 +39,15 @@ examples %w|
 matches [
 
 # Error page
-{ :status=>403, :text=>"<html><body>Sorry, invalid request</body></html>" }
+{ :status=>403, :text=>"<html><body>Sorry, invalid request</body></html>" },
+
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^CloudFront/ },
+
+# HTTP X-Cache Header
+{ :search=>"headers[x-cache]", :regexp=>/^Error from cloudfront/ },
 
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^CloudFront/
-
-	# HTTP X-Cache Header
-	m << { :name=>"HTTP X-Cache Header" } if @headers["x-cache"] =~ /^Error from cloudfront/
-
-	m
-
-end
 
 end
 

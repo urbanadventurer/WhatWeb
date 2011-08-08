@@ -24,19 +24,16 @@ examples %w|
 194.14.58.35
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^FortiWeb-([\d\.]+)$/) } if @headers["server"] =~ /^FortiWeb-([\d\.]+)$/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^FortiWeb$/ },
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^FortiWeb$/
+# Version Detection
+{ :search=>"headers[server]", :version=>/^FortiWeb-([\d\.]+)$/ },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

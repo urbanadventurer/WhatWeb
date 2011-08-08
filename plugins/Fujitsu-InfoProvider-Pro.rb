@@ -26,19 +26,16 @@ examples %w|
 61.196.255.194
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Server: Fujitsu-InfoProvider-Pro
-	m << { :name=>"HTTP Server Header" } if @headers['server'] =~ /Fujitsu-InfoProvider-Pro/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/Fujitsu-InfoProvider-Pro/ },
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers['server'].scan(/Fujitsu-InfoProvider-Pro\/[V]?([^ ]+) /) } if @headers['server'] =~ /Fujitsu-InfoProvider-Pro\/[V]?([^ ]+) /
+# Version Detection
+{ :search=>"headers[server]", :version=>/Fujitsu-InfoProvider-Pro\/[V]?([^ ]+) / },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

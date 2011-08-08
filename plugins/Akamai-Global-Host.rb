@@ -12,7 +12,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.2"
 description "Akamai-Global-Host HTTPd"
 
-# About 624447 ShodanHQ results for "server: AkamaiGHost" @ 2010-10-26
+# About 624,447 ShodanHQ results for "server: AkamaiGHost" @ 2010-10-26
 
 # Examples #
 examples %w|
@@ -28,15 +28,13 @@ examples %w|
 173.223.26.104
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header #
-	m << { :name=>"HTTP Server Header" } if @headers["server"].to_s =~ /^[\s]*AkamaiGHost/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^AkamaiGHost/ },
 
-	m
-end
+]
 
 end
 

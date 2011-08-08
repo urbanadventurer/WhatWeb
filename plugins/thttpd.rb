@@ -29,20 +29,16 @@ examples %w|
 82.229.195.70
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^thttpd\/([^\s]+)/) } if @headers["server"] =~ /^thttpd\/([^\s]+)/
+# HTTP Server Header
+#{ :search=>"headers[server]", :regexp=>/^thttpd$/ },
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^thttpd$/
+# Version Detection
+{ :search=>"headers[server]", :version=>/^thttpd\/([^\s]+)/ },
 
-	# Return passive matches
-	m
-
-end
+]
 
 end
 

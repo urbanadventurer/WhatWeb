@@ -22,16 +22,13 @@ examples %w|
 189.187.163.239
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^Hikvision-Webs$/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^Hikvision-Webs$/ },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

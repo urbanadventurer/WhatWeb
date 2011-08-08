@@ -35,23 +35,16 @@ examples %w|
 98.97.193.45
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	if @headers["server"] =~ /^AOLserver/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^AOLserver$/ },
 
-		m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^AOLserver$/
+# Version Detection
+{ :search=>"headers[server]", :version=>/^AOLserver\/([^\s]+)/ },
 
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^AOLserver\/([^\s]+)/) } if @headers["server"] =~ /^AOLserver\/([^\s]+)/
-
-	end
-
-	# Return passive matches
-	m
-end
+]
 
 end
 
