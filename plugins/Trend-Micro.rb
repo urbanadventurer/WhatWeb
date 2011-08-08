@@ -23,23 +23,16 @@ examples %w|
 150.70.74.72
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	if @headers["server"] =~ /^Trend Micro/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^Trend Micro$/ },
 
-		m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^Trend Micro$/
+# Version Detection
+{ :search=>"headers[server]", :version=>/^Trend Micro ([^\s]+)$/ },
 
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^Trend Micro ([^\s]+)$/) } if @headers["server"] =~ /^Trend Micro ([^\s]+)$/
-
-	end
-
-	# Return passive matches
-	m
-end
+]
 
 end
 

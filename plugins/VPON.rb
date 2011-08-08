@@ -45,19 +45,10 @@ matches [
 # Model Detection # /ctrl_ver.js
 { :url=>"/ctrl_ver.js", :model=>/^var vpon_platform = "([^"]+)";/ },
 
+# Version Detection
+{ :search=>"headers[server]", :version=>/^VPON Server\/([\d\.]+)$/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^VPON Server\/[\d\.]+$/
-
-	# Return passive matches
-	m
-
-end
 
 end
 

@@ -26,17 +26,13 @@ examples %w|
 212.30.17.75
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^SonicWALL SSL-VPN Web Server[.]?$/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^SonicWALL SSL-VPN Web Server[.]?$/ },
 
-	# Return passive matches
-	m
-
-end
+]
 
 end
 
