@@ -142,6 +142,11 @@ matches [
 { :url=>"/icons/apache_pb2.gif", :md5=>"36ccabeb1ad841c6af37660c3865a9c9", :version=>"2" },
 { :url=>"/icons/apache_pb2.gif", :md5=>"726dac78d3a989a360fc405452a798ee", :version=>"2.2" },
 
+{:regexp=>/^server: Apache/i,  :search=>"headers", :name=>"HTTP Server Header"},
+{:version=>/^Apache\/([\d\.]+)/i, :search=>"headers[server]"},
+{:certainty=>75, :module=>"mod_security", :regexp=>/^NOYB$/, :search=>"headers[server]"},
+{:certainty=>75, :name=>"htacess WWW-Authenticate realm", :search=>"headers[www-authenticate]", :regexp=>/Basic realm="htaccess password prompt"/}
+
 ]
 
 # Passive #
@@ -151,14 +156,13 @@ def passive
 	# Apache HTTP Server Header
 	if @meta["server"] =~ /^Apache/i
 
-		m << { :name=>"HTTP Server Header" }
-
-		# Version Detection
-		m << { :version=>@meta["server"].scan(/^Apache\/([\d\.]+)/i) } if @meta["server"] =~ /^Apache\/([\d\.]+)/i
+# replaced in matches[]
+# m << { :name=>"HTTP Server Header" }
+# Version Detection
+# m << { :version=>@meta["server"].scan(/^Apache\/([\d\.]+)/i) } if @meta["server"] =~ /^Apache\/([\d\.]+)/i
 
 		# Module Detection
 		m << { :module=>@meta["server"].scan(/[\s](mod_[^\s^\(]+)/) } if @meta["server"] =~ /[\s](mod_[^\s^\(]+)/
-
 		# proxy_html Module Detection
 		m << { :module=>@meta["server"].scan(/[\s](proxy_html\/[^\s]+)/) } if @meta["server"] =~ /[\s](proxy_html\/[^\s]+)/
 
@@ -169,15 +173,16 @@ def passive
 		m << { :module=>"WebSnmp/"+@meta["server"].scan(/^WebSnmp Server Httpd\/([\d.]+)$/).to_s }
 	end
 
+	# replaced in matches
 	# mod_security
-	m << { :certainty=>75, :module=>"mod_security" } if @meta["server"] =~ /^NOYB$/
+	# m << { :certainty=>75, :module=>"mod_security" } if @meta["server"] =~ /^NOYB$/
+	# WWW-Authenticate: Basic realm="htaccess password prompt"
+	# m << { :certainty=>75, :name=>"htacess WWW-Authenticate realm" } if @meta["www-authenticate"] =~ /Basic realm="htaccess password prompt"/
+
 
 	# x-mod-pagespeed Header # mod_pagespeed
 	m << { :module=>"mod_pagespeed/"+@meta["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).to_s } if @meta["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
-
-	# WWW-Authenticate: Basic realm="htaccess password prompt"
-	m << { :certainty=>75, :name=>"htacess WWW-Authenticate realm" } if @meta["www-authenticate"] =~ /Basic realm="htaccess password prompt"/
-
+	
 	# Return passive matches
 	m
 end
