@@ -15,21 +15,26 @@ end
 
 
 class Plugin
-  attr_accessor :base_uri
   @registered_plugins = {}
- 
+  
   class << self
     attr_reader :registered_plugins
     private :new
     attr_reader :locked
+    attr_reader :plugin_name
     @locked=false
   end
 
   def self.define(name, &block)
     p = new
+    p.set_plugin_name(name)
     p.instance_eval(&block)
     p.startup
     Plugin.registered_plugins[name] = p
+  end
+ 
+  def set_plugin_name(s)
+     @plugin_name = s
   end
 
   def version_detection?
@@ -63,6 +68,7 @@ class Plugin
   end
 
   def init (target)
+        @target=target
   	@body=target.body
   	@meta=target.headers
   	@status=target.status
@@ -71,42 +77,40 @@ class Plugin
 	@tagpattern=target.tag_pattern
 	@ip=target.ip
 	@raw_response = target.raw_response
+	@raw_headers = target.raw_headers
   end
 
-# execute plugin
-  def x	
-  	results=[]
-	
-	unless @matches.nil?
-	  	@matches.each do |match|
-			r=[]
-
+  def make_matches(target,match)
+      r=[]
+                        search_context = target.body # by default
+			search_context = target.raw_response if match[:search] == "all"
+			search_context = target.raw_headers if match[:search] == "headers"
+			search_context = target.headers[$1] if match[:search] =~ /headers\[(.*)\]/ and target.headers[$1]
+			
 			unless match[:ghdb].nil?
-				r << match if match_ghdb(match[:ghdb], @body, @meta, @status, @base_uri)
+				r << match if match_ghdb(match[:ghdb], target.body, target.headers, target.status, target.uri)
 			end
 			
 			unless match[:text].nil?
-				#r << match if @body.include?(match[:text])
-				r << match if match[:regexp_compiled] =~ @body
+				r << match if match[:regexp_compiled] =~ search_context
 			end
 
 			unless match[:md5].nil?
-				r << match if @md5sum == match[:md5]
+				r << match if target.md5sum == match[:md5]
 			end
 
 			unless match[:tagpattern].nil?
-				r << match if @tagpattern == match[:tagpattern]
+				r << match if target.tag_pattern == match[:tagpattern]
 			end
 
-
-			if !match[:status].nil? and match[:url] == @base_uri.path
-				r << match if @status == match[:status]
+			if !match[:status].nil? and match[:url] == target.uri.path
+				r << match if target.status == match[:status]
 			end
 
 			unless match[:regexp_compiled].nil?
 				[:regexp,:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
 					if !match[symbol].nil? and match[symbol].class==Regexp
-						regexpmatch = @body.scan(match[:regexp_compiled])
+						regexpmatch = search_context.scan(match[:regexp_compiled])
 				                unless regexpmatch.empty?
 				                        m = match.dup
 				                        m[symbol] = regexpmatch.map {|eachmatch|
@@ -121,16 +125,32 @@ class Plugin
 					end
 				end
 			end
-
-			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
+		       
+       			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
 			# if :status is present then check that @status matches
-			if match[:url].nil? or (!match[:url].nil? and !@base_uri.nil? and match[:url] == @base_uri.path)
-				if match[:status].nil? or (!match[:status].nil? and @status == match[:status] and !match[:url].nil?)					
-					results +=r 
+
+			if match[:url].nil? or (!match[:url].nil? and !target.uri.nil? and match[:url] == target.uri.path)
+				if match[:status].nil? or (!match[:status].nil? and target.status == match[:status] and !match[:url].nil?)
+					r
+				else
+				  r=[]
 				end
+			else
+			  r=[]
 			end
+	  r
+  end
+
+# execute plugin
+  def x	
+        results=[]
+
+  	unless @matches.nil?
+	  	@matches.each do |match|
+		        results = make_matches(@target,match)
 		end
 	end
+        results
 
 	# if the plugin has a passive method, use it
    	results += self.passive if defined? self.passive
@@ -138,76 +158,31 @@ class Plugin
 	# if the plugin has an aggressive method and we're in aggressive mode, use it
 	# or if we're guessing all URLs
 	if ($AGGRESSION == 3 and !results.empty?) or ($AGGRESSION == 4)
-		results += self.aggressive if defined? self.aggressive	
+		results += self.aggressive if defined? self.aggressive
 		
 		# if any of our matches have a url then fetch it
-		# and check the matches[]		
+		# and check the matches[]
 		# later we can do some caching
-
 
 		# we have no caching, so we sort the URLs to fetch and only get 1 unique url per plugin. not great..
 		unless @matches.nil?
 			lastbase_uri=nil
 			thisstatus,thisurl,thisbody,thisheaders=nil # this shouldn't be necessary but ruby thinks its a local variable to the if end statement
-			@matches.map {|x| x if x[:url]}.compact.sort_by {|x| x[:url] }.map do |match|
+			
+			@matches.map {|x| x if x[:url]}.compact.sort_by {|x| x[:url] }.map do |match|			
 				r=[] # temp results
 
-				# this is messy... need a webpage class
-				thisbase_uri=URI.join(@base_uri.to_s, match[:url])
-				if thisbase_uri != lastbase_uri
-					thisstatus,thisurl,thisip,thisbody,thisheaders = open_target( thisbase_uri.to_s) 
-				end
-				lastbase_uri=thisbase_uri
-
-				if thisbody.nil?
-					thismd5sum=nil
-					thistagpattern=nil
-				else
-					thismd5sum=Digest::MD5.hexdigest(thisbody)
-					thistagpattern = make_tag_pattern(thisbody)
-				end
+                                newbase_uri=URI.join(@base_uri.to_s, match[:url]).to_s
 				
-
-				unless match[:ghdb].nil?
-					r << match if match_ghdb(match[:ghdb], thisbody, {}, thisstatus, thisbase_uri)
+                                aggressivetarget=Target.new(newbase_uri)
+			        aggressivetarget.open
+				
+				if $verbose >1
+				  puts "#{@plugin_name} Aggressive: #{aggressivetarget.uri.to_s} [#{aggressivetarget.status}]"
 				end
 
-				unless match[:text].nil?
-					r << match if thisbody.include?(match[:text])
-				end
-
-				unless match[:md5].nil?
-					r << match if thismd5sum == match[:md5]
-				end
-
-				unless match[:tagpattern].nil?
-					r << match if thistagpattern == match[:tagpattern]
-				end
-		
-				if !match[:status].nil? and match[:url] == thisbase_uri.path
-					r << match if thisstatus == match[:status]
-				end
-
-				unless match[:regexp_compiled].nil?
-					[:regexp, :account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
-						if !match[symbol].nil? and match[symbol].class==Regexp
-							regexpmatch = thisbody.scan(match[:regexp_compiled])
-						        unless regexpmatch.empty?
-						                m = match.dup
-						                m[symbol] = regexpmatch.map {|eachmatch|
-										if match[:offset]
-											eachmatch[match[:offset]]
-										else
-											eachmatch.first
-										end
-									}.flatten.sort.uniq
-						                r << m
-						        end
-						end
-					end
-				end		
-
-				results +=r					
+				r = make_matches(aggressivetarget,match)
+				results +=r
 			end
 		end
 
@@ -220,35 +195,11 @@ class Plugin
 		end
 	end
 
-	# check for CVE stuff
-		# if has CVE array
-			# get final version. just use longest version for now, eg. 3.0.15 over 3.0
-				# for each CVE version / version range
-					# does version fit thisversion?
-						# match CVE
-	unless results.empty?
-		if defined?(self.vulnerabilities)
-			v=self.vulnerabilities(results)
-			pp v
-		end
-	end
-	# take CVE version, split into comma delimited list
-	# for each
-	# it's a range if it has - or x
-	# is it in the range?
-
-
-	# examples
-	# ["2.1.0-2.1.8, 2.2.0-2.2.8, 2.3.0-2.3.4, 2.4.0-2.4.6"
-	# "2.0.x"
-	# "1.81-"
-	# "3.1"
-
 	results
   end
 
   extend PluginSugar
-  def_field :author, :version, :examples, :description, :matches, :cve, :dorks
+  def_field  :author, :version, :examples, :description, :matches, :cve, :dorks
 #, :category
 
 end
