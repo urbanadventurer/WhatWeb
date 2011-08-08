@@ -14,8 +14,8 @@ Version 0.4.8-dev Unreleased
 * Removed the extra_urls feature
 * Added raw header support by monkey patching the net/http library
 * Targets from input files are now executed ascending order
-* Redesigned whatweb's main loop and introduced the Target class
-
+* Redesigned and refactored much of Whatweb's code. Introduced the Target class
+* Added context searching for plugin matches[]. Added the matches keyword, :search. Values can be "headers","headers[server]"(or any other HTTP header),"body"(default), "all" (the raw headers + body)
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
