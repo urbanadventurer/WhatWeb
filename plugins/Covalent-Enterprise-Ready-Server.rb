@@ -42,10 +42,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/secured_by_Covalent\/([^\s]+)/) } if @meta["server"] =~ /secured_by_Covalent\/([^\s]+)/
+	m << { :version=>@headers["server"].scan(/secured_by_Covalent\/([^\s]+)/) } if @headers["server"] =~ /secured_by_Covalent\/([^\s]+)/
 
 	# CovalentSNMP
-	m << { :module=>@meta["server"].scan(/(CovalentSNMP\/[^\s]+)/) } if @meta["server"] =~ /CovalentSNMP\/[^\s]+/
+	m << { :module=>@headers["server"].scan(/(CovalentSNMP\/[^\s]+)/) } if @headers["server"] =~ /CovalentSNMP\/[^\s]+/
 
 	# Return passive matches
 	m

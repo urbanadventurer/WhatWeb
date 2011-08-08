@@ -39,7 +39,7 @@ def passive
 	m=[]
 
 	# realm=XBMC # realm="Keimo-XBMC" # realm="XBMC WebServer"
-	m << { :name=>'HTTP WWW Authenticate header' } if @meta['www-authenticate'] =~ /realm=["]?XBMC/ or @meta['www-authenticate'] =~ /realm=["]?Keimo-XBMC/
+	m << { :name=>'HTTP WWW Authenticate header' } if @headers['www-authenticate'] =~ /realm=["]?XBMC/ or @headers['www-authenticate'] =~ /realm=["]?Keimo-XBMC/
 
 	# Return passive matches
 	m

@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^CouchDB\/([^\s]+) \((Erlang OTP\/R[^\s^\)]+)\)$/
+	if @headers["server"] =~ /^CouchDB\/([^\s]+) \((Erlang OTP\/R[^\s^\)]+)\)$/
 		m << { :version=>"#{$1}" }
 		m << { :string=>"#{$2}" }
 	end

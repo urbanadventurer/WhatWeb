@@ -32,7 +32,7 @@ def passive
 	m=[]
 
 	# X-Ksscommands HTTP Header
-	m << { :name=>"X-Ksscommands HTTP Header" } unless @meta["x-ksscommands"].nil?
+	m << { :name=>"X-Ksscommands HTTP Header" } unless @headers["x-ksscommands"].nil?
 
 	# Return passive matches
 	m

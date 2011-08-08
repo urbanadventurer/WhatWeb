@@ -48,13 +48,13 @@ def passive
 	m=[]
 
 	# Version Detection # SmartCDS Header
-	m << { :version=>@meta["smartcds"].scan(/^Version:([^\s]+)$/) } if @meta["smartcds"] =~ /^Version:([^\s]+)$/
+	m << { :version=>@headers["smartcds"].scan(/^Version:([^\s]+)$/) } if @headers["smartcds"] =~ /^Version:([^\s]+)$/
 
 	# Version Detection # Server Header
-	m << { :version=>@meta["server"].scan(/^smartcds\/([^\s]+)/) } if @meta["server"] =~ /^smartcds\/([^\s]+)/
+	m << { :version=>@headers["server"].scan(/^smartcds\/([^\s]+)/) } if @headers["server"] =~ /^smartcds\/([^\s]+)/
 
 	# Error Detection # X-SmartCDS-Error Header
-	m << { :string=>@meta["x-smartcds-error"].to_s } unless @meta["x-smartcds-error"].nil?
+	m << { :string=>@headers["x-smartcds-error"].to_s } unless @headers["x-smartcds-error"].nil?
 
 	# Return passive matches
 	m

@@ -34,7 +34,7 @@ def passive
 	m=[]
 
 	# Proxy-Agent HTTP Header
-	m << { :name=>"Proxy-Agent HTTP Header" } if @meta["proxy-agent"].to_s =~ /^[\s]*IWSS/
+	m << { :name=>"Proxy-Agent HTTP Header" } if @headers["proxy-agent"].to_s =~ /^[\s]*IWSS/
 
 	# Return Passive Matches
 	m

@@ -31,10 +31,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Karrigell\/([^\s]+) /) } if @meta["server"] =~ /^Karrigell\/([^\s]+) /
+	m << { :version=>@headers["server"].scan(/^Karrigell\/([^\s]+) /) } if @headers["server"] =~ /^Karrigell\/([^\s]+) /
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Karrigell ([^\s]+)$/) } if @meta["server"] =~ /^Karrigell ([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^Karrigell ([^\s]+)$/) } if @headers["server"] =~ /^Karrigell ([^\s]+)$/
 
 	# Return passive matches
 	m

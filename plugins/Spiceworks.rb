@@ -47,10 +47,10 @@ def passive
 	# spiceworks_session cookie
 	# Session cookie format: URL encoded base64 string beginning with "BAh7"
 	# Terminated by "--" then followed by a md5 hash
-	m << { :name=>"spiceworks_session cookie" } if @meta["set-cookie"] =~ /spiceworks_session=BAh7[^\s]+--/
+	m << { :name=>"spiceworks_session cookie" } if @headers["set-cookie"] =~ /spiceworks_session=BAh7[^\s]+--/
 
 	# spiceworks cookie
-	m << { :name=>"spiceworks cookie" } if @meta["set-cookie"] =~ /spiceworks=[a-f\d]{32}; path=\//
+	m << { :name=>"spiceworks cookie" } if @headers["set-cookie"] =~ /spiceworks=[a-f\d]{32}; path=\//
 
 	# If a match was found
 	unless m.empty?

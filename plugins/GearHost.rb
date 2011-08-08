@@ -43,7 +43,7 @@ def passive
 	m=[]
 
 	# Hosted-With HTTP Header
-	m << { :os=>"Windows", :module=>"ASP.NET, ColdFusion, PHP, Perl" } if @meta["hosted-with"] =~ /[\s]*GearHost Inc\. \(www.gearhost.com\)/
+	m << { :os=>"Windows", :module=>"ASP.NET, ColdFusion, PHP, Perl" } if @headers["hosted-with"] =~ /[\s]*GearHost Inc\. \(www.gearhost.com\)/
 
 	# Return Passive Matches
 	m

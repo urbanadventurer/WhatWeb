@@ -70,10 +70,10 @@ def passive
 	m=[]
 
 	# mosvisitor cookie # Also used by mambo
-	m << { :certainty=>75, :name=>"mosvisitor cookie" } if @meta["set-cookie"] =~ /mosvisitor=[0-9]+/ 
+	m << { :certainty=>75, :name=>"mosvisitor cookie" } if @headers["set-cookie"] =~ /mosvisitor=[0-9]+/ 
 
 	# P3P Privacy Headers # Also used by phpcake
-	m << { :name=>"P3P Privacy Headers", :certainty=>25 } if @meta["p3p"] == 'CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"'
+	m << { :name=>"P3P Privacy Headers", :certainty=>25 } if @headers["p3p"] == 'CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"'
 
 	# HTML Comment # seconds since epoch # Also used by mambo
 	if @body =~ /<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/ and @body !~ /mambo/i

@@ -26,7 +26,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Easy File Sharing Web Server v(.+)$/) } if @meta["server"] =~ /^Easy File Sharing Web Server v(.+)$/
+	m << { :version=>@headers["server"].scan(/^Easy File Sharing Web Server v(.+)$/) } if @headers["server"] =~ /^Easy File Sharing Web Server v(.+)$/
 
 	# Return passive matches
 	m

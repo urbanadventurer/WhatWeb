@@ -45,10 +45,10 @@ def passive
 	m=[]
 
 	# x-generator header
-	m << { :string=>@meta["x-generator"].scan(/^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /) } if @meta["x-generator"] =~ /^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /
+	m << { :string=>@headers["x-generator"].scan(/^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /) } if @headers["x-generator"] =~ /^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /
 
 	# generator header
-	m << { :string=>@meta["generator"].scan(/^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /) } if @meta["generator"] =~ /^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /
+	m << { :string=>@headers["generator"].scan(/^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /) } if @headers["generator"] =~ /^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /
 
 	# Return passive matches
 	m

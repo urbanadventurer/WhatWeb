@@ -47,7 +47,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^http server\/everfocus$/
+	if @headers["server"] =~ /^http server\/everfocus$/
 
 		m << { :name=>"HTTP Server Header" }
 

@@ -181,12 +181,12 @@ def passive
 	m=[]
 
 	# WWW-Authenticate Header
-	if @meta["www-authenticate"] =~ /^Basic realm="?[\s]*Netgear/i
+	if @headers["www-authenticate"] =~ /^Basic realm="?[\s]*Netgear/i
 
 		m << { :certainty=>75, :name=>"WWW-Authenticate Header" }
 
 		# Model Detection
-		m << { :model=>@meta["www-authenticate"].scan(/^Basic realm="?[\s]*NETGEAR ([^"]+)[\s]*"?/i) } if @meta["www-authenticate"] =~ /^Basic realm="?[\s]*NETGEAR ([^"]+)[\s]*"?/i
+		m << { :model=>@headers["www-authenticate"].scan(/^Basic realm="?[\s]*NETGEAR ([^"]+)[\s]*"?/i) } if @headers["www-authenticate"] =~ /^Basic realm="?[\s]*NETGEAR ([^"]+)[\s]*"?/i
 
 	end
 

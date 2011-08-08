@@ -34,13 +34,13 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Acme\.Serve\/v([\d\.]+) of [\d]{2}[a-z]{3}[\d]{2}$/
+	if @headers["server"] =~ /^Acme\.Serve\/v([\d\.]+) of [\d]{2}[a-z]{3}[\d]{2}$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^Acme\.Serve\/v([\d\.]+) of [\d]{2}[a-z]{3}[\d]{2}$/) }
+		m << { :version=>@headers["server"].scan(/^Acme\.Serve\/v([\d\.]+) of [\d]{2}[a-z]{3}[\d]{2}$/) }
 
 		# Date Detection
-		m << { :string=>@meta["server"].scan(/^Acme\.Serve\/v[\d\.]+ of ([\d]{2}[a-z]{3}[\d]{2})$/) }
+		m << { :string=>@headers["server"].scan(/^Acme\.Serve\/v[\d\.]+ of ([\d]{2}[a-z]{3}[\d]{2})$/) }
 
 	end
 

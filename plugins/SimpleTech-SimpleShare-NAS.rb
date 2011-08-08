@@ -21,10 +21,10 @@ def passive
 	m=[]
 
 	# Check Server
-	if @meta["server"] =~ /httpd/
+	if @headers["server"] =~ /httpd/
 
 		# SimpleShare WWW-Authenticate Realm
-		m << { :status=>401, :name=>"SimpleShare WWW-Authenticate Realm" } if @meta["www-authenticate"] =~ /Basic realm="SimpleShare \(default user name is admin and password is simple\)"/
+		m << { :status=>401, :name=>"SimpleShare WWW-Authenticate Realm" } if @headers["www-authenticate"] =~ /Basic realm="SimpleShare \(default user name is admin and password is simple\)"/
 
 	end
 

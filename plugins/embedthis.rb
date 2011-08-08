@@ -14,9 +14,9 @@ examples %w| 114.74.149.201 |
 
 def passive
 	m=[]
-	unless @meta["server"].nil?
-		m << { :string=>"Server header" } if @meta["server"] =~ /^Mbedthis-Appweb/i
-		m << { :version=>@meta["server"].scan(/Mbedthis-Appweb\/(.*)/i) } if @meta["server"] =~ /Mbedthis-Appweb\/(.*)/i
+	unless @headers["server"].nil?
+		m << { :string=>"Server header" } if @headers["server"] =~ /^Mbedthis-Appweb/i
+		m << { :version=>@headers["server"].scan(/Mbedthis-Appweb\/(.*)/i) } if @headers["server"] =~ /Mbedthis-Appweb\/(.*)/i
 	end
 	m
 end

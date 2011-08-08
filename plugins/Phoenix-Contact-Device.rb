@@ -26,7 +26,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /^Phoenix-Contact\/([^\s]+) \(powered by SpiderControl TM\)$/
+	if @headers["server"] =~ /^Phoenix-Contact\/([^\s]+) \(powered by SpiderControl TM\)$/
 		m << { :version=>"#{$1}" }
 	end
 

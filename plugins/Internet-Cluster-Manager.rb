@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Internet Cluster Manager Ver\. ([^\s]+)$/) } if @meta["server"] =~ /^Internet Cluster Manager Ver\. ([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^Internet Cluster Manager Ver\. ([^\s]+)$/) } if @headers["server"] =~ /^Internet Cluster Manager Ver\. ([^\s]+)$/
 
 	# Return passive matches
 	m

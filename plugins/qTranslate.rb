@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# Cookie # qtrans_cookie_test=qTranslate+Cookie+Test;
-	if @meta['set-cookie'] =~ /qtrans_cookie_test=qTranslate\+Cookie\+Test;/
+	if @headers['set-cookie'] =~ /qtrans_cookie_test=qTranslate\+Cookie\+Test;/
 
 		m << { :name=>"qtrans_cookie_test cookie", :string=>"Wordpress" }
 

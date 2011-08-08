@@ -5,7 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 # Version 0.2 # 2011-03-02 #
-# Removed redundant capitalized @meta["Server"] match
+# Removed redundant capitalized @headers["Server"] match
 ##
 # Version 0.3 2011-03-16 by Andrew Horton
 # Added cisco model detection
@@ -44,7 +44,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /^[\s]*cisco-IOS/
+	m << { :name=>"HTTP Server Header" } if @headers["server"].to_s =~ /^[\s]*cisco-IOS/
 
 	# Return passive matches
 	m

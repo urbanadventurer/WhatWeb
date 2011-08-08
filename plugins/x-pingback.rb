@@ -43,7 +43,7 @@ def passive
 	m=[]
 	
 	# X-Pingback HTTP Header
-	m << { :string=>@meta["x-pingback"] } unless @meta["x-pingback"].nil?
+	m << { :string=>@headers["x-pingback"] } unless @headers["x-pingback"].nil?
 
 	# Return passive matches
 	m

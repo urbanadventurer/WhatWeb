@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :os=>"HyNetOS", :version=>@meta["server"].scan(/^HyNetOS\/([^\s]+)$/) } if @meta["server"] =~ /^HyNetOS\/([^\s]+)$/
+	m << { :os=>"HyNetOS", :version=>@headers["server"].scan(/^HyNetOS\/([^\s]+)$/) } if @headers["server"] =~ /^HyNetOS\/([^\s]+)$/
 
 	# Return passive matches
 	m

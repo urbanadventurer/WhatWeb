@@ -33,7 +33,7 @@ def passive
 	m=[]
 
 	# Model Detection # WWW-Authenticate: Digest realm i3micro
-	m << { :model=>@meta["www-authenticate"].scan(/^Digest realm="i3micro (V[A-Z]{2})", nonce/) } if @meta["www-authenticate"] =~ /^Digest realm="i3micro (V[A-Z]{2})", nonce/
+	m << { :model=>@headers["www-authenticate"].scan(/^Digest realm="i3micro (V[A-Z]{2})", nonce/) } if @headers["www-authenticate"] =~ /^Digest realm="i3micro (V[A-Z]{2})", nonce/
 
 	# Return passive matches
 	m

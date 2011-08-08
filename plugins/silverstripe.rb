@@ -42,7 +42,7 @@ def passive
 	m=[]
 
 	# Set-Cookie: PastVisitor
-	m << {:name=>"PastVisitor Cookie" } if @meta["set-cookie"] =~ /PastVisitor=[0-9]+.*/	
+	m << {:name=>"PastVisitor Cookie" } if @headers["set-cookie"] =~ /PastVisitor=[0-9]+.*/	
 
 	# Return passive matches
 	m

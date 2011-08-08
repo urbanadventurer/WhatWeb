@@ -64,14 +64,14 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta['server'] =~ /^iGuard Embedded Web Server\/([^\s]{1,15}) \(([^\s^\)]+)\) (SN:[^\s]+)$/
+	if @headers['server'] =~ /^iGuard Embedded Web Server\/([^\s]{1,15}) \(([^\s^\)]+)\) (SN:[^\s]+)$/
 		m << { :firmware=>"#{$1}" }
 		m << { :model   =>"#{$2}" }
 		m << { :string  =>"#{$3}" }
 	end
 
 	# WWW-Authenticate: Basic realm="iGuard System"
-	m << { :name=>"WWW-Authenticate Header" } if @meta["www-authenticate"] =~ /Basic realm="iGuard System"/
+	m << { :name=>"WWW-Authenticate Header" } if @headers["www-authenticate"] =~ /Basic realm="iGuard System"/
 
 	# Return passive matches
 	m

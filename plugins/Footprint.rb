@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Footprint ([\d\.]+)\/FPMCP$/) } if @meta["server"] =~ /^Footprint ([\d\.]+)\/FPMCP$/
+	m << { :version=>@headers["server"].scan(/^Footprint ([\d\.]+)\/FPMCP$/) } if @headers["server"] =~ /^Footprint ([\d\.]+)\/FPMCP$/
 
 	# Return passive matches
 	m

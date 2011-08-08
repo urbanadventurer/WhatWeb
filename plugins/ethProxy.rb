@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^ethProxy$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^ethProxy$/
 
 	# Return passive matches
 	m

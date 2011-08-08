@@ -32,11 +32,11 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^(D\. )?Rogatkin/
+	if @headers["server"] =~ /^(D\. )?Rogatkin/
 
 		# Version Detection # HTTP Server Header
-		m << { :version=>@meta["server"].scan(/^Rogatkin's JWS based on Acme\.Serve\/\$Revision: ([\d\.]+) \$$/) } if @meta["server"] =~ /^Rogatkin's JWS based on Acme\.Serve\/\$Revision: ([\d\.]+) \$$/
-		m << { :version=>@meta["server"].scan(/^D\. Rogatkin's TJWS based on Acme\.Serve\/Version [^,]+, \$Revision: ([\d\.]+) \$$/) } if @meta["server"] =~ /^D\. Rogatkin's TJWS based on Acme\.Serve\/Version [^,]+, \$Revision: ([\d\.]+) \$$/
+		m << { :version=>@headers["server"].scan(/^Rogatkin's JWS based on Acme\.Serve\/\$Revision: ([\d\.]+) \$$/) } if @headers["server"] =~ /^Rogatkin's JWS based on Acme\.Serve\/\$Revision: ([\d\.]+) \$$/
+		m << { :version=>@headers["server"].scan(/^D\. Rogatkin's TJWS based on Acme\.Serve\/Version [^,]+, \$Revision: ([\d\.]+) \$$/) } if @headers["server"] =~ /^D\. Rogatkin's TJWS based on Acme\.Serve\/Version [^,]+, \$Revision: ([\d\.]+) \$$/
 
 	end
 

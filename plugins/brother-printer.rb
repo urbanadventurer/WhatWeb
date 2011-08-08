@@ -107,7 +107,7 @@ def passive
 
 	# Version Detection # HTTP Server Header
 	# This header is also used by brother faxes
-	m << { :certainty=>25, :version=>@meta["server"].scan(/^[Dd]ebut\/([\d\.]+)$/) } if @meta["server"] =~ /^[Dd]ebut\/([\d\.]+)$/
+	m << { :certainty=>25, :version=>@headers["server"].scan(/^[Dd]ebut\/([\d\.]+)$/) } if @headers["server"] =~ /^[Dd]ebut\/([\d\.]+)$/
 
 	# Return passive matches
 	m

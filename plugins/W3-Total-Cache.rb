@@ -40,7 +40,7 @@ def passive
 	m=[]
 
 	# Version detection # X-Powered-By
-	m << { :version=>@meta['x-powered-by'].scan(/W3 Total Cache\/([\d\.]+)/) } if @meta['x-powered-by'] =~ /W3 Total Cache\/([\d\.]+)/
+	m << { :version=>@headers['x-powered-by'].scan(/W3 Total Cache\/([\d\.]+)/) } if @headers['x-powered-by'] =~ /W3 Total Cache\/([\d\.]+)/
 
 	# Return passive matches
 	m

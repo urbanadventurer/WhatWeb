@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# Server: WindWeb # WWW-Authenticate: Basic realm="PortBase"
-	if @status == 401 and @meta["server"] =~ /^WindWeb/ and @meta["www-authenticate"] =~ /^Basic realm="PortBase"$/
+	if @status == 401 and @headers["server"] =~ /^WindWeb/ and @headers["www-authenticate"] =~ /^Basic realm="PortBase"$/
 		m << { :name=>"HTTP Server and WWW-Authenticate Headers" }
 	end
 

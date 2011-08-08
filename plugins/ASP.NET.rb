@@ -161,17 +161,17 @@ def passive
 	m=[]
 
 	# x-powered-by HTTP header
-	m << { :name=>"x-powered-by" } if @meta['x-powered-by'] =~ /asp\.net/i
+	m << { :name=>"x-powered-by" } if @headers['x-powered-by'] =~ /asp\.net/i
 
 	# Version Detection # X-AspNet-Version HTTP header
-	m << { :version=>@meta['x-aspnet-version'].to_s } unless @meta['x-aspnet-version'].nil?
+	m << { :version=>@headers['x-aspnet-version'].to_s } unless @headers['x-aspnet-version'].nil?
 
 	# Version Detection # X-AspNetmvc-version HTTP header
-	m << { :string=>"MVC"+@meta['x-aspnetmvc-version'].to_s } unless @meta['x-aspnetmvc-version'].nil?
+	m << { :string=>"MVC"+@headers['x-aspnetmvc-version'].to_s } unless @headers['x-aspnetmvc-version'].nil?
 
 	# AnonymousIdentificationModule
-	m << { :module=>"AnonymousIdentificationModule" } if @meta['set-cookie'] =~ /^anonymousID=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
-	m << { :module=>"AnonymousIdentificationModule" } if @meta['set-cookie'] =~ /^chkvalues=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
+	m << { :module=>"AnonymousIdentificationModule" } if @headers['set-cookie'] =~ /^anonymousID=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
+	m << { :module=>"AnonymousIdentificationModule" } if @headers['set-cookie'] =~ /^chkvalues=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
 
 	# Return passive results
 	m

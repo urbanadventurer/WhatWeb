@@ -70,7 +70,7 @@ class Plugin
   def init (target)
         @target=target
   	@body=target.body
-  	@meta=target.headers
+  	@headers=target.headers
   	@status=target.status
   	@base_uri=target.uri
 	@md5sum=target.md5sum

@@ -61,7 +61,7 @@ matches [
 
 def passive
         m=[]
-        m << {:name=>"TWIKISID Cookie" } if @meta["set-cookie"] =~ /TWIKISID=[0-9a-z]{32}/
+        m << {:name=>"TWIKISID Cookie" } if @headers["set-cookie"] =~ /TWIKISID=[0-9a-z]{32}/
         m
 end
 

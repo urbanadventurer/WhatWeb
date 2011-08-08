@@ -17,7 +17,7 @@ def passive
 	m=[]
 
 	# X-dotDefender-denied Header
-	m << { :string=>"Denied" } unless @meta["x-dotdefender-denied"].nil?
+	m << { :string=>"Denied" } unless @headers["x-dotdefender-denied"].nil?
 
 	# Return passive matches
 	m

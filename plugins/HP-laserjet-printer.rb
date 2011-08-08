@@ -152,13 +152,13 @@ def passive
         m=[]
 
 	# Server: HP-ChaiServer
-	m << { :version=>@meta['server'].scan(/HP-ChaiServer\/([\d\.]+)/) } if @meta['server'] =~ /HP-ChaiServer\/([\d\.]+)/
+	m << { :version=>@headers['server'].scan(/HP-ChaiServer\/([\d\.]+)/) } if @headers['server'] =~ /HP-ChaiServer\/([\d\.]+)/
 
 	# Server: HP-ChaiSOE
-	m << { :version=>@meta['server'].scan(/HP-ChaiSOE\/([\d\.]+)/) } if @meta['server'] =~ /HP-ChaiSOE\/([\d\.]+)/
+	m << { :version=>@headers['server'].scan(/HP-ChaiSOE\/([\d\.]+)/) } if @headers['server'] =~ /HP-ChaiSOE\/([\d\.]+)/
 
 	# Location: hp/device/this.LCDispatcher
-	m << { :name=>"HTTP Location Header" } if @meta['location'] =~ /hp\/device\/this.LCDispatcher/
+	m << { :name=>"HTTP Location Header" } if @headers['location'] =~ /hp\/device\/this.LCDispatcher/
 
 	# Return passive matches
         m

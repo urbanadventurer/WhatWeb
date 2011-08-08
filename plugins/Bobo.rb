@@ -36,19 +36,19 @@ def passive
 	m=[]
 
 	# Bobo-Exception-Line
-	m << { :name=>"HTTP Bobo-Exception-Line Header" } unless @meta["bobo-exception-line"].nil?
+	m << { :name=>"HTTP Bobo-Exception-Line Header" } unless @headers["bobo-exception-line"].nil?
 
 	# Bobo-Exception-Value
-	m << { :name=>"HTTP Bobo-Exception-Value Header" } unless @meta["bobo-exception-value"].nil?
+	m << { :name=>"HTTP Bobo-Exception-Value Header" } unless @headers["bobo-exception-value"].nil?
 
 	# Extract # Bobo-Exception-File
-	m << { :string=>@meta["bobo-exception-file"].scan(/([^\r^\n]+)/).to_s } if @meta["bobo-exception-file"] =~ /([^\r^\n]+)/
+	m << { :string=>@headers["bobo-exception-file"].scan(/([^\r^\n]+)/).to_s } if @headers["bobo-exception-file"] =~ /([^\r^\n]+)/
 
 	# Extract # Bobo-Exception-Type
-	m << { :string=>@meta["bobo-exception-type"].scan(/([^\r^\n]+)/).to_s } if @meta["bobo-exception-type"] =~ /([^\r^\n]+)/
+	m << { :string=>@headers["bobo-exception-type"].scan(/([^\r^\n]+)/).to_s } if @headers["bobo-exception-type"] =~ /([^\r^\n]+)/
 
 	# X-Ksscommands
-	m << { :name=>"X-Ksscommands HTTP Header" } unless @meta["x-ksscommands"].nil?
+	m << { :name=>"X-Ksscommands HTTP Header" } unless @headers["x-ksscommands"].nil?
 
 	m
 

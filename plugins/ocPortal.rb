@@ -42,10 +42,10 @@ def passive
 	m=[]
 
 	# X-Powered-By ocPortal
-	m << { :version=>@meta["x-powered-by"].scan(/^ocPortal ([^\(]+) \(PHP/) } if @meta["x-powered-by"] =~ /^ocPortal ([^\(]+) \(PHP/
+	m << { :version=>@headers["x-powered-by"].scan(/^ocPortal ([^\(]+) \(PHP/) } if @headers["x-powered-by"] =~ /^ocPortal ([^\(]+) \(PHP/
 
 	# ocp_session cookie
-	m << { :name=>"ocp_session cookie" } if @meta["set-cookie"] =~ /ocp_session=[\d]+;/
+	m << { :name=>"ocp_session cookie" } if @headers["set-cookie"] =~ /ocp_session=[\d]+;/
 
 	# Return passive matches
 	m

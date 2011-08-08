@@ -61,7 +61,7 @@ def passive
 	m=[]
 
 	# cookieOnOffChecker Cookie
-	if @meta["set-cookie"] =~ /^cookieOnOffChecker=on;/
+	if @headers["set-cookie"] =~ /^cookieOnOffChecker=on;/
 		m << { :name=>"cookieOnOffChecker Cookie" }
 	end
 

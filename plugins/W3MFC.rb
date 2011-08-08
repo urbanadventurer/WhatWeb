@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/W3MFC\/([\d\.]+)/) } if @meta["server"] =~ /W3MFC\/([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/W3MFC\/([\d\.]+)/) } if @headers["server"] =~ /W3MFC\/([\d\.]+)/
 
 	m
 

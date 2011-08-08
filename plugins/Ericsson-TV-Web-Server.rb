@@ -24,7 +24,7 @@ def passive
 	m=[]
 
 	# HTTP "Server " Header
-	m << { :name=>"HTTP Server Header" } if @meta["server "] =~ /^Ericsson Television Web server$/
+	m << { :name=>"HTTP Server Header" } if @headers["server "] =~ /^Ericsson Television Web server$/
 
 	# Return passive matches
 	m

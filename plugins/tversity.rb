@@ -16,9 +16,9 @@ matches [
 ]
 
 def passive
-	if @meta["server"] =~ /TVersity Media Server/
-		if @meta["server"] =~ /TVersity Media Server\/([\d\.]+)/
-			v=@meta["server"].scan(/TVersity Media Server\/([\d\.]+)/).first
+	if @headers["server"] =~ /TVersity Media Server/
+		if @headers["server"] =~ /TVersity Media Server\/([\d\.]+)/
+			v=@headers["server"].scan(/TVersity Media Server\/([\d\.]+)/).first
 			[{:name=>"server header", :version=>v}]
 		else
 			[{:name=>"server header"}]

@@ -34,7 +34,7 @@ def passive
         m=[]
 
 	# TCMS_SESS_ID cookie
-	m << {:name=>"TCMS_SESS_ID Cookie" } if @meta["set-cookie"] =~ /TCMS_SESS_ID=/
+	m << {:name=>"TCMS_SESS_ID Cookie" } if @headers["set-cookie"] =~ /TCMS_SESS_ID=/
 
 	# 2.0+ powered by text
         if @body =~ /				<a style="color:#999;" href="http:\/\/www.arsmedia-nidda.de">arsmedia<\/a>/

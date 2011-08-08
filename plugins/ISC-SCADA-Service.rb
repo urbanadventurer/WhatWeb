@@ -20,7 +20,7 @@ def passive
 	m=[]
 
 	# Check HTTP Server
-	if @meta["server"] =~ /ISC SCADA Service HTTPserv:00001/
+	if @headers["server"] =~ /ISC SCADA Service HTTPserv:00001/
 
 		# HTTP Server Header
 		m << { :name=>"HTTP Server Header" }
@@ -54,7 +54,7 @@ def aggressive
 	m=[]
 
 	# Check Server
-	if @meta["server"] =~ /ISC SCADA Service HTTPserv:00001/
+	if @headers["server"] =~ /ISC SCADA Service HTTPserv:00001/
 
 		# HTTP Server Header
 		m << { :name=>"HTTP Server Header" }

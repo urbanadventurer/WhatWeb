@@ -40,7 +40,7 @@ def passive
 	m=[]
 
 	# Model Detection # Title
-	if @meta["server"] =~ /^GoAhead-Webs$/ and @body =~ /<title>([^\s]+) Control<\/title>/
+	if @headers["server"] =~ /^GoAhead-Webs$/ and @body =~ /<title>([^\s]+) Control<\/title>/
 		m << { :model=>@body.scan(/<title>([^\s]+) Control<\/title>/) }
 	end
 

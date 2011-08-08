@@ -53,16 +53,16 @@ def passive
 	m=[]
 
 	# Cookie
-	m << {:name=>"cookie (rl-sticky-key)" } if @meta["set-cookie"] =~ /rl\-sticky\-key/i
+	m << {:name=>"cookie (rl-sticky-key)" } if @headers["set-cookie"] =~ /rl\-sticky\-key/i
 
 	# Via HTTP Header
-	if @meta["via"] =~ /Juniper Networks Application Acceleration Platform/i
+	if @headers["via"] =~ /Juniper Networks Application Acceleration Platform/i
 
 		m << {:name=>"via header" }
 
 		# Version Detection # Via HTTP Header
-		if @meta['via'] =~ /Juniper Networks Application Acceleration Platform \- ([^<^\)]+)/i
-			m << { :version=>@meta['via'].scan(/Juniper Networks Application Acceleration Platform \- ([^<^\)]+)/i) }
+		if @headers['via'] =~ /Juniper Networks Application Acceleration Platform \- ([^<^\)]+)/i
+			m << { :version=>@headers['via'].scan(/Juniper Networks Application Acceleration Platform \- ([^<^\)]+)/i) }
 		end
 
 	end    

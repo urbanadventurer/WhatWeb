@@ -87,7 +87,7 @@ def passive
 	m=[]
 
 	# HTTP Redirect Location #
-	m << { :certainty=>25 } if @meta["location"] =~ /^http:\/\/[\d\.a-z]{1,256}\/xampp\/$/i
+	m << { :certainty=>25 } if @headers["location"] =~ /^http:\/\/[\d\.a-z]{1,256}\/xampp\/$/i
 
 	m
 end

@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/DataflexViNE-Webserver\/([\d\.]+)/) } if @meta["server"] =~ /DataflexViNE-Webserver\/([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/DataflexViNE-Webserver\/([\d\.]+)/) } if @headers["server"] =~ /DataflexViNE-Webserver\/([\d\.]+)/
 
 	# Return passive matches
 	m

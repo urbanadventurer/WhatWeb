@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^PowerSchool$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^PowerSchool$/
 
 	# Return passive matches
 	m

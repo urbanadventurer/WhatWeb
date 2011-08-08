@@ -67,7 +67,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @status == 401 and @meta["www-authenticate"] =~ /^Basic realm="System Login"$/ and @meta["server"] == "httpd" and @body =~ /^<HTML> <Title> 401 unAuthorized <\/title>                   <body> <H1> 401 unauthorized request <\/H1><\/body>                   <\/HTML>$/
+	if @status == 401 and @headers["www-authenticate"] =~ /^Basic realm="System Login"$/ and @headers["server"] == "httpd" and @body =~ /^<HTML> <Title> 401 unAuthorized <\/title>                   <body> <H1> 401 unauthorized request <\/H1><\/body>                   <\/HTML>$/
 
 		m << { :name=>"WWW-Authenticate Realm, HTTP Server and HTML" }
 

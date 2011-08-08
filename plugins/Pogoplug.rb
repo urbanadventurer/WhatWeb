@@ -32,7 +32,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /^HBHTTP ([A-Z\d]+) - ([\d\.]+) - Linux$/
+	if @headers["server"] =~ /^HBHTTP ([A-Z\d]+) - ([\d\.]+) - Linux$/
 		m << { :string =>"#{$1}" }
 		m << { :version=>"#{$2}" }
 	end

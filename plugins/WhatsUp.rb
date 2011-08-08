@@ -42,13 +42,13 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :string=>"Gold", :version=>@meta["server"].scan(/^WhatsUp_Gold\/([\d\.]+)/) } if @meta["server"] =~ /^WhatsUp_Gold\/([\d\.]+)/
+	m << { :string=>"Gold", :version=>@headers["server"].scan(/^WhatsUp_Gold\/([\d\.]+)/) } if @headers["server"] =~ /^WhatsUp_Gold\/([\d\.]+)/
 
 	# WWW-Authenticate # HTTP Server Header
-	m << { :string=>"Gold", :certainty=>75, :name=>"WWW-Authenticate" } if @meta["www-authenticate"] =~ /^Basic realm="WhatsUp[\s]?Gold"/
+	m << { :string=>"Gold", :certainty=>75, :name=>"WWW-Authenticate" } if @headers["www-authenticate"] =~ /^Basic realm="WhatsUp[\s]?Gold"/
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^WhatsUp/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^WhatsUp/
 
 	# Return passive matches
 	m

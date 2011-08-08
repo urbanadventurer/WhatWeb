@@ -32,8 +32,8 @@ def passive
 	found=[]
 	normal_headers=%w|accept-ranges age allow cache-control cachecontrol connection content-disposition content-encoding content-language content-length content-location content-md5 content-range content-type date etag expires host last-modified location mime-version p3p pragma proxy-authenticate refresh server set-cookie status trailer transfer-encoding vary via warning www-authenticate x-aspnet-version x-cache x-cache-lookup x-pad x-powered-by x-runtime x-ua-compatible|
 	
-	unless @meta.nil?	
-		@meta.each do |x,y|
+	unless @headers.nil?	
+		@headers.each do |x,y|
 			unless normal_headers.include?(x)
 				found << x
 			end

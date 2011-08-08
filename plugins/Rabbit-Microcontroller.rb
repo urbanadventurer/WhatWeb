@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Z-World Rabbit$/
+	if @headers["server"] =~ /^Z-World Rabbit$/
 
 		m << { :name=>"HTTP Server Header" }
 

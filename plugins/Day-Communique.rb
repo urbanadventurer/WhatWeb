@@ -31,13 +31,13 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /Communique\/([^\s]+)/
+	if @headers["server"] =~ /Communique\/([^\s]+)/
 
 		# Version Detection
-		if @meta["server"] =~ /Communique\/([^\s]+ \([^\)]+\))/
-			m << { :version=>@meta["server"].scan(/Communique\/([^\s]+ \([^\)]+\))/) }
+		if @headers["server"] =~ /Communique\/([^\s]+ \([^\)]+\))/
+			m << { :version=>@headers["server"].scan(/Communique\/([^\s]+ \([^\)]+\))/) }
 		else
-			m << { :version=>@meta["server"].scan(/Communique\/([^\s]+)/) }
+			m << { :version=>@headers["server"].scan(/Communique\/([^\s]+)/) }
 		end
 
 	end

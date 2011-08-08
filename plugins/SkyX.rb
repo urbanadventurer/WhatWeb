@@ -45,10 +45,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^SkyX HTTPS ([^\s]+)$/
+	if @headers["server"] =~ /^SkyX HTTPS ([^\s]+)$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^SkyX HTTPS ([^\s]+)$/) }
+		m << { :version=>@headers["server"].scan(/^SkyX HTTPS ([^\s]+)$/) }
 
 		# Model Detection
 		m << { :model=>@body.scan(/<div id="model">Model:([^<]+)<\/div>/) } if @body =~ /<div id="model">Model:([^<]+)<\/div>/

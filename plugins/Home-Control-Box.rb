@@ -30,16 +30,16 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^hcb_web\/v[^\s]+ BoxTalk\/[^\s]+ SWILL\/[^\s]+ \([^\)]+\)$/
+	if @headers["server"] =~ /^hcb_web\/v[^\s]+ BoxTalk\/[^\s]+ SWILL\/[^\s]+ \([^\)]+\)$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^hcb_web\/v([^\s]+) BoxTalk\/[^\s]+ SWILL\/[^\s]+ \([^\)]+\)$/) }
+		m << { :version=>@headers["server"].scan(/^hcb_web\/v([^\s]+) BoxTalk\/[^\s]+ SWILL\/[^\s]+ \([^\)]+\)$/) }
 
 		# BoxTalk Version
-		m << { :module=>@meta["server"].scan(/^hcb_web\/v[^\s]+ (BoxTalk\/[^\s]+) SWILL\/[^\s]+ \([^\)]+\)$/) }
+		m << { :module=>@headers["server"].scan(/^hcb_web\/v[^\s]+ (BoxTalk\/[^\s]+) SWILL\/[^\s]+ \([^\)]+\)$/) }
 
 		# SWILL Version
-		m << { :module=>@meta["server"].scan(/^hcb_web\/v[^\s]+ BoxTalk\/[^\s]+ (SWILL\/[^\s]+) \([^\)]+\)$/) }
+		m << { :module=>@headers["server"].scan(/^hcb_web\/v[^\s]+ BoxTalk\/[^\s]+ (SWILL\/[^\s]+) \([^\)]+\)$/) }
 
 		# No Login Required
 		if @body =~ /<frame frameborder="0" name="MGUI" src="myhcb_gui\.html" scrolling="no" \/>/
@@ -49,8 +49,8 @@ def passive
 	end
 
 	# Username Detection # WWW-Authenticate header
-	if @meta["www-authenticate"] =~ /^Basic realm="Home Control Box Configuration \(hcb-([a-z]{3}-[\d]{4})\)"$/
-		m << { :account=>@meta["www-authenticate"].scan(/^Basic realm="Home Control Box Configuration \(hcb-([a-z]{3}-[\d]{4})\)"$/) }
+	if @headers["www-authenticate"] =~ /^Basic realm="Home Control Box Configuration \(hcb-([a-z]{3}-[\d]{4})\)"$/
+		m << { :account=>@headers["www-authenticate"].scan(/^Basic realm="Home Control Box Configuration \(hcb-([a-z]{3}-[\d]{4})\)"$/) }
 	end
 
 	# Return passive matches

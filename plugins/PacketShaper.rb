@@ -67,7 +67,7 @@ def passive
 	m=[]
 
 	# PScfgstr cookie
-	if @meta['set-cookie'] =~ /^PScfgstr=/
+	if @headers['set-cookie'] =~ /^PScfgstr=/
 
 		m << { :name=>"PScfgstr cookie" }
 

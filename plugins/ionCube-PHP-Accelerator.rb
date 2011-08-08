@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# X-Accelerated-By
-	m << { :version=>@meta["x-accelerated-by"].scan(/^[\s]*PHPA\/([^\r^\n]*)/) } if @meta["x-accelerated-by"] =~ /^[\s]*PHPA\/([^\r^\n]*)/
+	m << { :version=>@headers["x-accelerated-by"].scan(/^[\s]*PHPA\/([^\r^\n]*)/) } if @headers["x-accelerated-by"] =~ /^[\s]*PHPA\/([^\r^\n]*)/
 
 	m
 

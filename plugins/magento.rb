@@ -119,8 +119,8 @@ Set-Cookie: frontend=s0ucd54lq2js68cp05sp6r2u92; 	ALPHA	1.4.0.1
 def passive
 	m=[]
 
-	m<< {:name=>"cookie called magento" } if @meta["set-cookie"] =~ /^magento=[0-9a-f]+/
-	m<< {:name=>"cookie called frontend", :certainty=>75 } if @meta["set-cookie"] =~ /^frontend=[0-9a-z]+/
+	m<< {:name=>"cookie called magento" } if @headers["set-cookie"] =~ /^magento=[0-9a-f]+/
+	m<< {:name=>"cookie called frontend", :certainty=>75 } if @headers["set-cookie"] =~ /^frontend=[0-9a-z]+/
 	m
 end
 

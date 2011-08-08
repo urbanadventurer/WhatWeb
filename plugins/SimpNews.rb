@@ -77,7 +77,7 @@ def passive
 	m=[]
 
 	# cookie
-        m << { :name=>"simpnews[lastvisit] Cookie" } if @meta["set-cookie"] =~ /simpnews\[lastvisit\]=/
+        m << { :name=>"simpnews[lastvisit] Cookie" } if @headers["set-cookie"] =~ /simpnews\[lastvisit\]=/
 
 	# Return passive matches
         m

@@ -29,15 +29,15 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^UserLand Frontier/
+	if @headers["server"] =~ /^UserLand Frontier/
 
 		# Server Detection
 		m << { :name=>"HTTP Server Header" }
 
 		# Version & OS Detection
-		if @meta["server"] =~ /^UserLand Frontier\/([^-]+)-(.+)$/
+		if @headers["server"] =~ /^UserLand Frontier\/([^-]+)-(.+)$/
 
-			match=@meta["server"].scan(/^UserLand Frontier\/([^-]+)-(.+)$/)
+			match=@headers["server"].scan(/^UserLand Frontier\/([^-]+)-(.+)$/)
 
 			# Version Detection
 			m << { :version=>match[0][0] }

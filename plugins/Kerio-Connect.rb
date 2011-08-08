@@ -40,7 +40,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Kerio (MailServer|Connect) (.+)$/)[0][1] } if @meta["server"] =~ /^Kerio (MailServer|Connect) (.+)$/
+	m << { :version=>@headers["server"].scan(/^Kerio (MailServer|Connect) (.+)$/)[0][1] } if @headers["server"] =~ /^Kerio (MailServer|Connect) (.+)$/
 
 	# Return passive matches
 	m

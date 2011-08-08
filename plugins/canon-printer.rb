@@ -22,9 +22,9 @@ matches [
 
 def passive
 	m=[]
-	unless @meta["server"].nil?
-		m << { :string=>"Server header" } if @meta["server"] =~ (/^Canon Http Server/i)
-		m << { :version=>@meta["server"].scan(/Canon Http Server (.*)/i) } if @meta["server"] =~ (/Canon Http Server (.*)/i)
+	unless @headers["server"].nil?
+		m << { :string=>"Server header" } if @headers["server"] =~ (/^Canon Http Server/i)
+		m << { :version=>@headers["server"].scan(/Canon Http Server (.*)/i) } if @headers["server"] =~ (/Canon Http Server (.*)/i)
 	end
 	m
 end

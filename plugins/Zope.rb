@@ -31,13 +31,13 @@ def passive
 	m=[]
 
 	# Version # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/Zope\/\(([^,]*)/) } if @meta["server"] =~ /Zope\/\(([^,]*)/
+	m << { :version=>@headers["server"].scan(/Zope\/\(([^,]*)/) } if @headers["server"] =~ /Zope\/\(([^,]*)/
 
 	# Python # HTTP Server Header
-	m << { :module=>@meta["server"].scan(/Zope\/\([^,]*, ([^,]*)/) } if @meta["server"] =~ /Zope\/\([^,]*, ([^,]*)/
+	m << { :module=>@headers["server"].scan(/Zope\/\([^,]*, ([^,]*)/) } if @headers["server"] =~ /Zope\/\([^,]*, ([^,]*)/
 
 	# OS # HTTP Server Header
-	m << { :string=>@meta["server"].scan(/Zope\/\([^,]*, [^,]*, ([^\)^\s]*)/) } if @meta["server"] =~ /Zope\/\([^,]*, [^,]*, ([^\)^\s]*)/
+	m << { :string=>@headers["server"].scan(/Zope\/\([^,]*, [^,]*, ([^\)^\s]*)/) } if @headers["server"] =~ /Zope\/\([^,]*, [^,]*, ([^\)^\s]*)/
 
 	m
 

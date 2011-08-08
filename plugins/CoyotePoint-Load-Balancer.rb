@@ -25,7 +25,7 @@ def passive
 	m=[]
 
 	# Model Detection # HTTP Server Header
-	m << { :model=>@meta["server"].scan(/^CoyotePoint (L[\d]) Load Balancer$/) } if @meta["server"] =~ /^CoyotePoint (L[\d]) Load Balancer$/
+	m << { :model=>@headers["server"].scan(/^CoyotePoint (L[\d]) Load Balancer$/) } if @headers["server"] =~ /^CoyotePoint (L[\d]) Load Balancer$/
 
 	# Return passive matches
 	m

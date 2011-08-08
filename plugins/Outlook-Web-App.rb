@@ -61,7 +61,7 @@ def passive
 	m=[]
 
 	# Version Detection # x-owa-version HTTP Header
-	m << { :version=>@meta["x-owa-version"].to_s } unless @meta["x-owa-version"].nil?
+	m << { :version=>@headers["x-owa-version"].to_s } unless @headers["x-owa-version"].nil?
 
 	# Return passive matches
 	m

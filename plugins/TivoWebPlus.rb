@@ -25,7 +25,7 @@ def passive
 	m=[]
 
 	# Version Detection # WWW-Authenticate Realm
-	m << { :version=>@meta["www-authenticate"].scan(/^Basic realm=['"]TivoWebPlus - v([^'^"]+)['"]$/) } if @meta["www-authenticate"] =~ /^Basic realm=['"]TivoWebPlus - v([^'^"]+)['"]$/
+	m << { :version=>@headers["www-authenticate"].scan(/^Basic realm=['"]TivoWebPlus - v([^'^"]+)['"]$/) } if @headers["www-authenticate"] =~ /^Basic realm=['"]TivoWebPlus - v([^'^"]+)['"]$/
 
 	# Return passive matches
 	m

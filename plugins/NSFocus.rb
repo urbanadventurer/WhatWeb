@@ -38,7 +38,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^NSFocus\/([^\s]+) \( NSFOCUS \)/) } if @meta["server"] =~ /^NSFocus\/([^\s]+) \( NSFOCUS \)/
+	m << { :version=>@headers["server"].scan(/^NSFocus\/([^\s]+) \( NSFOCUS \)/) } if @headers["server"] =~ /^NSFocus\/([^\s]+) \( NSFOCUS \)/
 
 	# Return passive matches
 	m

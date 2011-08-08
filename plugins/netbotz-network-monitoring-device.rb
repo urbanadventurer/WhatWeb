@@ -72,7 +72,7 @@ def passive
 	m=[]
 
 	# HTTP WWW Authenticate header
-	m << { :name=>'HTTP WWW Authenticate header' } if @meta['www-authenticate'] =~ /NetBotz Appliance/
+	m << { :name=>'HTTP WWW Authenticate header' } if @headers['www-authenticate'] =~ /NetBotz Appliance/
 
 	# Return Passive Matches
 	m

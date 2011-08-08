@@ -42,18 +42,18 @@ def passive
 	m=[]
 
 	# Version Detection # Server DAV
-	m << { :version=>@meta["server"].scan(/[^\r^\n]*DAV\/([^\s^\r^\n]*)/) } if @meta["server"] =~ /[^\r^\n]*DAV\/([^\s^\r^\n]*)/
+	m << { :version=>@headers["server"].scan(/[^\r^\n]*DAV\/([^\s^\r^\n]*)/) } if @headers["server"] =~ /[^\r^\n]*DAV\/([^\s^\r^\n]*)/
 
 	# MS-Author-Via
-	if @meta["MS-Author-Via"].to_s =~ /^[\s]*DAV/ or @meta["ms-author-via"].to_s =~ /^[\s]*DAV/
+	if @headers["MS-Author-Via"].to_s =~ /^[\s]*DAV/ or @headers["ms-author-via"].to_s =~ /^[\s]*DAV/
 		m << { :name=>"MS-Author-Via HTTP Header" }
 	end
 
 	# DAV
-	m << { :version=>@meta["dav"].scan(/[\s]*1,2,<http:\/\/([^>]+)>/) } unless @meta["dav"].nil?
+	m << { :version=>@headers["dav"].scan(/[\s]*1,2,<http:\/\/([^>]+)>/) } unless @headers["dav"].nil?
 
 	# X-WebDAV-Status
-	m << { :name=>"x-webdav-status HTTP Header" } unless @meta["x-webdav-status"].nil?
+	m << { :name=>"x-webdav-status HTTP Header" } unless @headers["x-webdav-status"].nil?
 
 	m
 

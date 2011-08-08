@@ -33,10 +33,10 @@ def passive
 	m=[]
 
 	# Version Detection # Server HTTP header
-	m << { :version=>@meta["server"].to_s.scan(/^[\s]*lighttpd\/([^\s^\r^\n]+)/).to_s } if @meta["server"].to_s =~ /^[\s]*lighttpd\/([^\s^\r^\n]+)/
+	m << { :version=>@headers["server"].to_s.scan(/^[\s]*lighttpd\/([^\s^\r^\n]+)/).to_s } if @headers["server"].to_s =~ /^[\s]*lighttpd\/([^\s^\r^\n]+)/
 
 	# OS Detection # Server HTTP header
-	m << { :os=>@meta["server"].scan(/^[\s]*lighttpd \(([^\)]+)\)/).to_s } if @meta["server"] =~ /^[\s]*lighttpd \(([^\)]+)\)/
+	m << { :os=>@headers["server"].scan(/^[\s]*lighttpd \(([^\)]+)\)/).to_s } if @headers["server"] =~ /^[\s]*lighttpd \(([^\)]+)\)/
 
 	# Return passive results
 	m

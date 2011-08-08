@@ -24,9 +24,9 @@ def passive
 	m=[]
 
 	# WWW-Authenticate realm
-	if @meta["www-authenticate"] =~ /FreePBX/
-		m << { :name=>"WWW-Authenticate" } if @meta["www-authenticate"] =~ /^Basic realm="FreePBX( Admin| Administration)?"/
-		m << { :name=>"WWW-Authenticate" } if @meta["www-authenticate"] =~ /^Digest realm="FreePBX"/
+	if @headers["www-authenticate"] =~ /FreePBX/
+		m << { :name=>"WWW-Authenticate" } if @headers["www-authenticate"] =~ /^Basic realm="FreePBX( Admin| Administration)?"/
+		m << { :name=>"WWW-Authenticate" } if @headers["www-authenticate"] =~ /^Digest realm="FreePBX"/
 	end
 
 	# Return passive matches

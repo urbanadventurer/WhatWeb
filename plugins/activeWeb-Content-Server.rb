@@ -55,11 +55,11 @@ def passive
 	m=[]
 
 	# X-AwCache-* HTTP Server Header
-	m << { :name=>"X-AwCache-FollowUp Header" } unless @meta["x-awcache-followup"].nil?
-	m << { :name=>"X-AwCache-Command Header" } unless @meta["x-awcache-command"].nil?
+	m << { :name=>"X-AwCache-FollowUp Header" } unless @headers["x-awcache-followup"].nil?
+	m << { :name=>"X-AwCache-Command Header" } unless @headers["x-awcache-command"].nil?
 
 	# Technology Detection
-	m << { :string=>@meta["x-awcache-scripttechnology"].to_s } unless @meta["x-awcache-scripttechnology"].nil?
+	m << { :string=>@headers["x-awcache-scripttechnology"].to_s } unless @headers["x-awcache-scripttechnology"].nil?
 
 	# Return passive matches
 	m

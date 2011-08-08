@@ -47,11 +47,11 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^PowerAlert HTTP server, powered by Allegro-Software-RomPager$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^PowerAlert HTTP server, powered by Allegro-Software-RomPager$/
 
 	# WWW-Authenticate Header
-	m << { :name=>"WWW-Authenticate Header" } if @meta["www-authenticate"] =~ /^Basic realm="PowerAlert [\d]+ Login"$/
-	m << { :name=>"WWW-Authenticate Header" } if @meta["www-authenticate"] =~ /^Basic realm="PowerAlert Access Realm[\d]+"$/
+	m << { :name=>"WWW-Authenticate Header" } if @headers["www-authenticate"] =~ /^Basic realm="PowerAlert [\d]+ Login"$/
+	m << { :name=>"WWW-Authenticate Header" } if @headers["www-authenticate"] =~ /^Basic realm="PowerAlert Access Realm[\d]+"$/
 
 	# Return passive matches
 	m

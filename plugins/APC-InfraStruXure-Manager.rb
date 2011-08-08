@@ -41,7 +41,7 @@ def passive
 	m=[]
 
 	# Location
-	if @meta["server"] =~ /^Acme\.Serve/ and @status.to_s =~ /^302$/ and @meta["location"] =~ /^isx\.html$/
+	if @headers["server"] =~ /^Acme\.Serve/ and @status.to_s =~ /^302$/ and @headers["location"] =~ /^isx\.html$/
 		m << { :certainty=>25, :name=>"isx.html redirect" }
 	end
 

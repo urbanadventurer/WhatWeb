@@ -82,16 +82,16 @@ def passive
 	m = []
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^WatchGuard Firewall$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^WatchGuard Firewall$/
 
 	# WWW-Authenticate
-	m << { :name=>"WWW-Authenticate Header" } if @meta["www-authenticate"] =~ /^(Basic|Digest) realm="WatchGuard (SOHO|Firebox)/i
+	m << { :name=>"WWW-Authenticate Header" } if @headers["www-authenticate"] =~ /^(Basic|Digest) realm="WatchGuard (SOHO|Firebox)/i
 
 	# SOHO
-	m << { :string=>@meta["www-authenticate"].scan(/^Digest realm="WatchGuard (SOHO [^"]+) Configuration"/) } if @meta["www-authenticate"] =~ /Digest realm="WatchGuard (SOHO [^"]+) Configuration"/
+	m << { :string=>@headers["www-authenticate"].scan(/^Digest realm="WatchGuard (SOHO [^"]+) Configuration"/) } if @headers["www-authenticate"] =~ /Digest realm="WatchGuard (SOHO [^"]+) Configuration"/
 
 	# Firebox
-	m << { :string=>"Firebox" } if @meta["www-authenticate"] =~ /^Digest realm="WatchGuard Firebox Local User"/
+	m << { :string=>"Firebox" } if @headers["www-authenticate"] =~ /^Digest realm="WatchGuard Firebox Local User"/
 
 	# Return passive matches       
 	m

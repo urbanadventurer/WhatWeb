@@ -61,18 +61,18 @@ def passive
 	m=[]
 
 	# Application Server
-	if @meta["server"] =~ /^SAP (Web|NetWeaver) Application Server/
+	if @headers["server"] =~ /^SAP (Web|NetWeaver) Application Server/
 
 		# Server Detection
 		m << { :name=>"HTTP Server Header" }
 
 		# Version Detection
-		m << { :string=>@meta["server"].scan(/^SAP (Web|NetWeaver) Application Server [\/]?[\ ]?[\(]?([^\)^\r^\n]+)[\)]?/)[0][1] } if @meta["server"] =~ /^SAP (Web|NetWeaver) Application Server [\/]?[\ ]?[\(]?([^\)^\r^\n]+)[\)]?/
+		m << { :string=>@headers["server"].scan(/^SAP (Web|NetWeaver) Application Server [\/]?[\ ]?[\(]?([^\)^\r^\n]+)[\)]?/)[0][1] } if @headers["server"] =~ /^SAP (Web|NetWeaver) Application Server [\/]?[\ ]?[\(]?([^\)^\r^\n]+)[\)]?/
 
 	end
 
 	# J2EE Engine
-	m << { :module=>"J2EE", :version=>@meta["server"].scan(/^SAP J2EE Engine\/([\d\.]{1,4})/).to_s } if @meta["server"] =~ /^SAP J2EE Engine\/([\d\.]{1,4})/
+	m << { :module=>"J2EE", :version=>@headers["server"].scan(/^SAP J2EE Engine\/([\d\.]{1,4})/).to_s } if @headers["server"] =~ /^SAP J2EE Engine\/([\d\.]{1,4})/
 
 	# Return passive matches
 	m

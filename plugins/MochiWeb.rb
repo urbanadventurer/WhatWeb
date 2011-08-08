@@ -26,13 +26,13 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^MochiWeb/
+	if @headers["server"] =~ /^MochiWeb/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^MochiWeb\/([^\s]+)/) } if @meta["server"] =~ /^MochiWeb\/([^\s]+)/
+		m << { :version=>@headers["server"].scan(/^MochiWeb\/([^\s]+)/) } if @headers["server"] =~ /^MochiWeb\/([^\s]+)/
 
 		# Version Detection # WebMachine Module
-		m << { :module=>@meta["server"].scan(/ (WebMachine\/[^\s]+)/) } if @meta["server"] =~ / (WebMachine\/[^\s]+)/
+		m << { :module=>@headers["server"].scan(/ (WebMachine\/[^\s]+)/) } if @headers["server"] =~ / (WebMachine\/[^\s]+)/
 
 	end
 

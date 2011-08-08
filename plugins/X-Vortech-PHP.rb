@@ -27,7 +27,7 @@ examples %w|
 def passive
 	m=[]
 
-	m << { :version=>@meta["x-vortech-php"].to_s } unless @meta["x-vortech-php"].nil?
+	m << { :version=>@headers["x-vortech-php"].to_s } unless @headers["x-vortech-php"].nil?
 
 	m
 

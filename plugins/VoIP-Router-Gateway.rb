@@ -35,10 +35,10 @@ def passive
 	m=[]
 
 	# Check HTTP Server Header
-	if @meta["server"] =~ /^GoAhead-Webs/
+	if @headers["server"] =~ /^GoAhead-Webs/
 
 		# HTTP Server Header and WWW-Authenticate Realm
-		m << { :status=>401, :name=>"HTTP Server Header and WWW-Authenticate Realm" } if @meta["www-authenticate"] =~ /Basic realm="Web Config System"/
+		m << { :status=>401, :name=>"HTTP Server Header and WWW-Authenticate Realm" } if @headers["www-authenticate"] =~ /Basic realm="Web Config System"/
 
 	end
 

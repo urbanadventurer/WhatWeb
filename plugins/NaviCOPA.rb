@@ -24,10 +24,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^InterVations NaviCOPA Version ([\d\.]+) [\d]{1,2}[a-z]{2} [A-Z][a-z]+ [\d]{4}$/) } if @meta["server"] =~ /InterVations NaviCOPA Version ([\d\.]+) [\d]{1,2}[a-z]{2} [A-Z][a-z]+ [\d]{4}$/
+	m << { :version=>@headers["server"].scan(/^InterVations NaviCOPA Version ([\d\.]+) [\d]{1,2}[a-z]{2} [A-Z][a-z]+ [\d]{4}$/) } if @headers["server"] =~ /InterVations NaviCOPA Version ([\d\.]+) [\d]{1,2}[a-z]{2} [A-Z][a-z]+ [\d]{4}$/
 
 	# Set-Cookie
-	m << { :name=>"NaviCopaSession Cookie" } if @meta["set-cookie"] =~ /^NaviCopaSession=[a-z0-9]{8}; path=\//
+	m << { :name=>"NaviCopaSession Cookie" } if @headers["set-cookie"] =~ /^NaviCopaSession=[a-z0-9]{8}; path=\//
 
 	# Return passive matches
 	m

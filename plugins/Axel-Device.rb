@@ -38,7 +38,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Axel Admin Server$/
+	if @headers["server"] =~ /^Axel Admin Server$/
 
 		m << { :name=>"HTTP Server Header" }
 

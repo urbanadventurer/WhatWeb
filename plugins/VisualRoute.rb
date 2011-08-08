@@ -30,17 +30,17 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^VisualRoute /
+	if @headers["server"] =~ /^VisualRoute /
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^VisualRoute \((tm|R)\) ([^\s]+)$/)[0][1] } if @meta["server"] =~ /^VisualRoute \((tm|R)\) ([^\s]+)$/
+		m << { :version=>@headers["server"].scan(/^VisualRoute \((tm|R)\) ([^\s]+)$/)[0][1] } if @headers["server"] =~ /^VisualRoute \((tm|R)\) ([^\s]+)$/
 
-		if @meta["server"] =~ /^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/
+		if @headers["server"] =~ /^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/
 			# Edition Detection
-			m << { :string=>@meta["server"].scan(/^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/)[0][1] }
+			m << { :string=>@headers["server"].scan(/^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/)[0][1] }
 
 			# Version Detection
-			m << { :version=>@meta["server"].scan(/^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/)[0][2] }
+			m << { :version=>@headers["server"].scan(/^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/)[0][2] }
 
 		end
 

@@ -75,7 +75,7 @@ matches [
 
 def passive
         m=[]
-        m << {:name=>"sdsessionid Cookie" } if @meta["set-cookie"] =~ /sdsessionid=[a-z0-9]{32}/
+        m << {:name=>"sdsessionid Cookie" } if @headers["set-cookie"] =~ /sdsessionid=[a-z0-9]{32}/
 	m
 end
 

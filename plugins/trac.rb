@@ -75,7 +75,7 @@ matches [
 def passive
         m=[]
 
-        m << {:name=>"trac_form_token Cookie", :probability=>100 } if @meta["set-cookie"] =~ /trac_form_token=/
+        m << {:name=>"trac_form_token Cookie", :probability=>100 } if @headers["set-cookie"] =~ /trac_form_token=/
 
 	m
 

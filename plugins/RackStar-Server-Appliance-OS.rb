@@ -38,8 +38,8 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /<A HREF='http:\/\/www.rackstar.net\/' TITLE='This server is powered by the RackStar Server Appliance OS'>RACKSTAR<\/A>/
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /\(<A HREF=http:\/\/www.rackstar.net\/>RACKSTAR<\/A>\)/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /<A HREF='http:\/\/www.rackstar.net\/' TITLE='This server is powered by the RackStar Server Appliance OS'>RACKSTAR<\/A>/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /\(<A HREF=http:\/\/www.rackstar.net\/>RACKSTAR<\/A>\)/
 
 	m
 

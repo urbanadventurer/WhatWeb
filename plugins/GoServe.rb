@@ -35,18 +35,18 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^GoServe/
+	if @headers["server"] =~ /^GoServe/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^GoServe\/([^\s]+)$/) } if @meta["server"] =~ /^GoServe\/([^\s]+)$/
+		m << { :version=>@headers["server"].scan(/^GoServe\/([^\s]+)$/) } if @headers["server"] =~ /^GoServe\/([^\s]+)$/
 
-		if @meta["server"] =~ /^GoServe for OS\/2, version [^\s^;]+; SRE-http [\d\.]+$/
+		if @headers["server"] =~ /^GoServe for OS\/2, version [^\s^;]+; SRE-http [\d\.]+$/
 
 			# Version Detection
-			m << { :version=>@meta["server"].scan(/^GoServe for OS\/2, version ([^\s^;]+); SRE-http [\d\.]+$/) }
+			m << { :version=>@headers["server"].scan(/^GoServe for OS\/2, version ([^\s^;]+); SRE-http [\d\.]+$/) }
 
 			# Module Detection
-			m << { :module=>@meta["server"].scan(/^GoServe for OS\/2, version [^\s^;]+; (SRE-http [\d\.]+)$/) }
+			m << { :module=>@headers["server"].scan(/^GoServe for OS\/2, version [^\s^;]+; (SRE-http [\d\.]+)$/) }
 
 		end
 

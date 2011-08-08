@@ -66,7 +66,7 @@ def passive
 	m=[]
 
 	# ZM_TEST Cookie
-	m << { :name=>"ZM_TEST Cookie" } if @meta["set-cookie"] =~ /ZM_TEST=true/
+	m << { :name=>"ZM_TEST Cookie" } if @headers["set-cookie"] =~ /ZM_TEST=true/
 
 	# Return passive matches
 	m

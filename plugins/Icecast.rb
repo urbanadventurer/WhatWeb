@@ -32,18 +32,18 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /^Icecast ([^\s]+)/
+	if @headers["server"] =~ /^Icecast ([^\s]+)/
 		m << { :version=>"#{$1}" }
 	end
-	if @meta["server"] =~ /^icecast\/([^\s]+)/
+	if @headers["server"] =~ /^icecast\/([^\s]+)/
 		m << { :version=>"#{$1}" }
 	end
 
 	# icy-name Header
-	m << { :string=>@meta["icy-name"].to_s } unless @meta["icy-name"].nil?
+	m << { :string=>@headers["icy-name"].to_s } unless @headers["icy-name"].nil?
 
 	# WWW-Authenticate Header
-	m << { :certainty=>75, :name=>"WWW-Authenticate Header" } if @meta["www-authenticate"] =~ /Basic realm="Icecast/
+	m << { :certainty=>75, :name=>"WWW-Authenticate Header" } if @headers["www-authenticate"] =~ /Basic realm="Icecast/
 
 	# Return passive matches
 	m

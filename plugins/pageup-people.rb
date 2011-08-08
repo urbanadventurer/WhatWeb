@@ -157,7 +157,7 @@ def passive
         m=[]
 
 	# sPULastSelectedLanguage Cookie
-        m << { :name=>"sPULastSelectedLanguage Cookie" } if @meta["set-cookie"] =~ /sPULastSelectedLanguage=/
+        m << { :name=>"sPULastSelectedLanguage Cookie" } if @headers["set-cookie"] =~ /sPULastSelectedLanguage=/
 
 	# Return passive matches
         m

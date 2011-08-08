@@ -58,7 +58,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Railo-Version Header
-	m << { :version=>@meta["railo-version"].to_s } if @meta["railo-version"] =~ /^[\d\.]+$/
+	m << { :version=>@headers["railo-version"].to_s } if @headers["railo-version"] =~ /^[\d\.]+$/
 
 	# Return passive matches
 	m

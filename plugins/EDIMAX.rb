@@ -59,11 +59,11 @@ def passive
 	m=[]
 
 	# Check Server
-	if @meta["server"] =~ /GoAhead-Webs/
+	if @headers["server"] =~ /GoAhead-Webs/
 
 		# HTTP Server Header and WWW-Authenticate realm
-		m << { :name=>"HTTP Server Header and WWW-Authenticate realm", :status=>401, :model=>"Wireless Access Point / Broadband Router / Ethernet Hub / Printer Server" } if @meta["www-authenticate"] =~ /Basic realm="Default: admin\/1234"/
-		m << { :name=>"HTTP Server Header and WWW-Authenticate realm", :status=>401, :model=>"Wireless Access Point / Load Balancing Router" } if @meta["www-authenticate"] =~ /Basic realm="Default: admin\/password"/
+		m << { :name=>"HTTP Server Header and WWW-Authenticate realm", :status=>401, :model=>"Wireless Access Point / Broadband Router / Ethernet Hub / Printer Server" } if @headers["www-authenticate"] =~ /Basic realm="Default: admin\/1234"/
+		m << { :name=>"HTTP Server Header and WWW-Authenticate realm", :status=>401, :model=>"Wireless Access Point / Load Balancing Router" } if @headers["www-authenticate"] =~ /Basic realm="Default: admin\/password"/
 
 	end
 

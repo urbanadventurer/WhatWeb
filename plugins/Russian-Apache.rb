@@ -32,7 +32,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ / rus\/(PL[^\s]+)/
+	if @headers["server"] =~ / rus\/(PL[^\s]+)/
 		m << { :version=>"#{$1}" }
 	end
 

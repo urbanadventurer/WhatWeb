@@ -64,11 +64,11 @@ matches [
 def passive
 	m=[]
 	
-	m << {:name=>"phpbb2mysql_data cookie", :version=>"2" } if @meta["set-cookie"] =~ /phpbb2mysql_data/i
+	m << {:name=>"phpbb2mysql_data cookie", :version=>"2" } if @headers["set-cookie"] =~ /phpbb2mysql_data/i
 	
-	if @meta["set-cookie"] =~ /([^ ]+)_u=1; expires/
-		p=@meta["set-cookie"].scan(/([^ ]+)_u=1; expires/).to_s
-		m << {:name=>"phpbb3 _u, _k, _sid cookies", :version=>"3" } if @meta["set-cookie"] =~ /#{p}_u=.*#{p}_k=.*#{p}_sid=[0-9a-z]{32}/
+	if @headers["set-cookie"] =~ /([^ ]+)_u=1; expires/
+		p=@headers["set-cookie"].scan(/([^ ]+)_u=1; expires/).to_s
+		m << {:name=>"phpbb3 _u, _k, _sid cookies", :version=>"3" } if @headers["set-cookie"] =~ /#{p}_u=.*#{p}_k=.*#{p}_sid=[0-9a-z]{32}/
 	end
 
 	# Return passive matches

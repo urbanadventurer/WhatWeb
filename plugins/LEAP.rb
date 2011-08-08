@@ -110,7 +110,7 @@ def passive
 	end
 
 	# /LEAP/ # 401 # www-authenticate
-	if @status == 401 and @meta["www-authenticate"] =~ /^Basic realm="LEAP"$/ and @base_uri.path =~ /^\/LEAP\//
+	if @status == 401 and @headers["www-authenticate"] =~ /^Basic realm="LEAP"$/ and @base_uri.path =~ /^\/LEAP\//
 		m << { :name=>"/LEAP/ www-authenticate" }
 	end
 

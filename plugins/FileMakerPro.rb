@@ -37,12 +37,12 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^FileMakerPro\/([^\s]+)/
+	if @headers["server"] =~ /^FileMakerPro\/([^\s]+)/
 
 		# Version Detection # HTTP Server Header
-		m << { :version=>@meta["server"].scan(/^FileMakerPro\/([^\s]+)/) }
+		m << { :version=>@headers["server"].scan(/^FileMakerPro\/([^\s]+)/) }
 		# Module Detection # HTTP Server Header
-		m << { :module=>@meta["server"].scan(/^FileMakerPro\/[^\s]+ (WebCompanion\/.+)$/) } if @meta["server"] =~ /^FileMakerPro\/[^\s]+ (WebCompanion\/.+)$/
+		m << { :module=>@headers["server"].scan(/^FileMakerPro\/[^\s]+ (WebCompanion\/.+)$/) } if @headers["server"] =~ /^FileMakerPro\/[^\s]+ (WebCompanion\/.+)$/
 	end
 
 	# Return passive matches

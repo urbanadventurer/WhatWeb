@@ -18,7 +18,7 @@ description "PHP MVC web framework"
 
 def passive
   m=[]
-  m << {:name=>"CAKEPHP Cookie" } if @meta["set-cookie"] =~ /CAKEPHP=.*/
+  m << {:name=>"CAKEPHP Cookie" } if @headers["set-cookie"] =~ /CAKEPHP=.*/
   m
 end
 

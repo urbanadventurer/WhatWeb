@@ -37,9 +37,9 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Rapidsite\/Apa\/([\d\.]+)/
-		m << { :string=>"Apache/"+@meta["server"].scan(/Rapidsite\/Apa\/([\d\.]+)/).to_s }
-	elsif @meta["server"] =~ /^Rapidsite\/Apa$/
+	if @headers["server"] =~ /^Rapidsite\/Apa\/([\d\.]+)/
+		m << { :string=>"Apache/"+@headers["server"].scan(/Rapidsite\/Apa\/([\d\.]+)/).to_s }
+	elsif @headers["server"] =~ /^Rapidsite\/Apa$/
 		m << { :string=>"Apache" }
 	end
 

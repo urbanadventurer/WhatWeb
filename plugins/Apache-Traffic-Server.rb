@@ -37,12 +37,12 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /^ATS\/([^\s]+)$/
+	if @headers["server"] =~ /^ATS\/([^\s]+)$/
 		m << { :version=>"#{$1}" }
 	end
 
 	# Version Detection # HTTP Via Header
-	if @meta["via"] =~ /^(http|HTTP)\/1\.1 ([^\s]+) \(ApacheTrafficServer\/([^\s]+) \[c s f \]\)$/
+	if @headers["via"] =~ /^(http|HTTP)\/1\.1 ([^\s]+) \(ApacheTrafficServer\/([^\s]+) \[c s f \]\)$/
 		m << { :string =>"#{$2}" }
 		m << { :version=>"#{$3}" }
 	end

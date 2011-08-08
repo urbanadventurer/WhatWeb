@@ -32,7 +32,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Viking\/([^\s]{1,15})/) } if @meta["server"] =~ /^Viking\/([^\s]{1,15})$/
+	m << { :version=>@headers["server"].scan(/^Viking\/([^\s]{1,15})/) } if @headers["server"] =~ /^Viking\/([^\s]{1,15})$/
 
 	# Return Passive Matches
 	m

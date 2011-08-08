@@ -51,7 +51,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Ipswitch-IMail\/([\d\.]+)$/) } if @meta["server"] =~ /^Ipswitch-IMail\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^Ipswitch-IMail\/([\d\.]+)$/) } if @headers["server"] =~ /^Ipswitch-IMail\/([\d\.]+)$/
 
 	# Return passive matches
 	m

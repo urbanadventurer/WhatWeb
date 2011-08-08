@@ -27,9 +27,9 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Winconnection V([^\s]+) \(server ([A-Z\d]{6})\)$/
+	if @headers["server"] =~ /^Winconnection V([^\s]+) \(server ([A-Z\d]{6})\)$/
 
-		match=@meta["server"].scan(/^Winconnection V([^\s]+) \(server ([A-Z\d]{6})\)$/)
+		match=@headers["server"].scan(/^Winconnection V([^\s]+) \(server ([A-Z\d]{6})\)$/)
 
 		# Version Detection
 		m << { :version=>match[0][0] }

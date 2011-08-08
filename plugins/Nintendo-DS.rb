@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# WWW-Authenticate Header
-	m << { :certainty=>75, :name=>"www-authenticate" } if @meta["www-authenticate"] =~ /Basic realm="Nintendo Wi-Fi Network Adapter"/
+	m << { :certainty=>75, :name=>"www-authenticate" } if @headers["www-authenticate"] =~ /Basic realm="Nintendo Wi-Fi Network Adapter"/
 
 	# Return passive matches
 	m

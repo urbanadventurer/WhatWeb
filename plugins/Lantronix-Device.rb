@@ -45,10 +45,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Gordian Embedded([\d\.]+)$/
+	if @headers["server"] =~ /^Gordian Embedded([\d\.]+)$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^Gordian Embedded([\d\.]+)$/) }
+		m << { :version=>@headers["server"].scan(/^Gordian Embedded([\d\.]+)$/) }
 
 		# Model Detection
 		m << { :model=>@body.scan(/<font face="Arial,Helvetica" color="#660066"><b>([^<]+)<\/b><\/font><br><br>/) } if @body =~ /<font face="Arial,Helvetica" color="#660066"><b>([^<]+)<\/b><\/font><br><br>/

@@ -48,20 +48,20 @@ def passive
 	m=[]
 
 	# HTTP Server header
-	if @meta["server"] =~ /^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/
+	if @headers["server"] =~ /^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/
 
 		# Version Detection # HTTP Server
-		m << { :version=>@meta["server"].scan(/^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/)[0][1] } if @meta["server"] =~ /^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/
+		m << { :version=>@headers["server"].scan(/^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/)[0][1] } if @headers["server"] =~ /^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/
 
 		# Account Detection # X-dmUser
-		m << { :account=>@meta["x-dmuser"] } unless @meta["x-dmuser"].nil?
+		m << { :account=>@headers["x-dmuser"] } unless @headers["x-dmuser"].nil?
 	end
 
 	# CrushAuth Cookie
-	m << { :name=>"CrushAuth Cookie" } if @meta["set-cookie"] =~ /^CrushAuth=/
+	m << { :name=>"CrushAuth Cookie" } if @headers["set-cookie"] =~ /^CrushAuth=/
 
 	# WWW-Authenticate
-	m << { :version=>@meta["www-authenticate"].scan(/^Basic realm="CrushFTP Server Version ([\d\.]+)"$/) } if @meta["www-authenticate"] =~ /^Basic realm="CrushFTP Server Version ([\d\.]+)"$/
+	m << { :version=>@headers["www-authenticate"].scan(/^Basic realm="CrushFTP Server Version ([\d\.]+)"$/) } if @headers["www-authenticate"] =~ /^Basic realm="CrushFTP Server Version ([\d\.]+)"$/
 
 	# Return passive matches
 	m

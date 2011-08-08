@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :os=>"uClinux", :version=>@meta["server"].scan(/^uClinux-httpd ([\d\.]+)$/) } if @meta["server"] =~ /^uClinux-httpd ([\d\.]+)$/
+	m << { :os=>"uClinux", :version=>@headers["server"].scan(/^uClinux-httpd ([\d\.]+)$/) } if @headers["server"] =~ /^uClinux-httpd ([\d\.]+)$/
 
 	# Return passive matches
 	m

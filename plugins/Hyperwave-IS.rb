@@ -28,8 +28,8 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Hyperwave-IS\/([^\s]+)$/) } if @meta["server"] =~ /^Hyperwave-IS\/([^\s]+)$/
-	m << { :version=>@meta["server"].scan(/^Hyperwave-Information-Server\/([^\s]+)$/) } if @meta["server"] =~ /^Hyperwave-Information-Server\/([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^Hyperwave-IS\/([^\s]+)$/) } if @headers["server"] =~ /^Hyperwave-IS\/([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^Hyperwave-Information-Server\/([^\s]+)$/) } if @headers["server"] =~ /^Hyperwave-Information-Server\/([^\s]+)$/
 
 	# Return passive matches
 	m

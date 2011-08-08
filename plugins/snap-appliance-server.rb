@@ -95,10 +95,10 @@ def passive
 	m=[]
 
 	# Version Detection # Snap Appliance(s) # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Snap Appliances?, Inc\.\/([\d\.]+)$/) } if @meta["server"] =~ /^Snap Appliances?, Inc\.\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^Snap Appliances?, Inc\.\/([\d\.]+)$/) } if @headers["server"] =~ /^Snap Appliances?, Inc\.\/([\d\.]+)$/
 
 	# Version Detection # Quantum Corporation # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Quantum Corporation\.\/([\d\.]+)$/) } if @meta["server"] =~ /^Quantum Corporation\.\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^Quantum Corporation\.\/([\d\.]+)$/) } if @headers["server"] =~ /^Quantum Corporation\.\/([\d\.]+)$/
 
 	# Return passive matches
 	m

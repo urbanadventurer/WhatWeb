@@ -53,7 +53,7 @@ def passive
 	m=[]
 
 	# Cookie
-	m << { :name=>"WebblerSession Cookie" } if @meta["set-cookie"] =~ /WebblerSession=/
+	m << { :name=>"WebblerSession Cookie" } if @headers["set-cookie"] =~ /WebblerSession=/
 
 	# Return passive matches
 	m

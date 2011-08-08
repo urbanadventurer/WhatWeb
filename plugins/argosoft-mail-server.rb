@@ -57,12 +57,12 @@ def passive
 	m=[]
 
 	# Version and OS detection # HTTP Header Server text
-	if @meta["server"] =~ /ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)/
-		version=@meta["server"].scan(/ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)/)[0][0]
+	if @headers["server"] =~ /ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)/
+		version=@headers["server"].scan(/ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)/)[0][0]
 		m << { :version=>version, :os=>"Windows NT/2000" }
 	end
-	if @meta["server"] =~ /ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)/
-		version=@meta["server"].scan(/ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)/)[0][0]
+	if @headers["server"] =~ /ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)/
+		version=@headers["server"].scan(/ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)/)[0][0]
 		m << { :version=>version, :os=>"Windows NT/2000/XP" }
 	end
 

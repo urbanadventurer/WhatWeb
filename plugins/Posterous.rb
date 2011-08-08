@@ -59,10 +59,10 @@ def passive
 	m=[]
 
 	# _sharebymail_session_id cookie
-	m << { :name=>"_sharebymail_session_id cookie" } if @meta["set-cookie"] =~ /^_sharebymail_session_id=/
+	m << { :name=>"_sharebymail_session_id cookie" } if @headers["set-cookie"] =~ /^_sharebymail_session_id=/
 
 	# x-posteroushostname header
-	m << { :name=>"x-posteroushostname header" } unless @meta["x-posteroushostname"].nil?
+	m << { :name=>"x-posteroushostname header" } unless @headers["x-posteroushostname"].nil?
 
 	# Return passive matches
 	m

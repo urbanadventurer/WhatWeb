@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# Version and OS Detection # HTTP Server Header
-	m << { :os=>"z/OS", :version=>@meta["server"].scan(/^IBM_CICS_Transaction_Server\/([^\(]+)\(zOS\)$/) } if @meta["server"] =~ /^IBM_CICS_Transaction_Server\/([^\(]+)\(zOS\)$/
+	m << { :os=>"z/OS", :version=>@headers["server"].scan(/^IBM_CICS_Transaction_Server\/([^\(]+)\(zOS\)$/) } if @headers["server"] =~ /^IBM_CICS_Transaction_Server\/([^\(]+)\(zOS\)$/
 
 	# Return passive matches
 	m

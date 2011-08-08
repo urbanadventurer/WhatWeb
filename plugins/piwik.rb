@@ -64,7 +64,7 @@ def passive
         m=[]
 
 	# PIWIK_SESSID Cookie
-	m << { :name=>"PIWIK_SESSID Cookie" } if @meta["set-cookie"] =~ /PIWIK_SESSID/
+	m << { :name=>"PIWIK_SESSID Cookie" } if @headers["set-cookie"] =~ /PIWIK_SESSID/
         
 	# Return passive matches
 	m

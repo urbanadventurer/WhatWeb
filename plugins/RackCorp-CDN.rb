@@ -45,7 +45,7 @@ def passive
 	# HTTP Server Header # Server and OS Detection #
 	# Web servers are Apache or Nginx # OS is Linux
 	# As per : http://blog.rackcorp.com/?p=31
-	m << { :version=>@meta["server"].scan(/^[\s]*rackcorpcdn\/([\d\.]{3,6})/), :string=>"Apache or Nginx", :os=>"Linux" } if @meta["server"] =~ /^[\s]*rackcorpcdn\/[\d\.]{3,6}/
+	m << { :version=>@headers["server"].scan(/^[\s]*rackcorpcdn\/([\d\.]{3,6})/), :string=>"Apache or Nginx", :os=>"Linux" } if @headers["server"] =~ /^[\s]*rackcorpcdn\/[\d\.]{3,6}/
 
 	# Return passive matches
 	m

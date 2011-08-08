@@ -54,10 +54,10 @@ def passive
 	m=[]
 
 	# FreakAuth Cookie
-	m << { :name=>"FreakAuth Cookie" } if @meta["set-cookies"] =~ /^FreakAuth=/
+	m << { :name=>"FreakAuth Cookie" } if @headers["set-cookies"] =~ /^FreakAuth=/
 
 	# Location Header # /framework/index.php
-	m << { :name=>"Location Header" } if @meta["location"] =~ /^\/framework\/index\.php$/
+	m << { :name=>"Location Header" } if @headers["location"] =~ /^\/framework\/index\.php$/
 
 	# Return passive matches
 	m

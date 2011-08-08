@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# Via HTTP header
-	m << { :string=>@meta["x-forwarded-for"].to_s } unless @meta["x-forwarded-for"].nil?
+	m << { :string=>@headers["x-forwarded-for"].to_s } unless @headers["x-forwarded-for"].nil?
 
 	# Return passive matches
 	m

@@ -42,7 +42,7 @@ def passive
 	m=[]
 
 	# X-Frame-Options HTTP Header
-	m << { :string=>@meta["x-frame-options"].to_s } unless @meta["x-frame-options"].nil?
+	m << { :string=>@headers["x-frame-options"].to_s } unless @headers["x-frame-options"].nil?
 
 	m
 

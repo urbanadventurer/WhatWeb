@@ -39,20 +39,20 @@ examples %w|
 def passive
 	m=[]
 
-	if @meta["server"] =~ /^Sun/
+	if @headers["server"] =~ /^Sun/
 
 		# HTTP Server Header
-		if @meta["server"] =~ /^Sun-Web-Server$/
+		if @headers["server"] =~ /^Sun-Web-Server$/
 			m << { :name=>"HTTP Server Header" }
 		end
 
 		# Version Detection # HTTP Server Header
-		if @meta["server"] =~ /^Sun_WebServer\/([^\s]+)$/
+		if @headers["server"] =~ /^Sun_WebServer\/([^\s]+)$/
 			m << { :version=>"#{$1}" }
 		end
 
 		# Version Detection # HTTP Server Header
-		if @meta["server"] =~ /^Sun-ONE-Web-Server\/([^\s]+)$/
+		if @headers["server"] =~ /^Sun-ONE-Web-Server\/([^\s]+)$/
 			m << { :version=>"#{$1}" }
 		end
 

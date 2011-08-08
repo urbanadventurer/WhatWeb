@@ -63,19 +63,19 @@ def passive
 	m=[]
 
 	# No server HTTP header
-	if @meta["server"].nil?
+	if @headers["server"].nil?
 
 		# Location Header # ./TracWeb40/Default.html
-		m << { :name=>"Location Header" } if @meta["location"] =~ /^\.\/TracWeb40\/Default\.html$/
+		m << { :name=>"Location Header" } if @headers["location"] =~ /^\.\/TracWeb40\/Default\.html$/
 
 		# Location Header # TutorTrac/Default.html
-		m << { :name=>"Location Header" } if @meta["location"] =~ /^TutorTrac\/Default\.html$/
+		m << { :name=>"Location Header" } if @headers["location"] =~ /^TutorTrac\/Default\.html$/
 
 		# InstallCode Cookie
-		m << { :name=>"InstallCode Cookie" } if @meta["set-cookie"] =~ /InstallCode=[A-Z]+;/
+		m << { :name=>"InstallCode Cookie" } if @headers["set-cookie"] =~ /InstallCode=[A-Z]+;/
 
 		# ProductCode Cookie
-		m << { :name=>"ProductCode Cookie" } if @meta["set-cookie"] =~ /ProductCode=RSC[\d]+=[\d]+;/
+		m << { :name=>"ProductCode Cookie" } if @headers["set-cookie"] =~ /ProductCode=RSC[\d]+=[\d]+;/
 
 	end
 

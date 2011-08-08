@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^webfs\/([^\s]+)$/) } if @meta["server"] =~ /^webfs\/([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^webfs\/([^\s]+)$/) } if @headers["server"] =~ /^webfs\/([^\s]+)$/
 
 	# Return passive matches
 	m

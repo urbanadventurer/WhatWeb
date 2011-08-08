@@ -30,13 +30,13 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :version=>@meta["server"].scan(/Niagara Web Server\/([\d\.]+)/).to_s } if @meta["server"] =~ /Niagara Web Server\/([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/Niagara Web Server\/([\d\.]+)/).to_s } if @headers["server"] =~ /Niagara Web Server\/([\d\.]+)/
 
 	# HTTP Niagara-Release Header
-	m << { :version=>@meta["niagara-release"].to_s } unless @meta["niagara-release"].nil?
+	m << { :version=>@headers["niagara-release"].to_s } unless @headers["niagara-release"].nil?
 
 	# HTTP Niagara-ffs Header
-	m << { :name=>"Niagara-ffs HTTP Header" } unless @meta["niagara-ffs"].nil?
+	m << { :name=>"Niagara-ffs HTTP Header" } unless @headers["niagara-ffs"].nil?
 
 	m
 

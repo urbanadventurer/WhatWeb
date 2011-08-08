@@ -42,13 +42,13 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^StorageTek-HTTPD\/[^\s]+ \([^\s]+ NAS\)$/
+	if @headers["server"] =~ /^StorageTek-HTTPD\/[^\s]+ \([^\s]+ NAS\)$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^StorageTek-HTTPD\/([^\s]+) \([^\s]+ NAS\)$/) }
+		m << { :version=>@headers["server"].scan(/^StorageTek-HTTPD\/([^\s]+) \([^\s]+ NAS\)$/) }
 
 		# Model Detection
-		m << { :model=>@meta["server"].scan(/^StorageTek-HTTPD\/[^\s]+ \(([^\s]+) NAS\)$/) }
+		m << { :model=>@headers["server"].scan(/^StorageTek-HTTPD\/[^\s]+ \(([^\s]+) NAS\)$/) }
 
 	end
 

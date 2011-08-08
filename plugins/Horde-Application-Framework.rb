@@ -112,10 +112,10 @@ def passive
 	m=[]
 
 	# webmail_version Cookie
-	m << { :name=>"webmail_version Cookie" } if @meta["set-cookie"] =~ /webmail_version=(magnum|hunter); /
+	m << { :name=>"webmail_version Cookie" } if @headers["set-cookie"] =~ /webmail_version=(magnum|hunter); /
 
 	# webmail4prod Cookie
-	m << { :name=>"webmail4prod Cookie" } if @meta["set-cookie"] =~ /webmail4prod=[a-f\d]{32}; /
+	m << { :name=>"webmail4prod Cookie" } if @headers["set-cookie"] =~ /webmail4prod=[a-f\d]{32}; /
 
 	# Return passive matches
 	m

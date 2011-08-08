@@ -50,7 +50,7 @@ def passive
 	m=[]
 
 	# Location HTTP Header
-	m << { :name=>"Location HTTP Header" } if @meta["location"] =~ /cgi-bin\/web\.asp\?title=\*home$/
+	m << { :name=>"Location HTTP Header" } if @headers["location"] =~ /cgi-bin\/web\.asp\?title=\*home$/
 
 	# Return passive matches
 	m

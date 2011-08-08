@@ -37,10 +37,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^TalkSwitch HTTP Server\/([\d\.]+)$/
+	if @headers["server"] =~ /^TalkSwitch HTTP Server\/([\d\.]+)$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^TalkSwitch HTTP Server\/([\d\.]+)$/) }
+		m << { :version=>@headers["server"].scan(/^TalkSwitch HTTP Server\/([\d\.]+)$/) }
 
 		# Model Detection
 		m << { :model=>@body.scan(/<h3>Welcome to TalkSwitch ([^<]+) \([^\)]+\)<\/h3>/) } if @body =~ /<h3>Welcome to TalkSwitch ([^<]+) \([^\)]+\)<\/h3>/
@@ -51,7 +51,7 @@ def passive
 	end
 
 	# WWW-Authenticate Realm
-	m << { :name=>"WWW-Authenticate realm" } if @meta["www-authenticate"] =~ /^Digest realm="Your TalkSwitch System"$/
+	m << { :name=>"WWW-Authenticate realm" } if @headers["www-authenticate"] =~ /^Digest realm="Your TalkSwitch System"$/
 
 	# Return passive matches
 	m

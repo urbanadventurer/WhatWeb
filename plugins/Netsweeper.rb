@@ -85,10 +85,10 @@ def passive
 	m=[]
 
 	# webadmin cookie
-	m << { :name=>"webadmin cookie" } if @meta["set-cookie"] =~ /webadmin=[a-z\d]{26}/
+	m << { :name=>"webadmin cookie" } if @headers["set-cookie"] =~ /webadmin=[a-z\d]{26}/
 
 	# Redirect location header
-	m << { :name=>"Redirect location header" } if @meta["location"] =~ /\/webadmin\/deny\/index\.php\?dpid=[\d]+&dpruleid=[\d]+&/
+	m << { :name=>"Redirect location header" } if @headers["location"] =~ /\/webadmin\/deny\/index\.php\?dpid=[\d]+&dpruleid=[\d]+&/
 
 	# Return passive matches
 	m

@@ -45,13 +45,13 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^Mashery Proxy$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^Mashery Proxy$/
 
 	# X-Mashery-Responder
-	m << { :string=>@meta["x-mashery-responder"].to_s } unless @meta["x-mashery-responder"].nil?
+	m << { :string=>@headers["x-mashery-responder"].to_s } unless @headers["x-mashery-responder"].nil?
 
 	# X-Mashery-Error-Code
-	m << { :string=>@meta["x-mashery-error-code"].to_s } unless @meta["x-mashery-error-code"].nil?
+	m << { :string=>@headers["x-mashery-error-code"].to_s } unless @headers["x-mashery-error-code"].nil?
 
 	# Return passive matches
 	m

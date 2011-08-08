@@ -23,10 +23,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^(SR-M20A[C|P]{1}1)$/
+	if @headers["server"] =~ /^(SR-M20A[C|P]{1}1)$/
 
 		# Model Detection
-		m << { :model=>@meta["server"].scan(/^(SR-M20A[C|P]{1}1)$/) }
+		m << { :model=>@headers["server"].scan(/^(SR-M20A[C|P]{1}1)$/) }
 
 		# Firmware Version Detection # /hgi-bin/Setup/setup.cgi
 		m << { :url=>"/hgi-bin/Setup/setup.cgi", :firmware=>@body.scan(/<TABLE cellspacing=0 cellpadding=0><TR><TD align="center"><A href="\/home.html"><IMG src="\/images\/logo.gif" alt="[^"]+" border=0><\/A><BR><FONT size='2'>SR-M20A[C|P]{1}1\(V([\d\.]+) config1\)<BR><\/FONT><\/TD><\/TR><TR><TH colspan=4><HR>/) } if @body =~ /<TABLE cellspacing=0 cellpadding=0><TR><TD align="center"><A href="\/home.html"><IMG src="\/images\/logo.gif" alt="[^"]+" border=0><\/A><BR><FONT size='2'>SR-M20A[C|P]{1}1\(V([\d\.]+) config1\)<BR><\/FONT><\/TD><\/TR><TR><TH colspan=4><HR>/

@@ -24,7 +24,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/AMR_WinControl[_0-9]*\/([\d\.]+)/) } if @meta["server"] =~ /AMR_WinControl[_0-9]*\/([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/AMR_WinControl[_0-9]*\/([\d\.]+)/) } if @headers["server"] =~ /AMR_WinControl[_0-9]*\/([\d\.]+)/
 
 	m
 

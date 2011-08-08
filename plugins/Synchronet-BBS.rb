@@ -37,7 +37,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Synchronet BBS for .+ Version ([^\s]+)$/) } if @meta["server"] =~ /^Synchronet BBS for .+ Version ([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^Synchronet BBS for .+ Version ([^\s]+)$/) } if @headers["server"] =~ /^Synchronet BBS for .+ Version ([^\s]+)$/
 
 	# Return passive matches
 	m

@@ -46,7 +46,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^OctoWebSvr\/COM$/
+	if @headers["server"] =~ /^OctoWebSvr\/COM$/
 		m << { :name=>"HTTP Server Header" }
 	end
 

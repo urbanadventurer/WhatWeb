@@ -77,10 +77,10 @@ def passive
 	m=[]
 
 	# x-confluence-cluster-node
-	m << { :name=>"x-confluence-cluster-node header" } unless @meta["x-confluence-cluster-node"].nil?
+	m << { :name=>"x-confluence-cluster-node header" } unless @headers["x-confluence-cluster-node"].nil?
 
 	# x-confluence-request-time
-	m << { :name=>"x-confluence-request-time header" } unless @meta["x-confluence-request-time"].nil?
+	m << { :name=>"x-confluence-request-time header" } unless @headers["x-confluence-request-time"].nil?
 
 	# Return passive matches
 	m

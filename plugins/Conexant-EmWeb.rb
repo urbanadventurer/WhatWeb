@@ -88,11 +88,11 @@ def passive
 	m=[]
 
 	# Check HTTP Header
-	if @meta["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/ or @meta["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
+	if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/ or @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
 
 		# Server version
-		m << { :version=>@meta["server"].scan(/Conexant-EmWeb\/([^\r^\n]+)/) } if @meta["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/
-		m << { :version=>@meta["server"].scan(/Virata-EmWeb\/([^\r^\n]+)/) } if @meta["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
+		m << { :version=>@headers["server"].scan(/Conexant-EmWeb\/([^\r^\n]+)/) } if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/
+		m << { :version=>@headers["server"].scan(/Virata-EmWeb\/([^\r^\n]+)/) } if @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
 
 
 		# e-con # Model Detection # Default page # Default Logo
@@ -109,11 +109,11 @@ def aggressive
 	m=[]
 
 	# Check HTTP Header
-	if @meta["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/ or @meta["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
+	if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/ or @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
 
 		# Server Version
-		m << { :version=>@meta["server"].scan(/Conexant-EmWeb\/([^\r^\n]+)/) } if @meta["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/
-		m << { :version=>@meta["server"].scan(/Virata-EmWeb\/([^\r^\n]+)/) } if @meta["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
+		m << { :version=>@headers["server"].scan(/Conexant-EmWeb\/([^\r^\n]+)/) } if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/
+		m << { :version=>@headers["server"].scan(/Virata-EmWeb\/([^\r^\n]+)/) } if @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
 
 
 		# Allied Telesyn # Status page

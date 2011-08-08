@@ -42,7 +42,7 @@ def passive
 	m=[]
 
 	# virtuemart cookie
-	m << { :name=>"virtuemart cookie" } if @meta["set-cookie"] =~ /virtuemart=[a-z\d]{26,32}/
+	m << { :name=>"virtuemart cookie" } if @headers["set-cookie"] =~ /virtuemart=[a-z\d]{26,32}/
 
 	# Return passive matches
 	m

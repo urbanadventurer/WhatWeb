@@ -48,7 +48,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Viavideo-Web$/
+	if @headers["server"] =~ /^Viavideo-Web$/
 
 		# Server: Viavideo-Web
 		m << { :name=>"HTTP Server Header" }

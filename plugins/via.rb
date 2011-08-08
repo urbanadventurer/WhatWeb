@@ -5,7 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 # Version 0.2 # 2011-02-16 #
-# Removed redundant @meta["Via"] match
+# Removed redundant @headers["Via"] match
 ##
 Plugin.define "Via-Proxy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
@@ -39,7 +39,7 @@ def passive
 	m=[]
 
 	# Via HTTP header
-	m << { :string=>@meta["via"].to_s } unless @meta["via"].nil?
+	m << { :string=>@headers["via"].to_s } unless @headers["via"].nil?
 
 	# Return passive matches
 	m

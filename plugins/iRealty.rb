@@ -58,7 +58,7 @@ matches [
 def passive
         m=[]
 
-	m << { :name=>"iRealty PHPSESSID%28_%29 cookie" } if @meta["set-cookie"] =~ /^PHPSESSID%28_%29=[a-z0-9]{32}/
+	m << { :name=>"iRealty PHPSESSID%28_%29 cookie" } if @headers["set-cookie"] =~ /^PHPSESSID%28_%29=[a-z0-9]{32}/
 
         m
 

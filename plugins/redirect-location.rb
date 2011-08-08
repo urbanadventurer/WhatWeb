@@ -16,9 +16,9 @@ description "HTTP Server string location. used with http-status 301 and 302"
 def passive
 	m=[]
 	
-	unless @meta.nil?
+	unless @headers.nil?
 		location=nil	
-		location=@meta["location"] if @meta.keys.include?("location")
+		location=@headers["location"] if @headers.keys.include?("location")
 	
 		unless location.nil?
 			m << {:name=>"location",:string=>location}

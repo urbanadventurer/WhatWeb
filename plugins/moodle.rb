@@ -25,7 +25,7 @@ matches [
 
 def passive
   m=[]
-  m << {:name=>"MoodleSession Cookie" } if @meta["set-cookie"] =~ /MoodleSession=.*/
+  m << {:name=>"MoodleSession Cookie" } if @headers["set-cookie"] =~ /MoodleSession=.*/
   m
 end
 

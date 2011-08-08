@@ -87,7 +87,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^EIG Embedded Web Server$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^EIG Embedded Web Server$/
 
 	# Return passive matches
 	m

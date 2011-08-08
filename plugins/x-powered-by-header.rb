@@ -29,8 +29,8 @@ def passive
 	m=[]
 
 	# X-Powered-By Headers
-	unless @meta["x-powered-by"].nil?
-		m << { :name=>"x-powered-by string", :string=>@meta["x-powered-by"] }
+	unless @headers["x-powered-by"].nil?
+		m << { :name=>"x-powered-by string", :string=>@headers["x-powered-by"] }
 	end
 
 	# Return passive matches

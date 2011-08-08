@@ -58,12 +58,12 @@ def passive
 	m=[]
 
 	# Redirect location # /plc/webvisu.htm
-	if @meta["location"] =~ /\/plc\/webvisu\.htm$/
+	if @headers["location"] =~ /\/plc\/webvisu\.htm$/
 		m << { :name=>"Redirect location" }
 	end
 
 	# HTTP Server header
-	if @meta["server"] =~ /^WAGO_Webs$/
+	if @headers["server"] =~ /^WAGO_Webs$/
 		m << { :name=>"HTTP Server Header" }
 	end
 

@@ -50,8 +50,8 @@ matches [
 def passive
         m=[]
 
-	if @meta["uportal-version"] =~ /uPortal_rel-([\-0-9]+)/i
-		v=@meta["uportal-version"].scan(/uPortal_rel-([\-0-9]+)/i)[0][0]
+	if @headers["uportal-version"] =~ /uPortal_rel-([\-0-9]+)/i
+		v=@headers["uportal-version"].scan(/uPortal_rel-([\-0-9]+)/i)[0][0]
 		m << {:name=>"uportal-version header",  :version=>v }
 	end
 

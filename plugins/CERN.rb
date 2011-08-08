@@ -40,7 +40,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^CERN\/([^\s^\r^\n]+)/) } if @meta["server"] =~ /^CERN\/([^\s^\r^\n]+)/
+	m << { :version=>@headers["server"].scan(/^CERN\/([^\s^\r^\n]+)/) } if @headers["server"] =~ /^CERN\/([^\s^\r^\n]+)/
 
 	# Return passive matches
 	m

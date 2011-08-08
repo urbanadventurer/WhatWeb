@@ -31,13 +31,13 @@ def passive
 	m=[]
 
 	# HTTP X-Daisy-Version Header
-	unless @meta["x-daisy-version"].nil?
+	unless @headers["x-daisy-version"].nil?
 
 		# Version Detection
-		m << { :version=>@meta["x-daisy-version"].scan(/^([^\s]+) \(build: [^\s]+/).to_s } if @meta["x-daisy-version"] =~ /^([^\s]+) \(build:( [^\s]+)/
+		m << { :version=>@headers["x-daisy-version"].scan(/^([^\s]+) \(build: [^\s]+/).to_s } if @headers["x-daisy-version"] =~ /^([^\s]+) \(build:( [^\s]+)/
 
 		# Build Detection
-		m << { :string=>@meta["x-daisy-version"].scan(/^[^\s]+ \(build: ([^\s]+)/).to_s } if @meta["x-daisy-version"] =~ /^[^\s]+ \(build: ([^\s]+)/
+		m << { :string=>@headers["x-daisy-version"].scan(/^[^\s]+ \(build: ([^\s]+)/).to_s } if @headers["x-daisy-version"] =~ /^[^\s]+ \(build: ([^\s]+)/
 
 	end
 

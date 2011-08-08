@@ -63,16 +63,16 @@ def passive
     m = []
 
     
-    if @meta["set-cookie"] =~ /BNI__BARRACUDA_LB_COOKIE/i    
+    if @headers["set-cookie"] =~ /BNI__BARRACUDA_LB_COOKIE/i    
         m << {:name=>"BNI__BARRACUDA_LB_COOKIE cookie" } 
-    elsif @meta["set-cookie"] =~ /BARRACUDA_LB_COOKIE/i
+    elsif @headers["set-cookie"] =~ /BARRACUDA_LB_COOKIE/i
         m << {:name=>"BARRACUDA_LB_COOKIE cookie" }
     end
     
     
     
-    if @meta["set-cookie"] =~ /BARRACUDA_LB_COOKIE=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/i
-        internal_ip = @meta["set-cookie"].scan(/BARRACUDA_LB_COOKIE=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/i)
+    if @headers["set-cookie"] =~ /BARRACUDA_LB_COOKIE=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/i
+        internal_ip = @headers["set-cookie"].scan(/BARRACUDA_LB_COOKIE=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/i)
         m << {:string=>'Internal IP: ' + internal_ip.to_s}        
     end
     

@@ -54,16 +54,16 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^eHTTP v([\d\.]{1,3})$/
+	if @headers["server"] =~ /^eHTTP v([\d\.]{1,3})$/
 	
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^eHTTP v([\d\.]{1,3})$/) }
+		m << { :version=>@headers["server"].scan(/^eHTTP v([\d\.]{1,3})$/) }
 	
 		# Model Detection # Title
 		m << { :model=>@body.scan(/<title>[^\(]+ProCurve[^\(]+Switch[^\(]+\((ProCurve )?([^\(]+)\)[^\(]+<\/title>/m)[0][1] } if @body =~ /<title>[^\(]+ProCurve[^\(]+Switch[^\(]+\((ProCurve )?([^\(]+)\)[^\(]+<\/title>/m
 	
 		# Model Detection # WWW-Authenticate
-		m << { :model=>@meta["www-authenticate"].scan(/Basic realm="(HP|ProCurve) ([^"]{6})"/)[0][1] } if @meta["www-authenticate"] =~ /Basic realm="(HP|ProCurve) ([^"]{6})"/
+		m << { :model=>@headers["www-authenticate"].scan(/Basic realm="(HP|ProCurve) ([^"]{6})"/)[0][1] } if @headers["www-authenticate"] =~ /Basic realm="(HP|ProCurve) ([^"]{6})"/
 	
 	end
 

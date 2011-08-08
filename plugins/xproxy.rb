@@ -31,10 +31,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^xproxy\/([^\(]+)\([\d]+\)$/) } if @meta["server"] =~ /^xproxy\/([^\(]+)\([\d]+\)$/
+	m << { :version=>@headers["server"].scan(/^xproxy\/([^\(]+)\([\d]+\)$/) } if @headers["server"] =~ /^xproxy\/([^\(]+)\([\d]+\)$/
 
 	# Date Detection # HTTP Server Header
-	m << { :string=>@meta["server"].scan(/^xproxy\/[^\(]+\(([\d]+)\)$/) } if @meta["server"] =~ /^xproxy\/[^\(]+\(([\d]+)\)$/
+	m << { :string=>@headers["server"].scan(/^xproxy\/[^\(]+\(([\d]+)\)$/) } if @headers["server"] =~ /^xproxy\/[^\(]+\(([\d]+)\)$/
 
 	# Return passive matches
 	m

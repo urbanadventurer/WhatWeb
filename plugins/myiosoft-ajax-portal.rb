@@ -42,7 +42,7 @@ def passive
 	m=[]
 
 	# ajaxp cookie
-	m << { :name=>"ajaxp cookie" } if @meta["set-cookie"] =~ /ajaxp=[0-9a-f]{20,32}/
+	m << { :name=>"ajaxp cookie" } if @headers["set-cookie"] =~ /ajaxp=[0-9a-f]{20,32}/
 
 	# Return passive matches
 	m

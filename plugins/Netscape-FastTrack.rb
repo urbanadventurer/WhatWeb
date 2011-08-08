@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Netscape-FastTrack\/(.+)$/) } if @meta["server"] =~ /^Netscape-FastTrack\/(.+)$/
+	m << { :version=>@headers["server"].scan(/^Netscape-FastTrack\/(.+)$/) } if @headers["server"] =~ /^Netscape-FastTrack\/(.+)$/
 
 	# Return passive matches
 	m

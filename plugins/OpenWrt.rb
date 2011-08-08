@@ -40,7 +40,7 @@ def passive
 	m=[]
 
 	# WWW-Authenticate: Basic realm="OpenWrt"
-	m << { :name=>"realm OpenWrt" } if @meta["www-authenticate"] =~ / realm="OpenWrt"/
+	m << { :name=>"realm OpenWrt" } if @headers["www-authenticate"] =~ / realm="OpenWrt"/
 
 	# Return passive matches
 	m

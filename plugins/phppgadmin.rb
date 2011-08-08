@@ -52,7 +52,7 @@ matches [
 
 def passive
         m=[]
-        m << {:name=>"PPA_ID Cookie", :certainty=>100 } if @meta["set-cookie"] =~ /PPA_ID=[a-z0-9]+/
+        m << {:name=>"PPA_ID Cookie", :certainty=>100 } if @headers["set-cookie"] =~ /PPA_ID=[a-z0-9]+/
         m
 end
 

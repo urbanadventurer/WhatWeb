@@ -25,7 +25,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^TeleFinder\/([\d\.]+)$/) } if @meta["server"] =~ /^TeleFinder\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^TeleFinder\/([\d\.]+)$/) } if @headers["server"] =~ /^TeleFinder\/([\d\.]+)$/
 
 	# Return passive matches
 	m

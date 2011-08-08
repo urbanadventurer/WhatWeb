@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# Server(WindRiver or WindWeb) and WWW-Authenticate(Basic realm="i.LON")
-	if (@meta["server"] =~ /^WindRiver/ or @meta["server"] =~ /WindWeb/) and @meta["www-authenticate"] =~ /^Basic realm="i\.LON"$/
+	if (@headers["server"] =~ /^WindRiver/ or @headers["server"] =~ /WindWeb/) and @headers["www-authenticate"] =~ /^Basic realm="i\.LON"$/
 
 		m << { :name=>"HTTP Server and WWW-Authenticate headers" }
 

@@ -38,16 +38,16 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^LANCOM ([\d]{4}[\+]?) VPN( \([^\)]+\))? ([\d\.]+) \/ ([\d]{2}.[\d]{2}.[\d]{4})$/
+	if @headers["server"] =~ /^LANCOM ([\d]{4}[\+]?) VPN( \([^\)]+\))? ([\d\.]+) \/ ([\d]{2}.[\d]{2}.[\d]{4})$/
 
 		# Model Detection
-		m << { :model=>@meta["server"].scan(/^LANCOM ([\d]{4}[\+]?) VPN( \([^\)]+\))? ([\d\.]+) \/ ([\d]{2}.[\d]{2}.[\d]{4})$/)[0][0] }
+		m << { :model=>@headers["server"].scan(/^LANCOM ([\d]{4}[\+]?) VPN( \([^\)]+\))? ([\d\.]+) \/ ([\d]{2}.[\d]{2}.[\d]{4})$/)[0][0] }
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^LANCOM ([\d]{4}[\+]?) VPN( \([^\)]+\))? ([\d\.]+) \/ ([\d]{2}.[\d]{2}.[\d]{4})$/)[0][2] }
+		m << { :version=>@headers["server"].scan(/^LANCOM ([\d]{4}[\+]?) VPN( \([^\)]+\))? ([\d\.]+) \/ ([\d]{2}.[\d]{2}.[\d]{4})$/)[0][2] }
 
 		# Date Detection
-		m << { :string=>@meta["server"].scan(/^LANCOM ([\d]{4}[\+]?) VPN( \([^\)]+\))? ([\d\.]+) \/ ([\d]{2}.[\d]{2}.[\d]{4})$/)[0][3] }
+		m << { :string=>@headers["server"].scan(/^LANCOM ([\d]{4}[\+]?) VPN( \([^\)]+\))? ([\d\.]+) \/ ([\d]{2}.[\d]{2}.[\d]{4})$/)[0][3] }
 
 	end
 

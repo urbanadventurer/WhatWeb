@@ -114,31 +114,31 @@ def passive
         m=[]
 
 	# HTTP Server Header # ZyXEL-RomPager
-	if @meta["server"] =~ /^ZyXEL-RomPager/
+	if @headers["server"] =~ /^ZyXEL-RomPager/
 
 		m << { :name=>"HTTP Server Header" }
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^ZyXEL-RomPager\/([^\s]+)$/) } if @meta["server"] =~ /^ZyXEL-RomPager\/([^\s]+)$/
+		m << { :version=>@headers["server"].scan(/^ZyXEL-RomPager\/([^\s]+)$/) } if @headers["server"] =~ /^ZyXEL-RomPager\/([^\s]+)$/
 
 		# Model Detection # WWW-Authenticate # Prestige
-		m << { :model=>@meta["www-authenticate"].scan(/^Basic realm="(Prestige [^"]+)( Web)?"/)[0][0] } if @meta["www-authenticate"] =~ /^Basic realm="(Prestige [^"]+)( Web)?"/
+		m << { :model=>@headers["www-authenticate"].scan(/^Basic realm="(Prestige [^"]+)( Web)?"/)[0][0] } if @headers["www-authenticate"] =~ /^Basic realm="(Prestige [^"]+)( Web)?"/
 
 		# Model Detection # WWW-Authenticate
-		m << { :model=>@meta["www-authenticate"].scan(/^Basic realm="([^"^\s]+)"$/) } if @meta["www-authenticate"] =~ /^Basic realm="([^"^\s]+)"$/
+		m << { :model=>@headers["www-authenticate"].scan(/^Basic realm="([^"^\s]+)"$/) } if @headers["www-authenticate"] =~ /^Basic realm="([^"^\s]+)"$/
 
 	end
 
 	# HTTP Server Header # RomPager
-	if @meta["server"] =~ /^RomPager/
+	if @headers["server"] =~ /^RomPager/
 
 		# Model Detection # WWW-Authenticate # Prestige
-		m << { :model=>@meta["www-authenticate"].scan(/^Basic realm="(Prestige [^"]+)( Web)?"/)[0][0] } if @meta["www-authenticate"] =~ /^Basic realm="(Prestige [^"]+)( Web)?"/
+		m << { :model=>@headers["www-authenticate"].scan(/^Basic realm="(Prestige [^"]+)( Web)?"/)[0][0] } if @headers["www-authenticate"] =~ /^Basic realm="(Prestige [^"]+)( Web)?"/
 
 	end
 
 	# P-330W EE # HTTP Server Header and WWW-Authenticate realm
-	if @meta["www-authenticate"] =~ /Basic realm="P-330W EE \(username: admin\)"/ and @meta["server"] =~ /GoAhead-Webs/ and @status.to_s =~ /^401$/
+	if @headers["www-authenticate"] =~ /Basic realm="P-330W EE \(username: admin\)"/ and @headers["server"] =~ /GoAhead-Webs/ and @status.to_s =~ /^401$/
 		m << { :model=>"P-330W EE" }
 	end
 

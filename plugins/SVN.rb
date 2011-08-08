@@ -27,7 +27,7 @@ examples %w|
 def passive
 	m=[]
 
-	m << { :version=>@meta["server"].scan(/[^\r^\n]*SVN\/([^\r^\n^\s]*)/) } if @meta["server"] =~ /[^\r^\n]*SVN\/([^\r^\n^\s]*)/
+	m << { :version=>@headers["server"].scan(/[^\r^\n]*SVN\/([^\r^\n^\s]*)/) } if @headers["server"] =~ /[^\r^\n]*SVN\/([^\r^\n^\s]*)/
 
 	m
 

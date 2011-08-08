@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Data ONTAP\/\/?([^\s]+)$/) } if @meta["server"] =~ /^Data ONTAP\/\/?([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^Data ONTAP\/\/?([^\s]+)$/) } if @headers["server"] =~ /^Data ONTAP\/\/?([^\s]+)$/
 
 	# Return passive matches
 	m

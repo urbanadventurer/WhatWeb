@@ -82,8 +82,8 @@ matches [
 def passive
 	m=[]
 
-	m << {:name=>"__cfduid cookie" } if @meta["set-cookie"] =~ /__cfduid/i
-	m << {:name=>"server header" } if @meta["server"] =~ /cloudflare\-nginx/i
+	m << {:name=>"__cfduid cookie" } if @headers["set-cookie"] =~ /__cfduid/i
+	m << {:name=>"server header" } if @headers["server"] =~ /cloudflare\-nginx/i
 
 	# Return passive matches
 	m

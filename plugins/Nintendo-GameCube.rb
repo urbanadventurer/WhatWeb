@@ -45,10 +45,10 @@ def passive
 	m=[]
 
 	# Server: GameCube
-	m << { :certainty=>75, :name=>"Server Header" } if @meta["server"] =~ /^Game[\s]?Cube$/
+	m << { :certainty=>75, :name=>"Server Header" } if @headers["server"] =~ /^Game[\s]?Cube$/
 
 	# X-Organization: Nintendo
-	m << { :certainty=>75, :name=>"X-Organization Header" } if @meta["x-organization"] =~ /^Nintendo$/
+	m << { :certainty=>75, :name=>"X-Organization Header" } if @headers["x-organization"] =~ /^Nintendo$/
 
 	# Return passive matches
 	m

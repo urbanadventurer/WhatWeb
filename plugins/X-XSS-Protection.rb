@@ -42,7 +42,7 @@ def passive
 	m=[]
 
 	# X-XSS-Protection HTTP Header
-	m << { :string=>@meta["x-xss-protection"].to_s } unless @meta["x-xss-protection"].nil?
+	m << { :string=>@headers["x-xss-protection"].to_s } unless @headers["x-xss-protection"].nil?
 
 	m
 

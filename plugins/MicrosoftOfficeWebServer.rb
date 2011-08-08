@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# MicrosoftOfficeWebServer HTTP Header
-	m << { :version=>@meta["microsoftofficewebserver"].to_s } unless @meta["microsoftofficewebserver"].nil?
+	m << { :version=>@headers["microsoftofficewebserver"].to_s } unless @headers["microsoftofficewebserver"].nil?
 
 	# Return passive matches
 	m

@@ -47,7 +47,7 @@ def passive
 	m=[]
 
 	# TorrentFlux cookie
-	m << { :name=>"TorrentFlux cookie" } if @meta["set-cookie"] =~ /^TorrentFlux=[a-z\d]+; path=\//
+	m << { :name=>"TorrentFlux cookie" } if @headers["set-cookie"] =~ /^TorrentFlux=[a-z\d]+; path=\//
 
 	# Return passive matches
 	m

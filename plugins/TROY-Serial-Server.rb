@@ -39,7 +39,7 @@ def passive
 	m=[]
 
 	# HTTP Server & Date Header
-	m << { :model=>"TROY500", :name=>"HTTP Server & Date Header" } if @meta["server"] =~ /^XCD Web Admin$/ and @meta["file-created"] =~ /^Wed, 14 Jul 1999 04:00:00 GMT$/
+	m << { :model=>"TROY500", :name=>"HTTP Server & Date Header" } if @headers["server"] =~ /^XCD Web Admin$/ and @headers["file-created"] =~ /^Wed, 14 Jul 1999 04:00:00 GMT$/
 
 	# Return passive match
 	m

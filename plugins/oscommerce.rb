@@ -81,7 +81,7 @@ def passive
 	m=[]
 
 	# osCsid Cookie
-	m << {:name=>"osCsid Cookie" } if @meta["set-cookie"] =~ /osCsid=[a-z0-9]{32};/
+	m << {:name=>"osCsid Cookie" } if @headers["set-cookie"] =~ /osCsid=[a-z0-9]{32};/
 
 	# Return passive matches
 	m

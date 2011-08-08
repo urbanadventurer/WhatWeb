@@ -60,7 +60,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << {:name=>"HTTP Server String", :version=>@meta["server"].scan(/^OpenCms\/([a-z\d\.]+)/) } if @meta["server"] =~ /^OpenCms\/[a-z\d\.]+/
+	m << {:name=>"HTTP Server String", :version=>@headers["server"].scan(/^OpenCms\/([a-z\d\.]+)/) } if @headers["server"] =~ /^OpenCms\/[a-z\d\.]+/
 
 	# Return passive matches
 	m

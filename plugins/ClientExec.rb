@@ -69,7 +69,7 @@ def passive
 	m=[]
 
 	# CLIENTEXEC Cookie
-	if @meta["set-cookie"] =~ /CLIENTEXEC=[a-z\d]{26,32}; path=\//
+	if @headers["set-cookie"] =~ /CLIENTEXEC=[a-z\d]{26,32}; path=\//
 
 		m << { :name=>"CLIENTEXEC Cookie" }
 

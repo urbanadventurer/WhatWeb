@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# Server
-	m << { :version=>@meta["server"].to_s.scan(/^[\s]*WindWeb\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /^[\s]*WindWeb\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/^[\s]*WindWeb\/([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /^[\s]*WindWeb\/([^\s^\r^\n]+)/i
 
 	m
 

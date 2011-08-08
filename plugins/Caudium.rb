@@ -28,13 +28,13 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].to_s.scan(/^[\s]*Caudium\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /^[\s]*Caudium\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/^[\s]*Caudium\/([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /^[\s]*Caudium\/([^\s^\r^\n]+)/i
 
 	# Catch-All # HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /^[\s]*Caudium[^\s^\r^\n]*/i
+	m << { :name=>"HTTP Server Header" } if @headers["server"].to_s =~ /^[\s]*Caudium[^\s^\r^\n]*/i
 
 	# Pike Version Detection # HTTP X-Got-Fish Header
-	m << { :module=>"Pike:"+@meta["x-got-fish"].to_s.scan(/^[\s]*Pike v([^\r^\n]+)/i).to_s } if @meta["x-got-fish"].to_s =~ /^[\s]*Pike v([^\r^\n]+)/i
+	m << { :module=>"Pike:"+@headers["x-got-fish"].to_s.scan(/^[\s]*Pike v([^\r^\n]+)/i).to_s } if @headers["x-got-fish"].to_s =~ /^[\s]*Pike v([^\r^\n]+)/i
 
 	m
 

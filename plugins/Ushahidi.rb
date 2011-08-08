@@ -38,10 +38,10 @@ def passive
 	m=[]
 
 	# ushahidi cookie
-	m << { :name=>"ushahidi cookie" } if @meta["set-cookie"] =~ /ushahidi=[^;]+;/
+	m << { :name=>"ushahidi cookie" } if @headers["set-cookie"] =~ /ushahidi=[^;]+;/
 
 	# ushahidi_data cookie
-	m << { :name=>"ushahidi_data cookie" } if @meta["set-cookie"] =~ /ushahidi_data=[^;]+;/
+	m << { :name=>"ushahidi_data cookie" } if @headers["set-cookie"] =~ /ushahidi_data=[^;]+;/
 
 	# Return passive matches
 	m

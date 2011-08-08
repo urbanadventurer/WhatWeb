@@ -32,8 +32,8 @@ def passive
 	m=[]
 
 	# powered-by-chinacache HTTP Header
-	unless @meta["powered-by-chinacache"].nil?
-		m << { :string=>@meta["powered-by-chinacache"].to_s }
+	unless @headers["powered-by-chinacache"].nil?
+		m << { :string=>@headers["powered-by-chinacache"].to_s }
 	end
 
 	# Return passive matches

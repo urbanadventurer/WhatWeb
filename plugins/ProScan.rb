@@ -22,10 +22,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^ProScan ([^\s]+)$/) } if @meta["server"] =~ /^ProScan ([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^ProScan ([^\s]+)$/) } if @headers["server"] =~ /^ProScan ([^\s]+)$/
 
 	# icy-notice2 Header
-	m << { :name=>"icy-notice2 header" } if @meta["icy-notice2"] =~ /^ProScan\.\.\. see http:\/\/www\.proscan\.org$/
+	m << { :name=>"icy-notice2 header" } if @headers["icy-notice2"] =~ /^ProScan\.\.\. see http:\/\/www\.proscan\.org$/
 
 	# Return passive matches
 	m

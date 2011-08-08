@@ -67,7 +67,7 @@ def passive
 	m=[]
 
 	# HTTP Location Header
-	m << { :string=>"Broken" } if @meta["location"] =~ /\/Admin\/CriticalError.asp\?ErrorMessage=<b>Cannot%20access%20main%20SQL%20Server%20database.<\/b>/
+	m << { :string=>"Broken" } if @headers["location"] =~ /\/Admin\/CriticalError.asp\?ErrorMessage=<b>Cannot%20access%20main%20SQL%20Server%20database.<\/b>/
 
 	m
 

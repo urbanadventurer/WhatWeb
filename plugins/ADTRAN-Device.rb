@@ -48,15 +48,15 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^ADTRAN, Inc\.$/ or @meta["server"] =~ /^ADTRAN$/
+	if @headers["server"] =~ /^ADTRAN, Inc\.$/ or @headers["server"] =~ /^ADTRAN$/
 		m << { :name=>"HTTP Server Header" }
 	end
 
 	# NetVanta Series # Model Detection # WWW-Authenticate Header
-	m << { :string=>"NetVanta", :model=>@meta["www-authenticate"].scan(/^Basic realm="Net[Vv]anta ([^"]+)"$/) } if @meta["www-authenticate"] =~ /^Basic realm="Net[Vv]anta ([^"]+)"$/
+	m << { :string=>"NetVanta", :model=>@headers["www-authenticate"].scan(/^Basic realm="Net[Vv]anta ([^"]+)"$/) } if @headers["www-authenticate"] =~ /^Basic realm="Net[Vv]anta ([^"]+)"$/
 
 	# Total Access Series # Model Detection # WWW-Authenticate Header
-	m << { :string=>"Total Access", :model=>@meta["www-authenticate"].scan(/^Basic realm="Total Access ([^"]+)"$/) } if @meta["www-authenticate"] =~ /^Basic realm="Total Access ([^"]+)"$/
+	m << { :string=>"Total Access", :model=>@headers["www-authenticate"].scan(/^Basic realm="Total Access ([^"]+)"$/) } if @headers["www-authenticate"] =~ /^Basic realm="Total Access ([^"]+)"$/
 
 	# Return passive matches
 	m

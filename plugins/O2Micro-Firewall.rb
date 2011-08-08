@@ -43,10 +43,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^(O2micro|Firewall)\/([\d\.]+)/)[0][1] } if @meta["server"] =~ /^(O2micro|Firewall)\/([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/^(O2micro|Firewall)\/([\d\.]+)/)[0][1] } if @headers["server"] =~ /^(O2micro|Firewall)\/([\d\.]+)/
 
 	# HTTP Server Header and Cookie
-	if @meta["set-cookie"] =~ /^CGISESSID=01010011111100000000111110010011;/ and @meta["server"] =~ /^(O2micro|Firewall)/
+	if @headers["set-cookie"] =~ /^CGISESSID=01010011111100000000111110010011;/ and @headers["server"] =~ /^(O2micro|Firewall)/
 		m << { :name=>"HTTP Server Header and Cookie" }
 	end
 

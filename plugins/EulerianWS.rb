@@ -43,7 +43,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :version=>@meta["server"].to_s.scan(/^[\s]*EulerianWS\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /^[\s]*EulerianWS\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/^[\s]*EulerianWS\/([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /^[\s]*EulerianWS\/([^\s^\r^\n]+)/i
 
 	m
 

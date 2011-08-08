@@ -58,7 +58,7 @@ def passive
 	m=[]
 
 	# MAKACSESSION Cookie
-	m << { :name=>"MAKACSESSION Cookie" } if @meta["set-cookie"] =~ /^MAKACSESSION=[A-Z\d]{16}; Path=/
+	m << { :name=>"MAKACSESSION Cookie" } if @headers["set-cookie"] =~ /^MAKACSESSION=[A-Z\d]{16}; Path=/
 
 	# Return passive matches
 	m

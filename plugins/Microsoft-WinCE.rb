@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Microsoft-WinCE\/([^\s^\r^\n]+)$/) } if @meta["server"] =~ /^Microsoft-WinCE\/([^\s^\r^\n]+)$/
+	m << { :version=>@headers["server"].scan(/^Microsoft-WinCE\/([^\s^\r^\n]+)$/) } if @headers["server"] =~ /^Microsoft-WinCE\/([^\s^\r^\n]+)$/
 
 	# Return passive matches
 	m

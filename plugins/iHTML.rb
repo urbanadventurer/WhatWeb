@@ -28,10 +28,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/ \(Using iHTML\/([^\)^\s]+)\)/) } if @meta["server"] =~ / \(Using iHTML\/([^\)^\s]+)\)/
+	m << { :version=>@headers["server"].scan(/ \(Using iHTML\/([^\)^\s]+)\)/) } if @headers["server"] =~ / \(Using iHTML\/([^\)^\s]+)\)/
 
 	# Version Detection # X-Powered-By Header
-	m << { :version=>@meta["x-powered-by"].scan(/^iHTML\/([^\s]+)$/) } if @meta["x-powered-by"] =~ /^iHTML\/([^\s]+)$/
+	m << { :version=>@headers["x-powered-by"].scan(/^iHTML\/([^\s]+)$/) } if @headers["x-powered-by"] =~ /^iHTML\/([^\s]+)$/
 
 	# Return passive matches
 	m

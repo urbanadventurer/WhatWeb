@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# X-Powered-By Header
-	m << { :name=>"X-Powered-By" } if @meta["x-powered-by"] =~ /^Nette Framework$/
+	m << { :name=>"X-Powered-By" } if @headers["x-powered-by"] =~ /^Nette Framework$/
 
 	# Return passive matches
 	m

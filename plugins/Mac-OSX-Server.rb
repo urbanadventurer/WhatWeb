@@ -60,7 +60,7 @@ def passive
 	m=[]
 
 	# WWW-Authenticate realm
-	if @status == 401 and @meta["www-authenticate"] =~ /basic realm="Mac OS X Server Web Services"/
+	if @status == 401 and @headers["www-authenticate"] =~ /basic realm="Mac OS X Server Web Services"/
 		m << { :name=>"WWW-Authenticate realm", :os=>"Mac OSX" }
 	end
 

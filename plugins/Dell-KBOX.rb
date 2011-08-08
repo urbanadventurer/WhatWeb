@@ -31,19 +31,19 @@ def passive
 	m=[]
 
 	# Version Detection # X-DellKACE-Version Header
-	m << { :version=>@meta["x-dellkace-version"].to_s } unless @meta["x-dellkace-version"].nil?
+	m << { :version=>@headers["x-dellkace-version"].to_s } unless @headers["x-dellkace-version"].nil?
 
 	# Version Detection # X-KBOX-Version Header
-	m << { :version=>@meta["x-kbox-version"].to_s } unless @meta["x-kbox-version"].nil?
+	m << { :version=>@headers["x-kbox-version"].to_s } unless @headers["x-kbox-version"].nil?
 
 	# Model Detection # X-DellKACE-Appliance Header
-	m << { :model=>@meta["x-dellkace-appliance"].to_s } unless @meta["x-dellkace-appliance"].nil?
+	m << { :model=>@headers["x-dellkace-appliance"].to_s } unless @headers["x-dellkace-appliance"].nil?
 
 	# Hostname Detection # X-KBOX-WebServer
-	m << { :string=>@meta["x-kbox-webserver"].to_s } unless @meta["x-kbox-webserver"].nil?
+	m << { :string=>@headers["x-kbox-webserver"].to_s } unless @headers["x-kbox-webserver"].nil?
 
 	# Hostname Detection # X-DellKACE-Host
-	m << { :string=>@meta["x-dellkace-host"].to_s } unless @meta["x-dellkace-host"].nil?
+	m << { :string=>@headers["x-dellkace-host"].to_s } unless @headers["x-dellkace-host"].nil?
 
 	# Return passive matches
 	m
