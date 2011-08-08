@@ -115,7 +115,7 @@ def passive
 	m=[]
 
 	# Version Detection # x-owa-version HTTP Header
-	m << { :version=>@headers["x-owa-version"].to_s } unless @headers["x-owa-version"].nil?
+	m << { :version=>@meta["x-owa-version"].to_s } unless @meta["x-owa-version"].nil?
 
 	# Active Directory Domain Detection
 	if @body =~ /<!--Copyright \(c\) 2000-20[\d]{2} Microsoft Corporation\.  All rights reserved\.-->/
