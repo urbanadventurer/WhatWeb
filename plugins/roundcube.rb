@@ -26,7 +26,7 @@ matches [
 # Set-Cookie: roundcube_sessid=573c9cce97436b17e4ab02d83747efb2; path=/
 def passive
 	m=[]
-	m << {:name=>"roundcube_sessid cookie" } if @meta["set-cookie"] =~ /roundcube_sessid/i		
+	m << {:name=>"roundcube_sessid cookie" } if @headers["set-cookie"] =~ /roundcube_sessid/i		
 	m
 end
 

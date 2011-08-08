@@ -61,10 +61,10 @@ def passive
 	m=[]
 
 	# Server: CarelDataServer
-	if @meta["server"] =~ /^CarelDataServer\/[\d\.]{1,10}/
+	if @headers["server"] =~ /^CarelDataServer\/[\d\.]{1,10}/
 
 		# Version Detection # HTTP Server header
-		m << { :version=>@meta["server"].scan(/^CarelDataServer\/([\d\.]{1,10})/) }
+		m << { :version=>@headers["server"].scan(/^CarelDataServer\/([\d\.]{1,10})/) }
 
 		# Account Detection # LoginName select tag
 		accounts = @body.scan(/<select name='LoginName'>(.*)<\/select>/m) if @body =~ /<select name='LoginName'>(.*)<\/select>/m

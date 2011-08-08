@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# Set-Cookie # X-Mapping
-	m << { :name=>"Set-Cookie" } if @meta["set-cookie"] =~ /^X-Mapping-[a-z]{8}=([A-F\d]{32}|deleted);/
+	m << { :name=>"Set-Cookie" } if @headers["set-cookie"] =~ /^X-Mapping-[a-z]{8}=([A-F\d]{32}|deleted);/
 
 	# Return passive matches
 	m

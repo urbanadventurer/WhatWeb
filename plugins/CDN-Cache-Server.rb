@@ -27,7 +27,7 @@ def passive
 	m=[]
 
 	# Server: Cdn Cache Server
-	m << { :version=>@meta["server"].scan(/^Cdn Cache Server V([\d\.]+)/) } if @meta["server"] =~ /^Cdn Cache Server V([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/^Cdn Cache Server V([\d\.]+)/) } if @headers["server"] =~ /^Cdn Cache Server V([\d\.]+)/
 
 	# Return passive matches
 	m

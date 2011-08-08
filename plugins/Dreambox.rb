@@ -40,13 +40,13 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Enigma2 WebInterface Server ([\d\.]+)$/) } if @meta["server"] =~ /^Enigma2 WebInterface Server ([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^Enigma2 WebInterface Server ([\d\.]+)$/) } if @headers["server"] =~ /^Enigma2 WebInterface Server ([\d\.]+)$/
 
 	# HTTP Server Header # TwistedWeb
-	if @meta["server"] =~ /^TwistedWeb\/[\d\.]+$/
+	if @headers["server"] =~ /^TwistedWeb\/[\d\.]+$/
 
 		# WWW-Authenticate # basic realm="Enigma2 WebInterface"
-		m << { :name=>"TwistedWeb server + WWW-Authenticate realm" } if @meta["www-authenticate"] =~ /^basic realm="Enigma2 WebInterface"$/
+		m << { :name=>"TwistedWeb server + WWW-Authenticate realm" } if @headers["www-authenticate"] =~ /^basic realm="Enigma2 WebInterface"$/
 
 		# Title
 		m << { :name=>"TwistedWeb server + Title" } if @body =~ /<title>Dreambox WebControl<\/title>/
@@ -54,8 +54,8 @@ def passive
 	end
 
 	# Model Detection # WWW-Authenticate: basic realm
-	if @meta["server"] =~ /^Twisted\/[\d\.]+/ and @meta["www-authenticate"] =~ /^basic realm="(dm[\d]{4})"$/i
-		m << { :model=>@meta["www-authenticate"].scan(/^basic realm="(dm[\d]{4})"$/i) }
+	if @headers["server"] =~ /^Twisted\/[\d\.]+/ and @headers["www-authenticate"] =~ /^basic realm="(dm[\d]{4})"$/i
+		m << { :model=>@headers["www-authenticate"].scan(/^basic realm="(dm[\d]{4})"$/i) }
 	end
 
 	# Return passive matches

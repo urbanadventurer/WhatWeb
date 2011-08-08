@@ -33,13 +33,13 @@ def passive
 	m=[]
 
 	# Version Detection # Composed-By HTTP Header
-	m << { :version=>@meta["composed-by"].scan(/SPIP ([^@]{1,10}) @ www\.spip\.net/) } if @meta["composed-by"] =~ /SPIP ([^@]{1,10}) @ www\.spip\.net/
+	m << { :version=>@headers["composed-by"].scan(/SPIP ([^@]{1,10}) @ www\.spip\.net/) } if @headers["composed-by"] =~ /SPIP ([^@]{1,10}) @ www\.spip\.net/
 
 	# Composed-By HTTP Header
-	m << { :name=>"Composed-By HTTP Header" } if @meta["composed-by"] =~ /SPIP @ www\.spip\.net/
+	m << { :name=>"Composed-By HTTP Header" } if @headers["composed-by"] =~ /SPIP @ www\.spip\.net/
 
 	# x-spip-cache
-	m << { :name=>"x-spip-cache" } unless @meta["x-spip-cache"].nil?
+	m << { :name=>"x-spip-cache" } unless @headers["x-spip-cache"].nil?
 
 	# Return passive matches
 	m

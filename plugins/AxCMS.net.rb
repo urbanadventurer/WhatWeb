@@ -78,7 +78,7 @@ def passive
 	m=[]
 
 	# X-Powered-By: AxCMS.net
-	m << { :version=>@meta['x-powered-by'].scan(/AxCMS.net ([\d\.]+)/)[0] } if @meta['x-powered-by'] =~ /AxCMS.net ([\d\.]+)/
+	m << { :version=>@headers['x-powered-by'].scan(/AxCMS.net ([\d\.]+)/)[0] } if @headers['x-powered-by'] =~ /AxCMS.net ([\d\.]+)/
 
 	# Return passive matches
 	m

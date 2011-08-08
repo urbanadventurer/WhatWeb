@@ -40,10 +40,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^DeleGate\/([^\s]+)/) } if @meta["server"] =~ /^DeleGate\/([^\s]+)/
+	m << { :version=>@headers["server"].scan(/^DeleGate\/([^\s]+)/) } if @headers["server"] =~ /^DeleGate\/([^\s]+)/
 
 	# Version Detection # HTTP DeleGate-Ver Header
-	m << { :version=>@meta["delegate-ver"].scan(/^([^\s]+) \(delay=/) } if @meta["delegate-ver"] =~ /^([^\s]+) \(delay=/
+	m << { :version=>@headers["delegate-ver"].scan(/^([^\s]+) \(delay=/) } if @headers["delegate-ver"] =~ /^([^\s]+) \(delay=/
 
 	# Return passive matches
 	m

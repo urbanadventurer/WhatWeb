@@ -57,10 +57,10 @@ def passive
 	m=[]
 
 	# MySQLDumper Cookie
-	m << { :name=>"MySQLDumper Cookie" } if @meta["set-cookie"] =~ /MySQLDumper=[a-z\d]{16,32}/
+	m << { :name=>"MySQLDumper Cookie" } if @headers["set-cookie"] =~ /MySQLDumper=[a-z\d]{16,32}/
 
 	# WWW-Authenticate realm
-	m << { :name=>"WWW-Authenticate realm" } if @meta["www-authenticate"] =~ /^Basic realm="MySQLDumper"$/
+	m << { :name=>"WWW-Authenticate realm" } if @headers["www-authenticate"] =~ /^Basic realm="MySQLDumper"$/
 
 	# Return passive matches
 	m

@@ -46,12 +46,12 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Mirapoint/
+	if @headers["server"] =~ /^Mirapoint/
 
 		m << { :name=>"HTTP Server Header" }
 
 		# Version Detection
-		if @meta["server"] =~ /^Mirapoint\/([^\s]+)$/
+		if @headers["server"] =~ /^Mirapoint\/([^\s]+)$/
 			m << { :version=>"#{$1}" }
 		end
 	end

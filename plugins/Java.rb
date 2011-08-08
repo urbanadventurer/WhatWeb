@@ -57,31 +57,31 @@ def passive
 	m=[]
 
 	# JSESSIONID Cookie
-	m << { :name=>"JSESSIONID Cookie" } if @meta["set-cookie"] =~ /JSESSIONID=[^;]{0,32};[\s]?path=\//i
+	m << { :name=>"JSESSIONID Cookie" } if @headers["set-cookie"] =~ /JSESSIONID=[^;]{0,32};[\s]?path=\//i
 
 	# X-Powered-By # JSP Version Detection
-	m << { :version=>@meta['x-powered-by'].scan(/JSP\/([\d\.]+)/) } if @meta['x-powered-by'] =~ /JSP\/([\d\.]+)/
+	m << { :version=>@headers['x-powered-by'].scan(/JSP\/([\d\.]+)/) } if @headers['x-powered-by'] =~ /JSP\/([\d\.]+)/
 	# X-Powered-By # Servlet Version Detection
-	m << { :string=>@meta['x-powered-by'].scan(/(Servlet\/[\d\.]+)/i) } if @meta['x-powered-by'] =~ /(Servlet\/[\d\.]+)/i
+	m << { :string=>@headers['x-powered-by'].scan(/(Servlet\/[\d\.]+)/i) } if @headers['x-powered-by'] =~ /(Servlet\/[\d\.]+)/i
 	# X-Powered-By # JRE Version Detection
-	m << { :string=>@meta['x-powered-by'].scan(/(JRE\/[\d\.\-\_]+)/) } if @meta['x-powered-by'] =~ /(JRE\/[\d\.\-\_]+)/
+	m << { :string=>@headers['x-powered-by'].scan(/(JRE\/[\d\.\-\_]+)/) } if @headers['x-powered-by'] =~ /(JRE\/[\d\.\-\_]+)/
 
 	# Server # Version Detection
-	m << { :version=>@meta['server'].scan(/java\/([\d\.\-\_]+)/) } if @meta['server'] =~ /java\/([\d\.\-\_]+)/
+	m << { :version=>@headers['server'].scan(/java\/([\d\.\-\_]+)/) } if @headers['server'] =~ /java\/([\d\.\-\_]+)/
 	# Server # JDK Version Detection
-	m << { :string=>@meta['server'].scan(/(JDK [\d\.\-\_]+)/) } if @meta['server'] =~ /(JDK [\d\.\-\_]+)/
+	m << { :string=>@headers['server'].scan(/(JDK [\d\.\-\_]+)/) } if @headers['server'] =~ /(JDK [\d\.\-\_]+)/
 
 	# Servlet-Engine
-	if @meta['servlet-engine'] =~ /\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/
+	if @headers['servlet-engine'] =~ /\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/
 
 		# JSP Version Detection
-		m << { :string=>@meta['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][0] }
+		m << { :string=>@headers['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][0] }
 		# Servlet Version Detection
-		m << { :string=>@meta['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][1] }
+		m << { :string=>@headers['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][1] }
 		# Version Detection
-		m << { :version=>@meta['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][2] }
+		m << { :version=>@headers['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][2] }
 		# OS Detection
-		m << { :os=>@meta['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][3] }
+		m << { :os=>@headers['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][3] }
 
 	end
 

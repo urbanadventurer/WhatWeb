@@ -25,7 +25,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^MS-SDK-HttpServer\/([\d\.]+)$/) } if @meta["server"] =~ /^MS-SDK-HttpServer\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^MS-SDK-HttpServer\/([\d\.]+)$/) } if @headers["server"] =~ /^MS-SDK-HttpServer\/([\d\.]+)$/
 
 	# Return passive matches
 	m

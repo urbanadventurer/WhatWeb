@@ -66,19 +66,19 @@ def passive
 	m=[]
 
 	# Version Detection # Proxy-Agent
-	if @meta["proxy-agent"].to_s =~ /^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/
-		m << { :version=>@meta["proxy-agent"].scan(/^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/).to_s, :module=>"Proxy Server" }
+	if @headers["proxy-agent"].to_s =~ /^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/
+		m << { :version=>@headers["proxy-agent"].scan(/^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/).to_s, :module=>"Proxy Server" }
 	end
 
 	# Version Detection # Web Server
-	if @meta["server"].to_s =~ /^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/
-		m << { :version=>@meta["server"].scan(/^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/).to_s, :module=>"Web Server" }
+	if @headers["server"].to_s =~ /^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/
+		m << { :version=>@headers["server"].scan(/^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/).to_s, :module=>"Web Server" }
 	end
 
 	# Version Detection # Application Server
-	if @meta["server"].to_s =~ /^[\s]*Sun[\-\ ]{1}Java[\-\ ]{1}System[\/\ ]{1}Application[\-\ ]{1}Server/
-		if @meta["server"].to_s =~ /^[\s]*Sun[\-\ ]{1}Java[\-\ ]{1}System[\/\ ]{1}Application[\-\ ]{1}Server ([\d\._]+)/
-			m << { :version=>@meta["server"].scan(/^[\s]*Sun[\-\ ]{1}Java[\-\ ]{1}System[\/\ ]{1}Application[\-\ ]{1}Server ([\d\._]+)/), :module=>"Application Server" }
+	if @headers["server"].to_s =~ /^[\s]*Sun[\-\ ]{1}Java[\-\ ]{1}System[\/\ ]{1}Application[\-\ ]{1}Server/
+		if @headers["server"].to_s =~ /^[\s]*Sun[\-\ ]{1}Java[\-\ ]{1}System[\/\ ]{1}Application[\-\ ]{1}Server ([\d\._]+)/
+			m << { :version=>@headers["server"].scan(/^[\s]*Sun[\-\ ]{1}Java[\-\ ]{1}System[\/\ ]{1}Application[\-\ ]{1}Server ([\d\._]+)/), :module=>"Application Server" }
 		else
 			m << { :name=>"HTTP server header", :module=>"Application Server" }
 		end

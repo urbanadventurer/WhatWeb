@@ -43,22 +43,22 @@ def passive
 	m=[]
 
 	# P3P
-	m << { :name=>"P3P Header" } if @meta["p3p"] =~ /^P3P: policyref="\/bitrix\/p3p\.xml", CP="NON DSP COR CUR ADM DEV PSA PSD OUR UNR BUS UNI COM NAV INT DEM STA"$/
+	m << { :name=>"P3P Header" } if @headers["p3p"] =~ /^P3P: policyref="\/bitrix\/p3p\.xml", CP="NON DSP COR CUR ADM DEV PSA PSD OUR UNR BUS UNI COM NAV INT DEM STA"$/
 
 	# Cookies
-	m << { :name=>"BITRIX_SM_SALE_UID Cookie" } if @meta["set-cookie"] =~ /BITRIX_SM_SALE_UID=[\d]+;/
-	m << { :name=>"BITRIX_SM_GUEST_ID Cookie" } if @meta["set-cookie"] =~ /BITRIX_SM_GUEST_ID=[\d]+;/
-	m << { :name=>"BITRIX_SM_LAST_VISIT Cookie" } if @meta["set-cookie"] =~ /BITRIX_SM_LAST_VISIT=/
-	m << { :name=>"BITRIX_SM_BANNERS Cookie" } if @meta["set-cookie"] =~ /BITRIX_SM_BANNERS=/
+	m << { :name=>"BITRIX_SM_SALE_UID Cookie" } if @headers["set-cookie"] =~ /BITRIX_SM_SALE_UID=[\d]+;/
+	m << { :name=>"BITRIX_SM_GUEST_ID Cookie" } if @headers["set-cookie"] =~ /BITRIX_SM_GUEST_ID=[\d]+;/
+	m << { :name=>"BITRIX_SM_LAST_VISIT Cookie" } if @headers["set-cookie"] =~ /BITRIX_SM_LAST_VISIT=/
+	m << { :name=>"BITRIX_SM_BANNERS Cookie" } if @headers["set-cookie"] =~ /BITRIX_SM_BANNERS=/
 
 	# X-Powered-CMS
-	m << { :name=>"X-Powered-CMS header" } if @meta["x-powered-cms"] =~ /^Bitrix Site Manager \([a-f\d]{32}\)$/
+	m << { :name=>"X-Powered-CMS header" } if @headers["x-powered-cms"] =~ /^Bitrix Site Manager \([a-f\d]{32}\)$/
 
 	# B-Powered-By
-	m << { :name=>"B-Powered-By Header" } if @meta["b-powered-by"] =~ /^Bitrix SM \([a-f\d]{32}\)$/
+	m << { :name=>"B-Powered-By Header" } if @headers["b-powered-by"] =~ /^Bitrix SM \([a-f\d]{32}\)$/
 
 	# Version Detection # B-Powered-By
-	m << { :version=>@meta["b-powered-by"].scan(/^Bitrix SM\/([\d\.]+) \([a-f\d]{32}\)$/) } if @meta["b-powered-by"] =~ /^Bitrix SM\/([\d\.]+) \([a-f\d]{32}\)$/
+	m << { :version=>@headers["b-powered-by"].scan(/^Bitrix SM\/([\d\.]+) \([a-f\d]{32}\)$/) } if @headers["b-powered-by"] =~ /^Bitrix SM\/([\d\.]+) \([a-f\d]{32}\)$/
 
 	# Return passive matches
 	m

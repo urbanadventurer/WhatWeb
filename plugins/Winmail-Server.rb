@@ -99,13 +99,13 @@ def passive
 	m=[]
 
 	# magicwinmail_default_language cookie
-	m << { :name=>"magicwinmail_default_language cookie" } if @meta["set-cookie"] =~ /magicwinmail_default_language=[^;]+;/
+	m << { :name=>"magicwinmail_default_language cookie" } if @headers["set-cookie"] =~ /magicwinmail_default_language=[^;]+;/
 
 	# magicwinmail_domain_name cookie
-	m << { :name=>"magicwinmail_domain_name cookie" } if @meta["set-cookie"] =~ /magicwinmail_domain_name=[^;]+;/
+	m << { :name=>"magicwinmail_domain_name cookie" } if @headers["set-cookie"] =~ /magicwinmail_domain_name=[^;]+;/
 
 	# magicwinmail_login_userid cookie
-	m << { :name=>"magicwinmail_login_userid cookie" } if @meta["set-cookie"] =~ /magicwinmail_login_userid=[^;]+;/
+	m << { :name=>"magicwinmail_login_userid cookie" } if @headers["set-cookie"] =~ /magicwinmail_login_userid=[^;]+;/
 
 	# Return passive matches
 	m

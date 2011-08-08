@@ -24,12 +24,12 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^WalkGuard web server$/
+	if @headers["server"] =~ /^WalkGuard web server$/
 		m << { :name=>"HTTP Server Header" }
 	end
 
 	# WWW-Authenticate Header
-	if @meta["www-authenticate"] =~ /Basic realm="WalkGuard web server"/
+	if @headers["www-authenticate"] =~ /Basic realm="WalkGuard web server"/
 		m << { :name=>"WWW-Authenticate Header" }
 	end
 

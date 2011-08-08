@@ -46,7 +46,7 @@ def passive
 	m=[]
 
 	# Server: PRINT_SERVER WEB # Also used by other printer servers
-	m << { :certainty=>25, :version=>@meta["server"].scan(/^PRINT_SERVER WEB ([\d\.]+)$/) } if @meta["server"] =~ /^PRINT_SERVER WEB ([\d\.]+)$/
+	m << { :certainty=>25, :version=>@headers["server"].scan(/^PRINT_SERVER WEB ([\d\.]+)$/) } if @headers["server"] =~ /^PRINT_SERVER WEB ([\d\.]+)$/
 
 	# Return passive matches
 	m

@@ -34,10 +34,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/Zotonic\/([^\s]+)/) } if @meta["server"] =~ /Zotonic\/([^\s]+)/
+	m << { :version=>@headers["server"].scan(/Zotonic\/([^\s]+)/) } if @headers["server"] =~ /Zotonic\/([^\s]+)/
 
 	# z_pid and z_sid cookies
-	if @meta["set-cookie"] =~ /z_pid=[^;]+;/ and @meta["set-cookie"] =~ /z_sid=[^;]+;/
+	if @headers["set-cookie"] =~ /z_pid=[^;]+;/ and @headers["set-cookie"] =~ /z_sid=[^;]+;/
 		m << { :name=>"z_pid and z_sid cookies" }
 	end
 

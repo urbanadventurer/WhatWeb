@@ -51,7 +51,7 @@ def passive
 	m=[]
 
 	# NCD_COOKIE Cookie
-	m << { :name=>"NCD_COOKIE Cookie" } if @meta["set-cookie"] =~ /NCD_COOKIE=language=0#username=#logintime=#lastaction=;/
+	m << { :name=>"NCD_COOKIE Cookie" } if @headers["set-cookie"] =~ /NCD_COOKIE=language=0#username=#logintime=#lastaction=;/
 
 	# Return passive matches
 	m

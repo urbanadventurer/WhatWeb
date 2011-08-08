@@ -41,7 +41,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^GR-HTTPD Server\/([\d\.]+)$/
+	if @headers["server"] =~ /^GR-HTTPD Server\/([\d\.]+)$/
 
 		m << { :certainty=>75, :name=>"HTTP Server Header" }
 

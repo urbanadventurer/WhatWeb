@@ -34,7 +34,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^NetShelter\/VPN$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^NetShelter\/VPN$/
 	# Return passive matches
 	m
 end

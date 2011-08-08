@@ -30,15 +30,15 @@ def passive
 	m=[]
 
 	# No HTTP Server Header
-	if @meta["server"].nil?
+	if @headers["server"].nil?
 
 		# Location
-		if @status.to_s =~ /^302$/ and @meta["location"] =~ /\/syswww\/login\.xml/
+		if @status.to_s =~ /^302$/ and @headers["location"] =~ /\/syswww\/login\.xml/
 			m << { :name=>"Location Header" }
 		end
 
 		# SoftPLC Cookie
-		m << { :name=>"SoftPLC Cookie" } if @meta["set-cookie"] =~ /^SoftPLC=-?[\d]+; Path=\//
+		m << { :name=>"SoftPLC Cookie" } if @headers["set-cookie"] =~ /^SoftPLC=-?[\d]+; Path=\//
 
 	end
 

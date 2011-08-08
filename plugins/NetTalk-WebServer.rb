@@ -33,7 +33,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^NetTalk-WebServer\/([\d\.]+)$/) } if @meta["server"] =~ /^NetTalk-WebServer\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^NetTalk-WebServer\/([\d\.]+)$/) } if @headers["server"] =~ /^NetTalk-WebServer\/([\d\.]+)$/
 
 	# Return passive matches
 	m

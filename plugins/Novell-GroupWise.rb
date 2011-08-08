@@ -66,7 +66,7 @@ def passive
 	m=[]
 
 	# NJSCN Cookie
-	if @meta["set-cookie"] =~ /^NJSCN=[\d]+$/
+	if @headers["set-cookie"] =~ /^NJSCN=[\d]+$/
 		m << { :name=>"NJSCN Cookie" }
 	end
 

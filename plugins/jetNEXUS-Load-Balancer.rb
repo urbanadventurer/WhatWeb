@@ -23,7 +23,7 @@ def passive
 	m=[]
 
 	# jetNEXUS Header
-	m << { :name=>"jetNEXUS Header" } if @meta["jetnexus"] =~ /^Streaming Compression/
+	m << { :name=>"jetNEXUS Header" } if @headers["jetnexus"] =~ /^Streaming Compression/
 
 	# Return passive matches
 	m

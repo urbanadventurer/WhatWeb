@@ -46,13 +46,13 @@ def passive
 	m=[]
 
 	# Server # RomPager
-	m << { :version=>@meta["server"].to_s.scan(/^[\s]*RomPager\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /^[\s]*RomPager\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/^[\s]*RomPager\/([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /^[\s]*RomPager\/([^\s^\r^\n]+)/i
 
 	# Server # Allegro-Software-RomPager
-	m << { :version=>@meta["server"].to_s.scan(/^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i
 
 	# EXT
-	m << { :name=>"EXT HTTP Header" } if @meta["ext"] =~ //
+	m << { :name=>"EXT HTTP Header" } if @headers["ext"] =~ //
 
 	# Return passive matches
 	m

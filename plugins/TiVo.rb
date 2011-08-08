@@ -37,7 +37,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^tivo-httpd-[\d]+:(.+)$/) } if @meta["server"] =~ /^tivo-httpd-[\d]+:(.+)$/
+	m << { :version=>@headers["server"].scan(/^tivo-httpd-[\d]+:(.+)$/) } if @headers["server"] =~ /^tivo-httpd-[\d]+:(.+)$/
 
 	# Return passive matches
 	m

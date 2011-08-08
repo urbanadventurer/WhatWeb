@@ -37,10 +37,10 @@ def passive
 	m=[]
 
 	# kohanasession cookie
-	m << { :name=>"kohanasession cookie" } if @meta["set-cookie"] =~ /kohanasession=[a-z\d]{26}; expires=/
+	m << { :name=>"kohanasession cookie" } if @headers["set-cookie"] =~ /kohanasession=[a-z\d]{26}; expires=/
 
 	# kohanasession_data cookie
-	m << { :name=>"kohanasession_data cookie" } if @meta["set-cookie"] =~ /kohanasession_data=/
+	m << { :name=>"kohanasession_data cookie" } if @headers["set-cookie"] =~ /kohanasession_data=/
 
 	# Return passive matches
 	m

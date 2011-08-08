@@ -40,7 +40,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Bomgar$/
+	if @headers["server"] =~ /^Bomgar$/
 
 		m << { :name=>"HTTP Server Header" }
 

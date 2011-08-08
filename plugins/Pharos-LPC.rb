@@ -53,10 +53,10 @@ def passive
 	end
 
 	# Redirect Location
-	m << { :certainty=>75, :name=>"Redirect Location" } if @meta["location"] =~ /^https?:\/\/[^\/]+\/pharos_lpc\/index\.asp$/
+	m << { :certainty=>75, :name=>"Redirect Location" } if @headers["location"] =~ /^https?:\/\/[^\/]+\/pharos_lpc\/index\.asp$/
 
 	# WWW-Authenticate Realm
-	m << { :name=>"authenticate realm" } if @meta["www-authenticate"] =~ /Digest realm="PharosLPC"/
+	m << { :name=>"authenticate realm" } if @headers["www-authenticate"] =~ /Digest realm="PharosLPC"/
 
 	# Return passive matches
 	m

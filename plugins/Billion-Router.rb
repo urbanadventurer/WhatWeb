@@ -21,7 +21,7 @@ def passive
 	m=[]
 
 	# WWW-Authenticate: Basic realm="Billion Sky" 
-	if @meta["www-authenticate"] =~ /Basic realm="Billion Sky"/
+	if @headers["www-authenticate"] =~ /Basic realm="Billion Sky"/
 		m << { :name=>"WWW-Authenticate" }
 	end
 

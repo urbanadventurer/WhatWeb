@@ -59,7 +59,7 @@ def passive
 	m=[]
 
 	# Server: PCX3000/1.0
-	m << { :model=>"PCX3000" } if @meta["server"] =~ /^PCX3000\/[\d\.]{1,5}/
+	m << { :model=>"PCX3000" } if @headers["server"] =~ /^PCX3000\/[\d\.]{1,5}/
 
 	# Return passive matches
 	m

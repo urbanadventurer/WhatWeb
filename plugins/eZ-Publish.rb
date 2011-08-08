@@ -68,7 +68,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["x-powered-by"] =~ /^eZ [p|P]ublish/
+	m << { :name=>"HTTP Server Header" } if @headers["x-powered-by"] =~ /^eZ [p|P]ublish/
 
 	# Return passive matches
 	m

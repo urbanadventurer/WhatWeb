@@ -28,12 +28,12 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Trend Micro/
+	if @headers["server"] =~ /^Trend Micro/
 
-		m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^Trend Micro$/
+		m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^Trend Micro$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^Trend Micro ([^\s]+)$/) } if @meta["server"] =~ /^Trend Micro ([^\s]+)$/
+		m << { :version=>@headers["server"].scan(/^Trend Micro ([^\s]+)$/) } if @headers["server"] =~ /^Trend Micro ([^\s]+)$/
 
 	end
 

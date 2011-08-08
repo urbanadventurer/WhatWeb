@@ -50,7 +50,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^DirectAdmin Daemon v([^\s]+) Registered to /) } if @meta["server"] =~ /^DirectAdmin Daemon v([^\s]+) Registered to /
+	m << { :version=>@headers["server"].scan(/^DirectAdmin Daemon v([^\s]+) Registered to /) } if @headers["server"] =~ /^DirectAdmin Daemon v([^\s]+) Registered to /
 
 	# Return passive matches
 	m

@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Spyglass_MicroServer\/(.+)$/) } if @meta["server"] =~ /^Spyglass_MicroServer\/(.+)$/
+	m << { :version=>@headers["server"].scan(/^Spyglass_MicroServer\/(.+)$/) } if @headers["server"] =~ /^Spyglass_MicroServer\/(.+)$/
 
 	# Return passive matches
 	m

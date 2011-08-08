@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^SONY LocationFreeTV\/([^\s]+) HTTPD\/([^\s]+)$/
+	if @headers["server"] =~ /^SONY LocationFreeTV\/([^\s]+) HTTPD\/([^\s]+)$/
 		m << { :version=>"#{$2}" }
 		m << { :model=>"#{$1}" }
 	end

@@ -27,13 +27,13 @@ examples %w|
 def passive
 	m=[]
 
-	if @meta["server"] =~ /^KFWebServer/
+	if @headers["server"] =~ /^KFWebServer/
 
 		# HTTP Server Header
-		m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^KFWebServer$/
+		m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^KFWebServer$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^KFWebServer\/([\d\.]+)/) } if @meta["server"] =~ /^KFWebServer\/([\d\.]+)/
+		m << { :version=>@headers["server"].scan(/^KFWebServer\/([\d\.]+)/) } if @headers["server"] =~ /^KFWebServer\/([\d\.]+)/
 
 	end
 

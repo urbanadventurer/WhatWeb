@@ -52,11 +52,11 @@ def passive
 	m=[]
 
 	# X-Powered-By header
-	m << { :name=>"X-Powered-By header" } if @meta["x-powered-by"] =~ /^TBDev Yuna Scatari Edition/
-	m << { :name=>"X-Powered-By header" } if @meta["x-powered-by"] =~ /^TBDev YSE/
+	m << { :name=>"X-Powered-By header" } if @headers["x-powered-by"] =~ /^TBDev Yuna Scatari Edition/
+	m << { :name=>"X-Powered-By header" } if @headers["x-powered-by"] =~ /^TBDev YSE/
 
 	# X-Chocolate-to header
-	m << { :name=>"X-Chocolate-to header" } if @meta["x-chocolate-to"] =~ /^ICQ 7282521$/
+	m << { :name=>"X-Chocolate-to header" } if @headers["x-chocolate-to"] =~ /^ICQ 7282521$/
 
 	# Return passive matches
 	m

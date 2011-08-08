@@ -33,10 +33,10 @@ def passive
 	m=[]
 
 	# X-Squid-Error # Also used by iPrism, CachePower, and MecGuard 
-	m << { :name=>"x-squid-error", :certainty=>25 } unless @meta["x-squid-error"].nil?
+	m << { :name=>"x-squid-error", :certainty=>25 } unless @headers["x-squid-error"].nil?
 
 	# Server
-	m << { :version=>@meta["server"].to_s.scan(/[\s]*Squid\/([^\r^\n]+)/i) } if @meta["server"] =~ /[\s]*Squid\/([^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/[\s]*Squid\/([^\r^\n]+)/i) } if @headers["server"] =~ /[\s]*Squid\/([^\r^\n]+)/i
 
 	# Return passive results
 	m

@@ -34,10 +34,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^thttpd\/([^\s]+)/) } if @meta["server"] =~ /^thttpd\/([^\s]+)/
+	m << { :version=>@headers["server"].scan(/^thttpd\/([^\s]+)/) } if @headers["server"] =~ /^thttpd\/([^\s]+)/
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^thttpd$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^thttpd$/
 
 	# Return passive matches
 	m

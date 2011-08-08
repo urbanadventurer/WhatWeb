@@ -41,16 +41,16 @@ def passive
 	m=[]
 
 	# HTTP Server header
-	if @meta["server"] =~ /^AppleIDiskServer[\.|-][A-Z\d]+$/
+	if @headers["server"] =~ /^AppleIDiskServer[\.|-][A-Z\d]+$/
 
 		# Version Detection 
-		m << { :string=>@meta["server"].scan(/^AppleIDiskServer[\.|-]([A-Z\d]+)$/) }
+		m << { :string=>@headers["server"].scan(/^AppleIDiskServer[\.|-]([A-Z\d]+)$/) }
 
 		# WWW Authenticate
-		m << { :name=>"WWW Authenticate" } if @meta["www-authenticate"] =~ /Basic realm="me\.com"/
+		m << { :name=>"WWW Authenticate" } if @headers["www-authenticate"] =~ /Basic realm="me\.com"/
 
 		# Account Detection # X-dmUser
-		m << { :account=>@meta["x-dmuser"] } unless @meta["x-dmuser"].nil?
+		m << { :account=>@headers["x-dmuser"] } unless @headers["x-dmuser"].nil?
 	end
 
 	# Return passive matches

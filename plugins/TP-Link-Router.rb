@@ -47,10 +47,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server" } if @meta['server'] =~ /TP\-LINK Router/
+	m << { :name=>"HTTP Server" } if @headers['server'] =~ /TP\-LINK Router/
 
 	# WWW-Authenticate # Model Detection
-	m << { :model=>@meta['www-authenticate'].scan(/Basic realm="TP\-LINK ([^\"]*)"/) } if @meta['www-authenticate'] =~ /Basic realm="TP\-LINK ([^\"]*)"/
+	m << { :model=>@headers['www-authenticate'].scan(/Basic realm="TP\-LINK ([^\"]*)"/) } if @headers['www-authenticate'] =~ /Basic realm="TP\-LINK ([^\"]*)"/
 
 	# Return passive matches
 	m

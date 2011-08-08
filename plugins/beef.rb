@@ -40,7 +40,7 @@ def passive
 	m=[]
 
 	# HTTP # Server # Version Detection
-	m << { :version=>@meta["server"].scan(/^BeEF ([^\s]+)$/).to_s } if @meta["server"] =~ /^BeEF ([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^BeEF ([^\s]+)$/).to_s } if @headers["server"] =~ /^BeEF ([^\s]+)$/
 
 	# Return passive matches
 	m

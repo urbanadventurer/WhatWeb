@@ -45,7 +45,7 @@ def passive
 	m=[]
 
 	# Username Detection # x-tumblr-user Header
-	m << { :account=>@meta["x-tumblr-user"] } unless @meta["x-tumblr-user"].nil?
+	m << { :account=>@headers["x-tumblr-user"] } unless @headers["x-tumblr-user"].nil?
 
 	# Return passive matches
 	m

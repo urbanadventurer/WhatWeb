@@ -26,7 +26,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /^Falcon Web Server$/
+	if @headers["server"] =~ /^Falcon Web Server$/
 		m << { :name=>"HTTP Server Header" }
 	end
 

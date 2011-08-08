@@ -65,9 +65,9 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^TAC\/Xenta([\d]{3}|[\d]{3}-[A-Z]{3}) [\d\.]{4}/
-		m << { :model=>@meta["server"].scan(/^TAC\/Xenta([\d]{3}|[\d]{3}-[A-Z]{3}) [\d\.]{4}/) }
-		m << { :firmware=>@meta["server"].scan(/^TAC\/Xenta[^\ ]+ ([\d\.]{4})/) }
+	if @headers["server"] =~ /^TAC\/Xenta([\d]{3}|[\d]{3}-[A-Z]{3}) [\d\.]{4}/
+		m << { :model=>@headers["server"].scan(/^TAC\/Xenta([\d]{3}|[\d]{3}-[A-Z]{3}) [\d\.]{4}/) }
+		m << { :firmware=>@headers["server"].scan(/^TAC\/Xenta[^\ ]+ ([\d\.]{4})/) }
 	end
 
 	# Return passive matches

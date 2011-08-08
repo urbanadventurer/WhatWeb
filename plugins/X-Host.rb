@@ -39,13 +39,13 @@ def passive
 	# the request ends up at www.example.com instead of the intended
 	# origin.example.com.
 	# http://www.alphastate.com/x-host-vs-host-headers-in-apache
-	m << { :string=>@meta["x-host"].to_s } unless @meta["x-host"].nil?
+	m << { :string=>@headers["x-host"].to_s } unless @headers["x-host"].nil?
 
 	# X-Host-Name HTTP Header
-	m << { :string=>@meta["x-host-name"].to_s } unless @meta["x-host-name"].nil?
+	m << { :string=>@headers["x-host-name"].to_s } unless @headers["x-host-name"].nil?
 
 	# X-HostName HTTP Header
-	m << { :string=>@meta["x-hostname"].to_s } unless @meta["x-hostname"].nil?
+	m << { :string=>@headers["x-hostname"].to_s } unless @headers["x-hostname"].nil?
 
 	# X-Host-IP HTTP Header
 	# WonderProxy is the only software known to use this header however
@@ -55,7 +55,7 @@ def passive
 	# inject a hosts file onto the proxy server of their choice to allow
 	# server selection through a web interface."
 	# http://blog.preinheimer.com/index.php?/archives/349-X-Host-IP.html
-	m << { :string=>@meta["x-host-ip"].to_s, :module=>"WonderProxy" } unless @meta["x-host-ip"].nil?
+	m << { :string=>@headers["x-host-ip"].to_s, :module=>"WonderProxy" } unless @headers["x-host-ip"].nil?
 
 	m
 

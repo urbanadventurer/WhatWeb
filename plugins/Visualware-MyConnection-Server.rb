@@ -57,13 +57,13 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Visualware MyConnection Server /
+	if @headers["server"] =~ /^Visualware MyConnection Server /
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^Visualware MyConnection Server [^\d]+ (\d\.[^\s]+)$/) } if @meta["server"] =~ /^Visualware MyConnection Server [^\d]+ (\d\.[^\s]+)$/
+		m << { :version=>@headers["server"].scan(/^Visualware MyConnection Server [^\d]+ (\d\.[^\s]+)$/) } if @headers["server"] =~ /^Visualware MyConnection Server [^\d]+ (\d\.[^\s]+)$/
 
 		# Edition Detection
-		m << { :string=>@meta["server"].scan(/^Visualware MyConnection Server ([^\d]+) \d\.[^\s]+$/) } if @meta["server"] =~ /^Visualware MyConnection Server ([^\d]+) \d\.[^\s]+$/
+		m << { :string=>@headers["server"].scan(/^Visualware MyConnection Server ([^\d]+) \d\.[^\s]+$/) } if @headers["server"] =~ /^Visualware MyConnection Server ([^\d]+) \d\.[^\s]+$/
 
 	end
 

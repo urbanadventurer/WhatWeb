@@ -53,16 +53,16 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /^SiteScope\//
-		if @meta["server"] =~ /^SiteScope\/(.+) [\d]{1,2}:[\d]{2} [ap]m [\d]{1,2}\/[\d]{2}\/[\d]{2} [Bb]uild:? ([\d]+)$/
+	if @headers["server"] =~ /^SiteScope\//
+		if @headers["server"] =~ /^SiteScope\/(.+) [\d]{1,2}:[\d]{2} [ap]m [\d]{1,2}\/[\d]{2}\/[\d]{2} [Bb]uild:? ([\d]+)$/
 			m << { :version=>"#{$1} build #{$2}" }
-		elsif @meta["server"] =~ /^SiteScope\/([^\s]+( [A-Z]\d)?)/
+		elsif @headers["server"] =~ /^SiteScope\/([^\s]+( [A-Z]\d)?)/
 			m << { :version=>"#{$1}" }
 		end
 	end
 
 	# WWW-Authenticate Header
-	if @meta["www-authenticate"] =~ /BASIC realm="SiteScope Administrator"/
+	if @headers["www-authenticate"] =~ /BASIC realm="SiteScope Administrator"/
 		m << { :name=>"WWW-Authenticate Header" }
 	end
 

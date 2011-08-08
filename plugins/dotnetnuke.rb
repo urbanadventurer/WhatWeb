@@ -79,7 +79,7 @@ def passive
 	m=[]
 
 	# some sites have this cookie
-	m << {:name=>"DotNetNukeAnonymous Cookie" } if @meta["set-cookie"] =~ /DotNetNukeAnonymous=/
+	m << {:name=>"DotNetNukeAnonymous Cookie" } if @headers["set-cookie"] =~ /DotNetNukeAnonymous=/
 
 	# Return passive matches
 	m

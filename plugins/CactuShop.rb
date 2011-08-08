@@ -61,7 +61,7 @@ def passive
 	m=[]
 
 	# CactuShop Cookie
-	if @meta["set-cookie"] =~ /CactuShop[\d]+lang=numLanguageID=/ and @meta["set-cookie"] =~ /CactuShop[\d]+=numCurrencyID=/
+	if @headers["set-cookie"] =~ /CactuShop[\d]+lang=numLanguageID=/ and @headers["set-cookie"] =~ /CactuShop[\d]+=numCurrencyID=/
 		m << { :name=>"CactuShop cookies" }
 	end
 

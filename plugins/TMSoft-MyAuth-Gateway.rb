@@ -39,20 +39,20 @@ def passive
 	m=[]
 
 	# Cookie
-	m << { :version=>@meta["set-cookie"].scan(/MyAuth([0-9]{1})=[a-z0-9]{26}/) } if @meta["set-cookie"] =~ /MyAuth([0-9]{1})=[a-z0-9]{26}/
+	m << { :version=>@headers["set-cookie"].scan(/MyAuth([0-9]{1})=[a-z0-9]{26}/) } if @headers["set-cookie"] =~ /MyAuth([0-9]{1})=[a-z0-9]{26}/
 
 	# X-Powered-By
-	m << { :version=>@meta["x-powered-by"].scan(/TMSoft MyAuth Gateway ([^\s^\r^\n]+)/) } if @meta["x-powered-by"] =~ /TMSoft MyAuth Gateway ([^\s^\r^\n]+)/
+	m << { :version=>@headers["x-powered-by"].scan(/TMSoft MyAuth Gateway ([^\s^\r^\n]+)/) } if @headers["x-powered-by"] =~ /TMSoft MyAuth Gateway ([^\s^\r^\n]+)/
 
 	# X-Manager-By
-	m << { :version=>@meta["x-manager-by"].scan(/MyAuth Gateway ([^\s]+)/) } if @meta["x-manager-by"] =~ /MyAuth Gateway ([^\s]+)/
+	m << { :version=>@headers["x-manager-by"].scan(/MyAuth Gateway ([^\s]+)/) } if @headers["x-manager-by"] =~ /MyAuth Gateway ([^\s]+)/
 
 	# X-Software-*
-	if @meta["x-software-info"] =~ /MyAuth Gateway/ and @meta["x-software-owner"] =~ /Patrick Brandao, contato@tmsoft.com.br/
+	if @headers["x-software-info"] =~ /MyAuth Gateway/ and @headers["x-software-owner"] =~ /Patrick Brandao, contato@tmsoft.com.br/
 
 		m << { :name=>"X-Software HTTP Headers" }
-		m << { :version=>@meta["x-software-info"].scan(/MyAuth Gateway ([\d\.]+), TMSoft Solucoes \(www.tmsoft.com.br\)/) } if @meta["x-software-info"] =~ /MyAuth Gateway ([\d\.]+), TMSoft Solucoes \(www.tmsoft.com.br\)/
-		m << { :version=>@meta["x-software-version"].scan(/([^\r^\n]*)/) } if @meta["x-software-version"] =~ /([^\r^\n]*)/
+		m << { :version=>@headers["x-software-info"].scan(/MyAuth Gateway ([\d\.]+), TMSoft Solucoes \(www.tmsoft.com.br\)/) } if @headers["x-software-info"] =~ /MyAuth Gateway ([\d\.]+), TMSoft Solucoes \(www.tmsoft.com.br\)/
+		m << { :version=>@headers["x-software-version"].scan(/([^\r^\n]*)/) } if @headers["x-software-version"] =~ /([^\r^\n]*)/
 
 	end
 

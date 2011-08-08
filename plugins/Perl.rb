@@ -36,10 +36,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :version=>@meta["server"].to_s.scan(/[^\r^\n]*Perl\/v([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*Perl\/v([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/[^\r^\n]*Perl\/v([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /[^\r^\n]*Perl\/v([^\s^\r^\n]+)/i
 
 	# HTTP Content-Type Header
-	m << { :name=>"application/perl" } if @meta["content-type"] =~ /application\/perl/i
+	m << { :name=>"application/perl" } if @headers["content-type"] =~ /application\/perl/i
 
 	m
 

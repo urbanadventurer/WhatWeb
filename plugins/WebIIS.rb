@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# HTTP WebIIS Header
-	m << { :string=>"ASP" } if @meta["webiis"] =~ /^Mini ASP Web WebIIS$/
+	m << { :string=>"ASP" } if @headers["webiis"] =~ /^Mini ASP Web WebIIS$/
 
 	# Return passive matches
 	m

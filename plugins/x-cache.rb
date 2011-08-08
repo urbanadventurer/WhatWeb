@@ -42,15 +42,15 @@ def passive
 	m=[]
 
 	# X-Cache
-	if @meta["x-cache"] =~ /(MISS|HIT|NONE) from ([^\r^\n]{1,128})/
-		@meta["x-cache"].each do |x_cache|
+	if @headers["x-cache"] =~ /(MISS|HIT|NONE) from ([^\r^\n]{1,128})/
+		@headers["x-cache"].each do |x_cache|
 		m << { :string=>x_cache.to_s.scan(/ from ([^\r^\n]{1,128})/) }
 		end
 	end
 
 	# X-Cache-Lookup
-	if @meta["x-cache-lookup"] =~ /(MISS|HIT|NONE) from ([^\r^\n]{1,128})/
-		@meta["x-cache-lookup"].each do |x_cache|
+	if @headers["x-cache-lookup"] =~ /(MISS|HIT|NONE) from ([^\r^\n]{1,128})/
+		@headers["x-cache-lookup"].each do |x_cache|
 		m << { :string=>x_cache.to_s.scan(/ from ([^\r^\n]{1,128})/) }
 		end
 	end

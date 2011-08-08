@@ -48,10 +48,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^CloudFront/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^CloudFront/
 
 	# HTTP X-Cache Header
-	m << { :name=>"HTTP X-Cache Header" } if @meta["x-cache"] =~ /^Error from cloudfront/
+	m << { :name=>"HTTP X-Cache Header" } if @headers["x-cache"] =~ /^Error from cloudfront/
 
 	m
 

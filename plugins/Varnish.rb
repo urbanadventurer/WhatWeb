@@ -31,10 +31,10 @@ def passive
 	m=[]
 
 	# X-Varnish Header
-	m << { :name=>"X-Varnish Header" } unless @meta["x-varnish"].nil?
+	m << { :name=>"X-Varnish Header" } unless @headers["x-varnish"].nil?
 
 	# Server Header
-	m << { :name=>"Server Header" } if @meta["server"] =~ /^Varnish$/
+	m << { :name=>"Server Header" } if @headers["server"] =~ /^Varnish$/
 
 	# Return passive matches
 	m

@@ -72,7 +72,7 @@ def passive
 	end
 
 	# SiTsessionID Cookie
-	m << { :name=>"SiTsessionID Cookie" } if @meta["set-cookie"] =~ /SiTsessionID=[^;^\s]+/
+	m << { :name=>"SiTsessionID Cookie" } if @headers["set-cookie"] =~ /SiTsessionID=[^;^\s]+/
 
 	# Return passive matches
 	m

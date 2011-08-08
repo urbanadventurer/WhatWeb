@@ -48,10 +48,10 @@ def passive
 	m=[]
 
 	# Version Detection # IceWarp
-	m << { :version=>@meta["server"].scan(/^IceWarp\/(.+)$/) } if @meta["server"] =~ /^IceWarp( WebSrv)?\/(.+)$/
+	m << { :version=>@headers["server"].scan(/^IceWarp\/(.+)$/) } if @headers["server"] =~ /^IceWarp( WebSrv)?\/(.+)$/
 
 	# Version Detection # IceWarp WebSrv
-	m << { :version=>@meta["server"].scan(/^IceWarp WebSrv\/(.+)$/) } if @meta["server"] =~ /^IceWarp( WebSrv)?\/(.+)$/
+	m << { :version=>@headers["server"].scan(/^IceWarp WebSrv\/(.+)$/) } if @headers["server"] =~ /^IceWarp( WebSrv)?\/(.+)$/
 
 	# Return passive matches
 	m

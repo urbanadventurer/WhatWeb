@@ -38,10 +38,10 @@ http://94.126.240.118/
 def passive
     m = []
 
-    m << {:name=>"http via" } if @meta["via"] =~ /NS\-CACHE/i
+    m << {:name=>"http via" } if @headers["via"] =~ /NS\-CACHE/i
 
-    if @meta["via"] =~ /NS\-CACHE\-(\d{1,4}\.\d{1,4}):/i
-        version = @meta["via"].scan(/NS\-CACHE\-(\d{1,4}\.\d{1,4})/i)
+    if @headers["via"] =~ /NS\-CACHE\-(\d{1,4}\.\d{1,4}):/i
+        version = @headers["via"].scan(/NS\-CACHE\-(\d{1,4}\.\d{1,4})/i)
         m << {:version=>version.to_s}        
     end
 

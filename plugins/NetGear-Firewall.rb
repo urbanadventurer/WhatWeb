@@ -23,7 +23,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^NETGEAR Firewall$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^NETGEAR Firewall$/
 
 	# Return passive matches
 	m

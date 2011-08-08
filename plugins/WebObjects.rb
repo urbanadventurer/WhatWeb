@@ -45,28 +45,28 @@ def passive
 	m=[]
 
 	# x-webobjects-loadaverage
-	m << { :name=>"x-webobjects-loadaverage" } unless @meta["x-webobjects-loadaverage"].nil?
+	m << { :name=>"x-webobjects-loadaverage" } unless @headers["x-webobjects-loadaverage"].nil?
 
 	# x-apple-application-instance
-	m << { :name=>"x-apple-application-instance" } unless @meta["x-apple-application-instance"].nil?
+	m << { :name=>"x-apple-application-instance" } unless @headers["x-apple-application-instance"].nil?
 
 	# x-apple-application-site
-	m << { :name=>"x-apple-application-site" } unless @meta["x-apple-application-site"].nil?
+	m << { :name=>"x-apple-application-site" } unless @headers["x-apple-application-site"].nil?
 
 	# x-webobjects-servlet
-	m << { :name=>"x-webobjects-servlet" } unless @meta["x-webobjects-servlet"].nil?
+	m << { :name=>"x-webobjects-servlet" } unless @headers["x-webobjects-servlet"].nil?
 
 	# x-webobjects-server-name
-	m << { :name=>"x-webobjects-server-name" } unless @meta["x-webobjects-server-name"].nil?
+	m << { :name=>"x-webobjects-server-name" } unless @headers["x-webobjects-server-name"].nil?
 
 	# x-webobjects-request-method
-	m << { :name=>"x-webobjects-request-method" } unless @meta["x-webobjects-request-method"].nil?
+	m << { :name=>"x-webobjects-request-method" } unless @headers["x-webobjects-request-method"].nil?
 
 	# x-webobjects-adaptor-version
-	m << { :name=>"x-webobjects-adaptor-version" } unless @meta["x-webobjects-request-method"].nil?
+	m << { :name=>"x-webobjects-adaptor-version" } unless @headers["x-webobjects-request-method"].nil?
 
 	# x-webobjects-customenv
-	m << { :name=>"x-webobjects-customenv" } unless @meta["x-webobjects-customenv"].nil?
+	m << { :name=>"x-webobjects-customenv" } unless @headers["x-webobjects-customenv"].nil?
 
 	# Return passive matches
 	m

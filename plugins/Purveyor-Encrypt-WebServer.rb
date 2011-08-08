@@ -33,7 +33,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :os=>"OpenVMS", :version=>@meta["server"].scan(/^Purveyor Encrypt (Export|Domestic)\/v([^\s]+) OpenVMS$/)[0][1] } if @meta["server"] =~ /^Purveyor Encrypt (Export|Domestic)\/v([^\s]+) OpenVMS$/
+	m << { :os=>"OpenVMS", :version=>@headers["server"].scan(/^Purveyor Encrypt (Export|Domestic)\/v([^\s]+) OpenVMS$/)[0][1] } if @headers["server"] =~ /^Purveyor Encrypt (Export|Domestic)\/v([^\s]+) OpenVMS$/
 
 	# Return passive matches
 	m

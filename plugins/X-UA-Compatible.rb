@@ -39,7 +39,7 @@ def passive
 	m=[]
 
 	# X-UA-Compatible HTTP Header
-	m << { :string=>@meta["x-ua-compatible"].to_s } unless @meta["x-ua-compatible"].nil?
+	m << { :string=>@headers["x-ua-compatible"].to_s } unless @headers["x-ua-compatible"].nil?
 
 	m
 

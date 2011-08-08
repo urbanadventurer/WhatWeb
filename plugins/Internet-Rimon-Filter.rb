@@ -35,7 +35,7 @@ def passive
 	m=[]
 
 	# HTTP Rimon Header
-	m << { :string=>@meta["rimon"].to_s } unless @meta["rimon"].nil?
+	m << { :string=>@headers["rimon"].to_s } unless @headers["rimon"].nil?
 
 	# Return passive matches
 	m

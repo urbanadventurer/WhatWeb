@@ -39,7 +39,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header # Server: SPID HTTP Server - Alter Native
-	m << { :string=>@meta["server"].scan(/^SPID HTTP Server - Alter Native \(([^\)]+)\)/) } if @meta["server"] =~ /^SPID HTTP Server - Alter Native \(([^\)]+)\)/
+	m << { :string=>@headers["server"].scan(/^SPID HTTP Server - Alter Native \(([^\)]+)\)/) } if @headers["server"] =~ /^SPID HTTP Server - Alter Native \(([^\)]+)\)/
 
 	# Return passive matches
 	m

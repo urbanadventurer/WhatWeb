@@ -43,13 +43,13 @@ def passive
 	m=[]
 
 	# Check HTTP Server
-	if @meta["server"] =~ /^CIMPLICITY-HttpSvr\/([\d\.]+)/
+	if @headers["server"] =~ /^CIMPLICITY-HttpSvr\/([\d\.]+)/
 
 		# Version Detection # HTTP Server Header
-		m << { :version=>@meta["server"].scan(/^CIMPLICITY-HttpSvr\/([\d\.]+)/).to_s }
+		m << { :version=>@headers["server"].scan(/^CIMPLICITY-HttpSvr\/([\d\.]+)/).to_s }
 
 		# Extract Hostname # HTTP Location Header
-		m << { :status=>302, :string=>"Hostname: "+@meta["location"].scan(/^http:\/\/([^\/]+)\/index.html$/).to_s } if @meta["location"] =~ /^http:\/\/([^\/]+)\/index.html$/
+		m << { :status=>302, :string=>"Hostname: "+@headers["location"].scan(/^http:\/\/([^\/]+)\/index.html$/).to_s } if @headers["location"] =~ /^http:\/\/([^\/]+)\/index.html$/
 
 		# Extract screen path # /index.html
 		m << { :string=>@body.scan(/<PARAM NAME="screen" VALUE="([^\"]+)">/).to_s } if @body =~ /<PARAM NAME="screen" VALUE="([^\"]+)">/
@@ -65,7 +65,7 @@ def aggressive
 	m=[]
 
 	# Check HTTP Server
-	if @meta["server"] =~ /^CIMPLICITY-HttpSvr\/([\d\.]+)/
+	if @headers["server"] =~ /^CIMPLICITY-HttpSvr\/([\d\.]+)/
 
 		target = URI.join(@base_uri.to_s,"/index.html").to_s
 		status,url,ip,body,headers=open_target(target)

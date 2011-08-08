@@ -35,7 +35,7 @@ def passive
 	m=[]
 
 	# HTTP Server header
-	m << { :version=>@meta["server"].scan(/^DATM\/([\d\.]{1,3})$/).to_s } if @meta["server"] =~ /^DATM\/([\d\.]{1,3})$/
+	m << { :version=>@headers["server"].scan(/^DATM\/([\d\.]{1,3})$/).to_s } if @headers["server"] =~ /^DATM\/([\d\.]{1,3})$/
 
 	# Return passive matches
 	m

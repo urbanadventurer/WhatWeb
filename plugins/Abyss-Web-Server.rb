@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Abyss\/([^\s]+)/) } if @meta["server"] =~ /^Abyss\/([^\s]+)/
+	m << { :version=>@headers["server"].scan(/^Abyss\/([^\s]+)/) } if @headers["server"] =~ /^Abyss\/([^\s]+)/
 
 	# Return passive matches
 	m

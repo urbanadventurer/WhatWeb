@@ -33,7 +33,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :model=>"1300RD" } if @meta["server"] =~ /^IPMATE 1300RD$/
+	m << { :model=>"1300RD" } if @headers["server"] =~ /^IPMATE 1300RD$/
 
 	# Return passive matches
 	m

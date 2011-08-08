@@ -29,10 +29,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^FortiWeb-([\d\.]+)$/) } if @meta["server"] =~ /^FortiWeb-([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^FortiWeb-([\d\.]+)$/) } if @headers["server"] =~ /^FortiWeb-([\d\.]+)$/
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^FortiWeb$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^FortiWeb$/
 
 	# Return passive matches
 	m

@@ -61,7 +61,7 @@ def passive
 	m=[]
 
 	# DLILPC Cookie
-	m << { :name=>"DLILPC Cookie" } if @meta["set-cookie"] =~ /DLILPC=""; Version=[\d]+; Max-Age=[\d]+; Path=/
+	m << { :name=>"DLILPC Cookie" } if @headers["set-cookie"] =~ /DLILPC=""; Version=[\d]+; Max-Age=[\d]+; Path=/
 
 	# Return passive matches
 	m

@@ -34,10 +34,10 @@ def passive
 	m=[]
 	
 	# X-Machine HTTP Header
-	m << { :string=>@meta["x-machine"] } unless @meta["x-machine"].nil?
+	m << { :string=>@headers["x-machine"] } unless @headers["x-machine"].nil?
 
 	# X-Machine-ID HTTP Header
-	m << { :string=>@meta["x-machine-id"] } unless @meta["x-machine-id"].nil?
+	m << { :string=>@headers["x-machine-id"] } unless @headers["x-machine-id"].nil?
 
 	# Return passive matches
 	m

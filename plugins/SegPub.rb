@@ -37,13 +37,13 @@ def passive
 	m=[]
 
 	# Server: SegPache
-	m << { :os=>"FreeBSD7" } if @meta['server'] =~ /SegPache/
+	m << { :os=>"FreeBSD7" } if @headers['server'] =~ /SegPache/
 
 	# X-Powered-By: SegPub
-	m << { :os=>"FreeBSD7" } if @meta['x-powered-by'] =~ /SegPub/
+	m << { :os=>"FreeBSD7" } if @headers['x-powered-by'] =~ /SegPub/
 
 	# X-Powered-By: SegPod
-	m << { :os=>"FreeBSD7" } if @meta['x-powered-by'] =~ /SegPod/
+	m << { :os=>"FreeBSD7" } if @headers['x-powered-by'] =~ /SegPod/
 
 	# Return passive matches
 	m

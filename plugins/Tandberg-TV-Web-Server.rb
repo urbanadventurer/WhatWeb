@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header or HTTP "Server " Header
-	if @meta["server"] =~ /^Tandberg Television Web server$/ or @meta["server "] =~ /^Tandberg Television Web server$/
+	if @headers["server"] =~ /^Tandberg Television Web server$/ or @headers["server "] =~ /^Tandberg Television Web server$/
 		m << { :name=>"HTTP Server Header" }
 	end
 

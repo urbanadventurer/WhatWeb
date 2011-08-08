@@ -96,7 +96,7 @@ matches [
 
 def passive
         m=[]        
-        m << {:name=>"exp_last_visit cookie" } if @meta["set-cookie"] =~ /exp_last_visit=/
+        m << {:name=>"exp_last_visit cookie" } if @headers["set-cookie"] =~ /exp_last_visit=/
         m
 end
 

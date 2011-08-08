@@ -56,7 +56,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Virtual Web/
+	if @headers["server"] =~ /^Virtual Web/
 
 		m << { :certainty=>25, :name=>"HTTP Server Header" }
 

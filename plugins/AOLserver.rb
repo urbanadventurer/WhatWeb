@@ -40,12 +40,12 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^AOLserver/
+	if @headers["server"] =~ /^AOLserver/
 
-		m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^AOLserver$/
+		m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^AOLserver$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^AOLserver\/([^\s]+)/) } if @meta["server"] =~ /^AOLserver\/([^\s]+)/
+		m << { :version=>@headers["server"].scan(/^AOLserver\/([^\s]+)/) } if @headers["server"] =~ /^AOLserver\/([^\s]+)/
 
 	end
 

@@ -31,10 +31,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP CommunityServer Header
-	m << { :version=>@meta["communityserver"].scan(/^([\d\.]+)$/) } if @meta["communityserver"] =~ /^([\d\.]+)$/
+	m << { :version=>@headers["communityserver"].scan(/^([\d\.]+)$/) } if @headers["communityserver"] =~ /^([\d\.]+)$/
 
 	# Set-Cookie Header
-	if @meta["set-cookie"] =~ /^CommunityServer-UserCookie[\d\.]+/ or @meta["set-cookie"] =~ /^CommunityServer-LastVisitUpdated-[\d\.]+/
+	if @headers["set-cookie"] =~ /^CommunityServer-UserCookie[\d\.]+/ or @headers["set-cookie"] =~ /^CommunityServer-LastVisitUpdated-[\d\.]+/
 
 		m << { :name=>"Cookies" }
 

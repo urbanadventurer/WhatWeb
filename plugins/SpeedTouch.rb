@@ -38,12 +38,12 @@ def passive
 	m=[]
 
 	# WWW-Authenticate # realm SpeedTouch
-	if @meta["www-authenticate"] =~ /(Basic|Digest) realm="SpeedTouch/
+	if @headers["www-authenticate"] =~ /(Basic|Digest) realm="SpeedTouch/
 
 		m << { :name=>"WWW-Authenticate realm" }
 
 		# WWW-Authenticate # realm SpeedTouch # MAC Address Detection
-		m << { :string=>@meta["www-authenticate"].scan(/Basic realm="SpeedTouch \(([\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2})\)/) } if @meta["www-authenticate"] =~ /Basic realm="SpeedTouch \(([\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2})\)/
+		m << { :string=>@headers["www-authenticate"].scan(/Basic realm="SpeedTouch \(([\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2})\)/) } if @headers["www-authenticate"] =~ /Basic realm="SpeedTouch \(([\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2}\-[\dA-F]{2})\)/
 
 	end
 

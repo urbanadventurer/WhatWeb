@@ -66,16 +66,16 @@ def passive
 	m=[]
 
 	# Proxy-Agent
-	if @meta["proxy-agent"].to_s =~ /^[\s]*iPlanet-Web-Proxy-Server\/([\d\.]+)/
-		m << { :version=>@meta["proxy-agent"].scan(/^[\s]*iPlanet-Web-Proxy-Server\/([\d\.]+)/).to_s, :module=>"Proxy" }
+	if @headers["proxy-agent"].to_s =~ /^[\s]*iPlanet-Web-Proxy-Server\/([\d\.]+)/
+		m << { :version=>@headers["proxy-agent"].scan(/^[\s]*iPlanet-Web-Proxy-Server\/([\d\.]+)/).to_s, :module=>"Proxy" }
 	end
 
 	# Server
-	if @meta["server"].to_s =~ /^[\s]*iPlanet-WebServer-Enterprise\/([\d\.]+)/
-		m << { :version=>@meta["server"].scan(/^[\s]*iPlanet-WebServer-Enterprise\/([\d\.]+)/).to_s, :module=>"Web" }
+	if @headers["server"].to_s =~ /^[\s]*iPlanet-WebServer-Enterprise\/([\d\.]+)/
+		m << { :version=>@headers["server"].scan(/^[\s]*iPlanet-WebServer-Enterprise\/([\d\.]+)/).to_s, :module=>"Web" }
 	end
-	if @meta["server"].to_s =~ /^[\s]*Oracle-iPlanet-Web-Server\/([\d\.]+)/
-		m << { :version=>@meta["server"].scan(/^[\s]*Oracle-iPlanet-Web-Server\/([\d\.]+)/).to_s, :module=>"Web" }
+	if @headers["server"].to_s =~ /^[\s]*Oracle-iPlanet-Web-Server\/([\d\.]+)/
+		m << { :version=>@headers["server"].scan(/^[\s]*Oracle-iPlanet-Web-Server\/([\d\.]+)/).to_s, :module=>"Web" }
 	end
 
 	m

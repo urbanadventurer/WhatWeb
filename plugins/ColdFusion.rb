@@ -59,9 +59,9 @@ def passive
         m=[]
 
 	# Cookies
-	m << { :name=>"CFAUTHORIZATION_cfadmin Cookie" } if @meta["set-cookie"] =~ /CFAUTHORIZATION_cfadmin=/
+	m << { :name=>"CFAUTHORIZATION_cfadmin Cookie" } if @headers["set-cookie"] =~ /CFAUTHORIZATION_cfadmin=/
 
-	if @meta["set-cookie"] =~ /CFID=/ and @meta["set-cookie"] =~ /CFTOKEN=/
+	if @headers["set-cookie"] =~ /CFID=/ and @headers["set-cookie"] =~ /CFTOKEN=/
 		m << { :name=>"CFID and CFTOKEN cookie" }
 	end
 

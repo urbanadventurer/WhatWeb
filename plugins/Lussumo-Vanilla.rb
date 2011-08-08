@@ -44,7 +44,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP x-powered-by
-	m << { :version=>@meta["x-powered-by"].scan(/Lussumo Vanilla ([^\s]+)/) } if @meta["x-powered-by"] =~ /Lussumo Vanilla ([^\s]+)/
+	m << { :version=>@headers["x-powered-by"].scan(/Lussumo Vanilla ([^\s]+)/) } if @headers["x-powered-by"] =~ /Lussumo Vanilla ([^\s]+)/
 
 	# Return passive matches
 	m

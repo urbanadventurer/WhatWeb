@@ -31,10 +31,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/VTS ([\d\.]+)/) } if @meta["server"] =~ /VTS ([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/VTS ([\d\.]+)/) } if @headers["server"] =~ /VTS ([\d\.]+)/
 
 	# Version Detection # HTTP Set-Cookie Header
-	m << { :version=>@meta["set-cookie"].scan(/^VTS=([\d\.]+);Version=1;Path=\//) } if @meta["set-cookie"] =~ /^VTS=([\d\.]+);Version=1;Path=\//
+	m << { :version=>@headers["set-cookie"].scan(/^VTS=([\d\.]+);Version=1;Path=\//) } if @headers["set-cookie"] =~ /^VTS=([\d\.]+);Version=1;Path=\//
 
 	m
 

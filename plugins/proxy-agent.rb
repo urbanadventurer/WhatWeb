@@ -26,7 +26,7 @@ examples %w|
 def passive
 	m=[]
 
-	m << { :string=>@meta["proxy-agent"].to_s } unless @meta["proxy-agent"].nil?
+	m << { :string=>@headers["proxy-agent"].to_s } unless @headers["proxy-agent"].nil?
 
 	m
 

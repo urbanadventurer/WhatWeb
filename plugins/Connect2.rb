@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# Web Services Module # Version Detection # HTTP Server Header
-	m << { :module=>@meta["server"].scan(/^(Web Services Module [^\s]+ \([\d]+\)) for Connect2-SMTP$/) } if @meta["server"] =~ /^(Web Services Module [^\s]+ \([\d]+\)) for Connect2-SMTP$/
+	m << { :module=>@headers["server"].scan(/^(Web Services Module [^\s]+ \([\d]+\)) for Connect2-SMTP$/) } if @headers["server"] =~ /^(Web Services Module [^\s]+ \([\d]+\)) for Connect2-SMTP$/
 
 	# Return passive matches
 	m

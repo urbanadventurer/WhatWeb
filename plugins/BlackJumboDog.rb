@@ -35,10 +35,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^BlackJumboDog$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^BlackJumboDog$/
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^BlackJumboDog Version (.+)$/) } if @meta["server"] =~ /^BlackJumboDog Version (.+)$/
+	m << { :version=>@headers["server"].scan(/^BlackJumboDog Version (.+)$/) } if @headers["server"] =~ /^BlackJumboDog Version (.+)$/
 
 	# Return passive matches
 	m

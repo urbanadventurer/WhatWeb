@@ -26,10 +26,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^NetPort Software ([^\s]+)$/) } if @meta["server"] =~ /^NetPort Software ([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^NetPort Software ([^\s]+)$/) } if @headers["server"] =~ /^NetPort Software ([^\s]+)$/
 
 	# Netport HTTP Header # Netport: Power by NetPort
-	m << { :name=>"Netport HTTP Header" } if @meta["netport"] =~ /^Power by NetPort$/
+	m << { :name=>"Netport HTTP Header" } if @headers["netport"] =~ /^Power by NetPort$/
 
 	# Return passive matches
 	m

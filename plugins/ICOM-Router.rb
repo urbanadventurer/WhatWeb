@@ -29,11 +29,11 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /^Icom HTTP Server\/([^\s]+)$/
+	if @headers["server"] =~ /^Icom HTTP Server\/([^\s]+)$/
 		m << { :version=>"#{$1}" }
 
 		# Model Detection # WWW-Authenticate Header
-		if @meta["www-authenticate"] =~ /Basic realm="([^\s^"]+)"/
+		if @headers["www-authenticate"] =~ /Basic realm="([^\s^"]+)"/
 			m << { :model=>"#{$1}" }
 		end
 

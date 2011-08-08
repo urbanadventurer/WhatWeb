@@ -38,9 +38,9 @@ def passive
 	m=[]
 
 	# Set-Cookie Header
-	unless @meta["set-cookie"].nil? or @meta["set-cookie"].empty?
+	unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?
 
-		@meta["set-cookie"].each do |cookie|
+		@headers["set-cookie"].each do |cookie|
 
 			if cookie =~ /;[\s]*httponly/i
 				m << { :string=>cookie.scan(/^([^;^=]+).*;[\s]*httponly/i) } if cookie =~ /^([^;^=]+).*;[\s]*httponly/i

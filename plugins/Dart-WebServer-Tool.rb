@@ -32,7 +32,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Dart WebServer Tool\/([\d\.]+)$/) } if @meta["server"] =~ /^Dart WebServer Tool\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^Dart WebServer Tool\/([\d\.]+)$/) } if @headers["server"] =~ /^Dart WebServer Tool\/([\d\.]+)$/
 
 	# Return passive matches
 	m

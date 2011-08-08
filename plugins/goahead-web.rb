@@ -42,7 +42,7 @@ def passive
 	m=[]
 
 	# HTTP Server header
-	m << {:name=>"HTTP Server header"} if @meta['server'] =~ /GoAhead-Webs/i
+	m << {:name=>"HTTP Server header"} if @headers['server'] =~ /GoAhead-Webs/i
 
 	# Return passive matches
 	m

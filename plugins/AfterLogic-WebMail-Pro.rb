@@ -57,10 +57,10 @@ def passive
 	m=[]
 
 	# PHPWEBMAILSESSID cookie
-	m << { :name=>"PHPWEBMAILSESSID cookie" } if @meta["set-cookie"] =~ /^PHPWEBMAILSESSID=[^;]+;/
+	m << { :name=>"PHPWEBMAILSESSID cookie" } if @headers["set-cookie"] =~ /^PHPWEBMAILSESSID=[^;]+;/
 
 	# PHPWMADMINSESSID cookie
-	m << { :name=>"PHPWMADMINSESSID cookie" } if @meta["set-cookie"] =~ /^PHPWMADMINSESSID=[^;]+;/
+	m << { :name=>"PHPWMADMINSESSID cookie" } if @headers["set-cookie"] =~ /^PHPWMADMINSESSID=[^;]+;/
 
 	# Return passive matches
 	m

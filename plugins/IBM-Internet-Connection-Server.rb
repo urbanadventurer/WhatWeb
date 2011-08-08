@@ -23,7 +23,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^IBM Internet Connection Server\/([^\s]+)$/) } if @meta["server"] =~ /^IBM Internet Connection Server\/([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^IBM Internet Connection Server\/([^\s]+)$/) } if @headers["server"] =~ /^IBM Internet Connection Server\/([^\s]+)$/
 
 	# Return passive matches
 	m

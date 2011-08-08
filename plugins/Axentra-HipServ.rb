@@ -38,16 +38,16 @@ def passive
 	m=[]
 
 	# Version Detection # x-axentra-version Header
-	m << { :version=>@meta["x-axentra-version"].to_s } unless @meta["x-axentra-version"].nil?
+	m << { :version=>@headers["x-axentra-version"].to_s } unless @headers["x-axentra-version"].nil?
 
 	# HOMEBASEID Cookie
-	if @meta["set-cookie"] =~ /HOMEBASEID=/
+	if @headers["set-cookie"] =~ /HOMEBASEID=/
 
 		m << { :name=>"HOMEBASEID Cookie" }
 
 		# Account Detection # HTTP Location header # hipname param
-		if @meta["location"] =~ /\?hipname=([^&]+)/
-			m << { :account=>@meta["location"].scan(/\?hipname=([^&]+)/) }
+		if @headers["location"] =~ /\?hipname=([^&]+)/
+			m << { :account=>@headers["location"].scan(/\?hipname=([^&]+)/) }
 		end
 
 	end

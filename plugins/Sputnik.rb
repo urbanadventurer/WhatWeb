@@ -45,7 +45,7 @@ def passive
 	m=[]
 
 	# Sputnik Cookie
-	m << { :name=>"Sputnik Cookie" } if @meta["set-cookie"] =~ /^Sputnik_[a-z\d]{32}=/
+	m << { :name=>"Sputnik Cookie" } if @headers["set-cookie"] =~ /^Sputnik_[a-z\d]{32}=/
 
 	# Return passive matches
 	m

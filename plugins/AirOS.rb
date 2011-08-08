@@ -39,10 +39,10 @@ def passive
 	m=[]
 
 	# Cookie
-	m << { :name=>"AIROS_SESSIONID Cookie" } if @meta["set-cookie"] =~ /AIROS_SESSIONID=[a-z0-9]{32}; Path=\/; Version=([\d\.]+)/
+	m << { :name=>"AIROS_SESSIONID Cookie" } if @headers["set-cookie"] =~ /AIROS_SESSIONID=[a-z0-9]{32}; Path=\/; Version=([\d\.]+)/
 
 	# Location: /cookiechecker?uri=/
-	m << { :name=>"Location HTTP Header", :status=>301 } if @meta["location"] =~ /\/cookiechecker\?uri=\//
+	m << { :name=>"Location HTTP Header", :status=>301 } if @headers["location"] =~ /\/cookiechecker\?uri=\//
 
 	m
 

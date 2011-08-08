@@ -31,7 +31,7 @@ matches [
 
 def passive
   m=[]
-  m << {:name=>"Cushy Cookie" } if @meta["set-cookie"] =~ /_cushy_session=.*/
+  m << {:name=>"Cushy Cookie" } if @headers["set-cookie"] =~ /_cushy_session=.*/
   m
 end
 

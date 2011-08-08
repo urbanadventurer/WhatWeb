@@ -92,9 +92,9 @@ def passive
 	m=[]
 
 	# Cookies
-	m << { :name=>"BIGipServerSiebel_EService_Prod Cookie" } if @meta["set-cookie"] =~ /BIGipServerSiebel_EService_Prod=[\d\.]+;/
-	m << { :name=>"BIGipServerSIEBEL Cookie" } if @meta["set-cookie"] =~ /BIGipServerSIEBEL-80=[\d\.]+;/
-	m << { :name=>"_sn Cookie" } if @meta["set-cookie"] =~ /_sn=[a-zA-Z0-9]{43}_; Version=1; Path=\//
+	m << { :name=>"BIGipServerSiebel_EService_Prod Cookie" } if @headers["set-cookie"] =~ /BIGipServerSiebel_EService_Prod=[\d\.]+;/
+	m << { :name=>"BIGipServerSIEBEL Cookie" } if @headers["set-cookie"] =~ /BIGipServerSIEBEL-80=[\d\.]+;/
+	m << { :name=>"_sn Cookie" } if @headers["set-cookie"] =~ /_sn=[a-zA-Z0-9]{43}_; Version=1; Path=\//
 
 	# Landing page # Default form HTML
 	m << { :string=>@body.scan(/<input type[\s]*=[\s]*['"]?hidden["']? name[\s]*=[\s]*['"]?SWEView['"]? value[\s]*=[^\(]+\(([^\)]*)\)/).to_s } if @body =~ /<input type[\s]*=[\s]*['"]?hidden["']? name[\s]*=[\s]*['"]?SWEView['"]? value[\s]*=[^\(]+\(([^\)]*)\)/

@@ -29,8 +29,8 @@ www.axcess-financial.com
 def passive
     m = []   
       
-    m << {:name=>"PLBSID cookie" } if @meta["set-cookie"] =~ /PLBSID=/i  
-    m << {:name=>"server header" } if @meta["server"] =~ /Profense/i  
+    m << {:name=>"PLBSID cookie" } if @headers["set-cookie"] =~ /PLBSID=/i  
+    m << {:name=>"server header" } if @headers["server"] =~ /Profense/i  
     
     m
 

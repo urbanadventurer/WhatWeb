@@ -27,12 +27,12 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /ActiveHTML\/([^\s]+)/
+	if @headers["server"] =~ /ActiveHTML\/([^\s]+)/
 		m << { :version=>"#{$1}" }
 	end
 
 	# Version Detection # X-Powered-By
-	if @meta["x-powered-by"] =~ /seliSoft ActiveHTML\/([^\s]+)/
+	if @headers["x-powered-by"] =~ /seliSoft ActiveHTML\/([^\s]+)/
 		m << { :version=>"#{$1}" }
 	end
 

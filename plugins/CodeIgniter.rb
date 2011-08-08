@@ -48,7 +48,7 @@ matches [
 # Passive #
 def passive
         m=[]
-        m << {:string=>"ci_session Cookie" } if @meta["set-cookie"] =~ /ci_session=/
+        m << {:string=>"ci_session Cookie" } if @headers["set-cookie"] =~ /ci_session=/
 	m
 end
 

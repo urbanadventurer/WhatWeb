@@ -43,7 +43,7 @@ def passive
 	m=[]
 
 	# WWW-Authenticate Header
-	m << { :certainty=>75, :name=>"WWW-Authenticate Header" } if @meta["www-authenticate"] =~/Basic realm="Minecraft Admin Login" /
+	m << { :certainty=>75, :name=>"WWW-Authenticate Header" } if @headers["www-authenticate"] =~/Basic realm="Minecraft Admin Login" /
 
 	# Return passive matches
 	m

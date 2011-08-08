@@ -67,12 +67,12 @@ def passive
 	m=[]
 
 	# Version Detection # X-Powered-By Header
-	if @meta["x-powered-by"] =~ /JBoss(AS)?-([^\/^\s]+)/
+	if @headers["x-powered-by"] =~ /JBoss(AS)?-([^\/^\s]+)/
 		m << { :version=>"#{$2}" }
 	end
 
 	# Module Detection # JBossWeb
-	if @meta["x-powered-by"] =~ /(JBossWeb-[^\/^\s^,]+)/
+	if @headers["x-powered-by"] =~ /(JBossWeb-[^\/^\s^,]+)/
 		m << { :module=>"#{$1}" }
 	end
 

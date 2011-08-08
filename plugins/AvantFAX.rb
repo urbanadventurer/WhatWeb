@@ -40,7 +40,7 @@ def passive
 	m=[]
 
 	# AvantFAX Cookie
-	m << { :name=>"AvantFAX Cookie" } if @meta["set-cookie"] =~ /AvantFAX=[a-z\d]{26}; path=\//
+	m << { :name=>"AvantFAX Cookie" } if @headers["set-cookie"] =~ /AvantFAX=[a-z\d]{26}; path=\//
 
 	# Return passive matches
 	m

@@ -43,7 +43,7 @@ def passive
 	m=[]
 
 	# SESS Drupal Cookie
-	m << {:name=>"SESS Drupal Cookie", :certainty=>75 } if @meta["set-cookie"] =~ /^SESS[a-z0-9]{32}=[a-z0-9]{32}/
+	m << {:name=>"SESS Drupal Cookie", :certainty=>75 } if @headers["set-cookie"] =~ /^SESS[a-z0-9]{32}=[a-z0-9]{32}/
 
 	# Return passive matches
 	m

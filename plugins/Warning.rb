@@ -25,7 +25,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :string=>@meta["warning"].to_s } unless @meta["warning"].nil?
+	m << { :string=>@headers["warning"].to_s } unless @headers["warning"].nil?
 
 	# Return passive matches
 	m

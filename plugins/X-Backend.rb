@@ -37,16 +37,16 @@ def passive
 	m=[]
 
 	# HTTP Header # X-Backend
-	m << { :string=>@meta["x-backend"].to_s } unless @meta["x-backend"].nil?
+	m << { :string=>@headers["x-backend"].to_s } unless @headers["x-backend"].nil?
 
 	# HTTP Header # X-Backend-Server
-	m << { :string=>@meta["x-backend-server"].to_s } unless @meta["x-backend-server"].nil?
+	m << { :string=>@headers["x-backend-server"].to_s } unless @headers["x-backend-server"].nil?
 
 	# HTTP Header # X-BackendHost
-	m << { :string=>@meta["x-backendhost"].to_s } unless @meta["x-backendhost"].nil?
+	m << { :string=>@headers["x-backendhost"].to_s } unless @headers["x-backendhost"].nil?
 
 	# HTTP Header # X-Backend-Host
-	m << { :string=>@meta["x-backend-host"].to_s } unless @meta["x-backend-host"].nil?
+	m << { :string=>@headers["x-backend-host"].to_s } unless @headers["x-backend-host"].nil?
 
 	# Return passive matches
 	m

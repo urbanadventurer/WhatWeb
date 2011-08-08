@@ -113,21 +113,21 @@ def passive
 	m=[]
 
 	# Check HTTP Header for www-authenticate
-	unless @meta['www-authenticate'].nil?
+	unless @headers['www-authenticate'].nil?
 
 		# Detect Realm
-		if @meta['www-authenticate'].to_s =~ /realm=/
+		if @headers['www-authenticate'].to_s =~ /realm=/
 
 			# Extract Authentication Method
-			m << { :module=>@meta['www-authenticate'].scan(/([a-z]{3,20})[^\r^\n]{1,256}realm="/i) } if @meta['www-authenticate'].to_s =~ /[a-z]{3,20}[^\r^\n]{1,256}realm="/i
+			m << { :module=>@headers['www-authenticate'].scan(/([a-z]{3,20})[^\r^\n]{1,256}realm="/i) } if @headers['www-authenticate'].to_s =~ /[a-z]{3,20}[^\r^\n]{1,256}realm="/i
 
 			# Extract Authentication Realm
-			m << { :string=>@meta['www-authenticate'].scan(/realm="([^\"]{1,256})"/i) } if @meta['www-authenticate'].to_s =~ /realm="[^\"]{1,256}"/i
+			m << { :string=>@headers['www-authenticate'].scan(/realm="([^\"]{1,256})"/i) } if @headers['www-authenticate'].to_s =~ /realm="[^\"]{1,256}"/i
 
 		else
 
 			# No Realm # Extract Authentication Method
-			m << { :module=>@meta['www-authenticate'].to_s }
+			m << { :module=>@headers['www-authenticate'].to_s }
 
 		end
 

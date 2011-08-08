@@ -50,10 +50,10 @@ def passive
 	m=[]
 
 	# TINE20SESSID Cookie
-	m << { :name=>"TINE20SESSID Cookie" } if @meta['set-cookie'] =~ /TINE20SESSID=[^;]+;/
+	m << { :name=>"TINE20SESSID Cookie" } if @headers['set-cookie'] =~ /TINE20SESSID=[^;]+;/
 
 	# TINE20SETUPSESSID Cookie
-	m << { :name=>"TINE20SETUPSESSID Cookie" } if @meta['set-cookie'] =~ /TINE20SESSID=[^;]+;/
+	m << { :name=>"TINE20SETUPSESSID Cookie" } if @headers['set-cookie'] =~ /TINE20SESSID=[^;]+;/
 
 	# Return passive matches
 	m

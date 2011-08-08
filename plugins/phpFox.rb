@@ -60,7 +60,7 @@ def passive
 	end
 
 	# phpfox(x)visit cookie
-	if @meta["set-cookie"] =~ /phpfox[\d]visit=[\d]+;/
+	if @headers["set-cookie"] =~ /phpfox[\d]visit=[\d]+;/
 		m << { :name=>"phpfox(x)visit cookie" }
 	end
 

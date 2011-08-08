@@ -66,33 +66,33 @@ def passive
 
 	# About 62 ShodanHQ results for WWW-Authenticate: Basic realm="LOGIN Enter Password (default is private)"
 	# Probably D-Link # HTTP Server Header and WWW-Authenticate Realm
-	if @meta["server"] =~ /Boa\/[\d\.]+ \(with Intersil Extensions\)/ and @meta["www-authenticate"] =~ /Basic realm="LOGIN Enter Password \(default is private\)"/
+	if @headers["server"] =~ /Boa\/[\d\.]+ \(with Intersil Extensions\)/ and @headers["www-authenticate"] =~ /Basic realm="LOGIN Enter Password \(default is private\)"/
 		m << { :certainty=>25, :model=>"D-Link", :name=>"HTTP Server Header and WWW-Authenticate Realm" }
 	end
 
 	# Unknown Router 0001 # Check HTTP Server Header
 	# 3020 ShodanHQ results for set-cookie: niagara_audit=guest; path=/
-	if @meta["server"] =~ /Niagara Web Server\/([\d\.]+)/
-		m << { :certainty=>75, :name=>"niagara_audit=guest Cookie" } if @meta["set-cookie"] =~ /niagara_audit=guest; path=\//
+	if @headers["server"] =~ /Niagara Web Server\/([\d\.]+)/
+		m << { :certainty=>75, :name=>"niagara_audit=guest Cookie" } if @headers["set-cookie"] =~ /niagara_audit=guest; path=\//
 	end
 
 	# Unknown Router 0002 # ADSL2+ # HTTP Server and WWW Authenticate Realm
 	# 3361 ShodanHQ results for Server: RomPager WWW-Authenticate: Basic realm="Default Admin.= admin/admin"
 	# Find model info: /status/status_deviceinfo.htm
-	if @meta["www-authenticate"] =~ /Basic realm="Default Admin.= admin\/admin"/ and @meta["server"] =~ /RomPager/i
+	if @headers["www-authenticate"] =~ /Basic realm="Default Admin.= admin\/admin"/ and @headers["server"] =~ /RomPager/i
 		m << { :certainty=>25, :model=>"ADSL2+" }
 	end
 
 	# HTTP Server Header # 320 ShodanHQ results for thttpd-alphanetworks
 	# Alpha Networks was founded as a spin-off from the D-Link Corporation
 	# thttpd-alphanetworks is used by D-Link & Planex routers + others
-	if @meta["server"] =~ /^thttpd-alphanetworks\/([\d\.]+)$/
+	if @headers["server"] =~ /^thttpd-alphanetworks\/([\d\.]+)$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^thttpd-alphanetworks\/([\d\.]+)$/) }
+		m << { :version=>@headers["server"].scan(/^thttpd-alphanetworks\/([\d\.]+)$/) }
 
 		# Model Detection
-		m << { :model=>@meta["www-authenticate"].scan(/Basic realm="([^\s^"]+)"/) } if @meta["www-authenticate"] =~ /Basic realm="([^\s^"]+)"/
+		m << { :model=>@headers["www-authenticate"].scan(/Basic realm="([^\s^"]+)"/) } if @headers["www-authenticate"] =~ /Basic realm="([^\s^"]+)"/
 
 	end
 

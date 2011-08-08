@@ -43,10 +43,10 @@ def passive
 	m=[]
 
 	# X-Caching-Rule-Id: plone-content-types
-	m << {:name=>"X-Caching-Rule-Id: plone-content-types" } if @meta["x-caching-rule-id"] =~ /plone-content-types/i
+	m << {:name=>"X-Caching-Rule-Id: plone-content-types" } if @headers["x-caching-rule-id"] =~ /plone-content-types/i
 
 	# X-Cache-Rule: plone-content-types
-	m << {:name=>"X-Cache-Rule: plone-content-types" } if @meta["x-cache-rule"] =~ /plone-content-types/i
+	m << {:name=>"X-Cache-Rule: plone-content-types" } if @headers["x-cache-rule"] =~ /plone-content-types/i
 
 	# Return passive matches
 	m

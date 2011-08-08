@@ -49,7 +49,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Clearwell$/
+	if @headers["server"] =~ /^Clearwell$/
 
 		m << { :name=>"HTTP Server Header" }
 

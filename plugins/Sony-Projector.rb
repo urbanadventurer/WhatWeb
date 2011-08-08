@@ -66,12 +66,12 @@ def passive
 	m=[]
 
 	# HTTP Server
-	if @meta["server"] =~ /^Network Projector$/
+	if @headers["server"] =~ /^Network Projector$/
 		m << { :certainty=>75, :name=>"Server Header" }
 	end
 
 	# WWW-Authenticate Header
-	if @meta["www-authenticate"] =~ /Basic realm="Projector (User|Administration)"/
+	if @headers["www-authenticate"] =~ /Basic realm="Projector (User|Administration)"/
 		m << { :certainty=>75, :name=>"WWW-Authenticate Header" }
 	end
 

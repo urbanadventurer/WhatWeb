@@ -31,10 +31,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^nginx$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^nginx$/
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^nginx\/([^\s]+)$/) } if @meta["server"] =~ /^nginx\/([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^nginx\/([^\s]+)$/) } if @headers["server"] =~ /^nginx\/([^\s]+)$/
 
 	# Return passive matches
 	m

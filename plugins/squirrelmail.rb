@@ -32,7 +32,7 @@ def passive
 	m=[]
 	
 	# Set-Cookie: SQMSESSID=5055d75dbcac067f72b509effc42cc50; path=/
-	m << {:name=>"SQMSESSID cookie" } if @meta["set-cookie"] =~ /SQMSESSID=/i		
+	m << {:name=>"SQMSESSID cookie" } if @headers["set-cookie"] =~ /SQMSESSID=/i		
 	m
 end
 

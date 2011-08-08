@@ -31,14 +31,14 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Nintendo Wii( \(http\))?$/
+	if @headers["server"] =~ /^Nintendo Wii( \(http\))?$/
 		m << { :name=>"HTTP Server Header" }
-	elsif @meta["server"] =~ /^Nintendo Wii ([^\(]+)$/
+	elsif @headers["server"] =~ /^Nintendo Wii ([^\(]+)$/
 		m << { :string=>"#{$1}" }
 	end
 
 	# WWW-Authenticate Header
-	m << { :certainty=>75, :name=>"www-authenticate" } if @meta["www-authenticate"] =~ /Basic realm="Nintendo Wi-Fi Network Adapter"/
+	m << { :certainty=>75, :name=>"www-authenticate" } if @headers["www-authenticate"] =~ /Basic realm="Nintendo Wi-Fi Network Adapter"/
 
 	# Return passive matches
 	m

@@ -34,10 +34,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^IPOffice\/([^\s]+)$/
+	if @headers["server"] =~ /^IPOffice\/([^\s]+)$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^IPOffice\/([^\s]+)$/) }
+		m << { :version=>@headers["server"].scan(/^IPOffice\/([^\s]+)$/) }
 
 		# Version Detection
 		m << { :version=>@body.scan(/<title>About IP Office ([^\s^<]+)<\/title>/) } if @body =~ /<title>About IP Office ([^\s^<]+)<\/title>/

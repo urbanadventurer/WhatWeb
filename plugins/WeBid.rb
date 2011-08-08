@@ -52,7 +52,7 @@ def passive
 	m=[]
 
 	# WEBID_ONLINE cookie
-	m << { :name=>"WEBID_ONLINE cookie" } if @meta["set-cookie"] =~ /WEBID_ONLINE=[a-f\d]{32};/
+	m << { :name=>"WEBID_ONLINE cookie" } if @headers["set-cookie"] =~ /WEBID_ONLINE=[a-f\d]{32};/
 
 	# Return passive matches
 	m

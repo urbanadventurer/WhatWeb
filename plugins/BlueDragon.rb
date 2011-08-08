@@ -34,12 +34,12 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/BlueDragon Server( JXAS| JX)?(\/| )([\d\.]+)/)[0][2] } if @meta["server"] =~ /BlueDragon Server( JXAS| JX)?(\/| )([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/BlueDragon Server( JXAS| JX)?(\/| )([\d\.]+)/)[0][2] } if @headers["server"] =~ /BlueDragon Server( JXAS| JX)?(\/| )([\d\.]+)/
 
-	m << { :string=>@meta["server"].scan(/BlueDragon Server (JXAS|JX)/) } if @meta["server"] =~ /BlueDragon Server (JXAS|JX)/
+	m << { :string=>@headers["server"].scan(/BlueDragon Server (JXAS|JX)/) } if @headers["server"] =~ /BlueDragon Server (JXAS|JX)/
 
 	# Version Detection # X-Powered-By Header
-	m << { :version=>@meta["x-powered-by"].scan(/BlueDragon Server\/([^\s^,]+)/) } if @meta["x-powered-by"] =~ /BlueDragon Server\/([^\s^,]+)/
+	m << { :version=>@headers["x-powered-by"].scan(/BlueDragon Server\/([^\s^,]+)/) } if @headers["x-powered-by"] =~ /BlueDragon Server\/([^\s^,]+)/
 
 	# Return passive matches
 	m

@@ -22,7 +22,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^PowerWeb\/([^\s]+)$/) } if @meta["server"] =~ /^PowerWeb\/([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^PowerWeb\/([^\s]+)$/) } if @headers["server"] =~ /^PowerWeb\/([^\s]+)$/
 
 	# Return passive matches
 	m

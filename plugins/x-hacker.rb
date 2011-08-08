@@ -27,7 +27,7 @@ def passive
 	m=[]
 	
 	# X-Hacker HTTP Header
-	m << { :string=>@meta["x-hacker"] } unless @meta["x-hacker"].nil?
+	m << { :string=>@headers["x-hacker"] } unless @headers["x-hacker"].nil?
 
 	# Return passive matches
 	m

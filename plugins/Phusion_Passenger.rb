@@ -40,10 +40,10 @@ def passive
 	m=[]
 
 	# Server
-	m << { :version=>@meta["server"].scan(/[\s]+Phusion_Passenger\/([\d\.]+)/) } if @meta["server"] =~ /[\s]+Phusion_Passenger\/([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/[\s]+Phusion_Passenger\/([\d\.]+)/) } if @headers["server"] =~ /[\s]+Phusion_Passenger\/([\d\.]+)/
 
 	# X-Powered-By: Phusion Passenger (mod_rails/mod_rack)
-	m << { :version=>@meta["x-powered-by"].scan(/Phusion Passenger \(mod_rails\/mod_rack\) ([\d\.]+)/) } if @meta["x-powered-by"] =~ /Phusion Passenger \(mod_rails\/mod_rack\) ([\d\.]+)/
+	m << { :version=>@headers["x-powered-by"].scan(/Phusion Passenger \(mod_rails\/mod_rack\) ([\d\.]+)/) } if @headers["x-powered-by"] =~ /Phusion Passenger \(mod_rails\/mod_rack\) ([\d\.]+)/
 
 	# Return passive matches
 	m

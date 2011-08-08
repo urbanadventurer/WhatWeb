@@ -45,13 +45,13 @@ def passive
 	m=[]
 
 	# HTTP Headers
-	if @meta["x-spinetix-firmware"] =~ /^([^\r^\n]*)/ and @meta["x-raperca-version"] =~ /^([^\r^\n]*)/
+	if @headers["x-spinetix-firmware"] =~ /^([^\r^\n]*)/ and @headers["x-raperca-version"] =~ /^([^\r^\n]*)/
 
 		# X-spinetix-firmware
-		m << { :firmware=>@meta["x-spinetix-firmware"].scan(/^([^\r^\n]*)/).to_s, :model=>"HMP100" }
+		m << { :firmware=>@headers["x-spinetix-firmware"].scan(/^([^\r^\n]*)/).to_s, :model=>"HMP100" }
 
 		# X-raperca-version
-		m << { :module=>"raperca/"+@meta["x-raperca-version"].scan(/^([^\r^\n]*)/).to_s, :model=>"HMP100" }
+		m << { :module=>"raperca/"+@headers["x-raperca-version"].scan(/^([^\r^\n]*)/).to_s, :model=>"HMP100" }
 
 	end
 

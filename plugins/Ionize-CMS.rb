@@ -70,7 +70,7 @@ def passive
 	m=[]
 
 	# ionize_session Cookie
-	m << { :name=>"ionize_session Cookie" } if @meta["set-cookie"] =~ /ionize_session=/
+	m << { :name=>"ionize_session Cookie" } if @headers["set-cookie"] =~ /ionize_session=/
 
 	# Return passive matches
 	m

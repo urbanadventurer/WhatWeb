@@ -29,12 +29,12 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^NetPresenz/
+	if @headers["server"] =~ /^NetPresenz/
 
 		m << { :name=>"HTTP Server Header" }
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^NetPresenz\/([^\s]+)$/) } if @meta["server"] =~ /^NetPresenz\/([^\s]+)$/
+		m << { :version=>@headers["server"].scan(/^NetPresenz\/([^\s]+)$/) } if @headers["server"] =~ /^NetPresenz\/([^\s]+)$/
 
 	end
 

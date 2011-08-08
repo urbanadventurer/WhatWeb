@@ -32,13 +32,13 @@ examples %w|
 def passive
 	m=[]
 
-	if @meta["server"] =~ /^SAMBAR/
+	if @headers["server"] =~ /^SAMBAR/
 
 		# HTTP Server Header
 		m << { :name=>"HTTP Server Header" }
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^SAMBAR ([\d\.]+)$/) } if @meta["server"] =~ /^SAMBAR ([\d\.]+)$/
+		m << { :version=>@headers["server"].scan(/^SAMBAR ([\d\.]+)$/) } if @headers["server"] =~ /^SAMBAR ([\d\.]+)$/
 
 	end
 

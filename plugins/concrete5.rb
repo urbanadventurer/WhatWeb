@@ -32,7 +32,7 @@ matches [
 
 def passive
         m=[]        
-        m << {:name=>"CONCRETE5 cookie", :certainty=>100 } if @meta["set-cookie"] =~ /CONCRETE5=/i
+        m << {:name=>"CONCRETE5 cookie", :certainty=>100 } if @headers["set-cookie"] =~ /CONCRETE5=/i
     
         m
 end

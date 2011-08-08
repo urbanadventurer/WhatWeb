@@ -83,13 +83,13 @@ def passive
 	m=[]
 
 	# x-serendipity-interfacelang
-	m << { :name=>'x-serendipity-interfacelang' } unless @meta['x-serendipity-interfacelang'].nil?
+	m << { :name=>'x-serendipity-interfacelang' } unless @headers['x-serendipity-interfacelang'].nil?
 
 	# x-serendipity-contentlang
-	m << { :name=>'x-serendipity-contentlang' } unless @meta['x-serendipity-contentlang'].nil?
+	m << { :name=>'x-serendipity-contentlang' } unless @headers['x-serendipity-contentlang'].nil?
 
 	# x-blog: serendipity
-	m << { :name=>'x-blog: serendipity' } if @meta['x-blog'] =~ /^Serendipity$/
+	m << { :name=>'x-blog: serendipity' } if @headers['x-blog'] =~ /^Serendipity$/
 
 	# Return passive matches
 	m

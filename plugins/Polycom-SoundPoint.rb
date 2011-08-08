@@ -41,7 +41,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Polycom SoundPoint IP Telephone HTTPd$/
+	if @headers["server"] =~ /^Polycom SoundPoint IP Telephone HTTPd$/
 
 		m << { :name=>"HTTP Server Header" }
 

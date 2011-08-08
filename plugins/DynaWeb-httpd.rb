@@ -26,7 +26,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /^dwhttpd\/([^\s]+) \(([^\s^;^\)]+; [^\s^\)]+)\)$/
+	if @headers["server"] =~ /^dwhttpd\/([^\s]+) \(([^\s^;^\)]+; [^\s^\)]+)\)$/
 		m << { :version=>"#{$1}" }
 		m << { :string=>"#{$2}" }
 	end

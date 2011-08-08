@@ -28,10 +28,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :model=>"Telnet", :version=>@meta["server"].scan(/^SitePlayer Telnet\/([^\s]+)$/) } if @meta["server"] =~ /^SitePlayer Telnet\/([^\s]+)$/
+	m << { :model=>"Telnet", :version=>@headers["server"].scan(/^SitePlayer Telnet\/([^\s]+)$/) } if @headers["server"] =~ /^SitePlayer Telnet\/([^\s]+)$/
 
 	# WWW-Authenticate realm
-	m << { :model=>"Telnet", :name=>"WWW-Authenticate realm" } if @meta["www-authenticate"] =~ /^Basic realm="SitePlayer Telnet Configuration"$/
+	m << { :model=>"Telnet", :name=>"WWW-Authenticate realm" } if @headers["www-authenticate"] =~ /^Basic realm="SitePlayer Telnet Configuration"$/
 
 	# Return passive matches
 	m

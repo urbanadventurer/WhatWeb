@@ -16,7 +16,7 @@ examples %w| |
 def passive
 	m=[]
 	m<< {:name=>"Page body is 'invalid request'" } if @body == "invalid request"
-	m<< {:name=>'Basic realm="uTorrent"' } if @meta['www-authenticate'] == 'Basic realm="uTorrent"'
+	m<< {:name=>'Basic realm="uTorrent"' } if @headers['www-authenticate'] == 'Basic realm="uTorrent"'
 	m
 end
 end

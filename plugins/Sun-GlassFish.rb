@@ -43,16 +43,16 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /GlassFish/
+	if @headers["server"] =~ /GlassFish/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^GlassFish v(.+)$/) } if @meta["server"] =~ /^GlassFish v(.+)$/
+		m << { :version=>@headers["server"].scan(/^GlassFish v(.+)$/) } if @headers["server"] =~ /^GlassFish v(.+)$/
 
 		# Version Detection # Open Source
-		m << { :string=>"Open Source Edition", :version=>@meta["server"].scan(/^GlassFish Server Open Source Edition (.+)$/) } if @meta["server"] =~ /^GlassFish Server Open Source Edition (.+)$/
+		m << { :string=>"Open Source Edition", :version=>@headers["server"].scan(/^GlassFish Server Open Source Edition (.+)$/) } if @headers["server"] =~ /^GlassFish Server Open Source Edition (.+)$/
 
 		# Version Detection # Enterprise
-		m << { :string=>"Enterprise Server", :version=>@meta["server"].scan(/Sun GlassFish Enterprise Server v(.+)$/) } if @meta["server"] =~ /Sun GlassFish Enterprise Server v(.+)$/
+		m << { :string=>"Enterprise Server", :version=>@headers["server"].scan(/Sun GlassFish Enterprise Server v(.+)$/) } if @headers["server"] =~ /Sun GlassFish Enterprise Server v(.+)$/
 
 	end
 

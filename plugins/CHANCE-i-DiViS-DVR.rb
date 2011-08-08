@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Techno Vision Security System Ver. ([\d\.]+)$/) } if @meta["server"] =~ /^Techno Vision Security System Ver. ([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^Techno Vision Security System Ver. ([\d\.]+)$/) } if @headers["server"] =~ /^Techno Vision Security System Ver. ([\d\.]+)$/
 
 	# Return passive matches
 	m

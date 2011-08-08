@@ -154,34 +154,34 @@ def passive
 	m=[]
 
 	# Apache HTTP Server Header
-	if @meta["server"] =~ /^Apache/i
+	if @headers["server"] =~ /^Apache/i
 
 # replaced in matches[]
 # m << { :name=>"HTTP Server Header" }
 # Version Detection
-# m << { :version=>@meta["server"].scan(/^Apache\/([\d\.]+)/i) } if @meta["server"] =~ /^Apache\/([\d\.]+)/i
+# m << { :version=>@headers["server"].scan(/^Apache\/([\d\.]+)/i) } if @headers["server"] =~ /^Apache\/([\d\.]+)/i
 
 		# Module Detection
-		m << { :module=>@meta["server"].scan(/[\s](mod_[^\s^\(]+)/) } if @meta["server"] =~ /[\s](mod_[^\s^\(]+)/
+		m << { :module=>@headers["server"].scan(/[\s](mod_[^\s^\(]+)/) } if @headers["server"] =~ /[\s](mod_[^\s^\(]+)/
 		# proxy_html Module Detection
-		m << { :module=>@meta["server"].scan(/[\s](proxy_html\/[^\s]+)/) } if @meta["server"] =~ /[\s](proxy_html\/[^\s]+)/
+		m << { :module=>@headers["server"].scan(/[\s](proxy_html\/[^\s]+)/) } if @headers["server"] =~ /[\s](proxy_html\/[^\s]+)/
 
 	end
 
 	# Apache WebSnmp module
-	if @meta["server"] =~ /^WebSnmp Server Httpd\/([\d.]+)$/
-		m << { :module=>"WebSnmp/"+@meta["server"].scan(/^WebSnmp Server Httpd\/([\d.]+)$/).to_s }
+	if @headers["server"] =~ /^WebSnmp Server Httpd\/([\d.]+)$/
+		m << { :module=>"WebSnmp/"+@headers["server"].scan(/^WebSnmp Server Httpd\/([\d.]+)$/).to_s }
 	end
 
 	# replaced in matches
 	# mod_security
-	# m << { :certainty=>75, :module=>"mod_security" } if @meta["server"] =~ /^NOYB$/
+	# m << { :certainty=>75, :module=>"mod_security" } if @headers["server"] =~ /^NOYB$/
 	# WWW-Authenticate: Basic realm="htaccess password prompt"
-	# m << { :certainty=>75, :name=>"htacess WWW-Authenticate realm" } if @meta["www-authenticate"] =~ /Basic realm="htaccess password prompt"/
+	# m << { :certainty=>75, :name=>"htacess WWW-Authenticate realm" } if @headers["www-authenticate"] =~ /Basic realm="htaccess password prompt"/
 
 
 	# x-mod-pagespeed Header # mod_pagespeed
-	m << { :module=>"mod_pagespeed/"+@meta["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).to_s } if @meta["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
+	m << { :module=>"mod_pagespeed/"+@headers["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).to_s } if @headers["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
 	
 	# Return passive matches
 	m

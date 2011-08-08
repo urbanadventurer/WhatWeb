@@ -34,7 +34,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header", :string=>"Apache" } if @meta["server"] =~ /^MACOS_Personal_Websharing$/
+	m << { :name=>"HTTP Server Header", :string=>"Apache" } if @headers["server"] =~ /^MACOS_Personal_Websharing$/
 
 	# Return passive matches
 	m

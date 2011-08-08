@@ -51,7 +51,7 @@ def passive
 	m=[]
 
 	# _dradis_session cookie
-	m << { :name=>"_dradis_session cookie" } if @meta["set-cookie"] =~ /^_dradis_session=/
+	m << { :name=>"_dradis_session cookie" } if @headers["set-cookie"] =~ /^_dradis_session=/
 
 	# Return passive matches
 	m

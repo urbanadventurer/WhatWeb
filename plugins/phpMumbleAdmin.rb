@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# Set-Cookie: phpMumbleADMIN_session
-	m << { :name=>"phpMumbleADMIN_session Cookie" } if @meta["set-cookie"] =~ /^phpMumbleADMIN_session=/
+	m << { :name=>"phpMumbleADMIN_session Cookie" } if @headers["set-cookie"] =~ /^phpMumbleADMIN_session=/
 
 	# Return passive matches
 	m

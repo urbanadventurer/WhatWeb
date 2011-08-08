@@ -42,13 +42,13 @@ def passive
 	m=[]
 
 	# PPServer HTTP Header # Retrieve local host name
-	m << { :string=>@meta["ppserver"].to_s.scan(/H: ([\w\-\.]+) /) } if @meta["ppserver"] =~ /H: ([\w\-\.]+) /
+	m << { :string=>@headers["ppserver"].to_s.scan(/H: ([\w\-\.]+) /) } if @headers["ppserver"] =~ /H: ([\w\-\.]+) /
 
 	# MSNServer HTTP Header # Retrieve local host name
-	m << { :string=>@meta["msnserver"].to_s.scan(/H: ([\w\-\.]+) /) } if @meta["msnserver"] =~ /H: ([\w\-\.]+) /
+	m << { :string=>@headers["msnserver"].to_s.scan(/H: ([\w\-\.]+) /) } if @headers["msnserver"] =~ /H: ([\w\-\.]+) /
 
 	# X-MSNServer HTTP Header # Retrieve local host name
-	m << { :string=>@meta["x-msnserver"].to_s } unless @meta["x-msnserver"].nil?
+	m << { :string=>@headers["x-msnserver"].to_s } unless @headers["x-msnserver"].nil?
 
 	m
 end

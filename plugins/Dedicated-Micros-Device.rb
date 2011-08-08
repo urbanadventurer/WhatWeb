@@ -55,7 +55,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^ADH-Web$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^ADH-Web$/
 
 	# Return passive matches
 	m

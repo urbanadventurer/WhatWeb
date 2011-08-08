@@ -33,7 +33,7 @@ def passive
 	m=[]
 
 	# Version Detection # A-Powered-By Header
-	m << { :version=>@meta["a-powered-by"].scan(/^ABO\.CMS( E-commerce| Corporative)? ([\d\.]+)/)[0][1] } if @meta["a-powered-by"] =~ /^ABO\.CMS( E-commerce| Corporative)? ([\d\.]+)/
+	m << { :version=>@headers["a-powered-by"].scan(/^ABO\.CMS( E-commerce| Corporative)? ([\d\.]+)/)[0][1] } if @headers["a-powered-by"] =~ /^ABO\.CMS( E-commerce| Corporative)? ([\d\.]+)/
 
 	# Return passive matches
 	m

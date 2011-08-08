@@ -45,7 +45,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^InterSpace HTTP Tunneling\/([^\s]+)$/) } if @meta["server"] =~ /^InterSpace HTTP Tunneling\/([^\s]+)$/
+	m << { :version=>@headers["server"].scan(/^InterSpace HTTP Tunneling\/([^\s]+)$/) } if @headers["server"] =~ /^InterSpace HTTP Tunneling\/([^\s]+)$/
 
 	# Return passive matches
 	m

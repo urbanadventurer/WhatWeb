@@ -35,7 +35,7 @@ def passive
 	end
 
 	# Content type
-	m << { :string=>"x-x509-ca-cert" } if @meta["Content-Type"] =~ /^[\s]*application\/x-x509-ca-cert/
+	m << { :string=>"x-x509-ca-cert" } if @headers["Content-Type"] =~ /^[\s]*application\/x-x509-ca-cert/
 
 	m
 

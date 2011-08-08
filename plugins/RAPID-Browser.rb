@@ -53,7 +53,7 @@ def passive
 	m=[]
 
 	# Location HTTP Header
-	m << { :name=>"Location HTTP Header" } if @meta["location"] =~ /command\?command_name=WebLoginCmd&view=login\.jsp$/
+	m << { :name=>"Location HTTP Header" } if @headers["location"] =~ /command\?command_name=WebLoginCmd&view=login\.jsp$/
 
 	# Return passive matches
 	m

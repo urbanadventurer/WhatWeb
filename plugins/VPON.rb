@@ -52,7 +52,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^VPON Server\/[\d\.]+$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^VPON Server\/[\d\.]+$/
 
 	# Return passive matches
 	m

@@ -26,10 +26,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"] =~ /^Xitami$/
+	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^Xitami$/
 
 	# Edition Detection # HTTP Server Header
-	m << { :string=>@meta["server"].scan(/^Xitami\/([^\s]+)$/) } if @meta["server"] =~ /^Xitami\/([^\s]+)$/
+	m << { :string=>@headers["server"].scan(/^Xitami\/([^\s]+)$/) } if @headers["server"] =~ /^Xitami\/([^\s]+)$/
 
 	# Return passive matches
 	m

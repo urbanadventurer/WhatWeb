@@ -70,7 +70,7 @@ def passive
 	m=[]
 
 	# Version Detection # Server: Hitbox Gateway
-	m << { :version=>@meta["server"].scan(/^Hitbox Gateway ([^\s^\r^\n]{1,10})$/) } if @meta["server"] =~ /^Hitbox Gateway ([^\s^\r^\n]{1,10})$/
+	m << { :version=>@headers["server"].scan(/^Hitbox Gateway ([^\s^\r^\n]{1,10})$/) } if @headers["server"] =~ /^Hitbox Gateway ([^\s^\r^\n]{1,10})$/
 
 	# Return passive matches
 	m

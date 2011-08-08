@@ -52,7 +52,7 @@ matches [
 # Set-Cookie: fusion_visited=yes; expires=Thu, 02-Jun-2011 11:17:49 GMT; path=/
 def passive
         m=[]
-        m << {:name=>"fusion_visited Cookie" } if @meta["set-cookie"] =~ /fusion_visited=/
+        m << {:name=>"fusion_visited Cookie" } if @headers["set-cookie"] =~ /fusion_visited=/
 	m
 end
 

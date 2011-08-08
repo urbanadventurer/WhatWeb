@@ -50,7 +50,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^XCD WebAdmin$/ and @body =~ /Server Access Password: <\/B><INPUT TYPE="PASSWORD" SIZE="16" MAXLENGTH="16" NAME="ZZ_pwd">/ and @body =~ /<HTML><HEAD><TITLE>EasyLAN Web<\/TITLE><\/HEAD>/
+	if @headers["server"] =~ /^XCD WebAdmin$/ and @body =~ /Server Access Password: <\/B><INPUT TYPE="PASSWORD" SIZE="16" MAXLENGTH="16" NAME="ZZ_pwd">/ and @body =~ /<HTML><HEAD><TITLE>EasyLAN Web<\/TITLE><\/HEAD>/
 
 		# Model Detection
 		m << { :model=>@body.scan(/<TD><FONT COLOR="BLACK" SIZE="5">Intermec EasyLAN ([a-z\d]{3,4})<\/FONT><\/TD>/) } if @body =~ /<TD><FONT COLOR="BLACK" SIZE="5">Intermec EasyLAN ([a-z\d]{3,4})<\/FONT><\/TD>/

@@ -32,7 +32,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^WebHare Application Portal v([\d\.]+) Webserver$/) } if @meta["server"] =~ /^WebHare Application Portal v([\d\.]+) Webserver$/
+	m << { :version=>@headers["server"].scan(/^WebHare Application Portal v([\d\.]+) Webserver$/) } if @headers["server"] =~ /^WebHare Application Portal v([\d\.]+) Webserver$/
 
 	# Return passive matches
 	m

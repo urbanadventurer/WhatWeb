@@ -46,7 +46,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^LanRTC\/([\d\.]{1,5})$/) } if @meta["server"] =~ /^LanRTC\/([\d\.]{1,5})$/
+	m << { :version=>@headers["server"].scan(/^LanRTC\/([\d\.]{1,5})$/) } if @headers["server"] =~ /^LanRTC\/([\d\.]{1,5})$/
 
 	# Return passive matches
 	m

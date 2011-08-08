@@ -43,7 +43,7 @@ def passive
 	m=[]
 
 	# HTP Server Header
-	if @meta["server"] =~ /^PCX\/(No-Cache|Dynamic)/
+	if @headers["server"] =~ /^PCX\/(No-Cache|Dynamic)/
 
 		# Server: PCX/No-Cache # Server: PCX/Dynamic
 		m << { :name=>"HTTP Server Header" }

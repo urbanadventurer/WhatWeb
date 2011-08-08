@@ -27,7 +27,7 @@ def passive
 	m=[]
 
 	# Cookies
-	m << { :string=>@meta["set-cookie"].scan(/WEBTRENDS_ID=([\d\.]+)-[\d\.]+;[^\r^\n]*expires=[^,]*, ([^\s]*) /) } if @meta["set-cookie"] =~ /WEBTRENDS_ID=([\d\.]+)-[\d\.]+;[^\r^\n]*expires=[^,]*, ([^\s]*) /
+	m << { :string=>@headers["set-cookie"].scan(/WEBTRENDS_ID=([\d\.]+)-[\d\.]+;[^\r^\n]*expires=[^,]*, ([^\s]*) /) } if @headers["set-cookie"] =~ /WEBTRENDS_ID=([\d\.]+)-[\d\.]+;[^\r^\n]*expires=[^,]*, ([^\s]*) /
 
 	m
 

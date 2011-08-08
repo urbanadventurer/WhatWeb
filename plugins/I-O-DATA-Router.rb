@@ -48,7 +48,7 @@ def passive
 	m=[]
 
 	# Version + Model Detection # HTTP Server Header
-	if @meta["server"] =~ /^Linux, HTTP\/1\.1, (WN-[^\s]+) Ver ([^\s]+)$/
+	if @headers["server"] =~ /^Linux, HTTP\/1\.1, (WN-[^\s]+) Ver ([^\s]+)$/
 		m << { :model  =>"#{$1}" }
 		m << { :version=>"#{$2}" }
 	end

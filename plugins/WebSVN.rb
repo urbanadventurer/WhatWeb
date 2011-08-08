@@ -86,8 +86,8 @@ def passive
 	end
 
 	# Redirect Location
-	if @status.to_s =~ /^302$/ and @meta["location"] =~ /^listing\.php\?repname=[^\s]+$/
-		m << { :string=>@meta["location"].scan(/^listing\.php\?repname=([^\s]+)$/) }
+	if @status.to_s =~ /^302$/ and @headers["location"] =~ /^listing\.php\?repname=[^\s]+$/
+		m << { :string=>@headers["location"].scan(/^listing\.php\?repname=([^\s]+)$/) }
 	end
 
 	# Return passive matches

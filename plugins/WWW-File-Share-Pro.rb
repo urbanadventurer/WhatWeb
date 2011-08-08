@@ -49,7 +49,7 @@ def passive
 	m=[]
 
 	# HTTP Server header
-	m << { :name=>"HTTP Server header" } if @meta["server"] =~ /^WWW File Share Pro$/
+	m << { :name=>"HTTP Server header" } if @headers["server"] =~ /^WWW File Share Pro$/
 
 	# Return passive matches
 	m

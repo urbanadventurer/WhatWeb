@@ -134,13 +134,13 @@ def passive
 	m=[]
 
 	# x-arequestid
-	m << { :name=>"x-arequestid header" } if @meta["x-arequestid"] =~ /^[\d]+x[\d]+x[\d]+$/
+	m << { :name=>"x-arequestid header" } if @headers["x-arequestid"] =~ /^[\d]+x[\d]+x[\d]+$/
 
 	# x-ausername
-	m << { :name=>"x-ausername header" } unless @meta["x-ausername"].nil?
+	m << { :name=>"x-ausername header" } unless @headers["x-ausername"].nil?
 
 	# atlassian.xsrf.token cookie
-	m << { :name=>"atlassian.xsrf.token" } if @meta["set-cookie"] =~ /atlassian\.xsrf\.token=/
+	m << { :name=>"atlassian.xsrf.token" } if @headers["set-cookie"] =~ /atlassian\.xsrf\.token=/
 
 	# Return passive matches
 	m

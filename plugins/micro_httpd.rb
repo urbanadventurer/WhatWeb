@@ -33,7 +33,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @meta["server"].to_s =~ /^[\s]*micro_httpd/i
+	m << { :name=>"HTTP Server Header" } if @headers["server"].to_s =~ /^[\s]*micro_httpd/i
 
 	# Return passive matches
 	m

@@ -37,8 +37,8 @@ matches [
 def passive
         m=[]
 
-	if @meta["liferay-portal"] =~ /([\s]*)/
-		version=@meta["liferay-portal"].to_s
+	if @headers["liferay-portal"] =~ /([\s]*)/
+		version=@headers["liferay-portal"].to_s
 		m << { :version=>version }
 	end
 

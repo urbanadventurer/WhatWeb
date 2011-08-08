@@ -51,7 +51,7 @@ matches [
 
 def passive
         m=[]
-	m << {:name=>"fEcom Cookie", :certainty=>75 } if @meta["set-cookie"] =~ /fEcom=/
+	m << {:name=>"fEcom Cookie", :certainty=>75 } if @headers["set-cookie"] =~ /fEcom=/
         m
 end
 

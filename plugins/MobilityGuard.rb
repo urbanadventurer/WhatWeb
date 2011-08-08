@@ -42,11 +42,11 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	if @meta["server"] =~ /^MobilityGuard/
+	if @headers["server"] =~ /^MobilityGuard/
 
 		m << { :name=>"HTTP Server Header" }
 
-		if @meta["server"] =~ /^MobilityGuard v([^\s]+)$/
+		if @headers["server"] =~ /^MobilityGuard v([^\s]+)$/
 			m << { :version=>"#{$1}" }
 		end
 	end

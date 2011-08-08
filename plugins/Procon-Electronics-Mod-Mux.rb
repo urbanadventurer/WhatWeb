@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Procon Electronics Mod-Mux$/
+	if @headers["server"] =~ /^Procon Electronics Mod-Mux$/
 
 		m << { :name=>"HTTP Server Header" }
 

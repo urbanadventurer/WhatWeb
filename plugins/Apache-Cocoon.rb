@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# X-Cocoon-Version Header
-	m << { :version=>@meta['x-cocoon-version'].to_s } unless @meta['x-cocoon-version'].nil?
+	m << { :version=>@headers['x-cocoon-version'].to_s } unless @headers['x-cocoon-version'].nil?
 
 	# Return passive matches
 	m

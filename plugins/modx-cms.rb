@@ -92,8 +92,8 @@ matches [
 
 def passive
   m=[]
-  m << {:name=>"SN4 Cookie", :certainty=>75 } if @meta["set-cookie"] =~ /^SN4[a-z0-9]{12}=/
-  m << {:name=>"P3P" } if @meta["P3P"] =~ /CP="NOI NID ADMa OUR IND UNI COM NAV"/
+  m << {:name=>"SN4 Cookie", :certainty=>75 } if @headers["set-cookie"] =~ /^SN4[a-z0-9]{12}=/
+  m << {:name=>"P3P" } if @headers["P3P"] =~ /CP="NOI NID ADMa OUR IND UNI COM NAV"/
   
   m
 end

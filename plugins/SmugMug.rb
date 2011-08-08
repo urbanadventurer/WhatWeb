@@ -31,10 +31,10 @@ def passive
 	m=[]
 
 	# Version Detection # X-Powered-By
-	m << { :version=>@meta["x-powered-by"].scan(/^SmugMug\/([\d\.]+)$/i) } if @meta["x-powered-by"] =~ /^SmugMug\/([\d\.]+)$/i
+	m << { :version=>@headers["x-powered-by"].scan(/^SmugMug\/([\d\.]+)$/i) } if @headers["x-powered-by"] =~ /^SmugMug\/([\d\.]+)$/i
 
 	# X-SmugMug-Values
-	m << { :name=>"X-SmugMug-Values HTTP Header" } unless @meta["x-smugmug-values"].nil?
+	m << { :name=>"X-SmugMug-Values HTTP Header" } unless @headers["x-smugmug-values"].nil?
 
 	# Return passive matches
 	m

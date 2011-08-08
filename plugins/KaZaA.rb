@@ -27,13 +27,13 @@ def passive
 	m=[]
 
 	# X-Kazaa-IP
-	m << { :string=>@meta["x-kazaa-ip"] } unless @meta["x-kazaa-ip"].nil?
+	m << { :string=>@headers["x-kazaa-ip"] } unless @headers["x-kazaa-ip"].nil?
 
 	# X-Kazaa-Network
-	m << { :module=>@meta["x-kazaa-network"] } unless @meta["x-kazaa-network"].nil?
+	m << { :module=>@headers["x-kazaa-network"] } unless @headers["x-kazaa-network"].nil?
 
 	# X-Kazaa-Username
-	m << { :account=>@meta["x-kazaa-username"] } unless @meta["x-kazaa-username"].nil?
+	m << { :account=>@headers["x-kazaa-username"] } unless @headers["x-kazaa-username"].nil?
 
 	# Return passive matches
 	m

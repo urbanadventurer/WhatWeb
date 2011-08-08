@@ -34,15 +34,15 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^Grandstream/
+	if @headers["server"] =~ /^Grandstream/
 
 		# Model Detection
-		m << { :model=>@meta["server"].scan(/^Grandstream ([^\s]+) [\d\.]+$/) } if @meta["server"] =~ /^Grandstream ([^\s]+) [\d\.]+$/
+		m << { :model=>@headers["server"].scan(/^Grandstream ([^\s]+) [\d\.]+$/) } if @headers["server"] =~ /^Grandstream ([^\s]+) [\d\.]+$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^Grandstream [^\s]+ ([\d\.]+)$/) } if @meta["server"] =~ /^Grandstream [^\s]+ ([\d\.]+)$/
+		m << { :version=>@headers["server"].scan(/^Grandstream [^\s]+ ([\d\.]+)$/) } if @headers["server"] =~ /^Grandstream [^\s]+ ([\d\.]+)$/
 
-		m << { :version=>@meta["server"].scan(/^Grandstream\/([\d\.]+)$/) } if @meta["server"] =~ /^Grandstream\/([\d\.]+)$/
+		m << { :version=>@headers["server"].scan(/^Grandstream\/([\d\.]+)$/) } if @headers["server"] =~ /^Grandstream\/([\d\.]+)$/
 
 	end
 

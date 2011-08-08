@@ -45,12 +45,12 @@ def passive
 	m=[]
 
 	# Server HTTP Header
-	m << { :version=>@meta["server"].scan(/[\s]*IBM-HTTP-Server\/([\d\.]+)/) } if @meta["server"] =~ /[\s]*IBM-HTTP-Server\/([\d\.]+)[^\r^\n]*/
-	m << { :version=>@meta["server"].scan(/[\s]*IBM_HTTP_Server\/([\d\.]+)/) } if @meta["server"] =~ /[\s]*IBM_HTTP_Server\/([\d\.]+)[^\r^\n]*/
-	m << { :name=>"IBM_HTTP_Server" } if @meta["server"].to_s =~ /^[\s]*IBM_HTTP_Server/
+	m << { :version=>@headers["server"].scan(/[\s]*IBM-HTTP-Server\/([\d\.]+)/) } if @headers["server"] =~ /[\s]*IBM-HTTP-Server\/([\d\.]+)[^\r^\n]*/
+	m << { :version=>@headers["server"].scan(/[\s]*IBM_HTTP_Server\/([\d\.]+)/) } if @headers["server"] =~ /[\s]*IBM_HTTP_Server\/([\d\.]+)[^\r^\n]*/
+	m << { :name=>"IBM_HTTP_Server" } if @headers["server"].to_s =~ /^[\s]*IBM_HTTP_Server/
 
 	# srvrname HTTP Header
-	m << { :string=>@meta["srvrname"].to_s } unless @meta["srvrname"].nil?
+	m << { :string=>@headers["srvrname"].to_s } unless @headers["srvrname"].nil?
 
 	# Return passive matches
 	m

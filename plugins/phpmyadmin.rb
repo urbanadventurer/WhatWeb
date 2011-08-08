@@ -121,8 +121,8 @@ def passive
 	m=[]
 
 	# Cookies
-	m << {:name=>"phpMyAdmin Cookie" } if @meta["set-cookie"] =~ /phpMyAdmin=[0-9]{32}/
-	m << {:name=>"pma_theme Cookie" } if @meta["set-cookie"] =~ /pma_theme=original/
+	m << {:name=>"phpMyAdmin Cookie" } if @headers["set-cookie"] =~ /phpMyAdmin=[0-9]{32}/
+	m << {:name=>"pma_theme Cookie" } if @headers["set-cookie"] =~ /pma_theme=original/
 
 	# Return passive matches
 	m

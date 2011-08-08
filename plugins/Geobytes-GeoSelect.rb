@@ -32,7 +32,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/Geobytes-GeoSelect\/([\d\.]+)/) } if @meta["server"] =~ /Geobytes-GeoSelect\/([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/Geobytes-GeoSelect\/([\d\.]+)/) } if @headers["server"] =~ /Geobytes-GeoSelect\/([\d\.]+)/
 
 	# Return passive matches
 	m

@@ -31,10 +31,10 @@ def passive
 	m=[]
 
 	# Server: Fujitsu-InfoProvider-Pro
-	m << { :name=>"HTTP Server Header" } if @meta['server'] =~ /Fujitsu-InfoProvider-Pro/
+	m << { :name=>"HTTP Server Header" } if @headers['server'] =~ /Fujitsu-InfoProvider-Pro/
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta['server'].scan(/Fujitsu-InfoProvider-Pro\/[V]?([^ ]+) /) } if @meta['server'] =~ /Fujitsu-InfoProvider-Pro\/[V]?([^ ]+) /
+	m << { :version=>@headers['server'].scan(/Fujitsu-InfoProvider-Pro\/[V]?([^ ]+) /) } if @headers['server'] =~ /Fujitsu-InfoProvider-Pro\/[V]?([^ ]+) /
 
 	# Return passive matches
 	m

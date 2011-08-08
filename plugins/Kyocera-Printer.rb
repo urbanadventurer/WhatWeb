@@ -41,10 +41,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header # KM-MFP-http
-	if @meta["server"] =~ /^KM-MFP-http\/V([\d\.]+)$/
+	if @headers["server"] =~ /^KM-MFP-http\/V([\d\.]+)$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^KM-MFP-http\/V([\d\.]+)$/) }
+		m << { :version=>@headers["server"].scan(/^KM-MFP-http\/V([\d\.]+)$/) }
 
 		# Model Detection
 		m << { :model=>@body.scan(/^var ModelName="([^"]+)";/) } if @body =~ /^var ModelName="([^"]+)";/
@@ -52,13 +52,13 @@ def passive
 	end
 
 	# Version Detection # HTTP Server Header # KM-httpd
-	m << { :version=>@meta["server"].scan(/^KM-httpd\/([\d\.]+)$/) } if @meta["server"] =~ /^KM-httpd\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^KM-httpd\/([\d\.]+)$/) } if @headers["server"] =~ /^KM-httpd\/([\d\.]+)$/
 
 	# Version Detection # HTTP Server Header # JC-HTTPD
-	m << { :version=>@meta["server"].scan(/^JC-HTTPD\/([\d\.]+)$/) } if @meta["server"] =~ /^JC-HTTPD\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^JC-HTTPD\/([\d\.]+)$/) } if @headers["server"] =~ /^JC-HTTPD\/([\d\.]+)$/
 
 	# Version Detection # HTTP Server Header # NetworkScanner WebServer Ver
-	m << { :string=>"Scanner", :version=>@meta["server"].scan(/^NetworkScanner WebServer Ver([\d\.]+)$/) } if @meta["server"] =~ /^NetworkScanner WebServer Ver([\d\.]+)$/
+	m << { :string=>"Scanner", :version=>@headers["server"].scan(/^NetworkScanner WebServer Ver([\d\.]+)$/) } if @headers["server"] =~ /^NetworkScanner WebServer Ver([\d\.]+)$/
 
 	# Return passive matches
 	m

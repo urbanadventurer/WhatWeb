@@ -36,15 +36,15 @@ def passive
 	m=[]
 
 	# Server # Version Detection
-	m << { :version=>@meta["server"].to_s.scan(/Ruby\/([^\s^\/^\(]+)/).to_s } if @meta["server"].to_s =~ /Ruby\/([^\s^\/^\(]+)/
+	m << { :version=>@headers["server"].to_s.scan(/Ruby\/([^\s^\/^\(]+)/).to_s } if @headers["server"].to_s =~ /Ruby\/([^\s^\/^\(]+)/
 
-	if @meta["server"] =~ /^WEBrick\/[\d\.]+ \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/
+	if @headers["server"] =~ /^WEBrick\/[\d\.]+ \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/
 
 		# WEBrick Version Detection
-		m << { :module=>@meta["server"].scan(/^(WEBrick\/[\d\.]+) \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/) }
+		m << { :module=>@headers["server"].scan(/^(WEBrick\/[\d\.]+) \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/) }
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^WEBrick\/[\d\.]+ \(Ruby\/([\d\.]+)\/[\d]{4}-[\d]{2}-[\d]{2}\)/) }
+		m << { :version=>@headers["server"].scan(/^WEBrick\/[\d\.]+ \(Ruby\/([\d\.]+)\/[\d]{4}-[\d]{2}-[\d]{2}\)/) }
 
 	end
 

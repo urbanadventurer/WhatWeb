@@ -49,7 +49,7 @@ def passive
 	m=[]
 
 	# WWW-Authenticate # realm="SABnzbd"
-	m << { :name=>'HTTP WWW Authenticate header' } if @meta['www-authenticate'] =~ /realm="SABnzbd"/
+	m << { :name=>'HTTP WWW Authenticate header' } if @headers['www-authenticate'] =~ /realm="SABnzbd"/
 
 	# Return passive matches
 	m

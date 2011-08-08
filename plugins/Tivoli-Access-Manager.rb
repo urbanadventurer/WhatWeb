@@ -74,7 +74,7 @@ def passive
 	m=[]
 
 	# WWW-Authenticate # realm="Access Manager for e-business"
-	m << { :name=>'HTTP WWW Authenticate header' } if @meta['www-authenticate'] =~ /realm="Access Manager for e-business"/
+	m << { :name=>'HTTP WWW Authenticate header' } if @headers['www-authenticate'] =~ /realm="Access Manager for e-business"/
 
 	# Return passive matches
 	m

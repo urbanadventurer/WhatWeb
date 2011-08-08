@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^RemotelyAnywhere\/([\d\.]+)$/) } if @meta["server"] =~ /^RemotelyAnywhere\/([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^RemotelyAnywhere\/([\d\.]+)$/) } if @headers["server"] =~ /^RemotelyAnywhere\/([\d\.]+)$/
 
 	# Return passive matches
 	m

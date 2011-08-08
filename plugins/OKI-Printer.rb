@@ -27,10 +27,10 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^OKIDATA-HTTPD\/([^\s]+)$/
+	if @headers["server"] =~ /^OKIDATA-HTTPD\/([^\s]+)$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^OKIDATA-HTTPD\/([^\s]+)$/) }
+		m << { :version=>@headers["server"].scan(/^OKIDATA-HTTPD\/([^\s]+)$/) }
 
 		# Model Detection
 		m << { :model=>@body.scan(/<title>([^<]+)<\/title>/) } if @body =~ /<title>([^<]+)<\/title>/

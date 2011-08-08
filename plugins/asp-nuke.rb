@@ -65,7 +65,7 @@ matches [
 def passive
    #P3P: CP="NOI CUR OUR IND UNI COM NAV INT"
    m=[]   
-   m << {:name=>"P3P Privacy Headers", :certainty=>25 } if @meta["p3p"] == "CP=\"NOI CUR OUR IND UNI COM NAV INT\""
+   m << {:name=>"P3P Privacy Headers", :certainty=>25 } if @headers["p3p"] == "CP=\"NOI CUR OUR IND UNI COM NAV INT\""
    
    m
 end

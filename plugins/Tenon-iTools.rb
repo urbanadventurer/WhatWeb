@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :version=>@meta["server"].scan(/\(iTools ([\d\.]+)[\)]?\/Mac OS X\)/).to_s, :string=>"Mac OS X" } if @meta["server"] =~ /\(iTools ([\d\.]+)[\)]?\/Mac OS X\)/
+	m << { :version=>@headers["server"].scan(/\(iTools ([\d\.]+)[\)]?\/Mac OS X\)/).to_s, :string=>"Mac OS X" } if @headers["server"] =~ /\(iTools ([\d\.]+)[\)]?\/Mac OS X\)/
 
 	m
 

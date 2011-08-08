@@ -73,7 +73,7 @@ def passive
 	m=[]
 
 	# Model Detection # HTTP Server Header
-	m << { :model=>@meta["server"].scan(/^(Si-[A-Za-z\d]{4,10})$/) } if @meta["server"] =~ /^Si-[A-Za-z\d]{4,10}$/
+	m << { :model=>@headers["server"].scan(/^(Si-[A-Za-z\d]{4,10})$/) } if @headers["server"] =~ /^Si-[A-Za-z\d]{4,10}$/
 
 	# Return passive matches
 	m

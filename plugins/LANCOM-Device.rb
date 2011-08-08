@@ -29,16 +29,16 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^LANCOM [^\s]+ .+ [\d\.]+ \/ [\d]{2}\.[\d]{2}\.[\d]{4}$/
+	if @headers["server"] =~ /^LANCOM [^\s]+ .+ [\d\.]+ \/ [\d]{2}\.[\d]{2}\.[\d]{4}$/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^LANCOM [^\s]+ .+ ([\d\.]+) \/ [\d]{2}\.[\d]{2}\.[\d]{4}$/) }
+		m << { :version=>@headers["server"].scan(/^LANCOM [^\s]+ .+ ([\d\.]+) \/ [\d]{2}\.[\d]{2}\.[\d]{4}$/) }
 
 		# Model Detection
-		m << { :model=>@meta["server"].scan(/^LANCOM ([^\s]+) .+ [\d\.]+ \/ [\d]{2}\.[\d]{2}\.[\d]{4}$/) }
+		m << { :model=>@headers["server"].scan(/^LANCOM ([^\s]+) .+ [\d\.]+ \/ [\d]{2}\.[\d]{2}\.[\d]{4}$/) }
 
 		# Device Detection (Wireless Router, VPN, VoIPm etc)
-		m << { :string=>@meta["server"].scan(/^LANCOM [^\s]+ (.+) [\d\.]+ \/ [\d]{2}\.[\d]{2}\.[\d]{4}$/) }
+		m << { :string=>@headers["server"].scan(/^LANCOM [^\s]+ (.+) [\d\.]+ \/ [\d]{2}\.[\d]{2}\.[\d]{4}$/) }
 
 	end
 

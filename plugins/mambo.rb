@@ -92,7 +92,7 @@ def passive
 	end
 
 	# mosvisitor cookie # Also used by joomla
-	m << { :certainty=>75, :name=>"mosvisitor cookie" } if @meta["set-cookie"] =~ /mosvisitor=[0-9]+/ 
+	m << { :certainty=>75, :name=>"mosvisitor cookie" } if @headers["set-cookie"] =~ /mosvisitor=[0-9]+/ 
 
 	# Return passive matches
 	m

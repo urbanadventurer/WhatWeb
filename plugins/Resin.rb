@@ -38,10 +38,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header # Standalone
-	m << { :version=>@meta["server"].scan(/^Resin\/([^\s]+)/), :string=>"Standalone" } if @meta["server"] =~ /^Resin\/([^\s]+)/
+	m << { :version=>@headers["server"].scan(/^Resin\/([^\s]+)/), :string=>"Standalone" } if @headers["server"] =~ /^Resin\/([^\s]+)/
 
 	# Version Detection # HTTP Server Header # Plugin
-	m << { :version=>@meta["server"].scan(/[\s]+Resin\/([^\s]+)/), :string=>"Plugin" } if @meta["server"] =~ /[\s]+Resin\/([^\s]+)/
+	m << { :version=>@headers["server"].scan(/[\s]+Resin\/([^\s]+)/), :string=>"Plugin" } if @headers["server"] =~ /[\s]+Resin\/([^\s]+)/
 
 	# Return passive matches
 	m

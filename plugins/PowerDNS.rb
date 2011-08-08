@@ -26,7 +26,7 @@ def passive
 	m=[]
 
 	# WWW-Authenticate: Basic realm="PowerDNS" 
-	m << { :name=>"WWW-Authenticate realm" } if @meta["www-authenticate"] =~ /^Basic realm="PowerDNS"$/
+	m << { :name=>"WWW-Authenticate realm" } if @headers["www-authenticate"] =~ /^Basic realm="PowerDNS"$/
 
 	# Return passive matches
 	m

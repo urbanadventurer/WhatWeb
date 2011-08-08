@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^(EMS-Entry|ZENT5) V[\d\.]+ Beckmann-GmbH$/
+	if @headers["server"] =~ /^(EMS-Entry|ZENT5) V[\d\.]+ Beckmann-GmbH$/
 
 		m << { :name=>"HTTP Server Header" }
 

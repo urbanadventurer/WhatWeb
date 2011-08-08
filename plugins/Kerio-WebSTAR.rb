@@ -32,22 +32,22 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^(Kerio_)?WebSTAR/
+	if @headers["server"] =~ /^(Kerio_)?WebSTAR/
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^WebSTAR\/([^\s^\(]+)/) } if @meta["server"] =~ /^WebSTAR\/([^\s^\(]+)/
-		m << { :version=>@meta["server"].scan(/^Kerio_WebSTAR\/([^\s^\(]+)/) } if @meta["server"] =~ /^Kerio_WebSTAR\/([^\s^\(]+)/
-		m << { :version=>@meta["server"].scan(/^WebSTAR ([\d\.]+ .+)$/) } if @meta["server"] =~ /^WebSTAR ([\d\.]+ .+)$/
+		m << { :version=>@headers["server"].scan(/^WebSTAR\/([^\s^\(]+)/) } if @headers["server"] =~ /^WebSTAR\/([^\s^\(]+)/
+		m << { :version=>@headers["server"].scan(/^Kerio_WebSTAR\/([^\s^\(]+)/) } if @headers["server"] =~ /^Kerio_WebSTAR\/([^\s^\(]+)/
+		m << { :version=>@headers["server"].scan(/^WebSTAR ([\d\.]+ .+)$/) } if @headers["server"] =~ /^WebSTAR ([\d\.]+ .+)$/
 
 	end
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^4D_WebStar_[A-Z]\//
+	if @headers["server"] =~ /^4D_WebStar_[A-Z]\//
 
 		m << { :name=>"HTTP Server Header" }
 
 		# Version Detection
-		m << { :version=>@meta["server"].scan(/^4D_WebStar_[A-Z]\/([\d\.]+)/) } if @meta["server"] =~ /^4D_WebStar_[A-Z]\/([\d\.]+)/
+		m << { :version=>@headers["server"].scan(/^4D_WebStar_[A-Z]\/([\d\.]+)/) } if @headers["server"] =~ /^4D_WebStar_[A-Z]\/([\d\.]+)/
 
 	end
 

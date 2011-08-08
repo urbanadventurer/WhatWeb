@@ -47,7 +47,7 @@ def passive
 
 	# ZULA_6666cd76f96956469e7be39d750cc7d9 Cookie
 	# 6666cd76f96956469e7be39d750cc7d9 is the md5 hash for "/"
-	m << { :name=>"ZULA_6666cd76f96956469e7be39d750cc7d9 Cookie" } if @meta["set-cookie"] =~ /ZULA_6666cd76f96956469e7be39d750cc7d9=[^;^\s]+;/
+	m << { :name=>"ZULA_6666cd76f96956469e7be39d750cc7d9 Cookie" } if @headers["set-cookie"] =~ /ZULA_6666cd76f96956469e7be39d750cc7d9=[^;^\s]+;/
 
 	# Return passive matches
 	m

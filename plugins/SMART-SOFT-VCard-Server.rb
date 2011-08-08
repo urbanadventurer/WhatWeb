@@ -46,10 +46,10 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^SMART-SOFT VCard HTTP\/SSL server \(([^\)]+)\)$/) } if @meta["server"] =~ /^SMART-SOFT VCard HTTP\/SSL server \(([^\)]+)\)$/
+	m << { :version=>@headers["server"].scan(/^SMART-SOFT VCard HTTP\/SSL server \(([^\)]+)\)$/) } if @headers["server"] =~ /^SMART-SOFT VCard HTTP\/SSL server \(([^\)]+)\)$/
 
 	# Exception header
-	m << { :name=>"Exception header" } if @meta["exception"] =~ /^Directory%20browsing%20not%20allowed$/
+	m << { :name=>"Exception header" } if @headers["exception"] =~ /^Directory%20browsing%20not%20allowed$/
 
 	# Return passive matches
 	m

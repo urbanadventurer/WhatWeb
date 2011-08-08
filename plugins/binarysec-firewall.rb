@@ -35,22 +35,22 @@ def passive
 	m = []
 
 	# X-BinarySEC-Via header
-	unless @meta["x-binarysec-via"].nil?
+	unless @headers["x-binarysec-via"].nil?
 		m << { :name=>"X-BinarySEC-Via header" }
 	end
 
 	# X-BinarySEC-NoCache
-	unless @meta["x-binarysec-nocache"].nil?
+	unless @headers["x-binarysec-nocache"].nil?
 		m << { :name=>"X-BinarySEC-NoCache header" }
 	end
 
 	# Server Header
-	if @meta['server'] =~ /BinarySec/i
+	if @headers['server'] =~ /BinarySec/i
 
 		m << { :name=>"server header" }
 
 		# Version Detection # HTTP Server header
-        	m << { :version=>@meta['server'].scan(/BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/i) } if @meta['server'] =~ /BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/i
+        	m << { :version=>@headers['server'].scan(/BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/i) } if @headers['server'] =~ /BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/i
 	end
 
 	# Return passive matches

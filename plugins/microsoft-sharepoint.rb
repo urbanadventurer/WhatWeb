@@ -96,17 +96,17 @@ def passive
 	m=[]
 
 	# MicrosoftSharePointTeamServices HTTP Header
-	m << { :version=>@meta["microsoftsharepointteamservices"].to_s } unless @meta["microsoftsharepointteamservices"].nil?
+	m << { :version=>@headers["microsoftsharepointteamservices"].to_s } unless @headers["microsoftsharepointteamservices"].nil?
 
 	# x-sharepointhealthscore HTTP Header
-	m << { :name=>"x-sharepointhealthscore HTTP header" } unless @meta["x-sharepointhealthscore"].nil?
+	m << { :name=>"x-sharepointhealthscore HTTP header" } unless @headers["x-sharepointhealthscore"].nil?
 
 	# exires HTTP Header # Quality Assurance is for pussies
 	# http://download.microsoft.com/download/8/5/8/858F2155-D48D-4C68-9205-29460FD7698F/%5BMS-WSSHP%5D.PDF
 	# HTTP Windows SharePoint Services Headers Protocol Specification
 	# Section 2.2.1 # Exires Header:
 	# The Exires [sic] header and its value have no meaning. The protocol server SHOULD use the Expires header instead as specified in [RFC2616] section 14.21.
-	m << { :certainty=>25, :name=>"exires HTTP header" } unless @meta["exires"].nil?
+	m << { :certainty=>25, :name=>"exires HTTP header" } unless @headers["exires"].nil?
 
 	# Return passive matches
 	m

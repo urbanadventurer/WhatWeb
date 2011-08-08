@@ -44,7 +44,7 @@ def passive
 #    Set-Cookie: log_filters=; path=/log/; expires=Sun, 06-Nov-1960 06:12:35 GMT
 
 	# APSCOOKIE and log_filters cookies
-	cookie = @meta['set-cookie'] if @meta.keys.include?('set-cookie')
+	cookie = @headers['set-cookie'] if @headers.keys.include?('set-cookie')
 	if cookie =~ /APSCOOKIE=/ and cookie =~ /log_filters=/
 		m << {:name=>'HTTP Cookie'}
 	end

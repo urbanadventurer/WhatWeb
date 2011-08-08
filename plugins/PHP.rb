@@ -113,30 +113,30 @@ def passive
 	m=[]
 
 	# HTTP # Server # Version Detection
-	m << { :version=>@meta["server"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).to_s } if @meta["server"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
 
 	# HTTP # Server # Module Detection
-	m << { :module=>@meta["server"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).to_s } if @meta["server"] =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
+	m << { :module=>@headers["server"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).to_s } if @headers["server"] =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
 
 	# HTTP # X-Powered-By
-	m << { :version=>@meta["x-powered-by"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).to_s } if @meta["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["x-powered-by"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).to_s } if @headers["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
 
 	# HTTP # X-Powered-By # Module Detection
-	m << { :module=>@meta["x-powered-by"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).to_s } if @meta["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
+	m << { :module=>@headers["x-powered-by"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).to_s } if @headers["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
 
 	# PHP Error # PHP HTTP Header
-	if @meta["php"] =~ /^Error parsing (.+) on line [\d]+$/
+	if @headers["php"] =~ /^Error parsing (.+) on line [\d]+$/
 
 		# Local Filethpath Detection
-		m << { :filepath=>@meta["php"].scan(/^Error parsing (.+) on line [\d]+$/) } unless @meta["php"] =~ /^Error parsing \/php\.ini on line [\d]+$/
+		m << { :filepath=>@headers["php"].scan(/^Error parsing (.+) on line [\d]+$/) } unless @headers["php"] =~ /^Error parsing \/php\.ini on line [\d]+$/
 
 		# Account Detection
-		m << { :account=>@meta["php"].scan(/^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/) } if @meta["php"] =~ /^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/
+		m << { :account=>@headers["php"].scan(/^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/) } if @headers["php"] =~ /^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/
 
 	end
 
 	# PHP Warning Header
-	m << { :name=>"PHP Warning Header" } unless @meta["php warning"].nil?
+	m << { :name=>"PHP Warning Header" } unless @headers["php warning"].nil?
 
 	# Return passive matches
 	m

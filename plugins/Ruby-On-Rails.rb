@@ -33,7 +33,7 @@ def passive
 	m=[]
 	m << {:name=>'5 JS files', :certainty=>75} if @body =~ /javascripts\/prototype\.js\?[0-9]+/ and @body =~ /javascripts\/effects\.js\?[0-9]+/ and @body =~ /javascripts\/dragdrop\.js\?[0-9]+/ and @body =~ /javascripts\/controls\.js\?[0-9]+/ and @body =~ /javascripts\/application\.js\?[0-9]+/
 
-	m << {:name=>"X-Powered-By: Phusion Passenger"} if @meta["x-powered-by"] =~ /Phusion Passenger/ # Phusion is only for rails
+	m << {:name=>"X-Powered-By: Phusion Passenger"} if @headers["x-powered-by"] =~ /Phusion Passenger/ # Phusion is only for rails
 	m
 end
 

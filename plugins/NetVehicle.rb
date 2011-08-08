@@ -38,7 +38,7 @@ def passive
 	m=[]
 
 	# Model Detection # HTTP Server Header
-	m << { :model=>@meta["server"].scan(/^NetVehicle-([A-Z\d]{1,3})/) } if @meta["server"] =~ /^NetVehicle-([A-Z\d]{1,3})/
+	m << { :model=>@headers["server"].scan(/^NetVehicle-([A-Z\d]{1,3})/) } if @headers["server"] =~ /^NetVehicle-([A-Z\d]{1,3})/
 
 	# Return passive matches
 	m

@@ -25,7 +25,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@meta["server"].scan(/^Crystal2 BalancerServer ([\d\.]+)$/) } if @meta["server"] =~ /^Crystal2 BalancerServer ([\d\.]+)$/
+	m << { :version=>@headers["server"].scan(/^Crystal2 BalancerServer ([\d\.]+)$/) } if @headers["server"] =~ /^Crystal2 BalancerServer ([\d\.]+)$/
 
 	# Return passive matches
 	m

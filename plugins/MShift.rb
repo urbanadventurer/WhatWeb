@@ -78,7 +78,7 @@ def passive
 	m=[]
 
 	# dcttype cookie
-	m << { :certainty=>25, :name=>"dcttype cookie" } if @meta["set-cookie"] =~ /^dcttype=1$/
+	m << { :certainty=>25, :name=>"dcttype cookie" } if @headers["set-cookie"] =~ /^dcttype=1$/
 
 	# Return passive matches
 	m

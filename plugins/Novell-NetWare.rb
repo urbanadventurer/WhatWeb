@@ -95,13 +95,13 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	if @meta["server"] =~ /^NetWare/
+	if @headers["server"] =~ /^NetWare/
 
-		if @meta["server"] =~ /^NetWare HTTP Stack$/
+		if @headers["server"] =~ /^NetWare HTTP Stack$/
 			m << { :name=>"HTTP Server Header" }
 		end
 
-		if @meta["server"] =~ /^NetWare-Enterprise-Web-Server\/([^\s]+)$/
+		if @headers["server"] =~ /^NetWare-Enterprise-Web-Server\/([^\s]+)$/
 			m << { :version=>"#{$1}" }
 		end
 
