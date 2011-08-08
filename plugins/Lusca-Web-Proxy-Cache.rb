@@ -25,19 +25,16 @@ examples %w|
 202.181.93.21
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^Lusca$/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^Lusca$/ },
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^Lusca\/LUSCA_HEAD-([^\s]+)$/) } if @headers["server"] =~ /^Lusca\/LUSCA_HEAD-([^\s]+)$/
+# Version Detection
+{ :search=>"headers[server]", :version=>/^Lusca\/LUSCA_HEAD-([^\s]+)$/ },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

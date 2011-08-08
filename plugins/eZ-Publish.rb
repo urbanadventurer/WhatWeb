@@ -61,18 +61,10 @@ matches [
 # Admin # body
 { :text=>"topmargin=\"6\" marginheight=\"6\" leftmargin=\"6\" marginwidth=\"6\" onload=\"MM_preloadImages('/admin/images/ezpublish/redigerminimrk.gif','/admin/images/ezpublish/slettminimrk.gif','/admin/images/ezpublish/downloadminimrk.gif')\">" },
 
+# X-Powered-By Header
+{ :search=>"headers[x-powered-by]", :regexp=>/^eZ [p|P]ublish/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["x-powered-by"] =~ /^eZ [p|P]ublish/
-
-	# Return passive matches
-	m
-end
 
 end
 

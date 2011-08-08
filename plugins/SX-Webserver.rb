@@ -20,18 +20,10 @@ matches [
 { :status=>501, :text=>"<head></head><body><html><h1>Error 501</h1><p>This feature is not implemented.</html></body>\r\n" },
 { :status=>505, :text=>"<head></head><body><html><h1>Error 505</h1><p>HTTP Version not supported.  This server supports HTTP 1.0 and HTTP 1.1.</html></body>\r\n" },
 
+# Version Detection
+{ :search=>"headers[server]", :version=>/^SX Webserver ([\d\.]{1,5})/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header # SX Webserver
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^SX Webserver ([\d\.]{1,5})/
-
-	# Return passive matches
-	m
-end
 
 end
 

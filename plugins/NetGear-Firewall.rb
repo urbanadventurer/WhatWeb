@@ -18,17 +18,13 @@ examples %w|
 66.45.2.228
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^NETGEAR Firewall$/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^NETGEAR Firewall$/ },
 
-	# Return passive matches
-	m
-
-end
+]
 
 end
 

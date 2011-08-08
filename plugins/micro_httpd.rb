@@ -28,16 +28,13 @@ examples %w|
 89.249.219.51
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"].to_s =~ /^[\s]*micro_httpd/i
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/micro_httpd/i },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 
