@@ -19,16 +19,13 @@ examples %w|
 81.25.141.38
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP "Server " Header
-	m << { :name=>"HTTP Server Header" } if @headers["server "] =~ /^Ericsson Television Web server$/
+# HTTP Server Header
+{ :search=>"headers[server ]", :regexp=>/^Ericsson Television Web server$/ },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

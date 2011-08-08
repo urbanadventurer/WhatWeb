@@ -80,18 +80,10 @@ matches [
 # Model Detection # Shark # /meter_information.htm
 { :url=>"/meter_information.htm", :model=>/<td width=108 bgcolor="#B9BEC2"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#990000">&nbsp;[\s\r\n]*Device Type<\/font><\/b><\/td>[\s\r\n]*<td width=150 bgcolor="#FFFFFF"><div align="center"><font color="#000000" size="1" face="Verdana, Arial, Helvetica, sans-serif">[\s\r\n]*([^\r^\n^\s^<]{3,5})[^<]*<\/font><\/div>/, :string=>"Shark" },
 
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^EIG Embedded Web Server$/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^EIG Embedded Web Server$/
-
-	# Return passive matches
-	m
-end
 
 end
 

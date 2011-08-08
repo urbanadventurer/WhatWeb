@@ -27,17 +27,10 @@ matches [
 # Logo
 { :url=>"/images/sb_logo.gif", :md5=>"ffacfeae7e203bd8de5c9da889d217ec" },
 
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^NetShelter\/VPN$/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^NetShelter\/VPN$/
-	# Return passive matches
-	m
-end
 
 end
 

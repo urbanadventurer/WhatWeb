@@ -27,23 +27,16 @@ princeton.edu
 178.237.32.227
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	if @headers['server'] =~ /^Roxen/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^Roxen$/ },
 
-		m << { :name=>"HTTP Server Header" } if @headers['server'] =~ /^Roxen$/
+# Version Detection
+{ :search=>"headers[server]", :version=>/^Roxen\/([^\s]+)$/ },
 
-		# Version Detection # HTTP Server Header
-		m << { :version=>@headers["server"].scan(/^Roxen\/([^\s]+)$/) } if @headers["server"] =~ /^Roxen\/([^\s]+)$/
-
-	end
-
-	# Return passive matches
-	m
-end
+]
 
 end
 

@@ -48,18 +48,10 @@ matches [
 # Model Detection # DVIP # /webpages/index.shtml
 { :url=>"/webpages/index.shtml", :text=>"	<title>DVIP</title>", :model=>"DVIP" },
 
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^ADH-Web$/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^ADH-Web$/
-
-	# Return passive matches
-	m
-end
 
 end
 

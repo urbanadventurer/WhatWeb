@@ -33,17 +33,16 @@ examples %w|
 96.255.255.204
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /<A HREF='http:\/\/www.rackstar.net\/' TITLE='This server is powered by the RackStar Server Appliance OS'>RACKSTAR<\/A>/
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /\(<A HREF=http:\/\/www.rackstar.net\/>RACKSTAR<\/A>\)/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/<A HREF='http:\/\/www.rackstar.net\/' TITLE='This server is powered by the RackStar Server Appliance OS'>RACKSTAR<\/A>/ },
 
-	m
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/\(<A HREF=http:\/\/www.rackstar.net\/>RACKSTAR<\/A>\)/ },
 
-end
+]
 
 end
 

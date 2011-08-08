@@ -30,20 +30,16 @@ examples %w|
 61.194.10.34
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^BlackJumboDog$/
+# HTTP Server Header
+{ :search=>"headers[server]", :regexp=>/^BlackJumboDog$/ },
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^BlackJumboDog Version (.+)$/) } if @headers["server"] =~ /^BlackJumboDog Version (.+)$/
+# Version Detection
+{ :search=>"headers[server]", :version=>/^BlackJumboDog Version (.+)$/ },
 
-	# Return passive matches
-	m
-
-end
+]
 
 end
 
