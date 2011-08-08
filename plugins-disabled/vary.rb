@@ -32,7 +32,7 @@ def passive
 	m=[]
 
 	# Vary HTTP Header
-	m << { :string=>@meta["vary"].to_s } unless @meta["vary"].nil?
+	m << { :string=>@headers["vary"].to_s } unless @headers["vary"].nil?
 
 	# Return passive matches
 	m
