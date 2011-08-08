@@ -39,12 +39,12 @@ def passive
 	m=[]
 
 	# Version Detection # X-Powered-By Header
-	if @meta["x-powered-by"] =~ /^Simbix Framework\/([^\s]+)$/
+	if @headers["x-powered-by"] =~ /^Simbix Framework\/([^\s]+)$/
 		m << { :version=>"#{$1}" }
 	end
 	
 	# Version Detection # X-Simbix-Version Header
-	if @meta["x-simbix-version"] =~ /^([^\s]+)\.YYMMDD-HHMM$/
+	if @headers["x-simbix-version"] =~ /^([^\s]+)\.YYMMDD-HHMM$/
 		m << { :version=>"#{$1}" }
 	end
 
