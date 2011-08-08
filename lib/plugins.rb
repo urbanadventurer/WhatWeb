@@ -85,8 +85,14 @@ class Plugin
                         search_context = target.body # by default
 			search_context = target.raw_response if match[:search] == "all"
 			search_context = target.raw_headers if match[:search] == "headers"
-			search_context = target.headers[$1] if match[:search] =~ /headers\[(.*)\]/ and target.headers[$1]
-			
+			if match[:search] =~ /headers\[(.*)\]/
+				if target.headers[$1]
+					search_context = target.headers[$1]  
+				else
+					return []
+				end
+			end
+
 			unless match[:ghdb].nil?
 				r << match if match_ghdb(match[:ghdb], target.body, target.headers, target.status, target.uri)
 			end
