@@ -17,12 +17,20 @@ examples %w| include-some.net example-websites.com here.com |
 # :regexp        -- it's a regular expression in ruby, eg. /^foobar$/
 # :text          -- case sensitive text
 # :ghdb          -- Google Hack Database. u can use intitle: inurl: -
-# :md5           -- MD5 hash
+# :md5           -- MD5 hash of the body
 # :tagpattern    -- a pattern made by the html entities. fuzzy matching coming soon
 # :url           -- you can combine this with other variables or use by itself
 # :name          -- naming the matches is optional
+# :search	 -- can be "body" (default), "all", "headers", or "headers[x]" for a specific HTTP header
+# :account       -- this is used to return data
 # :version       -- this is used to return data
+# :os       	 -- this is used to return data
+# :module        -- this is used to return data
+# :model       	 -- this is used to return data
 # :string        -- this is used to return data
+# :firmware      -- this is used to return data
+# :filepath      -- this is used to return data
+
 
 # Matches are enclosed in {} brackets and separated by commas
 matches [
@@ -56,7 +64,7 @@ def passive
 	# want some debugging? maybe you'd like to view some variables	
 =begin
   	@body
-  	@meta
+  	@headers
   	@cookies
   	@status
   	@base_uri
@@ -64,7 +72,7 @@ def passive
 	@tagpattern
 	@ip
 =end
-	pp @meta
+	pp @headers
 	pp @status
 	pp @body
 	puts @base_uri.to_s
