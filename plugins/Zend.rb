@@ -10,6 +10,8 @@
 # tomatocms is based on zend framework
 # v2.0 by Andrew Horton
 # Added meta generator match and vendor matches. bug fixes. new random string function
+# v3.0 by Andrew Horton
+# new routine for POST requests
 
 Plugin.define "Zend" do
 author "Aung Khant <http://yehg.net>"
