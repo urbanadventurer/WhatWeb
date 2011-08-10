@@ -153,7 +153,7 @@ class Plugin
 
   	unless @matches.nil?
 	  	@matches.each do |match|
-		        results = make_matches(@target,match)
+		        results+= make_matches(@target,match)
 		end
 	end
         results
@@ -187,8 +187,7 @@ class Plugin
 				  puts "#{@plugin_name} Aggressive: #{aggressivetarget.uri.to_s} [#{aggressivetarget.status}]"
 				end
 
-				r = make_matches(aggressivetarget,match)
-				results +=r
+				results += make_matches(aggressivetarget,match)
 			end
 		end
 

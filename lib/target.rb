@@ -112,7 +112,14 @@ class Target
 		end
 	end
 
+#	def open_url
+#		open_url({:method=>"GET"})
+#	end
+
+#	def open_url(options)
 	def open_url
+
+
 		begin
 			if $USE_PROXY == true
 				http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(uri.host,uri.port)
