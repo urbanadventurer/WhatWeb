@@ -16,6 +16,7 @@ Version 0.4.8-dev Unreleased
 * Targets from input files are now executed ascending order
 * Redesigned and refactored much of Whatweb's code. Introduced the Target class
 * Added context searching for plugin matches[]. Added the matches keyword, :search. Values can be "headers","headers[server]"(or any other HTTP header),"body"(default), "all" (the raw headers + body)
+* Fixed meta refresh redirection but with HTML entities in the URL
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
