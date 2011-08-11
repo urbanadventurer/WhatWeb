@@ -7,7 +7,7 @@ class Target
 	attr_reader :is_url, :is_file
 	attr_accessor :http_options
 
-	@@meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
+	@@meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"'>]+)['"]?[^>]*>/i
 
 
 	def inspect
@@ -18,6 +18,9 @@ class Target
 		@target
 	end
 
+	def Target.meta_refresh_regex
+		@@meta_refresh_regex
+	end
 	def is_file?
 		@is_file
 	end
@@ -197,6 +200,7 @@ class Target
 
 		if @@meta_refresh_regex =~ @body
 			metarefresh=@body.scan(@@meta_refresh_regex).first.to_s
+			metarefresh=decode_html_entities(metarefresh)
 			newtarget_m=URI.join(@target,metarefresh).to_s # this works for relative and absolute
 		end
 
