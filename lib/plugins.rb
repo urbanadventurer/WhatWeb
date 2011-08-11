@@ -115,7 +115,7 @@ class Plugin
 
 			unless match[:regexp_compiled].nil?
 				[:regexp,:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
-					if !match[symbol].nil? and match[symbol].class==Regexp
+					if match[symbol] and match[symbol].class==Regexp
 						regexpmatch = search_context.scan(match[:regexp_compiled])
 				                unless regexpmatch.empty?
 				                        m = match.dup
