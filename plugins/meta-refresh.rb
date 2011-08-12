@@ -36,9 +36,23 @@ www.cms.il.gov/iisradio/
 matches [
 
 # Extract URL from Meta Tag
-{ :string=>/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i },
+
 
 ]
+
+def passive
+
+	x=@body.scan(Target::meta_refresh_regex).flatten
+
+	unless x.empty?
+		meta_refresh= x.first
+		meta_refresh = decode_html_entities(meta_refresh)
+
+		[{:string=>meta_refresh}]
+	else
+		[]
+	end
+end
 
 end
 

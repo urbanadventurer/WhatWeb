@@ -10,6 +10,8 @@
 # tomatocms is based on zend framework
 # v2.0 by Andrew Horton
 # Added meta generator match and vendor matches. bug fixes. new random string function
+# v3.0 by Andrew Horton
+# new routine for POST requests
 
 Plugin.define "Zend" do
 author "Aung Khant <http://yehg.net>"
@@ -47,76 +49,6 @@ matches [
 
 ]
 
-# Andrew Horton: this really sux. plugins shouldn't need to do this...
-def http_request(target,method='post',post_data='whatweb')
-	# follow 301's
-	begin
-		uri=URI.parse(target)
-		path=uri.path
-		path="/" if uri.path==""
-		query=uri.query
-		
-		if $USE_PROXY == true
-			http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(uri.host,uri.port)
-		else
-			http=Net::HTTP.new(uri.host,uri.port)
-		end
-		
-		# set timeouts
-		http.open_timeout = $HTTP_OPEN_TIMEOUT
-		http.read_timeout = $HTTP_READ_TIMEOUT
-
-
-		# if it's https://
-		# i wont worry about certificates, verfication, etc
-		if uri.class == URI::HTTPS
-			http.use_ssl = true	
-			http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
-		end
-		case method
-			when 'get'
-			  req=Net::HTTP::Get.new(path + (query.nil? ? "" : "?" + query ) ,{"User-Agent"=>$USER_AGENT})
-			when 'post'
-			  req=Net::HTTP::Post.new(path ,{"User-Agent"=>$USER_AGENT})
-			  req.set_form_data(post_data)	
-		end 
-		
-		res=http.request(req)
-		
-		headers={}; res.each_header {|x,y| headers[x]=y }
-		body=res.body
-		status=res.code.to_i
-		cookies=res.get_fields('set-cookie')
-		
-	rescue SocketError => err
-		error(target + " ERROR: Socket error #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue TimeoutError => err
-		error(target + " ERROR: Timed out #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue EOFError => err
-		error(target + " ERROR: EOF error #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue StandardError => err		
-		err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-		error(target + " ERROR: #{err}")
-		return [0, nil, nil, nil,nil]
-	rescue => err
-		error(target + " ERROR: #{err}")
-		return [0, nil, nil, nil,nil]
-	end
-
-
-	begin		
-		ip=IPSocket.getaddress(uri.host)
-	rescue StandardError => err		
-		err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-		error(target + " ERROR: #{err}")
-		return [0, nil, nil, nil,nil]
-	end
-
-	[status,uri,ip,body,headers,cookies]
-end
 
 def passive
 # X-Powered-By=Zend Framework
@@ -158,10 +90,13 @@ def aggressive
 #<p>An application error occured!</p>
 
 	m=[]
-	target = URI.join(@base_uri.to_s).to_s
-	status,url,ip,body,headers=http_request(target,'post')
-	unless body.nil?
-		if body =~ /<h1>Application error!<\/h1>(\r\n|\n)<p>An application error occured!<\/p>/
+	aggressive_target = Target.new(@base_uri.to_s)
+	aggressive_target.http_options={:method=>"POST", :data=>"whatweb=true"}
+	aggressive_target.open
+	# open_url
+
+	unless aggressive_target.body.nil?
+		if aggressive_target.body =~ /<h1>Application error!<\/h1>(\r\n|\n)<p>An application error occured!<\/p>/
 			m << {:string=>"Invalid Post Method"}
 		end
 	end
@@ -169,8 +104,5 @@ def aggressive
 end
 
 end
-
-
-
 
 

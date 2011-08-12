@@ -128,7 +128,7 @@ files=[
 {:version=>"3.1", :path=>"readme.html", :md5=>'f01635ffca23e49e01f47e98553ea75d' },
 {:version=>"3.1.1", :path=>"readme.html", :md5=>'d74be699794f7fd969232bfe73c0ab04' },
 {:version=>"3.1.2", :path=>"readme.html", :md5=>'20f882b08b2804bc7431c0866a8999d1' },
-
+{:version=>"3.2.1", :path=>"readme.html", :md5=>'98d3f05ff1e321dbd58ad154cc95e569' },
 ]
 
 	# Fetch and hash files

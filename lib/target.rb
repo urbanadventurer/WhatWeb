@@ -5,8 +5,9 @@ class Target
 	attr_reader :md5sum
 	attr_reader :tag_pattern
 	attr_reader :is_url, :is_file
+	attr_accessor :http_options
 
-	@@meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"^'^>]+)['"]?[^>]*>/i
+	@@meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"'>]+)['"]?[^>]*>/i
 
 
 	def inspect
@@ -17,6 +18,9 @@ class Target
 		@target
 	end
 
+	def Target.meta_refresh_regex
+		@@meta_refresh_regex
+	end
 	def is_file?
 		@is_file
 	end
@@ -28,6 +32,7 @@ class Target
 	def initialize(target=nil)
 		@target=target
 		@headers={}
+		@http_options={:method=>"GET"}
 #		@status=0
 
 		if @target =~ /^http[s]?:\/\//
@@ -63,7 +68,7 @@ class Target
 		if self.is_file?
 			open_file
 		else
-			open_url
+			open_url(@http_options)
 		end
 
 		## after open 
@@ -112,14 +117,7 @@ class Target
 		end
 	end
 
-#	def open_url
-#		open_url({:method=>"GET"})
-#	end
-
-#	def open_url(options)
-	def open_url
-
-
+	def open_url(options)
 		begin
 			if $USE_PROXY == true
 				http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(uri.host,uri.port)
@@ -139,8 +137,18 @@ class Target
 			end
 			
 			getthis = @uri.path + (@uri.query.nil? ? "" : "?" + @uri.query)
-	
-			req=Net::HTTP::Get.new(getthis, $CUSTOM_HEADERS)
+			req=nil
+
+			if options[:method] == "GET"
+				req=Net::HTTP::Get.new(getthis, $CUSTOM_HEADERS)
+			end
+			if options[:method] == "HEAD"
+				req=Net::HTTP::Head.new(getthis, $CUSTOM_HEADERS)
+			end		
+			if options[:method] == "POST"
+				req=Net::HTTP::Post.new(getthis, $CUSTOM_HEADERS)
+	                        req.set_form_data(options[:data])
+			end
 
 			if $BASIC_AUTH_USER	
 				req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
@@ -184,6 +192,7 @@ class Target
 		end
 	end
 
+
 	def get_redirection_target
 		newtarget_m=nil
 		newtarget_h=nil
@@ -191,6 +200,7 @@ class Target
 
 		if @@meta_refresh_regex =~ @body
 			metarefresh=@body.scan(@@meta_refresh_regex).first.to_s
+			metarefresh=decode_html_entities(metarefresh)
 			newtarget_m=URI.join(@target,metarefresh).to_s # this works for relative and absolute
 		end
 

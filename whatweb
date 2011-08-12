@@ -165,6 +165,13 @@ def make_tag_pattern(b)
 		}.compact.join(",")
 end
 
+def decode_html_entities(s)
+	t = s.dup
+	html_entities = { "&quot;"=>'"', "&apos;"=>"'", "&amp;"=>"&", "&lt;"=>"<", "&gt;"=>">" }
+	html_entities.each_pair {|from,to| t.gsub!(from,to) }
+	t
+end
+
 
 def certainty_to_words(p)
 	case p
