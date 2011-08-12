@@ -87,7 +87,7 @@ class Plugin
 			search_context = target.raw_headers if match[:search] == "headers"
 			if match[:search] =~ /headers\[(.*)\]/
 				if target.headers[$1]
-					search_context = target.headers[$1]  
+					search_context = target.headers[$1]
 				else
 					return []
 				end
@@ -120,10 +120,13 @@ class Plugin
 				                unless regexpmatch.empty?
 				                        m = match.dup
 				                        m[symbol] = regexpmatch.map {|eachmatch|
-									if match[:offset]
+
+									if eachmatch.is_a?(Array) and match[:offset]
 										eachmatch[match[:offset]]
-									else
+									elsif eachmatch.is_a?(Array)
 										eachmatch.first
+									elsif eachmatch.is_a?(String)
+										eachmatch
 									end
 								}.flatten.sort.uniq
 				                        r << m
@@ -131,7 +134,6 @@ class Plugin
 					end
 				end
 			end
-		       
        			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
 			# if :status is present then check that @status matches
 
