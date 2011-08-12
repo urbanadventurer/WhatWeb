@@ -203,7 +203,7 @@ def match_ghdb(ghdb, body, meta, status, base_uri)
 	if s =~ /intitle:/i
 		# extract either the next word or the following words enclosed in "s, it can't possibly be both
 		intitle = (s.scan(/intitle:"([^"]*)"/i) + s.scan(/intitle:([^"]\w+)/i)).to_s
-		matches << ((body =~ /<title>[^<]*#{intitle}[^<]*<\/title>/i).nil? ? false : true)
+		matches << ((body =~ /<title>[^<]*#{Regexp.escape(intitle)}[^<]*<\/title>/i).nil? ? false : true)
 		# strip out the intitle: part
 		s=s.gsub(/intitle:"([^"]*)"/i,'').gsub(/intitle:([^"]\w+)/i,'')
 	end
@@ -212,16 +212,16 @@ def match_ghdb(ghdb, body, meta, status, base_uri)
 		filetype = (s.scan(/filetype:"([^"]*)"/i) + s.scan(/filetype:([^"]\w+)/i)).to_s
 		# lame method: check if the URL ends in the filetype
 		unless base_uri.nil?
-			matches << ((base_uri.path.split("?")[0] =~ /#{filetype}$/i).nil? ? false : true)
+			matches << ((base_uri.path.split("?")[0] =~ /#{Regexp.escape(filetype)}$/i).nil? ? false : true)
 		end
 		s=s.gsub(/filetype:"([^"]*)"/i,'').gsub(/filetype:([^"]\w+)/i,'')
 	end
 
 	if s =~ /inurl:/i
-		inurl = (s.scan(/inurl:"([^"]*)"/i) + s.scan(/inurl:([^"]\w+)/i)).flatten	
+		inurl = (s.scan(/inurl:"([^"]*)"/i) + s.scan(/inurl:([^"]\w+)/i)).flatten
 		# can occur multiple times.
-		inurl.each {|x| matches << ((base_uri.to_s =~ /#{inurl}/i).nil? ? false : true)  }
-		# strip out the filetype: part
+		inurl.each {|x| matches << ((base_uri.to_s =~ /#{Regexp.escape(x)}/i).nil? ? false : true)  }
+		# strip out the inurl: part
 		s=s.gsub(/inurl:"([^"]*)"/i,'').gsub(/inurl:([^"]\w+)/i,'')
 	end
 
@@ -235,10 +235,10 @@ def match_ghdb(ghdb, body, meta, status, base_uri)
 		# does it start with a - ?
 		if w[0..0] == '-'
 			# reverse true/false if it begins with a -
-			matches << ((body =~ /#{w[1..-1]}/i).nil? ? true : false) 
+			matches << ((body =~ /#{Regexp.escape(w[1..-1])}/i).nil? ? true : false) 
 		else
 			w = w[1..-1] if w[0..0] == '+' # if it starts with +, ignore the 1st char
-			matches << ((body =~ /#{w}/i).nil? ? false : true)
+			matches << ((body =~ /#{Regexp.escape(w)}/i).nil? ? false : true)
 		end	
 	end
 
@@ -569,7 +569,7 @@ end
 
 plugin_selection=nil
 use_custom_plugin=false
-use_custom_grep_plugin=true
+use_custom_grep_plugin=false
 input_file=nil
 output_list = []
 mongo={}
@@ -856,10 +856,8 @@ end
 $semaphore=Mutex.new
 Thread.abort_on_exception = true if $DEBUG
 
-while thistarget = next_target
-		Thread.new do
-			# if u swap around the following lines the target gets confused. idk why.
-			
+while t = next_target
+		Thread.new(t) do |thistarget|
 			begin
 				target = Target.new(thistarget) # we set the target within the thread
 			rescue => err

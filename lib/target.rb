@@ -103,9 +103,9 @@ class Target
 			for k in 1...pageheaders.length
 				section=pageheaders[k].split(/:/).first.to_s.downcase
 				if section =~ /^set-cookie$/i
-					@cookies << pageheaders[k].scan(/:[\s]*(.+)$/).to_s
+					@cookies << pageheaders[k].scan(/:[\s]*(.+)$/).flatten.first
 				else
-					@headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).to_s
+					@headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).flatten.first
 				end
 			end
 			@headers["set-cookie"] = @cookies.join("\n") unless @cookies.nil? or @cookies.empty?
