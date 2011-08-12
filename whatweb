@@ -569,7 +569,7 @@ end
 
 plugin_selection=nil
 use_custom_plugin=false
-use_custom_grep_plugin=true
+use_custom_grep_plugin=false
 input_file=nil
 output_list = []
 mongo={}
