@@ -104,11 +104,12 @@ matches [
 def passive
 	m=[]
 
-	# window.location = host/LEAP/error.lasso JavaScript
-	if @body =~ Regexp.new('if \(ls == lw.length\) window.location = "http[s]?:\/\/'+Regexp.escape(@base_uri.host)+'\/LEAP\/error.lasso";')
-		m << { :name=>"/LEAP/error.lasso JavaScript" }
+	if @base_uri.host
+			# window.location = host/LEAP/error.lasso JavaScript
+		if @body =~ Regexp.new('if \(ls == lw.length\) window.location = "http[s]?:\/\/'+Regexp.escape(@base_uri.host)+'\/LEAP\/error.lasso";')
+			m << { :name=>"/LEAP/error.lasso JavaScript" }
+		end
 	end
-
 	# /LEAP/ # 401 # www-authenticate
 	if @status == 401 and @headers["www-authenticate"] =~ /^Basic realm="LEAP"$/ and @base_uri.path =~ /^\/LEAP\//
 		m << { :name=>"/LEAP/ www-authenticate" }
