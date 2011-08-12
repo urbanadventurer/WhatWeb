@@ -140,7 +140,7 @@ if [[ -z "$QUERY" ]]; then
 		echo "[-] No query specified. Loading Google queries for $APP" >&2
 	fi
 
-	DORKS=`"$WHATWEB" -g "$APP"`
+	DORKS=`"$WHATWEB" --dorks "$APP"`
 
 	# Quit if no dorks were returned
 	if [[ -z "$DORKS" ]]; then
