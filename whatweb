@@ -856,10 +856,8 @@ end
 $semaphore=Mutex.new
 Thread.abort_on_exception = true if $DEBUG
 
-while thistarget = next_target
-		Thread.new do
-			# if u swap around the following lines the target gets confused. idk why.
-			
+while t = next_target
+		Thread.new(t) do |thistarget|
 			begin
 				target = Target.new(thistarget) # we set the target within the thread
 			rescue => err
