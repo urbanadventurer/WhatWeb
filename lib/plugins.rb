@@ -392,7 +392,6 @@ for adding/removing sets of plugins.
 			"
 		end
 
-
 		begin
 			# open tmp file
 			f=Tempfile.new('whatweb-custom-plugin')
