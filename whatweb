@@ -500,13 +500,14 @@ PLUGINS:
   --list-plugins, -l\tList the plugins
   --info-plugins, -I\tDisplay information for all plugins. Optionally search
 \t\t\twith keywords in a comma delimited list.
+  --grep, -g\t\tSearch for a string. Reports in a plugin called Grep
   --custom-plugin\tDefine a custom plugin called Custom-Plugin,
 \t\t\tExamples: \":text=>'powered by abc'\"
 \t\t\t\":regexp=>/powered[ ]?by ab[0-9]/\"
 \t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
 \t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
 \t\t\t\"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}\"
-  --dorks, -g <plugin name>\tReturns google dorks for the selected plugin
+  --dorks\t\t<plugin name>\tReturns google dorks for the selected plugin
 
 LOGGING & OUTPUT:
   --verbose, -v\t\tIncrease verbosity, use twice for plugin development.
@@ -568,6 +569,7 @@ end
 
 plugin_selection=nil
 use_custom_plugin=false
+use_custom_grep_plugin=true
 input_file=nil
 output_list = []
 mongo={}
@@ -581,7 +583,7 @@ opts = GetoptLong.new(
       [ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
       [ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
-      [ '-g','--dorks', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--dorks', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-e','--example-urls', GetoptLong::NO_ARGUMENT ],
       [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
@@ -611,6 +613,7 @@ opts = GetoptLong.new(
       [ '--url-suffix', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--url-pattern', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--custom-plugin', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '-g','--grep', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--open-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--header','-H', GetoptLong::REQUIRED_ARGUMENT ],
@@ -636,7 +639,7 @@ begin
 				PluginSupport.load_plugins
 				PluginSupport.plugin_info(arg.split(","))
 				exit
-			when '-g','--dorks'
+			when '--dorks'
 				PluginSupport.load_plugins
 				PluginSupport.plugin_dorks(arg)
 				exit
@@ -747,8 +750,10 @@ begin
 				$URL_SUFFIX=arg
 			when '--url-pattern'
 				$URL_PATTERN=arg
-			when '--custom-plugin'				
+			when '--custom-plugin'
 				use_custom_plugin=true if PluginSupport.custom_plugin(arg)
+			when '--grep','-g'
+				use_custom_grep_plugin=true if PluginSupport.custom_plugin(arg,"grep")
 			when '--follow-redirect'	
 				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
 					$FOLLOW_REDIRECT=arg.downcase
@@ -802,6 +807,7 @@ end
 
 ### PLUGINS
 plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection
+plugin_selection += ",Grep" if use_custom_grep_plugin and plugin_selection
 $plugins_to_use = PluginSupport.load_plugins(plugin_selection ) # load all the plugins
 
 # sanity check # no plugins?

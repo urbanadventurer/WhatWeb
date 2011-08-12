@@ -18,6 +18,7 @@ Version 0.4.8-dev Unreleased
 * Added context searching for plugin matches[]. Added the matches keyword, :search. Values can be "headers","headers[server]"(or any other HTTP header),"body"(default), "all" (the raw headers + body)
 * Added methods for aggressive plugins to send HEAD and POST requests
 * Fixed meta refresh redirection but with HTML entities in the URL
+* Added --grep option to be easier than --custom-plugin. -g is now for grep, not google dorks. (Requested by Scott Bell)
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes

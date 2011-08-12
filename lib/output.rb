@@ -749,6 +749,7 @@ class OutputSQL < Output
 	
 		# plugins table
 		@f.puts "INSERT INTO plugins (name) VALUES ('Custom-Plugin');"
+		@f.puts "INSERT INTO plugins (name) VALUES ('Grep');"
 
 		Plugin::registered_plugins.each do |n,p|
 			@f.puts "INSERT INTO plugins (name) VALUES (#{ escape_for_sql(n) });"

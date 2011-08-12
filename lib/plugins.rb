@@ -356,29 +356,42 @@ for adding/removing sets of plugins.
 
 
 
-	def PluginSupport.custom_plugin(c)
-		# define a custom plugin on the cmdline
-		# ":text=>'powered by abc'" or
-		# "{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
+	def PluginSupport.custom_plugin(c,*option)
 
-		# then it's ok..
-		if c =~ /:(text|ghdb|md5|regexp|tagpattern)=>[\/'"].*/
-			matches="matches [\{#{c}\}]"
+		if option == ["grep"]
+			matches="matches [:text=>\"#{c}\"]"
+
+			custom="Plugin.define \"Grep\" do
+			author \"Unknown\"
+			description \"User defined\"
+			#{matches}
+			end
+			"
+		else
+			# define a custom plugin on the cmdline
+			# ":text=>'powered by abc'" or
+			# "{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
+
+			# then it's ok..
+			if c =~ /:(text|ghdb|md5|regexp|tagpattern)=>[\/'"].*/
+				matches="matches [\{#{c}\}]"
+			end
+
+			# this isn't checked for sanity... loading plugins = cmd exec anyway
+			if c =~ /\{.*\}/
+				matches="matches [#{c}]"
+			end
+
+			abort("Invalid custom plugin syntax: #{c}") if matches.nil?
+
+			custom="Plugin.define \"Custom-Plugin\" do
+			author \"Unknown\"
+			description \"User defined\"
+			#{matches}
+			end
+			"
 		end
 
-		# this isn't checked for sanity... loading plugins = cmd exec anyway
-		if c =~ /\{.*\}/
-			matches="matches [#{c}]"
-		end
-
-		abort("Invalid custom plugin syntax: #{c}") if matches.nil?
-
-		custom="Plugin.define \"Custom-Plugin\" do
-		author \"Unknown\"
-		description \"User defined\"
-		#{matches}
-		end
-		"
 
 		begin
 			# open tmp file
