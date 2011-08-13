@@ -29,7 +29,6 @@ Version 0.4.7 Released April 5th 2011
 * Removed certainty info from verbose output unless certainty <100
 * Bugfixes for error reporting
 * Updated some error messages
-* Disallow simultaneous use of aggressive level 3+ and recursive spidering
 * Changed default open and read timeouts to 15 and 30 seconds respectively
 * Updated slow plugins
 * Added plugins: TVersity, Ultimate-Bulletin-Board, 

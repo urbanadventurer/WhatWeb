@@ -29,8 +29,6 @@ Features:
 .TP
 	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB, SQL.
 .TP
-	* Recursive web spidering
-.TP
 	* Proxy support including TOR
 .TP
 	* Custom HTTP headers
@@ -67,18 +65,6 @@ Identify URLs found in FILE
 
 4 (Heavy) - Trigger aggressive functions for all plugins. Guess a lot of URLs like Nikto.
 
-.TP
-.B \-\-recursion \-r
-Follow links recursively. Only follows links under the path (default: off)
-.TP
-.B \-\-depth \-d
-Maximum recursion depth (default: 10)
-.TP
-.B \-\-max-links \-m
-Maximum number of links to follow on one page (default: 250)
-.TP
-.B \-\-spider-skip-extensions
-Redefine extensions to skip. (default: zip,gz,tar,jpg,exe,png,pdf)
 .TP
 .B \-\-list-plugins \-l
 List the plugins
@@ -234,8 +220,6 @@ Display version information.
 
 .SH BUGS
 WhatWeb is not compatible with Ruby 1.9
-
-Do not use aggressive plugins with recursive site crawling. 
 
 Logging modes append to the user-selected log file by default.
  Appending will result in malformed XML due to multiple \<xml\> tags
