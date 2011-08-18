@@ -4,57 +4,79 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-08-18 # Brendan Coles <bcoles@gmail.com> #
+# Added a few matches
+##
+
 Plugin.define "PHP-Fusion" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04 
-version "0.1"
-description "PHP-Fusion, a light-weight open-source content management system (CMS). PHP-Fusion is written in PHP and MySQL and includes a simple, comprehensive adminstration system. The most common features you would expect to see in many other CMS packages are included in PHP-Fusion. - homepage:http://www.php-fusion.co.uk/"
-examples %w|
-http://www.php-fusion.co.uk/
-http://www.phpfusionstyle.com/
-http://www.phpfusionmods.com/
-http://www.php-fusion.nu/
-http://www.phpfusion-nederlands.info/
-http://www.phpfusion.cz/
-http://www.php-fusion.pl/
-http://php-fusion7.ru/
-http://serverheaven.net/
-http://esports-angelz.co.cc/
-http://alttz.eu5.org/
-http://www.caranet.co.uk/
-http://www.vucjak.com/
-http://www.moremusic.es/
-http://www.islamiyete.com/
-http://www.alltube.pl/
-http://www.kouelohab.com/
-http://www.egitimfakultesi.net/
-http://www.liendoi.net/
-http://www.lordoftheringsonline.net/
-http://www.whisperwillow.com/
-http://www.wethepeoplewillnotbechipped.com/main/
-http://www.neilhague.com/
-http://www.onepiecenakama.pl/
-|
+version "0.2"
+description "PHP-Fusion, a light-weight open-source content management system (CMS) - Requires: PHP and MySQL - Homepage: http://www.php-fusion.co.uk/"
 
-matches [
+# ShodanHQ results as at 2011-08-18 #
+# 1,668 for fusion_visited=yes
+# 4 for fusion_visited= -yes
 
-# About 57,800,000 results @ 2010-06-02
-{:name=>'GHDB: "Powered by PHP-Fusion copyright" +intitle:News',
-:certainty=>75,
-:ghdb=>'"Powered by PHP-Fusion copyright" +intitle:News'
-},
-
-{:name=>"powered by text",
-:text=>"Powered by <a href='http://www.php-fusion.co.uk'>PHP-Fusion</a> copyright &copy; 2002 - "
-}
-
+# Dorks #
+dorks [
+'"Powered by PHP-Fusion copyright" +intitle:News'
 ]
 
-# Set-Cookie: fusion_visited=yes; expires=Thu, 02-Jun-2011 11:17:49 GMT; path=/
-def passive
-        m=[]
-        m << {:name=>"fusion_visited Cookie" } if @headers["set-cookie"] =~ /fusion_visited=/
-	m
-end
+# Examples #
+examples %w|
+www.phpfusionstyle.com
+www.phpfusionmods.com
+www.php-fusion.nu
+www.phpfusion-nederlands.info
+www.phpfusion.cz
+www.php-fusion.pl
+php-fusion7.ru
+serverheaven.net
+esports-angelz.co.cc
+alttz.eu5.org
+www.caranet.co.uk
+www.vucjak.com
+www.moremusic.es
+www.islamiyete.com
+www.kouelohab.com
+www.liendoi.net
+www.whisperwillow.com
+www.wethepeoplewillnotbechipped.com/main/
+www.neilhague.com
+www.onepiecenakama.pl
+www.diptera.info
+www.valeriovendrame.it
+oak.conncoll.edu/~phc/phpfusion/
+bingdev.binghamton.edu/vpma/
+www.isa.pdx.edu/fusion/
+oregonstate.edu/groups/india/
+elsci.coe.nau.edu
+students.sabanciuniv.edu/~mbilal/webdeneme/php-fusion-7-00-2/files/
+|
+
+# Matches #
+matches [
+
+# GHDB # "Powered by PHP-Fusion copyright" +intitle:News'
+{ :certainty=>75, :ghdb=>'"Powered by PHP-Fusion copyright" +intitle:News' },
+
+# Year Detection # powered by text
+{ :string=>/Powered by <a href='http:\/\/www\.php-fusion\.co\.uk'>PHP-Fusion<\/a> copyright &copy; 2002 - ([\d]{4})/ },
+
+# Profile page # profile.php
+{ :text=>"<td align='right' class='tbl1 profile_user_level'><!--profile_user_level-->" },
+{ :text=>"<td align='right' class='profile_user_level tbl1'><!--profile_user_level-->" },
+{ :text=>"class='tbl profile_user_avatar'><!--profile_user_avatar--><img src='images/avatars/" },
+{ :text=>"<td align='right' class='tbl1 profile_user_name'><!--profile_user_name-->" },
+{ :text=>"<td align='right' class='profile_user_name tbl1'><!--profile_user_name-->" },
+
+# HTML Comment
+{ :certainty=>75, :regexp=>/<!--counter-->[\d,]+ unique visits</ },
+
+# fusion_visited Cookie
+{ :search=>"headers[set-cookie]", :name=>"fusion_visited Cookie", :regexp=>/fusion_visited=/ },
+
+]
 
 end
 
