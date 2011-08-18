@@ -21,7 +21,27 @@ dorks [
 ]
 
 # Examples #
-examples %w|http://phpbbmodders.net/board/ http://smartor.is-root.com/forum/ http://narutoc.phpbbnow.com/ http://www.bikeradar.com/forum/index.php http://forum.djmag.com/ http://www.rotationz.be/forum/ http://www.sgscwelisten.com/forum/ http://www.globalhardstyle.com/forum/ http://www.soapforum.co.uk/ www.ostriches.org/forum/ forum.comicostrich.com forum.ectune.com pokerforums.fulltiltpoker.com www.bettertransport.org.nz/forum/ back2basics.hiphopnz.com/ www.oldschool.co.nz/|
+examples %w|
+phpbbmodders.net/board/
+smartor.is-root.com/forum/
+narutoc.phpbbnow.com
+www.bikeradar.com/forum/index.php
+forum.djmag.com
+www.rotationz.be/forum/
+www.sgscwelisten.com/forum/
+www.globalhardstyle.com/forum/
+www.soapforum.co.uk
+www.ostriches.org/forum/
+forum.comicostrich.com
+forum.ectune.com
+pokerforums.fulltiltpoker.com
+www.bettertransport.org.nz/forum/
+back2basics.hiphopnz.com
+www.oldschool.co.nz
+mazda-auto.ru
+4x4drive.ru.spnet.ru
+129.118.162.211
+|
 
 =begin
 
@@ -58,14 +78,15 @@ matches [
 {:name=>"In total there are x users online ::",
 :regexp=>/In total there are <b>[0-9]+<\/b> users online :: [0-9]+ Registered, [0-9]+ Hidden and [0-9]+ Guests/},
 
+# Version Detection # Cookie
+{ :search=>"headers[set-cookie]", :version=>/phpbb([\d])mysql_(data=a%3A|sid=[a-f\d]{32};)/ },
+
 ]
 
 # Passive #
 def passive
 	m=[]
-	
-	m << {:name=>"phpbb2mysql_data cookie", :version=>"2" } if @headers["set-cookie"] =~ /phpbb2mysql_data/i
-	
+
 	if @headers["set-cookie"] =~ /([^ ]+)_u=1; expires/
 		p=@headers["set-cookie"].scan(/([^ ]+)_u=1; expires/).to_s
 		m << {:name=>"phpbb3 _u, _k, _sid cookies", :version=>"3" } if @headers["set-cookie"] =~ /#{p}_u=.*#{p}_k=.*#{p}_sid=[0-9a-z]{32}/
