@@ -7,7 +7,7 @@
 Plugin.define "4D" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.1"
-description "In one integrated environment, 4D lets you harness the power of a formidable database engine, design world class applications, and get them into your users' hands. - Homepage: http://www.4d.com/products.html"
+description "4D web application deployment server  - Homepage: http://www.4d.com/products.html"
 
 # ShodanHQ results as at 2011-04-11 #
 # 431 for 4D_v11_SQL
@@ -15,7 +15,6 @@ description "In one integrated environment, 4D lets you harness the power of a f
 # Examples #
 examples %w|
 60.164.175.210
-62.176.230.120
 128.227.160.179
 205.221.40.10
 88.37.190.35
@@ -24,16 +23,13 @@ examples %w|
 216.139.201.206
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^4D_v[\d]{1,2}_SQL\/([\d\.]+)$/) } if @headers["server"] =~ /^4D_v[\d]{1,2}_SQL\/([\d\.]+)$/
+# Version Detection # HTTP Server Header
+{ :search=>"headers[server]", :version=>/^4D_v[\d]{1,2}(_SQL)?\/([\d\.]+)$/, :offset=>1 },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 
