@@ -29,16 +29,13 @@ examples %w|
 216.174.158.220
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^WebSitePro\/([^\s]+)/) } if @headers["server"] =~ /^WebSitePro\/([^\s]+)/
+# Version Detection # HTTP Server Header
+{ :search=>"headers[server]", :version=>/^WebSitePro\/([^\s]+)/ },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 
