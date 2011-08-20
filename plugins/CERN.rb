@@ -35,17 +35,13 @@ examples %w|
 84.19.182.97
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^CERN\/([^\s^\r^\n]+)/) } if @headers["server"] =~ /^CERN\/([^\s^\r^\n]+)/
+# Version Detection # HTTP Server Header
+{ :search=>"headers[server]", :version=>/^CERN\/([^\s]+)/ },
 
-	# Return passive matches
-	m
-
-end
+]
 
 end
 
