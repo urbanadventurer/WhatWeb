@@ -155,7 +155,6 @@ class Target
 			end
 			res=http.request(req)
 			@raw_headers=http.raw.join("\n")
-		
 			@headers={}; res.each_header {|x,y| @headers[x]=y }
 			@headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless @headers["set-cookie"].nil?
 			@body=res.body
@@ -199,7 +198,7 @@ class Target
 		newtarget=nil			
 
 		if @@meta_refresh_regex =~ @body
-			metarefresh=@body.scan(@@meta_refresh_regex).first.to_s
+			metarefresh=@body.scan(@@meta_refresh_regex).flatten.first
 			metarefresh=decode_html_entities(metarefresh)
 			newtarget_m=URI.join(@target,metarefresh).to_s # this works for relative and absolute
 		end

@@ -226,7 +226,7 @@ class PluginSupport
 			error("Error: Failed to load #{f}: syntax error")
 		rescue SystemExit, Interrupt
 			error("ERROR: Failed to load plugins: Interrupted")
-			if $DEBUG==true or $verbose > 1
+			if $WWDEBUG==true or $verbose > 1
 				raise
 			end
 			exit 1
@@ -363,7 +363,8 @@ for adding/removing sets of plugins.
 		if option == ["grep"]
 			matches="matches [:text=>\"#{c}\"]"
 
-			custom="Plugin.define \"Grep\" do
+			custom="# coding: ascii-8bit
+			Plugin.define \"Grep\" do
 			author \"Unknown\"
 			description \"User defined\"
 			#{matches}
@@ -386,7 +387,8 @@ for adding/removing sets of plugins.
 
 			abort("Invalid custom plugin syntax: #{c}") if matches.nil?
 
-			custom="Plugin.define \"Custom-Plugin\" do
+			custom="# coding: ascii-8bit
+			Plugin.define \"Custom-Plugin\" do
 			author \"Unknown\"
 			description \"User defined\"
 			#{matches}
