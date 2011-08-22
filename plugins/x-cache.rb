@@ -43,16 +43,16 @@ def passive
 
 	# X-Cache
 	if @headers["x-cache"] =~ /(MISS|HIT|NONE) from ([^\r^\n]{1,128})/
-		@headers["x-cache"].each do |x_cache|
-		m << { :string=>x_cache.to_s.scan(/ from ([^\r^\n]{1,128})/) }
-		end
+#		@headers["x-cache"].each do |x_cache|
+		m << { :string=>@headers["x-cache"].to_s.scan(/ from ([^\r^\n]{1,128})/) }
+#		end
 	end
 
 	# X-Cache-Lookup
 	if @headers["x-cache-lookup"] =~ /(MISS|HIT|NONE) from ([^\r^\n]{1,128})/
-		@headers["x-cache-lookup"].each do |x_cache|
-		m << { :string=>x_cache.to_s.scan(/ from ([^\r^\n]{1,128})/) }
-		end
+#		@headers["x-cache-lookup"].each do |x_cache|
+		m << { :string=>@headers["x-cache-lookup"].scan(/ from ([^\r^\n]{1,128})/) }
+#		end
 	end
 
 	# Return passive matches

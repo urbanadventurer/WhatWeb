@@ -36,10 +36,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
-# coding: utf-8
 
 
-#require 'profile' # for debugging
+#require 'profile' 
 require 'getoptlong'
 require 'pp'
 require 'net/http'
@@ -119,7 +118,7 @@ PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if F
 
 # nothing says pro-developer like using global variables
 $VERSION="0.4.8"
-$DEBUG = false # raise exceptions in plugins, etc
+$WWDEBUG = false # raise exceptions in plugins, etc
 $verbose=0 # $VERBOSE is reserved in ruby
 $USE_EXAMPLE_URLS=false
 $use_colour="auto"
@@ -244,7 +243,7 @@ def match_ghdb(ghdb, body, meta, status, base_uri)
 
 	pp matches if $verbose > 2
 
-	# if all matches are true, then true	
+	# if all matcbhes are true, then true	
 	if matches.uniq == [true]
 		true
 	else
@@ -424,7 +423,7 @@ def run_plugins(target)
 			rescue StandardError => err
 				error("ERROR: Plugin #{name} failed for #{target.to_s}. #{err}")
 				plugin.unlock
-				raise if $DEBUG==true
+				raise if $WWDEBUG==true
 			end
 			results << [name, result] unless result.nil? or result.empty?
 		end
@@ -780,7 +779,7 @@ begin
 				$BASIC_AUTH_USER=arg.split(":").first
 				$BASIC_AUTH_PASS=arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
 			when '--debug'
-				$DEBUG = true
+				$WWDEBUG = true
 			when '-h','--help'
 				usage
 				exit
@@ -854,7 +853,7 @@ if $targets.size <1
 end
 
 $semaphore=Mutex.new
-Thread.abort_on_exception = true if $DEBUG
+Thread.abort_on_exception = true if $WWDEBUG
 
 while t = next_target
 		Thread.new(t) do |thistarget|

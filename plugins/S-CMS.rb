@@ -1,4 +1,4 @@
-# coding: utf-8
+# coding: ascii-8bit
 ##
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
@@ -8,9 +8,13 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
+##
+# Version 0.3 # 2011-02-25 #
+# Updated powered by match
+##
 Plugin.define "S-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
-version "0.2"
+version "0.3"
 description "CMS - homepage: http://www.matteoiammarrone.com/public/s-cms/"
 
 # Google results as at 2010-08-30 #
@@ -28,7 +32,7 @@ www.scms.altervista.org/fluid/
 matches [
 
 # Powered by text
-{ :text=>'        <p class="alignRight">Powered by S:CMS - Copyright © 2010 Pd&p</p>' },
+{ :text=>'<p class="alignRight">Powered by S:CMS - Copyright ©' },
 
 # Admin Page # Default Title
 { :text=>'<title>SCMS</title>' },

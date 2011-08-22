@@ -40,6 +40,7 @@ def passive
 	# Set-Cookie Header
 	unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?
 
+=begin
 		@headers["set-cookie"].each do |cookie|
 
 			if cookie =~ /;[\s]*httponly/i
@@ -47,7 +48,10 @@ def passive
 			end
 
 		end
-
+=end
+		if @headers["set-cookie"] =~ /;[\s]*httponly/i
+			m << { :string=>@headers["set-cookie"].scan(/^([^;^=]+).*;[\s]*httponly/i) } if @headers["set-cookie"] =~ /^([^;^=]+).*;[\s]*httponly/i
+		end
 	end
 
 	# Return passive matches
