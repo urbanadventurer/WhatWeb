@@ -17,8 +17,6 @@ Author: Andrew Horton aka urbanadventurer. Security Consultant for Security-Asse
  
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-
-
 Copyright 2009-2011 Andrew Horton <andrew.horton at security-assessment dot com>
 
 This file is part of WhatWeb.
@@ -52,8 +50,6 @@ require 'rbconfig'  # detect environment, e.g. windows or linux
 ### ruby 1.9 changes
 if RUBY_VERSION =~ /^1\.9/
         require 'digest/md5'
-	print "ERROR: Ruby 1.9.x is not supported\n"
-	#exit 1
 else
         require 'md5'
 	require 'net/https'
@@ -145,7 +141,7 @@ $CUSTOM_HEADERS={}
 $BASIC_AUTH_USER=nil
 $BASIC_AUTH_PASS=nil
 $PLUGIN_TIMES=Hash.new(0)
-
+$NO_ERRORS=false
 
 
 ### matching
@@ -349,6 +345,7 @@ end
 ### output
 
 def error(s)
+	return if $NO_ERRORS
 	if defined?($semaphore)
 		# We want the output mutex locked.
 		# Has our current thread already locked the Mutex?
@@ -528,6 +525,7 @@ LOGGING & OUTPUT:
   --log-mongo-username\tMongoDB username. Default: nil
   --log-mongo-password\tMongoDB password. Default: nil
   --log-errors=FILE\tLog errors
+  --no-errors=FILE\tSuppress error messages
 
 PERFORMANCE & STABILITY:
   --max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
@@ -600,6 +598,7 @@ opts = GetoptLong.new(
       [ '--log-sql', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-sql-create', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--no-errors', GetoptLong::NO_ARGUMENT ],
       [ '-i','--input-file', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-a','--aggression', GetoptLong::REQUIRED_ARGUMENT ],
@@ -728,6 +727,8 @@ begin
 				end
 			when '--log-errors'
 			 	$OUTPUT_ERRORS = OutputErrors.new(arg)
+			when '--no-errors'
+			 	$NO_ERRORS = true
 			when '-U','--user-agent'
 				$USER_AGENT=arg
 			when '-t','--max-threads'
