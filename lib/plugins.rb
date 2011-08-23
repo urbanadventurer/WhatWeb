@@ -109,10 +109,6 @@ class Plugin
 				r << match if target.tag_pattern == match[:tagpattern]
 			end
 
-			if match[:status] and match[:url] == target.uri.path
-				r << match if target.status == match[:status]
-			end
-
 			unless match[:regexp_compiled].nil?
 				[:regexp,:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
 					if match[symbol] and match[symbol].class==Regexp
@@ -134,18 +130,31 @@ class Plugin
 					end
 				end
 			end
-       			# if match requires a URL, only match it if the @baseuri.path is equal to the :url
-			# if :status is present then check that @status matches
 
-			if match[:url].nil? or (match[:url] and target.uri and match[:url] == target.uri.path)
-				if match[:status].nil? or (match[:status] and target.status == match[:status] and match[:url])
-					r
+
+			if match[:status]
+				# this match is discarded unless it matches the status
+				if match[:status] == target.status
+					r << match 
 				else
-				  r=[]
+					r=[]
 				end
-			else
-			  r=[]
 			end
+
+			if match[:url]			
+				if match[:url] == target.uri.path
+					r << match
+				else
+					r=[]
+				end
+			end
+
+			if match[:status] and match[:url]	
+				unless match[:status] == target.status and match[:url] == target.uri.path
+					r=[]
+				end
+			end
+
 	  r
   end
 
