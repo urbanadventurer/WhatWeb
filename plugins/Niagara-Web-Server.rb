@@ -30,7 +30,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :version=>@headers["server"].scan(/Niagara Web Server\/([\d\.]+)/).to_s } if @headers["server"] =~ /Niagara Web Server\/([\d\.]+)/
+	m << { :version=>@headers["server"].scan(/Niagara Web Server\/([\d\.]+)/).flatten } if @headers["server"] =~ /Niagara Web Server\/([\d\.]+)/
 
 	# HTTP Niagara-Release Header
 	m << { :version=>@headers["niagara-release"].to_s } unless @headers["niagara-release"].nil?

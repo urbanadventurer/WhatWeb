@@ -30,7 +30,7 @@ def passive
 	if @body =~ /^-----BEGIN CERTIFICATE-----/ and @body =~ /^-----END CERTIFICATE-----/ and @body =~ /Public Key Algorithm:/ and @body =~ /Signature Algorithm:/ and @body =~ /Issuer:/
 
 		m << { :name=>"SSL Cert Text" }
-		m << { :string=>@body.scan(/Issuer:[\s]*([^\r^\n]+)/)[0].to_s+" ("+@body.scan(/RSA Public Key:[\s]*\(([^\)]+)\)/)[0].to_s+") ("+@body.scan(/^[\s]+Not After : ([^\r^\n]+)/)[0].to_s+")" } if @body =~ /Issuer:[\s]*([^\r^\n]+)/ and @body =~ /RSA Public Key:[\s]*\(([^\)]+)\)/ and @body =~ /^[\s]+Not After : ([^\r^\n]+)/
+		m << { :string=>@body.scan(/Issuer:[\s]*([^\r^\n]+)/)[0].to_s+" ("+@body.scan(/RSA Public Key:[\s]*\(([^\)]+)\)/).flatten.first+") ("+@body.scan(/^[\s]+Not After : ([^\r^\n]+)/).flatten.first+")" } if @body =~ /Issuer:[\s]*([^\r^\n]+)/ and @body =~ /RSA Public Key:[\s]*\(([^\)]+)\)/ and @body =~ /^[\s]+Not After : ([^\r^\n]+)/
 
 	end
 

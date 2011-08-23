@@ -48,7 +48,7 @@ def passive
 	if @body =~ /<title>Timelink<\/title>/
 
 		# Model Detection
-		m << { :model=>@body.scan(/<td><div class="heading">([A-Z]+)<font class="titlefont">([^<]+)<\/font><\/div><\/td>/).to_s } if @body =~ /<td><div class="heading">([A-Z]+)<font class="titlefont">([^<]+)<\/font><\/div><\/td>/
+		m << { :model=>@body.scan(/<td><div class="heading">([A-Z]+)<font class="titlefont">([^<]+)<\/font><\/div><\/td>/).flatten } if @body =~ /<td><div class="heading">([A-Z]+)<font class="titlefont">([^<]+)<\/font><\/div><\/td>/
 
 	end
 

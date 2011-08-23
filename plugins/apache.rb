@@ -162,15 +162,15 @@ def passive
 # m << { :version=>@headers["server"].scan(/^Apache\/([\d\.]+)/i) } if @headers["server"] =~ /^Apache\/([\d\.]+)/i
 
 		# Module Detection
-		m << { :module=>@headers["server"].scan(/[\s](mod_[^\s^\(]+)/) } if @headers["server"] =~ /[\s](mod_[^\s^\(]+)/
+		m << { :module=>@headers["server"].scan(/[\s](mod_[^\s^\(]+)/).flatten } if @headers["server"] =~ /[\s](mod_[^\s^\(]+)/
 		# proxy_html Module Detection
-		m << { :module=>@headers["server"].scan(/[\s](proxy_html\/[^\s]+)/) } if @headers["server"] =~ /[\s](proxy_html\/[^\s]+)/
+		m << { :module=>@headers["server"].scan(/[\s](proxy_html\/[^\s]+)/).flatten } if @headers["server"] =~ /[\s](proxy_html\/[^\s]+)/
 
 	end
 
 	# Apache WebSnmp module
 	if @headers["server"] =~ /^WebSnmp Server Httpd\/([\d.]+)$/
-		m << { :module=>"WebSnmp/"+@headers["server"].scan(/^WebSnmp Server Httpd\/([\d.]+)$/).to_s }
+		m << { :module=>"WebSnmp/"+@headers["server"].scan(/^WebSnmp Server Httpd\/([\d.]+)$/).flatten.first.to_s }
 	end
 
 	# replaced in matches
@@ -181,7 +181,7 @@ def passive
 
 
 	# x-mod-pagespeed Header # mod_pagespeed
-	m << { :module=>"mod_pagespeed/"+@headers["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).to_s } if @headers["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
+	m << { :module=>"mod_pagespeed/"+@headers["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).flatten.first.to_s } if @headers["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
 	
 	# Return passive matches
 	m

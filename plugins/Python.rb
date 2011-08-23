@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# Server # Version Detection
-	m << { :version=>@headers["server"].to_s.scan(/[^\r^\n]* Python\/([^\s^\r^\n]+)/).to_s } if @headers["server"].to_s =~ /[^\r^\n]* Python\/([^\s^\r^\n]+)/
+	m << { :version=>@headers["server"].to_s.scan(/[^\r^\n]* Python\/([^\s^\r^\n]+)/).flatten } if @headers["server"].to_s =~ /[^\r^\n]* Python\/([^\s^\r^\n]+)/
 
 	m
 

@@ -56,7 +56,7 @@ svn.omega-services.org
 matches [
 
 # Version Detection # Meta Generator
-{ :version=>/<meta http-equiv="generator" content="WebSVN ([^"]+)"[\s]?\/>/ },
+{ :version=>/<meta http-equiv="generator" content="WebSVN ([^"]+)"[\s]?\/>/ }, #"
 
 # WebSVN RSS link
 { :text=>'<link rel="alternate" type="application/rss+xml" title="WebSVN RSS" href="rss.php?repname=' },
@@ -78,16 +78,16 @@ def passive
 	if @body =~ /Powered by <a href="http:\/\/www\.websvn\.info\/">WebSVN<\/a> ([^\s]+) and <a href="http:\/\/subversion\.tigris\.org">Subversion<\/a> [^\s]+ &nbsp; &nbsp; &#x2713;/
 
 		# Version Detection
-		m << { :version=>@body.scan(/Powered by <a href="http:\/\/www\.websvn\.info\/">WebSVN<\/a> ([^\s]+) and <a href="http:\/\/subversion\.tigris\.org">Subversion<\/a> [^\s]+ &nbsp; &nbsp; &#x2713;/) }
+		m << { :version=>@body.scan(/Powered by <a href="http:\/\/www\.websvn\.info\/">WebSVN<\/a> ([^\s]+) and <a href="http:\/\/subversion\.tigris\.org">Subversion<\/a> [^\s]+ &nbsp; &nbsp; &#x2713;/).flatten }
 
 		# Module Detection # Subversion
-		m << { :module=>@body.scan(/Powered by <a href="http:\/\/www\.websvn\.info\/">WebSVN<\/a> [^\s]+ and <a href="http:\/\/subversion\.tigris\.org">(Subversion)<(\/)a> ([^\s]+) &nbsp; &nbsp; &#x2713;/).to_s }
+		m << { :module=>@body.scan(/Powered by <a href="http:\/\/www\.websvn\.info\/">WebSVN<\/a> [^\s]+ and <a href="http:\/\/subversion\.tigris\.org">(Subversion)<(\/)a> ([^\s]+) &nbsp; &nbsp; &#x2713;/).flatten }
 
 	end
 
 	# Redirect Location
 	if @status.to_s =~ /^302$/ and @headers["location"] =~ /^listing\.php\?repname=[^\s]+$/
-		m << { :string=>@headers["location"].scan(/^listing\.php\?repname=([^\s]+)$/) }
+		m << { :string=>@headers["location"].scan(/^listing\.php\?repname=([^\s]+)$/).flatten }
 	end
 
 	# Return passive matches

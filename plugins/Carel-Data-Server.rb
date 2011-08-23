@@ -67,8 +67,8 @@ def passive
 		m << { :version=>@headers["server"].scan(/^CarelDataServer\/([\d\.]{1,10})/) }
 
 		# Account Detection # LoginName select tag
-		accounts = @body.scan(/<select name='LoginName'>(.*)<\/select>/m) if @body =~ /<select name='LoginName'>(.*)<\/select>/m
-		m << { :account=>accounts.to_s.scan(/<option value="([^"]+)"[^>]*>[^<]+<\/option>/) } if accounts.to_s =~ /<option value="([^"]+)"[^>]*>[^<]+<\/option>/
+		accounts = @body.scan(/<select name='LoginName'>(.*)<\/select>/m).flatten if @body =~ /<select name='LoginName'>(.*)<\/select>/m
+		m << { :account=>accounts.to_s.scan(/<option value="([^"]+)"[^>]*>[^<]+<\/option>/).flatten } if accounts.to_s =~ /<option value="([^"]+)"[^>]*>[^<]+<\/option>/
 
 	end
 

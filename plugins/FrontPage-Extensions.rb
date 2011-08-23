@@ -37,7 +37,7 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].to_s.scan(/FrontPage\/([^\s]+)/i).to_s } if @headers["server"].to_s =~ /FrontPage\/([^\s]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/FrontPage\/([^\s]+)/i).flatten } if @headers["server"].to_s =~ /FrontPage\/([^\s]+)/i
 
 	# Return passive matches
 	m

@@ -48,16 +48,16 @@ def passive
 	if @headers["x-spinetix-firmware"] =~ /^([^\r^\n]*)/ and @headers["x-raperca-version"] =~ /^([^\r^\n]*)/
 
 		# X-spinetix-firmware
-		m << { :firmware=>@headers["x-spinetix-firmware"].scan(/^([^\r^\n]*)/).to_s, :model=>"HMP100" }
+		m << { :firmware=>@headers["x-spinetix-firmware"].scan(/^([^\r^\n]*)/).flatten, :model=>"HMP100" }
 
 		# X-raperca-version
-		m << { :module=>"raperca/"+@headers["x-raperca-version"].scan(/^([^\r^\n]*)/).to_s, :model=>"HMP100" }
+		m << { :module=>"raperca/"+@headers["x-raperca-version"].scan(/^([^\r^\n]*)/).flatten, :model=>"HMP100" }
 
 	end
 
 	# Admin Page # Extract MAC
 	if @body =~ /<h1>SpinetiX HMP100 Web Access<\/h1><\/div>/ and @body =~ /SpinetiX SA. All rights reserved.<br\/>/ and @body =~ /<tr><td>MAC : <\/td><td>([^<]+)<\/td>/
-		m << { :account=>@body.scan(/<tr><td>MAC : <\/td><td>([^<]+)<\/td>/).to_s, :model=>"HMP100", :string=>"Admin" }
+		m << { :account=>@body.scan(/<tr><td>MAC : <\/td><td>([^<]+)<\/td>/).flatten, :model=>"HMP100", :string=>"Admin" }
 	end
 
 	m

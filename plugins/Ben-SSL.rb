@@ -31,7 +31,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header
-	m << { :version=>@headers["server"].to_s.scan(/Ben-SSL\/([\d\.]+)/i).to_s } if @headers["server"].to_s =~ /Ben-SSL\/([\d\.]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/Ben-SSL\/([\d\.]+)/i).flatten } if @headers["server"].to_s =~ /Ben-SSL\/([\d\.]+)/i
 
 	m
 

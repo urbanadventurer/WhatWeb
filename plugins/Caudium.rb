@@ -28,13 +28,13 @@ def passive
 	m=[]
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].to_s.scan(/^[\s]*Caudium\/([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /^[\s]*Caudium\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/^[\s]*Caudium\/([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /^[\s]*Caudium\/([^\s^\r^\n]+)/i
 
 	# Catch-All # HTTP Server Header
 	m << { :name=>"HTTP Server Header" } if @headers["server"].to_s =~ /^[\s]*Caudium[^\s^\r^\n]*/i
 
 	# Pike Version Detection # HTTP X-Got-Fish Header
-	m << { :module=>"Pike:"+@headers["x-got-fish"].to_s.scan(/^[\s]*Pike v([^\r^\n]+)/i).to_s } if @headers["x-got-fish"].to_s =~ /^[\s]*Pike v([^\r^\n]+)/i
+	m << { :module=>"Pike:"+@headers["x-got-fish"].to_s.scan(/^[\s]*Pike v([^\r^\n]+)/i).flatten.first.to_s } if @headers["x-got-fish"].to_s =~ /^[\s]*Pike v([^\r^\n]+)/i
 
 	m
 

@@ -29,7 +29,7 @@ def passive
 	m=[]
 
 	# Version detection
-	m << { :version=>@headers["server"].scan(/[^\r^\n]*OpenSSL\/([^\s^\r^\n]+)/) } if @headers["server"].to_s =~ /[^\r^\n]*OpenSSL\/([^\s^\r^\n]+)/
+	m << { :version=>@headers["server"].scan(/[^\r^\n]*OpenSSL\/([^\s^\r^\n]+)/).flatten } if @headers["server"].to_s =~ /[^\r^\n]*OpenSSL\/([^\s^\r^\n]+)/
 
 	m
 

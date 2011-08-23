@@ -42,10 +42,10 @@ def passive
 	if @headers["server"] =~ /^EPSON-HTTP\/([^\s]+)/
 
 		# Version Detection
-		m << { :version=>@headers["server"].scan(/^EPSON-HTTP\/([^\s]+)/) }
+		m << { :version=>@headers["server"].scan(/^EPSON-HTTP\/([^\s]+)/).flatten }
 
 		# Module Detection # Title
-		m << { :module=>@body.scan(/<TITLE>EpsonNet (WebAssist |Config )Rev\.([^<]+)<\/TITLE>/).to_s } if @body =~ /<TITLE>EpsonNet (WebAssist |Config )Rev\.([^<]+)<\/TITLE>/
+		m << { :module=>@body.scan(/<TITLE>EpsonNet (WebAssist |Config )Rev\.([^<]+)<\/TITLE>/).flatten } if @body =~ /<TITLE>EpsonNet (WebAssist |Config )Rev\.([^<]+)<\/TITLE>/
 
 	end
 

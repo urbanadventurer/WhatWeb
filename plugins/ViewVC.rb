@@ -97,13 +97,13 @@ def aggressive
                 random_fname=rand(36**6).to_s(36)
 
 		# Detect /viewcv/ or /viewcvs/
-		target_url = @base_uri.path.scan(/^([^\n]*\/viewvc\/|[^\n]*\/viewcvs\/)/i).to_s+"/*docroot*/"+random_fname if @base_uri.path =~ /^([^\n]*\/viewvc\/|[^\n]*\/viewcvs\/)/i
+		target_url = @base_uri.path.scan(/^([^\n]*\/viewvc\/|[^\n]*\/viewcvs\/)/i).flatten.first+"/*docroot*/"+random_fname if @base_uri.path =~ /^([^\n]*\/viewvc\/|[^\n]*\/viewcvs\/)/i
 
 		# Detect /viewvc or /viewcvs
-		target_url = @base_uri.path.scan(/^([^\n]*\/viewvc$|^[^\n]*\/viewcvs$)/i).to_s+"/*docroot*/"+random_fname if @base_uri.path =~ /^([^\n]*\/viewvc$|[^\n]*\/viewcvs$)/i
+		target_url = @base_uri.path.scan(/^([^\n]*\/viewvc$|^[^\n]*\/viewcvs$)/i).flatten.first+"/*docroot*/"+random_fname if @base_uri.path =~ /^([^\n]*\/viewvc$|[^\n]*\/viewcvs$)/i
 
 		# Detect /viewvc.cgi or /viewcvs.cgi
-		target_url = @base_uri.path.scan(/^([^\n]*\/viewvc\.cgi|[^\n]*\/viewcvs\.cgi)/i).to_s+"/*docroot*/"+random_fname if @base_uri.path =~ /^([^\n]*\/viewvc\.cgi|[^\n]*\/viewcvs\.cgi)/i
+		target_url = @base_uri.path.scan(/^([^\n]*\/viewvc\.cgi|[^\n]*\/viewcvs\.cgi)/i).flatten.first+"/*docroot*/"+random_fname if @base_uri.path =~ /^([^\n]*\/viewvc\.cgi|[^\n]*\/viewcvs\.cgi)/i
 
 		# Open application base url + "/*docroot*/" + random filename
 		unless target_url.nil?
@@ -112,7 +112,7 @@ def aggressive
 			status,url,ip,body,headers=open_target(target)
 
 			# Extract local file path
-			m << { :filepath=>body.scan(/\(\[Errno 2\] No such file or directory: '([^']+)#{random_fname}'\)/) } if body =~ /\(\[Errno 2\] No such file or directory: '([^']+)#{random_fname}'\)/
+			m << { :filepath=>body.scan(/\(\[Errno 2\] No such file or directory: '([^']+)#{random_fname}'\)/).flatten } if body =~ /\(\[Errno 2\] No such file or directory: '([^']+)#{random_fname}'\)/
 
 		end
 

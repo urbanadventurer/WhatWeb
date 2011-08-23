@@ -46,7 +46,7 @@ def passive
 	m=[]
 
 	# Version Detection # Server
-	m << { :version=>@headers["server"].scan(/[\s]*Microsoft-IIS\/([\d\.]+)/i) } if @headers["server"].to_s =~ /[\s]*Microsoft-IIS\/([\d\.]+)/i
+	m << { :version=>@headers["server"].scan(/[\s]*Microsoft-IIS\/([\d\.]+)/i).flatten } if @headers["server"].to_s =~ /[\s]*Microsoft-IIS\/([\d\.]+)/i
 
 	m
 

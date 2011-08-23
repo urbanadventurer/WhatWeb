@@ -34,10 +34,10 @@ def passive
 	unless @headers["x-daisy-version"].nil?
 
 		# Version Detection
-		m << { :version=>@headers["x-daisy-version"].scan(/^([^\s]+) \(build: [^\s]+/).to_s } if @headers["x-daisy-version"] =~ /^([^\s]+) \(build:( [^\s]+)/
+		m << { :version=>@headers["x-daisy-version"].scan(/^([^\s]+) \(build: [^\s]+/).flatten } if @headers["x-daisy-version"] =~ /^([^\s]+) \(build:( [^\s]+)/
 
 		# Build Detection
-		m << { :string=>@headers["x-daisy-version"].scan(/^[^\s]+ \(build: ([^\s]+)/).to_s } if @headers["x-daisy-version"] =~ /^[^\s]+ \(build: ([^\s]+)/
+		m << { :string=>@headers["x-daisy-version"].scan(/^[^\s]+ \(build: ([^\s]+)/).flatten } if @headers["x-daisy-version"] =~ /^[^\s]+ \(build: ([^\s]+)/
 
 	end
 

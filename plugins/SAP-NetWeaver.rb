@@ -72,7 +72,7 @@ def passive
 	end
 
 	# J2EE Engine
-	m << { :module=>"J2EE", :version=>@headers["server"].scan(/^SAP J2EE Engine\/([\d\.]{1,4})/).to_s } if @headers["server"] =~ /^SAP J2EE Engine\/([\d\.]{1,4})/
+	m << { :module=>"J2EE", :version=>@headers["server"].scan(/^SAP J2EE Engine\/([\d\.]{1,4})/).flatten } if @headers["server"] =~ /^SAP J2EE Engine\/([\d\.]{1,4})/
 
 	# Return passive matches
 	m

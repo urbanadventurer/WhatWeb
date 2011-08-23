@@ -41,10 +41,10 @@ def passive
 	if @headers["server"] =~ /^WEBrick\/[\d\.]+ \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/
 
 		# WEBrick Version Detection
-		m << { :module=>@headers["server"].scan(/^(WEBrick\/[\d\.]+) \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/) }
+		m << { :module=>@headers["server"].scan(/^(WEBrick\/[\d\.]+) \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/).flatten }
 
 		# Version Detection
-		m << { :version=>@headers["server"].scan(/^WEBrick\/[\d\.]+ \(Ruby\/([\d\.]+)\/[\d]{4}-[\d]{2}-[\d]{2}\)/) }
+		m << { :version=>@headers["server"].scan(/^WEBrick\/[\d\.]+ \(Ruby\/([\d\.]+)\/[\d]{4}-[\d]{2}-[\d]{2}\)/).flatten }
 
 	end
 

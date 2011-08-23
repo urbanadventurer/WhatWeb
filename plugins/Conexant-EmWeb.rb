@@ -96,7 +96,7 @@ def passive
 
 
 		# e-con # Model Detection # Default page # Default Logo
-		m << { :model=>"e-con "+@body.scan(/<img src="\/webconfig\/images\/logo.gif" alt="LOGO" title="LOGO" hspace="0" vspace="0" width="220" height="45"><\/td><td class="rbtop" width="100%"><h1 class="pname">e-con ([^\s]+) Ethernet Router<\/h1>/).to_s } if @body =~ /<img src="\/webconfig\/images\/logo.gif" alt="LOGO" title="LOGO" hspace="0" vspace="0" width="220" height="45"><\/td><td class="rbtop" width="100%"><h1 class="pname">e-con ([^\s]+) Ethernet Router<\/h1>/	
+		m << { :model=>"e-con "+@body.scan(/<img src="\/webconfig\/images\/logo.gif" alt="LOGO" title="LOGO" hspace="0" vspace="0" width="220" height="45"><\/td><td class="rbtop" width="100%"><h1 class="pname">e-con ([^\s]+) Ethernet Router<\/h1>/).flatten.first } if @body =~ /<img src="\/webconfig\/images\/logo.gif" alt="LOGO" title="LOGO" hspace="0" vspace="0" width="220" height="45"><\/td><td class="rbtop" width="100%"><h1 class="pname">e-con ([^\s]+) Ethernet Router<\/h1>/	
 
 	end
 
@@ -112,8 +112,8 @@ def aggressive
 	if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/ or @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
 
 		# Server Version
-		m << { :version=>@headers["server"].scan(/Conexant-EmWeb\/([^\r^\n]+)/) } if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/
-		m << { :version=>@headers["server"].scan(/Virata-EmWeb\/([^\r^\n]+)/) } if @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
+		m << { :version=>@headers["server"].scan(/Conexant-EmWeb\/([^\r^\n]+)/).flatten } if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/
+		m << { :version=>@headers["server"].scan(/Virata-EmWeb\/([^\r^\n]+)/).flatten } if @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
 
 
 		# Allied Telesyn # Status page
@@ -121,22 +121,22 @@ def aggressive
 		status,url,ip,body,headers=open_target(target)
 
 		# Allied Telesyn # Status page # Model Detection
-		m << { :url=>"/status/Status_1.htm", :model=>"Allied Telesyn-"+body.scan(/<TD WIDTH="30%"><STRONG>Model Type<\/STRONG><\/TD>[\r\n\s]*<TD>([^<]+)<\/TD>/).to_s } if body =~ /<TD WIDTH="30%"><STRONG>Model Type<\/STRONG><\/TD>[\r\n\s]*<TD>([^<]+)<\/TD>/
+		m << { :url=>"/status/Status_1.htm", :model=>"Allied Telesyn-"+body.scan(/<TD WIDTH="30%"><STRONG>Model Type<\/STRONG><\/TD>[\r\n\s]*<TD>([^<]+)<\/TD>/).flatten } if body =~ /<TD WIDTH="30%"><STRONG>Model Type<\/STRONG><\/TD>[\r\n\s]*<TD>([^<]+)<\/TD>/
 
 		# Allied Telesyn # Status page # MAC Address
-		m << { :url=>"/status/Status_1.htm", :string=>body.scan(/<TD><STRONG>MAC Address<\/STRONG><\/TD>[\r\n\s]*<TD>([^<]+)<\/TD>/).to_s } if body =~ /<TD><STRONG>MAC Address<\/STRONG><\/TD>[\r\n\s]*<TD>([^<]+)<\/TD>/
+		m << { :url=>"/status/Status_1.htm", :string=>body.scan(/<TD><STRONG>MAC Address<\/STRONG><\/TD>[\r\n\s]*<TD>([^<]+)<\/TD>/).flatten } if body =~ /<TD><STRONG>MAC Address<\/STRONG><\/TD>[\r\n\s]*<TD>([^<]+)<\/TD>/
 
 
 		# Allied Telesyn # iMG634A-R2 # Top frame
 		target = URI.join(@base_uri.to_s,"/webconfig/atl/top_frame.html").to_s
 		status,url,ip,body,headers=open_target(target)
-		m << { :url=>"/webconfig/atl/top_frame.html", :model=>body.scan(/^[\s]+<em>([^<]+)<\/em>/).to_s } if body =~ /^[\s]+<em>([^<]+)<\/em>/
+		m << { :url=>"/webconfig/atl/top_frame.html", :model=>body.scan(/^[\s]+<em>([^<]+)<\/em>/).flatten } if body =~ /^[\s]+<em>([^<]+)<\/em>/
 
 
 		# Allied Telesyn # iMG646BD / iMG606BD # Top frame
 		target = URI.join(@base_uri.to_s,"/ati_header_frame.html").to_s
 		status,url,ip,body,headers=open_target(target)
-		m << { :url=>"/ati_header_frame.html", :model=>body.scan(/^[\s]+<em>([^<]+)<\/em>/).to_s } if body =~ /^[\s]+<em>([^<]+)<\/em>/
+		m << { :url=>"/ati_header_frame.html", :model=>body.scan(/^[\s]+<em>([^<]+)<\/em>/).flatten } if body =~ /^[\s]+<em>([^<]+)<\/em>/
 
 	end
 

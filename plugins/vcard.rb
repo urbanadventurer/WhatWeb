@@ -56,19 +56,19 @@ def passive
 	if @body =~ /^BEGIN:VCARD[\s]*$/i and @body =~ /^END:VCARD/i
 
 		# Version
-		m << { :version=>@body.scan(/^BEGIN:VCARD[\s]*$.*^VERSION:([\d\.]{1,3})[\s]*$.*^END:VCARD/im).to_s } if @body =~ /^BEGIN:VCARD[\s]*$.*^VERSION:([\d\.]{1,3})[\s]*$.*^END:VCARD/im
+		m << { :version=>@body.scan(/^BEGIN:VCARD[\s]*$.*^VERSION:([\d\.]{1,3})[\s]*$.*^END:VCARD/im).flatten } if @body =~ /^BEGIN:VCARD[\s]*$.*^VERSION:([\d\.]{1,3})[\s]*$.*^END:VCARD/im
 
 		# Name
-		m << { :string=>"Name:"+@body.scan(/^BEGIN:VCARD[\s]*$.*^N:([^\r^\n]+)[\s]*$.*^END:VCARD/im).to_s } if @body =~ /^BEGIN:VCARD[\s]*$.*^N:([^\r^\n]+)[\s]*$.*^END:VCARD/im
+		m << { :string=>"Name:"+@body.scan(/^BEGIN:VCARD[\s]*$.*^N:([^\r^\n]+)[\s]*$.*^END:VCARD/im).flatten } if @body =~ /^BEGIN:VCARD[\s]*$.*^N:([^\r^\n]+)[\s]*$.*^END:VCARD/im
 
 		# Full Name
-		m << { :string=>"Full Name:"+@body.scan(/^BEGIN:VCARD[\s]*$.*^FN:([^\r^\n]+)[\s]*$.*^END:VCARD/im).to_s } if @body =~ /^BEGIN:VCARD[\s]*$.*^FN:([^\r^\n]+)[\s]*$.*^END:VCARD/im
+		m << { :string=>"Full Name:"+@body.scan(/^BEGIN:VCARD[\s]*$.*^FN:([^\r^\n]+)[\s]*$.*^END:VCARD/im).flatten } if @body =~ /^BEGIN:VCARD[\s]*$.*^FN:([^\r^\n]+)[\s]*$.*^END:VCARD/im
 
 		# Oraganization
-		m << { :string=>"Organization:"+@body.scan(/^BEGIN:VCARD[\s]*$.*^ORG:([^\r^\n]+)[\s]*$.*^END:VCARD/im).to_s } if @body =~ /^BEGIN:VCARD[\s]*$.*^ORG:([^\r^\n]+)[\s]*$.*^END:VCARD/im
+		m << { :string=>"Organization:"+@body.scan(/^BEGIN:VCARD[\s]*$.*^ORG:([^\r^\n]+)[\s]*$.*^END:VCARD/im).flatten } if @body =~ /^BEGIN:VCARD[\s]*$.*^ORG:([^\r^\n]+)[\s]*$.*^END:VCARD/im
 
 		# Address # 3.x only
-		m << { :string=>"Address:"+@body.scan(/^BEGIN:VCARD[\s]*$.*^ADR:([^\r^\n]+)[\s]*$.*^END:VCARD/im).to_s } if @body =~ /^BEGIN:VCARD[\s]*$.*^ADR:([^\r^\n]+)[\s]*$.*^END:VCARD/im
+		m << { :string=>"Address:"+@body.scan(/^BEGIN:VCARD[\s]*$.*^ADR:([^\r^\n]+)[\s]*$.*^END:VCARD/im).flatten } if @body =~ /^BEGIN:VCARD[\s]*$.*^ADR:([^\r^\n]+)[\s]*$.*^END:VCARD/im
 
 	end
 

@@ -39,17 +39,17 @@ def passive
 
 	# Server # Short
 	if @headers["server"] =~ /[\s]*mhttpd v([\d\.]+)/i
-		m << { :version=>@headers["server"].to_s.scan(/[\s]*mhttpd v([\d\.]+)/i) }
+		m << { :version=>@headers["server"].to_s.scan(/[\s]*mhttpd v([\d\.]+)/i).flatten }
 	end
 
 	# Server # Long
 	if @headers["server"] =~ /[\s]*MHttpd\/([\d\.]+) \([^;]+; [^;]+; Meta-HTML\/[\d\.]+\)/
-		m << { :version=>@headers["server"].to_s.scan(/[\s]*MHttpd\/([\d\.]+) \([^\;]+; [^\;]+; Meta-HTML\/[\d\.]+\)/), :module=>@headers["server"].to_s.scan(/[\s]*MHttpd\/[\d\.]+ \([^\;]+; ([^\;]+); Meta-HTML\/[\d\.]+\)/) }
+		m << { :version=>@headers["server"].to_s.scan(/[\s]*MHttpd\/([\d\.]+) \([^\;]+; [^\;]+; Meta-HTML\/[\d\.]+\)/).flatten, :module=>@headers["server"].to_s.scan(/[\s]*MHttpd\/[\d\.]+ \([^\;]+; ([^\;]+); Meta-HTML\/[\d\.]+\)/).flatten }
 	end
 
 	# Meta-HTML-Engine
 	if @headers["meta-html-engine"] =~ /[\s]*MHttpd\/([\d\.]+) \([^;]+; [^;]+; Meta-HTML\/[\d\.]+\)/
-		m << { :version=>@headers["meta-html-engine"].to_s.scan(/[\s]*MHttpd\/([\d\.]+) \([^\;]+; [^\;]+; Meta-HTML\/[\d\.]+\)/), :module=>@headers["meta-html-engine"].to_s.scan(/[\s]*MHttpd\/[\d\.]+ \([^\;]+; ([^\;]+); Meta-HTML\/[\d\.]+\)/) }
+		m << { :version=>@headers["meta-html-engine"].to_s.scan(/[\s]*MHttpd\/([\d\.]+) \([^\;]+; [^\;]+; Meta-HTML\/[\d\.]+\)/).flatten, :module=>@headers["meta-html-engine"].to_s.scan(/[\s]*MHttpd\/[\d\.]+ \([^\;]+; ([^\;]+); Meta-HTML\/[\d\.]+\)/).flatten }
 	end
 
 	m
