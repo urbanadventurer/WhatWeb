@@ -131,30 +131,39 @@ class Plugin
 				end
 			end
 
+			# all previous matches are OR
+			# these are ARE. e.g. required if present
 
 			if match[:status]
-				# this match is discarded unless it matches the status
-				if match[:status] == target.status
-					r << match 
-				else
-					r=[]
+				# status cannot match by itself. it needs friends
+				unless r.empty?
+					# this match is discarded unless it matches the status
+					if match[:status] == target.status
+						r << match 
+					else
+						r=[]
+					end
 				end
 			end
 
-			if match[:url]			
-				if match[:url] == target.uri.path
-					r << match
-				else
-					r=[]
+			if match[:url]
+				# url cannot match by itself. it needs friends
+				unless r.empty?		
+					if match[:url] == target.uri.path
+						r << match
+					else
+						r=[]
+					end
 				end
 			end
 
-			if match[:status] and match[:url]	
+			if match[:status] and match[:url]
 				unless match[:status] == target.status and match[:url] == target.uri.path
 					r=[]
+				else
+					r << match
 				end
 			end
-
 	  r
   end
 
