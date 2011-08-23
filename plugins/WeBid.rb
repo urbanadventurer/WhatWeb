@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-08-23 #
+# Added version detection
+##
 Plugin.define "WeBid" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-17
 version "0.1"
@@ -14,6 +17,7 @@ description "Open source php/mysql fully featured auction script. - Homepage: ht
 
 # Google results as at 2011-06-17 #
 # 243 for "powered by WeBid"
+# 7 for "WeBid Installer" inurl:"install.php" ext:php
 
 # Dorks #
 dorks [
@@ -31,9 +35,12 @@ alaganga.com/WeBid-0.8.5/WeBid/browse.php
 auction.ideorg.org/item.php
 ezbid.dedlines.com/item.php
 www.nelo.eu/auctions/user_login.php
-www.b-ebe.com/browse.php
 nobilis.nobles.edu/webid/item.php
 site.tsodna.edu.ge/browse.php
+www.uboatbid.com/test/install/install.php
+www.uboatbid.com/us/install/install.php
+elongatedauctions.com/install/install.php
+ankand.net/a/install.php
 |
 
 # Matches #
@@ -45,18 +52,13 @@ matches [
 # Year Detection # Powered by footer
 { :string=>/Powered by <a href="http:\/\/www\.webidsupport\.com\/">WeBid<\/a> &copy; 2008\s?[,-] ([\d]{4}) <a href="http:\/\/www\.webidsupport\.com\/">WeBid<\/a>/ },
 
+# WEBID_ONLINE cookie
+{ :search=>"headers[set-cookie]", :regexp=>/WEBID_ONLINE=[a-f\d]{32};/ },
+
+# Version Detection # ./install/install.php
+{ :version=>/<h1>WeBid Installer v([^\s^>]+)<\/h1>[\s]*<form name="form1" method="post" action="\?step=1">/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# WEBID_ONLINE cookie
-	m << { :name=>"WEBID_ONLINE cookie" } if @headers["set-cookie"] =~ /WEBID_ONLINE=[a-f\d]{32};/
-
-	# Return passive matches
-	m
-end
 
 end
 
