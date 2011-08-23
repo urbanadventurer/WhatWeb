@@ -155,10 +155,9 @@ class Plugin
 
   	unless @matches.nil?
 	  	@matches.each do |match|
-		        results+= make_matches(@target,match)
+		        results+=make_matches(@target,match)
 		end
 	end
-        results
 
 	# if the plugin has a passive method, use it
    	results += self.passive if defined? self.passive
