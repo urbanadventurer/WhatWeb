@@ -20,6 +20,7 @@ Version 0.4.8-dev Unreleased
 * Added --grep option to be easier than --custom-plugin. -g is now for grep, not google dorks. (Requested by Scott Bell)
 * Major changes to support Ruby 1.9.1
 * Better support for UTF-8 encoded strings in plugins.
+* :status and :url are now logical AND with other matches. They cannot match in isolation unless with each other.
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes

@@ -503,7 +503,7 @@ PLUGINS:
 \t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
 \t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
 \t\t\t\"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}\"
-  --dorks\t\t<plugin name>\tReturns google dorks for the selected plugin
+  --dorks\t\t<plugin name>\tList google dorks for the selected plugin
 
 LOGGING & OUTPUT:
   --verbose, -v\t\tIncrease verbosity, use twice for plugin development.
@@ -525,7 +525,7 @@ LOGGING & OUTPUT:
   --log-mongo-username\tMongoDB username. Default: nil
   --log-mongo-password\tMongoDB password. Default: nil
   --log-errors=FILE\tLog errors
-  --no-errors=FILE\tSuppress error messages
+  --no-errors\t\tSuppress error messages
 
 PERFORMANCE & STABILITY:
   --max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
