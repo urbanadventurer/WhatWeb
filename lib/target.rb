@@ -54,7 +54,7 @@ class Target
 		end
 
 		if self.is_url?
-			@uri=URI.parse(@target)
+			@uri=URI.parse(URI.encode(@target))
 
 			# is this taking control away from the user?
 			# [400] http://www.alexa.com  [200] http://www.alexa.com/
@@ -120,7 +120,7 @@ class Target
 	def open_url(options)
 		begin
 			if $USE_PROXY == true
-				http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(uri.host,uri.port)
+				http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host,@uri.port)
 			else
 				http=Net::HTTP.new(@uri.host,@uri.port)
 			end

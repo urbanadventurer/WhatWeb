@@ -292,7 +292,7 @@ for adding/removing sets of plugins.
 				a << choice if choice.type == "file"
 				b << choice if choice.type == "plugin"
 			end
-
+  
 			# sort by neither, add, minus
 			a=a.sort
 
