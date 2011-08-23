@@ -280,7 +280,9 @@ for adding/removing sets of plugins.
 		if list
 			list=list.split(",")
 
-			plugins_disabled_location = ["plugins-disabled"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
+			plugins_disabled_location = ["plugins-disabled"].map {|x|
+					$LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } 
+				}.flatten.compact.first
 
 			list.each {|x| x.gsub!(/^\+$/,"+#{plugins_disabled_location}") } # + is short for +plugins-disabled
 
@@ -290,7 +292,7 @@ for adding/removing sets of plugins.
 				a << choice if choice.type == "file"
 				b << choice if choice.type == "plugin"
 			end
-
+  
 			# sort by neither, add, minus
 			a=a.sort
 
