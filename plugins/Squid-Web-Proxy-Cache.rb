@@ -36,7 +36,7 @@ def passive
 	m << { :name=>"x-squid-error", :certainty=>25 } unless @headers["x-squid-error"].nil?
 
 	# Server
-	m << { :version=>@headers["server"].to_s.scan(/[\s]*Squid\/([^\r^\n]+)/i) } if @headers["server"] =~ /[\s]*Squid\/([^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/[\s]*Squid\/([^\r^\n]+)/i).flatten } if @headers["server"] =~ /[\s]*Squid\/([^\r^\n]+)/i
 
 	# Return passive results
 	m

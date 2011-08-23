@@ -50,7 +50,10 @@ def passive
 	if @body =~ /<title>High-Tech Bridge SA - Advisories - / and @body =~ /<br \/><font color=#606060>/ and @body =~ /The following PoC is available:/
 
 		# Extract product name and affected version
-		m << { :version=>@body.scan(/<tr><td width=21%><b>Product:<\/b><\/td><td width=79%>([^<]*)<\/td><\/tr>/).to_s+" "+@body.scan(/<tr><td width=21%><b>Vulnerable Version:<\/b><\/td><td width=79%>([^<]*)<\/td><\/tr>/).to_s } if @body =~ /<tr><td width=21%><b>Vulnerable Version:<\/b><\/td><td width=79%>[^<]*<\/td><\/tr>/ and @body =~ /<tr><td width=21%><b>Product:<\/b><\/td><td width=79%>[^<]*<\/td><\/tr>/
+		if @body =~ /<tr><td width=21%><b>Vulnerable Version:<\/b><\/td><td width=79%>[^<]*<\/td><\/tr>/ and @body =~ /<tr><td width=21%><b>Product:<\/b><\/td><td width=79%>[^<]*<\/td><\/tr>/
+			m << { :version=>@body.scan(/<tr><td width=21%><b>Product:<\/b><\/td><td width=79%>([^<]*)<\/td><\/tr>/).flatten,
+				:string=>@body.scan(/<tr><td width=21%><b>Vulnerable Version:<\/b><\/td><td width=79%>([^<]*)<\/td><\/tr>/).flatten}
+		end
 
 		# Extract PoC URLs
 		if @body =~ /<br \/><font color=#606060>[^<]*<\/font>/
@@ -59,7 +62,6 @@ def passive
 				m << { :string=>poc.to_s }
 			end
 		end
-
 	end
 
 	m

@@ -55,15 +55,15 @@ def passive
 		if @body =~ /<!--Version [\d]{8} for [\d\.]+ EF -->/
 
 			# Version Detection
-			m << { :version=>@body.scan(/^<!--Version [\d]{8} for ([\d\.]+) EF -->/) }
+			m << { :version=>@body.scan(/^<!--Version [\d]{8} for ([\d\.]+) EF -->/).flatten }
 
 			# Firmware Build/Year Detection
-			m << { :firmware=>@body.scan(/^<!--Version ([\d]{8}) for [\d\.]+ EF -->/) }
+			m << { :firmware=>@body.scan(/^<!--Version ([\d]{8}) for [\d\.]+ EF -->/).flatten }
 
 		end
 
 		# ERViewer.ocx Version Detection # JavaScript
-		m << { :module=>"ERViewer.ocx/"+@body.scan(/var g_sVersion = "([\d\.]+)"/).to_s } if @body =~ /var g_sVersion = "[\d\.]+"/
+		m << { :module=>"ERViewer.ocx/"+@body.scan(/var g_sVersion = "([\d\.]+)"/).flatten } if @body =~ /var g_sVersion = "[\d\.]+"/
 
 	end
 

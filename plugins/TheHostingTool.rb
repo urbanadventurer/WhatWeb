@@ -70,25 +70,25 @@ def passive
 
 	# PHP Version detection
 	if @body =~ /<td> ([\d\.]+) \(<a href="\?page=status&sub=phpinfo">PHPInfo<\/a>\)<\/td>/
-		version=@body.scan(/<td> ([\d\.]+) \(<a href="\?page=status&sub=phpinfo">PHPInfo<\/a>\)<\/td>/).to_s
+		version=@body.scan(/<td> ([\d\.]+) \(<a href="\?page=status&sub=phpinfo">PHPInfo<\/a>\)<\/td>/).flatten.first
 		m << { :version=>"PHP:"+version }
 	end
 
 	# MySQL version detection
 	if @body =~ /<td><strong>MySQL Version:<\/strong><\/td>[\r\n|\n]+<td> ([\d\.]+) <\/td>/
-		version=@body.scan(/<td><strong>MySQL Version:<\/strong><\/td>[\r\n|\n]+<td> ([\d\.]+) <\/td>/).to_s
+		version=@body.scan(/<td><strong>MySQL Version:<\/strong><\/td>[\r\n|\n]+<td> ([\d\.]+) <\/td>/).flatten.first
 		m << { :version=>"MySQL:"+version }
 	end
 
 	# OS detection
 	if @body =~ /<td width="20%"><strong>Server OS:<\/strong><\/td>[\r\n|\n]+<td width="80%"> ([^\ ]+) <\/td>/
-		version=@body.scan(/<td width="20%"><strong>Server OS:<\/strong><\/td>[\r\n|\n]+<td width="80%"> ([^\ ]+) <\/td>/).to_s
+		version=@body.scan(/<td width="20%"><strong>Server OS:<\/strong><\/td>[\r\n|\n]+<td width="80%"> ([^\ ]+) <\/td>/).flatten.first
 		m << { :version=>version }
 	end
 
 	# Module detection
 	if @body =~ /<td align="center"><strong>([^<]+)<\/strong><\/td>/
-		modules=@body.scan(/<td align="center"><strong>([^<]+)<\/strong><\/td>/)
+		modules=@body.scan(/<td align="center"><strong>([^<]+)<\/strong><\/td>/).flatten
 		m << { :module=>modules }
 	end
 

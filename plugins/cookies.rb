@@ -39,8 +39,8 @@ def passive
 
 		# Detect local file paths containing public_html
 		if @headers["set-cookie"].to_s =~ /path=\/home[\d]*\/([^\/]+)\/public_html\//
-			m << { :account=>@headers["set-cookie"].to_s.scan(/path=\/home[\d]*\/([^\/]+)\/public_html\//) }
-			m << { :filepath=>@headers["set-cookie"].to_s.scan(/path=(\/home[\d]*\/[^\/]+\/public_html\/)/) }
+			m << { :account=>@headers["set-cookie"].to_s.scan(/path=\/home[\d]*\/([^\/]+)\/public_html\//).flatten }
+			m << { :filepath=>@headers["set-cookie"].to_s.scan(/path=(\/home[\d]*\/[^\/]+\/public_html\/)/).flatten }
 		end
 
 	end

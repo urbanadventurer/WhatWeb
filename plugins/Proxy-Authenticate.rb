@@ -25,7 +25,7 @@ def passive
 	m=[]
 
 	# Proxy-Authenticate HTTP Header
-	m << { :string=>@headers["proxy-authenticate"].scan(/realm="([^"]+)"/i).to_s } if @headers["proxy-authenticate"] =~ /realm="([^"]+)"/i
+	m << { :string=>@headers["proxy-authenticate"].scan(/realm="([^"]+)"/i).flatten } if @headers["proxy-authenticate"] =~ /realm="([^"]+)"/i
 
 	m
 end

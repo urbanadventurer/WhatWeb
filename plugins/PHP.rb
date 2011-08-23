@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2011-08-23 # Andrew Horton
+# 
+#
 # Version 0.4 # 2011-05-25 # Brendan Coles <bcoles@gmail.com>
 # Merged php-error plugin and PHP plugin
 # Added aggressive version detection using PHP credits page
@@ -17,7 +20,7 @@
 ##
 Plugin.define "PHP" do
 author "Andrew Horton & Brendan Coles" # 2010-10-26
-version "0.4"
+version "0.5"
 description "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML. This plugin identifies PHP errors, modules and versions and extracts the local file path and username if present. - Homepage: http://www.php.net/"
 
 # ShodanHQ results as at 2011-05-25 #
@@ -113,25 +116,25 @@ def passive
 	m=[]
 
 	# HTTP # Server # Version Detection
-	m << { :version=>@headers["server"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
 
 	# HTTP # Server # Module Detection
-	m << { :module=>@headers["server"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).to_s } if @headers["server"] =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
+	m << { :module=>@headers["server"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).flatten } if @headers["server"] =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
 
 	# HTTP # X-Powered-By
-	m << { :version=>@headers["x-powered-by"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).to_s } if @headers["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["x-powered-by"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).flatten } if @headers["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
 
 	# HTTP # X-Powered-By # Module Detection
-	m << { :module=>@headers["x-powered-by"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).to_s } if @headers["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
+	m << { :module=>@headers["x-powered-by"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).flatten } if @headers["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
 
 	# PHP Error # PHP HTTP Header
 	if @headers["php"] =~ /^Error parsing (.+) on line [\d]+$/
 
 		# Local Filethpath Detection
-		m << { :filepath=>@headers["php"].scan(/^Error parsing (.+) on line [\d]+$/) } unless @headers["php"] =~ /^Error parsing \/php\.ini on line [\d]+$/
+		m << { :filepath=>@headers["php"].scan(/^Error parsing (.+) on line [\d]+$/).flatten } unless @headers["php"] =~ /^Error parsing \/php\.ini on line [\d]+$/
 
 		# Account Detection
-		m << { :account=>@headers["php"].scan(/^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/) } if @headers["php"] =~ /^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/
+		m << { :account=>@headers["php"].scan(/^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/).flatten } if @headers["php"] =~ /^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/
 
 	end
 

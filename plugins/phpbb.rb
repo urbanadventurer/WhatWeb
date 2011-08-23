@@ -88,7 +88,7 @@ def passive
 	m=[]
 
 	if @headers["set-cookie"] =~ /([^ ]+)_u=1; expires/
-		p=@headers["set-cookie"].scan(/([^ ]+)_u=1; expires/).to_s
+		p=@headers["set-cookie"].scan(/([^ ]+)_u=1; expires/).flatten.first
 		m << {:name=>"phpbb3 _u, _k, _sid cookies", :version=>"3" } if @headers["set-cookie"] =~ /#{p}_u=.*#{p}_k=.*#{p}_sid=[0-9a-z]{32}/
 	end
 
@@ -108,7 +108,7 @@ def aggressive
 		# <li><a href="#v303">Changes since 3.0.3</a></li>
 		# <li><a href="#2018">Changes since 2.0.18</a></li>
 		if body =~ /<li><a href="[^"]+">Changes since ([0-9\.]+)<\/a><\/li>/
-			v=body.scan(/<li><a href="[^"]+">Changes since ([0-9\.]+)<\/a><\/li>/)[0].to_s
+			v=body.scan(/<li><a href="[^"]+">Changes since ([0-9\.]+)<\/a><\/li>/).flatten.first
 			m << {:name=>"phpbb changelog", :version=>">"+v }
 		end
 	end

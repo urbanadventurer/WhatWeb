@@ -28,7 +28,7 @@ def passive
 	m=[]
 
 	# Server
-	m << { :version=>@headers["server"].to_s.scan(/^[\s]*Nucleus\/([^\s^\r^\n]+)/i).to_s } if @headers["server"].to_s =~ /^[\s]*Nucleus\/([^\s^\r^\n]+)/i
+	m << { :version=>@headers["server"].to_s.scan(/^[\s]*Nucleus\/([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /^[\s]*Nucleus\/([^\s^\r^\n]+)/i
 
 	m
 

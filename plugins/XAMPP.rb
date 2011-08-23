@@ -109,11 +109,11 @@ def aggressive
 	if body =~ /<title>phpinfo\(\)<\/title>/ and body =~ /XAMPP/i and (body =~ /<h1 class="p">PHP Version [^<]{3,40}<\/h1>/ or body =~ /<h1>PHP Version [^<]{3,40}<\/h1>/)
 
 		# Extract PHP Version
-		m << { :string=>"PHP:"+body.scan(/<h1 class="p">PHP Version ([^<]{3,40})<\/h1>/)[0].to_s } if body =~ /<h1 class="p">PHP Version [^<]{3,40}<\/h1>/
-		m << { :string=>"PHP:"+body.scan(/<h1>PHP Version ([^<]{3,40})<\/h1>/)[0].to_s } if body =~ /<h1>PHP Version [^<]{3,40}<\/h1>/
+		m << { :string=>"PHP:"+body.scan(/<h1 class="p">PHP Version ([^<]{3,40})<\/h1>/).flatten.first } if body =~ /<h1 class="p">PHP Version [^<]{3,40}<\/h1>/
+		m << { :string=>"PHP:"+body.scan(/<h1>PHP Version ([^<]{3,40})<\/h1>/).flatten.first } if body =~ /<h1>PHP Version [^<]{3,40}<\/h1>/
 
 		# OS Detection
-		m << { :os=>body.scan(/<tr><td class="e">System <\/td><td class="v">([^<]{4,256})[\s]?<\/td><\/tr>/)[0].to_s } if body =~ /<tr><td class="e">System <\/td><td class="v">[^<]{4,256}[\s]?<\/td><\/tr>/
+		m << { :os=>body.scan(/<tr><td class="e">System <\/td><td class="v">([^<]{4,256})[\s]?<\/td><\/tr>/).flatten.first } if body =~ /<tr><td class="e">System <\/td><td class="v">[^<]{4,256}[\s]?<\/td><\/tr>/
 
 	end
 

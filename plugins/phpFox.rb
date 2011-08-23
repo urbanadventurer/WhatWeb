@@ -54,7 +54,7 @@ def passive
 
 		# Version Detection # Meta Version # base64 encoded
 		if @body =~ /<meta name="version" content="([^"]+)" \/>/
-			version=@body.scan(/<meta name="version" content="([^"]+)" \/>/).first.to_s
+			version=@body.scan(/<meta name="version" content="([^"]+)" \/>/).flatten.first
 			m << { :version=>Base64.decode64(version).to_s }
 		end
 	end

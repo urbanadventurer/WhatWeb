@@ -42,10 +42,10 @@ def passive
 	m << { :name=>"HTTP Bobo-Exception-Value Header" } unless @headers["bobo-exception-value"].nil?
 
 	# Extract # Bobo-Exception-File
-	m << { :string=>@headers["bobo-exception-file"].scan(/([^\r^\n]+)/).to_s } if @headers["bobo-exception-file"] =~ /([^\r^\n]+)/
+	m << { :string=>@headers["bobo-exception-file"].scan(/([^\r^\n]+)/).flatten } if @headers["bobo-exception-file"] =~ /([^\r^\n]+)/
 
 	# Extract # Bobo-Exception-Type
-	m << { :string=>@headers["bobo-exception-type"].scan(/([^\r^\n]+)/).to_s } if @headers["bobo-exception-type"] =~ /([^\r^\n]+)/
+	m << { :string=>@headers["bobo-exception-type"].scan(/([^\r^\n]+)/).flatten } if @headers["bobo-exception-type"] =~ /([^\r^\n]+)/
 
 	# X-Ksscommands
 	m << { :name=>"X-Ksscommands HTTP Header" } unless @headers["x-ksscommands"].nil?

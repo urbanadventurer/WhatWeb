@@ -22,7 +22,7 @@ http://www.aers-zdc.city.tl/portal/realmstatus/WoW/server_test.php
 matches [
 
 # Default image
-{ :regexp=>/<img[^>]*src="wow_ss.php\?realm=/ },
+{ :regexp=>/<img[^>]*src="wow_ss.php\?realm=/ }, #"
 
 ]
 
@@ -31,10 +31,10 @@ def passive
 	m=[]
 
 	# PHP Version # server_test.php
-	m << { :string=>"PHP/"+@body.scan(/<h3 style="color: green">Your GD Library \(version [\d\.]+\) appears to be capable of running WoW Server Status.<\/h3><br \/><h3 style="color: green">You are running PHP version ([\d\.]+).  Horray!<\/h3><br \/><h3 style="color: green">It appears that your server can run WoW Server Status.  Game on./).to_s } if @body =~ /<h3 style="color: green">Your GD Library \(version [\d\.]+\) appears to be capable of running WoW Server Status.<\/h3><br \/><h3 style="color: green">You are running PHP version ([\d\.]+).  Horray!<\/h3><br \/><h3 style="color: green">It appears that your server can run WoW Server Status.  Game on./
+	m << { :string=>"PHP/"+@body.scan(/<h3 style="color: green">Your GD Library \(version [\d\.]+\) appears to be capable of running WoW Server Status.<\/h3><br \/><h3 style="color: green">You are running PHP version ([\d\.]+).  Horray!<\/h3><br \/><h3 style="color: green">It appears that your server can run WoW Server Status.  Game on./).flatten.to_s } if @body =~ /<h3 style="color: green">Your GD Library \(version [\d\.]+\) appears to be capable of running WoW Server Status.<\/h3><br \/><h3 style="color: green">You are running PHP version ([\d\.]+).  Horray!<\/h3><br \/><h3 style="color: green">It appears that your server can run WoW Server Status.  Game on./
 
 	# GD Library version # server_test.php
-	m << { :string=>"GD/"+@body.scan(/<h3 style="color: green">Your GD Library \(version ([\d\.]+)\) appears to be capable of running WoW Server Status.<\/h3><br \/><h3 style="color: green">You are running PHP version [\d\.]+.  Horray!<\/h3><br \/><h3 style="color: green">It appears that your server can run WoW Server Status.  Game on./).to_s } if @body =~ /<h3 style="color: green">Your GD Library \(version ([\d\.]+)\) appears to be capable of running WoW Server Status.<\/h3><br \/><h3 style="color: green">You are running PHP version [\d\.]+.  Horray!<\/h3><br \/><h3 style="color: green">It appears that your server can run WoW Server Status.  Game on./
+	m << { :string=>"GD/"+@body.scan(/<h3 style="color: green">Your GD Library \(version ([\d\.]+)\) appears to be capable of running WoW Server Status.<\/h3><br \/><h3 style="color: green">You are running PHP version [\d\.]+.  Horray!<\/h3><br \/><h3 style="color: green">It appears that your server can run WoW Server Status.  Game on./).flatten.to_s } if @body =~ /<h3 style="color: green">Your GD Library \(version ([\d\.]+)\) appears to be capable of running WoW Server Status.<\/h3><br \/><h3 style="color: green">You are running PHP version [\d\.]+.  Horray!<\/h3><br \/><h3 style="color: green">It appears that your server can run WoW Server Status.  Game on./
 
 	m
 

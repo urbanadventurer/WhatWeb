@@ -119,10 +119,10 @@ def passive
 		if @headers['www-authenticate'].to_s =~ /realm=/
 
 			# Extract Authentication Method
-			m << { :module=>@headers['www-authenticate'].scan(/([a-z]{3,20})[^\r^\n]{1,256}realm="/i) } if @headers['www-authenticate'].to_s =~ /[a-z]{3,20}[^\r^\n]{1,256}realm="/i
+			m << { :module=>@headers['www-authenticate'].scan(/([a-z]{3,20})[^\r^\n]{1,256}realm="/i).flatten } if @headers['www-authenticate'].to_s =~ /[a-z]{3,20}[^\r^\n]{1,256}realm="/i
 
 			# Extract Authentication Realm
-			m << { :string=>@headers['www-authenticate'].scan(/realm="([^\"]{1,256})"/i) } if @headers['www-authenticate'].to_s =~ /realm="[^\"]{1,256}"/i
+			m << { :string=>@headers['www-authenticate'].scan(/realm="([^\"]{1,256})"/i).flatten } if @headers['www-authenticate'].to_s =~ /realm="[^\"]{1,256}"/i
 
 		else
 

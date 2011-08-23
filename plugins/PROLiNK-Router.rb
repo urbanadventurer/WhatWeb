@@ -61,16 +61,16 @@ def passive
 		m << { :certainty=>25, :name=>"HTTP Server Header" }
 
 		# status.asp or /admin/status.asp # Model Detection
-		m << { :model=>@body.scan(/<tr bgcolor="#EEEEEE">\s+<td width=40%><font size=2><b>Alias Name<\/b><\/td>\s+<td width=60%><font size=2>PROLiNK ([^<]+)<\/td>\s+<\/tr>/) } if @body =~ /<tr bgcolor="#EEEEEE">\s+<td width=40%><font size=2><b>Alias Name<\/b><\/td>\s+<td width=60%><font size=2>PROLiNK ([^<]+)<\/td>\s+<\/tr>/
+		m << { :model=>@body.scan(/<tr bgcolor="#EEEEEE">\s+<td width=40%><font size=2><b>Alias Name<\/b><\/td>\s+<td width=60%><font size=2>PROLiNK ([^<]+)<\/td>\s+<\/tr>/).flatten } if @body =~ /<tr bgcolor="#EEEEEE">\s+<td width=40%><font size=2><b>Alias Name<\/b><\/td>\s+<td width=60%><font size=2>PROLiNK ([^<]+)<\/td>\s+<\/tr>/
 
 		# status.asp or /admin/status.asp # Firmware Detection
-		m << { :firmware=>@body.scan(/<tr bgcolor="#EEEEEE">\s+<td width=40%><font size=2><b>Firmware Version<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/) } if @body =~ /<tr bgcolor="#EEEEEE">\s+<td width=40%><font size=2><b>Firmware Version<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/
+		m << { :firmware=>@body.scan(/<tr bgcolor="#EEEEEE">\s+<td width=40%><font size=2><b>Firmware Version<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/).flatten } if @body =~ /<tr bgcolor="#EEEEEE">\s+<td width=40%><font size=2><b>Firmware Version<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/
 
 		# status.asp or /admin/status.asp # DSP Version Detection
-		m << { :version=>@body.scan(/<tr bgcolor="#DDDDDD">\s+<td width=40%><font size=2><b>DSP Version<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/) } if @body =~ /<tr bgcolor="#DDDDDD">\s+<td width=40%><font size=2><b>DSP Version<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/
+		m << { :version=>@body.scan(/<tr bgcolor="#DDDDDD">\s+<td width=40%><font size=2><b>DSP Version<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/).flatten } if @body =~ /<tr bgcolor="#DDDDDD">\s+<td width=40%><font size=2><b>DSP Version<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/
 
 		# status.asp or /admin/status.asp # MAC Address Detection
-		m << { :string=>"MAC:"+@body.scan(/<tr bgcolor="#DDDDDD">\s+<td width=40%><font size=2><b>MAC Address<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/).to_s } if @body =~ /<tr bgcolor="#DDDDDD">\s+<td width=40%><font size=2><b>MAC Address<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/
+		m << { :string=>"MAC:"+@body.scan(/<tr bgcolor="#DDDDDD">\s+<td width=40%><font size=2><b>MAC Address<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/).flatten } if @body =~ /<tr bgcolor="#DDDDDD">\s+<td width=40%><font size=2><b>MAC Address<\/b><\/td>\s+<td width=60%><font size=2>([^<]+)<\/td>\s+<\/tr>/
 
 	end
 

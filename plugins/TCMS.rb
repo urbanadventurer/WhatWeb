@@ -39,7 +39,7 @@ def passive
 	# 2.0+ powered by text
         if @body =~ /				<a style="color:#999;" href="http:\/\/www.arsmedia-nidda.de">arsmedia<\/a>/
 		if @body =~ /powered by TCMS v[0-9\.]+ &copy; [0-9]{4} by/
-	                version=@body.scan(/powered by TCMS v([\d\.]+) &copy; [0-9]{4} by/).to_s
+	                version=@body.scan(/powered by TCMS v([\d\.]+) &copy; [0-9]{4} by/).flatten
         	        m << {:version=>version}
 		end
         end

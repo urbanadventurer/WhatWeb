@@ -35,13 +35,13 @@ def passive
 		m << { :md5=>"3f0d5432fc1a54d284d17939431acf8a", :url=>"/gif/top.gif" }
 
 		# Firmware # /html/info.htm
-		m << { :url=>"/html/info.htm", :firmware=>@body.scan(/<td bgcolor="#b4c0cb"><b>&nbsp;Firmware Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/).to_s } if @body =~ /<td bgcolor="#b4c0cb"><b>&nbsp;Firmware Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/
+		m << { :url=>"/html/info.htm", :firmware=>@body.scan(/<td bgcolor="#b4c0cb"><b>&nbsp;Firmware Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/).flatten } if @body =~ /<td bgcolor="#b4c0cb"><b>&nbsp;Firmware Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/
 
 		# Version # /html/info.htm
-		m << { :url=>"/html/info.htm", :version=>@body.scan(/<td bgcolor="#b4c0cb"><b>&nbsp;Script Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/).to_s } if @body =~ /<td bgcolor="#b4c0cb"><b>&nbsp;Script Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/
+		m << { :url=>"/html/info.htm", :version=>@body.scan(/<td bgcolor="#b4c0cb"><b>&nbsp;Script Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/).flatten } if @body =~ /<td bgcolor="#b4c0cb"><b>&nbsp;Script Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/
 
 		# MAC Address # /html/info.htm
-		m << { :url=>"/html/info.htm", :string=>@body.scan(/<TD bgcolor="#b4c0cb"><b>&nbsp;MAC-adresse&nbsp;<\/b><\/TD>[\r\n\s]*<TD bgcolor="#f1eee9"> ([^<]+)<\/TD>/).to_s } if @body =~ /<TD bgcolor="#b4c0cb"><b>&nbsp;MAC-adresse&nbsp;<\/b><\/TD>[\r\n\s]*<TD bgcolor="#f1eee9"> ([^<]+)<\/TD>/
+		m << { :url=>"/html/info.htm", :string=>@body.scan(/<TD bgcolor="#b4c0cb"><b>&nbsp;MAC-adresse&nbsp;<\/b><\/TD>[\r\n\s]*<TD bgcolor="#f1eee9"> ([^<]+)<\/TD>/).flatten } if @body =~ /<TD bgcolor="#b4c0cb"><b>&nbsp;MAC-adresse&nbsp;<\/b><\/TD>[\r\n\s]*<TD bgcolor="#f1eee9"> ([^<]+)<\/TD>/
 
 	end
 
@@ -63,13 +63,13 @@ def aggressive
 		status,url,ip,body,headers=open_target(target)
 
 		# Firmware # /html/info.htm
-		m << { :url=>"/html/info.htm", :firmware=>body.scan(/<td bgcolor="#b4c0cb"><b>&nbsp;Firmware Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/).to_s } if body =~ /<td bgcolor="#b4c0cb"><b>&nbsp;Firmware Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/
+		m << { :url=>"/html/info.htm", :firmware=>body.scan(/<td bgcolor="#b4c0cb"><b>&nbsp;Firmware Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/).flatten } if body =~ /<td bgcolor="#b4c0cb"><b>&nbsp;Firmware Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/
 
 		# Version # /html/info.htm
-		m << { :url=>"/html/info.htm", :version=>body.scan(/<td bgcolor="#b4c0cb"><b>&nbsp;Script Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/).to_s } if body =~ /<td bgcolor="#b4c0cb"><b>&nbsp;Script Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/
+		m << { :url=>"/html/info.htm", :version=>body.scan(/<td bgcolor="#b4c0cb"><b>&nbsp;Script Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/).flatten } if body =~ /<td bgcolor="#b4c0cb"><b>&nbsp;Script Version&nbsp;<\/b><\/td>[\r\n\s]*<td bgcolor="#f1eee9"> ([\d\.]+) &nbsp;<\/td>/
 
 		# MAC Address # /html/info.htm
-		m << { :url=>"/html/info.htm", :string=>body.scan(/<TD bgcolor="#b4c0cb"><b>&nbsp;MAC-adresse&nbsp;<\/b><\/TD>[\r\n\s]*<TD bgcolor="#f1eee9"> ([^<]+)<\/TD>/).to_s } if body =~ /<TD bgcolor="#b4c0cb"><b>&nbsp;MAC-adresse&nbsp;<\/b><\/TD>[\r\n\s]*<TD bgcolor="#f1eee9"> ([^<]+)<\/TD>/
+		m << { :url=>"/html/info.htm", :string=>body.scan(/<TD bgcolor="#b4c0cb"><b>&nbsp;MAC-adresse&nbsp;<\/b><\/TD>[\r\n\s]*<TD bgcolor="#f1eee9"> ([^<]+)<\/TD>/).flatten } if body =~ /<TD bgcolor="#b4c0cb"><b>&nbsp;MAC-adresse&nbsp;<\/b><\/TD>[\r\n\s]*<TD bgcolor="#f1eee9"> ([^<]+)<\/TD>/
 
 	end
 

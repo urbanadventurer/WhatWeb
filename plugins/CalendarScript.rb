@@ -121,7 +121,7 @@ def aggressive
 			status,url,ip,body,headers=open_target(target)
 
 			# Extract local file path
-			m << { :filepath=>body.scan(/^Month '-1' out of range 0\.\.11 at ([^\n^<]+) <a href="#error">line [\d]+<\/a>\.$/) } if body =~ /^Month '-1' out of range 0\.\.11 at ([^\n^<]+) <a href="#error">line [\d]+<\/a>\.$/
+			m << { :filepath=>body.scan(/^Month '-1' out of range 0\.\.11 at ([^\n^<]+) <a href="#error">line [\d]+<\/a>\.$/).flatten } if body =~ /^Month '-1' out of range 0\.\.11 at ([^\n^<]+) <a href="#error">line [\d]+<\/a>\.$/
 
 		end
 

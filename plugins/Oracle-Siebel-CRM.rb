@@ -97,7 +97,7 @@ def passive
 	m << { :name=>"_sn Cookie" } if @headers["set-cookie"] =~ /_sn=[a-zA-Z0-9]{43}_; Version=1; Path=\//
 
 	# Landing page # Default form HTML
-	m << { :string=>@body.scan(/<input type[\s]*=[\s]*['"]?hidden["']? name[\s]*=[\s]*['"]?SWEView['"]? value[\s]*=[^\(]+\(([^\)]*)\)/).to_s } if @body =~ /<input type[\s]*=[\s]*['"]?hidden["']? name[\s]*=[\s]*['"]?SWEView['"]? value[\s]*=[^\(]+\(([^\)]*)\)/
+	m << { :string=>@body.scan(/<input type[\s]*=[\s]*['"]?hidden["']? name[\s]*=[\s]*['"]?SWEView['"]? value[\s]*=[^\(]+\(([^\)]*)\)/).flatten } if @body =~ /<input type[\s]*=[\s]*['"]?hidden["']? name[\s]*=[\s]*['"]?SWEView['"]? value[\s]*=[^\(]+\(([^\)]*)\)/
 
 	m
 

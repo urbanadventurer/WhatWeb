@@ -49,7 +49,7 @@ def passive
 		m << { :name=>"HTTP Server Header" }
 
 		# PHP Version Detection
-		m << { :string=>"PHP:"+@body.scan(/<td class="content">([^\s]+) \(<a href=".\/phpinfo.php" target="_blank">phpinfo<\/a>\)<\/td>/).to_s } if @body =~ /<td class="content">([^\s]+) \(<a href=".\/phpinfo.php" target="_blank">phpinfo<\/a>\)<\/td>/
+		m << { :string=>"PHP:"+@body.scan(/<td class="content">([^\s]+) \(<a href=".\/phpinfo.php" target="_blank">phpinfo<\/a>\)<\/td>/).flatten } if @body =~ /<td class="content">([^\s]+) \(<a href=".\/phpinfo.php" target="_blank">phpinfo<\/a>\)<\/td>/
 
 	end
 

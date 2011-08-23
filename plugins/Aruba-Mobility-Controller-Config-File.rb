@@ -34,25 +34,25 @@ def passive
 
 		# Get version
 		if @body =~ /^version ([\d\.]+)/
-			version=@body.scan(/^version ([\d\.]+)/)[0][0]
+			version=@body.scan(/^version ([\d\.]+)/).flatten
 			m << { :version=>version }
 		end
 
 		# Get enabled services and ports
 		if @body =~ /^netservice svc-([^\n]+)/
-			modules=@body.scan(/^netservice svc-([^\n]+)/)
+			modules=@body.scan(/^netservice svc-([^\n]+)/).flatten
 			m << { :module=>modules }
 		end
 
 		# Get admin username and password hash
 		if @body =~ /^mgmt-user admin ([^\n]+)/
-			accounts=@body.scan(/^mgmt-user admin ([^\n]+)/)
+			accounts=@body.scan(/^mgmt-user admin ([^\n]+)/).flatten
 			m << { :account=>accounts }
 		end
 
 		# Get WPA passphrase
 		if @body =~ /wpa-passphrase ([^\n^\ ]+)/
-			accounts=@body.scan(/wpa-passphrase ([^\n^\ ]+)/).to_s
+			accounts=@body.scan(/wpa-passphrase ([^\n^\ ]+)/).flatten
 			m << { :account=>"WPA-Passphrase:"+accounts }
 		end
 

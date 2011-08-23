@@ -64,19 +64,19 @@ def passive
 				m << {:name=>'X-Powered-By'}
 		        end
 		        if @headers["x-powered-by"] =~ /Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/i
-				version = 'Framework: ' + @headers["x-powered-by"].scan(/Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s
+				version = 'Framework: ' + @headers["x-powered-by"].scan(/Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/i).flatten.first
 				m << {:version=>version}
 		        end	
 		
 			if @headers["x-powered-by"] =~ /Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i			
-				version = 'Core: ' + @headers["x-powered-by"].scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s 
+				version = 'Core: ' + @headers["x-powered-by"].scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i).flatten.first 
 				m << {:version=>version}
 			end
 		end
 	
 		unless @headers["server"].nil?
 			if @headers["server"] =~ /Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i
-				version = 'Core: ' + @headers["server"].scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i)[0].to_s 
+				version = 'Core: ' + @headers["server"].scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i).flatten.first
 				m << {:version=>version}
 			end
 		end
