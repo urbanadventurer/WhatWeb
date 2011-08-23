@@ -186,7 +186,7 @@ class Plugin
 			        aggressivetarget.open
 				
 				if $verbose >1
-				  puts "#{@plugin_name} Aggressive: #{aggressivetarget.uri.to_s} [#{aggressivetarget.status}]"
+#				  puts "#{@plugin_name} Aggressive: #{aggressivetarget.uri.to_s} [#{aggressivetarget.status}]"
 				end
 
 				results += make_matches(aggressivetarget,match)

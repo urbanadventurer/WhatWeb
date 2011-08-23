@@ -9,7 +9,6 @@ Version 0.4.8-dev Unreleased
 * Updated whatweb.xsl
 * Fixed bug causing Mongo DB logging to fail
 * Added SQL logging with `--log-sql` and `--log-sql-create` arguments
-* Increased Ruby 1.9 support (still not supported)
 * Removed the spidering feature and dependence on the customised and unsupported Anemone gem
 * Removed the extra_urls feature
 * Added raw header support by monkey patching the net/http library
@@ -19,6 +18,8 @@ Version 0.4.8-dev Unreleased
 * Added methods for aggressive plugins to send HEAD and POST requests
 * Fixed meta refresh redirection but with HTML entities in the URL
 * Added --grep option to be easier than --custom-plugin. -g is now for grep, not google dorks. (Requested by Scott Bell)
+* Major changes to support Ruby 1.9.1
+* Better support for UTF-8 encoded strings in plugins.
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes

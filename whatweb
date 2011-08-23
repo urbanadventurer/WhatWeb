@@ -17,8 +17,6 @@ Author: Andrew Horton aka urbanadventurer. Security Consultant for Security-Asse
  
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-
-
 Copyright 2009-2011 Andrew Horton <andrew.horton at security-assessment dot com>
 
 This file is part of WhatWeb.
@@ -52,8 +50,6 @@ require 'rbconfig'  # detect environment, e.g. windows or linux
 ### ruby 1.9 changes
 if RUBY_VERSION =~ /^1\.9/
         require 'digest/md5'
-	print "ERROR: Ruby 1.9.x is not supported\n"
-	#exit 1
 else
         require 'md5'
 	require 'net/https'
