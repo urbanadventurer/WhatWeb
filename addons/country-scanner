@@ -1,0 +1,103 @@
+#!/bin/bash
+# country scanner v1
+# scan a country, learn something
+#
+GRAY="\033[1;30m"
+RED="\033[0;31m"
+LIGHT_RED="\033[1;31m"
+GREEN="\033[0;32m"
+LIGHT_GRAY="\033[0;37m"
+CYAN="\033[0;36m"
+LIGHT_CYAN="\033[1;36m"
+DARK_GREY="\033[1;30m"
+BROWN="\033[0;33m"
+WHITE="\033[1;37m"
+BLUE="\033[0;34m"
+LIGHT_BLUE="\033[1;34m"
+NO_COLOUR="\033[0m"
+SUBTITLE=$DARK_GREY
+
+echo -e "
+$LIGHT_RED                            __                  
+  ____   ____  __ __  _____/  |________  ___.__.$RED
+_/ ___\ /    \|  |  \/    \   __\_  __ \\\\\   |  |
+\  \___(  //  )  |  /   |  \  |  |  | \/ \___  |
+ \_____>\____/|____/|___|  /__|  |__|    / ____|
+                         \/              \/                                                          
+$LIGHT_BLUE  ______  ____  _____     ____   ____   ____ _______ $BLUE
+ /  ___/_/ ___\ \__  \   /    \ /    \_/ __ \\\\\_  __ \\
+ \___ \ \  \___  / \\\\\ \_|   |  \   |  \  ___/ |  | \/
+/______> \___  >(____  /|___|  /___|  /\_____>|__|   
+             \/      \/      \/     \/           $NO_COLOUR
+
+Country Scanner - Sample the web around the world	
+Version v1.0 by urbanadventurer / Andrew Horton
+"
+
+N=100000
+AGENT="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; eSobiSubscriber 2.0.4.16; .NET CLR 3.0.30618)"
+
+usage(){
+	echo "Usage: $0 "
+	echo -e "-c\tcountry"
+	echo -e "-l\tList countries"
+	echo -e "-h\thelp"
+	echo -e "-n\tNumber of results. 0 for all. Default: $N"
+	echo
+}
+
+checkdependencies(){
+for c in `echo "nmap geoipgen"`;
+do
+	if [ -z "`which $c`" ]; then
+		echo "$c not found. aborting"
+		exit 1
+	fi
+done
+}
+
+checkdependencies
+
+while getopts "hln:c:" OPTION
+do
+	case $OPTION in
+	h)	usage;exit 1;;
+	n)	N="$OPTARG";;
+	l)	geoipgen -l;exit 1;;
+	c)	CC="$OPTARG";;
+	?)	usage; exit ;;
+	esac
+done
+
+if [ -z "$CC" ]; then
+	usage; exit 1
+fi
+
+# check CC is sane
+
+# find whatweb
+WHATWEB=`dirname "$0"`"/../whatweb"
+
+f=`tempfile --prefix scan-`
+g=`tempfile --prefix scan-`  
+h=`tempfile -d . --prefix scan --suffix "-$CC"`
+
+if [ "$N" = "0" ]; then
+	echo "[Generating all IP addresses in $CC]"
+	geoipgen "$CC" > "$f"
+else
+	echo "[Generating $N IP addresses in $CC]"
+	geoipgen -n "$N" "$CC" > "$f"
+fi
+
+echo "[Scanning for port 80]"
+nmap  --open -PN -n -p 80 -i "$f" -oG "$g" --min-hostgroup 5000 --max-retries 0 --host-timeout 60s --min-rate 500 2>/dev/null >/dev/null
+fgrep open "$g"  | cut -d ' ' -f 2 > "$f"
+rm -f "$g"
+echo "[Found "`wc -l "$f"`" IP addresses]"
+
+echo "[Scanning with WhatWeb. Logging to $h]"
+# -p +  
+$WHATWEB -U "$AGENT" -t 1250 --read-timeout 10 --log-brief "$h" -i "$f"  2>/dev/null |grep -v "ERROR"
+
+
