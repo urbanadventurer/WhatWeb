@@ -15,7 +15,7 @@ examples %w| newzealand.govt.nz www.direct.gov.uk|
 
 matches [
 {:name=>"dublin core",
-:regexp=>/<meta [^>]*name="DC\.title".*?>/i},
+:regexp=>/<meta [^>]*name="DC\.title"[^>]*>/i},
 
 ]
 

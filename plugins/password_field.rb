@@ -11,16 +11,23 @@ author "Caleb Anderson"
 version "0.1"
 description "find password fields"
 
-examples %w|www.twitter.com  www.facebook.com|
+# Examples #
+examples %w|
+www.twitter.com
+www.facebook.com
+|
 
+# Matches #
 matches [
-{:name=>"rss link type", :regexp=>/<input [^>]*?type=["']password["'].*?>/i }
+
+{:name=>"rss link type", :regexp=>/<input [^>]*?type=["']password["'][^>]*>/i },
 
 ]
 
+# Passive #
 def passive
     m=[]
-    fields=@body.scan(/<input [^>]*?type=["']password["'].*?>/i)
+    fields=@body.scan(/<input [^>]*?type=["']password["'][^>]*>/i)
     fields.each do |field|
         name=field.scan(/name=["'](.*?)["']/i).first.first rescue nil # rescues when there is no name= element
         m << {:name=>"field name",:string=>name} unless name.nil?

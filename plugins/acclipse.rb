@@ -67,7 +67,7 @@ http://whitetiecatering.co.nz/|
 
 matches [
 {:name=>"Footer link",
-:regexp=>/<a href="http:\/\/www.(acclipse|acclipseweb).(co.nz|com.au)[\/]?(for_Businesses)?" target="_blank"( class="poweredbylink")?>(Software solutions for accountants|Web design New Zealand|Web design Australia)<\/a>/},
+:regexp=>/<a href="http:\/\/www\.(acclipse|acclipseweb)\.(co\.nz|com\.au)[\/]?(for_Businesses)?" target="_blank"( class="poweredbylink")?>(Software solutions for accountants|Web design New Zealand|Web design Australia)<\/a>/},
 
 {:name=>"Website powered by",
 :text=>"Website powered by <A href=\"http://www.acclipse.com.au\" target=_blank>Acclipse</A>"},
@@ -76,7 +76,7 @@ matches [
 :text=>"<A href=\"http://www.acclipse.co.nz/\" target=_blank></A>"},
 
 {:name=>"https://secure.acclipse.com link",
-:regexp=>/https:\/\/secure.acclipse(web)?.com\/[^\/]*\/index.cfm/}
+:regexp=>/https:\/\/secure\.acclipse(web)?\.com\/[^\/]*\/index\.cfm/}
 ]
 
 

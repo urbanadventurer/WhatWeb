@@ -15,7 +15,7 @@ examples %w|adrianlamologs.blogspot.com hackersinpinkdresses.wordpress.com|
 
 matches [
 {:name=>"openid",
-:regexp=>/<link .*?rel=['"](openid\.server|openid.delegate)['"].*?>/i
+:regexp=>/<link [^>]*rel=['"](openid\.server|openid\.delegate)['"][^>]*>/i
 },
 
 ]

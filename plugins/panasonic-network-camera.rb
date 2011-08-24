@@ -184,9 +184,9 @@ matches [
 
 { :text=>'      <FONT FACE="Arial" STYLE="font-size: 24px" COLOR="#ffffff"><B>Network Camera</B></FONT>' },
 
-{ :regexp=>/<BODY BACKGROUND="image\/Hcm1[0]?.gif" 		[\t]?BGCOLOR="#efefef" TEXT="#000000" LINK="#000000" 			VLINK="#000000" ALINK="#000000">/ },
+{ :regexp=>/<BODY BACKGROUND="image\/Hcm1[0]?\.gif" 		[\t]?BGCOLOR="#efefef" TEXT="#000000" LINK="#000000" 			VLINK="#000000" ALINK="#000000">/ },
 
-{ :regexp=>/<FRAME name=bar src="CgiTagMenu?page=Top&Language=[\d]+" scrolling=no NORESIZE>/ },
+{ :regexp=>/<FRAME name=bar src="CgiTagMenu\?page=[^&]+&Language=[\d]+" scrolling=no NORESIZE>/ },
 
 # WJ-HD200/WJ-HD220 Digital Disk Recorder Series
 { :text=>'<META name="copyright" content="Copyright (C) 2003 Matsushita Electric Industrial Co., Ltd. All rights reserved.">' },
