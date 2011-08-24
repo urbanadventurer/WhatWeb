@@ -20,7 +20,7 @@ Version 0.4.8-dev Unreleased
 * Added --grep, -g option to be easier than --custom-plugin. (Requested by Scott Bell)
 * Major changes to support Ruby 1.9.1
 * Better support for UTF-8 encoded strings in plugins.
-* Fixed :url and :status. they are both AND and cannot be used alone unless with each other
+* :status and :url are now logical AND with other matches. They cannot match in isolation unless with each other.
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes

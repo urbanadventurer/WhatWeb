@@ -149,14 +149,13 @@ PLUGINS:
   --list-plugins, -l	List the plugins
   --info-plugins, -I	Display information for all plugins. Optionally search
 			with keywords in a comma delimited list.
-  --grep, -g		Search for a string. Reports in a plugin called Grep
   --custom-plugin	Define a custom plugin called Custom-Plugin,
 			Examples: ":text=>'powered by abc'"
 			":regexp=>/powered[ ]?by ab[0-9]/"
 			":ghdb=>'intitle:abc \"powered by abc\"'"
 			":md5=>'8666257030b94d3bdb46e05945f60b42'"
 			"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
-  --dorks <plugin name>	List google dorks for the selected plugin
+--dorks			List google dorks for the selected plugin
 
 LOGGING & OUTPUT:
   --verbose, -v		Increase verbosity, use twice for plugin development.
@@ -178,7 +177,6 @@ LOGGING & OUTPUT:
   --log-mongo-username	MongoDB username. Default: nil
   --log-mongo-password	MongoDB password. Default: nil
   --log-errors=FILE	Log errors
-  --no-errors		Suppress error messages
 
 PERFORMANCE & STABILITY:
   --max-threads, -t	Number of simultaneous threads. Default: 25.
@@ -220,7 +218,6 @@ The following types of logging are supported:
 	--log-mongo-username	MongoDB username. Default: nil
 	--log-mongo-password	MongoDB password. Default: nil
 	--log-errors=FILE	Log errors. This is usually printed to the screen in red.
-	--no-errors		Suppress error messages
 
 You can output to multiple logs simultaneously by specifying multiple command line logging options.
 
@@ -388,6 +385,10 @@ Version 0.4.8-dev Unreleased
 Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 License: GPLv2
+
+Anemone library (used for spidering) is written by Chris Kite
+Homepage: http://anemone.rubyforge.org/
+License: MIT
 
 
 DEVELOPERS
