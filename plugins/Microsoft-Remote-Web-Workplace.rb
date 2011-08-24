@@ -69,7 +69,7 @@ matches [
 { :text=>'</title><link href="signinStyle.css" rel="stylesheet" type="text/css" />' },
 
 # Default form tag HTML
-{ :regexp=>/<form name="form1" method="post" action="logon.aspx?ReturnUrl=%2f[^"]" id="form1" autocomplete="OFF" onsubmit="OnUserNameFocus\(\);">/ },
+{ :regexp=>/<form name="form1" method="post" action="logon\.aspx\?ReturnUrl=%2f[^"]" id="form1" autocomplete="OFF" onsubmit="OnUserNameFocus\(\);">/ },
 
 # Default remember me link
 { :text=>'<input id="rememberMe" type="checkbox" name="rememberMe" tabindex="3" /><label for="rememberMe">Remember me on this computer</label>', :certainty=>25 },
