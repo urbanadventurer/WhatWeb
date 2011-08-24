@@ -81,6 +81,9 @@ Comma delimited set of selected plugins. Default is all.
 Display information for all plugins. Optionally search
  with keywords in a comma delimited list.
 .TP
+.B \-\-grep \-g
+Search for a string. Reports in a plugin called Grep
+.TP
 .B \-\-example-urls \-e
 Add example urls for each plugin to the target list
 .TP
@@ -135,6 +138,9 @@ MongoDB password. Default: nil
 .B \-\-log-errors=FILE
 Log errors
 .TP
+.B \-\-no-errors
+Suppress error messages
+.TP
 .B \-\-user-agent \-U
 Identify as user-agent instead of WhatWeb/VERSION.
 .TP
@@ -179,8 +185,8 @@ Examples: ":text=>'powered by abc'"
 ":md5=>'8666257030b94d3bdb46e05945f60b42'"
 "{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
 .TP
-.B \-\-dorks \-g <plugin name>
-Returns google dorks for the selected plugin
+.B \-\-dorks <plugin name>
+List google dorks for the selected plugin
 .TP
 .B \-\-url-prefix
 Add a prefix to target URLs
@@ -219,8 +225,6 @@ Display version information.
  whatweb 192.168.1.0/24
 
 .SH BUGS
-WhatWeb is not compatible with Ruby 1.9
-
 Logging modes append to the user-selected log file by default.
  Appending will result in malformed XML due to multiple \<xml\> tags
  in XML and MagicTree logging modes.

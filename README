@@ -155,7 +155,7 @@ PLUGINS:
 			":ghdb=>'intitle:abc \"powered by abc\"'"
 			":md5=>'8666257030b94d3bdb46e05945f60b42'"
 			"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
---dorks, -g <plugin name>	Returns google dorks for the selected plugin
+--dorks			List google dorks for the selected plugin
 
 LOGGING & OUTPUT:
   --verbose, -v		Increase verbosity, use twice for plugin development.
@@ -286,9 +286,11 @@ Examples :
 	-p ./plugins-disabled,-md5
 
 
-The --dorks, -g <plugin name> command line option returns google dorks for the selected plugin.
+The --dorks <plugin name> command line option returns google dorks for the selected plugin.
 
-For example, -g wordpress returns "is proudly powered by WordPress"
+For example, --dorks wordpress returns "is proudly powered by WordPress"
+
+The --grep, -g command line option searches the target page for the selected string and returns a match in a plugin called Grep if it is found.
 
 
 6. Aggression
