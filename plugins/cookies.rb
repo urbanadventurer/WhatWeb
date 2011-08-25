@@ -33,9 +33,9 @@ def passive
 	unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?
 
 		# Extract cookie names
-		#@headers["set-cookie"].each do |cookie|
-		m << { :string=>@headers["set-cookie"].split("=")[0] } if @headers["set-cookie"] =~ /=/
-		#end
+		@headers["set-cookie"].each do |cookie|
+			m << { :string=>cookie.split("=")[0] } if cookie =~ /=/
+		end
 
 		# Detect local file paths containing public_html
 		if @headers["set-cookie"].to_s =~ /path=\/home[\d]*\/([^\/]+)\/public_html\//
