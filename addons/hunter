@@ -23,6 +23,7 @@ USERAGENT="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) Apple
 PROXYUSER=""
 PROXY=""
 FILTER=""
+WHATWEB_QUIET=""
 
 # GGGoogleScan settings
 WAIT="0"
@@ -82,7 +83,7 @@ Options:
   -l KEYWORD		List supported applications. Filter by KEYWORD.
 			Use \".\" to list all applications.
   -h			This help info
-  -q			Quiet. Turn off comment lines.
+  -q			Quiet. Do not display comment lines and errors to STDOUT
 
 Google Options:
   -d NUM		Depth of Google results. NUM pages to return. Default: 5
@@ -160,8 +161,9 @@ if [[ "$VERBOSE" == "TRUE" ]]; then
 	echo "$DORKS"
 fi
 
-# Show google query URLs
+# Set quiet args if required
 if [[ "$VERBOSE" == "FALSE" ]]; then
+	WHATWEB_QUIET="-q --no-errors"
 	# gggooglescan's quiet mode is broken in v0.4
 	if [[ ! -z `cat "$GOOGLESCAN" | grep "getopts" | grep q` ]]; then
 		GSCAN_QUIET="-q"
@@ -169,7 +171,7 @@ if [[ "$VERBOSE" == "FALSE" ]]; then
 fi
 
 # Pipe dorks to gggooglescan then pipe the results to WhatWeb
-echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" $GSCAN_QUIET -d "$DEPTH" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$LOG" -p "$FILTER" | grep -e " \[[0-9]"
+echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" $GSCAN_QUIET -d "$DEPTH" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" $WHATWEB_QUIET -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$LOG" -p "$FILTER" | grep -e " \[[0-9]"
 
 # Show log message
 if [[ "$VERBOSE" == "TRUE" ]]; then
