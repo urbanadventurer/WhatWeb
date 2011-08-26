@@ -98,6 +98,6 @@ echo "[Found "`wc -l "$f"`" IP addresses]"
 
 echo "[Scanning with WhatWeb. Logging to $h]"
 # -p +  
-$WHATWEB -U "$AGENT" -t 1250 --read-timeout 10 --log-brief "$h" -i "$f"  2>/dev/null |grep -v "ERROR"
+$WHATWEB --no-errors -U "$AGENT" -t 1250 --read-timeout 10 --log-brief "$h" -i "$f"  2>/dev/null 
 
 
