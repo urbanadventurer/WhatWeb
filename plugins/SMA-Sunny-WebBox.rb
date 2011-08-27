@@ -42,7 +42,7 @@ examples %w|
 matches [
 
 # Version Detection # /culture/index.dml
-{ :url=>"/culture/index.dml", :account=>"User,Installer", :version=>/<UserLevels><Items><XmlItem name="[^"^\s]*"><Items \/><Value>User<\/Value><\/XmlItem><XmlItem name="[^"^\s]*"><Items \/><Value>Installer<\/Value><\/XmlItem><\/Items><\/UserLevels><\/Element><\/Content><StatusBar deviceKey="[^"^\s]*" hideDataTransfer="[^"^\s]*" hidePasswordSafety="[^"^\s]*" hidePlantTime="[^"^\s]*" hideUserLevel="[^"^\s]*" hideUpdateState="[^"^\s]*" noRefresh="[^"^\s]*" serialNumber="[\d]*" version="([^"^\s]+)" \/><\/Page>/ },
+{ :url=>"/culture/index.dml", :account=>["User","Installer"], :version=>/<UserLevels><Items><XmlItem name="[^"^\s]*"><Items \/><Value>User<\/Value><\/XmlItem><XmlItem name="[^"^\s]*"><Items \/><Value>Installer<\/Value><\/XmlItem><\/Items><\/UserLevels><\/Element><\/Content><StatusBar deviceKey="[^"^\s]*" hideDataTransfer="[^"^\s]*" hidePasswordSafety="[^"^\s]*" hidePlantTime="[^"^\s]*" hideUserLevel="[^"^\s]*" hideUpdateState="[^"^\s]*" noRefresh="[^"^\s]*" serialNumber="[\d]*" version="([^"^\s]+)" \/><\/Page>/ },
 
 # Frameset Page
 { :url=>"/", :regexp=>/<title>Sunny WebBox<\/title>[\s]+<\/head>[\s]+<frameset rows="75,\*,22" frameborder="no" border="2" framespacing="0">/ },

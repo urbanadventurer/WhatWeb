@@ -50,18 +50,18 @@ matches [
 
 # Meta Generator # xtcModified # http://www.xtc-modified.org/
 { :module=>/<meta name="generator" content="\(c\) by (xtcModified v[\d\.]{1,15}) dated: [\d]{4}-[\d]{2}-[\d]{2} , http:\/\/www.xtc-modified.org" \/>/ },
-{ :text=>'<meta name="generator" content="(c) by xtcModified , http://www.xtc-modified.org" />', :module=>["xtcModified"] },
-{ :text=>'<meta name="generator" content="(c) by xtcModified ----- http://www.xtc-modified.org" />', :module=>["xtcModified"] },
+{ :text=>'<meta name="generator" content="(c) by xtcModified , http://www.xtc-modified.org" />', :module=>"xtcModified" },
+{ :text=>'<meta name="generator" content="(c) by xtcModified ----- http://www.xtc-modified.org" />', :module=>"xtcModified" },
 
 # Copyright HTML
 { :regexp=>/<div class="copyright">eCommerce Engine &copy; [\d]{4} <a href="http:\/\/www.xt-commerce.com[\/]?" target="_blank">xt:Commerce Shopsoftware<\/a>/ },
 
 # Copyright HTML # eComBASE # http://www.ecombase.de/
-{ :regexp=>/<div class="copyright"><a rel="follow" href="http:\/\/[^>^"]*\/ecombase.php" title="eComBASE licence">eComBASE<\/a> &copy; [\d]{4} based on /, :module=>["eComBASE"] },
+{ :regexp=>/<div class="copyright"><a rel="follow" href="http:\/\/[^>^"]*\/ecombase.php" title="eComBASE licence">eComBASE<\/a> &copy; [\d]{4} based on /, :module=>"eComBASE" },
 
 # Copyright HTML # xtcModified # http://www.xtc-modified.org
 { :module=>/<div class="copyright"><a href="http:\/\/www.xtc-modified.org" target="_blank">(xtcModified v[\d\.]{1,15}) dated: [\d]{4}-[\d]{2}-[\d]{2}<\/a>/ },
-{ :text=>'<div class="copyright"><a href="http://www.xtc-modified.org" target="_blank">xtcModified</a>', :module=>["xtcModified"] },
+{ :text=>'<div class="copyright"><a href="http://www.xtc-modified.org" target="_blank">xtcModified</a>', :module=>"xtcModified" },
 
 ]
 
