@@ -4,10 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-08-27 #
+# Added cookie matches
+##
 Plugin.define "DataLife-Engine" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
-version "0.1"
+version "0.2"
 description "DataLife Engine CMS - Homepage: http://dle-news.ru"
+
+# ShodanHQ results as at 2011-08-27 #
+# 3,348 for dle_hash dle_password dle_user_id
 
 # Google results at 2011-03-18 #
 # 374 for "powered by DataLife Engine"
@@ -38,6 +44,8 @@ rusinet.com
 hotgallery.org
 www.era.ge
 digggu.co.cc
+188.126.78.186
+193.16.101.9
 |
 
 # Matches #
@@ -53,8 +61,12 @@ matches [
 # JavaScript
 { :regexp=>/<script language="javascript" type="text\/javascript">[\s]+<!--[\s]+var dle_root       = '[^']+';[\s]+var dle_admin      = '[^']*';[\s]+var dle_login_hash = '[^']*';[\s]+(var dle_group      = [\d]+;[\s]+)?var dle_skin       = '[^']*';[\s]+var dle_wysiwyg    = '[^']*';[\s]+var quick_wysiwyg  = '[^']*';[\s]+/ },
 
+# Cookies
+{ :search=>"headers[set-cookie]", :regexp=>/dle_hash=[^;]+;/ },
+{ :search=>"headers[set-cookie]", :regexp=>/dle_password=[^;]+;/ },
+{ :search=>"headers[set-cookie]", :regexp=>/dle_user_id=[^;]+;/ },
+
 ]
 
 end
-
 
