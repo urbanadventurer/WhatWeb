@@ -78,13 +78,13 @@ www.auroraworld.de/shop/shop/produkte/
 matches [
 
 # powered by text
-{ :regexp=>/Powered by <a title="Koobi ist ein komfortables und leistungsf&auml;higes Content-Management-System \(CMS\) f&uuml;r Privatpersonen, Vereine, kleine und mittelst&auml;ndische Unternehmen, die einen professionellen Internetauftritt realisieren m&ouml;chten."[^>]+>Koobi[\ :]*/i },
+{ :regexp=>/Powered by <a title="Koobi ist ein komfortables und leistungsf&auml;higes Content-Management-System \(CMS\) f&uuml;r Privatpersonen, Vereine, kleine und mittelst&auml;ndische Unternehmen, die einen professionellen Internetauftritt realisieren m&ouml;chten."[^>]+>Koobi/i },
 
 # HTML Comment
 { :text=>'<!-- powered by koobi - do not remove this info! -->' },
 
 # Version Detection # Koobie Pro Powered by text
-{ :version=>/powered by <a class="foot" href="http:\/\/www.dream4.de\/[^>]+>Koobi Pro ([\d\.]+)<\/a>/i, :module=>["Pro"] },
+{ :version=>/powered by <a class="foot" href="http:\/\/www.dream4.de\/[^>]+>Koobi Pro ([\d\.]+)<\/a>/i, :string=>"Pro" },
 
 # Version Detection # Meta generator
 { :version=>/<meta name="generator" content="\(c\) Koobi ([\d\.]+), http:\/\/www.dream4.de" \/>/ },
@@ -105,7 +105,7 @@ matches [
 { :version=>/    Diese Webseite wurde mit Koobi[\ :]*(SHOP|PRO|CMS)[\ \-]*([\d\.\ a-z]+) erstellt./, :offset=>1 },
 
 # Version Detection # Nulled script by antichat.ru # Powered by text
-{ :version=>/powered by <a class="foot" href="http:\/\/www.antichat.ru" target="_blank">Koobi Pro ([\d\.]+) \[nulled by censored! from antichat.ru\]<\/a>/, :module=>["Nulled"] },
+{ :version=>/powered by <a class="foot" href="http:\/\/www.antichat.ru" target="_blank">Koobi Pro ([\d\.]+) \[nulled by censored! from antichat.ru\]<\/a>/, :string=>"Nulled" },
 
 ]
 
