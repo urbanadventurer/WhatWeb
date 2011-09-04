@@ -37,7 +37,6 @@ def passive
 		# OS Detection # Unix family
 		m << { :os=>"MontaVista Hard Hat Linux" } if @headers["server"] =~ /MontaVista Software Hard Hat Linux/i
 		m << { :os=>"FreeBSD" } if @headers["server"] =~ /FreeBSD/i
-		m << { :os=>"Solaris" } if @headers["server"] =~ /Solaris/i
 		m << { :os=>"MacOSX" } if @headers["server"] =~ /MacOSX/i
 		m << { :os=>"CentOS" } if @headers["server"] =~ /CentOS/i
 		m << { :os=>"Debian Linux" } if @headers["server"] =~ /Debian/i
@@ -52,13 +51,20 @@ def passive
 		m << { :os=>"Slackware Linux" } if @headers["poweredby"] =~ /Slackware/i
 		m << { :os=>"Gentoo Linux" } if @headers["x-powered-by"] =~ /Gentoo/i
 		m << { :os=>"Red Hat Linux" } if @headers["server"] =~ /Red[-| ]?Hat/i
+		m << { :os=>"GNU OpenSolaris" } if @headers["server"] =~ /GNU_OpenSolaris/i
+		m << { :os=>"Trustix Secure Linux" } if @headers["server"] =~ /Trustix Secure Linux/i
 
 		# Unix catch-all
 		if m.empty? and @headers["server"] =~ /UNIX/i
 			m << { :os=>"Unix" }
 		end
 
-		# OS Detection # Linux catch-all # Kernel Version Detection
+		# Solaris catch-all
+		if m.empty? and @headers["server"] =~ /Solaris/i
+			m << { :os=>"Solaris" }
+		end
+
+		# Linux catch-all # Kernel Version Detection
 		if m.empty? and @headers["server"] =~ /Linux\/[^\s]+/
 			m << { :os=>@headers["server"].scan(/(Linux\/[^\s]+)/) }
 		elsif m.empty? and @headers["server"] =~ /Linux/
