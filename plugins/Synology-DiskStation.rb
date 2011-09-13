@@ -10,8 +10,9 @@ version "0.1"
 description "Synology DiskStation provides a full-featured Network Attached Storage (NAS) solution which offers RAID storage, backup, and network surveillance (NVR). - Homepage: http://www.synology.com/"
 
 # ShodanHQ results as at 2011-08-07 #
-# 545 for webman
-# 534 for webman/index.cgi
+# 2,425 for stauts
+#   545 for webman
+#   534 for webman/index.cgi
 
 # Google results as at 2011-08-07 #
 # 60 for intitle:"Synology DiskStation" inurl:"webman/index.cgi"
@@ -26,6 +27,11 @@ examples %w|
 114.32.160.208:5000
 178.192.156.74
 77.251.129.204:5000
+88.183.148.31
+77.248.245.214
+63.201.78.6
+91.72.94.128
+213.93.79.102
 lss.lawsonsupportservices.com:5000
 www.thegpf.com:5000
 evergreenstables.com:5000
@@ -49,6 +55,9 @@ matches [
 
 # Version Detection
 { :url=>"/webman/index.cgi", :version=>/<script type="text\/javascript" src="synodefs\.cgi\?v=([\d]+)"><\/script>/ },
+
+# Stauts Header
+{ :certainty=>75, :search=>"headers[stauts]", :status=>302, :url=>"/", :regexp=>/^301 Moved Permanently$/ },
 
 ]
 
