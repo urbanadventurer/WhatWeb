@@ -4,22 +4,47 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # Brendan Coles <bcoles@gmail.com>
+# Version 0.2 # 2011-09-14 # Brendan Coles <bcoles@gmail.com>
 # Updated random string generation
+# Updated cookie match
 # Changed :string to :name
+# Added JavaScript match, aggressive image match and google dork
 ##
 Plugin.define "Fortinet-Firewall" do
 author "Aung Khant, http://yehg.net"
 version "0.2"
-description "Detect Fortinet-Firewall Web Interface usually running on port 443 - Homepage: http://www.fortinet.com/"
+description "Fortinet firewall technology combines ASIC-accelerated stateful inspection with an arsenal of integrated application security engines to quickly identify and block complex threats. - Homepage: http://www.fortinet.com/solutions/firewall.html"
+
+# Google results as at 2011-09-14 #
+# 8 for intitle:"Please Login" "Warning: this page requires Javascript. To correctly view, please enable it in your browser."
+
+# Dorks #
+dorks [
+'intitle:"Please Login" "Warning: this page requires Javascript. To correctly view, please enable it in your browser."'
+]
 
 # Examples #
 examples %w|
-
+193.251.60.228/login
+www.fortigate.com/login
+eur.daewoo.com/login
+www.optimedia.co.il/login
+lincoln27.net/login
+https://www.fortianalyzer.com/login
 |
 
 # Matches #
 matches [
+
+# Redirect Page # /index.html
+{ :certainty=>75, :url=>"/", :md5=>"c647dc149f55829659640751e9184f8c" },
+{ :certainty=>75, :url=>"/index.html", :md5=>"c647dc149f55829659640751e9184f8c" },
+
+# JavaScript # /login
+{ :url=>"/login", :certainty=>75, :regexp=>/str_table\.token_needed = "Please input your token code.";[\s]+str_table\.ncode_needed = "FortiToken clock drift detected\. Please input the next code and continue\.";[\s]+str_table\.mail_token_msg = "An email message containing a Token Code will be sent to";/ },
+
+# Aggressive # /images/logon_merge.gif
+#{:url=>"/images/logon_merge.gif", :md5=>"3955ddaf1229f63f94f4a20781b3ade4" },
 
 # Aggressive # login.js?nocache= + 8 random characters # MD5
 {:url=>'login.js?nocache='+rand(36**8).to_s(36), :name=>'Login.js MD5 Hash', :md5=>'6032999e08978b317d8382249866232a'},
@@ -39,13 +64,9 @@ matches [
 def passive
 	m=[]
 
-# Examples cookies:
-#    Set-Cookie: APSCOOKIE=0&0; path=/; expires=Sun, 06-Nov-1960 06:12:35 GMT
-#    Set-Cookie: log_filters=; path=/log/; expires=Sun, 06-Nov-1960 06:12:35 GMT
-
 	# APSCOOKIE and log_filters cookies
 	cookie = @headers['set-cookie'] if @headers.keys.include?('set-cookie')
-	if cookie =~ /APSCOOKIE=/ and cookie =~ /log_filters=/
+	if cookie =~ /APSCOOKIE(_[\d]+)?=/ and cookie =~ /log_filters=/
 		m << {:name=>'HTTP Cookie'}
 	end
 
