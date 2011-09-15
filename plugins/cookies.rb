@@ -33,7 +33,7 @@ def passive
 	unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?
 
 		# Extract cookie names
-		@headers["set-cookie"].each do |cookie|
+		@headers["set-cookie"].split("\n").each do |cookie|
 			m << { :string=>cookie.split("=")[0] } if cookie =~ /=/
 		end
 
