@@ -35,10 +35,11 @@ matches [
 { :certainty=>25, :search=>"headers[server]", :regexp=>/^(Network Camera|Network Dome Camera|Network Camera with Pan\/Tilt|Wireless Network Camera)$/ },
 
 # /cgi-bin/admin/getparamjs.cgi?system
-{ :url=>"/cgi-bin/admin/getparamjs.cgi?system", :model   =>/system_modelname="([^"]+)"/ },
-{ :url=>"/cgi-bin/admin/getparamjs.cgi?system", :version =>/system_supportscriptversion="([^"]+)"/ },
-{ :url=>"/cgi-bin/admin/getparamjs.cgi?system", :firmware=>/system_firmwareversion="([^"]+)"/ },
-{ :url=>"/cgi-bin/admin/getparamjs.cgi?system", :string  =>/system_hostname="([^"]+)"/ },
+{ :url=>"/cgi-bin/admin/getparamjs.cgi", :model   =>/system_modelname="([^"]+)"/ },
+{ :url=>"/cgi-bin/admin/getparamjs.cgi", :version =>/system_supportscriptversion="([^"]+)"/ },
+{ :url=>"/cgi-bin/admin/getparamjs.cgi", :firmware=>/system_firmwareversion="([^"]+)"/ },
+{ :url=>"/cgi-bin/admin/getparamjs.cgi", :string  =>/system_hostname="([^"]+)"/ },
+{ :url=>"/cgi-bin/admin/getparamjs.cgi", :account =>/security_user(pass|name)\.[\d]{1,2}="([^"]+)"/, :offset=>1 },
 
 # /setup/system.html
 { :url=>"/setup/system.html", :text=>'<script type="text/javascript" 	src="/cgi-bin/admin/getparamjs.cgi?system">' },
