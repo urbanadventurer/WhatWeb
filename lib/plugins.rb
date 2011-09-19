@@ -149,7 +149,9 @@ class Plugin
 			if match[:url]
 				# url cannot match by itself. it needs friends
 				unless r.empty?		
-					if match[:url] == target.uri.path
+					target_url = target.uri.path
+					target_url += "?" + target.uri.query unless target.uri.query.nil?
+					if match[:url] == target_url
 						r << match
 					else
 						r=[]
