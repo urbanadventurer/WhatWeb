@@ -149,13 +149,14 @@ PLUGINS:
   --list-plugins, -l	List the plugins
   --info-plugins, -I	Display information for all plugins. Optionally search
 			with keywords in a comma delimited list.
+  --grep, -g		Search for a string. Reports in a plugin called Grep
   --custom-plugin	Define a custom plugin called Custom-Plugin,
 			Examples: ":text=>'powered by abc'"
 			":regexp=>/powered[ ]?by ab[0-9]/"
 			":ghdb=>'intitle:abc \"powered by abc\"'"
 			":md5=>'8666257030b94d3bdb46e05945f60b42'"
 			"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
---dorks			List google dorks for the selected plugin
+  --dorks		List google dorks for the selected plugin
 
 LOGGING & OUTPUT:
   --verbose, -v		Increase verbosity, use twice for plugin development.
@@ -244,7 +245,7 @@ Plugin Name               Description
 -------------------------------------------------------------------------------
 1024-CMS                  1024 is one of a few CMS's leading the way with the i
 360-Web-Manager           360-Web-Manager - homepage: http://www.360webmanager.
-4images                   4images is a powerful web-based image gallery managem
+3COM-NBX                  3COM NBX phone system. The NBX NetSet utility is a we
 ... (truncated - there are a lot)
 
 
@@ -259,13 +260,14 @@ Plugin Name               Details
 phpBB
         Author:              Andrew Horton
         Version:             0.3
-        Examples:            16
+        Examples:            19
         Matches:             7
+        Dorks:               1
         Passive function:    Yes
         Aggressive function: Yes
         Version detection:   Yes
         Description:
-        phpBB is a free forum phpbb.org
+        phpBB is a free forum - Homepage: http://phpbb.org/
 
 --------------------------------------------------------------------------------
 1 plugins found
@@ -368,8 +370,8 @@ To enable character set detection and MongoDB logging install the rchardet gem.
 9. Release History
 ================================================================================
 
-Version 0.3 Released at Kiwicon III (kiwicon.org), November 2nd, 2009
-Version 0.4 Released March 14th, 2010
+Version 0.3   Released at Kiwicon III (kiwicon.org), November 2nd, 2009
+Version 0.4   Released March 14th, 2010
 Version 0.4.1 Released April 28th, 2010
 Version 0.4.2 Released April 30th, 2010
 Version 0.4.3 Released May 24th, 2010
@@ -385,10 +387,6 @@ Version 0.4.8-dev Unreleased
 Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 License: GPLv2
-
-Anemone library (used for spidering) is written by Chris Kite
-Homepage: http://anemone.rubyforge.org/
-License: MIT
 
 
 DEVELOPERS
