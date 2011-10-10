@@ -10,7 +10,11 @@ version "0.1"
 description "Microsoft Internet Information Services (IIS) for Windows Server is a flexible, secure and easy-to-manage Web server for hosting anything on the Web. From media streaming to web application hosting, IIS's scalable and open architecture is ready to handle the most demanding tasks. - homepage: http://www.iis.net/"
 
 # About 3137957 ShodanHQ results for "server: IIS" @ 2010-10-26
+
+# Examples #
 examples %w|
+99.24.184.222
+132.206.153.3
 202.175.135.202
 203.167.230.151
 203.109.206.1
@@ -18,10 +22,10 @@ webext.ccc.govt.nz
 www.pfoa.com
 www.microsoft.com
 lanzend.co.nz
-www.test.com
 www.asp.net
 |
 
+# Matches #
 matches [
 
 # Site Not Found # From iis-site-not-found.rb by Andrew Horton
@@ -39,18 +43,22 @@ matches [
 # Under Construction # 7.x # Welcome image link # From iis-underconstruction.rb by Andrew Horton
 { :text=>'<a href="http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409"><img src="welcome.png" alt="IIS7" width="571" height="411" /></a>', :module=>"Under Construction" },
 
+# 5.x # 404
+{ :status=>404, :text=>'<h1 style="COLOR:000000; FONT: 13pt/15pt verdana"><!--Problem-->The page cannot be found</h1>' },
+
+# 5.x # 404 # Version Detection
+{ :status=>404, :version=>/<a href="http:\/\/www\.microsoft\.com\/ContentRedirect\.asp\?prd=iis&sbp=&pver=([\d\.]+)&pid=&ID=404&cat=web&os=&over=&hrd=&Opt1=&Opt2=&Opt3=" target="_blank">Microsoft Support<\/a>/ },
+
+# 6.x # 404
+{ :status=>404, :text=>'<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>' },
+
+# 6.x # 403
+{ :status=>403, :text=>'<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>403</b>.</li>' },
+
+# Version Detection # HTTP Server Header
+{ :search=>"headers[server]", :version=>/Microsoft-IIS\/([\d\.]+)/i },
+
 ]
-
-# HTTP Header
-def passive
-	m=[]
-
-	# Version Detection # Server
-	m << { :version=>@headers["server"].scan(/[\s]*Microsoft-IIS\/([\d\.]+)/i).flatten } if @headers["server"].to_s =~ /[\s]*Microsoft-IIS\/([\d\.]+)/i
-
-	m
-
-end
 
 end
 
