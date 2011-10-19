@@ -11,8 +11,8 @@ description "Embedded YouTube video - Homepage: http://youtube.com/"
 
 # Examples #
 examples %w|
-neworder.box.sk
-screplayvideos.com/2010/12/03/tvp-vs-carriers-12/
+apiblog.youtube.com
+beefproject.com
 |
 
 # Matches #
@@ -20,6 +20,10 @@ matches [
 
 # param|object Source
 { :regexp=>/<(param|embed) [^>]*youtube\.com\/v/i },
+
+# iframe
+#{ :text=>'<iframe class="youtube-player"' },
+{ :regexp=>/<iframe [^>]*src=['"]https?:\/\/(www\.)?youtube\.com\/embed\// },
 
 ]
 
