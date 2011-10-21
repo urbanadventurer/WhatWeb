@@ -24,6 +24,9 @@ matches [
 # param|embed|object Source
 { :regexp=>/<(param|object|embed) [^>]+vimeo\.com\/moogaloop/i },
 
+# iframe
+{ :regexp=>/<iframe [^>]*src=['"]https?:\/\/player\.vimeo\.com\/video\// },
+
 ]
 
 end
