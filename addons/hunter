@@ -171,7 +171,7 @@ if [[ "$VERBOSE" == "FALSE" ]]; then
 fi
 
 # Pipe dorks to gggooglescan then pipe the results to WhatWeb
-echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" $GSCAN_QUIET -d "$DEPTH" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" $WHATWEB_QUIET -a "$AGGRESSION" -U "$AGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$LOG" -p "$FILTER" | grep -e " \[[0-9]"
+echo "$DORKS" | while read LINE ; do "$GOOGLESCAN" $GSCAN_QUIET -d "$DEPTH" -s "$WAIT" "$LINE"; done | egrep -v "^#" | "$WHATWEB" $WHATWEB_QUIET -a "$AGGRESSION" -U "$USERAGENT" -i /dev/stdin --proxy "$PROXY" --proxy-user "$PROXYUSER" --log-brief="$LOG" -p "$FILTER" | grep -e " \[[0-9]"
 
 # Show log message
 if [[ "$VERBOSE" == "TRUE" ]]; then
