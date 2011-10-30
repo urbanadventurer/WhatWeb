@@ -16,7 +16,7 @@ description "eFront is a modern learning system, bundled with key enterprise fun
 # Dorks #
 dorks [
 'inurl:"index.php?ctg=contact"',
-'allintext:"efront version" "Community Edition" "Contact us'
+'allintext:"efront version" "Community Edition" "Contact us"'
 ]
 
 # Examples #
