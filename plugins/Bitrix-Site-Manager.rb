@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-11-04 #
+# Updated matches to use :search instead of passive[]
+##
 Plugin.define "Bitrix-Site-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-04
 version "0.1"
@@ -16,53 +19,50 @@ description "Website management, e-commerce and e-marketing solution that delive
 
 # Examples #
 examples %w|
+www.1c-bitrix-ua.com
 80.250.160.250
 80.78.194.252
 64.191.50.24
 95.141.136.156
 188.133.185.194
-70.32.97.133
-83.167.18.35
 217.106.236.131
 194.85.89.116
 80.71.44.50
-82.179.192.82
 212.193.230.240
 208.109.106.151
 80.84.112.36
 168.143.31.170
+77.221.152.58
+79.135.228.66
+87.242.99.80
+91.199.211.47
+95.142.83.101
+212.59.97.138
+78.110.54.10
 |
 
 # Matches #
 matches [
 
+# P3P
+{ :search=>"headers[p3p]", :name=>"P3P Header", :regexp=>/^policyref="\/bitrix\/p3p\.xml", CP="NON DSP COR CUR ADM DEV PSA PSD OUR UNR BUS UNI COM NAV INT DEM STA"$/ },
+
+# Cookies
+{ :search=>"headers[set-cookie]", :name=>"BITRIX_SM_SALE_UID Cookie", :regexp=>/BITRIX_SM_SALE_UID=[\d]+;/ },
+{ :search=>"headers[set-cookie]", :name=>"BITRIX_SM_GUEST_ID Cookie", :regexp=>/BITRIX_SM_GUEST_ID=[\d]+;/ },
+{ :search=>"headers[set-cookie]", :name=>"BITRIX_SM_LAST_VISIT Cookie", :regexp=>/BITRIX_SM_LAST_VISIT=/ },
+{ :search=>"headers[set-cookie]", :name=>"BITRIX_SM_BANNERS Cookie", :regexp=>/BITRIX_SM_BANNERS=/ },
+
+# X-Powered-CMS
+{ :search=>"headers[x-powered-cms]", :name=>"X-Powered-CMS Header", :regexp=>/^Bitrix Site Manager \(/ },
+
+# B-Powered-By
+{ :search=>"headers[b-powered-by]", :name=>"B-Powered-By Header", :regexp=>/^Bitrix SM \(/ },
+
+# Version Detection # B-Powered-By
+{ :search=>"headers[b-powered-by]", :name=>"B-Powered-By Header", :version=>/^Bitrix SM\/([\d\.]+) \(/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# P3P
-	m << { :name=>"P3P Header" } if @headers["p3p"] =~ /^P3P: policyref="\/bitrix\/p3p\.xml", CP="NON DSP COR CUR ADM DEV PSA PSD OUR UNR BUS UNI COM NAV INT DEM STA"$/
-
-	# Cookies
-	m << { :name=>"BITRIX_SM_SALE_UID Cookie" } if @headers["set-cookie"] =~ /BITRIX_SM_SALE_UID=[\d]+;/
-	m << { :name=>"BITRIX_SM_GUEST_ID Cookie" } if @headers["set-cookie"] =~ /BITRIX_SM_GUEST_ID=[\d]+;/
-	m << { :name=>"BITRIX_SM_LAST_VISIT Cookie" } if @headers["set-cookie"] =~ /BITRIX_SM_LAST_VISIT=/
-	m << { :name=>"BITRIX_SM_BANNERS Cookie" } if @headers["set-cookie"] =~ /BITRIX_SM_BANNERS=/
-
-	# X-Powered-CMS
-	m << { :name=>"X-Powered-CMS header" } if @headers["x-powered-cms"] =~ /^Bitrix Site Manager \([a-f\d]{32}\)$/
-
-	# B-Powered-By
-	m << { :name=>"B-Powered-By Header" } if @headers["b-powered-by"] =~ /^Bitrix SM \([a-f\d]{32}\)$/
-
-	# Version Detection # B-Powered-By
-	m << { :version=>@headers["b-powered-by"].scan(/^Bitrix SM\/([\d\.]+) \([a-f\d]{32}\)$/) } if @headers["b-powered-by"] =~ /^Bitrix SM\/([\d\.]+) \([a-f\d]{32}\)$/
-
-	# Return passive matches
-	m
-end
 
 end
 
