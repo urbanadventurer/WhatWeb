@@ -19,7 +19,7 @@ description "PHP-Fusion, a light-weight open-source content management system (C
 
 # Dorks #
 dorks [
-'"Powered by PHP-Fusion copyright" +intitle:News'
+'"Powered by PHP-Fusion copyright" intitle:News'
 ]
 
 # Examples #

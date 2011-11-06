@@ -15,7 +15,7 @@ description "Koha is an open source software library automation package (ILS) - 
 
 # Dorks #
 dorks [
-'intitle:"Log in to Koha" +Password',
+'intitle:"Log in to Koha" "Password"',
 'inurl:cgi-bin/koha ext:pl'
 ]
 

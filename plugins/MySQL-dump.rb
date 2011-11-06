@@ -17,7 +17,7 @@ description "Extracts MySQL host, database and server version from MySQL-dump .s
 
 # Dorks #
 dorks [
-'"MySQL dump" ext:sql +Host +"Table structure for table"'
+'"MySQL dump" ext:sql "Host" "Table structure for table"'
 ]
 
 # Examples #

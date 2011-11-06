@@ -14,7 +14,7 @@ description "TimeLive Time and Expense Tracking - TimeLive Web timesheet suite i
 
 # Dorks #
 dorks [
-'intitle:"TimeLive" "TimeLive LogIn" +Username +Password'
+'intitle:"TimeLive" "TimeLive LogIn" "Username" "Password"'
 ]
 
 # Examples #

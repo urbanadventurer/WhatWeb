@@ -14,7 +14,7 @@ description "Pluck is a small and simple content management system. - Requires: 
 
 # Dorks #
 dorks [
-'"powered by pluck" +admin inurl:file=kop1.php'
+'"powered by pluck" "admin" inurl:"file=kop1.php"'
 ]
 
 # Examples #

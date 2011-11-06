@@ -17,7 +17,7 @@ description "AIDeX Webserver - does not support CGI or PHP - Homepage: http://ww
 
 # Dorks #
 dorks [
-'intitle:"Directory Listing" +"Directory Listing" +"Powered by AIDeX Webserver"'
+'intitle:"Directory Listing" "Directory Listing" "Powered by AIDeX Webserver"'
 ]
 
 # Examples #

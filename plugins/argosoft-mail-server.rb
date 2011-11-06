@@ -24,7 +24,7 @@ description "ArGoSoft-Mail-Server web interface - homepage: http://www.argosoft.
 
 # Dorks #
 dorks [
-'+intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser -inurl',
+'intitle:"adding new user" "ArGoSoft Mail Server" inurl:addnewuser -inurl',
 '"adding new user" inurl:addnewuser -"there are no domains"'
 ]
 

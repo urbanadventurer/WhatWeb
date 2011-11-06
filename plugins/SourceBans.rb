@@ -15,7 +15,7 @@ description "SourceBans is a free global administration and banning system for S
 
 # Dorks #
 dorks [
-'inurl:web_upload ext:php +steam'
+'inurl:web_upload ext:php "steam"'
 ]
 
 # Examples #

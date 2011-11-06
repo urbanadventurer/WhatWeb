@@ -17,7 +17,7 @@ description "CMScontrol - homepage: http://www.cmscontrol.com/"
 
 # Dorks #
 dorks [
-'+CMScontrol -"SQL Injection" -exploit +inurl:"index.php?id_menu="'
+'"CMScontrol" -"SQL Injection" -exploit inurl:"index.php?id_menu="'
 ]
 
 # Examples #

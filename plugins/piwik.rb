@@ -17,7 +17,7 @@ description "Piwik is a downloadable, open source (GPL licensed) real time web a
 
 # Dorks #
 dorks [
-'+intitle:Piwik "JavaScript must be enabled in order for you to use Piwik in standard view"'
+'intitle:Piwik "JavaScript must be enabled in order for you to use Piwik in standard view"'
 ]
 
 # Examples #

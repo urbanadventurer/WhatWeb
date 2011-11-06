@@ -14,7 +14,7 @@ description "Subsonic is a free, web-based media streamer, providing ubiquitous 
 
 # Dorks #
 dorks [
-'intitle:"Subsonic" +Username +Password "Remember me" inurl:login.view'
+'intitle:"Subsonic" "Username" "Password" "Remember me" inurl:login.view'
 ]
 
 # Examples #

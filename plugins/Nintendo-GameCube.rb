@@ -18,7 +18,7 @@ description "Nintendo GameCube video game console - Homepage: http://www.nintend
 
 # Dorks #
 dorks [
-'intitle:"HTML Page" +"This is test.html page"'
+'intitle:"HTML Page" "This is test.html page"'
 ]
 
 # Examples #

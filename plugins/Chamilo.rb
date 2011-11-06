@@ -19,7 +19,7 @@ description "Chamilo is a fully-fledged e-learning system. Chamilo can be connec
 # Dorks #
 dorks [
 '("Plattform Chamilo"|"Portal Chamilo"|"Plataforma Chamilo") inurl:index.php?language=',
-'"Congratulations! You have successfully installed your e-learning portal!" +Chamilo'
+'"Congratulations! You have successfully installed your e-learning portal!" "Chamilo"'
 ]
 
 # Examples #

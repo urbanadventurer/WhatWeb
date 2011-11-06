@@ -15,7 +15,7 @@ description "BOOKSolved - guestbook script - Homepage: http://www.usolved.net/sc
 
 # Dorks #
 dorks [
-'+BOOKSolved "by USOLVED" inurl:"booksolved.php"'
+'"BOOKSolved" "by USOLVED" inurl:"booksolved.php"'
 ]
 
 # Examples #

@@ -13,7 +13,7 @@ description "Web-based project management suite including time track, dashboard 
 
 # Dorks #
 dorks [
-'"Plandora Project" +User +Password +Login inurl:pandora/do'
+'"Plandora Project" "User" "Password" "Login" inurl:"pandora/do"'
 ]
 
 # Examples #

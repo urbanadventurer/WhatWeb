@@ -14,7 +14,7 @@ description "Visualization of an IHC Control electrical installation. - Homepage
 
 # Dorks #
 dorks [
-'intitle:"LK IHC controller forside" +SceneView'
+'intitle:"LK IHC controller forside" "SceneView"'
 ]
 
 # Examples #

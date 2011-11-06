@@ -11,7 +11,7 @@ description "Freeway is by far the largest and most fully featured Open Source e
 
 # Dorks #
 dorks [
-'+"Copyright * Zacware" +"Welcome Guest" +"Advanced Search" +"Shopping Cart" +"Checkout"'
+'"Copyright * Zacware" "Welcome Guest" "Advanced Search" "Shopping Cart" "Checkout"'
 ]
 
 # Examples #

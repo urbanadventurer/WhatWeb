@@ -17,7 +17,7 @@ description "MeetingPlaza Distance Conference Service for internet conferencing,
 
 # Dorks #
 dorks [
-'"Hello. I\'m MeetingPlaza HTTP Tunneling Server." +Date'
+'"Hello. I\'m MeetingPlaza HTTP Tunneling Server." "Date"'
 ]
 
 # Examples #

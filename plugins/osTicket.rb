@@ -15,7 +15,7 @@ description "osTicket is a widely-used open source support ticket system - Requi
 
 # Dorks #
 dorks [
-'"SUPPORT TICKET SYSTEM" +Home "Ticket Status" "New Ticket" "Welcome to the support center"'
+'"SUPPORT TICKET SYSTEM" "Home" "Ticket Status" "New Ticket" "Welcome to the support center"'
 ]
 
 # Examples #

@@ -16,7 +16,7 @@ description "Trac is an enhanced wiki and issue tracking system for software dev
 
 # Dorks #
 dorks [
-'"Powered by Trac" +intitle:Trac'
+'"Powered by Trac" intitle:Trac'
 ]
 
 # Examples #

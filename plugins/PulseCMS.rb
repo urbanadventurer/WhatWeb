@@ -14,7 +14,7 @@ description "Manage Content, Simply. Pulse is a simple CMS designed for small we
 
 # Dorks #
 dorks [
-'intitle:"Pulse Content Manager" +Pulse +CMS +Password +Login'
+'intitle:"Pulse Content Manager" "Pulse" "CMS" "Password" "Login"'
 ]
 
 # Examples #

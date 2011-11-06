@@ -13,7 +13,7 @@ description "EasyFeeds is a powerful PHP based RSS reader and news aggregator. -
 
 # Dorks #
 dorks [
-'"Partners" "Powered by" +EasyFeeds +"Ktools.net"'
+'"Partners" "Powered by" "EasyFeeds" "Ktools.net"'
 ]
 
 # Examples #

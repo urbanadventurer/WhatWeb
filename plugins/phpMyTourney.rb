@@ -13,7 +13,7 @@ description "homepage: http://phpmytourney.sourceforge.net/"
 
 # Dorks #
 dorks [
-'"Powered by phpmytourney" +Version'
+'"Powered by phpmytourney" "Version"'
 ]
 
 # Examples #

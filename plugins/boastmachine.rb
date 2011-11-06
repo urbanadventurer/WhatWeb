@@ -16,7 +16,7 @@ description "boastMachine blog - homepage: http://boastology.com/"
 
 # Dorks #
 dorks [
-'"powered by boastMachine" +"Recent posts" -exploit'
+'"powered by boastMachine" "Recent posts" -exploit'
 ]
 
 # Examples #

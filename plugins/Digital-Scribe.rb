@@ -14,7 +14,7 @@ description "The Digital Scribe is a free, intuitive system designed to help tea
 
 # Dorks #
 dorks [
-'+copyright "Digital Scribe * All Rights Reserved"'
+'"copyright" "Digital Scribe * All Rights Reserved"'
 ]
 
 # Examples #

@@ -14,7 +14,7 @@ description "The MagImageBank is a easy to use and flexible web-based DAM (digit
 
 # Dorks #
 dorks [
-'"Powered by MagImageBank" +"info@magimagebank.com"'
+'"Powered by MagImageBank" "info@magimagebank.com"'
 ]
 
 # Examples #

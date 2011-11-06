@@ -14,7 +14,7 @@ description "MYREPHP - MYRE Real Estate Software, MYRE Holiday Rental Manager, M
 
 # Dorks #
 dorks [
-'"My Last Viewed" "Get e-mail alerts" +MYREPHP'
+'"My Last Viewed" "Get e-mail alerts" "MYREPHP"'
 ]
 
 # Examples #

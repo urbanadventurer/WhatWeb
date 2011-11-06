@@ -14,7 +14,7 @@ description "QuiXplorer is a multi-user, web-based file-manager. It allows you t
 
 # Dorks #
 dorks [
-'"QuiXplorer" +Username +Password +"the QuiX project"'
+'"QuiXplorer" "Username" "Password" "the QuiX project"'
 ]
 
 # Examples #

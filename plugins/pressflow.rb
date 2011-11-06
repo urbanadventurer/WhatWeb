@@ -13,7 +13,7 @@ description "Pressflow is a distribution of Drupal with integrated performance, 
 
 # Dorks #
 dorks [
-'+"powered by Pressflow" +"an open source content management system"'
+'"powered by Pressflow" "an open source content management system"'
 ]
 
 # Examples #

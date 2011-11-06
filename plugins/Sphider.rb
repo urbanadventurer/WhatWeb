@@ -15,7 +15,7 @@ description "Sphider is a lightweight web spider and search engine written in PH
 
 # Dorks #
 dorks [
-'intitle:"Sphider Admin Login" inurl:"admin" +Username +Password',
+'intitle:"Sphider Admin Login" inurl:"admin" "Username" "Password"',
 'intitle:"Sphider installation script" intext:"Sphider installation script" inurl:"install.php"'
 ]
 

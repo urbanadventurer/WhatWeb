@@ -14,7 +14,7 @@ description "AWStats - Free log file analyzer for advanced statistics (GNU GPL).
 
 # Dorks #
 dorks [
-'inurl:awstats ext:pl +intitle:"Statistics for"',
+'inurl:awstats ext:pl intitle:"Statistics for"',
 'intitle:"statistics of" "advanced web statistics"'
 ]
 

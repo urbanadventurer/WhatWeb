@@ -14,7 +14,7 @@ description "Nucleus CMS - Homepage: http://nucleuscms.org/"
 
 # Dorks #
 dorks [
-'intitle:"Nucleus Install" "Install Nucleus" +Hostname +Username +Password'
+'intitle:"Nucleus Install" "Install Nucleus" "Hostname" "Username" "Password"'
 ]
 
 # Examples #

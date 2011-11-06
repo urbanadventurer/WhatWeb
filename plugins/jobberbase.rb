@@ -16,7 +16,7 @@ description "jobberBase is the open-source job board software that helps you set
 
 # Dorks #
 dorks [
-'+Companies +Sitemap "Proudly powered by jobberBase"'
+'"Companies" "Sitemap" "Proudly powered by jobberBase"'
 ]
 
 # Examples #

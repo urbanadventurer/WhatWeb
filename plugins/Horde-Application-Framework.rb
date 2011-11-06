@@ -27,8 +27,8 @@ description "A web application framework. Projects using the framework include w
 # Dorks #
 dorks [
 '"powered by Horde Application Framework"',
-'inurl:util/icon_browser.php?subdir=',
-'intitle:"WebMail 4.0 LOGIN" "E-mail address" +Password'
+'inurl:"util/icon_browser.php?subdir="',
+'intitle:"WebMail 4.0 LOGIN" "E-mail address" "Password"'
 ]
 
 # Examples #

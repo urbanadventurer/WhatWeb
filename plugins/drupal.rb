@@ -33,7 +33,7 @@ description "Drupal is an opensource CMS written in PHP. Homepage: http://www.dr
 
 # Dorks #
 dorks [
-'inurl:/user/register +"Powered by Drupal"'
+'inurl:/user/register "Powered by Drupal"'
 ]
 
 # Examples #

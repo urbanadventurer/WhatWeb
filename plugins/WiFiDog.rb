@@ -14,7 +14,7 @@ description "The Wifidog project is an open source captive portal solution. Requ
 
 # Dorks #
 dorks [
-'"I am unable to retrieve the schema version. Either the wifidog database hasn\'t been created yet, the postgresql server is down, or pg_hba.conf does not allow your web server to connect to the wifidog database." +host +port +dbname'
+'"I am unable to retrieve the schema version. Either the wifidog database hasn\'t been created yet, the postgresql server is down, or pg_hba.conf does not allow your web server to connect to the wifidog database." "host" "port" "dbname"'
 ]
 
 # Examples #

@@ -15,7 +15,7 @@ description "Full-featured web-based Time and Attendance, Workforce Scheduling, 
 
 # Dorks #
 dorks [
-'intitle:Timelink +Language +Password +Version -ext:html'
+'intitle:Timelink "Language" "Password" "Version" -ext:html'
 ]
 
 # Examples #

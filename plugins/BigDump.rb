@@ -14,7 +14,7 @@ description "BigDump: Staggered MySQL Dump Importer  - Homepage: http://www.ozer
 
 # Dorks #
 dorks [
-'inurl:"bigdump.php" intitle:"BigDump ver" +Filename "BigDump: Staggered MySQL Dump Importer"'
+'inurl:"bigdump.php" intitle:"BigDump ver" "Filename" "BigDump: Staggered MySQL Dump Importer"'
 ]
 
 # Examples #
