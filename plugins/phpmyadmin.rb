@@ -26,7 +26,7 @@ description "phpMyAdmin is a free software tool written in PHP intended to handl
 
 # Dorks #
 dorks [
-'+intitle:phpMyAdmin +"Language: Afrikaans" +"Welcome to phpMyAdmin"',
+'intitle:phpMyAdmin "Language: Afrikaans" "Welcome to phpMyAdmin"',
 'inurl:main.php "Welcome to phpMyAdmin"'
 ]
 

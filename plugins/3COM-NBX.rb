@@ -21,7 +21,7 @@ description "3COM NBX phone system. The NBX NetSet utility is a web interface in
 
 # Dorks #
 dorks [
-'intitle:"NBX NetSet" +Version +Created'
+'intitle:"NBX NetSet" "Version" "Created"'
 ]
 
 # Examples #

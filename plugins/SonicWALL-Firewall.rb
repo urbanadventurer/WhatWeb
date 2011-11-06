@@ -17,7 +17,7 @@ description "SonicWALL Firewall device - Homepage: http://www.sonicwall.com/us/p
 
 # Dorks #
 dorks [
-'intitle:"SonicWALL - Authentication" +Username +Password +Language'
+'intitle:"SonicWALL - Authentication" "Username" "Password" "Language"'
 ]
 
 # Examples #

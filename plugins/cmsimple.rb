@@ -16,7 +16,7 @@ description "CMSimple is a simple content management system for smart maintainan
 
 # Dorks #
 dorks [
-'"Powered by CMSimple.dk" +welcome'
+'"Powered by CMSimple.dk" "welcome"'
 ]
 
 # Examples #

@@ -17,7 +17,7 @@ description "Open source PHP client for web based management of torrents. Featur
 
 # Dorks #
 dorks [
-'"TorrentFlux Login" intitle:TorrentFlux +Username +Password'
+'"TorrentFlux Login" intitle:TorrentFlux "Username" "Password"'
 ]
 
 # Examples #

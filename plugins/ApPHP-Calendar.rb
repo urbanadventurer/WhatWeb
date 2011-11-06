@@ -14,7 +14,7 @@ description "The ApPHP Calendar (ApPHP CAL) is a powerful PHP calendar script th
 
 # Dorks #
 dorks [
-'Sunday Monday Tuesday Wednesday Thursday Friday +Satarday inurl:action inurl:view_type'
+'Sunday Monday Tuesday Wednesday Thursday Friday "Satarday" inurl:action inurl:view_type'
 ]
 
 # Examples #

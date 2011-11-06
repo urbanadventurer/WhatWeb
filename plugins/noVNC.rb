@@ -14,7 +14,7 @@ description "VNC client using HTML5 (Web Sockets, Canvas) with encryption (wss:/
 
 # Dorks #
 dorks [
-'intitle:"noVNC" inurl:vnc_auto.html +Loading "Canvas not supported."'
+'intitle:"noVNC" inurl:vnc_auto.html "Loading" "Canvas not supported."'
 ]
 
 # Examples #

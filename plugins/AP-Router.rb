@@ -14,7 +14,7 @@ description "AP Router [Brazilian] - Homepage: http://aprouter.com.br/"
 
 # Dorks #
 dorks [
-'intitle:"AP Router New Generation" +Sistema'
+'intitle:"AP Router New Generation" "Sistema"'
 ]
 
 # Examples #

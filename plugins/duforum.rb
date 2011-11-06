@@ -11,7 +11,7 @@ description "forum - homepage:http://www.duware.com/"
 
 # Dorks #
 dorks [
-'+"powered by duforum" +intitle:DUdforum'
+'"powered by duforum" intitle:DUdforum'
 ]
 
 # Examples #

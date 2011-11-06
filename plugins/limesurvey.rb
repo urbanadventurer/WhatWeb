@@ -11,7 +11,7 @@ description "LimeSurvey basically contains everything you need for doing nearly 
 
 # Dorks #
 dorks [
-'+"The following surveys are available" +"The Online Survey Tool - Free & Open Source"'
+'"The following surveys are available" "The Online Survey Tool - Free & Open Source"'
 ]
 
 # Examples #

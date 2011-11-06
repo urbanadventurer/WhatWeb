@@ -14,7 +14,7 @@ description "Winmail Server is an enterprise class mail server software system o
 
 # Dorks #
 dorks [
-'intitle:"Powered by Winmail Server - Login" +Username +Password'
+'intitle:"Powered by Winmail Server - Login" "Username" "Password"'
 ]
 
 # Examples #

@@ -13,7 +13,7 @@ description "ezBOO WebStats is a high level statistical tool for web sites monit
 
 # Dorks #
 dorks [
-'+"Administrator Panel" +intitle:"ezBOO WebStats"'
+'"Administrator Panel" intitle:"ezBOO WebStats"'
 ]
 
 # Examples #

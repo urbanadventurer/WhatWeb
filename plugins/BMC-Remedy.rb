@@ -18,7 +18,7 @@ description "BMC Remedy Action Request System (also known as Remedy, AR System a
 
 # Dorks #
 dorks [
-'intitle:"Remedy Mid Tier" "User Name" +Password'
+'intitle:"Remedy Mid Tier" "User Name" "Password"'
 ]
 
 # Examples #

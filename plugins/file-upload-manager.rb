@@ -17,7 +17,7 @@ description "Web based file upload manager written in PHP. - homepage:http://www
 
 # Dorks #
 dorks [
-'+intitle:"File Upload Manager" "rename to" "file types allowed"'
+'intitle:"File Upload Manager" "rename to" "file types allowed"'
 ]
 
 # Examples #

@@ -14,7 +14,7 @@ description "Sphinx is a tool that makes it easy to create intelligent and beaut
 
 # Dorks #
 dorks [
-'"Created using Sphinx" +Copyright'
+'"Created using Sphinx" "Copyright"'
 ]
 
 # Examples #

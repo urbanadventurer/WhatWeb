@@ -14,7 +14,7 @@ description "Arca Solutions eDirectory provides a php and .NET software platform
 
 # Dorks #
 dorks [
-'"Powered by eDirectory" "type a keyword" +listings +events'
+'"Powered by eDirectory" "type a keyword" "listings" "events"'
 ]
 
 # Examples #

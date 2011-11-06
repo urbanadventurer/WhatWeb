@@ -15,7 +15,7 @@ description "This plugin identifies PHP error_logs and and extracts the local fi
 
 # Dorks #
 dorks [
-'warning|error inurl:error_log +PHP "on line"'
+'warning|error inurl:error_log "PHP" "on line"'
 ]
 
 # Examples #

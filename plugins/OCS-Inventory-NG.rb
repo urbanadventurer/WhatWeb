@@ -14,7 +14,7 @@ description "Open Computers and Software Inventory Next Generation - computer ha
 
 # Dorks #
 dorks [
-'intitle:"OCS Inventory" +Ver +inurl:"index.php?av="'
+'intitle:"OCS Inventory" "Ver" inurl:"index.php?av="'
 ]
 
 # Examples #

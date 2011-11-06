@@ -16,8 +16,8 @@ description "SQL Buddy - Web based MySQL administration - Homepage: http://www.s
 
 # Dorks #
 dorks [
-'intitle:"SQL Buddy" +Host +Username +Password +Database -sbconfig -site:www.sqlbuddy.com -site:code.google.com',
-'inurl:"sqlbuddy/login.php" +Host +Username +Password +Database -sbconfig'
+'intitle:"SQL Buddy" "Host" "Username" "Password" "Database" -sbconfig -site:www.sqlbuddy.com -site:code.google.com',
+'inurl:"sqlbuddy/login.php" "Host" "Username" "Password" "Database" -sbconfig'
 ]
 
 # Examples #

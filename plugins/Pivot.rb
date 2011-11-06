@@ -13,7 +13,7 @@ description "Pivot is a web-based tool to help you maintain dynamic sites, like 
 
 # Dorks #
 dorks [
-'"Set up the Administrator User" +Username +"Password (confirm)" +confirm +Email +Nickname'
+'"Set up the Administrator User" "Username" "Password (confirm)" "confirm" "Email" "Nickname"'
 ]
 
 # Examples #

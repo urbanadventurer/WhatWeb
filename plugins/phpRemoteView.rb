@@ -14,7 +14,7 @@ description "phpRemoteView - web backdoor - allows users to browse the filesyste
 
 # Dorks #
 dorks [
-'intitle:"phpRemoteView: " +perms'
+'intitle:"phpRemoteView: " "perms"'
 ]
 
 # Examples #

@@ -14,7 +14,7 @@ description "TraceWatch Real Time Web Stats and Traffic Analysis Lets you keep t
 
 # Dorks #
 dorks [
-'"TraceWatch" "Website Statistics and Traffic Analysis Software" +author'
+'"TraceWatch" "Website Statistics and Traffic Analysis Software" "author"'
 ]
 
 # Examples #

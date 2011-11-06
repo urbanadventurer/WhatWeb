@@ -14,7 +14,7 @@ description "OpenI is a Business Intelligence web application for on-demand or S
 
 # Dorks #
 dorks [
-'"Openi Intelligence Portal" +Username +Password'
+'"Openi Intelligence Portal" "Username" "Password"'
 ]
 
 # Examples #

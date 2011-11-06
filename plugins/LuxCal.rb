@@ -14,7 +14,7 @@ description "LuxCal is a free user-friendly and lightweight web based event cale
 
 # Dorks #
 dorks [
-'"powered by LuxSoft" +LuxCal "Log In" Monday Tuesday Wednesday Thursday Friday Saturday Sunday'
+'"powered by LuxSoft" "LuxCal" "Log In" Monday Tuesday Wednesday Thursday Friday Saturday Sunday'
 ]
 
 # Examples #

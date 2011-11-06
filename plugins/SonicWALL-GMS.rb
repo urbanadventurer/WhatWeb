@@ -15,7 +15,7 @@ description "The SonicWALL Global Management System (GMS) provides organizations
 
 # Dorks #
 dorks [
-'intitle:"SonicWALL GMS Login" +User +Password'
+'intitle:"SonicWALL GMS Login" "User" "Password"'
 ]
 
 # Examples #

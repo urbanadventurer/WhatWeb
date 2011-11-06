@@ -17,7 +17,7 @@ description "Ektron provides web content management and social software. Ektron'
 
 # Dorks #
 dorks [
-'inurl:/workarea/java/ +ektron'
+'inurl:"/workarea/java/" "ektron"'
 ]
 
 # Examples #

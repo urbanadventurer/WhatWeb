@@ -13,7 +13,7 @@ description "HoloCMS. Requires PHP."
 
 # Dorks #
 dorks [
-'"powered by HoloCMS" +Meth0d'
+'"powered by HoloCMS" "Meth0d"'
 ]
 
 # Examples #

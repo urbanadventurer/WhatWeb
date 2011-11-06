@@ -16,7 +16,7 @@ description "WHMCS is an all-in-one client management, billing & support solutio
 
 # Dorks #
 dorks [
-'"Powered by WHMCompleteSolution" inurl:cart.php +Language',
+'"Powered by WHMCompleteSolution" inurl:cart.php "Language"',
 'intitle:"WHMCS Complete Billing & Support System - Login" "Remember me until I logout"'
 ]
 

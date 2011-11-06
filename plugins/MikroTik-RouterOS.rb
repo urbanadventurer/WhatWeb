@@ -14,7 +14,7 @@ description "RouterOS is the operating system used on the MikroTik RouterBOARD s
 
 # Dorks #
 dorks [
-'intitle:"RouterOS router configuration page" +RouterOS "You have connected to a router"'
+'intitle:"RouterOS router configuration page" "RouterOS" "You have connected to a router"'
 ]
 
 # Examples #

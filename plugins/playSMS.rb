@@ -11,7 +11,7 @@ description "Free and Open Source SMS Gateway - Homepage: http://playsms.org/"
 
 # Dorks #
 dorks [
-'intitle:"SMS" +Username +Password +"Register an account" +"Forgot password"'
+'intitle:"SMS" "Username" "Password" "Register an account" "Forgot password"'
 ]
 
 # Examples #

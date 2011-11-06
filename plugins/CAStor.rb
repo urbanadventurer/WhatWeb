@@ -21,7 +21,7 @@ description "CAStor is object storage software designed to store unstructured da
 
 # Dorks #
 dorks [
-'intitle:"CAStor Node Status" +"CAStor Node IP"'
+'intitle:"CAStor Node Status" "CAStor Node IP"'
 ]
 
 # Examples #

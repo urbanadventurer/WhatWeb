@@ -13,7 +13,7 @@ description "FestOS is web-based arts-n-crafts festival management software - ho
 
 # Dorks #
 dorks [
-'+"powered by FestOS"'
+'"powered by FestOS"'
 ]
 
 # Examples #

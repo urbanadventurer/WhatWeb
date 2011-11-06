@@ -17,7 +17,7 @@ description "Calendarix is a powerful and easy to use web-based calendar that ru
 
 # Dorks #
 dorks [
-'intitle:"Calendarix User Login" intext:"Calendarix User Login" +Username +Password',
+'intitle:"Calendarix User Login" intext:"Calendarix User Login" "Username" "Password"',
 '"powered by Calendarix"'
 ]
 

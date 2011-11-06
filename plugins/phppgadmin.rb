@@ -11,7 +11,7 @@ description "phpPgAdmin is a web-based administration tool for PostgreSQL. It is
 
 # Dorks #
 dorks [
-'+intitle:phpPgAdmin "Welcome to phpPgAdmin"'
+'intitle:phpPgAdmin "Welcome to phpPgAdmin"'
 ]
 
 # Examples #

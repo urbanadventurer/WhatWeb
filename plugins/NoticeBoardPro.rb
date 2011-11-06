@@ -16,7 +16,7 @@ description "NoticeBoardPro is an online, web-based, notice board system - Homep
 
 # Dorks #
 dorks [
-'+noticeboard "View All Items" "View Items by Category"'
+'"noticeboard" "View All Items" "View Items by Category"'
 ]
 
 # Examples #

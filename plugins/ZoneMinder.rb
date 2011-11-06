@@ -16,7 +16,7 @@ description "Linux video camera security and surveillance solution - Web interfa
 # Dorks #
 dorks [
 '"ZoneMinder Console - Running" intitle:Console inurl:view=console',
-'+"ZoneMinder Login" +Username +Password +intitle:Login'
+'"ZoneMinder Login" "Username" "Password" intitle:Login'
 ]
 
 # Examples #

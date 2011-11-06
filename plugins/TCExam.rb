@@ -15,7 +15,7 @@ description "TCExam is a FLOSS Computer-Based Assessment system. - Homepage: htt
 
 # Dorks #
 dorks [
-'"TCExam ver" +Copyright "Nicola Asuni"'
+'"TCExam ver" "Copyright" "Nicola Asuni"'
 ]
 
 # Examples #

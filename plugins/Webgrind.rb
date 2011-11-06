@@ -14,7 +14,7 @@ description "Webgrind is an Xdebug profiling web frontend in PHP5. It implements
 
 # Dorks #
 dorks [
-'intitle:"Webgrind" "profiling in the browser" +percent +milliseconds +microseconds'
+'intitle:"Webgrind" "profiling in the browser" "percent" "milliseconds" "microseconds"'
 ]
 
 # Examples #

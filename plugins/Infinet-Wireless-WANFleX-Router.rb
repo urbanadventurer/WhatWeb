@@ -17,7 +17,7 @@ description "Infinet Wireless WANFleX Router - Homepage: http://www.infinetwirel
 
 # Dorks #
 dorks [
-'intitle:"Login Page" "InfiNet Wireless" "All rights reserved." "User Name" +Password'
+'intitle:"Login Page" "InfiNet Wireless" "All rights reserved." "User Name" "Password"'
 ]
 
 # Examples #
