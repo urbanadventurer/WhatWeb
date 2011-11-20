@@ -4,47 +4,72 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2011-11-20 #
+# Replaced passive[] with matches
+# Added google dork and module detection
+##
 Plugin.define "SPIP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-12
-version "0.1"
+version "0.2"
 description "SPIP is a publishing system for the Internet in which great importance is attached to collaborative working, to multilingual environments, and to simplicity of use for web authors. - Homepage: http://www.spip.net/"
 
-# ShodanHQ results as at 2011-02-12 #
-# 1,666 for Composed-By spip # 1,229 in France
-# 1,382 for x-spip-cache # 1,033 in France
+# ShodanHQ results as at 2011-11-20 #
+# 1,825 for Composed-By spip # 1,321 in France
+# 1,531 for x-spip-cache # 1,116 in France
+#    48 for spip.php
+
+# Google results as at 2011-11-20 #
+# 505 for inurl:"spip.php" "Login (identifiant de connexion au site)"
+
+# Dorks #
+dorks [
+'inurl:"spip.php" "Login (identifiant de connexion au site)"'
+]
 
 # Examples #
 examples %w|
-http://81.201.178.225/
-http://82.151.64.2/
-http://82.229.103.245/
-http://91.207.254.82/
-http://62.58.108.110/
-http://147.210.232.193/
-http://195.220.70.6/
-http://194.199.99.4/
-http://213.139.127.54/
-http://213.251.187.134/
-http://217.70.191.175/
+69.70.33.3
+81.201.178.225
+82.151.64.2
+91.207.254.82
+62.58.108.110
+147.210.232.193
+195.220.70.6
+194.199.99.4
+213.139.127.54
+213.251.187.134
+217.70.191.175
+www.glpi-project.org
+creamaster.free.fr
+p.arvers.free.fr
+volontaires.ain.free.fr
+www.productivix.com
+printempspoetique.free.fr/spip.php
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Version Detection # Composed-By HTTP Header
-	m << { :version=>@headers["composed-by"].scan(/SPIP ([^@]{1,10}) @ www\.spip\.net/) } if @headers["composed-by"] =~ /SPIP ([^@]{1,10}) @ www\.spip\.net/
+# div class="formulaire_spip formulaire_recherche"
+{ :text=>'<div class="formulaire_spip formulaire_recherche"' },
 
-	# Composed-By HTTP Header
-	m << { :name=>"Composed-By HTTP Header" } if @headers["composed-by"] =~ /SPIP @ www\.spip\.net/
+# Meta Generator # Version Detection
+#{:version=>/<meta name="generator" content="SPIP ([^\s]+ \[[\d]+\])"( \/)?>/ },
+{ :version=>/<meta name="generator" content="SPIP ([^\s]+) \[[\d]+\]"( \/)?>/ },
 
-	# x-spip-cache
-	m << { :name=>"x-spip-cache" } unless @headers["x-spip-cache"].nil?
+# HTTP Header # Composed-By # Version Detection
+{ :search=>"headers[composed-by]", :version=>/SPIP ([^@]{1,10}) @ www\.spip\.net/ },
 
-	# Return passive matches
-	m
+# HTTP Header # Composed-By # Module Detection
+{ :search=>"headers[composed-by]", :module=>/SPIP [^@]{1,10} @ www\.spip\.net \+ (.+)/ },
+
+# HTTP Header # Composed-By
+{ :search=>"headers[composed-by]", :regexp=>/SPIP @ www\.spip\.net/ },
+
+# HTTP Header # x-spip-cache
+{ :search=>"headers[x-spip-cache]", :regexp=>/^.+$/ },
+
+]
+
 end
-
-end
-
 
