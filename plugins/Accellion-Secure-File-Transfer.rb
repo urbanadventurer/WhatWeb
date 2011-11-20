@@ -11,6 +11,7 @@ description "Accellion Secure File Transfer (SFT) - Homepage: http://www.accelli
 
 # ShodanHQ results as at 2011-11-20 #
 # 1,005 for location courier mail_user_login.html
+#   991 for sfcurl=deleted
 
 # Google results as at 2011-11-20 #
 # 37 for inurl:"courier/1000@/mail_user_login.html"
@@ -22,6 +23,14 @@ dorks [
 
 # Examples #
 examples %w|
+63.149.188.82
+50.16.201.101
+184.94.11.5
+67.221.227.60
+65.205.167.64
+198.37.32.41
+217.34.170.13
+75.144.102.23
 https://sft.onyx-pharm.com
 https://transfer.amvbbdo.com
 https://sendfiles.riotinto.com
@@ -35,6 +44,9 @@ https://me2usd2.qualcomm.com
 
 # Matches #
 matches [
+
+# HTTP Set-Cookie Header # sfcurl=deleted;
+{ :search=>"headers[set-cookie]", :regexp=>/sfcurl=deleted;/, :certainty=>25 },
 
 # HTTP Location Header
 { :search=>"headers[location]", :regexp=>/\/courier\/[\d]+@\/mail_user_login\.html\?$/ },
