@@ -547,7 +547,7 @@ EXAMPLE USAGE:
 \n"
 
 	suggestions=""
-	suggestions << "WARNING: Without the em-resolve-replace gem performance is significantly degraded.\n" unless gem_available?('em-resolv-replace')
+	suggestions << "WARNING: Without the em-resolv-replace gem performance is significantly degraded.\n" unless gem_available?('em-resolv-replace')
 	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
 	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
 	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
