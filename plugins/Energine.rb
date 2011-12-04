@@ -47,7 +47,7 @@ pravdop.com
 matches [
 
 # Default JavaScript
-{ :regexp=>'<script type="text\/javascript" src="[^"]*scripts\/Energine.js"><\/script>' },
+{ :regexp=>/<script type="text\/javascript" src="[^"]*scripts\/Energine.js"><\/script>/ },
 
 # Default Stylesheet
 { :regexp=>/<link rel="stylesheet" type="text\/css" href="[^"]*stylesheets\/energine.css" \/>/ },
