@@ -342,8 +342,6 @@ The --wait and --max-threads commands can be used to assist in IDS evasion.
 
 Furthermore, changing the user-agent using the -U or --user-agent command line option will avoid the Snort IDS rule for WhatWeb.
 
-Without the em-resolve-replace gem performance is significantly degraded.
-
 If you are scanning ranges of IP addresses, it is much more efficient to use a port scanner like nmap to discover which have port 80 open before scanning with WhatWeb.
 
 Character set detection, with the Charset plugin, required by JSON and MongoDB logging uses more CPU than otherwise.
