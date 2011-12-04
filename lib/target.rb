@@ -132,8 +132,8 @@ class Target
 			# if it's https://
 			# i wont worry about certificates, verfication, etc
 			if @uri.class == URI::HTTPS
-				http.use_ssl = true	
-				http.verify_mode = OpenSSL::SSL::VERIFY_NONE		
+				http.use_ssl = true
+				http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 			end
 			
 			getthis = @uri.path + (@uri.query.nil? ? "" : "?" + @uri.query)
