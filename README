@@ -353,9 +353,6 @@ Character set detection, with the Charset plugin, required by JSON and MongoDB l
 8. Optional Dependencies
 ================================================================================
 
-Without the em-resolve-replace gem performance is significantly degraded.
-	gem install em-resolve-replace
-
 To enable JSON logging install the json gem.
 	gem install json
 
