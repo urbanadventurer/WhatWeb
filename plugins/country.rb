@@ -7,14 +7,24 @@
 
 # version 0.2
 # display full country names
+# version 0.3
+# fix crash with ipv6 addresses, update comments, update database
 
 Plugin.define "Country" do
 author "Andrew Horton"
-version "0.2"
-description "GeoIP IP2Country lookup. To refresh DB, replace IpToCountry.csv and remove country-ips.dat. GeoIP database from http://software77.net/geo-ip/. Local IPv4 addresses are represented as ZZ according to an ISO convention. Lookup code developed by Matthias Wachter for rubyquiz.com and used with permission."
+version "0.3"
+description "Shows the country the IPv4 address belongs to. This uses the GeoIP IP2Country database from http://software77.net/geo-ip/. Instructions on updating the database are in the plugin comments."
 
-# Keep country-ips.dat in the same location as country.rb
-# For first time use, drop IpToCountry.csv in the same folder as country.rb
+# Lookup code developed by Matthias Wachter for rubyquiz.com and used with permission.
+# Local IPv4 addresses are represented as ZZ according to an ISO convention. 
+
+# How to Update Database
+# ----------------------
+# rm plugins/country-ips.dat plugins/IpToCountry.csv
+# wget software77.net/geo-ip/?DL=1 -O plugins/IpToCountry.csv.gz
+# gzip -d plugins/IpToCountry.csv.gz
+# then run whatweb on a URL, it will automatically make the country-ips.dat file
+
 
 def startup
 
@@ -70,7 +80,7 @@ end
 def passive
 m=[]
 
-  if @rfile and @ip
+  if @rfile and @ip and @ip =~ /^([0-9]{1,3}\.){3}[0-9]{1,3}$/
 	  @rfile.seek(0,IO::SEEK_END)
 	  record_max=@rfile.pos/10-1
 

@@ -247,9 +247,9 @@ files=[
 	to_download = files.map {|x| x[:path]}.sort.uniq
 	downloads={}
 	to_download.each do |d|
-		target = URI.join(@base_uri.to_s,d).to_s	
+		target = URI.join(@base_uri.to_s,d).to_s
 		status,url,ip,body,headers=open_target(target)
-		downloads[d] = {:md5sum=>MD5.new(body).to_s}	
+		downloads[d] = {:md5sum=>MD5.new(body).to_s}
 	end
 
 	# Compare file hashes to known hashes
@@ -263,6 +263,15 @@ files=[
 	# Set version if present
 	unless version.nil?
 		m << {:name=>"md5 sums of files", :version=>version}
+	end
+
+        # Extract version from Documentation.html (README is not present in debian package)
+	target = URI.join(@base_uri.to_s, "Documentation.html").to_s
+	status,url,ip,body,headers=open_target(target)
+
+	if body =~ /<title>phpMyAdmin ([^\s^<]+)[^<]*<\/title>/
+		version = body.scan(/<title>phpMyAdmin ([^\s^<]+)[^<]*<\/title>/)[0].to_s
+		m << {:name=>"Documentation version", :version=>version }
 	end
 
 	# Return aggressive matches
