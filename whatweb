@@ -45,6 +45,9 @@ require 'thread'
 require 'iconv'
 require 'tempfile'
 require 'rbconfig'  # detect environment, e.g. windows or linux
+require 'resolv'
+require 'resolv-replace' # asynchronous DNS
+
 
 ### ruby 1.9 changes
 if RUBY_VERSION =~ /^1\.9/
@@ -67,23 +70,19 @@ def gem_available_new_rubygems?(gemname)
   Gem::Specification.methods.include?(:find_all_by_name) and not Gem::Specification.find_all_by_name(gemname).empty?
  end
 
-gems = %w|json mongo rchardet em-resolv-replace|
+gems = %w|json mongo rchardet |
 
 gems.each do |thisgem|
 	begin
 		require 'rubygems' # rubygems is optional
-		if gem_available?(thisgem) # 
-			unless thisgem == "em-resolv-replace"
-				require thisgem
-			else
-				require 'resolv'
-				require 'resolv-replace'
-			end
+		if gem_available?(thisgem) # 			
+			require thisgem			
 		end
 	rescue LoadError
 		# that failed.. no big deal
 	end
 end
+
 
 ## set up load paths - must be before loading lib/ files
 # add the directory of the file currently being executed to the load path
@@ -546,7 +545,6 @@ EXAMPLE USAGE:
 \n"
 
 	suggestions=""
-	suggestions << "WARNING: Without the em-resolv-replace gem performance is significantly degraded.\n" unless gem_available?('em-resolv-replace')
 	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
 	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
 	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')

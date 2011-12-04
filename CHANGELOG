@@ -14,13 +14,15 @@ Version 0.4.8-dev Unreleased
 * Added raw header support by monkey patching the net/http library
 * Targets from input files are now executed ascending order
 * Redesigned and refactored much of Whatweb's code. Introduced the Target class
+* Major changes to support Ruby 1.9.1
 * Added context searching for plugin matches[]. Added the matches keyword, :search. Values can be "headers","headers[server]"(or any other HTTP header),"body"(default), "all" (the raw headers + body)
 * Added methods for aggressive plugins to send HEAD and POST requests
 * Fixed meta refresh redirection but with HTML entities in the URL
 * Added --grep, -g option to be easier than --custom-plugin. (Requested by Scott Bell)
-* Major changes to support Ruby 1.9.1
 * Better support for UTF-8 encoded strings in plugins.
 * :status and :url are now logical AND with other matches. They cannot match in isolation unless with each other.
+* Updated Country plugin. Fixed IPv6 bug
+* Removed dependency on em-resolv-replace
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
