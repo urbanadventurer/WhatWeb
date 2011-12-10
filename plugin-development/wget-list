@@ -11,7 +11,8 @@ fi
 
 for i in `cat $1` ; do
  u=$i; f=`echo $i | sed 's/http:\/\///g' | sed 's/\//-/g'`
- wget -U "$AGENT" -t 2 -O $f.html $u
- curl -A "$AGENT" -I $u > $f.meta
+# wget -U "$AGENT" -t 2 -O $f.html $u
+# curl -A "$AGENT" -I $u > $f.meta
  curl -A "$AGENT" -k -i $u > $f.http
 done
+
