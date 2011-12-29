@@ -16,7 +16,7 @@ install:
 	install -d $(DESTDIR)$(DOCPATH)/$(NAME)
 	cp -p -r my-plugins $(DESTDIR)$(LIBPATH)/$(NAME)/
 	cp -p -r plugins-disabled plugins lib plugin-development addons $(DESTDIR)$(LIBPATH)/$(NAME)/
-	cp -p -r CHANGELOG INSTALL LICENSE README TODO whatweb.xsl $(DESTDIR)$(DOCPATH)/$(NAME)/
+	cp -p -r CHANGELOG INSTALL LICENSE README whatweb.xsl $(DESTDIR)$(DOCPATH)/$(NAME)/
 
 clean:
 	# clean will remove your my-plugins folder. be warned
