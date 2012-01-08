@@ -4,17 +4,38 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2012-01-08 #
+# Added logo image matches
+# Added www-authenticate header match
+##
 Plugin.define "Billion-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
-version "0.1"
+version "0.2"
 description "Billion router - Homepage: http://www.billion.com/product/product.html"
 
-# ShodanHQ results as at 2011-08-05 #
-# 1,340 for Billion Sky
+# ShodanHQ results as at 2012-01-08 #
+# 41,859 for Authenticate WebAdmin Conexant-EmWeb
+#  1,462 for Billion Sky
 
 # Examples #
 examples %w|
+41.243.230.220
+209.212.46.141
+67.102.23.129
+203.19.220.32
+218.111.43.185
+201.200.148.61
+72.10.214.96
 |
+
+# Matches #
+matches [
+
+# /customized/logo.gif
+{ :url=>"/customized/logo.gif", :md5=>"766b7266a7324317b84be0d15cffc4aa" },
+{ :url=>"/customized/logo.gif", :md5=>"82b6dea5a084044bf65f9af5440dfaf1" },
+
+]
 
 # Passive #
 def passive
@@ -23,6 +44,11 @@ def passive
 	# WWW-Authenticate: Basic realm="Billion Sky" 
 	if @headers["www-authenticate"] =~ /Basic realm="Billion Sky"/
 		m << { :name=>"WWW-Authenticate" }
+	end
+
+	# WWW-Authenticate: Basic realm="WebAdmin" # Server: =~ Conexant-EmWeb
+	if @headers["www-authenticate"] =~ /Basic realm="WebAdmin"/ and @headers["server"] =~ /Conexant-EmWeb/
+		m << { :name=>"WWW-Authenticate", :certainty=>25 }
 	end
 
 	# Return passive matches
