@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AxCMS.net" do
+Plugin.define "AxCMS_net" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.1"
 description "AxCMS.net - the free ASP.NET CMS by Axinom - Homepage: http://en.axcms.net/"
