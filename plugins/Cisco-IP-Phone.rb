@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Cisco-IP-Phone.rb" do
+Plugin.define "Cisco-IP-Phone" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-26
 version "0.1"
 description "This plugin identifies Cisco IP phones and extracts the internal hostname which is also the device's MAC adress prefixed with 'SEP' - Homepage: http://www.cisco.com/en/US/products/sw/voicesw/index.html"

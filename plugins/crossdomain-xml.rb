@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "crossdomain.xml" do
+Plugin.define "crossdomain-xml" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-09
 version "0.1"
 description "This plugin extracts allowed domain from crossdomain.xml"

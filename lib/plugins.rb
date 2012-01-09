@@ -370,7 +370,12 @@ for adding/removing sets of plugins.
 			end
 			plugins_to_use = Plugin.registered_plugins
 		end
-
+		
+		mongo_incompatible_plugins  = Plugin.registered_plugins.find_all {|n,p| n =~ /.*[.].*/ }
+		unless mongo_incompatible_plugins.empty?
+			puts "Error: The following plugins contain a \".\" in their name and will cause problems logging to Mongo DB: " + mongo_incompatible_plugins.map {|n,p| n}.join(", ")
+		end
+		
 		plugins_to_use
 	end
 
