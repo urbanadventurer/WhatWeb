@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Avaya-IP-Office.rb" do
+Plugin.define "Avaya-IP-Office" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
 description "IP Office is Avaya's telephone system for small and medium enterprises. IP Office systems can be run in several modes. - Homepage: http://marketingtools.avaya.com/knowledgebase/"

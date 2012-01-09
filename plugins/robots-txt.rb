@@ -10,7 +10,7 @@
 # Version 0.2 #
 # Added aggressive `/robots.txt` retrieval
 ##
-Plugin.define "robots.txt" do
+Plugin.define "robots-txt" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-22
 version "0.3"
 description "This plugin identifies robots.txt files and extracts both allowed and disallowed directories. - More Info: http://www.robotstxt.org/"

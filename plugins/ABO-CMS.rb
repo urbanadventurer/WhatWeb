@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ABO.CMS" do
+Plugin.define "ABO-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
 description "ABO.CMS - Hompage: http://www.abocms.com/"
