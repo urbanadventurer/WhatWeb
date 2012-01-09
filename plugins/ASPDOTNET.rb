@@ -13,7 +13,7 @@
 # Version 0.2 # 2011-01-28 #
 # Added version detection
 ##
-Plugin.define "ASP.NET" do
+Plugin.define "ASPDOTNET" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
 version "0.4"
 description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world. - homepage: http://www.asp.net/"
