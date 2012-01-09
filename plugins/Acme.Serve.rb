@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Acme.Serve" do
+Plugin.define "Acme_Serve" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
 version "0.1"
 description "Minimal Java HTTP server class. This class implements a very small embeddable HTTP server. It runs Servlets compatible with the API used by JavaSoft's JavaServer server. Used as an embedded server for many devices. - Homepage: http://www.acme.com/java/software/Acme.Serve.Serve.html"
