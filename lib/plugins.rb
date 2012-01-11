@@ -19,9 +19,9 @@ class Plugin
   
   class << self
     attr_reader :registered_plugins
-    private :new
     attr_reader :locked
     attr_reader :plugin_name
+    private :new
     @locked=false
   end
 
@@ -32,7 +32,11 @@ class Plugin
     p.startup
     Plugin.registered_plugins[name] = p
   end
- 
+  
+  def plugin_name
+    @plugin_name
+  end
+
   def set_plugin_name(s)
      @plugin_name = s
   end
