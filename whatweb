@@ -101,8 +101,10 @@ require 'lib/plugins.rb'
 require 'lib/output.rb'
 require 'lib/colour.rb'
 require 'lib/tld.rb'
-require 'lib/monkeypatch-http.rb'
-
+require 'lib/opener.rb'
+require 'lib/processor.rb'
+require 'lib/scanner.rb'
+require 'lib/output_processor.rb'
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
@@ -301,6 +303,7 @@ PERFORMANCE & STABILITY:
   --read-timeout\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}
   --aho-corasick\tbuild Aho-Corasick prefix dictionary for speed
   --wait=SECONDS\tWait SECONDS between connections
+  --benchmark\tShow benchmarking info
 \t\t\tThis is useful when using a single thread.
 
 HELP & MISCELLANEOUS:
@@ -389,6 +392,7 @@ parse = GetoptLong.new(
       [ '--debug', GetoptLong::NO_ARGUMENT ],
       [ '--version', GetoptLong::NO_ARGUMENT ],
       [ '--aho-corasick', GetoptLong::NO_ARGUMENT],
+      [ '--benchmark', GetoptLong::NO_ARGUMENT],
       [ '-q','--quiet', GetoptLong::NO_ARGUMENT]
     )
 
@@ -558,6 +562,15 @@ begin
         else
           raise "Sorry, the ahocorasick gem is required for Aho-Corasick support"
         end
+      when '--benchmark'
+        opts[:benchmark]=true
+        opts[:benchmark_results]={}
+        opts[:benchmark_results][:open]={}
+        opts[:benchmark_results][:process]={}
+        opts[:benchmark_results][:open][:total]=0
+        opts[:benchmark_results][:open][:runs]=0
+        opts[:benchmark_results][:process][:total]=0
+        opts[:benchmark_results][:process][:runs]=0
 			when '--debug'
 				opts[:debug]=true
 			when '-h','--help'
@@ -587,40 +600,46 @@ end
 ### PLUGINS
 plugin_selection += ",Custom-Plugin" if opts[:use_custom_plugin] and opts[:plugin_selection]
 plugin_selection += ",Grep" if opts[:use_custom_grep_plugin] and opts[:plugin_selection]
-opts[:plugins] = PluginSupport.load_plugins(plugin_selection ) 
+opts[:plugins] = WhatWeb::PluginSupport.load_plugins(plugin_selection ) 
 
 # sanity check # no plugins?
-if $plugins_to_use.size == 0
+if opts[:plugins].size == 0
 	error "No plugins selected, exiting."
 	exit 1
 end
 # optimise plugins
-PluginSupport.precompile_regular_expressions 
+WhatWeb::PluginSupport.precompile_regular_expressions 
 
 ### OUTPUT
-opts[:output_plugins] << OutputBrief.new unless $QUIET # by default output brief
-opts[:output_plugins] << OutputObject.new() if $verbose > 1 # full output if -vv
-opts[:output_plugins] << OutputVerbose.new() if $verbose > 0 # full output if -v
+opts[:output_plugins] << WhatWeb::OutputBrief.new unless $QUIET # by default output brief
+opts[:output_plugins] << WhatWeb::OutputObject.new() if $verbose > 1 # full output if -vv
+opts[:output_plugins] << WhatWeb::OutputVerbose.new() if $verbose > 0 # full output if -v
 
 ## output dependencies
 if opts[:use_mongo_log]
 	if opts[:plugins].keys.include?("Charset")
-		opts[:output_plugins] << OutputMongo.new(mongo) 
+		opts[:output_plugins] << WhatWeb::OutputMongo.new(mongo) 
 	else
 		error("MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/Charset.rb to enable it.")
 		exit
 	end
 end
-output=OutputProcessor.new(opts)
+output=WhatWeb::OutputProcessor.new(opts)
 opts[:callback_only]=true
-opts[:on_result_callback]=Proc.new{|result| output.result(result)}
+opts[:on_result_callback]=Proc.new{|target, result| output.out(target,target.status,result)}
 opts[:on_error_callback]=Proc.new{|error| output.error(error)}
 opts[:argv]=ARGV
-scanner=Scanner.new(opts)
+scanner=WhatWeb::Scanner.new(opts)
 scanner.start
 
 # shutdown plugins
 Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }
+if opts[:benchmark]
+  puts "BENCHMARKING:"
+  opts[:benchmark_results].each do |label,m|
+    puts "#{label} #{m[:runs]} #{m[:total]} #{m[:total]/m[:runs]}"
+  end
+end
 
 #pp $PLUGIN_TIMES.sort_by {|x,y|y }
 

@@ -42,7 +42,7 @@ matches [
 
 def passive
 
-	x=@body.scan(Target::meta_refresh_regex).flatten
+	x=@body.scan(WhatWeb::Target::meta_refresh_regex).flatten
 
 	unless x.empty?
 		meta_refresh= x.first

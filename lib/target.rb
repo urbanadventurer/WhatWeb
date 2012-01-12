@@ -1,11 +1,13 @@
 module WhatWeb
 class Target
 	attr_reader :target
-	attr_reader :uri, :status, :ip, :body, :headers, :raw_headers, :raw_response
+	attr_reader :status, :ip, :body, :headers, :raw_headers, :raw_response
+  attr_accessor :uri
 	attr_reader :cookies
 	attr_reader :md5sum
 	attr_reader :tag_pattern
-	attr_reader :is_url, :is_file
+	attr_accessor :original_source
+  attr_accessor :is_url, :is_file
 	attr_accessor :http_options
 
 	@@meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"'>]+)['"]?[^>]*>/i
@@ -16,7 +18,7 @@ class Target
 	end
 
 	def to_s
-		@target
+		original_source
 	end
 
 	def Target.meta_refresh_regex
@@ -56,8 +58,7 @@ end
 
 	def open_string(string)
 		# target is a file
-		@body=string
-		
+	  @body=string.force_encoding("BINARY")
 		# target is a http packet file
 		if @body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
 			# extract http header
@@ -68,7 +69,7 @@ end
 			@cookies=[]
 			for k in 1...pageheaders.length
 				section=pageheaders[k].split(/:/).first.to_s.downcase
-				if section =~ /^set-cookie$/i
+        if section =~ /^set-cookie$/i
 					@cookies << pageheaders[k].scan(/:[\s]*(.+)$/).flatten.first
 				else
 					@headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).flatten.first

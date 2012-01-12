@@ -492,7 +492,6 @@ class OutputMagicTreeXML < Output
 		end
 	end
 
-end
 
 # JSON Output #
 class OutputJSON < Output
@@ -681,7 +680,7 @@ class OutputMongo < Output
 		end
 
 	end
-
+end
 
 
 class OutputJSONVerbose < Output

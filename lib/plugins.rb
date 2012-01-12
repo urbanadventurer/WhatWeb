@@ -633,7 +633,7 @@ class PluginChoice
 end
 end
 
-
+Plugin=WhatWeb::Plugin
 
 
 

@@ -1,3 +1,5 @@
+require 'curl'
+require 'uri'
 module WhatWeb
 class Opener
 
@@ -8,20 +10,32 @@ class Opener
   attr_reader :opts
 
   def initialize(opts={})
-    @opts.clone
+    @opts=opts.clone
     @target_list=make_target_list(opts)
-    @input_file_mutex=Mutex.net
-    if @opts[:input_file] and File.exists?(@opts[:input_file])
-      @input_file=File.open(@input_file)
-    end
+    @input_file_mutex=Mutex.new
+    @input_file=File.open(opts[:input_file])
     @opts[:timeout]||=30
   end
 
 
   def open_next_target
+    s=Time.now
+    opts[:benchmark_results][:open][:runs]+=1 if opts[:benchmark]
+    if @input_file
+      @input_file_mutex.synchronize {
+    if  @target_list.empty? and !@input_file.eof?
+       c=0
+       while(!@input_file.eof? and c<1024) do
+          @target_list << @input_file.gets.strip
+          c=c+1
+        end
+    end
+    }
+    end
     t=next_target
     raise NoMoreTargets if t.nil?
-    return open(target)
+    opts[:benchmark_results][:open][:total]+=Time.now-s if opts[:benchmark]
+    return open(t)
   end
 
 
@@ -31,7 +45,7 @@ class Opener
       t.is_file=true
       t.is_url=false
     else
-		  r=Curl::Easy.http_get(target) do |e|
+		  r=::Curl::Easy.http_get(target) do |e|
 			  e.header_in_body=true
 			  e.follow_location=true
 			  e.max_redirects=4
@@ -42,8 +56,9 @@ class Opener
       t=Target.new(r.body_str)
       t.is_file=false
       t.is_url=true
-      t.uri=target
+      t.uri=URI.parse(target)
 		end
+    t.original_source=target
     return t
   end
 
@@ -52,32 +67,21 @@ class Opener
 
 
   def next_target
-    if @input_file
-      @input_file_mutex.synchronize {
-        if @target_list.nil? and !@input_file.eof?
-          c=0
-          while(!@input_file.eof? and c<1024) do
-            @target_list << @input_file.gets
-            c+=1
-          end
-        end
-      }
-    end
     t=@target_list.shift
-    t=process_target(t)
+    t=process_target(t) unless t.nil?
     return t
   end
 
 
   def process_target(x)
-    
-    if File.exists?(x)
+    if File.exist?(x)
       x
     else
+      puts "NOT file exists #{x} '#{Dir.getwd}'"
       if opts[:url_pattern]
         x = opts[:url_pattern].gsub('%insert%',x)
       end
-      x=opts[:url_prefix] + x + opts[:url_suffix]
+      x=opts[:url_prefix].to_s + x + opts[:url_suffix].to_s
       if x =~ (/^[a-z]+:\/\//)
 	      x
       else
@@ -87,13 +91,8 @@ class Opener
   end
 
   def make_target_list(opts)
-	url_list = opts[:cmd_urls]
+	url_list = opts[:argv]
         
-	# read each line as a url, skipping lines that begin with a #
-	if opts[:input_file] and File.exists?(opts[:input_file])
-		pp "loading input file: #{opts[:input_file]}" if $verbose > 2
-		url_list += File.open(opts[:input_file]).readlines.each {|line| line.strip! }.delete_if {|line| line =~ /^#.*/ }.each {|line| line.delete!("\n") }
-	end
 
 	# add example urls to url_list if required. plugins must be loaded already
 	if opts[:enable_example_urls]
@@ -115,10 +114,6 @@ class Opener
 	url_list += genrange unless genrange.empty?
      
 
-	#make urls friendlier, test if it's a file, if test for not assume it's http://
-	# http, https, ftp, etc
-	url_list=url_list.map do |x|   
-	end
 
 	url_list=url_list.flatten #.sort.uniq
   end
