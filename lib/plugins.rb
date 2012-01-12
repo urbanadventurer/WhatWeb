@@ -1,3 +1,4 @@
+module WhatWeb
 module PluginSugar
   def def_field(*names)
     class_eval do 
@@ -176,7 +177,7 @@ class Plugin
   end
 
 # execute plugin
-  def x	
+  def x(opts)	
         results=[]
 
   	unless @matches.nil?
@@ -190,7 +191,7 @@ class Plugin
 
 	# if the plugin has an aggressive method and we're in aggressive mode, use it
 	# or if we're guessing all URLs
-	if ($AGGRESSION == 3 and !results.empty?) or ($AGGRESSION == 4)
+	if (opts[:aggression] == 3 and !results.empty?) or (opts[:aggression] == 4)
 		results += self.aggressive if defined? self.aggressive
 		
 		# if any of our matches have a url then fetch it
@@ -233,6 +234,87 @@ class Plugin
   extend PluginSugar
   def_field  :author, :version, :examples, :description, :matches, :cve, :dorks
 #, :category
+
+
+
+### matching
+
+def decode_html_entities(s)
+	t = s.dup
+	html_entities = { "&quot;"=>'"', "&apos;"=>"'", "&amp;"=>"&", "&lt;"=>"<", "&gt;"=>">" }
+	html_entities.each_pair {|from,to| t.gsub!(from,to) }
+	t
+end
+
+# some plugins want a random string in URLs
+def randstr
+	rand(36**8).to_s(36)
+end 
+
+
+def match_ghdb(ghdb, body, meta, status, base_uri)
+	# this could be made faster by creating code to eval once for each plugin
+
+	pp "match_ghdb",ghdb if $verbose > 2
+	
+	# take a GHDB string and turn it into code to be evaluated
+	matches=[] # fill with true or false. succeeds if all true
+	s = ghdb
+
+	# does it contain intitle?
+	if s =~ /intitle:/i
+		# extract either the next word or the following words enclosed in "s, it can't possibly be both
+		intitle = (s.scan(/intitle:"([^"]*)"/i) + s.scan(/intitle:([^"]\w+)/i)).to_s
+		matches << ((body =~ /<title>[^<]*#{Regexp.escape(intitle)}[^<]*<\/title>/i).nil? ? false : true)
+		# strip out the intitle: part
+		s=s.gsub(/intitle:"([^"]*)"/i,'').gsub(/intitle:([^"]\w+)/i,'')
+	end
+
+	if s =~ /filetype:/i
+		filetype = (s.scan(/filetype:"([^"]*)"/i) + s.scan(/filetype:([^"]\w+)/i)).to_s
+		# lame method: check if the URL ends in the filetype
+		unless base_uri.nil?
+			matches << ((base_uri.path.split("?")[0] =~ /#{Regexp.escape(filetype)}$/i).nil? ? false : true)
+		end
+		s=s.gsub(/filetype:"([^"]*)"/i,'').gsub(/filetype:([^"]\w+)/i,'')
+	end
+
+	if s =~ /inurl:/i
+		inurl = (s.scan(/inurl:"([^"]*)"/i) + s.scan(/inurl:([^"]\w+)/i)).flatten
+		# can occur multiple times.
+		inurl.each {|x| matches << ((base_uri.to_s =~ /#{Regexp.escape(x)}/i).nil? ? false : true)  }
+		# strip out the inurl: part
+		s=s.gsub(/inurl:"([^"]*)"/i,'').gsub(/inurl:([^"]\w+)/i,'')
+	end
+
+	# split the remaining words except those enclosed in quotes, remove the quotes and sort them
+
+	remaining_words = s.scan(/([^ "]+)|("[^"]+")/i).flatten.compact.each {|w| w.delete!('"')  }.sort.uniq
+	
+	pp "Remaining GHDB words", 	remaining_words if $verbose > 2
+	
+	remaining_words.each do |w| 	
+		# does it start with a - ?
+		if w[0..0] == '-'
+			# reverse true/false if it begins with a -
+			matches << ((body =~ /#{Regexp.escape(w[1..-1])}/i).nil? ? true : false) 
+		else
+			w = w[1..-1] if w[0..0] == '+' # if it starts with +, ignore the 1st char
+			matches << ((body =~ /#{Regexp.escape(w)}/i).nil? ? false : true)
+		end	
+	end
+
+	pp matches if $verbose > 2
+
+	# if all matcbhes are true, then true	
+	if matches.uniq == [true]
+		true
+	else
+		false
+	end
+end
+
+
 
 end
 
@@ -549,7 +631,7 @@ class PluginChoice
 		end
 	end
 end
-
+end
 
 
 

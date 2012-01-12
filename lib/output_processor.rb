@@ -17,8 +17,10 @@ You should have received a copy of the GNU General Public License
 along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
-class Output
-	def initialize(f=STDOUT)
+class OutputProcessor
+	def initialize(f=STDOUT,opts)
+    @opts=opts
+    @mutex=Mutex.new
 	# if no f, output to STDOUT, if f is a filename then open it, if f is a file use it	
 		@f = f if f.class == IO or f.class == File
 		@f=File.open(f,"a") if f.class == String
@@ -59,12 +61,10 @@ end
 
 class OutputObject < Output
 	def out(target, status, results) 
-		$semaphore.synchronize do 
 			@f.puts "Identifying: "+ target.to_s
 			@f.puts "HTTP-Status: "+ status.to_s
 			@f.puts results.pretty_inspect unless results.empty?	
 			@f.puts
-		end
 	end
 end
 
@@ -80,7 +80,6 @@ class OutputVerbose < Output
 	end
 
 	def out(target, status, results)
-		$semaphore.synchronize do
 			@f.puts "URL".ljust(7)+": #{coloured(target,'blue')}"
 			@f.puts "Status".ljust(7)+": #{status}"
 			results.sort.each do |plugin_name,plugin_results|
@@ -162,7 +161,6 @@ class OutputVerbose < Output
 			end
 		end
 	end
-end
 
 class OutputBrief < Output
 
@@ -239,13 +237,11 @@ end
 			end
 		end
 		
-		$semaphore.synchronize do 
 			if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
 				@f.puts blue(target) + " [#{status}] " + brief_results.join(", ")
 			else
 				@f.puts target.to_s + " [#{status}] " + brief_results.join(", ")
 			end		
-		end
 	end
 end
 
@@ -285,7 +281,6 @@ class OutputXML < Output
 	end
 
 	def out(target, status, results)	
-		$semaphore.synchronize do 
 			@f.puts "<target>"
 			@f.puts "\t<uri>#{escape(target)}</uri>"
 			@f.puts "\t<http-status>#{escape(status)}</http-status>"
@@ -334,7 +329,6 @@ class OutputXML < Output
 			@f.puts "</target>"
 		end
 	end
-end
 
 
 # MagicTree #
@@ -371,7 +365,6 @@ class OutputMagicTreeXML < Output
 
 	def out(target, status, results)
 
-		$semaphore.synchronize do
 
 			# Parse target URL and initialize host node details
 			uri = URI.parse(target.to_s)
@@ -584,9 +577,7 @@ class OutputJSON < Output
 			flatten_elements!(foo)			
 		end
 
-		$semaphore.synchronize do 
 			@f.puts JSON::fast_generate(foo)
-		end
 	end
 end
 
@@ -692,24 +683,19 @@ class OutputMongo < Output
 		end
 
 	end
-end
 
 
 
 class OutputJSONVerbose < Output
 	def out(target, status, results)
 		# brutal and simple
-		$semaphore.synchronize do 
 			@f.puts JSON::fast_generate([target,status,results])
-		end
 	end
 end
 
 class OutputErrors < Output
 	def out(error)
-		$semaphore.synchronize do 
 			@f.puts error
-		end
 	end	
 end
 

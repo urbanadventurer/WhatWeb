@@ -4,32 +4,30 @@ class Processor
   attr_reader :opts
   attr_reader :aho_corasick_preprocessor
   def initialize(opts)
-    self.opts=opts
-    opts[:plugins]=Plugin.registered_plugins unless opts[:plugins]
-    if opts[:enable_aho_corasick]
+    @opts=opts.clone
+    @opts[:plugins]=Plugin.registered_plugins unless @opts[:plugins]
+    if @opts[:enable_aho_corasick]
       @aho_corasick_preprocessor=WhatWeb::AhoCorasickPreprocessor.new
-      aho_corasick_preprocessor.build_trigger_dictionary(opts[:plugins])
+      aho_corasick_preprocessor.build_trigger_dictionary(@opts[:plugins])
     end
   end
 
-  def process(target)
+  def error(e)
+    opts[:on_error_callback].call("ERROR: Plugin #{name} failed for #{target.to_s}. #{err}") if opts[:on_error_callback]
+  end
+
+  def process(raw)
 
     results=[]
     plugins=opt[:plugins]
     plugins=aho_corasick_preprocessor.find_plugins(target) if aho_corasick_preprocessor
-    plugins.each do |name,plugin|
+    plugins.each do |name,prototype|
       begin			
-        while plugin.locked?
-          sleep 0.1
-	  puts "Waiting for plugin:#{name} to unlock" if $verbose > 2
-	end
-	plugin.lock
+	      plugin=prototype.clone
         plugin.init(target)
-	result=plugin.x
-	plugin.unlock
+	      result=plugin.x(opts)
       rescue StandardError => err
-	error("ERROR: Plugin #{name} failed for #{target.to_s}. #{err}")
-	plugin.unlock
+	      error("ERROR: Plugin #{name} failed for #{target.to_s}. #{err}")
         raise if $WWDEBUG==true
       end
       results << [name, result] unless result.nil? or result.empty?

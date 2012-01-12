@@ -1,3 +1,4 @@
+module WhatWeb
 # coding: utf-8
 #
 # Copyright Andrew Horton, 2010
@@ -404,4 +405,4 @@ class TLD
 	end
 
 end
-
+end

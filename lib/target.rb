@@ -1,3 +1,4 @@
+module WhatWeb
 class Target
 	attr_reader :target
 	attr_reader :uri, :status, :ip, :body, :headers, :raw_headers, :raw_response
@@ -32,65 +33,30 @@ class Target
 	def initialize(target=nil)
 		@target=target
 		@headers={}
-		@http_options={:method=>"GET"}
-#		@status=0
+    open_string(target)
+    @md5sum=Digest::MD5.hexdigest(@body)
+		@tag_pattern = make_tag_pattern(@body)
 
-		if @target =~ /^http[s]?:\/\//
-			@is_url=true 
-		else
-			@is_url=false
-		end
-
-		if File.exists?(@target)
-			@is_file=true
-			if File.directory?(@target)
-				raise "Error: #{@target} is a directory"
-			end
-			if File.readable?(@target) == false
-				raise "Error: You do not have permission to view #{@target}"
-			end
-		else
-			@is_file=false
-		end
-
-		if self.is_url?
-			@uri=URI.parse(URI.encode(@target))
-
-			# is this taking control away from the user?
-			# [400] http://www.alexa.com  [200] http://www.alexa.com/
-			@uri.path = "/" if @uri.path.empty?
-		else
-			@uri=URI.parse("file://"+@target)
-		end
-	end
-
-	def open
-		if self.is_file?
-			open_file
-		else
-			open_url(@http_options)
-		end
-
-		## after open 
-		if @body.nil?
-			# Initialize @body variable if the connection is terminated prematurely
-			# This is usually caused by HTTP status codes: 101, 102, 204, 205, 305
-			@body=""
-		else
-			@md5sum=Digest::MD5.hexdigest(@body)
-			@tag_pattern = make_tag_pattern(@body)
-			if @raw_headers
-				@raw_response = @raw_headers + @body
-			else
-				@raw_response = @body
-			end
-		end
-	end
+  end
 
 
-	def open_file
+# fuzzy matching ftw
+def make_tag_pattern(b)
+	# remove stuff between script and /script
+	# don't bother with  !--, --> or noscript and /noscript
+	inscript=false;
+
+	b.scan(/<([^\s>]*)/).flatten.map {|x| x.downcase!; r=nil;
+			r=x if inscript==false
+			inscript=true if x=="script"
+			(inscript=false; r=x) if x=="/script"
+			r
+		}.compact.join(",")
+end
+
+	def open_string(string)
 		# target is a file
-		@body=File.open(@target).read
+		@body=string
 		
 		# target is a http packet file
 		if @body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
@@ -116,81 +82,6 @@ class Target
 			end
 		end
 	end
-
-	def open_url(options)
-		begin
-			if $USE_PROXY == true
-				http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host,@uri.port)
-			else
-				http=Net::HTTP.new(@uri.host,@uri.port)
-			end
-		
-			# set timeouts
-			http.open_timeout = $HTTP_OPEN_TIMEOUT
-			http.read_timeout = $HTTP_READ_TIMEOUT
-
-			# if it's https://
-			# i wont worry about certificates, verfication, etc
-			if @uri.class == URI::HTTPS
-				http.use_ssl = true
-				http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-			end
-			
-			getthis = @uri.path + (@uri.query.nil? ? "" : "?" + @uri.query)
-			req=nil
-
-			if options[:method] == "GET"
-				req=Net::HTTP::Get.new(getthis, $CUSTOM_HEADERS)
-			end
-			if options[:method] == "HEAD"
-				req=Net::HTTP::Head.new(getthis, $CUSTOM_HEADERS)
-			end		
-			if options[:method] == "POST"
-				req=Net::HTTP::Post.new(getthis, $CUSTOM_HEADERS)
-	                        req.set_form_data(options[:data])
-			end
-
-			if $BASIC_AUTH_USER	
-				req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
-			end
-			res=http.request(req)
-			@raw_headers=http.raw.join("\n")
-			@headers={}; res.each_header {|x,y| @headers[x]=y }
-			@headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless @headers["set-cookie"].nil?
-			@body=res.body
-			@status=res.code.to_i
-			puts @uri.to_s + " [#{status}]" if  $verbose > 0 
-
-		rescue SocketError => err
-			error(@target + " ERROR: Socket error #{err}")
-			return
-		rescue TimeoutError => err
-			error(@target + " ERROR: Timed out #{err}")
-			return
-		rescue Errno::ETIMEDOUT	=>err # for ruby 1.8.7 patch level 249
-			error(@target + " ERROR: Timed out (ETIMEDOUT) #{err}")
-			return
-		rescue EOFError => err
-			error(@target + " ERROR: EOF error #{err}")
-			return
-		rescue StandardError => err		
-			err = "Not HTTP or cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-			error(@target + " ERROR: #{err}")
-			return
-		rescue => err
-			error(@target + " ERROR: #{err}")
-			return
-		end
-
-		begin
-			@ip=IPSocket.getaddress(@uri.host)
-		rescue StandardError => err		
-			err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-			error(@target + " ERROR: #{err}")
-			return
-		end
-	end
-
 
 	def get_redirection_target
 		newtarget_m=nil
@@ -233,4 +124,4 @@ class Target
 	end
 
 end
-
+end

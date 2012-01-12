@@ -1,15 +1,17 @@
 require 'ahocorasick'
 require 'pp'
 module WhatWeb
-module AhoCorasick
+class AhoCorasickPreprocessor
 
-  MIN_TRIGGER_SIZE=4
+  attr_reader :opts
 
-  def self.build_prefix_dictionary
+  def build_trigger_dictionary(opts)
     @prefixes={}
+    @opts=opts.clone
+    @opts[:min_trigger_size]||=4
     @prefixes[:other]=[]
     @keyword_tree=::AhoCorasick::KeywordTree.new
-    ::Plugin.registered_plugins.values.each do |plugin|
+    @opts[:plugins].values.each do |plugin|
       prefix=nil
       matches=plugin.matches
       matches||=[]
@@ -24,14 +26,14 @@ module AhoCorasick
         elsif match[:ghdb]
           prefix=match[:ghdb].scan(/(".*?"|\b.*?\b)/).map{|m2| m=m2.first; (m.match(":") ? m.split(":").last.to_s : m).gsub('"','')}.sort{|a,b| a.size<=>b.size}.last
         end
-        if prefix and prefix.strip.size>=MIN_TRIGGER_SIZE
+        if prefix and prefix.strip.size>=@opts[:min_trigger_size]
           add_match(prefix.strip,plugin)
           found_match=true
         end
       end
       if !found_match
         prefix=source_to_prefix(plugin)
-        if prefix and prefix.strip.size>=MIN_TRIGGER_SIZE
+        if prefix and prefix.strip.size>=@opts[:min_trigger_size]
           add_match(prefix.strip,plugin)
           found_match=true
         end
@@ -41,7 +43,7 @@ module AhoCorasick
     @keyword_tree.make
   end
 
-  def self.find_plugins(target)
+  def find_plugins(target)
     time=Time.now
     plugins=[]
     @keyword_tree.find_all(target.body.to_s+target.headers.to_s).each do |result|
@@ -54,7 +56,7 @@ module AhoCorasick
     return ret
   end
 
-  def self.source_to_prefix(plugin)
+  def source_to_prefix(plugin)
     source=open(plugin.source,"r").read
     lines=source.scan(/^.*\bif\b.*=~.*$/)
     lines.each do |line|
@@ -63,12 +65,12 @@ module AhoCorasick
         r2=regex_to_prefix(r.first)
         prefix=r2 if r2.size>prefix.size
       end
-      return prefix if(prefix.strip.size>=MIN_TRIGGER_SIZE)
+      return prefix if(prefix.strip.size>=@opts[:min_trigger_size])
     end
     return ""
   end
 
-  def self.add_match(prefix,plugin)
+  def add_match(prefix,plugin)
     unless @prefixes.has_key?(prefix) or prefix==:other
       @keyword_tree.add_string(prefix)
     end
@@ -76,7 +78,7 @@ module AhoCorasick
     @prefixes[prefix] << plugin unless @prefixes[prefix].include? plugin
   end
 
-  def self.regex_to_prefix(regex)
+  def regex_to_prefix(regex)
     if(regex.is_a? Regexp)
       string=regex.source
     else 

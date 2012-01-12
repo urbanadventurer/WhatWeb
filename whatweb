@@ -38,8 +38,6 @@ along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 #require 'profile' 
 require 'getoptlong'
 require 'pp'
-require 'net/http'
-require 'open-uri'
 require 'cgi'
 require 'thread'
 require 'iconv'
@@ -144,205 +142,6 @@ $PLUGIN_TIMES=Hash.new(0)
 $NO_ERRORS=false
 
 
-### matching
-
-# fuzzy matching ftw
-def make_tag_pattern(b)
-	# remove stuff between script and /script
-	# don't bother with  !--, --> or noscript and /noscript
-	inscript=false;
-
-	b.scan(/<([^\s>]*)/).flatten.map {|x| x.downcase!; r=nil;
-			r=x if inscript==false
-			inscript=true if x=="script"
-			(inscript=false; r=x) if x=="/script"
-			r
-		}.compact.join(",")
-end
-
-def decode_html_entities(s)
-	t = s.dup
-	html_entities = { "&quot;"=>'"', "&apos;"=>"'", "&amp;"=>"&", "&lt;"=>"<", "&gt;"=>">" }
-	html_entities.each_pair {|from,to| t.gsub!(from,to) }
-	t
-end
-
-
-def certainty_to_words(p)
-	case p
-		when 0..49
-			"maybe"
-		when 50..99
-			"probably"
-		when 100
-			"certain"
-	end
-end
-
-# some plugins want a random string in URLs
-def randstr
-	rand(36**8).to_s(36)
-end 
-
-
-def match_ghdb(ghdb, body, meta, status, base_uri)
-	# this could be made faster by creating code to eval once for each plugin
-
-	pp "match_ghdb",ghdb if $verbose > 2
-	
-	# take a GHDB string and turn it into code to be evaluated
-	matches=[] # fill with true or false. succeeds if all true
-	s = ghdb
-
-	# does it contain intitle?
-	if s =~ /intitle:/i
-		# extract either the next word or the following words enclosed in "s, it can't possibly be both
-		intitle = (s.scan(/intitle:"([^"]*)"/i) + s.scan(/intitle:([^"]\w+)/i)).to_s
-		matches << ((body =~ /<title>[^<]*#{Regexp.escape(intitle)}[^<]*<\/title>/i).nil? ? false : true)
-		# strip out the intitle: part
-		s=s.gsub(/intitle:"([^"]*)"/i,'').gsub(/intitle:([^"]\w+)/i,'')
-	end
-
-	if s =~ /filetype:/i
-		filetype = (s.scan(/filetype:"([^"]*)"/i) + s.scan(/filetype:([^"]\w+)/i)).to_s
-		# lame method: check if the URL ends in the filetype
-		unless base_uri.nil?
-			matches << ((base_uri.path.split("?")[0] =~ /#{Regexp.escape(filetype)}$/i).nil? ? false : true)
-		end
-		s=s.gsub(/filetype:"([^"]*)"/i,'').gsub(/filetype:([^"]\w+)/i,'')
-	end
-
-	if s =~ /inurl:/i
-		inurl = (s.scan(/inurl:"([^"]*)"/i) + s.scan(/inurl:([^"]\w+)/i)).flatten
-		# can occur multiple times.
-		inurl.each {|x| matches << ((base_uri.to_s =~ /#{Regexp.escape(x)}/i).nil? ? false : true)  }
-		# strip out the inurl: part
-		s=s.gsub(/inurl:"([^"]*)"/i,'').gsub(/inurl:([^"]\w+)/i,'')
-	end
-
-	# split the remaining words except those enclosed in quotes, remove the quotes and sort them
-
-	remaining_words = s.scan(/([^ "]+)|("[^"]+")/i).flatten.compact.each {|w| w.delete!('"')  }.sort.uniq
-	
-	pp "Remaining GHDB words", 	remaining_words if $verbose > 2
-	
-	remaining_words.each do |w| 	
-		# does it start with a - ?
-		if w[0..0] == '-'
-			# reverse true/false if it begins with a -
-			matches << ((body =~ /#{Regexp.escape(w[1..-1])}/i).nil? ? true : false) 
-		else
-			w = w[1..-1] if w[0..0] == '+' # if it starts with +, ignore the 1st char
-			matches << ((body =~ /#{Regexp.escape(w)}/i).nil? ? false : true)
-		end	
-	end
-
-	pp matches if $verbose > 2
-
-	# if all matcbhes are true, then true	
-	if matches.uniq == [true]
-		true
-	else
-		false
-	end
-end
-
-
-
-
-
-
-### targets
-
-def make_target_list(cmdline_args, inputfile=nil,pluginlist = nil)
-	url_list = cmdline_args
-
-	# read each line as a url, skipping lines that begin with a #
-	if !inputfile.nil? and File.exists?(inputfile)
-		pp "loading input file: #{inputfile}" if $verbose > 2
-		url_list += File.open(inputfile).readlines.each {|line| line.strip! }.delete_if {|line| line =~ /^#.*/ }.each {|line| line.delete!("\n") }
-	end
-
-	# add example urls to url_list if required. plugins must be loaded already
-	if $USE_EXAMPLE_URLS
-		url_list += pluginlist.map {|name,plugin| plugin.examples unless plugin.examples.nil? }.compact.flatten
-	end
-
-        genrange=url_list.map do |x|
-	  range=nil
-	  if x =~ /^[0-9\.\-*\/]+$/ and not x =~ /^[\d\.]+$/
-	    # check for nmap
-	    error "Target ranges require nmap to be in the path" if `which nmap` == ""
-	    range=`nmap -n -sL #{x} 2>&1 | egrep -o "([0-9]{1,3}\\.){3}[0-9]{1,3}"`
-	    range=range.split("\n")
-	  end
-	  range
-	end.compact.flatten
-	
-	url_list= url_list.select {|x| not x =~ /^[0-9\.\-*\/]+$/ or x =~ /^[\d\.]+$/ }
-	url_list += genrange unless genrange.empty?
-     
-
-	#make urls friendlier, test if it's a file, if test for not assume it's http://
-	# http, https, ftp, etc
-	url_list=url_list.map do |x|   
-		if File.exists?(x)
-			x
-		else
-			# use url pattern
-			if $URL_PATTERN
-				x = $URL_PATTERN.gsub('%insert%',x)
-			end
-			# add prefix & suffix
-			x=$URL_PREFIX + x + $URL_SUFFIX
-
-			if x =~ (/^[a-z]+:\/\//)
-				x
-			else
-				x.sub(/^/,"http://")
-			end
-		end	
-	end
-
-	url_list=url_list.flatten #.sort.uniq
-end
-
-def next_target
-	t=nil
-
-	while $recent_targets.include?(t) or t.nil?
-		t=$targets.shift
-		# t at the end of the $targets list
-		if t.nil?
-			puts "t is nil" if $verbose > 2
-			if $targets.empty?
-				if Thread.list.size > 1
-					puts "Thread list size: #{Thread.list.size}" if $verbose > 2
-					sleep 1
-				else
-					puts "breaking now" if $verbose > 2
-					break
-				end
-			end
-		end
-	end
-
-	puts "Recent Targets:" + $recent_targets.join(",") if $verbose > 2
-
-	$recent_targets.push t
-	$recent_targets.pop if $recent_targets.size > 100 # we dont need to care about mroe than 100
-
-	t
-end
-
-# backwards compatible convenience method for plugins to use
-def open_target(url)
-	newt = Target.new(url)
-	newt.open
-	[newt.status,newt.uri,newt.ip,newt.body,newt.headers,newt.raw_headers]
-end
-
-### output
 
 def error(s)
 	return if $NO_ERRORS
@@ -396,39 +195,6 @@ def word_wrap(s,width=10)
 end
 
 ### core
-
-def run_plugins(target)
-		results=[]
-    plugins=$plugins_to_use
-    plugins=WhatWeb::AhoCorasick.find_plugins(target) if $AHO_CORASICK
-		plugins.each do |name,plugin|
-			begin			
-				while plugin.locked?
-					sleep 0.1
-					puts "Waiting for plugin:#{name} to unlock" if $verbose > 2
-				end
-				plugin.lock
-
-				plugin.init(target)
-				
-				# eXecute the plugin			
-				#start_time = Time.now
-				result=plugin.x
-				#end_time = Time.now
-				#$PLUGIN_TIMES[name] += end_time - start_time
-
-				plugin.unlock
-
-			rescue StandardError => err
-				error("ERROR: Plugin #{name} failed for #{target.to_s}. #{err}")
-				plugin.unlock
-				raise if $WWDEBUG==true
-			end
-			results << [name, result] unless result.nil? or result.empty?
-		end
-	results
-end
-
 
 
 
@@ -574,10 +340,10 @@ input_file=nil
 output_list = []
 mongo={}
 mongo[:use_mongo_log]=false
+opts={}
+opts[:output_plugins]=[]
 
-
-
-opts = GetoptLong.new(
+parse = GetoptLong.new(
       [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
       [ '-v','--verbose', GetoptLong::NO_ARGUMENT ],
       [ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
@@ -626,11 +392,12 @@ opts = GetoptLong.new(
       [ '-q','--quiet', GetoptLong::NO_ARGUMENT]
     )
 
-begin    
-	opts.each do |opt, arg|
+begin
+
+	parse.each do |opt, arg|
 		case opt
 			when '-i','--input-file'
-				input_file=arg
+				opts[:input_file]=arg
 			when '-l','--list-plugins'
 				PluginSupport.load_plugins
 				PluginSupport.plugin_list
@@ -650,26 +417,26 @@ begin
 			when '--color','--colour'
 				case arg
 					when 'auto'
-						$use_colour="auto"
+						opts[:color]="auto"
 					when 'always'
-						$use_colour="always"
+						opts[:color]="always"
 					when 'never'
-						$use_colour=false
+						opts[:color]=false
 					else
 						raise("--colour argument not recognized")
 					end
 			when '--log-object'
-				output_list << OutputObject.new(arg)
+				opts[:output_plugins] << OutputObject.new(arg)
 			when '--log-brief'
-			 	output_list << OutputBrief.new(arg)
+			 	opts[:output_plugins] << OutputBrief.new(arg)
 			when '--log-xml'
-			 	output_list << OutputXML.new(arg)
+			 	opts[:output_plugins] << OutputXML.new(arg)
 			when '--log-magictree'
-				output_list << OutputMagicTreeXML.new(arg)
+				opts[:output_plugins] << OutputMagicTreeXML.new(arg)
 			when '--log-verbose'
-				output_list << OutputVerbose.new(arg)
+				opts[:output_plugins] << OutputVerbose.new(arg)
 			when '--log-sql'
-			 	output_list << OutputSQL.new(arg)
+			 	opts[:output_plugins] << OutputSQL.new(arg)
 			when '--log-sql-create'
 				PluginSupport.load_plugins("+")
 				# delete the file if it already exists
@@ -682,121 +449,122 @@ begin
 				exit
 			when '--log-json'
 				if defined?(JSON)
-			 		output_list << OutputJSON.new(arg)
+			 		opts[:output_plugins] << OutputJSON.new(arg)
 				else
 					raise("Sorry. The JSON gem is required for JSON output")
 				end
 			when '--log-json-verbose'
 				if defined?(JSON)
-			 		output_list << OutputJSONVerbose.new(arg)
+			 		opts[:output_plugins] << OutputJSONVerbose.new(arg)
 				else
 					raise("Sorry. The JSON gem is required for JSONVerbose output")
 				end
 			when '--log-mongo-collection'
 				if defined?(Mongo) and defined?(CharDet)
-					mongo[:collection]=arg
-					mongo[:use_mongo_log]=true
+					opts[:mongo_collection]=arg
+			    opts[:use_mongo_log]=true
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 
 			when '--log-mongo-host'
 				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:host]=arg
-					mongo[:use_mongo_log]=true
+			 		opts[:mongo_host]=arg
+					opts[:use_mongo_log]=true
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 
 			when '--log-mongo-database'
 				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:database]=arg
-					mongo[:use_mongo_log]=true
+			 		opts[:mongo_database]=arg
+					opts[:use_mongo_log]=true
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 			when '--log-mongo-username'
 				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:username]=arg
-					mongo[:use_mongo_log]=true
+			 		opts[:mongo_username]=arg
+					opts[:use_mongo_log]=true
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 			when '--log-mongo-password'
 				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:password]=arg
-					mongo[:use_mongo_log]=true
+			 		opts[:mongo_password]=arg
+					opts[:use_mongo_log]=true
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 			when '--log-errors'
-			 	$OUTPUT_ERRORS = OutputErrors.new(arg)
+			 	opts[:output_errors] = OutputErrors.new(arg)
 			when '--no-errors'
-			 	$NO_ERRORS = true
+			 	opts[:no_errors]=true
 			when '-U','--user-agent'
-				$USER_AGENT=arg
+				opts[:user_agent]=arg
 			when '-t','--max-threads'
-				$MAX_THREADS=arg.to_i
+				opts[:threads]=arg.to_i
 			when '-a','--aggression'
-				$AGGRESSION=arg.to_i
+				opts[:aggression]=arg.to_i
 			when '--proxy'
-				$USE_PROXY=true
-				$PROXY_HOST = arg.to_s.split(":")[0]
-				$PROXY_PORT = arg.to_s.split(":")[1].to_i if arg.to_s.include?(":")		
+				opts[:use_proxy] = true
+				opts[:proxy_host] = arg.to_s.split(":")[0]
+				opts[:proxy_port] = arg.to_s.split(":")[1].to_i if arg.to_s.include?(":")		
 			when '--proxy-user'
 				$PROXY_USER=arg.to_s.split(":")[0]
 				$PROXY_PASS=arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
 			when '-q','--quiet'
-				$QUIET=true
+				opts[:quiet]=true
 			when '--url-prefix'
-				$URL_PREFIX=arg
+				opts[:url_prefix]=arg
 			when '--url-suffix'
-				$URL_SUFFIX=arg
+			  opts[:url_suffix]=arg
 			when '--url-pattern'
-				$URL_PATTERN=arg
+				opts[:url_pattern]=arg
 			when '--custom-plugin'
-				use_custom_plugin=true if PluginSupport.custom_plugin(arg)
+				opts[:custom_plugin]=true if PluginSupport.custom_plugin(arg)
 			when '--grep','-g'
-				use_custom_grep_plugin=true if PluginSupport.custom_plugin(arg,"grep")
-			when '--follow-redirect'	
+				opts[:custom_grep_plugin]=true if PluginSupport.custom_plugin(arg,"grep")
+			when '--follow-redirect'
 				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
-					$FOLLOW_REDIRECT=arg.downcase
+					opts[:follow_redirect]=arg.downcase
 				else
 					raise("Invalid --follow-redirect parameter.")
 				end
 			when '--max-redirects'
-				$MAX_REDIRECTS=arg.to_i
+				opts[:max_redirects]=arg.to_i
 			when '--open-timeout'					
-				$HTTP_OPEN_TIMEOUT=arg.to_i
+				opts[:open_timeout]=arg.to_i
 			when '--read-timeout'					
-				$HTTP_READ_TIMEOUT=arg.to_i
+				opts[:read_timeout]=arg.to_i
 			when '--wait'
-				$WAIT = arg.to_i
+			  opts[:wait] = arg.to_i
 			when '-H','--header'
 				begin
 					x=arg.scan(/([^:]+):(.*)/).flatten
 					raise if x.empty?
-					$CUSTOM_HEADERS[x.first]=x.last
+          opts[:customer_headers]={}
+					opts[:customer_headers][x.first]=x.last
 				rescue
 					raise("Invalid --header parameter.")
 				end
 			when '-u','--user'
-				$BASIC_AUTH_USER=arg.split(":").first
-				$BASIC_AUTH_PASS=arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
+				opts[:auth_user]=arg.split(":").first
+				opts[:auth_pass]=arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
       when '--aho-corasick'
         if defined?(AhoCorasick)
           require 'lib/aho_corasick'
-          $AHO_CORASICK=true
+          opts[:enable_aho_corasick]=true
         else
           raise "Sorry, the ahocorasick gem is required for Aho-Corasick support"
         end
 			when '--debug'
-				$WWDEBUG = true
+				opts[:debug]=true
 			when '-h','--help'
 				usage
 				exit
 			when '-v','--verbose'
-				$verbose=$verbose+1
+				opts[:verbose]=opts[:verbose].to_i+1
 			when '--version'
 				puts "WhatWeb version #{$VERSION} ( http://www.morningstarsecurity.com/research/whatweb/ )"
 				exit
@@ -813,136 +581,43 @@ end
 
 # sanity check # Disable colours in Windows environments
 if Config::CONFIG['host_os'] =~ /mswin|mingw/
-	$use_colour = false
+	opts[:color] = false
 end
 
 ### PLUGINS
-plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection
-plugin_selection += ",Grep" if use_custom_grep_plugin and plugin_selection
-$plugins_to_use = PluginSupport.load_plugins(plugin_selection ) # load all the plugins
+plugin_selection += ",Custom-Plugin" if opts[:use_custom_plugin] and opts[:plugin_selection]
+plugin_selection += ",Grep" if opts[:use_custom_grep_plugin] and opts[:plugin_selection]
+opts[:plugins] = PluginSupport.load_plugins(plugin_selection ) 
 
 # sanity check # no plugins?
 if $plugins_to_use.size == 0
 	error "No plugins selected, exiting."
 	exit 1
 end
-
 # optimise plugins
 PluginSupport.precompile_regular_expressions 
-WhatWeb::AhoCorasick.build_prefix_dictionary if $AHO_CORASICK
 
 ### OUTPUT
-output_list << OutputBrief.new unless $QUIET # by default output brief
-output_list << OutputObject.new() if $verbose > 1 # full output if -vv
-output_list << OutputVerbose.new() if $verbose > 0 # full output if -v
+opts[:output_plugins] << OutputBrief.new unless $QUIET # by default output brief
+opts[:output_plugins] << OutputObject.new() if $verbose > 1 # full output if -vv
+opts[:output_plugins] << OutputVerbose.new() if $verbose > 0 # full output if -v
 
 ## output dependencies
-if mongo[:use_mongo_log]
-	if $plugins_to_use.map { |a,b| a }.include?("Charset")
-		output_list << OutputMongo.new(mongo) 
+if opts[:use_mongo_log]
+	if opts[:plugins].keys.include?("Charset")
+		opts[:output_plugins] << OutputMongo.new(mongo) 
 	else
 		error("MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/Charset.rb to enable it.")
 		exit
 	end
 end
-
-
-## Headers
-$CUSTOM_HEADERS["User-Agent"]=$USER_AGENT unless $CUSTOM_HEADERS["User-Agent"]
-$CUSTOM_HEADERS.delete_if {|k,v| v=="" }
-
-
-### TARGETS
-# clean up urls, add example urls if needed
-$targets=make_target_list(ARGV, input_file, $plugins_to_use)
-$recent_targets=[]
-
-# fail & show usage if no targets.
-if $targets.size <1
-	error "No targets selected"	
-	usage
-	exit 1
-end
-
-$semaphore=Mutex.new
-Thread.abort_on_exception = true if $WWDEBUG
-
-while t = next_target
-		Thread.new(t) do |thistarget|
-			begin
-				target = Target.new(thistarget) # we set the target within the thread
-			rescue => err
-				error(err)
-				next
-			end
-
-			puts Thread.current.to_s + " started for " + target.to_s if $verbose>1
-			sleep $WAIT unless $WAIT.nil? # wait
-		
-			# follow redirects
-			no_redirects =false
-			num_redirects = 0
-			while no_redirects == false do
-				# if we redirect 10 times we give up
-				if num_redirects == $MAX_REDIRECTS
-					error(target.to_s + " ERROR: Too many redirects")
-					no_redirects=true
-					next
-				end
-				
-				begin
-					target.open
-				rescue
-					error(err)
-					next
-				end
-
-				no_redirects=true if target.is_file?
-				if target.is_url? and target.status.nil?
-					# assume all HTTP sites return a status
-					no_redirects=true
-					next
-				end
-
-				results = run_plugins(target)
-
-				# reporting
-				# multiple output plugins simultaneously, some stdout, some files
-				output_list.each do |o|
-					begin
-						o.out(target.to_s, target.status, results)
-					rescue
-						#srsly, logging failed
-						error("Error: Logging failed for "+ target.to_s)
-					end
-				end
-
-				# REDIRECTION
-				unless no_redirects
-					begin
-						if newtarget = target.get_redirection_target		
-							num_redirects+=1 
-							target=Target.new(newtarget)
-						else
-							no_redirects=true 
-						end
-					rescue => err
-						error("Redirection broken: #{err}")
-						no_redirects=true
-					end
-				end
-			end # while no_redirects
-	
-		end # Thread.new
-
-	while Thread.list.size>($MAX_THREADS+1)
-		puts "sleeping" if $verbose>1
-		sleep 0.5
-	end
-end # targets.each
-
-# close output logs
-output_list.each {|o| o.close }
+output=OutputProcessor.new(opts)
+opts[:callback_only]=true
+opts[:on_result_callback]=Proc.new{|result| output.result(result)}
+opts[:on_error_callback]=Proc.new{|error| output.error(error)}
+opts[:argv]=ARGV
+scanner=Scanner.new(opts)
+scanner.start
 
 # shutdown plugins
 Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }
