@@ -11,26 +11,16 @@ class Opener
 
   def initialize(opts={})
     @opts=opts.clone
+
+    @input_file=File.open(opts[:input_file])
     @target_list=make_target_list(opts)
     @input_file_mutex=Mutex.new
-    @input_file=File.open(opts[:input_file])
     @opts[:timeout]||=30
   end
 
 
   def open_next_target
     bm=Benchmark.start(:open_next_target) if opts[:benchmark]
-    if @input_file
-      @input_file_mutex.synchronize {
-    if  @target_list.empty? and !@input_file.eof?
-       c=0
-       while(!@input_file.eof? and c<1024) do
-          @target_list << @input_file.gets.strip
-          c=c+1
-        end
-    end
-    }
-    end
     t=next_target
     raise NoMoreTargets if t.nil?
     t2=open(t)
@@ -40,8 +30,14 @@ class Opener
 
 
   def open(target)
+    bm=Benchmark.start(:open_open) if opts[:benchmark]
     if File.exists?(target)
-      t=Target.new(File.open(target).read)
+      fo=Benchmark.start(:open_file) if opts[:benchmark]
+      body=File.open(target,"rb").read
+      fo.finish if opts[:benchmark]
+      tm=Benchmark.start(:open_new_target) if opts[:benchmark]
+      t=Target.new(body)
+      tm.finish if opts[:benchmark]
       t.is_file=true
       t.is_url=false
     else
@@ -53,12 +49,15 @@ class Opener
 			  e.connect_timeout=opts[:open_timeout]
 			  e.resolve_mode = :ipv4
       end
+      tm=Benchmark.start(:open_open) if opts[:benchmark]
       t=Target.new(r.body_str)
+      tm.finish if opts[:benchmark]
       t.is_file=false
       t.is_url=true
       t.uri=URI.parse(target)
 		end
     t.original_source=target
+    bm.finish if opts[:benchmark]
     return t
   end
 
@@ -93,7 +92,6 @@ class Opener
   def make_target_list(opts)
 	url_list = opts[:argv]
         
-
 	# add example urls to url_list if required. plugins must be loaded already
 	if opts[:enable_example_urls]
 		url_list += pluginlist.map {|name,plugin| plugin.examples unless plugin.examples.nil? }.compact.flatten
@@ -113,7 +111,11 @@ class Opener
 	url_list= url_list.select {|x| not x =~ /^[0-9\.\-*\/]+$/ or x =~ /^[\d\.]+$/ }
 	url_list += genrange unless genrange.empty?
      
-
+  if(@input_file)
+  while(!@input_file.eof?) do
+    url_list << @input_file.gets.strip
+  end
+  end
 
 	url_list=url_list.flatten #.sort.uniq
   end
