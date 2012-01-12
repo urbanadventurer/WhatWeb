@@ -17,8 +17,7 @@ class Processor
   end
 
   def process(target)
-    opts[:benchmark_results][:process][:runs]+=1 if opts[:benchmark]
-    p=Time.now
+    bm=Benchmark.start(:process) if opts[:benchmark]
     results=[]
     plugins=opts[:plugins]
     plugins=aho_corasick_preprocessor.find_plugins(target) if aho_corasick_preprocessor
@@ -33,7 +32,7 @@ class Processor
       end
       results << [name, result] unless result.nil? or result.empty?
     end
-    opts[:benchmark_results][:process][:total]+=Time.now-p if opts[:benchmark]
+    bm.finish if opts[:benchmark]
     results
   end
 

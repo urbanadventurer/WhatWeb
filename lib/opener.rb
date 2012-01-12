@@ -19,8 +19,7 @@ class Opener
 
 
   def open_next_target
-    s=Time.now
-    opts[:benchmark_results][:open][:runs]+=1 if opts[:benchmark]
+    bm=Benchmark.start(:open_next_target) if opts[:benchmark]
     if @input_file
       @input_file_mutex.synchronize {
     if  @target_list.empty? and !@input_file.eof?
@@ -34,8 +33,9 @@ class Opener
     end
     t=next_target
     raise NoMoreTargets if t.nil?
-    opts[:benchmark_results][:open][:total]+=Time.now-s if opts[:benchmark]
-    return open(t)
+    t2=open(t)
+    bm.finish if opts[:benchmark]
+    return t2
   end
 
 

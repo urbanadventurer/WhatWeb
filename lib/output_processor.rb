@@ -6,12 +6,16 @@ class OutputProcessor
     @mutex=Mutex.new
     @err_queue=[]
     @out_queue=[]
+    @close=false
     @thread=Thread.new { process_queue }
   end
 
   def process_queue
     loop do
       if @err_queue.empty? and @out_queue.empty?
+        if @close
+          break
+        end
         sleep 0.5
         puts 'sleep'
         next
@@ -27,6 +31,11 @@ class OutputProcessor
         end
       end
     end
+  end
+
+  def close
+    @close=true
+    @thread.join
   end
 
   def out(target, status, results)

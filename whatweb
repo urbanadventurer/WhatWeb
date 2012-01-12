@@ -46,7 +46,6 @@ require 'rbconfig'  # detect environment, e.g. windows or linux
 require 'resolv'
 require 'resolv-replace' # asynchronous DNS
 
-
 ### ruby 1.9 changes
 if RUBY_VERSION =~ /^1\.9/
         require 'digest/md5'
@@ -96,6 +95,7 @@ if File.symlink?(__FILE__)
   $LOAD_PATH << File.dirname( Pathname.new(__FILE__).realpath )
 end
 
+require 'lib/benchmark.rb'
 require 'lib/target.rb'
 require 'lib/plugins.rb'
 require 'lib/output.rb'
@@ -564,14 +564,7 @@ begin
         end
       when '--benchmark'
         opts[:benchmark]=true
-        opts[:benchmark_results]={}
-        opts[:benchmark_results][:open]={}
-        opts[:benchmark_results][:process]={}
-        opts[:benchmark_results][:open][:total]=0
-        opts[:benchmark_results][:open][:runs]=0
-        opts[:benchmark_results][:process][:total]=0
-        opts[:benchmark_results][:process][:runs]=0
-			when '--debug'
+      when '--debug'
 				opts[:debug]=true
 			when '-h','--help'
 				usage
@@ -634,12 +627,15 @@ scanner.start
 
 # shutdown plugins
 Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }
+output.close
 if opts[:benchmark]
   puts "BENCHMARKING:"
-  opts[:benchmark_results].each do |label,m|
+  WhatWeb::Benchmark.results.each do |label,m|
+    next if m[:runs].zero?
     puts "#{label} #{m[:runs]} #{m[:total]} #{m[:total]/m[:runs]}"
   end
 end
 
+STDOUT.flush
 #pp $PLUGIN_TIMES.sort_by {|x,y|y }
 

@@ -44,15 +44,18 @@ class AhoCorasickPreprocessor
   end
 
   def find_plugins(target)
+    bm=Benchmark.start(:aho_corasick) if opts[:benchmark]
     time=Time.now
     plugins=[]
-    @keyword_tree.find_all(target.body.to_s+target.headers.to_s).each do |result|
-      plugins=plugins+@prefixes[result[:value]]
-      plugins.uniq!
-    end
-    plugins=plugins+@prefixes[:other]
     ret={}
-    plugins.uniq.each {|p| ret[p.plugin_name]=p}
+    @keyword_tree.find_all(target.body.to_s+target.headers.to_s).each do |result|
+      
+      pa=@prefixes[result[:value]]
+      pa.each {|p| ret[p.plugin_name]=p}
+      
+    end
+    @prefixes[:other].each { |p| ret[p.plugin_name]=p }
+    bm.finish if opts[:benchmark]
     return ret
   end
 
