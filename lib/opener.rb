@@ -12,7 +12,7 @@ class Opener
   def initialize(opts={})
     @opts=opts.clone
 
-    @input_file=File.open(opts[:input_file])
+    @input_file=File.open(opts[:input_file]) if opts[:input_file]
     @target_list=make_target_list(opts)
     @input_file_mutex=Mutex.new
     @opts[:timeout]||=30
