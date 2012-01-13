@@ -8,7 +8,7 @@ class AhoCorasickPreprocessor
   def build_trigger_dictionary(opts)
     @prefixes={}
     @opts=opts.clone
-    @opts[:min_trigger_size]||=4
+    @opts[:min_trigger_size]||=5
     @prefixes[:other]=[]
     @keyword_tree=::AhoCorasick::KeywordTree.new
     @opts[:plugins].values.each do |plugin|

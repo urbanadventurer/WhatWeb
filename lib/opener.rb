@@ -32,10 +32,17 @@ class Opener
   def open(target)
     bm=Benchmark.start(:open_open) if opts[:benchmark]
     if File.exists?(target)
-      fo=Benchmark.start(:open_file) if opts[:benchmark]
-      body=File.open(target,"rb").read
-      fo.finish if opts[:benchmark]
+      body=""
+      #@input_file_mutex.synchronize { 
+      fo=Benchmark.start(:open_file_open) if opts[:benchmark]
+      fd=IO.sysopen(target,"rb")
+      fo.finish
+      f=IO.new(fd,"rb")  
+      fr=Benchmark.start(:open_file_read) if opts[:benchmark]
+      f.read(50000,body)
+      fr.finish
       tm=Benchmark.start(:open_new_target) if opts[:benchmark]
+      
       t=Target.new(body)
       tm.finish if opts[:benchmark]
       t.is_file=true
