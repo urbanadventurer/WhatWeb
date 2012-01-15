@@ -16,6 +16,18 @@ class AhoCorasickPreprocessor
       matches=plugin.matches
       matches||=[]
       found_match=false
+      if(plugin.trigger==:always)
+        @prefixes[:other]<<plugin
+        next
+      elsif plugin.trigger.is_a? String
+        add_match(plugin.trigger,plugin)
+        next
+      elsif plugin.trigger.is_a? Array
+        plugin.trigger.each do |trigger|
+          add_match(trigger,plugin)
+        end
+        next
+      end
       matches.each do |match|
         if match[:text]
           prefix=match[:text]
@@ -40,6 +52,7 @@ class AhoCorasickPreprocessor
       end
       @prefixes[:other]<<plugin unless found_match
     end
+    @prefixes[:other].each {|p| puts p.plugin_name if p.trigger.nil?}
     @keyword_tree.make
   end
 

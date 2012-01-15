@@ -17,6 +17,8 @@ dorks [
 '"Total" "query" "Time now is" "Powered by 6kbbs"'
 ]
 
+trigger "6KBBS"
+
 # Examples #
 examples %w|
 www.6kbbs.net

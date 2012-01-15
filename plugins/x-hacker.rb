@@ -22,6 +22,8 @@ http://184.73.3.92/
 http://38.99.89.248/
 |
 
+trigger "x-hacker"
+
 # Passive #
 def passive
 	m=[]

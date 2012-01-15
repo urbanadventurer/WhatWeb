@@ -22,6 +22,9 @@ examples %w|
 98.235.134.5
 |
 
+trigger "kazaa"
+
+
 # Passive #
 def passive
 	m=[]

@@ -25,6 +25,8 @@ examples %w|
 69.168.111.70
 |
 
+trigger "access-control-allow-methods"
+
 # Matches #
 matches [
 

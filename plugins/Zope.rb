@@ -26,6 +26,8 @@ examples %w|
 82.100.204.40
 |
 
+trigger "Zope"
+
 # Passive #
 def passive
 	m=[]

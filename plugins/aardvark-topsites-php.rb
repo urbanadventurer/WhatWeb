@@ -81,6 +81,8 @@ topsites.girls-teasing.com
 www.phonesextoplist.com
 |
 
+trigger "Aardvark"
+
 matches [
 
 # GHDB Match

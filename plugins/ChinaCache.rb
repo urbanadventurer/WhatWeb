@@ -27,6 +27,8 @@ examples %w|
 121.14.235.222
 |
 
+trigger "powered-by-chinacache"
+
 # Passive #
 def passive
 	m=[]

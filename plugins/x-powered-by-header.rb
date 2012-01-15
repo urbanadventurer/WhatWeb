@@ -24,6 +24,8 @@ examples %w|
 219.76.176.30
 |
 
+trigger "x-powered-by"
+
 # Passive #
 def passive
 	m=[]

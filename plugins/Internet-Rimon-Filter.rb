@@ -30,6 +30,8 @@ examples %w|
 212.76.113.213
 |
 
+trigger "rimon"
+
 # Passive #
 def passive
 	m=[]

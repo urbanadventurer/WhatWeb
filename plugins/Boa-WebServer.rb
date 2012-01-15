@@ -27,6 +27,8 @@ examples %w|
 64.187.75.237
 |
 
+trigger "Boa"
+
 # Passive #
 def passive
 	m=[]

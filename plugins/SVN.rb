@@ -23,6 +23,8 @@ examples %w|
 69.9.183.118
 |
 
+trigger "SVN"
+
 # HTTP Header
 def passive
 	m=[]

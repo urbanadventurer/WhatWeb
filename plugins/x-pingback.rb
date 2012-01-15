@@ -38,6 +38,8 @@ www.wordpress.com
 184.82.44.96
 |
 
+trigger "x-pingback"
+
 # Passive #
 def passive
 	m=[]

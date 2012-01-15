@@ -24,6 +24,8 @@ www.camerongray.net
 www.harvestdream.org
 |
 
+trigger "powered"
+
 # Matches #
 matches [
 

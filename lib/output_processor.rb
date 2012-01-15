@@ -3,50 +3,19 @@ class OutputProcessor
   attr_reader :opts
   def initialize(opts)
     @opts=opts
-    @mutex=Mutex.new
-    @err_queue=[]
-    @out_queue=[]
-    @close=false
-    @thread=Thread.new { process_queue }
-  end
-
-  def process_queue
-    loop do
-      if @err_queue.empty? and @out_queue.empty?
-        if @close
-          break
-        end
-        sleep 0.5
-        puts 'sleep'
-        next
-      end
-      next_err=@err_queue.shift
-      next_out=@out_queue.shift
-      puts_error(next_err) unless next_err.nil?
-      if next_out
-        begin 
-          @opts[:output_plugins].each {|o| o.out(*next_out)}
-        rescue Exception => e
-          puts_error("Error in output plugin: #{e.to_s}")
-        end
-      end
-    end
-  end
-
-  def close
-    @close=true
-    @thread.join
   end
 
   def out(target, status, results)
-    @out_queue << [target,status,results]
+    begin 
+      @opts[:output_plugins].each {|o| o.out(target, status, results)}
+    rescue Exception => e
+      error("Error in output plugin: #{e.to_s}")
+    end
   end
+
+
 
   def error(e)
-    @err_queue << e
-  end
-
-  def puts_error(e)
        return if opts[:no_errors]
 
        if (opts[:use_colour]=="auto") or (opts[:use_colour]=="always") 

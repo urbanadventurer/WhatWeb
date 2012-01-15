@@ -18,6 +18,8 @@ description "SilverStripe is an opensource CMS written in PHP. It can run on Apa
 # Examples #
 examples %w|http://beatone.co.uk/ http://charcoalinteriors.com.au/ http://customcanvas.fritzandandre.com/ http://hungryhearts.no http://maungataniwha.co.nz/ http://unbounded.org/ http://victoriaoruwari.com/ http://weonline.in  http://www.arprostatecancer.org/ http://www.benpearce.co.nz/ http://www.bradyinc.com/ http://www.cavendishimaging.com/ http://www.chapmansurfboards.com/ http://www.choidoco.com/demo/ http://www.enamaine.org/ http://www.executivemediasearch.com/ http://www.fairtradenap.net/ http://www.firstgalaxies.org/ http://www.frussian.com.ar/ http://www.fuel.ie/silverstripe http://www.gsbc.edu/ http://www.holistichealth.com/ http://www.hutmacherin.com/ http://www.infinitestillness.ie/ss http://www.intandemtheatre.org/ http://www.kitesurfnelson.co.nz/ http://www.latenightdisco.com/ http://www.lisamarieelliott.com/ http://www.maklerservice-greiz.de/ http://www.moerakihavenmotel.co.nz/ http://www.monjasantner.de/ http://www.moonlitekustoms.com/ http://www.moto-racepaint.com/ http://www.nadabakery.co.nz/ http://www.peterpanvakantieclub.nl/ http://www.rcaforum.org.nz/ http://www.robert80.de/ http://www.silverstripe.com/ http://www.silverstripe.org.pl/ http://www.stillrunnin.com/ http://www.textiprints.com/ http://www.thelightboxdesigns.com/ http://www.tobychampion.co.uk/ http://www.upstreamgroup.com/ http://www.verus.com.tr/ http://www.wend.nl/ http://www.whileyouwait.co.nz/ |
 
+trigger ["SilverStripe", "typography"]
+
 # Matches #
 matches [
 

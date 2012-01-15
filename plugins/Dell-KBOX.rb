@@ -26,6 +26,9 @@ examples %w|
 114.111.132.51
 |
 
+
+trigger "x-dellkace-version"
+
 # Passive #
 def passive
 	m=[]

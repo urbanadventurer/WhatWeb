@@ -34,6 +34,8 @@ examples %w|
 71.40.235.251
 |
 
+trigger "wicket:bookmarkablePage"
+
 # Matches #
 matches [
 

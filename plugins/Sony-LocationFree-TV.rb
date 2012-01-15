@@ -25,7 +25,7 @@ examples %w|
 119.14.199.143
 121.119.226.12
 |
-
+trigger "SONY LocationFreeTV"
 # Passive #
 def passive
 	m=[]

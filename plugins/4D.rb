@@ -23,6 +23,8 @@ examples %w|
 216.139.201.206
 |
 
+trigger "4D_v"
+
 # Matches #
 matches [
 

@@ -32,6 +32,8 @@ www.maxim.com
 www.cms.il.gov/iisradio/
 |
 
+trigger "refresh"
+
 # Matches #
 matches [
 

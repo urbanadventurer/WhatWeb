@@ -32,6 +32,8 @@ examples %w|
 134.58.239.64
 |
 
+trigger "x-backend"
+
 # Passive #
 def passive
 	m=[]

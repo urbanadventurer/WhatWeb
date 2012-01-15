@@ -37,6 +37,8 @@ examples %w|
 207.46.150.172
 |
 
+trigger ["ppserver", "msnserver"]
+
 # Passive #
 def passive
 	m=[]

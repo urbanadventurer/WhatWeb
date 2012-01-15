@@ -56,6 +56,8 @@ www.7-milemarina.com/home/homeJ.html
 66.191.76.78:8088/home/homeJ.html
 |
 
+trigger ["adminWin", "Sony Network", "sonyhome", "Server Push"]
+
 # Matches #
 matches [
 

@@ -14,6 +14,8 @@ examples %w|
 www.buyplm.com
 |
 
+trigger "addthis.com"
+
 # Matches #
 matches [
 

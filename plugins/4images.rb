@@ -24,6 +24,8 @@ www.quimica.unam.mx/galeria/
 www.voreart.com/vorevideo/
 |
 
+trigger ["4homepages", "4images"]
+
 matches [
 
 # Copyright text

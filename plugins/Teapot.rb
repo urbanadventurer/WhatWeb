@@ -21,6 +21,8 @@ examples %w|
 89.185.37.9
 |
 
+trigger "418"
+
 # Passive #
 def passive
 	m=[]

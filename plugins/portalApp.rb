@@ -48,6 +48,8 @@ www.sakaedod.ac.th
 www.darulna-im.ac.th
 |
 
+trigger ["PortalApp", "aspapp.com"]
+
 # Matches #
 matches [
 

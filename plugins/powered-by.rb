@@ -33,6 +33,8 @@ zen-cart.com
 forums.cpanel.net
 |
 
+trigger "powered"
+
 # Matches could be improved by:
 #   Stripping HTML and CSS tags
 #   Handling whitespace more effectively

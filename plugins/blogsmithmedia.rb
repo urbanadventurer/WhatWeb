@@ -17,6 +17,8 @@ description "Pro bloggers - www.blogsmithmedia.com"
 # uses scripts,css,icons hosted at blogsmithmedia.com
 # "<script .*\"http://www.blogsmithmedia.com" *
 
+trigger "www.blogsmithmedia.com"
+
 matches [
 {:certainty=>75, :regexp=>/<script [^>]*\"http:\/\/www.blogsmithmedia.com/},
 ]

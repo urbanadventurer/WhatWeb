@@ -37,6 +37,8 @@ examples %w|
 86.43.79.253
 |
 
+trigger "x-frame-options"
+
 # Passive #
 def passive
 	m=[]

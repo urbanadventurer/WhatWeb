@@ -37,6 +37,8 @@ examples %w|
 212.87.83.78
 |
 
+trigger ["dav", "DAV"]
+
 # HTTP Header
 def passive
 	m=[]

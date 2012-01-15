@@ -24,6 +24,8 @@ examples %w|
 67.202.195.116
 |
 
+trigger "x-forwarded-for"
+
 # Passive #
 def passive
 	m=[]

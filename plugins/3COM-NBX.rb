@@ -39,6 +39,8 @@ telephone.michiganaerospace.com
 rrcs-76-79-236-246.west.biz.rr.com
 |
 
+trigger "NBX" 
+
 # Matches #
 matches [
 

@@ -31,6 +31,9 @@ examples %w|
 212.48.35.37
 |
 
+
+trigger ["bobo-exception","x-Ksscommands"]
+
 # Passive #
 def passive
 	m=[]

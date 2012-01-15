@@ -21,6 +21,8 @@ todx.net84.net
 xprt.net46.net
 |
 
+trigger "1024 CMS"
+
 matches [
 
 { :text=>"<div id='otatfpowered'><a href='http://www.1024cms.com' target='_blank'>Powered by 1024 CMS</a></div></div>" },

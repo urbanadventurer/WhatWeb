@@ -40,6 +40,8 @@ www-physics.lbl.gov/~gilg/XrayNov00/ws_ftp.log
 www.sex-and-relationships.com/pages/LH/images/WS_FTP.LOG
 |
 
+trigger ["-->", "<--"]
+
 matches [
 
 # FTP server extraction

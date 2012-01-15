@@ -25,6 +25,9 @@ lanzend.co.nz
 www.asp.net
 |
 
+
+trigger ["Microsoft", "microsoft","Construction"]
+
 # Matches #
 matches [
 

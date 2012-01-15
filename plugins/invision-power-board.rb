@@ -80,6 +80,8 @@ examples %w| forums.metacafe.com forums.invisionpower.com forum.emule-project.ne
 # <p id='content_jump'><a id='top'></a><a href='#j_content' title='Jump to content' accesskey='m'>Jump to content</a></p>
 #<form action="http://forum.emule-project.net/index.php?app=core&amp;module=search&amp;do=quick_search&amp;search_filter_app[forums]=1" method="post" id='search-box' >
 
+trigger ["Invision", "invision"]
+
 # Matches #
 matches [
 {:text=>'(Powered by Invision Power Board)</title>' },

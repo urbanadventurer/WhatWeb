@@ -29,6 +29,8 @@ www.ornatopia.com
 www.usbornebooksandmore.com/?NewID=NEW
 |
 
+trigger "frame"
+
 # Passive #
 matches [
 

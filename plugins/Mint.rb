@@ -14,6 +14,8 @@ examples %w|
 haveamint.com
 |
 
+trigger "mint"
+
 # Matches #
 matches [
 

@@ -17,6 +17,8 @@ www.twitter.com
 www.facebook.com
 |
 
+trigger "password"
+
 # Matches #
 matches [
 

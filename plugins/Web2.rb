@@ -26,6 +26,8 @@ examples %w|
 195.96.171.3
 |
 
+trigger "Web/2"
+
 # Passive #
 def passive
 	m=[]

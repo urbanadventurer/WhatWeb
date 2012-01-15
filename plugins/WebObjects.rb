@@ -40,6 +40,9 @@ www.tvo.org
 168.143.88.52
 |
 
+
+trigger ["webobjects","apple-application"]
+
 # Passive #
 def passive
 	m=[]

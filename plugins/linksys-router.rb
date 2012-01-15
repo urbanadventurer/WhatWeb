@@ -12,6 +12,9 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-28
 version "0.2"
 description "Linksys router - homepage: http://www.linksys.com/"
 
+trigger "UI_Linksys.gif"
+
+
 # Matches #
 matches [
 

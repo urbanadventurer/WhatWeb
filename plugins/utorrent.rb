@@ -12,6 +12,8 @@ description "The uTorrent GUI is a web interface to the uTorrent BitTorrent clie
 # Examples #
 examples %w| |
 
+trigger ["uTorrent", "invalid request"]
+
 # Passive #
 def passive
 	m=[]

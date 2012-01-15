@@ -16,6 +16,8 @@ examples %w|
 64.183.16.20
 |
 
+trigger "SimpleShare"
+
 # Passive #
 def passive
 	m=[]

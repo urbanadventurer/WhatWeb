@@ -29,6 +29,8 @@ examples %w|
 159.153.98.31
 |
 
+trigger "x-host"
+
 # Passive #
 def passive
 	m=[]

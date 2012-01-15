@@ -32,6 +32,8 @@ www.ellapicerohispano.com
 www.usedfurnitureshop.co.uk
 |
 
+trigger "68 Classifieds"
+
 # Matches #
 matches [
 

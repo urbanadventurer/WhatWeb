@@ -23,6 +23,8 @@ examples %w|
 216.157.154.194
 |
 
+trigger "x-vortech-php"
+
 # HTTP Header
 def passive
 	m=[]

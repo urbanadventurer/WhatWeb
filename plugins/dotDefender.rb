@@ -12,6 +12,8 @@ description "dotDefender is the market-leading software Web Application Firewall
 # ShodanHQ results as at 2011-04-08 #
 # 6 for dotDefender
 
+trigger "x-dotdefender-denied"
+
 # Passive #
 def passive
 	m=[]

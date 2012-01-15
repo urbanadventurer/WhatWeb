@@ -28,6 +28,8 @@ examples %w|
 209.207.75.227
 |
 
+trigger "allow"
+
 # Passive #
 def passive
 	m=[]

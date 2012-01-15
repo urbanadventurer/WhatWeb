@@ -29,6 +29,8 @@ examples %w|
 99.102.26.89
 |
 
+trigger "Acme.Serve"
+
 # Passive #
 def passive
 	m=[]

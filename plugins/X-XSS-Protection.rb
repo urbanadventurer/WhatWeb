@@ -37,6 +37,8 @@ examples %w|
 109.232.193.87
 |
 
+trigger "x-xss-protection"
+
 # Passive #
 def passive
 	m=[]

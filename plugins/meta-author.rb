@@ -16,6 +16,8 @@ www.codeproject.com
 www.webmarketingnow.com
 |
 
+trigger "author"
+
 # Matches #
 matches [
 

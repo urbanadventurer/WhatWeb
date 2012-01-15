@@ -26,6 +26,8 @@ examples %w|
 210.82.57.92
 |
 
+trigger "x-cocoon-version"
+
 # Passive #
 def passive
 	m=[]

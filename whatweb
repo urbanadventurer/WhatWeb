@@ -105,6 +105,7 @@ require 'lib/opener.rb'
 require 'lib/processor.rb'
 require 'lib/scanner.rb'
 require 'lib/output_processor.rb'
+require 'lib/file_pile.rb'
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
@@ -564,6 +565,7 @@ begin
         end
       when '--benchmark'
         opts[:benchmark]=true
+        opts[:stats]={}
       when '--debug'
 				opts[:debug]=true
 			when '-h','--help'
@@ -633,6 +635,13 @@ if opts[:benchmark]
   WhatWeb::Benchmark.results.each do |label,m|
     next if m[:runs].zero?
     puts "#{label} #{m[:runs]} #{m[:total]} #{m[:total]/m[:runs]}"
+  
+  end
+  stats=[]
+  opts[:stats].each {|k,v| stats << [k,v]}
+  stats.sort!{|a,b| a[1]<=>b[1]}
+  stats.each do |s|
+    puts "#{s[0]}: #{s[1]}"
   end
 end
 

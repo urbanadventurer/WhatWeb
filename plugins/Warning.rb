@@ -20,6 +20,8 @@ examples %w|
 209.18.68.80
 |
 
+trigger "warning"
+
 # Passive #
 def passive
 	m=[]

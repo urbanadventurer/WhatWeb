@@ -29,6 +29,8 @@ examples %w|
 198.202.148.86
 |
 
+trigger "x-machine"
+
 # Passive #
 def passive
 	m=[]

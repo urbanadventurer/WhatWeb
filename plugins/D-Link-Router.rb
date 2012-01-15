@@ -12,6 +12,9 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-27
 version "0.2"
 description "D-Link Router - D-Link is the global leader in connectivity for small, medium and large enterprise business networking. - homepage: http://www.dlink.com/"
 
+
+trigger ["images/dgl","images/di7","images/dir","images/ebr","images/wbr","images/dsl","images/dgl","images/dwl","images/wda","images/wna","images/wua"]
+
 # Matches #
 matches [
 

@@ -33,7 +33,7 @@ examples %w|
 178.238.130.197
 83.147.205.234
 |
-
+trigger "via"
 # Passive #
 def passive
 	m=[]

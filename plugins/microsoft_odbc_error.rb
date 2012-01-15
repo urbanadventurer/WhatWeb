@@ -29,6 +29,8 @@ www.nepalisite.com/fashion/ramp/ramp.cfm
 www.organicitta.org/materici/Materici.cfm?Cod=7
 |
 
+trigger "ODBC Error Code"
+
 # Passive #
 def passive
 	m=[]

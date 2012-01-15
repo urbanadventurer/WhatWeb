@@ -14,6 +14,8 @@ version "0.2"
 description "The HTML page title"
 examples %w| www.google.com |
 
+trigger "<title>"
+
 #
 
 def passive

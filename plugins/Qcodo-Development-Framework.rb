@@ -43,6 +43,8 @@ matches [
 
 ]
 
+trigger ["Qcodo", "QApplication"]
+
 # Passive #
 def passive
 	m=[]

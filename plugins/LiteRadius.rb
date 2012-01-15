@@ -30,6 +30,8 @@ www.bernhardt.com/sr2/locator.php?parsed_page=4&lat=29.572100&long=98.605300&map
 www.austinair.com/php/locator.php?state=NY&filterCity=Long%20Beach
 |
 
+trigger "parsed_page"
+
 # Matches #
 matches [
 

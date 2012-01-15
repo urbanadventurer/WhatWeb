@@ -23,6 +23,8 @@ examples %w|
 210.243.242.161
 |
 
+trigger "x-accelerated-by"
+
 # HTTP Header
 def passive
 	m=[]

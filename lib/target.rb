@@ -1,7 +1,8 @@
+require 'json'
 module WhatWeb
 class Target
 	attr_reader :target
-	attr_reader :status, :ip, :body, :headers, :raw_headers, :raw_response
+	attr_accessor :status, :ip, :body, :headers, :raw_headers, :raw_response
   attr_accessor :uri
 	attr_reader :cookies
 	attr_reader :md5sum
@@ -9,8 +10,13 @@ class Target
 	attr_accessor :original_source
   attr_accessor :is_url, :is_file
 	attr_accessor :http_options
-
 	@@meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"'>]+)['"]?[^>]*>/i
+
+  def to_json(*args)
+    return {"status" => status, "original_source" => original_source, "status"=>status, "ip"=>ip, "body"=>body, "headers"=>headers, "raw_headers"=>raw_headers,"raw_response"=>raw_response}.to_json(*args)
+  end
+
+
 
 
 	def inspect
@@ -33,12 +39,16 @@ class Target
 	end
 
 	def initialize(target=nil)
-		@target=target
+		z=self
+    if target.is_a?(Hash)
+      target.each{|k,v| z.send("#{k}=",v)}
+    else
+    @target=target
 		@headers={}
     open_string(target)
     @md5sum=Digest::MD5.hexdigest(@body)
 		@tag_pattern = make_tag_pattern(@body)
-
+    end
   end
 
 

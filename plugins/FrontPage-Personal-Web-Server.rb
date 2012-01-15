@@ -27,6 +27,8 @@ examples %w|
 213.1.251.104
 |
 
+trigger "FPWS"
+
 # Passive #
 def passive
 	m=[]

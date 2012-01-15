@@ -23,6 +23,8 @@ examples %w|
 171.64.71.20
 |
 
+trigger "NCSA"
+
 # Passive #
 def passive
 	m=[]

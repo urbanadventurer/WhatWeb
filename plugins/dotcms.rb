@@ -38,6 +38,7 @@ www.uthouston.edu/
 # <img src="/dotAsset/
 # <link href="/dotAsset/
 
+trigger ["dotAsset", "index.dot"]
 
 matches [
 {:regexp=>/<img[^>]+src="[^"]*\/dotAsset\//}, #"

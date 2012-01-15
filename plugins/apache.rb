@@ -122,6 +122,7 @@ https://ls.berkeley.edu
 74.114.46.152
 209.255.137.144
 |
+trigger ["Apache", "apache"]
 
 # Matches #
 matches [

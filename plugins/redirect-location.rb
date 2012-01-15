@@ -13,6 +13,8 @@ author "Andrew Horton"
 version "0.2"
 description "HTTP Server string location. used with http-status 301 and 302"
 
+trigger "location"
+
 def passive
 	m=[]
 	

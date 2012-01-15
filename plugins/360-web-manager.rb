@@ -34,6 +34,7 @@ wasargentina2011.com/index1.php
 www.cultoasanlamuerte.com/index.php
 www.kalmada.com.ar/index1.php
 |
+trigger ["360 Web Manager", "360WebManager", "360webmanager"]
 
 matches [
 

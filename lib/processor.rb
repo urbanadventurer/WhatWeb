@@ -1,3 +1,4 @@
+require 'json'
 module WhatWeb
 class Processor
 
@@ -16,7 +17,7 @@ class Processor
     opts[:on_error_callback].call(e) if opts[:on_error_callback]
   end
 
-  def process(target)
+  def process(write,target)
     bm=Benchmark.start(:process) if opts[:benchmark]
     results=[]
     plugins=opts[:plugins]
@@ -26,6 +27,10 @@ class Processor
 	      plugin=prototype.clone
         plugin.init(target)
 	      result=plugin.x(opts)
+        if opts[:benchmark]
+          opts[:stats][plugin.plugin_name]||=0
+          opts[:stats][plugin.plugin_name]+=1
+        end
       rescue StandardError => err
 	      error("ERROR: Plugin #{name} failed for #{target.original_source.to_s}. #{err}")
         raise if $WWDEBUG==true
@@ -33,7 +38,7 @@ class Processor
       results << [name, result] unless result.nil? or result.empty?
     end
     bm.finish if opts[:benchmark]
-    results
+    Marshal.dump([target,results],write)
   end
 
   private

@@ -27,6 +27,8 @@ examples %w|
 77.236.43.47
 |
 
+trigger "rus"
+
 # Passive #
 def passive
 	m=[]

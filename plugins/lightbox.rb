@@ -13,7 +13,7 @@ Plugin.define "Lightbox" do
 author "Andrew Horton"
 version "0.2"
 description "Javascript for nice image popups"
-
+trigger "lightbox"
 # identifying strings
 
 matches [

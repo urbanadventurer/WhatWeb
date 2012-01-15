@@ -26,6 +26,8 @@ examples %w|
 199.15.160.42
 |
 
+trigger "X-UA-Compatible"
+
 # Matches #
 matches [
 

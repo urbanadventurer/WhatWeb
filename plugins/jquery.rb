@@ -15,7 +15,7 @@ Plugin.define "JQuery" do
 author "Andrew Horton"
 version "0.3"
 description "Javascript library"
-
+trigger "jquery"
 # identifying strings
 # <script type='text/javascript' src='http://blog.core-ed.net/derek/wp-includes/js/jquery/jquery.js?ver=1.2.3'></script>
 # <script src="/javascript/jquery-1.2.6.pack.js" type="text/javascript" charset="utf-8"></script>

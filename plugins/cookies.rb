@@ -25,6 +25,7 @@ description "Display the names of cookies in the HTTP headers. The values are no
 # 2,527,334 for set-cookie
 # 37 for set-cookie path home public_html
 # 17 for set-cookie path=/home/ /public_html
+trigger "set-cookie"
 
 # Passive #
 def passive

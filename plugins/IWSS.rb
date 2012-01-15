@@ -29,6 +29,8 @@ examples %w|
 12.200.16.15
 |
 
+trigger "Proxy-Agent HTTP Header"
+
 # Passive #
 def passive
 	m=[]

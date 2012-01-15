@@ -27,6 +27,8 @@ examples %w|
 130.225.180.111
 |
 
+trigger "x-ksscommands"
+
 # Passive #
 def passive
 	m=[]

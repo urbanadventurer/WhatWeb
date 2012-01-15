@@ -40,6 +40,8 @@ www.spytech-web.com/helpdesk/ticket.php?cmd=lost
 support.adcserver.net/ticket.php?cmd=lost
 |
 
+trigger ["infobar_01", "ticket", "InverseFlow"]
+
 # Matches #
 matches [
 

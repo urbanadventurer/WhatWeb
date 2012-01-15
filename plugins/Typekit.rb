@@ -14,6 +14,8 @@ examples %w|
 typekit.com
 |
 
+trigger "typekit"
+
 # Matches #
 matches [
 

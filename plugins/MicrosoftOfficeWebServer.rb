@@ -24,6 +24,8 @@ examples %w|
 216.197.115.57
 |
 
+trigger "microsoftofficewebserver"
+
 # Passive #
 def passive
 	m=[]

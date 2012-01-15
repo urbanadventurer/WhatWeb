@@ -22,6 +22,8 @@ examples %w|
 200.38.95.152
 |
 
+trigger "proxy-agent"
+
 # HTTP Header
 def passive
 	m=[]
