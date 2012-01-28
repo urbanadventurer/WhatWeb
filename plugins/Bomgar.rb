@@ -12,6 +12,14 @@ description "Bomgar simplifies support by letting technicians control remote com
 # ShodanHQ results as at 2011-05-31 #
 # 3,453 for Bomgar
 
+# Google results as at 2012-01-29 #
+# 590 for "Bomgar Corporation. Redistribution Prohibited. All Rights Reserved. " "Access Software for Help Desk Support"
+
+# Dorks #
+dorks [
+'"Bomgar Corporation. Redistribution Prohibited. All Rights Reserved. " "Access Software for Help Desk Support"'
+]
+
 # Examples #
 examples %w|
 194.209.83.100
