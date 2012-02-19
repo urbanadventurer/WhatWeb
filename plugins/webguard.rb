@@ -4,31 +4,73 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.3 # 2012-02-19 # Brendan Coles <bcoles@gmail.com>
+# Added aggressive logo match
+# Added version detection
+# Added google dork
+# Removed JavaScript matches
+##
 # Version 0.2
-# removed :certainty=>100 & :name
-
+# Removed :certainty=>100 & :name
+##
 Plugin.define "WebGuard" do
 author "Andrew Horton"
-version "0.2"
-description "Security surveillance  Homepage: http://novuscctv.com/"
-examples %w| 124.198.140.159 144.131.54.78 www.dvronline.net |
+version "0.3"
+description "Security surveillance - Homepage: http://novuscctv.com/"
 
-# product is: © NOVUS Security
-# NV-DVR5816/DVD
+# ShodanHQ results as at 2012-02-19 #
+# 618 for gsoap
 
-# <title>WebGuard Login</title>
-# newWindow = window.open(addr + '.htm', 'WEBGUARD', 'width=1000,
-# watchPort = 8016;
+# Google results as at 2012-02-19 #
+# 61 for intitle:"WebGuard Login" "[LOGIN] [EXIT]"
 
+# Dorks #
+dorks [
+'intitle:"WebGuard Login" "[LOGIN] [EXIT]"'
+]
 
+# Examples #
+examples %w|
+144.131.54.78
+14.32.53.240
+220.81.142.4
+183.98.17.179
+221.149.244.226
+1.212.84.114
+118.41.71.104
+120.146.132.31
+59.5.68.216
+121.170.13.143
+193.251.61.4:12089/webguard_login.htm
+148.243.99.19:12088/webguard_login.htm
+www.dvronline.net
+|
+
+# Matches #
 matches [
-{:text=>'<title>WebGuard Login</title>' },
-{:certainty=>75, :text=>'watchPort = 8016;' },
-{:certainty=>75, :text=>"newWindow = window.open(addr + '.htm', 'WEBGUARD', 'width=1000" }
+
+# Title
+{ :certainty=>75, :text=>'<title>WebGuard Login</title>' },
+
+# Login Page # body tag
+{ :text=>'<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="GetInfo()" onResize="fit_center()">' },
+
+# Login Page # Logo HTML
+{ :text=>'<table id=loginback border="0" cellpadding="0" cellspacing="0" background="images/login_venus_back.gif" width=480 height=175 style=\'POSITION:absolute\'>' },
+
+# Login Page # Password field
+{ :text=>'<td align="left" valign="middle"><input name="login_passwd" type="password" class="noborder" size="26"></td>' },
+
+# /UISelect.js # Version Detection
+{ :url=>"/UISelect.js", :version=>/var _VERSION = "<acronym title='([^']+)'><table border='0'/ },
+
+# /images/login_back.gif # Login Page Background Image
+{ :url=>"/images/login_back.gif", :md5=>"4617667f3ec03b31a9971ff1c03da57e" },
+
+# / # Redirect Page
+{ :md5=>"457dff12099372b8415b29e2e50c3910" },
 
 ]
 
 end
-
 
