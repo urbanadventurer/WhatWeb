@@ -7,10 +7,10 @@
 # Version 0.2 # 
 # Fixed regex to return multiple scripts
 ##
-Plugin.define "Script" do
+Plugin.define "Script-URLs" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.2"
-description "This plugin detects instances of script HTML elements and grabs the URL."
+description "This plugin detects instances of script HTML elements and retrieves the URL."
 
 # Google results as at 2010-10-14 #
 # 384 for "your browser does not support javascript"
@@ -28,7 +28,7 @@ www.microsoft.com
 matches [
 
 # Extract source URL
-{ :string=>/<[\s]*script[^>]+src[\s]*=[\s]*["|']?([^>^"]+)/i },
+{ :string=>/<script[^>]+src\s*=\s*["']?([^>^"^']+)/i },
 
 ]
 
