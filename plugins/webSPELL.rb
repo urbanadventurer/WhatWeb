@@ -4,16 +4,29 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2012-02-22 #
+# Added Google dorks
+# Added cookie match
+##
 Plugin.define "webSPELL" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
-version "0.1"
+version "0.2"
 description "webSPELL is a free Content Management System which was especially developed for the needs of esport related communities. - Homepage: http://www.webspell.org/"
+
+# ShodanHQ results as at 2012-02-22 #
+# 326 for ws_session
 
 # Google results as at 2011-03-14 #
 # 92 for "this site is using the webspell script version" -dork
 
+# Dorks #
+dorks [
+'"this site is using the webspell script version" -dork'
+]
+
 # Examples #
 examples %w|
+www.webspell.org
 www.webspell.org/blutengeladmin.bl.ohost.de/index.php?site=imprint
 www.webspell.org/freetddragon.fr.funpic.de/index.php?site=imprint
 www.webspell.org/blog.bonehost.de/index.php?site=imprint
@@ -92,6 +105,9 @@ matches [
 
 # Version Detection # This site is using link # German
 { :version=>/Diese Seite benutzt das <a href="http:\/\/www.webspell.org" target="[^"]+">webSPELL Script \(Version: ([^\)]+)\)[\s]*<\/a>/ },
+
+# ws_session Cookie
+{ :certainty=>75, :search=>"headers[set-cookie]", :regexp=>/ws_session=[a-z\d]+;/ },
 
 ]
 
