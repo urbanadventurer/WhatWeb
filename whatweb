@@ -816,7 +816,6 @@ end
 # optimise plugins
 PluginSupport.precompile_regular_expressions 
 
-
 ### OUTPUT
 output_list << OutputBrief.new unless $QUIET # by default output brief
 output_list << OutputObject.new() if $verbose > 1 # full output if -vv

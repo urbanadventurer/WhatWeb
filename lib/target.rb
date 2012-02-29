@@ -93,6 +93,7 @@ class Target
 	def open_file
 		# target is a file
 		@body=File.open(@target).read
+
 		# target is a http packet file
 		if @body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
 			# extract http header

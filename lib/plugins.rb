@@ -85,6 +85,7 @@ class Plugin
                         search_context = target.body # by default
 			search_context = target.raw_response if match[:search] == "all"
 			search_context = target.raw_headers if match[:search] == "headers"
+
 			if match[:search] =~ /headers\[(.*)\]/
 				if target.headers[$1]
 					search_context = target.headers[$1]
@@ -261,7 +262,7 @@ class PluginSupport
 				matches.each do |thismatch|
 					unless thismatch[:regexp].nil?
 						#pp thismatch
-						thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])					
+						thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])
 					end
 
 					[:version, :os, :string, :account, :model, :firmware, :module, :filepath].each do |label|
