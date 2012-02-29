@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby1.9.1
 =begin
 
 .$$$     $.                                   .$$$     $.         
@@ -70,13 +70,15 @@ def gem_available_new_rubygems?(gemname)
   Gem::Specification.methods.include?(:find_all_by_name) and not Gem::Specification.find_all_by_name(gemname).empty?
  end
 
-gems = %w|json mongo rchardet |
+gems = %w|json mongo rchardet aurelian-ruby-ahocorasick|
 
 gems.each do |thisgem|
 	begin
 		require 'rubygems' # rubygems is optional
 		if gem_available?(thisgem) # 			
-			require thisgem			
+			to_require=thisgem
+      to_require='ahocorasick' if thisgem=='aurelian-ruby-ahocorasick'
+      require to_require
 		end
 	rescue LoadError
 		# that failed.. no big deal
@@ -397,7 +399,9 @@ end
 
 def run_plugins(target)
 		results=[]
-		$plugins_to_use.each do |name,plugin|
+    plugins=$plugins_to_use
+    plugins=WhatWeb::AhoCorasick.find_plugins(target) if $AHO_CORASICK
+		plugins.each do |name,plugin|
 			begin			
 				while plugin.locked?
 					sleep 0.1
@@ -529,6 +533,7 @@ PERFORMANCE & STABILITY:
   --max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
   --open-timeout\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}
   --read-timeout\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}
+  --aho-corasick\tbuild Aho-Corasick prefix dictionary for speed
   --wait=SECONDS\tWait SECONDS between connections
 \t\t\tThis is useful when using a single thread.
 
@@ -548,6 +553,7 @@ EXAMPLE USAGE:
 	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
 	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
 	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
+  suggestions << "To enable aho-corasick pre-checking install the aurelian-ruby-ahocorasick gem.\n" unless gem_available?('aurelian-ruby-ahocorasick')
 
 	unless suggestions.empty?
 		print "\nOPTIONAL DEPENDENCIES\n--------------------------------------------------------------------------------\n" + suggestions + "\n"
@@ -616,6 +622,7 @@ opts = GetoptLong.new(
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--debug', GetoptLong::NO_ARGUMENT ],
       [ '--version', GetoptLong::NO_ARGUMENT ],
+      [ '--aho-corasick', GetoptLong::NO_ARGUMENT],
       [ '-q','--quiet', GetoptLong::NO_ARGUMENT]
     )
 
@@ -776,6 +783,13 @@ begin
 			when '-u','--user'
 				$BASIC_AUTH_USER=arg.split(":").first
 				$BASIC_AUTH_PASS=arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
+      when '--aho-corasick'
+        if defined?(AhoCorasick)
+          require 'lib/aho_corasick'
+          $AHO_CORASICK=true
+        else
+          raise "Sorry, the ahocorasick gem is required for Aho-Corasick support"
+        end
 			when '--debug'
 				$WWDEBUG = true
 			when '-h','--help'
@@ -815,7 +829,7 @@ end
 
 # optimise plugins
 PluginSupport.precompile_regular_expressions 
-
+WhatWeb::AhoCorasick.build_prefix_dictionary if $AHO_CORASICK
 
 ### OUTPUT
 output_list << OutputBrief.new unless $QUIET # by default output brief

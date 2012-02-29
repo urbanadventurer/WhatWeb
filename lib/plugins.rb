@@ -16,12 +16,14 @@ end
 
 class Plugin
   @registered_plugins = {}
-  
+ 
+  attr_accessor :source
+ 
   class << self
     attr_reader :registered_plugins
-    private :new
     attr_reader :locked
     attr_reader :plugin_name
+    private :new
     @locked=false
   end
 
@@ -32,7 +34,11 @@ class Plugin
     p.startup
     Plugin.registered_plugins[name] = p
   end
- 
+  
+  def plugin_name
+    @plugin_name
+  end
+
   def set_plugin_name(s)
      @plugin_name = s
   end
@@ -238,7 +244,10 @@ class PluginSupport
 	# this is used by load_plugins
 	def PluginSupport.load_plugin(f)
 		begin
+                        old_plugins=Plugin.registered_plugins.values
 			load f
+                        new_plugins=Plugin.registered_plugins.values-old_plugins
+                        new_plugins.each {|p| p.source=f}
 		rescue
 			error("Error: failed to load #{f}")
 		rescue SyntaxError
