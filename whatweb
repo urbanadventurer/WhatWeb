@@ -433,7 +433,7 @@ begin
 			when '--log-object'
 				opts[:output_plugins] << OutputObject.new(arg)
 			when '--log-brief'
-			 	opts[:output_plugins] << OutputBrief.new(arg)
+			 	opts[:output_plugins] << WhatWeb::OutputBrief.new(arg)
 			when '--log-xml'
 			 	opts[:output_plugins] << OutputXML.new(arg)
 			when '--log-magictree'
