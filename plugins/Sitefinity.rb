@@ -4,19 +4,37 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2012-03-09 #
+# Added match. Added google dork. Updated version detection.
+##
 Plugin.define "Sitefinity" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
-version "0.1"
+version "0.2"
 description "sitefinity ASP.NET CMS - Homepage: http://www.sitefinity.com/"
 
-# Google results as at 2011-03-04 #
+# Google results as at 2012-03-09 #
+# 30 for inurl:"/Sitefinity/WebsiteTemplates/"
 # 20 for "Powered by Sitefinity ASP.NET CMS"
+
+# Dorks #
+dorks [
+'inurl:"/Sitefinity/WebsiteTemplates/"'
+]
 
 # Examples #
 examples %w|
 www.sitefinity.com
 www.telerik.com
 website2pdf.com
+www.purecircle.com
+www.lbs.com.my
+www.fultonscrabhouse.com
+www.fultonsontheriver.com
+catalogue.seaquistclosures.eu
+promaxbda.org
+dev1.promaxbda.org
+demo.iciniti.com
+apca.com.au
 |
 
 # Matches #
@@ -27,7 +45,10 @@ matches [
 { :text=>'title="Sitefinity ASP.NET CMS" class="poweredBySitefinity" href="http://www.sitefinity.com">Powered by Sitefinity ASP.NET CMS</a></p>' },
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="Generator" content="Sitefinity ([\d\.:]{1,20})" \/>/ },
+{ :version=>/<meta name="Generator" content="Sitefinity ([\d\.:]{1,20}( [A-Z]+)?)" \/>/ },
+
+# Link # /SiteFinity
+{ :certainty=>75, :regexp=>/<link href="\/[Ss]ite[Ff]inity\/WebsiteTemplates\// },
 
 ]
 
