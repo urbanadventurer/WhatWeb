@@ -15,7 +15,6 @@ description "NetApp network-attached storage solutions and a unified storage arc
 # Examples #
 examples %w|
 158.102.161.153
-163.117.131.201
 129.10.116.9
 169.236.151.110
 89.238.71.254
@@ -24,29 +23,21 @@ examples %w|
 63.231.195.122
 129.74.223.99
 208.50.232.51
-220.73.139.185
 211.63.185.8
 218.24.6.177
 124.243.127.141
 123.190.234.18
 60.22.151.142
 217.11.56.190
-206.251.170.254
-68.68.103.52
-216.94.32.208
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^NetApp\/[\/]?(.+)$/) } if @headers["server"] =~ /^NetApp\/[\/]?(.+)$/
+# HTTP Server Header # Version Detection
+{ :search=>"headers[server]", :version=>/^NetApp\/(.+)$/ },
 
-	# Return passive matches
-	m
-
-end
+]
 
 end
 
