@@ -10,48 +10,55 @@
 Plugin.define "Plone" do
 author "Andrew Horton"
 version "0.2"
-description "CMS http://plone.org"
-examples %w| www.norden.org www.trolltech.com www.plone.net www.smeal.psu.edu|
+description "Plone Content Management System (CMS) - Homepage: http://plone.org"
+
+# Examples #
+examples %w|
+www.norden.org
+www.trolltech.com
+www.plone.net
+www.smeal.psu.edu
+|
 
 # Dorks #
 dorks [
-'"powered by plone"'
+'"powered by plone"',
+'inurl:"acl_users/credentials_cookie_auth/require_login?came_from"'
 ]
 
 # Matches #
 matches [
 
+# URL Pattern
+{ :name=>"URL Pattern", :certainty=>75, :ghdb=>'inurl:"acl_users/credentials_cookie_auth/require_login?came_from"' },
+
+# Meta Generator
 {:name=>"meta generator tag",
 :regexp=>/<meta name="generator" content="[^>]*http:\/\/plone.org" \/>/},
 
+# StyleSheet HTML
 {:name=>"plone css",
 :regexp=>/(@import url|text\/css)[^>]*portal_css\/.*plone.*css(\)|")/}, #"
 
+# JavaScript
 {:name=>"plone javascript",
 :regexp=>/src="[^"]*ploneScripts[0-9]+.js"/}, #"
 
+# <div class="visualIcon contenttype-plone-site">
 {:text=>'<div class="visualIcon contenttype-plone-site">'},
 
+# <div id="visual-portal-wrapper">
 {:name=>"div tag, visual-portal-wrapper",
 :certainty=>75,
 :text=>'<div id="visual-portal-wrapper">'},
 
+# X-Caching-Rule-Id: plone-content-types
+{ :name=>"X-Caching-Rule-Id: plone-content-types", :search=>"headers[x-caching-rule-id]", :regexp=>/plone-content-types/i },
+
+# X-Cache-Rule: plone-content-types
+{ :name=>"X-Cache-Rule: plone-content-types", :search=>"headers[x-cache-rule]", :regexp=>/plone-content-types/i },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# X-Caching-Rule-Id: plone-content-types
-	m << {:name=>"X-Caching-Rule-Id: plone-content-types" } if @headers["x-caching-rule-id"] =~ /plone-content-types/i
-
-	# X-Cache-Rule: plone-content-types
-	m << {:name=>"X-Cache-Rule: plone-content-types" } if @headers["x-cache-rule"] =~ /plone-content-types/i
-
-	# Return passive matches
-	m
-end
-
 
 end
 
