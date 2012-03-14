@@ -7,10 +7,19 @@
 Plugin.define "Zope" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
 version "0.1"
-description "Zope is an open source web application server primarily written in the Python programming language. It features a transactional object database which can store not only content and custom data, but also dynamic HTML templates, scripts, a search engine, and relational database (RDBMS) connections and code. - homepage: http://www.zope.org/"
+description "Zope is an open source web application server primarily written in the Python programming language. It features a transactional object database which can store not only content and custom data, but also dynamic HTML templates, scripts, a search engine, and relational database (RDBMS) connections and code. - Homepage: http://www.zope.org/"
 
 # ShodanHQ results as at 2010-11-02 #
 # 6,219 for Server: Zope
+
+# Google results as at 2012-03-14 #
+# 88 for inurl:"HelpSys" intitle:"Zope Help System"
+# 40 for inurl:"HelpSys?help_url="
+
+# Dorks #
+dorks [
+'inurl:"HelpSys" intitle:"Zope Help System"'
+]
 
 # Examples #
 examples %w|
@@ -26,22 +35,19 @@ examples %w|
 82.100.204.40
 |
 
-# Passive #
-def passive
-	m=[]
+# Matches #
+matches [
 
-	# Version # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/Zope\/\(([^,]*)/) } if @headers["server"] =~ /Zope\/\(([^,]*)/
+# Version # HTTP Server Header
+{ :search=>"headers[server]", :version=>/Zope\/\(([^,]*)/ },
 
-	# Python # HTTP Server Header
-	m << { :module=>@headers["server"].scan(/Zope\/\([^,]*, ([^,]*)/) } if @headers["server"] =~ /Zope\/\([^,]*, ([^,]*)/
+# Python # HTTP Server Header
+{ :search=>"headers[server]", :module=>/Zope\/\([^,]*, ([^,]*)/ },
 
-	# OS # HTTP Server Header
-	m << { :string=>@headers["server"].scan(/Zope\/\([^,]*, [^,]*, ([^\)^\s]*)/) } if @headers["server"] =~ /Zope\/\([^,]*, [^,]*, ([^\)^\s]*)/
+# OS # HTTP Server Header
+{ :search=>"headers[server]", :string=>/Zope\/\([^,]*, [^,]*, ([^\)^\s]*)/ },
 
-	m
-
-end
+]
 
 end
 
