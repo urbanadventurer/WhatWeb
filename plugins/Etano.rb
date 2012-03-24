@@ -12,6 +12,11 @@ description "Etano - Dating and social networking script - Homepage: https://cod
 # Google results as at 2012-03-24 #
 # 42 for "Powered by Etano" intitle:"Etano"
 
+# Dorks #
+dorks [
+'"Powered by Etano" intitle:"Etano"'
+]
+
 # Examples #
 examples %w|
 www.datemill.com/friendy/
