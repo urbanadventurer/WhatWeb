@@ -22,7 +22,7 @@ matches [
 { :search=>"headers[server]", :version=>/^Http explorer ([^\s]+)$/ },
 
 # Footer # Version Detection
-{ :version=>/<p id="pgfooter_p_main">\s+<a href="http:\/\/http\-explorer\.sourceforge\.net\/\?lang=[^"]+">Http explorer ([^\s^<]+)<\/a>\s+<span> - Page generated in/ },
+{ :version=>/<p id="pgfooter_p_main">\s+<a href="http:\/\/http\-explorer\.sourceforge\.net\/\?lang=[^"]+">Http explorer\s+([^\s^<]+)<\/a>/ },
 
 ]
 
