@@ -9,30 +9,40 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.1"
 description "Piwigo is a photo gallery software for the web, built by an active community of users and developers. - homepage: http://piwigo.org/"
 
-# 271 results for "powered by piwigo" @ 2010-09-12
+# Google results as at 2010-09-12 #
+# 271 results for "powered by piwigo"
+
+# Dorks #
+dorks [
+'"powered by piwigo"'
+]
+
+# Examples #
 examples %w|
+piwigo.org/demo/
+photograph.piwigo.net
 ru.piwigo.org/demo/
-alhudha.net
 blankakovacevic.com
 brendanjensen.net/photography/index.php
 clicknatureindia.com
-photos.thezet.com
 toths.us/Piwigo/
 wireless-sec.com
-www.reptilempire.com/photos/picture.php
-www.iomcoh.com/pictures/picture.php
 www.licks0re-shirts.info/lps/piwigo/
-www.aliceodilon.com
-www.jpgs.com
-www.wilvis.com
 www.muza-chan.net/photo/
 |
 
+# Matches #
 matches [
 
 # Meta generator
 { :text=>'<meta name="generator" content="Piwigo (aka PWG), see piwigo.org">' },
 { :text=>'<meta name="generator" content="Piwigo, piwigo.org">' },
+
+# div id="copyright" # a name="EoP" # HTML Comment
+{ :regexp=>/<div id="copyright">\s+<a name="EoP"><\/a>\s+<!-- End of Page -->/ },
+
+# Powered by
+{ :regexp=>/Powered by\s+<a href="http:\/\/piwigo\.org" class="Piwigo">/ },
 
 ]
 
