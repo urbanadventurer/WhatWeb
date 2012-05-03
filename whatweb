@@ -12,11 +12,11 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 
 WhatWeb - Next generation web scanner.
-Author: Andrew Horton aka urbanadventurer. Security Consultant for Security-Assessment.com
+Author: Andrew Horton aka urbanadventurer
  
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-Copyright 2009-2011 Andrew Horton <andrew.horton at security-assessment dot com>
+Copyright 2009-2012 Andrew Horton <andrew at morningstarsecurity dot com>
 
 This file is part of WhatWeb.
 
@@ -111,7 +111,7 @@ PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if F
 
 
 # nothing says pro-developer like using global variables
-$VERSION="0.4.8"
+$VERSION="0.4.8-dev"
 $WWDEBUG = false # raise exceptions in plugins, etc
 $verbose=0 # $VERBOSE is reserved in ruby
 $USE_EXAMPLE_URLS=false
@@ -440,7 +440,7 @@ $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 "
-puts "WhatWeb - Next generation web scanner.\nVersion #{$VERSION} by Andrew Horton aka urbanadventurer from Security-Assessment.com"
+puts "WhatWeb - Next generation web scanner.\nVersion #{$VERSION} by Andrew Horton aka urbanadventurer"
 puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
 puts
 puts "Usage: whatweb [options] <URLs>"
