@@ -544,7 +544,7 @@ EXAMPLE USAGE:
   whatweb example.com
 * Scan reddit.com slashdot.org with verbose plugin descriptions
   whatweb -v reddit.com slashdot.org
-* An aggressive scan of mashable.com detects Wordpress then identifies the exact version
+* An aggressive scan of mashable.com detects the exact version of Wordpress
   whatweb -a 3 mashable.com
 * Scan the local network with no errors and 255 threads
   whatweb --no-errors -t 255 192.168.0.0/24
