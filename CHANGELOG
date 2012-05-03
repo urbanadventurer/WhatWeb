@@ -23,6 +23,8 @@ Version 0.4.8-dev Unreleased
 * :status and :url are now logical AND with other matches. They cannot match in isolation unless with each other.
 * Updated Country plugin. Fixed IPv6 bug
 * Removed dependency on em-resolv-replace
+* Changed version from 0.4.8 to 0.4.8-dev to show development version
+* Updated usage
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
