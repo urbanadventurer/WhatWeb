@@ -449,23 +449,21 @@ TARGET SELECTION:
   <URLs>\t\tEnter URLs, filenames or nmap-format IP ranges.
 \t\t\tUse /dev/stdin to pipe HTML directly
   --input-file=FILE, -i\tIdentify URLs found in FILE, eg. -i /dev/stdin
+
+TARGET MODIFICATION:
   --url-prefix\t\tAdd a prefix to target URLs
   --url-suffix\t\tAdd a suffix to target URLs
   --url-pattern\t\tInsert the targets into a URL. Requires --input-file,
 \t\t\teg. www.example.com/%insert%/robots.txt 
-  --example-urls, -e\tAdd example URLs for each selected plugin to the target
-\t\t\tlist. By default will add example URLs for all plugins.
 
 AGGRESSION LEVELS:
   --aggression, -a=LEVEL The aggression level controls the trade-off between
 \t\t\tspeed/stealth and reliability. Default: 1
-\t\t\tAggression levels are:
-\t1 (Passive)\tMake one HTTP request per target. Except for redirects.
-\t2 (Polite)\tReserved for future use
-\t3 (Aggressive)\tTriggers aggressive plugin functions only when a
-\t\t\tplugin matches passively.
-\t4 (Heavy)\tTrigger aggressive functions for all plugins. Guess a
-\t\t\tlot of URLs like Nikto.
+  Aggression levels are:
+  1. Stealthy\t\tMakes one HTTP request per target, includes redirects.
+  2. Unused
+  3. Aggressive\t\tIf a plugin is identified with a level 1 request then aggressive tests for that plugin are triggered. Makes a handful of HTTP requests.
+  4. Heavy\t\tAggressive tests from all plugins are used for all URLs. Makes a lot of HTTP requests.
 
 HTTP OPTIONS:
   --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/#{$VERSION}.
@@ -502,12 +500,17 @@ PLUGINS:
 \t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
 \t\t\t\"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}\"
   --dorks\t\t<plugin name>\tList google dorks for the selected plugin
+  --example-urls, -e\tAdd the example URLs for each selected plugin to the target
+\t\t\tlist. By default will add example URLs for all plugins.
 
-LOGGING & OUTPUT:
-  --verbose, -v\t\tIncrease verbosity, use twice for plugin development.
+OUTPUT:
+  --verbose, -v\t\tVerbose output includes plugin descriptions. Use twice for debugging.
   --colour,--color=WHEN\tcontrol whether colour is used. WHEN may be `never',
 \t\t\t`always', or `auto'
   --quiet, -q\t\tDo not display brief logging to STDOUT
+  --no-errors\t\tSuppress error messages
+
+LOGGING:
   --log-brief=FILE\tLog brief, one-line output
   --log-verbose=FILE\tLog verbose output
   --log-xml=FILE\tLog XML format
@@ -523,7 +526,6 @@ LOGGING & OUTPUT:
   --log-mongo-username\tMongoDB username. Default: nil
   --log-mongo-password\tMongoDB password. Default: nil
   --log-errors=FILE\tLog errors
-  --no-errors\t\tSuppress error messages
 
 PERFORMANCE & STABILITY:
   --max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
@@ -538,10 +540,15 @@ HELP & MISCELLANEOUS:
   --version\t\tDisplay version information. (WhatWeb #{$VERSION})
 
 EXAMPLE USAGE:
+* Scan example.com
   whatweb example.com
-  whatweb -v example.com
-  whatweb -a 3 example.com
-  whatweb 192.168.1.0/24
+* Scan reddit.com slashdot.org with verbose plugin descriptions
+  whatweb -v reddit.com slashdot.org
+* An aggressive scan of mashable.com detects Wordpress then identifies the exact version
+  whatweb -a 3 mashable.com
+* Scan the local network with no errors and 255 threads
+  whatweb --no-errors -t 255 192.168.0.0/24
+
 \n"
 
 	suggestions=""
