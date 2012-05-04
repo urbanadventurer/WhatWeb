@@ -5,7 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 # Version 0.5 # 2011-08-04 Andrew Horton - added default meta refresh page
-#
+##
 # Version 0.4 # 2011-04-06 # Brendan Coles <bcoles@gmail.com>
 # Added /cgi-sys/defaultwebpage.cgi and /img-sys/header.jpg aggressive matches
 ##
@@ -18,11 +18,16 @@
 Plugin.define "cPanel" do
 author "Andrew Horton"
 version "0.5"
-description "Site configuration and management software application. Supporting many operating systems while allowing endusers to control every aspect of their webhosting experience. - homepage: http://www.cpanel.net/"
+description "Site configuration and management software application. Supporting many operating systems while allowing endusers to control every aspect of their webhosting experience. - Homepage: http://www.cpanel.net/"
+
+# Google results as at 2012-04-11 #
+# 899 for inurl:":2082/frontend" -demo
+# 487 for inurl:":2095/webmail/x3"
 
 # Dorks #
 dorks [
-'inurl::2082/frontend -demo'
+'inurl:":2082/frontend" -demo',
+'inurl:":2095/webmail/x3"'
 ]
 
 # Examples #
@@ -65,20 +70,10 @@ matches [
 # Aggressive # /img-sys/header.jpg
 { :url=>"/img-sys/header.jpg", :md5=>"b0f3863b68ff707c3fb586bd87b4f9c6" },
 
+# Version Detection # HTTP Server header
+{ :search=>"headers[server]", :version=>/^cpsrvd\/([\d\.]+)$/ },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server header
-	if @headers["server"].to_s =~ /^cpsrvd\/([\d\.]+)$/
-		m << { :version=>@headers["server"].scan(/^cpsrvd\/([\d\.]+)$/) }
-	end
-
-	# Return passive matches
-	m
-end
 
 end
 
