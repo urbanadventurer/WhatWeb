@@ -6,15 +6,16 @@ Version 0.4.8-dev Unreleased
 * Added google dorks to more than 500 plugins
 * Added ./addons/hunter
 * Added ./addons/gggooglescan
+* Added ./addons/country-scanner
 * Updated whatweb.xsl
 * Fixed bug causing Mongo DB logging to fail
-* Added SQL logging with `--log-sql` and `--log-sql-create` arguments
+* Added SQL logging with `--log-sql` and `--log-sql-create` arguments. These are not listed in the usage.
 * Removed the spidering feature and dependence on the customised and unsupported Anemone gem
 * Removed the extra_urls feature
 * Added raw header support by monkey patching the net/http library
 * Targets from input files are now executed ascending order
 * Redesigned and refactored much of Whatweb's code. Introduced the Target class
-* Major changes to support Ruby 1.9.1
+* Improved support for Ruby 1.9.1
 * Added context searching for plugin matches[]. Added the matches keyword, :search. Values can be "headers","headers[server]"(or any other HTTP header),"body"(default), "all" (the raw headers + body)
 * Added methods for aggressive plugins to send HEAD and POST requests
 * Fixed meta refresh redirection but with HTML entities in the URL
@@ -25,6 +26,7 @@ Version 0.4.8-dev Unreleased
 * Removed dependency on em-resolv-replace
 * Changed version from 0.4.8 to 0.4.8-dev to show development version
 * Updated usage
+* Plugin brief output is now sorted alphabetically by plugin name
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
