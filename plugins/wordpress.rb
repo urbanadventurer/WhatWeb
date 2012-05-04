@@ -49,7 +49,7 @@ matches [
 {:url=>"favicon.ico", :md5=>'f420dc2c7d90d7873a90d82cd7fde315'}, # not common, seen on http://s.wordpress.org/favicon.ico
 {:url=>"favicon.ico", :md5=>'fa54dbf2f61bd2e0188e47f5f578f736'},  # on wordpress.com blogs  http://s2.wp.com/i/favicon.ico 
 
-{:url=>"/readme.html", :version=>/<h1.*Version ([0-9a-z\.]+).*<\/h1>/m}
+{:url=>"/readme.html", :version=>/<h1.*WordPress.*Version ([0-9a-z\.]+).*<\/h1>/m}
 
 ]
 
