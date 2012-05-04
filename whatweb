@@ -526,9 +526,10 @@ LOGGING:
   --log-verbose=FILE\tLog verbose output
   --log-xml=FILE\tLog XML format
   --log-json=FILE\tLog JSON format
-  --log-sql=FILE\tLog SQL INSERT statements
-  --log-sql-create=FILE\tCreate SQL database tables
-  --log-json-verbose=FILE Log JSON Verbose format
+"+
+#  --log-sql=FILE\tLog SQL INSERT statements
+#  --log-sql-create=FILE\tCreate SQL database tables
+"  --log-json-verbose=FILE Log JSON Verbose format
   --log-magictree=FILE\tLog MagicTree XML format
   --log-object=FILE\tLog Ruby object inspection format
   --log-mongo-database\tName of the MongoDB database
