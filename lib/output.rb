@@ -182,9 +182,10 @@ end
 		brief_results=[]
 
 # sort results so plugins that are less important at a glance are last
-		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Tag-Hash|
-		results=results.sort_by {|x,y| last_plugins.include?(x) ? 1 : 0 }
+#		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Tag-Hash|
+#		results=results.sort_by {|x,y| last_plugins.include?(x) ? 1 : 0 }
 
+		results=results.sort
 
 		results.each do |plugin_name,plugin_results|
 			unless plugin_results.empty?
