@@ -569,9 +569,7 @@ EXAMPLE USAGE:
 * An aggressive scan of mashable.com detects the exact version of Wordpress
   whatweb -a 3 mashable.com
 * Scan the local network quickly with 255 threads and suppress errors
-  whatweb --no-errors -t 255 192.168.0.0/24
-
-\n"
+  whatweb --no-errors -t 255 192.168.0.0/24\n"
 
 	suggestions=""
 	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
@@ -581,6 +579,11 @@ EXAMPLE USAGE:
 	unless suggestions.empty?
 		print "\nOPTIONAL DEPENDENCIES\n--------------------------------------------------------------------------------\n" + suggestions + "\n"
 	end
+if RUBY_VERSION =~ /^1\.9/
+	puts "WARNING: Ruby 1.9 support is experimental. For stable usage use Ruby 1.8 instead. Please report bugs at https://github.com/urbanadventurer/WhatWeb/issue\n\n"
+end
+puts
+
 end
 
 
@@ -832,6 +835,7 @@ if Config::CONFIG['host_os'] =~ /mswin|mingw/
 	$use_colour = false
 end
 
+# example URLs are only allowed with selected plugins, not all plugins
 if $USE_EXAMPLE_URLS and not plugin_selection
 	error "You must select plugins with -p or --plugins to include examples in the target list"
 	exit 1
