@@ -171,7 +171,7 @@ class Plugin
   end
 
 # execute plugin
-  def x	
+  def x
         results=[]
 
   	unless @matches.nil?

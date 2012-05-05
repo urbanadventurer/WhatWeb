@@ -359,8 +359,7 @@ def error(s)
 		begin
 			$semaphore.lock
 		rescue ThreadError
-			# we're already locked. Nice.		
-			raise if $WWDEBUG==true
+			# we're already locked. This was expected.
 		end
 	end
 	if ($use_colour=="auto") or ($use_colour=="always")

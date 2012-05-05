@@ -241,12 +241,14 @@ end
 			end
 		end
 		
-		$semaphore.synchronize do 
-			if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
-				@f.puts blue(target) + " [#{status}] " + brief_results.join(", ")
-			else
-				@f.puts target.to_s + " [#{status}] " + brief_results.join(", ")
-			end		
+
+		if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
+			brief_results_final= blue(target) + " [#{status}] " + brief_results.join(", ")
+		else
+			brief_results_final= target.to_s + " [#{status}] " + brief_results.join(", ")
+		end	
+		$semaphore.synchronize do
+			@f.puts brief_results_final
 		end
 	end
 end
