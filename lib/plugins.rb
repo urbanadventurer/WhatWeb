@@ -240,10 +240,10 @@ class PluginSupport
 	def PluginSupport.load_plugin(f)
 		begin
 			load f
-		rescue
-			error("Error: failed to load #{f}")
-		rescue SyntaxError
-			error("Error: Failed to load #{f}: syntax error")
+		rescue => err
+			error("Error: failed to load - #{err}")
+		rescue SyntaxError => err
+			error("Error: Failed to load - #{err}")
 		rescue SystemExit, Interrupt
 			error("ERROR: Failed to load plugins: Interrupted")
 			if $WWDEBUG==true or $verbose > 1
