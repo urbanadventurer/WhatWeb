@@ -80,6 +80,7 @@ gems.each do |thisgem|
 		end
 	rescue LoadError
 		# that failed.. no big deal
+		raise if $WWDEBUG==true
 	end
 end
 
@@ -351,6 +352,7 @@ def error(s)
 			$semaphore.lock
 		rescue ThreadError
 			# we're already locked. Nice.		
+			raise if $WWDEBUG==true
 		end
 	end
 	if ($use_colour=="auto") or ($use_colour=="always")
@@ -918,6 +920,7 @@ while t = next_target
 					rescue
 						#srsly, logging failed
 						error("Error: Logging failed for "+ target.to_s)
+						raise if $WWDEBUG==true
 					end
 				end
 
@@ -933,6 +936,7 @@ while t = next_target
 					rescue => err
 						error("Redirection broken: #{err}")
 						no_redirects=true
+						raise if $WWDEBUG==true
 					end
 				end
 			end # while no_redirects
