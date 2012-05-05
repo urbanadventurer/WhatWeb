@@ -309,14 +309,22 @@ end
 def next_target
 	t=nil
 
+	puts "Target List:" + $targets.inspect if $verbose > 2
+#
 	while $recent_targets.include?(t) or t.nil?
 		t=$targets.shift
+		puts "# t at the end of the $targets list" if $verbose > 2
 		# t at the end of the $targets list
 		if t.nil?
 			puts "t is nil" if $verbose > 2
 			if $targets.empty?
 				if Thread.list.size > 1
-					puts "Thread list size: #{Thread.list.size}" if $verbose > 2
+					if $verbose > 2
+						puts "Thread list size: #{Thread.list.size}"
+						Thread.list.each do |thread|
+							puts "Thread: #{thread.inspect} is #{thread.status}"
+						end
+					end
 					sleep 1
 				else
 					puts "breaking now" if $verbose > 2
@@ -884,26 +892,28 @@ while t = next_target
 
 			puts Thread.current.to_s + " started for " + target.to_s if $verbose>1
 			sleep $WAIT unless $WAIT.nil? # wait
-		
+
 			# follow redirects
 			no_redirects =false
 			num_redirects = 0
 			while no_redirects == false do
+				no_redirects=true if target.is_file?
 				# if we redirect 10 times we give up
 				if num_redirects == $MAX_REDIRECTS
-					error(target.to_s + " ERROR: Too many redirects")
+					error("ERROR Too many redirects: #{target.to_s}")
 					no_redirects=true
 					next
 				end
-				
+
 				begin
 					target.open
-				rescue
-					error(err)
+				rescue => err
+					error("ERROR Opening target: #{target.to_s} - #{err}")
+					no_redirects = true # without this we can get stuck in a loop
+					raise if $WWDEBUG
 					next
 				end
 
-				no_redirects=true if target.is_file?
 				if target.is_url? and target.status.nil?
 					# assume all HTTP sites return a status
 					no_redirects=true
@@ -917,9 +927,9 @@ while t = next_target
 				output_list.each do |o|
 					begin
 						o.out(target.to_s, target.status, results)
-					rescue
+					rescue => err
 						#srsly, logging failed
-						error("Error: Logging failed for "+ target.to_s)
+						error("ERROR Logging failed: #{target.to_s} - #{err}")
 						raise if $WWDEBUG==true
 					end
 				end
@@ -934,13 +944,12 @@ while t = next_target
 							no_redirects=true 
 						end
 					rescue => err
-						error("Redirection broken: #{err}")
+						error("ERROR Redirection broken: #{target.to_s} - #{err}")
 						no_redirects=true
 						raise if $WWDEBUG==true
 					end
 				end
 			end # while no_redirects
-	
 		end # Thread.new
 
 	while Thread.list.size>($MAX_THREADS+1)
@@ -950,7 +959,9 @@ while t = next_target
 end # targets.each
 
 # close output logs
-output_list.each {|o| o.close }
+output_list.each {|o| 
+	o.close
+}
 
 # shutdown plugins
 Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }

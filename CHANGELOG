@@ -8,7 +8,8 @@ Version 0.4.8-dev Unreleased
 * Added ./addons/gggooglescan
 * Added ./addons/country-scanner
 * Updated whatweb.xsl
-* Fixed bug causing Mongo DB logging to fail
+* Fixed a bug causing Mongo DB logging to fail
+* Fixed a bug causing brief logging to not escape special characters
 * Added SQL logging with `--log-sql` and `--log-sql-create` arguments. These are not listed in the usage.
 * Removed the spidering feature and dependence on the customised and unsupported Anemone gem
 * Removed the extra_urls feature
