@@ -607,7 +607,7 @@ opts = GetoptLong.new(
       [ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
       [ '--dorks', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-e','--example-urls', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '-e','--example-urls', GetoptLong::NO_ARGUMENT ],
       [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-brief', GetoptLong::REQUIRED_ARGUMENT ],
@@ -669,6 +669,7 @@ begin
 				exit
 			when '-e','--example-urls'
 				$USE_EXAMPLE_URLS=true
+
 			when '--color','--colour'
 				case arg
 					when 'auto'
