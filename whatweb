@@ -657,7 +657,7 @@ begin
 				PluginSupport.load_plugins
 				PluginSupport.plugin_list
 				exit
-			when '-p','--run-plugins'
+			when '-p','--plugins'
 				plugin_selection=arg
 			when '-I','--info-plugins'                
 				PluginSupport.load_plugins
