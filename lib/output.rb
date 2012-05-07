@@ -167,7 +167,6 @@ end
 class OutputBrief < Output
 
 def escape(s)
-
 	# Encode all special characters # More info: http://www.asciitable.com/
 	r=/[^\x20-\x5A\x5E-\x7E]/
 
@@ -182,20 +181,22 @@ end
 		brief_results=[]
 
 # sort results so plugins that are less important at a glance are last
-		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Tag-Hash|
-		results=results.sort_by {|x,y| last_plugins.include?(x) ? 1 : 0 }
+#		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Tag-Hash|
+#		results=results.sort_by {|x,y| last_plugins.include?(x) ? 1 : 0 }
 
+		results=results.sort # sort results by plugin name alphabetically
 
 		results.each do |plugin_name,plugin_results|
 			unless plugin_results.empty?
 				suj = suj(plugin_results)
 
-				certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty],suj[:version],suj[:os],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
+				certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty].to_i,escape(suj[:version]),escape(suj[:os]),escape(suj[:string]), escape(suj[:account]),escape(suj[:model]),escape(suj[:firmware]),escape(suj[:module]),escape(suj[:filepath])
 
+
+				# colour the output
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
 				if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
-					 string=escape(string)
 					 coloured_string = yellow(string)
 					 coloured_string = cyan(string) if plugin_name == "HTTPServer"
  				 	 coloured_string = dark_green(string) if plugin_name == "Title"
@@ -214,18 +215,19 @@ end
 					 coloured_plugin = grey(plugin_name) if plugin_name == "Tag-Hash"
   					 					 
 					 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
-					   coloured_plugin + (!version.empty? ? "["+green(escape(version))+"]" : "") +
-					   (!os.empty? ? "[" + red(escape(os))+"]" : "") +	
+					   coloured_plugin + (!version.empty? ? "["+green(version)+"]" : "") +
+					   (!os.empty? ? "[" + red(os)+"]" : "") +	
 					   (!string.empty? ? "[" + coloured_string+"]" : "") +
-					   (!accounts.empty? ? "["+ cyan(escape(accounts))+"]" : "" ) +
-					   (!model.empty? ? "["+ dark_green(escape(model))+"]" : "" ) +
-					   (!firmware.empty? ? "["+ dark_green(escape(firmware))+"]" : "" ) +
-					   (!filepath.empty? ? "["+ dark_green(escape(filepath))+"]" : "" ) +
-					   (!modules.empty? ? "["+ magenta(escape(modules))+"]" : "" )
+					   (!accounts.empty? ? "["+ cyan(accounts)+"]" : "" ) +
+					   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
+					   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
+					   (!filepath.empty? ? "["+ dark_green(filepath)+"]" : "" ) +
+					   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
 
 					 
 					 brief_results << p
 				else
+
 					brief_results << ((certainty and certainty < 100) ? certainty_to_words(certainty)+ " " : "")  +
 					   plugin_name + (!version.empty? ? "[" + version +"]" : "") +
 					   (!os.empty? ? "[" + os+"]" : "") +
@@ -239,12 +241,14 @@ end
 			end
 		end
 		
-		$semaphore.synchronize do 
-			if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
-				@f.puts blue(target) + " [#{status}] " + brief_results.join(", ")
-			else
-				@f.puts target.to_s + " [#{status}] " + brief_results.join(", ")
-			end		
+
+		if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
+			brief_results_final= blue(target) + " [#{status}] " + brief_results.join(", ")
+		else
+			brief_results_final= target.to_s + " [#{status}] " + brief_results.join(", ")
+		end	
+		$semaphore.synchronize do
+			@f.puts brief_results_final
 		end
 	end
 end

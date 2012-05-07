@@ -91,8 +91,13 @@ class Target
 
 
 	def open_file
+	begin
 		# target is a file
-		@body=File.open(@target).read
+		if RUBY_VERSION =~ /^1\.9/
+			@body=File.open(@target, :encoding=>"ASCII-8BIT").read
+		else
+			@body=File.open(@target).read
+		end
 
 		# target is a http packet file
 		if @body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
@@ -111,12 +116,14 @@ class Target
 				end
 			end
 			@headers["set-cookie"] = @cookies.join("\n") unless @cookies.nil? or @cookies.empty?
-
 			# extract html source
 			if @body =~ /^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m
 				@body = @body.scan(/^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m).to_s
 			end
 		end
+	rescue => err
+		raise
+	end
 	end
 
 	def open_url(options)

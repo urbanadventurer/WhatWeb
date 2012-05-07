@@ -12,11 +12,11 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 
 WhatWeb - Next generation web scanner.
-Author: Andrew Horton aka urbanadventurer. Security Consultant for Security-Assessment.com
+Author: Andrew Horton aka urbanadventurer
  
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-Copyright 2009-2011 Andrew Horton <andrew.horton at security-assessment dot com>
+Copyright 2009-2012 Andrew Horton <andrew at morningstarsecurity dot com>
 
 This file is part of WhatWeb.
 
@@ -80,6 +80,7 @@ gems.each do |thisgem|
 		end
 	rescue LoadError
 		# that failed.. no big deal
+		raise if $WWDEBUG==true
 	end
 end
 
@@ -111,7 +112,7 @@ PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if F
 
 
 # nothing says pro-developer like using global variables
-$VERSION="0.4.8"
+$VERSION="0.4.8-dev"
 $WWDEBUG = false # raise exceptions in plugins, etc
 $verbose=0 # $VERBOSE is reserved in ruby
 $USE_EXAMPLE_URLS=false
@@ -308,14 +309,22 @@ end
 def next_target
 	t=nil
 
+	puts "Target List:" + $targets.inspect if $verbose > 2
+#
 	while $recent_targets.include?(t) or t.nil?
 		t=$targets.shift
+		puts "# t at the end of the $targets list" if $verbose > 2
 		# t at the end of the $targets list
 		if t.nil?
 			puts "t is nil" if $verbose > 2
 			if $targets.empty?
 				if Thread.list.size > 1
-					puts "Thread list size: #{Thread.list.size}" if $verbose > 2
+					if $verbose > 2
+						puts "Thread list size: #{Thread.list.size}"
+						Thread.list.each do |thread|
+							puts "Thread: #{thread.inspect} is #{thread.status}"
+						end
+					end
 					sleep 1
 				else
 					puts "breaking now" if $verbose > 2
@@ -350,7 +359,7 @@ def error(s)
 		begin
 			$semaphore.lock
 		rescue ThreadError
-			# we're already locked. Nice.		
+			# we're already locked. This was expected.
 		end
 	end
 	if ($use_colour=="auto") or ($use_colour=="always")
@@ -440,7 +449,7 @@ $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 "
-puts "WhatWeb - Next generation web scanner.\nVersion #{$VERSION} by Andrew Horton aka urbanadventurer from Security-Assessment.com"
+puts "WhatWeb - Next generation web scanner.\nVersion #{$VERSION} by Andrew Horton aka urbanadventurer"
 puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
 puts
 puts "Usage: whatweb [options] <URLs>"
@@ -449,27 +458,28 @@ TARGET SELECTION:
   <URLs>\t\tEnter URLs, filenames or nmap-format IP ranges.
 \t\t\tUse /dev/stdin to pipe HTML directly
   --input-file=FILE, -i\tIdentify URLs found in FILE, eg. -i /dev/stdin
+
+TARGET MODIFICATION:
   --url-prefix\t\tAdd a prefix to target URLs
   --url-suffix\t\tAdd a suffix to target URLs
   --url-pattern\t\tInsert the targets into a URL. Requires --input-file,
 \t\t\teg. www.example.com/%insert%/robots.txt 
-  --example-urls, -e\tAdd example URLs for each selected plugin to the target
-\t\t\tlist. By default will add example URLs for all plugins.
 
-AGGRESSION LEVELS:
-  --aggression, -a=LEVEL The aggression level controls the trade-off between
-\t\t\tspeed/stealth and reliability. Default: 1
-\t\t\tAggression levels are:
-\t1 (Passive)\tMake one HTTP request per target. Except for redirects.
-\t2 (Polite)\tReserved for future use
-\t3 (Aggressive)\tTriggers aggressive plugin functions only when a
-\t\t\tplugin matches passively.
-\t4 (Heavy)\tTrigger aggressive functions for all plugins. Guess a
-\t\t\tlot of URLs like Nikto.
+AGGRESSION:
+  The aggression level controls the trade-off between speed/stealth and
+  reliability.
+  --aggression, -a=LEVEL Set the aggression level. Default: 1
+  Aggression levels are:
+  1. Stealthy\tMakes one HTTP request per target. Also follows redirects.
+  2. Unused
+  3. Aggressive\tCan make a handful of HTTP requests per target. This triggers
+  \t\taggressive plugins for targets only when those plugins are
+  \t\tidentified with a level 1 request first.
+  4. Heavy\tMakes a lot of HTTP requests per target. Aggressive tests from
+  \t\tall plugins are used for all URLs.
 
 HTTP OPTIONS:
   --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/#{$VERSION}.
-  --user, -u=<user:password> HTTP basic authentication
   --header, -H\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a default
 \t\t\theader will replace it. Specifying an empty value, eg.
 \t\t\t\"User-Agent:\" will remove the header.
@@ -478,43 +488,57 @@ HTTP OPTIONS:
 \t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}
   --max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
 
+AUTHENTICATION:
+  --user, -u=<user:password> HTTP basic authentication
+  Add session cookies with --header, e.g. --header \"Cookie: SESSID=1a2b3c;\"
+
 PROXY:
   --proxy\t\t<hostname[:port]> Set proxy hostname and port
 \t\t\tDefault: #{$PROXY_PORT}
   --proxy-user\t\t<username:password> Set proxy user and password
 
 PLUGINS:
-  --plugins, -p\t\tComma delimited set of selected plugins. Default is all.
+  --list-plugins, -l\tList all plugins
+  --plugins, -p=LIST\tSelect plugins. LIST is a comma delimited set of 
+\t\t\tselected plugins. Default is all.
 \t\t\tEach element can be a directory, file or plugin name and
 \t\t\tcan optionally have a modifier, eg. + or -
 \t\t\tExamples: +/tmp/moo.rb,+/tmp/foo.rb
 \t\t\ttitle,md5,+./plugins-disabled/
 \t\t\t./plugins-disabled,-md5
 \t\t\t-p + is a shortcut for -p +plugins-disabled
-  --list-plugins, -l\tList the plugins
-  --info-plugins, -I\tDisplay information for all plugins. Optionally search
-\t\t\twith keywords in a comma delimited list.
-  --grep, -g\t\tSearch for a string. Reports in a plugin called Grep
-  --custom-plugin\tDefine a custom plugin called Custom-Plugin,
+  --info-plugins, -I=PLUGINS\tDisplay detailed information for plugins.
+\t\t\tOptionally search with keywords in a comma delimited
+\t\t\tlist.
+  --grep, -g=STRING\tSearch for STRING in HTTP responses. Reports with a
+\t\t\tplugin named Grep
+  --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
 \t\t\tExamples: \":text=>'powered by abc'\"
-\t\t\t\":regexp=>/powered[ ]?by ab[0-9]/\"
+\t\t\t\":version=>/powered[ ]?by ab[0-9]/\"
 \t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
 \t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
 \t\t\t\"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}\"
-  --dorks\t\t<plugin name>\tList google dorks for the selected plugin
+  --dorks=PLUGIN\tList google dorks for the selected plugin
+  --example-urls, -e=PLUGIN Update the target list with example URLs from
+\t\t\tthe selected plugins.
 
-LOGGING & OUTPUT:
-  --verbose, -v\t\tIncrease verbosity, use twice for plugin development.
+OUTPUT:
+  --verbose, -v\t\tVerbose output includes plugin descriptions. Use twice
+\t\t\tfor debugging.
   --colour,--color=WHEN\tcontrol whether colour is used. WHEN may be `never',
 \t\t\t`always', or `auto'
   --quiet, -q\t\tDo not display brief logging to STDOUT
+  --no-errors\t\tSuppress error messages
+
+LOGGING:
   --log-brief=FILE\tLog brief, one-line output
   --log-verbose=FILE\tLog verbose output
   --log-xml=FILE\tLog XML format
   --log-json=FILE\tLog JSON format
-  --log-sql=FILE\tLog SQL INSERT statements
-  --log-sql-create=FILE\tCreate SQL database tables
-  --log-json-verbose=FILE Log JSON Verbose format
+"+
+#  --log-sql=FILE\tLog SQL INSERT statements
+#  --log-sql-create=FILE\tCreate SQL database tables
+"  --log-json-verbose=FILE Log JSON Verbose format
   --log-magictree=FILE\tLog MagicTree XML format
   --log-object=FILE\tLog Ruby object inspection format
   --log-mongo-database\tName of the MongoDB database
@@ -523,7 +547,6 @@ LOGGING & OUTPUT:
   --log-mongo-username\tMongoDB username. Default: nil
   --log-mongo-password\tMongoDB password. Default: nil
   --log-errors=FILE\tLog errors
-  --no-errors\t\tSuppress error messages
 
 PERFORMANCE & STABILITY:
   --max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
@@ -538,11 +561,14 @@ HELP & MISCELLANEOUS:
   --version\t\tDisplay version information. (WhatWeb #{$VERSION})
 
 EXAMPLE USAGE:
+* Scan example.com
   whatweb example.com
-  whatweb -v example.com
-  whatweb -a 3 example.com
-  whatweb 192.168.1.0/24
-\n"
+* Scan reddit.com slashdot.org with verbose plugin descriptions
+  whatweb -v reddit.com slashdot.org
+* An aggressive scan of mashable.com detects the exact version of Wordpress
+  whatweb -a 3 mashable.com
+* Scan the local network quickly with 255 threads and suppress errors
+  whatweb --no-errors -t 255 192.168.0.0/24\n"
 
 	suggestions=""
 	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
@@ -552,6 +578,11 @@ EXAMPLE USAGE:
 	unless suggestions.empty?
 		print "\nOPTIONAL DEPENDENCIES\n--------------------------------------------------------------------------------\n" + suggestions + "\n"
 	end
+if RUBY_VERSION =~ /^1\.9/
+	puts "WARNING: Ruby 1.9 support is experimental. For stable usage use Ruby 1.8 instead. Please report bugs at https://github.com/urbanadventurer/WhatWeb/issue\n\n"
+end
+puts
+
 end
 
 
@@ -628,7 +659,7 @@ begin
 				PluginSupport.load_plugins
 				PluginSupport.plugin_list
 				exit
-			when '-p','--run-plugins'
+			when '-p','--plugins'
 				plugin_selection=arg
 			when '-I','--info-plugins'                
 				PluginSupport.load_plugins
@@ -640,6 +671,7 @@ begin
 				exit
 			when '-e','--example-urls'
 				$USE_EXAMPLE_URLS=true
+
 			when '--color','--colour'
 				case arg
 					when 'auto'
@@ -802,6 +834,12 @@ if Config::CONFIG['host_os'] =~ /mswin|mingw/
 	$use_colour = false
 end
 
+# example URLs are only allowed with selected plugins, not all plugins
+if $USE_EXAMPLE_URLS and not plugin_selection
+	error "You must select plugins with -p or --plugins to include examples in the target list"
+	exit 1
+end
+
 ### PLUGINS
 plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection
 plugin_selection += ",Grep" if use_custom_grep_plugin and plugin_selection
@@ -863,26 +901,28 @@ while t = next_target
 
 			puts Thread.current.to_s + " started for " + target.to_s if $verbose>1
 			sleep $WAIT unless $WAIT.nil? # wait
-		
+
 			# follow redirects
 			no_redirects =false
 			num_redirects = 0
 			while no_redirects == false do
+				no_redirects=true if target.is_file?
 				# if we redirect 10 times we give up
 				if num_redirects == $MAX_REDIRECTS
-					error(target.to_s + " ERROR: Too many redirects")
+					error("ERROR Too many redirects: #{target.to_s}")
 					no_redirects=true
 					next
 				end
-				
+
 				begin
 					target.open
-				rescue
-					error(err)
+				rescue => err
+					error("ERROR Opening target: #{target.to_s} - #{err}")
+					no_redirects = true # without this we can get stuck in a loop
+					raise if $WWDEBUG
 					next
 				end
 
-				no_redirects=true if target.is_file?
 				if target.is_url? and target.status.nil?
 					# assume all HTTP sites return a status
 					no_redirects=true
@@ -896,9 +936,10 @@ while t = next_target
 				output_list.each do |o|
 					begin
 						o.out(target.to_s, target.status, results)
-					rescue
+					rescue => err
 						#srsly, logging failed
-						error("Error: Logging failed for "+ target.to_s)
+						error("ERROR Logging failed: #{target.to_s} - #{err}")
+						raise if $WWDEBUG==true
 					end
 				end
 
@@ -912,12 +953,12 @@ while t = next_target
 							no_redirects=true 
 						end
 					rescue => err
-						error("Redirection broken: #{err}")
+						error("ERROR Redirection broken: #{target.to_s} - #{err}")
 						no_redirects=true
+						raise if $WWDEBUG==true
 					end
 				end
 			end # while no_redirects
-	
 		end # Thread.new
 
 	while Thread.list.size>($MAX_THREADS+1)
@@ -927,7 +968,9 @@ while t = next_target
 end # targets.each
 
 # close output logs
-output_list.each {|o| o.close }
+output_list.each {|o| 
+	o.close
+}
 
 # shutdown plugins
 Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }

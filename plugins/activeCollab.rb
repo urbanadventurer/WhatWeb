@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+## Version 0.2 by Andrew Horton
+# Added acpowered.gif logo, and powered by footer 
+
 Plugin.define "activeCollab" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
-version "0.1"
+version "0.2"
 description "activeCollab - project management & collaboration tool - Requires PHP and MySQL - Homepage: http://www.activecollab.com/"
 
 # Google results as at 2012-05-02 #
@@ -58,6 +61,8 @@ matches [
 # Login Page # JavaScript # Version Detection
 { :version=>/if\(\!App\.data\) \{ App\.data = \{\}; \}\s+App\.data\.quick_search_url = "[^"]+";\s+App\.data\.ac_version = "([^"]+)";/ },
 
+{:name=>"acpowered.gif", :url=>'/public/assets/images/acpowered.gif', :md5=>"ad6152c96454d96f7b8ec78c08bb789b"},
+{:name=>"powered by footer", :text=>'<p id="powered_by"><a href="http://www.activecollab.com/"'}
 ]
 
 end
