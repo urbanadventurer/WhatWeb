@@ -206,7 +206,9 @@ def match_ghdb(ghdb, body, meta, status, base_uri)
 		filetype = (s.scan(/filetype:"([^"]*)"/i) + s.scan(/filetype:([^"]\w+)/i)).to_s
 		# lame method: check if the URL ends in the filetype
 		unless base_uri.nil?
-			matches << ((base_uri.path.split("?")[0] =~ /#{Regexp.escape(filetype)}$/i).nil? ? false : true)
+			unless base_uri.path.split("?")[0].nil?
+				matches << ((base_uri.path.split("?")[0] =~ /#{Regexp.escape(filetype)}$/i).nil? ? false : true)
+			end
 		end
 		s=s.gsub(/filetype:"([^"]*)"/i,'').gsub(/filetype:([^"]\w+)/i,'')
 	end
