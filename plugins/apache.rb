@@ -131,19 +131,22 @@ matches [
 {:text=>"<TITLE>Test Page for the SSL/TLS-aware Apache Installation on Web Site</TITLE>", :string=>"Default" },
 
 # Default page # Default HTML
-{:text=>"<html><body><h1>It works!</h1></body></html>" },
-{:text=>"<html>Apache is functioning normally</html>" },
+{:text=>"<html><body><h1>It works!</h1></body></html>", :string=>"Default" },
+{:text=>"<html>Apache is functioning normally</html>", :string=>"Default" },
 {:name=>"This IP is being shared among many domains.", 
-:text=>"<body><center>This IP is being shared among many domains.<br>\nTo view the domain you are looking for, simply enter the domain name in the location bar of your web browser.<br>" },
-{ :text=>"Apache is working on your cPanel<sup>&reg;</sup> and WHM&#8482; Server" },
+:text=>"<body><center>This IP is being shared among many domains.<br>\nTo view the domain you are looking for, simply enter the domain name in the location bar of your web browser.<br>", :string=>"Default" },
+{ :text=>"Apache is working on your cPanel<sup>&reg;</sup> and WHM&#8482; Server", :string=>"Default" },
 
-# /icons/apache_pb2.gif
+# /icons/apache_pb.gif
 { :url=>"/icons/apache_pb.gif", :md5=>"48bc8b181b36c9289866a2e30f6afedd" },
-{ :url=>"/icons/apache_pb2.gif", :md5=>"36ccabeb1ad841c6af37660c3865a9c9", :version=>"2" },
+
+# /icons/apache_pb2.gif # 2.x
+{ :url=>"/icons/apache_pb2.gif", :md5=>"36ccabeb1ad841c6af37660c3865a9c9", :version=>"2.x" },
 { :url=>"/icons/apache_pb2.gif", :md5=>"726dac78d3a989a360fc405452a798ee", :version=>"2.2" },
 
-{:regexp=>/^server: Apache/i,  :search=>"headers", :name=>"HTTP Server Header"},
-{:version=>/^Apache\/([\d\.]+)/i, :search=>"headers[server]"},
+# Headers
+{:regexp=>/^Apache/i,  :search=>"headers[server]", :name=>"HTTP Server Header"},
+{:version=>/^Apache\/([\d\.]+)/i, :search=>"headers[server]", :name=>"HTTP Server Header"},
 {:certainty=>75, :module=>"mod_security", :regexp=>/^NOYB$/, :search=>"headers[server]"},
 {:certainty=>75, :name=>"htacess WWW-Authenticate realm", :search=>"headers[www-authenticate]", :regexp=>/Basic realm="htaccess password prompt"/}
 
@@ -153,13 +156,8 @@ matches [
 def passive
 	m=[]
 
-	# Apache HTTP Server Header
+	# HTTP Server Header # Apache
 	if @headers["server"] =~ /^Apache/i
-
-# replaced in matches[]
-# m << { :name=>"HTTP Server Header" }
-# Version Detection
-# m << { :version=>@headers["server"].scan(/^Apache\/([\d\.]+)/i) } if @headers["server"] =~ /^Apache\/([\d\.]+)/i
 
 		# Module Detection
 		m << { :module=>@headers["server"].scan(/[\s](mod_[^\s^\(]+)/).flatten } if @headers["server"] =~ /[\s](mod_[^\s^\(]+)/
@@ -168,19 +166,12 @@ def passive
 
 	end
 
-	# Apache WebSnmp module
+	# HTTP Server Header # Apache WebSnmp module
 	if @headers["server"] =~ /^WebSnmp Server Httpd\/([\d.]+)$/
 		m << { :module=>"WebSnmp/"+@headers["server"].scan(/^WebSnmp Server Httpd\/([\d.]+)$/).flatten.first.to_s }
 	end
 
-	# replaced in matches
-	# mod_security
-	# m << { :certainty=>75, :module=>"mod_security" } if @headers["server"] =~ /^NOYB$/
-	# WWW-Authenticate: Basic realm="htaccess password prompt"
-	# m << { :certainty=>75, :name=>"htacess WWW-Authenticate realm" } if @headers["www-authenticate"] =~ /Basic realm="htaccess password prompt"/
-
-
-	# x-mod-pagespeed Header # mod_pagespeed
+	# x-mod-pagespeed Header # mod_pagespeed module
 	m << { :module=>"mod_pagespeed/"+@headers["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).flatten.first.to_s } if @headers["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
 	
 	# Return passive matches
