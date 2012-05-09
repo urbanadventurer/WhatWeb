@@ -55,15 +55,14 @@ Enter URLs, filenames or nmap-format IP ranges. Use /dev/stdin to pipe HTML dire
 Identify URLs found in FILE
 .TP
 .B \-\-aggression \-a
-1 (Passive) - Make one HTTP request per target. Except
- for redirects.
+1 (Stealthy) - Makes one HTTP request per target. Also follows redirects.
 
-2 (Polite) - Reserved for future use
+2 (Unused) - 
 
-3 (Aggressive) - Triggers aggressive plugin functions only when
- a plugin matches passively.
+3 (Aggressive) - Can make a handful of HTTP requests per target. This triggers aggressive plugins for targets only when those plugins are identified with a level 1 request first.
 
-4 (Heavy) - Trigger aggressive functions for all plugins. Guess a lot of URLs like Nikto.
+4 (Heavy) - Makes a lot of HTTP requests per target. Aggressive tests from
+ all plugins are used for all URLs.
 
 .TP
 .B \-\-list-plugins \-l
