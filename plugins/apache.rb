@@ -142,7 +142,7 @@ matches [
 { :url=>"/icons/apache_pb2.gif", :md5=>"36ccabeb1ad841c6af37660c3865a9c9", :version=>"2" },
 { :url=>"/icons/apache_pb2.gif", :md5=>"726dac78d3a989a360fc405452a798ee", :version=>"2.2" },
 
-{:regexp=>/^server: Apache/i,  :search=>"headers", :name=>"HTTP Server Header"},
+{:regexp=>/^server: Apache/i,  :search=>"headers", :name=>"HTTP Server Header regexp"},
 {:version=>/^Apache\/([\d\.]+)/i, :search=>"headers[server]"},
 {:certainty=>75, :module=>"mod_security", :regexp=>/^NOYB$/, :search=>"headers[server]"},
 {:certainty=>75, :name=>"htacess WWW-Authenticate realm", :search=>"headers[www-authenticate]", :regexp=>/Basic realm="htaccess password prompt"/}
@@ -156,11 +156,6 @@ def passive
 	# Apache HTTP Server Header
 	if @headers["server"] =~ /^Apache/i
 
-# replaced in matches[]
-# m << { :name=>"HTTP Server Header" }
-# Version Detection
-# m << { :version=>@headers["server"].scan(/^Apache\/([\d\.]+)/i) } if @headers["server"] =~ /^Apache\/([\d\.]+)/i
-
 		# Module Detection
 		m << { :module=>@headers["server"].scan(/[\s](mod_[^\s^\(]+)/).flatten } if @headers["server"] =~ /[\s](mod_[^\s^\(]+)/
 		# proxy_html Module Detection
@@ -172,13 +167,6 @@ def passive
 	if @headers["server"] =~ /^WebSnmp Server Httpd\/([\d.]+)$/
 		m << { :module=>"WebSnmp/"+@headers["server"].scan(/^WebSnmp Server Httpd\/([\d.]+)$/).flatten.first.to_s }
 	end
-
-	# replaced in matches
-	# mod_security
-	# m << { :certainty=>75, :module=>"mod_security" } if @headers["server"] =~ /^NOYB$/
-	# WWW-Authenticate: Basic realm="htaccess password prompt"
-	# m << { :certainty=>75, :name=>"htacess WWW-Authenticate realm" } if @headers["www-authenticate"] =~ /Basic realm="htaccess password prompt"/
-
 
 	# x-mod-pagespeed Header # mod_pagespeed
 	m << { :module=>"mod_pagespeed/"+@headers["x-mod-pagespeed"].scan(/^([\d\.]+-[\d]{3})$/).flatten.first.to_s } if @headers["x-mod-pagespeed"] =~ /^([\d\.]+-[\d]{3})$/
