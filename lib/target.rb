@@ -11,7 +11,19 @@ class Target
 
 
 	def inspect
-		"#{target} " + [@uri,@status,@ip,@body,@headers,@raw_headers,@raw_response,@cookies,@md5sum,@tag_pattern,@is_url,@is_file].join(",")
+	#	"#{target} " + [@uri,@status,@ip,@body,@headers,@raw_headers,@raw_response,@cookies,@md5sum,@tag_pattern,@is_url,@is_file].join(",")
+		"URI\n#{'*' * 40}\n#{@uri}" +
+		"status\n#{'*' * 40}\n#{@status}" +
+		"ip\n#{'*' * 40}\n#{@ip}" +
+		"header\n#{'*' * 40}\n#{@headers}" +
+		"cookies\n#{'*' * 40}\n#{@cookies}" +
+		"raw_headers\n#{'*' * 40}\n#{@raw_headers}" +
+		"raw_response\n#{'*' * 40}\n#{@raw_response}" +
+		"body\n#{'*' * 40}\n#{@body}" +
+		"md5sum\n#{'*' * 40}\n#{@md5sum}" +
+		"tag_pattern\n#{'*' * 40}\n#{@tag_pattern}" +
+		"is_url\n#{'*' * 40}\n#{@is_url}" +
+		"is_file\n#{'*' * 40}\n#{@is_file}"
 	end
 
 	def to_s
@@ -169,6 +181,15 @@ class Target
 			@body=res.body
 			@status=res.code.to_i
 			puts @uri.to_s + " [#{status}]" if  $verbose > 0 
+
+=begin
+if @raw_headers =~ /^Server:.*^Server:/m
+	puts "raw_headers-"*20
+	puts @raw_headers
+	exit
+end
+puts @raw_headers+"\n"+"*"*40
+=end
 
 		rescue SocketError => err
 			error(@target + " ERROR: Socket error #{err}")
