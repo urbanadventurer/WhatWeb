@@ -3,7 +3,7 @@ require 'uri'
 
 # monkeypatched to return the real header block
 # This *works* with Ruby1.8.7 and Ruby1.9.1
-# HTTPS loses SPI auth
+# HTTPS loses SPI 
 
 module Net   #:nodoc:
 
@@ -46,6 +46,7 @@ module Net   #:nodoc:
     end
 
     def connect
+	@raw=[]
       if RUBY_VERSION =~ /^1\.8/
 
 
@@ -75,7 +76,8 @@ module Net   #:nodoc:
 		  end
 		  @socket.writeline ''
 		  x,raw=HTTPResponse.read_new(@socket)
-		  @raw << raw
+		  @raw = raw
+
 		  res=x.value
 		end
 		s.connect
@@ -123,7 +125,7 @@ module Net   #:nodoc:
 		    @socket.writeline ''
 		  #  HTTPResponse.read_new(@socket).value
 		  x,raw=HTTPResponse.read_new(@socket)
-		  @raw << raw
+		  @raw = raw
 		  res=x.value
 		  end
 		  timeout(@open_timeout) { s.connect }
@@ -187,8 +189,8 @@ end
     class << HTTPResponse
 
       def read_new(sock)   #:nodoc: internal use only
-	@rawlines=[]
-        httpv, code, msg = read_status_line(sock)
+        x,httpv, code, msg = read_status_line(sock)
+	@rawlines=x+"\n"
         res = response_class(code).new(httpv, code, msg)
         each_response_header(sock) do |k,v|
           res.add_field k, v
@@ -203,10 +205,9 @@ end
 
       def read_status_line(sock)
         str = sock.readline
-	@rawlines << str
         m = /\AHTTP(?:\/(\d+\.\d+))?\s+(\d\d\d)\s*(.*)\z/in.match(str) or
           raise HTTPBadResponse, "wrong status line: #{str.dump}"
-        m.captures
+        [str] + m.captures
       end
 
 
@@ -239,6 +240,7 @@ end
       @body = nil
       @read = false
       @realresponse=[]
+      @rawlines=""
     end
   
 
