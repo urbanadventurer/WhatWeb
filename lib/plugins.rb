@@ -125,7 +125,7 @@ class Plugin
 									elsif eachmatch.is_a?(String)
 										eachmatch
 									end
-								}.flatten.sort.uniq
+								}.flatten.compact.sort.uniq
 				                        r << m
 				                end
 					end
