@@ -4,25 +4,33 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2012-05-18 #
+# Added a couple of matches, google dorks and example urls
+##
 Plugin.define "PluXml" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
-version "0.1"
-description "PluXml - PHP powered CMS [French] - homepage: http://pluxml.org/"
+version "0.2"
+description "PluXml - PHP powered CMS [French] - Homepage: http://pluxml.org/"
 
-# 64 results for "powered by PluXml" @ 2010-10-14
+# Google results as at 2012-05-18 #
+# 150 results for "powered by PluXml" @ 2010-10-14
+#  72 for "par Pluxml en" "Valide xHTML"
+#   5 for intitle:"PluXml - Page d'authentification" inurl:"auth.php"
 
 # Dorks #
 dorks [
-'"powered by PluXml"'
+'"powered by PluXml"',
+'"par Pluxml en" "Valide xHTML"'
 ]
 
 # Examples #
 examples %w|
+demo.pluxml.org/index.php
+demo.pluxml.org/core/admin/
 braceletsbijoux.com/core/admin/
 chopin.julien.free.fr/core/admin/
 christian.helmich.free.fr/kirin/kagefx/pluxml/admin
 christian.helmich.free.fr/kirin/kagefx/
-demo.pluxml.org/core/admin/
 design.axenis.net/core/admin/
 idilles-mariage.com/core/admin/
 klingmobile.com/core/admin/
@@ -30,14 +38,18 @@ pluxtest.pluxthemes.com
 pluxtest.pluxthemes.com/core/admin/
 www.axenis.net
 www.axenis.net/core/admin/
-www.giesdesign.com
 www.giesdesign.com/core/admin/
 www.kagefx.net
+kagefx.sourceforge.net
+www.poweredbyted.com
 www.it-wars.com/core/admin/
 www.yorkiesdelacotin.fr/core/admin/
 www.zeroadteam.com/core/admin/
+www.webcam-teen.fr/core/admin/
+gay.titusblog.com/core/admin/
 |
 
+# Matches #
 matches [
 
 # Version detection
@@ -45,13 +57,19 @@ matches [
 
 # Login page # Powered by text
 { :text=>'par <a href="http://pluxml.org">Pluxml</a></p>' },
-{ :regexp=>/Powered by <a href="http:\/\/pluxml.org[\/]*">Pluxml<\/a>/i },
+{ :regexp=>/Powered by <a href="http:\/\/pluxml\.org/ },
 
 # Login page # Default title
 { :text=>"<title>PluXml - Page d'authentification</title>" },
 
 # Login page # Default HTML
 { :text=>'<p class="auth_return"><a href="../../">Retour au site</a>' },
+
+# Footer Link
+{ :text=>'G&eacute;n&eacute;r&eacute; par <a href="http://pluxml.org" title="Blog ou Cms sans base de donn&eacute;es">PluXml</a>' },
+
+# ./admin/auth.php?p=/core/admin/ # Login Page # Footer Link
+{ :text=>'G&eacute;n&eacute;r&eacute; par <a href="http://pluxml.org">PluXml</a></p>' },
 
 ]
 
