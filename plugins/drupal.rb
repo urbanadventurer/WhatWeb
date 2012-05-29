@@ -15,18 +15,10 @@ author "Andrew Horton"
 version "0.3"
 description "Drupal is an opensource CMS written in PHP. Homepage: http://www.drupal.org"
 
-# hard to identify
-#<a href="http://drupal.org"><img src="/dagboek/misc/powered-black-80x15.png" alt="Powered by Drupal, an open source content management system" title="Powered by Drupal, an open source content management system" width="80" height="15" /></a>  </div>
-#  <script type="text/javascript" src="/misc/drupal.js"></script>
-#  <script type="text/javascript" src="/main/misc/drupal.js"></script>
-# @import "/misc/drupal.css";
-
-# Set-Cookie: SESS6bdd09d4debccdc3a0f49becc449e8d5=2sq674vjn6vig48e3podh3j8e2; expires=Fri, 11 Dec 2009 15:37:52 GMT; path=/; domain=.moby.com
-# Set-Cookie: SESS9795bcd4ea70e3f846e84f29f9491636=57eafcca6400d894772a136fb5889b92; expires=Fri, 11-Dec-2009 15:38:25 GMT; path=/; domain=.save-your-future.com
-
-# ShodanHQ results as at 2011-09-17 #
-# 1,047 for x-drupal-cache
-#    36 for mobileplugin_group
+# ShodanHQ results as at 2012-05-29 #
+# 6,646 for drupal.org
+# 2,790 for x-drupal-cache
+#    50 for mobileplugin_group
 
 # Google results as at 2011-09-17 #
 # 876 for inurl:/user/register +"Powered by Drupal"
@@ -37,14 +29,21 @@ dorks [
 ]
 
 # Examples #
-examples %w| amnesty.org/ appel.nasa.gov/ beta.worldbank.org/ entergy.pewclimate.org/ labs.divx.com/ lindenlab.com/ littlestarprints.com moby.com/ myplay.com/ sequelnaturals.com/ teen.secondlife.com/ www.artwaves.de www.asys.com.br/ www.atomicbop.net www.cristal.com.pe/?adulto=si www.dutchbutnotfromholland.eu/ www.elespectador.com/ www.ensembles.com.ph/ www.foxsearchlight.com/index.php www.freshbrain.org/ www.icsalabs.com/ www.johnnycashonline.com/ www.journalismcenter.org/ www.jovenscriativos.com.br/ www.koalafoundation.org.au/ www.la2day.com/ www.moove.be www.mtv.co.uk/channel/flux www.mulinobianco.it/ www.multiways.com/ www.nowpublic.com/ www.pravda.lt/ www.realismssoftware.com/ www.save-your-future.com www.shock.com.co/ www.sosojuicy.com/ www.spreadfirefox.com/ www.tidningenresultat.se www.ubuntu.com/ www.universitytowers.net/ www.warnerbrosrecords.com 116.12.54.172 97.107.131.55 194.78.165.246 174.143.214.105 79.125.13.223 195.34.165.6 64.207.153.57 62.149.1.2 184.72.243.245 209.235.237.98 |
+examples %w| amnesty.org/ appel.nasa.gov/ beta.worldbank.org/ entergy.pewclimate.org/ labs.divx.com/ lindenlab.com/ littlestarprints.com moby.com/ myplay.com/ sequelnaturals.com/ teen.secondlife.com/ www.artwaves.de www.asys.com.br/ www.atomicbop.net www.cristal.com.pe/?adulto=si www.dutchbutnotfromholland.eu/ www.elespectador.com/ www.ensembles.com.ph/ www.foxsearchlight.com/index.php www.freshbrain.org/ www.icsalabs.com/ www.johnnycashonline.com/ www.journalismcenter.org/ www.jovenscriativos.com.br/ www.koalafoundation.org.au/ www.la2day.com/ www.moove.be www.mtv.co.uk/channel/flux www.mulinobianco.it/ www.multiways.com/ www.nowpublic.com/ www.pravda.lt/ www.realismssoftware.com/ www.save-your-future.com www.shock.com.co/ www.sosojuicy.com/ www.spreadfirefox.com/ www.tidningenresultat.se www.ubuntu.com/ www.universitytowers.net/ www.warnerbrosrecords.com 116.12.54.172 97.107.131.55 194.78.165.246 174.143.214.105 79.125.13.223 195.34.165.6 64.207.153.57 62.149.1.2 184.72.243.245 209.235.237.98 81.137.254.82 23.21.133.51 184.172.190.100 74.204.112.71 106.187.54.63 130.207.32.161 202.27.28.168 69.195.78.78 67.222.35.207 75.56.232.150|
 
 # Matches #
 matches [
 
+# JavaScript
 {:regexp=>/<script type="text\/javascript" src="[^\"]*\/misc\/drupal.js[^\"]*"><\/script>/},
+
+# alt text
 {:regexp=>/<[^>]+alt="Powered by Drupal, an open source content management system"/},
+
+# Stylesheet
 {:regexp=>/@import "[^\"]*\/misc\/drupal.css"/},
+
+# JavaScript
 {:text=>'jQuery.extend(Drupal.settings,'},
 {:certainty=>75, :text=>'Drupal.extend('},
 
@@ -56,6 +55,9 @@ matches [
 
 # x-drupal-cache Header
 { :search=>"headers[x-drupal-cache]", :regexp=>/(HIT|MISS)/ },
+
+# X-Generator Header
+{ :search=>"headers[x-generator]", :version=>/^Drupal ([^\s]+) \(http:\/\/drupal\.org\)$/ },
 
 ]
 
