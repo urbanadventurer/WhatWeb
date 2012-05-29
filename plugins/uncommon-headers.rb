@@ -4,10 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 # Version 0.2
 # removed :certainty=>100
-
+##
 Plugin.define "UncommonHeaders" do
 author "Andrew Horton"
 version "0.2"
@@ -17,7 +16,7 @@ description "Uncommon HTTP server headers. The blacklist includes all the standa
 def passive
 	m=[]
 	found=[]
-	normal_headers=%w|accept-ranges age allow cache-control cachecontrol connection content-disposition content-encoding content-language content-length content-location content-md5 content-range content-type date etag expires host last-modified location mime-version p3p pragma proxy-authenticate refresh server set-cookie status trailer transfer-encoding vary via warning www-authenticate x-aspnet-version x-cache x-cache-lookup x-pad x-powered-by x-runtime x-ua-compatible x-frame-options x-xss-protection x-pingback|
+	normal_headers=%w|accept-ranges age allow cache-control cachecontrol connection content-disposition content-encoding content-language content-length content-location content-md5 content-range content-type date etag expires host last-modified location mime-version p3p pragma proxy-authenticate refresh server set-cookie status trailer transfer-encoding vary via warning www-authenticate x-aspnet-version x-cache x-cache-lookup x-pad x-powered-by x-runtime x-ua-compatible x-frame-options x-xss-protection x-pingback keep-alive|
 	
 	unless @headers.nil?	
 		@headers.each do |x,y|
