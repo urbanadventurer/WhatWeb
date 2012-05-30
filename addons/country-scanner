@@ -1,7 +1,10 @@
 #!/bin/bash
-# country scanner v1
-# scan a country, learn something
+# country scanner v1.1
+# Illustrative example of how to write scripts using whatweb and nmap.
+# Automatically discover samples of web servers and test whatweb
 #
+
+
 GRAY="\033[1;30m"
 RED="\033[0;31m"
 LIGHT_RED="\033[1;31m"
@@ -31,18 +34,19 @@ $LIGHT_BLUE  ______  ____  _____     ____   ____   ____ _______ $BLUE
              \/      \/      \/     \/           $NO_COLOUR
 
 Country Scanner - Sample the web around the world	
-Version v1.0 by urbanadventurer / Andrew Horton
+Version v1.1 by urbanadventurer
 "
 
-N=100000
+N=1000
+SCANBLOCK=10000
 AGENT="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; eSobiSubscriber 2.0.4.16; .NET CLR 3.0.30618)"
 
 usage(){
 	echo "Usage: $0 "
-	echo -e "-c\tcountry"
+	echo -e "-c\tCountry"
 	echo -e "-l\tList countries"
-	echo -e "-h\thelp"
-	echo -e "-n\tNumber of results. 0 for all. Default: $N"
+	echo -e "-h\tHelp"
+	echo -e "-n\tNumber of whatweb log entries. Default: $N"
 	echo
 }
 
@@ -50,7 +54,9 @@ checkdependencies(){
 for c in `echo "nmap geoipgen"`;
 do
 	if [ -z "`which $c`" ]; then
-		echo "$c not found. aborting"
+		echo "$c not found. Aborting"
+		echo "You need to install geoipgen to generate country IP lists"
+		echo "Visit http://www.morningstarsecurity.com/research/geoipgen"
 		exit 1
 	fi
 done
@@ -77,27 +83,44 @@ fi
 
 # find whatweb
 WHATWEB=`dirname "$0"`"/../whatweb"
+FOUND=0
 
-f=`tempfile --prefix scan-`
-g=`tempfile --prefix scan-`  
-h=`tempfile -d . --prefix scan --suffix "-$CC"`
+f=`tempfile -d . --prefix scan- --suffix -geo`
+g=`tempfile -d . --prefix scan- --suffix -nmp`
+h=`tempfile -d . --prefix scan- --suffix "-$CC"`
 
-if [ "$N" = "0" ]; then
-	echo "[Generating all IP addresses in $CC]"
-	geoipgen "$CC" > "$f"
-else
-	echo "[Generating $N IP addresses in $CC]"
-	geoipgen -n "$N" "$CC" > "$f"
-fi
+echo "Scan of $CC started at `date`"
+echo "--------------------------------------------------"
+echo
 
-echo "[Scanning for port 80]"
-nmap  --open -PN -n -p 80 -i "$f" -oG "$g" --min-hostgroup 5000 --max-retries 0 --host-timeout 60s --min-rate 500 2>/dev/null >/dev/null
-fgrep open "$g"  | cut -d ' ' -f 2 > "$f"
-rm -f "$g"
-echo "[Found "`wc -l "$f"`" IP addresses]"
+while [ "$FOUND" -le "$N" ]; do
 
-echo "[Scanning with WhatWeb. Logging to $h]"
-# -p +  
-$WHATWEB --no-errors -U "$AGENT" -t 1250 --read-timeout 10 --log-brief "$h" -i "$f"  2>/dev/null 
+	echo "[*] Generating $SCANBLOCK IP addresses in $CC"
+	echo "    geoipgen -n \"$SCANBLOCK\" \"$CC\" > \"$f\""
+	geoipgen -n "$SCANBLOCK" "$CC" > "$f"
+	echo
 
+	echo "[*] Port scanning for web servers"
+	echo "    nmap  --open -PN -n -p 80 -i \"$f\" -oG \"$g\" --max-retries 1 --max-rtt-timeout 30s --min-hostgroup 4096 --host-timeout 30s > /dev/null 2>/dev/null"
+	nmap  --open -PN -n -p 80 -i "$f" -oG "$g" --max-rtt-timeout 10s --min-hostgroup 4096 --host-timeout 10s > /dev/null 2>/dev/null 
+	echo
+	fgrep open "$g"  | cut -d ' ' -f 2 > "$f"
+
+	#rm -f "$g"
+	echo "[*] Found "`wc -l "$f" |cut -d ' ' -f 1`" IPs with TCP port 80 open"
+	echo
+	echo "[*] Scanning with WhatWeb. Logging to $h"
+	# -p +  
+	echo "    $WHATWEB --no-errors -U \"$AGENT\" -t 500 --read-timeout 30 --log-brief \"$h\" -i \"$f\""
+	$WHATWEB --no-errors -U "$AGENT" -t 50 --log-brief "$h" -i "$f" 
+	echo
+	FOUND=`wc -l "$h" | cut -d ' ' -f 1`
+	#rm -f "$f"
+	echo "[*] Found $FOUND web servers so far"
+	echo
+done
+
+echo "[*] Finished at `date`"
+
+rm -f "$f" "$g"
 

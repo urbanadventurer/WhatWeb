@@ -72,7 +72,8 @@ class Target
 			# [400] http://www.alexa.com  [200] http://www.alexa.com/
 			@uri.path = "/" if @uri.path.empty?
 		else
-			@uri=URI.parse("file://"+@target)
+			# @uri=URI.parse("file://"+@target)
+			@uri=URI.parse("")
 		end
 	end
 
