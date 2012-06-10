@@ -26,7 +26,6 @@ matches [
 # Form HTML
 { :text=>'<form name="form1" method="post" action="trackerlogin.aspx" id="form1">' },
 
-
 ]
 
 end
