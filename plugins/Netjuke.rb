@@ -1,0 +1,44 @@
+##
+# This file is part of WhatWeb and may be subject to
+# redistribution and commercial restrictions. Please see the WhatWeb
+# web site for more information on licensing and terms of use.
+# http://www.morningstarsecurity.com/research/whatweb
+##
+Plugin.define "Netjuke" do
+author "Brendan Coles <bcoles@gmail.com>" # 2012-07-13
+version "0.1"
+description "Netjuke is a Web-Based Audio Streaming Jukebox - Homepage: http://sourceforge.net/projects/netjuke"
+
+# Google results as at 2012-07-13 #
+# 13 for inurl:"search.php?do=list.tracks"
+
+# Dorks #
+dorks [
+'inurl:"search.php?do=list.tracks"'
+]
+
+# Examples #
+examples %w|
+musicalibre.es/netjuke/
+megimg.info/orthodoxmusic/
+www.jimmysizzle.com/netjuke/
+www.singspirationtime.com/
+www.geertjansen.nl/netjuke/
+music.perfect.net.ua
+mp3.im7.de
+|
+
+# Matches #
+matches [
+
+# HTML Comments
+{ :text=>'<!-- Start Primary Header -->' },
+{ :text=>'<!-- Begin Primary Footer -->' },
+
+# JavaScript # onClick
+{ :text=>"onClick=\"window.open('alphabet.php?do=alpha.artists','NetjukeRemote'" },
+
+]
+
+end
+
