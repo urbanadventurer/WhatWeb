@@ -17,7 +17,6 @@ description "Dell KACE System Management Appliance - Homepage: http://www.kace.c
 examples %w|
 66.195.246.235
 169.199.80.116
-209.161.160.100
 67.129.64.8
 97.65.106.46
 114.111.132.51
@@ -34,6 +33,9 @@ matches [
 
 # X-DellKACE-Host # Server Name Detection
 { :search=>"headers[x-dellkace-host]", :string=>/^(.+)$/ },
+
+# X-DellKACE-Appliance # Model Detection
+{ :search=>"headers[x-dellkace-appliance]", :model=>/^(.+)$/ },
 
 # X-KBOX-Version # Version Detection
 { :search=>"headers[x-kbox-version]", :version=>/^(.+)$/ },
