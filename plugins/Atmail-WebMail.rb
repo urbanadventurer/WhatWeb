@@ -4,21 +4,24 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2012-07-29 #
+# Updated dorks
+##
 # Version 0.2 # 2011-01-07 #
 # Updated version detection method
 # Added MailServer detection
 ##
 Plugin.define "Atmail-WebMail" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-26
-version "0.2"
+version "0.3"
 description "Atmail allows users to access IMAP Mailboxes on any server of your choice. You and your users can experience webmail via a fluid, intuitive interface that excels aesthetically and functionally; a benchmark that very few webmail clients have achieved. - homepage: http://www.atmail.com/webmail-client/"
 
-# Google results as at 2010-09-26 #
-# 3 results for "powered by Atmail WebMail"
+# Google results as at 2012-07-29 #
+# 333 for "Powered by Atmail" "WebAdmin Control Panel" "Email" "Password" "More" " Mailserver" "Protocol" "Language"
 
 # Dorks #
 dorks [
-'"powered by Atmail WebMail"'
+'"Powered by Atmail" "WebAdmin Control Panel" "Email" "Password" "More" " Mailserver" "Protocol" "Language"'
 ]
 
 # Examples #
@@ -27,6 +30,12 @@ a6demo.atmail.com
 atmail6.datawave.net.au/index.php/admin/
 demo.atmail.com
 webmail.uo.edu.cu/wclient/rect/index.php
+webmail1.blacksun.ca
+mail.falmouthmass.us
+mail.moosebytes.net
+webmail.as.gov
+https://mail.citynetwork.se/
+https://email.goidp.com/
 |
 
 # Matches #
