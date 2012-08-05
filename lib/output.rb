@@ -262,7 +262,18 @@ class OutputXML < Output
 	def initialize(f=STDOUT)
 		super
 		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
-		@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
+
+		# only output <?xml line if it's a new file or STDOUT
+		if RUBY_VERSION =~ /^1\.8/
+			if @f.stat.size == 0
+				@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
+			end
+		else
+			if @f.size == 0
+				@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
+			end
+		end
+
 		@f.puts "<log>"
 	end
 
@@ -347,7 +358,17 @@ class OutputMagicTreeXML < Output
 	def initialize(f=STDOUT)
 		super
 		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
-		@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
+
+		# only output <?xml line if it's a new file or STDOUT
+		if RUBY_VERSION =~ /^1\.8/
+			if @f.stat.size == 0
+				@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
+			end
+		else
+			if @f.size == 0
+				@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
+			end
+		end
 		@f.puts '<magictree class="MtBranchObject">'
 	end
 

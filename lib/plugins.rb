@@ -543,7 +543,3 @@ class PluginChoice
 end
 
 
-
-
-
-
