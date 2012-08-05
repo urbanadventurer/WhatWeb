@@ -305,22 +305,22 @@ class OutputXML < Output
 					certainty = plugin_results.map {|x|
 		x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
 					version = plugin_results.map {|x|
-		x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.join(",")
+		x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq
 					os = plugin_results.map {|x|
-		x[:os] unless x[:os].class==Regexp}.flatten.compact.sort.uniq.join(",")
+		x[:os] unless x[:os].class==Regexp}.flatten.compact.sort.uniq
 					string = plugin_results.map {|x|
-		x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.join(",")
+		x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq
 					model = plugin_results.map {|x|
-		x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq.join(",")
+		x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq
 					firmware = plugin_results.map {|x|
-		x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq.join(",")
+		x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq
 					filepath = plugin_results.map {|x|
-		x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.join(",")
+		x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq
 
 					account = plugin_results.map {|x|
-		x[:account] unless x[:account].class==Regexp}.flatten.compact.sort.uniq.join(",")
+		x[:account] unless x[:account].class==Regexp}.flatten.compact.sort.uniq
 					modules = plugin_results.map {|x|
-		x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq.join(",")
+		x[:module] unless x[:module].class==Regexp}.flatten.compact.sort.uniq
 
 					# Output results
 					@f.puts "\t\t<certainty>#{escape(certainty)}</certainty>" if certainty and certainty < 100
@@ -428,13 +428,13 @@ class OutputMagicTreeXML < Output
 
 				if !plugin_results.empty? and plugin_name !~ /^IP$/ and plugin_name !~ /^Country$/
 					certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
-					versions = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq.to_a
-					strings = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq.to_a
-					models = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq.to_a
-					firmwares = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq.to_a
-					filepaths = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq.to_a
-					accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq.to_a
-					modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq.to_a
+					versions = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq
+					strings = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq
+					models = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq
+					firmwares = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq
+					filepaths = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq
+					accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq
+					modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq
 
 					# URL node # plugin node
 					@f.write "<url>#{escape(target)}<#{escape(plugin_name)}>"
