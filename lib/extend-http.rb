@@ -6,15 +6,15 @@ require 'uri'
 
 # HTTPS loses SPI 
 
-# The ExtendedHTTP Module is used to extend the HTTP class
+# The ExtendedHTTP class is used in place of the HTTP class
 # for example,
-# http=Net::HTTP.new(@uri.host,@uri.port)
-# http.extend ExtendedHTTP
+# http=ExtendedHTTP.new(@uri.host,@uri.port)
 
-# The HTTPResponse is still Monkey Patched!
+# The ExtendedHTTP class uses the ExtendedHTTPResponse class
 
-module ExtendedHTTP   #:nodoc:
+class ExtendedHTTP < Net::HTTP   #:nodoc:
    include Net
+
 #  class HTTP < Protocol
 
     # Creates a new Net::HTTP object for the specified +address+.
@@ -83,7 +83,7 @@ module ExtendedHTTP   #:nodoc:
 		    @socket.writeline "Proxy-Authorization: Basic #{credential}"
 		  end
 		  @socket.writeline ''
-		  x,raw=HTTPResponse.read_new(@socket)
+		  x,raw=ExtendedHTTPResponse.read_new(@socket)
 		  @raw = raw
 
 		  res=x.value
@@ -104,6 +104,7 @@ module ExtendedHTTP   #:nodoc:
 	      if use_ssl?
 		ssl_parameters = Hash.new
 		iv_list = instance_variables
+
 		SSL_ATTRIBUTES.each do |name|
 		  ivname = "@#{name}".intern
 		  if iv_list.include?(ivname) and
@@ -132,7 +133,7 @@ module ExtendedHTTP   #:nodoc:
 		   end
 		    @socket.writeline ''
 		  #  HTTPResponse.read_new(@socket).value
-		  x,raw=HTTPResponse.read_new(@socket)
+		  x,raw=ExtendedHTTPResponse.read_new(@socket)
 		  @raw = raw
 		  res=x.value
 		  end
@@ -171,7 +172,7 @@ module ExtendedHTTP   #:nodoc:
         begin_transport req
         req.exec @socket, @curr_http_version, edit_path(req.path)
         begin
-          res,y = HTTPResponse.read_new(@socket)
+          res,y = ExtendedHTTPResponse.read_new(@socket)
 	  @raw << y
 	  res
         end while res.kind_of?(HTTPContinue)
@@ -187,14 +188,12 @@ module ExtendedHTTP   #:nodoc:
 
       res
     end
-#end
 end
 
 
-# MonkeyPatching still here
-###
-module Net
-  class HTTPResponse   # reopen
+
+ class ExtendedHTTPResponse < Net::HTTPResponse # reopen
+	include Net
 
     class << self
 
@@ -234,8 +233,9 @@ module Net
       end
     end
 
+###################
     public 
-    include HTTPHeader
+#    include HTTPHeader
 
     def initialize(httpv, code, msg)   #:nodoc: internal use only
       @http_version = httpv
@@ -247,7 +247,8 @@ module Net
       @realresponse=[]
       @rawlines=""
     end
-  end
 
-end   # module Net
+end
+
+
 

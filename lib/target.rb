@@ -138,13 +138,10 @@ class Target
 	def open_url(options)
 		begin
 			if $USE_PROXY == true
-				http=Net::HTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host,@uri.port)
+				http=ExtendedHTTP::Proxy($PROXY_HOST,$PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host,@uri.port)
 			else
-				http=Net::HTTP.new(@uri.host,@uri.port)
+				http=ExtendedHTTP.new(@uri.host,@uri.port)
 			end
-
-			# add extension to Net::HTTP
-			http.extend ExtendedHTTP
 
 			# set timeouts
 			http.open_timeout = $HTTP_OPEN_TIMEOUT
