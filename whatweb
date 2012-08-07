@@ -102,7 +102,8 @@ require 'lib/plugins.rb'
 require 'lib/output.rb'
 require 'lib/colour.rb'
 require 'lib/tld.rb'
-require 'lib/monkeypatch-http.rb'
+#require 'lib/monkeypatch-http.rb'
+require 'lib/extend-http.rb'
 
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact

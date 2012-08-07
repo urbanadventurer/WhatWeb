@@ -142,7 +142,10 @@ class Target
 			else
 				http=Net::HTTP.new(@uri.host,@uri.port)
 			end
-		
+
+			# add extension to Net::HTTP
+			http.extend ExtendedHTTP
+
 			# set timeouts
 			http.open_timeout = $HTTP_OPEN_TIMEOUT
 			http.read_timeout = $HTTP_READ_TIMEOUT
@@ -167,6 +170,7 @@ class Target
 				req=Net::HTTP::Post.new(getthis, $CUSTOM_HEADERS)
 	                        req.set_form_data(options[:data])
 			end
+
 
 			if $BASIC_AUTH_USER	
 				req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
