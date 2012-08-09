@@ -4,39 +4,36 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "mrtg" do
+# Version 0.2 by Andrew Horton
+# Replaced matches, replaced Google dork, replaced examples
+# Plugin still needs to be tested on all versions of MRTG
+
+Plugin.define "MRTG" do
 author "Aung Khant <http://yehg.net/>" # 2012-02-10
-version "0.1"
+version "0.2"
 description "MRTG - Multi Router Traffic Grapher - http://oss.oetiker.ch/mrtg/"
 
-# Google results as at 2012-02-13 #
-# 1 for inurl:"aggregated.html" intitle:"Aggregated traffic"
+# Google results as at 2012-08-09 #
+# 8330 for intitle:"MRTG Index Page"
 
 # Examples #
 examples %w|
-http://www.six.sk/mrtg/aggregated.html
+http://12.239.56.37/pix.htm
+http://www.lisp4.net/mrtg/
+www.mozix.org.mz/mrtg/
 |
 
 # Matches #
 matches [
-{:text=>'title="Multi Router Traffic Grapher" alt="Multi Router Traffic Grapher"'},
+{:name=>"Title", :regexp=>/<TITLE>MRTG Index Page<\/TITLE>/i},
+{:name=>"Logo in footer", :regexp=>/HREF="http:\/\/oss.oetiker.ch\/mrtg\/"><IMG[\s]*BORDER=0 SRC="mrtg-l.png"/mi},
+
+{:name=>"Logo in footer2", :regexp=>/HREF="http:\/\/www.ee.ethz.ch\/~oetiker\/webtools\/mrtg\/">.*src=mrtg-l.png alt=MRTG/mi},
+
+{:name=>"Logo image", :url=>"/mrtg-l.png", :md5=>"241244d0d8845dcad7e891e84e79d63f"},
+{:version=>/<title>MRTG Index Page.*version ([^<]+)<\/font><\/td>/mi}
+
 ]
-
-# Aggressive #
-def aggressive
-	m=[]
-
-	target = URI.join(@base_uri.to_s,'mrtg/aggregated.html').to_s	
-	status,url,ip,body,headers=open_target(target)	
-	if status == 200
-
-		if body =~ /title="Multi Router Traffic Grapher" alt="Multi Router Traffic Grapher"/
-			m << {:name => 'HTML Body'}
-		end
-
-	end
-
-end
 
 end
 
