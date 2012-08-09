@@ -1,5 +1,6 @@
 Version 0.4.8-dev Unreleased
-* Added more than 300 new plugins
+* Added support for Ruby 1.9.1
+* Added over 700 new plugins
 * Added aggressive version detection using md5 static file matches to several plugins
 * Added support for raw HTTP headers when scanning local files
 * Added --dorks <plugin name> to return google dorks for the selected plugin
@@ -7,26 +8,24 @@ Version 0.4.8-dev Unreleased
 * Added ./addons/hunter
 * Added ./addons/gggooglescan
 * Added ./addons/country-scanner
+* Added SQL logging with `--log-sql` and `--log-sql-create` arguments. These are not listed in the usage.
+* Added raw header support by monkey patching the net/http library
+* Added context searching for plugin matches[]. Added the matches keyword, :search. Values can be "headers","headers[server]"(or any other HTTP header),"body"(default), "all" (the raw headers + body)
+* Added methods for aggressive plugins to send HEAD and POST requests
+* Added --grep, -g option to be easier than --custom-plugin. (Requested by Scott Bell)
+* Removed the spidering feature and dependence on the customised and unsupported Anemone gem
+* Removed the extra_urls feature
+* Removed dependency on em-resolv-replace
 * Updated whatweb.xsl
 * Fixed a bug causing Mongo DB logging to fail
 * Fixed a bug causing brief logging to not escape special characters
-* Added SQL logging with `--log-sql` and `--log-sql-create` arguments. These are not listed in the usage.
-* Removed the spidering feature and dependence on the customised and unsupported Anemone gem
-* Removed the extra_urls feature
-* Added raw header support by monkey patching the net/http library
-* Targets from input files are now executed ascending order
-* Redesigned and refactored much of Whatweb's code. Introduced the Target class
-* Improved support for Ruby 1.9.1
-* Added context searching for plugin matches[]. Added the matches keyword, :search. Values can be "headers","headers[server]"(or any other HTTP header),"body"(default), "all" (the raw headers + body)
-* Added methods for aggressive plugins to send HEAD and POST requests
 * Fixed meta refresh redirection but with HTML entities in the URL
-* Added --grep, -g option to be easier than --custom-plugin. (Requested by Scott Bell)
+* Redesigned and refactored much of Whatweb's code. Introduced the Target class
+* Targets from input files are now executed ascending order
 * Better support for UTF-8 encoded strings in plugins.
 * :status and :url are now logical AND with other matches. They cannot match in isolation unless with each other.
 * Updated Country plugin. Fixed IPv6 bug
-* Removed dependency on em-resolv-replace
 * Changed version from 0.4.8 to 0.4.8-dev to show development version
-* Updated usage
 * Plugin brief output is now sorted alphabetically by plugin name
 
 Version 0.4.7 Released April 5th 2011
