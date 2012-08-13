@@ -844,7 +844,7 @@ rescue StandardError, GetoptLong::Error => err
 end
 
 # sanity check # Disable colours in Windows environments
-if Config::CONFIG['host_os'] =~ /mswin|mingw/
+if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
 	$use_colour = false
 end
 
