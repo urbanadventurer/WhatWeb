@@ -59,20 +59,25 @@ end
 
 ### gem detection & loading
 def gem_available?(gemname)
+	#  gem_available_new_rubygems?(gemname) or gem_available_old_rubygems?(gemname)
 	if defined?(Gem::Specification)
-	  gem_available_new_rubygems?(gemname)
+		gem_available_new_rubygems?(gemname)
 	else
-	  gem_available_old_rubygems?(gemname)
+		gem_available_old_rubygems?(gemname)
 	end
 end
 
 # unlikely to be needed anymore
 def gem_available_old_rubygems?(gemname)
-  Gem.available?(gemname)
+	Gem.available?(gemname)
 end
 
 def gem_available_new_rubygems?(gemname)
-  Gem::Specification.methods.include?(:find_all_by_name) and not Gem::Specification.find_all_by_name(gemname).empty?
+	begin
+		true if Gem::Specification.find_by_name(gemname)
+	rescue LoadError
+		false 
+	end
 end
 
 gems = %w|json mongo rchardet |
@@ -80,9 +85,10 @@ gems = %w|json mongo rchardet |
 gems.each do |thisgem|
 	begin
 		require 'rubygems' # rubygems is optional
-		if gem_available?(thisgem) # 			
+		if gem_available?(thisgem) #
 			require thisgem			
-		end
+		else
+end
 	rescue LoadError
 		# that failed.. no big deal
 		raise if $WWDEBUG==true
