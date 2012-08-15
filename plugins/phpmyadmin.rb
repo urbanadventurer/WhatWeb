@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.4 # 2012-08-16 # Andrew Horton
+# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
+##
 # Version 0.3 # 2011-04-06 #
 # Added aggressive md5 matches
 ##
@@ -15,7 +18,7 @@
 ##
 Plugin.define "phpMyAdmin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
-version "0.3"
+version "0.4"
 description "phpMyAdmin is a free software tool written in PHP intended to handle the administration of MySQL over the World Wide Web. - Homepage: http://www.phpmyadmin.net/home_page/index.php"
 
 # Google results as at 2010-10-26 #
@@ -249,7 +252,7 @@ files=[
 	to_download.each do |d|
 		target = URI.join(@base_uri.to_s,d).to_s
 		status,url,ip,body,headers=open_target(target)
-		downloads[d] = {:md5sum=>MD5.new(body).to_s}
+		downloads[d] = {:md5sum=>Digest::MD5.hexdigest(body).to_s}
 	end
 
 	# Compare file hashes to known hashes
