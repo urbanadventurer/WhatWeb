@@ -559,7 +559,11 @@ class OutputJSON < Output
 		if obj.class == String
 #			obj=obj.upcase!
 #			obj=Iconv.iconv("UTF-8",@charset,obj).join
-			obj=obj.gsub!(/^.*$/,Iconv.iconv("UTF-8",@charset,obj).join) # this is a bad way to do this but it works			
+
+#pp @charset
+#pp obj.encoding
+# read this - http://blog.grayproductions.net/articles/ruby_19s_string
+			obj=obj.gsub!(/^.*$/,Iconv.iconv("UTF-8",@charset,obj).join) # this is a bad way to do this but it works
 		end
 	end
 

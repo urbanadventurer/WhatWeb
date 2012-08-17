@@ -3,6 +3,9 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
+#
+# Version 0.4 # 2012-08-16 # Andrew Horton
+# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
 ##
 # Version 0.3 # 2011-04-09 # Brendan Coles <bcoles@gmail.com>
 # Added aggressive md5 matches
@@ -12,7 +15,7 @@
 ##
 Plugin.define "Drupal" do
 author "Andrew Horton"
-version "0.3"
+version "0.4"
 description "Drupal is an opensource CMS written in PHP. Homepage: http://www.drupal.org"
 
 # ShodanHQ results as at 2012-05-29 #
@@ -123,7 +126,7 @@ files=[
 	to_download.each do |d|
 		target = URI.join(@base_uri.to_s,d).to_s	
 		status,url,ip,body,headers=open_target(target)
-		downloads[d] = {:md5sum=>MD5.new(body).to_s}	
+		downloads[d] = {:md5sum=>Digest::MD5.hexdigest(body).to_s}	
 	end
 
 	# Compare file hashes to known hashes

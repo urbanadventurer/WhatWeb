@@ -4,12 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2012-08-16 # Andrew Horton
+# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
+##
 # Version 0.2 # 2011-04-09 # Brendan Coles <bcoles at gmail dot com>
 # Added aggressive md5 matches
 ##
 Plugin.define "Serendipity" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
-version "0.2"
+version "0.3"
 description "Serendipity - a PHP Weblog/Blog software. Serendipity is a PHP-powered weblog application which gives the user an easy way to maintain an online diary, weblog or even a complete homepage. - homepage: http://www.s9y.org"
 
 # Google results as at 2011-02-24 #
@@ -128,7 +131,7 @@ files=[
 	to_download.each do |d|
 		target = URI.join(@base_uri.to_s,d).to_s	
 		status,url,ip,body,headers=open_target(target)
-		downloads[d] = {:md5sum=>MD5.new(body).to_s}	
+		downloads[d] = {:md5sum=>Digest::MD5.hexdigest(body).to_s}	
 	end
 
 	# Compare file hashes to known hashes

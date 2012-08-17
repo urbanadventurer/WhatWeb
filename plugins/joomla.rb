@@ -3,7 +3,10 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
-
+##
+# Version 0.9 # 2012-08-16 # Andrew Horton
+# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
+##
 # Vesion 0.8 # Andrew
 #  Added aggressive match for /administrator/. Use match now
 ##
@@ -108,7 +111,7 @@ def aggressive
 	to_download.each do |d|	
 		target = URI.join(@base_uri.to_s,d).to_s	
 		status,url,ip,body,headers=open_target(target)
-		downloads[d] = {:md5sum=>MD5.new(body).to_s}	
+		downloads[d] = {:md5sum=>(Digest::MD5.hexdigest(body).to_s)}
 	end
 
 	# Compare md5 hashes # this could be improved
