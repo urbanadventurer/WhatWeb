@@ -28,10 +28,13 @@ matches [
 { :url=>"/uptime.html", :text=>'<body bgcolor="#4c555a" style="margin: 0; padding: 0" onload="getSysUptime()">' },
 
 # / # Version Detection
-{ :version=>/<div><p style="font-size: 90%; color: #aaa; line-height: 14px;"><strong>Distro Release:&nbsp;<\/strong>Openfiler NSA ([^\s]+)/ },
+{ :version=>/<div><p style="font-size: 90%; color: #aaa; line-height: 14px;"><strong>Distro Release:&nbsp;<\/strong>Openfiler [EN]SA ([^\s]+)/ },
 
 # / # GUI Version Detection
 { :string=>/<strong>GUI Version:&nbsp;<\/strong>([^<^\s]+)<\/p><\/div>/ },
+
+# / # Year Detection
+{ :string=>/&copy; 2001 - (2[\d]{3}) <a href="http:\/\/www\.openfiler\.com\/">Openfiler<\/a>\. All rights reserved\.<br \/>/ },
 
 ]
 
