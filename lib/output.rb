@@ -168,7 +168,10 @@ class OutputBrief < Output
 
 def escape(s)
 	# Encode all special characters # More info: http://www.asciitable.com/
-	r=/[^\x20-\x5A\x5E-\x7E]/
+	#r=/[^\x20-\x5A\x5E-\x7E]/
+
+	# Encode low ascii non printable characters
+	r=/[\x00-\x1F]/
 
 	# based on code for CGI.escape
 	s.gsub(r) do |x|
@@ -563,6 +566,11 @@ class OutputJSON < Output
 #pp obj.encoding
 # read this - http://blog.grayproductions.net/articles/ruby_19s_string
 			obj=obj.gsub!(/^.*$/,Iconv.iconv("UTF-8",@charset,obj).join) # this is a bad way to do this but it works
+
+	#	obj=obj.force_encoding("ASCII-8BIT")
+#puts obj.encoding.name
+#		obj.encode!("UTF-8",{:invalid=>:replace,:undef=>:replace})
+
 		end
 	end
 
@@ -607,13 +615,15 @@ class OutputJSON < Output
 		end
 
 		@charset=results.map {|n,r| r[0][:string] if n=="Charset" }.compact.first
+
 		unless @charset.nil? or @charset == "Failed"
 			utf8_elements!(foo) # convert foo to utf-8
 			flatten_elements!(foo)			
 		end
 
+
 		$semaphore.synchronize do 
-			@f.puts JSON::fast_generate(foo)
+			@f.puts JSON::generate(foo)
 		end
 	end
 end
@@ -667,7 +677,7 @@ class OutputMongo < Output
 		if obj.class == String
 #			obj=obj.upcase!
 #			obj=Iconv.iconv("UTF-8",@charset,obj).join
-			obj=obj.gsub!(/^.*$/,Iconv.iconv("UTF-8",@charset,obj).join) # this is a bad way to do this but it works			
+			obj=obj.gsub!(/^.*$/,Iconv.iconv("UTF-8",@charset,obj).join) # this is a bad way to do this but it works	
 		end
 	end
 

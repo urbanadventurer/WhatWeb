@@ -177,6 +177,8 @@ class Target
 			@headers={}; res.each_header {|x,y| @headers[x]=y }
 			@headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless @headers["set-cookie"].nil?
 			@body=res.body
+# body is ASCII-8BIT at this stage
+
 			@status=res.code.to_i
 			puts @uri.to_s + " [#{status}]" if  $verbose > 0 
 
