@@ -501,7 +501,7 @@ HTTP OPTIONS:
 
 AUTHENTICATION:
   --user, -u=<user:password> HTTP basic authentication
-  Add session cookies with --header, e.g. --header \"Cookie: SESSID=1a2b3c;\"
+  --cookie, -c=COOKIES\tProvide cookies, e.g. 'name=value; name2=value2  '
 
 PROXY:
   --proxy\t\t<hostname[:port]> Set proxy hostname and port
@@ -654,6 +654,7 @@ opts = GetoptLong.new(
       [ '--open-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--header','-H', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--cookie','-c', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--user','-u', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--debug', GetoptLong::NO_ARGUMENT ],
@@ -815,6 +816,13 @@ begin
 					$CUSTOM_HEADERS[x.first]=x.last
 				rescue
 					raise("Invalid --header parameter.")
+				end
+			when '-c','--cookie'
+				begin
+					raise if arg.empty?
+					$CUSTOM_HEADERS["Cookie"]=arg
+				rescue
+					raise("Cookie require a parameter, e.g. name=value; name2=value2")
 				end
 			when '-u','--user'
 				$BASIC_AUTH_USER=arg.split(":").first
