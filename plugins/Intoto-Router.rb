@@ -41,13 +41,13 @@ ip67-153-108-0.z108-153-67.customer.algx.net
 # Matches #
 matches [
 
-# Model Detection # Also used by Nortel router
-{ :certainty=>75, :model=>/<td class="headtext" nowrap>Router Model: (<font size=2>)?<b>([^\s^<]+)[\s]*(&nbsp;)?<\/b><\//, :offset=>1 },
+# Model Detection # Also used by other manufacturers
+{ :certainty=>25, :model=>/<td class="headtext" nowrap>Router Model: (<font size=2>)?<b>([^\s^<]+)[\s]*(&nbsp;)?<\/b><\//, :offset=>1 },
 
 # td class="greytitle"
 { :text=>'<td class="greytitle" nowrap><b>About Device Manager </b></td> ' },
 
-# Telnet link # Also used by Nortel router
+# Telnet link # Also used by other manufacturers
 { :certainty=>25, :text=>'<td class="headtext" nowrap><font class="yellowbullet">&#149;</font> <a href="javascript:telnetToBox();">Telnet</a></td>' },
 
 # body HTML
