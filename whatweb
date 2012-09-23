@@ -113,13 +113,10 @@ require 'lib/plugins.rb'
 require 'lib/output.rb'
 require 'lib/colour.rb'
 require 'lib/tld.rb'
-#require 'lib/monkeypatch-http.rb'
 require 'lib/extend-http.rb'
 
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
-
-
 
 
 
@@ -177,7 +174,6 @@ def decode_html_entities(s)
 	html_entities.each_pair {|from,to| t.gsub!(from,to) }
 	t
 end
-
 
 def certainty_to_words(p)
 	case p
@@ -471,7 +467,8 @@ puts "
 TARGET SELECTION:
   <URLs>\t\tEnter URLs, filenames or nmap-format IP ranges.
 \t\t\tUse /dev/stdin to pipe HTML directly
-  --input-file=FILE, -i\tIdentify URLs found in FILE, eg. -i /dev/stdin
+  --input-file=FILE, -i\tIdentify URLs found in FILE. You can pipe
+\t\t\thostnames or URLs directly with -i /dev/stdin
 
 TARGET MODIFICATION:
   --url-prefix\t\tAdd a prefix to target URLs
@@ -855,9 +852,10 @@ if $USE_EXAMPLE_URLS and not plugin_selection
 end
 
 ### PLUGINS
-plugin_selection += ",Custom-Plugin" if use_custom_plugin and plugin_selection
-plugin_selection += ",Grep" if use_custom_grep_plugin and plugin_selection
-$plugins_to_use = PluginSupport.load_plugins(plugin_selection ) # load all the plugins
+plugin_selection += ",+Custom-Plugin" 	if use_custom_plugin and plugin_selection
+plugin_selection += ",+Grep" 		if use_custom_grep_plugin and plugin_selection
+$plugins_to_use = PluginSupport.load_plugins(plugin_selection)
+# load all the plugins
 
 # sanity check # no plugins?
 if $plugins_to_use.size == 0

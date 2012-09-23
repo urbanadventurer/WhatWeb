@@ -289,6 +289,7 @@ for adding/removing sets of plugins.
 --plugins foobar (only select foobar)
 --plugins ./plugins-disabled,-md5 (select only plugins from the plugins-disabled folder, remove the md5 plugin from the selected list)
 =end
+
 	def PluginSupport.load_plugins(list=nil)
 		# separate l into a and b
 		#	a = make list of dir & filenames
