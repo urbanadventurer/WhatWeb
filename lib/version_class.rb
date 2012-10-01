@@ -21,7 +21,7 @@ class   Version
           @files["filenames"].push(file[0])
           @files["files"].push(URI.join(@url.to_s, file[0]).to_s)
           status, url, ip, body, headers = open_target(@files["files"].last)
-          @files["md5"].push(MD5.new(body).to_s)
+          @files["md5"].push(Digest::MD5.hexdigest(body))
         end
       end
     end
