@@ -84,7 +84,7 @@ def passive
 	found=false
 	while trythis = trythese.pop
 	begin
-		d=Iconv.iconv("UTF-8",trythis,body).join
+        d = body.force_encoding('UTF-8')
 		found=true
 		m << {:string=> trythis}
 		break
@@ -97,7 +97,7 @@ def passive
 			begin
 				cd = CharDet.detect(body)
 				encoding = cd['encoding'].upcase
-				d=Iconv.iconv("UTF-8",encoding,body).join
+                d = body.force_encoding('UTF-8')
 				found=true
 				m << {:string=> encoding, :module=> "CharDet"}
 			rescue
