@@ -4,26 +4,61 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define "PegaRULES" do
 author "Andrew Horton"
-version "0.1"
+version "0.2"
 description "PegaRULES Process Commander is BPM software from Pega. Many of the world's leading organizations use Pega to drive revenue growth, improve customer experience, and enhance operational efficiency. Pega's unified offering is recognized by industry analysts as a leader in CRM, BPM, case management and business rules. Homepage: http://www.pega.com/"
 
-examples %w|http://205.223.230.13:8080/prweb/PRServlet https://usg-301.pegacloud.com:9443/prweb/PRServlet/ |
-
 # extra URLs /prweb/
+
+# Google results as at 2012-10-06 #
+# 4 for inurl:"prweb/PRServlet" intitle:"Welcome to PegaRULES"
+
+# ShodanHQ results as at 2012-10-06 #
+# 3 for prweb/PRServlet
+
+# Dorks #
 dorks [
 'intitle:"Welcome to PegaRULES"',
 'inurl:/prweb/PRServlet/'
 ]
 
+# Examples #
+examples %w|
+http://193.46.72.243/
+http://213.219.10.243/
+http://205.223.230.13:8080/prweb/PRServlet/
+https://usg-301.pegacloud.com:9443/prweb/PRServlet/
+https://affinity.ebiz.qbe.com.au/prweb/FIOnline/
+|
+
+# Matches #
 matches [
+
+# Pega-RULES Cookie
 {:name=>'cookie',:search=>"headers[set-cookie]",:text=>"Pega-RULES"},
+
+# Title
 {:name=>'title', :text=>'<title> Welcome to PegaRULES </title>' },
+
+# Footer
 {:name=>'copyright footer',:regexp=>/<span>[^<]+Copyright[^<]+Pegasystems Inc/m},
+
+# favicon
 {:name=>'shortcut icon',:text=>'<LINK REL="SHORTCUT ICON" HREF="images/pzPegaIcon.ico">'},
-{:version=>/Welcome to PegaRULES.*<span id="ProductVersion" class="ProductVersion">Version ([^<]+)<\/span>/m}
+
+# Version Detection
+{ :version=>/td style="text-align: center;"><span id="ProductVersion" class="ProductVersion">Version ([^<]+)<\/span><\/td/ },
+
+# Login Page # HTML Comment
+{ :text=>'<!-- B-12380 avoid reuse/repost of username/password -->' },
+
+# Error Page
+{ :text=>'<HEAD><H3>Unable to logon to the PegaRULES system.</H3></HEAD>' },
+
+# 403 Forbidden Page
+{ :regexp=>/<TR><TD>\s+<FONT face="Helvetica">\s+Your system policy has denied access to the requested URL\.\s+<\/FONT>/ },
+
 ]
 
 end
