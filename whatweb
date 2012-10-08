@@ -335,7 +335,8 @@ def next_target
 							puts "Thread: #{thread.inspect} is #{thread.status}"
 						end
 					end
-					sleep 1
+					#sleep 1
+					Thread.pass
 				else
 					puts "breaking now" if $verbose > 2
 					break
@@ -419,8 +420,9 @@ def run_plugins(target)
 		$plugins_to_use.each do |name,plugin|
 			begin			
 				while plugin.locked?
-					sleep 0.1
+					#sleep 0.1
 					puts "Waiting for plugin:#{name} to unlock" if $verbose > 2
+					Thread.pass
 				end
 				plugin.lock
 
@@ -982,8 +984,9 @@ while t = next_target
 		end # Thread.new
 
 	while Thread.list.size>($MAX_THREADS+1)
-		puts "sleeping" if $verbose>1
-		sleep 0.5
+		puts "Thread list full, passing control" if $verbose>1
+		#sleep 0.5
+		Thread.pass
 	end
 end # targets.each
 

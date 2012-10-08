@@ -250,7 +250,7 @@ end
 		else
 			brief_results_final= target.to_s + " [#{status}] " + brief_results.join(", ")
 		end	
-		$semaphore.synchronize do
+			$semaphore.synchronize do
 			@f.puts brief_results_final
 		end
 	end
