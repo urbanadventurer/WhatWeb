@@ -16,6 +16,7 @@ description "Citrix XenServer is a complete, managed server virtualization platf
 # Examples #
 examples %w|
 74.115.3.130
+95.140.46.200
 alumni.sewanee.edu
 www.luola.net
 www.jacklab.net
@@ -27,7 +28,7 @@ www.werbefahne24.de
 matches [
 
 # Version Detection
-{ :url=>"/", :version=>/<html>[\s]+<title>XenServer ([^\s^<]+)<\/title>[\s]+<head>[\s]+<\/head>[\s]+<body>[\s]+<p\/>Citrix Systems, Inc\. XenServer ([^\s]+)[\s]+<p\/><a href="XenCenter\.iso">XenCenter CD image<\/a>[\s]+<p\/><a href="XenCenter\.msi">XenCenter installer<\/a>[\s]+<\/body>[\s]+<\/html>/ },
+{ :url=>"/", :version=>/<html>\s+<title>XenServer ([^\s^<]+)<\/title>\s+<head>\s+<\/head>\s+<body>\s+<p\/>Citrix Systems, Inc\. XenServer ([^\s]+)\s+<p\/><a href="XenCenter\.iso">XenCenter CD image<\/a>\s+<p\/><a href="XenCenter\.msi">XenCenter installer<\/a>/ },
 
 # Home Page # matches home page when version numbers aren't displayed
 { :url=>"/", :md5=>"141c8bbcda4cf773763e9f2108d62ff3" },
