@@ -57,7 +57,7 @@ matches [
 
 # Full Version Detection # Footer
 { :version=>/<\/div>(Portal|Plattform|Platform|Plataforma) <a href="http:\/\/www\.chamilo\.org\/?" target="_blank">Chamilo ([^<^\s]+)<\/a> &copy;/, :offset=>1 },
-{ :version=>/<div class="copyright">Portal <a href="http:\/\/www\.chamilo\.org\/?" target="_blank">Chamilo ([^<^\s]+)<\/a> &copy;/ },
+{ :version=>/<div class="copyright">(Portal|Plattform|Platform|Plataforma) <a href="http:\/\/www\.chamilo\.org\/?" target="_blank">Chamilo ([^<^\s]+)<\/a> &copy;/, :offset=>1 },
 
 ]
 
