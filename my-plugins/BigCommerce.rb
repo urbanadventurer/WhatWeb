@@ -1,0 +1,18 @@
+Plugin.define "BigCommerce" do
+author "Claudio Salazar <csalazar at spect dot cl>"
+version "0.1"
+description "Fully loaded with killer features. -
+  Homepage: http://www.bigcommerce.com/"
+examples %w| www.4living.co.uk |
+
+matches [
+{
+  :name=>"iselector.css is a common file in BigCommerce systems",
+  :regexp=>/\/iselector.css/
+},
+#Common variables
+{ :regexp=>/config.ShopPath = /},
+{ :regexp=>/config.AppPath = /}
+]
+
+end
