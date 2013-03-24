@@ -10,7 +10,7 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Readme for WhatWeb - Next generation web scanner.
-By urbanadventurer aka Andrew Horton
+Developed by Andrew Horton aka urbanadventurer and Brendan Coles
 Version: 0.4.8. Unreleased
 License: GPLv2
 
@@ -93,8 +93,8 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner.
-Version 0.4.8-dev by Andrew Horton aka urbanadventurer
+WhatWeb - Next generation web scanner version 0.4.8-dev.
+Developed by Andrew Horton aka urbanadventurer and Brendan Coles
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
@@ -102,7 +102,8 @@ Usage: whatweb [options] <URLs>
 TARGET SELECTION:
   <URLs>		Enter URLs, filenames or nmap-format IP ranges.
 			Use /dev/stdin to pipe HTML directly
-  --input-file=FILE, -i	Identify URLs found in FILE, eg. -i /dev/stdin
+  --input-file=FILE, -i	Identify URLs found in FILE. You can pipe
+			hostnames or URLs directly with -i /dev/stdin
 
 TARGET MODIFICATION:
   --url-prefix		Add a prefix to target URLs
@@ -135,7 +136,7 @@ HTTP OPTIONS:
 
 AUTHENTICATION:
   --user, -u=<user:password> HTTP basic authentication
-  Add session cookies with --header, e.g. --header "Cookie: SESSID=1a2b3c;"
+  --cookie, -c=COOKIES	Provide cookies, e.g. 'name=value; name2=value2  '
 
 PROXY:
   --proxy		<hostname[:port]> Set proxy hostname and port
@@ -393,7 +394,7 @@ Version 0.4.8-dev Unreleased
 10. Credits
 ================================================================================
 
-Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
+Written by urbanadventurer aka Andrew Horton and Brendan Coles
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 License: GPLv2
 
@@ -419,7 +420,8 @@ nk@dsigned.gr
 Steve 'Ashcrow' Milner
 Michal Ambroz for writing the Makefile and Man pages
 Gremwell for improving the MagicTree logging
-Sagar Prakash Junnarkar 
+Sagar Prakash Junnarkar
+GertBerger 
 
 11. Updates & Additional Information
 ================================================================================

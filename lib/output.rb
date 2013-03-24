@@ -1,5 +1,5 @@
 =begin
-Copyright 2009, 2010 Andrew Horton
+Copyright 2009 to 2013, Andrew Horton
 
 This file is part of WhatWeb.
 
@@ -18,11 +18,12 @@ along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
 class Output
-	def initialize(f=STDOUT)
-	# if no f, output to STDOUT, if f is a filename then open it, if f is a file use it	
+  # if no f, output to STDOUT, 
+	# if f is a filename then open it, if f is a file use it	
+	def initialize(f = STDOUT)
+	  f = STDOUT if f == "-"
 		@f = f if f.class == IO or f.class == File
-		@f=File.open(f,"a") if f.class == String and f != '-'
-		@f = STDOUT if f == '-'
+		@f = File.open(f,"a") if f.class == String
 		@f.sync = true # we want flushed output
 	end
 
@@ -34,7 +35,7 @@ class Output
 	def suj(plugin_results)
 		suj={}
 		[:certainty, :version, :os, :string, :account, :model, :firmware, :module, :filepath].map do  |thissymbol|
-			t=plugin_results.map {|x| x[thissymbol] unless x[thissymbol].class==Regexp }.flatten.compact.sort.uniq.join(",")
+			t=plugin_results.map {|x| x[thissymbol] unless x[thissymbol].class == Regexp }.flatten.compact.sort.uniq.join(",")
 			suj[thissymbol] = t
 		end
 		suj[:certainty] = plugin_results.map {|x| x[:certainty] }.flatten.compact.sort.last.to_i # this is different, it's a number
@@ -43,11 +44,11 @@ class Output
 
 	# sort and uniq but no join. just for one plugin result
 	def sortuniq(p)
-		su={}
+		su = {}
 		[:name, :certainty, :version, :os, :string, :account, :model, :firmware, :module, :filepath].map do |thissymbol|
-			unless p[thissymbol].class==Regexp
-				t=p[thissymbol]
-				t=t.flatten.compact.sort.uniq if t.is_a?(Array)
+			unless p[thissymbol].class == Regexp
+				t = p[thissymbol]
+				t = t.flatten.compact.sort.uniq if t.is_a?(Array)
 				su[thissymbol] = t unless t.nil?
 			end					
 		end
@@ -61,8 +62,8 @@ end
 class OutputObject < Output
 	def out(target, status, results) 
 		$semaphore.synchronize do 
-			@f.puts "Identifying: "+ target.to_s
-			@f.puts "HTTP-Status: "+ status.to_s
+			@f.puts "Identifying: " + target.to_s
+			@f.puts "HTTP-Status: " + status.to_s
 			@f.puts results.pretty_inspect unless results.empty?	
 			@f.puts
 		end
@@ -70,7 +71,7 @@ class OutputObject < Output
 end
 
 class OutputVerbose < Output
-	def coloured(s,colour)
+	def coloured(s, colour)
 		use_colour = ((@f == STDOUT and $use_colour=="auto") or ($use_colour=="always"))
 
 		if use_colour
@@ -82,39 +83,37 @@ class OutputVerbose < Output
 
 	def out(target, status, results)
 		$semaphore.synchronize do
-			@f.puts "URL".ljust(7)+": #{coloured(target,'blue')}"
-			@f.puts "Status".ljust(7)+": #{status}"
-			results.sort.each do |plugin_name,plugin_results|
+			@f.puts "URL".ljust(7) + ": #{coloured(target,'blue')}"
+			@f.puts "Status".ljust(7) + ": #{status}"
+			results.sort.each do |plugin_name, plugin_results|
 				unless plugin_results.empty?
 				
-					@f.puts "   "+coloured(plugin_name,"yellow")+ " " + coloured("-"*(80-5-plugin_name.size),"dark_blue")
+					@f.puts "   " + coloured(plugin_name, "yellow") + " " + coloured("-"*(80-5-plugin_name.size), "dark_blue")
 				
-					description=[""]
+					description = [""]
 					unless Plugin.registered_plugins[plugin_name].description.nil?
-						d=Plugin.registered_plugins[plugin_name].description[0..350] 
-						d+="..." if d.size==251
-						description=word_wrap(d, 60)
+						d = Plugin.registered_plugins[plugin_name].description[0..350] 
+						d += "..." if d.size == 251
+						description = word_wrap(d, 60)
 					end
 #					@f.puts "\tCategory   : " + Plugin.registered_plugins[plugin_name].category.first unless Plugin.registered_plugins[plugin_name].category.nil?
 
 					@f.puts "\tDescription: " + description.first
-					description[1..-1].each {|line|
-						@f.puts "\t" + " "*13 + line
+					description[1..-1].each { |line|
+						@f.puts "\t" + " " * 13 + line
 					}
 
-
-					top_certainty= suj(plugin_results)[:certainty].to_i
+					top_certainty = suj(plugin_results)[:certainty].to_i
 					unless top_certainty == 100
-						@f.puts "\t"+"Certainty".ljust(11)+": " + certainty_to_words(top_certainty)
+						@f.puts "\t" + "Certainty".ljust(11) + ": " + certainty_to_words(top_certainty)
 					end
 
-					plugin_results.map {|x| sortuniq(x) }.each do |pr|
-
+					plugin_results.map { |x| sortuniq(x) }.each do |pr|
 						if pr[:name]
 							name_of_match = pr[:name]
 						else
-							name_of_match = [pr[:regexp_compiled],pr[:text],pr[:regexp].to_s,
-										pr[:ghdb],pr[:md5],pr[:tagpattern]].compact.join("|")
+							name_of_match = [pr[:regexp_compiled], pr[:text], pr[:regexp].to_s,
+										pr[:ghdb], pr[:md5], pr[:tagpattern]].compact.join("|")
 						end
 
 						pr.each do |key,value|
@@ -156,7 +155,7 @@ class OutputVerbose < Output
 							@f.puts
 						end
 
-						@f.puts "\t"+ coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
+						@f.puts "\t" + coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
 					end
 					@f.puts			
 				end
@@ -167,26 +166,26 @@ end
 
 class OutputBrief < Output
 
-def escape(s)
-	# Encode all special characters # More info: http://www.asciitable.com/
-	#r=/[^\x20-\x5A\x5E-\x7E]/
+  def escape(s)
+	  # Encode all special characters # More info: http://www.asciitable.com/
+	  #r=/[^\x20-\x5A\x5E-\x7E]/
 
-	# Encode low ascii non printable characters
-	r=/[\x00-\x1F]/
+	  # Encode low ascii non printable characters
+	  r=/[\x00-\x1F]/
 
-	# based on code for CGI.escape
-	s.gsub(r) do |x|
-		'%' + x.unpack('H2' * x.size).join('%').upcase
-	end
-end
+	  # based on code for CGI.escape
+	  s.gsub(r) do |x|
+		  '%' + x.unpack('H2' * x.size).join('%').upcase
+	  end
+  end
 
-# don't use colours if not to STDOUT
+  # don't use colours if not to STDOUT
 	def out(target, status, results)
 		brief_results=[]
 
-# sort results so plugins that are less important at a glance are last
-#		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Tag-Hash|
-#		results=results.sort_by {|x,y| last_plugins.include?(x) ? 1 : 0 }
+  # sort results so plugins that are less important at a glance are last
+  #		last_plugins=%w| CSS MD5 Header-Hash Footer-Hash Tag-Hash|
+  #		results=results.sort_by {|x,y| last_plugins.include?(x) ? 1 : 0 }
 
 		results=results.sort # sort results by plugin name alphabetically
 
@@ -213,9 +212,9 @@ end
  					 
 					 coloured_plugin = white(plugin_name)
 					 coloured_plugin = grey(plugin_name) if plugin_name == "MD5"
-  					 coloured_plugin = grey(plugin_name) if plugin_name == "Header-Hash"
-  					 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"  					 
-  					 coloured_plugin = grey(plugin_name) if plugin_name == "CSS"
+					 coloured_plugin = grey(plugin_name) if plugin_name == "Header-Hash"
+					 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"  					 
+					 coloured_plugin = grey(plugin_name) if plugin_name == "CSS"
 					 coloured_plugin = grey(plugin_name) if plugin_name == "Tag-Hash"
   					 					 
 					 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
@@ -269,11 +268,12 @@ class OutputXML < Output
 
 		# only output <?xml line if it's a new file or STDOUT
 		if RUBY_VERSION =~ /^1\.8/
-			if @f.stat.size == 0
+			if @f == STDOUT or @f.stat.size == 0
 				@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
 			end
 		else
-			if @f.size == 0
+		  # ruby 1.9
+			if @f == STDOUT or @f.size == 0
 				@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
 			end
 		end
@@ -289,11 +289,11 @@ class OutputXML < Output
 	def escape(t)		
 		text=t.to_s.dup
 		# use sort_by so that & is before &quot;, etc.
-		@substitutions.sort_by {|a,b| a=="&" ? 0 : 1 }.map{|from,to| text.gsub!(from,to) }
+		@substitutions.sort_by { |a,b| a=="&" ? 0 : 1 }.map{ |from,to| text.gsub!(from,to) }
 
 		# Encode all special characters
 		# More info: http://www.asciitable.com/
-		r=/[^\x20-\x5A\x5E-\x7E]/
+		r = /[^\x20-\x5A\x5E-\x7E]/
 
 		# based on code for CGI.escape
 		text.gsub!(r) do |x|
@@ -382,9 +382,9 @@ class OutputMagicTreeXML < Output
 	end
 
 	def escape(t)		
-		text=t.to_s.dup
+		text = t.to_s.dup
 		# use sort_by so that & is before &quot;, etc.
-		@substitutions.sort_by {|a,b| a=="&" ? 0 : 1 }.map{|from,to| text.gsub!(from,to) }
+		@substitutions.sort_by {|a,b| a == "&" ? 0 : 1 }.map{ |from,to| text.gsub!(from,to) }
 
 		# Encode all special characters
 		# More info: http://www.asciitable.com/
@@ -394,7 +394,6 @@ class OutputMagicTreeXML < Output
 		text.gsub!(r) do |x|
 			'%' + x.unpack('H2' * x.size).join('%').upcase
 		end
-
 		text
 	end
 
@@ -404,7 +403,7 @@ class OutputMagicTreeXML < Output
 
 			# Parse target URL and initialize host node details
 			uri = URI.parse(target.to_s)
-			@host_os=[]
+			@host_os = []
 			@host_port = uri.port
 			@host_scheme = uri.scheme
 
@@ -418,7 +417,7 @@ class OutputMagicTreeXML < Output
 			end
 
 			# Loop through plugin results # get host IP, country and OS
-			results.each do |plugin_name,plugin_results|
+			results.each do |plugin_name, plugin_results|
 				unless plugin_results.empty?
 					# Host IP
 					@host_ip = plugin_results.map {|x| x[:string] unless x[:string].nil?}.to_s if plugin_name =~ /^IP$/
@@ -452,14 +451,14 @@ class OutputMagicTreeXML < Output
 			results.each do |plugin_name,plugin_results|
 
 				if !plugin_results.empty? and plugin_name !~ /^IP$/ and plugin_name !~ /^Country$/
-					certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
-					versions = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq
-					strings = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq
-					models = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq
-					firmwares = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq
-					filepaths = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq
-					accounts = plugin_results.map {|x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq
-					modules = plugin_results.map {|x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq
+					certainty = plugin_results.map { |x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
+					versions = plugin_results.map { |x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq
+					strings = plugin_results.map { |x| x[:string] unless x[:string].class==Regexp}.flatten.compact.sort.uniq
+					models = plugin_results.map { |x| x[:model] unless x[:model].class==Regexp}.flatten.compact.sort.uniq
+					firmwares = plugin_results.map { |x| x[:firmware] unless x[:firmware].class==Regexp}.flatten.compact.sort.uniq
+					filepaths = plugin_results.map { |x| x[:filepath] unless x[:filepath].class==Regexp}.flatten.compact.sort.uniq
+					accounts = plugin_results.map { |x| x[:account]  unless x[:account].class==Regexp }.flatten.compact.sort.uniq
+					modules = plugin_results.map { |x|  x[:module]   unless x[:module].class==Regexp}.flatten.compact.sort.uniq
 
 					# URL node # plugin node
 					@f.write "<url>#{escape(target)}<#{escape(plugin_name)}>"
