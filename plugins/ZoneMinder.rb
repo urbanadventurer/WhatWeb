@@ -9,6 +9,9 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-08-01
 version "0.1"
 description "Linux video camera security and surveillance solution - Web interface - Requires MySQL and PHP - Homepage: http://www.zoneminder.com/"
 
+# ShodanHQ results as at 2013-01-22 #
+# 1,020 for ZMSESSID
+
 # Google results as at 2011-08-01 #
 # 371 for "ZoneMinder Login" +Username +Password
 #  18 for "ZoneMinder Console - Running" intitle:Console inurl:view=console
@@ -21,7 +24,15 @@ dorks [
 
 # Examples #
 examples %w|
-75.127.250.205
+24.35.239.147
+195.210.60.124
+81.29.182.175
+201.238.229.105
+201.148.36.170
+91.143.208.137
+99.44.169.136
+187.206.138.62
+77.108.31.133
 https://zoneminder.dsr.life.ku.dk/zm/
 www.ttgoz.com/zm/index.php
 entr.co.uk/zoneminder/
@@ -39,13 +50,10 @@ hrib.net/zm/
 loveyourwife.com/zm/
 crespo.us:8888/zm/
 96.37.141.218:88/zm/index.php
-travislongley.webhop.org
-www.martyweb.com:81
 www.jcshome.net/zm/index.php
 cameras.arenafernandasselin.com
 www.robertdwatson.com
 camera.mrroofing.com
-kamera.tenindo.co.id
 6810.redkingfoods.com:8888/zm/
 |
 
@@ -65,6 +73,10 @@ matches [
 # Version Detection
 { :version=>/Running<\/a> - <a href="\?view=version" onclick="createPopup\( '\?view=version', 'zmVersion', 'version' \); return\( false \);">v([^<^\s]+)<\/a><\/h2>/ },
 { :version=>/Running<\/a> - <a href="javascript: newWindow\( '\/index\.php\?view=version', 'zmVersion', 320, 140 \);">v([^<^\s]+)<\/a>/ },
+{ :search=>"headers[server]", :version=>/^ZoneMinder Video Server\/([^\s]+)$/ },
+
+# ZMSESSID Cookie
+{ :search=>"headers[set-cookie]", :regexp=>/ZMSESSID=[^;]+/ },
 
 ]
 

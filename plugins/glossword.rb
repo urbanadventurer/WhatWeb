@@ -12,8 +12,8 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
 description "Glossword helps you to create and publish online multilingual dictionary, glossary, or reference. - homepage: http://glossword.biz/"
 
-# Google results as at 2010-08-01 #
-# 120 for "Powered by Glossword"
+# Google results as at 2013-02-06 #
+# 458 for "Powered by Glossword"
 
 # Dorks #
 dorks [
@@ -23,6 +23,10 @@ dorks [
 # Examples #
 examples %w|
 65.254.78.72/php/glossword/
+www.arlen.com.br/dicionario/
+grinchos.org/glossword/
+hosq.am
+www.khmerdictionary.info
 abbrevs.com
 almoltaka.net/glossword/
 armenian.name
@@ -52,7 +56,6 @@ wachanakoshaya.co.cc
 www.africaservice.com/dictionary/
 www.agelock.ro/max-dictionary-online/
 www.allindustrialresources.com
-www.beard-bear.com/glossword/
 www.bolden.ru/glossary/glossword/1.8/
 www.cnx-translation.com/thaidict/
 www.competencesoftware.net/glossword/
@@ -68,8 +71,6 @@ www.ixl.ru/index.php
 www.kazakhtili.com
 www.kuark.org/terim/
 www.marketing-playbook.com/glossary/
-www.memhr.org/dic/
-www.miguelmllop.com/gw/
 www.nplg.gov.ge/glossword/
 www.odps.org/glossword/
 www.rare-cancer.org/dictionary/

@@ -10,14 +10,23 @@
 Plugin.define "IPCop-Firewall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.2"
-description "The IPCop Firewall is a Linux firewall distribution. It is geared towards home and SOHO users. The IPCop web-interface is very user-friendly and makes usage easy. - homepage: http://sf.net/projects/ipcop/"
+description "The IPCop Firewall is a Linux firewall distribution. It is geared towards home and SOHO users. The IPCop web-interface is very user-friendly and makes usage easy. - Homepage: http://sf.net/projects/ipcop/"
 
-# Google results as at 2010-07-20 #
-# 5 for intitle:"ipcop . main"
+# Google results as at 2012-11-04 #
+# 6 for intitle:"IPCop - Main page" "IP Address" "Hostname"
+
+# Dorks #
+dorks [
+'intitle:"IPCop - Main page" "IP Address" "Hostname"'
+]
 
 # Examples #
 examples %w|
 https://207.63.8.142:445/cgi-bin/index.cgi
+https://smtp.ownsurance.com/
+https://200.123.179.49:445/cgi-bin/index.cgi
+http://96.11.130.129/
+https://www.goecke-dolan.com:445/
 |
 
 # Matches #
@@ -37,6 +46,15 @@ matches [
 
 # Version Detection
 { :version=>/	    <img src='\/images\/null.gif' width='1' height='29' alt='' \/>([\d\.]+)<\/td>/ },
+
+# HTML Comment
+{ :text=>'<!-- IPCOP FOOTER -->' },
+
+# Footer # Version Detection
+{ :version=>/<small>IPCop v([^\s]+) &copy; 2001-20[\d]{2} The IPCop Team<\/small><\/td>/ },
+
+# /include/ipcop.css
+{ :url=>"/include/ipcop.css", :text=>'/* used in status.cgi (among others) */' },
 
 ]
 
