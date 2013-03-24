@@ -21,7 +21,8 @@ class Output
 	def initialize(f=STDOUT)
 	# if no f, output to STDOUT, if f is a filename then open it, if f is a file use it	
 		@f = f if f.class == IO or f.class == File
-		@f=File.open(f,"a") if f.class == String
+		@f=File.open(f,"a") if f.class == String and f != '-'
+		@f = STDOUT if f == '-'
 		@f.sync = true # we want flushed output
 	end
 
