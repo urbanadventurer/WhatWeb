@@ -18,9 +18,9 @@
 # Added passive model, firmware and module extraction support for /cgi-bin/authLogin.cgi
 ## 
 Plugin.define "QNAP-NAS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
-version "0.4"
-description "QNAP provides a series of network attached storage (NAS) products - homepage:http://www.qnap.com/"
+author "Brendan Coles <bcoles@gmail.com>" # 2013-03-29
+version "0.5"
+description "QNAP provides a series of network attached storage (NAS) products and network video recorder (NVR) solutions - homepage:http://www.qnap.com/"
 
 # Tested on TS Models:
 #   TS-109 PRO, TS-109 PRO II, TS-119, TS-209 PRO, TS-209 PRO II,
@@ -94,7 +94,7 @@ http://xn--c3tyik98bwox.net:8080/cgi-bin/
 https://www.boskoe.com/cgi-bin/
 http://163.27.57.9:8080/cgi-bin/
 http://www.rhk4.com:8080/cgi-bin/
-http://www.jr1186.com:8000/cgi-bin/
+http://www.jr1186.com:8080/cgi-bin/
 http://www.patvibes.com:6000/cgi-bin/
 https://www.cpcupload.com/cgi-bin/
 http://www.qwe4.net:8080/cgi-bin/
