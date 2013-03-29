@@ -10,7 +10,7 @@
 Plugin.define "Allegro-RomPager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.1"
-description "The RomPager suite of products enable your engineering team to leverage proven Web-based technologies in your networked embedded device. - homepage: http://www.allegrosoft.com/rpproduct.html"
+description "The RomPager suite of products enable your engineering team to leverage proven Web-based technologies in your networked embedded device. - homepage: http://www.allegrosoft.com/embedded-web-server"
 
 # ShodanHQ results as at 2010-10-26 #
 # 2,247,816 for "server: RomPager"
