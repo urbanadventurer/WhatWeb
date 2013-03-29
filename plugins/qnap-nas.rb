@@ -4,6 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2013-03-29 #
+# Due to a renewed web interface (v3.8), all existing matches didn't see the QNAP anymore
+# New matches need to be determined
+
 # Version 0.4 # 2011-03-22 #
 # Removed aggressive section
 ##
@@ -141,6 +145,15 @@ matches [
 { :text=>'<img id="img_webfile" src="/ajax_obj/images/login_main_5.jpg" longdesc="javascript:onQuickLinkChange(5);" alt="Web File Manager" />', :module=>"Web File Manager" },
 { :text=>'<img id="img_surveillance" src="/ajax_obj/images/login_main_6.jpg" longdesc="javascript:onQuickLinkChange(6);" alt="Surveillance Station" />', :module=>"Surveillance Station" },
 
+# ----- 3.8 version ----- 
+
+# HTML title
+{ :text=>'<title>Welcome to QNAP Turbo NAS</title>' },
+
+# favicon.ico
+{ :url=>"/ajax_obj/images/favicon.ico", :md5=>"9afa5d60e5ef15dc75d7662e418cac72" },
+
+
 ]
 
 # Passive #
@@ -169,6 +182,9 @@ def passive
 
 	end
 
+	# ----- 3.8 version ----- 
+	# New model detection has to be determined here
+	
 	# Return passive matches
 	m
 
