@@ -183,7 +183,11 @@ def passive
 	end
 
 	# ----- 3.8 version ----- 
-	# New model detection has to be determined here
+	# Firmware Version Detection
+	if @body =~ /var URL_RANDOM_NUM = "[0-9\.]+";/
+		f=@body.scan(/var URL_RANDOM_NUM = "([0-9\.]+)";/)[0]
+		m << {:name=>"javascript variable", :firmware=>f }
+	end
 	
 	# Return passive matches
 	m
