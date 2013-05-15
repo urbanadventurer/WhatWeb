@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.4 # 2013-04-16
+# Changed homepage
+#
 # Version 0.3 # 2011-01-29 # Brendan Coles <bcoles@gmail.com>
 # Updated regex
 ##
@@ -12,8 +15,8 @@
 ##
 Plugin.define "GoAhead-Webs" do
 author "Andrew Horton"
-version "0.3"
-description "Opensource, embedded webserver. Homepage: http://www.goahead.com/products/webserver/default.aspx"
+version "0.4"
+description "Opensource, embedded webserver. Homepage: http://embedthis.com/products/goahead/"
 
 # ShodanHQ results as at 2011-01-29 #
 # 453222 for GoAhead Webs
