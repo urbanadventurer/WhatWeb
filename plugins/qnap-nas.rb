@@ -4,6 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2013-03-29 #
+# Due to a renewed web interface (v3.8), all existing matches didn't see the QNAP anymore
+# New matches need to be determined
+
 # Version 0.4 # 2011-03-22 #
 # Removed aggressive section
 ##
@@ -14,9 +18,9 @@
 # Added passive model, firmware and module extraction support for /cgi-bin/authLogin.cgi
 ## 
 Plugin.define "QNAP-NAS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
-version "0.4"
-description "QNAP provides a series of network attached storage (NAS) products - homepage:http://www.qnap.com/"
+author "Brendan Coles <bcoles@gmail.com>" # 2013-03-29
+version "0.5"
+description "QNAP provides a series of network attached storage (NAS) products and network video recorder (NVR) solutions - homepage:http://www.qnap.com/"
 
 # Tested on TS Models:
 #   TS-109 PRO, TS-109 PRO II, TS-119, TS-209 PRO, TS-209 PRO II,
@@ -90,7 +94,7 @@ http://xn--c3tyik98bwox.net:8080/cgi-bin/
 https://www.boskoe.com/cgi-bin/
 http://163.27.57.9:8080/cgi-bin/
 http://www.rhk4.com:8080/cgi-bin/
-http://www.jr1186.com:8000/cgi-bin/
+http://www.jr1186.com:8080/cgi-bin/
 http://www.patvibes.com:6000/cgi-bin/
 https://www.cpcupload.com/cgi-bin/
 http://www.qwe4.net:8080/cgi-bin/
@@ -141,6 +145,15 @@ matches [
 { :text=>'<img id="img_webfile" src="/ajax_obj/images/login_main_5.jpg" longdesc="javascript:onQuickLinkChange(5);" alt="Web File Manager" />', :module=>"Web File Manager" },
 { :text=>'<img id="img_surveillance" src="/ajax_obj/images/login_main_6.jpg" longdesc="javascript:onQuickLinkChange(6);" alt="Surveillance Station" />', :module=>"Surveillance Station" },
 
+# ----- 3.8 version ----- 
+
+# HTML title
+{ :text=>'<title>Welcome to QNAP Turbo NAS</title>' },
+
+# favicon.ico
+{ :url=>"/ajax_obj/images/favicon.ico", :md5=>"9afa5d60e5ef15dc75d7662e418cac72" },
+
+
 ]
 
 # Passive #
@@ -169,6 +182,13 @@ def passive
 
 	end
 
+	# ----- 3.8 version ----- 
+	# Firmware Version Detection
+	if @body =~ /var URL_RANDOM_NUM = "[0-9\.]+";/
+		f=@body.scan(/var URL_RANDOM_NUM = "([0-9\.]+)";/)[0]
+		m << {:name=>"javascript variable", :firmware=>f }
+	end
+	
 	# Return passive matches
 	m
 
