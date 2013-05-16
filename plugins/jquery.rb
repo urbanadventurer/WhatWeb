@@ -10,9 +10,12 @@
 # Version 0.3
 # rewrite
 ##
+# Version 0.4
+# added another match line from Eric Sesterhenn
+
 Plugin.define "JQuery" do
 author "Andrew Horton"
-version "0.3"
+version "0.4"
 description "A fast, concise, JavaScript that simplifies how to traverse HTML documents, handle events, perform animations, and add AJAX. - Homepage: http://jquery.com/"
 
 # Examples #
@@ -82,6 +85,7 @@ matches [
 
 # JavaScript # Version Detection
 { :version=>/jquery(\.min)?\.js\?ver=([0-9\.]+)['"]/, :offset=>1 },
+{ :version=>/jquery-([0-9\.]+)(\.min)?\.js/, :offset=>0 }
 
 ]
 
