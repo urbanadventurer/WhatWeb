@@ -343,8 +343,23 @@ www.johngiczewski.com
                       "9a6697bf0a6b3fd8c367d52a8163e289"]],
                     "2.5.6" =>
                     [["joomla.xml",
-                      "fd03f70094e980a288df57b74ba8bdaa"]]]
-    
+                      "fd03f70094e980a288df57b74ba8bdaa"]],
+                    "2.5.7" =>
+                    [["joomla.xml",
+                      "ddfc0ffae42633ae0792879e72848eef"]],
+                    "2.5.8" =>
+                    [["joomla.xml",
+                      "2f60cbc0aacc748ead8942eff735e632"]],
+                    "2.5.9" =>
+                    [["joomla.xml",
+                      "02f88367ece6d41aa277de57c48828b3"]],                     
+                    "2.5.10" =>
+                    [["joomla.xml",
+                      "0327fe30ad173c02eed4d38b9db65326"]],
+                    "2.5.11" =>
+                    [["joomla.xml",
+                      "9dba426830a3728e3fa6c7a53b52502a"]]]
+
         v = Version.new("Joomla", versions, @base_uri)
 
         version = v.matches_format
