@@ -43,7 +43,7 @@ matches [
 
 # Version Detection # Powered by text
 { :version=>/<a href="http:\/\/www.simplemachines.org\/" title="Simple Machines Forum" target="_blank"( class="new_win")?>Powered by SMF ([^<]+)/, :offset=>1 },
-
+{ :version=>/<a href=".*?" title="Simple Machines Forum" target="_blank" class="new_win">SMF ([^<]+)/},
 ]
 
 # Aggressive #
@@ -77,9 +77,9 @@ files=[
 	to_download = files.map {|x| x[:path]}.sort.uniq
 	downloads={}
 	to_download.each do |d|
-		target = URI.join(@base_uri.to_s,d).to_s	
+		target = URI.join(@base_uri.to_s,d).to_s
 		status,url,ip,body,headers=open_target(target)
-		downloads[d] = {:md5sum=>Digest::MD5.hexdigest(body).to_s}	
+		downloads[d] = {:md5sum=>Digest::MD5.hexdigest(body).to_s}
 	end
 
 	# Compare file hashes to known hashes
