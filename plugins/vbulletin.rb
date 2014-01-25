@@ -35,12 +35,12 @@ matches [
 {:version=>/<meta name="generator" content="vBulletin ([0-9a-z.]+)" \/>/,  :name=>"version" },
 {:version=>/\* vBulletin ([0-9a-z.]+) CSS/,  :name=>"version" },
 {:version=>/clientscript\/vbulletin_md5\.js,qv=(\d+)\.pagespeed\..*?js">/,  :name=>"version" },
-{:version=>/\/clientscript\/vbulletin-core\.js\?v=(\d+)/,  :name=>"version" },
+{:version=>/clientscript\/vbulletin-core\.js\?v=(\d+)/,  :name=>"version" },
 {:version=>/\/vbulletin\/clientscript\/guestforum\.js\?v=(\d+)/,  :name=>"version" },
-
+{:version=>/clientscript\/vbulletin_global\.js\?v=(\d+)/,  :name=>"version" },
 ]
 
- 
+
 # <meta name="generator" content="vBulletin 3.8.3" />
 # <style type="text/css" id="vbulletin_css">
 # <script type="text/javascript" src="clientscript/vbulletin_menu.js?v=383"></script>
@@ -62,7 +62,7 @@ matches [
 # vb_bullet.gif
 
 # Powered by: vBulletin Version 2.0.3<br>
-# Powered by: vBulletin Version 2.3.2<br> 
+# Powered by: vBulletin Version 2.3.2<br>
 # Powered by vBulletin&reg; Version 3.7.3<br />Copyright &copy;2000 - 2009, Jelsoft Enterprises Ltd.
 # vBulletin&reg; Copyright &copy;2000 - 2009, Jelsoft Enterprises Ltd.
 # Copyright &copy;2000 - 2009, Jelsoft Enterprises Ltd.
