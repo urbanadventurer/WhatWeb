@@ -790,11 +790,11 @@ matches [
                     ],
                       "3.8" =>
                     [["readme.html", "38ee273095b8f25b9ffd5ce5018fc4f0"],
-                      ["wp-admin/css/wp-admin.css", "68600417d5dc22244168b4eeb84f0af4"]
+                      ["wp-admin/css/wp-admin.css", "25554fc81989c307119b7d4818dc3963"]
                     ],
                       "3.8.1" =>
                     [["readme.html", "0d0eb101038124a108f608d419387b92"],
-                      ["wp-admin/css/wp-admin.css", "25554fc81989c307119b7d4818dc3963"]]
+                      ["wp-admin/css/wp-admin.css", "68600417d5dc22244168b4eeb84f0af4"]]
     ]
     
     v = Version.new("Joomla", versions, @base_uri)
