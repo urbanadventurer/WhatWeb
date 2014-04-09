@@ -69,6 +69,13 @@ matches [
 # HTTP Header # x-spip-cache
 { :search=>"headers[x-spip-cache]", :regexp=>/^.+$/ },
 
+# a href="spip.php
+{ :text=>'<a href="spip.php' },
+
+# img src='/spip
+{ :text=>'<img src=\'/spip' },
+
+
 ]
 
 end
