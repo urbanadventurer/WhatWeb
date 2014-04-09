@@ -49,7 +49,7 @@ require 'resolv-replace' # asynchronous DNS
 
 
 ### ruby 1.9 changes
-if RUBY_VERSION =~ /^1\.9/
+if RUBY_VERSION =~ /^1\.9/ || RUBY_VERSION =~ /^2\.0/
         require 'digest/md5'
 else
         require 'md5'
