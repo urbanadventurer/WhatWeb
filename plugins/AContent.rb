@@ -30,6 +30,9 @@ matches [
 # Login page
 { :text=>'<dt><span class="required" title="Required Field">*</span><label for="login">Login Name or Email</label></dt>' },
 
+# Default Favicon
+{ :md5=>"28c34462a074c5311492759435549468", :url=>"/favicon.ico" },
+
 ]
 
 

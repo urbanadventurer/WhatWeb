@@ -80,7 +80,6 @@ www.pluggit.org
 www.poststory.freenice.org
 www.rhconseil.net
 www.seofirmthailand.com
-www.streetviewfunny.com
 www.submitpligg.com
 www.twendle.com
 www.ujeed.com
@@ -98,6 +97,9 @@ matches [
 
 # JavaScript # Twitter Feed
 { :text=>"jQuery.jTwitter('pligg', function (userdata) {" },
+
+# Default Favicon
+{ :md5=>"7c548077f2a8cc6099858eb1bf9201b4", :url=>"/favicon.ico" },
 
 ]
 

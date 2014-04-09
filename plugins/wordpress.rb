@@ -756,7 +756,7 @@ matches [
                       "617d9fd858e117c7d1d087be168b5643"]]
                    ]
     
-    v = Version.new("Joomla", versions, @base_uri)
+    v = Version.new("WordPress", versions, @base_uri)
     
     version = v.matches_format
     

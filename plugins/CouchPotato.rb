@@ -32,6 +32,12 @@ matches [
 # Footer # Version Detection
 { :version=>/<a href="\/cron\/force\/">Force check<\/a> \)[\s]+<\/div>[\s]+<div id="version">[\s]+Version: <em>([^\s^<]+)<\/em>/ },
 
+# Default Favicon
+{ :md5=>"a59c6fead5d55050674f327955df3acb", :url=>"/static/images/favicon.ico" },
+
+# Default Apple Touch Icon
+{ :md5=>"4814f0d48b2944e48d474325fc4a0f86", :url=>"/static/images/homescreen.png" },
+
 ]
 
 end
