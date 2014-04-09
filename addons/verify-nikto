@@ -18,9 +18,9 @@ fi
  
 tfile=`tempfile --prefix=verify-nikto-`
 tlog=`tempfile --prefix=whatweb-log-`
-cat "$fname" | grep -A 999999 "Start Time:" | egrep -o "^+.*(/[^:]+)" | cut -d/ -f 2-|cut -d: -f 1| sed 's/^/\//g' > "$tfile"
-hostname=`cat $fname | grep "+ Target Hostname: "|  cut -d : -f2 | tr -d ' '`
-port=`cat $fname | grep "+ Target Port: "|  cut -d : -f2 | tr -d ' '`
+grep -A 999999 "Start Time:" "$fname" | egrep -o "^+.*(/[^:]+)" | cut -d/ -f 2-|cut -d: -f 1| sed 's/^/\//g' > "$tfile"
+hostname=`cat $fname | grep "+ Target Hostname: " "$fname" | cut -d : -f2 | tr -d ' '`
+port=`grep "+ Target Port: " "$fname"|  cut -d : -f2 | tr -d ' '`
  
 grep -q 'SSL Info' "$fname"
 ssl=$?
