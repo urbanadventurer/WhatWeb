@@ -631,7 +631,6 @@ class OutputJSON < Output
 		end
 
 		$semaphore.synchronize do 
-			p foo
 			@f.puts JSON::generate(foo)
 		end
 	end
