@@ -565,6 +565,12 @@ class OutputJSON < Output
 #pp @charset
 #pp obj.encoding
 # read this - http://blog.grayproductions.net/articles/ruby_19s_string
+			# replace invalid UTF-8 chars
+			# based on http://stackoverflow.com/a/8873922/388038
+			if String.method_defined?(:encode)
+			  obj.encode!('UTF-16', 'UTF-8', :invalid => :replace, :replace => '')
+			  obj.encode!('UTF-8', 'UTF-16')
+			end
             obj = obj.force_encoding('UTF-8')
 
 	#	obj=obj.force_encoding("ASCII-8BIT")
@@ -619,10 +625,13 @@ class OutputJSON < Output
 		unless @charset.nil? or @charset == "Failed"
 			utf8_elements!(foo) # convert foo to utf-8
 			flatten_elements!(foo)			
+		else
+			# could not find encoding force UTF-8 anyway
+			utf8_elements!(foo) 
 		end
 
-
 		$semaphore.synchronize do 
+			p foo
 			@f.puts JSON::generate(foo)
 		end
 	end
