@@ -97,7 +97,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 	end
 
 
-        if RUBY_VERSION =~ /^1\.9/
+        if RUBY_VERSION =~ /^1\.9/ || RUBY_VERSION =~ /^2\.0/
 	      D "opening connection to #{conn_address()}..."
 	      s = timeout(@open_timeout) { TCPSocket.open(conn_address(), conn_port()) }
 	      D "opened"
