@@ -1424,6 +1424,24 @@ Plugin.define "Drupal" do
                      "0bb055ea361b208072be45e8e004117b"],
                     ["misc/tabledrag.js",
                      "caaf444bbba2811b4fa0d5aecfa837e5"]],
+                    "7.27" =>
+                    [["CHANGELOG.txt",
+                     "cedcdbb21a0b0946b264fecc48a20703"],
+                    ["misc/ajax.js",
+                     "fb2f42e93aa34d26a48c415b46fb2468"],
+                    ["misc/drupal.js",
+                     "0bb055ea361b208072be45e8e004117b"],
+                    ["misc/tabledrag.js",
+                     "caaf444bbba2811b4fa0d5aecfa837e5"]],
+                    "7.28" =>
+                    [["CHANGELOG.txt",
+                     "d56858b074520fc947a7739c03031cbc"],
+                    ["misc/ajax.js",
+                     "d7a1d3b0e4468342268058e23fa71059"],
+                    ["misc/drupal.js",
+                     "0bb055ea361b208072be45e8e004117b"],
+                    ["misc/tabledrag.js",
+                     "caaf444bbba2811b4fa0d5aecfa837e5"]],
     ]
                     
     v = Version.new("Drupal", versions, @base_uri)
