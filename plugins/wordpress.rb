@@ -794,7 +794,37 @@ matches [
                     ],
                       "3.8.1" =>
                     [["readme.html", "0d0eb101038124a108f608d419387b92"],
-                      ["wp-admin/css/wp-admin.css", "68600417d5dc22244168b4eeb84f0af4"]]
+                      ["wp-admin/css/wp-admin.css", "68600417d5dc22244168b4eeb84f0af4"]
+		    ],
+                      "3.8.2" =>
+                    [["readme.html", "e01a2663475f6a7a8363a7c75a73fe23"],
+                      ["wp-admin/css/wp-admin.css", "68600417d5dc22244168b4eeb84f0af4"]
+		    ],
+                      "3.8.3" =>
+                    [["readme.html", "c6de8fc70a18be7e5c36198cd0f99a64"],
+                      ["wp-admin/css/wp-admin.css", "68600417d5dc22244168b4eeb84f0af4"]
+		    ],
+                      "3.9" =>
+                    [["readme.html", "cdbf9b18e3729b3553437fc4e9b6baad"],
+                      ["wp-admin/css/wp-admin.css", "ff37a40c48d23ba4ecc09d9a98da1247"]
+		    ],
+                      "3.9.1" =>
+                    [["readme.html", "84b54c54aa48ae72e633685c17e67457"],
+                      ["wp-admin/css/wp-admin.css", "ff37a40c48d23ba4ecc09d9a98da1247"]
+		    ],
+
+
+#0d0eb101038124a108f608d419387b92  /var/www/wordpress-3.8.1/readme.html
+#  /var/www/wordpress-3.8.2/readme.html
+#  /var/www/wordpress-3.8.3/readme.html
+#kkkkkkkkkkkkk  /var/www/wordpress-3.9.1/readme.html
+#  /var/www/wordpress-3.9/readme.html
+
+#68600417d5dc22244168b4eeb84f0af4  /var/www/wordpress-3.8.1/wp-admin/css/wp-admin.css
+#68600417d5dc22244168b4eeb84f0af4  /var/www/wordpress-3.8.2/wp-admin/css/wp-admin.css
+#68600417d5dc22244168b4eeb84f0af4  /var/www/wordpress-3.8.3/wp-admin/css/wp-admin.css
+#ff37a40c48d23ba4ecc09d9a98da1247  /var/www/wordpress-3.9.1/wp-admin/css/wp-admin.css
+#ff37a40c48d23ba4ecc09d9a98da1247  /var/www/wordpress-3.9/wp-admin/css/wp-admin.css
     ]
     
     v = Version.new("WordPress", versions, @base_uri)
