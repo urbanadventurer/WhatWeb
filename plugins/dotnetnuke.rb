@@ -4,6 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.6 # 2014-xx-xx # Pedro Worcel <pedro.worcel@security-Assessment.com>
+# general things
+##
+##
 # Version 0.5 # 2011-03-06 # Brendan Coles <bcoles@gmail.com>
 # Updated module and version detection
 ##
