@@ -318,6 +318,7 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 
 			#IDN domains support
 			if $IDN
+				# removed the http:// from "x" because SimpleIDN does not expect the http://
 				domain = SimpleIDN.to_ascii(x.sub(/^[a-z]+:\/\//, ''))
 				x = domain.sub(/^/,"http://")
 			end
