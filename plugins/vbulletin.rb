@@ -38,6 +38,7 @@ matches [
 {:version=>/clientscript\/vbulletin-core\.js\?v=(\d+)/,  :name=>"version" },
 {:version=>/\/vbulletin\/clientscript\/guestforum\.js\?v=(\d+)/,  :name=>"version" },
 {:version=>/clientscript\/vbulletin_global\.js\?v=(\d+)/,  :name=>"version" },
+{:version=>/\/vbulletin_read_marker\.js\?v=(\d+)/,  :name=>"version" },
 ]
 
 
