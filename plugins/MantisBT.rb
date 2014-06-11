@@ -19,50 +19,7 @@ dorks [
 '"Powered by Mantis Bugtracker"'
 ]
 
-# Examples #
-examples %w|
-www.defianceinteractive.com/projects/admin/install.php
-mantis.madpowah.org/admin/install.php
-www.pursun.net/bugTrace/admin/install.php
-mp05.de/admin/install.php
-szlsz.hu
-www.meecc.org
-www.dentalservice.ru
-www.mantisbt.org/demo/
-www.talendforge.org/bugs/
-caml.inria.fr/mantis/
-www.web-cp.net/mantis/
-www.raudus.com/bugtracker/
-inworldz.com/mantis/
-www.euroscope.hu/Mantis/my_view_page.php
-www.hastymail.org/mantis/
-62.166.198.202
-bugs.orfeo-toolbox.org
-gm4mac.yoyogames.com
-dev.omnetpp.org/bugs/
-bugtraq.steamcore.se
-bugs.intellegit.com
-bugs.neonascent.com
-www.packetfence.org/bugs/
-opensimulator.org/mantis/
-bugtracking.just-works.de/login_page.php
-www.clevercomponents.com/bugtracker/
-mybeehome.com/mantis/
-gaggle.systemsbiology.net/mantis/
-www.specknet.org/mantis/
-www.maconnect.ch/mantisbt/
-www.eda.org/svdb/
-bugs.qtmoko.org
-www.wowraidmanager.net/mantis/
-springrts.com/mantis/
-bugs.centos.org
-demandas.pbh.gov.br
-www.vet.minpolj.gov.rs/pm/
-servicios.vuce.gov.co/mantis/
-mantis.serpro.gov.br
-https://projects.lbl.gov/mantis/signup_page.php
-https://metrics1.jpl.nasa.gov/mantis/
-|
+
 
 # Matches #
 matches [

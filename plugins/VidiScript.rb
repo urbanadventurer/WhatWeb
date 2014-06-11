@@ -17,36 +17,7 @@ dorks [
 '"powered by VidiScript"'
 ]
 
-# Examples #
-examples %w|
-www.vidiscript.com/mainstreamdemo/
-pinoyscandaltube.com
-into-the-beat.com/vidi/
-harvellesroadhouse.com
-www.bestanimatedshorts.com
-www.zetrof.com/VidiScript/
-myrecruitingspot.com
-www.groupmedas.com
-imyyus.com/nabila/
-www.unotubo.com
-marcsvideos.com
-sexchatvideotube.com/free/
-bubblebutz.com
-ksxtv.com
-davidarchuletatalkchannel.com
-www.redman.tv
-www.freefemdomvideo.0fees.net
-www.adangerouscult.com/video/
-mujtaba.org
-www.shadyempire.com
-hostsaving.com
-themaskedhackersserver.info
-www.freshmantease.com
-rusvid.com
-wss123.co.cc
-www.freestylecomedy.com
-surveillancematch.com
-|
+
 
 # Matches #
 matches [

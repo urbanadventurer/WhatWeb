@@ -12,19 +12,7 @@ description "Reliable, High Performance TCP/HTTP Load Balancer - Homepage: http:
 # ShodanHQ results #
 # 9,975 for HAProxy statistics
 
-# Examples #
-examples %w|
-198.37.157.101
-74.63.236.142
-50.31.43.53
-208.115.239.73
-50.31.33.149
-208.117.53.150
-50.31.56.148
-208.115.235.95
-208.117.63.209
-50.31.42.205
-|
+
 
 # Matches #
 matches [

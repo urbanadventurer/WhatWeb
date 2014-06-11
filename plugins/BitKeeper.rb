@@ -16,10 +16,7 @@ description "BitKeeper Bug Manager - BitKeeper is paving the way for the next ge
 # ShodanHQ results as at 2011-06-04 #
 # 1 for bkhttp
 
-# Examples #
-examples %w|
-db.bitkeeper.com
-|
+
 
 # Matches #
 matches [

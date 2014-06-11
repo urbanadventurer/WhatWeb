@@ -54,7 +54,6 @@ Most WhatWeb plugins are thorough and recognise a range of cues from subtle to o
 Features:
 	* Over 1500 plugins
 	* Control the trade off between speed/stealth and reliability
-	* Plugins include example URLs
 	* Performance tuning. Control how many websites to scan concurrently.
 	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB.
 	* Proxy support including TOR
@@ -165,8 +164,6 @@ PLUGINS:
 			":md5=>'8666257030b94d3bdb46e05945f60b42'"
 			"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
   --dorks=PLUGIN	List google dorks for the selected plugin
-  --example-urls, -e=PLUGIN Update the target list with example URLs from
-			the selected plugins.
 
 OUTPUT:
   --verbose, -v		Verbose output includes plugin descriptions. Use twice

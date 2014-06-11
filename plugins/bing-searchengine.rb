@@ -12,7 +12,7 @@ Plugin.define "Bing-SearchEngine" do
 author "Andrew Horton"
 version "0.1"
 description "Bing.com is Microsoft's search engine"
-examples %w| www.bing.com |
+
 
 #
 

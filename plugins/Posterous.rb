@@ -12,27 +12,7 @@ description "Posterous publishing platform. If you can email, you can manage a w
 # ShodanHQ results as at 2011-05-19 #
 # 13 for _sharebymail_session_id
 
-# Examples #
-examples %w|
-66.252.2.41
-67.207.139.81
-184.106.20.101
-66.216.125.32
-184.106.20.100
-74.205.65.180
-209.20.70.130
-1337.posterous.com
-blog.posterous.com
-help.posterous.com
-pre.posterous.com
-jesus.posterous.com
-god.posterous.com
-asdf.posterous.com
-qwerty.posterous.com
-wwww.posterous.com
-administrator.posterous.com
-fbi.posterous.com
-|
+
 
 # Matches #
 matches [

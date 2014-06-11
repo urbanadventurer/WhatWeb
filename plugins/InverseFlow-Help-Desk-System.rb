@@ -21,24 +21,7 @@ dorks [
 'inurl:"ticketview.php" "To view a ticket, please enter your email address and ticket ID."'
 ]
 
-# Examples #
-examples %w|
-www.inverseflow.com/HelpDeskDemo/login.php
-www.netblazon.com/support/helpdesk/login.php
-www.sunwave.com.br/helpdesk/login.php
-support.virtualevolution.co.za/login.php
-help.gayadpros.com/ticketview.php
-helpdesk.t3g.net/helpdesk/ticketview.php
-www.radio2mp3.com/helpdesk/ticketview.php
-help.pridestudios.com/ticketview.php
-www.pfyc.com/help/login.php
-www.c-logix.com/ticket.php?cmd=lost
-helpdesk.serverwizards.com/ticket.php?cmd=lost
-support.onlinegardener.com/ticket.php?cmd=lost
-www.reply2dave.com/ticket.php?cmd=lost
-www.spytech-web.com/helpdesk/ticket.php?cmd=lost
-support.adcserver.net/ticket.php?cmd=lost
-|
+
 
 # Matches #
 matches [

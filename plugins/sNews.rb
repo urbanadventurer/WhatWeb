@@ -17,22 +17,7 @@ dorks [
 '"powered by sNews"'
 ]
 
-# Examples #
-examples %w|
-halvard.writeside.net
-halvard.writeside.net/login/
-people.virginia.edu/~msm6sw/
-www.bjbjd.com
-www.bjbjd.com/login/
-www.gmun.unal.edu.co/~cicamargoba/BinaryNews/iMAINN.html
-www.maquettiste.fr/snews/
-www.maquettiste.fr/snews/login/
-www.snewscms.com
-www.snewstr.com
-www.snewstr.com/login/
-www.sociology.ohio-state.edu/snews/admin.php
-www.zagadki.edukator.edu.pl
-|
+
 
 matches [
 

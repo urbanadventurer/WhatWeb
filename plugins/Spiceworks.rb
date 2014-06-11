@@ -13,18 +13,7 @@ description "Spiceworks' single, easy-to-use interface combines Network Inventor
 # 2,101 for spiceworks_session
 # 20 for -spiceworks_session spiceworks
 
-# Examples #
-examples %w|
-75.150.83.164
-204.97.253.84
-64.197.246.50
-69.95.6.106
-63.229.182.22
-130.179.4.93
-150.203.23.49
-207.212.143.229
-62.215.220.234
-|
+
 
 # Matches #
 matches [

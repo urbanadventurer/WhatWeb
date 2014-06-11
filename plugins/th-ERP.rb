@@ -17,16 +17,7 @@ dorks [
 'intitle:"thERP - Login" Username Password'
 ]
 
-# Examples #
-examples %w|
-www.costin.biz/erp/
-erptest.sgci.com
-demos1.softexconsulting.com/demos/therp/index.php
-www.distribook.ro/modul_plati/
-mag.echinaceea.ro
-pay.letempledujeu.fr
-www.pnc-consulting.ro/gfact/common/security.php
-|
+
 
 # Matches #
 matches [

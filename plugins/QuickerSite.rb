@@ -17,38 +17,7 @@ dorks [
 '"Powered by QuickerSite"'
 ]
 
-# Examples #
-examples %w|
-www.quickersite.com
-www.iseral.be
-www.tecnoambiente-ro.it
-degitaar.iseral.be
-www.museocieloeterra.org
-www.interxpose.com
-www.kikkerfreak.be
-www.diapasonsnc.it
-www.eigen-kracht.be
-www.museoarcheologicoambientale.it
-www.dogs-centro-hondentraining.be
-www.wimtuerlinckx.be
-www.laxrefs.org
-www.cambodia.fite.co.nz
-www.burchettfamily.com
-elitestonechicago.com
-www.cafe93.co.nz
-www.delrayac.com
-www.concretepumps.be
-www.buckydentbaseballschool.com/BDBS/
-www.delraysoccer.com
-www.emergeconsultancy.co.nz
-www.globaltribe.co.nz
-www.softwarepmi.com
-martineser.de
-www.hosdorisoboris.se
-quickersite.testsites.dk
-www.rollladen-daemmung.com
-www.doarisrael.com
-|
+
 
 # Matches #
 matches [

@@ -18,12 +18,7 @@ dorks [
 ]
 
 
-# Examples #
-examples %w|
-www.franztransporte.de/iplog.php?action=show
-www.debilsoft.de/ip_logger_pro/iplog.php?action=show
-www.lenapf.de/iplog.php?action=show
-|
+
 
 # Matches #
 matches [

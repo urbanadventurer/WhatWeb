@@ -20,25 +20,7 @@ dorks [
 '"Powered by AfterLogic WebMail Pro" intitle:"AfterLogic WebMail Pro"'
 ]
 
-# Examples #
-examples %w|
-webmail.mailstone.net
-webmail.mailstone.net/adminpanel/
-www.cccga.org/mail/
-mail.icerocket.com/webmail.php
-mail.shkoder.net
-banster.net/mail/
-mail.geoalb.org
-afterlogic.zoombuzz.net
-201.33.17.15
-200.203.89.54
-201.33.21.49
-201.33.22.225
-195.239.148.123
-41.162.143.12
-200.155.38.14
-94.21.6.43
-|
+
 
 # Matches #
 matches [

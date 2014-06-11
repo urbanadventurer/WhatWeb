@@ -18,45 +18,7 @@ dorks [
 'filetype:swe inurl:start'
 ]
 
-# Examples #
-examples %w|
-67.66.44.17
-70.137.112.170
-81.200.198.107
-81.200.202.73
-86.65.43.202
-163.231.4.68/eservice_enu/
-163.231.5.68/eservice_enu/
-209.173.53.80
-209.173.57.80
-customercenter.solidworks.com/eservice_enu/
-eservices.archives.gov/orderonline/
-mkt.solidworks.com/emarketing_enu/
-partnergateway.motorola.com/prmportalexternal_enu/
-siebel.ilovenydata.com/prmportal_enu/
-siebel-rbak.redback.com/eservice/
-widesurf.appspot.com/eservices.archives.gov/orderonline/
-www.license.nsw.gov.au/gls_eservice/
-https://appregistration.fahcsia.gov.au/
-https://connect.ariba.com/connect/start.swe
-https://ctms.dcri.duke.edu/eclinical_enu/
-https://eco.copyright.gov/eService_enu/
-https://eipweb.uspto.gov/SOMS/
-https://fofms.fahcsia.gov.au/fofmsportal/
-https://gesonline.ges.com/esales_enu/
-https://lsionline3.lsil.com/eservice-ssi/
-https://portal.casa.gov.au/selfservice/
-https://sbwsweb.ieee.org/ecustomercme_enu/
-https://sbprodweb.riag.com/etraining_enu/
-https://secure.tes.dwp.gov.uk/eservice_enu/
-https://siebel.ada.org/ecustomer_enu/
-https://srmanager.netiq.com/eservice_ENU/
-https://treas-secure.treas.state.mi.us/eservice_enu/
-https://webcrm.towerhamlets.gov.uk/eService_enu/
-https://webshop.dnv.com/global/
-https://www.computerproductseurope.co.uk/eservice_enu/
-https://www.fastrac4.nokia.com/prmportalHI_chs/start.swe
-|
+
 
 matches [
 

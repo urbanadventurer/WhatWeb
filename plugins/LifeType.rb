@@ -17,26 +17,7 @@ dorks [
 '"Powered by LifeType"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/lifetype/
-hugi.to/blog/
-iya.blogs.nowhere-else.org
-hrbspecialties.com/lifetype/
-cisc.twbbs.org/lifetype/
-ccyes.tpc.edu.tw/lifetype/
-cy-thompson.co.uk/lifetype/
-bigbrakebrewing.com/lifetype/
-journalofsustainability.com/lifetype/
-140.120.80.32/lifetype/
-linux.e-yen.info/lifetype/
-cy-thompson.co.uk/lifetype/
-chargingbull.net/lifetype/
-books.mlc.tw/lifetype/
-myfirstblog.net
-blaogy.com
-barbandrodger.com/LifeType/
-|
+
 
 # Matches #
 matches [

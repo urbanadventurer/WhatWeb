@@ -13,18 +13,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09
 version "0.2"
 description "This plugin identifies references to Google API in <script>."
 
-# Examples #
-examples %w|
-jquery.com
-scriptsrc.net
-css-tricks.com
-googleajaxsearchapi.blogspot.com
-getclicky.com
-jqueryui.com
-encosia.com
-telerik.com
-nivo.dev7studios.com
-|
+
 
 # Matches #
 matches [

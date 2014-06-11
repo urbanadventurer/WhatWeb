@@ -12,15 +12,7 @@ description "GPS NTP Network Appliances make it easy to manage and monitor time 
 # ShodanHQ results as at 2011-03-09 #
 # 20 for DATM
 
-# Examples #
-examples %w|
-192.77.171.2
-130.158.254.26
-138.26.185.249
-65.97.248.100
-208.77.216.230
-208.65.0.25
-|
+
 
 # Matches #
 matches [

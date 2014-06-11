@@ -17,12 +17,7 @@ dorks [
 'intitle:"V1" "welcome to phone settings" password -intitle'
 ]
 
-# Examples #
-examples %w|
-217.145.81.225
-194.44.0.55
-140.127.243.65
-|
+
 
 # Matches #
 matches [

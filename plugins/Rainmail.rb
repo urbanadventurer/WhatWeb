@@ -17,21 +17,7 @@ dorks [
 'intitle:"Rainmail Intranet Page"'
 ]
 
-# Examples #
-examples %w|
-124.247.192.24
-61.12.112.82
-119.226.97.189
-209.20.81.90
-122.160.44.128
-mx.ionexchangeglobal.com
-mail.rrfcl.com
-mail.sparkcapital.in
-mail.skpec.in
-email.ambujagroup.com
-mx.narl.gov.in
-intranet.wsinsulators.com
-|
+
 
 # Matches #
 matches [

@@ -16,22 +16,7 @@ dorks [
 'intitle:"powered by phpMyFAQ"'
 ]
 
-# Examples #
-examples %w|
-faq.phpmyfaq.de
-faq.aschool.com.au/Index.php
-faqs.pcbsd.org
-kelantan.gov.my/faq/index.php
-millionhelp.texmedia.de
-osresources.com
-puppylinuxfaq.org
-www.actatek.biz/faq/index.php
-www.fulbrightalumni.info/faq/
-www.previsora.gov.co/faq/
-www.sandiegocesar.gov.co/phpmyfaq/index.php
-www.shastidbullmastifflist.com/faq/
-www.webyog.com/faq/index.php
-|
+
 
 matches [
 

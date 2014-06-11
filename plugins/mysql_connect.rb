@@ -19,20 +19,7 @@ description "This plugin detects instances of the mysql_connect() function in PH
 #  13 results for mysql_connect ext:php2 @ 2011-01-19
 # 499 results for mysql_connect ext:php3 @ 2011-01-19
 
-# Examples #
-examples %w|
-http://www.majoss.com/shop2/marketing/realistic.php~
-http://www.freak.fr/includes/connection.php~
-http://www.nascarracingexperience.com/scheduleforthefirst/NRETEST.bak
-http://www.cacvs.org/registration/old/paiement_registration.php~
-http://conference.merlot.org/include/mysql/mysql_functions.inc
-http://www.coolminiornot.com/shop/js/ajax/getFindItFast.php.bak
-http://www.uspulpandpaper.com/cgi-local/dataconn.bak
-http://www.emporistechnologies.com/includes/dbconn.bak
-http://mypalletmanager.com/lib/class_sql.BAK
-http://www.science.uwaterloo.ca/~phys111/step2_sql.bak
-http://www.newinti.edu.my/mid-year-scholarship/scholarship.bak
-|
+
 
 # Passive #
 # Detect instances of the mysql_connect function and extract details

@@ -20,14 +20,7 @@ dorks [
 '"Powered by SocketKB version" -intext'
 ]
 
-# Examples #
-examples %w|
-socketkb.com/site/home/demo_coolblue.php
-socketkb.com/site/home/demo_default.php
-kb.c-comsat.com
-kb2.c-comsat.com/home/
-www.classiclandscapes.com/socketkb/
-|
+
 
 # Matches #
 matches [

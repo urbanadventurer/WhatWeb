@@ -17,29 +17,7 @@ dorks [
 "Your browser or some settings do not meet the requirements of Password Manager."
 ]
 
-# Examples #
-examples %w|
-https://admgmt.activedirectory.cornell.edu/QPM/user/
-https://access.stfc.ac.uk
-https://mya.insearch.edu.au/QPM/User/Identification/
-https://w3.abdn.ac.uk/QPM/User/Identification/
-https://passwd.mullermartini.com/QPM/User/
-https://password.georgianc.on.ca/QPM/User/
-https://password.xavier.edu
-https://passwordreset.leeds.ac.uk/QPM/User/Identification/
-https://passwordreset.ittdublin.ie/QPM/User/
-https://prm.abmc.gov/QPM/User/Identification/
-https://prm.jwu.edu/QPM/User/Identification/
-https://pss.student.westwood.edu/QPM/User/Identification/
-https://blowa.bl.uk/QPM/User/
-https://umanage.alabama.gov/qpm/user/
-https://unlock.altera.com/QPM/User/Identification/
-https://quest.propc.ie/QPM/User/
-https://helpdesk.lamar.edu/prmselfservice/
-https://mya.insearch.edu.au/QPM/User/Identification/index.aspx
-https://keystone.roundarch.com/QPM/User/About/
-https://selfhelp.bpglobal.com/QPM/User/Identification/
-|
+
 
 # Matches #
 matches [

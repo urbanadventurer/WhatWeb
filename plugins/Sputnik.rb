@@ -16,20 +16,7 @@ dorks [
 '"Powered by Sputnik"'
 ]
 
-# Examples #
-examples %w|
-sputnik.freewisdom.org
-gitoid.org
-www.luarocks.org
-mine.7chan.org/wiki/
-junkcode.erisian.com.au
-reaperworld.com
-trylua.net
-sylvanaar.com
-www.takhteyev.org
-wiki.secution.com
-qg.uncronopio.org
-|
+
 
 # Matches #
 matches [

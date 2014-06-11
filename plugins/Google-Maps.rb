@@ -17,14 +17,7 @@ dorks [
 '"powered by google maps"'
 ]
 
-# Examples #
-examples %w|
-www.map-generator.net
-www.blueforge.org/map/
-geo.worldbank.org
-rru.worldbank.org/businessplanet/
-www.bushnell.illinois.gov/shopmap.php
-|
+
 
 # Matches #
 matches [

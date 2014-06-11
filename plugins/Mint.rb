@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
 version "0.1"
 description "Mint is an extensible, self-hosted web site analytics program. Homepage: http://www.haveamint.com/"
 
-# Examples #
-examples %w|
-haveamint.com
-|
+
 
 # Matches #
 matches [

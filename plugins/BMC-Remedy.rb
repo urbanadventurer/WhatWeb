@@ -21,36 +21,7 @@ dorks [
 'intitle:"Remedy Mid Tier" "User Name" "Password"'
 ]
 
-# Examples #
-examples %w|
-soporte.quitze.com.mx/arsys/shared/login.jsp
-str.bsnl.co.in:8014/arsys/shared/login.jsp
-hcl-remedy.hcl.in
-remedy.perceptis.com
-hibajegy.invitel.co.hu
-servicedesk.servicegruppen.dk
-support.koan-it.com
-v-rem-lnx1.nwu.ac.za:8080/MidTier/
-supportportal.tideworks.com
-remedysupport.globecommsystems.com/arsys/
-https://help.afsv.net/
-https://servicios.itsm.ejie.net/arsys/shared/login.jsp
-https://csdpmt1.k12.hi.us/
-https://remedy.its.ws
-ccconline.nwpg.gov.za/arsys/shared/login.jsp
-https://its.support.nc.gov/
-https://itsm.ca.gov/arsys/home
-gemini.srv.cs.cmu.edu
-support.utoledo.edu
-itsm.uws.edu.au
-support.utoledo.edu
-https://helpdesk.uh.edu/arsys/
-https://remedy.ccit.arizona.edu:8081/arsys/
-https://helpdesk.ksu.edu/arsys/shared/login.jsp
-https://hd.kc.us.army.mil/
-https://remedy1.afbudsys.disa.mil/arsys/home
-https://mt1.afrc.af.mil/arsys/
-|
+
 
 # Matches #
 matches [

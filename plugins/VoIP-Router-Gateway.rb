@@ -11,17 +11,7 @@ description "ALLWIN Tech VoIP Router Gateway device [ Chinese ] - Runs EIA AOS s
 # Default login: admin/admin
 
 # About 1303 ShodanHQ results for WWW-Authenticate: Basic realm="Web Config System" @ 2010-11-01
-examples %w|
-123.190.74.124
-221.220.158.255
-110.203.3.18
-183.160.23.216
-119.145.111.198
-70.79.66.127
-219.153.163.42
-220.228.185.30
-222.247.232.31
-|
+
 
 matches [
 

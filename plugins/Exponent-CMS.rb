@@ -17,25 +17,7 @@ dorks [
 '"powered by Exponent CMS"'
 ]
 
-# Examples #
-examples %w|
-beyondthebeatenpath.com
-fortwayneworkingdog.org
-noiraonline.org
-www.3riversworkingdog.org
-www.abinfo.com.br
-www.chapmanqualityroofing.co.uk
-www.circleofbusiness.org
-www.consult-avatar.com
-www.danjim.com.au
-www.englishdrama-trier.de
-www.heritagescience.ac.uk
-www.metalmar.net/exp/
-www.path3.com
-www.rcfrn.org/cms/
-www.ridgeworks.ca
-www.riia.ro
-|
+
 
 matches [
 

@@ -12,18 +12,7 @@ description "Cisco VPN 3000 Series Concentrators provide your business with unpr
 # 15 results for "intitle:Cisco Systems, Inc. VPN 3000 Concentrator" @ 2010-07-20
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=791
 # Default login: admin/admin
-examples %w|
-218.1.100.229/index.html
-66.62.91.6
-38.136.1.229
-www.ciliance.fr
-208.255.77.2
-https://cgsn.org
-206.67.182.219/admin.html
-170.206.226.20
-168.100.253.3
-ciscovpn.alliedholdings.com
-|
+
 
 matches [
 

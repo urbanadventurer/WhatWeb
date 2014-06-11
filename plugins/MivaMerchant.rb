@@ -20,19 +20,7 @@ dorks [
 'inurl:merchant.mvc ext:mvc'
 ]
 
-# Examples #
-examples %w|
-208.106.184.25
-208.84.117.133
-208.112.22.15
-216.177.132.4
-64.78.26.15
-67.99.206.88
-www.concealco.com/miva/merchant.mvc
-shop.newbelgium.com/store/merchant.mvc
-www.mtnhse.com/mm5/merchant.mvc
-www.venierospastry.com/Merchant2/merchant.mvc
-|
+
 
 # Matches #
 matches [

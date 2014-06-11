@@ -15,19 +15,7 @@ description "IBM Remote Supervisor Adapter (RSA) is the out-of-band management i
 # ShodanHQ results as at 2012-02-15 #
 # 568 for private/testcookie.ssi SESSID
 
-# Examples #
-examples %w|
-212.162.7.219
-92.60.50.121
-173.166.87.212
-61.47.61.21
-121.254.238.91
-93.89.14.141
-129.42.208.236
-212.47.219.84
-193.40.150.172
-193.40.150.188
-|
+
 
 # Matches #
 matches [

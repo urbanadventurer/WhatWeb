@@ -12,19 +12,7 @@ description "Telligent Community (previously known as Community Server) is a com
 # ShodanHQ results as at 2011-03-15 #
 # 658 for communityserver
 
-# Examples #
-examples %w|
-66.129.71.27
-146.217.8.128
-208.40.147.100
-74.86.47.16
-199.79.186.117
-66.240.69.219
-213.225.135.130
-82.165.129.142
-92.52.93.58
-208.71.18.59
-|
+
 
 # Passive #
 def passive

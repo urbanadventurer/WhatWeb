@@ -21,17 +21,7 @@ description "Opensource, embedded webserver. Homepage: http://embedthis.com/prod
 # ShodanHQ results as at 2011-01-29 #
 # 453222 for GoAhead Webs
 
-# Examples #
-examples %w|
-120.138.16.61
-202.89.36.233
-175.115.218.6
-66.31.253.181
-77.236.193.140
-200.202.225.35
-122.254.45.241
-189.14.249.222
-|
+
 
 # Matches #
 matches [

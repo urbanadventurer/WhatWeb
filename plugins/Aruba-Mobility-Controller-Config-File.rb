@@ -10,14 +10,7 @@ version "0.1"
 description "Aruba's family of mobility controllers are purpose-built network infrastructure devices, designed from the ground up to provide secure, scalable solutions for campus wireless LAN, wired security, branch office deployments, and remote networking.  - homepage: http://www.arubanetworks.com/products/mobility_controllers.php"
 
 # 4 results for "logging level warnings stm" @ 2010-10-14
-examples %w|
-www.moloch.org/tommEE/aruba.cfg
-www.opus1.com/nac/lv06configs/ARUBA-CONFIG.
-www.opus1.com/nac/ny06configs/NAP-ARUBA.CONFIG
-www.opus1.com/nac/ny06configs/NAP-ARUBA-AP.CFG
-www.opus1.com/nac/lv08configs/ARUBA-NAC.CONFIG
-www.opus1.com/nac/lv08configs/ARUBA-INFRASTRUCTURE.CONFIG
-|
+
 
 matches [
 

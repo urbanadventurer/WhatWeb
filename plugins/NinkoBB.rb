@@ -17,23 +17,7 @@ dorks [
 '"Powered by NinkoBB"'
 ]
 
-# Examples #
-examples %w|
-ninkobb.com
-demo.opensourcecms.com/ninkobb/
-codeshare.comeze.com
-khaledmekaoui.tk/forum/
-shanegi13.com/form.php
-stuentry.thu.edu.tw/guestbook/
-systemsorcery.net
-webhostingwetrust.org/forum/
-www.shawncorson.com/community/
-www.artseek.co.uk/forum/
-www.noybook.com
-www.clubrimes.com
-venthemiux.org/commune/
-hateistheonlywayout.netne.net/form.php
-|
+
 
 # Matches #
 matches [

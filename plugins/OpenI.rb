@@ -17,11 +17,7 @@ dorks [
 '"Openi Intelligence Portal" "Username" "Password"'
 ]
 
-# Examples #
-examples %w|
-jasper.openi.org
-demo.openi.org/openi
-|
+
 
 # Matches #
 matches [

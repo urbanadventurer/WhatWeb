@@ -20,15 +20,7 @@ dorks [
 'intitle:"Login Page - Kerio WinRoute Firewall"'
 ]
 
-# Examples #
-examples %w|
-83.167.96.186
-194.67.48.102
-80.249.182.138
-https://melita.digisecmalta.com:4081
-a47.sub34.net78.udm.net
-78.85.34.47:4080
-|
+
 
 # Matches #
 matches [

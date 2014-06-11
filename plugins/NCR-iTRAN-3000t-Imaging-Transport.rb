@@ -11,20 +11,7 @@ description "A full function, image-based table top check imaging and payment pr
 
 # More Info # http://www.ncr.com/documents/itran_3000t_ds.pdf
 
-# Examples #
-examples %w|
-67.203.68.236
-71.136.54.109
-71.177.28.2
-76.192.223.67
-69.9.54.145
-63.248.58.159
-207.177.229.115
-67.113.112.18
-12.101.236.14
-63.248.198.183
-207.177.241.232
-|
+
 
 # Matches #
 matches [

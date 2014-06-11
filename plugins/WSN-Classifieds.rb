@@ -12,18 +12,7 @@ description "WSN Classifieds gives you a powerful classified ads site. The vast 
 # Google results as at 2011-03-16 #
 # 3 for "WSN Classifieds" inurl:"adminlogin.php"
 
-# Examples #
-examples %w|
-demo.webmastersite.net/wsnclassifieds
-demo.webmastersite.net/wsnclassifiedsadmin/admin/
-empordalloguer.com
-twowayradiodirectory.com/classifieds/
-glasgow-south.co.uk/classifieds
-clasificados4u.com
-www.synamix.net/adminlogin.php
-www.empordalloguer.com/adminlogin.php
-www.glasgow-south.co.uk/classifieds/adminlogin.php
-|
+
 
 # Matches #
 matches [

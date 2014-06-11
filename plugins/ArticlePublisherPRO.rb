@@ -20,24 +20,7 @@ dorks [
 '"powered by Article Publisher PRO" -Vulnerability'
 ]
 
-# Examples #
-examples %w|
-article-publisher-pro.phparticlescript.com
-article-publisher-pro.phparticlescript.com/admin/admin.php
-adultarticlezone.com
-coronanewsplace.com
-info-knowledge.com
-phpscriptstore.com
-toddcue.co.uk/articles/
-tiredemployees.com
-www.articlehealthandfitness.com
-www.hauntedbook.co.uk
-www.kylecfrazier.com/pennyarticle/
-www.medicaidarticles.com
-www.submitarticlesfree.com
-www.tucanatech.com
-www.valuedarticles.com/article/
-|
+
 
 # Matches #
 matches [

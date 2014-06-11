@@ -17,26 +17,7 @@ dorks [
 '"powered by Esvon Classifieds"'
 ]
 
-# Examples #
-examples %w|
-allterrainshopper.com
-classifiedusa.net
-globalemploymentguide.com
-photinicreations.com
-qatarforall.com/auto/
-top10contractors.com
-worldsexguide.info/escorts/
-www.custommarinesales.com/classifieds/
-www.forsaleboats.com
-www.holiday-home-rentals.com
-www.ifreeagent.com
-www.listarooni.com
-www.nutrader.com
-www.sunlifeproperty.com
-www.thedieselclassifieds.com
-www.worldsexguide.com/escorts/
-www.usedbaby.ca
-|
+
 
 matches [
 

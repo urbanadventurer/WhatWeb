@@ -22,40 +22,7 @@ dorks [
 '"ZoneMinder Login" "Username" "Password" intitle:Login'
 ]
 
-# Examples #
-examples %w|
-24.35.239.147
-195.210.60.124
-81.29.182.175
-201.238.229.105
-201.148.36.170
-91.143.208.137
-99.44.169.136
-187.206.138.62
-77.108.31.133
-https://zoneminder.dsr.life.ku.dk/zm/
-www.ttgoz.com/zm/index.php
-entr.co.uk/zoneminder/
-pix.chill.colostate.edu
-stresslessgroup.com/index.php
-67.212.42.104/index.php
-guardduty.corrilan.com
-darkcity.ca/index.php
-cams.padgettlawoffice.net:83/zm/
-video.evairtight.com
-cams.lewispestcontrol.net:81/zm/
-chittavritti.com/zm/
-stupidrob.net/zm/index.php
-hrib.net/zm/
-loveyourwife.com/zm/
-crespo.us:8888/zm/
-96.37.141.218:88/zm/index.php
-www.jcshome.net/zm/index.php
-cameras.arenafernandasselin.com
-www.robertdwatson.com
-camera.mrroofing.com
-6810.redkingfoods.com:8888/zm/
-|
+
 
 # Matches #
 matches [

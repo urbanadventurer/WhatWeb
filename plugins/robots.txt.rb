@@ -18,12 +18,7 @@ description "This plugin identifies robots.txt files and extracts both allowed a
 # Google results as at 2011-03-23 #
 # 920 for inurl:robots.txt filetype:txt
 
-# Examples #
-examples %w|
-morningstarsecurity.com/robots.txt
-itsecuritysolutions.org/robots.txt
-whatweb.net/robots.txt
-|
+
 
 # Passive #
 def passive

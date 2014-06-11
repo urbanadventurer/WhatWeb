@@ -12,17 +12,7 @@ description "NetPresenz is a Classic Macintosh implementation of the WWW, Gopher
 # ShodanHQ results as at 2011-06-04 #
 # 26 for netpresenz
 
-# Examples #
-examples %w|
-129.22.129.203
-206.205.130.131
-155.207.5.59
-74.124.163.192
-81.224.46.177
-194.204.19.10
-64.198.81.221
-150.46.110.44
-|
+
 
 # Passive #
 def passive

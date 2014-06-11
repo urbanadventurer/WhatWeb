@@ -12,18 +12,7 @@ description "Message Handling System (MHS) is an important early email protocol 
 # ShodanHQ results as at 2011-05-31 #
 # 25 for Web Services Module
 
-# Examples #
-examples %w|
-64.7.164.161
-64.7.164.168
-64.7.164.157
-64.7.164.169
-64.7.164.166
-64.7.164.152
-64.7.164.171
-64.7.164.167
-64.7.164.158
-|
+
 
 # Passive #
 def passive

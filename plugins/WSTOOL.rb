@@ -17,10 +17,7 @@ dorks [
 ' intitle:"Server Error & SQL Injection Sacnner" "Server info" "Domain or IP"'
 ]
 
-# Examples #
-examples %w|
-www.sustainableexpeditions.org/wstool/ws_main.php
-|
+
 
 # Matches #
 matches [

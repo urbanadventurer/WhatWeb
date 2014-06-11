@@ -18,19 +18,7 @@ dorks [
 'intitle:"PHPOpenChat Installation" inurl:"admin/install.php"'
 ]
 
-# Examples #
-examples %w|
-www.linajeescogido.com/lounge/chat/html/admin/install.php
-toyotapower.wz.cz/chat/html/admin/install.php
-www.valledelcauca.gov.co/chat/html/admin/install.php
-www.clubedosdivorciados.com/chat/html/admin/install.php
-www.privatchatmeiner.chat3.de/form/chat/html/admin/install.php
-www.stonemountainalumni.org/chat/html/admin/install.php
-www.urbannightmares.net/chat/html/admin/install.php
-mistertoro.com/wbi/chat/html/admin/install.php
-kra7os.com/irc/html/admin/install.php
-42loop.de/chat/html/admin/install.php
-|
+
 
 # Matches #
 matches [

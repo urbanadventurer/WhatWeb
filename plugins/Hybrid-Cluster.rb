@@ -15,19 +15,7 @@ description "Hybrid Web Cluster is a software product that sits on top of the in
 # ShodanHQ results as at 2011-06-07 #
 # 30 for Hybrid Cluster
 
-# Examples #
-examples %w|
-91.209.244.154
-91.209.244.163
-91.209.244.144
-91.209.244.133
-91.209.244.168
-91.209.244.137
-91.209.244.191
-91.209.244.180
-91.209.244.152
-91.209.244.170
-|
+
 
 # Passive #
 def passive

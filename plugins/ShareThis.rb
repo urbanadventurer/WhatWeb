@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
 version "0.1"
 description "ShareThis is a utility that makes it easy to share articles to social media websites like Digg or Facebook [JavaScript] - Homepage: http://sharethis.com/"
 
-# Examples #
-examples %w|
-sharethis.com
-www.foxtrot.com
-|
+
 
 # Matches #
 matches [

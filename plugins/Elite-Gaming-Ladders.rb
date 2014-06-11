@@ -19,34 +19,7 @@ dorks [
 'inurl:"ladders.php?platform="'
 ]
 
-# Examples #
-examples %w|
-eliteladders.com/demoegla
-eliteladders.com/demo/index.php
-eliteladders.com/demov2
-www.armaleague.com/apl_ladder/ladders.php?platform=13
-league.hxclancenter.com/ladders.php?platform=2
-clancompete.com/ladders.php?platform=1
-gamearena.us/ladders.php?platform=
-www.balkanesports.com/ladders.php?platform=
-www.ps3leaderboard.com/ladders.php?platform=
-brotherofwar.com/groundzero/ladders.php?platform=2
-matches.clantacular.com/ladders.php?platform=2
-www.fusionleague.com/ladders.php?platform=4
-www.widowmakers.com/league/ladders.php?platform=
-fragageddon.net/ladders.php?platform=3
-rs8.com/ladders.php?platform=2
-www.yodc.com/ladders.php?platform=8
-www.armaleague.com/apl_ladder/ladders.php
-ladderscript.com/ladders.php?platform=11
-www.leikjamot.com/ladders.php?platform=2
-rumblegt.com/ladders.php?platform=2
-superiorpcs.net/ladders.php?platform=3
-ps3cod.com/ladders.php?platform=2
-nationalegl.com/ladders.php?platform=2
-www.360battles.com/ladders.php?grid=30
-p4fleague.com/profile.php?account=85
-|
+
 
 # Matches #
 matches [

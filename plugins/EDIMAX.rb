@@ -18,22 +18,7 @@ description "EDIMAX Device # Wireless Access Point / Broadband Routers / Etherne
 
 # About 12,383 SHodanHQ results for WWW-Authenticate: Basic realm="Default: admin/1234"
 # About 49 SHodanHQ results for "WWW-Authenticate: Basic realm=" "Default: admin/password"
-examples %w|
-84.111.104.73
-84.111.190.21
-89.216.27.79
-61.250.78.55
-83.130.123.44
-212.93.154.236
-123.0.211.163
-91.144.142.42
-84.232.21.232
-81.182.227.48
-88.135.174.201
-125.15.148.25
-218.226.215.11
-122.25.226.187
-|
+
 
 matches [
 

@@ -12,16 +12,7 @@ description "Konica Minolta Printer - Homepage: http://konicaminolta.com/"
 # ShodanHQ results as at 2011-09-22 #
 # 819 for LPC Http Server
 
-# Examples #
-examples %w|
-202.253.12.190
-204.88.144.131
-141.213.32.82
-141.213.32.82:631
-160.114.106.190
-211.195.85.8
-160.114.106.190
-|
+
 
 # Matches #
 matches [

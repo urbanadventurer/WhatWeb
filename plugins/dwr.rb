@@ -9,11 +9,7 @@ author "Aung Khant <http://yehg.net/>" # 2012-02-12
 version "0.1"
 description "Direct Web Remoting - http://directwebremoting.org"
 
-# Examples #
-examples %w|
-http://directwebremoting.org/dwr-demo/dwr/test/JavascriptChat
-http://directwebremoting.org/dwr-demo/widgets/dojo-demo.html
-|
+
 
 # Matches #
 matches [

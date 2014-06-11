@@ -13,11 +13,7 @@ description "Tiger Netcom is a manufacturer and distributor of Voice over Intern
 # 21 for TigerNetCom -SIP
 # 30 for TigerNetCom
 
-# Examples #
-examples %w|
-63.245.66.236
-193.179.44.46
-|
+
 
 # Passive #
 def passive

@@ -13,16 +13,7 @@ description "WSN Gallery is a media gallery for images, videos and more. It can 
 # 2 for "WSN Gallery" "Non-numeric id value given in creating object"
 # 1 for "WSN Gallery" inurl:"adminlogin.php"
 
-# Examples #
-examples %w|
-demo.webmastersite.net/wsngallery
-demo.webmastersite.net/wsngalleryadmin/admin/
-www.manu-baeren.de/wincolor/window-color/adminlogin.php
-www.san-diego-university.com/wsngallery/
-coppolabros.com/index.php
-www.yupifotos.com/download.php
-www.dpalbums.lv/lat/download.php
-|
+
 
 # Matches #
 matches [

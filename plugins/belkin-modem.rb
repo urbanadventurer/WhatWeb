@@ -12,7 +12,7 @@ Plugin.define "Belkin-Modem" do
 author "Andrew Horton"
 version "0.2"
 description "Homepage: http://www.belkin.com/"
-examples %w| 122.58.46.235 121.73.151.115 202.0.58.89|
+
 
 # http://122.58.46.235 Generic-Server = 'micro_httpd'
 # http://121.73.151.115/ server-header = 'IP_SHARER WEB 1.0'

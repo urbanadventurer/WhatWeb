@@ -17,24 +17,7 @@ dorks [
 '"2004 E-Manage All Rights Reserved MySchool Version * E-Manage"'
 ]
 
-# Examples #
-examples %w|
-em.com.eg/demo/myschool/
-e-manage.org/myschool/
-asmis-school.com/girls/
-www.asmis-school.com/kids/
-www.shareyaschools.com
-safwa-school-faisal.com
-badralislam.com
-www.anjalbisha.com/sec1/
-www.anjalbisha.com/sec2/
-arabia-schools.com
-farasanss.com
-www.alkhwarzmioman.com
-albawade.net
-alqalafschools.com/index.php
-elhedayaps-hl.com/index.php
-|
+
 
 # Matches #
 matches [

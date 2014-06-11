@@ -13,15 +13,7 @@ description "XBMC (formerly 'Xbox Media Center') is a free, open source (GPL) mu
 # 47 for XBMC -"xbmc.org"
 # 46 for realm XBMC
 
-# Examples #
-examples %w|
-83.81.148.101
-94.195.248.67
-79.97.45.250
-83.117.218.216
-87.210.58.176
-87.251.196.116
-|
+
 
 # Matches #
 matches [

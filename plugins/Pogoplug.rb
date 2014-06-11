@@ -15,17 +15,7 @@ description "Pogoplug is a device that connects your USB drive to the Internet s
 # ShodanHQ results as at 2011-08-05 #
 # 193 for HBHTTP
 
-# Examples #
-examples %w|
-https://cloudstor.pogoplug.com/
-https://my.pogoplug.com/
-173.77.25.209
-80.117.69.149
-173.162.88.214
-141.211.155.215
-38.104.224.170
-77.222.174.210
-|
+
 
 # Passive #
 def passive

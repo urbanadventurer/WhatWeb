@@ -18,33 +18,7 @@ dorks [
 'intitle:"Powered by AM4SS"'
 ]
 
-# Examples #
-examples %w|
-www.ma4ma.com
-www.qtr-web.com
-www.coolnt.com/home/
-www.jedawyah.com
-www.oman-server.com
-www.wid.net.sa
-www.b4fh.com
-www.arabictop.net
-www.aboody-host.com
-www.alrakka.biz
-www.sh3net.net
-www.jooyl.net
-www.or4sup.com
-www.lolaty.com/sp/
-www.eb-h.com
-www.siitte.com
-www.x8c.net
-alsharqyah.com
-www.mofed.net
-www.4d3m.com
-maakm.com
-starjo-host.com
-www.moshark.com.sa
-www.al-nile.com/hosting/
-|
+
 
 # Matches #
 matches [

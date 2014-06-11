@@ -16,15 +16,7 @@ dorks [
 'intitle:mywebftp "Please enter your password" -intitle'
 ]
 
-# Examples #
-examples %w|
-superiorscoping.com/free_ftp/ftp.php
-icsap.com/mywebftp/admin.php
-stockage.univ-brest.fr/~e20301845/admin/my_web_ftp/ftp.php
-www.bandicoot-net.de/Tools/webFTP.php
-www.valdosta.edu/~jospoone/MyFTP/ftp.php
-ftp.lopezortiz.com
-|
+
 
 # Matches #
 matches [

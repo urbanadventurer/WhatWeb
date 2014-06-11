@@ -11,20 +11,7 @@ description "This plugin retrieves the X-UA-Compatible value from the HTTP heade
 
 # About 30930 ShodanHQ results for X-UA-Compatible @ 2011-01-08
 
-# Examples #
-examples %w|
-207.12.181.108
-203.33.22.163
-64.151.119.85
-87.106.255.248
-208.24.16.131
-92.79.167.103
-216.177.95.165
-67.223.239.164
-69.28.15.38
-198.64.139.229
-199.15.160.42
-|
+
 
 # Matches #
 matches [

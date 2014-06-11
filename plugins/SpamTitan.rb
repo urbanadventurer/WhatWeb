@@ -16,24 +16,7 @@ dorks [
 'intitle:"SpamTitan" "Language" "Czech (Czech)" "German (German)" "English (English)" "Japanese (Japanese)" "Password" "Email Address"'
 ]
 
-# Examples #
-examples %w|
-demo.spamtitan.com:8080
-www.teletekpr.com
-spamtitan002.wice.eu
-spamtitan.ccsleeds.co.uk
-www.djepy.fr
-netx.ca
-pacificstar.biz
-spamtitan.nitrex.net
-spamtitan.changewright.com
-mailin.mailr.net
-openbsd.vip.net.id
-https://smtp1.ironclad-email.com/
-https://edge.nsc.nevada.edu/
-https://spamtitan.tangischools.org/
-https://net2spam.net2net-it.com:5443/
-|
+
 
 # Matches #
 matches [

@@ -20,21 +20,7 @@ dorks [
 'intitle:"VisionWEB" "Insignis Technologies"'
 ]
 
-# Examples #
-examples %w|
-151.12.21.34
-87.235.126.127
-88.2.160.51
-81.138.8.20
-46.26.195.96
-77.251.93.107
-80.38.175.254
-85.34.54.102
-212.73.36.73
-taunton.mercedes-benzsouthwest.co.uk
-mail.newquayzoo.org.uk
-81.57.103.196
-|
+
 
 # Matches #
 matches [

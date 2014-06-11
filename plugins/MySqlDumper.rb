@@ -21,22 +21,7 @@ dorks [
 'inurl:sql_statement inurl:sql.php intitle:MySqlDumper'
 ]
 
-# Examples #
-examples %w|
-www.njoftime.com/mysqldumper/sql.php
-s294746524.onlinehome.info/mysqldumper/sql.php
-usthb-dz.org/mysqldumper/sql.php
-tvf.22web.net/mysqldumper/sql.php
-giakienphatcafe.com/mysqldumper/sql.php
-www.ruediger-sielaff.de/mysqldumper/sql.php
-canpolat.wkhost.net/mysqldumper/sql.php
-fatwarez.org/msd/sql.php
-ibs-informatik.dnsalias.net/mysqldumper/sql.php
-dishpointer.techno-com.de/MySQLDumper/sql.php
-www.manutd-news.com/Hi/sql.php
-212.41.212.38
-80.69.47.37
-|
+
 
 # Matches #
 matches [

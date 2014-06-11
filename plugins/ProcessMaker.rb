@@ -17,23 +17,7 @@ dorks [
 '"User" "Password" "Language" "System Information" "Colosa, Inc. All rights reserved."'
 ]
 
-# Examples #
-examples %w|
-sandbox.processmaker.com/sysformsharedub/en/green/login/login.html
-process.gopremierone.net
-h2b2x.colosa.net
-80.191.101.26
-pmaker.carolinaperu.com
-bpm.grupovadeto.com
-process.gopremierone.net
-pm.activeshare.cn
-www.ddm.graysonindustries.com
-199.253.96.45/sysShanghai/en/green/login/login
-pm.at2.kz/sysworkflow/en/green/login/login.html
-https://www.masterline-logistics.com/
-https://ubrandingsystem.unimelb.edu.au/
-https://forms.hved.org/
-|
+
 
 # Matches #
 matches [

@@ -12,20 +12,7 @@ description "Russian Apache is based on the popular HTTP server Apache, with add
 # ShodanHQ results as at 2011-08-04 #
 # 10,842 for rus/PL
 
-# Examples #
-examples %w|
-62.213.112.3
-217.23.157.92
-62.213.74.107
-62.213.112.60
-62.213.112.245
-62.213.81.254
-217.23.158.205
-89.108.105.56
-62.213.113.7
-79.137.231.15
-77.236.43.47
-|
+
 
 # Passive #
 def passive

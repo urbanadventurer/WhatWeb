@@ -15,7 +15,7 @@ author "Patrik Wallström"
 version "0.2"
 description "CMS from EPiServer - http://episerver.com/"
 
-examples %w| www.stockholm.se www.sweden.se www.fritidsresor.se www.generationgreen.co.uk www.jerseytelecom.com www.mohive.com|
+
 
 matches [
 {:name=>"meta generator tag with EPiServer", :text=>"<meta name=\"GENERATOR\" content=\"EPiServer\" />"},

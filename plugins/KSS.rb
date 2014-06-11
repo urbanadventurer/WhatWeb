@@ -18,14 +18,7 @@ description "KSS (Kinetic Style Sheets) is an Ajax framework that allows UI deve
 # ShodanHQ results as at 2011-06-02 #
 # 155 for X-Ksscommands
 
-# Examples #
-examples %w|
-168.143.184.45
-200.55.201.175
-62.2.188.250
-146.186.106.199
-130.225.180.111
-|
+
 
 # Passive #
 def passive

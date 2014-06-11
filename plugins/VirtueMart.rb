@@ -12,19 +12,7 @@ description "VirtueMart is an Open Source E-Commerce solution to be used togethe
 # ShodanHQ results as at 2011-05-23 #
 # 8,747 for virtuemart
 
-# Examples #
-examples %w|
-demo.virtuemart.net
-178.210.66.230
-122.252.15.112
-112.140.180.158
-85.207.57.153
-93.81.242.166
-69.89.23.247
-81.176.228.120
-207.210.225.33
-207.7.81.168
-|
+
 
 # Matches #
 matches [

@@ -18,8 +18,7 @@ dorks [
 'name "last modified" size description'
 ]
 
-# Examples #
-examples %w| http://203.167.225.160 http://www.ibiblio.org/pub/ http://www.w3.org/Icons/ loop-aes.sourceforge.net http://www.gap-system.org/~history/Mathematicians/ http://www.lightrail.com/ http://download.opensuse.org/repositories/ |
+
 
 # Apache2 http://www.ibiblio.org/pub/
 #<a href="?C=N;O=D">Name</a>                     <a href="?C=M;O=A">Last modified</a>

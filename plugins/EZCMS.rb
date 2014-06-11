@@ -20,14 +20,7 @@ dorks [
 '"powered by EZCMS" -Vulnerabilities'
 ]
 
-# Examples #
-examples %w|
-ezcms.eztechhelp.com
-www.eztechhelp.com/ezcms/
-ezcms.eztechhelp.com
-www.liverpoolwebdesign.com.au
-www.ezwebsites.com.au
-|
+
 
 # Matches #
 matches [

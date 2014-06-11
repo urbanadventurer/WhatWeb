@@ -13,10 +13,7 @@ description "Fujitsu Wireless Access Point - Homepage: http://fenics.fujitsu.com
 # 1 for SR-M20AP1
 # 0 for SR-M20AC1
 
-# Examples #
-examples %w|
-133.86.247.9
-|
+
 
 # Passive #
 def passive

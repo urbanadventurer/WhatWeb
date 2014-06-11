@@ -17,34 +17,7 @@ dorks [
 '"Powered by PageCookery Microblog"'
 ]
 
-# Examples #
-examples %w|
-www.pagecookery.com/?act=view
-www.myf5.cn
-www.xmiy.com
-liukun.name/talk/
-mozun.cn/wb/
-www.jackidea.com/talk/
-www.windsays.com/t/
-talk.kaisir.com
-t.binjoo.net
-t.mxlove.org
-t.lvbeta.com
-t.ai95.com
-www.douk.tk
-www.zhouhua.tk/
-www.loytown.com/mblog/
-sorry.im/microblog/
-t.yeezi.org
-microblog.dr-rider.tk
-jandan.tk
-tsina.tk/mblog/
-www.minisix.cn/mblog/
-t.snailstory.cn
-www.zhuhuadong.com
-www.imyxiao.com/microblog/
-www.sayme.tk
-|
+
 
 # Matches #
 matches [

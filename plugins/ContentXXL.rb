@@ -9,15 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
 description "ContentXXL - CMS [German] - Requires: .NET - Homepage: http://www.contentxxl.de/"
 
-# Examples #
-examples %w|
-www.contentxxl.de
-www.contentxxl.com
-www.futurexxl.de
-www.glauxsoft.com
-www.evidence.gs
-www.fallfuehrung.ch
-|
+
 
 # Matches #
 matches [

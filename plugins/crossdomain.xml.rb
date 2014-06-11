@@ -11,14 +11,7 @@ description "This plugin extracts allowed domain from crossdomain.xml"
 
 # 61 results for ext:xml "allow-access-from domain" inurl:"crossdomain.xml"
 
-# Examples #
-examples %w|
-video.google.com/crossdomain.xml
-youtube.com/crossdomain.xml
-lwbcmn.org/crossdomain.xml
-www.davidstephenson.com/crossdomain.xml
-deviantart.com/crossdomain.xml
-|
+
 
 # Matches #
 matches [

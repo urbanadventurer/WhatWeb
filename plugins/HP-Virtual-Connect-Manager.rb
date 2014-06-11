@@ -16,19 +16,7 @@ description "HP Virtual Connect Enterprise Manager (VCEM) centralizes connection
 # 60 for Virtual Connect -0
 # 56 for Module Virtual Connect
 
-# Examples #
-examples %w|
-212.124.111.91
-212.124.111.92
-212.124.111.54
-212.124.111.55
-212.124.111.56
-212.124.111.238
-212.124.111.239
-212.124.111.53
-212.124.111.228
-212.124.111.229
-|
+
 
 # Matches #
 matches [

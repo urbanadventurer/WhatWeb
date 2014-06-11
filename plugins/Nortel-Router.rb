@@ -20,23 +20,7 @@ dorks [
 'intitle:"Nortel Secure Router" "To administer this device you must first login"'
 ]
 
-# Examples #
-examples %w|
-4.59.116.128
-173.215.168.252
-173.228.226.56
-98.19.223.240
-207.230.201.39
-65.249.137.159
-omnexgroup.com
-66.236.240.10.ptr.us.xo.net
-ip67-91-212-19.z212-91-67.customer.algx.net
-67-131-219-63.dia.static.qwest.net
-72-166-54-192.dia.static.qwest.net
-66-50-124-202.prtc.net
-ip66-104-218-32.z218-104-66.customer.algx.net
-209.31.26.1.ptr.us.xo.net
-|
+
 
 # Matches #
 matches [

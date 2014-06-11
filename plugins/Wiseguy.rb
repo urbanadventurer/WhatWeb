@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
 description "Wiseguy is a WSGI compliant FastCGI server built on top of python-fastcgi and the Open Market FCGI library. It contains a few patches to deal with various bad behaviors under high load. - Homepage: https://code.google.com/p/msolo/wiki/wiseguy"
 
-# Examples #
-examples %w|
-www.youtube.com/watch
-|
+
 
 # Passive #
 def passive

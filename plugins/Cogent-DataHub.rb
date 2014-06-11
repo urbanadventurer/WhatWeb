@@ -9,13 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
 version "0.1"
 description "Cogent DataHub - real-time data monitoring. DataHub WebView is a Silverlight application - Homepage: http://www.cogentdatahub.com/"
 
-# Examples #
-examples %w|
-developers.cogentrts.com:8080
-cogentrts.com:8080
-mes-demo.ch:8080
-cloud.cogentdatahub.com
-|
+
 
 # Matches #
 matches [

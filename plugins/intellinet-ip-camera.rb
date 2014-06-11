@@ -21,16 +21,7 @@ dorks [
 'intitle:"INTELLINET" intitle:"IP Camera Homepage"'
 ]
 
-# Examples #
-examples %w|
-216.114.121.12
-193.95.229.234
-193.164.133.130
-78.86.204.2:84/index.cgi
-imst.selfip.net:88
-tcl.dyndns.info
-webcam.vanree.com/index.cgi
-|
+
 
 # Matches #
 matches [

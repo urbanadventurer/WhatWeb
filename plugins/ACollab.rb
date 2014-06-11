@@ -17,11 +17,7 @@ dorks [
 'intitle:"ACollab : Accessible Collaboration Environment:"'
 ]
 
-# Examples #
-examples %w|
-www.atutor.ca/acollab/demo.php
-dev.atutor.ca/acollab/demo.php
-|
+
 
 matches [
 

@@ -14,14 +14,7 @@ description "This plugin retrieves details from SSL certificate files."
 
 # 193 results for "-----BEGIN CERTIFICATE-----" "Signature Algorithm"  "-----END CERTIFICATE-----" ext:pem
 # 6 results for "-----BEGIN CERTIFICATE-----" "Signature Algorithm"  "-----END CERTIFICATE-----" ext:der
-examples %w|
-h1.usherca.org/aia/ca.pem
-193.140.100.140/servisler/sertifika/valid_cert/signed-certs/0262.pem
-www.eurogrid.org/ca/valid-certs/800041.pem
-www.tatemura.net/term_3.07/cert_tatemura.pem
-deniz.ulakbim.gov.tr/servisler/sertifika/valid_cert/signed-certs/024D.pem
-mail.madnet.ro/madnet.der
-|
+
 
 def passive
 	m=[]

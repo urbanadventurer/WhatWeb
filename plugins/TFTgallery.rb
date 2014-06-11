@@ -17,41 +17,7 @@ dorks [
 'intitle:"TFTgallery administration"'
 ]
 
-# Examples #
-examples %w|
-www.tftgallery.org/demo/
-www.tftgallery.org/?content=includedgallery
-www.tftgallery.org/demo/admin/index.php
-recumbentcountry.osgoodeonline.com/tftgallery1/admin/index.php
-www.sandysofas.osgoodeonline.com/tftgallery/admin/index.php
-zandvoort.photoalbum80.com/admin/index.php
-france.photoalbum80.com/admin/index.php
-www.minkhollow.ca/mhf/tft/admin/index.php
-www.silvershoreswaterfront.com/gallery/admin/index.php
-gsaggior.ifmw.mobi/tftgallery/admin/index.php
-www.rozemarie.nl/tftgallery/admin/index.php
-www.markwinpetresort.com/gallery/admin/index.php
-www.ilynda.com/gallery/admin/index.php
-havanada.com/gallery/admin/index.php
-www.aidanconstruction.com/tftgallery/admin/index.php
-www.newfieweb.com/angus/admin/index.php
-gingerichconstruction.net/COLES-DUNGEON/gallery/admin/index.php
-mike.fotogeeks.com/admin/index.php
-bev.fotogeeks.com/admin/index.php
-randy.fotogeeks.com/admin/index.php
-foto.kolla.no/admin/index.php
-shadow.spb.ru/tft/admin/index.php
-www.benburko.com/gallery/admin/index.php
-www.upwind.com.br/galeria3/admin/index.php
-jm.me.cz/fotky/admin/index.php
-www.soshelmond.nl/TFTgallery/admin/index.php
-www.wimfreriks.nl/gallery/admin/index.php
-www.sellebjerg.dk/byg/admin/index.php
-bakaliowakraina.pl/pepe/admin/index.php
-www.ppmhp.hr/gallery/admin/index.php
-www.robinu.com/gallery/admin/index.php
-www.vorf.se/tftgallery/admin/index.php
-|
+
 
 # Matches #
 matches [

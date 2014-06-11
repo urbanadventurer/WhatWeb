@@ -18,19 +18,7 @@ dorks [
 '"Visit MultiPowUpload web site for new release and support information." intitle:"Element-It MultiPowUpload"'
 ]
 
-# Examples #
-examples %w|
-www.yandara.com/ysounds/upload/FileProcessingScripts/PHP/uploadfiles.php
-www.addictiondenim.com/ebay/adclothing/add_photos/
-www.e-journals.in/multipowupload/rightlist.html
-www.goodwin123.com/!Readme!.htm
-intelasource.com/fileupload/Default.html
-merovinger.me.ohost.de/multi/!Readme!.htm
-www.saunalahti.fi/renholm/kamaa/uppi/
-www.djcontrolradio-live.com/UPLOAD/Default.html
-www.pitonline.com.br/igc/uploadAr/
-www.fotofriend.com/app/mpupload/rightlist.html
-|
+
 
 # Matches #
 matches [

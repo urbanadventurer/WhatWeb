@@ -25,51 +25,7 @@ dorks [
 'intitle:"my webcamXP server!" inurl:":8080"'
 ]
 
-# Examples #
-examples %w|
-angelpage.dyndns.tv:8080
-212.91.164.28:8080
-ka7bgr.dyndns.org:8080
-65.40.115.225:8080
-66.93.98.195:8080
-201.95.124.93:8080
-184.74.128.164:8080
-ruff-cuts.dyndns.org:8080
-75.132.23.101:8080
-pogona.dyn-o-saur.com:8080
-86.89.114.160:8080
-201.26.75.197:8080
-skyhongkong.com
-erattori.tripod.com
-webcam.hobnobpet.com
-62.147.155.139:8080
-www.talla3.com:8088
-www.miele-family.com/weather/
-www.qsl.net/g0ohk/gallery/
-these2boots.com/webcamCHAT.htm
-collins-nz.homedns.org:8080
-www.bredenbeek.net
-70.80.195.110:8000
-85.114.190.10:8081
-122.154.103.2:8000
-212.26.215.92:9090
-65.40.115.225:8080
-82.30.169.41:8080
-72.241.200.185:8080
-www.wire.boom.ru
-82.89.210.115:8080
-212.91.164.28:8080
-www.justicecamera.ws43.com
-184.74.128.164:8085
-www.nicholsforever.com:7578
-71.49.17.48:8050
-72.151.246.109:8080
-68.83.85.251:8080
-server1.richardselectronics.net:8185
-162.39.5.129:8081
-168.243.148.172:8080
-live.pravoslav.tv:8080
-|
+
 
 # Matches #
 matches [

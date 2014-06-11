@@ -17,26 +17,7 @@ dorks [
 'inurl:"phpgw_forward" ext:php'
 ]
 
-# Examples #
-examples %w|
-https://mserv.enjo-wien.at/egw/
-https://www.gsisoft.com.br/
-200.189.113.93
-213.183.76.121/egroupware/login.php
-dev.mitija.com/blueerp/
-egw.bitswerk.de
-fichtrementbienfait.com/login.php?cd=yes
-haurigot.com/egroupware/
-hundredplus.com/groupwareplus/
-mail.cityofcortez.com
-ntxbg.org/egroupware/
-openreality.sk/egroupware/
-slperwagn.net
-www.biblioscan.org/egroupware/
-www.sankyosgw.com/sgw/
-www.cabinetgyneco-doctekoukou.net/egroupware/
-www.natronics.com.au
-|
+
 
 # Matches #
 matches [

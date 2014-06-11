@@ -17,14 +17,7 @@ dorks [
 '"powered by AdaptCMS"'
 ]
 
-# Examples #
-examples %w|
-www.24quotes.com
-www.charliepage88.com
-www.dynastywizard.com/beta/
-www.dynastywizard.com/beta/forums/
-www.insanevisions.com
-|
+
 
 matches [
 

@@ -12,31 +12,7 @@ description "Content Server is a comprehensive, scalable content management plat
 # ShodanHQ results as at 2011-03-25 #
 # 19 for X-AwCache
 
-# Examples #
-examples %w|
-137.226.107.17
-137.226.107.11
-137.226.107.16
-137.226.107.31
-137.226.107.22
-137.226.107.23
-137.226.107.12
-137.226.107.45
-137.226.107.25
-137.226.107.41
-137.226.107.18
-137.226.107.21
-137.226.107.15
-137.226.107.28
-137.226.107.36
-137.226.107.35
-137.226.107.26
-137.226.107.14
-194.124.202.224
-www.gesund-in-hessen.info
-www.familienatlas.de
-www.exzellenz.rwth-aachen.de
-|
+
 
 # Matches #
 matches [

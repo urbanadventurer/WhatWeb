@@ -10,27 +10,7 @@ version "0.1"
 description "Web shopping cart - homepage: http://cpcommerce.org/"
 
 # 58 results for "powered by cpCommerce" @ 2010-08-14
-examples %w|
-cphnetwork.com
-blackpearlgoddess.com
-www.grsrefrigeration.com
-www.myhomecinema.be/shop/
-www.medtechforensics.com/store/
-www.rc-auto.hu
-www.swordsandstarships.com
-phpcat.com/BPG/document.php
-onlytechdeals.com
-www.rhonakonrad.com/gallery/
-juicysoulja.com/shop/
-www.logictechs.com/LCTstore/
-store.davidburren.com
-greeneysgarage.com
-www.therecordfinder.com.au/store/
-www.klimperbein.de/shop/
-abckonyvek.hu/v1.3.0/cpcommerce/
-www.publimania.com.ar
-www.elrastromotorrad.com
-|
+
 
 matches [
 

@@ -12,17 +12,7 @@ description "Sybase Jaguar server - discontinued - Homepage: http://www.sybase.c
 # ShodanHQ results as at 2011-07-27 #
 # 468 for Server: Jaguar Server Version
 
-# Examples #
-examples %w|
-140.134.131.96
-199.193.10.86
-199.193.13.53
-168.243.1.83
-120.125.96.143
-192.83.194.205
-222.122.70.252
-192.87.31.188
-|
+
 
 # Passive #
 def passive

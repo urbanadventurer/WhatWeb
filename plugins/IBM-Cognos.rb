@@ -17,16 +17,7 @@ dorks [
 'inurl:"cognos8/cgi-bin/cognos.cgi"'
 ]
 
-# Examples #
-examples %w|
-cognosout.cabq.gov/cognos8/cgi-bin/cognos.cgi
-www.netra.fi/cognos8/cgi-bin/cognos.cgi
-data.iowadatacenter.org/cognos8/cgi-bin/cognos.cgi
-cognos8.dhhs.nh.gov/cognos8/cgi-bin/cognos.cgi
-cognos-p.nmsu.edu/cognos8/cgi-bin/cognos.cgi
-https://arbeitsmarktdatenbank.at/cognos8/cgi-bin/cognos.cgi
-https://portal.doyonutilities.com:2250/cognos8/cgi-bin/cognos.cgi
-|
+
 
 # Matches #
 matches [

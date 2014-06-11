@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
 version "0.1"
 description "Aladdin HASP License Manager - Homepage: http://www3.safenet-inc.com/support/hasp/enduser.aspx#lm"
 
-# Examples #
-examples %w|
-152.1.60.42:1947
-|
+
 
 # Matches #
 matches [

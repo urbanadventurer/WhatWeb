@@ -12,12 +12,7 @@ description "Ericsson Integrated Receiver Decoders - web interface - Homepage: h
 # ShodanHQ results as at 2011-05-30 #
 # 5 for Ericsson Television Web server
 
-# Examples #
-examples %w|
-85.34.224.174
-81.25.141.42
-81.25.141.38
-|
+
 
 # Matches #
 matches [

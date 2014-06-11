@@ -16,12 +16,7 @@ dorks [
 '"powered by SazCart"'
 ]
 
-# Examples #
-examples %w|
-www.sazcart.com/demo/
-expeditionaddicts.com/store/
-www.redpetalcards.com/store/
-|
+
 
 matches [
 

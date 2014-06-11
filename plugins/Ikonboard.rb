@@ -17,37 +17,7 @@ dorks [
 '"Powered by Ikonboard" ext:cgi'
 ]
 
-# Examples #
-examples %w|
-david.abcc.ncifcrf.gov/forum/cgi-bin/ikonboard.cgi
-niaid.abcc.ncifcrf.gov/forum/cgi-bin/ikonboard.cgi
-www.hexedit.com/cgi-bin/ikonboard.cgi
-www.netmax.org/cgi-bin/netmaxforums/ikonboard.cgi?act=NW;f=4;t=5
-damnsmalllinux.org/cgi-bin/forums/ikonboard.cgi
-www.jodhpur-fetish.com/cgi-bin/ikonboard.cgi
-www.backpacker.com/cgi-bin/forums/ikonboard.cgi
-www.patricianworld.com/cgi-bin/ikonboard.cgi
-www.webchillaz.de/cgi-bin/board/profile.cgi
-www.the-penny-dreadful.com/boardofspokane/cgi-bin/ikonboard.cgi
-www.ezbsystems.com/cgi-bin/ikonboard.cgi
-theladyboyforums.com/cgi-bin/board/ikonboard.cgi
-www.hovercontrol.com/cgi-bin/ib3/ikonboard.cgi
-www.turkishmusic.org/cgi-bin/ikonboard/topic.cgi
-www.myyellowpad.com/cgi-bin/ikonboard/ikonboard.cgi
-www.hypertrophy-specific.info/cgi-bin/ib314/ikonboard.cgi
-www.sexyloops.co.uk/cgi-bin/theboard_07/ikonboard.cgi
-www.ancienttimes.net/cgi/ikonboard/topic.cgi
-www.gametv.az/cgi-bin/ib3/ikonboard.cgi
-forum.dushanbe.ru/cgi-bin/ib312/ikonboard.cgi
-www.lamboreplica.co.uk/cgi-bin/ikonboard.cgi
-cwn.comicraft.com/cgi-bin/ikonboard/ikonboard.cgi
-www.sexyloops.co.uk/cgi-bin/theboard_07/ikonboard.cgi
-www.pacificneotek.com/cgi-bin/ikonboard/printpage.cgi
-forums.graphicaction.com.au/cgi-bin/printpage.cgi
-www.superbox.ru/cgi-bin/ikonboard/printpage.cgi
-www.lifeillumination.com/cgi-bin/ikonboard/printpage.cgi
-www.powderburn.net/cgi-bin/ikonboard/printpage.cgi
-|
+
 
 # Matches #
 matches [

@@ -12,18 +12,7 @@ description "Specifies the method or methods allowed when accessing a resource -
 # ShodanHQ results as at 2011-08-20 #
 # 106 for Access-Control-Allow-Methods
 
-# Examples #
-examples %w|
-196.33.235.224
-4.53.93.165
-188.40.205.227
-74.81.195.155
-85.17.224.91
-186.215.208.107
-209.20.76.103
-216.127.144.113
-69.168.111.70
-|
+
 
 # Matches #
 matches [

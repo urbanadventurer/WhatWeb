@@ -16,20 +16,7 @@ dorks [
 '"powered by MiniCWB"'
 ]
 
-# Examples #
-examples %w|
-h2o-pics.com
-www.tkpix.com
-www.web-hosting-control-panel-addons.com/product.php/MiniCWB-Site-Builder-for-PLESK/3/
-www.tratamente.info/hemoroizi/index.php
-www.dreamweaver-extensions.net
-www.vacas.be
-testsite.hailandkill.org/minicwb/
-www.abantu.nl
-www.test.sheppeyonline.co.uk
-davidsargent.net78.net
-m0fetest.110mb.com/news.php
-|
+
 
 matches [
 

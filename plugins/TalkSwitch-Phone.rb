@@ -20,17 +20,7 @@ dorks [
 'intitle:TalkSwitch "Welcome to TalkSwitch" "More information about TalkSwitch can be found on the TalkSwitch home page"'
 ]
 
-# Examples #
-examples %w|
-174.141.89.112
-66.25.13.69
-165.154.50.24
-66.207.206.213
-70.54.183.110
-98.207.176.36
-173.162.178.10
-173.77.24.43
-|
+
 
 # Passive #
 def passive

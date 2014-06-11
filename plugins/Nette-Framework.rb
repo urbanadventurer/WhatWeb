@@ -12,18 +12,7 @@ description "Nette Framework is a powerful framework for rapid and easy creation
 # ShodanHQ results as at 2011-04-08 #
 # 105 for X-Powered-By: Nette Framework
 
-# Examples #
-examples %w|
-95.168.203.90
-109.74.144.212
-93.184.70.208
-62.245.94.248
-92.52.82.213
-109.74.144.205
-147.230.88.143
-93.185.104.99
-147.251.105.149
-|
+
 
 # Passive #
 def passive

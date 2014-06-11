@@ -17,22 +17,7 @@ dorks [
 '"Powered by AllNewsManager.NET"'
 ]
 
-# Examples #
-examples %w|
-anmdemo.allnewsmanager.net
-dnndemo.allnewsmanager.net
-www.massimilianobianchi.info
-www.piercecc.biz
-www.aquideportes.com
-www.astrium.co.za
-beta.newsneteast.com
-www.events-saudia.com/NewsArticles.aspx
-www2.drkteam.cz
-online.nyayatra.org
-mural.residencialbolonha.com.br
-www.diaparta.cz
-www.mentis.si/News.aspx
-|
+
 
 # Matches #
 matches [

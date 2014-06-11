@@ -10,7 +10,7 @@ Plugin.define "AnyGate" do
 author "Andrew Horton"
 version "0.1"
 description "Korean home wifi/router device. Homepage: http://www.anygate.co.kr/"
-examples %w| http://211.55.111.126  |
+
 
 matches [
 {:url=>'/index.asp', :text=>'<title>AnyGate' },

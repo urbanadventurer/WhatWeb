@@ -21,13 +21,7 @@ dorks [
 'intitle:"Wireless Hotspot Gateway" "Welcome To Administrator Login Page"'
 ]
 
-# Examples #
-examples %w|
-218.214.81.88
-120.151.7.132
-124.184.9.95
-125.255.117.67
-|
+
 
 # Matches #
 matches [

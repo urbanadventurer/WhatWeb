@@ -16,28 +16,7 @@ description "SSL Network Extender adds SSL VPN functionality to the IPSec VPN ca
 # Lots of false positives for intitle:"Check Point SSL Network Extender"
 # 2 for intitle:"Check Point SSL Network Extender HELP" inurl:help_data.html
 
-# Examples #
-examples %w|
-212.174.139.46
-193.108.116.249
-83.246.101.229
-212.174.139.65
-195.235.219.161
-210.245.209.117
-212.0.1.35
-193.158.194.154
-80.48.182.5
-https://77.88.105.34/
-https://sslvpn.lsuhsc.edu/
-https://vpn.bgu.ac.il/
-https://vpn.ual.com/
-https://rwshi.emea.reuters.com/
-https://vpn.bgu.ac.il/
-https://63.97.76.67/
-https://hellfire.put.poznan.pl/
-https://vpn.ipp.pt/
-https://sslvpn.lsuhsc.edu/
-|
+
 
 # Matches #
 matches [

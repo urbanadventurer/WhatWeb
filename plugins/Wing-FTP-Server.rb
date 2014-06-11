@@ -19,20 +19,7 @@ dorks [
 '"The web client depend on JavaScript to function properly" intitle:"How do I enable JavaScript in my browser" inurl:help_javascript.htm'
 ]
 
-# Examples #
-examples %w|
-demo.wftpserver.com:5466
-demo.wftpserver.com
-demo.wftpserver.com
-btudbud.dk
-lib2.ripi.ir
-173.161.16.2
-64.93.80.22
-209.29.24.155
-117.102.4.22
-213.146.228.244
-173.167.180.67
-|
+
 
 # Matches #
 matches [

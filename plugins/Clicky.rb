@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-04-07
 version "0.1"
 description "Clicky - Real Time Web Analytics - Homepage: https://www.getclicky.com/"
 
-# Examples #
-examples %w|
-https://www.getclicky.com/
-|
+
 
 # Matches #
 matches [

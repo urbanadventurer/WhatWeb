@@ -18,9 +18,6 @@ Plugin.define "WordPress" do
   version "0.5"
   description "WordPress is an opensource blogging system commonly used as a CMS. Homepage: http://www.wordpress.org/ "
   
-  # Examples #
-  examples %w| http://lonnroth.info/ http://mattbrett.com/ http://www.komodomedia.com/ http://bestwebgallery.com/ http://cssremix.com/ http://www.cssbloom.net/ http://www.screenz.de/ http://www.kineda.com/ http://ifelse.co.uk/ http://fadtastic.net/ http://www.funci.org/en/ |
-    
     # Dorks #
     dorks [
            '"is proudly powered by WordPress"'

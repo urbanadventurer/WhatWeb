@@ -17,14 +17,7 @@ dorks [
 '"IB-Lite" "Firmware version" "Bootloader version"'
 ]
 
-# Examples #
-examples %w|
-ib-lite-test.comap.cz
-mail.ajpower.net
-186.113.20.202
-190.3.10.154
-186.113.20.203
-|
+
 
 # Matches #
 matches [

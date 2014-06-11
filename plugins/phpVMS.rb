@@ -18,23 +18,7 @@ dorks [
 '"powered by phpVMS" inurl:"index.php/registration"'
 ]
 
-# Examples #
-examples %w|
-www.ldsva.comxa.com/install/install.php
-flyvva.org/forum/install/install.php
-dev.phpvms.net/install/install.php
-phpvms.integratedpirepsystem.com
-www.simpilotgroup.com/manager/
-www.worldwidevirtual.net
-www.vcal.org.uk
-www.iconairways.org
-testdomain.dth-scripts.com/PHPVMS/
-www.aerosvet.cz
-www.simplejetvirtual.freeiz.com
-flylava.com
-alaskacargovirtual.com
-mixaviation.tk
-|
+
 
 # Matches #
 matches [

@@ -15,14 +15,7 @@ description "Grandstream Networks is the leading manufacturer of IP voice/video 
 # ShodanHQ results as at 2011-03-14 #
 # 25,344 for Grandstream
 
-# Examples #
-examples %w|
-216.54.149.49
-84.28.128.218
-62.165.255.156
-78.32.89.204
-109.73.41.210
-|
+
 
 matches [
 {:text=>'<title>Grandstream Device Configuration</title>'},

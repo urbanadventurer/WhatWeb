@@ -17,12 +17,7 @@ dorks [
 'intitle:"GenOHM Scada Launcher"'
 ]
 
-# Examples #
-examples %w|
-62.43.194.120
-sircbaleares.es
-4n.lv:7999
-|
+
 
 # Matches #
 matches [

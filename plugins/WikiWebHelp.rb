@@ -16,13 +16,7 @@ dorks [
 '"powered by WikiWebHelp"'
 ]
 
-# Examples #
-examples %w|
-www.worldwidedancers.com/help/
-www.faq.tsc-hosting.eu
-wikiwebhelp.org
-www.zhengzhou3c.com/wiki/
-|
+
 
 matches [
 

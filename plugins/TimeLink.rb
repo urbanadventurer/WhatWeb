@@ -18,13 +18,7 @@ dorks [
 'intitle:Timelink "Language" "Password" "Version" -ext:html'
 ]
 
-# Examples #
-examples %w|
-99.102.26.89
-timelink.cmich.edu/timelink/
-https://mcw.timelink.net/timelink/login
-https://timelink.utoronto.ca/timelink/login
-|
+
 
 # Matches #
 matches [

@@ -12,19 +12,7 @@ description "PowerSchool is the fastest-growing, most widely used web-based stud
 # ShodanHQ results as at 2011-04-08 #
 # 3,328 for PowerSchool
 
-# Examples #
-examples %w|
-64.35.192.201
-64.251.50.184
-70.88.208.220
-198.236.34.52
-96.5.144.9
-96.39.9.99
-207.109.154.165
-168.10.85.19
-209.56.110.181
-24.106.173.19
-|
+
 
 # Matches #
 matches [

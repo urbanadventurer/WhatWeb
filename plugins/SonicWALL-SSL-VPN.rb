@@ -12,19 +12,7 @@ description "SonicWALL SSL-VPN Portal provides secure Internet access for remote
 # ShodanHQ results as at 2011-03-13 #
 # 11,960 for SonicWALL SSL-VPN Web Server
 
-# Examples #
-examples %w|
-12.192.121.70
-217.108.93.178
-67.138.161.28
-66.240.162.31
-128.46.88.201
-77.67.53.101
-133.105.9.9
-64.115.151.157
-213.249.130.58
-212.30.17.75
-|
+
 
 # Matches #
 matches [

@@ -17,38 +17,7 @@ dorks [
 'intitle:"CGI:IRC Login" Nickname Server Channel'
 ]
 
-# Examples #
-examples %w|
-cgiirc.org/demo/
-irc.fr.uninet.edu
-webchat.uninet.edu
-irc.fr.uninet.edu/irc.cgi
-webchat.uninet.edu/login
-irc.upm.edu.ph/cgi-bin/irc.cgi
-gluc.unicauca.edu.co/cgi-bin/irc/irc.cgi
-www.plwebs.de/cgi-bin/irc.cgi
-www.scoutlink.ch/cgi-bin/irc.cgi
-virtualtruth.net/cgi-bin/cgiirc/irc.cgi
-awmirc.com/webgate/irc.cgi
-www.dark-angels.co.za/cgiirc/irc.cgi
-rand-pdx.solidnet.net/cgi-bin/cgiirc/irc.cgi
-www.frankspage.net/cgi-bin/irc.cgi
-open.neurostechnology.com/cgiirc/
-irc.datatower.net/cgi-bin/irc/irc.cgi
-www.frozyn.info/cgi-bin/cgiirc-0.5.9/cgiirc-0.5.9/irc.cgi
-mandrich.com/irc/irc.cgi
-irc.uberguilds.com/irc.cgi
-www.thelinuxlink.net/cgi-bin/cgiirc/irc.cgi
-koha.org/cgi-bin/irc.cgi
-www.anxiety-support.org/cgi-bin/cgiirc/irc.cgi
-www.agorat.org/cgiirc/irc.cgi
-irc.free.net.ph/cgi-bin/irc.cgi
-217.67.200.130/cgi-bin/cgiirc/irc.cgi
-webchat.starlink-irc.org/cgi-bin/irc.cgi
-cgi.irc.ragingfist.net/cgi-bin/irc.cgi
-cs-mapping.com.ua/cgi-bin/irc.cgi
-www.flooble.net/cgi-bin/cgiirc/irc.cgi
-|
+
 
 # Matches #
 matches [

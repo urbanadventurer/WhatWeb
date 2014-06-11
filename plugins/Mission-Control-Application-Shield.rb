@@ -26,19 +26,7 @@ dorks [
 'intitle:"Application Shield Notification" inurl:"CookieCheckError.shtml?trg="'
 ]
 
-# Examples #
-examples %w|
-https://entry.axa.de/
-https://www.axa-jvpms.de
-77.73.244.92
-80.94.144.244
-212.203.72.90
-171.18.24.4
-80.94.144.243
-171.18.24.3
-212.203.72.91
-77.73.244.75
-|
+
 
 # Matches #
 matches [

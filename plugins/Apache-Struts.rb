@@ -15,18 +15,7 @@ description "The Apache Struts web framework is a free open-source solution for 
 # ShodanHQ results as at 2012-01-08 #
 # 7 for org.apache.struts
 
-# Examples #
-examples %w|
-63.237.220.171
-211.34.86.65
-63.236.32.62
-204.236.130.47
-63.237.220.31
-63.237.220.94
-63.146.118.181
-www.isutami.com
-123.10.18.189
-|
+
 
 # Matches #
 matches [

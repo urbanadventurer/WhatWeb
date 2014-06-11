@@ -17,29 +17,7 @@ dorks [
 'intitle:"Open Admin for Schools" "Open Admin for Schools" "Les Richardson" Main Attendance Discipline Fees Report Cards Timetable Export/Xfer Start/End of Year Help'
 ]
 
-# Examples #
-examples %w|
-demo-admin.open-admin.net
-demo-teacher.open-admin.net
-demo-parent.open-admin.net
-french.open-admin.net
-french-tch.open-admin.net
-french-par.open-admin.net
-esdemo.open-admin.net
-esdemo-tch.open-admin.net
-esdemo-par.open-admin.net
-serbdemo.open-admin.net
-serbdemo-tch.open-admin.net
-serbdemo-par.open-admin.net
-khmer-admin.openadmin.ca
-khmer-teacher.openadmin.ca
-https://parishdemo.endofinternet.org:923/openadmin/demo/parish
-www.campestreamericano.com/today/openadmin-5.50Jan30/school/admin/
-www.schoolslinknigeria.com/openadmin/openadmin-4.75July18R1/school/admin/
-www.penflowerinternational.com/opt/openadmin/
-www.penflowerinternational.com/opt/openadmin/penflower/admin/
-ciess.ca/openadmin/openadmin-3.00a/school/admin/
-|
+
 
 # Matches #
 matches [

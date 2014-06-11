@@ -17,26 +17,7 @@ dorks [
 '"Powered by Kandidat CMS"'
 ]
 
-# Examples #
-examples %w|
-sajansk.net.ru
-sharypovo.net.ru
-www.stroi-klassbest.ru
-mramor-master.ru
-verhnjajapyshma.net.ru
-suhinichi.net.ru
-hyuman.ru
-pereslavl-zalesskij.net.ru
-privolzhsk.net.ru
-petuhovo.net.ru
-nesterov.net.ru
-tatarsk.net.ru
-700rub.pp.ru
-njurba.net.ru
-obluche.net.ru
-alapaevsk.net.ru
-www.drunkrepublic.net/news/
-|
+
 
 # Matches #
 matches [

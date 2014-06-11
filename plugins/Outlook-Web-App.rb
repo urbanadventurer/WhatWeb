@@ -23,51 +23,7 @@ dorks [
 'inurl:"/owa/auth/logon.aspx?url="'
 ]
 
-# Examples #
-examples %w|
-https://outlook.symbiosystems.com/owa/
-https://cassmail.city.ac.uk/owa/
-https://remote.lpguys.com/owa/
-https://mail.yzsddt.cn/owa/
-https://mail.ncgrain.gov.cn/owa/
-https://mail.pyramidregroup.com/owa/
-https://remote.maceng.com.au/owa/
-https://mail.specialtysand.com/owa/
-https://mail.certifiedsitesafety.com/owa/
-https://webmail.ribisecurity.com/owa/
-https://remote.system-transport.no/owa/
-https://webmail.ec.europa.eu/
-https://phsexchweb.partners.org/
-https://student-webmail.tvu.ac.uk/exchweb/bin/auth/owalogon.asp
-https://webmail.inhs.org/exchweb/bin/auth/owalogon.asp
-https://owa.vivetelmex.com/exchweb/bin/auth/owalogon.asp
-https://email.btconnect.com/exchweb/bin/auth/owalogon.asp
-https://apowa.csl.com.au/CookieAuth.dll
-https://webems.rmit.edu.vn/exchweb/bin/auth/owalogon.asp
-https://uspl.webmail.eds.com/exchweb/bin/auth/owalogon.asp
-https://owa.mailseat.com/exchweb/bin/auth/owalogon.asp
-https://mn-exch1.nes.nuclearholdings.co.uk/exchweb/bin/auth/owalogon.asp
-http://www.davis-interiors.com/exchweb/bin/auth/owalogon.asp
-https://medexch.med.unc.edu/exchweb/bin/auth/owalogon.asp
-https://cpsmail.cps.k12.il.us/exchweb/bin/auth/owalogon.asp
-https://82.93.236.51/exchweb/bin/auth/owalogon.asp
-https://webmail.west.thomson.com/
-https://ssl.esu.edu/exchweb/bin/auth/owalogon.asp
-https://outlook.leeds.ac.uk/exchweb/bin/auth/owalogon.asp
-https://www.mayerreed.com/exchweb/bin/auth/owalogon.asp
-https://mail.apscuf.org/exchweb/bin/auth/owalogon.asp
-https://www.compasscpagroup.com/exchweb/bin/auth/owalogon.asp
-https://owa.nusd.k12.az.us/exchweb/bin/auth/owalogon.asp
-https://remote.greatnorthwest.org/exchweb/bin/auth/owalogon.asp
-https://mail.ual.com/
-https://staffmail.telstraclear.co.nz/exchweb/bin/auth/owalogon.asp
-https://smtp.wellsnursing.org/exchweb/bin/auth/owalogon.asp
-https://webmail.co.multnomah.or.us/
-https://www.jastrucking.com/exchweb/bin/auth/owalogon.asp
-https://secure.mitchellinstallations.ca/exchweb/bin/auth/owalogon.asp
-https://mail.lakeforrestprep.com/exchweb/bin/auth/owalogon.asp
-https://eumail.bp.com/exchweb/bin/auth/owalogon.asp
-|
+
 
 # Matches #
 matches [

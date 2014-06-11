@@ -10,11 +10,7 @@ version "0.1"
 description "DBabble is a chat, discussion, and instant messaging server and client, which allows users to send encrypted instant messages, have private conversations, and create and participate in private or public chat rooms and discussions. - homepage: http://netwinsite.com/dbabble/index.html"
 
 # 3 results for "You can use DBabble unsecurely but faster through your web browser at" "Warning - DBabble requires a web browser that Supports JavaScript 1.1 or higher." @ 2010-10-12
-examples %w|
-dbabble.com:4141
-mailhost.aea9.net:8132
-netwin.co.nz:8132
-|
+
 
 matches [
 

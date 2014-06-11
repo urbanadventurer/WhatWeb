@@ -24,13 +24,7 @@ dorks [
 'intitle:"Network Storage Link for USB 2.0 Disks" Firmware'
 ]
 
-# Examples #
-examples %w|
-94.224.183.90:8080
-82.90.216.198
-193.206.101.3
-kinsella.dnsalias.org
-|
+
 
 # Matches #
 matches [

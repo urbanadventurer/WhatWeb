@@ -12,10 +12,7 @@ description "FreeNAC is an OpenSource solution for LAN access control and dynami
 # Google results as at 2012-05-20 #
 # 1 for inurl:"stats.php?graphtype=bar"
 
-# Examples #
-examples %w|
-freenac.net/demo/index.php
-|
+
 
 # Matches #
 matches [

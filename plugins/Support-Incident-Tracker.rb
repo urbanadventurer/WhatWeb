@@ -20,27 +20,7 @@ dorks [
 '"SiT! - Login" "Username" "Password" "Forgotten your details"'
 ]
 
-# Examples #
-examples %w|
-demo.sitracker.org
-190.144.109.26
-216.252.70.78
-200.72.17.58
-216.177.9.3
-81.252.137.37
-www.ermesconsulting.com/sit/
-www.repostor.com/sit-3.63/
-clearcasecomputers.com/sit/htdocs/index.php
-www.insight-ict.co.uk/helpdesk/
-www.spocsys-server4.info/sit-3.60/
-support.sfraser.net
-support.shadowsystems.com.au/
-www.videoezy.co.th/sit/
-support.newporthigh.co.uk/
-chimpleit.com/sit350/
-www.econtact.co.za/support/
-sit.flipmode.dk
-|
+
 
 # Matches #
 matches [

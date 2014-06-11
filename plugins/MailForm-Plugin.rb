@@ -20,15 +20,7 @@ dorks [
 '"powered by MailForm"'
 ]
 
-# Examples #
-examples %w|
-www.mt-j.info/contact.html
-ono-eye.jpmd.org/mailform.html
-soramame.com.au/en/mail-form.php
-www.another-here-i-am.com/mailform.php
-www.clover8.com/mailform.html
-www.jatts.jp/admissionform.html
-|
+
 
 # Matches #
 matches [

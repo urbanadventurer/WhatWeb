@@ -17,20 +17,7 @@ dorks [
 '"Powered by NukeViet"'
 ]
 
-# Examples #
-examples %w|
-nukeviet.vn
-viet-fashion.net
-ngohuudung.qnit.vn
-www.freightnlogistics.com
-baovethienduc.com
-www.dakhoney.com
-life2mobile.org
-tamgiaojsc.com
-icdlvietnam.vn
-www.fbaclub.com
-darkanime.org
-|
+
 
 # Matches #
 matches [

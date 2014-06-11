@@ -13,29 +13,7 @@ description "This plugin detects instances of Microsoft Live Passport servers us
 # 1036 ShodanHQ results for MSNSERVER @ 2011-01-09
 # 214 ShodanHQ results for PPServer @ 2011-01-09
 
-# Examples #
-examples %w|
-64.4.34.74
-64.4.61.53
-64.4.61.141
-65.52.114.184
-65.52.116.132
-65.54.205.13
-65.54.251.254
-65.54.248.248
-65.54.248.249
-65.54.186.18
-65.54.216.183
-65.55.40.71
-65.55.64.186
-65.55.72.215
-65.55.85.119
-65.55.255.15
-207.46.150.159
-207.46.150.163
-207.46.150.166
-207.46.150.172
-|
+
 
 # Passive #
 def passive

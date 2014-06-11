@@ -11,57 +11,7 @@ description "Weatimages is very easy to use program that allows you to organize 
 
 # 289 results for "powered by Weatimages" @ 2010-08-28
 # 129 results for "powered by Weatimages" intitle:Albums @ 2010-08-28
-examples %w|
-www.nazarkin.name/projects/weatimages/demo/index.php
-www.latsabidze.com/pics/index.php
-www.mykhanna.com/gallery/index.php
-gotoimage.com/hosted/
-ga2k.com
-fot.kudzia.eu
-www.lucindaart.com/gallery/
-www.gregsullivan.org/images/
-www.inaguamainhouse.com/gallery.php
-pb.ueberl33t.net/fun/gallery/index.php
-www.andrewadams.com
-sandhaanu.net/raajjecup/index.php
-www.thesaphere.com/photos_misc/index.php
-ihatebottles.com/gallery/
-www.logodesignweb.com/stockphoto/nature/animals2/
-www.risashoebox.com/gallery/
-sisgi.site40.net
-www.joneman.com/weatimages/index.php
-www.hinis.bel.tr/images/album/index.php
-mickej.se/gallery/
-affiliatemashupstore.com/screens/index.php
-www.stardotstar.co.in/gallery/index.php
-www.taylormadehardwoodfloors.com/photos/index.php
-www.ogormanhomeimprovements.com/images/index.php
-www.aight.se/breeder/index.php
-photos.damnleet.com/index.php
-www.sweetcornz.net/Gallery/Sunrise_Sunset/index.php
-www.incounters.net/photo_gallery/index.php
-ga2k.com/gallery/index.php
-www.wildskiesoutfitting.com/photos/index.php
-filmanley.com/photography/index.php
-www.crccphotos.com/index.php
-arjuna-abi.com/Registration/index.php
-www.thurens.com/photoalbum/index.php
-www.shawnjordan.com/index.php
-plainsimple.dk/dump/index.php
-section9.hu/index.php
-daniela-thelen.net/gallery/public/index.php
-www.whiteside.me.uk/photos/index.php
-www.zuiderbaan.com/photo/index.php
-www.blankdesigns.org/templates/index.php
-whdh.gamsofgold.com/2008/dylan_d/photos/index.php
-jimfields.us
-www.bandalaestrella.com/weatimes/index.php
-www.nextutah.com/flyers/
-www.redrock.ch/picture/index.php
-www.coralbark.com/ofelia/stills/noflash/index.php
-photo.spodniak.cz/index.php
-www.gregsullivan.org/images/index.php
-|
+
 
 matches [
 

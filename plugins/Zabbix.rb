@@ -20,20 +20,7 @@ dorks [
 'inurl:"tr_status.php?sid=" intitle:"refreshed every"'
 ]
 
-# Examples #
-examples %w|
-https://zabbix.org/zabbix/tr_status.php
-https://jo.jomiami.net:4443/zabbix/
-https://www.usmon.net/zabbix/index.php
-zabbix.dinamize.com.br/tr_events.php
-sysmon.xenex.at/zabbix/report2.php
-meanstreams.com/zabbix/events.php
-monitoring.sysmon.nl
-zabbix.applicaster.com
-www.icc-mt.net/zabbix/
-mrtg.ciputra.ac.id
-203.99.77.197/zabbix/
-|
+
 
 # Matches #
 matches [

@@ -20,18 +20,7 @@ dorks [
 '"Hello. I\'m MeetingPlaza HTTP Tunneling Server." "Date"'
 ]
 
-# Examples #
-examples %w|
-mp1.meetingplaza.com
-mp1.meetingplaza.com:15501
-mp2.meetingplaza.com
-mp3.meetingplaza.com
-mp4.meetingplaza.com
-66.77.128.68
-218.213.250.231
-122.215.200.58
-122.215.192.67
-|
+
 
 # Matches #
 matches [

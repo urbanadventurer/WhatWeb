@@ -12,8 +12,7 @@ author "Andrew Horton"
 version "0.2"
 description "DiBos security surveillance system homepage: www.boschsecurity.com"
 
-# Examples #
-examples %w| 219.89.120.119 209.3.146.51|
+
 
 # Dorks #
 dorks [

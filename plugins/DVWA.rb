@@ -15,10 +15,7 @@ dorks [
 'intitle:"Damn Vulnerable Web App (DVWA) - Login"'
 ]
 
-# Examples #
-examples %w|
-www.neozz.tk/dvwa/login.php
-|
+
 
 
 # Matches #

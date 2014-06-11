@@ -10,9 +10,7 @@ version "0.1"
 description "PHP powered shopping cart - homepage: http://www.eptcel.com.br/"
 
 # 1 result for "powered by ez oscommerce" @ 2010-10-12
-examples %w|
-www.eptcel.com.br/ecommerce/product_reviews.php
-|
+
 
 matches [
 

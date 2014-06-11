@@ -15,21 +15,7 @@ description "Bobo is a light-weight framework for creating WSGI web applications
 # 441 for Bobo-Exception-Value
 # 441 for Bobo-Exception-Type
 
-# Examples #
-examples %w|
-78.47.94.29
-83.175.124.83
-88.191.65.203
-82.100.204.40
-210.188.216.218
-147.120.13.109
-82.165.128.216
-129.59.129.64
-63.82.98.55
-188.120.70.202
-129.219.28.106
-212.48.35.37
-|
+
 
 # Passive #
 def passive

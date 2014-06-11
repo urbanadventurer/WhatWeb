@@ -17,20 +17,7 @@ dorks [
 'intitle:"PEAR :: PEAR_Info" "auto_discover"'
 ]
 
-# Examples #
-examples %w|
-webdev.felk.cvut.cz/info/pearinfo.php
-www.imingo.net/pear/pear_info.php
-pear.modwest.com
-community.curtislibrary.com/CML/library/pear/docs/PEAR_Info/examples/pear_info.php
-home.pl/files/pearinfo.php
-202.65.133.69/xampp/pearinfo.php
-forum.lolipop.jp/servinfo/pear.php
-www.nono150.com/cgi/pear_info.php
-www.apartment-in-tuebingen.de/xampp/pearinfo.php
-www.pb-web.jp/systemtool/pear_info.php
-stawn.uwcs.co.uk/info/pearinfo.php
-|
+
 
 # Matches #
 matches [

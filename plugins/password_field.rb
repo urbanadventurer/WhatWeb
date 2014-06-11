@@ -11,11 +11,7 @@ author "Caleb Anderson"
 version "0.1"
 description "find password fields"
 
-# Examples #
-examples %w|
-www.twitter.com
-www.facebook.com
-|
+
 
 # Matches #
 matches [

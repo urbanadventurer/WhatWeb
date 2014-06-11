@@ -16,28 +16,7 @@ dorks [
 'inurl:mmod=staticContent'
 ]
 
-# Examples #
-examples %w|
-www.motorito.com
-www.starmyname.com
-www.nlmt.com
-www.bike-tech.net
-www.startwin.tv
-www.verticalrunning.com
-www.emprendedorxxi.es
-www.idtweb.org
-www.e-excellence.es
-www.gremirestauracio.com
-www.biciclowneldocumental.com
-www.l2bconsultores.com
-www.cocimer.com
-www.sono.es
-www.caixacapitalrisc.es
-www.biciclown.com
-www.asodame.com
-www.revistatrail.com
-www.caixacapitalrisc.com
-|
+
 
 matches [
 

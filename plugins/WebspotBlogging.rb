@@ -10,10 +10,7 @@ version "0.1"
 description "Old blog - homepage: http://www.webspot.co.uk/"
 
 # 13 results for "powered by WebspotBlogging" @ 2010-08-21
-examples %w|
-mkarimu.com/archieve/install.html
-openprojects.rarcoa.com/~miztic/tanklog/
-|
+
 
 def passive
         m=[]

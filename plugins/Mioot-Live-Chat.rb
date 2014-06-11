@@ -9,14 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-09-06
 version "0.1"
 description "Mioot live chat JavaScript - Homepage: http://www.mioot.com/"
 
-# Examples #
-examples %w|
-mioot.com
-72.41.150.42
-50.6.86.252
-72.41.192.32
-50.6.25.54
-|
+
 
 # Matches #
 matches [

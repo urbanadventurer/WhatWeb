@@ -20,16 +20,7 @@ dorks [
 '"This is your Timezone Offset from GMT and is shown in hours."'
 ]
 
-# Examples #
-examples %w|
-www.demo.calogic.de
-www.kaparealty.com/calogic/
-www.acstextiles.com/calendar/
-www.ictsolver.nl/CATS/
-fluffybunnies.net/calendar/
-www.lts2.home.pl/calogic/calogic122/
-www.tampabaycatsailors.com/calogic/calogic113/
-|
+
 
 # Matches #
 matches [

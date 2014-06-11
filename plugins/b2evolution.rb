@@ -16,29 +16,7 @@ dorks [
 
 # 482 results for "Powered by b2evolution" @ 2010-10-11
 
-# Examples #
-examples %w|
-b2evolution.net/admin.php
-demo1.b2evolution.net/stable/admin.php
-demo1.b2evolution.net/stable/blog1.php
-demo1.b2evolution.net/stable/blog2.php
-demo1.b2evolution.net/stable/blog3.php
-demo1.b2evolution.net/stable/default.php
-b2evo.sonorth.com
-b2evo.sonorth.com/admin.php
-ezelesek.com/b2evolution/admin.php
-ezelesek.com/b2evolution/
-mayanhawk.com/news/
-mayanhawk.com/news/admin.php
-skinfaktory.com
-skinfaktory.com/admin.php
-www.blog.hemminga.net
-www.blog.hemminga.net/admin.php
-www.larrate.com
-www.larrate.com/admin.php
-www.leeturner.org
-www.leeturner.org/admin.php
-|
+
 
 matches [
 

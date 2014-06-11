@@ -17,19 +17,7 @@ dorks [
 '"Artiphp" "2001" "est un logiciel libre" "sous licence GPL"'
 ]
 
-# Examples #
-examples %w|
-www.artiphp.com
-ariegecampingcarclub.com
-www.crvvmpy.com/cartographie/index.php
-www.algerie-femme.com/actu/dossiers/
-genevrier.be/genevrier3/faq/reponse.php
-www.vsaorientation.com
-www.lys-nord-metropole.org
-www.ecoc2006.org/dossiers/dossiers.php
-voillemont-deiber.qc.ca/artpublic/utilisateurs/inscription.php
-www.whistlestars.com/spgm/index.php
-|
+
 
 # Matches #
 matches [

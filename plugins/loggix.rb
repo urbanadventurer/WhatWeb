@@ -19,16 +19,7 @@ dorks [
 '"Powered by Loggix"'
 ]
 
-# Examples #
-examples %w|
-loggix.gotdns.org
-jamlog.podzone.org
-quatrefoil.net/tale/
-d85.jp
-monolog.devgiri.org
-hbkt.scrapping.cc
-blog.apoderus.net
-|
+
 
 matches [
 

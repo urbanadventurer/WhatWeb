@@ -17,11 +17,7 @@ dorks [
 'inurl:"index.php?book=" inurl:"version=" inurl:"chapter="'
 ]
 
-# Examples #
-examples %w|
-web.ics.purdue.edu/~gbudiman/phpmybible/index.php
-www.nekeri.net/society/religion/pmb/index.php
-|
+
 
 # Matches #
 matches [

@@ -17,31 +17,7 @@ dorks [
 '"Powered by PHP Photo Gallery"'
 ]
 
-# Examples #
-examples %w|
-album.mtt.bg/photo.php
-album.ojamaa.ee/photo.php
-eliteconcretedesign.net/v10/photo.php
-lakecheer.com/album/index.php
-lawyerseverett.com
-movementexplorers.com/gallery/photo.php
-photo.urbanfishingshow.com/photos/
-tulsa2u.com
-www.thevoiceofpeace.co.il/gallery2/photo.php
-www.well.hr/polovno/contact.php
-www.bijon.fr/photo.php
-www.gncommunitycentre.org/gall/photos/
-wwwnno.moph.go.th/web_ssj/photogall/photo.php
-www.oneinchdeep.com/photo.php
-www.tpv-brigerbad.ch/new_gallery/index.php
-www.urbanfishingshow.com/photo/
-www.karperteamstadskanaal.nl/test/index.php
-www.krumblez.co.uk
-www.reedme.org
-www.mediosparalelos.com/criollos/photos/
-www.manoogian.org/gallery/index.php
-www.loaded-dog.co.uk/photo.php
-|
+
 
 # Matches #
 matches [

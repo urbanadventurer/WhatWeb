@@ -12,18 +12,7 @@ description "Toshiba mobile and conference room projector - Homepage: http://us.
 # ShodanHQ results as at 2011-10-30 #
 # 21 for TOSHIBA-Projector
 
-# Examples #
-examples %w|
-158.193.119.19
-158.193.119.16
-158.193.115.240
-158.193.119.15
-130.74.107.185
-158.193.119.25
-158.193.119.7
-158.193.119.9
-158.193.119.18
-|
+
 
 # Matches #
 matches [

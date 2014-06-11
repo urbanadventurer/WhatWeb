@@ -21,21 +21,7 @@ dorks [
 '"SiteScope Login" intitle:"SiteScope Login" "Mercury Interactive Corporation"'
 ]
 
-# Examples #
-examples %w|
-sitescope.mansellgroup.net:8888
-ns2.atwo.com
-sitescope.ttlc.net
-www.idn.co.id
-135.196.9.142
-216.34.112.91
-194.78.47.125
-209.118.49.218
-212.135.1.120
-216.74.159.162
-61.88.56.162
-210.51.18.19
-|
+
 
 # Matches #
 matches [

@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
 description "McAfee Secure sites apparently help keep you safe from identity theft, credit card fraud, spyware, spam, viruses and online scams - Homepage: http://www.mcafeesecure.com/"
 
-# Examples #
-examples %w|
-tangowire.net
-mcafeesecure.com
-|
+
 
 # Matches #
 matches [

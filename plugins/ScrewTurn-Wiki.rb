@@ -16,17 +16,7 @@ dorks [
 '"Powered by ScrewTurn Wiki version "'
 ]
 
-# Examples #
-examples %w|
-wiki.webgear.co.nz
-www.hookedonlinq.com
-entanglar.dunnchurchill.com
-workity.simprove.de
-help.workity.com/wiki/
-vista.cira.colostate.edu/airdatawiki/
-tracker.nettiers.com
-teddyma.com
-|
+
 
 # Matches #
 matches [

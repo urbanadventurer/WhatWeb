@@ -18,12 +18,7 @@ dorks [
 '"There\'s no newswall without javascript - please activate" inurl:newswall'
 ]
 
-# Examples #
-examples %w|
-culvercityobserver.com/newswall/indext.php
-getyourstuff.org/newswall/
-wall.www.info.vn
-|
+
 
 # Matches #
 matches [

@@ -14,25 +14,7 @@ description "TYPO3 is a free Open Source content management system for enterpris
 
 # More examples here: http://welovet3.com/
 
-# Examples #
-examples %w|
-typo3.com
-demo.opensourcecms.com/typo3/
-www.rapidfyre.net
-www.gotoperu.com
-www.glassartlight.com
-www.nemadesign.de
-www.krueger-dirndl.de
-www.apler-webdesign.de
-www.turismopesaro.it
-www.pesarocultura.it
-www.fao.org
-www.pesaro0914.comune.pesaro.pu.it
-www.unesco.org
-www.panzergrenadierbrigade16.de
-www.sabine-zimmermann.info
-wolfgang-schaeuble.de
-|
+
 
 # Matches #
 matches [

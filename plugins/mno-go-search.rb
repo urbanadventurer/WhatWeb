@@ -20,8 +20,7 @@ dorks [
 '"Powered by mnoGoSearch"'
 ]
 
-# Examples #
-examples %w|http://www.uic.asso.fr/mnogosearch http://www.bio-systems.org/cgi-bin/search.cgi http://www.accessinn.com/cgi-bin/search.cgi http://www.zmanda.com/cgi-bin/search.cgi http://physhun.kfki.hu/cgi-bin/search-cncsun.cgi |
+
 
 # Matches #
 matches [

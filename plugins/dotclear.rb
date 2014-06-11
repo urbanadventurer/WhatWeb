@@ -17,21 +17,7 @@ dorks [
 '"powered by dotclear"'
 ]
 
-# Examples #
-examples %w|
-dotclear.org
-fr.dotclear.org
-www.feeblemind.org
-www.markvernon.com/friendshiponline/dotclear/
-www.pixielive.org
-www.glazman.org/weblog/dotclear/index.php
-www.libellules.ch/dotclear/
-www.extens-hair.com/blog/index.php
-www.grounation.org
-www.sophiemhabille.com/index.php
-hajji-ayadi.com/dotclear2/
-www.ateliermetaldart.com/blog/
-|
+
 
 # Matches #
 matches [

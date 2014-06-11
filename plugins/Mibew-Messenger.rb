@@ -18,24 +18,7 @@ dorks [
 '"Mibew Messenger" "mibew.org" intitle:"Mibew Messenger" inurl:"operator/restore.php"'
 ]
 
-# Examples #
-examples %w|
-demo.mibew.org/operator/login.php
-support.cyberszone.com/operator/login.php
-www.chat.web.id/operator/login.php
-support.pcgame.ge/operator/restore.php
-www.issolution.it/webim/operator/restore.php
-virtualize.no-ip.org/libs/mibew/operator/restore.php
-helpdesk.hostingportal.pt
-support.pcfif.dk
-158.36.158.50
-www.sevilla.gov.co/apps/owm/operator/login.php?locale=en
-www.amplaonline.com/ampla/fr/new/temp/chat/install/?locale=en
-jambonex.com/bonga2/
-nztechshop.com/webim/license.php
-chat.colegiodesanpatricio.edu.co
-support.pcgame.ge/operator/restore.php
-|
+
 
 # Matches #
 matches [

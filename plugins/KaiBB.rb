@@ -17,16 +17,7 @@ dorks [
 '"Powered by KaiBB"'
 ]
 
-# Examples #
-examples %w|
-www.kaibb.co.uk
-demo.opensourcecms.com/kaibb/
-164.115.5.58/fetpkai/
-demo.caot.net/kaibb/
-bkbox.free.fr/forum/
-164.115.5.58/fetpkai/
-ap7ita.hellospace.net/forum/
-|
+
 
 # Matches #
 matches [

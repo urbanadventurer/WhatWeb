@@ -17,21 +17,7 @@ dorks [
 '"Powered by PG Roomate Finder Solution - roommate estate web site design"'
 ]
 
-# Examples #
-examples %w|
-demo.realtysoft.pro/roommate/index.php
-www.mydesres.com
-www.roommatesusa.com
-www.roomieworld.com
-demo.realtysoft.pro/roommate/
-www.roommateplanet.com
-www.roomrentalworld.com
-www.roomfindster.com
-www.roommateusa.com
-www.roomieworld.com
-roommateusa.com
-www.roomrentalworld.com
-|
+
 
 # Matches #
 matches [

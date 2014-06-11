@@ -14,19 +14,7 @@ description "Toshiba Cable Modem - Homepage: http://www.toshiba.com/"
 # 5,583 for Document follows PCX
 # All results are from Japan
 
-# Examples #
-examples %w|
-203.215.225.134/up.html
-203.133.197.7/up.html
-203.133.222.133/up.html
-61.122.63.86/up.html
-111.67.191.248/up.html
-219.113.83.191/up.html
-122.152.45.17/up.html
-61.122.62.10/up.html
-61.122.61.158/up.html
-61.122.63.161/up.html
-|
+
 
 # Matches #
 matches [

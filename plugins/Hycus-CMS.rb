@@ -16,10 +16,7 @@ dorks [
 '"powered by Hycus CMS"'
 ]
 
-# Examples #
-examples %w|
-www.quacku.com
-|
+
 
 matches [
 

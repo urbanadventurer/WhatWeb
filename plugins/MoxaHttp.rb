@@ -12,14 +12,7 @@ description "Device Networking for Industry: device server, industrial ethernet 
 # ShodanHQ results as at 2011-05-30 #
 # 3,104 for MoxaHttp
 
-# Examples #
-examples %w|
-109.70.228.146
-151.3.40.174
-140.112.67.185
-148.71.76.170
-140.115.186.98
-|
+
 
 # Passive #
 def passive

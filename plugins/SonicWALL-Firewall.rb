@@ -20,23 +20,7 @@ dorks [
 'intitle:"SonicWALL - Authentication" "Username" "Password" "Language"'
 ]
 
-# Examples #
-examples %w|
-66.92.37.53
-199.7.197.34
-77.235.189.66
-210.245.193.157
-62.7.88.18
-75.64.137.63
-213.82.101.126
-96.54.192.195
-66.193.26.66
-76.72.245.42
-77.43.10.146
-clerk.hannibal-mo.gov
-acutechnetworkservices.com
-https://www.netech.edu
-|
+
 
 # Matches #
 matches [

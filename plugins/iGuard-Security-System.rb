@@ -27,20 +27,7 @@ dorks [
 '"iGuard Security System" "Lucky Technology Ltd.. All rights reserved." "US Patent No.: 6,643,779"'
 ]
 
-# Examples #
-examples %w|
-66.208.250.26
-www.bionanoresearch.chem.ufl.edu
-69.33.11.10
-61.221.43.146
-59.125.173.29
-72.156.138.242
-87.216.165.57
-76.243.174.137
-85.154.251.33
-219.76.167.240
-222.178.110.71
-|
+
 
 # Matches #
 matches [

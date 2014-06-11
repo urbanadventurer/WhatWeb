@@ -17,29 +17,7 @@ dorks [
 '"Powered by SePortal"'
 ]
 
-# Examples #
-examples %w|
-www.seportal.org
-demo.seportal.org
-emlak43.net/tavsanlihaber/
-188.193.251.8:82
-expatsportal.com
-www.cpm8241.com
-dagardi.biz
-sc.mybestbuy.net
-www.belkoyu.com
-belkoyu.de
-bereni.zzl.org
-www.gencpartiankara.com
-pirreklam.com/install.php
-www.yaylabelkoyu.com
-www.zifanaaytas.com
-emlak43.net
-www.tumsagper.org
-tenide.com
-kwadrotatus.ifastnet.com/seportal/
-home.northmarden.com
-|
+
 
 # Matches #
 matches [

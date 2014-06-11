@@ -17,12 +17,7 @@ dorks [
 '"QR-Code Panel" "by G0LGS"'
 ]
 
-# Examples #
-examples %w|
-boinq.dk
-www.grg.org.uk
-www.caranet.co.uk
-|
+
 
 # Matches #
 matches [

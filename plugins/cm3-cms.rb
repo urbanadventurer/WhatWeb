@@ -9,15 +9,7 @@ author "Aung Khant <http://yehg.net/>" # 2012-02-12
 version "0.1"
 description "CM3/CM2 CMS - http://www.cm3cms.com/ , CM2 was based on ASP, CM3 was based on ASP.NET."
 
-# Examples #
-examples %w|
-http://www.cm3cms.com/
-http://www.gould.edu.au/admin/
-http://www.wildscape.com.au/admin/
-http://www.sia.org.au/AcoraCMS/Admin/login/default.asp
-http://www.cancervic.org.au/AcoraCMS/Admin/
-http://www.sunsmart.com.au/admin/login/default.asp
-|
+
 
 # Matches #
 matches [

@@ -16,23 +16,7 @@ dorks [
 '"powered by Mysource matrix"'
 ]
 
-# Examples #
-examples %w|
-tintern.clients.squiz.net
-aih.clients.squiz.net
-www.artsandecology.org.uk
-www.acahealth.com.au
-www.apnic.net
-www.cpdining.com.au
-www.hsj-absence.com
-www.informaprofessional.com
-www.minerals.org.au/primary/secondary/minerals_industry_careers/
-www.motorship.com
-www.nationalgrains.org.au
-www.nswfarmers.org.au
-www.palitsyn.com/blog/
-www.sydneyolympicpark.com.au
-|
+
 
 matches [
 

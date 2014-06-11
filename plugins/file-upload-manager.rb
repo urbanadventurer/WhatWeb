@@ -20,24 +20,7 @@ dorks [
 'intitle:"File Upload Manager" "rename to" "file types allowed"'
 ]
 
-# Examples #
-examples %w|
-www.ancea.org/fileupload/
-www.philadelphiaprint.com/fileupload/
-www.akroncigarclub.com/fileman/index.php
-ellipsisanalytics.com/uploads/
-reallab.info/up/
-www.fotomi.pl/0up/
-dtti.prv.pl/upload/
-kusunoki.ty.land.to/party-upload/
-www.libor-ri.hr/fileupload/
-www.worldalpinerockfest.com/submit/
-lnx.gtiuruguay.com/phr/
-klikni.hit.bg/
-125.162.92.55/upload/
-cuonglv.110mb.com/upload/
-www.rastodolix.ovh.org/upload/upload.php
-|
+
 
 # Matches #
 matches [

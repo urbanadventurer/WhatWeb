@@ -12,13 +12,7 @@ description "W3Mfc is a collection of MFC classes to implement a Web Server - ho
 # ShodanHQ results as at 2010-11-01 #
 # 5,486 for "Server: W3MFC"
 
-# Examples #
-examples %w|
-76.217.77.98
-60.249.212.232
-190.56.134.234
-76.180.117.102
-|
+
 
 # Matches #
 matches [

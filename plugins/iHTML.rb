@@ -12,16 +12,7 @@ description "iHTML is a server side internet/web programming and scripting langu
 # ShodanHQ results as at 2011-06-04 #
 # 593 for iHTML
 
-# Examples #
-examples %w|
-217.25.65.44
-205.210.230.181
-195.10.246.83
-205.210.228.158
-205.210.230.170
-205.210.230.118
-205.210.228.33
-|
+
 
 # Passive #
 def passive

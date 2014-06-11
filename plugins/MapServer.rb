@@ -24,21 +24,7 @@ dorks [
 'inurl:cgi-bin/mapserv/?map'
 ]
 
-# Examples #
-examples %w|
-demo.mapserver.org/cgi-bin/mapserv
-ide.jccm.es/cgi-bin/mapserv
-gis11.nsgc.gov.ns.ca/cgi-bin/mapserv.exe
-mrdata.usgs.gov/cgi-bin/mapserv
-cwcgom.aoml.noaa.gov/cgi-bin/mapserv
-biometry.gis.umn.edu/cgi-bin/mapserv.exe
-bg.berkeley.edu/cgi-bin/mapserv
-niceguy.wustl.edu/cgi-bin/mapserv
-water.umn.edu/cgi-bin/mapserv-3
-relief.ersc.wisc.edu/cgi-bin/mapserv
-mesonet.agron.iastate.edu/cgi-bin/mapserv/mapserv
-planet.sr.unh.edu/cgi-bin/mapserv
-|			
+			
 
 matches [
  {:name=>"Version", :url=>"?map=*", :version=>/<\/HEAD>\s*<!\-\- MapServer version (.*?)\s/ },

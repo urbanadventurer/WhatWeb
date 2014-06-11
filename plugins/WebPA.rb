@@ -17,20 +17,7 @@ dorks [
 'intitle:"WebPA OS" "Web-PA Login"'
 ]
 
-# Examples #
-examples %w|
-webpaos.lboro.ac.uk/login.php
-lrt.mmu.ac.uk/demos/webpa/login_check.php
-webpa.ltiapps.net
-e-learning.coventry.ac.uk/WebPA/
-learning.staffs.ac.uk/webpa/login.php
-newwebpa.lboro.ac.uk
-webpa.tulane.edu
-webpa.swan.ac.uk
-webpa.ntushare.org
-webpa.hull.ac.uk
-https://webpa.dcs.shef.ac.uk/admin/review/student/index.php
-|
+
 
 # Matches #
 matches [

@@ -17,14 +17,7 @@ dorks [
 '"Powered By : Zones Web Solution" "inurl:index.php?manufacturers_id='
 ]
 
-# Examples #
-examples %w|
-www.wintertirestoronto.ca
-www.tirestoronto.ca
-www.alloywheelscanada.com
-www.carkraze.ca
-www.crazywheels.ca
-|
+
 
 # Matches #
 matches [

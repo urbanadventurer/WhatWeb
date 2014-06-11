@@ -16,24 +16,7 @@ dorks [
 '"powered by i-Gallery"'
 ]
 
-# Examples #
-examples %w|
-hoaithuy.phans.info
-hoaithuy.phans.info/login.asp
-igallery.luminesceproductions.com/igallery.asp
-krye.org/gallery
-observatory2.angkasa.gov.my/langkawibrowserastronomy/igallery/
-portal.hss.ntu.edu.sg/macc/photogallery/
-tanbinh.hochiminhcity.gov.vn/ViewPhoto.asp
-win2k.klgsh.kl.edu.tw/ftproot/socialweb/geography/igallery/igallery.asp
-www.mineralareadsa.org/photoalbums/
-www.quan9.hochiminhcity.gov.vn/ViewPhoto.asp
-www.rogersmeadows.com/igallery34/
-www.rogersmeadows.com/igallery34/login.asp
-www.tand.hochiminhcity.gov.vn/ViewPhoto.asp
-www.wilayahnetwork.com/igallery/
-www.wilayahnetwork.com/igallery/login.asp
-|
+
 
 matches [
 

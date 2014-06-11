@@ -17,23 +17,7 @@ description "CodeIgniter PHP Framework - http://codeigniter.com/ "
 
 # more http://codeigniter.com/projects/
 
-# Examples #
-examples %w| 
-dearie6.com  
-www.foodrunner.nl
-www.kunststofoveral.nl
-www.iwasblownaway.com
-www.neoreader.com.br
-www.wissamjoubran.com
-www.horadecomer.com
-climatechange.pacificpeoplespartnership.org
-www.creatieve-cursussen.nl
-www.councillcontract.com
-bambooinvoice.org
-nuherbs.com
-kennedyhahn.com
-www.enerdata.com
-|	
+	
 
 # Matches #
 matches [

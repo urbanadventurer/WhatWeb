@@ -17,14 +17,7 @@ dorks [
 'intitle:"Puppet Node Manager" "Puppet Labs"'
 ]
 
-# Examples #
-examples %w|
-aaf-mgnt01.aaf.edu.au
-rps.leaxis.be
-www.alyssastacy.com
-r11118.ovh.net
-host10.billeo.com
-|
+
 
 # Matches #
 matches [

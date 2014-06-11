@@ -17,29 +17,7 @@ dorks [
 'inurl:"sitegenius/topic.php?id="'
 ]
 
-# Examples #
-examples %w|
-www.euraxess.rs/sitegenius/
-www.fovea.com/sitegenius/
-www.fovea.ch/sitegenius/
-www.sunnybit.com/sitegenius/
-www.euraxess.me/sitegenius/
-www.skinis.org.rs/sitegenius/
-www.masfak.ni.ac.rs/sitegenius/
-webmob.masfak.ni.ac.rs/sitegenius/
-www.newenproject.org/sitegenius/
-www.freeyourdata.net/sitegenius/
-www.seesciencepolicy.org/sitegenius/
-www.iseemob.eu/sitegenius/
-www.intersectoralmobility.eu/sitegenius/
-www.pevo-kmuberatung.ch/sitegenius/
-www.foveaonline.ch/fovea/sitegenius/
-www.sunnybit.ch/sitegenius/
-www.skiandsun.co.rs/sitegenius/
-www.sokobanja.org.rs/sitegenius/
-www.rotary-brb.ch/sitegenius/
-www.mobi4you.com/sitegenius/
-|
+
 
 # Matches #
 matches [

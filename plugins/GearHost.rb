@@ -18,25 +18,7 @@ description "GearHost is a Microsoft Gold Certified Windows Hosting Partner that
 # ShodanHQ results as at 2010-10-25 #
 # 1,369 for Hosted-With: GearHost Inc. (www.gearhost.com)
 
-# Examples #
-examples %w|
-69.24.78.59
-69.24.78.66
-69.24.78.69
-69.24.78.79
-69.24.71.151
-69.24.71.219
-69.24.70.136
-69.24.74.147
-69.24.68.234
-69.24.78.188
-69.24.79.92
-69.24.64.101
-69.24.64.102
-69.24.64.103
-69.24.64.104
-69.24.68.105
-|
+
 
 # HTTP Header
 def passive

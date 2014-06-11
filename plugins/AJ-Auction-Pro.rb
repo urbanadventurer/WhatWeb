@@ -17,15 +17,7 @@ dorks [
 '"Powered By AJ Auction Pro" -dork'
 ]
 
-# Examples #
-examples %w|
-www.ajdemos.com/demo/ajauctionpro/oopdv3.1/
-www.ajsquare.co.in/demos/auction/oopdv3.1_persian/
-www.ajsquare.co.in/demos/auction/oopdv3.1_croatian/
-www.ajsquare.co.in/demos/auction/oopdv3.1_croatian/
-www.ajsquare.co.in/demos/auction/oopdv3.1_spanish/
-www.ajdemos.com/demo/ajauctionpro/web20/
-|
+
 
 # Matches #
 matches [

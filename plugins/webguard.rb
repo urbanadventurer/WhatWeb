@@ -29,22 +29,7 @@ dorks [
 'intitle:"WebGuard Login" "[LOGIN] [EXIT]"'
 ]
 
-# Examples #
-examples %w|
-144.131.54.78
-14.32.53.240
-220.81.142.4
-183.98.17.179
-221.149.244.226
-1.212.84.114
-118.41.71.104
-120.146.132.31
-59.5.68.216
-121.170.13.143
-193.251.61.4:12089/webguard_login.htm
-148.243.99.19:12088/webguard_login.htm
-www.dvronline.net
-|
+
 
 # Matches #
 matches [

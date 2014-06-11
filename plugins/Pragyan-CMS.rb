@@ -17,13 +17,7 @@ dorks [
 '"powered by Pragyan CMS"'
 ]
 
-# Examples #
-examples %w|
-pragyan.org/11/home/
-teamdeltaforce.org/
-www.nitt.edu/students/events/
-www.probe.org.in/
-|
+
 
 # Matches #
 matches [

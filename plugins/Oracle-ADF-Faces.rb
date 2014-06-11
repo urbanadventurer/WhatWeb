@@ -17,16 +17,7 @@ dorks [
 '"This page uses JavaScript and requires a JavaScript enabled browser.Your browser is not JavaScript enabled."'
 ]
 
-# Examples #
-examples %w|
-https://applications.almullagroup.com/onlineremit/faces/infrastructure/EXLogin.jspx
-https://selfcare.tikona.in/selfcare/faces/ss/base/auth/Login.jspx
-portal.synchrotron.org.au
-https://businessportal.alcatel-lucent.com/alugesdp/faces/pub/sec/UserRegistration.jspx
-https://www.agriculture.gov.ie/ssoauthagfood/static/InformationBrowser.htm
-https://mygxp.socetgxp.com/SelfService/faces/ss/base/um/registration/RegNewRequest.jspx
-hercules.psi-corp.com/PSIPortal/faces/fp/PSICustReg.jspx
-|
+
 
 # Matches #
 matches [

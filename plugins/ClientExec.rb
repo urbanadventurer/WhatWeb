@@ -21,31 +21,7 @@ dorks [
 'intitle:"Support Center - Powered By ClientExec"'
 ]
 
-# Examples #
-examples %w|
-demo.clientexec.com
-billing.myteamspeak.net
-my.hostned.com/ce/
-billing.miwcity.net
-hqsecure.com/clientexec/
-www.host3.co.uk/members/
-dristal.com/client/
-billing.veeservers.com
-billing.velocity-servers.net
-clients.medialayer.com
-www.elkwebworks.com/clientexec/
-members.hostedhere.net
-www.xpservers.net/billing/
-www.aquanetworks.com/helpdesk/
-188.40.240.234
-178.238.133.149
-74.53.147.59
-97.74.8.67
-75.119.218.159
-210.17.245.137
-208.77.220.130
-209.188.95.113
-|
+
 
 # Matches #
 matches [

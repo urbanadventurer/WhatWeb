@@ -17,28 +17,7 @@ dorks [
 '"powered by LuxSoft" "LuxCal" "Log In" Monday Tuesday Wednesday Thursday Friday Saturday Sunday'
 ]
 
-# Examples #
-examples %w|
-www.luxsoft.eu/luxcal/
-donwer-musek.lu/luxcal/index.php
-bankschroef.nl/calendar/
-www.mec.cuny.edu/calendar/
-www.lickingcountybicycleclub.com/lcbcEvents/
-anrc-services.com/calendar/
-www.frolickingfrogwine.com/calendar/
-www.wbymca.org/event-calendar230/index.php
-www.penderhumane.org/calendar/
-sportsedgebarandgrill.com/luxcal16/
-www.theoriginalonsitegeeks.com/luxcal/
-globalstrategicresources.com/luxcal/index.php
-www.rct-it.co.za/viastep/luxcal/index.php
-www.cottonwoodcenterforthearts.com/Luxcal/index.php
-www.stmonicanepa.com/smluxcal/index.php
-www.flagswipepaintball.com/luxcal232/
-ffla.us/calendar/
-torontomulticulturalcalendar.com/index.php
-shubhmuhurat.in
-|
+
 
 # Matches #
 matches [

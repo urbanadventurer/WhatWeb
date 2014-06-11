@@ -13,28 +13,7 @@ description "Oracle Fusion Middleware (OFM) - Homepage: http://www.oracle.com/au
 # ShodanHQ results as at 2012-07-23 #
 # 24 for Oracle Fusion Middleware
 
-# Examples #
-examples %w|
-91.211.156.18
-203.166.160.65
-91.194.86.50
-187.72.169.16
-187.72.169.15
-200.198.216.16
-200.198.216.17
-200.198.216.10
-187.72.169.17
-bic2g.oracle.com
-fed.metropcs.com
-hrisssopub.asmnet.com
-a1bowling.net
-www.sandiegoilead.com
-www2.wou.edu
-myclubmobile.com
-inforep.mram.gov.mn
-securedb.fsec.ucf.edu
-https://misterimporter.com/
-|
+
 
 # Matches #
 matches [

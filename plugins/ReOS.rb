@@ -12,24 +12,7 @@ description "REOS is hi-end software solution designed to help real estate agent
 # Google results as at 2011-02-04 #
 # 125 for "powered by reos"
 
-# Examples #
-examples %w|
-www.ocasionlanzarote.com
-antaresgestion.com
-www.b-flats.com/padmin/
-fanaka-immo.com
-www.turksvastgoed.be
-competitivemoves.com
-www.mypristineproperty.com
-reos.elazos.com/demo/
-reos.elazos.com/demo/padmin/
-reos.elazos.com/padmin/
-www.tiasinmobiliaria.com
-re.matodo.com
-inmobiliariarisso.com.ar
-www.gestionin.es
-www.zonaunobaires.com/reos/
-|
+
 
 # Matches #
 matches [

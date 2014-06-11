@@ -14,23 +14,7 @@ description "This plugin identifies and extracts the value for X-Backend, X-Back
 # 4 for X-BackendHost
 # 3 for X-Backend-Host
 
-# Examples #
-examples %w|
-63.245.208.197
-63.245.209.112
-63.245.209.32
-63.245.209.139
-63.245.209.10
-63.245.213.96
-59.151.50.59
-63.245.209.133
-203.34.47.175
-63.245.209.104
-134.58.239.51
-134.58.239.30
-134.58.239.63
-134.58.239.64
-|
+
 
 # Passive #
 def passive

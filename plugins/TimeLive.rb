@@ -17,19 +17,7 @@ dorks [
 'intitle:"TimeLive" "TimeLive LogIn" "Username" "Password"'
 ]
 
-# Examples #
-examples %w|
-demo.livetecs.com
-timelive.livetecs.com
-timelive.inforica.com
-216.119.79.149
-timelive.ironbarkheritage.com/TimeLive/
-timelive.net
-www.flatrockbilling.com
-www.guidance-technology.com/timesheets/
-dbcts.com
-gotgreenstrategy.net
-|
+
 
 # Matches #
 matches [

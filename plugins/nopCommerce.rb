@@ -17,31 +17,7 @@ dorks [
 '"powered by nopCommerce" "You have no items in your shopping cart."'
 ]
 
-# Examples #
-examples %w|
-demo.nopcommerce.com
-admin-demo.nopcommerce.com
-www.cvmbs.colostate.edu/clinsci/ce/products/27-frankworkshop.aspx
-nchs.ss.ucla.edu
-shop.soulsurvivor.com
-www.procosplay.com
-shop.kineteka.com
-shop.thewhitneycollection.com
-www.acsbookshop.com
-www.bcaillustrated.com.au
-ssl1001.qwestoffice.com/gardendesigner.com/store-19/
-ebook.acsedu.com
-rainbowproducts.awakenedhearts.com/privacyinfo.aspx
-kerineal.com/ohsewcute/
-www.firewallshop.com/fortinet/
-www.rpstudios.net/store/
-www.delectabletoys.com
-www.shopbyyou.com
-www.ldstempleblankets.com
-kelseyweddle.webmatrix01.cytanium.com
-www.worldnetsales.org/shop/wholesale/
-store.justproud.com
-|
+
 
 # Matches #
 matches [

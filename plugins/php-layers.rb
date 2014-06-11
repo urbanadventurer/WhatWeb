@@ -20,24 +20,7 @@ dorks [
 '"Powered by PHP Layers"'
 ]
 
-# Examples #
-examples %w|
-phplayersmenu.sourceforge.net/demo.php
-www.marcopratesi.it
-www.dardensystems.com/menu/
-hs.stantonysonline.com/
-www.iq-institut-sh.de/phpgroupware/folders/phplayersmenu/
-telug.it
-kevinatkins.com/kswiki/lib/phplayers/example-hormenu_and_vermenu.php
-rbl.interserver.net
-www.brasscrest.com
-www.cs.cas.cz/krylov/
-rbl.interserver.net
-grasstreegallery.com
-amsit.ca/account/
-rmohseni.de
-www.sv-leipzig-ost-1858.de
-|
+
 
 # Matches #
 matches [

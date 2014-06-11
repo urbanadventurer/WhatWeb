@@ -17,18 +17,7 @@ dorks [
 '"powered by DBHcms" -dork'
 ]
 
-# Examples #
-examples %w|
-matix.ro/index.php
-bkp.apo-commune.org/lobby-bar/
-thebunks.net
-bginvestconsult.eu
-nmprofile.com
-www.drbenhur.com
-www.ikando.net
-www.especialidades-dentales.com
-www.remotehotel.com/DBHcms/index.php
-|
+
 
 # Matches #
 matches [

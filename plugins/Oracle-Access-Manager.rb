@@ -21,37 +21,7 @@ dorks [
 'inurl:"obrareq.cgi"'
 ]
 
-# Examples #
-examples %w|
-12.171.85.17
-60.29.141.71
-72.163.7.110
-85.205.252.163
-98.175.77.81
-141.191.16.124
-141.191.16.143
-141.191.32.122
-141.191.32.166
-145.20.124.72
-157.164.189.75
-170.135.72.76
-170.135.130.43
-170.135.130.96
-170.135.218.200
-193.109.72.154
-202.3.113.20
-203.127.145.167
-218.32.161.235
-207.17.137.111
-https://ops13web.nws.noaa.gov/oam/server/obrareq.cgi
-http://sso.admbnet.be/oam/server/obrareq.cgi
-https://tjenester.sismo.no/oam/server/obrareq.cgi
-https://ops13web.nws.noaa.gov/oam/server/obrareq.cgi
-https://connect.homehardware.ca/oam/server/obrareq.cgi
-https://nu.edu.kz/oam/server/obrareq.cgi
-https://login.oracle.com/oam/server/obrareq.cgi
-https://sso.erau.edu/oam/server/obrareq.cgi
-|
+
 
 # Matches #
 matches [

@@ -15,16 +15,7 @@ description "An integrated gateway solution for controlling access to the Intern
 # ShodanHQ results as at 2011-10-30 #
 # 141 for Traffic inspector
 
-# Examples #
-examples %w|
-83.242.255.1
-77.239.235.103
-213.242.252.141
-94.25.62.202
-62.117.110.230
-62.117.110.228
-188.128.15.78
-|
+
 
 # Matches #
 matches [

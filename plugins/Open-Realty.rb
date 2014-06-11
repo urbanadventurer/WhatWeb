@@ -16,19 +16,7 @@ dorks [
 '"powered by Open-Realty"'
 ]
 
-# Examples #
-examples %w|
-www.open-realty.org
-creativerealestateagent.com
-demo.open-realty.org
-demo.open-realty.org/member_login.html
-opallease.com/index.php
-praediumpanama.com
-realty.focusgraphicdesign.com.au/index.php
-southwest-realestate.net/realty/index.php
-www.it21test.net/realtor/
-www.googlemapsrealestate.com.au
-|
+
 
 matches [
 

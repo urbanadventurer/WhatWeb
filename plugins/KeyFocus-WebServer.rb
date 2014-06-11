@@ -12,16 +12,7 @@ description "KeyFocus Web Server is a free HTTP Server that can host an unlimite
 # ShodanHQ results as at 2011-04-08 #
 # 753 for KFWebServer
 
-# Examples #
-examples %w|
-61.67.173.33
-212.142.81.174
-217.127.93.171
-109.206.97.202
-140.114.17.97
-62.178.28.190
-81.136.236.152
-|
+
 
 # Matches #
 matches [

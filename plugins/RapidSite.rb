@@ -18,19 +18,7 @@ description "RapidSite is the world's largest and most experienced Web hosting e
 #	Switzerland 1,138
 #	Spain 1,100
 
-# Examples #
-examples %w|
-222.146.62.70
-61.112.35.83
-60.43.217.19
-60.43.245.55
-60.43.196.250
-128.121.191.196
-198.66.207.94
-207.56.82.6
-199.237.208.244
-198.173.242.110
-|
+
 
 # Passive #
 def passive

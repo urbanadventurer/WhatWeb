@@ -20,52 +20,7 @@ dorks [
 '"powered by Axigen Mail Server"'
 ]
 
-# Examples #
-examples %w|
-194.105.7.2:8000
-mail.realtyweb.net
-mail.conpoint.com
-box.exent.it
-oxy.pub.ro:8000
-www.axigenmail.com
-www.mbox4me.com
-www.el-meu-correu.com
-www.elmeucorreu.com
-www.mbhmail.nl
-mail.mediasat.ro
-mail.keytown.com
-webmail.uachurchonline.net
-mail.atumo.se
-webmail.osim.ro
-radioquintessenz.de:8080
-webmail.iie.es
-webmail.loxley.co.th
-my126.org
-mail.jasoneng.com.hk:81
-mail.nordtroms.net
-samaphone.net
-mail.ttaf.com.hk
-www.fodor.com.ro
-bnmw.nl
-webmail.multimedia.cz
-mail.oratech.com.tr:2080
-webmail.velpitar.ro
-mail.fon.edu.mk
-webmail.comune.forli.fc.it
-mail.mediahertz.it
-axigen.cmss-oz.cz
-mail.mofidu.ac.ir
-webmail.axen.se
-mail.bonicom.cz
-www.stampq.lv:9001
-albaniaonline.net
-pop3.interclan.net
-pop3.nckcn.com
-interclan.net
-correopersonal.es
-mi-correo.es
-mail.arquinetmty.com
-|
+
 
 # Matches #
 matches [

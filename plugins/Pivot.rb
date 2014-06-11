@@ -16,29 +16,7 @@ dorks [
 '"Set up the Administrator User" "Username" "Password (confirm)" "confirm" "Email" "Nickname"'
 ]
 
-# Examples #
-examples %w|
-www.undereternityblue.com/seva/pivot/index.php
-bibliotheek.pivot.cc/pivot/
-ecumenici.altervista.org/html/pivot/index.php
-dawnanddrew.podkeyword.com/pivotblog/pivot/
-soulcookie.podkeyword.com/pivotblog/pivot/
-reviews.podkeyword.com/pivotblog/pivot/
-openpodcast.podkeyword.com/pivotblog/pivot/
-marchon.podkey.com/pivotblog/pivot/
-technology.podkey.com/pivotblog/pivot/
-www.podkey.com/pivotblog/pivot/
-jakokru.wz.cz/web/pivot/
-members.iinet.net.au/~tealou/public_html/pvblog/pivot/
-koen.logt.org/pivot/
-members.multimania.nl/elninofxp/pivot/index.php
-marchonscorner.podkey.com/pivotblog/pivot/
-david.podkeyword.com/pivotblog/pivot/
-portalette.podkeyword.com/pivotblog/pivot/
-toverknoop.nl/pivot/
-www.computerblondie.nl/pivot/
-atila.irb.hr/weblog/pivot/
-|
+
 
 # Matches #
 matches [

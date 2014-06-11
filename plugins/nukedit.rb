@@ -20,42 +20,7 @@ dorks [
 '"powered by Nukedit"'
 ]
 
-# Examples #
-examples %w|
-catalystinfotech.com/cms/
-crutial.erse-web.it
-ermine.erse-web.it
-forsandtrial.org
-realisegrid.erse-web.it
-seesgen-ict.erse-web.it
-www.bedfordbulls.co.uk
-www.cyberlets.co.uk/basketball/
-www.doula.org.uk
-www.editdudes.com
-www.hdpost.se
-www.huntingdonbasketball.co.uk
-www.indianaviators.com
-www.instantuknumbers.co.uk
-www.maliinvest.dk
-www.mediabuild.co.uk
-www.mobilefonecentral.com
-www.multiinformatica.com
-www.musiclife.com.au
-www.ntmf.no
-www.nukedit.com
-www.plattlmania.com
-www.postproduction.se
-www.rosenkranz-scheifling.at
-www.schenkenschanz.com
-www.stadsboerderijdemars.nl
-www.ubl.com.au
-www.ukhk.se
-www.vcss.com.au
-www.vejlemodelflyveklub.dk
-www.viborgmodelflyveklub.dk
-www.weddingcompare.com
-www.xn--ellebksmalerservice-pxb.dk
-|
+
 
 # Matches #
 matches [

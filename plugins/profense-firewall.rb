@@ -11,19 +11,7 @@ version "0.1"
 description "Profense Web Application Firewall -  http://www.armorlogic.com/profense_overview.html"
 
 # 394 ShodanHQ results for Profense
-examples %w|
-www.axcess-financial.com
-68.62.48.54
-74.115.186.105
-74.115.186.126
-64.197.73.28
-159.87.126.87
-74.115.186.125
-66.17.86.223
-159.87.126.35
-134.250.14.200
-74.115.186.83
-|
+
 
 
 def passive

@@ -9,12 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
 version "0.1"
 description "This plugin retrieves the description from the meta description tag."
 
-# Examples #
-examples %w|
-itsecuritysolutions.org
-yehg.net
-www.backtrack-linux.org
-|
+
 
 # Matches #
 matches [

@@ -12,19 +12,7 @@ description "Netscape Enterprise Server was a web server developed originally by
 # ShodanHQ results as at 2011-03-14 #
 # 11,641 for Netscape-Enterprise
 
-# Examples #
-examples %w|
-80.250.173.147
-202.27.156.18
-155.44.241.42
-200.185.28.12
-47.234.44.96
-208.84.224.177
-192.104.67.58
-141.123.222.4
-200.185.64.3
-203.241.162.36
-|
+
 
 # Passive #
 def passive

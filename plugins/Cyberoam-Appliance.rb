@@ -18,21 +18,7 @@ dorks [
 '"To use cyberoam console , enable JavaScript by changing your browser options."'
 ]
 
-# Examples #
-examples %w|
-premiumhc.com
-cswcrtiddn.org
-cyberoam.e-rong.co.th/th/CyberoamDemoNew/reports/index.html
-https://www.inycom.es/
-https://190.60.243.2:8443/
-https://202.142.194.179:13782/
-https://extranet.inauxa.es:8443/
-https://legacy.scangroup.biz:8443/
-https://www.dialogotv.it:8443/corporate/sslvpnuserportal/login.jsp
-https://www.juntaue1sanfernando.es:8443/
-https://220.127.103.253:8443/
-https://61.17.38.146:8443/
-|
+
 
 # Matches #
 matches [

@@ -17,35 +17,7 @@ dorks [
 '"Powered by bloofoxCMS"'
 ]
 
-# Examples #
-examples %w|
-bloofox.com
-chipthemoney.com
-dunkletraeume.du.funpic.de
-frauenpower-willich.de/cms/
-hahne.oest.info/index.php
-xvolks-bot.tk
-www.hahne-gmbh.de/index.php
-www.europeanwalls.com
-www.x-gefunden.de
-www.livetime-gewinnspiele.at
-www.event-spiele.de
-www.daimn88.com/en/
-www.kg-urmel.de/cms/
-www.mkvideo.de
-www.mobile-fahrzeugpflege-boenen.de
-www.uecker-webdesign.de
-www.ohm-abi2003.de
-www.gv-voran.de
-www.club55.biz/cms/
-www.haircut-malinowski.de
-www.brennerei-lang.de
-www.dortmunder-sportbilder.de
-www.ladenbau-dortmund.de
-www.heilpraxis-scholl-hartlaub.de
-www.adler-freunde-eberbach.de
-www.industrial-photo-art.com/index.php
-|
+
 
 # Matches #
 matches [

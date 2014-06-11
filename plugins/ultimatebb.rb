@@ -17,27 +17,7 @@ dorks [
 '"Powered by UBB.threads"'
 ]
 
-# Examples #
-examples %w|
-www.ubbdev.com/forums/
-texasfishingforum.com/forums/ubbthreads.php
-bbs.keyhole.com
-www.bankersonline.com/forum/ubbthreads.php
-simhq.com/forum/ubbthreads.php
-forums.equipped.org/ubbthreads.php
-forum.canadianparents.com
-forums.superiorpics.com
-www.physicaltherapyforum.com/ubbthreads.php
-www.zoomway.net/ubbthreads/ubbthreads.php
-www.psychopath-research.com/forum/
-www.egyptsearch.com/forums/ultimatebb.cgi
-www.itmbforums.gov.bc.ca/cgi-bin/ultimatebb.cgi
-www.hayward-ca.gov/cgi-bin/ultimatebb.cgi
-arts.cornish.edu/forums/
-www.me.pdx.edu/ubb/ubbthreads.php
-blueboard.uky.edu/ubbthreads/
-forums.csus.edu
-|
+
 
 # Matches #
 matches [

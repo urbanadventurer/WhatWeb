@@ -20,21 +20,7 @@ dorks [
 '"qdPM" "is redistributable under the GNU General Public License" "Login" "Email" "Password"'
 ]
 
-# Examples #
-examples %w|
-qdpm.net/demo/index.php
-www.sena-tech.com/management/
-www.swaeurope.com/index.php
-projets.altilab.com
-nmarques.qdpm.dev1.publicis-modem.ca
-support.kukoa.com
-clients.almahor.biz
-asyncthreads.com/tracking/
-www.dinamiza.it/assistenza/
-tools.fas.at/pm/index.php
-beta.mototoja.lt
-www.quadrogestionale.it/assistenza/
-|
+
 
 # Matches #
 matches [

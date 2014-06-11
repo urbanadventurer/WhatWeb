@@ -17,12 +17,7 @@ dorks [
 '"powered by FCMS Copyright"'
 ]
 
-# Examples #
-examples %w|
-www.aichacher-zeitung.de
-www.fidion.de
-www.main.de
-|
+
 
 # Matches #
 matches [

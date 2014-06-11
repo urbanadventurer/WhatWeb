@@ -18,16 +18,7 @@ dorks [
 '"Website Powered by SiteMajic"'
 ]
 
-# Examples #
-examples %w|
-www.lambtonkia.com
-www.jonesgable.com
-www.kgba.ca
-www.estatesettler.com
-www.gananoquecurlingclub.com
-www.lyndhurstseeleysbaychamber.com
-www.stmaryparishfamilycentre.com
-|
+
 
 # Matches #
 matches [

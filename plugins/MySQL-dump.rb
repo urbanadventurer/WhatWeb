@@ -20,30 +20,7 @@ dorks [
 '"MySQL dump" ext:sql "Host" "Table structure for table"'
 ]
 
-# Examples #
-examples %w|
-bio16j.lbl.gov/dcs/config2.sql
-bio16j.lbl.gov/dcs/eval2.sql
-bio16j.lbl.gov/dcs/track2.sql
-edge.dev.box.sk/download/daily/box.sql
-ftp.interlegis.gov.br/interlegis/STC/tbi/sapldemo.sql
-ftp.mcs.anl.gov/pub/raffenet/neosdb.sql
-mirror.pscigrid.gov.ph/ebi-software/software/ensembl/avilella/data/12dros/drosophila_erecta_core_3_55_13a.sql
-mirror.pscigrid.gov.ph/ebi-software/software/ensembl/avilella/data/12dros/drosophila_sechellia_core_3_55_13a.sql
-mirror.pscigrid.gov.ph/ebi-software/software/ensembl/avilella/data/12dros/drosophila_pseudoobscura_core_3_55_23a.sql
-mirror.pscigrid.gov.ph/ebi-software/software/textmining/pp/monitored_channel.sql
-ncisvn.nci.nih.gov/svn/gss/trunk/software/gss/sql/gss_dump.sql
-users.nccs.gov/~ratsadm/share/rats_dump_20090223.sql
-vimssftp.lbl.gov/UnsupervisedOperons/Genomics/Database/allTables.genomics_test.sql
-woce.nodc.noaa.gov/woce_v3/updates/wocedocs/bibliography/allbib/biblio_countries.sql
-woce.nodc.noaa.gov/woce_v3/updates/wocedocs/bibliography/allbib/biblio_regions.sql
-woce.nodc.noaa.gov/woce_v3/updates/wocedocs/bibliography/allbib/biblio.sql
-www.chjhs.tyc.edu.tw/gov/school.sql
-www.cochabamba.gov.bo/public/descargas/back2010.sql
-www.gentoo.org/doc/en/files/genericmailsql.sql
-www.sarandi.pr.gov.br/SITE_ANTIGO/bkp/sarandi.sql
-www.scrailway.gov.in/enggol/LASTAWARDEDRATE.sql
-|
+
 
 # Matches #
 matches [

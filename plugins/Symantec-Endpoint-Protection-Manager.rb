@@ -17,11 +17,7 @@ dorks [
 'intitle:"Symantec Endpoint Protection Manager" "You must have JavaScript enabled to use this Web page."'
 ]
 
-# Examples #
-examples %w|
-vanhoadoc.net:9090
-91.207.237.188
-|
+
 
 # Matches #
 matches [

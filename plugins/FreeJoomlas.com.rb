@@ -13,18 +13,7 @@ description "FreeJoomlas.com - We provide free hosting for your Joomla portals. 
 # 100,000 for "joomla hosting powered by FreeJoomlas.com"
 # 47,400 for site:FreeJoomlas.com
 
-# Examples #
-examples %w|
-http://grall.freejoomlas.com/
-http://animationcity.freejoomlas.com/
-http://www.malaysiansimmer.freejoomlas.com/
-http://www.organicfarming.freejoomlas.com/
-http://www.snaalumni.freejoomlas.com/
-http://etonmommyandme.freejoomlas.com/
-http://www.ramkumar.freejoomlas.com/AFS
-http://www.balkanskabanits.freejoomlas.com/
-http://www.pracimantoro.freejoomlas.com/
-|
+
 
 # Matches #
 matches [

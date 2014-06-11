@@ -17,11 +17,7 @@ dorks [
 '"Update (diff) available: update now , Check for new version"'
 ]
 
-# Examples #
-examples %w|
-kroud.in:5000/manage/
-couchpotato.daveisadork.com/feed/
-|
+
 
 # Matches #
 matches [

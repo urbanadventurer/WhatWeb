@@ -20,19 +20,7 @@ dorks [
 'intitle:"AlienVault - Open Source SIM" Maximized User Password'
 ]
 
-# Examples #
-examples %w|
-142.158.8.28
-115.108.10.50
-200.174.1.20
-64.94.230.226
-132.248.139.81
-66.8.71.194
-174.142.215.161
-174.142.215.162
-206.40.99.123
-ns2.desenhovoce.com/ossim/
-|
+
 
 # Matches #
 matches [

@@ -17,14 +17,7 @@ dorks [
 'intitle:"Enabling Self-Service Procurement" "Loading Page"'
 ]
 
-# Examples #
-examples %w|
-bsc.puridiom.com/puridiom/
-bcbsri.puridiom.com
-https://my.puridiomx.com/
-hoyatest.puridiom.com/
-pur.vsecorp.com
-|
+
 
 # Matches #
 matches [

@@ -12,19 +12,7 @@ description "Nginx (Engine-X) is a free, open-source, high-performance HTTP serv
 # ShodanHQ results as at 2011-03-13 #
 # 289,545 for nginx
 
-# Examples #
-examples %w|
-121.14.176.28
-50.16.215.176
-173.230.133.226
-213.5.185.191
-209.190.31.117
-46.62.226.231
-173.224.218.183
-93.174.6.147
-194.126.241.10
-95.169.190.66
-|
+
 
 # Matches #
 matches [

@@ -16,11 +16,7 @@ dorks [
 '"powered by pithcms"'
 ]
 
-# Examples #
-examples %w|
-pithcms.altervista.org
-pithcms.altervista.org/admin/login.php
-|
+
 
 # Matches #
 matches [

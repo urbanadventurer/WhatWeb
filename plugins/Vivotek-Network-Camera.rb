@@ -12,15 +12,7 @@ description "Vivotek Network Camera web interface - Homepage: http://www.vivotek
 # ShodanHQ results as at 2011-09-19 #
 # 2,262 for Network Camera -Authenticate
 
-# Examples #
-examples %w|
-213.73.30.220
-222.252.236.34
-78.187.20.245
-12.232.29.162
-84.94.115.34
-92.61.94.59
-|
+
 
 # Matches #
 matches [

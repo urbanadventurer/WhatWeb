@@ -21,19 +21,7 @@ dorks [
 'inurl:sismodule=user'
 ]
 
-# Examples #
-examples %w|
-www.shomanews.com
-portal.merc.ac.ir
-www.irannsr.org
-www.sinainsurance.com
-portal.irannsr.org
-77.237.91.57
-195.146.59.31
-80.191.8.14
-62.193.12.206
-82.99.218.78
-|
+
 
 # Matches #
 matches [

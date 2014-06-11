@@ -17,13 +17,7 @@ dorks [
 '"PhpCollab" inurl:/general/login.php'
 ]
 
-# Examples #
-examples %w|
-mydemo.opensourcecms.com/phpcollab9992/general/login.php
-www.santafemold.com/phpcollab/general/login.php
-www.glasscreek.com/phpcollab/general/login.php
-www.backswing-conseil.com/phpcollab/general/login.php
-|
+
 
 # Matches #
 matches [

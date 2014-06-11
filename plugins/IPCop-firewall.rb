@@ -20,14 +20,7 @@ dorks [
 'intitle:"IPCop - Main page" "IP Address" "Hostname"'
 ]
 
-# Examples #
-examples %w|
-https://207.63.8.142:445/cgi-bin/index.cgi
-https://smtp.ownsurance.com/
-https://200.123.179.49:445/cgi-bin/index.cgi
-http://96.11.130.129/
-https://www.goecke-dolan.com:445/
-|
+
 
 # Matches #
 matches [

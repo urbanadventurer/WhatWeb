@@ -19,18 +19,7 @@ dorks [
 '"This Alumni website runs with open source software from the AlumniServer project."'
 ]
 
-# Examples #
-examples %w|
-www.reasoninfo.net/alumniserver/AlumniServerProject.php
-www.disted.edu.my/alumni/network/AlumniServerProject.php
-www.keoshion.net/alumni/AlumniServerProject.php
-pravnifakultet.info/AlumniServerProject.php
-thekovalfactor.com/Alumni/AlumniServerProject.php
-sbal.webuda.com/AlumniServerProject.php
-alumni.ahrkar.com/AlumniServerProject.php
-alumni.nvpolytechnic.com/AlumniServerProject.php
-thekovalfactor.com/Alumni/AlumniServerProject.php
-|
+
 
 # Matches #
 matches [

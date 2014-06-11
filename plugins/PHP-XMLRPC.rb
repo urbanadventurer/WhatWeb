@@ -17,12 +17,7 @@ dorks [
 '"Generated using PHP-XMLRPC" ext:php'
 ]
 
-# Examples #
-examples %w|
-phpxmlrpc.sourceforge.net/server.php
-studip.serv.uni-osnabrueck.de/xmlrpc.php
-casada.com/php/index.php
-|
+
 
 # Matches #
 matches [

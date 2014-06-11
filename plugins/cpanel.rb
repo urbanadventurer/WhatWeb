@@ -30,18 +30,7 @@ dorks [
 'inurl:":2095/webmail/x3"'
 ]
 
-# Examples #
-examples %w|
-demo.cpanel.net
-202.191.40.29
-classyserver.com:2082
-www.pinoakwebhosting.com:2082
-mango.catalyst2.com:2082
-www.bent-palestine.com:2082
-cpanel.il-toys.com
-il-kamasutra.com
-114.111.138.239
-|
+
 
 # Matches #
 matches [

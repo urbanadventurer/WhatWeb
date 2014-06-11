@@ -13,19 +13,7 @@ description "JEUS (Java Enterprise User Solution) is TmaxSoft's Java EE 5 certif
 # 1,543 for Jeus WebContainer
 # Most results are from Korea
 
-# Examples #
-examples %w|
-us.tmaxsoft.com
-61.106.5.22
-211.252.220.45
-203.227.232.41
-210.96.133.159
-211.39.94.101
-61.41.119.30
-222.122.208.201
-121.162.118.176
-203.239.254.107
-|
+
 
 # Passive #
 def passive

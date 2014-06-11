@@ -14,7 +14,7 @@ author "Andrew Horton"
 version "0.2"
 description "Simple, closed-source CMS. Free and paid versions. Built with Ruby on Rails. Homepage: http://www.cushycms.com/"
 
-examples %w| www.cushycms.com http://www.speldhurstderby.org.uk/ http://www.avantgardesalon.net/ www.zundoo.com http://www.zahirahbellydance.net http://www.nolimitsportfishing.com/ www.royalhousecatering.com dorenda.eu| 
+ 
 
 # Set-Cookie: _cushy_session=BAh7CDoPc2Vzc2lvbl9pZCIlYTkwOTgxZGRmNTVmMjY3ZGRmYWJiNDhkNzM4OWY2NzQ6DXJlZmVycmVyIgAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA%3D--e520ebeee34faf95fede4247ecaaf46fe80a84de; path=/; HttpOnly
 #  <li id="poweredBy"><img alt="Powered by CushyCMS" src="/images/cushy_badge.gif?1274163122" /></li>

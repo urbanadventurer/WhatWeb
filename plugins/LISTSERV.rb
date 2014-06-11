@@ -17,39 +17,7 @@ dorks [
 '"Server Administration" "List Management" "List Moderation" "Subscriber\'s Corner" "Email Lists"'
 ]
 
-# Examples #
-examples %w|
-demo.lsoft.com/Scripts/wa-demo.exe
-listserv.binghamton.edu/scripts/wa.exe
-listserv.miami.edu/scripts/wa.exe
-list.tehila.gov.il
-apple.ease.lsoft.com
-list.uvm.edu
-www.listserv.va.gov/cgi-bin/wa.exe
-statelists.state.gov/scripts/wa.exe
-www.aime.ua.edu/cgi-bin/wa
-alabamamaps.ua.edu/cgi-bin/wa
-networks.iop.org
-listserver.ciesin.columbia.edu
-listserv.ci.lakeville.mn.us/scripts/wa.exe
-mail.abanet.org/scripts/wa.exe
-listserv.pomona.edu/Archives/cgi-bin/wa.exe
-list.seniorweb.nl/cgi-bin/wa.exe
-listserv.heanet.ie/cgi-bin/wa
-nesdanetmail.com/scripts/wa.exe
-dir.commerce.gov/cgi-bin/WA.EXE
-listserv.cnr.it/cgi-bin/wa
-listservs.shu.edu/cgi-bin/wa
-listserv.opm.gov/wa.exe
-listserv.state.nv.us
-www.westga.edu/cgi-bin/wa
-listserv.american.edu/cgi-bin/wa
-listserv.seascout.org/cgi-bin/wa
-tr.wou.edu/CGI-BIN/WA.EXE
-list.nih.gov
-listserv.buffalo.edu
-listserv.bouldercounty.org/scripts/wa.exe
-|
+
 
 # Matches #
 matches [

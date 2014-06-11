@@ -17,25 +17,7 @@ dorks [
 '"is proudly powered by bbPress"'
 ]
 
-# Examples #
-examples %w|
-abudawoodtc.com/bbpress/
-bbshowcase.org/forums/
-demo.blazed-designs.com/bbpress/
-demo.forum-software.org/bbpress/
-demos.softaculous.com/bbPress/
-forum.wpml.org
-forum.grafa-design.com
-forum.go41.de
-forums.brynmawr.edu
-ravidreams.com/forum/
-www.alwaysontechnologies.com/forums/
-www.drnamaya.org/forum/
-www.edgeofexistence.org/forum/
-www.gapsa.upenn.edu/bbpress/
-www.poliscijobrumors.com
-www.startwithwordpress.com/forums/
-|
+
 
 # Matches #
 matches [

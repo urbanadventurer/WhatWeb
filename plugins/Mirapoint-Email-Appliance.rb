@@ -16,30 +16,7 @@ description "Mirapoint Email Appliance is a Unix-like standards-compliant black-
 # ShodanHQ results as at 2011-08-04 #
 # 686 for Mirapoint
 
-# Examples #
-examples %w|
-mail.mirapoint.com
-junk.mail.vt.edu
-mirapoint.utpb.edu
-webmail.hunter.cuny.edu
-webmail.uow.edu.au
-mirapoint.jcu.edu
-mail.umd.edu
-mail.iis.u-tokyo.ac.jp
-https://usnaemail.usna.edu
-207.172.157.86
-119.254.72.230
-20.132.170.3
-63.76.154.140
-63.107.133.42
-209.143.0.202
-66.100.26.50
-211.99.195.158
-207.172.157.70
-69.26.27.14
-153.91.1.114
-219.142.42.8
-|
+
 
 # Passive #
 def passive

@@ -17,27 +17,7 @@ dorks [
 '"Powered by Claroline"'
 ]
 
-# Examples #
-examples %w|
-demo.claroline.net
-lab.claroline.net
-campus.claroline.net
-demos.softaculous.com/Claroline/
-claroline.inwicast.com/en/
-claroline.city.academic.gr
-89.202.197.83/t2platform/
-opendoorbibleschool.com
-theschoolwork.com/lms/
-intranet.btcctb.org/claroline/
-ict.iiu.edu.my/claroline
-elearning.yu.edu.jo/online/claroline/
-www.interlink.edu/claroline/uncg/
-www.ksap.gov.pl/eksap/claroline/
-asimov.fdn.uq.edu.au/claroline178/
-www.interlink.edu/claroline/uncg/
-studium.monaco.edu
-www.humanidades.uni.edu.py/tics/claroline/
-|
+
 
 # Matches #
 matches [

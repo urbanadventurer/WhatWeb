@@ -17,29 +17,7 @@ dorks [
 'inurl:"newsletter.php.cgi"'
 ]
 
-# Examples #
-examples %w|
-www.amaterasu-institut.de/cgi-bin/newsletter.php.cgi
-www.ticketshop-gap.de/cgi-bin/newsletter.php.cgi
-www.kleingaertnerin.net/cgi-bin/newsletter.php.cgi
-www.mobikon.de/cgi-bin/newsletter.php.cgi
-www.paul-klee-schule.de/cgi-bin/newsletter.php.cgi
-www.tractechnik.de/cgi-bin/newsletter.php.cgi
-www.smigla-bobinski.com/cgi-bin/newsletter.php.cgi
-542397.de.strato-hosting.eu/cgi-bin/newsletter.php.cgi
-www.frauwolle.de/cgi-bin/newsletter.php.cgi
-www.leuchter.de/cgi-bin/newsletter.php.cgi
-www.wildobst-erdbeeren.de/cgi-bin/newsletter.php.cgi
-www.sovd-jugend-sh.de/cgi-bin/newsletter.php.cgi
-www.greenclimbershome.com/cgi-bin/newsletter.php.cgi
-www.loz.de/cgi-bin/newsletter.php.cgi
-www.mode-landshut.de/cgi-bin/newsletter.php.cgi
-www.hipsy-ev.de/cgi-bin/newsletter.php.cgi
-www.leuchter.de/cgi-bin/newsletter.php.cgi
-www.amaterasu-institut.de/cgi-bin/newsletter.php.cgi
-www.waldorfschule-halle.de/cgi-bin/newsletter.php.cgi
-www.clemens-motorsport.de/cgi-bin/newsletter.php.cgi
-|
+
 
 # Matches #
 matches [

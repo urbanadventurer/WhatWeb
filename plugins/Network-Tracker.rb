@@ -14,9 +14,7 @@ dorks [
 '"powered by network tracker"'
 ]
 
-# Examples #
-examples %w|
-|
+
 
 # Matches #
 matches [

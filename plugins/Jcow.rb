@@ -17,30 +17,7 @@ dorks [
 '"Go to" "Admin CP" "Themes" "Username or Email" "Manage Blocks"'
 ]
 
-# Examples #
-examples %w|
-demo.jcow.net
-jcow.pv.biz
-indoflit.co.cc
-shiftysplayground.co.cc
-salingcela.co.cc
-japemete.tk
-online-flower-delivery.co.cc
-www.supyall.com
-www.chatmax.my3host.tk
-www.snindia.com
-www.esindhis.com
-mystrudel.com
-bombaylist.com/jcow/
-www.justbieb.com
-realestatesbb.com
-www.follow.id.gp
-www.escort4.me
-social636.com
-www.inscienet.org
-www.thejdsbook.com
-mysociallife.mack-christian-network.org
-|
+
 
 # Matches #
 matches [

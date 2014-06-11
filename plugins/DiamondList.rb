@@ -16,10 +16,7 @@ dorks [
 '"powered by DiamondList"'
 ]
 
-# Examples #
-examples %w|
-diamondlist.demos.hulihanapplications.com
-|
+
 
 matches [
 

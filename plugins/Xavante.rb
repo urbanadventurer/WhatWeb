@@ -12,14 +12,7 @@ description "Xavante is a Lua HTTP 1.1 Web server that uses a modular architectu
 # ShodanHQ results as at 2012-08-26 #
 # 143 for Xavante
 
-# Examples #
-examples %w|
-184.95.38.38
-46.16.98.131
-80.237.70.73
-137.224.129.217
-212.119.125.188
-|
+
 
 # Matches #
 matches [

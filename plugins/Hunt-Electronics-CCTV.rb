@@ -10,12 +10,7 @@ version "0.1"
 description "Hunt Electronics is staffed with highly trained, experienced, and creative individuals specializing in the development and manufacturing of high performance CCTV solutions. - homepage: http://www.huntcctv.com/"
 
 # Live demos: http://www.huntcctv.com/demo.asp
-examples %w|
-174.127.26.130:9994
-174.127.26.130:9995
-174.127.26.130:9996
-174.127.26.130:9999
-|
+
 
 matches [
 

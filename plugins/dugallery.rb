@@ -20,19 +20,7 @@ dorks [
 'ext:asp inurl:DUgallery intitle:"3.0"'
 ]
 
-# Examples #
-examples %w|
-www.unitybham.org/dugallery/
-www.jermerica.net/dugallery/
-jtommorow.com/DUgallery/
-unityofbirmingham.org/dugallery/
-www.kausphoto.com/dugallery/
-www.grampy.com/dugallery/
-www.toninbala.com.br/dados/DUgallery/
-www.escadinha.esp.br/dados/DUgallery/
-www.pakitos.esp.br/portal/DUgallery/
-www.atego.esp.br/portal/DUgallery/
-|
+
 
 matches [
 

@@ -16,17 +16,7 @@ dorks [
 'intitle:"Biromsoft WebCam" -download -serial -crack -the -a'
 ]
 
-# Examples #
-examples %w|
-69.62.143.103:6565
-www.arcanis-webcam.friko.pl
-www.karaboss.com/webcam/index2.htm
-www.radioloud.fm/mediabox/
-www.stonecircle.us/WebCam/cam.html
-www.angelfire.com/wrestling3/irckamera/index.htm
-www.hardebeck.net/index2.htm
-valledelaserena.com/camara/
-|
+
 
 # Matches #
 matches [

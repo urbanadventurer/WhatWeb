@@ -12,19 +12,7 @@ description "Check Point Firewall - Homepage: http://www.checkpoint.com/"
 # ShodanHQ results as at 2011-03-13 #
 # 6,527 for fwauthredirect
 
-# Examples #
-examples %w|
-204.58.166.81
-204.58.159.244
-194.84.127.36
-204.58.157.109
-198.203.193.125
-204.58.167.84
-204.58.167.40
-202.77.10.62
-218.104.45.93
-137.151.120.242
-|
+
 
 # Matches #
 matches [

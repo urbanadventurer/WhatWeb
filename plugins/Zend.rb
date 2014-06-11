@@ -18,14 +18,7 @@ author "Aung Khant <http://yehg.net>"
 version "0.2"
 description "Zend PHP Framework (http://framework.zend.com/) and Zend Server (http://zend.com) Detection"
 
-examples %w|
-framework.zend.com
-www.zend.com
-http://andries.systray.be/zf-demos/feed-reader/feed/
-www.survivethedeepend.com
-demo.tomatocms.com
-www.shoretotaloffice.com
-|	
+	
 
 matches [
 # 2010-10-14

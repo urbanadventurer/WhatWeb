@@ -12,18 +12,7 @@ description "IBM Web Traffic Express - proxy, caching and filtering - Homepage: 
 # ShodanHQ results as at 2012-08-12 #
 # 755 for IBM-PROXY-WTE
 
-# Examples #
-examples %w|
-129.35.201.1
-164.156.71.65
-91.199.250.10
-159.87.99.122
-193.173.83.66
-212.2.103.223
-207.61.57.99
-193.173.83.113
-203.66.102.19
-|
+
 
 # Matches #
 matches [

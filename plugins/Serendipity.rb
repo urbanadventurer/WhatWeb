@@ -31,38 +31,7 @@ dorks [
 '"My weblog is proudly powered by Serendipity"'
 ]
 
-# Examples #
-examples %w|
-213.133.110.49
-95.64.115.3
-72.232.233.131
-46.4.166.78
-82.38.46.207
-174.97.231.22
-67.55.71.103
-64.120.5.175
-129.121.73.47
-86.83.236.157
-217.69.84.26
-89.161.175.123
-89.110.145.40
-88.198.149.117
-arizonapowernetwork.com
-blog.chris.de
-dcoles.net/blog/
-idempot.net/blog/
-livinggratefully.co.uk/blog/index.php
-reggaemania.com/serendipity/
-www.brokenthumb.co.uk
-www.thunderboltmountain.com/serendipity/
-www.camerongray.net
-www.harvestdream.org
-www.n2ition.com/serendipity/
-www.latrobe.edu.au/blogs/hsresearch/
-www.pontification.com/serendipity/
-www.jimjag.com/imo/
-www.bradrippe.com/serendipity/
-|
+
 
 # Matches #
 matches [

@@ -17,9 +17,7 @@ dorks [
 'intitle:"VLC media player - Web Interface" "VLM interface"'
 ]
 
-# Examples #
-examples %w|
-|
+
 
 # Matches #
 matches [

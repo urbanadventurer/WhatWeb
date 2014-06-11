@@ -17,14 +17,7 @@ dorks [
 '"Files in" "Free open source file browser available from fileNice.com"'
 ]
 
-# Examples #
-examples %w|
-filenice.com/demo/
-demo-project.alahup.net/index.php
-www.r-vm.com/downloads/fileNice-old/index-old.php
-supreme-electrical.com/downloads/
-hellblazer.cc/hmc/m/uploads/index.php
-|
+
 
 # Matches #
 matches [

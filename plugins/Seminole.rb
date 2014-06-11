@@ -12,18 +12,7 @@ description "Seminole is an embeddable webserver toolkit designed to be non-inva
 # ShodanHQ results as at 2012-12-05 #
 # 260 for Seminole
 
-# Examples #
-examples %w|
-gladesoft.com:8080
-66.202.130.101
-66.104.246.137
-38.126.133.82
-69.199.220.138
-35.9.117.107
-66.90.18.233
-12.13.53.118
-80.75.105.178
-|
+
 
 # Matches #
 matches [

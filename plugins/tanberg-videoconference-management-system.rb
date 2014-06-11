@@ -13,10 +13,7 @@ description "TANDBERG video conferencing management system web interface - http:
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1347
 # 2 results for intitle:"TANDBERG" "This page requires a frame capable browser!"
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1346
-examples %w|
-128.61.173.23
-212.157.202.134
-|
+
 
 matches [
 

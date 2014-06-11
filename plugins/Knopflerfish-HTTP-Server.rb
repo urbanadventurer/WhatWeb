@@ -13,17 +13,7 @@ description "Knopflerfish HTTP Server - Small footprint OSGi HTTP server impleme
 # ShodanHQ results as at 2012-01-18 #
 # 95 for Knopflerfish
 
-# Examples #
-examples %w|
-129.170.250.41:8080
-188.204.251.78
-90.190.254.167
-31.220.229.54
-89.181.152.127
-80.223.154.40
-82.37.168.162
-94.229.55.226
-|
+
 
 # Matches #
 matches [

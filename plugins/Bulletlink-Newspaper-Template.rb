@@ -19,21 +19,7 @@ dorks [
 '"powered by bulletlink.com"'
 ]
 
-# Examples #
-examples %w|
-bulletlink-s14934.com
-bulletlink-s11145.com
-bulletlink-s13251.com
-dowsadvocate.com
-clarionnewsonline.com
-billerica.org
-wellscountyvoice.com
-chesapeakecurrent.com
-jhvonline.com
-thecountypatriot.com
-overlandstage.com
-www.midvalleynews.com
-|
+
 
 # Matches #
 matches [

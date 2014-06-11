@@ -15,18 +15,7 @@ description "Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, a
 # ShodanHQ results as at 2010-10-25 #
 # 115,253 for "Server: squid"
 
-# Examples #
-examples %w|
-184.82.40.169
-200.112.202.56
-196.22.14.203
-195.71.11.68
-109.169.38.95
-203.56.14.207
-85.124.85.114
-109.108.128.157
-121.120.79.43
-|
+
 
 # Passive #
 def passive

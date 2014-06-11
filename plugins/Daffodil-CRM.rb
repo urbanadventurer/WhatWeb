@@ -17,12 +17,7 @@ dorks [
 '"Daffodil" inurl:app=forgot_passwd'
 ]
 
-# Examples #
-examples %w|
-www.dis.edu.bd/vus/
-erp.daffodilvarsity.edu.bd/vus/
-203.190.10.145/green/
-|
+
 
 # Matches #
 matches [

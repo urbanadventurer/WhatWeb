@@ -21,27 +21,7 @@ dorks [
 'inurl:"mysitecaddy/site"|inurl:"mysitecaddy/site3"'
 ]
 
-# Examples #
-examples %w|
-info.sitecaddy.com/mysitecaddy/site3/
-help.sitecaddy.com/mysitecaddy/site3/
-vigitrust.com/mysitecaddy/site3
-www.marlaygolfcourse.com/mysitecaddy/site3/competitions.htm
-www.katebowepr.ie/mysitecaddy/site3/business.htm
-www.blainroe.com/mysitecaddy/site3/members.htm
-www.flanaganscelticcorner.com/mysitecaddy/site/contactus.htm
-www.kilmashoguegc.ie/mysitecaddy/site3/member.htm
-www.scarboroughfaironline.com/mysitecaddy/site3/foralloccasions.htm
-www.lynchpintours.com/mysitecaddy/site3/legalconditions.htm
-theisles.biz/mysitecaddy/site3/historyandculture.htm
-www.vpsi.org/mysitecaddy/site3/responsibilityworkforce.htm
-www.southcountygolf.ie/mysitecaddy/site3/courserules.htm
-www.borujewelry.com/mysitecaddy/site3/shop/category.htm?categoryID=1538
-celticcrossing.com/mysitecaddy/site3/kiltrental.htm
-www.messagecaddy.com/mysitecaddy/site3/email/EmailPage.htm
-mail.blackthorneceltic.com/mysitecaddy/site3/email/EmailPage.htm
-sullivansirishalley.com/mysitecaddy/site3/shop/category.htm
-|
+
 
 # Matches #
 matches [

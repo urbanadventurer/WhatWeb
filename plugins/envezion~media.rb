@@ -16,17 +16,7 @@ dorks [
 '"powered by envezion~media"'
 ]
 
-# Examples #
-examples %w|
-envezion.com
-123searchonline.com/blog/
-specialdepot.com/Blog/
-grizzsbbq.com/kansas-city-bbq/
-www.gpsfleettrackingonline.com
-123healthscience.com
-recipes.123bbqcentral.com
-123bbqcentral.com
-|
+
 
 matches [
 

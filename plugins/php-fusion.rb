@@ -22,37 +22,7 @@ dorks [
 '"Powered by PHP-Fusion copyright" intitle:News'
 ]
 
-# Examples #
-examples %w|
-www.phpfusionstyle.com
-www.phpfusionmods.com
-www.php-fusion.nu
-www.phpfusion-nederlands.info
-www.phpfusion.cz
-www.php-fusion.pl
-php-fusion7.ru
-serverheaven.net
-esports-angelz.co.cc
-alttz.eu5.org
-www.caranet.co.uk
-www.vucjak.com
-www.moremusic.es
-www.islamiyete.com
-www.kouelohab.com
-www.liendoi.net
-www.whisperwillow.com
-www.wethepeoplewillnotbechipped.com/main/
-www.neilhague.com
-www.onepiecenakama.pl
-www.diptera.info
-www.valeriovendrame.it
-oak.conncoll.edu/~phc/phpfusion/
-bingdev.binghamton.edu/vpma/
-www.isa.pdx.edu/fusion/
-oregonstate.edu/groups/india/
-elsci.coe.nau.edu
-students.sabanciuniv.edu/~mbilal/webdeneme/php-fusion-7-00-2/files/
-|
+
 
 # Matches #
 matches [

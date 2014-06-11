@@ -12,15 +12,7 @@ description "Xerver is an advanced free GNU GPL Web and FTP server. - Homepage: 
 # ShodanHQ results as at 2011-05-20 #
 # 182 for Xerver
 
-# Examples #
-examples %w|
-24.72.92.19
-122.52.101.11
-74.218.83.38
-173.17.200.112
-85.65.85.113
-87.208.119.231
-|
+
 
 # Passive #
 def passive

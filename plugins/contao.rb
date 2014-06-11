@@ -13,9 +13,7 @@ author "Eric Sesterhenn"
 version "0.1"
 description "Contao is an OpenSource CMS written in PHP. Homepage: www.contao.org"
 
-examples %w|
-contao.org
-|
+
 
 matches [
 {:text=>'This website is powered by Contao Open Source CMS :: Licensed under GNU/LGPL'},

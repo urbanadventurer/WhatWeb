@@ -12,19 +12,7 @@ description "IBM WebSEAL is a high-performance, multi-threaded Web server that a
 # ShodanHQ results as at 2012-08-12 #
 # 1,515 for WebSEAL
 
-# Examples #
-examples %w|
-137.153.56.144
-212.39.42.16
-210.158.5.190
-163.191.60.137
-209.155.18.228
-183.62.160.46
-77.221.240.4
-211.12.20.144
-61.88.45.13
-64.212.174.239
-|
+
 
 # Matches #
 matches [

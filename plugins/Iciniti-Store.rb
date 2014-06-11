@@ -19,30 +19,7 @@ dorks [
 'inurl:"logon_forgot_password.aspx"'
 ]
 
-# Examples #
-examples %w|
-http://shop.stephenjosephinc.com/logon_forgot_password.aspx
-http://www.projectorlampsource.com/logon_forgot_password.aspx
-http://www.projectorlampexperts.com/logon_forgot_password.aspx
-http://www.dragonusaonline.com/logon_forgot_password.aspx
-http://96.57.128.190:8000/Store/logon_forgot_password.aspx
-http://trx.corbeilph.com/store/logon_forgot_password.aspx
-http://store.stottpilates.com/store/logon_forgot_password.aspx
-http://webstore.cnib.ca/logon_forgot_password.aspx
-http://www.randmar.com/logon_forgot_password.aspx
-http://www.crabtreebooks.com/Store/logon_forgot_password.aspx
-https://www.cwbstore.org/CWBStore/logon_forgot_password.aspx
-https://www.colourintelligence.com.au/logon_forgot_password.aspx
-http://www.gummersonfabrics.com.au/Gumweb/logon_forgot_password.aspx
-http://www.e-todays.com/logon_forgot_password.aspx
-http://www.wileyx.com/EcommSuite/logon_forgot_password.aspx
-https://www.mysmartstart.com/logon_forgot_password.aspx
-http://www.prosport.net/logon_forgot_password.aspx
-http://www.shopaat.com/logon_forgot_password.aspx
-http://www.regentstoneproducts.com/logon_forgot_password.aspx
-https://us.shuttle.com/logon_forgot_password.aspx
-https://secure.interstatelabel.com/logon_forgot_password.aspx
-|
+
 
 # Matches #
 matches [

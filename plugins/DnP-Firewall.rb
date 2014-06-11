@@ -17,12 +17,7 @@ dorks [
 '"Protected by DnP Firewall" intitle:"Forum Gateway - Powered by DnP Firewall"'
 ]
 
-# Examples #
-examples %w|
-svptit.org/forum.php
-vietmf.com
-alboraaq.com/forum/
-|
+
 
 # Matches #
 matches [

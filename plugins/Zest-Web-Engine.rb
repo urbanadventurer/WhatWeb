@@ -20,22 +20,7 @@ dorks [
 'inurl:/cgi-bin/web.asp'
 ]
 
-# Examples #
-examples %w|
-www.zest-leisure.com
-campusweb.warren-wilson.edu/cgi-bin/web.asp
-campusweb.morningside.edu/cgi-bin/web.asp
-216.15.215.240
-65.175.91.208
-65.175.102.138
-66.165.120.93
-65.175.109.102
-66.165.127.218
-216.15.170.67
-66.201.115.102
-216.15.131.22
-216.198.243.234
-|
+
 
 # Matches #
 matches [

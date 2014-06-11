@@ -14,19 +14,7 @@ description "United Security Providers (USP; previously known as Tetrade) Secure
 # ShodanHQ results as at 2011-08-25 #
 # 56 for Secure Entry Server
 
-# Examples #
-examples %w|
-193.5.56.67
-193.201.123.145
-194.230.108.105
-68.178.167.107
-194.230.108.71
-193.201.123.146
-193.201.123.254
-194.230.108.81
-87.236.200.18
-195.65.87.164
-|
+
 
 # Matches #
 matches [

@@ -17,21 +17,7 @@ dorks [
 '"Powered By PhotoStore" "Sell Photos Online by Ktools.net LLC"'
 ]
 
-# Examples #
-examples %w|
-www.ktoolsdemos.net/photoshow/
-www.ktoolsdemos.net/photostore/
-dev.papshots.com/manager/login.php
-bildarchiv.aktivnews.de
-www.titiphotos.com
-www.socialexplorations.org/store/
-www.stluciapictures.com
-www.stockphotorequest.com
-www.clixphoto.com
-www.fire-image.com
-www.photocrats.com
-www.mediastockphotos.com
-|
+
 
 # Matches #
 matches [

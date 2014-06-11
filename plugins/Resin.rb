@@ -20,18 +20,7 @@ description "Resin provides a reliable, fast Web server which can also be used a
 # ShodanHQ results as at 2011-02-24 #
 # 25,565 for server Resin
 
-# Examples #
-examples %w|
-210.73.205.244
-220.181.8.109
-69.195.131.29
-208.64.132.155
-175.45.141.211
-87.119.211.53
-209.200.251.9
-193.178.135.9
-124.238.250.67
-|
+
 
 # Passive #
 def passive

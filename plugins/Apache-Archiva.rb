@@ -17,28 +17,7 @@ dorks [
 'intitle:"Apache Archiva" ext:action "Copyright"'
 ]
 
-# Examples #
-examples %w|
-archiva.yola.net/archiva/
-68.64.33.185
-maven2.samara.lanit.ru
-archiva.squale.org/repos/
-archiva.fdvs.com.ar
-zinc.mathforum.org:8080/archiva/
-maven-secure.jivesoftware.com/archiva/
-secure.jwall.org/maven/
-reppo.rrze.uni-erlangen.de:8080/archiva/
-cit2.mak.ac.ug:8080/archiva/
-https://collab.eastbanctech.com/archiva/
-https://archiva.skdn.org/
-nimbleteam.com/archiva/index.action
-maven2.langhua.org/archiva/
-https://maven2.everit.biz
-ci.sakaiquebec.org/archiva/
-metis.di.uoa.gr:808/archiva/
-archiva.openaos.com/archiva/
-java.lmarin.org/archiva/
-|
+
 
 # Matches #
 matches [

@@ -20,15 +20,7 @@ description "Internet Rimon (Israeli ISP) server based filtering server - Homepa
 # Google results as at 2011-05-15 #
 # 311 for "You are not recognized in the system !!!"
 
-# Examples #
-examples %w|
-213.151.42.133
-95.86.92.73
-95.86.127.239
-213.151.39.35
-213.151.37.61
-212.76.113.213
-|
+
 
 # Passive #
 def passive

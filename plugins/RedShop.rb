@@ -10,10 +10,7 @@ version "0.1"
 description "ASP Powered shopping cart software [Chinese] - homepage: http://www.rednetcms.com/redshop/"
 
 # 1 result for "Powered by Redshop" @ 2010-10-12
-examples %w|
-www.rednetcms.com/redshop/
-www.rednetcms.com/redshop/login.asp
-|
+
 
 matches [
 

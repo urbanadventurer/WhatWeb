@@ -12,19 +12,7 @@ description "Winstone is a servlet container that was written out of a desire to
 # ShodanHQ results as at 2012-02-23 #
 # 293 for Winstone Servlet Engine
 
-# Examples #
-examples %w|
-150.146.160.229
-174.129.86.99
-66.228.62.114
-46.137.173.238
-75.101.248.12
-184.106.211.201
-212.63.68.198
-184.107.133.230
-199.168.174.159
-174.143.25.176
-|
+
 
 # Matches #
 matches [

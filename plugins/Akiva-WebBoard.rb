@@ -18,15 +18,7 @@ dorks [
 '"Powered by WebBoard 8" "Log In Options" Username" "Password"'
 ]
 
-# Examples #
-examples %w|
-rvmobile.com/wb/
-chat.sakapfet.com
-boards.studioline.net/WB/
-www.law.uh.edu/wb/
-classweb.ghc.edu/WB/
-wb.itboards.com/wb/
-|
+
 
 # Matches #
 matches [

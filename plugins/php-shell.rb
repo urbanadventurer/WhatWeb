@@ -14,14 +14,7 @@ description "php remote shell and file explorer"
 
 # http://johnny.ihackstuff.com/ghdb/?function=detail&id=833
 # About 48 results for +filetype:php +HAXPLORER +"Server Files Browser" +Browsing +"Script Location" @ 2010-06-06
-examples %w|
-www.raveneye1.com/1.php
-www.s-solution.sk/honey/filemanager/1.php
-www.amorphias.com/mc.php
-www.nwo.net/hh/1.php
-www.abyss.cba.pl/hnpt/haxplorer/1.php
-www.island.net/~zapper/cgi.php
-|
+
 
 matches [
 

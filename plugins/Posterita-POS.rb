@@ -16,12 +16,7 @@ dorks [
 '"powered by Posterita POS" "POS APPLICATION"'
 ]
 
-# Examples #
-examples %w|
-https://www.testadempiere.com/posterita/
-https://mano.ist.lt/posterita/
-https://adempiere-japan.com/posterita/
-|
+
 
 # Matches #
 matches [

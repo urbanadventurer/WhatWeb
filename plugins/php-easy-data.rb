@@ -19,18 +19,7 @@ dorks [
 
 # 12 results for "powered by PHPEasyData" @ 2010-08-15
 
-# Examples #
-examples %w|
-www.phpeasydata.com/annuaire/annuaire.php
-www.marocannonce.org/admin/
-www.e-profil.fr/annu/admin/
-annuaire.divine-nolwenn.com
-www.telparis.com/admin/
-www.marocvoyage.org/admin/
-www.lalgerie.net/admin/
-www.ergotherapie.fr/annuaire/admin/
-www.ambafrance-ma.org/cjb/fondsdoc/annuaire/admin/
-|
+
 
 matches [
 

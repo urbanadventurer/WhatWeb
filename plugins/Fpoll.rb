@@ -18,17 +18,7 @@ dorks [
 'intitle:"Fpoll" intitle:"AdminCP" inurl:admincp ext:php'
 ]
 
-# Examples #
-examples %w|
-www.phpfront.com/Fpoll/admincp/
-www.alasmari.com/Fpoll/admincp/install.php
-www.aclandroadchurch.org.uk/Fpoll/admincp/index.php
-touch.fm/Fpoll/poll.php
-www.bengt-rosby.se/Fpoll/admincp/
-www.quepasohoy.com/site/2.2/administracion/encuestas/admincp/index.php
-www.pinkfloyd.cl/radio/en/admincp/index.php
-www.kesob.com/Fpoll/sonuc.php
-|
+
 
 # Matches #
 matches [

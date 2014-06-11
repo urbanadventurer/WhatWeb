@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
 description "Intraxxion - CMS - Homepage: http://intraxxion.com/"
 
-# Examples #
-examples %w|
-www.heerlerheide.info
-intraxxion.com
-|
+
 
 # Matches #
 matches [

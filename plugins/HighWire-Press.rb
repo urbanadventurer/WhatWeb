@@ -13,20 +13,7 @@ description "HighWire Press hosting - Homepage: http://highwire.stanford.edu/abo
 # 1,886 for X-Highwire
 #   302 for X-Firenze
 
-# Examples #
-examples %w|
-171.67.113.25
-171.67.122.102
-171.67.117.60
-171.66.124.18
-171.67.118.156
-171.67.119.139
-171.67.117.217
-171.67.123.181
-171.67.122.225
-171.67.112.70
-167.216.165.174
-|
+
 
 # Matches #
 matches [

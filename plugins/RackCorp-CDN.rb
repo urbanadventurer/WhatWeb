@@ -16,27 +16,7 @@ description "RackCorp Content Delivery Network - RackCorp is the preferred hosti
 # 50 for rackcorpcdn
 # Australia 21 # United States 14 # Germany 10 # United Kingdom 4 # India 1 #
 
-# Examples #
-examples %w|
-67.19.61.116
-78.129.148.29
-124.158.19.20
-124.158.19.21
-124.158.19.26
-124.158.19.27
-124.158.19.28
-124.158.19.29
-124.158.19.30
-124.158.19.42
-124.158.19.62
-124.158.19.72
-124.158.19.74
-124.158.19.75
-124.158.19.91
-188.72.255.43
-203.145.50.164
-207.44.231.225
-|
+
 
 # Passive #
 def passive

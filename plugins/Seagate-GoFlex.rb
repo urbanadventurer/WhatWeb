@@ -12,19 +12,7 @@ description "Seagate-GoFlex - centralized file storage with remote access via se
 # ShodanHQ results as at 2011-03-13 #
 # 26,995 for HOMEBASEID seagateshare.com
 
-# Examples #
-examples %w|
-75.119.235.220
-174.1.233.40
-174.53.242.197
-67.161.0.184
-50.30.98.36
-97.112.254.217
-77.198.205.131
-173.11.2.114
-173.18.37.198
-69.219.237.40
-|
+
 
 # Matches #
 matches [

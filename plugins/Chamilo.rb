@@ -22,23 +22,7 @@ dorks [
 '"Congratulations! You have successfully installed your e-learning portal!" "Chamilo"'
 ]
 
-# Examples #
-examples %w|
-78.46.114.13
-captelnet.campusinstituto.com.ar
-rebujito.org/gruposclice20/
-capitaleducativo.com/chamilo
-virtual.tcpsystem.com.pe
-intranet2.cuencar.com
-www.info-teach.net/chamilo-1.8.7-rc2/
-mediadact.net
-www.wiredclassroom.net/chamilo/
-cursosugm.edu.mx/chamilo/
-dokeos.e-abclearning.com
-e-learning.umsida.ac.id
-www.impactinc.it/learning/
-www.erlearning.com.ar/igp/
-|
+
 
 # Matches #
 matches [

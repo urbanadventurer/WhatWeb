@@ -20,18 +20,7 @@ dorks [
 'inurl:borrow.php?diskid='
 ]
 
-# Examples #
-examples %w|
-sandeberg.org/videodb/
-movies.c3owner.com/
-pneu.dk/_sub_sites/video/
-www.thomasgrauf.de/video/index.php
-georges.khaznadar.fr/videodb/templates/modern/
-film.frode.biz
-www.roguetech.org/videodb/
-ryanpampush.com/videodb/index.php
-motvind.homeip.net/videodb/index.php
-|
+
 
 # Matches #
 matches [

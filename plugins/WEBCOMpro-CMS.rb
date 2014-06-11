@@ -20,14 +20,7 @@ dorks [
 'inurl:module/interface.php?ifc_page=licence'
 ]
 
-# Examples #
-examples %w|
-213.9.6.142
-213.9.6.144
-213.9.6.129
-213.9.6.146
-213.9.6.141
-|
+
 
 # Matches #
 matches [

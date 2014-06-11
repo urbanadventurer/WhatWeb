@@ -20,32 +20,7 @@ dorks [
 '"powered by RunCMS" -Vulnerability -exploit inurl:module inurl:viewcat.php'
 ]
 
-# Examples #
-examples %w|
-www.runcms.org/modules/links/viewcat.php?cid=2
-www.rune-federation.org/modules/mydownloads/viewcat.php?cid=4
-www.jattworld.com/portal/modules/mysections/viewcat.php?cid=1
-www.thaibadminton.com/main/modules/adresses/viewcat.php?cid=1
-mondialplomelin.net/modules/photo/viewcat.php?cid=13
-www.xvid.gr/modules/mylinks/viewcat.php?cid=0
-boguchar.ws/modules/mylinks/viewcat.php?cid=1
-www.ilincagorobet.ase.md/modules/mydownloads/viewcat.php?cid=1
-www.fenomenibg.com/modules/mylinks/viewcat.php?cid=4
-runcms.uw.hu/modules/mydownloads/viewcat.php?cid=2
-exe-community.com.ru/modules/mydownloads/viewcat.php?cid=7
-stusti.patrick-bernau.de/modules/mylinks/viewcat.php?cid=1
-www.cpmdq.com/modules/mylinks/viewcat.php?cid=11
-www.assisi.sk/modules/mylinks/viewcat.php?cid=2
-www.ideabyidea.com/main/modules/mylinks/viewcat.php?cid=10
-www.starwars.alfaspace.net/modules/mydownloads/viewcat.php?cid=7
-www.alssrhan.com/modules/mysections/viewcat.php?cid=1
-yaoigames.ru/tenma/modules/mydownloads/viewcat.php?cid=5
-sitefree.ru/modules/mydownloads/viewcat.php?cid=15
-egpic.6te.net/modules/bamagalerie3/viewcat.php?id=11
-3gpvideo.ru/modules/files/viewcat.php?cid=3
-atom.alfaspace.net/modules/mydownloads/viewcat.php?cid=1
-www.agifish.com.vn/home_en/modules/photo/viewcat.php?cid=1
-|
+
 
 # Matches #
 matches [

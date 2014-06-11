@@ -17,27 +17,7 @@ dorks [
 '"Project Management" "Stay logged in" intitle:"Login" intitle:"Collabtive"'
 ]
 
-# Examples #
-examples %w|
-collabtive.o-dyn.de/demo/
-collab.ajldesign.com.au/
-bioluminescence.org/projects/
-portal.unitbv.ro/proxy/
-www.hillbillery.com/collab/
-www.halalhub.sg/manage/
-www.kava.co/projects/
-www.lanteam-solutions.com/collab/
-www.citizenperth.com/collaborate/
-publish88.com/collabtive/
-bluejinx.com/collab/index.php?mode=login
-collab.davisnpartners.com/
-jaxfantom.dyndns.info/collabtive/
-collabtive.codegang.com/
-megaflux.net63.net/
-blindrobotlabs.com/collabtive/
-www.o-dyn.de/test/
-projects.gastonsoto.com.ar/
-|
+
 
 # Matches #
 matches [

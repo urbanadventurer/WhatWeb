@@ -13,14 +13,7 @@ description "The Winconnection 6 is a gateway to access the Internet developed w
 # 136 for Winconnection
 # All results are from Brazil
 
-# Examples #
-examples %w|
-189.19.75.58
-189.41.178.137
-189.2.51.154
-189.111.151.65
-201.30.137.133
-|
+
 
 # Passive #
 def passive

@@ -13,15 +13,7 @@ description "WebIIS - Mini ASP Web Server [Chinese]"
 # 933 for WebIIS: Mini ASP Web WebIIS
 # Most (931) results are from China
 
-# Examples #
-examples %w|
-116.207.210.251
-222.88.75.37
-123.165.84.110
-123.189.48.76
-123.146.137.107
-110.244.103.37
-|
+
 
 # Passive #
 def passive

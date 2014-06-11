@@ -17,15 +17,7 @@ dorks [
 '"Proudly powered by TinyBB"'
 ]
 
-# Examples #
-examples %w|
-tinybb.net/forum/
-demo.opensourcecms.com/tinybb/
-rfr-samp.com/bb/
-eliteddl.co.cc
-bloghabbo.com/tiny/
-galaxybuddies.com/forum/
-|
+
 
 # Matches #
 matches [

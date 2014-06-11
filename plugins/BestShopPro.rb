@@ -18,23 +18,7 @@ dorks [
 'inurl:"pokaz_podkat.php?idkat="'
 ]
 
-# Examples #
-examples %w|
-http://www.demo.bst.pl/
-http://www.demo.bst.pl/admin
-http://meteoryty.sklepna5.pl/admin/
-http://www.lincoln.sklep.pl/shop/pokaz_podkat.php
-http://www.witalis.sklepna5.pl/pokaz_podkat.php
-http://www.bmw.ewor.pl/pokaz_podkat.php
-http://www.weitec.pl/pokaz_podkat.php
-http://www.stalchem.sklepna5.pl/pokaz_podkat.php
-http://futuresport.com.pl/pkat/61/spodenki.html
-http://www.motosklep.net/towar/245/q-horse-power-5w-20-api-sm-1l.html
-http://www.drzeweczka.com/kat/10/cyprysiki-chamaecyparis.html
-http://www.drzeweczka.com/kat/4/cisy-taxus.html
-http://www.alka.pl/sklep/pokaz_produkty.php
-http://www.draiv.pl/pokaz_produkt.php
-|
+
 
 # Matches #
 matches [

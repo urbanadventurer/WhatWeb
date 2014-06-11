@@ -17,52 +17,7 @@ dorks [
 'intitle:"Powered by Winmail Server - Login" "Username" "Password"'
 ]
 
-# Examples #
-examples %w|
-mail.investguangzhou.gov.cn:6080
-mail.spqi.gov.cn:6080
-mail.dehua.gov.cn
-mail.cpol.gov.cn
-www.dygs.gov.cn:6080
-jcy.yz.gov.cn:6080
-hnjtde.gov.cn:6080
-mail.sczw.gov.cn:6080
-www.shuangyang.gov.cn:6080
-www.ahipo.gov.cn:3000
-www.hbjc.gov.cn:6080
-www.cd12366.gov.cn:6080
-www.csjy.gov.cn:6080
-www.fjwater.gov.cn:6080
-mail.zjhw.gov.cn
-www.hhhtdx.gov.cn:6080
-sgepb.gov.cn/mail/
-www.jhk.gov.cn:6080
-mail.bjchp.gov.cn
-mail.sdaj.gov.cn:6080
-mail.sijing.gov.cn
-mail.ptec.gov.cn:6080
-mail.xygtzyj.gov.cn:6080
-www.gdmzsafety.gov.cn:6080
-www.fzkj.gov.cn:8383
-big5.fmprc.gov.cn/gate/big5/mail.amb-chine.fr/admin/index.php
-mail.lnnet.gov.cn
-mail.guilin.gov.cn
-mail.qjzx.gov.cn
-www.gxinfo.gov.cn:3000
-www.gz12358.gov.cn:2004/www/index.php
-mail.zjport.gov.cn
-mail.lyls.gov.cn
-www.szsmb.gov.cn:6080
-www.sahvet.gov.cn/mail/
-mail.lfdz.gov.cn:6080
-mail.lngeo.gov.cn
-mail.tjsw.gov.cn
-mail.gdfire.gov.cn
-www.hbsea.gov.cn:6080
-cdmail.cdeic.gov.cn
-mail.nbbc.gov.cn:6080
-mail.lzsafety.gov.cn:6080
-|
+
 
 # Matches #
 matches [

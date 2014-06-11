@@ -16,20 +16,7 @@ dorks [
 '"powered by pixelpost"'
 ]
 
-# Examples #
-examples %w|
-blog.benjaminvenancie.com
-brendannewell.com
-www.choobnam.com
-www.djve.com
-kasperchristiansen.com
-photos.livingdot.com
-www.chantefleur.net
-www.eighteenfiftysix.com/pixelpost/
-www.okebaja.nl
-www.skinnybuzzard.com
-www.sodapopthesis.com
-|
+
 
 matches [
 

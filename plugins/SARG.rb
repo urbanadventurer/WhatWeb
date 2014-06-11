@@ -17,30 +17,7 @@ dorks [
 'inurl:sarg inurl:siteuser.html ext:html'
 ]
 
-# Examples #
-examples %w|
-institutosocratesguanaes.org/sarg/
-sarg.marchelly.org.ua
-relay.kh.edu.tw/sarg/
-www.camarapitanga.pr.gov.br/sarg/
-webmail.danske.co.nz/sarg/Daily/
-sede.oestedigital.net/sarg/Daily/
-sarg.chpmu.com.ua
-proxy.ilrc.edu.tw/sarg/
-proxy.snjh.tcc.edu.tw/sarg/
-net.abecom.com.br/sarg/
-moviemail.ru/sarg/
-sarg.rcen-nt.ru
-admin.kiavrn.ru/sarg/
-akdn-p.net/perf/sarg/
-delta.phipsiuiuc.com/sarg/
-firewall1.carta.tecno21.net:3080/sarg/
-admin.volvo.motorlandgroup.ru/sarg/
-server.exclam.com.br:73/sarg/
-www.dominic.fs.school.za/sarg/
-admin.ekoland.org.ru/sarg/
-marketingcentre.ru/sarg/
-|
+
 
 # Matches #
 matches [

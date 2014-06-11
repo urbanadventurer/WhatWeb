@@ -14,18 +14,7 @@ description "Boa Webserver - Do You Feel the Need for Speed? Boa currently seems
 
 # About 176872 ShodanHQ results for "server: boa" @ 2010-10-26
 
-# Examples #
-examples %w|
-119.201.87.127
-78.156.33.58
-190.40.76.135
-190.42.155.28
-190.233.84.141
-109.125.220.249
-201.240.104.107
-193.165.154.214
-64.187.75.237
-|
+
 
 # Passive #
 def passive

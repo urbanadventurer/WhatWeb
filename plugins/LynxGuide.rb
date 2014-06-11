@@ -17,10 +17,7 @@ dorks [
 'inurl:"cgi/logon.plx"'
 ]
 
-# Examples #
-examples %w|
-asp.mitsi.com/cgi/logon.plx?Option=Logout
-|
+
 
 # Matches #
 matches [

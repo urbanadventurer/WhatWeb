@@ -16,16 +16,7 @@ dorks [
 '"Powered by phpmytourney" "Version"'
 ]
 
-# Examples #
-examples %w|
-web109.cyberwebserver-12.de/turnier/account.php
-www.clan-drug.de/phpt/grid.php
-www.netstormhq.com/tourney/details.php
-www.z-tribe.de
-nightmare6.ni.funpic.de/signup.php
-tourney.netstormhq.com/details.php
-tycoontour.ty.funpic.de/grid.php
-|
+
 
 matches [
 

@@ -17,36 +17,7 @@ dorks [
 "inurl:ab_fct.php?fct="
 ]
 
-# Examples #
-examples %w|
-www.sud-paradise-immo.com/en/ab_fct.php
-www.texiergestion.com/en/ab_fct.php
-www.lorraine-cyclisme.com/fr/oldfr/ab_fct.php
-lehetre-immobilier.com/fr/ab_fct.php
-www.agence-provence.com/fr/ab_fct.php
-www.immopassion.fr/fr/ab_fct.php
-www.bijouterie-stauffer.com/fr/ab_fct.php
-janpolontheweb.free.fr/fr/ab_fct.php
-www.providenz.com/fr/ab_fct.php
-www.deltalabo.fr/fr/ab_fct.php
-www.perrotfleurs.com/fr/ab_fct.php
-www.bouko-immobilier.com/fr/ab_fct.php
-www.kotorpharma.com/fr/ab_fct.php
-www.achat-lunettes.com/fr/ab_fct.php
-www.liguelorrainesportsdecontact.com/fr/ab_fct.php
-www.resideva.com/fr/ab_fct.php
-www.veto54.com/fr/ab_fct.php
-www.lorrainemuaythai.com/fr/ab_fct.php
-www.lorraine-handball.com/fr/ab_fct.php
-www.cadeaux-coccinelle.com/fr/ab_fct.php
-luneville-cadeaux.com/fr/ab_fct.php
-www.dentam-turbinedentex.com/fr/ab_fct.php
-www.rpmfermetures.com/fr/ab_fct.php
-www.evolution-mountyhall.com/fr/ab_fct.php
-www.rastelagay.com/fr/ab_fct.php
-www.aquabio-france.com/fr/ab_fct.php
-www.hbcnancysluc.com/fr/ab_fct.php
-|
+
 
 # Matches #
 matches [

@@ -12,37 +12,7 @@ description "This plugin idenitfies instances of Remote File Include Scanner bot
 # 57 results for "##[ RUTIN SEARCH ENGINE ]##" "my @servers" "#!/usr/bin/perl" @ 2010-10-15
 # 21 results for "perl feelscanz.pl <chan w/o #> <server> <port>" @ 2010-10-15
 # 57 results for "my @servers" "#!/usr/bin/perl" +chan +nick ext:txt
-examples %w|
-armypratama.eu/file:/bot/rfi1.txt
-beltps.by/images/File/zayavlenie/rss.txt
-beltps.by/images/File/zayavlenie/scn.txt
-brandon420.fileave.com/scan/rfi-scanner3.txt
-brandon420.fileave.com/scan/rfi-scanner3n.txt
-capsud-hotel.com/eng/gmjk2.txt
-filesplus.abunawaf.com/2007-04/s.txt.3
-frank79.idv.tw/wp-content/uploads/2009/03/klorovers.txt
-host67.hrwebservices.net/~allstag/AllstagePhotos/data/media/a/caks.txt
-im3tulungagung.zoomshare.com/files/s7.txt
-jatidowo.zoomshare.com/files/sc.txt
-leoboy1.fileave.com/f.txt
-love-to.net/log/scanmild.txt
-makras8.webs.com/embat.txt
-momok.org/tools/unix.txt
-nautilus.fis.uc.pt/aif/forms/coisas/concelho.txt
-nmta.info/meidi/mei1.txt
-upelmaturintv.com.ve/canaltv/scan.txt
-wan8.fileave.com/bar.txt
-www.bulltear.com/catalog/images/p.txt
-www.bookguild.co.uk/skin1/images/zen.txt
-www.kortech.cn/bbs/scan.txt
-www.porto.napoli.it/tt/data/scanerA.txt
-www.porto.napoli.it/tt/data/scanerB.txt
-www.prosyachtdelivery.com/downloads/bot_e107.txt
-www.prunk.si/mediawiki/images/4/45/R.txt
-www.ulster.irishhome.net/archive/asu.txt
-www.ulster.irishhome.net/archive/byz.txt
-www.xn--9iqr86bsxdx46a.com/Public/Js/FCKeditor/editor/filemanager/connectors/php/20100901_123943569.txt
-|
+
 
 # Extract bot config
 def passive

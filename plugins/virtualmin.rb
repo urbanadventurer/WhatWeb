@@ -14,30 +14,7 @@ dorks [
 '"Forgot your Virtualmin password?"'
 ]
 
-# Examples #
-examples %w|
-www.software.virtualmin.com
-demo.virtualmin.com
-https://admin.kocc.eu:12527
-https://seattleserver.com:10000
-https://azm.dk:10000
-https://www.cre8ivewebsites.com:10000
-https://riggli.tcnet.ch:10000
-https://www.procob.cg:10000
-https://secure.youngguns.nl:10000
-https://izihost.biz:10000
-https://webhosting.trustica.net:10000
-https://steverowe.co.uk:1010
-https://www.maxxdomain.de:10000
-https://kaosenlared.net:10000
-https://www.itchance.de:4711
-https://da-vrt001.digital-adventures.nl:10000
-https://eairvm01.edatactr.com:10000
-https://www.gransassolagatrek.it:10000
-https://www.randomlogic.net:10000
-https://virtualmin.joyent.us/fbvolapu/
-https://virtualmin.joyent.us/fbjicimu/
-|
+
 matches [
 
 # 25 results @ 2010-06-14

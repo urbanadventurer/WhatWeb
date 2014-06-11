@@ -19,18 +19,7 @@ dorks [
 'intitle:"Basic Analysis and Security Engine (BASE)" "Built on ACID by Roman Danyliw" "Login" "Password"'
 ]
 
-# Examples #
-examples %w|
-www.dotacash.com/base/setup/
-src.gnu-darwin.org/ports/security/base/work/base-1.3.9/
-cloud.bake180.com/base/
-base.runlevel5.dk/setup/index.php
-base.gozubuyukoglu.com
-h2jdc5.aboa.net
-base.hybridconcept.net
-phoenixit.pl/base/
-spiderman.diginext.com/base-1.3.9/
-|
+
 
 # Matches #
 matches [

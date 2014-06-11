@@ -15,13 +15,7 @@ description "pixie is a free, open source web application that will help you qui
 # Google results as at 2010-07-18 #
 # 5 for +"powered by pixie" -"Powered by Pixie Dust" +theme
 
-# Examples #
-examples %w|
-demo.getpixie.co.uk
-www.marcjohnsdesign.com
-pixie.axtry.com
-www.indigoenergies.co.nz
-|
+
 
 # Matches #
 matches [

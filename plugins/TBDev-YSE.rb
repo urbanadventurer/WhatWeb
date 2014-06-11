@@ -22,18 +22,7 @@ dorks [
 '"Powered by TBDev v2.0 Yuna Scatari Edition"'
 ]
 
-# Examples #
-examples %w|
-hdclub.org
-kinorun.com
-valami.comuv.com
-darksoul.us/dark/
-tracker35.ru
-torrent.in.te.ua
-cinemastreet.org
-mobitt.net
-kinoplus.net
-|
+
 
 # Matches #
 matches [

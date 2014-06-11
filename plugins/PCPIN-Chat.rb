@@ -18,24 +18,7 @@ dorks [
 '"powered by PCPIN.com" -dork -exploit'
 ]
 
-# Examples #
-examples %w|
-demo.chat.pcpin.com
-www.aldimeola.com/new-site/chat/
-www.djohnsonmusic.com/plus/main.php
-www.ecila.net/chat/main.php
-chat.d-bexpress.de/
-musis-chat.de/Chat/
-www.twojarandka.pl/chat/
-chat.degeneres-e.org
-www.road-rageradio.com/pcpin_chat/
-twisted-pothead-radio.com/chat/
-www.boletinto.cl/foroonline/
-cinebydesign.net/chat/
-www.chat2me247.com/global-chatters/index.php
-seraphicradio.com/chat/
-www.aldimeola.com/new-site/chat/
-|
+
 
 # Matches #
 matches [

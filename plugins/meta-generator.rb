@@ -15,10 +15,7 @@ author "Andrew Horton"
 version "0.3"
 description "This plugin identifies meta generator tags and extracts its value."
 
-# Examples #
-examples %w|
-www.morningstarsecurity.com
-|
+
 
 # Matches #
 matches [

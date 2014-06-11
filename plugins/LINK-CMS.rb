@@ -16,25 +16,7 @@ dorks [
 '"Powered by LINK CMS"'
 ]
 
-# Examples #
-examples %w|
-www.afc-loro.co.rs
-www.biznis-akademija.com
-www.edu-soft.rs
-www.ekongim.edu.rs
-www.ekongim.edu.rs/cms/preview/
-www.fsom.edu.rs
-www.it-akademija.com
-www.its.edu.rs
-www.link.co.rs/news/
-www.mre.gov.rs/main.php
-www.naxi.co.rs
-www.planum.rs
-www.poslovnaskola.com
-www.simplex.ba
-www.super-lab.com
-www.videoseminari.com
-|
+
 
 matches [
 

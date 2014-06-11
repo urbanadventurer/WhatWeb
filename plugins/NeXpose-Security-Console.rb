@@ -11,10 +11,7 @@ description "NeXpose Security Console - Identifying vulnerabilities across netwo
 
 # 1 Google result for "JavaScript must be enabled before you can continue." @ 2011-01-05
 
-# Examples #
-examples %w|
-https://candi4.cirt.vt.edu:3780/
-|
+
 
 # TODO # Fingerprint using certificate :
 #   ERROR: certificate common name `NeXpose Security Console' doesn't match requested host name `candi4.cirt.vt.edu'.

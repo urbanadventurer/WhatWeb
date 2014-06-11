@@ -20,26 +20,7 @@ dorks [
 '"powered by Quick.Cms"'
 ]
 
-# Examples #
-examples %w|
-opensolution.org/Quick.Cms/demo_lite/
-opensolution.org/Quick.Cms/demo_lite/admin.php
-opensolution.org/Quick.Cms/demo/
-opensolution.org/Quick.Cms/demo/admin.php
-opensolution.org/Quick.Cms/demo_ext/
-opensolution.org/Quick.Cms/demo_ext/admin.php
-www.teramoney.com
-www.completewoodworking.co.cc
-www.completewoodworking.co.cc/admin.php
-www.perfectionbody.com
-www.perfectionbody.com/admin.php
-www.anticaresidenzadelgallo.com
-www.anticaresidenzadelgallo.com/admin.php
-www.internetmarketingsite101.com
-www.internetmarketingsite101.com/admin.php
-www.pharmaprofessionals.eu
-www.pharmaprofessionals.eu/admin.php
-|
+
 
 # Matches #
 matches [

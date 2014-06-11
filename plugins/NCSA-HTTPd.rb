@@ -12,16 +12,7 @@ description "NCSA HTTPd - Homepage: http://web.archive.org/web/20071020024535/ho
 # ShodanHQ results as at 2011-03-13 #
 # 306 for NCSA -apache -IIS -TakaC
 
-# Examples #
-examples %w|
-63.149.191.205
-211.87.190.4
-69.248.131.94
-58.191.153.71
-130.37.20.37
-63.149.191.200
-171.64.71.20
-|
+
 
 # Passive #
 def passive

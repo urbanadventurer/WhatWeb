@@ -13,19 +13,7 @@ description "Vanilla Forums - open-source, standards-compliant, customizable dis
 # 81 for X-Garden-Version
 # 74 for Set-Cookie Vanilla=deleted
 
-# Examples #
-examples %w|
-107.22.134.225
-209.159.145.144
-173.203.238.119
-173.255.223.82
-70.32.106.87
-72.167.52.53
-50.17.153.22
-50.6.101.242
-108.166.122.63
-64.39.226.216
-|
+
 
 # Matches #
 matches [

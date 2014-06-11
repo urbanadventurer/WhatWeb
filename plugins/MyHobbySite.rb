@@ -20,41 +20,7 @@ dorks [
 '"Powered by MyHobbySite"'
 ]
 
-# Examples #
-examples %w|
-www.myhobbysite.net
-www.demo.myhobbysite.net
-www.sjmike.com
-www.themetalzone.net
-www.bluefalcontrading.com
-www.blackenedtrading.com
-www.radikalproductions.org
-www.myapocalypsetrading.com
-www.spacemanrocks.net
-www.lepermessiahtrading.com
-www.allnightmarelongtrading.com
-www.unforgiven-trading.com
-www.bonjovi-trade.com
-www.thejudaskiss.org
-www.cotisproductions.com/cms/
-www.noremorse-trading.com
-www.metallicainc.com
-www.visualmediatrade.com
-www.anteroboots.com
-www.hellonearthinc.net
-www.apocalypsemusic.net
-www.metcoverart.com/spawn/
-www.thiswasjustmylife.com
-jamroomlive.com
-povrecordings.xtreemhost.com
-www.dvd-bootlegs.ru
-www.jezhead.com
-www.bobmetallicafreaktrading.com
-www.patkroll.com/trading/
-www.ironmaiden.bz
-metallicavideoarchive.net
-www.deadonetrading.com/cms/
-|
+
 
 # Matches #
 matches [

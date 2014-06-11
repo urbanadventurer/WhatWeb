@@ -20,15 +20,7 @@ dorks [
 '"Login" intext:"If you\'ve created an account you can put your info into the form below to login."'
 ]
 
-# Examples #
-examples %w|
-80.57.51.8
-69.142.67.109
-145.99.231.179
-xeontheory.serveftp.net:5555
-dennispenis.net
-elportaldejuancho.es:180
-|
+
 
 # Matches #
 matches [

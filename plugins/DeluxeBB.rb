@@ -17,32 +17,7 @@ dorks [
 '"DeluxeBB 1.3 is copyrighted to the DeluxeBB team \'05-08"'
 ]
 
-# Examples #
-examples %w|
-www.deluxebb.com/demo/index.php
-www.deluxebb.com/community/
-eu-portal24.de
-forum.freieunion-sachsenanhalt.de
-pprs.derbfactory.net/forum/
-www.n4iqt.com/bb/
-www.artoi.it/public/forum/
-www.chillinshades.com/sccobbs/
-www.scantruck.com.my/index1.php
-www.adf21.net/deluxeBB/
-www.gotgolfing.com/forum/
-www.josefeliciano.com/fanforum/
-www.itsworthfixing.com/cartalk/
-www.elisabethinen.or.at/40000_medizin/40260_turnus/deluxebb1_3/
-www.isabelallendebussi.cl/deluxebb/
-www.fussballinlondon.de/forum/
-www.sv-laim.de/forum/
-www.stepphahn.de/forum1/
-www.pauschalreisen.ch/reise-forum/
-www.centropsicosomatica.cl/forum/
-www.gemini-web.de/forum/
-www.magnet-motor-forum.de/forum_alt/
-www.vjcentral.de
-|
+
 
 # Matches #
 matches [

@@ -12,19 +12,7 @@ description "CHANCE-i DiViS digital video recorder device - Homepage: http://www
 # ShodanHQ results as at 2011-03-14 #
 # 13,735 for Techno Vision Security System
 
-# Examples #
-examples %w|
-demo.chance-i.kr
-72.19.180.243
-68.213.17.89
-201.58.59.216
-71.101.170.157
-189.41.135.36
-173.209.135.134
-75.48.203.165
-87.224.75.194
-67.224.221.91
-|
+
 
 # Passive #
 def passive

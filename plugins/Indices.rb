@@ -17,17 +17,7 @@ dorks [
 '"Parent Directory" "Indices 1.1"'
 ]
 
-# Examples #
-examples %w|
-antisleep.com/indices-demo/
-www.geotests.net/cours/sigma/
-stlukes.lowton.info/docs/
-theyosh.nl/speeltuin/
-download.csssprites.org/maven2/
-https://files.samknows.com/~gpl/
-https://webfiles.gl.ciw.edu/Users/kcrispin/Public/
-https://www.gl.ciw.edu/static/users/ghuntress/
-|
+
 
 # Matches #
 matches [

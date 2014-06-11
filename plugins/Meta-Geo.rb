@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06 #
 version "0.1"
 description "This plugin identifies and extracts data from meta geo.* tags - More Info: http://en.wikipedia.org/wiki/Geotagging"
 
-# Examples #
-examples %w|
-pakfoon.nl
-www.geo-tag.de
-|
+
 
 # Matches #
 matches [

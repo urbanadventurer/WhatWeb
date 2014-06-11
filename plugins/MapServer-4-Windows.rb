@@ -9,16 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
 description "MapServer for Windows (MS4W) - Homepage: http://www.maptools.org/ms4w/"
 
-# Examples #
-examples %w|
-155.207.43.17
-194.199.251.166
-192.35.98.160
-152.92.4.94
-190.24.137.84
-77.211.253.3
-93.174.143.152
-|
+
 
 # Matches #
 matches [

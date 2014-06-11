@@ -21,20 +21,7 @@ dorks [
 'intitle:"JSP snoop page" "WebApp JSP Snoop page"'
 ]
 
-# Examples #
-examples %w|
-131.172.236.205
-71.205.236.68
-120.151.90.144
-159.226.13.222
-206.187.12.109
-131.137.181.230
-50.17.210.117
-69.15.244.106
-98.143.158.143
-plainsoft.net
-webapps.udem.edu.co:8080
-|
+
 
 # Matches #
 matches [

@@ -13,12 +13,7 @@ description "Keil Embedded WEB Server - Homepage: http://www.keil.com/"
 # ShodanHQ results as at 2011-05-31 #
 # 220 for Keil-EWEB
 
-# Examples #
-examples %w|
-82.166.126.176
-115.160.150.11
-82.138.49.139
-|
+
 
 # Matches #
 matches [

@@ -16,20 +16,7 @@ dorks [
 '"powered by iGaming CMS"'
 ]
 
-# Examples #
-examples %w|
-benforum.com.ar/foro2/games.php
-coruscant.ej.am/games/videogames/gamedetails.php
-demo.opensourcecms.com/igaming/index.php
-garde-gardes.ic.cz/igaming/previews.php
-geames.awardspace.com/games.php
-liga-zkouska.ic.cz/index.php
-purplepills.webatu.com/viewpoll.php
-pgn.site88.net
-sendvic-recenze.ic.cz
-www.paradise-gaming.com/gamedetails.php
-www.vincenzoscognamiglio.it/vsSalaGiochi/
-|
+
 
 matches [
 

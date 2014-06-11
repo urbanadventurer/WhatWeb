@@ -20,8 +20,7 @@ dorks [
 'intitle:"Powered by Invision Power Board"'
 ]
 
-# Examples #
-examples %w| forums.metacafe.com forums.invisionpower.com forum.emule-project.net www.cartotalk.com www.crokergolfsystem.com/ipsforum flecko.net/forums/ www.lutomes.com/capcom/index.php http://www.dixiechicksfans.net/forums/index.php www.wpaconsultants.co.uk/forum www.directgames.net/pumpkin2/forums/ forum.prikolka.ru/ http://forums.inkdropstyles.com http://beeskneesfx.com forums.thegamingsurge.com www.urbanplanet.org|
+
 
 # <title>Metacafe Forums (Powered by Invision Power Board)</title>
 # <div id="ipbwrapper">

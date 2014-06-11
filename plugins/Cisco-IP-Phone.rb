@@ -26,23 +26,7 @@ description "This plugin identifies Cisco IP phones and extracts the internal ho
 # Google results as at 2011-01-26 #
 # 43 for inurl:"NetworkConfiguration" cisco
 
-# Examples #
-examples %w|
-202.6.112.134
-61.12.22.204
-216.66.74.249
-64.179.131.49
-147.32.241.7
-128.83.153.39
-147.32.241.146
-203.110.205.248
-24.42.151.148
-www.teleleren.econ.hvu.nl
-servicol1.hablamasya.com
-www.networkogren.com
-www.trucktracking.net
-www.jeffshelton.us
-|
+
 
 # Matches #
 matches [

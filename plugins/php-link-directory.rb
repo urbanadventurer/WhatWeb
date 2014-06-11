@@ -19,29 +19,7 @@ dorks [
 '"powered by phpLinkDirectory"'
 ]
 
-# Examples #
-examples %w|
-www.inclusio.com
-pornocms.com
-www.londovor.com
-www.travel247365.com
-myworlddirectory.com
-www.ultradirectory.net
-www.link-collections.info
-www.summerdirectory.info
-www.dawnlink.info
-www.knifedirectory.info
-shrateralliance.com
-www.gardenwebdirectory.com
-highriselinks.info
-www.drinksdirectory.info
-www.hitchfifty.com
-www.hitslive.info
-indian-links.com
-www.addmylinkfree.com
-www.vipdirectory.com.ar
-www.europelink.info
-|
+
 
 matches [
 

@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
 description "Ecomat CMS - Homepage: http://www.ecomat.ch/"
 
-# Examples #
-examples %w|
-http://www.ecomat.ch/
-http://ecomatdemo.codefabrik.ch/index.php
-|
+
 
 # Matches #
 matches [

@@ -15,27 +15,7 @@ description "Web-based Distributed Authoring and Versioning (WebDAV) is a set of
 # 22354 ShodanHQ results for MS-Author-Via: DAV
 # 323 ShodanHQ results for webdav
 # 110 ShodanHQ results for "DAV: 1,2,<http"
-examples %w|
-24.229.202.79
-41.200.250.19
-66.37.58.180
-67.219.60.190
-62.154.206.93
-70.154.131.249
-81.25.190.151
-83.241.144.122
-94.193.169.160
-95.240.44.146
-141.84.66.71
-162.127.16.24
-168.176.27.169
-174.54.240.30
-174.143.27.191
-173.11.171.172
-173.74.74.208
-217.144.100.163
-212.87.83.78
-|
+
 
 # HTTP Header
 def passive

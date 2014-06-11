@@ -17,21 +17,7 @@ dorks [
 '"powered by mahara" inurl:"about.php" intitle:"About"'
 ]
 
-# Examples #
-examples %w|
-demo.mahara.org
-eportfolios.cs.lewisu.edu
-eportfolio.cardiff.ac.uk
-eport.coe.edu
-leo.ogu.edu.tr/mahara/
-courses.miad.edu/mahara/
-katie.luther.edu/mahara/
-support.educ.sfu.ca/mahara/
-createtolearn.com/mahara/
-mahara.smuc.ac.uk
-mahara.nimbus.info
-myeportfolio.bishopg.ac.uk
-|
+
 
 # Matches #
 matches [

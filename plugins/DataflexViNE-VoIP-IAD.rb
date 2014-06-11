@@ -12,19 +12,7 @@ description "The ViNE range of VoIP ADSL and VoIP SHDSL IADs support both SIP an
 # ShodanHQ results as at 2011-04-11 #
 # 2,609 for DataflexViNE-Webserver
 
-# Examples #
-examples %w|
-151.84.179.193
-87.216.189.1
-87.216.61.57
-151.69.32.129
-151.58.47.185
-151.69.121.165
-87.216.53.89
-151.93.146.36
-151.58.222.105
-151.84.131.78
-|
+
 
 # Passive #
 def passive

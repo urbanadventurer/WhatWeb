@@ -17,35 +17,7 @@ dorks [
 '"Powered by Acidcat CMS"'
 ]
 
-# Examples #
-examples %w|
-www.acidcat.com/demo1_en/
-www.acidcat.com/demo1_en/admin/
-www.acidcat.com/demo1_fr/
-www.acidcat.com/demo1_fr/admin/
-www.acidcat.com/demo1_de/
-www.acidcat.com/demo1_de/admin/
-www.afaceribuftea.ro
-www.debiechten.nl
-www.klommesten.no
-www.tcob.no
-ptmbodrum.com
-www.avsantjosep.org
-www.tourlemans.com
-chrkrist.dk
-www.amicidellaferroviavalmorea.it
-www.dub.cat
-www.adkf.dk
-www.hundestedroklub.dk
-www.bonandrini.it/acidcat/
-famfisker.dk
-www.psicologiaorru.com.br
-golfavisenopen.dk
-www.whepping.nl/hzvvsupercoach/acidcat/
-www.stou.ac.th/schools/sec/main/
-www.scuolasaba.it/acidcat/
-www.vandersar.info
-|
+
 
 # Matches #
 matches [

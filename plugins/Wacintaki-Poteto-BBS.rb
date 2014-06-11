@@ -19,21 +19,7 @@ description "Wacintaki Poteto BBS is a CSS conversion of Oekaki Poteto 5.x. - Ho
 dorks [
 '"Wacintaki * by Waccoon / Based on OekakiPoteto v5.x by RanmaGuy and Marcello"']
 
-# Examples #
-examples %w|
-www.ninechime.com/coonikaki/
-www.catgirlz.com/adult/
-www.oekakideviant.com/
-ddoekaki.info/
-ho-ohrealm.zzl.org/oekaki/
-superogira.com/oekaki/
-oekakis.shadow-apocalypse.net/mao/
-fuckpuck.net23.net/oekaki/
-www.serenityisles.com/oekaki/
-pallid.unixdaemons.com/Oekaki/
-www.fursonapod.com/fursonakaki/install.php
-www.mintaba.bplaced.de/filemanager/oekaki/install.php
-|
+
 
 # Matches #
 matches [

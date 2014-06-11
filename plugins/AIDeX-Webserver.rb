@@ -20,11 +20,7 @@ dorks [
 'intitle:"Directory Listing" "Directory Listing" "Powered by AIDeX Webserver"'
 ]
 
-# Examples #
-examples %w|
-95.222.16.5
-kdv.ath.cx
-|
+
 
 # Matches #
 matches [

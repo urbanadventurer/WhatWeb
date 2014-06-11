@@ -10,13 +10,7 @@ version "0.1"
 description "Nortel Ethernet Routing Switch Config File - homepage: http://products.nortel.com/go/product_index.jsp?locale=en-US&lcid=-1"
 
 # 21 results for "qos queue-set-assignment queue-set" @ 2010-10-14
-examples %w|
-community.nortel.com/go/servlet/JiveServlet/download/13456-4929/ott-nortel.txt
-filedb.experts-exchange.com/incoming/2009/01_w05/99490/Nortel-5510-Running-Config.txt
-www.ertlnetworks.de/config.txt
-www.groumpf.org/vrac/ConfigNodal.txt
-www.opus1.com/nac/lv06configs/NAP_NORTEL5520.CFG
-|
+
 
 def passive
 	m=[]

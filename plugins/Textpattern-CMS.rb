@@ -10,25 +10,7 @@ version "0.1"
 description "A flexible, elegant and easy-to-use CMS - homepage: http://textpattern.com/"
 
 # 34 results for "powered by Textpattern CMS" @ 2010-09-13
-examples %w|
-analogdigital.org
-bertgarcia.com
-bikecharlotte.net
-bobmcpartlin.com
-dsgnmgzn.de
-hcgtv.com/rated/
-humtata.at
-liebt.at
-nupusi.com
-mccuba.com
-phpxref.com/cms/
-teppenlift.at
-txp-templates.com
-txplanet.net
-youfora.com
-wisconsinmusicdj.com
-www.linkcemetery.com
-|
+
 
 matches [
 

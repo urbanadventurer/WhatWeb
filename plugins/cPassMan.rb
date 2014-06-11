@@ -17,10 +17,7 @@ dorks [
 'intitle:"Collaborative Passwords Manager"'
 ]
 
-# Examples #
-examples %w|
-http://www.vag-technique.fr/divers/cpassman/index.php
-|
+
 
 # Matches #
 matches [

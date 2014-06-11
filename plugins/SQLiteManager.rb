@@ -18,20 +18,7 @@ dorks [
 'intitle:"SQLite version" "Welcome to SQLiteManager version"'
 ]
 
-# Examples #
-examples %w|
-www.magic-word.net/sqlitemanager/main.php
-178.32.252.223/sqlitemanager/main.php
-69.162.89.213:8090/sqlite/main.php
-ip-86-110-182-2.spark-rostov.ru/sqlite/main.php
-slpestates.com/sqlitemanager/main.php
-122.160.25.52/sqlitemanager/main.php
-sqladmin.gucz.net/main.php
-www.petit-fat.com/php/sqlm/main.php
-www.aasagroup.net/iut/ic3/sqlite/main.php
-hitman-game.net76.net/SQLiteManager-1.2.0/main.php
-green.ribbon.to/~thought/SQLiteManager-1.2.0/main.php
-|
+
 
 # Matches #
 matches [

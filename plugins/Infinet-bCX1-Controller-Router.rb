@@ -16,16 +16,7 @@ description "The Infinet bCX1 Controller Router (bCX1-CR-INF) is a native BACnet
 # Google results as at 2011-03-06 #
 # 1 for intitle:"Andover Continuum" "Controller Configuration Options" "Embedded WebServer"
 
-# Examples #
-examples %w|
-155.33.192.82
-210.48.158.121
-173.51.170.228
-99.96.1.57
-99.48.89.77
-76.75.26.205
-67.103.179.235
-|
+
 
 # Matches #
 matches [

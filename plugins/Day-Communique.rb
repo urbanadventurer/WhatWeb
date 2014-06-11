@@ -13,18 +13,7 @@ description "Day Communique (CQ5) WCM is a web content management system based o
 # ShodanHQ results as at 2011-06-04 #
 # 246 for Communique
 
-# Examples #
-examples %w|
-164.109.48.187
-63.99.16.145
-194.114.32.12
-210.164.140.31
-205.140.228.1
-164.109.50.176
-164.109.48.215
-63.99.16.75
-184.73.183.220
-|
+
 
 # Passive #
 def passive

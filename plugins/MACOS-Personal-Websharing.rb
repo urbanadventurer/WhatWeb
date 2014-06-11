@@ -16,18 +16,7 @@ description "Web Sharing is a feature in Mac OS X that allows you to serve docum
 # ShodanHQ results as at 2011-06-02 #
 # 88 for MACOS_Personal_Websharing
 
-# Examples #
-examples %w|
-198.30.209.207
-204.50.12.249
-67.95.194.67
-128.250.219.219
-150.32.72.108
-160.193.159.15
-129.171.42.128
-99.116.182.142
-206.68.96.11
-|
+
 
 # Passive #
 def passive

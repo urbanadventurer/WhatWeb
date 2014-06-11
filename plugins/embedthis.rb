@@ -10,7 +10,7 @@ author "Andrew Horton"
 version "0.1"
 description "Web server for embedded devices. Homepage: http://embedthis.com/products/appweb/embedded-web-server.html"
 
-examples %w| 114.74.149.201 |
+
 
 def passive
 	m=[]

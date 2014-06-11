@@ -17,20 +17,7 @@ dorks [
 '"powered by BrowserCMS"'
 ]
 
-# Examples #
-examples %w|
-www.browsercms.com
-www.browsermedia.com
-www.aacap.org
-www.amwa.net
-www.amwa.net/portlets/login/
-www.atssa.com
-www.atssa.com/portlets/login/
-www.efc.org/portlets/login/login-portlet.jsp
-www.plataformatec.com.br
-www.sheehanassociates.com
-www.usra.edu
-|
+
 
 # Matches #
 matches [

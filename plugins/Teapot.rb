@@ -12,14 +12,7 @@ description "HTCPCP, a protocol for controlling, monitoring, and diagnosing coff
 # ShodanHQ results as at 2011-03-14 #
 # 6 for 418 teapot
 
-# Examples #
-examples %w|
-118.127.16.151
-80.101.28.219
-178.63.84.149
-89.185.34.10
-89.185.37.9
-|
+
 
 # Passive #
 def passive

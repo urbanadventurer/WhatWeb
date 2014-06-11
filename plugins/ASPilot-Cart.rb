@@ -17,14 +17,7 @@ dorks [
 '"Powered by Pilot Cart V" -vulnerabilities'
 ]
 
-# Examples #
-examples %w|
-www.PilotCart.com
-www.roguecreamery.com
-www.farleysessentials.com
-www.proscreeninc.com/pilot.asp
-www.navelbling.com/pilot.asp
-|
+
 
 matches [
 

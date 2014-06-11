@@ -13,9 +13,7 @@ version "0.2"
 description "This plugin detects instances of WhatWeb plugins. If this plugin is returned then chances are the other results are false positives."
 
 # Plugin list: http://github.com/urbanadventurer/WhatWeb/tree/master/plugins/
-examples %w|
-http://github.com/urbanadventurer/WhatWeb/raw/master/plugins/1024-CMS.rb
-|
+
 
 # Passive #
 def passive

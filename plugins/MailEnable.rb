@@ -17,20 +17,7 @@ dorks [
 'intitle:"MailEnable - Webmail" "Account Login" "MailEnable"'
 ]
 
-# Examples #
-examples %w|
-www.web-mail.co.il
-mail.nad.gr
-www.elaegypt.com
-mail.biznetix.net
-mail.naphs.net
-mail.tossfed.org.tr
-webmail.enter-system.com/mewebmail/mondo/lang/sys/login.aspx
-webmail.softwebabl.it
-www.miamicountyin.gov/mewebmail/
-mail.manage.gov.in/mewebmail/
-https://webmail.braathe.no/
-|
+
 
 # Matches #
 matches [

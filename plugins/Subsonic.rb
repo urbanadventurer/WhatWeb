@@ -17,20 +17,7 @@ dorks [
 'intitle:"Subsonic" "Username" "Password" "Remember me" inurl:login.view'
 ]
 
-# Examples #
-examples %w|
-rokerz.com/login.view
-wolff-den.com:8181/login.view
-75.110.11.227:10217/login.view
-thursbygarden.org:4040/login.view
-94.195.246.158:4141/login.view
-music.sameeryousuf.com/login.view
-www.bananabend.net:8080/login.view
-applieddigitalinc.dyndns.org/login.view
-baxtr.homeip.net:8050
-ww2.squareholepress.com:9191
-gmusic.homedns.org
-|
+
 
 # Matches #
 matches [

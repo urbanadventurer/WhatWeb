@@ -20,19 +20,7 @@ dorks [
 'inurl:"sls/auth?RequestedPage"'
 ]
 
-# Examples #
-examples %w|
-https://customeraccess.partnersgroup.com/sls/auth
-https://hitpartner.hotelplan.com/login/sls/auth
-https://webmail.actelion.com/
-https://entry.axa.de/bav-portal/sls/auth
-https://ses.zehndergroup.com/login/sls/
-https://www.credit-suisse.com/fundlab
-www.reka.ch/login/sls/auth
-www.rekanet.ch
-webmail.kanti.sh.ch
-www.ruedblass.ch
-|
+
 
 # Matches #
 matches [

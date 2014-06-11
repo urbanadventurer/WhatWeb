@@ -12,17 +12,7 @@ description "Django is a high-level Python Web framework that encourages rapid d
 # ShodanHQ results as at 2012-02-27 #
 # 878 for WSGIServer Python
 
-# Examples #
-examples %w|
-live.rockresult.ru
-riatimes.com
-www.cocosoco.com
-bitacola.org
-nebridge.org
-212.29.223.35
-122.248.197.142
-109.73.69.173
-|
+
 
 # Matches #
 matches [

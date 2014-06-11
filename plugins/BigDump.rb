@@ -17,23 +17,7 @@ dorks [
 'inurl:"bigdump.php" intitle:"BigDump ver" "Filename" "BigDump: Staggered MySQL Dump Importer"'
 ]
 
-# Examples #
-examples %w|
-oruwebsite.org/dump/bigdump.php
-www.twinkletwinklelittlestars.com/bigdump.php
-equipmentsfarm.com/bigdump.php
-www.lebnn.com/bigdump.php
-mramail.org/upload/bigdump.php
-jpinfomeshon.jp/bigdump.php
-minilaptops.iim.bz/bigdump.php
-mysydneyhotel.com/bigdump.php
-microxbeta.sys1.co.uk/bigdump.php
-svsting.org/xml/bigdump.php
-uk.akshayjain.org/bigdump.php
-luxdev.org/d/bigdump.php
-www.aisforarmy.com/bigdump.php
-taleemsa.gov.sa/bigdump.php
-|
+
 
 # Matches #
 matches [

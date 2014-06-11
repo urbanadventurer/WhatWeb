@@ -20,15 +20,7 @@ dorks [
 'intitle:"VISEC - Login" "Please enter a password to log into VISEC"'
 ]
 
-# Examples #
-examples %w|
-173.160.171.169
-96.24.78.18
-75.83.76.46
-99.237.250.215
-173.196.140.110
-67.78.72.130
-|
+
 
 # Matches #
 matches [

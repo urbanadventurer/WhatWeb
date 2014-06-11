@@ -124,7 +124,7 @@ PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if F
 $VERSION="0.4.8-dev"
 $WWDEBUG = false # raise exceptions in plugins, etc
 $verbose=0 # $VERBOSE is reserved in ruby
-$USE_EXAMPLE_URLS=false
+#$USE_EXAMPLE_URLS=false
 $use_colour="auto"
 $USER_AGENT="WhatWeb/#{$VERSION}"
 $MAX_THREADS=25
@@ -272,10 +272,6 @@ def make_target_list(cmdline_args, inputfile=nil,pluginlist = nil)
 		url_list += File.open(inputfile).readlines.each {|line| line.strip! }.delete_if {|line| line =~ /^#.*/ }.each {|line| line.delete!("\n") }
 	end
 
-	# add example urls to url_list if required. plugins must be loaded already
-	if $USE_EXAMPLE_URLS
-		url_list += pluginlist.map {|name,plugin| plugin.examples unless plugin.examples.nil? }.compact.flatten
-	end
 
         genrange=url_list.map do |x|
 	  range=nil
@@ -532,9 +528,7 @@ PLUGINS:
 \t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
 \t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
 \t\t\t\"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}\"
-  --dorks=PLUGIN\tList google dorks for the selected plugin
-  --example-urls, -e=PLUGIN Update the target list with example URLs from
-\t\t\tthe selected plugins.
+  --dorks=PLUGIN\tList Google dorks for the selected plugin
 
 OUTPUT:
   --verbose, -v\t\tVerbose output includes plugin descriptions. Use twice
@@ -623,7 +617,6 @@ opts = GetoptLong.new(
       [ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
       [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
       [ '--dorks', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-e','--example-urls', GetoptLong::NO_ARGUMENT ],
       [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-brief', GetoptLong::REQUIRED_ARGUMENT ],
@@ -684,8 +677,6 @@ begin
 				PluginSupport.load_plugins
 				PluginSupport.plugin_dorks(arg)
 				exit
-			when '-e','--example-urls'
-				$USE_EXAMPLE_URLS=true
 
 			when '--color','--colour'
 				case arg
@@ -857,10 +848,10 @@ if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
 end
 
 # example URLs are only allowed with selected plugins, not all plugins
-if $USE_EXAMPLE_URLS and not plugin_selection
-	error "You must select plugins with -p or --plugins to include examples in the target list"
-	exit 1
-end
+#if $USE_EXAMPLE_URLS and not plugin_selection
+#	error "You must select plugins with -p or --plugins to include examples in the target list"
+#	exit 1
+#end
 
 ### PLUGINS
 plugin_selection += ",+Custom-Plugin" 	if use_custom_plugin and plugin_selection

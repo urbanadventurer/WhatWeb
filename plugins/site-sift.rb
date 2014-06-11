@@ -22,50 +22,7 @@ dorks [
 '"powered by Site Sift" -exploit -"SQL Injection"'
 ]
 
-# Examples #
-examples %w|
-scripts.site-sift.com/demo/
-www.twbdir.com
-www.litigationweb.com
-www.atoznetauto.com
-weinkatalog.info
-www.businessestogo.net
-www.forectory.com
-www.safeemail.org/directory/
-www.fishing-vacation.info
-www.smindsrt.com
-www.linkbuildingdir.com/link_directory/
-www.herdir.com
-www.dir6.com
-www.fishing-charters.biz/7/USA/
-www.airsoftgiant.net
-www.nunti-petreceri.ro
-audiodirectory.co.uk
-www.dirdirdir.net
-www.organicpharming.com/links/
-www.pixelsshow.com
-www.indianlinkexchange.com/directory/
-euroinvestigator.org
-directory.leadingsolutions.com
-www.4mybody.com
-mohyals.info/dir/
-directory.azmi.info
-www.bestuk.biz/ss/
-www.artelinks.net
-www.adultwebdirectory.org
-www.bramptonlistings.info
-www.directorypatch.com
-www.estate-zone.com
-www.webdirectorysquare.com
-www.digistore.co.nz/directory/
-www.ladiesofhack.com/directory/
-www.allbizlistings.com
-www.cranialcranialsacraltherapy.com/Cranial_Sacral_Osteopathy/
-www.badcreditcreditcards.biz/creditdirectory/
-www.uzbeksites.com
-www.angelicdirectory.com/85/Card_games/
-www.thevipdirectory.info
-|
+
 
 matches [
 

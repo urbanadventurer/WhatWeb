@@ -20,15 +20,7 @@ dorks [
 'intitle:"TOTVSSMARTCLIENT" "URL do Totvs Server"'
 ]
 
-# Examples #
-examples %w|
-189.112.219.236
-200.169.9.135
-189.3.92.130
-189.42.119.18
-189.42.119.21
-200.175.6.110
-|
+
 
 # Matches #
 matches [

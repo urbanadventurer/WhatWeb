@@ -12,33 +12,7 @@ description "SmartThumbs is a complete tgp script (thumbnail gallery post manage
 # Google results as at 2011-03-17 #
 # 211 for "powered by SMART THUMBS"
 
-# Examples #
-examples %w|
-www.finethumbs.com
-www.kellysthumbs.com
-sweetythumbs.com
-www.hotwifepornmovies.com
-www.gothporntgp.com
-www.teenpanties-tgp.com
-free-porn-webs.com
-www.tgpfootfetish.com
-www.gothicporntgp.com
-www.wetpantiesex.com
-www.sexlesbiantgp.com
-top3dsex.com
-www.tube777.net
-www.ineedbdsm.com
-www.mytubeporn.net
-www.bondagebigpics.com
-www.anusgame.com
-porncomicsfree.com
-www.bbwpornclub.com
-pinkload.com
-amazing3dporn.com
-www.pinupvixens.com
-www.girlpeeing.org:8081
-nubianflesh.com
-|
+
 
 # Matches #
 matches [

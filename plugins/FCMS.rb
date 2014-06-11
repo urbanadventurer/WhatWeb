@@ -17,27 +17,7 @@ dorks [
 'intitle:"powered by Family Connections"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/familycms/
-demo.ourfamilycircles.com
-www.clanwatson.info
-www.teedfamily.com
-smithsnconnors.com
-www.teamstevens.com
-blackeggserver.com
-www.firstfamilyenterprise.com
-marhelis.com
-www.liongi.com
-sarkar.ws
-mayerfamily.info
-www.shortypack.com/fcms/
-babyhitz.com
-www.hi.grabers.us
-famillepiv.franceserv.com
-houseofgaunt.net
-combined-portal.com/Fam/
-|
+
 
 # Matches #
 matches [

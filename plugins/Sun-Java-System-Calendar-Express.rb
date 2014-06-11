@@ -20,20 +20,7 @@ dorks [
 'intitle:"Sun Java[tm] System Calendar Express"'
 ]
 
-# Examples #
-examples %w|
-jhem.johnshopkins.edu:8080
-cal.med.usyd.edu.au
-stagweb.fairfield.edu:6785
-my.iit.edu:6785
-paws.usask.ca:6785
-my.sju.edu:6785
-jhem.jhu.edu:8080
-lumprod.corning-cc.edu:6785
-mybama-res-1.ua.edu:6785
-https://calendar.york.ac.uk
-https://calendar.cs.bham.ac.uk
-|
+
 
 # Matches #
 matches [

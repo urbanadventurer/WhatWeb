@@ -14,18 +14,7 @@ dorks [
 '"Powered by Zikula"'
 ]
 
-# Examples #
-examples %w|
-zikula.org
-demo.zikula.org
-community.zikula.org
-blog.zikula.org
-zikula.de
-demo.zikula.de
-blanktheme.org
-www.zikulaplus.com
-zikula.at
-|
+
 
 # Matches #
 matches [

@@ -22,32 +22,7 @@ dorks [
 'intitle:"Squirrelcart" intitle:"Control Panel" "Username" "Password"'
 ]
 
-# Examples #
-examples %w|
-208.109.164.234
-174.123.177.76
-66.226.77.113
-184.168.218.201
-174.121.88.196
-204.42.145.43
-67.225.199.192
-174.123.177.90
-74.53.111.31
-www.squirrelcart.com/demo1/
-www.squirrelcart.com/demo2/squirrelcart/
-www.squirrelcart.com/demo2/
-www.squirrelcart.com/demo3/
-www.squirrelcart.com/demo4/squirrelcart/
-www.schalkenbach.org/store.php
-www.shilohpostcards.net/index.php
-www.granoladelights.com
-www.partsmike.com/store/
-www.forengineers.org
-www.shadowlurker.com.au
-aircombat.com/store/squirrelcart/
-https://www.superlather.com
-https://www.thelyeguy.com/
-|
+
 
 # Matches #
 matches [

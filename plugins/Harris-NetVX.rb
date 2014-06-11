@@ -12,20 +12,7 @@ description "NetVX combines standards-compliant audio, video and data networking
 # ShodanHQ results as at 2011-03-30 #
 # 41 for harris.asp
 
-# Examples #
-examples %w|
-200.67.85.254
-71.252.114.107
-207.237.37.89
-200.23.36.246
-201.130.105.166
-208.108.2.236
-211.58.113.95
-208.108.2.237
-71.252.114.106
-211.58.113.70
-142.55.230.118
-|
+
 
 # Matches #
 matches [

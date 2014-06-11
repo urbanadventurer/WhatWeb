@@ -15,13 +15,7 @@ description "VMware VirtualCenter is a software suite designed to centralize the
 # Manual #
 # http://www.vmware.com/pdf/vsphere4/r40/vsp_40_web_access.pdf
 
-# Examples #
-examples %w|
-https://1lost.com/
-https://core.obdarujte.si/
-https://dreamalong.com/
-https://zygogen.com/
-|
+
 
 # Matches #
 matches [

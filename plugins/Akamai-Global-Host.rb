@@ -14,19 +14,7 @@ description "Akamai-Global-Host HTTPd"
 
 # About 624,447 ShodanHQ results for "server: AkamaiGHost" @ 2010-10-26
 
-# Examples #
-examples %w|
-24.200.239.8
-184.87.51.66
-95.100.27.229
-88.221.133.187
-125.56.251.206
-96.6.66.83
-96.7.46.77
-59.151.154.93
-184.50.127.176
-173.223.26.104
-|
+
 
 # Matches #
 matches [

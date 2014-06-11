@@ -20,25 +20,7 @@ dorks [
 'inurl:CerberusPublicGUI'
 ]
 
-# Examples #
-examples %w|
-62.84.129.171
-204.15.49.93
-107.6.25.98
-75.126.166.241
-181.14.219.95
-209.43.124.74
-208.17.243.244
-204.13.152.31
-64.211.69.217
-212.39.75.8
-www.clearedanddelivered.com/support-center/index.php
-www.nextgenserver.com/server_reseller.htm
-www.cyberhostuk.net/helpdesk/support-center/
-www.dc02.net/demos/
-www.bdsol.co.uk/support-center/
-https://cosi.certilience.fr/support-center/
-|
+
 
 # Matches #
 matches [

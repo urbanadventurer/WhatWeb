@@ -18,19 +18,7 @@ description "SegPub, a hosting solutions provider based in Sydney, Australia - H
 # 273 for X-Powered-By SegPub Server SegPache
 # 4   for X-Powered-By SegPod
 
-# Examples #
-examples %w|
-65.61.176.66
-65.61.176.118
-66.216.83.164
-66.216.83.170
-66.216.93.163
-66.216.83.165
-66.216.103.206
-66.216.93.188
-66.216.93.186
-66.216.103.216
-|
+
 
 # Passive #
 def passive

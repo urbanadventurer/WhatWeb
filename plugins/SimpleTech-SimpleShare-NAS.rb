@@ -11,10 +11,7 @@ description "Whether it's photos and music, or business presentations and financ
 # Default login: admin/simple
 
 # 21 ShodanHQ results for WWW-Authenticate: Basic realm="SimpleShare (default user name is admin and password is simple)"
-examples %w|
-64.75.193.93
-64.183.16.20
-|
+
 
 # Passive #
 def passive

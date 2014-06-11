@@ -12,19 +12,7 @@ description "Kentico CMS for ASP.NET - flexible, all-in-one solution for web dev
 # ShodanHQ results as at 2013-02-06 #
 # 384 for CMSPreferredCulture
 
-# Examples #
-examples %w|
-www.kentico.com
-72.5.217.45
-146.101.137.122
-202.146.213.70
-128.100.224.229
-202.148.128.203
-202.148.128.205
-63.243.49.93
-81.17.250.242
-50.57.195.88
-|
+
 
 # Matches #
 matches [

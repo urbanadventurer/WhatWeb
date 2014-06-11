@@ -24,53 +24,7 @@ dorks [
 '"Powered by Group-Office" "Copyright" "Intermesh" "2003"'
 ]
 
-# Examples #
-examples %w|
-62.97.115.212
-31.195.136.83
-46.105.229.149
-213.73.91.209
-195.202.159.122
-62.43.212.115
-87.98.235.156
-84.54.187.84
-202.57.140.227
-www.group-office.com/groupoffice/
-demo.group-office.com/groupoffice/
-demo.group-office.eu
-go.gabou.net
-go.notalisle.fr
-gruenzweigs.de
-gys.uwkantooronline.nu
-ict-eqep.com/groupoffice/
-intern.digitalartists.de
-office.sawyershome.co.uk/groupoffice/
-yanrehsos.depsos.go.id/intranet/
-www.backupnu.nl
-www.bdagenda.net
-www.dltvlaw.com/groupoffice/
-www.enteringenieria.com.ar/goffice/
-www.group-office.org
-www.investinislam.com.au/go/
-www.puechel.net/groupoffice/
-www.rhein-sieg-office.de
-www.slimoffice.nl
-www.tbidirectagenda.info
-www.wrightwaycommunications.com.au/gp/
-biotreat-eu.org/extra/
-www.nagra.com/go/
-groupoffice.african-court.org
-intranet.datalife.cz
-www.heinztree.com/groupoffice/
-tenutadeangelis.no-ip.com/gruppo/
-demo.recruity.com
-webmail.adomnes.com
-office.sawyershome.co.uk/groupoffice/
-https://mercury.jncasr.ac.in/go/index.php
-https://kab-paderborn.dyndns.org/groupoffice/index.php
-https://falz.dyndns.org/team/
-https://sozdia.dyndns.org/groupoffice/index.php
-|
+
 
 # Matches #
 matches [

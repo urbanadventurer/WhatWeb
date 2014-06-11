@@ -17,16 +17,7 @@ dorks [
 'inurl:Locator/record.php?Dealer_ID'
 ]
 
-# Examples #
-examples %w|
-phpdealerlocator.yourphppro.com/demo/
-www.xsscuba.com/locator/record.php
-www.alpinecentral.com/locator/record.php
-www.worldwidegolfshops.com/Locator/record.php
-www.environne.com/locator/record.php
-shopsorial.com/dealers/locator/
-www.bodyguardaccessories.com/phpDealerLocator/
-|
+
 
 # Matches #
 matches [

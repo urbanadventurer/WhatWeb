@@ -15,8 +15,7 @@ author "Andrew Horton"
 version "0.3"
 description "VSNS is a Very Simple News System written in PHP. VSNS Lemon vulnerabilities: http://evuln.com/vulns/106/summary.html"
 
-# Examples #
-examples %w|http://tachyondecay.net/blog/|
+
 
 # Matches #
 matches [

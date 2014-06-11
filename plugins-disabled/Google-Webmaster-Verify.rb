@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
 version "0.1"
 description "This plugin identifies the verify meta tag for Google Webmaster verification. This may be useful for tracking a webmaster across multiple domains."
 
-# Examples #
-examples %w|
-whatweb.net
-|
+
 
 # Matches #
 matches [

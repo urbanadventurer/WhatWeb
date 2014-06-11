@@ -23,18 +23,7 @@ dorks [
 '"SoundPoint IP Configuration" intitle:"SoundPoint IP Configuration Utility - Registration" ext:htm'
 ]
 
-# Examples #
-examples %w|
-207.228.51.194
-72.244.162.86
-75.186.59.227
-81.0.197.178
-142.58.0.212
-66.37.236.211
-24.238.7.127
-27.1.25.6
-148.210.125.59
-|
+
 
 # Passive #
 def passive

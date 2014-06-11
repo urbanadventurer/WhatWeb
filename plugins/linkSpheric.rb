@@ -16,19 +16,7 @@ dorks [
 '"powered by linkSpheric" -Vulnerability'
 ]
 
-# Examples #
-examples %w|
-dataspheric.com/directory/install.php
-fingx.com/install.php
-www.partyhead.be/dating/install.php
-www.hipaa-directory.com
-www.thaieserver.com/directory/
-www.phpxref.com/xref/linkspheric/admin/settingsAdmin.php.source.txt
-karatetraining.org/dojos/indexCopy.php
-www.izonecr.com/linkexchange/
-fibregolf.com/old/
-www.phillyliving.com/links/admin/index.php
-|
+
 
 matches [
 

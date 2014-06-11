@@ -13,10 +13,7 @@ description "Spora The Burning Crusade Edition Means RoSpora - web script build 
 # 5 for "This server supports only 2.2.3 clients" "1x Quest XP , 1x Kill XP , 1x Discovery XP"
 # 1 for "LET'S INSTALL YOUR ROSPORA!" ext:txt
 
-# Examples #
-examples %w|
-lom-cuentas.comyr.com
-|
+
 
 # Matches #
 matches [

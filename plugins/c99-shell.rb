@@ -13,18 +13,7 @@ description "c99 PHP Backdoor"
 # 272 for inurl:c99.php ext:php
 # 117 for inurl:c99.php ext:php +uname
 
-# Examples #
-examples %w|
-attacker.securecrash.org/shellz/c99.php
-freewebs.com/grove/c99.php
-bennyblog.net/c99.php
-iiisebaiii.altervista.org/public/r57/c99.php
-freelancer-blackfare.tym.sk/c99.php
-usuarios.multimania.es/charmedpower/pizarron_ima/c99.php
-slavegod.3x.ro/try/upload_files/c99.php
-0a.se/eshop/c99.php
-www.malta-hotel.com/special/img/hotels/c99.php
-|
+
 
 matches [
 

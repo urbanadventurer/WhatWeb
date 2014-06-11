@@ -13,18 +13,7 @@ description "SCADA - Allen Bradley programmable logic controller (PLC) - Homepag
 # 16 for port:161 SLC5
 # 23 for Allen-Bradley
 
-# Examples #
-examples %w|
-77.48.77.61
-140.122.89.250
-140.119.57.3
-140.119.207.6
-140.119.178.3
-140.119.114.3
-66.178.240.163
-166.142.53.22
-166.142.49.75
-|
+
 
 # Matches #
 matches [

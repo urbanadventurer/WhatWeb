@@ -20,25 +20,7 @@ dorks [
 'intitle:"ProjectWise Web Server" "ProjectWise Web Server"'
 ]
 
-# Examples #
-examples %w|
-206.227.137.49
-58.56.159.37
-114.251.196.90
-209.131.10.244
-117.79.80.67
-208.82.223.243
-206.211.200.42
-206.227.137.45
-94.95.109.13
-209.131.10.175
-pw.amg-eng.com
-pw.carollo.com
-https://pw.hntb.com/
-https://projectwise.dot.ny.gov/
-https://planroom.dot.illinois.gov/
-https://pw1.mbakercorp.com/
-|
+
 
 # Matches #
 matches [

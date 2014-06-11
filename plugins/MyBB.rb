@@ -17,47 +17,7 @@ dorks [
 '"Powered By MyBB"'
 ]
 
-# Examples #
-examples %w|
-hlurb.gov.ph/forum/
-www.ldrt.gov.za/ldrtforum/
-forum.citizen.apps.gov/DraftYVPForum/
-sanpablo.gov.ph/forum/
-mods.mybb.com/theme-demo/
-mydemo.opensourcecms.com/mybb4749/
-www.mybbcodes.com
-mybbthemes.8ez.com
-forum.online-urbanus.be
-forum.mybbz.net
-electrojams.com/forum/
-dotautilities-forums.net
-democratsforprogress.com/forum/
-forum.suprbay.org
-goxema.com
-stylemybb.com
-mybbtemplates.createmybb.com
-mhhauto.com
-forums.mybbcommunity.com
-endlessparadigm.com/forum/
-prxbx.com/forums/
-www.audentio.com/forums/
-www.wbdev.co.cc
-www.mybbextras.com
-www.mybbcentral.com
-www.rusnakweb.com/forum/
-www.hackforums.net
-www.networkedmediatank.com
-www.forum.tech2game.com
-www.vgzero.com
-www.pavementsucks.com
-www.mybbgm.com
-www.zoomcities.com/forum/
-www.nameslot.com
-www.pokeboard.com
-www.cydevice.net
-www.spriters-resource.com/community/
-www.charice.tv
-|
+
 
 # Matches #
 matches [

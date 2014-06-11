@@ -21,10 +21,7 @@ dorks [
 'intitle:"First Time User\'s Wizard - dradis" inurl:wizard'
 ]
 
-# Examples #
-examples %w|
-dradis.heroku.com/wizard
-|
+
 
 # Matches #
 matches [

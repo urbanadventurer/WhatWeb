@@ -20,20 +20,7 @@ dorks [
 'intitle:"Login Page" "InfiNet Wireless" "All rights reserved." "User Name" "Password"'
 ]
 
-# Examples #
-examples %w|
-88.84.217.161
-46.52.134.25
-79.175.55.153
-213.154.179.65
-213.170.86.113
-188.247.43.201
-188.133.158.165
-213.170.100.249
-80.252.150.21
-80.252.147.137
-46.52.136.11
-|
+
 
 # Matches #
 matches [

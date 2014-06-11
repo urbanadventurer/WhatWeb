@@ -17,29 +17,7 @@ dorks [
 '"powered by DokuWiki" inurl:doku.php filetype:php'
 ]
 
-# Examples #
-examples %w|
-www.dokuwiki.org/dokuwiki/
-wmi.math.u-szeged.hu/xaos/doku.php
-www.oalodgemaster.org/support/docs/doku.php
-www.cdburnerxp.se/help/doku.php
-home.agh.edu.pl/~wta/doku.php
-is.csie.ncyu.edu.tw/iswiki/doku.php
-taiwan.caltech.edu/doku.php
-www.egr.msu.edu/~zhaojia1/doku.php
-people.eecs.ku.edu/~eecs138/webprogramming/doku.php
-primates.ximian.com/~glesage/wiki/doku.php
-www.isfahanlug.org/doku.php
-lodgemaster.oa-bsa.org/support/docs/doku.php
-www.radioswap.net/wiki/doku.php
-ihuru.fe.up.pt/palestrasDEI/doku.php
-www.the-wolfpack.eu/dokuwiki/doku.php
-n0rad.fr/doku.php
-www.cdasoftware.com.au/docsonline/doku.php
-evoplant.uni-hohenheim.de/doku.php
-www.ustm.ac.mz/wiki/doku.php
-www.pirateparty.be/elections/doku.php
-|
+
 
 # Matches #
 matches [

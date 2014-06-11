@@ -16,7 +16,7 @@ version "0.3"
 
 description "VP-ASP (Virtual Programming - ASP) Shopping Cart. Free & commercial versions. http://johnny.ihackstuff.com/ghdb/?function=detail&id=324  Homepage:www.vpasp.com"
 
-examples %w|higginswoodfloors.com/shopping www.andrewbrownhomedirect.com/default.asp www.moremagictricks.co.uk www.stonebridge.com www.valuevision.com.ph/shopdisplayproducts.asp www.partysballoons.com.au www.palouseriver.net |
+
 
 matches [
 {:certainty=>75, :ghdb=>'filetype:asp inurl:"shopdisplayproducts.asp"'},

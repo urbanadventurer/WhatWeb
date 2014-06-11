@@ -16,18 +16,7 @@ dorks [
 '"Administrator Panel" intitle:"ezBOO WebStats"'
 ]
 
-# Examples #
-examples %w|
-jcoder.com/sitetraff/
-www.paddi.net/index.php3
-www.ava.es/WebStats/
-www.otakuex.com/admin/ezWebStats303/
-pgsql.navicat.com/sitetraff/
-lesjardinsdubarri.fr/stat/
-pin88.hostoi.com/stat/
-gilda.it/dsx/old/counter2.php3
-www.numericshop.be/administration_temp/stats/
-|
+
 
 # Matches #
 matches [

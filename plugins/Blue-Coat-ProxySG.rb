@@ -12,18 +12,7 @@ description "Blue Coat ProxySG - provides complete control over all web traffic 
 # ShodanHQ results as at 2012-09-12 #
 # 13 for location proxysg
 
-# Examples #
-examples %w|
-107.1.133.169
-220.130.95.189
-216.109.0.23
-216.109.0.25
-216.109.0.24
-216.109.0.21
-220.130.95.154
-216.109.0.26
-65.207.30.85
-|
+
 
 # Matches #
 matches [

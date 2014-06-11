@@ -17,14 +17,7 @@ dorks [
 '"View All Strings" "The tool can be used by the online community"'
 ]
 
-# Examples #
-examples %w|
-entrans.sourceforge.net/demo/
-translate.gelatocms.com/main.php
-translate.sbbic.org
-community.topracers.net/main.php
-translate.wp-persian.com/main.php
-|
+
 
 # Matches #
 matches [

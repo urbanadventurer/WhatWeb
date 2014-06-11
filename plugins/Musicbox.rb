@@ -18,19 +18,7 @@ dorks [
 'inurl:genre_artists.php'
 ]
 
-# Examples #
-examples %w|
-www.musicboxv2.com/liteversion/index.php
-www.musicboxv2.com/videobox/index.php
-www.musicboxv2.com/demo/index.php
-banglasong.evergreenbangla.com/genre_artists.php
-www.pakistani.pk/songs/
-tanmayeemusic.com/music/genre_artists.php
-muxmp3.com/songs/genre_artists.php
-tamilmaalai.com/genre_artists.php
-nhipcauamnhac.org/genre_artists.php
-www.kooru.com/album/genre_artists.php
-|
+
 
 # Matches #
 matches [

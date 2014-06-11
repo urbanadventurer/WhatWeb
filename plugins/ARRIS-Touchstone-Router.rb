@@ -23,27 +23,7 @@ dorks [
 '"HW/FW Versions" "CM Hardware Information" inurl:vers.htm'
 ]
 
-# Examples #
-examples %w|
-76.137.147.106
-207.253.164.118
-www.derrickhackman.com
-www.conceptzowie.com
-host-24-100-45-135.newwavecomm.net
-anketa.ris.org
-midmichigansprayfoam.com
-24.198.158.173
-96.223.142.140
-76.136.63.249
-174.182.108.63
-208.100.178.55
-98.51.71.86
-74.16.31.241
-98.52.105.138
-96.217.52.114
-96.223.172.237
-96.196.72.16
-|
+
 
 # Matches #
 matches [

@@ -17,48 +17,7 @@ dorks [
 '"Home" "Purge caches" intitle:phpLDAPadmin'
 ]
 
-# Examples #
-examples %w|
-wurley.demo.phpldapadmin.org/php5-1.2/
-ldapadmin.limoilux.org
-www4.ensiie.fr
-courier.ngi.de
-stonge-family.com
-phpadmin.cnr.it
-ldap.culture.u-bordeaux1.fr
-w3.hjdt.de/htdocs/index.php
-www.albaco.com.pe/ldapadmin/htdocs/index.php
-mohawk.santhe.nl/phpldapadmin/
-nickatkins.net/ldap/
-grid.ct.infn.it/phpldapadmin/htdocs/
-www.physics.ua.ac.be/~casteels/phpldapadmin/htdocs/tree.php
-supernet.ao/htdocs/tree.php
-www.zmbh.uni-heidelberg.de/phpldapadmin/htdocs/tree.php
-mx3.ncf.ca/ldapadmin/
-lesnouveauxdisparus.org/phpldapadmin/tree.php
-https://nexus.qualitis.hu/phpldapadmin/
-https://ldap.dvo.ru/
-https://www.ucimc.org/
-https://ssl.pierrefitte93.fr/ldapadmin/
-https://www.asso.ups-tlse.fr/phpldapadmin/htdocs/tree.php
-https://www.spartacusse.org/phpldapadmin/
-https://www.sub.unibe.ch/phpldapadmin/htdocs/tree.php
-https://intranet.datef.it/phpldapadmin/htdocs/
-https://webmail.math.cnrs.fr/admin/index.php
-https://wineme.fb5.uni-siegen.de/benutzerverwaltung/
-https://ldap.nux.cz/cmd.php
-https://hosts.sic.rm.cnr.it/ldapadmin/htdocs/
-https://ewr-openldap-n1.mediamath.com/phpldapadmin/
-https://ldap.gippnet.de/index.php
-scs.earlham.edu/phpldapadmin/tree.php
-in1.ee.ncu.edu.tw/phpldapadmin/htdocs/cmd.php
-is3.grid.iu.edu/phpldapadmin/htdocs/cmd.php
-https://www.math.osu.edu/ldap/
-https://swise.fau.edu/ldapadmin_tst4/tree.php
-https://teco141pc.teco.edu/phpldapadmin/index.php
-www.tribctas.gba.gov.ar/sistemas/pla/
-https://id.asti.dost.gov.ph/phpldapadmin/
-|
+
 
 # Matches #
 matches [

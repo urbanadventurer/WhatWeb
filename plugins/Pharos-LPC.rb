@@ -18,12 +18,7 @@ description "Pharos LPC web interface - All-in-one control solution for entertai
 # ShodanHQ results as at 2011-07-14 #
 # 5 for pharos_lpc
 
-# Examples #
-examples %w|
-68.190.215.8
-217.68.38.56
-212.247.241.5
-|
+
 
 # Passive #
 def passive

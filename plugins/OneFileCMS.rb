@@ -17,11 +17,7 @@ dorks [
 '"This site powered by OneFileCMS"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/onefile/
-fronten.fr.ohost.de
-|
+
 
 # Matches #
 matches [

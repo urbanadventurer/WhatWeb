@@ -12,18 +12,7 @@ description "Wildcat! Interactive Net Server - includes and combines SSL (Secure
 # ShodanHQ results as at 2011-09-04 #
 # 165 for wildcat
 
-# Examples #
-examples %w|
-www.santronics.com
-204.181.6.171
-193.200.223.18
-203.34.72.84
-68.17.97.76
-67.47.21.142
-82.32.136.200
-121.215.234.219
-132.236.191.26
-|
+
 
 # Matches #
 matches [

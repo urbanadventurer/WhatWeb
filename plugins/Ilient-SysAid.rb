@@ -21,29 +21,7 @@ dorks [
 'intitle:"SysAid Help Desk Software" "User Name" "Password"'
 ]
 
-# Examples #
-examples %w|
-siren.calhouncotx.org:8080
-helpdesk.sintec.com.mx
-www.systemsmadesimple.com/support/
-www.communityhealthcorps.org/helpdesk/
-142.25.186.160:8080
-help.wvca.us
-servicedesk.health.wyo.gov
-suporteguia.sysaidcss.com/EndUserPortal.jsp
-sunplushelp.adventist.org
-workorder.concord.edu
-201.192.154.235:8080/sysaid/
-hd.technion.ac.il:8080/sysaid/
-factorintegracion.com.mx/sysaid/
-www.argilityassist.com
-support.attaintechnology.com:8080
-www.ptssupport.net:9500
-support.ustcs.net
-support.malonead.com/Login.jsp
-golions.sysaidit.com/Login.jsp
-https://syssup.synel.co.il:8888/
-|
+
 
 # Matches #
 matches [

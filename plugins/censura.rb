@@ -19,29 +19,7 @@ dorks [
 '"Powered by: Censura"'
 ]
 
-# Examples #
-examples %w|
-www.censurademo.com
-www.astronomyforbeginners.com/reviews/
-www.dwuog.com/reviews/
-omahasrestaurants.com
-www.n0hr.com/HamRadioReviews/
-usa-hotelguide.com
-americacoasters.com/database/
-www.coindealerratings.com/reviews/
-chestsurgeryproject.org
-ratearealtor.org
-www.ratemycaseworker.net
-ghostreviews.com
-www.beauty-mania.rs/censura/
-ees24.de
-holidayscore.com
-sinekitap.com
-soutak.com/user/
-nappyreviews.com
-www.archerytalkreviews.com/reviews/
-www.bikesuperhub.com/reviews/
-|
+
 
 # Matches #
 matches [

@@ -19,29 +19,7 @@ description "ADTRAN device - Total Access and NetVanta Network Management - Incl
 #  2,328 for Total Access http -sip -Gen
 #     86 for netvanta http -sip
 
-# Examples #
-examples %w|
-68.68.225.14
-216.14.189.254
-209.152.97.209
-208.88.61.65
-208.88.57.186
-65.89.126.170
-66.0.131.49
-209.152.73.121
-64.140.197.174
-173.241.26.38
-63.118.209.113
-65.183.166.57
-216.231.116.65
-63.250.78.102
-66.181.3.234
-205.232.142.10
-216.106.116.186
-64.89.192.189
-76.76.52.42
-199.227.187.57
-|
+
 
 # Passive #
 def passive

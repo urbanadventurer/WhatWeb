@@ -18,19 +18,7 @@ dorks [
 'intitle:"PnPSCADA Login" "Note: This site uses Cookies, JavaScript and Popups"'
 ]
 
-# Examples #
-examples %w|
-41.190.111.19
-196.213.181.69
-41.241.194.9
-196.33.57.60
-sdg.pnpscada.com
-w.pnpscada.com
-impactenergy.pnpscada.com
-enos-l.pnpscada.com
-https://blueskys.pnpscada.com
-https://ww.pnpscada.com
-|
+
 
 # Matches #
 matches [

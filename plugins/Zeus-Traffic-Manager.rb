@@ -12,18 +12,7 @@ description "Zeus Traffic Manager - Application Delivery Controller - allows you
 # ShodanHQ results as at 2011-03-17 #
 # 8,788 for set-cookie X-Mapping
 
-# Examples #
-examples %w|
-209.163.246.98
-88.208.249.35
-98.129.200.228
-174.143.69.60
-98.129.229.146
-209.163.249.106
-174.143.191.19
-98.129.246.7
-64.39.22.96
-|
+
 
 # Passive #
 def passive

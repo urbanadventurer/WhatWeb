@@ -17,14 +17,7 @@ dorks [
 '"powered by hot banana"'
 ]
 
-# Examples #
-examples %w|
-www.visitgrey.ca
-www.medivalu.com
-www.sterlingaccount.com
-www.mcat-gta.ca/members/
-seegrey.com
-|
+
 
 # Matches #
 matches [

@@ -12,17 +12,7 @@ description "EMS-ENTRY-COM is database software that gathers data from Beckmann 
 # ShodanHQ results as at 2011-03-14 #
 # 65 for Beckmann-GmbH
 
-# Examples #
-examples %w|
-193.213.42.43
-193.213.21.152
-193.213.31.77
-193.213.21.179
-85.196.126.122
-193.212.77.222
-62.92.92.2
-85.196.68.174
-|
+
 
 # Passive #
 def passive

@@ -12,11 +12,7 @@ description "jetNEXUS provide leading edge load balancing and traffic management
 # ShodanHQ results as at 2011-05-23 #
 # 4 for jetNEXUS: Streaming Compression On
 
-# Examples #
-examples %w|
-91.199.56.32
-195.244.202.223
-|
+
 
 # Passive #
 def passive

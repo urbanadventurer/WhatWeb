@@ -20,45 +20,7 @@ dorks [
 'intitle:"WHMCS Complete Billing & Support System - Login" "Remember me until I logout"'
 ]
 
-# Examples #
-examples %w|
-demo.whmcs.com
-demo.whmcs.com/admin/
-demo.whmcs.com/mobile/
-central.fix.com.br/mobile/
-guru-host.eu/client/mobile/
-www.savont.com.au/whmcs/mobile/
-pcontrol.ibericahost.com/mobile/
-www.hostifex.com/clientes/mobile/
-www.clients.techgoofhosting.info/whmcs/cart.php
-www.webtechnos.net/billing/cart.php
-https://www.domainname.com/cart.php
-https://secure.cpcustomer.com/cart.php
-www.erbwebsolutions.com/clients/cart.php
-https://x9hosting.com/portal/cart.php
-clients.freecpanelhost.co/cart.php
-clients.profitsender.com/cart.php
-www.webbyctrl.net/billing/cart.php
-https://www.t-rex.net.in/secure/cart.php
-clients.budgethost.ca/cart.php
-https://billing.theweb-factory.com/cart.php
-billing.boxslots.com/cart.php
-https://billing.corong.com/cart.php
-https://billing.hostmonsterz.info/cart.php
-https://billing.4java.ca/cart.php
-https://secure.instavps.com/billing/cart.php
-https://clients.rocksolidsystems.com/cart.php
-lvpshosting.com/whmcs/cart.php
-www.superspecialservers.com/cart.php
-www.mycpanel.co.uk/panel/cart.php
-https://www.adda-host.com/desk/cart.php
-www.carmelbaird.com/whmcs/cart.php
-https://billing.gigatux.com/cart.php
-https://www.beastserv.com/cart.php
-billing.xenserv.com/cart.php
-billing.tnnhost.com/admin/login.php
-billing.softcloud.co.uk/admin/
-|
+
 
 # Matches #
 matches [

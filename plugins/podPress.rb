@@ -17,24 +17,7 @@ dorks [
 '"Podcast powered by podPress"'
 ]
 
-# Examples #
-examples %w|
-www.mightyseek.com
-clarkesworldmagazine.com
-thewordnerds.org
-podhammer.net
-mediadriving.com
-www.cyberneticpunks.com
-noisetosignal.com.au/franklyspeaking/
-www.radres.org/podcast/
-www.audiocourses.com/podcasts/
-www.baxtisweekly.com
-37hz.net
-www.twificpimps.com
-www.ispeakhindi.com
-worldsendradio.com
-www.beyondwebanalytics.com
-|
+
 
 # Matches #
 matches [

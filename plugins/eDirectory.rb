@@ -17,32 +17,7 @@ dorks [
 '"Powered by eDirectory" "type a keyword" "listings" "events"'
 ]
 
-# Examples #
-examples %w|
-www.demodirectory.com
-demodirectory-test.arcasolutions.com/edirectory/
-www.totallyjewishdirectory.com
-www.searchbusinesses.com.au
-www.nuffratings.com
-www.graphicartsonline.mobi/listing
-www.localhg.com
-www.directoryspecs.com
-www.dinenw.com
-www.gunsource.com
-www.internationaldirectorygroup.com
-consultants.afpnet.org
-www.personalbestdirectory.com
-greenbuildingscene.com
-consignmentshopdirectory.com
-lovingmagazinedirectory.net
-ikdb.org
-www.kingdomlink.net
-metrohouseandhome.com
-dineni.com
-directory.yourlocalusa.com
-www.libizcard.com
-www.thecityofverobeach.com
-|
+
 
 # Matches #
 matches [

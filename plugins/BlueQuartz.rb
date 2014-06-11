@@ -19,31 +19,7 @@ dorks [
 '(intitle:Login BlueOnyx|intitle:Login BlueQuartz)'
 ]
 
-# Examples #
-examples %w|
-94.76.198.16
-cube.acc-international.co.uk
-www.providence-nbtx.com/login/
-mail.mincommerce.gov.dz/login/
-www.customs.gov.ag/login/
-www.abec.gov.ag:444/redirector.php
-www.zrp-tr.gov.al/login/
-www.bashkialibrazhd.gov.al/login/
-www.iqt.gov.al/login/
-www.bashkiafushekruje.gov.al:444/login.php
-mail.mincommerce.gov.dz/personal/
-www.fre3.edu
-www.alc.edu.lb
-santarita.edu.uy
-ifmsa.umb.edu.pl
-surveys.pgcc.edu
-eca.ccsc.edu.hk
-aisad.edu.mx
-php.bc.sinica.edu.tw
-www.ice.edu.py
-mail.kentinstitute.edu.uy
-mail.unicit.edu.ni
-|
+
 
 # Matches #
 matches [

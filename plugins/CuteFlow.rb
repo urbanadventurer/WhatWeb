@@ -20,30 +20,7 @@ dorks [
 'intitle:"CuteFlow" "CuteFlow - Document circulation system" "Login" "Username" "Password" "Language"'
 ]
 
-# Examples #
-examples %w|
-79.120.177.122
-115.113.122.45
-amakha.org
-approvebox.com
-intranet.radialsa.com.br/cuteflow/
-www.antioch-mbc.org/cuteflow/
-www.gecamphenol.com:800/cuteflow/
-www.redemptionrescueministries.org/workflow/
-cuteflow.hwci.org.au
-amrtur.net/tracker/
-awardinput.psi.org
-www6.hinesna.no/cuteflow/
-salonculinaire.com/certifiedchef.com/certflow/
-flow.allori.com.au
-www.hiroshima-shinbouai.ed.jp/gakuen/cuteflowjp/
-www.cfinfoconta.com/DEMOS/cuteflow/
-www.testshop.php5.cz/rv/
-64.131.69.65/CuteFlow/
-modacolegial.com/cuteflow_v.2.11.2/
-go4process.com/jcg/
-www.emmanuelarreguez.com.ar/cuteflow/
-|
+
 
 # Matches #
 matches [

@@ -14,10 +14,7 @@ dorks [
 'inurl:"monitor/index.php/default/show_login"'
 ]
 
-# Examples #
-examples %w|
-https://demo.op5.com/monitor/index.php/default/show_login
-|
+
 
 # Matches #
 matches [

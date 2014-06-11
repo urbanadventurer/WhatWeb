@@ -17,19 +17,7 @@ dorks [
 '"Login" "Password" "Your IP" intitle:"Pandora FMS - the Flexible Monitoring System"'
 ]
 
-# Examples #
-examples %w|
-farscape.artica.es/pandora/
-farscape.artica.es/pandora_console/
-www.navspub.com/pandora_console
-monitoring.thecellcity.com
-https://monitor.redimi.no
-pandora.sleek.ro
-ftpserver.ecuavisa.com/pandora_console/index.php
-www.ediviewer.nl
-fallback.crossplatform.nl
-monit.gct.inf.br
-|
+
 
 # Matches #
 matches [

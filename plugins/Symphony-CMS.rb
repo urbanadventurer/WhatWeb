@@ -23,23 +23,7 @@ dorks [
 '"powered by Symphony"'
 ]
 
-# Examples #
-examples %w|
-symphony-cms.com
-www.iivs.org
-tech.carsonsasser.com
-keatonbrandt.grotonma.net
-www.portfolioni.info
-aramdavid.com
-carsonsasser.com
-sonocs.com
-teoballve.com
-www.abacentre.ca
-www.group-gs.com
-www.juliatabor.com
-www.truthmove.org
-www.truthmove.org/symphony/
-|
+
 
 # Matches #
 matches [

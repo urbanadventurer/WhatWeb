@@ -21,22 +21,7 @@ dorks [
 'intitle:"Wowza Media Server 3 Monthly Edition"'
 ]
 
-# Examples #
-examples %w|
-68.68.29.37
-68.68.29.19
-68.68.29.17
-68.68.29.25
-178.21.120.198
-201.7.180.143
-68.68.29.20
-m.live-fstreams.rambla.be
-82.80.218.164:8086
-178.86.20.88:1935/dawn/dawn_sub/Manifest.f4m
-timaotv.uol.com.br
-awv.m.live-fstreams.cdn01.rambla.be
-wow.eleden.com:1935/cristov/cristov.stream
-|
+
 
 # Matches #
 matches [

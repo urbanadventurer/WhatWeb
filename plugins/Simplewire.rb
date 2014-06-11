@@ -15,12 +15,7 @@ description "Simplewire - Wireless Messaging Network - Simplewire is a premium b
 # ShodanHQ results as at 2011-05-31 #
 # 5 for Simplewire
 
-# Examples #
-examples %w|
-98.129.101.58
-92.52.87.194
-89.234.5.52
-|
+
 
 # Passive #
 def passive

@@ -23,14 +23,7 @@ dorks [
 'inurl:/prweb/PRServlet/'
 ]
 
-# Examples #
-examples %w|
-http://193.46.72.243/
-http://213.219.10.243/
-http://205.223.230.13:8080/prweb/PRServlet/
-https://usg-301.pegacloud.com:9443/prweb/PRServlet/
-https://affinity.ebiz.qbe.com.au/prweb/FIOnline/
-|
+
 
 # Matches #
 matches [

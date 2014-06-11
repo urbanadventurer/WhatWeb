@@ -17,20 +17,7 @@ dorks [
 'intitle:"OCS Inventory" "Ver" inurl:"index.php?av="'
 ]
 
-# Examples #
-examples %w|
-demo.ocsinventory-ng.org
-cati.eci.ufmg.br/ocs/index.php
-arbooz.net/ocs/index.php
-www.decorceramica.com/ocsreports/index.php
-all.marlix.com/OCSNG/ocsreports/index.php
-ocs.emu.ee/index.php
-ocs.brok-matic.com/index.php
-https://secure.ucc.asn.au/ocsreports/index.php
-https://www.anwi.ch/ocs/index.php
-https://www.duchenoy.com/ocs/index.php
-https://nrm.tranbert.com/ocs/index.php
-|
+
 
 # Matches #
 matches [

@@ -18,18 +18,7 @@ dorks [
 'intitle:"SonicWALL GMS Login" "User" "Password"'
 ]
 
-# Examples #
-examples %w|
-https://gms.demo.sonicwall.com/
-https://sgms.i-witness.biz/
-https://gms.computer-business.com/
-https://gms.aosinc.com/
-https://sgms.tyc.edu.tw/
-https://sgms.embratel.net.br/
-174.78.191.219
-sgms.cuttingedgenet.com
-gms.bigiron.co.nz
-|
+
 
 # Matches #
 matches [

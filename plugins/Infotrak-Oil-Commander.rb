@@ -17,29 +17,7 @@ dorks [
 'intitle:"Login - Powered By: Infotrak\'s Oil Commander"'
 ]
 
-# Examples #
-examples %w|
-equipcom.cavpower.com/Equipcom/
-https://secure.hastdeer.com.au/hdsosweb/Login.aspx
-equipmanager.westrac.com.au/equipcom/
-sos.zahid.com
-https://oilcom.equipcom.finning.ca/
-www.fuchslubricants.com.au/infologin.asp
-203.47.145.83/EquipCom/Login.aspx
-https://oil.cashmanequipment.com/equipcom/login.aspx
-www.zfoillab.com/EquipCom/
-lubewatch.co.nz/
-mantrac-sos.com/EquipCom/
-www.agipsampling.co.nz/
-mcmnfluidsampling.com/EquipCom/
-results.oillab.co.nz/
-infotrak.ransome.com/Equipcom/
-ilsoillab.co.nz/
-totaloillab.co.nz/
-equipcom.procmservices.com/equipcom/
-fa.hopennmachinery.com/equipcom/
-castrollabcheck.co.nz/
-|
+
 
 # Matches #
 matches [

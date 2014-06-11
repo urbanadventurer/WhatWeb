@@ -17,29 +17,7 @@ dorks [
 '"Powered by phpATM" inurl:"viewer_bottom.php"'
 ]
 
-# Examples #
-examples %w|
-demo.phpatm.org
-demo2.phpatm.org
-www.zer0-m.org/phpatm/
-recksistem.com
-www.cerix.it/upload/
-casimir1904.com/site/
-download.laudenewtoncollege.com
-www.foxdepo.com
-spidersat.in
-www.smkn2cirebon.net/download/
-psi-plus.com/files/
-carlosgomes.110mb.com/up/
-eris.pwnspeak.com/
-uploadalmacen.freei.me/
-equi.se/lab1/
-www.db.cams-and-more.li/
-ulc.satangels.net
-www.wlansupport.no
-www.chip-tuner.hu/original_ecu_files/
-www.portfolio.is
-|
+
 
 # Matches #
 matches [

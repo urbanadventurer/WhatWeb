@@ -14,22 +14,7 @@ dorks [
 'intitle:phpPgAdmin "Welcome to phpPgAdmin"'
 ]
 
-# Examples #
-examples %w|
-phppgadmin.kattare.com/phppgadmin4/
-216.157.146.2/phpPgAdmin/index.php
-www-ldi.univ-paris13.fr/phppgadmin/
-tiarajosodirdjo-assc.com/webapps/phppgadmin/
-www.gnova.com/phppgadmin/
-intermedia73.com/webapps/phppgadmin/
-www.serverart.com/client_area/pgsql/
-www.netflux.org/phppgadmin2/
-cancellar.info/phppgadmin/
-ssl.telvinet.pl/phppgadmin/
-happy5214.no-ip.org/phppgadmin/intro.php
-www.klinikzentrum.com/phppgadmin/
-www.mideiros.net/phpPgAdmin/
-|
+
 
 matches [
 

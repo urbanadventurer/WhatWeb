@@ -10,19 +10,7 @@ version "0.1"
 description "OurDisclaimer.com - Third party disclaimer service. - homepage: http://ourdisclaimer.com/"
 
 # 59 results for inurl:"ourdisclaimer.com/?i=" @ 2010-10-14
-examples %w|
-AshMax123.com
-astarabeauty.co.za
-CHEMICALPLANTSAFETY.NET
-electronicmusic.com
-elfulminador.com/disclaimer.html
-kjkglobalindustries.com
-letterofcredit.biz
-metricationmatters.com
-STROMBOLI.ORG
-WIIWORLD.co.uk
-www.CloudTweaks.com
-|
+
 
 matches [
 

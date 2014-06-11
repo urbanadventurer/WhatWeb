@@ -24,17 +24,7 @@ description "Nera SatLink router [Norwegian] - The Nera SatLink family of DVB-RC
 # ShodanHQ results as at 2011-08-14 #
 # 1,046 for SatLink Terminal
 
-# Examples #
-examples %w|
-72.15.239.185
-213.52.46.121
-124.81.18.25
-217.149.146.29
-124.81.3.57
-72.15.239.129
-74.84.214.11
-213.52.47.81
-|
+
 
 # Matches #
 matches [

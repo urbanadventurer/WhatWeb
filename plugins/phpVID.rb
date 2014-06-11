@@ -10,9 +10,7 @@ version "0.1"
 description "phpVID is a video sharing software or a video shating script and has all the features that are needed to run a successful video sharing website like youtube.com. - homepage: http://www.vastal.com/phpvid-the-video-sharing-software.html"
 
 # No results for "Powered By phpVID" @ 2010-09-04
-examples %w|
-www.phpvid.com
-|
+
 
 # Dorks #
 dorks [

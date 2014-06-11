@@ -13,16 +13,7 @@ description "Oracle Database - Homepage: http://www.oracle.com/technetwork/datab
 # ShodanHQ results as at 2011-11-22 #
 # 185 for Oracle XML DB/Oracle Database
 
-# Examples #
-examples %w|
-82.196.46.76
-195.88.249.66
-88.41.181.66
-178.237.185.221
-217.128.76.87
-80.254.178.172
-213.25.91.164
-|
+
 
 # Matches #
 matches [

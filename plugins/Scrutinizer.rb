@@ -17,11 +17,7 @@ dorks [
 'intitle:"Scrutinizer" "For the best Scrutinizer experience possible, please address the issues below"'
 ]
 
-# Examples #
-examples %w|
-https://netflow2.sas.co.uk/
-86.108.192.244
-|
+
 
 # Matches #
 matches [

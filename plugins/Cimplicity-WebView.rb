@@ -12,18 +12,7 @@ description "CIMPLICITY is a client/server based visualization and control solut
 # ShodanHQ results as at 2010-11-02 #
 # 58 for CIMPLICITY-HttpSvr
 
-# Examples #
-examples %w|
-24.148.112.118
-68.178.61.99
-83.13.87.230
-95.51.250.138
-79.188.201.155
-66.15.197.75
-84.199.78.194
-80.55.14.190
-220.227.249.238
-|
+
 
 matches [
 

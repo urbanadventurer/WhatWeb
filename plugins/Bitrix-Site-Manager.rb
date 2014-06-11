@@ -17,29 +17,7 @@ description "Website management, e-commerce and e-marketing solution that delive
 # 225 for B-Powered-By Bitrix SM
 # 4,064 for X-Powered-CMS
 
-# Examples #
-examples %w|
-www.1c-bitrix-ua.com
-80.250.160.250
-80.78.194.252
-64.191.50.24
-95.141.136.156
-188.133.185.194
-217.106.236.131
-194.85.89.116
-80.71.44.50
-212.193.230.240
-208.109.106.151
-80.84.112.36
-168.143.31.170
-77.221.152.58
-79.135.228.66
-87.242.99.80
-91.199.211.47
-95.142.83.101
-212.59.97.138
-78.110.54.10
-|
+
 
 # Matches #
 matches [

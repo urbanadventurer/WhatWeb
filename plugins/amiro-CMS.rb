@@ -15,27 +15,7 @@ dorks [
 ]
 
 # 235 results for "powered by Amiro.CMS" @ 2010-09-04
-examples %w|
-unlimited-usa.com
-manual.evolvesystems.ws
-horsnaroundstables.com
-truessence.net
-www.dancinonbroadway.com/shop-dob/
-www.cjscreativecottage.com
-www.teamworksauburn.com
-www.teamworksnorthboro.com
-www.franchisemasters.com
-www.shop4cha.com
-www.onekapetresort.com
-www.imperialwall.com
-www.mccartygroup.com
-www.micronmetalworks.com
-www.bredahlinc.com/service
-www.nomoldsrequired.com
-www.nelsonremodelingandconstruction.com
-www.evolve-systems.com
-asiaskygate.aero/en/
-|
+
 
 matches [
 

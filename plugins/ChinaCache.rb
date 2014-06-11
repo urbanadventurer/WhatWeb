@@ -15,17 +15,7 @@ description "ChinaCache is a leading content distribution network (CDN) service 
 # ShodanHQ results as at 2010-10-30 #
 # About 958 results for "Powered-By-ChinaCache"
 
-# Examples #
-examples %w|
-58.68.168.210
-221.192.148.123
-221.206.124.155
-218.29.42.138
-60.169.10.65
-110.93.136.252
-221.192.149.214
-121.14.235.222
-|
+
 
 # Passive #
 def passive

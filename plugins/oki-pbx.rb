@@ -13,7 +13,7 @@ Plugin.define "OkiPBX" do
 author "Andrew Horton"
 version "0.2"
 description "OKI PBX (phone exchange) http://www.oki.com/en/iptel/products/mxsx/maintenance.html"
-examples %w| 125.236.233.225 |
+
 #
 # OKI PBX
 # <APPLET CODE="DavisBar.class" ARCHIVE="ipstage.jar"

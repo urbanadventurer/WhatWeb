@@ -23,14 +23,7 @@ dorks [
 '"Online Help" "Order Supplies" intitle:"Laser Printer" intitle:dell'
 ]
 
-# Examples #
-examples %w|
-128.192.89.71
-128.125.132.215
-129.25.9.220
-biomech-va.media.mit.edu
-et000400757849.emporia.edu
-|
+
 
 # Matches #
 matches [

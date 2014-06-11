@@ -15,22 +15,7 @@ description "Synchronet Multinode BBS Software - Open source BBS that works on t
 # 23 for Synchronet BBS Linux
 #  1 for Synchronet BBS FreeBSD
 
-# Examples #
-examples %w|
-76.202.204.42
-87.79.30.27
-74.82.196.211
-67.131.51.105
-71.130.72.50
-86.24.74.157
-69.197.160.143
-208.115.243.69
-71.236.221.62
-173.12.195.97
-71.197.167.138
-66.25.237.142
-99.56.212.181
-|
+
 
 # Passive #
 def passive

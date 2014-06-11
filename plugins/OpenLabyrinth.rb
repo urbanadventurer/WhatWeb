@@ -17,13 +17,7 @@ dorks [
 'inurl:mstartnode.asp?mapid='
 ]
 
-# Examples #
-examples %w|
-pine.nosm.ca
-simeon.med.auth.gr/openlabyrinth/
-164.8.136.105/OpenLabyrinth/
-69.172.198.236/openlabyrinth/
-|
+
 
 # Matches #
 matches [

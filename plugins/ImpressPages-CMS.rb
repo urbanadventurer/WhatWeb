@@ -20,32 +20,7 @@ dorks [
 '"This is standard ImpressPages content management system website. Use it as an example to build your own website with your content and design." intitle:"ImpressPages welcome page"'
 ]
 
-# Examples #
-examples %w|
-impresspages.org
-theme.impresspages.org
-traditionalweddingday.com
-karli-der-sebnitzer.de
-smartmobile.lt
-www.tratterip.null-plan.de
-www.flowtech.su
-salmingcup.com/index/
-epark.lt
-www.kljb-aepfingen.de
-www.missioneufficio.eu
-www.druv.de
-www.uki.vu.lt
-www.h-net.dk
-www.ffw-volkertshausen.de
-eurellahorses.com
-hogstorp.se/admin.php
-mkessler.de/impresspages/admin.php
-weinkunst.at/admin.php
-www.h-r.cz/admin.php
-mig.uki.vu.lt/admin.php
-eline2.ionic.pl/admin.php
-www.mwsschueler.de/admin.php
-|
+
 
 # Matches #
 matches [

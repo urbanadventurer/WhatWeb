@@ -18,25 +18,7 @@ dorks [
 'intitle:"Web Configurator" "ACTi Corporation All Rights Reserved"'
 ]
 
-# Examples #
-examples %w|
-129.130.90.140
-205.200.88.223
-69.50.89.43:6004
-80.25.118.143
-65.82.253.105:8085
-46.252.52.194:86/cgi-bin/videoconfiguration.cgi
-88.35.234.202:2121/cgi-bin/videoconfiguration.cgi
-g80fw.dyndns.org:2003/cgi-bin/videoconfiguration.cgi
-193.193.81.34:3467
-cam3.kuakini.org
-www.dilido.com:8100
-web-cam-2.la.net.ua
-129.130.90.140
-www.stulik.cz:89
-www.stulik.cz:90
-www.stulik.cz:91
-|
+
 
 # Matches #
 matches [

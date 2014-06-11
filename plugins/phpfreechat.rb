@@ -19,26 +19,7 @@ dorks [
 '"powered by phpfreechat"'
 ]
 
-# Examples #
-examples %w|
-www.phpfreechat.net/demo/
-www.radioambientalfm.com/chat/
-www.tvacapulco.com/chat/phpfreechat/
-fr.lookotel.com/chat/phpfreechat-1.2/
-makina.webou.net/phpfreechat-1.2/
-www.fbinjapan.net/chat/
-www.anarchywars.com/livechat/
-www.nazarenoitatiba.org/chat/
-fbc.hearhiscall.com/chat/
-www.esam64.com/chat/
-helppayit.com/chat/
-dynamicenergies.com/phpfreechat/
-sultanboys.com/chat/
-midsouthweb.com/phpfreechat-1.0-beta9/
-www.eskandani.com/chat/
-www.kamiedownen.com/chat/
-realestate-saltlakecityutah.net
-|
+
 
 matches [
 

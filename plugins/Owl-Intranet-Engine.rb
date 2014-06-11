@@ -20,36 +20,7 @@ dorks [
 '"Owl Intranet Engine, Version Owl" "Username" "Password"'
 ]
 
-# Examples #
-examples %w|
-216.226.17.58
-200.251.41.147
-200.76.54.33
-87.106.187.164
-208.79.212.25
-212.9.179.171
-88.217.240.10
-122.166.13.166
-189.210.155.69
-owl.anytimecomm.com/demo-owl/demo-owl-ul
-www.caribrm.com/caribreports/
-doc.steelpencil.com
-www.societyofscholastics.org/library/
-www.nordgen.org/documents/
-web.eu-egi.eu/internal/document-server/
-www.gips.unisi.it/intune_intranet/index.php?login=1&currentdb=0
-ligne2-douai.com
-www.sdt-owl.com
-ingerop-tcsp.com
-www.rerc-wts.org
-dms.dhmtx.com
-dda9.com
-www.sirithorn.ch/Owl/index.php?login=1
-www.noehk.at/raum/index.php
-www.smartmedla.com/owl/
-https://www.neugrid.eu/owl-0.90/index.php?login=1
-https://semiramis.atosresearch.eu/owl1.0/index.php
-|
+
 
 # Matches #
 matches [

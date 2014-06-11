@@ -12,10 +12,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
 version "0.2"
 description "This plugin retrieves the city from the meta city tag. This tag is used by the Gigablast search engine."
 
-# Examples #
-examples %w|
-http://www.gigablast.com/tagsdemo.html
-|
+
 
 # Matches #
 matches [

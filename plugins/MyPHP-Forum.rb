@@ -20,18 +20,7 @@ dorks [
 '"powered by MyPHP Forum" -Vulnerability'
 ]
 
-# Examples #
-examples %w|
-dance.pl/old/pl/forum/topic.php
-life-log.dk/kemi2/menu/pages/forum3/faq.php
-mrphotoshop.altervista.org/blog2/topic.php
-neapolisleague.altervista.org/forum/faq.php
-www.m-150.com/forums/forum.php
-www.m-150.in/forums/forum.php
-www.shopforall.it/forum/index.php
-www.studentkm.net/forums/topic.php
-www.uck.at/forum/search.php
-|
+
 
 # Matches #
 matches [

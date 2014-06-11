@@ -11,27 +11,7 @@ description "Digital video recording system web fronend"
 
 # 125 Google results for intitle:"WEBDVR" -ext:php -ext:html -ext:asp @ 2010-07-20
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1352
-examples %w|
-66.147.166.131
-140.116.176.39
-www.watchtires.com
-ewhspectrum.com
-probaby.teleba.net
-www.bhcjamaica.com
-www.zestyelgin.com
-72.2.70.172:89
-173.60.188.36
-store671.pplstores.ca
-74.84.92.243
-aceservicecentre.co.uk:81
-stpg.no-ip.info:90
-61.85.235.39/webdvr15
-martodimedjo.150m.com
-bas1-toronto21-1279275390.dsl.bell.ca
-camarassanfrancisco.dyndns.org
-phoomdhecha.thaiddns.com
-gbs1.dnsdvr.com
-|
+
 
 matches [
 

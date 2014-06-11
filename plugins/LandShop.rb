@@ -17,17 +17,7 @@ dorks [
 '"Powered by LandShop" inurl:"action"'
 ]
 
-# Examples #
-examples %w|
-www.landshop.gr/landshop_demo/action/ls.php
-www.sandauimmo.de/tools/shop/action/ls.php
-www.regia-domus.com/action/ls.php
-www.home-for-sale.gr/action/ls.php
-www.mendocinoconnection.com/land/action/ls.php
-www.beachlifecr.com/landshop-0.9/action/ls.php
-www.nzvillage.com/realestate/action/ls.php
-www.newland-realestate.gr/data/action/ls.php
-|
+
 
 # Matches #
 matches [

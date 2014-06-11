@@ -12,10 +12,7 @@ description "Epic Web Honeypot"
 # Google results as at 2011-09-23 #
 # 1 for intitle:"Epic Web Honeypot - Extended edition"
 
-# Examples #
-examples %w|
-41.223.53.133
-|
+
 
 # Matches #
 matches [

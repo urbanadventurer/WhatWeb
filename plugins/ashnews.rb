@@ -14,13 +14,7 @@ description "ashnews is a simple program using PHP/MySQL that allows you to easi
 
 # 19 results for "News powered by ashNews" -allinurl -Vulnerabilities @ 2010-08-28
 
-# Examples #
-examples %w|
-www.onecrazyfan.com/reeze.php
-axoft.com.ar/wwwroot/
-www.duelunelive.net/ashnews.php
-www.turismoaventura.com
-|
+
 
 # Matches #
 matches [

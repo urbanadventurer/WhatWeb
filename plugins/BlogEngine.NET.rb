@@ -17,29 +17,7 @@ dorks [
 '"Powered by BlogEngine.NET"'
 ]
 
-# Examples #
-examples %w|
-www.dotnetblogengine.net
-nyveldt.com
-www.gildnersolutions.com
-www.learnmsnet.com
-mosesofegypt.net
-jcooney.net
-www.farina1.com/blog/
-xapware.com
-www.jwendl.net
-www.reddybrek.com
-madskristensen.net
-lovetocode.net
-rtur.net/blog/
-blog.arcanum247.net
-www.insidercoding.com
-blog.apiss.com
-www.jasonlay.net
-preview.onesoft.dk
-www.blogenginetheme.com
-www.gravitycube.net/blog/
-|
+
 
 # Matches #
 matches [

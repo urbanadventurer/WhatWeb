@@ -17,29 +17,7 @@ dorks [
 '"Powered by Videosmate Organizer Version" Login. Username: Password: Sign Up'
 ]
 
-# Examples #
-examples %w|
-www.videosmate.com/componentdemo/
-nickynicknytv.com/wp-content/wp_vm/category_finder.php
-www.megavdos.in
-maybachmusic.net/videos/
-www.teluguspoofs.com
-maybachmusic.net/videos/
-www.qawrascoutgroup.org/qawratube/
-www.digiflux.com/videosmate/
-www.shapeshift.tv
-findncr.com/entrtainment/video/
-videorecipes.info
-howdoitieatie.info
-subtitle-movies.com
-elvisongs.com
-discovermagicmushrooms.com
-coffee-video.com
-www.armnetwork.com
-tv.nsk.pl
-www.hmongchannel.com
-www.kookrecepten.tv
-|
+
 
 # Matches #
 matches [

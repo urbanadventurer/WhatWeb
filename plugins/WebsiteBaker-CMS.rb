@@ -17,18 +17,7 @@ dorks [
 '"powered by websitebaker"'
 ]
 
-# Examples #
-examples %w|
-www.mywebsitebaker.com
-demosite.glulife.com
-www.holidayparksmanagement.com
-www.missoulastrikers.com
-www.neurogenic.com
-www.digitalsoundlabs.de
-thuro-transformers.com
-brownsindustrial.com
-tewohgroup.com
-|
+
 
 # Matches #
 matches [

@@ -16,11 +16,7 @@ dorks [
 '"Powered by DORG"'
 ]
 
-# Examples #
-examples %w|
-http://demo.opensourcecms.com/dorg/
-http://demo.opensourcecms.com/dorg/admin_panel/
-|
+
 
 # Matches #
 matches [

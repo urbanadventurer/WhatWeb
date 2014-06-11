@@ -12,12 +12,7 @@ description "AQTRONIX WebKnight is an application firewall for IIS and other web
 # ShodanHQ results as at 2011-03-14 #
 # 276 for WebKnight
 
-# Examples #
-examples %w|
-192.197.105.149
-59.9.224.1
-210.219.173.210
-|
+
 
 # Passive #
 def passive

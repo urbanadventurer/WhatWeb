@@ -19,13 +19,7 @@ dorks [
 'intitle:"PHP Error" "Qcubed Version" "PHP Version"'
 ]
 
-# Examples #
-examples %w|
-padhaichannel.com/qcodo/indexqq.php
-balroux.com/qcubed/
-www.unesco.org/culture/languages-atlas/assets/_core/php/_devtools/start_page.php
-trolkca.com/assets/_core/php/_devtools/start_page.php
-|
+
 
 # Matches #
 matches [

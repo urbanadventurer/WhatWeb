@@ -14,17 +14,7 @@ dorks [
 '"Powered by ShopEX"'
 ]
 
-# Examples #
-examples %w|
-115.47.109.143
-www.dvd128.com
-www.galasurvey.com
-www.newwoman.com.tw
-www.eshop86.com
-www.cangtiange.net
-www.rosemary-product.com
-www.joinfly.net/shop/
-|
+
 
 # Matches #
 matches [

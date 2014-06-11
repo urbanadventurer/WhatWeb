@@ -24,22 +24,7 @@ dorks [
 'intitle:iDVR -intitle:"com | net | shop" -inurl:"asp | htm | pdf | html | php | shtml | com | at | cgi | tv"'
 ]
 
-# Examples #
-examples %w|
-68.15.38.73
-68.89.135.133
-71.40.164.156
-71.98.250.171
-72.45.156.138
-74.218.49.10
-75.17.27.107
-208.125.177.54
-208.125.189.126
-209.220.222.14
-213.79.40.116
-220.162.158.162/adv/
-www.avinfo.cn/adv/
-|
+
 
 # Matches #
 matches [

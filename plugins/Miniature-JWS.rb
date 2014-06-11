@@ -14,18 +14,7 @@ description "Tiny Java Web Server and Servlet Container (aka Miniature JWS) with
 # 505 for Acme.Serve JWS
 #   8 for Acme.Serve TJWS
 
-# Examples #
-examples %w|
-217.210.166.233
-83.92.159.41
-90.185.54.76
-81.235.253.55
-80.167.154.182
-83.92.148.228
-87.59.233.195
-63.205.89.188
-117.102.104.173
-|
+
 
 # Passive #
 def passive

@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
 version "0.1"
 description "This plugin extracts the HTML comments from the HTML source."
 
-# Examples #
-examples %w|
-www.morningstarsecurity.com
-itsecuritysolutions.org
-|
+
 
 # Matches #
 matches [

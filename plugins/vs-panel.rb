@@ -15,29 +15,7 @@ description "VS-Panel - homepage: http://www.vertigostudios.com"
 # Google results as at 2010-08-29 #
 # 56 for "powered by VS PANEL" -Vulnerability
 
-# Examples #
-examples %w|
-arapispro.gr
-dasyllas-markos.gr/index.php
-idcon.it
-www.arapis.gr
-www.buildohellas.gr
-www.enmikro.gr
-www.euromonotiki.com.gr
-www.evotec.gr
-www.hometest.gr/en/
-www.develiki.gr
-www.hometests.gr
-www.ioannisgeorgoulis.gr
-www.joyseek.eu/index.php
-www.matakidis.gr
-www.mythosfurniture.gr
-www.promocigar.gr/index.php
-www.simeonidistours.gr/tours/
-www.thinkclima.gr
-www.tzaki.com.gr/en/
-www.wireland.gr/index.php
-|
+
 
 # Matches #
 matches [

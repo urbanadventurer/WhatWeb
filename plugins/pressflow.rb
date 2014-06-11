@@ -16,39 +16,7 @@ dorks [
 '"powered by Pressflow" "an open source content management system"'
 ]
 
-# Examples #
-examples %w|
-patprzybilla.me
-gotdrupal.com/videos/
-newleafdigital.com
-www.orved.org
-agtoday.info
-api.lullabot.com
-deglos.com
-www.dogolympicgames.eu
-nnewton.org
-www.ronnbot.com
-davidseth.net
-www.outlandishjosh.com/blogs/
-frequencygrease.com
-openlearninglabs.org
-www.universalizer.com
-webkenny.com
-www.stealthip.com
-www.caktux.ca/blog/
-www.ecoforestry.ca
-www.ontogrator.com
-www.2tmsviluppo.com/pressflow/
-zoraweb.com
-joestewartjr.com
-www.613commandments.com
-drupalwebdesign.com.au
-www.mascellaro.it
-drupaldanmark.dk
-www.widescreenbabes.com
-www.fastdrupalthemes.com/install.php
-osuosl.org/install.php
-|
+
 
 matches [
 

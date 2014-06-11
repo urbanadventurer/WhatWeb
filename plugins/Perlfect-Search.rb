@@ -16,15 +16,7 @@ dorks [
 '"powered by Perlfect Search"'
 ]
 
-# Examples #
-examples %w|
-http://freeunix.dyndns.org:8088/cgi-bin/perlfect/search/search.pl
-http://www.stereoscopy.com/cgi-bin/perlfect/search/search.pl
-http://www.ahrp.org/cgi-bin/perlfect/search/search.pl
-http://www.upscale.utoronto.ca/cgi-bin/perlfect/search/search.pl
-http://www.pqa.net/search/search.pl
-http://www.vho.org/cgi-bin/perlfect/search/search.pl
-|
+
 
 # Matches #
 matches [

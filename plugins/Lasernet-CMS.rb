@@ -17,20 +17,7 @@ dorks [
 'intext:"Powered by Lasernet" -intext'
 ]
 
-# Examples #
-examples %w|
-cms.lasernet.gr
-inox-gennadios.gr
-paidotopos.com
-simseguros.pt
-www.panagiotidis-tools.gr
-rotskos.gr
-www.2dim-n-raidestos.gr
-dimconorth.gr
-thermaios.gr
-www.mikra-aeroclub.gr
-pfotoset.gr
-|
+
 
 # Matches #
 matches [

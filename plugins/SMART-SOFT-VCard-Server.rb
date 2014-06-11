@@ -14,18 +14,7 @@ description "SMART-SOFT VCard HTTP/SSL server - Homepage: http://www.smart-soft.
 # 36 for Directory%20browsing%20not%20allowed
 # All results are from the Russian Federation
 
-# Examples #
-examples %w|
-89.110.40.70
-212.3.153.128
-89.110.37.181
-83.174.227.132
-89.110.36.86
-83.174.236.221
-89.110.41.18
-212.3.156.175
-89.110.36.126
-|
+
 
 # Matches #
 matches [

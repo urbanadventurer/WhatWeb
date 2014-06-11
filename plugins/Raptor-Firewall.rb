@@ -12,19 +12,7 @@ description "Raptor Firewall (previously known as Raptor EagleNT) was acquired b
 # ShodanHQ results as at 2011-03-13 #
 # 55,684 for Simple, Secure Web Server
 
-# Examples #
-examples %w|
-167.251.107.85
-167.251.253.30
-167.251.158.124
-167.251.218.111
-167.251.21.41
-213.183.80.255
-167.251.9.88
-167.251.124.155
-167.251.207.116
-167.251.200.7
-|
+
 
 # Passive #
 def passive

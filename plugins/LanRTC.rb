@@ -12,14 +12,7 @@ description "LanRTC Device - Homepage: http://www.dorma-time-access.de/prod/cont
 # ShodanHQ results as at 2011-03-09 #
 # 5 for LanRTC
 
-# Examples #
-examples %w|
-194.25.143.11
-194.25.143.12
-194.25.143.13
-194.25.143.14
-164.15.87.28
-|
+
 
 # Matches #
 matches [

@@ -17,15 +17,7 @@ dorks [
 'intitle:"Simple Forum PHP script - Administration"'
 ]
 
-# Examples #
-examples %w|
-www.simpleforumphp.com/forum/admin.php
-www.simpleforumphp.com/forum/forum.php
-12letters.com/alpha/forum/admin.php
-12letters.com/alpha/forum/forum.php
-ghanaswatchdog.com/forum/admin.php
-https://www.laparoscopyhospital.com/forum/admin.php
-|
+
 
 # Matches #
 matches [

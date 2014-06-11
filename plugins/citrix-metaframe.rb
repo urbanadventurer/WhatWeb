@@ -12,7 +12,7 @@ Plugin.define "Citrix-Metaframe" do
 author "Andrew Horton"
 version "0.2"
 description "Citrix-Metaframe. Thin clients."
-examples %w|http://203.97.79.96|
+
 
 =begin
 <!--

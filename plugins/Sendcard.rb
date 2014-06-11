@@ -19,40 +19,7 @@ dorks [
 '"Powered by sendcard - an advanced PHP e-card program" -dork'
 ]
 
-# Examples #
-examples %w|
-www.sendcard.org/sendcard/
-www.havaneser-und-landseer.de/sendcard/
-www.mirakle.net/sendcard/
-www.liberalgreetings.com/sendcard/
-www.gardenorganic.org.uk/sendcard/index.php
-www.gerardkeegan.co.uk/sendcard/index.php
-www.postudios.com/sendcard/
-www.vcbio.science.ru.nl/virtuallessons/landscape/ooij/e-card/
-www.eulenatelier.at/sendcard/
-www.linneaartline.com/public/sendcard/
-www.mirakle.net/sendcard/
-inside.amnestyinternational.be/sendcard/
-ludoeduko.com/sendcard/
-www.dagmars-bilderwelt.de/sendcard/
-karppaus.info/postikonttori/
-www.lesbenforen.de/webseiten/sendcard/
-www.grusskarten.franzengels.ch/amrum.php
-www.gaypaintings.com/ecard/
-www.nothinbuttdogs.net/sendcard/Basset.php
-www.bandbclub.com/sendcard/
-www.ethioview.com/sendcard/
-www.waechters-home.de/php-bin/sendcard/
-www.norikooki.com/sendcard/
-www.korttihai.fi/e-kortti/
-www.mega.gr/sendcard/
-www.grusskarten.sillc.net
-www.pannet.pa/postal/mipueblito.php
-www.tamlinh.net/sendcard/poem.php
-www.psychiatriegespraech.de/grusskarten/
-www.plkcastar.edu.hk/sendcard/chinewyear.php
-www.saldelcloset.com/comunidad/postales/buendia001.php
-|
+
 
 # Matches #
 matches [

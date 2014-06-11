@@ -11,7 +11,7 @@ author "Caleb Anderson"
 version "0.1"
 description "Atom feed detection"
 
-examples %w| adrianlamologs.blogspot.com www.wired.com|
+
 
 matches [
 {:name=>"atom link type",

@@ -18,51 +18,7 @@ dorks [
 'inurl:"cacti/graph_view.php?action="'
 ]
 
-# Examples #
-examples %w|
-https://wiki.cse.buffalo.edu/cacti/
-https://cacti.bath.ac.uk/cacti/
-mrtg181.eastern-tele.com
-support.airspeed.ie
-www.env.msu.ac.th/cacti/
-traffic.012.net.il
-cacti.esn.ac.lk
-163.22.4.155/cacti/
-193.255.152.57/cacti/
-bellspace.net/cacti/
-cacti.bath.ac.uk/cacti/
-cacti.orion.on.ca/cacti/
-devar.dyndns.org/cacti/
-ersh.tog.ru/cacti/
-gargamel.merlins.org/cacti/
-gilks.ath.cx/cacti/
-https://ciist.ist.utl.pt/cacti/
-https://monitor.waia.asn.au/cacti/
-https://www.jaqpot.net/cacti/
-lyra.nexusuk.org/cacti/
-mae.nmsu.edu/cacti/
-monitor.net.tenet.ac.za/cacti/
-mon.ugm.ac.id/cacti/
-nagios.creativecommons.org/cacti/
-netmon.acad.bg/cacti/
-netmon.lru.ac.th/cacti/
-netmon.rmutsv.ac.th/cacti/
-perfsonar.cen.ct.gov/toolkit/gui/cacti/
-serveurperso.ath.cx/cacti/
-status.pulpfree.org/cacti/
-tibu.kiisu.eu/cacti/
-umopt1.grid.umich.edu/cacti/
-unix1.gps.caltech.edu/cacti/
-www.billiau.net/cacti/
-www.ir3ip.net/cacti/
-www.lab.bt.es/cacti/
-www.libcice.net/cacti/
-www.noc.cudi.edu.mx/cacti/
-www.querx.com/cacti/
-www.securedispatch.net/cacti/
-www.vpntunnel.net/cacti/
-www.x-graphs.com/cacti/
-|
+
 
 # Matches #
 matches [

@@ -17,17 +17,7 @@ dorks [
 '"powered by networx" "Privacy Policy Terms of Use About Us Contact Us"'
 ]
 
-# Examples #
-examples %w|
-www.socialabc.com/demo/
-iwebi.freeiz.com/password_recovery.php
-www.bizbrokernet.com/password_recovery.php
-worldbook.hostzi.com/privacy.php
-v071842.home.net.pl/network/
-ghanekarfamily.net/about.php
-www.h2ms.co.uk/terms.php
-word.nicbit.com/about.php
-|
+
 
 # Matches #
 matches [

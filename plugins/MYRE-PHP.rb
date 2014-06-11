@@ -17,17 +17,7 @@ dorks [
 '"My Last Viewed" "Get e-mail alerts" "MYREPHP"'
 ]
 
-# Examples #
-examples %w|
-drproperties.ca/myrephp/
-ownerfinanceahome.com
-myrephp.com/holiday/index.php
-myrephp.com/classified/index.php
-myrephp.com/demo2/
-casapart.co.uk
-www.ibusinessforsale.com.au
-ownerfinanceahome.com/pages/
-|
+
 
 # Matches #
 matches [

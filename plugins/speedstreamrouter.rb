@@ -26,19 +26,7 @@ dorks [
 'intitle:"SpeedStream Router Management Interface" inurl:title.htm'
 ]
 
-# Examples #
-examples %w|
-62.41.54.81
-195.7.129.176
-83.16.17.79
-83.16.117.131
-62.25.46.184
-194.123.127.224
-83.232.161.96
-194.120.31.81
-92.64.168.40
-83.16.171.235
-|
+
 
 # Matches #
 matches [

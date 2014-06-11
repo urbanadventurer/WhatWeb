@@ -17,36 +17,7 @@ dorks [
 '"Powered by eTicket" "Support Ticket System"'
 ]
 
-# Examples #
-examples %w|
-www.transitlink.com.sg/eservice/efeedback/view.php
-support.cepstral.com
-www.pandoraonline.net/support/newticket.php
-www.communityservicepartners.org/eTicket/
-www2.wowmx.net/tickets/eTicket/view.php
-www.sabaiko.com/esupport/readme.html
-helpdesk.vcon.bg
-www.aitcs.com.au/eticket/view.php
-www.bitnetpros.com/help/
-rt.6deploy.eu
-www.rdithelp.co.uk/view.php
-ticket.dvdworldusainfo.com
-rtp-web-01.lmit-rtp.com/BMDS_helpdesk/
-https://www.digistarsolutions.com/esupport/open.php
-support.geenet.co.za/index.php
-www.keystolearningsuccess.com/helpdesk/
-www.spectrum-edge.com/eticket/view.php
-support.maverickcoaching.com/helpdesk/open.php
-www.womenadvance.com/support/
-www.axiooworld.com/eticket/view.php
-www.networksystech.com/helpdesk/index.php
-it-helpdesk.ipb.ac.id
-support.digitalhousing.net
-help.mackcity.k12.mi.us
-ticket.ihno.de
-www.improductivitysecrets.com/support/
-www.elearningyuc.edu.sa/helpdesk/
-|
+
 
 # Matches #
 matches [

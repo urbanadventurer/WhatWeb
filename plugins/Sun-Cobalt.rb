@@ -14,25 +14,7 @@ description "The Cobalt Qube was a computer server appliance product line develo
 # 399 for intitle:"Login - Sun Cobalt RaQ 550"
 #  59 for intitle:"Login - Sun Cobalt Qube"
 
-# Examples #
-examples %w|
-www.in-memoriam-uk.com/login/
-mx1.tonitraduction.net:444/login
-www.franck-duval.com:444/login
-www.ciavieja.com:444/login
-www.antiquegarmentrestoration.com:444/login
-www.avenir-ttp.com:444/login
-www.afibk.com:444/login
-linkctp.com
-dev.thinkfirst.com.au:444/login
-www.drtaylor.com.au/login
-www.arlingtonhills.com:444/login
-rla.oakland.edu:444/login
-janis220254020164.janis.or.jp:444/login.php
-mail.np-npv.com:444/login.php
-web02.kcc.hawaii.edu
-web03.kcc.hawaii.edu
-|
+
 
 # Matches #
 matches [

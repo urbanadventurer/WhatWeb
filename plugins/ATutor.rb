@@ -17,11 +17,7 @@ dorks [
 'intitle:"ATutor: Learning Management System:"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/atutor/login.php
-dev.atutor.ca/atutor/demo.php
-|
+
 
 matches [
 

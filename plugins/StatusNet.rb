@@ -17,22 +17,7 @@ dorks [
 '"powered by StatusNet version" inurl:"/main/version" -filetype:html'
 ]
 
-# Examples #
-examples %w|
-www.twitrobo.com/index.php/main/version
-siam.tv
-indus.kkkon.jp:33080/statusnet/index.php/main/version
-microblog.squigglescripts.com
-demo.cowboyhacks.com/statusnet/
-yourestatus.com
-status.refatoring.com
-status.tfevens.com
-velotube.com/sn/
-jcvassort.open-web.fr/microblog/
-thegamemastershow.com/status/
-wgreenhouse.dyndns.org/statusnet/
-ceae.colorado.edu/myewb/
-|
+
 
 # Matches #
 matches [

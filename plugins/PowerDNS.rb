@@ -12,14 +12,7 @@ description "PowerDNS is a high performance, non-BIND nameserver written in c++ 
 # ShodanHQ results as at 2011-05-20 #
 # 12 for PowerDNS
 
-# Examples #
-examples %w|
-130.161.143.163
-210.57.208.4
-204.232.198.253
-200.98.246.51
-188.65.113.8
-|
+
 
 # Passive #
 def passive

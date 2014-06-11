@@ -12,12 +12,7 @@ description "GrandTec X-Guard PC-based surveillance system - Homepage: http://st
 # ShodanHQ results as at 2011-08-05 #
 # 25 for WalkGuard
 
-# Examples #
-examples %w|
-122.24.95.203
-24.241.21.163
-91.84.217.226
-|
+
 
 # Passive #
 def passive

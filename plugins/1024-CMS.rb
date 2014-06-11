@@ -10,16 +10,7 @@ version "0.1"
 description "1024 is one of a few CMS's leading the way with the implementation of the AJAX technology  into all its areas. This includes dynamic adminstration and user interaction. 1024 offers you to ability to set up your own community forums, download area, news posts, member management and more. - homepage: http://www.1024cms.org/"
 
 # 25 results "Powered By 1024 CMS" @ 2010-09-12
-examples %w|
-tbsrio.com
-bskenyon.com
-crispy1990.co.cc
-www.vvv.id-orion.ru
-www.tastefull.nl
-www.fbr-project.ru
-todx.net84.net
-xprt.net46.net
-|
+
 
 matches [
 

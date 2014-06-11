@@ -10,13 +10,7 @@ version "0.1"
 description "hompage: http://www.starltd.net/"
 
 # 5 results for "Powered by Star Network" @ 2010-08-08
-examples %w|
-www.articles-star.com
-www.xindex.net
-www.xdx.co.il
-www.online-games-place.com
-www.tech-phone.co.il
-|
+
 
 matches [
 { :regexp=>/Powered [b|B]+y <a href="http:\/\/www.[starltd.net|s4u.co.il]+[\/]*">Star Network[\ and\ Promotion\ LTD|\&amp\;\ Promotion\ LTD]*<\/a>/ },

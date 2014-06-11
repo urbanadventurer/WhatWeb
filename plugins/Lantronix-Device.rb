@@ -12,19 +12,7 @@ description "Lantronix provides device networking and remote access products for
 # ShodanHQ results as at 2011-06-02 #
 # 823 for Gordian Embedded
 
-# Examples #
-examples %w|
-152.2.76.84
-209.121.74.68
-212.159.96.226
-130.88.59.87
-212.59.56.4
-81.179.14.137
-141.211.224.101
-67.155.143.72
-74.189.227.45
-95.183.158.33
-|
+
 
 # Matches #
 matches [

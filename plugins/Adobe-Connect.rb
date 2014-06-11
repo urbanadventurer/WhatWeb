@@ -12,18 +12,7 @@ description "Adobe Connect is an enterprise web conferencing solution for online
 # ShodanHQ results as at 2011-03-13 #
 # 2,459 for BREEZESESSION
 
-# Examples #
-examples %w|
-https://connect.weforum.org
-https://smvc.selectmedicalcorp.com
-https://na1cps.adobeconnect.com
-https://connect.wezupport.se
-https://na1cps.adobeconnect.com
-https://connect.lsu.edu
-64.254.145.6
-38.105.120.185
-212.219.101.61
-|
+
 
 # Matches #
 matches [

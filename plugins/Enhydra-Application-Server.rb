@@ -16,18 +16,7 @@ description "Enhydra Application Server - Homepage: http://enhydra.org/"
 # 75 for Enhydra Application Server
 # 64 for Enhydra-MultiServer
 
-# Examples #
-examples %w|
-68.21.221.36
-12.106.115.245
-211.103.141.190
-72.2.4.12
-189.212.130.174
-173.13.215.148
-94.127.53.36
-89.234.65.65
-89.234.65.71
-|
+
 
 # Matches #
 matches [

@@ -17,16 +17,7 @@ dorks [
 'intitle:"Seo Panel: Login section"'
 ]
 
-# Examples #
-examples %w|
-demo.seopanel.in/login.php
-ozyseo.com.au/login.php
-www.seogold.org/login.php
-www.digitalworkhorse.com/seopanel/login.php
-www.bigsplashwebdesign.com/tools/seopanel/login.php
-seopanel.seofact.de/login.php
-seo-panel.ru/login.php
-|
+
 
 # Matches #
 matches [

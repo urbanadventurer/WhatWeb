@@ -22,41 +22,7 @@ dorks [
 '"OrangeHRM ver" "OrangeHRM Inc." "All rights reserved."'
 ]
 
-# Examples #
-examples %w|
-demo26.orangehrm.com/symfony/web/index.php/auth/login
-demo.orangehrmlive.com/symfony/web/index.php/auth/login
-demos1.softaculous.com/OrangeHRM/symfony/web/index.php/auth/login
-www.khfoges.com.sg/hrm/index.php
-110.77.143.163
-80.169.74.43
-ciat.org:8080
-baf.xoom.it
-200.40.68.134:210/orangehrm2/
-pdavmeh.freeiz.com/orangehrm/
-ec2-79-125-34-155.eu-west-1.compute.amazonaws.com/orange/index.php
-apps.agileconcept.co.uk/_orangehrm/
-www.hrm.b.gp
-www.baf.c.gp
-www.zahlelife.com/Programs/orangehrm/
-impactomx.com/rhs/
-81.98.185.138/orangehrm/
-apps.agileconcept.co.uk/_orangehrm/
-www.nganson.com.vn/installer/installerUI.php
-idealhost.org/hrm/
-www.gaychatnow.info/jobs/
-200.40.68.134:210/orangehrm2/
-apps.agileconcept.co.uk/_orangehrm/
-hrm.net84.net
-intranet.nfi.or.th/orangehrm/symfony/web/index.php/auth/login
-www.ehabich.com/recursos/symfony/web/index.php/auth/login
-hrm.twilightinfosoft.com/symfony/web/index.php/auth/login
-afour.co.za/orangehrm2/symfony/web/index.php/auth/login
-apps.spm.co.id:81/hrm/symfony/web/index.php/auth/login
-greatlakesassociates.com/symfony/web/index.php/auth/login
-kalcogroup.net/symfony/web/index.php/auth/login
-www.saas-consulting.com:81/orangehrm/symfony/web/index.php/auth/login
-|
+
 
 # Matches #
 matches [

@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
 version "0.1"
 description "This plugin retrieves the state from the meta state tag. This tag is used by the Gigablast search engine."
 
-# Examples #
-examples %w|
-http://www.gigablast.com/tagsdemo.html
-|
+
 
 # Matches #
 matches [

@@ -14,10 +14,7 @@ description "Linksys NAS web frontend - homepage: http://www.linksys.com/"
 
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1669
 # 2 results for intitle:"Ethernet Network Attached Storage Utility" @ 2010-07-15
-examples %w|
-krxo.serveftp.com
-prominence.info
-|
+
 
 matches [
 

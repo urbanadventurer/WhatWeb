@@ -21,34 +21,7 @@ dorks [
 # Google results as at 2010-6-04 #
 # 676,000 for inurl:awstats ext:pl +intitle:"Statistics for"
 
-# Examples #
-examples %w|
-alfven.princeton.edu/cgi-bin/awstats.pl
-www.2server.amazound.com.ar/awstats/cgi-bin/awstats.pl
-first-cis.com/awstats/cgi-bin/awstats.pl
-graciaaudio.com/awstats/cgi-bin/awstats.pl/awstats.pl
-http://pres4.thefungallink.com/awstats/cgi-bin/awstats.pl
-endless-referrals.com/awstats/cgi-bin/awstats.pl
-brementravelguide.com/awstats/cgi-bin/awstats.pl
-westernwarner.com/awstats/cgi-bin/awstats.pl
-sky-venture.org/awstats/cgi-bin/awstats.pl
-cleaningfx.ca/awstats/cgi-bin/awstats.pl
-173.83.42.254/awstats.old/cgi-bin/awstats.pl
-flaub.com.ar/awstats/cgi-bin/awstats.pl
-cupidoclub.net/awstats/cgi-bin/awstats.pl
-abujafaralmonsor.com/awstats/cgi-bin/awstats.pl/awstats.pl
-www.spiriteye.com/webstats/awstats.pl
-hbg.dhcook.net/awstats/cgi-bin/awstats.pl
-penninckx.com/awstats/cgi-bin/awstats.pl
-download.haibei.net/cgi-bin/awstat/awstats.pl
-bestbrospc.com/awstats/cgi-bin/awstats.pl
-ddr.treasurechestsolutions.com/awstats/cgi-bin/awstats.pl
-http://www.ligad-gifts.com/awstats/awstats.pl
-http://www.sportscardauction.com/cgi-bin/stats/awstats.pl
-http://www.bqto.unexpo.edu.ve/cgi-bin/awstats.pl
-http://aria.org/webstats/awstats.pl
-http://crowned.org/webstats/awstats.pl
-|
+
 
 # Matches #
 matches [
