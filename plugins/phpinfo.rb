@@ -29,45 +29,7 @@ dorks [
 'inurl:"phpinfo.php" intitle:"phpinfo()" "mysql.default_password"'
 ]
 
-# Examples #
-examples %w|
-www.jtlnet.com/phpinfo.php
-www.lufthavn.com
-www.nskor.com
-www.bali-bungalows.com/info.php
-www.no-debris.org
-topheadsets.com/jk.php
-www.ycbo.com/info.php
-www.netseoul.net
-thewholepie.com
-juliandavid.net/ejemplos/php/info.php
-lynneberg.com/mod-php/phpinfo.php
-www.superhosting.com.au
-www.cac.com.au/phpinfo.php
-www.chainwirefm.com.au/test/php/php_info.php
-linked.viper007bond.com/local_phpinfo.htm
-www.weblinks.com.au
-www.yourname.com.au
-php.ultraserver.co.uk
-www.london-pc-support.co.uk/test.php
-www.finnie.org/software/ncsa-httpd/phpinfo.php
-www.iddc.org.uk/info/dfid_policy.pdf
-www.host.sk/phpinfo.html
-hydromet.ru/docs/inf.php
-php.scripts.psu.edu/users/t/p/tpp5004/phpinfo.php
-icecreamcakes.com.au/scripts/phpinfo.php
-iskaldt.com/su-php/phpinfo.php
-www.marketingtactics.com/PHP_Tutorials/PHP_RequestInfo_Primer/Lessons/Lesson_00/phpinfo.php
-oicjapan.org/phpinfo.php
-norgesbakeriene.com/mod-php/phpinfo.php
-hosting.iptcom.net/phpinfo.php
-www.idcuk.co.uk/info.php
-members.iinet.net.au/~isabelle/public_html/public_html/phpinfo.php
-members.iinet.net.au/~isabelle/phpinfo.php
-www.hwaccess.net/phpinfo.php
-www.beloze.com/test/index.php
-www.o4e.com/public/phpinfo.php
-|
+
 
 # Passive #
 def passive

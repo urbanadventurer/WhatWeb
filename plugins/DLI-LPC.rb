@@ -22,21 +22,7 @@ description "Digital Loggers Inc remote switch with built-in web server for remo
 # ShodanHQ results as at 2011-07-15 #
 # 1,583 for DLILPC
 
-# Examples #
-examples %w|
-207.231.214.196
-204.249.202.150
-70.35.52.179
-168.105.206.150
-67.207.109.107
-76.8.226.52
-63.249.82.42
-96.46.14.202
-38.101.245.194
-70.35.52.179
-68.186.39.252
-204.249.202.150
-|
+
 
 # Matches #
 matches [

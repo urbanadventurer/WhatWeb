@@ -18,16 +18,7 @@ description "This plugin identifies Microsoft ODBC error codes."
 # Google results as at 2011-03-05 #
 # 100 for "ODBC Error Code = 37000 (Syntax error or access violation)" ext:cfm
 
-# Examples #
-examples %w|
-www.nutragold.co.nz/main.cfm?id=5843&sid=916&id2=964
-careers.terrywhitechemists.com.au/pharmacist.cfm?jobID=
-www.fishbase.us/country/CountrySpeciesSummary.cfm?id=
-www.generationproducts.com/index.cfm?fuseaction=displaysitecategory&category=
-www.athealth.com/ClintonClay.cfm?list=741
-www.nepalisite.com/fashion/ramp/ramp.cfm
-www.organicitta.org/materici/Materici.cfm?Cod=7
-|
+
 
 # Passive #
 def passive

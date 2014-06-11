@@ -17,16 +17,7 @@ dorks [
 '"Powered by Dolphin - Free Community Software"'
 ]
 
-# Examples #
-examples %w|
-demo.boonex.com
-www.agapejesus.com
-connectionsbyfaith.com
-ukcampingclub.com
-www.cad-cam.tv
-www.memaze.com
-girl2girlchat.com/g2gcv1/
-|
+
 
 # Matches #
 matches [

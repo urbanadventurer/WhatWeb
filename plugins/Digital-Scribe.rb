@@ -17,14 +17,7 @@ dorks [
 '"copyright" "Digital Scribe * All Rights Reserved"'
 ]
 
-# Examples #
-examples %w|
-www.digital-scribe.org/DigitalScribe/index.php
-constodad.com.ar/DigitalScribe/
-test2.server.tl/index.php
-www.english.bankah.in/viewhw1.php
-matbaaci.org/register.php
-|
+
 
 # Matches #
 matches [

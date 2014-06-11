@@ -20,10 +20,7 @@ dorks [
 'inurl:"/core/orionSplashScreen.do" "Log On to ePolicy Orchestrator" "User name" "Password" "Language"'
 ]
 
-# Examples #
-examples %w|
-https://epoprod01.gsu.edu:8443/core/orionSplashScreen.do
-|
+
 
 # Matches #
 matches [

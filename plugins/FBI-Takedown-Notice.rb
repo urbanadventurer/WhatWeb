@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-02-29
 version "0.1"
 description "This plugin detects instances of the joint Department of Justice, FBI and IPR Center take down notice. - Homepage: http://fbi.gov/"
 
-# Examples #
-examples %w|
-megaupload.com
-usdoj.s3-website-us-east-1.amazonaws.com
-|
+
 
 # Matches #
 matches [

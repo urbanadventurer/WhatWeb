@@ -17,20 +17,7 @@ dorks [
 '"Powered by cyn.in" "free open source edition"'
 ]
 
-# Examples #
-examples %w|
-168.143.184.45
-200.55.201.175
-78.86.196.122
-arabidopsis.usc.edu
-portal.ifrj.edu.br
-moneyworkslive.co.za
-dev.apterca.com
-community.eea.europa.eu
-kms.ndic.gov.mn
-ws.widevision.com.ua
-intranet.akbild.ac.at
-|
+
 
 # Matches #
 matches [

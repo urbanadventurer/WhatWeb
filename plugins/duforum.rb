@@ -14,26 +14,7 @@ dorks [
 '"powered by duforum" intitle:DUdforum'
 ]
 
-# Examples #
-examples %w|
-http://www.bentonone.org/forum/login.asp
-http://www.diegocampagna.com/sito/forum/login.asp
-http://www.giuseppezollo.com/forum/login.asp
-http://www.csconsulenza.it/forum/login.asp
-http://www.cpbmaroc.org/Forum/login.asp
-http://www.otokrab.hr/forum/login.asp
-http://www.agrifieratda.com/forum/login.asp
-http://www.interstart.it/forum/login.asp
-http://www.telefidenza.it/forum/login.asp
-http://gentedimareitaliana.com/forum/login.asp
-http://www.dirc.it/forum/login.asp
-http://www.bandamusicalebajardi.it/forum/login.asp
-http://www.unccorigliano.org/forum/login.asp
-http://www.g-c-o.com/rockroll/forum/login.asp
-http://www.coruslain.it/forum/login.asp
-http://www.crocebiancaimperia.org/forum/login.asp
-http://www.clinique-agdal.com/forum/login.asp
-|
+
 
 matches [
 

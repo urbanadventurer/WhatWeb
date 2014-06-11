@@ -11,13 +11,7 @@ description "VTS Server"
 
 # 123 ShodanHQ results for Server: VTS
 # 103 ShodanHQ results for Set-Cookie: VTS=
-examples %w|
-71.42.172.182
-99.167.253.150
-142.176.153.126
-166.139.45.60
-216.171.226.110
-|
+
 
 matches [
 

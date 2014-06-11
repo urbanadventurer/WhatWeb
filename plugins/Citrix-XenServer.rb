@@ -13,16 +13,7 @@ description "Citrix XenServer is a complete, managed server virtualization platf
 # intitle:"XenServer 5.6.100"
 # intitle:"XenServer" "Citrix Systems, Inc. XenServer" "XenCenter CD image" "XenCenter installer"
 
-# Examples #
-examples %w|
-74.115.3.130
-95.140.46.200
-alumni.sewanee.edu
-www.luola.net
-www.jacklab.net
-www.ice.eng.hokudai.ac.jp
-www.werbefahne24.de
-|
+
 
 # Matches #
 matches [

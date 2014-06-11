@@ -19,20 +19,7 @@ dorks [
 '"powered by uportal"'
 ]
 
-# Examples #
-examples %w|
-https://my.rice.edu/uPortal/
-https://my.nsac.ca/uPortal/
-https://my.uis.edu/uPortal/
-https://my.ucmerced.edu/uPortal/
-https://my.rutgers.edu/portal/
-https://my.ubc.ca/
-https://my.nau.edu/uPortal/
-https://my.uga.edu/uPortal/
-https://smgportal.bu.edu/uPortal/
-https://saffron.ringling.edu/uPortal/
-https://thefort.fortlewis.edu/uPortal/
-|
+
 
 matches [
 

@@ -12,11 +12,7 @@ description "The Real Estate Script is a fully scalable turn-key PHP MySQL Real 
 # Version 0.1 can fingerprint only the admin login page:
 # - This script is closed source and there are very few online examples.
 
-examples %w|
-www.therealestatescript.com/demo/admin/login.php
-www.mulliganslist.com/realestate/admin/login.php
-illinoiszones.com/admin/login.php
-|
+
 
 matches [
 { :text=>"<tr><td><h3>Administration Login<hr size=1/></h3><form action='login.php' method='post'><table border=0 cellpadding=2><tr><td>Username</td><td><input type='text' name='Username' required='yes' validate='text' message='Enter Admin Username.'></td></tr><tr><td>Password</td><td><input type='password' name='Password' required='yes' validate='text' message='Enter Admin Password.'></td></tr><td valign='top'>Image Verification</td>" },

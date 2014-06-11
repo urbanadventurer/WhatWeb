@@ -16,22 +16,7 @@ dorks [
 '"powered by iScripts CyberMatch" "A premium product from iScripts.com"'
 ]
 
-# Examples #
-examples %w|
-ebonyalt.com
-thecybermatch.com
-datingboomer.com
-matchwithin.com
-significantotherz.com
-forlatebloomers.com/date/
-keemera.com
-georgiauptownsingles.com
-www.7artsdating.co.uk
-www.happypartners.com
-www.loverslanedating.com
-www.gamerloveconnections.com
-www.singlesmeetsafe.com
-|
+
 
 matches [
 

@@ -12,14 +12,7 @@ description "ruTorrent is a front-end for the popular Bittorrent client rTorrent
 # ShodanHQ results as at 2011-05-13 #
 # 62 for ruTorrent
 
-# Examples #
-examples %w|
-46.182.126.100
-46.182.126.104
-46.182.126.109
-91.121.162.43
-205.185.124.237
-|
+
 
 # Passive #
 def passive

@@ -28,31 +28,7 @@ dorks [
 '"Powered by Liferay Portal"'
 ]
 
-# Examples #
-examples %w|
-91.98.133.134
-151.1.163.13
-195.76.55.107
-184.107.254.205
-164.177.150.124
-195.198.8.151
-81.169.131.61
-81.22.160.185
-213.9.109.100
-2.116.11.71
-www.liferay.com
-www.optionsnet.gr/c/portal/
-www.liferayportal.se
-www.intalio.com/company/
-www.monator.com
-www.mcnolia.com/web/
-webtown.hu
-sareweb.net
-portletfaces.org
-innova4j.com:8080/web/guest/
-vm-20.liferay.com/community/
-https://www.jivix.nl/
-|
+
 
 # Matches #
 matches [

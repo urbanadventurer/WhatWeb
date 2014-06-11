@@ -17,23 +17,7 @@ dorks [
 '"Powered by Prediction Football"'
 ]
 
-# Examples #
-examples %w|
-www.skortahmini.net/index.php
-www.gratisvoetbaltoto.nl/PredictionLeague/index.php
-liga.fcdb.ro/index.php
-www.em2004tipp.de/index.php
-www.predictionleague.nl/predictionleague/index.php
-hajralilak.hu/PredictionLeague/index.php
-www.cdmirandes.com/porra/index.php
-skortahmini.net/index.php
-alpc.gordonflood.com/index.php
-www.oudshoornbv.com/wk2010/
-www.offsideref.com/predictionleague/
-www.cpfc.org/league/view/index.php
-www.dtfc.prediction-leagues.co.uk
-www.lancashirecountyleague.com/PredictionLeague/index.php
-|
+
 
 # Matches #
 matches [

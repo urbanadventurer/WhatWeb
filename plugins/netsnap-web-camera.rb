@@ -17,16 +17,7 @@ dorks [
 'intitle:"Live NetSnap Cam-Server feed" -intitle'
 ]
 
-# Examples #
-examples %w|
-65.171.3.102:85/coolpush.htm
-24.118.32.173:86/coolpush.htm
-165.234.186.24:81/coolpush.htm
-www.mheer.com:8082/push100.htm
-members.fortunecity.com/keepinitreal1/cam2.htm
-foxhunter12.tripod.com/webcam/CoolPush.htm
-homepage.hispeed.ch/Bertcam/push100.htm
-|
+
 
 # Matches #
 matches [

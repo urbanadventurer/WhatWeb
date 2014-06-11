@@ -18,9 +18,7 @@ description "Fizmez Web Server - A webserver written entirely in Java. Useful fo
 # 1.3 # Fizmez/1.3    #
 #######################
 
-# Examples #
-examples %w|
-|
+
 
 # Matches #
 matches [

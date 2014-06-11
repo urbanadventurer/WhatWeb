@@ -17,16 +17,7 @@ dorks [
 'inurl:inc_portfoliomanager.asp'
 ]
 
-# Examples #
-examples %w|
-demo.dmxready.com/applications/PortfolioManager/inc_portfoliomanager.asp
-demo.dmxready.com/admin/PortfolioManager/components/AdminSecurityManager/login.asp
-www.truckbeds.com/applications/PortfolioManager/inc_portfoliomanager.asp
-www.basketgualdo.it/applications/portfoliomanager/inc_portfoliomanager.asp
-www.masterss.be/applications/portfoliomanager/inc_portfoliomanager.asp
-www.coastaldruginstitutionalpharmacy.com/applications/PortfolioManager/inc_portfoliomanager.asp
-209.227.222.81/applications/PortfolioManager/inc_portfoliomanager.asp
-|
+
 
 # Matches #
 matches [

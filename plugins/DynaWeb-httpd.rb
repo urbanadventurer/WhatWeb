@@ -15,11 +15,7 @@ description "DynaWeb web server. Ships with Sun Microsystem's AnswerBook - Homep
 # ShodanHQ results as at 2011-08-07 #
 # 5 for dwhttpd
 
-# Examples #
-examples %w|
-141.84.137.36
-65.88.89.75
-|
+
 
 # Passive #
 def passive

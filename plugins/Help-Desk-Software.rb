@@ -16,14 +16,7 @@ dorks [
 '"powered by freehelpdesk.org" intitle:"Help Request System"'
 ]
 
-# Examples #
-examples %w|
-tareas.bestpropertiesrealty.com
-www.techsavvydocs.com/HelpDesk/templates/admin/layout.htm
-demohelpdesk.org
-www.vetikke.no/helpdesk/
-msc.webcindario.com/soporte/index.php
-|
+
 
 # Matches #
 matches [

@@ -17,28 +17,7 @@ dorks [
 '"powered by kleeja"'
 ]
 
-# Examples #
-examples %w|
-alfuaim.com/up/
-alwsta.com/up/
-hazemsakeek.com/up/
-kurdit.comyr.com/up/
-migdad.net/upload/
-nassab.net/uup/
-nawdasht.comze.com
-samt.web44.net
-shkshk2.beeeba.com/download.php
-up.shbaby.net
-whyshare.net/ucp.php
-www.r3r3.com
-www.aansar.com/up/
-www.hamsjazan.com/up/
-www.islamup.com/download.php
-www.fares9.net/upload/
-www.cu-g.com/up/
-www.dr-jaber.com/up/
-www.lymedicine.com/upload/
-|
+
 
 matches [
 

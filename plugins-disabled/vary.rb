@@ -13,19 +13,7 @@ description "This plugin extracts the value for the vary HTTP header. This is ra
 # 237,111   for vary User-Agent
 # 1,710,678 for vary
 
-# Examples #
-examples %w|
-64.13.205.139
-66.201.116.247
-213.184.129.120
-186.216.132.109
-64.38.60.194
-212.34.133.145
-94.23.214.43
-209.157.71.203
-78.41.206.129
-195.88.202.151
-|
+
 
 # Passive #
 def passive

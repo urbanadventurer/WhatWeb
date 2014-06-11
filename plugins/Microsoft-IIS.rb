@@ -11,19 +11,7 @@ description "Microsoft Internet Information Services (IIS) for Windows Server is
 
 # About 3137957 ShodanHQ results for "server: IIS" @ 2010-10-26
 
-# Examples #
-examples %w|
-99.24.184.222
-132.206.153.3
-202.175.135.202
-203.167.230.151
-203.109.206.1
-webext.ccc.govt.nz
-www.pfoa.com
-www.microsoft.com
-lanzend.co.nz
-www.asp.net
-|
+
 
 # Matches #
 matches [

@@ -18,16 +18,7 @@ dorks [
 '"Powered by Teledata" "Best viewed in IE6"'
 ]
 
-# Examples #
-examples %w|
-imei.teledatamarine.com
-sma.teledatamarine.com
-veda.teledatain.com
-skillset.teledatain.com
-inside.veda.edu.in
-cbt.adu.us.com
-sbt.adu.us.com
-|
+
 
 # Matches #
 matches [

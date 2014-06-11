@@ -18,12 +18,7 @@ description "IQeye netcam web interface"
 # Google rsults as at 2010-07-11 #
 # 5 for intitle:"IQeye302 | IQeye303 | IQeye601 | IQeye602 | IQeye603" intitle:"Live Images"
 
-# Examples #
-examples %w|
-ocwx.com
-161.53.240.140
-203.122.250.159
-|
+
 
 # Matches #
 matches [

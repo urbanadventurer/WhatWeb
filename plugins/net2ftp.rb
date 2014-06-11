@@ -20,26 +20,7 @@ dorks [
 '"Powered by net2ftp - a web based FTP client" intitle:"net2ftp - a web based FTP client" "Clear cookies"'
 ]
 
-# Examples #
-examples %w|
-www.net2ftp.com
-www.omo.sk/webftp2/
-www.group3properties.com/files/
-www.sixthformscsc.co.uk/registers/
-file-manager.000webhost.com/file-manager/index.php
-www.musc.edu/webserver/net2ftp
-nibiru.zarea.net/net2ftp/
-synapsebiomedical.com/ftp/index.php
-ftp.afcons.com
-https://secure.bw.edu/
-pubfiles.dri.edu
-https://www.math.ohio-state.edu/ftp/
-https://classics.uc.edu/ftp/index.php
-https://secure.aluminati.net/aluminati.net/net2ftp/
-https://212.61.175.4/net2ftp/
-https://webftp.dreamhost.com/
-http://www.hellfactory.org/bodin/net2ftp/net2ftp_v0.93/files_to_upload/
-|
+
 
 # Matches #
 matches [

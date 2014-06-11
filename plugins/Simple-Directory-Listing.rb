@@ -17,31 +17,7 @@ dorks [
 '"powered by SimpleDirectoryListing"'
 ]
 
-# Examples #
-examples %w|
-www.designcourse.com/index_old.php
-www.4tified.org/music/SDL2.php
-downloads.trinimuslims.com/index.php
-grsoccerclub.org/portal.php
-www.piaohong.cn.nf
-www.sipafweb.com/download/
-hotmonitor.org/ajaxdepot/sdl/SDL20.php
-labs.jersure.com
-media.seattlebikesupply.com
-www.danymotostyle.com
-eidenai.org
-high8.tk/index.php
-magyaropera.info
-etebaran.com/designfiles/admin.php
-upload.gnarpf.net
-download.zoopda.com/index.php
-www.tierrataina.com/img_mini/index.php
-download2.xkafe.net
-alexmckenzie.com/LibertyIs/
-download.mecan.com.br
-share.kevin125.com
-www.corruptive.co.uk/files/w810i/SDL2.php
-|
+
 
 # Matches #
 matches [

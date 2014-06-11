@@ -16,15 +16,7 @@ description "The Mentat SkyX series were designed for TCP acceleration/compressi
 # ShodanHQ results as at 2011-05-30 #
 # 63 for SkyX HTTPS
 
-# Examples #
-examples %w|
-82.167.160.99
-82.167.160.126
-66.178.112.122
-60.36.187.130
-82.167.160.158
-212.93.218.152
-|
+
 
 # Matches #
 matches [

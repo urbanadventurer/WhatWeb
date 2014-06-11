@@ -12,14 +12,7 @@ description "Mason is a powerful Perl-based templating system for generating HTM
 # ShodanHQ results as at 2012-11-04 #
 # 27 for X-Powered-By: HTML::Mason
 
-# Examples #
-examples %w|
-54.247.113.207
-84.18.195.146
-84.18.196.230
-84.18.196.233
-84.18.195.150
-|
+
 
 # Matches #
 matches [

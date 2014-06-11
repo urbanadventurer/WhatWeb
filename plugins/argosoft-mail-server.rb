@@ -28,17 +28,7 @@ dorks [
 '"adding new user" inurl:addnewuser -"there are no domains"'
 ]
 
-# Examples #
-examples %w|
-www.mecmont.info/addnewuser
-vbsca.ca:81/addnewuser
-www.chielie.com:8081/addnewuser
-softkiller.ws:85/addnewuser
-163.247.50.25/addnewuser
-www.buchhorn.net:1080/addnewuser
-www.mascot.gr:8080/addnewuser
-mail.fws.net/addnewuser
-|
+
 
 # Matches #
 matches [

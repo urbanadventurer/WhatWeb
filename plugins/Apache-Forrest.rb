@@ -9,23 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-11-19
 version "0.1"
 description "Apache Forrest software is a publishing framework that transforms input from various sources into a unified presentation in one or more output formats. - Homepage: https://forrest.apache.org/"
 
-# Examples #
-examples %w|
-https://forrest.apache.org
-www.target-x.de
-www.varietee.com.au
-vitables.org
-medallionsystem.com
-techsol.ca
-www.inqwell.com
-kirtlandflightcenter.org
-www.roughbros.com
-stephane.galles.free.fr
-scriptella.javaforge.com
-www.skiclub-troisdorf.de
-apfw.sourceforge.net
-www.primordion.com/Cellontro/
-|
+
 
 # Matches #
 matches [

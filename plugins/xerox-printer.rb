@@ -30,26 +30,7 @@ dorks [
 'intext:centreware inurl:status'
 ]
 
-# Examples #
-examples %w|
-130.236.83.191
-accb8-2.usc.edu
-150.59.88.27
-150.55.51.24
-68.181.148.177/mpm_status.html
-68.181.148.205/jobaccounting.html
-3228rad.eecs.umich.edu/status.html
-accb8-2.usc.edu/status.shtml
-giotto.fisica.unimo.it/status.html
-jordan-clr-laser.uchicago.edu/status/statgeneralx.htm
-208.253.124.178/properties/aboutPrinter.html
-82.207.117.213/properties/aboutPrinter.html
-www.ritzvillelibrary.org/properties/aboutPrinter.html
-https://137.110.134.240/properties/aboutPrinter.html
-80.53.3.222/properties/aboutPrinter.html
-www.assicuranza.com/properties/aboutprinter.html
-65.124.157.198/properties/aboutPrinter.html
-|
+
 
 # Matches #
 matches [

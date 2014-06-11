@@ -18,15 +18,7 @@ dorks [
 'Mercurial summary shortlog changelog graph tags branches files changeset bz2 zip gz'
 ]
 
-# Examples #
-examples %w|
-www.cs.utexas.edu/users/speedway/jikesrvm-hg/trunk/
-qilin.seas.harvard.edu/repo/
-hg.dovecot.org/dovecot-2.0-sslstream/shortlog/
-foss.ntua.gr/hg/pacman/shortlog/
-hg.proclos.com/fluxomat/shortlog/
-hg.trapdoor.org/decorum/shortlog/
-|
+
 
 # Matches #
 matches [

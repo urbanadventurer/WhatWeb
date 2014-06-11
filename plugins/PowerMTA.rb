@@ -12,14 +12,7 @@ description "PowerMTA - email gateway software (SMTP server) that makes it easy 
 # ShodanHQ results as at 2011-09-14 #
 # 4 for PowerMTA
 
-# Examples #
-examples %w|
-190.92.236.6:8180
-209.190.100.164
-207.182.141.123
-207.182.141.122
-207.182.141.124
-|
+
 
 # Matches #
 matches [

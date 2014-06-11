@@ -21,25 +21,7 @@ dorks [
 'inurl:"Reports/Pages/Folder.aspx" "intitle:"Report Manager"'
 ]
 
-# Examples #
-examples %w|
-216.220.29.41
-72.158.137.205
-130.132.21.105
-50.76.2.82
-207.21.229.35
-87.85.79.34
-206.192.38.62
-81.25.229.178
-216.151.120.94
-pubreports.myclearwater.com/Reports/Pages/Folder.aspx
-reports.cccco.edu/Reports/Pages/Folder.aspx
-reports.scdps.org/Reports/Pages/Folder.aspx
-reports.izzy.org/Reports/en/help/f1_rsc_webui_standalone_4to0.htm
-data.plzensky-kraj.cz/Reports/en/help/f1_rsc_webui_standalone_0t0x.htm
-www.fhr.ac.at/FHR_Public_Reports/en/help/f1_rsc_webui_standalone_0um1.htm
-estatistica.azores.gov.pt:81/Reports/en/help/f1_rsc_webui_standalone_9syq.htm
-|
+
 
 # Matches #
 matches [

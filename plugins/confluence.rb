@@ -22,38 +22,7 @@ description "Confluence combines powerful online authoring capabilities, deep Of
 # Google results as at 2011-03-19 #
 # 144 for "Atlassian Confluence" +"the Enterprise Wiki" +"Intranet software for documentation and knowledge management" +"Report a bug"
 
-# Examples #
-examples %w|
-74.122.104.69
-192.9.162.69
-84.255.243.84
-72.242.107.245
-159.14.198.91
-66.165.176.42
-sandbox.onconfluence.com
-artemistech.com
-wiki.objectstyle.org
-www.securecoding.cert.org
-support.hyperic.com
-docs.codehaus.org
-opticks.org
-wiki.list.org
-www.artemissoftware.biz
-docs.rice.edu
-confluence.pegasus.isi.edu
-www.oscommerce.info
-www.bobsgear.com
-confluence.slac.stanford.edu
-fosswiki.liip.ch
-wiki.flux-cms.org
-wiki.csinitiative.com
-wiki.fourkitchens.com
-k15t.com/confluence/
-mygrid.org.uk/dev/wiki/
-support.process-one.net/doc/display/
-www.mongodb.org/display/
-confluence.pegasus.isi.edu/display/
-|
+
 
 # Matches #
 matches [

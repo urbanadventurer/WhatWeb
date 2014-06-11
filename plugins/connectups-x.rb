@@ -22,13 +22,7 @@ dorks [
 'intitle:"ConnectUPS" inurl:"PSummary.html"'
 ]
 
-# Examples #
-examples %w|
-85.196.1.62
-201.148.53.41
-208.123.192.15
-bilagsflyt.com
-|
+
 
 # Matches #
 matches [

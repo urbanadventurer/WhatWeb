@@ -12,16 +12,7 @@ description "Spyglass MicroServer is a small footprint, scalable, embedded Web s
 # ShodanHQ results as at 2011-03-13 #
 # 441 for Spyglass MicroServer
 
-# Examples #
-examples %w|
-64.131.31.50
-138.23.172.26
-131.246.60.9
-128.112.45.60
-64.131.31.56
-150.59.188.130
-130.83.208.96
-|
+
 
 # Passive #
 def passive

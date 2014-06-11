@@ -10,7 +10,7 @@ author "Andrew Horton"
 version "0.1"
 description "A complete print server provided as an interface card for attaching KYOCERA printers and multifunctional peripherals (MFP) to the network. Homepage: http://www.seh-technology.com/products/print-servers/printer-interfaces/kyocera.html"
 
-examples %w| 139.18.27.136 155.207.62.69 141.20.11.68 rm207printer.forestry.yale.edu|
+
 
 # 2 for "SEH Computertechnik GmbH, Germany" "All trademarks, registered trademarks, logos and product names are property of their respective owners"
 

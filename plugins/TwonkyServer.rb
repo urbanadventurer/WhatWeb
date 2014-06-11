@@ -20,29 +20,7 @@ dorks [
 'inurl:":9000" PacketVideo corporation (intitle:"TwonkyMedia"|intitle:"TwonkyServer")'
 ]
 
-# Examples #
-examples %w|
-173.179.157.19:9000
-edlauck.com:9000
-eduis.com:9000
-demo.qnap.ru:9000
-adnovea.com:9000
-98.156.100.236:9000
-sunoo94.iptime.org:9000
-203.155.56.86:9000
-195.182.85.236:9000
-nlks.com:9000
-14.52.147.235:9000
-89.179.183.177:9000
-eduis.com:9000
-203.155.56.86:9000
-195.182.85.236:9000
-203.155.56.86:9000
-195.182.85.236:9000
-14.52.147.235:9000
-89.179.183.177:9000
-14.52.147.235:9000
-|
+
 
 # Matches #
 matches [

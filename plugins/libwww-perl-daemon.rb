@@ -12,15 +12,7 @@ description "Perl CPAN HTTP::Daemon - a simple http server class. Instances of t
 # ShodanHQ results as at 2011-08-20 #
 # 154 for libwww-perl-daemon
 
-# Examples #
-examples %w|
-160.94.254.73
-122.248.222.165
-66.232.160.65
-160.94.254.74
-160.94.254.81
-130.239.8.30
-|
+
 
 # Matches #
 matches [

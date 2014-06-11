@@ -11,7 +11,7 @@ author "Caleb Anderson"
 version "0.1"
 description "openid detection"
 
-examples %w|adrianlamologs.blogspot.com hackersinpinkdresses.wordpress.com|
+
 
 matches [
 {:name=>"openid",

@@ -12,13 +12,7 @@ description "TeleFinder is a Macintosh-based bulletin-board system written by Sp
 # ShodanHQ results as at 2011-06-02 #
 # 8 for telefinder
 
-# Examples #
-examples %w|
-67.222.116.34
-95.128.90.75
-216.37.83.18
-195.234.241.39
-|
+
 
 # Passive #
 def passive

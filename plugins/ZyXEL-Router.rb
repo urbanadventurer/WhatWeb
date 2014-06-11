@@ -43,37 +43,7 @@ dorks [
 '"Welcome to the Web-Based Configurator" "Welcome to your router Configuration Interface"'
 ]
 
-# Examples #
-examples %w|
-80.32.183.41
-81.187.164.217
-81.223.235.86
-80.175.97.245
-88.88.90.185
-83.251.216.232
-24.34.19.225
-190.60.247.134
-80.38.76.93
-198.68.199.247
-spamdns.com
-195.210.177.1
-195.210.180.229
-www.brts.webhop.net
-66.178.129.151
-213.180.170.149
-210.176.164.58/top.htm
-24.153.183.242/top.htm
-67.53.102.106/top.htm
-213.236.165.126/top.htm
-fleta.org/top.htm
-68.185.53.190/top.htm
-67.79.70.218/top.htm
-65.23.108.18/top.htm
-74.218.130.219/top.htm
-24.199.41.82/top.htm
-https://207.190.252.194/top.htm
-83.167.114.66
-|
+
 
 # Matches #
 matches [

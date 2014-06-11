@@ -16,18 +16,7 @@ description "WebSitePro is an HTTP web server for Microsoft Windows. The 16-bit 
 # ShodanHQ results as at 2011-06-04 #
 # 1,344 for WebSitePro
 
-# Examples #
-examples %w|
-217.25.65.44
-206.180.231.218
-209.189.56.60
-206.82.159.103
-209.189.56.173
-68.123.18.136
-208.187.248.152
-208.187.250.120
-216.174.158.220
-|
+
 
 # Matches #
 matches [

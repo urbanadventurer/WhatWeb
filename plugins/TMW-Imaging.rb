@@ -12,19 +12,7 @@ description "TMW Imaging - Document management system - Homepage: http://www.tmw
 # ShodanHQ results as at 2012-11-16 #
 # 9 for TMWImagingSession
 
-# Examples #
-examples %w|
-162.40.249.91
-66.179.46.238
-66.179.46.240
-69.166.130.137
-67.237.144.221
-207.254.215.23
-207.254.215.31
-207.254.215.32
-207.254.215.36
-207.254.215.37
-|
+
 
 # Matches #
 matches [

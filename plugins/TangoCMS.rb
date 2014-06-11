@@ -20,15 +20,7 @@ dorks [
 '"Powered by TangoCMS"'
 ]
 
-# Examples #
-examples %w|
-demo.tangocms.org
-nilsander.com
-milnix.org
-212.38.88.221
-213.210.4.6
-77.107.81.237
-|
+
 
 # Matches #
 matches [

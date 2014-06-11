@@ -17,20 +17,7 @@ dorks [
 'Sunday Monday Tuesday Wednesday Thursday Friday "Satarday" inurl:action inurl:view_type'
 ]
 
-# Examples #
-examples %w|
-www.apphp.com/php-calendar/examples/sample1/index.php
-www.paragon.us.com/new/event_calendar.php
-www.troop174.com/calendar.php
-www.jg75.com/news/code_example.php
-mojotweb.com/web_storage/calendar/code_example.php
-www.leiron.be/documents/calendar.php
-thyge.eu/code_example.php
-www.darsgahcollege.org/events.php
-www.kolunthuvel.com/tools/calendar/code_example.php
-www.thehubfargo.com/calendar/index.php
-schachalsfeld.sc.funpic.de/kalender/code_example.php
-|
+
 
 # Matches #
 matches [

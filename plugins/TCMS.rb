@@ -16,13 +16,7 @@ dorks [
 '"powered by TCMS"'
 ]
 
-# Examples #
-examples %w|
-image.tanzarine.net
-www.oberhessen.de
-www.weber-wireless.com
-www.verein-oberhessen.de
-|
+
 
 matches [
 

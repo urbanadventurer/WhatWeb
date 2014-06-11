@@ -9,18 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
 description "This plugin retrieves the favicon path."
 
-# Examples #
-examples %w|
-www.deviantart.com
-www.mainstreet.com
-www.southpark.com
-www.twitter.com
-www.vbulletin.com
-www.w3.org
-www.webmarketingnow.com
-www.wikipedia.org
-www.yehg.net
-|
+
 
 # Matches #
 matches [

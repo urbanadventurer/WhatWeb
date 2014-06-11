@@ -12,19 +12,7 @@ description "Ultraseek - web site search engine product information - Homepage [
 # ShodanHQ results as at 2011-06-02 #
 # 350 for Ultraseek
 
-# Examples #
-examples %w|
-202.228.58.253
-12.96.58.100
-209.156.246.164
-195.41.97.244
-200.245.207.182
-193.178.2.246
-205.181.72.201
-70.42.48.195
-217.145.112.82
-207.192.33.70
-|
+
 
 # Passive #
 def passive

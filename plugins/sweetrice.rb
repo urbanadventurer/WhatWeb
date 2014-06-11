@@ -17,14 +17,7 @@ dorks [
 '"Powered By Basic CMS SweetRice" -dork'
 ]
 
-# Examples #
-examples %w|
-blog.b-d-soft.com
-sweetrice.limewebs.com
-www.basic-cms.org
-blog.basic-cms.net
-rodiono.net
-|
+
 
 # Matches #
 matches [

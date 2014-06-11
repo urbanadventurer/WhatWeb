@@ -9,20 +9,7 @@ author "Aung Khant <http://yehg.net/>" # 2011-02-04
 version "0.1"
 description "vTigerCRM - http://www.vtiger.com/"
 
-examples %w|
-http://demo.vtiger.com/
-http://demo.vtiger.de/
-http://demo.myvtiger.it/
-http://demo.vhostr.com/
-http://demo.vtiger-crm.cz/
-http://www.portalondemand.biz/demo/vtigercrm52/
-http://demo.vtiger.pl/
-http://planetauthorize.com/vtiger52demo/
-http://demo.m8solutions.com/vtigercrm/
-http://demo.devsum.it/vtiger/
-http://www.magestore.com/demo/vtiger/
-http://openwebapplications.com/crmdemo/
-|
+
 
 
 matches [

@@ -17,23 +17,7 @@ dorks [
 '"powered by AV Arcade" -Vulnerability'
 ]
 
-# Examples #
-examples %w|
-www.demo.avarcadepro.com
-ahliang.com/arcade/
-flashgames4u.info
-flashgamesweb.com
-mouza-trans.com
-www.arcadeelf.com
-www.dhoytt.com/games/flash/av_arcade/
-www.firefreak.net
-www.games-volcano.net
-www.gmhs2008.org
-www.newonlineflashgames.com
-www.geniusarcade.com
-www.ninjaclanarcade.com
-www.zupergames.net
-|
+
 
 # Matches #
 matches [

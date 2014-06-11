@@ -17,27 +17,7 @@ dorks [
 '"Page fueled by poMMo mailing management software"'
 ]
 
-# Examples #
-examples %w|
-try.pommo.org
-yourvoip.net
-e-toaster.co.uk
-msuced.com/mailinglist/
-www.awbksales.com/mail/
-www.taagwc.org/email/
-business-emails.net/
-www.arbutusmusic.net/pommo/user/login.php
-mckeanre.com/listserver/
-www.johnsoncountytx.org/pct3/newsletter/install/upgrade.php
-www.shrimpfarmmarket.com/poMMo/user/mailings.php
-riskywire.net/newsletter/
-www.whimsymerced.com/enews/admin/admin.php
-www.cbttraining.com.au/pommo/admin/admin.php
-demos1.softaculous.com/poMMo/
-www.hdtrials.org/pommo/user/mailings.php
-motionbank.org/newsletter/user/subscribe.php
-www.financial-advice-for-beginners.com/blog/
-|
+
 
 # Matches #
 matches [

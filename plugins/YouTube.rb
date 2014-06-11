@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-04-16
 version "0.1"
 description "Embedded YouTube video - Homepage: http://youtube.com/"
 
-# Examples #
-examples %w|
-apiblog.youtube.com
-beefproject.com
-|
+
 
 # Matches #
 matches [

@@ -18,32 +18,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-02-03
 version "0.4"
 description "This plugin identifies routers for which the vendor is unknown or where fingerprinting is exceptionally difficult."
 
-# Examples #
-examples %w|
-80.179.16.172
-212.143.118.102
-82.35.80.76
-95.87.199.169
-81.104.44.67
-82.39.102.142
-95.87.212.11
-88.199.139.144
-95.87.196.252
-95.87.203.247
-83.89.21.117
-81.18.75.138
-12.50.82.185
-65.103.138.230
-70.148.255.88
-74.204.63.227
-134.29.214.66
-173.14.85.126
-201.151.198.125
-208.90.101.48
-216.1.6.199
-122.116.158.179
-200.206.138.249
-|
+
 
 # Matches #
 matches [

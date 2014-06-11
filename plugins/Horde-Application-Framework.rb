@@ -31,38 +31,7 @@ dorks [
 'intitle:"WebMail 4.0 LOGIN" "E-mail address" "Password"'
 ]
 
-# Examples #
-examples %w|
-netex.net.ua/horde/
-netex.net.ua/horde/util/icon_browser.php?subdir=alerts
-ssjh.sk/mail/imp/login.php
-ssjh.sk/mail/util/icon_browser.php?subdir=weatherdotcom
-theupstairsroom.com
-webmail.uvm.edu/horde/
-webmail.uvm.edu/horde/util/icon_browser.php?subdir=nav
-www.metrum.sk/webmail/
-www.eltimon.com/horde/config/conf.xml
-www.eltimon.com/horde/util/icon_browser.php?subdir=emoticons
-www.sanctamaria-aarschot.be/horde/util/icon_browser.php
-www.infs.de/mails/imp/login.php
-www.infs.de/mails/util/icon_browser.php?subdir=weatherdotcom
-www.webmail.telushosting.com
-msmediaradio.com
-e-liteusa.com
-keystoneink.com
-webmail.centurytelhosting.com
-webmail.ctchosting.com
-webmail.bthosting.ie
-69.49.108.141
-69.49.109.76
-64.29.147.43
-69.156.243.46
-64.29.147.30
-69.49.113.54
-91.136.10.34
-69.49.108.17
-69.49.111.74
-|
+
 
 # Matches #
 matches [

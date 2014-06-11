@@ -17,12 +17,7 @@ dorks [
 '"Powered by Red Lion." "Display a view of the HMI\'s display and keyboard."'
 ]
 
-# Examples #
-examples %w|
-62.219.160.155:8080
-63.99.54.57
-brimar1.lnk.telstra.net
-|
+
 
 # Matches #
 matches [

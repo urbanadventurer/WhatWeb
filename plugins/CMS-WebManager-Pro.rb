@@ -20,10 +20,7 @@ dorks [
 '"powered by CMS WebManager-Pro"'
 ]
 
-# Examples #
-examples %w|
-www.21.com.ua
-|
+
 
 # Matches #
 matches [

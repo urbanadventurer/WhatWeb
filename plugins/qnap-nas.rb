@@ -35,76 +35,7 @@ dorks [
 'inurl:/cgi-bin/authLogin.cgi'
 ]
 
-# Examples #
-examples %w|
-http://140.113.74.103:8080/cgi-bin/
-http://203.72.160.21:8080/cgi-bin/
-http://163.19.88.200:8080/cgi-bin/
-http://140.123.174.172:8080/cgi-bin/
-http://163.22.115.180:8080/cgi-bin/
-http://120.107.162.9:8080/cgi-bin/
-http://www.guillerault.eu:8080/cgi-bin/
-http://119.247.13.81:8080/cgi-bin/
-http://sousedi.cz:8088/cgi-bin/
-http://www.jgirado.com/cgi-bin/
-http://www.belleandku.info:8080/cgi-bin/
-http://dasistsehr.net:8080/cgi-bin/
-http://harrelsonsplace.com:8080/cgi-bin
-http://www.thatsyummymummy.com:8080/cgi-bin/
-https://rovingjungs.net/cgi-bin/
-http://www.didadi.info:8080/cgi-bin/
-https://www.mindache.com/cgi-bin
-http://pixelhunger.com:8080/cgi-bin/
-http://eendje.org:8080/cgi-bin/
-http://jan.portinga.eu:8080/cgi-bin/
-http://www.jgrimes.co.uk:8080/cgi-bin/
-http://www.silud.com:8080/cgi-bin/
-http://www.zeising.net:8080/cgi-bin/
-http://www.momocable.com:8080/cgi-bin/
-https://qnap.expanic.com/cgi-bin/
-http://193.147.58.206:8080/cgi-bin/
-http://www.hakkahome.com:10101/cgi-bin/
-http://philipsenechal.com:8080/cgi-bin/
-https://mdelattre.com/cgi-bin/
-http://melkes.net:8080/cgi-bin/
-http://123.204.252.119:8080/cgi-bin/
-http://legendav.dynalias.com:8080/cgi-bin/
-http://train-to-attain.com:8080/cgi-bin/
-http://114.32.115.33:8080/cgi-bin/
-http://219.87.144.203:8080/cgi-bin/
-http://www.stehagen.se:8080/cgi-bin/
-http://www.air-village.com:8080/cgi-bin/
-http://www.liwei.de:8080/cgi-bin/
-http://60.251.202.110:8080/cgi-bin/
-http://www.marcjones.co.uk:8080/cgi-bin/
-http://www.nightleo.com:8080/cgi-bin/
-http://www.infotronic-service.com/cgi-bin/
-http://ekodagitim.com.tr:8080/cgi-bin/
-https://www.johos.se/cgi-bin/
-http://www.smaal.nu:8080/cgi-bin/
-http://www.dickyfamily.com:3737/cgi-bin/
-http://www.imetek.com:8080/cgi-bin/
-http://www.ikke.net:8080/cgi-bin/
-http://www.heathens.ca:8080/cgi-bin/
-https://hdproserveur.com/cgi-bin/
-http://www.andrewmacbeth.com:8080/cgi-bin/
-https://www.vanmaurik.org/cgi-bin/
-http://92.79.132.123:8080/cgi-bin/
-http://xn--c3tyik98bwox.net:8080/cgi-bin/
-https://www.boskoe.com/cgi-bin/
-http://163.27.57.9:8080/cgi-bin/
-http://www.rhk4.com:8080/cgi-bin/
-http://www.jr1186.com:8080/cgi-bin/
-http://www.patvibes.com:6000/cgi-bin/
-https://www.cpcupload.com/cgi-bin/
-http://www.qwe4.net:8080/cgi-bin/
-https://www.girlguide.org.sg/cgi-bin/
-http://www.qwe4.com:8080/cgi-bin/
-https://www.fluehmann.net/cgi-bin/
-https://bahaykubo.info:8443/cgi-bin/
-http://kwlo.webhop.net:8080/cgi-bin/
-http://yaohaiping.net:8080/cgi-bin/
-|
+
 
 # Matches #
 matches [

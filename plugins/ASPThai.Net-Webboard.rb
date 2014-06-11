@@ -20,13 +20,7 @@ dorks [
 '"powered by ASPThai.Net Webboard version"'
 ]
 
-# Examples #
-examples %w|
-www.correct.go.th/tdclamp/Webboard/default.asp
-users.domaindlx.com/mcgar/webboard/
-www.champa.kku.ac.th/qa/webboard/default.asp
-203.155.220.217/law/webboard/default.asp
-|
+
 
 # Matches #
 matches [

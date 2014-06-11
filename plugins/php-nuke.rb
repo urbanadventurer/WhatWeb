@@ -23,8 +23,7 @@ description "PHP-Nuke is a free CMS. Homepage: phpnuke.org. The plugin passively
 # 305 for "powered by phpnuke"
 #  88 for allinurl:phpnuke/modules.php?name=Search
 
-# Examples #
-examples %w|http://www.patientjourney.org.nz http://www.schoolhistory.co.nz http://www.sil3nt.zl1my.co.nz http://www.tagairsoft.co.nz http://www.freeze.co.nz/community/index.php http://www.ig42.com http://www.isea.org.nz http://www.kakariki.net http://www.tweakforce.com www.vcdeasy.org www.quransunnah.com www.p90.nl/phpnuke/ dayfamily4.us/PHPNuke/ www.snafu-clan.co.uk/phpnuke/ www.carsena.com/phpnuke/ fullhousesoftware.com/phpnuke/ www.nmpfd.com/phpnuke/ www.clubafrika.com/phpnuke/ www.rollingthundergaming.com/phpnuke/ beachpool.com/phpnuke/|
+
 
 # Matches #
 matches [

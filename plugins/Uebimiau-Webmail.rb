@@ -17,22 +17,7 @@ dorks [
 '"Uebimiau Webmail v3.2.0-2.0" -disclosure'
 ]
 
-# Examples #
-examples %w|
-www.hostsalive.com/webmail/
-www.nationalhotel-jerusalem.com/mail/
-correopym.com/t-dah/
-ismailmidi.com/webmail/index.php
-webmail.edeinternet.com/balder/
-sanjeevanicbccusa.com/mail/
-www.hippodaycare.com/webmail/
-www.rufino.eti.br/webmail/
-webmail.lukas23.de/
-www.danito.com/webmail/
-www.patricetankard.com/webmail/index.php
-www.mda.cinvestav.mx/webmail/
-madisehpub.ir/mail/
-|
+
 
 # Matches #
 matches [

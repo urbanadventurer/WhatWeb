@@ -22,32 +22,7 @@ dorks [
 '"File List" "Folder archive" "HttpFileServer" "Servertime" "Uptime" "Build-time" intitle:HFS'
 ]
 
-# Examples #
-examples %w|
-87.69.132.38
-81.218.140.90
-84.109.79.172
-80.179.242.125
-86.21.40.206
-188.226.108.188
-209.250.240.231
-91.200.228.253
-78.130.220.205
-www.fhms.edu.hk:280
-ip-120-125-86-21.mcu.edu.tw
-olechinese.ouhk.edu.hk
-www.raps.matsu.edu.tw:8080
-omo.oc.ntu.edu.tw:8080
-el.iim.nctu.edu.tw
-eoiclab.nfu.edu.tw
-cc5-051.niu.edu.tw
-pcc2.ee.oit.edu.tw:8080
-omo.oc.ntu.edu.tw:8080
-eoiclab.nfu.edu.tw
-file.hses.tyc.edu.tw
-kct.ee.ncut.edu.tw
-imagepc6.cm.nctu.edu.tw
-|
+
 
 # Matches #
 matches [

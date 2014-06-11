@@ -16,12 +16,7 @@ dorks [
 '"Web Administration Panel" "by Kaon Softwares. All Rights Reserved."'
 ]
 
-# Examples #
-examples %w|
-www.comparemania.co.uk/admin/
-products.kaonsoftwares.com/price-comparison-help/
-products.kaonsoftwares.com/price-comparison/admin/
-|
+
 
 matches [
 

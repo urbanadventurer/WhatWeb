@@ -10,10 +10,7 @@ version "0.1"
 description "Streamline is a streaming media web application written in php. - homepage: http://streamline.sourceforge.net/about.php"
 
 # 5 results for "A PHP Streaming Media Server" @ 2010-08-27
-examples %w|
-www.trichuronline.com/radio/src/weblogin/loginform.php
-mano.ra2.lt/www/radijas/liveradio/src/installer/
-|
+
 
 matches [
 

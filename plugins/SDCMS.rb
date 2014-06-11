@@ -17,15 +17,7 @@ dorks [
 '"Powered By SDCMS"'
 ]
 
-# Examples #
-examples %w|
-www.yuwenfang.com
-www.dfguitar.net
-www.ztq66.com
-www.sbcsbc.cn/chs/
-tv9988.com
-www.kukuyy.com
-|
+
 
 # Matches #
 matches [

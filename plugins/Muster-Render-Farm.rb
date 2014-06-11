@@ -21,10 +21,7 @@ dorks [
 'intitle:"Muster" intitle:"Integrated Web server login"'
 ]
 
-# Examples #
-examples %w|
-cias-renderfarm.rit.edu
-|
+
 
 # Matches #
 matches [

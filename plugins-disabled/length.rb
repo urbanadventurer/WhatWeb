@@ -9,7 +9,7 @@ Plugin.define "Len" do
 author "Andrew Horton"
 version "0.1"
 description "The length of the HTML body"
-examples %w| include-some.net example-websites.com here.com |
+
 
 def passive
 	[{:string=>@body.size}]

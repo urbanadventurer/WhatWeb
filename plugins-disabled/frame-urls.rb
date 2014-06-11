@@ -15,19 +15,7 @@ description "This plugin detects instances of frame and iframe HTML elements and
 # Google results as at 2010-10-13 #
 # 213 for "your browser does not support frames"
 
-# Examples #
-examples %w|
-crowd.webhop.org
-frenchtownalive.com
-movies.sky.com
-tv.sky.com
-bricktech.blogspot.com
-livestreamingofsoccer.blogspot.com
-www.dialogclassic.com
-www.nasa.gov/externalflash/name_ISS/
-www.ornatopia.com
-www.usbornebooksandmore.com/?NewID=NEW
-|
+
 
 # Passive #
 matches [

@@ -20,16 +20,7 @@ dorks [
 '"TorrentFlux Login" intitle:TorrentFlux "Username" "Password"'
 ]
 
-# Examples #
-examples %w|
-flomu.com
-torrent-server.com.nu
-raybt.comli.com
-www.thecomitatus.org
-brutalzorz.org/torrentflux/
-torrent.rijndael-project.com
-www.george-smart.co.uk/torrentflux/
-|
+
 
 # Matches #
 matches [

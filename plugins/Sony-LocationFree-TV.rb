@@ -13,18 +13,7 @@ description "The LocationFree TV is an advanced, portable TV that allows you to 
 # ShodanHQ results as at 2011-08-02 #
 # 374 for SONY LocationFreeTV
 
-# Examples #
-examples %w|
-180.11.151.51
-221.251.212.58
-67.180.179.138
-219.110.163.228
-24.113.130.121
-219.178.160.4
-116.83.124.13
-119.14.199.143
-121.119.226.12
-|
+
 
 # Passive #
 def passive

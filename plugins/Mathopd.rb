@@ -12,17 +12,7 @@ description "Mathopd is a very small, yet very fast HTTP server for UN*X systems
 # ShodanHQ results as at 2011-03-30 #
 # 8,170 for Mathopd
 
-# Examples #
-examples %w|
-82.42.100.57
-87.207.138.199
-78.31.73.190
-212.21.10.240
-145.236.188.246
-217.19.7.12
-85.197.175.56
-121.254.125.92
-|
+
 
 # Passive #
 def passive

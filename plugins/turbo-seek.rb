@@ -9,30 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15
 version "0.1"
 description "Turbo Seek enables anyone to build a Search Engine & Directory Portal with the minimum expense and effort. - homepage: http://www.focalmedia.net/index_tb.html"
 
-examples %w|
-www.vermontbridemagazine.com/cgi/tseekdir.cgi
-www.namsearch.com/cgi-bin/tseekdir.cgi
-www.chatrooms.uk.com/cgi-bin/tsearch/tseekdir.cgi
-www.cyprus-directory.com/cgi-bin/tseekdir.cgi
-www.obesityresource.com/cgi-bin/tseekdir.cgi
-www.webdropshipper.com/cgi-bin/tseekdir.cgi
-ebookdirectory.com/cgi-bin/tseekdir.cgi
-www.sangeetbhubon.com/cgi-bin/tseekdir.cgi
-www.videosilva.com/cgi-bin/tseekdir.cgi
-www.philippines.com.au/cgi-bin/global/tseekdir.cgi
-www.obxonline.com/cgi-bin/search/tseekdir.cgi
-www.bettorstalk.com/cgi-bin/turboseek/tseekdir.cgi
-www.jewishwebsight.com/bin/directory/tseekdir.cgi
-www.chatrooms.uk.com/cgi-bin/tsearch/tseekdir.cgi
-www.uknation.co.uk/cgi-uknation/turbo/tseekdir.cgi
-duitsland-vakantieland.nl/cgi-bin/tseekdir.cgi
-www.123sardegna.com/cgi-bin/tseekdir.cgi
-www.mycreditsolver.com/cgi-bin/tseekdir.cgi
-www.expeditecarrier.com/cgi-bin/tseekdir.cgi
-www.essentialfemdom.com/cgi-bin/essentials/tseekdir.cgi
-www.cockforum.com/cgi-bin/tseekdir.cgi
-www.jesusjournal.com/cgi-bin/tseek/tseekdir.cgi
-|
+
 
 matches [
 

@@ -20,56 +20,7 @@ dorks [
 '"powered by SyndeoCMS"'
 ]
 
-# Examples #
-examples %w|
-www.syndeocms.org/demo/
-www.delahey.org.au
-www.sawyersvalleyps.det.wa.edu.au
-borondameadowselementary.com
-project.futureofeurope.net
-iitms.org
-www.huskiesutefootball.com
-jordanhightrack.com
-web51.sit-mainz.info
-demo-server.net23.net
-ou-fotinov.org
-jordanhighfootball.org
-www.bloemenbuurt-helmond.nl
-ccgi.windmilleg.plus.com
-www.d1031599.dotsterhost.com
-www.digirapport.eu
-www.2master.com
-www.amshaven.edu.almere.nl
-www.bs-dewijngaard.be
-www.kbsvliedberg.nl
-www.doefmat.nl
-www.vnfh.nl
-www.kadoes.nl
-www.obsdedriebond.nl
-www.de-horizon.net
-www.sbolaucup.nl
-www.cspi.qc.ca
-www.ttodrenthe.nl
-www.fdfoverlade.dk
-www.campe-gymnasium-holzminden.de
-km-rogozen.com
-www.deraveinterim.nl
-www.glashelderglas.nl
-www.decata.info/2b/
-www.kita-muehlweg.de
-www.bredeschool-hillesluis.nl
-www.verderwonen.nl
-www.evang-hartberg.at
-associacaomundodalua.com
-www.heilighartschool.nl
-www.grietjewillemsma.nl
-www.familiegroenen.nl
-www.grietjewillemsma.nl
-www.heilighartschool.nl
-www.bredeschool-hillesluis.nl
-www.familiegroenen.nl
-www.bongerd.edu.almere.nl
-|
+
 
 # Matches #
 matches [

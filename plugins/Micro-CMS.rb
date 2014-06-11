@@ -17,12 +17,7 @@ dorks [
 '"Powered by Micro CMS"'
 ]
 
-# Examples #
-examples %w|
-www.micro-cms.com
-www.incroatia.org
-sefcartagena05.com/cms/micro-cms/
-|
+
 
 # Matches #
 matches [

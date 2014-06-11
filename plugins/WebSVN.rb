@@ -23,34 +23,7 @@ dorks [
 '"Powered by WebSVN * and Subversion"'
 ]
 
-# Examples #
-examples %w|
-opensees.berkeley.edu/WebSVN/
-www.cs.rpi.edu/websvn/
-svn.ilab.ldeo.columbia.edu
-thestaticvoid.com/wsvn/
-loft.optics.arizona.edu/svn/
-websvn.ow2.org
-cnmc30.hs.ntnu.edu.tw/websvn/
-www.denorastats.org/websvn/
-openoffice.oss.gov.vn/websvn/
-ncisvn.nci.nih.gov/WebSVN/
-atlaswww.hep.anl.gov/asc/WebSVN/
-svn.mikrokopter.de
-svn.cherokee-project.com
-svn.fryer.org.uk/websvn/
-svn.7zsfx.info
-apoc.sixserv.org/coderepo/
-linuxfoo.de/websvn/
-svn.grindstone4spam.atopa.me
-studenti.scuole.bo.it/websvn/
-source.cfengine.com/websvn/
-www.wh0rd.biz/websvn/
-websvn.dharmatech.org/websvn/
-www.geniustrader.org/websvn/
-websvn.freemyipod.org
-svn.omega-services.org
-|
+
 
 # Matches #
 matches [

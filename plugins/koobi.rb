@@ -20,59 +20,7 @@ dorks [
 '"powered by Koobi PRO|SHOP|CMS" -"SQL Injection"'
 ]
 
-# Examples #
-examples %w|
-archiwum.wrzesnia.info.pl
-baumkuchen-cottbus.de
-communitypower.info/online/linkverzeichnis/
-instant-gold.com
-mgamez.awardspace.com
-www.fototools.de
-www.kamerahalter.com
-www.logistik-shop.com
-www.myfashionbuy.com
-www.taramar.de
-www.sepp-tattoo.de
-www.vw-community.de
-www.natural-horse-care.com
-www.crossgolf-portal.de/shop/
-www.tmp-products.com/shop/
-www.3gservice.at/shop/
-www.original-socap.de
-www.fahrerkarten-auswerten.de/shop/
-www.slatka-tajna.de
-www.radiowoche.de
-www.entsperren.org
-www.lifestyle1001.com/shop/produkt/
-www.gsm-style.de/shop/
-www.b2bshop.innocept.de/shop/
-www.kraeuterspatz.at/shop/
-www.proton-shop.ch/shop/
-www.union-sandersdorf.de
-www.keeper-shop.de/meldungen/
-www.dantespforten.com/content/
-www.eylul.de
-www.sauna-hut.de
-www.starfiretattoo.com/content/
-www.phaenomen-verlag.de
-www.markvice.de
-www.dauercamperweb.de
-www.cohimi.de
-www.rechtsreferendare-duesseldorf.de
-www.scripte-shop.com
-www.echinocereus.de/index/
-www.visionexecutive.ch
-www.shop.hw-4u.de/shop/shop/
-www.spieletester.com
-www.dive-star.de
-www.tuxonmedia.de
-www.semaf.at
-www.swtor-station.com
-www.argentinos.info
-www.kupivednaga.com
-maximum-network.com/atelier/shop/produkte/
-www.auroraworld.de/shop/shop/produkte/
-|
+
 
 # Matches #
 matches [

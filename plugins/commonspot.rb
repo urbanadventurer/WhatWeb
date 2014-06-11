@@ -12,28 +12,7 @@ author "Tonmoy Saikia"
 version "0.2"
 description "The CommonSpot Web content management solution (Web CMS) increases the value of content by creating engaging Web experiences that generate high impact results. - Homepage: http://www.paperthin.com/"
 
-# Examples #
-examples %w|
-http://www.scu.edu/
-http://www.orlandoinfo.com/
-http://www.nist.gov/index.html
-http://www.ohio.edu/bicentennial/
-http://www.ohio.edu/
-http://www3.sanmita.com/
-http://www.engineering.cornell.edu/
-http://www.orie.cornell.edu/
-http://www.iccd.cornell.edu/
-http://www.uwrf.edu/
-http://foryourvocation.org/
-http://www.kent.edu/
-http://www.hasbro.com/
-http://www.scisys.com/
-http://www5.gmsproject.org/
-http://www.american.edu/
-http://www.esabna.com/
-http://www.riversideonline.com/
-http://tulane.edu/
-|
+
 
 # Matches #
 matches [

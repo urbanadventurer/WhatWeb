@@ -13,28 +13,7 @@ description "WSN Links is a links directory with google pageranks, link checking
 # 12 results for "WSN Links is unable to render this page. The reason is described below: " intitle:"WSN Links"
 # 14 results for intitle:"WSN Links" ext:php "Non-numeric id value given in creating object"
 
-# Examples #
-examples %w|
-demo.webmastersite.net/wsnlinks/
-demo.webmastersite.net/wsnlinksadmin/adminlogin.php
-www.mambogani.com/classifieds/
-www.topstorylinks.com
-www.aussiecooking.com.au/cook/
-0webmasters.com
-metal-detectors.info/metal_detectors/
-www.oldieslist.com
-www.postalbigtoe.com
-www.sibilintimate.com/wsnlinks/
-www.motosikletsiteleri.com/adminlogin.php
-www.digindirt.com/link.php
-www.toprealestates.com/in.php
-kitaabghar.net/dir/link.php
-www.gamelinks.com/link.php
-homehdguy.com/links/link.php
-kitaabghar.com/dir/link.php
-www.shoppingaide.com/categories/link.php
-www.vbulletin-commercial.com/link.php
-|
+
 
 # Matches #
 matches [

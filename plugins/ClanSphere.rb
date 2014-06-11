@@ -17,26 +17,7 @@ dorks [
 '"powered by ClanSphere"'
 ]
 
-# Examples #
-examples %w|
-demo.csphere.eu
-acg.anicode.info
-fifasquad.com
-hl2serveradmintool.tontauben-clan.com
-orden.begbie.ws
-world-eaters.net
-www.aeon-clan.de
-www.hsh-berlin-clan.de/v3/
-www.mt-lan.de
-www.myp2b.eu
-www.partymode-homepage.de.ki
-www.schwarzer-orden.eu
-www.schwarzer-orden.com
-www.thecrazymonkeys.de
-www.tontauben-clan.com
-www.unity-esports.net
-www.unity-esports.org
-|
+
 
 # Matches #
 matches [

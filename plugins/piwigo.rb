@@ -17,19 +17,7 @@ dorks [
 '"powered by piwigo"'
 ]
 
-# Examples #
-examples %w|
-piwigo.org/demo/
-photograph.piwigo.net
-ru.piwigo.org/demo/
-blankakovacevic.com
-brendanjensen.net/photography/index.php
-clicknatureindia.com
-toths.us/Piwigo/
-wireless-sec.com
-www.licks0re-shirts.info/lps/piwigo/
-www.muza-chan.net/photo/
-|
+
 
 # Matches #
 matches [

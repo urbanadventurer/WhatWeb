@@ -20,11 +20,7 @@ dorks [
 'intitle:"BlueNet Video Viewer"'
 ]
 
-# Examples #
-examples %w|
-75.15.47.149:7831/cgi-bin/client_execute.cgi?tUD=0
-68.185.14.34:8087/cgi-bin/client_execute.cgi?tUD=0
-|
+
 
 # Matches #
 matches [

@@ -19,13 +19,7 @@ dorks [
 '"Powered by Easy Site-Edit"'
 ]
 
-# Examples #
-examples %w|
-easysitebackup.com
-demo.easysiteedit.com/ese/index.php
-www.rumerfinancial.com/ese/
-www.corpsstyleconcepts.nl/esev2/install.php
-|
+
 
 # Matches #
 matches [

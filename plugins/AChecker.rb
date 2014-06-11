@@ -17,11 +17,7 @@ dorks [
 'intitle:"AChecker : ATRC Accessibility Checker:"'
 ]
 
-# Examples #
-examples %w|
-www.atutor.ca/achecker/demo.php
-dev.atutor.ca/achecker/demo.php
-|
+
 
 matches [
 

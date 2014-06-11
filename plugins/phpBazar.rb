@@ -17,14 +17,7 @@ dorks [
 'intitle:"phpBazar-AdminPanel" -intitle'
 ]
 
-# Examples #
-examples %w|
-cometsquare.com/admin/admin.php
-abcpetitesannonces.com/admin/admin.php
-ex-sale.com/beta/admin/admin.php
-www.eaa-mauritius.com/phpBazar-2.1.1fix/admin/admin.php
-www.kmlogsdon.com/admin/admin.php
-|
+
 
 # Matches #
 matches [

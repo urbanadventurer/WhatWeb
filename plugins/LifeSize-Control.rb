@@ -15,16 +15,7 @@ description "LifeSize Control is an all-in-one video management software platfor
 # Google results as at 2011-08-29 #
 # 3 for inurl:"/LifeSizeControl/ASP/"
 
-# Examples #
-examples %w|
-77.89.153.77
-129.128.17.20
-92.103.5.73
-86.12.133.109
-82.138.95.241
-173.226.127.45
-betabug.qlikview.com
-|
+
 
 # Matches #
 matches [

@@ -17,13 +17,7 @@ dorks [
 '"Fossil version " inurl:"fossil.cgi"'
 ]
 
-# Examples #
-examples %w|
-www.fossil-scm.org
-pritlog.com/fossil.cgi
-fossil-scm.hwaci.com/fossil/
-www.weirdspaceadventures.com/cgi-bin/fossil.cgi
-|
+
 
 # Matches #
 matches [

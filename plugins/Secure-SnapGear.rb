@@ -18,27 +18,7 @@ dorks [
 'intitle:"Management Console" "Secure Computing SnapGear unit"'
 ]
 
-# Examples #
-examples %w|
-72.24.68.214
-84.253.184.218
-165.228.186.222
-58.6.122.236
-87.55.241.14
-117.53.131.145
-67.79.50.70
-41.225.238.178
-217.193.155.10
-203-59-93-130.perm.iinet.net.au
-mvssmail.mvss.com
-78.97.93.13
-www.rb7.com
-12.237.255.131
-www.aegef.ro
-24.155.158.138
-rrcs-97-76-48-2.se.biz.rr.com
-https://138.88.163.46
-|
+
 
 # Matches #
 matches [

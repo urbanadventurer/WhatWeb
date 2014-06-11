@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-09-08
 version "0.1"
 description "WANem is a Wide Area Network emulator designed by Performance Engineering Research Centre, TATA Consultancy Services, Mumbai. - Homepage: http://wanem.sourceforge.net/"
 
-# Examples #
-examples %w|
-184.177.72.70
-|
+
 
 # Matches #
 matches [

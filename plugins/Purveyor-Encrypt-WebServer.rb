@@ -17,16 +17,7 @@ description "Purveyor Encrypt WebServer for OpenVMS combines the reliability, se
 # 18 for Purveyor Encrypt Domestic
 # 10 for Purveyor Encrypt Export
 
-# Examples #
-examples %w|
-129.43.7.102
-74.218.70.8
-74.218.70.7
-137.125.248.2
-158.165.5.23
-132.170.217.131
-67.53.90.98
-|
+
 
 # Passive #
 def passive

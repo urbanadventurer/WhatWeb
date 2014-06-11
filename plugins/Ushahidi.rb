@@ -12,18 +12,7 @@ description "The Ushahidi Platform is a platform for information collection, vis
 # ShodanHQ results as at 2011-06-05 #
 # 22 for ushahidi_data
 
-# Examples #
-examples %w|
-50.18.62.41
-184.106.149.168
-184.106.135.232
-50.56.94.242
-186.202.17.207
-72.3.176.215
-184.106.165.19
-64.85.162.230
-174.129.45.214
-|
+
 
 # Matches #
 matches [

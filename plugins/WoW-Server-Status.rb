@@ -11,13 +11,7 @@ description "This lightweight PHP script will parse Blizzard's XML feed and disp
 
 # 4 Google results for "It appears that your server can run WoW Server Status.  Game on."
 # 1 Google result for "This lightweight PHP script will parse Blizzard's XML feed and display realm status on your Guild's web page." ext:txt
-examples %w|
-iliad.nu/server_test.php
-energobielsk.pl/eqdkp/portal/realmstatus/WoW/server_test.php
-silentsence.si.funpic.de/eqdkp/portal/realmstatus/WoW/server_test.php
-www.crushridge.us/portal/realmstatus/WoW/server_test.php
-http://www.aers-zdc.city.tl/portal/realmstatus/WoW/server_test.php
-|
+
 
 matches [
 

@@ -15,12 +15,7 @@ description "IT747.COM is proudly presenting a property listings management syst
 # Google results as at 2010-08-27 #
 # 10 for "powered by Realtor 747"
 
-# Examples #
-examples %w|
-www.it747.com/realtor747/demo/admin_demo/admin/index.php
-webdesign.jejusoft.com/demo/admin_demo/admin/index.php
-louisvillehighlights.com/admin/index.php
-|
+
 
 # Matches #
 matches [

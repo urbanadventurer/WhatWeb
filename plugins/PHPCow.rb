@@ -17,31 +17,7 @@ dorks [
 '"powered by PHPCow.com"'
 ]
 
-# Examples #
-examples %w|
-www.babyboomer-magazine.com
-guiadeflamenco.com
-www.presurance.com
-www.aldiyarsat.net
-www.sportswarts.com/gallery/
-www.myrgvsports.net
-www2.efreshers.com
-www.yourundergroundnews.com
-www.thebusinessmail.com
-www.tvnext.in
-www.thegingerbreads.co.uk/news/
-rotarycllt.org
-www.thenooze.net
-www.bravanews.com
-www.servicemaster-polk-county.com
-www.delhigo.com
-www.freeenergy.ca
-www.teis.org.tr
-www.bestofmalawi.com/news/
-www.northindiatimes.com/news/
-www.saudionfocus.com/en/
-fdphotos.net
-|
+
 
 # Matches #
 matches [

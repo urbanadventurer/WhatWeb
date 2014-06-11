@@ -12,26 +12,7 @@ description "Administration of dynamic IP addresses by LANCOM Dynamic VPN device
 # ShodanHQ results as at 2011-03-13 #
 # 12,416 for LANCOM VPN
 
-# Examples #
-examples %w|
-87.193.163.178
-80.156.200.130
-83.64.76.20
-195.243.143.67
-195.127.174.62
-85.125.86.254
-62.154.143.98
-217.92.155.127
-178.250.192.220
-195.243.55.74
-88.76.227.210
-217.92.140.219
-80.153.158.84
-217.93.32.170
-87.139.199.76
-87.139.220.3
-87.79.73.166
-|
+
 
 # Passive #
 def passive

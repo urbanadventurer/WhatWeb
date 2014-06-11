@@ -19,13 +19,7 @@ dorks [
 '"powered by basilic"'
 ]
 
-# Examples #
-examples %w|
-www.lifl.fr/GRAPHIX/publications.php
-secure.ntsg.umt.edu/publications/
-www.liaad.up.pt/pub/
-www.inis.iarc.uaf.edu/publications/
-|
+
 
 # Matches #
 matches [

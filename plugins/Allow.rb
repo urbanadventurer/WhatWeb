@@ -11,22 +11,7 @@ description "This plugin retrieves the allowed methods from the HTTP Allow heade
 
 # 83 ShodanHQ results for "Allow: PUT" @ 2010-11-01
 # About 255 ShodanHQ results for "Allow: DELETE" @ 2010-11-01
-examples %w|
-194.185.104.85
-212.20.102.132
-155.199.148.174
-184.73.28.176
-217.149.125.198
-155.199.149.67
-155.199.36.227
-64.40.180.24
-194.185.104.85
-150.254.14.91
-209.207.83.19
-212.20.102.132
-155.199.148.174
-209.207.75.227
-|
+
 
 # Passive #
 def passive

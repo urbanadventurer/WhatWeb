@@ -17,11 +17,7 @@ dorks [
 'intitle:"Mercury Satellite Ground Station"'
 ]
 
-# Examples #
-examples %w|
-http://gs.stanford.edu/mercury/main.php
-https://gs.stanford.edu/mercury-1.2.0/main.php
-|
+
 
 # Matches #
 matches [

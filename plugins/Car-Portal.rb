@@ -18,16 +18,7 @@ dorks [
 '"Powered by Car Portal" "Frequently asked questions"'
 ]
 
-# Examples #
-examples %w|
-www.dream-autos.com
-www.rewardauto.com/index.php
-www.carbazar.com.pk/index.php
-www.automerchantqr.com
-www.viperimagemedia.com/cars/admin/admin.php
-hondadesmedt.be/cars/admin/admin.php
-www.ngpimporauto.com/cars/admin/admin.php
-|
+
 
 # Matches #
 matches [

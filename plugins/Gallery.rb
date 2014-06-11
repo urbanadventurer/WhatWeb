@@ -19,30 +19,7 @@ dorks [
 '187 for inurl:"/index.php/login/ajax" "Login" "Username" "Password" "Forgot your password"'
 ]
 
-# Examples #
-examples %w|
-gallery.tarpify.com
-www.brabandfilmvideo.com/gallery/installer/
-andrei.myip.org/pictures/
-www.bohonabears.com/gallery3/index.php
-www.teaserfishing.com/gallery/index.php
-communitymidwivesofhalton.com/gallery/index.php/login/ajax
-hunt180.com/gallery3/index.php
-www.amazonkinglodge.com/gallery/index.php/login/ajax
-poopscoopersboise.com/pictures/index.php
-psiconversion.com/gallery/index.php
-www.rickytsang.ca/gallery/index.php
-www.ultimatekenpo.org/gallery/index.php
-www.sneha-villa.com/photo/index.php
-www.vfw10216.com/photo_gallery/index.php
-www.obscuredplanet.com/obscured/index.php/login/ajax
-www.vintageimages.org/index.php
-www.asiagirl.us/index.php
-kareena.indianactresspics.in/index.php
-sarkfolkfestival-photos.com/index.php/login/ajax
-geog.ggy.uga.edu/gallery/index.php
-assets.unioncountyil.gov
-|
+
 
 # Matches #
 matches [

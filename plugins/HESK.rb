@@ -17,64 +17,7 @@ dorks [
 '"Powered by Help Desk Software HESK"'
 ]
 
-# Examples #
-examples %w|
-www.hesk.com/demo/
-www.hesk.com/demo/admin/
-techsupport.iearn.org/index.php
-www.thetoothfairyletters.com/Hesk/
-onlinebusiness2riches.com/hesk/
-helpdesk.real-time-traffic.net
-www.blackapplehost.net
-https://moodle.hm.edu/support/
-support.learninglikecrazy.com
-www.davegaleonline.com/helpdesk/
-www.safelistgeek.com/hesk/index.php
-www.ewritecms.com/ticket/
-support.pureadultweb.com
-mobishark.com/helpdesk/
-support.comvigo.com/
-www.bcehosting.info/hesk/index.php
-www.mensdatingadvice.com/hesk/
-support.elkor.net/knowledgebase.php
-www.perfect-diet-tracker.com/hesk/knowledgebase.php
-support.kgdm.com/knowledgebase.php
-www.rubihawk.com/helpdesk/knowledgebase.php
-www.rapidace.com/helpdesk/knowledgebase.php
-www.centurionwealthcircle.com/contact/knowledgebase.php
-www.cybergenix.com.au/hesk/
-gpscraper.com/support/knowledgebase.php
-helpdesk.acutetools.com
-support.yuplay.com/knowledgebase.php
-www.globobux.com/support/
-www.tacfitcommando.com/support/
-www.speechagents.com/helpdesk/knowledgebase.php
-www.talkingcommunities.com/helpdesk/index.php
-www.melvinsoftware.com/support/
-www.realbooksoftware.com/hesk
-helpdesk.tfcash.com
-www.rmaxinternational.com/hesk/
-mobilesentry.net/hesk/
-www.sexsim.com/helpdesk/index.php
-www.rudegameware.com/hesk/knowledgebase.php
-www.ced.berkeley.edu/cedhelp/index.php
-lsc.wisc.edu/helpdesk/
-www.indycc.edu/hesk/
-extensiononline.tamu.edu/help-desk/knowledgebase.php
-walkacrosstexas.tamu.edu/helpdesk/knowledgebase.php
-helpdesk.brescia.edu/hesk/index.php
-help.maconstate.edu/knowledgebase.php
-slc-web.scilabs.lsa.umich.edu/hesk/
-libs0600.library.iup.edu/hesk/knowledgebase.php
-extensiononline.tamu.edu/help-desk/knowledgebase.php
-www.uni.edu/chfa/chfatech/news.php
-lpc1.laspositascollege.edu/blackboardsupport/
-www.problems.ednet.lsu.edu/knowledgebase.php
-educ-calvin.lsu.edu/~etshelpdesk/knowledgebase.php
-helpdesk.colin.edu
-https://fcs.tamu.edu/help-desk/knowledgebase.php
-sacomaine.gov/helpdesk/index.php
-|
+
 
 # Matches #
 matches [

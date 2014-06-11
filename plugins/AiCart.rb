@@ -16,19 +16,7 @@ dorks [
 'inurl:"/store.php?action=view_product pid="'
 ]
 
-# Examples #
-examples %w|
-www.diacan.com/login.php
-mail.diacan.com/login.php
-www.the-brass-works.com/login.php
-dentalmartsupplies.com/login.php
-www.modflame.com/login.php
-www.vanitbox.com/login.php
-74.213.165.229/login.php
-www.eaglecanada.com/login.php
-questyme.com/login.php
-discussupply.com/login.php
-|
+
 
 # Matches #
 matches [

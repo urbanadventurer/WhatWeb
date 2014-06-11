@@ -17,23 +17,7 @@ dorks [
 '"qcodo/_devtools/codegen.php" intitle:"Development Framework - Start Page"'
 ]
 
-# Examples #
-examples %w|
-www.pureingenuity.com/library/Qcodo/
-data.kidzclix.net/vaclav/kidzclix_core_backup/
-www.docsminder.com.au/qcodo/
-www.solutionpropertyservices.com/en/furniture/qcodo/
-praxisconstructions.com/qcodo/
-www.kraushummel.com/backend/qcodo/
-www.wilevco.com/qcodo/
-www.matrixcheersquad.com/admin/qcodo/
-www.successby6kfla.ca/library/Qcodo/
-www.myworldcollege.com/qcodo/
-apps.gatewaystaff.com/Qcodo/
-oakif.com/~oakif/affiliates/qcodo/
-www.onlineautoapplication.com/qcodo/
-www.msamused.com/qcodo/
-|
+
 
 # Matches #
 matches [

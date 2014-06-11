@@ -13,15 +13,7 @@ description "Tencent QQ, generally referred to as QQ, is the most popular free i
 # ShodanHQ results as at 2011-03-19 #
 # 8 for Tencent/HTTP_Magic_Expression
 
-# Examples #
-examples %w|
-112.90.136.71
-203.195.110.20
-124.153.72.86
-203.184.141.212
-119.147.7.210
-119.147.15.33
-|
+
 
 # Matches #
 matches [

@@ -17,20 +17,7 @@ dorks [
 '"Welcome to FileVista" "Please enter your credentials:" "User name"'
 ]
 
-# Examples #
-examples %w|
-www.gleamtech.com/demos/filevista/login.aspx
-investorlogin.forbion.com
-servicecenter.verykool.net
-docs.consigli.com
-ca.kuczmarski.com
-kikah.com
-24.39.104.202
-evanterry.imediafiles.com/filevista/
-team.grogers.com/login.aspx
-filevista.jnt.fi
-www.romaricerche.it/filevista/
-|
+
 
 # Matches #
 matches [

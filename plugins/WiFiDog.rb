@@ -17,15 +17,7 @@ dorks [
 '"I am unable to retrieve the schema version. Either the wifidog database hasn\'t been created yet, the postgresql server is down, or pg_hba.conf does not allow your web server to connect to the wifidog database." "host" "port" "dbname"'
 ]
 
-# Examples #
-examples %w|
-auth.nycwireless.net/install.php
-87.106.7.143/install.php
-niibi.ru/install.php
-fishpot.co.uk
-wifi.locolandia.net
-mm.mech.pk.edu.pl
-|
+
 
 # Matches #
 matches [

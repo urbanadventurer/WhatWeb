@@ -12,19 +12,7 @@ description "Fujitsu-InfoProvider-Pro web server - homepage: http://software.fuj
 # ShodanHQ results as at 2011-02-24 #
 # 188 for Fujitsu-InfoProvider-Pro
 
-# Examples #
-examples %w|
-220.110.109.67
-211.1.58.203
-118.86.65.91
-211.12.239.205
-202.122.49.62
-211.130.30.62
-202.32.0.33
-218.40.1.204
-60.32.200.135
-61.196.255.194
-|
+
 
 # Matches #
 matches [

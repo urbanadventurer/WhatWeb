@@ -12,19 +12,7 @@ description "CommuniGate Pro provides an integrated platform for Store-and-Forwa
 # ShodanHQ results as at 2011-05-23 #
 # 9,594 for CommuniGatePro
 
-# Examples #
-examples %w|
-208.42.184.243
-66.18.70.50
-209.190.212.8
-84.246.196.173
-12.185.81.67
-87.224.134.190
-212.71.47.51
-79.99.248.5
-217.14.192.50
-142.103.75.236
-|
+
 
 # Passive #
 def passive

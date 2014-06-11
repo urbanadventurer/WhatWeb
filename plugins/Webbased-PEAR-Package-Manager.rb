@@ -19,40 +19,7 @@ dorks [
 '"Installed packages" "Webbased PEAR Package Manager" "Search package by name"'
 ]
 
-# Examples #
-examples %w|
-tias.ulyssis.org/frontweb_demo/
-value-zoom.net
-www.neblu.net
-www.miguettmexico.com/index.php
-www.smokeyjoeentertainment.com/index.php
-mwlan.pl/index.php
-www.mwlan.pl/index.php
-maroonprojects.com/index.php
-powerplacedr.com/pear/PEAR/docs/PEAR_Frontend_Web/docs/example.php
-comparewebads.com
-www2.tilmannklein.de/pear/
-lookratings.com
-objoo.com
-shoutsfromthemountaintop.com/index.php
-bptime.com
-www.xpressinfo.ca/index.php
-www.ground.co.kr/pear/PEAR/docs/PEAR_Frontend_Web/docs/example.php
-shi-ba.info/pear/index.php
-banahievitch.com/PEARPACKAGE/index.php
-somethingblue.thecoolbook.com/index.php
-reflections.thecoolbook.com/index.php
-www.protos21.net/index.php
-sd.ufm.com.au
-www.kittys.biz/pear/index.php
-www.sorun-inc.com/go-pear-admin.php
-ajian.jp/pear.php
-mockmonster.com/pear/index.php
-demos.savvyehosting.com
-219.94.210.97/pear.php
-mgs-dai1.net/kanri/pear.php
-www.protos21.net/index.php
-|
+
 
 # Matches #
 matches [

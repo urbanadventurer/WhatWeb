@@ -18,11 +18,7 @@ dorks [
 'intitle:"spt - simple phishing toolkit" "forgot password"'
 ]
 
-# Examples #
-examples %w|
-www.squadr.at/spt/
-www.items-ip.de
-|
+
 
 # Matches #
 matches [

@@ -12,18 +12,7 @@ description "Procon Electronics Mod-Mux (Serial/Ethernet Converter & Modbus Gate
 # ShodanHQ results as at 2011-07-27 #
 # 39 for Procon Electronics
 
-# Examples #
-examples %w|
-129.215.243.251
-129.215.243.248
-194.81.244.241
-129.215.143.248
-129.215.116.249
-129.215.82.202
-129.215.148.246
-194.81.243.248
-129.215.244.248
-|
+
 
 # Passive #
 def passive

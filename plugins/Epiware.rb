@@ -17,19 +17,7 @@ dorks [
 'intitle:"Epiware" "This web-site requires javascript. Please enable javascript to access this web-site."'
 ]
 
-# Examples #
-examples %w|
-www.lagaialuna.it:81/epiware/
-klu.dk/docs/
-marek-szewczyk.prv.pl/dokument/
-www.eng.buffalo.edu/Research/GLERC/
-www.flaris.be
-www.csi.nus.edu.sg/epi/
-www.mypiccs.org
-https://acad.gcsu.edu/epiware/
-https://planet-topers.oma.be/
-https://dms-extern.ivi.fraunhofer.de/
-|
+
 
 # Matches #
 matches [

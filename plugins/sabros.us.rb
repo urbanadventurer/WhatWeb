@@ -15,49 +15,7 @@ description "sabros.us  is a CMS to put your bookmarks online with folksonomy su
 # Google results as at 2010-08-06 #
 # 81 for "Powered by sabros.us"
 
-# Examples #
-examples %w|
-www.10stripe.com/private/sabrosus/
-www.webzapp.in
-sabrosus.pdfkitap.com
-sabrosus.velloo.com
-www.selfsufficientish.com/link.ish/
-sabrosus.kaydet.in
-sabrosus.pratik.us
-tagspt.com
-sabrosus.mis-algoritmos.com
-erikssonnet.com/links/
-www.sardegnawiki.it/index.php
-www.tagzswap.de
-www11.atpages.jp/sabrosus/
-demoll.tuxfamily.org/tags/
-go.artec.cn
-sabrosus.gizliip.com
-sabrosus.vistaxp.us
-sabrosus.hekim.in/sabrosus.php
-sabrosus.videonita.com
-sabrosus.fotooan.com
-sabrosus.ilan.im
-sabrosus.vanminit.com
-sabrosus.zoomboo.com
-bookmark.rpwt.info
-sabrosus.tarih.in
-sabrosus.kadin.in
-sabrosus.kopek.in
-sabrosus.anten.in
-sabrosus.eglen.in
-sabrosus.neden.in
-sabrosus.kuran.in
-sabrosus.hedef.in
-sabrosus.arsiv.in
-sabrosus.erkek.in
-sabrosus.indirim.in
-meinmasstisch.de
-sabrosus.tercih.in
-taka.myftp.org
-links.emotionconcept.ro
-sabrosus.gelin.in
-|
+
 
 # Matches #
 matches [

@@ -14,12 +14,7 @@ dorks [
 '"Baked with PieCrust"'
 ]
 
-# Examples #
-examples %w|
-bolt80.com
-www.sotavio.com
-ahdiaz.euler.es/development/
-|
+
 
 # Matches #
 matches [

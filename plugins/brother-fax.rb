@@ -22,24 +22,7 @@ dorks [
 'intitle:"brother mfc" inurl:"/main/main.html"'
 ]
 
-# Examples #
-examples %w|
-70.89.9.195
-128.119.130.18
-128.250.167.204
-129.25.6.46
-129.107.93.5
-129.237.170.148
-130.111.215.98
-130.158.27.156
-133.5.71.163
-134.34.71.47
-141.2.161.110
-www.curee.info
-www.xxjfnk.com
-cascade.engr.utk.edu
-astro14.astronevis.columbia.edu
-|
+
 
 # Matches #
 matches [

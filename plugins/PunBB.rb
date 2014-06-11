@@ -20,43 +20,7 @@ dorks [
 '"Powered by PunBB, supported by Informer Technologies"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/punbb/
-www.gamebreaker.tv/forum/
-source.online.free.fr
-www.pkbc.ca/forum/index.php
-www.drakaz.com/forum/
-gparted-forum.surf4.info
-forum.ashopsoftware.com
-www.perthivf.com.au/forum/
-forums.famillecollet.com
-thefixed.org/forum/
-forum.algoriddim.com
-www.simpleviewer.net/forum/
-spinkbb.jsand.net/punbb/
-community.nirvanahq.com/forums/
-www.sqldbx.com/forum/
-webapp-net.com/Forums/
-www.trasporto-moto.com/forum/
-penisenlargementforums.com
-forum.getfiregpg.org
-www.applecider.org/forums/
-chrome.desc.se/forum/
-forums.illusorystudios.com
-frances26.org/punbb/
-www.ultimatepwnage.com/forum/
-www.simplecms.com/help/
-protextthemes.info
-www.whitaker.org/forum/
-kscripts.com/forum/index.php
-sahi.co.in/forums/
-www.tracmor.com/forum/
-board.alluc.org
-www.aspecto-software.com/punbb/
-events.maelstromgames.co.uk/punbb/
-xteraco.untergrund.net
-|
+
 
 # Matches #
 matches [

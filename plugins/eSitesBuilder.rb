@@ -16,39 +16,7 @@ dorks [
 '"powered by eSitesBuilder"'
 ]
 
-# Examples #
-examples %w|
-realestate.esitesbuilder.com
-ecommerce.esitesbuilder.com/ru/
-personal.esitesbuilder.com/ru/
-school.esitesbuilder.com/ru/
-clan.esitesbuilder.com/ru/
-books.esitesbuilder.com/ru/
-software.esitesbuilder.com/ru/
-hardware.esitesbuilder.com/ru/
-venerasabirova.esitesbuilder.com
-fgin.esitesbuilder.com/en/
-software.com.ua/ua/
-chist.com.ua/ru/
-market.umh.ua/ru/
-tech-business.kiev.ua
-www.tehnoinet.com.ua/ru/
-www.fgin.ru
-www.brightgroup.com.ua
-www.systemshift.com
-www.kucha.com.ua
-www.7continent.com.ua
-www.vbal.com.ua
-www.maskot.com.ua
-www.danik.com.ua
-www.santeco.com.ua
-www.linza-ua.com
-www.tolstosum.com.ua
-www.automatica.kiev.ua
-www.alpha-genics.com
-www.alphagenics.com
-www.dualex.com
-|
+
 
 matches [
 

@@ -11,28 +11,7 @@ description "MyAuth Gateway 3 is a software for the administration of users to p
 
 # About 6144 ShodanHQ results for "X-Manager-By:"
 # About 4794 ShodanHQ results for "X-Powered-By: TMSoft MyAuth Gateway"
-examples %w|
-186.194.3.225
-186.200.70.130
-187.62.107.141
-187.63.203.62
-187.111.193.35
-189.17.122.162
-189.39.108.156
-189.42.251.108
-189.53.131.252
-189.84.120.251
-189.39.106.237
-189.39.107.138
-189.39.108.77
-200.192.146.116
-200.192.147.216
-200.192.149.2
-200.192.153.240
-201.39.19.152
-201.48.39.5
-201.56.234.116
-|
+
 
 # Passive # HTTP Header
 def passive

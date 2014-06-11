@@ -16,17 +16,7 @@ dorks [
 'intitle:"PHP Server Monitor" "Powered by PHP Server Monitor"'
 ]
 
-# Examples #
-examples %w|
-monitor.i20a.net
-bc-apps1.com/monitoring/
-www.hoebe.be/test/
-www.cyberpunk.co.za
-adsbake180.com/monitor/
-monitor.gundari.net
-www.philnichols.co.uk/watcher/
-encompassinteractive.com
-|
+
 
 # Matches #
 matches [

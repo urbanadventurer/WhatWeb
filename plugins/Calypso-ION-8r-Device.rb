@@ -9,12 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-11-16
 version "0.1"
 description "The ION-8r is a networked device controller with 8 individual contact relays and a single RS-232 port. Like all Calypso controllers, the ION-8r uses an on-board event database to speed and ease control logic definition, with little training and no code-writing. - Homepage [offline]: http://www.calypsosystems.com/"
 
-# Examples #
-examples %w|
-99.140.152.26
-208.53.86.131
-208.53.86.138
-|
+
 
 # Matches #
 matches [

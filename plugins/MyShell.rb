@@ -16,13 +16,7 @@ dorks [
 'intitle:"MyShell 1.1.0 build 20010923" -intitle'
 ]
 
-# Examples #
-examples %w|
-garen.no/a.php
-www.sistemasiri.it/index.php
-www.eugendorf.at/bilder/MCS_only/jh/shell.php
-www.eugendorf.at/bilder/MCS_only/sparputz/b.php
-|
+
 
 # Matches #
 matches [

@@ -12,19 +12,7 @@ description "This product version has been EOL'd and is beyond its end of suppor
 # ShodanHQ results as at 2011-03-14 #
 # 810 for Netscape FastTrack
 
-# Examples #
-examples %w|
-68.160.66.251
-194.214.122.229
-212.13.154.8
-216.158.96.233
-206.175.176.48
-119.97.209.44
-12.202.192.58
-129.1.87.221
-63.175.72.62
-173.166.241.230
-|
+
 
 # Passive #
 def passive

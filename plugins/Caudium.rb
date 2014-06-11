@@ -11,17 +11,7 @@ description "Caudium is the name of a GPL-ed (free for commercial and personal u
 
 # About 209 ShodanHQ results for Server: Caudium @ 2011-08-02
 
-# Examples #
-examples %w|
-109.252.249.154
-195.70.32.144
-89.140.182.99
-141.108.20.11
-89.31.236.7
-193.149.48.8
-195.70.32.132
-216.158.103.42
-|
+
 
 # Passive #
 def passive

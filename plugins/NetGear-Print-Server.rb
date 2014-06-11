@@ -13,16 +13,7 @@ description "NetGear Print Server - Print servers connect printers directly to t
 # 1,142 for PRINT_SERVER WEB
 # 1,142 for PRINT_SERVER WEB 1.0
 
-# Examples #
-examples %w|
-149.144.234.195
-147.83.166.196
-208.57.132.37
-140.247.162.148
-12.183.242.103
-170.211.195.230
-154.6.144.125
-|
+
 
 # Matches #
 matches [

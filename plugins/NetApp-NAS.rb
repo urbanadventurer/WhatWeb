@@ -12,24 +12,7 @@ description "NetApp network-attached storage solutions and a unified storage arc
 # ShodanHQ results as at 2011-03-13 #
 # 1,485 for NetApp -NetCache
 
-# Examples #
-examples %w|
-158.102.161.153
-129.10.116.9
-169.236.151.110
-89.238.71.254
-204.12.115.184
-206.251.171.61
-63.231.195.122
-129.74.223.99
-208.50.232.51
-211.63.185.8
-218.24.6.177
-124.243.127.141
-123.190.234.18
-60.22.151.142
-217.11.56.190
-|
+
 
 # Matches #
 matches [

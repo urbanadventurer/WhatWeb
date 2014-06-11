@@ -17,21 +17,7 @@ dorks [
 'intitle:"Funkwerk * Home Page" "Initial Configuration" "Advanced Configuration"'
 ]
 
-# Examples #
-examples %w|
-80.244.116.23
-80.244.123.160
-80.244.124.176
-80.244.125.247
-81.252.94.224
-81.252.138.84
-81.80.185.191
-88.149.145.143
-94.102.129.111
-213.215.44.242
-host55-150-static.74-81-b.business.telecomitalia.it
-host192-33-static.42-85-b.business.telecomitalia.it
-|
+
 
 # Matches #
 matches [

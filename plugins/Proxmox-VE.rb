@@ -17,11 +17,7 @@ dorks [
 '"JavaScript is not available" intitle:"Proxmox Virtual Environment"'
 ]
 
-# Examples #
-examples %w|
-https://audio.wbhm.net
-https://mybeni.rootzilla.de
-|
+
 
 # Matches #
 matches [

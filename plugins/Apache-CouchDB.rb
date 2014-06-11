@@ -16,13 +16,7 @@ description "Apache CouchDB is a document-oriented database written in Erlang th
 # ShodanHQ results as at 2011-08-03 #
 # 41 for CouchDB
 
-# Examples #
-examples %w|
-64.30.133.196
-50.18.16.183
-178.79.131.77
-87.98.142.10
-|
+
 
 # Passive #
 def passive

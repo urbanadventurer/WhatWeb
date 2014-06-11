@@ -17,13 +17,7 @@ dorks [
 '"Powered by Shadowed Portal" "These script\'s code is Copyright" -dork'
 ]
 
-# Examples #
-examples %w|
-mecanica2006.webcindario.com
-labertuccia.altervista.org/portal/
-tabclub.sufx.net
-holyemperium.ho.funpic.de
-|
+
 
 # Matches #
 matches [

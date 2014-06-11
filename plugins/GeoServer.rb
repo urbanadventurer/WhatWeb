@@ -18,40 +18,7 @@ dorks [
 '"This GeoServer belongs to" "This GeoServer instance is running version" intitle:"GeoServer: Welcome"'
 ]
 
-# Examples #
-examples %w|
-demo.opengeo.org/geoserver/web/
-93.158.64.16/geoserver/web/
-129.24.63.138/geoserver/web/
-v2.suite.opengeo.org/geoserver/web/
-geobretagne.fr/geoserver/web/
-speeduperp.se/geoserver/web/
-geo.cropster.org/geoserver/web/
-wdc.aari.ru:8080/geoserver/web/
-50.17.57.6:8080/geoserver/web/
-www.lucamorandini.it/geoserver/web/
-ldvapp07.fao.org:8030/geoserver/web/
-web-karten-portal.de:8080/geoserver/web/
-www.meetnetlandschap.nl/web/
-64.185.222.206:8080/geoserver/web/
-https://geo.vioe.be/geoserver/web/
-catalog.usgin.org/geoserver/web/
-www.drna.gobierno.pr/geodrna/web/
-geonode.sopac.org/geoserver/web/
-siscom.ibama.gov.br/geoserver/web/
-www.metoc.gov.au/geoserver/web/
-services.aad.gov.au/geoserver/web/
-geology.data.nt.gov.au/erml/web/
-geoserver.agric.wa.gov.au/geoserver/
-d3.elgin.gov.uk/g.1.dynamic.live/web/
-www.metoc.gov.au/geoserver/web/
-www.geoservicos.ibge.gov.br/geoserver/web/
-gis.nationalarchives.gov.uk/geoserver/web/
-sinpesq.mpa.gov.br/geoserver/web/
-www.nottinghamshire.gov.uk/maps/
-bhuvan5.nrsc.gov.in/bhuvan/web/
-mapa.bialystok.lasy.gov.pl:8080/geoserver/
-|
+
 
 # Matches #
 matches [

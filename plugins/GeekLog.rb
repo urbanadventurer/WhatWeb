@@ -18,20 +18,7 @@ dorks [
 '"powered by GeekLog"'
 ]
 
-# Examples #
-examples %w|
-www.geeklog.net
-news.infoshop.org
-www.sangria.org.il/gl/users.php
-www.battersbox.ca
-www.topsight.net/index.php
-news.bn.gs
-www.panama-guide.com
-www.webhostingsitesreviews.com
-www.roadshow.ubc.ca/links/index.php
-bigforex.com
-www.abend.org
-|
+
 
 # Matches #
 matches [

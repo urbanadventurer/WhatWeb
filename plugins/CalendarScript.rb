@@ -23,60 +23,7 @@ dorks [
 '"CGISession: Session file" "could not be opened for writing!"'
 ]
 
-# Examples #
-examples %w|
-www.calendarscript.com/demo/calendar_admin.pl
-weakleycountytn.gov/cgi-bin/calendar.pl?calendar=countycalendar
-www.rcmforjesus.org/cgi-bin/calendar_admin.pl
-www.liwomen.com/cgi-bin/LIWcalendar/calendar_admin.pl
-www.chapelhilljaycees.org/cgi-bin/calendar_admin.pl
-vamason.org/cgi-bin/cs/calendar_admin.pl
-www.rochestergerman.com/cgi-bin/calendar_admin.pl
-www.observingstars.com/cgi-bin/calendar/calendar_admin.pl
-www.mediasourcewichita.com/cgi-bin/calendar_admin.pl
-archive.enigmata.org/calendar/calendar_admin.pl
-www.q-m.se/cgi-bin/calendar_admin.pl
-www.rcmforjesus.org/cgi-bin/calendar_admin.pl
-www.powellbuttecommunitycenter.com/cgi-bin/calendar_admin.pl
-www.lucpgh.com/calendar/calendar_admin.pl
-www.harrispavilion.com/cgi-bin/calendar_admin.pl
-www.whitney-fan.com/nr/cldr/new/calendar_admin.pl
-www.unit5.org/cgi-bin/Lunch-Sub/calendar_admin.pl
-www.cincycalendar.com/cgi-bin/calendar/calendar_admin.pl
-www.lafayette-online.com/cgi-bin/calendar_admin.pl
-www.federalhouserestaurant.com/cgi-bin/party/calendar_admin.pl
-www.liwomen.com/cgi-bin/LIWcalendar/calendar_admin.pl
-www.usdfregion4.org/Calendar/calendar_admin.pl
-www.op2vbc.com/calendar_admin.pl
-www.whisperingpinesretirementvillage.com/cal/calendar_admin.pl
-www.tahomaclub.com/cgi-bin/calendar_admin.pl
-learn2skate.ca/cgi-bin/calendar_admin.pl
-www.chapelhilljaycees.org/cgi-bin/calendar_admin.pl
-www.angelicministries.com/cgi-bin/calendar321/calendar_admin.pl
-www.mendocinocoast.com/cgi-bin/mendocinocoast/calendar/calendar_admin.pl
-vamason.org/cgi-bin/cs/calendar_admin.pl
-www.myoan.net/cgi-bin/calendar_admin.pl
-beniciasoccer.org/calendar/calendar_admin.pl
-www.rochestergerman.com/cgi-bin/calendar_admin.pl
-lakemichiganhomeswi.com/cgi-bin/calendar_admin.pl
-www.observingstars.com/cgi-bin/calendar/calendar_admin.pl
-www.castroonline.com/cgi-bin/calendar/calendar_admin.pl
-www.wachapreague.com/cgi-bin/events/calendar_admin.pl
-thoseladylions.org/cgi-bin/calendar_admin.pl
-www.mediasourcewichita.com/cgi-bin/calendar_admin.pl
-www.dumbaaldum.org/cgi-bin/calendar/calendar_admin.pl
-archive.enigmata.org/calendar/calendar_admin.pl
-www.q-m.se/cgi-bin/calendar_admin.pl
-seattlecentral.edu/library/cgi-bin/calendar.pl
-www.unit5.org/cgi-bin/Lunch-Sub/calendar_admin.pl
-www.ocean.edu/cgi-bin/calendarscript/calendar.pl
-www.chem.umn.edu/events/
-www.midland.edu/cgi-bin/calendar.pl
-www.washcoll.edu/cgi-bin/calendar.pl
-www.irp.wisc.edu/cgi-bin/irp/calendar.pl
-research.mmb.usyd.edu.au/calp
-www.clean.cise.columbia.edu/cgi-bin/calendar.pl
-|
+
 
 # Matches #
 matches [

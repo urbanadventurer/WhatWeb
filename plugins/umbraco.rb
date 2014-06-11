@@ -21,27 +21,7 @@ dorks [
 '"site powered by umbraco"'
 ]
 
-# Examples #
-examples %w|
-store.umbraco.org
-webguruservices.com
-greg.berlin.net.au
-www.hoosiertrailsbsa.org
-www.bataviacando.org
-baty-barr.com
-kasperb.dk
-aelsharif.com
-www.ucc-bln.de
-www.xsltreference.com
-www.battain.at
-www.littlewebempire.com
-www.method2madness.org
-kenny.no
-www.mortenbock.dk
-www.innwebtech.com.au
-www.manhattanheavy.com
-www.bpk.cc
-|
+
 
 matches [
 

@@ -16,29 +16,7 @@ dorks [
 '"powered by Plogger"'
 ]
 
-# Examples #
-examples %w|
-cantillano.com
-gallery.onetruegem.com
-mysmc.org/gallery/
-tmcyouth.com/summits/photos/
-www.africanlibraryproject.org/plogger/index.php
-www.atifaslam.biz/photo-gallery/
-www.davidperrett.com/plogger/
-www.fishnwater.com
-www.fotosindonesia.com
-www.geoartworks.com
-www.inlinestorefixtures.com/gallery/
-www.johndenhamhouse.com/plogger/index.php
-www.liadane.com/gif/
-www.philipmorrisbreakup.org/worldtour/
-www.tangoalchemie.com/gallery/
-www.rates-billing.net/bi/index.php
-www.sluttygfs.net
-www.texanmom.com
-www.tibetanpaintings.com/photos.php
-www.wallz4u.com
-|
+
 
 matches [
 

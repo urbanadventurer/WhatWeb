@@ -23,72 +23,7 @@ dorks [
 'intitle:"Forest Blog Administration"'
 ]
 
-# Examples #
-examples %w|
-www.jonathantokeley.com/Admin/
-poweron.mobile88.com/Admin/
-www.homeschool4you.com/Admin/
-blog.ammamalayalam.com/Admin/login.asp
-www.revivegroup.com.au/blog/Admin/login.asp
-www.searchengineposition.com/blog/Admin/
-www.rjmedina.com/hacks/Admin/login.asp
-www.wehategoogle.org/Admin/login.asp
-www.e-designs.ca/Admin/login.asp
-twoseveneight.iobb.net/blogs/rina_blog/Admin/
-www.patientpower.info/blog/Admin/
-www.felixcafarelli.com/public/SocialBlog/Admin/login.asp
-www.grenzeloosliefhebben.nl/Admin/login.asp
-www.asianfilmarchive.org/blog/Admin/login.asp
-positivefuturist.com/Admin/login.asp
-www.lighthouseassociates.com/blog/Admin/login.asp
-www.blogpac.org
-www.angelrockproject.com/arp/blog/
-www.searchengineposition.com
-positivefuturist.com
-www.usefilm.com/blog/
-blog.winemessenger.com/
-www.eadtu.nl/blog/
-www.chineseteastore.net/teablog/
-www.expeditions.com/blog/
-poweron.mobile88.com
-www.markvoss.net
-www.cartoonstock.com/cs_blog/default.asp
-www.producerpack.com/Articles/
-bloggingcrazy.com
-blog.ready2invest.co.uk
-www.maryjanesfarm.org/RFBlog/
-sfgblog.maryjanesfarm.org/default.asp
-rfgblog.maryjanesfarm.org
-mfgblog.maryjanesfarm.org
-www.marketdeveloper.com/blog/
-www.helpmetechs.com/blog/
-www.homeschool4you.com
-clemetzoo.com/zblog/default.asp
-blog.nicolasmusic.com/default.asp
-www.ezuploadplus.com/blog/
-www.taxcollector.com/blog/
-www.technojabber.com
-www.cashtree.com/blog/
-www.buildprogress.com/blog/default.asp
-www.santadays.co.uk/blog/
-www.limoanywhere.com/blog/
-www.rickcable.com/blog/default.asp
-www.waterfowlersrus.com/blog.asp
-www.triventek-ductcleaning.com/blog/
-www.diverselist.com/blog/
-www.flpharmacist.com
-www.gajett.com
-blog.symmetryplc.com
-robertin.com
-www.pbtalent.com/blog/
-www.theblah.net
-7thtee.us
-blog.comedyrobot.com
-www.nsifa.co.uk/blog/
-www.ianblair.com
-ellen.illinoisffa.org
-blog.biggerplate.com
-|
+
 
 # Matches #
 matches [

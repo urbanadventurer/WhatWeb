@@ -16,14 +16,7 @@ dorks [
 '"powered by FestOS"'
 ]
 
-# Examples #
-examples %w|
-skypanther.com/festos.php
-demo.festengine.org
-www.fairportcanaldays.com
-www.trilogynewberg.com
-www.parkavesummerartfest.com/parkavefest/
-|
+
 
 matches [
 

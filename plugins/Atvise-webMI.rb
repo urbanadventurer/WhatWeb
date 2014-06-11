@@ -12,13 +12,7 @@ description "Web-based HMI server - atvise webMI compliant web servers can be ex
 # ShodanHQ results as at 2012-04-11 #
 # 7 for atvise
 
-# Examples #
-examples %w|
-78.46.233.33
-78.46.233.34
-83.169.10.50
-213.239.211.34
-|
+
 
 # Matches #
 matches [

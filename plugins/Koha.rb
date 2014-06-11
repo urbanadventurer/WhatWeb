@@ -19,71 +19,7 @@ dorks [
 'inurl:cgi-bin/koha ext:pl'
 ]
 
-# Examples #
-examples %w|
-library.software.coop
-library.software.coop:8080
-head.bibkat.no
-head.bibkat.no:8080
-staff.kohademo.esilibrary.com
-opac.kohademo.esilibrary.com
-catalog.bywatersolutions.com
-intranet.bywatersolutions.com
-library.bswa.org
-l2-staff.load.bywatersolutions.com
-l1-staff.load.bywatersolutions.com
-koha-3.2demo-staff.osslabs.biz
-koha-3.2demo-staff.osslabs.biz:8080
-koha.nhusd.k12.ca.us:8080
-su.maktabat-online.net:8080
-alshafallah.maktabat-online.net:8080
-mu.maktabat-online.net:8080
-115.119.146.176:8081
-ptfs-staff.demo.kohalibrary.com
-scls-staff.kohalibrary.com
-gcpl2-staff.sandbox.kohalibrary.com
-ptfs-staff.demo.kohalibrary.com
-www.koha.libsoul.com
-www.afghandigitallibraries.org:4001
-solr.biblibre.com
-staff.kalibindia.com
-intranet.nikkeibunko.com
-sesiahsadminbackup.intersearch.com.au
-131.175.9.53:8080
-lib.bue.edu.eg:8080
-kohanor33.bibkat.no:8080
-opencat-staff.library.ucar.edu
-library.miuegypt.edu.eg
-wat.lib.tldsb.on.ca:8080
-sbe.lib.tldsb.on.ca:8080
-kramer.mayfirst.org:8080
-librarian.opus.koha.catalystdemo.net.nz
-koha.com.msu.edu:8080
-kingsfund.koha-ptfs.eu:8080
-koha.fhcrc.org
-vieuxmontreal-intranet.koha.ccsr.qc.ca
-koha.jgu.edu.in:8080
-koha-pro.devinci.fr
-ktmkirjasto.kuopio.fi
-devel-pro.tamil.fr
-koha.ffzg.hr:8080
-kohastaff.halton.gov.uk
-librarian.ero.govt.nz
-koha.kelantanlibrary.gov.my:8000
-elibrary.kelantan.gov.my
-koha.nlp.gov.ph
-connemara.tnopac.gov.in
-thiruvannamalai.tnopac.gov.in
-pudukkottai.tnopac.gov.in
-vellore.tnopac.gov.in
-archives1.dags.hawaii.gov:8000
-library.asti.dost.gov.ph
-zed.mdah.state.ms.us
-dlis.gov.dm
-catalog.library.strathamnh.gov
-library.nal.gov.au
-kohalibrary.halton.gov.uk
-|
+
 
 # Matches #
 matches [

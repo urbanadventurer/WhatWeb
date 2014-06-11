@@ -16,52 +16,7 @@ dorks [
 '"Script Powered by Kontaktformular"'
 ]
 
-# Examples #
-examples %w|
-aerobic-stabilized-oxygen.de/Ordner/kontakt.php
-bootsschulung.de/anmelden/anmelden/anmelden.php
-eg.sbb-design.de/?sec=contact
-ertek.de/kontakt.php
-hk-entertainment.com/index.php?seite=kontakt
-jurkovic.de/kontaktformular.php
-oxygen-bar.de/jobs.php
-stefanfreese.de/kontaktformular/kontakt.php
-taurus-trading.de/kontaktformular/kontakt.php
-ulmen-apotheke-nierstein.com/templates/kontakt.php
-wogramm.de/kontakt.php
-www.ab-fahrt.eu/kontaktform/kontakt.php
-www.astrobiographie.ch/kontakt/kontakt.php
-www.australien-fox-downunder.de/kontaktformular/kontakt.php
-www.bestattungen-kramer.de/kontakt.php
-www.fanstars.de/kontakt/kontakt.php
-www.floh-dur.de/wenigasche/kontakt/02/kontakt.php
-www.hausamdorfteich.de/kontakt.php
-www.henkelstreich-internisten.de/kontaktformular/kontakt.php
-www.kanal-werner.de/?content_text=12
-www.licht-wohnen.de/kontaktformular/kontakt.php
-www.orchidmassage.de/kontakt/kontakt.php
-www.rbplanung.ch/contact/kontakt.php
-www.stopp-wohnnotstand.ch/kontakt.php
-www.polyperla.de/templates/kontakt.php
-www.d-minds.de/wh/kontakt.php
-www.franziskagrab.ch/kontakt/kontakt.php
-www.mikrasysteme.de/kontakt/kontakt.php
-www.nshop2000.de/kontakt.php
-www.boersenpoint.de/index.php?site=kontakt
-www.evelinfraentzel.de/php/kontakt.php
-www.waldhundeschule.de/kontakt.php
-www.labor-auf-raedern.de/Kontaktformular/kontakt.php
-www.wolfsonium.com/kontakt/kontakt.php
-www.reeckmann.de/mailform/kontakt.php
-www.notrucksack.com/kontakt.php
-www.zimmerer-innung-ulm.de/zimmerer-innung-ulm/inhalt/kontakt/kontakt.php
-www.kneipe-longjohnsilver-berlin.de/kontaktformular.php
-www.handkaffeemuehlen.de/php/kontakt.php
-www.groner-kriegsknappen.de/include/kontakt.php
-www.rebleuten.ch/kontakt.php
-www.steuernpoint.de/index.php?site=kontakt
-www.rehsec.de/kontakt.php
-|
+
 
 matches [
 

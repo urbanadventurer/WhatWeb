@@ -10,10 +10,7 @@ version "0.1"
 description "The Warcraft 3 mod for AMX-Mod-X for Half-Life uses a config file which contains mySQL username, password, server, database name, table name. This plugin grabs the mySQL username, password and server."
 
 # 4 results for inurl:war3ft.cfg ext:cfg @ 2010-09-04
-examples %w|
-tom.fatesunited.com/%5BFates%20United%5D/Servers/69.28.220.111_port_27015/untitled/war3ft/war3FT.cfg
-www.ciberinc.cl/dod/publico/dod/addons/amxmodx/configs/war3ft/war3FT.cfg
-|
+
 
 matches [
 

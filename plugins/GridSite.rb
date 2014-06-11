@@ -17,23 +17,7 @@ dorks [
 'inurl:gridsite-admin.cgi filetype:cgi -inurl'
 ]
 
-# Examples #
-examples %w|
-www.gridsite.org
-www.hep.man.ac.uk
-sct.esc.rl.ac.uk
-www.gridpp.ac.uk/pmb/
-www.sysadmin.hep.ac.uk
-www.gridsite.org/doc/HEAD/gridsite-admin.cgi?cmd=history&file=index.html
-www.gridsite.org/gridsite-admin.cgi?cmd=history&file=index.html
-www.gridsite.org/doc/0.9.x/gridsite-admin.cgi?cmd=history&file=install.html
-www.gridpp.ac.uk/pmb/gridsite-admin.cgi?cmd=history&file=index.html
-www.gridpp.ac.uk/website/gridsite-admin.cgi?cmd=history&file=gridpp-admin.html
-www.gridpp.ac.uk/gridpp19/gridsite-admin.cgi?cmd=history&file=index.html
-www.hep.man.ac.uk/website/gridsite-admin.cgi?cmd=history&file=admin.html
-www.sysadmin.hep.ac.uk/gridsite-admin.cgi?cmd=history&file=index.html
-sct.esc.rl.ac.uk/SCARF/gridsite-admin.cgi?cmd=history&file=index.html
-|
+
 
 # Matches #
 matches [

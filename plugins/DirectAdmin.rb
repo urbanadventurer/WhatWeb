@@ -16,21 +16,7 @@ dorks [
 'intitle:"DirectAdmin Login" "DirectAdmin Login Page" "Please enter your Username and Password"'
 ]
 
-# Examples #
-examples %w|
-www.directadmin.com:2222
-datatelekom.net/noname2.php
-ftp.sunrise-art.ru
-www.erfbelasting.com:2222
-www.vergelijkjongerenreizen.nl:2222
-www.motomercado.com.ar:2222
-www.xvo.pl:2222
-serverint.m-it.tk
-www.rdsi-host2.net:2222
-www.uitinalkmaar.nl:2222
-https://ireallyhost.com:2222
-https://ryklys.serveriai.lt:8080
-|
+
 
 # Matches #
 matches [

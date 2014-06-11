@@ -17,30 +17,7 @@ dorks [
 '"powered by phpDenora" intitle:"phpDenora"'
 ]
 
-# Examples #
-examples %w|
-www.teranova.net/stats/
-www.ircstorm.net/stats/
-nfnet.org/stats/
-www.forums.nfnet.org/stats/
-chat.kappa.ro/denora/
-www.gb-irc.net/stats/phpdenora/
-www.mircland.com/istatistik/
-seniorenchat.eu/denora/
-www.recycled-irc.net/phpnsa/
-mijnchatbox.eu/stats/
-www.chat-irc.fr/stats/
-oicoite.com/stats/denora/
-aphroditechat.com/stats/
-www.abc-hebergement.fr/phpdenora/
-www.gay-sites.de/phpdenora/
-www.eagles-myirc.de/phpdenora/
-86.17.192.127:8080/stats/
-www.dream-irc.de/phpdenora/
-www.gewoonzo.nl/irc/
-divnoe.cn/stats/
-www.6667.eu/phpdenora/
-|
+
 
 # Matches #
 matches [

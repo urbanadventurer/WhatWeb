@@ -20,20 +20,7 @@ dorks [
 'ext:lasso'
 ]
 
-# Examples #
-examples %w|
-205.238.176.191
-207.183.64.10
-67.192.74.124
-12.10.87.44
-66.159.53.83
-70.169.167.54
-66.172.175.101
-130.108.162.47
-207.176.31.181
-www.hallcountyne.gov
-carnival.ind.wpi.edu
-|
+
 
 # Matches #
 matches [

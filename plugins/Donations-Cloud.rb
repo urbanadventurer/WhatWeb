@@ -17,22 +17,7 @@ dorks [
 '"powered by Donations Cloud"'
 ]
 
-# Examples #
-examples %w|
-www.zirona.com
-lucrenainternet.com
-myworldtour.net
-robeverest.com
-superwahmmy.com
-thecelebritydb.com
-www.attackvector.org
-www.homepagerelated.com
-www.ideiasparanegocios.com
-www.padgamers.de
-www.pcdicasuteis.com
-www.ps3attitude.com
-www.webmasterbulletin.net
-|
+
 
 matches [
 

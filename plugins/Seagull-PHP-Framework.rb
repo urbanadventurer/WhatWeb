@@ -21,35 +21,7 @@ dorks [
 '"Powered By Seagull PHP Framework"'
 ]
 
-# Examples #
-examples %w|
-s12.delirium.wp.pl
-s13.delirium.wp.pl
-fp.seagullsystems.com
-hausamsee.hallstattregion.at
-indonesia-property.com
-news.picturearchive.co.za
-rostok.info/default/
-rushlightawards.co.uk
-seagullproject.org
-www.hotel-hausamsee.at
-www.zoopalic.co.rs
-www.motorsportentry.com
-www.liepa.fi
-www.siegwulf-turek.at
-www.ol-ut.org
-www.carfrom.us
-www.picturearchive.co.za/
-www.im-salzkammergut.at
-www.sandhillspower.net
-www.canalettocamperclub.com
-www.grupobisel.com/www/
-www.heikewycisk.de
-www.progenicscorp.com
-www.buteni.ro
-www.worldphotoalbum.com/index.php
-www.bidro.eu/www/setup.php
-|
+
 
 # Matches #
 matches [

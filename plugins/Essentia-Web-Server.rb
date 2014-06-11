@@ -9,8 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
 version "0.1"
 description "Essentia Web Server - High performance HTTP/1.1 compliant multi-threaded server."
 
-# Examples #
-examples %w| |
+
 
 # Passive #
 def passive

@@ -14,19 +14,7 @@ description "Sitecom Home Storage Center - Network Attached Storage (NAS) - Home
 # ShodanHQ results as at 2012-09-07 #
 # 425 for WWW-Authenticate Basic realm SITECOM LOGIN Enter Password
 
-# Examples #
-examples %w|
-80.56.131.117
-84.28.31.247
-217.122.134.130
-62.163.127.175
-83.83.82.233
-84.29.171.202
-84.31.239.44
-94.209.207.23
-94.210.223.170
-82.161.86.74
-|
+
 
 # Matches #
 matches [

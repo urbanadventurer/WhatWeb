@@ -17,17 +17,7 @@ dorks [
 'inurl:"products?utf8=" inurl:keywords'
 ]
 
-# Examples #
-examples %w|
-demo.spreecommerce.com
-www.lapalomerafarma.es/products?utf8=%E2%9C%93
-farmawell.it/products?utf8=%E2%9C%93
-unikicks.ru/products?utf8=%E2%9C%93
-www.scale24.ru/products?utf8=%E2%9C%93
-www.naturapet.com/products?utf8=%E2%9C%93
-www.evopet.com/products?utf8=%E2%9C%93
-www.innovapet.com/products?utf8=%E2%9C%93
-|
+
 
 # Matches #
 matches [

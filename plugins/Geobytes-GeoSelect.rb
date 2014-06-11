@@ -12,20 +12,7 @@ description "GeoSelect gives you easy access to numerous features that you can u
 # ShodanHQ results as at 2011-05-17 #
 # 76 for geobytes
 
-# Examples #
-examples %w|
-www.geobytes.com
-64.60.28.195
-209.98.72.247
-69.59.27.233
-89.140.107.7
-69.59.27.232
-209.98.212.113
-69.64.72.32
-38.96.155.187
-67.228.197.232
-24.248.38.161
-|
+
 
 # Passive #
 def passive

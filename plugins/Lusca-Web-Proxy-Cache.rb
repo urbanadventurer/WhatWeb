@@ -13,17 +13,7 @@ description "Lusca Web/Proxy Cache - Lusca is a fork of the Squid-2 development 
 # 4,889 for Lusca
 #   331 for Lusca -HEAD
 
-# Examples #
-examples %w|
-189.87.66.25
-190.221.0.81
-189.87.69.40
-189.87.68.75
-189.87.68.104
-189.87.66.43
-189.87.68.71
-202.181.93.21
-|
+
 
 # Matches #
 matches [

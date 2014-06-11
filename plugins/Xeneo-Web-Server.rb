@@ -12,10 +12,7 @@ description "Xeneo Web Server - Homepage: http://www.northernsolutions.com/produ
 # ShodanHQ results as at 2011-08-20 #
 # 3 for Xeneo
 
-# Examples #
-examples %w|
-119.93.97.215
-|
+
 
 # Matches #
 matches [

@@ -24,24 +24,7 @@ dorks [
 '"powered by WeBid"'
 ]
 
-# Examples #
-examples %w|
-72.51.36.63
-satraders.net/WeBid/
-ticcmall.net/browse.php
-www.kinkebay.co.uk/index.php
-www.propertyplaces.com/contents.php
-alaganga.com/WeBid-0.8.5/WeBid/browse.php
-auction.ideorg.org/item.php
-ezbid.dedlines.com/item.php
-www.nelo.eu/auctions/user_login.php
-nobilis.nobles.edu/webid/item.php
-site.tsodna.edu.ge/browse.php
-www.uboatbid.com/test/install/install.php
-www.uboatbid.com/us/install/install.php
-elongatedauctions.com/install/install.php
-ankand.net/a/install.php
-|
+
 
 # Matches #
 matches [

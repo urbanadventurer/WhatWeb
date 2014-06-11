@@ -12,17 +12,7 @@ description "LANCOM Systems is a provider of innovative and reliable communicati
 # ShodanHQ results as at 2011-06-02 #
 # 32,344 for LANCOM
 
-# Examples #
-examples %w|
-212.108.43.65
-217.92.219.241
-62.227.71.192
-217.140.72.103
-217.89.42.186
-79.187.243.194
-217.92.214.213
-213.187.77.184
-|
+
 
 # Passive #
 def passive

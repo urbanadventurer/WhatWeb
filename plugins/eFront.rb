@@ -19,21 +19,7 @@ dorks [
 'allintext:"efront version" "Community Edition" "Contact us"'
 ]
 
-# Examples #
-examples %w|
-onlyweb.org
-anol.seafdec.org.ph/ANOL/www/
-www.arts.pdn.ac.lk/efront/
-gte2.uib.es/lvsv/testefront/
-justkitchen.info/lms/
-www.htgsoft.com/demoso/elearn/
-efront.demo1.cz/www/index.php
-fvs.ecampus.com.au/index.php
-www.nationaltechtraining.com/ole/www/index.php
-justkitchen.info/lms/
-www.htgsoft.com/demoso/elearn/
-e-learning.nycourts.gov
-|
+
 
 # Matches #
 matches [

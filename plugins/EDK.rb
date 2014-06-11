@@ -17,24 +17,7 @@ dorks [
 '(inurl:alliance_detail | inurl:pilot_detail | inurl:corp_detail)'
 ]
 
-# Examples #
-examples %w|
-bdeal-eve.info/kb/
-cow.hosti.fi/kb/
-killboard.blind-octopus.com
-killboard.executive-outcomes.info
-killboard.evekb.co.uk
-kb.eve-iyi.com
-kb2.wn-alliance.com
-killboard.brick-squad.com
-killboard.tgrads.com
-myth.uk.easynet.net/fmjkb/
-noir.pinacoderm.com/killboard
-ontherocks-ice.com/kb/
-www.a-kills.com
-www.minmatar-militia.org/kb/
-www.northern-coalition.com
-|
+
 
 matches [
 

@@ -21,35 +21,7 @@ dorks [
 'intitle:"Jenkins" "Remember me on this computer" "Jenkins ver"'
 ]
 
-# Examples #
-examples %w|
-ci.jenkins-ci.org
-build.sidelab.es:8080/jenkins/
-bits.nsms.ox.ac.uk:8080/jenkins/
-qa.piwik.org:8080/jenkins/
-builds.jmri.org/jenkins/
-www.movingblocks.net:8080
-78.46.16.202:8080/jenkins/
-l33tbox.de:8080/jenkins/
-gaea.ucmerced.edu:8080/jenkins/
-basecamp.peakplatform.net/ci/
-confluence.andromda.org/jenkins/
-www.norman-schleicher.de/jenkins/
-eventlet.net/ci/
-150.146.160.229
-66.228.62.114
-193.213.37.251
-107.20.208.113
-46.137.173.238
-75.101.248.12
-188.40.243.227
-184.107.133.230
-199.168.174.159
-174.143.25.176
-https://irmis-dev.bnl.gov/jenkins/
-https://ci.sistec.dlr.de/hudson/
-https://ci.upbiit.org/jenkins/
-|
+
 
 # Matches #
 matches [

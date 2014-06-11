@@ -13,19 +13,7 @@ description "Local inline Deduplication Backup Systems with available offsite Cl
 # 122 for BACKUP_LOCAL_LOCALE
 # 122 for BACKUP_LOCAL_LOCALE=en_US
 
-# Examples #
-examples %w|
-76.252.81.42
-50.96.190.158
-173.8.114.162
-208.67.114.70
-12.35.105.202
-208.93.60.101
-50.77.135.49
-137.85.170.15
-216.253.89.61
-98.189.240.46
-|
+
 
 # Matches #
 matches [

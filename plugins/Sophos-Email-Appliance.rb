@@ -23,19 +23,7 @@ dorks [
 'intitle:"Sophos Email Appliance" "Enter your login and password to log in."'
 ]
 
-# Examples #
-examples %w|
-72.166.224.232
-198.150.76.43
-63.100.5.111
-138.80.160.26
-217.111.206.133
-210.56.234.139
-139.130.66.46
-204.137.66.98
-65.111.139.202
-213.174.107.52
-|
+
 
 # Matches #
 matches [

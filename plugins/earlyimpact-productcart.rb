@@ -20,20 +20,7 @@ dorks [
 'inurl:custva.asp'
 ]
 
-# Examples #
-examples %w|
-www.anatex.com/ProductCart/pc/custva.asp
-www.maunakeagalleries.com
-www.kaddvd.com/dvd/custva.asp
-www.goezlaw.com/custva.asp
-secure.jnjcanada.com/Eshop/productcart/pc/Custva.asp
-www.piercechemical.com/ProductCart/pc/custva.asp
-www.stanatural.com/productcart/pc/Custva.asp
-www.logitech.uk.com/productcart/pc/Custva.asp
-www.prairiewholesale.net/ProductCart2/pc/Custva.asp
-www.motherstyles.com/shop/pc/custva.asp
-www.topcoins.com
-|
+
 
 # Matches #
 matches [

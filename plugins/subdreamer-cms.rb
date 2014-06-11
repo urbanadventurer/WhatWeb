@@ -8,30 +8,7 @@ Plugin.define "Subdreamer-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15 
 version "0.1"
 description "Whether your goal is creating a simple or full scale website, Subdreamer will get you there by providing unbeatable content management tools. - homepage: http://www.subdreamer.com/"
-examples %w|
-www.subdreamer.com/demo/
-demo.sdskins2go.com
-demo.sdskins2go.com/admin/
-www.velohalifax.ca/admin/
-playeraffinity.com/admin/pages.php
-www.ameritechcorp.com
-www.hc-coe.org
-apt-uk.com
-www.cdartdisplay.com
-www.wedowii.com
-www.afterhourstc.com
-iquispy.com
-www.adfclan.com
-www.humanbeatbox.com
-www.souheildagher.com
-www.stpetersbutlerpa.org
-silverwingsband.freehostia.com
-pchat-irc.com
-www.buckleystautotech.com
-wpepro.net
-www.mustangcountry.com.au/downunder/
-www.q8nds.com
-|
+
 
 matches [
 

@@ -10,21 +10,7 @@ version "0.1"
 description "Shopping Cart - homepage: http://www.tomatocart.com/"
 
 # 216 results for "powered by TomatoCart" -Vulnerability @ 2010-09-18
-examples %w|
-demo.tomatocart.com
-demo.tomatocart.cz
-demo.tomatocart.it
-demosvn.tomatocart.com
-naughtycoupletoys.com
-save-it-easy.biz
-tomatocart-templates.com
-tradepokemon.com
-webshop.trader-internet.com
-www.estetica-discount.net/tomatocart/
-www.seansbigpcrepair.com
-www.tecnojuegos.cl/tomatocart/
-www.yamaka.site90.com
-|
+
 
 matches [
 

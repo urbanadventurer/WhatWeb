@@ -24,22 +24,7 @@ dorks [
 'intitle:"novell webaccess" inurl:servlet/webacc -filetype:html'
 ]
 
-# Examples #
-examples %w|
-www.kemptvillec.uoguelph.ca/servlet/webacc
-https://gwweb.cwu.edu/servlet/webacc
-https://gw.state.mi.us/servlet/webacc
-www2.vaccinar.com.br/servlet/webacc
-mail.twentscarmelcollege.nl/servlet/webacc
-web.kjmail.com/servlet/webacc
-mail.maasdonk.nl/servlet/webacc/
-https://webmail.iserlohn.de/servlet/webacc/
-www.hunfalvy.hu/servlet/webacc/
-groupwise-web.newcastle.edu.au
-webmail.olivet.edu/gw/webacc
-webmail.nnu.edu
-webmail.newschool.edu
-|
+
 
 # Matches #
 matches [

@@ -17,29 +17,7 @@ description "The RomPager suite of products enable your engineering team to leve
 # 190,212   for "server: Allegro-Software-RomPager" 
 # 2,087,647 for "EXT: "
 
-# Examples #
-examples %w|
-74.189.97.193
-68.68.104.145
-203.1.55.183
-152.2.189.5
-67.103.40.123
-63.202.242.22
-118.222.183.51
-99.151.224.78
-24.42.153.177
-96.61.248.100
-71.2.238.96
-92.81.141.159
-69.232.80.182
-183.80.68.157
-110.139.190.183
-110.139.164.11
-99.59.65.251
-125.166.145.144
-123.27.50.94
-125.161.205.182
-|
+
 
 # Passive # HTTP Headers
 def passive

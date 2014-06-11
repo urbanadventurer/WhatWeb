@@ -16,15 +16,7 @@ dorks [
 '"powered by SmodCMS"'
 ]
 
-# Examples #
-examples %w|
-www.szkolakorlino.pl
-jaroslawiec24.com
-nowy.poznan.kph.org.pl
-www.mariuszgorczynski.pl
-www.travelneo.pl
-poznan.kph.org.pl
-|
+
 
 matches [
 

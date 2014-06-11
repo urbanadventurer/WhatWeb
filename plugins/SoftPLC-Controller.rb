@@ -12,18 +12,7 @@ description "All SoftPLC controller CPUs provide the same rich set of features. 
 # ShodanHQ results as at 2011-06-02 #
 # 81 for SoftPLC
 
-# Examples #
-examples %w|
-82.100.49.144
-213.180.49.110
-83.69.35.246
-92.62.229.192
-217.196.212.7
-90.180.41.35
-82.99.182.227
-188.167.59.157
-90.176.143.179
-|
+
 
 # Passive #
 def passive

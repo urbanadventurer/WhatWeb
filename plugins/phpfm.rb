@@ -20,18 +20,7 @@ dorks [
 '"powered by PHPFM" -username'
 ]
 
-# Examples #
-examples %w|
-www.abbahost.net/vinedocs/
-gis-develop.3x.ro/temp/index.php
-www.surat-local.go.th/content/
-www.huadong-sao.go.th/content/
-www.willsfamily.org/files/
-anamariac.3x.ro/phpfm/
-thc.infinitus.co.uk/fileman/
-files2.visual-paradigm.com/UserUpload/
-www.pollak-gmbh.at/phpfm/
-|
+
 
 # Matches #
 matches [

@@ -17,10 +17,7 @@ dorks [
 'intitle:"Oracle Real User Experience Insight" inurl:ruei "Please login"'
 ]
 
-# Examples #
-examples %w|
-124.207.242.209:88/ruei/
-|
+
 
 # Matches #
 matches [

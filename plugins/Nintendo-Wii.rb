@@ -18,13 +18,7 @@ description "Nintendo Wii video game console - Homepage: http://www.nintendo.com
 # 33 for "Nintendo Wi-Fi Network Adapter"
 #  4 for Nintendo Wii
 
-# Examples #
-examples %w|
-119.82.2.58
-119.26.10.63
-220.40.23.154
-205.166.76.209
-|
+
 
 # Passive #
 def passive

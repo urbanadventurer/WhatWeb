@@ -20,40 +20,7 @@ dorks [
 '"powered by axcms"'
 ]
 
-# Examples #
-examples %w|
-88.217.156.146
-88.217.156.178
-88.217.156.179
-88.217.156.180
-88.217.156.182
-88.217.156.183
-88.217.156.185
-88.217.156.186
-92.42.226.213
-92.42.226.243
-213.189.86.20
-axcms.net
-help.axcms.net
-de.axcms.net
-ch.axinom.com
-axinom.com
-www.axinom.de
-help.axinom.de
-en.help.axinom.de
-www.axdms.net
-www.axinom.co.uk
-www.axinom.ch
-www.freeenterprisecms.de
-www.axday.de
-www.stolenmoments.co.uk
-www.consonavita.com
-www.axasp.de
-josephburton.co.uk
-axcmsexpress.cloudapp.net
-www.henksplek.com
-www.abosoftware.co.za
-|
+
 
 # Matches #
 matches [

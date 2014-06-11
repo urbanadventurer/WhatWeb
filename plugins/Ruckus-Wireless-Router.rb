@@ -20,20 +20,7 @@ dorks [
 'intitle:"Ruckus Wireless Admin" "Ruckus Wireless Admin" "Username" "Password"'
 ]
 
-# Examples #
-examples %w|
-210.240.88.236
-113.193.13.77
-212.63.100.204
-222.176.216.242
-77.241.52.8
-114.26.54.248
-175.142.71.250
-58.114.221.124
-114.37.99.92
-77.241.50.171
-89.142.94.87
-|
+
 
 # Matches #
 matches [

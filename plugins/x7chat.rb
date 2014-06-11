@@ -20,31 +20,7 @@ dorks [
 'inurl:x7chat "Please enter your username and password to login"'
 ]
 
-# Examples #
-examples %w|
-help.x7chat.com
-www.sledmaine.net/x7chat/
-www.fmwriters.com/x7chat/
-www.ikegami.com/v-web/x7chat/
-www.ikegami.com/v-web/x7chat/
-www.northbrooklynsda.org/x7chat/
-riverhousecanada.com/X7Chat/
-thegoldenbowl.org/X7Chat/
-bethelebc.org/X7Chat/
-shrimpin.com/v-web/x7chat/
-silver-dragon.net/forum/x7chat/
-www.dustyshome.com/x7chat/
-sandisuniquedesign.com/v-web/x7chat/
-vasai.org/v-web/x7chat/
-www.denningservices.com/x7chat/
-www.chopwork.com/x7chat/
-friendshipbowling.com/x7chat/
-www.imwan.com/phpBB3/x7chat/
-www.rbbt.net/x7chat/
-hdtv.taosystems.net/x7chat/
-stjohntalk.com/v-web/x7chat/
-x7chat.99k.org/x7chat/x/
-|
+
 
 # Matches #
 matches [

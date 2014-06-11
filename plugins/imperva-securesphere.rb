@@ -9,10 +9,7 @@ author "Aung Khant <http://yehg.net/>" # 2012-02-12
 version "0.1"
 description "Imperva SecureSphere - http://www.impervaguard.com/SecureSphere-Platform.asp"
 
-# Examples #
-examples %w|
 
-|
 
 # Matches #
 matches [

@@ -12,19 +12,7 @@ description "Custom CMS from Boston web design and hosting company 1stOmni - htt
 # ShodanHQ results as at 2011-05-16 #
 # 8 for SpirePRO CMS
 
-# Examples #
-examples %w|
-www.maidpro.com
-www.olympus-ims.comen
-www.blueq.com
-66.151.177.67
-66.151.177.55
-66.151.177.160
-66.151.177.159
-66.151.177.74
-66.151.177.36
-66.151.177.104
-|
+
 
 # Matches #
 matches [

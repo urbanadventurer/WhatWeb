@@ -36,9 +36,6 @@ Plugin.define "Drupal" do
          'inurl:/user/register "Powered by Drupal"'
         ]
   
-  # Examples #
-  examples %w| amnesty.org/ appel.nasa.gov/ beta.worldbank.org/ entergy.pewclimate.org/ labs.divx.com/ lindenlab.com/ littlestarprints.com moby.com/ myplay.com/ sequelnaturals.com/ teen.secondlife.com/ www.artwaves.de www.asys.com.br/ www.atomicbop.net www.cristal.com.pe/?adulto=si www.dutchbutnotfromholland.eu/ www.elespectador.com/ www.ensembles.com.ph/ www.foxsearchlight.com/index.php www.freshbrain.org/ www.icsalabs.com/ www.johnnycashonline.com/ www.journalismcenter.org/ www.jovenscriativos.com.br/ www.koalafoundation.org.au/ www.la2day.com/ www.moove.be www.mtv.co.uk/channel/flux www.mulinobianco.it/ www.multiways.com/ www.nowpublic.com/ www.pravda.lt/ www.realismssoftware.com/ www.save-your-future.com www.shock.com.co/ www.sosojuicy.com/ www.spreadfirefox.com/ www.tidningenresultat.se www.ubuntu.com/ www.universitytowers.net/ www.warnerbrosrecords.com 116.12.54.172 97.107.131.55 194.78.165.246 174.143.214.105 79.125.13.223 195.34.165.6 64.207.153.57 62.149.1.2 184.72.243.245 209.235.237.98 |
-    
     # Matches #
     matches [
              

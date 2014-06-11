@@ -10,12 +10,7 @@ version "0.1"
 description "Site4 is a danish CMS system for webshops and homepages. - homepage: http://www.Site4.dk/"
 
 # 4 results for "SITE4.dk is a danish CMS system for webshops and homepages."
-examples %w|
-www.Site4.dk/error.asp
-212.130.39.246/error.asp
-flowform.dk/error.asp
-www.dansk-svensk.gaardhund.dk/error.asp
-|
+
 
 matches [
 

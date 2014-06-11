@@ -13,22 +13,7 @@ description "SapporoWorks BlackJumboDog provides server functions (HTTP, FTP, et
 # 453 for BlackJumboDog
 # Most results are from Japan
 
-# Examples #
-examples %w|
-123.217.220.3
-60.239.147.248
-211.131.133.170
-211.3.242.206
-120.51.223.55
-121.84.187.58
-122.249.175.207
-114.190.26.11
-118.243.116.139
-211.5.220.118
-118.157.243.170
-124.96.62.30
-61.194.10.34
-|
+
 
 # Matches #
 matches [

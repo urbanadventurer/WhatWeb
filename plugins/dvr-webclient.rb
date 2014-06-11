@@ -14,15 +14,7 @@ dorks [
 'intitle:"DVR WebClient"'
 ]
 
-# Examples #
-examples %w|
-http://122.160.154.104/
-http://125.99.118.103/
-http://59.90.207.4/
-http://88.249.69.19/
-http://195.122.24.206/
-http://218.17.150.210/
-|
+
 
 # Matches #
 matches [

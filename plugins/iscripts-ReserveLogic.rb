@@ -16,14 +16,7 @@ dorks [
 '"powered by iScripts ReserveLogic"'
 ]
 
-# Examples #
-examples %w|
-jamaicaoceanviewvilla.com/reservelogic/
-pigeonforgenow.com
-www.iguanalist.com
-hotelsaim.in
-stjohnvacationrentals.net/reservations/
-|
+
 
 matches [
 

@@ -29,25 +29,7 @@ description "Mambo CMS (http://mambo-foundation.org)"
 # Google results as at 2011-03-06 #
 # 3,420,000 results for "powered by mambo" inurl:option=com_content
 
-# Examples #
-examples %w|
-http://www.mamboserver.com/
-http://news.mamboserver.com/
-http://historycouncilvic.org.au/
-http://www.turksandcaicosproperty.com/
-http://www.moneydepot.com.au/md/
-http://www.fuzzytoad.com/mambo/
-http://wreathsbydesign.com/portal/
-http://www.xpec.co.uk/
-http://www.everydayrobots.com/
-http://www.sistematics.net/
-http://acl.arts.usyd.edu.au/
-http://interweby.com/web/
-http://myalbangera.com/bp/
-http://www.thedealaa.com/mambofolder/
-http://aribs.com.au/Mambo/
-http://www.osteopath.net.au/
-|
+
 
 # Matches #
 matches [

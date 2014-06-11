@@ -15,18 +15,7 @@ description "Whizzy-CMS - homepage: http://unverse.net/"
 # Google results as at 2010-09-18 #
 # 37 for "powered by Whizzy CMS"
 
-# Examples #
-examples %w|
-unverse.net
-bruehler.net
-hardmanhydroponics.com
-websitesmade.co.uk
-www.jorogo.co.uk
-www.royalberks.info
-www.sixbellsconcrete.co.uk
-www.ubi-sunt.com
-www.woodleytheatre.org
-|
+
 
 # Matches #
 matches [

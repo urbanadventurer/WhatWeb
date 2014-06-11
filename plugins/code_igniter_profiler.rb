@@ -11,7 +11,7 @@ author "Caleb Anderson"
 version "0.1"
 description "Find codeigniter profiler debug divs"
 
-examples %w| www.contactsonline.co.nz|
+
 
 
 def passive

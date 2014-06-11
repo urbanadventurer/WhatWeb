@@ -17,12 +17,7 @@ dorks [
 'intext:"Powered by phxEventManager" -intext'
 ]
 
-# Examples #
-examples %w|
-calendar.icpl.org
-0-calendar.icpl.org.alec.icpl.org
-iowacitylimits.com
-|
+
 
 # Matches #
 matches [

@@ -17,14 +17,7 @@ dorks [
 'inurl:"mysql.cgi?do="'
 ]
 
-# Examples #
-examples %w|
-trinitywheeleronline.com/cgi-bin/dbman/mysql.cgi
-eriu.homeip.net/cgi-bin/mysqlman/mysql.cgi
-rio70.com.mx/cgi-bin/sql/mysql.cgi
-www.praisenpray.com/cgi-bin/mysqlman/mysql.cgi
-www.diversity-radio.net/cgi/mysqlman-1.09/mysql.cgi
-|
+
 
 # Matches #
 matches [

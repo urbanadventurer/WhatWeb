@@ -17,14 +17,7 @@ dorks [
 '"Powered by Xataface" inurl:"-table"'
 ]
 
-# Examples #
-examples %w|
-xataface.com
-fueleconomydb.com
-publications.weblite.ca
-apps.weblite.ca
-dev.papers.ierg.net
-|
+
 
 # Matches #
 matches [

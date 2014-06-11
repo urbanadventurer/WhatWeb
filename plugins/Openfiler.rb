@@ -12,11 +12,7 @@ description "Openfiler is an Open Source Network Attached Storage and Storage Ar
 # Default Login # openfiler/password
 # Default Port  # 446 (HTTPS)
 
-# Examples #
-examples %w|
-https://203.145.207.114:446/
-https://110.74.207.186:446/
-|
+
 
 # Matches #
 matches [

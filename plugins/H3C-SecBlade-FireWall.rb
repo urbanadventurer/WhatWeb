@@ -15,16 +15,7 @@ description "H3C SecBlade FireWall modules are industry-leading 10000-Mbps high-
 # Google results as at 2011-09-12 #
 # 4 for intitle:"Web user login" inurl:"en/login.html"
 
-# Examples #
-examples %w|
-60.170.156.68
-209.172.51.206
-67.230.207.66
-117.106.7.254
-123.134.32.33
-220.187.31.80
-61.128.197.86
-|
+
 
 # Matches #
 matches [

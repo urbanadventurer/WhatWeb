@@ -20,24 +20,7 @@ dorks [
 'intitle:"FreakAuth" "Welcome on board ! / Login"'
 ]
 
-# Examples #
-examples %w|
-toughta.info
-quilla.info
-ns204603.ovh.net
-ade.net84.net
-mobileespn.lordsofodds.com
-178.33.139.165
-178.33.5.243
-178.33.139.113
-178.33.5.98
-178.33.139.1
-178.33.139.46
-178.33.5.92
-178.33.139.32
-178.33.5.247
-188.165.116.193
-|
+
 
 # Matches #
 matches [

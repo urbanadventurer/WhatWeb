@@ -11,14 +11,7 @@ description "On-Demand Web Analytics For Optimizing Online Business Performance
 HBX Analytics service is a comprehensive on-demand web analytics solution, delivering up-to-the second insight into online visitor and customer behavior. - homepage: http://www.websidestory.com/"
 
 # 25 results for "powered by WEBSIDESTORY" @ 2010-10-14
-examples %w|
-movies.sky.com
-kentuckyfairness.org/about/search.htm
-taction.us/news/news.php
-www.msu.edu/~nixonjos/armadillo/search.html
-www.taction.com/services/technology.php
-www.wisclawyermarketing.com
-|
+
 
 matches [
 

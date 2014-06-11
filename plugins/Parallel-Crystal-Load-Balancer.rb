@@ -14,11 +14,7 @@ description "Parallel Crystal load balancing server - Homepage: http://www.dynal
 # ShodanHQ results as at 2011-07-27 #
 # 6 for Crystal2 BalancerServer
 
-# Examples #
-examples %w|
-46.4.68.111
-88.198.65.74
-|
+
 
 # Passive #
 def passive

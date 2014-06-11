@@ -17,31 +17,7 @@ dorks [
 '"Powered By CS-Cart - Shopping Cart Software"'
 ]
 
-# Examples #
-examples %w|
-8000t.com
-alexions.dev.cs-cart.com/demo/
-bjcbs.com
-caec.co.uk
-consolefactory.co.uk
-marquenoire.com
-mobilelimit.com
-mochachino1.com/cart/
-rolexury.com
-spermarttirici.net
-www.bagsbylynn.com
-www.baysalexpo.com
-www.coop-store.com
-www.dorotype.net
-www.hdsteals.com
-www.ladybird2shop.com
-www.liondecommerce.com/en/
-www.onekickparts.com
-www.plottertec.net
-www.pricesmartpro.com
-www.sharkass.com/sys/
-www.steventhedj.com
-|
+
 
 matches [
 

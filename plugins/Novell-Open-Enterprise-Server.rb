@@ -17,25 +17,7 @@ dorks [
 'intitle:"Home - Novell Open Enterprise Server 2" "Novell Open Enterprise Server provides secure, reliable and highly available workgroup services in an open environment"'
 ]
 
-# Examples #
-examples %w|
-mghtbrc13.mgh.harvard.edu
-www.mail.medbill.com
-mghtbrc13.mgh.harvard.edu
-kimsrv9.ncpg.gov.za
-mail.scconsumer.gov
-academic2.american.edu
-somifolder.ucsd.edu
-netstore.nmiddlesex.mec.edu
-ares.newpaltz.edu
-eagle3.american.edu
-www.student.ipfw.edu
-print.msb.edu
-iul.eng.fiu.edu
-https://www3.waubonsee.edu/
-https://www.ntw-datentechnik.com/
-https://lawtoncs.org/
-|
+
 
 # Matches #
 matches [

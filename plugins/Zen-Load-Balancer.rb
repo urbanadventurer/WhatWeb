@@ -12,10 +12,7 @@ description "Zen Load Balancer is a complete solution for load balancing to prov
 # Default Port  # 444 (HTTPS)
 # Default Login # admin / admin
 
-# Examples #
-examples %w|
 
-|
 
 # Matches #
 matches [

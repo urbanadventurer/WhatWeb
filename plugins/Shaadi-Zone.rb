@@ -16,12 +16,7 @@ dorks [
 '"Powered By Shaadi Zone"'
 ]
 
-# Examples #
-examples %w|
-www.vastal.com/shaadi_zone_1.0.9/
-www.memon.com/matrimonial_old/
-www.nikah.in
-|
+
 
 matches [
 

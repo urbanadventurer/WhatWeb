@@ -12,18 +12,7 @@ description "SpryWare Market Information Server (MIS) - Homepage: http://www.spr
 # ShodanHQ results as at 2011-03-13 #
 # 67 for spryware
 
-# Examples #
-examples %w|
-72.5.193.42
-74.217.166.246
-72.5.193.66
-72.5.193.85
-72.5.193.78
-72.5.193.70
-72.5.193.7
-72.5.193.23
-12.26.7.154
-|
+
 
 # Matches #
 matches [

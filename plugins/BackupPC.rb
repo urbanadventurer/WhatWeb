@@ -20,23 +20,7 @@ dorks [
 'intitle:"BackupPC Server Status" inurl:BackupPC_Admin'
 ]
 
-# Examples #
-examples %w|
-50.16.224.129
-74.55.63.13
-62.12.149.76
-174.132.119.250
-87.98.168.225
-194.150.237.6
-94.142.233.16
-82.211.9.253
-87.239.8.6
-74.55.63.5
-38.116.133.34
-gw.crownkenya.com/cgi-bin/BackupPC_Admin
-www.estrela.cz/cgi-bin/BackupPC_Admin
-backup5.techiemedia.net/cgi-bin/BackupPC_Admin
-|
+
 
 # Matches #
 matches [

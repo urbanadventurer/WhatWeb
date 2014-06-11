@@ -17,17 +17,7 @@ dorks [
 'intitle:"DataNet Tracking System Login" "DataNet Tracking System." "User Name" "Password"'
 ]
 
-# Examples #
-examples %w|
-64.69.77.165
-199.126.10.119:81
-www.weblink.bz
-66.15.92.113:81
-nexedgedata.com
-173.203.50.121
-174.1.224.199
-64.69.77.165
-|
+
 
 # Matches #
 matches [

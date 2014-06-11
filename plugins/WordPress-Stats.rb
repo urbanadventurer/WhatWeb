@@ -9,12 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-06-12
 version "0.1"
 description "WordPress.com Stats - Homepage: https://wordpress.com"
 
-# Examples #
-examples %w|
-WordPress.com
-memebase.com
-www.stdonats.com
-|
+
 
 # Matches #
 matches [

@@ -17,19 +17,7 @@ dorks [
 'intitle:"LK IHC controller forside" "SceneView"'
 ]
 
-# Examples #
-examples %w|
-93.163.37.34
-90.225.121.2:6080
-tostarp.dlinkddns.com:60002
-77.213.218.175
-78.156.127.211
-2.108.35.138
-83.92.159.41
-81.235.253.55
-83.92.148.228
-87.59.233.195
-|
+
 
 # Matches #
 matches [

@@ -17,17 +17,7 @@ dorks [
 'intitle:"noVNC" inurl:vnc_auto.html "Loading" "Canvas not supported."'
 ]
 
-# Examples #
-examples %w|
-itreek.spb.ru/kanaka-noVNC-40a653f/vnc_auto.html
-itreek.spb.ru/kanaka-noVNC-40a653f/vnc.html
-bkmks.com/docs/vnc_auto.html
-bkmks.com/docs/vnc.html
-balbu.u-strasbg.fr/test/noVNC/vnc_auto.html
-balbu.u-strasbg.fr/test/noVNC/vnc.html
-balbu.u-strasbg.fr/test/my_novnc/noVNC/vnc_auto.html
-balbu.u-strasbg.fr/test/my_novnc/noVNC/vnc.html
-|
+
 
 # Matches #
 matches [

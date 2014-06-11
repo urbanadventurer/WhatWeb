@@ -20,14 +20,7 @@ dorks [
 '"powered by Ajax Portal"'
 ]
 
-# Examples #
-examples %w|
-myiosoft.com/products/AjaxPortal/demo/
-defog.org
-ajaxportal.guidecms.org
-www.calmpc.com
-ag8.host22.com
-|
+
 
 # Matches #
 matches [

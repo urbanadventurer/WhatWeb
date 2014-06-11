@@ -14,7 +14,7 @@ Plugin.define "SearchFitShoppingCart" do
 author "Andrew Horton"
 version "0.3"
 description "Commercial ecommerce system written in PHP. Homepage: http://www.searchfit.com/shopping-cart-features.htm"
-examples %w| www.bestpricedfurniture.com |
+
 
 # pretty basic plugin, only 1 example to work from
 

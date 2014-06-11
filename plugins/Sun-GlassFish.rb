@@ -19,24 +19,7 @@ description "GlassFish is an open source application server project led by Sun M
 # 1,197 for GlassFish -Sun
 #   733 for GlassFish Open Source
 
-# Examples #
-examples %w|
-85.214.75.103
-192.236.37.132
-200.118.2.186
-63.241.4.87
-147.110.32.110
-94.125.59.2
-68.169.49.83
-87.83.215.42
-87.216.164.54
-80.86.84.103
-195.81.70.53
-109.205.186.25
-184.168.123.125
-202.231.109.67
-60.199.250.26
-|
+
 
 # Passive #
 def passive

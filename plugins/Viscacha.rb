@@ -17,48 +17,7 @@ dorks [
 '"powered by Viscacha" "The Viscacha Project" inurl:register.php'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/viscacha/
-www.dng.st/forum/
-ndl.scat-princess.com/viscacha/
-birnbeckarts.co.uk
-paincity.cwsurf.de
-www.puppenworld.de/viscacha4/
-deberescolmenaris.com/forum/
-peptto.pe.funpic.de
-lotusk.lo.funpic.de/Boule/
-www.schwerhoerigenforum.de/viscacha/
-gladiator.mela.de/gildenforum/
-trainer.eeee.at
-www.iel1974.org
-www.semper-fidelis-online.de
-skoter.pro.mk
-pioneer.famkos.net
-oekumenitas.de/forum/
-forum.financeconsult.de
-www.preussenstadion.de
-pff.preussenstadion.de
-2.nct-online.de
-sirag.comze.com/foro/
-www.lighterclub.de/forum/
-mojazona.dza.ba/icentar/
-sg.bayernkicker.de
-avponline.pytalhost.net/viscacha-081.install/
-forum.space4u.de
-www.micatuca.org
-www.lena.macht-frei.de/bul/
-rasocha.net
-www.loxstedt.net
-tubeload.tk
-www.rdh-juh.de/Forum/
-diehanseaten-hamburg.de/forum/
-www.rasocha.de
-www.schlafmuetze-forum.test.lc
-www.futzichat.de/viscacha/
-www.kardiotechnik.at/forum/
-forum.interactive-systems.de
-|
+
 
 # Matches #
 matches [

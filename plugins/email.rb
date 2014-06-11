@@ -37,10 +37,7 @@ description "Extract email addresses. Find valid email address and syntactically
 # Google results as at 2011-03-19 #
 # 902 for "contact me" ("@hotmail.com"|"@gmail.com"|"@yahoo.com")
 
-# Examples #
-examples %w|
-plugins/mailto.rb
-|
+
 
 # Matches #
 matches [

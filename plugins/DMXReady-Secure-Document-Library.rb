@@ -17,30 +17,7 @@ dorks [
 'inurl:inc_securedocumentlibrary.asp'
 ]
 
-# Examples #
-examples %w|
-demo.dmxready.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.synqnet.org/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.trinityvillas.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-sawcertified.org/applications/secureDocumentLibrary/inc_securedocumentlibrary.asp
-www.strokenetstaff.net/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-s15349149.onlinehome-server.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.traininghighway.org.uk/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.masonicleadership.org/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.specialkidscare.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.beca-aba.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-bahcs.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.fourthquadrantassetmanagement.com/applications/securedocumentlibrary/inc_securedocumentlibrary.asp
-https://www.regenmg.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.quinsigamondlodge.org/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.eotj.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.aws-errata.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-https://www.ftl-inc.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-legacy.minntech.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-srcwwportal.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.psireseller.com/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-www.olivebranchmasons.org/applications/SecureDocumentLibrary/inc_securedocumentlibrary.asp
-|
+
 
 # Matches #
 matches [

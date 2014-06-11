@@ -10,10 +10,7 @@ version "0.1"
 description "ISC SCADA Service"
 
 # 2 ShodanHQ results for "Server: ISC SCADA Service HTTPserv" @ 2010-11-01
-examples %w|
-62.61.141.96
-195.249.56.43
-|
+
 
 # Passive #
 def passive

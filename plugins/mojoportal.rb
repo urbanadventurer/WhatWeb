@@ -21,39 +21,7 @@ dorks [
 '"Powered by mojoPortal"'
 ]
 
-# Examples #
-examples %w|
-www.mojoportal.com
-storedemo.mojoportal.com
-demo.mojoportal.com
-www.bigberrydigital.com
-i7media.net/mojoportal-hosting
-es.mojoportal.com
-www.artyalin.com
-www.sourcetreesolutions.com
-garthvh.com
-www.sandypondconsulting.com
-www.mercatus3.com
-www.joeaudette.com
-www.skye1907.com
-demos.retroviz.com/mojoportal/
-phoulihandds.com
-www.allelegance.com
-www.snowscape.com/mojoPortal/
-www.foodmarketingmadesimple.com
-bollagardar.net
-www.gpofr.com/portal/
-www.chartwellstables.co.za
-www.riovara.net
-pocketcigarguide.com
-kellyfurnitureservice.com/cms/
-agro-house.com/Setup/Default.aspx
-www.cssiofma.com
-www.scdpmonline.org/Setup/Default.aspx
-es.positionlogic.com/Setup/Default.aspx
-www.creoconstruction.com/default.aspx
-www.medinarcraceway.com
-|
+
 
 # Matches #
 matches [

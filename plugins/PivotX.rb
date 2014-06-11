@@ -17,16 +17,7 @@ dorks [
 'inurl:"pivotx/ajaxhelper.php"'
 ]
 
-# Examples #
-examples %w|
-pivotx.net
-themes.pivotx.net
-unterloisdorf.at/pivotx/index.php
-www.mobiles.net.pl/pivotx/
-hy-production.net/pivotx/
-blog.nextgenetics.net/pivotx/
-vipcasinoguests.com/pivotx/
-|
+
 
 # Matches #
 matches [

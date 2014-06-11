@@ -17,30 +17,7 @@ dorks [
 'intitle:"Login" inurl:admin "Newscoop" "the open content management system for professional journalists."'
 ]
 
-# Examples #
-examples %w|
-www.sourcefabric.org
-newscoop-demo.sourcefabric.org/admin/
-panama.lab.sourcefabric.org
-netgazeti2.lab.sourcefabric.org/admin/
-ushahidi-cooker.net
-www.elfaro.net/admin/
-www.hapbits.net/admin/
-southernviewhomenews.com/admin/
-jeromehomenews.com/admin/
-https://radojetatic.org/admin/
-lelandgrovehomenews.com/admin/
-www.b-g.by/admin/
-www.nashkraj.com/admin/
-www.politicalslackers.com/admin/
-elperiodicomx.com/admin/
-alfnode.net/admin
-nomassmedia.net/admin
-epolitical.org/admin/
-isanews.pl/admin/
-mensch-aktuell.de/admin
-https://svaboda.omniton.net/admin/
-|
+
 
 # Matches #
 matches [

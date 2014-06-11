@@ -16,31 +16,7 @@ dorks [
 '"powered by XMB"'
 ]
 
-# Examples #
-examples %w|
-blissmb.net
-forum.julnowrimo.com
-forum.simdynasty.com
-forum.thegardenfestival.eu/xmb/
-forums.tagbilaran.gov.ph
-forums.xmbforum.com
-scalehobby.com
-www.airgroup51.com/forums/
-www.cemeterydrive.net
-www.chemuserworld.com/forum/index.php
-www.deuxmb.net
-www.dfreload.com
-www.ironwindmetals.com/agora/
-www.lasereyeforum.com
-www.lighttek.com/forum/
-www.netvasco.com.br/forum/
-www.nswcorvettes.com.au/forum/
-www.ozhiphop.com/forum/
-www.rossica.org/Samovar/
-www.thecultweb.com/forum/
-www.ventanasystems.co.uk/forum/
-www.xmbgarage.com
-|
+
 
 matches [
 

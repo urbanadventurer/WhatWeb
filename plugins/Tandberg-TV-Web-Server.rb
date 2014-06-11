@@ -12,17 +12,7 @@ description "Tandberg - Video Conferencing Solutions and Telepresence Products -
 # ShodanHQ results as at 2011-05-30 #
 # 154 for Tandberg Television Web server
 
-# Examples #
-examples %w|
-68.185.18.114
-72.21.89.214
-80.109.134.172
-65.15.147.82
-211.58.113.98
-70.91.146.215
-70.91.146.212
-64.119.40.42
-|
+
 
 # Passive #
 def passive

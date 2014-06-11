@@ -11,24 +11,7 @@ description "Eulerian Technologies Web Server (EulerianWS) [French] - homepage: 
 
 # About 127 ShodanHQ results for server EulerianWS @ 2011-01-08
 
-# Examples #
-examples %w|
-109.232.193.40
-109.232.193.41
-109.232.193.42
-109.232.193.43
-109.232.193.44
-109.232.193.45
-109.232.193.73
-109.232.193.75
-109.232.193.87
-109.232.193.111
-109.232.193.137
-109.232.193.147
-109.232.193.146
-109.232.193.244
-109.232.193.251
-|
+
 
 # Matches #
 matches [

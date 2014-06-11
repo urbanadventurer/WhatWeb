@@ -12,10 +12,7 @@ description "Koala is an HTTP server written in Dylan programming language. - Ho
 # ShodanHQ results as at 2011-11-23 #
 # 17 for Koala Web Server
 
-# Examples #
-examples %w|
-193.52.101.175
-|
+
 
 # Matches #
 matches [

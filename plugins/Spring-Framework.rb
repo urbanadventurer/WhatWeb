@@ -12,16 +12,7 @@ description "Spring Framework is an open source application framework for the Ja
 # ShodanHQ results as at 2011-09-12 #
 # 20 for springframework
 
-# Examples #
-examples %w|
-192.85.242.2
-70.42.226.26
-206.31.22.197
-80.74.135.141
-190.3.109.209
-59.42.254.5
-221.186.145.166
-|
+
 
 # Matches #
 matches [

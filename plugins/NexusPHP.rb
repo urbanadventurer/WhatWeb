@@ -19,19 +19,7 @@ dorks [
 '"Powered by NexusPHP" inurl:aboutnexus.php'
 ]
 
-# Examples #
-examples %w|
-www.hdstar.org
-www.whupt.net
-www.notpt.org
-www.thdbits.org
-et8.org
-pt.eastgame.org
-pt.gztown.com.cn
-pt.ntu.edu.cn
-pt.lzu6.edu.cn/login.php
-bbs.seu.edu.cn/pt/
-|
+
 
 # Matches #
 matches [

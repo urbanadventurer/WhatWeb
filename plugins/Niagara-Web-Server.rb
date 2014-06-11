@@ -10,20 +10,7 @@ version "0.1"
 description "Niagara Web Server"
 
 # 8073 ShodanHQ results for "Niagara web server"
-examples %w|
-204.38.42.28
-129.240.197.206
-199.79.254.204
-24.240.168.154
-166.66.68.109
-12.50.82.185
-173.14.85.126
-165.138.178.71
-65.103.138.230
-173.162.64.97
-68.185.48.215
-74.175.101.244
-|
+
 
 # Passive #
 def passive

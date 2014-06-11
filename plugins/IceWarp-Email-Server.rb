@@ -12,51 +12,7 @@ description "IceWarp Email Server is at the core of IceWarp Unified Communicatio
 # Google results as at 2011-03-17 #
 # 513 for "Powered by IceWarp Software"
 
-# Examples #
-examples %w|
-webmail.topspeeddata.com/mail/
-mail.famous.com.sg
-mail.dataperk.com
-showmemail.com
-webmail.epolk.com
-www.xpresscom.net:4096
-mail.novexx.com.sg
-webmail.penangfon.com
-vrmmail.voizplus.com
-lincoln.k12.ms.us
-raima.it
-mail.patkol.com
-mail.brittonsd.com
-mail.starhosting.cz
-www.co.uintah.ut.us:81/mail/
-https://mail.pwrnet.net/
-https://webmail.torrancecountynm.org/
-https://mail.daystar1.net/
-https://webmail.nmgrads.org/
-https://webmail.webadmin2.net/
-mail.tep.ps/mail/
-https://87.107.120.38:32001/mail/
-mail.korayotomotiv.com:32000
-webmail.sysascend.com:4096
-mail.infoserv.dk
-mail.ffc.or.th
-mail.nbc29.com:2000/mail/
-smtp.safaburgos.com
-mail.millsoft.ca/mail/
-diemhenvn.com:32000/mail/
-hoangte.com:32000/mail/
-www.hainhung.net:32000/mail/
-phutungford.com:32000/mail/
-9xvn.org:32000/mail/
-thaihuy.9xvn.org:32000/mail/
-gate.cmfhost.com/webmail/
-123.176.101.60/webmail/
-151.1.187.7/webmail/
-mail.ayera.com
-webmail.moc.go.th
-webmail.anafen.com
-66.192.84.40
-|
+
 
 # Matches #
 matches [

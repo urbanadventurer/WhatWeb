@@ -17,46 +17,7 @@ dorks [
 '"Project" "Description" "Owner" "Last Change" "Search" "summary" "shortlog" "log" "tree" "TXT" "OPML" intitle:git'
 ]
 
-# Examples #
-examples %w|
-gitweb.samba.org
-gitweb.kde.org
-gitweb.scilab.org
-git.linaro.org
-git.xilinx.com
-git.openfabrics.org
-git.pioto.org
-git.secretlab.ca
-git.joshuawise.com
-git.naquadah.org
-gitweb.dolmen-project.org
-git.koha-community.org
-git.linux-mips.org
-gamma.guegue.com.ni
-www.gitling.com
-www.mathiasdm.com/gitweb
-git.biterror.net
-git.obeliks.de
-m2m-embedded.pl/git/
-88.198.59.165/gitweb/
-git.doucette.cc
-www.mathiasdm.com/gitweb
-git.azaqiel.org
-www.nikon-workshop.de
-tavernenland.nexos-it.de
-209.40.201.211
-9ch.in/git/
-git.sfinx.od.ua
-kernel.ubuntu.com/git
-code.th-h.de
-git.overlays.gentoo.org/gitweb/
-source.djpig.de/git/
-git.muteddisk.com
-hostap.epitest.fi/gitweb/gitweb.cgi
-git.websterwood.com
-www.mutabah.net/cgi-bin/gitweb.cgi
-rtime.felk.cvut.cz/gitweb/
-|
+
 
 # Matches #
 matches [

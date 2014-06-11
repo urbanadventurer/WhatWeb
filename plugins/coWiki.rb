@@ -15,12 +15,7 @@ description "coWiki - wiki - homepage: http://www.cowiki.org/"
 # Google results as at 2010-07-22 #
 # 8 for "powered by coWiki"
 
-# Examples #
-examples %w|
-chernowiki.ru
-www.s9y.org
-itg.chem.indiana.edu/inc/wiki/
-|
+
 
 # Matches #
 matches [

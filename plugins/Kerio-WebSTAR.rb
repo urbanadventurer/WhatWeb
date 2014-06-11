@@ -13,19 +13,7 @@ description "Kerio WebSTAR (formerly 4D WebSTAR and StarNine WebSTAR) is an HTTP
 # 5,486 for WebSTAR
 # 3,267 for WebSTAR -4d
 
-# Examples #
-examples %w|
-221.250.175.149
-192.166.192.11
-65.211.11.40
-67.102.134.82
-157.6.54.8
-65.211.11.97
-212.9.185.150
-68.15.228.128
-216.145.68.187
-70.88.70.221
-|
+
 
 # Passive #
 def passive

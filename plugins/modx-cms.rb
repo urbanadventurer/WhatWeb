@@ -13,63 +13,7 @@ Plugin.define "ModxCMS" do
   version "0.2"
   description "OpenSource CMS written in PHP. Homepage: http://modxcms.com/ Aggressive match"
   
-  examples %w|
-http://www.lanni.jp/
-http://www.ksk26.co.jp/
-http://www.broadwaysanjose.com/
-http://www.pictwo.com/
-http://www.baby-cakes-cupcakes.com/
-http://www.g73.de/
-http://agarciaarquitectos.pt/
-http://www.franconique.nl/
-http://www.michael-van-laar.de/
-http://www.logiagamer.com/juegos/
-http://wanchairotary.org/
-http://teplocel.ru/
-http://www.feedfabrik.com/
-http://www.filieo.com/
-http://dvcompany.biz/
-http://www.creationtruth.org/
-http://kinerase.com.tw/
-http://investsouth.ru/
-http://www.hutag.de/
-http://www.2dz.pt/
-http://3dreactor.com/
-http://atsrostov.ru/
-http://www.cis.org.uk/
-http://www.ibh-solar.de/
-http://www.weltklassezuerich.ch/
-http://www.rotoplas.com/
-http://www.dragolab.com/
-http://www.polam-rem.com.pl/
-http://www.mipeta.fi/
-http://www.baikal-web.ru/
-http://www.deactro.nl/
-http://auto-life.kiev.ua/
-http://www.le-souffle-du-pic.fr/
-http://www.cinema-leprado.com/
-http://www.habitatvegetal.com/
-http://www.morethanadriveway.org/index.php
-http://www.soteapparel.com/
-http://www.p-jentschura.com/
-http://www.energycrew.ca/
-http://www.indieophile.com/
-http://www.drreinke.de/
-http://www.christophe-peyras.com/
-http://www.blohmcreative.com/
-http://www.botflyrocks.com/
-http://www.techsolcom.ca/en/
-http://festival.hevy.co.uk/
-http://www.rockness.co.uk/
-http://www.interparking.nl/
-http://www.dakfilms.org/
-http://www.panamaspain.com/
-http://www.deerwalk.com/
-http://www.rspca.org.au/
-http://www.blueskyvineyards.com/
-http://www.smarthistory.org/
-http://www.en-taipei.com.tw/
-| 
+   
     
     # none of this is common
     #www.soteapparel.com-.html:        <script type="text/javascript">var MODX_MEDIA_PATH = "media";</script>

@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
 version "0.1"
 description "Ext JS is a cross-browser JavaScript library for building rich internet applications. - Homepage: http://www.sencha.com/products/extjs/"
 
-# Examples #
-examples %w|
-examples.extjs.eu
-|
+
 
 # Matches #
 matches [

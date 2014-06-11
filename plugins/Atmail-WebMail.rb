@@ -24,19 +24,7 @@ dorks [
 '"Powered by Atmail" "WebAdmin Control Panel" "Email" "Password" "More" " Mailserver" "Protocol" "Language"'
 ]
 
-# Examples #
-examples %w|
-a6demo.atmail.com
-atmail6.datawave.net.au/index.php/admin/
-demo.atmail.com
-webmail.uo.edu.cu/wclient/rect/index.php
-webmail1.blacksun.ca
-mail.falmouthmass.us
-mail.moosebytes.net
-webmail.as.gov
-https://mail.citynetwork.se/
-https://email.goidp.com/
-|
+
 
 # Matches #
 matches [

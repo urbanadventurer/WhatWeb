@@ -15,11 +15,7 @@ dorks [
 ]
 
 # 4 results for ext:cfg "Linux users may encounter problems if they specify" @ 2010-09-04
-examples %w|
-www.ciberinc.cl/dod/publico/dod/addons/amxmodx/configs/sql.cfg
-amxmodx.ucoz.ru/_fr/25/0749705.cfg
-amxmodx.ucoz.ru/_fr/25/sql.cfg
-|
+
 
 # Matches #
 matches [

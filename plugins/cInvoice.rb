@@ -17,22 +17,7 @@ dorks [
 '"Powered by cInvoice system"'
 ]
 
-# Examples #
-examples %w|
-www.eztekmedia.com/eztekinvoicecenter/
-behanconsulting.com/services/cinvoice/
-www.jpwdesigns.com/billing/
-oceaniamed.biz/register.php
-secure149.hostgator.com/~cipvill/cinvoice/index.php
-invoice.discos.co.uk
-www.fleitescomputers.com/cinvoice/
-www.247computersolution.com/invoice/
-blue-development.com
-billing.whymandev.com/resetpassword.php
-www.finanpyme.es/facturacion/
-administratie.niv.nl
-works.dualweb.it/fatture/
-|
+
 
 # Matches #
 matches [

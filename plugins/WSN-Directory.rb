@@ -12,13 +12,7 @@ description "WSN Directory is a powerful, translatable business directory script
 # Google results as at 2011-03-16 #
 # 1 for "WSN Directory" inurl:"adminlogin.php"
 
-# Examples #
-examples %w|
-demo.webmastersite.net/wsndirectory
-demo.webmastersite.net/wsndirectoryadmin/admin/
-tradesmen.com.au/wsn/admin/
-world-business-list.com/adminlogin.php
-|
+
 
 # Matches #
 matches [

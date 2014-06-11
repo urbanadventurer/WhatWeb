@@ -22,18 +22,7 @@ dorks [
 'intitle:"Global Traffic Statistics" "Name" "Device" "Type"'
 ]
 
-# Examples #
-examples %w|
-130.117.244.12
-78.207.110.5
-80.55.216.245
-93.187.162.81
-150.185.184.40
-proxy.snjh.tcc.edu.tw:3000
-proxy.snjh.tc.edu.tw:3000
-www.paranoidbits.com:3000
-kamadjaja.com:3000
-|
+
 
 # Matches #
 matches [

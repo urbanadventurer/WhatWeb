@@ -17,22 +17,7 @@ dorks [
 ]
 
 # Exampels #
-examples %w|
-ilpp-legal.com/eng/
-www.trade-park.ru/alina/
-test.tochka-diz.ru/index.php
-izvekoff.ru/index.php
-itprice.vn.ua
-www.legal-collegium.com.ua
-www.studliga-nt.ru
-zerkalo.500mb.ru
-www.optimizsite.net.ru
-www.ptv-m.ru
-moepravo.info
-travelbar.stacmv.net/en/
-shu.pp.ru/index.php
-biz.vn.ua
-|
+
 
 matches [
 

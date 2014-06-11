@@ -15,11 +15,7 @@ description "Webmedia Explorer scans and indexes everything under a folder calle
 # Google results as at 2010-11-07 #
 # 51 for "Powered by webmedia explorer" "Marc Salmurri"
 
-# Examples #
-examples %w|
-demo.webmediaexplorer.com
-www.webmediaexplorer.com
-|
+
 
 # Matches #
 matches [

@@ -18,21 +18,7 @@ dorks [
 '"BOOKSolved" "by USOLVED" inurl:"booksolved.php"'
 ]
 
-# Examples #
-examples %w|
-www.bkh-cultcats.ch/book/booksolved.php
-www.heimkinopage.de/gaestebuch/booksolved.php
-www.ssv-sandhausen.de/gaestebuch/booksolved.php
-www.tistelbodecats.ch/gb/booksolved.php
-22ndbirthday.ellen-page.net/booksolved.php
-www.postscriptum.no/guestbook/booksolved.php
-www.bunker-soundz.de/seiten/peterbaerli/gb/booksolved.php
-web409.can03.de/cmdegb/booksolved.php
-www.historyswingers.ch/Gaestebuch/booksolved.php
-www.the-starts.de/guestbook/booksolved.php
-www.wild-spirit-tattoo.de/booksolved/booksolved.php
-www.getback-beatlesnight.de/book/booksolved.php
-|
+
 
 # Matches #
 matches [

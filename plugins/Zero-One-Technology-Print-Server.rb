@@ -12,19 +12,7 @@ description "Zero One Technology Print Server - Print servers connect printers d
 # ShodanHQ results as at 2011-03-14 #
 # 2,579 for ZOT-PS
 
-# Examples #
-examples %w|
-91.44.72.55
-140.109.113.11
-148.247.185.99
-140.118.32.50
-163.15.156.117
-132.216.67.41
-203.68.181.97
-140.116.205.102
-118.82.7.157
-189.136.157.58
-|
+
 
 # Passive #
 def passive

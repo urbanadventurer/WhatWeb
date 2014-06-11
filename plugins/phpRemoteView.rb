@@ -17,20 +17,7 @@ dorks [
 'intitle:"phpRemoteView: " "perms"'
 ]
 
-# Examples #
-examples %w|
-loraart.ru/SamyGO/redaktor/index.php
-aodaitimhue.com/hack/rem_view.php
-codecrew.110mb.com/index.php
-www.themovement.info/Images/maln.php
-rukinoshnik.info/index.php
-www.marestan.com/theme/imgs.php
-www.wz.lviv.ua/image/4225/news/rsmv.php
-www.gremlinsolutions.co.uk/rem.php
-scumdesign.ru/wp-content/plugins/hello.php
-rastest.fatal.ru
-pomagamy.portowcy.org/vcart.php
-|
+
 
 # Matches #
 matches [

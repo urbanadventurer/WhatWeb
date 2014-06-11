@@ -12,13 +12,7 @@ description "TivoWebPlus is a web server that runs on your TiVo PVR. It is writt
 # ShodanHQ results as at 2011-05-21 #
 # 31 for TivoWebPlus
 
-# Examples #
-examples %w|
-202.27.218.103
-80.229.29.198
-80.6.18.203
-124.190.133.75
-|
+
 
 # Passive #
 def passive

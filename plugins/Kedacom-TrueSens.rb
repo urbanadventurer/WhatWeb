@@ -12,19 +12,7 @@ description "Kedacom TrueSens videoconferencing system - Homepage: http://www.ke
 # ShodanHQ results as at 2011-09-20 #
 # 6,435 for KEDACOM-Webs
 
-# Examples #
-examples %w|
-113.12.64.90
-58.213.143.121
-222.190.167.62
-220.170.195.119
-222.92.69.37
-218.94.172.122
-183.167.195.96
-220.168.7.236
-183.167.193.63
-58.211.56.12
-|
+
 
 # Matches #
 matches [

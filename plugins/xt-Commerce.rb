@@ -18,23 +18,7 @@ dorks [
 'inurl:"xtc_check_stock_attributes.inc.php"'
 ]
 
-# Examples #
-examples %w|
-die-glasperle.de/shop/
-xtcommerce.moschcau.de
-www.px-shop.eu
-www.raeuchermischung.com
-www.raeuchermischungen.info
-www.mobilis-art.com
-www.smoke-world.info
-www.darks-tattoo-studio.de
-www.luftbild-schleswig-holstein.de/Postershop/
-www.tt-graumann.de
-www.gartentraeume-shop.de
-www.tarotladen.de
-www.abovogmbh.de
-www.wehmhoff.de/Shop/
-|
+
 
 # Matches #
 matches [

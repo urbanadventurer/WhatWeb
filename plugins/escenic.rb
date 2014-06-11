@@ -21,41 +21,7 @@ dorks [
 'filetype:ece'
 ]
 
-# Examples #
-examples %w|
-escenic.com
-thetimes.co.uk
-www.barnetid.no
-www.side3.no
-www.filmweb.no
-www.reiserogferie.no
-golf.no
-spn.dk
-www.arbeidsmanden.no
-www.folkebladet.no
-www.na24.no
-www.spillmagasinet.no
-epn.dk
-www.vareveger.no
-www.oslokino.no
-www.industrien.no
-www.idg.no
-fpn.dk
-www.banett.no
-www.oa.no
-www.thetimes.co.uk
-www.thesundaytimes.co.uk
-www.nyteknik.se
-www.gooieneemlander.nl
-www.timesonline.co.uk
-jp.dk
-www.upstreamonline.com
-reise.bt.no
-www.ed.nl
-www.pzc.nl
-www.thesun.co.uk
-www.majalla.com
-|
+
 
 # Matches #
 matches [

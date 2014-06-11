@@ -21,26 +21,7 @@ dorks [
 '"Powered by OpenConf"'
 ]
 
-# Examples #
-examples %w|
-www.en4en.org/openconf/
-2012.ncss.org/conversations/author/submit.php
-www.groupes.polymtl.ca/cirta/Colloque2009/openconf/author/reset.php
-www.afaanz.org/openconf/2011/modules/request.php
-www.inflibnet.ac.in/planner2010/ocs/chair/signin.php
-webapps.fep.up.pt/compstat08/chair/
-www.africasexuality.org/abstract/openconf.php
-www.trjfas.sumae.gov.tr/oc/author/upload.php
-icdim.org/jdim/
-www.socialstudies.org/dc2011proposals/modules/request.php
-www.gatedcommunities.istanbul2011.itu.edu.tr/openconf/chair/signin.php
-iem.pub.ro/openconf/chair/signin.php
-ncis-cmsp2012.shiep.edu.cn/openconf/author/paper.php
-www.dasconference.ro/openconf/review/reset.php
-www.pedometrics.org/dsm_oz/openconf/author/reset.php
-www.dynamicpublishers.com/icnpsc4/
-www.papers2010.imcsit.org/author/list_papers.php
-|
+
 
 # Matches #
 matches [

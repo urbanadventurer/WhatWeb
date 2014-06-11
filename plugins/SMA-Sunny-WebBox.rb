@@ -29,14 +29,7 @@ description "Sunny WebBox is a high-performance communication hub for medium to 
 # 4,007 for Sunny WebBox
 #    74 for WebBox-20
 
-# Examples #
-examples %w|
-213.241.138.40
-87.69.245.12
-85.65.10.165
-194.179.18.200
-206.213.128.15
-|
+
 
 # Matches #
 matches [

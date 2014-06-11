@@ -12,18 +12,7 @@ description "HyNetOS is a network operating system specifically designed for emb
 # ShodanHQ results as at 2011-04-11 #
 # 6,124 for HyNetOS
 
-# Examples #
-examples %w|
-70.168.205.181
-210.66.144.175
-71.249.202.144
-129.44.191.45
-76.233.119.158
-193.219.73.242
-61.71.181.173
-67.14.214.70
-76.187.47.156
-|
+
 
 # Passive #
 def passive

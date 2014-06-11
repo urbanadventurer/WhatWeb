@@ -17,43 +17,7 @@ dorks [
 '"Powered by Dada Mail" ext:cgi inurl:mail.cgi'
 ]
 
-# Examples #
-examples %w|
-demo.dadamailproject.com/cgi-bin/dada/mail.cgi
-www.clrc.ca.gov/cgi-bin/dada/mail.cgi/archive/agendas/newest/
-lists.tva.gov/cgi-bin/dada/mail.cgi
-www.dcosmic.net/cgi-bin/dada/mail.cgi
-www.sweethearttree.com/cgi-bin/dada/mail.cgi
-www.hemispheregames.com/mailbot/mail.cgi
-www.netrascope.com/cgi-bin/dada/mail.cgi
-www.anxietysupportnetwork.com/dadamail/mail.cgi
-www.goodsol.com/cgi-bin/news/mail.cgi
-humanrightstools.org/cgi-bin/dada/mail.cgi
-www.bodycosmeticsbh.com/cgi-bin/dada/mail.cgi
-www.agroforestry.net/mail.cgi
-maillist.3dpixelnet.com/cgi-bin/dada/mail.cgi
-www.saltboxrocks.com/cgi-bin/dada/mail.cgi
-www.brianmcollins.com/mail_list/mail.cgi
-www.joekidonastingray.com/cgi-bin/mail.cgi
-www.healthylunches.org/cgi-bin/dada/mail.cgi
-www.sancnet.org/lists/mail.cgi
-www.oakdownbooks.com/DadaMail_OakdownNewsletter/mail.cgi
-www.jdmwebservices.com/cgi-bin/dada/mail.cgi
-www.lafetenews.com/cgi-bin/dada/mail.cgi
-www.alabamaatheist.org/mailings/mail.cgi
-www.univ-brest.fr/geosciences/dada/mail.cgi
-sacorivercampingarea.com/cgi-bin/list/mail.cgi
-greatjake.com/cgi-bin/dada/mail.cgi
-www.rpcvinctest.com/dadamail/mail.cgi
-tgm.org/cgi-bin/dada/mail.cgi
-www.gornahoor.net/cgi-bin/dada/mail.cgi
-aaai.org/cgi-dada/mail.cgi
-www.onlygoodbusiness.com/cgi-bin/dada/mail.cgi
-workministry.com/cgi-bin/dada/mail.cgi
-www.yiot.org/newsletter/mail.cgi
-www.chortle.co.uk/scripts/dada/mail.cgi
-spyonus.com/cgi-bin/dada/mail.cgi
-|
+
 
 # Matches #
 matches [

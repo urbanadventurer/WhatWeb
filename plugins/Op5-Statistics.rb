@@ -17,11 +17,7 @@ dorks [
 'intitle:"Login to op5 Statistics" "Please enter your op5 Statistics user name and password below"'
 ]
 
-# Examples #
-examples %w|
-https://demo.op5.com/statistics/
-https://koll.portal.chalmers.se/statistics/
-|
+
 
 # Matches #
 matches [

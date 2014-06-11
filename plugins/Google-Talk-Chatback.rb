@@ -9,13 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.1"
 description "Google 'chatback badge' allows your site's visitors to chat with you, provided you're logged in to Google Talk at the time. - Homepage: http://www.google.com/talk/service/badge/New"
 
-# Examples #
-examples %w|
-www.morningstarsecurity.com
-nick.texidor.com
-prasanna.freeoda.com/blog/
-chrismatthias.com/2008/03/27/add-google-talk-chatback-badge-to-your-site/
-|
+
 
 # Matches #
 matches [

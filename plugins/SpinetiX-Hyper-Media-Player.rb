@@ -12,17 +12,7 @@ description "SpinetiX HMP100 is the first networked Hyper Media Player appliance
 
 # About 23 ShodanHQ results for "X-spinetix-firmware" @ 2010-10-30
 # Insecure: 5 ShodanHQ results for "X-spinetix-firmware" "200 OK" @ 2010-10-30
-examples %w|
-71.129.115.236
-89.150.33.210
-88.84.62.86
-89.150.38.30
-131.211.208.213
-217.19.155.47
-89.150.34.135
-89.150.32.50
-80.199.117.180
-|
+
 
 matches [
 

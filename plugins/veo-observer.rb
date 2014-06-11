@@ -14,18 +14,7 @@ description "Web interface for discontinued network cameras from Veo"
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1783
 # 5 Google results for intitle:"Veo Observer Web Client" @ 2010-07-20
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1348
-examples %w|
-www.e-agores.gr
-compunet.dyndns.info:82
-hakon.nl
-62.3.215.210
-87.105.249.22
-141.57.9.89
-189.168.46.194
-61.10.45.31
-84.12.138.238
-83.235.183.23
-|
+
 
 matches [
 

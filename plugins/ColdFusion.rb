@@ -28,31 +28,7 @@ dorks [
 'intitle:"ColdFusion Administrator Login"'
 ]
 
-# Examples #
-examples %w|
-asb.co.uk
-online.ctcd.edu/cfadmin/datasources/
-pegismap.penang.gov.my/PENANG/CFIDE/administrator/index.cfm
-sfsa.tiktak.ch/index.cfm
-testing.ctc-disted.net/cfadmin/
-www.104boss.com.tw/alliance/CFIDE/administrator/index.cfm
-www.aarc.org/CFIDE_old1/administrator/index.cfm
-www.aarc.org/CFIDE/administrator/index.cfm
-www.frrp.org.uk
-www.gordonresponse.dpc.wa.gov.au
-www.koopa-adv.de
-mawsonlakeseyespecialists.com
-trainingroom.microassist.com/trainingroom/
-216.119.105.39
-62.197.33.6
-64.224.49.56
-208.71.18.247
-98.131.153.24
-65.163.101.132
-216.197.120.137
-207.36.90.226
-12.42.70.81
-|
+
 
 # Matches #
 matches [

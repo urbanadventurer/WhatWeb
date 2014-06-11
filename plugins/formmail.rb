@@ -17,7 +17,7 @@ description "Common form email script.
 
 FormMail is a Perl script written by Matt Wright to send mail with sendmail from the cgi-gateway. Early version didn't have a referer check. New versions could be misconfigured. Spammers are known to hunt them down (by means of cgi-scanning) and abuse them for their own evil purposes if the admin forgot to check the settings.http://www.securityfocus.com/bid/3954/discussion/"
 
-examples %w| http://dominio.netfirms.com/cgi-bin/FormMail.pl http://eng.yale.edu/cgi-bin/classes/ee101/FormMail.pl http://belmorenursesbureau.com.au/cgi-bin/FormMail.pl http://www.ldb.org/iphw/iphw_f.htm http://www.fabius-pompey.com/fpsurvey.htm|
+
 
 #  
   

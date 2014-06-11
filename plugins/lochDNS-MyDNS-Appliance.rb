@@ -19,13 +19,7 @@ dorks [
 '"Manage lochDNS system with rPath Appliance Agent"'
 ]
 
-# Examples #
-examples %w|
-66.76.38.7
-193.47.151.1
-141.85.204.4
-dns1.radio.opole.pl
-|
+
 
 # Matches #
 matches [

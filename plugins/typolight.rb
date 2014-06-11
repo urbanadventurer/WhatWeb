@@ -13,31 +13,7 @@ author "Andrew Horton"
 version "0.2"
 description "TypoLight is an OpenSource CMS written in PHP. Homepage: www.typolight.org"
 
-examples %w|
-www.dobiecki.com
-www.whitakeroil.com
-www.shiatsu-aroma.at
-www.degas-atd.com
-www.hydroenergie.de
-www.soleil-royal.ch
-www.psdab.com
-www.rivieratimes.com
-www.elt-online.co.uk
-www.aquazulplaya.com
-www.dm-toys.de
-www.docklandsrecycling.co.uk
-www.mohawktrail.com
-www.stg-brandenburg.de
-www.zoaroutdoor.com
-www.hydroenergie.de
-www.schroetgens-architekten.de
-www.beilharz-strasse.de
-www.netzwerk-ladenbau.de
-www.risktransfer.net/
-www.ostseefibel.de
-www.75marketing.net
-www.ecopage.at
-|
+
 
 matches [
 {:name=>"typolight.css", :text=>'<link rel="stylesheet" href="system/typolight.css" type="text/css" media="screen" />'},

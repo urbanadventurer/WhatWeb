@@ -20,23 +20,7 @@ dorks [
 'intitle:"Device Manager" "To administer this device you must first login"'
 ]
 
-# Examples #
-examples %w|
-ip67-94-228-1.z228-94-67.customer.algx.net
-216-206-27-64.dia.static.qwest.net
-w224.z064220019.hrt-ct.dsl.cnc.net
-71.4.210.255
-ip67-153-108-0.z108-153-67.customer.algx.net
-140.239.209.111
-66.17.53.104
-66.104.15.143
-65.91.62.223
-67.106.137.129
-204.191.53.23
-66.106.13.151
-65.118.251.239
-113.160.225.195
-|
+
 
 # Matches #
 matches [

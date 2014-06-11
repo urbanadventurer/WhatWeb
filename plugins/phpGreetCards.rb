@@ -14,12 +14,7 @@ dorks [
 '"Powered by phpGreetCards"'
 ]
 
-# Examples #
-examples %w|
-counter25.co.funpic.de/phpGreetCards/phpGreetCards/
-www.w2b.ru/demo/phpGreetCards/
-www.sumareclass.infopainel.com/phpcard/phpGreetCards.php
-|
+
 
 # Matches #
 matches [

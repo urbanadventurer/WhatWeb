@@ -12,17 +12,7 @@ description "The Linux/Microcontroller project (uClinux) is a port of Linux to s
 # ShodanHQ results as at 2011-04-08 #
 # 6,633 for uClinux-httpd
 
-# Examples #
-examples %w|
-92.146.137.180
-75.60.14.25
-190.100.43.93
-92.24.89.220
-115.160.162.86
-78.187.211.176
-189.223.17.49
-189.16.92.54
-|
+
 
 # Passive #
 def passive

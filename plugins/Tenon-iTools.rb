@@ -11,19 +11,7 @@ description "iTools 9 is a web site management system for both small to medium-s
 
 # 687 ShodanHQ results for iTools @ 2010-11-01
 
-# Examples #
-examples %w|
-208.86.167.8
-207.255.26.212
-64.51.57.75
-64.186.244.170
-93.93.131.212
-62.181.209.24
-173.56.12.2
-198.31.196.155
-207.162.162.65
-74.62.17.201
-|
+
 
 # Passive #
 def passive

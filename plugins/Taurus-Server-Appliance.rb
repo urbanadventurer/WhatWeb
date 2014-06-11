@@ -16,10 +16,7 @@ dorks [
 '"Welcome to Taurus" "Taurus administration UI" intitle:"The Taurus Server Appliance"'
 ]
 
-# Examples #
-examples %w|
-fle.com.my
-|
+
 
 # Matches #
 matches [

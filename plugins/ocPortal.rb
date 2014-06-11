@@ -12,16 +12,7 @@ description "Cutting-edge CMS for building and maintaining a sophisticated socia
 # ShodanHQ results as at 2011-05-12 #
 # 24 for X-Powered-By ocPortal
 
-# Examples #
-examples %w|
-ocportal.com
-www.netsweeper.com
-76.162.143.121
-92.60.125.116
-209.197.116.188
-216.171.102.147
-173.203.82.250
-|
+
 
 # Matches #
 matches [

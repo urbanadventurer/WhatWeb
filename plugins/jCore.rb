@@ -18,17 +18,7 @@ dorks [
 'intitle:"Admin - jCore - the Webmaster\'s Multisite CMS"'
 ]
 
-# Examples #
-examples %w|
-jcore.net
-demo.jcore.net
-midnightbar.es
-demos1.softaculous.com/jCore/admin/
-my.todayhub.com
-it.todayhub.com/admin/
-jcore.ccool4.me
-demo3.cz
-|
+
 
 # Matches #
 matches [

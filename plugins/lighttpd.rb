@@ -18,15 +18,7 @@ description "Lightweight open-source web server - Homepage: http://www.lighttpd.
 # ShodanHQ results as at 2010-10-26 #
 # 124,972 for "server: lighttpd"
 
-# Examples #
-examples %w|
-64.120.143.228
-68.153.46.136
-88.148.20.117
-71.191.249.57
-96.31.161.122
-208.94.198.165
-|
+
 
 # Passive #
 def passive

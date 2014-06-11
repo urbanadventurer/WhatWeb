@@ -17,24 +17,7 @@ dorks [
 'inurl:inc_membersareamanager.asp'
 ]
 
-# Examples #
-examples %w|
-demo.dmxready.com/applications/MembersAreaManager/inc_membersareamanager.asp
-ehclientasp.com/applications/MembersAreaManager/inc_membersareamanager.asp
-www.graphicwhizard.com/applications/MembersAreaManager/inc_membersareamanager.asp
-www.petsumerreport.com/applications/MembersAreaManager/inc_membersareamanager.asp
-membersaba.org/applications/MembersAreaManager/inc_membersareamanager.asp
-www.nyfireinvestigators.com/applications/MembersAreaManager/inc_membersareamanager.asp
-www.davton.com/applications/MembersAreaManager/inc_membersareamanager.asp
-pleasantonrugbyclub.com/applications/MembersAreaManager/inc_membersareamanager.asp
-www.valerielloyd.com/applications/MembersAreaManager/inc_membersareamanager.asp
-www.parchmentcraftguild.co.uk/applications/MembersAreaManager/inc_membersareamanager.asp
-www.treasuretowerworldcanada.com/applications/MembersAreaManager/inc_membersareamanager.asp
-www.vinylsiding.org/members/mam/applications/MembersAreaManager/inc_membersareamanager.asp
-www.monarchjewelrycad.com/applications/MembersAreaManager/inc_membersareamanager.asp
-teamnorwex.com/applications/MembersAreaManager/inc_membersareamanager.asp
-www.ktowntickets.com/applications/MembersAreaManager/inc_membersareamanager.asp
-|
+
 
 # Matches #
 matches [

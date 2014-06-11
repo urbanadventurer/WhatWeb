@@ -16,12 +16,7 @@ dorks [
 '"powered by Orbis CMS" intitle:"Orbis CMS > Login"'
 ]
 
-# Examples #
-examples %w|
-www.bergnersbil.se/admin/login.php
-cpic.webege.com/orbis/admin/login.php
-demo.opensourcecms.com/orbiscms/admin/login.php
-|
+
 
 matches [
 

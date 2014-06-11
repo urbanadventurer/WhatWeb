@@ -24,18 +24,7 @@ dorks [
 'intitle:"CAStor Node Status" "CAStor Node IP"'
 ]
 
-# Examples #
-examples %w|
-130.242.14.62
-74.204.163.82
-64.129.59.141
-64.129.59.140
-121.83.198.43
-129.242.4.207
-152.2.228.234
-121.83.198.45
-12.45.140.13
-|
+
 
 # Matches #
 matches [

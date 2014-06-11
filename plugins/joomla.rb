@@ -34,28 +34,6 @@ Plugin.define "Joomla" do
          '"powered by joomla" inurl:option=com_content'
         ]
   
-  # Examples #
-  examples %w|
-biokolchuga.com
-cosmicfantasia.net.au
-rustedfables.com
-www.1000usi.ch
-www.azrul.com
-www.bittdesign.nl
-www.clubjoomla.com
-www.danone.com
-www.imusictools.com
-www.joomla.org
-www.joomlawebdesigns.com
-www.livelovehope.org
-82.223.114.249
-www.gendervision.org/joomla15/
-da-anime.info
-www.miru.net
-hostingdemo.joomlapolis.com
-www.johngiczewski.com
-|
-    
 # Matches #
     matches [
              { :version=>"1.0", :regexp=>/<meta name="Generator" content="Joomla! - Copyright \(C\) 200[0-9] - 200[0-9] Open Source Matters. All rights reserved." \/>/ },

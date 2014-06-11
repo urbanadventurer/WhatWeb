@@ -20,28 +20,7 @@ dorks [
 '"Powered by phpBB"'
 ]
 
-# Examples #
-examples %w|
-phpbbmodders.net/board/
-smartor.is-root.com/forum/
-narutoc.phpbbnow.com
-www.bikeradar.com/forum/index.php
-forum.djmag.com
-www.rotationz.be/forum/
-www.sgscwelisten.com/forum/
-www.globalhardstyle.com/forum/
-www.soapforum.co.uk
-www.ostriches.org/forum/
-forum.comicostrich.com
-forum.ectune.com
-pokerforums.fulltiltpoker.com
-www.bettertransport.org.nz/forum/
-back2basics.hiphopnz.com
-www.oldschool.co.nz
-mazda-auto.ru
-4x4drive.ru.spnet.ru
-129.118.162.211
-|
+
 
 =begin
 

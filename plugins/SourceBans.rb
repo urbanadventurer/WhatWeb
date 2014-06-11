@@ -18,17 +18,7 @@ dorks [
 'inurl:web_upload ext:php "steam"'
 ]
 
-# Examples #
-examples %w|
-aldarion.bgmeet.com/sourcebans/web_upload/
-c7clan.net/sourcebans/
-apeha.comli.com/web_upload/index.php
-banidos.actioncss.com.br
-gc01317.gc-server.de/web_upload/
-tracker.comuv.com
-ventilaator.planet.ee/web_upload/
-bans.gp-emerica.ru
-|
+
 
 # Matches #
 matches [

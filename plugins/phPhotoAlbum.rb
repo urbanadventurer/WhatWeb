@@ -20,12 +20,7 @@ dorks [
 '"powered by PHPhotoalbum" intitle:My Picture Album"'
 ]
 
-# Examples #
-examples %w|
-www.hardmaps.com/BOTD/BOTD/phPhotoAlbum.php
-www.keshershalosh.com/photos/album.php
-oldstyle.3x.ro/Album/index.php
-|
+
 
 # Matches #
 matches [

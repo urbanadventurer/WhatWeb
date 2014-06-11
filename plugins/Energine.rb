@@ -17,31 +17,7 @@ dorks [
 '"Powered by Energine"'
 ]
 
-# Examples #
-examples %w|
-demo.energine.org
-www.school-221.ho.ua/en/
-www.supme.net.ru/en/
-www.energine-cmf.ho.ua/en/
-energine.demo.openmag.biz/en/
-sazz.pgk.cc
-www.azs-sanki.ru/en/
-kalyan48.ru/en/
-www.gnevush-metal.com.ua/zabori/
-silver-studio.com.ua/en/
-www.techno.uz.ua/en/
-eggmen.net/~andriy/ss/en/
-mgree.ru
-fintstudio.uz.ua
-litvatravel.itprojects.lt
-artkukla.com.ua/en/
-mostovenko.com.ua/en/
-jgt.com.ua/en/
-art-kukla.colocall.com/en/
-fcc.kiev.ua/en/
-pravdop.com
-62.149.25.162
-|
+
 
 # Matches #
 matches [

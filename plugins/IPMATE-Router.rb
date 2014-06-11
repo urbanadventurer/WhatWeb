@@ -12,10 +12,7 @@ description "IPMATE router [Japanese] - http://www.ntt-east.co.jp/"
 # ShodanHQ results as at 2011-03-07 #
 # 1 for IPMATE
 
-# Examples #
-examples %w|
-210.232.156.129
-|
+
 
 # Matches #
 matches [

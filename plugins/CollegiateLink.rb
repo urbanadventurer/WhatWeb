@@ -17,23 +17,7 @@ dorks [
 '"Powered by CollegiateLink Version" inurl:"Community?action"'
 ]
 
-# Examples #
-examples %w|
-wpunj.collegiatelink.net
-muhlenberg.collegiatelink.net
-allegheny.collegiatelink.net
-nicholls.collegiatelink.net
-clubhaven.collegiatelink.net
-buffalotraining.collegiatelink.net
-rulinked.camden.rutgers.edu
-callink.berkeley.edu
-myinvolvement.indiana.edu
-es-salink-tst.uits.indiana.edu
-outsidetheclassroom.pitt.edu
-studentlink.iupui.edu
-atuvalegacy.student.virginia.edu
-csilink.ubalt.edu
-|
+
 
 # Matches #
 matches [

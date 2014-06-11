@@ -34,20 +34,7 @@ dorks [
 'intitle:"Default Parallels Plesk Panel Page"'
 ]
 
-# Examples #
-examples %w|
-193.92.33.194
-178.63.88.4
-63.141.138.20
-188.40.159.225
-173.193.22.105
-50.22.88.100
-213.142.141.191
-216.28.245.171
-212.174.225.246
-85.214.39.102
-80.237.244.17
-|
+
 
 # 2006
 # <img src='def_plesk_logo.gif' alt="Plesk logo">

@@ -33,58 +33,7 @@ dorks [
 'filetype:htpasswd inurl:htpasswd'
 ]
 
-# Examples #
-examples %w|
-doro999.piranho.de/neuer%20Versuch/htpasswd.txt
-cgibinpp.50webs.com/htpasswd.txt..txt
-www.halsogskaun.dk/Medlemsside/htpasswd.txt
-membres.multimania.fr/fefmail/htpasswd.txt
-www.oishii.jp/yyguest/htpasswd.txt
-daten.amoba.ch/htpasswd.txt
-homepages.fh-giessen.de/~lsyn55/Privat/htpasswd.txt
-eurogelys.com/admin/htpasswd.txt
-www.purefishing.jp/products/elite_360/htpasswd.txt
-www.findrxonline.com/amember/data.htpasswd
-syracuse-dev.org/private/trac-syracuse-dev.htpasswd
-dai-us.com/zitopw.htpasswd
-114.33.136.38/trac/mapawire-www/mapawire.htpasswd
-collegesom.free.fr/jury.htpasswd
-198.85.71.234/murphyms/web289/xampplite/security/webdav.htpasswd
-files.ciptc.org.cn/portal/%23%23.htpasswd.bak
-linguistical.com/mcart/data/htpasswd.bak
-www.amitainc.com/dealers/htpasswd.bak
-www.pornstarsociety.com/acpay/acp.htpasswd.bak.20021015051207
-escrime59.fr/htpasswd.txt
-www.dart-creations.com/images/stories/joomlatuts/secure/htpasswd.txt
-x68000.q-e-d.net/~68user/net/sample/http-auth/.htpasswd
-www.odont.uio.no/studier/ressurser/forelesninger/undervisning/immunologi/thalsten/.htpasswd~
-www.filedropper.com/jay/.htpasswd1
-www.amitainc.com/dealers/htpasswd.bak
-files.ciptc.org.cn/portal/%23%23.htpasswd.bak
-laboratoriomatematicas.uniandes.edu.co/financieras/matfin1/htpasswd.bak
-eskola2.pp.fi/POIS_110310_.htpasswd
-koti.mbnet.fi/icef1re/tnf/k.htpasswd
-www.ubat-formation.fr/dossiers/old.htpasswd
-seo-online.ru/%7C.htpasswd
-www-geant4.kek.jp/~iwai/cvs/index.cgi/*checkout*/pcfarm/.htpasswd
-xn--p5b4c.com/soft-systems/default/~.htpasswd
-www.snowlock.net/original/rifts/rifts/clan.htpasswd
-www.pimvullers.net/domains/vullersweb.nl/svn/svn.htpasswd
-www.gimsig.ac.uk/images/gimsig%20site%20security/o.htpasswd
-www.cnra.ci/fichetech/htpasswd.htpasswd
-hyp3rion.free.fr/Personal_Database/trucs%20usefull/htpasswd.txt
-deceder.at10.be/content/mamatijd/beveiligdepagina/htpasswd.txt
-koellemedien.de/htpasswd.txt
-subdomains.iberka.com/htpasswd.txt
-www.systemaonline.com.br/public/teste/htpasswd.txt
-daten.amoba.ch/htpasswd.txt
-amd2408.am.funpic.de/htpasswd.txt
-www.ksmh.be/BestuursAdmin/htpasswd.txt
-www.jp-bank-seminar.jp/________.htpasswd
-www.bitscape.jp/____.htpasswd
-www.amitainc.com/dealers/htpasswd.bak
-files.ciptc.org.cn/portal/%23%23.htpasswd.bak
-|
+
 
 # Passive #
 # Extract credentials in user{2-255}:pass{1-80} format

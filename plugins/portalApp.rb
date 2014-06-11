@@ -16,37 +16,7 @@ dorks [
 '"powered by PortalApp" -exploit'
 ]
 
-# Examples #
-examples %w|
-www.portalapp.com/default.asp
-www.euroufo.net/content.asp
-www.aspapp.com/content.asp
-www.redesambientales.org.co
-pandorasrl.com
-www.samorsae.com
-superficies.elladrillorojo.com
-202.158.79.180/portalsdm/
-superficies.lrgrup.com
-franquicias.elladrillorojo.com
-www.iwtatwork.com/content.asp
-www.ngkrooihuiskraal.org.za
-www.informationquest.it
-www.parcodellefavole.it
-www.watsampatuan.ac.th
-www.klongtaaiem.ac.th
-www.wkss.ac.th
-www.watintaram.ac.th
-www.watthod.ac.th
-www.slk.ac.th
-www.skad80.ac.th
-www.ben4.ac.th
-www.slschool.ac.th
-www.watbangprong.ac.th
-www.watkrongtonman.ac.th
-www.watgatesamosorn.ac.th
-www.sakaedod.ac.th
-www.darulna-im.ac.th
-|
+
 
 # Matches #
 matches [

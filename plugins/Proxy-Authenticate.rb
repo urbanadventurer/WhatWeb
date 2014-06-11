@@ -11,14 +11,7 @@ description "This plugin extracts the realm from the proxy-authenticate HTTP hea
 
 # About 1402 ShodanHQ results for proxy-authenticate @ 2011-01-09
 
-# Examples #
-examples %w|
-196.23.54.97
-92.255.238.196
-178.86.6.223
-178.86.6.225
-146.47.39.143
-|
+
 
 # Passive #
 def passive

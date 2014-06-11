@@ -9,15 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-11-17
 version "0.1"
 description "Solidyne iNET Server - web interface for Solidyne devices - Homepage: http://www.solidyne.com/"
 
-# Examples #
-examples %w|
-96.4.148.41
-67.22.208.245
-65.15.160.90
-76.100.121.82
-209.195.188.240
-184.11.116.49
-|
+
 
 # Matches #
 matches [

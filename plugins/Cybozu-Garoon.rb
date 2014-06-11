@@ -13,12 +13,7 @@ description "Cybozu Garoon is a web-based groupware suite integrating key collab
 # 251 for Cybozu-WS
 # Most results are from Japan
 
-# Examples #
-examples %w|
-158.217.167.72
-220.99.93.77
-133.5.192.2
-|
+
 
 # Passive #
 def passive

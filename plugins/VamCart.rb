@@ -17,13 +17,7 @@ dorks [
 '# 5 for "VamCart" "Shipping and Returns" inurl:"page/shipping--returns.html"'
 ]
 
-# Examples #
-examples %w|
-vamcart.com/demo/
-magazynauto.ho.ua/
-www.eachparty.com/page/shipping--returns.html
-sy.tidwah.com/page/shipping--returns.html
-|
+
 
 # Matches #
 matches [

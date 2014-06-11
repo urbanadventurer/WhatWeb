@@ -21,23 +21,7 @@ dorks [
 '"XWiki Enterprise * Documentation" inurl:"bin/view/Main"'
 ]
 
-# Examples #
-examples %w|
-87.98.168.11
-91.121.38.59
-203.37.253.40
-203.116.109.77
-91.121.39.190
-hub.opensolaris.org/bin/view/
-stirling.kent.ac.uk/awiki/bin/view/
-mortagne.org/xwiki/bin/view/
-ndc.sciencebase.gov
-golem.ps.uci.edu/xwiki/bin/view/
-l3dwiki.cs.colorado.edu/xwiki/bin/view/
-l3dwiki.cs.colorado.edu:8080/bin/view/
-cc09.cs.colorado.edu/bin/view/
-eeat.cis.gsu.edu:8080/xwiki/bin/view/
-|
+
 
 # Matches #
 matches [

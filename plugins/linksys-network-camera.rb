@@ -19,12 +19,7 @@ dorks [
 'inurl:/img/main.cgi inurl:next_file'
 ]
 
-# Examples #
-examples %w|
-189.254.227.7
-216.167.184.100:6360
-24.226.195.125
-|
+
 
 matches [
 

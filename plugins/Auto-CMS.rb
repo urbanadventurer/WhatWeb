@@ -16,10 +16,7 @@ dorks [
 '"Powered by Auto CMS"'
 ]
 
-# Examples #
-examples %w|
-http://ventics.com/autocms/
-|
+
 
 matches [
 

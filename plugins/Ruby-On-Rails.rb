@@ -9,8 +9,7 @@ author "Andrew Horton"
 version "0.1"
 description "Ruby on rails is an MVC web application framework written in the ruby language. Doesn't detect all RoR sites. Homepage: http://www.rubyonrails.org."
 
-# Examples #
-examples %w| http://yeah.com/   http://www.twitter.com/ http://www.shopify.com/ http://www.yellowpages.com/ http://www.github.com/ http://www.lighthouseapp.com/ http://sortfolio.com/ http://www.hulu.com/ http://www.groupon.com/ http://www.geni.com/ http://www.backpackit.com/ http://www.ravelry.com/ http://www.43things.com/ http://www.justin.tv/ http://www.scribd.com/ http://www.ilike.com/ http://www.streeteasy.com/ http://www.chow.com/ http://www.facebook.com/apps/application.php?id=2427603417 http://home.inklingmarkets.com/ http://www.alistapart.com/ http://www.revolutionhealth.com/ http://www.newyorkjets.com/ http://www.mingle2.com/ http://www.vitalsource.com/betterbooks/ http://www.blinksale.com/ http://www.cookpad.com/ http://www.blurb.com/ http://www.tobi.com/ http://www.spock.com/ http://www.lumosity.com/ http://www.lacoctelera.com/ http://www.a-better-tomorrow.com/http://minutestrading.com/ http://qurl.net/ http://pickem.terrbear.org/ http://now.dartmouth.edu/ http://nosleepmedia.com/ http://store.iamstillalive.net/ http://weed.rbse.com/ http://weasel-ware.org/ http://vorlesungsverzeichnis.hgkz.ch/ http://techzingo.com/ 74.117.104.106 74.81.93.82 203.71.5.22|
+
 
 # Matches #
 matches [

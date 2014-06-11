@@ -12,11 +12,7 @@ description "phpMailShare is a small php script that allows you to share emails 
 # Google results as at 2012-02-18 #
 # 1 for "Powered by phpMailShare"
 
-# Examples #
-examples %w|
-www.tekreaders.com/phpMailShare/demo/
-www.marcostolp.nl
-|
+
 
 # Matches #
 matches [

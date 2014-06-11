@@ -20,44 +20,7 @@ dorks [
 '"powered by Traidnt UP Version"'
 ]
 
-# Examples #
-examples %w|
-shjoonalhajri.net
-moon-14.net
-iraqeon.net
-slayl-abs.net
-up.sa-l.com
-3eeb.alkrsan.net
-iraqiyat.net/up/
-up.sitamol.net
-up.klgcol.net
-ebnelqady.com
-alfdol.net
-ll1ll.com
-a5fe.net
-hanasa-up.ueuo.com
-up-zazlux.co.cc
-up.esgmarkets.com
-www.not-world.com
-www.baghdadyat.com
-www.7fz.net
-www.mishooo.org
-www.sabagate.com
-www.z3lanh.net
-www.3adany.net
-www.2upl.com
-www.silence-gate.org
-www.14nooor.net
-www.noor-alyaqeen.com/up/
-www.sada9.com
-www.m1111.net
-www.up.up-alswalf.com
-www.kber-g.co.cc
-www.iqpic.com
-www.turaif.me/upload/
-www.vb-k.com/up/
-www.1rmad.com/up/
-|
+
 
 # Matches #
 matches [

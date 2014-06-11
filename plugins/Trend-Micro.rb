@@ -12,16 +12,7 @@ description "Trend Micro server - http://www.trendmicro.com/"
 # ShodanHQ results as at 2011-06-12 #
 # 19 for Trend Micro
 
-# Examples #
-examples %w|
-150.70.74.71
-218.104.127.179
-150.70.65.213
-216.104.8.86
-216.104.8.81
-150.70.65.241
-150.70.74.72
-|
+
 
 # Matches #
 matches [

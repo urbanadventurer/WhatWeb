@@ -22,34 +22,7 @@ dorks [
 '"powered by PHP Live!" -Vulnerability'
 ]
 
-# Examples #
-examples %w|
-74.208.90.54:400/rep.ipmanage.net/httpdocs/phplive/admin/traffic/knowledge_search.php
-jswcrm.com/livechat/request_email.php
-lib207.lib.wwu.edu/phplive/request_email.php
-live.trainingjolt.com/request_email.php
-livehelp.vi.virginia.gov/admin/traffic/knowledge_search.php
-livehelp.preferred-care-pharmacy.com/message_box.php
-phplive.prostarcrm.com/message_box.php
-phplive.sig-support.com/rus/admin/traffic/knowledge_search.php
-secure.westnic.net/livesupport/request_email.php
-talk.lifechurch.tv/phplive/request_email.php
-www.megrisoft.com/livesupport/request_email.php
-www.activitydirectorsnetwork.com/phplive/admin/traffic/knowledge_search.php
-www.vividracing.com/phplive/request_email.php
-www.lccavia.ru/support/request_email.php
-www.hthengineering.com/phplive/message_box.php
-www.phplivesupport.co.uk/phplive/admin/traffic/knowledge_search.php
-www.activitydirectorsnetwork.com/phplive/admin/traffic/knowledge_search.php
-www.nutridirect.co.uk/phplive/admin/traffic/knowledge_search.php
-www.indecenciashop.com.br/phplive/admin/traffic/knowledge_search.php
-www.guestcentric.com/support/request_email.php
-www.toureast.com/en/chatlive/request_email.php
-www.edunet-help.com/request_email.php
-www.lbsib.com/support/request_email.php
-www.hotelangelshome.com/support/request_email.php
-www.robotsetup.com/support/request_email.php
-|
+
 
 # Matches #
 matches [

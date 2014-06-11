@@ -18,19 +18,7 @@ description "Cisco IOS (originally Internetwork Operating System) is the softwar
 # ShodanHQ results as at 2010-10-26 #
 # 284,567 for "server: cisco-IOS"
 
-# Examples #
-examples %w|
-96.61.214.8
-122.227.189.246
-199.2.209.61
-202.6.154.2
-216.244.169.38
-199.216.192.128
-91.206.162.13
-95.14.189.62
-65.61.46.1
-195.133.224.193
-|
+
 
 # Matches #
 matches [

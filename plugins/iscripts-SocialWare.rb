@@ -16,48 +16,7 @@ dorks [
 '"powered by iScripts SocialWare" "A premium product from iScripts.com"'
 ]
 
-# Examples #
-examples %w|
-www.iscripts.com/socialware/demo/confessions.php
-www.welcomeecuador.com/social/confessions.php
-jandapal.com
-nijimo.com/beta/confessions.php
-www.homeschoolnetworks.com
-www.pawsland.com
-www.superconcentratedbrainjuice.com
-asianchatonline.com/confessions.php
-www.socioboom.com
-bdmyspace.com
-www.nuffvibes.net
-www.planetwhisper.com
-igazeebo.org/confessions.php
-www.socialwebclub.com/confessions.php
-cantresonline.com/confessions.php
-personal4you.com/profile.php?profile=sifat
-amdriven.com
-italkfriends.com
-community.jijole.com/profile.php
-thedistancelearningnetwork.com
-www.deshifacebook.com/confessions.php
-superwhack.com/events.php
-famstory.co.uk
-thebarristerslounge.com/confessions.php
-worldwidesantaclaus.net/forums.php
-www.viralimalai.com/events.php
-meetntreat.com/userlogin.php
-blendedfamily.ca/confessions.php
-babblefish.com/sn/search.php
-www.insert24.de/comnet/confessions.php
-masterqmacteam.com/social/index.php
-egfcostaricacommunity.com/profile.php
-www.nirmalacollege.com/profile.php
-www.clubng.com/news.php
-praminhacasa.com
-www.expatmafia.com/events.php
-fremantle.appsclub.com/classifieds.php
-bentleysquare.org/social/forums.php
-best-running-club.com/tips.php
-|
+
 
 matches [
 

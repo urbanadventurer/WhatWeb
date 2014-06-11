@@ -18,21 +18,7 @@ dorks [
 
 # 41 results for "powered by aspWebLinks" @ 2010-08-28
 # 7 results for "powered by aspWebLinks" intitle:"aspWebLinks" @ 2010-08-28
-examples %w|
-www.wcschools.net/Departments/ttrc/links.asp
-www.gatewaychurchdoncaster.org.uk/gateway/links.asp
-www.pinnbeads.com/links.asp
-alumni.x-aimas.net/v3/kptmkcas-linkdir.asp
-www.metal-coven.dk/links/links.asp
-portland2000.mine.nu/links.asp
-www.laughing-rocks.org/links.asp
-files.unitedbenefitadvisors.com/benefits2_2/shared/T4_Dynamic_Pages/ERC/links.asp
-www.suonerie-mp3-gratis.com/directory/links.asp
-dir.webnow.com.my/links.asp
-www.pinnbeads.com/links.asp
-users6.nofeehost.com/goalsurfer/links.asp
-www.studentenwerk-aachen.de/links/links.asp
-|
+
 
 matches [
 

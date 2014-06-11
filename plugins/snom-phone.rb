@@ -17,8 +17,7 @@ dorks [
 '"You can enter a simple telephone number (e.g. 0114930398330) or URI like info@snom.com."'
 ]
 
-# Examples #
-examples %w| http://121.73.14.125/ http://63.117.239.171/|
+
 
 # &copy; 2000-2008 <a href="http://snom.com">snom AG</a><br>
 # <tr><td class="flyoutLink" colspan="2"><b><a href=http://wiki.snom.com/wiki/index.php/snom300>Manual</a>

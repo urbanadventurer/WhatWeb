@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-19
 version "0.1"
 description "Simple CGI backdoor by DK (http://michaeldaw.org)"
 
-# Examples #
-examples %w|
-www.sportshop.tk/images/perlcmd.cgi
-|
+
 
 # Matches #
 matches [

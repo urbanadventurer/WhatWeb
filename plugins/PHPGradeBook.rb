@@ -17,12 +17,7 @@ dorks [
 'inurl:"admin" intitle:"phpGradeBook"'
 ]
 
-# Examples #
-examples %w|
-phpgradebook.com/demo/admin/
-www.compclass.us/phpGradeBook/admin/
-gregjessup.com/gradebook/admin/top.ini.php
-|
+
 
 # Matches #
 matches [

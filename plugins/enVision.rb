@@ -12,12 +12,7 @@ description "Content Interface Corp enVision - interactive WYSIWYG layout editor
 # ShodanHQ results as at 2012-03-24 #
 # 5 for Content Interface Corp enVision
 
-# Examples #
-examples %w|
-202.3.142.57
-64.34.225.140
-202.3.142.67
-|
+
 
 # Matches #
 matches [

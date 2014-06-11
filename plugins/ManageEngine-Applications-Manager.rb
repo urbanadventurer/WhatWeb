@@ -18,15 +18,7 @@ dorks [
 'intitle:"Applications Manager Login Screen" "Applications Manager" "Number of Monitor"'
 ]
 
-# Examples #
-examples %w|
-demo.appmanager.com
-lists.catalyst2.com/index.do
-201.55.73.46:8080
-apmon.dhc.com.br
-https://appmanager.liquidspoke.com/
-https://winmon.delhi.edu/applications.do
-|
+
 
 # Matches #
 matches [

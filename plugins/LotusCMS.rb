@@ -18,35 +18,7 @@ dorks [
 '"Powered by LotusCMS"'
 ]
 
-# Examples #
-examples %w|
-www.lotuscms.org/index.php?system=Admin
-demo.opensourcecms.com/lotuscms/index.php?system=Admin
-demo.opensourcecms.com/lotuscms/
-www.waterboysuw.com
-techresq.net/lotus/
-lotuscms.welovewebdesign.com
-www.melonkore.co.cc/lcms/
-www.truth.outnowhere.com
-www.arboroia.com
-libreriaamor.rapiagenda.com
-simbiosi.org
-pankrol.herobo.com/lotus/
-jnns.net
-www.gi.alaska.edu/~chha/cms/
-littaandersen.dk
-slnt.fr/lcms/
-www.svenstringer.com
-www.psychotronika.szkola.pl
-aepfel.ch
-fotki.netserwer.pl
-www.kartynylvovagoldeye.abajt.pl/lotos/LotusCMS/
-todai-tsa.org
-www.unitradedubai.com/admin/
-rashid.comxa.com/admin/
-faya-dance.nl/index.php?system=Admin
-www.eichberger.org/admin/
-|
+
 
 # Matches #
 matches [

@@ -13,19 +13,7 @@ description "home.net.pl hosting - a major polish hosting company home.pl uses i
 # 91,705 for IdeaWebServer
 # All results are from Poland
 
-# Examples #
-examples %w|
-89.161.189.91
-79.96.144.37
-89.161.188.231
-79.96.225.88
-89.161.139.59
-79.96.41.17
-212.85.110.71
-79.96.204.115
-79.96.131.17
-79.96.92.82
-|
+
 
 # Passive #
 def passive

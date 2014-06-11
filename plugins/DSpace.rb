@@ -16,12 +16,7 @@ dorks [
 '"Powered by DSpace, version"'
 ]
 
-# Examples #
-examples %w|
-repository.law.ttu.edu
-hub.hku.hk
-repository.hku.hk
-|
+
 
 # Matches #
 matches [

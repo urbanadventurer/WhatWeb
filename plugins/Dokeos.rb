@@ -19,49 +19,7 @@ dorks [
 '"Portal Dokeos"'
 ]
 
-# Examples #
-examples %w|
-demo.dokeos.com
-campus.dokeos.com
-www.messianicondemand.co.cc
-demo.opensourcecms.com/dokeos/
-apelos.squareserve.com
-ponce.inter.edu/nhp/contents/webct2/chamilo/
-easyjetfact.com
-dokeos.uaa.edu
-tatsujin-web.com/main/install/index.php
-www.advance365.org
-www.uacqb-guerrero.org.mx/dokeos/
-elearning.ecac-ceac.org/
-www.advance365.me.uk
-www.ksjoma.be/dokeos/
-elearning.mspas.gob.gt
-lms.godevzone.com
-mylearningspot.org
-edu.pfri.hr/dokeos/
-www.u.edu.gt/dokeos/
-82.114.92.139/dokeos/
-dokeos.isboweb.be
-fad-pascal.net/dokeos/
-www.vithoulkas.edu.gr
-www.ozarkempirecft.com
-aulavirtual.usac.edu.gt/cursospsicologia/
-www.cunoroc.edu.gt/virtual/
-fcvirtual.uni.edu.pe
-www.esar.edu.pt/gestaodocumental/
-www.istrfa.edu.pe/aula/
-e-learning.asys.edu.co
-www.podologiaepm.edu.mx/campus/
-ecourse.chandraonline.info
-www.cesuver.edu.mx/plataforma/virtual.s1/
-www.cesuver.edu.mx/plataforma/virtual.s2/
-www.cesuver.edu.mx/plataforma/virtual.s3/
-www.cesuver.edu.mx/plataforma/virtual.s4/
-www.cesuver.edu.mx/plataforma/virtual.s5/
-www.cesuver.edu.mx/plataforma/virtual.s6/
-www.cesuver.edu.mx/plataforma/virtual.s7/
-www.cesuver.edu.mx/plataforma/virtual.s8/
-|
+
 
 # Matches #
 matches [

@@ -17,10 +17,7 @@ dorks [
 'intitle:"Octopussy Login"'
 ]
 
-# Examples #
-examples %w|
-svn.vdcdev.com
-|
+
 
 # Matches #
 matches [

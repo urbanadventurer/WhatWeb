@@ -26,12 +26,7 @@ dorks [
 'intitle:"mikrotik routeros > administration" "Winbox is the graphical configuration application for RouterOS."'
 ]
 
-# Examples #
-examples %w|
-http://demo.mt.lv/
-http://78.133.218.221/
-http://79.106.2.29/
-|
+
 
 # Matches #
 matches [

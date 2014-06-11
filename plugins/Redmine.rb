@@ -21,46 +21,7 @@ dorks [
 '"Powered by Redmine"'
 ]
 
-# Examples #
-examples %w|
-www.redmine.org
-dev.metasploit.com/redmine/
-redmine.hackthissite.org
-redmine.lighttpd.net
-hades.synyx.org
-www.hostedredmine.com
-f.etf.unsa.ba/redmine/login
-akita-yurihonjo.net/redmine/login
-molokozavod.org/redmine/login
-85.214.128.12/redmine/login
-route536.ddo.jp/redmine/login
-87.252.238.93:443/redmine/login
-www.ank-sia.com/redmine/login
-developer.digitalstrom.org/redmine/login
-svn.cinspiration.de/redmine/login
-sys.iqmtel.net/redmine/login
-www.krdtbk139.com/redmine/login
-www.see.leeds.ac.uk/redmine/
-codeblue.umich.edu
-redmine.eg.bucknell.edu
-netdot.uoregon.edu
-theory.cm.utexas.edu/redmine/
-wiesel.ece.utah.edu/redmine/
-ares.lids.mit.edu/redmine/activity
-hydrogeology.glg.msu.edu/redmine/
-pub.lmmp.nasa.gov/redmine/
-project.harrisonburgva.gov
-https://cdcvs.fnal.gov/redmine/
-https://nova-daq.fnal.gov/redmine/
-https://visitbugs.ornl.gov
-https://git.cs.unc.edu/redmine/
-https://portal.lib.ohio-state.edu/redmine/
-https://intern.mediacluster.de/redmine/login
-https://pm.optimustest.com/redmine/login
-https://portal.optimusinfo.com/redmine/login
-https://globaltrackingsolutions.com/redmine/login
-https://pineapple.champlain.edu/
-|
+
 
 # Matches #
 matches [

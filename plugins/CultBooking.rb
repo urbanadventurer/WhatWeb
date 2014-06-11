@@ -17,26 +17,7 @@ dorks [
 'inurl:cultbooking.php filetype:php'
 ]
 
-# Examples #
-examples %w|
-cultbooking.com/cultbooking.php
-www.sonnekalb.de/buchung/cultuzz/cultbooking.php
-potsdam-hostel.com/CultBooking/cultbooking.php
-klosterbraeuhaus.com/cultbooking/cultbooking.php
-www.energiehotel-berlin.de/booking/cultbooking.php
-www.gasthof-alpengluehn.co.at/cultbooking/cultbooking.php
-www.hotel-zu-den-linden.de/cultbooking/cultbooking.php
-gasthof-kranz.com/cultbooking/cultbooking.php
-www.24zimmer.de/onlinebuchung/cultbooking.php
-www.atlas-hotels.de/hotel-garmisch-zugspitze-buchung/cultbooking.php
-www.kohsamuibeachresort.com/reservation/cultbooking.php
-booking.hotel-pension-berlin.de/cultbooking.php
-gasthof-kranz.de/cultbooking/cultbooking.php
-www.kranz-lausheim.de/cultbooking/cultbooking.php
-www.gasthauskranz.de/cultbooking/cultbooking.php
-www.ferienwohnung-365.de/booking/cultbooking.php
-www.mauritiusholidaydeals.com/CultBooking/cultbooking.php
-|
+
 
 # Matches #
 matches [

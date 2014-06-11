@@ -12,14 +12,7 @@ description "NetPort server - used by several routers."
 # ShodanHQ results as at 2011-05-30 #
 # 83,817 for NetPort
 
-# Examples #
-examples %w|
-201.10.105.227
-46.19.16.54
-62.41.54.81
-162.127.230.82
-205.119.127.245
-|
+
 
 # Passive #
 def passive

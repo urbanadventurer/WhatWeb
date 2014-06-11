@@ -12,12 +12,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
 version "0.2"
 description "TaskFreak! Original is a simple but efficient web based task manager written in PHP. - homepage: http://www.taskfreak.com/original/"
 
-# Examples #
-examples %w|
-demo.taskfreak.com
-support.djs-consulting.com
-pz-dev.de/tasks/login.php
-|
+
 
 # Matches #
 matches [

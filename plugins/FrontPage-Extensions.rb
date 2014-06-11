@@ -19,18 +19,7 @@ description "Microsoft FrontPage (full name Microsoft Office FrontPage) is a WYS
 # ShodanHQ results as at 2010-10-26 #
 # 1,148,067 for "server: Frontpage"
 
-# Examples #
-examples %w|
-205.234.252.238
-69.162.186.70
-129.121.38.159
-198.104.177.102
-74.53.136.101
-74.53.225.110
-198.104.62.165
-174.122.231.220
-66.49.171.154
-|
+
 
 # Passive #
 def passive

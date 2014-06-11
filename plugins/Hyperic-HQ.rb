@@ -23,22 +23,7 @@ dorks [
 'intitle:"Sign In - Hyperic" "Please enter your username and password to sign in"'
 ]
 
-# Examples #
-examples %w|
-65.124.140.127
-184.73.103.125
-91.230.238.142
-209.59.2.196
-198.41.41.61
-184.172.45.21:8080
-64.27.68.102
-50.17.18.140
-209.59.2.193
-mon.tedata.net
-hyperic.econocompu.com
-int103.vodafone.de
-hyperic.tulane.edu
-|
+
 
 # Matches #
 matches [

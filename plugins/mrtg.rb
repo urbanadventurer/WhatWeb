@@ -16,12 +16,7 @@ description "MRTG - Multi Router Traffic Grapher - http://oss.oetiker.ch/mrtg/"
 # Google results as at 2012-08-09 #
 # 8330 for intitle:"MRTG Index Page"
 
-# Examples #
-examples %w|
-http://12.239.56.37/pix.htm
-http://www.lisp4.net/mrtg/
-www.mozix.org.mz/mrtg/
-|
+
 
 # Matches #
 matches [

@@ -16,23 +16,7 @@ dorks [
 '"powered by phplist version" intitle:phplist'
 ]
 
-# Examples #
-examples %w|
-demo.phplist.com/lists/
-demo.phplist.com/lists/admin/
-dev.phplist.com/lists/
-dev.phplist.com/lists/admin/
-gpsmailadmin.com
-newsletter-ilger.com/newsletter/
-teu.ac.nz/lists/
-www.relevantmethod.com/emarketing/lists/
-www.minimarketing.com.ar/lists/
-lists.ort.org.il
-www.dotcom.co.il/apps/lists/
-www.winwinliving.net/admin/
-newsletter.etuc.org
-illinoispolicecoalition.com/lists/
-|
+
 
 # Matches #
 matches [

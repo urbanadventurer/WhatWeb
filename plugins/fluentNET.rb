@@ -19,13 +19,7 @@ dorks [
 '"powered by FluentCMS from DotContent"'
 ]
 
-# Examples #
-examples %w|
-www.eepublishers.co.za
-www.resolve.co.za
-www.getclosure.co.za
-resolvetraining.co.za.dedi5a.your-server.co.za
-|
+
 
 matches [
 

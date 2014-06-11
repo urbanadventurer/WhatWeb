@@ -20,17 +20,7 @@ dorks [
 '"Bomgar Corporation. Redistribution Prohibited. All Rights Reserved. " "Access Software for Help Desk Support"'
 ]
 
-# Examples #
-examples %w|
-194.209.83.100
-130.57.1.144
-173.9.73.146
-65.51.112.173
-69.169.180.41
-70.61.233.243
-195.67.111.50
-209.12.223.8
-|
+
 
 # Matches #
 matches [

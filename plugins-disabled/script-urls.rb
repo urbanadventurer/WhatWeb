@@ -15,14 +15,7 @@ description "This plugin detects instances of script HTML elements and retrieves
 # Google results as at 2010-10-14 #
 # 384 for "your browser does not support javascript"
 
-# Examples #
-examples %w|
-github.com
-morningstarsecurity.com
-twitter.com
-wordpress.com
-www.microsoft.com
-|
+
 
 # Matches #
 matches [

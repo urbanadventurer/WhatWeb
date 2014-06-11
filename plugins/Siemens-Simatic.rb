@@ -18,16 +18,7 @@ description "SCADA - Siemens Simatic - Homepage: http://www.automation.siemens.c
 # 13 for SIMATIC NET -S7 -HMI
 # 13 for "Simatic S7"
 
-# Examples #
-examples %w|
-216.14.191.234 
-81.136.162.184
-74.112.123.100
-24.43.123.102
-67.67.148.105
-68.90.36.217
-68.90.36.217/__Additional
-|
+
 
 # Matches #
 matches [

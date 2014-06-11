@@ -12,20 +12,7 @@ description "The fastest and most complete WordPress performance optimization pl
 # ShodanHQ results as at 2011-02-19 #
 # 3,086 for W3 Total Cache
 
-# Examples #
-examples %w|
-dragonblogger.com
-sexyschoolgirloutfit.org
-74.63.91.122
-66.172.26.233
-173.201.231.186
-96.30.11.28
-173.83.144.158
-64.224.108.76
-69.167.135.146
-188.165.182.148
-173.192.235.134
-|
+
 
 # Matches #
 matches [

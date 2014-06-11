@@ -20,15 +20,7 @@ dorks [
 'intitle:"Asterisk Configuration GUI" "Asterisk Configuration Panel - Please click on a panel to manage related features"'
 ]
 
-# Examples #
-examples %w|
-208.72.79.14
-41.145.125.136
-27.50.17.166
-93.96.174.134
-93.93.205.118:8088
-voip.tdl.com
-|
+
 
 # Matches #
 matches [

@@ -16,23 +16,7 @@ dorks [
 '"Powered By phpFox Version"'
 ]
 
-# Examples #
-examples %w|
-live.phpfox.com/demo/
-www.mytalent.com
-www.gospelville.org/community/
-www.stylevice.com
-www.power-9-network.com
-www.arrowchat.com/demo.phpfox/index.php
-www.eskysite.com
-www.rpmspace.com
-cliquelink.com
-stpetersburgbeach.com
-demo.teamwurkz.com/v2demo-flava/
-www.lesbos-island.org
-www.ethiomusicians.com
-phpfoxstyles.com/demo2/
-|
+
 
 # Matches #
 matches [

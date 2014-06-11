@@ -16,31 +16,7 @@ dorks [
 '"powered by iRealty"'
 ]
 
-# Examples #
-examples %w|
-informasikos.com
-www.sakanonline.com
-www.stefanouproperties.com
-fortmyersvacationrentalsfl.com
-homesperson2person.com
-www.jameendalal.com
-www.bulgaria-apartments.org
-www.mrrent-paphos.net
-www.searchlosangeleshomes.com
-www.hottarget.de
-www.elarabia-estate.com
-www.exchangeproperties.co.uk
-www.craigrooms.com
-www.propertyforsale.gr
-inmomenorca.es
-www.propertymarketservice.co.uk
-www.collegebyowner.com
-www.panama.bz
-www.yuva24.com
-www.viveyanda.com
-home2cell.com
-www.dlm.hr
-|
+
 
 matches [
 

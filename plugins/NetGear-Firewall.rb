@@ -12,11 +12,7 @@ description "The NETGEAR ProSafe wired and wireless VPN solutions offer SMB's a 
 # ShodanHQ results as at 2011-03-18 #
 # 5 for NETGEAR Firewall port:80
 
-# Examples #
-examples %w|
-206.223.65.152
-66.45.2.228
-|
+
 
 # Matches #
 matches [

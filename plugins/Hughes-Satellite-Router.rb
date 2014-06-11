@@ -20,20 +20,7 @@ dorks [
 'inurl:sys_info "Print this page. It will be needed if your system fails."'
 ]
 
-# Examples #
-examples %w|
-67.201.153.9
-67.201.153.68
-69.168.177.25
-67.201.154.49
-67.201.154.153
-41.204.231.19
-41.211.223.62
-69.168.177.129
-69.168.177.29
-81.28.144.73
-88.210.164.249
-|
+
 
 # Matches #
 matches [

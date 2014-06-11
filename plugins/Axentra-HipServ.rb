@@ -13,14 +13,7 @@ description "Axentra-HipServ - Digital Home/SOHO Software Platform for Internet 
 # 21,091 for x-axentra-version
 # 21,121 for HOMEBASEID
 
-# Examples #
-examples %w|
-88.91.82.37
-63.135.11.40
-71.80.114.35
-84.107.206.200
-74.237.231.229
-|
+
 
 # Matches #
 matches [

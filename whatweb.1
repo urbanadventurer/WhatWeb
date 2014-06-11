@@ -23,8 +23,6 @@ Features:
 .TP
 	* Control the trade off between speed/stealth and reliability
 .TP
-	* Plugins include example URLs
-.TP
 	* Performance tuning. Control how many websites to scan concurrently.
 .TP
 	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB, SQL.
@@ -82,9 +80,6 @@ Display information for all plugins. Optionally search
 .TP
 .B \-\-grep \-g
 Search for a string. Reports in a plugin called Grep
-.TP
-.B \-\-example-urls \-e
-Add example urls for each plugin to the target list
 .TP
 .B \-\-colour=[WHEN] \-\-color=[WHEN]
 control whether colour is used. WHEN may be "never", "always", or "auto"
@@ -224,12 +219,10 @@ Display version information.
  whatweb 192.168.1.0/24
 
 .SH BUGS
-Logging modes append to the user-selected log file by default.
- Appending will result in malformed XML due to multiple \<xml\> tags
- in XML and MagicTree logging modes.
+Report bugs and feature requests to https://github.com/urbanadventurer/WhatWeb
 
 .SH AUTHOR
-WhatWeb was written by Andrew Horton aka urbanadventurer.
+WhatWeb was written by Andrew Horton aka urbanadventurer, and Brendan Coles.
 
 .SH HOMEPAGE
 http://www.morningstarsecurity.com/research/whatweb

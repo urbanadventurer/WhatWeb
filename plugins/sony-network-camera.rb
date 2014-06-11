@@ -19,42 +19,7 @@ description "SONY network video camera web interface - homepage: http://www.sony
 # ShodanHQ results as at 2010-07-22 #
 # 543 for Server:NetEVI
 
-# Examples #
-examples %w|
-128.233.172.35
-222.147.168.35
-199.3.2.212
-128.196.12.63
-71.225.115.35
-142.31.86.235
-74.143.29.150
-152.2.31.35/home/homeJ.html
-152.3.125.165/en/index.html
-222.124.220.243/en/AViewer.html
-131.170.113.40/en/JViewer.html
-apps.niagara.edu/webcams/cam1.php
-70.141.63.105:8080/image1
-thebittners.dyndns.org:9000
-128.196.12.150/home/homeJ.html
-www.apollodiveio.it/it/home/homeJ.html
-greskos.com/cam/Gcam.html
-212.174.34.170:10225/home/homeA.html
-163.21.169.98/adrv/home/homeJ.html
-www.7-milemarina.com/home/homeJ.html
-207.108.37.243:33200/home/homeS.html
-72.36.21.200/home/homeS.html
-212.174.34.170:10225/home/homeA.html
-66.55.123.5:8080/home/homeJ.html
-207.108.37.243:33200/home/homeS.html
-212.174.34.170:10225/home/homeA.html
-163.21.169.98/adrv/home/homeJ.html
-217.153.19.4/adrv/home/homeS.html
-163.21.169.98/adrv/home/homeJ.html
-207.108.37.243:33200/home/homeS.html
-128.101.80.75/home/homeS.html
-68.63.72.246/home/homej.html
-66.191.76.78:8088/home/homeJ.html
-|
+
 
 # Matches #
 matches [

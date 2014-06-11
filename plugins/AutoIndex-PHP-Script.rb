@@ -14,13 +14,7 @@ dorks [
 '"Powered by AutoIndex PHP Script"'
 ]
 
-# Examples #
-examples %w|
-opi.mt.gov/pub/index.php
-autoindex.sourceforge.net/demo/index.php
-myize.com
-www.peaceobservatory.org/archivio/index.php
-|
+
 
 # Matches #
 matches [

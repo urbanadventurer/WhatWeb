@@ -9,14 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-07-19
 version "0.1"
 description "Kajona - Open Source Content Management System - Requires PHP & MySQL - Homepage: http://www.kajona.de/"
 
-# Examples #
-examples %w|
-www.kajona.de
-demo.kajona.de
-demo.kajona.de/admin/
-demo.opensourcecms.com/kajona/
-demo.opensourcecms.com/kajona/admin/
-|
+
 
 # Matches #
 matches [

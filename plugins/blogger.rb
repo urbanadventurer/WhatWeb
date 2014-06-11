@@ -13,12 +13,7 @@ author "Andrew Horton"
 version "0.2"
 description "Blogger.com free blogging site"
 
-examples %w|
-http://examples-blogger.blogspot.com/
-http://xprograf.blogspot.com/
-http://anukrati.blogspot.com/
-http://virtualsink.com/
-|
+
 
 # identifying strings
 # <meta content='blogger' name='generator'/>

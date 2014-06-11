@@ -12,20 +12,7 @@ description "w-agora is web based forum package. It is entirely customizable thr
 # Google results as at 2011-02-27 #
 # 57 for inurl:"w-agora" ext:php3
 
-# Examples #
-examples %w|
-www.w-agora.com/current/list.php
-www.w-agora.net/current/list.php
-www.lipsheim.org/forum/agora/index.php3
-www.exmormon.org/boards/w-agora/w-agora.php3
-quandgtpetit.free.fr/w-agora/setup.php3
-www.bacc.no/w-agora/view.php3
-cm2000.cm.nctu.edu.tw/w-agora/list.php3
-automodelismo.com/w-agora/view.php3
-www.senarrs.com.br/php3/w-agora/list.php3
-oanguenot.free.fr/w-agora/view.php3
-www.ymclub.com/bbs/list.php3
-|
+
 
 # Matches #
 matches [

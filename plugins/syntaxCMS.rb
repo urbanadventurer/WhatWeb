@@ -16,12 +16,7 @@ dorks [
 '"powered by syntaxCMS"'
 ]
 
-# Examples #
-examples %w|
-www.projectspaces.com
-www.forumonenetworks.com
-signup.projectspaces.com
-|
+
 
 matches [
 

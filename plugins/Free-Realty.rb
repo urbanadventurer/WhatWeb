@@ -17,17 +17,7 @@ dorks [
 'inurl:"propview.php" "equal housing logo This tool is Open Source and released under the GPL"'
 ]
 
-# Examples #
-examples %w|
-freerealty.rwcinc.net/demo/
-rentalrealtyar.com/FR/propview.php?view=5
-www.homeremedyofflorida.com/realestate/propview.php?view=17
-www.homeremedyofflorida.com/realestate/propview.php?view=13
-www.myhousespace.biz/propview.php?view=1
-www.myhousespace.biz/propview.php?view=2
-ck-erp.org/fr/propview.php
-realestate-phoenixville.com/propview.php
-|
+
 
 # Matches #
 matches [

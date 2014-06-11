@@ -12,18 +12,7 @@ description "Traceroute and network diagnostic tool - Homepage: http://www.visua
 # ShodanHQ results as at 2011-06-02 #
 # 24 for VisualRoute
 
-# Examples #
-examples %w|
-195.67.99.4
-200.63.160.22
-194.73.11.18
-194.242.61.53
-205.234.111.160
-205.234.111.166
-216.206.187.181
-12.10.126.151
-205.234.111.204
-|
+
 
 # Passive #
 def passive

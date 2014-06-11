@@ -20,17 +20,7 @@ dorks [
 'intitle:"Gitorious" "Gitorious is a great way of collaborating on distributed open source projects" "About Gitorious" "Dashboard" "Login"'
 ]
 
-# Examples #
-examples %w|
-gitorious.org
-91.199.154.106
-12.139.154.102
-88.198.108.178
-87.238.52.168
-131.179.196.47
-82.192.66.99
-147.65.1.94
-|
+
 
 # Matches #
 matches [

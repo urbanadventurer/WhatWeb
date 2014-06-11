@@ -17,21 +17,7 @@ dorks [
 'intitle:"GateQuest php Site Recommender - Include Method" "Recipient Email Addresses"'
 ]
 
-# Examples #
-examples %w|
-carlsauter.com/srecommender/Include_Method/recommend.php
-fuckchristmas.org/recommend.php
-unionporlosninos.com/recomendarsitio/recommend.php
-www.corderodedios.org.mx/siterecommender/recommend.php
-www.montrealsante.ca/siterecommender/recommend.php
-www.deanfriedman.net/recommend.php4
-www.munshigonj.com/srecommender/Include_Method/recommend.php
-www.opticasaremy.com/siterecommender/recommend.php
-www.1stchoiceproducts.com/Contest2/recommend.php
-www.thepoopdeckrestaurants.com/Recommend/recommend.php
-www.soferii.ro/siterecommender/recommend.php
-www.avocat-consultanta.com/siterecommender/recommend.php
-|
+
 
 # Matches #
 matches [

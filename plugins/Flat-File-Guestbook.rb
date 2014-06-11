@@ -17,14 +17,7 @@ dorks [
 'inurl:ffgb_admin.php "Please enter the administration area login information to manage the guestbook."'
 ]
 
-# Examples #
-examples %w|
-beachcaravansburghead.co.uk/ffgb_admin.php
-bhc.hostoi.com/med1a/g-b00k/www/ffgb_admin.php
-www.jkfoundation.info/feedback/ffgb_admin.php
-jamesbonham.co.uk/newsite/guestbook/ffgb_admin.php
-www.quinta-serena.com/ffgb_admin.php
-|
+
 
 # Matches #
 matches [

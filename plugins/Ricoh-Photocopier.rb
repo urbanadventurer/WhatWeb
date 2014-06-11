@@ -13,19 +13,7 @@ description "Ricoh photocopier web interface - Homepage: http://www.ricoh.com/"
 # 16,004 for CookieOnOffChecker
 # 15,983 for CookieOnOffChecker Web-Server
 
-# Examples #
-examples %w|
-137.189.76.110
-163.20.36.221
-65.214.201.107
-35.9.124.248
-140.254.49.156
-82.139.247.98
-128.193.28.96
-193.146.210.139
-165.132.121.157
-61.60.180.148
-|
+
 
 # Matches #
 matches [

@@ -12,11 +12,7 @@ description "SQL CMS is a Multi Award Winning web based Content Management Syste
 # Google results as at 2011-03-04 #
 # 2 for inurl:"Login.aspx" Username Password SQLCMS
 
-# Examples #
-examples %w|
-okcdb.com/sqlcms/login.aspx
-www.developerinabox.com/demo/
-|
+
 
 # Matches #
 matches [

@@ -17,15 +17,7 @@ dorks [
 'intitle:"Flax Article CMS Administration Panel"'
 ]
 
-# Examples #
-examples %w|
-www.articlesitedemo.com
-www.articlesitedemo.com/admin/admin.php
-www.aviationnews.us
-www.aviationnews.us/admin/admin.php
-www.findanexpertonline.com/FlaxArticlesManager/
-www.findanexpertonline.com/FlaxArticlesManager/admin/admin.php
-|
+
 
 # Matches #
 matches [

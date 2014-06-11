@@ -12,12 +12,7 @@ description "The NaviCOPA Web Server Software installs on any version of the Mic
 # ShodanHQ results as at 2011-03-25 #
 # 4 for InterVations
 
-# Examples #
-examples %w|
-99.131.62.237
-71.114.2.23
-85.119.72.193
-|
+
 
 # Passive #
 def passive

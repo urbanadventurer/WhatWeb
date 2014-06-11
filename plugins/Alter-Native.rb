@@ -13,26 +13,7 @@ description "Alter-Native - IBM UniVerse database and Client/Server solutions pr
 # 20 for SPID HTTP Server -apache -IIS -nginx
 # All results are from France
 
-# Examples #
-examples %w|
-84.96.29.66
-84.96.29.92
-84.96.29.72
-80.11.83.69
-84.96.29.83
-84.96.29.180
-84.96.29.162
-84.96.29.163
-84.96.29.130
-84.96.29.166
-84.96.29.164
-84.96.29.134
-84.96.29.168
-84.96.29.165
-81.93.8.73
-81.93.4.208
-90.80.59.237
-|
+
 
 # Passive #
 def passive

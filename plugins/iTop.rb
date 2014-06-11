@@ -19,23 +19,7 @@ dorks [
 'intitle:"iTop Login"'
 ]
 
-# Examples #
-examples %w|
-itop.available-on.com/
-desarrollo.ucaldas.edu.co/itop/
-www.itilv3.kilu.de
-gvsun.net/itop/pages/UI.php
-www.yves.eti.br/itop/
-netcmdb.com/LastItop/
-genesis.e2solutions.de
-gigahertz24.de
-helpdesk.disqr.com
-seitol.com
-support.justmakeit.de
-www.boce-informatik.ch/crm/pages/
-helpdesk.ziteam.com
-i.opensolucoes.com.br
-|
+
 
 # Matches #
 matches [

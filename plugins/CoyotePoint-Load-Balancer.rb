@@ -12,13 +12,7 @@ description "CoyotePoint load balancing device - Homepage: http://www.coyotepoin
 # ShodanHQ results as at 2011-05-16 #
 # 11 for CoyotePoint
 
-# Examples #
-examples %w|
-202.55.99.36
-61.206.36.232
-199.108.228.204
-72.35.9.180
-|
+
 
 # Passive #
 def passive

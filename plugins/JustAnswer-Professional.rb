@@ -16,11 +16,7 @@ dorks [
 'inurl:forum_answer.php?que_id= "Powered By Guruscript.com"'
 ]
 
-# Examples #
-examples %w|
-gurusanswers.com/forum_answer.php?que_id=27
-www.123bayblade.com/forum_answer.php?que_id=6
-|
+
 
 # Matches #
 matches [

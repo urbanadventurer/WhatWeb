@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-01-29
 version "0.1"
 description "WWWPhoto is a tag based web photo gallery for PHP5 with GD-Library and MySQL or PostgreSQL. Since release 0.1.0 the navigation on the user view is Ajax driven by using the JSON implementation for PHP from Michal Migurski, Matt Knapp and Brett Stimmerman (http://pear.php.net/pepr/pepr-proposal-show.php?id=198) - Homepage: http://www.pburkhalter.net/wwwphoto.php"
 
-# Examples #
-examples %w|
-photo.pburkhalter.net
-|
+
 
 # Matches #
 matches [

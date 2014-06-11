@@ -17,29 +17,7 @@ dorks [
 'g_PORTAL_TITLE'
 ]
 
-# Examples #
-examples %w|
-213.30.154.59
-appex2.monsanto.com.ar/map/xmlloader.asp?type=portal
-crm.admtl.com/eservicefr/
-customerconnect.carf.org
-epartner.pivotal.com/xmlloader.asp?type=portal
-epartner.byucksan.com
-eservice.millerheiman.com
-imsupport.im.se/xmlloader.asp
-support.exlibrisgroup.com
-support.radvision.com/eservice/
-support.global360.com
-eservice.springsoft.com/eService/
-portal.teknion.com/epartner/
-support.llpgroup.com/eService/xmlloader.asp
-www.supportgroup.com.au/portals/CHA/
-https://customerhub.peopleclick.com/eservice/
-https://incident.healthland.com/eservice/
-https://macca.monsanto.com
-https://supportil.retalix.com
-https://www.errr.oeb.gov.on.ca/
-|
+
 
 # Matches #
 matches [

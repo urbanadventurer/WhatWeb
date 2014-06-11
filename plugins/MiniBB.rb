@@ -17,32 +17,7 @@ dorks [
 '"Powered by MiniBB"'
 ]
 
-# Examples #
-examples %w|
-minibb.org/minibb-test.php
-kioskcd.com/minibb/index.php
-suzukidr.pl/forum/index.php
-integrexmachinist.com/forums/
-tekgems.com/forum/
-hitfm.kaluga.ru/community/forum/
-trintalk.com/acb/
-ada.untergrund.net/forum/
-www.mellosa.com/forum/
-www.woonyville.com/mb/index.php
-www.nrdg.net/ching/
-www.keenpeople.com/index.php?option=com_minibb
-www.theparadinecase.de/minibb/
-www.hunter.lt/index.php
-www.cornblogs.de/zakynthos/forum.php
-www.richplanet.net/forum/
-www.dreamfabric.com/discussions/
-www.colorpilot.com/forum/index.php
-www.bbtalk.nl
-www.ah.md/forum/
-www.edwardforbes.co.uk/forums/
-www.pochobradsky.com/forum/
-www.skalinks.com/forums/
-|
+
 
 # Matches #
 matches [

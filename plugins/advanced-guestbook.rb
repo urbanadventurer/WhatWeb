@@ -17,8 +17,7 @@ dorks [
 'inurl:guestbook.php "Advanced GuestBook" "powered by phpbb"'
 ]
 
-# Examples #
-examples %w|http://proxy2.de/demo/guestbook/index.php http://www.tennapel.net/advancedguestbook/ http://www.gawronski.net/guestbook/ www.rhydins-holiday-cottages.co.uk/gbook/ http://www.tjparker.net/guestbook/ |
+
 
 # Matches #
 matches [

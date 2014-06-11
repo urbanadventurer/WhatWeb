@@ -30,47 +30,7 @@ dorks [
 'inurl:"extras/update.php" -display'
 ]
 
-# Examples #
-examples %w|
-46.249.58.66
-217.23.92.219
-213.198.126.22
-193.105.240.205
-63.223.107.156
-151.248.117.158
-108.168.144.8
-82.144.221.113
-173.214.245.108
-188.120.43.164
-97.74.160.238
-199.244.88.43
-70.39.248.198
-122.201.108.14
-74.54.205.26
-208.131.137.154
-67.20.112.181
-64.13.234.169
-93.115.85.9
-82.165.8.95
-http://www.chanta.ir/
-http://www.worldoffancydress.co.uk/
-http://4divaslingerie.com/
-http://www.beautybynature.com.au/catalog/
-http://www.dierenboeken.nl/
-http://www.aquazoo.it/catalog/default.php
-http://www.geraeteland.de/shop/catalog/index.php
-http://atlantasolar.com/
-http://shop.laserpointer4u.de/laserpointer/default.php
-http://www.nve.com/webstore/catalog/
-http://www.burnerpartsnow.com/
-http://www.avendi.net/esp/
-http://www.cleanshop.hu/clean/index.php
-http://www.telepiscinas.com/catalog/index.php
-http://www.cover-tec.de/
-http://www.drakus.com/
-http://www.testproducts.com/safecart/
-http://www.hapo.de/
-|
+
 
 # Matches #
 matches [

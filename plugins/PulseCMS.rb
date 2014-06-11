@@ -17,15 +17,7 @@ dorks [
 'intitle:"Pulse Content Manager" "Pulse" "CMS" "Password" "Login"'
 ]
 
-# Examples #
-examples %w|
-pulsecms.com/demo/
-deluxagroup.com/salem/login/
-www.canarysystems.com/2009/pulsepro/
-darekfinster.com/pulsepro/
-www.hotel-residence.de/pulsepro/index.php
-thomhost.hthosting.nl
-|
+
 
 # Matches #
 matches [

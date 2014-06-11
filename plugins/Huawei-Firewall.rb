@@ -20,26 +20,7 @@ dorks [
 'intitle:"Web Admin login" "Password" "Huawei Technologies Co., Ltd."'
 ]
 
-# Examples #
-examples %w|
-221.198.89.0
-222.81.151.114
-122.241.172.73
-117.35.96.85
-124.114.128.46
-59.44.159.246
-117.90.219.214
-175.17.249.194
-113.142.169.206
-60.160.183.34
-222.221.17.197
-61.153.194.3
-222.62.166.36
-cqky.net
-www.bzyct.com
-www.ybs.gov.cn
-oa.shiqian.gov.cn
-|
+
 
 # Matches #
 matches [

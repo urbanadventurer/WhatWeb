@@ -9,27 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
 version "0.1"
 description "ReFlex CMS is an extremely flexible ASP.NET based website and content management platform that can be used to construct highly functional commercial websites, social networking applications, intranets, personal portals and blog sites. ReFlex CMS can also be easily added to existing sites. - Homepage: http://www.impelsystems.com.au/reflex-cms-website-framework/overview-5.aspx"
 
-# Examples #
-examples %w|
-www.impelsystems.com.au
-www.impelsystems.com.au/Admin/
-demo.impelsystems.com.au/reflex-architex/
-demo.impelsystems.com.au/reflex-architex/Admin/
-www.proclasscabinets.com.au
-www.proclasscabinets.com.au/Admin/
-www.caba.com.au
-www.caba.com.au/Admin/
-www.counterpoint.com.au
-www.counterpoint.com.au/Admin/
-www.telstrabusinessawards.com/Admin/
-www.telstrabusinesswomensawards.com/Admin/
-www.ispnet.com.au
-www.ispnet.com.au/Admin/
-www.wyndarra.com
-www.wyndarra.com/Admin/
-www.wyndarrasolutions.com
-www.wyndarrasolutions.com/Admin/
-|
+
 
 # Matches #
 matches [

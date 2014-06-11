@@ -12,13 +12,7 @@ description "Tilgin was founded under the name i3 micro technology in 1997 and d
 # ShodanHQ results as at 2011-05-30 #
 # 5,115 for i3micro -SIP
 
-# Examples #
-examples %w|
-79.138.109.183
-94.203.157.34
-91.74.47.251
-90.149.161.10
-|
+
 
 # Matches #
 matches [

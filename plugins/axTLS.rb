@@ -12,12 +12,7 @@ description "The axTLS embedded SSL project is a highly configurable client/serv
 # ShodanHQ results as at 2011-05-30 #
 # 592 for axhttpd
 
-# Examples #
-examples %w|
-187.44.109.208
-187.121.182.156
-187.44.127.130
-|
+
 
 # Passive #
 def passive

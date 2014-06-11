@@ -20,31 +20,7 @@ dorks [
 '"GpsGate Server - Login" intitle:"GpsGate Server - Login"'
 ]
 
-# Examples #
-examples %w|
-marathon.gpsgate.com
-trackershop.gpsgate.com
-gps.skidelivery.net/gpsgateserver/
-www.itrak247.com.au/gpsApp/index.aspx
-www.rastrealo.com/Login.aspx
-www.northloc24.com
-gpstrack.glaszer.com
-srv3.kontrolloauto.com/Login.aspx
-gpsguardian.pl:8001/monitoring/login.aspx
-www.rastrealo.es/Login.aspx
-www.chipsbay.com
-bluetrack.gpsgate.com
-primagroupinc.com
-www.andromedagps.com
-64.139.70.65
-213.200.20.10/gpsgateserver/
-gpsgate.atv.net.au
-tracking.ccems.org
-tracking.planetpin.com/trackingserver/
-lbs.office.ccm-systems.com/gprs/
-car-tracker.com.ua/gpsgateserver/
-car-tracker.com.ua/gpsgateserver/VehicleTracker/
-|
+
 
 # Matches #
 matches [

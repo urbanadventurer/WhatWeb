@@ -17,26 +17,7 @@ dorks [
 '"powered by Elxis CMS"'
 ]
 
-# Examples #
-examples %w|
-www.elxis.org
-www.elxis-demo.com
-critica.biz
-hotels.isopensource2.com
-mrctec.com
-www.aoth.gr
-www.foinix.com
-www.htcomputer.gr/en/
-www.interbridge.org
-www.music-shop.rs
-www.portugalguests.com/en/
-www.rentasite.co.gr
-www.rentasite.co.gr/elxis-cms/
-www.rentasite.co.gr/elxis-cms/elxis-cms/
-www.shopfinder.gr
-www.visionbrazil.net
-www.whitening-beauty.com
-|
+
 
 matches [
 

@@ -20,24 +20,7 @@ dorks [
 '"select \'Yes\' to accept the certificate to access Integrated Lights-Out."'
 ]
 
-# Examples #
-examples %w|
-ukpip.com
-www.jhfundswebcast.com
-www.tzppw.com
-www.gefest.org
-www.guipuzcoana.com
-212.154.192.7/index.htm
-erp.knu.edu.tw
-webrace1.dyu.edu.tw
-stream2.astem-co.co.jp
-loki3.kernel.org
-hinghamwhitehart.co.uk
-ctrl.control.dk
-secureplus.insphire.com
-california.sf.agency.com
-neptunelo.fdu.edu
-|
+
 
 # Matches #
 matches [

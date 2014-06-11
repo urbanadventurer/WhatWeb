@@ -12,8 +12,7 @@ author "Andrew Horton"
 version "0.2"
 description "PHP opensource, virtual hosting system homepage: http://www.isp-control.net/"
 
-# Examples #
-examples %w| 202.6.117.217 |
+
 
 # <title>ispCP Omega a Virtual Hosting Control System</title>
 # Powered by <a class="login" href="http://www.isp-control.net" target="_blank">ispCP Omega</a>

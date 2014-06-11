@@ -17,18 +17,7 @@ dorks [
 '"powered by Truition" inurl:ExecMacro inurl:cgi-bin'
 ]
 
-# Examples #
-examples %w|
-www.dellauction.com/cgi-bin/ncommerce3/ExecMacro/static/feature.d2w
-auction.mlb.com/cgi-bin/ncommerce3/ExecMacro/static/feature.d2w
-auction.steinersports.com/cgi-bin/ncommerce3/ExecMacro/static/feature.d2w
-shopalot.ca/cgi-bin/ncommerce3/ExecMacro/static/
-oilers.at.edeal.com/cgi-bin/ncommerce3/ExecMacro/static/FAQ.d2w
-www.edeal.com/cgi-bin/ncommerce3/ExecMacro/static/help/search_advanced.d2w
-auctions.nascar.com/cgi-bin/ncommerce3/ExecMacro/static/help/smartbid.d2w
-www.auctionriot.com/cgi-bin/ncommerce3/ExecMacro/feature.d2w
-www.starauctions.ca/cgi-bin/ncommerce3/ExecMacro/sold.d2w
-|
+
 
 # Matches #
 matches [

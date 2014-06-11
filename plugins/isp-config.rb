@@ -16,8 +16,7 @@ author "Andrew Horton"
 version "0.3"
 description "ISPConfig is a free, opensource hosting control panel. Homepage: http://www.ispconfig.org/"
 
-# Examples #
-examples %w| 118.93.56.121 92.243.80.27 |
+
 
 # Dorks #
 dorks [

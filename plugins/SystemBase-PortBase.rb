@@ -14,15 +14,7 @@ description "Portbase is a Serial to Ethernet Device Server with an internal mod
 # 7 for PortBase
 # All results are from Korea
 
-# Examples #
-examples %w|
-119.206.53.2
-124.80.41.2
-121.129.214.1
-119.206.53.1
-59.23.4.1
-211.224.145.97
-|
+
 
 # Passive #
 def passive

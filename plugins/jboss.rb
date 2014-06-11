@@ -25,21 +25,7 @@ dorks [
 'intitle:"Welcome to JBoss AS"'
 ]
 
-# Examples #
-examples %w|
-87.98.234.85
-88.198.119.18
-174.78.147.201
-152.26.34.21
-164.100.72.146
-66.9.60.10
-207.238.143.110
-216.162.88.103
-eul0600541.eu.verio.net:8080
-en.maxiaohui.com
-contracttool.com
-fkts-app02.dyndns.org
-|
+
 
 # Matches #
 matches [

@@ -23,26 +23,7 @@ dorks [
 'intitle:"MyConnection" "MyConnection Server" ("expires in"|EXPIRED)'
 ]
 
-# Examples #
-examples %w|
-traceroute-s2.prominic.net
-support.amerivault.com:2546
-www.astoriavillage.com
-ispgeeksdiagnostics.net
-chicago.ms.streamguys.com
-amsterdam.mcs.streamguys.com
-72.4.7.67
-195.130.195.254
-204.14.40.60
-205.216.29.50
-200.54.84.23
-65.244.158.61
-80.244.65.138
-208.73.148.43
-216.7.123.4
-216.23.136.167
-208.175.141.44
-|
+
 
 # Matches #
 matches [

@@ -12,19 +12,7 @@ description "NetCache is a former web cache software product which was owned and
 # ShodanHQ results as at 2012-03-09 #
 # 141,128 for netcache netapp
 
-# Examples #
-examples %w|
-150.84.174.14
-133.30.202.88
-133.30.84.46
-133.30.242.248
-133.30.82.18
-150.84.37.45
-133.30.108.23
-133.30.109.68
-150.84.72.223
-84.54.21.156
-|
+
 
 # Matches #
 matches [

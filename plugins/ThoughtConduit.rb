@@ -18,19 +18,7 @@ dorks [
 '"This site runs on ThoughtConduit * by Sensory Research"'
 ]
 
-# Examples #
-examples %w|
-www.thoughtconduit.net
-www.sensoryresearch.net/thoughtconduit/news?id=1
-https://secure.sensoryresearch.net/thoughtconduit/news
-www.stefanominerals.com
-plundercast.net
-www.dancehallreggae.org/thoughtconduit/news?id=1
-www.traintoskaville.org/thoughtconduit/news?id=1
-www.poppsyche.com/thoughtconduit/news?id=1
-it.sensoryresearch.net/thoughtconduit/news?id=1
-www.paradoxexplorer.com/thoughtconduit/news?id=1
-|
+
 
 # Matches #
 matches [

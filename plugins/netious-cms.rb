@@ -16,22 +16,7 @@ dorks [
 '"Powered by netious.com"'
 ]
 
-# Examples #
-examples %w|
-www.netious.com
-www.netious.com/demo/
-www.jozef.lysikowski.pl
-gnuea.sourceforge.net
-pl.netious.com
-www.naviga.pl
-www.jp-sammelpacker.de/cms_en/index.php
-www.netinfor.com.pl
-www.rudiger.pl
-www.allsat.pl
-verpackungsmaschinenbau.de/cms/
-www.jp-sobrigau.de/cms_en/
-www.jp-kartonfueller.de/cms/
-|
+
 
 matches [
 

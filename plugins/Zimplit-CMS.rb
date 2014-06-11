@@ -20,38 +20,7 @@ dorks [
 '"powered by Zimplit CMS"'
 ]
 
-# Examples #
-examples %w|
-www.zimplit.com
-www.zimplit.org
-www.zimplit.org/templatetest/1/
-www.zimplit.org/templatetest/10/
-client.zimplit.com/ztemplates/templatesPreviews/1/
-client.zimplit.com/ztemplates/templatesPreviews/10/
-avonwaycommunitycentre.org.uk
-fujiko.110mb.com
-klaes.org
-nils.ostumaa.ee
-religionofislam.org
-villayuste.es
-zimplittest.110mb.com
-www.appelsmetperen.nl/old/contact.html
-www.baltplast.ee
-www.dame2carreaux.com
-www.fortyfiveup.com
-www.gasparinisales.com
-www.hegllc.com/hegllc/index.html
-www.katelan.idv.tw
-www.leadfeather.org/concrete/themes/GreenyGrass/
-www.lintall.com
-www.muhumuuseum.ee/eng/
-www.rdpower.it
-www.rotterdamcomputer.nl/rotterdam/zimplit.php
-www.seal-project.eu
-www.smakfullt.org
-www.sync101.com
-www.toomikes.com/zip/
-|
+
 
 # Matches #
 matches [

@@ -27,6 +27,7 @@ Version 0.4.8-dev Unreleased
 * Updated Country plugin. Fixed IPv6 bug
 * Changed version from 0.4.8 to 0.4.8-dev to show development version
 * Plugin brief output is now sorted alphabetically by plugin name
+* Removed plugin example URLs
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes

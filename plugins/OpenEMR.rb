@@ -20,23 +20,7 @@ dorks [
 'inurl:"interface/login/login_frame.php" ext:php'
 ]
 
-# Examples #
-examples %w|
-opensourceemr.com:2100/openemr/
-www.generationhomecare.com/openemr/
-utkarshsystem.com/openemr/
-dev.personforce.net/openemr/
-openemr.cybersims.com
-maisondx.com/gomre/
-emr.elethia.org
-krpweb.com/openemr/
-www.1-fast-cnc-production-factory.1000yrs.net/emr-company/
-www.nilotaninaka.com/webmed/
-https://www.emgdoctor.net/openemr-2.9.0/interface/login/login_title.php
-https://wecanhelpout.net/emr/
-https://aperioemr.mi-squared.com/openemr/
-https://medical.seawinn.com/chiro/
-|
+
 
 # Matches #
 matches [

@@ -16,23 +16,7 @@ dorks [
 '"powered by Zomplog" -Vulnerability -exploit'
 ]
 
-# Examples #
-examples %w|
-annegret.intensiverleben.at/blogme/
-annegret.intensiverleben.at/blogme/login.php
-demo.opensourcecms.com/zomplog/index.php
-demo.opensourcecms.com/zomplog/login.php
-kat.griesstopf.de
-kat.griesstopf.de/login.php
-wilkie.rcxp.ca/msp23/
-wilkie.rcxp.ca/msp23/login.php
-www.ajetotechniek.nl/cms/
-www.ajetotechniek.nl/cms/login.php
-www.catherinefreemanfoundation.com/blog/
-www.catherinefreemanfoundation.com/blog/login.php
-www.oregonbodybuilding.com/blog/index.php
-www.oregonbodybuilding.com/blog/login.php
-|
+
 
 matches [
 

@@ -18,25 +18,7 @@ description "OpenCms, professional and easy to use CMS. - Homepage: http://www.o
 # ShodanHQ results as at 2011-03-21 #
 # 528 for opencms
 
-# Examples #
-examples %w|
-demo.opencms.org
-www.opencms.org
-192.160.109.199
-80.37.10.47
-91.121.179.215
-75.127.79.179
-59.173.244.27
-210.9.134.32
-63.81.25.27
-www.boersewien.at
-www.ccbh.net
-www.bng-galiza.org
-www.area.trieste.it
-www.eu2010.es
-www.edgebox.net
-www.bionet-intl.org
-|
+
 
 # Matches #
 matches [

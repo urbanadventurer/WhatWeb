@@ -17,12 +17,7 @@ dorks [
 'intitle:"Kolab Groupware login"'
 ]
 
-# Examples #
-examples %w|
-https://kolab.benefacere.fr/admin/
-https://mail.dajiaok.com/admin/
-https://i.bin.dah.am/admin/
-|
+
 
 # Matches #
 matches [

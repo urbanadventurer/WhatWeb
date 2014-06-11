@@ -19,29 +19,7 @@ dorks [
 '"Diese Website wurde mit PHPKIT WCMS erstellt"'
 ]
 
-# Examples #
-examples %w|
-www.phpkit-demo.com/de/pk/
-www.phpkit-demo.com/de/
-vizsla-revier.de/phpkit/
-vizsla-revier.de/phpkit/pk/
-balkan.dj/v2/
-balkan.dj/v2/pk/
-www.lost-legends.net
-www.lost-legends.net/pk/
-www.kommandoskin.com/index.php
-www.kommandoskin.com/pk/
-tsofehn.alfahosting.org/upload_files/
-tsofehn.alfahosting.org/upload_files/pk/
-catweewee.bplaced.net
-catweewee.bplaced.net/pk/
-www.pwngyzoggt.de
-www.pwngyzoggt.de/pk/
-www.brood-clan.de
-www.brood-clan.de/pk/
-www.radio-lauschgift.eu
-www.radio-lauschgift.eu/pk/
-|
+
 
 # Matches #
 matches [

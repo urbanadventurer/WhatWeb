@@ -13,10 +13,7 @@ description "Linksys Print Server - Print servers connect printers directly to t
 # 1,142 for PRINT_SERVER WEB
 # 1,142 for PRINT_SERVER WEB 1.0
 
-# Examples #
-examples %w|
-173.12.38.72
-|
+
 
 # Matches #
 matches [

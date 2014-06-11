@@ -9,8 +9,7 @@ author "Andrew Horton"
 version "0.1"
 description "The uTorrent GUI is a web interface to the uTorrent BitTorrent client. Homepage: https://web.utorrent.com/"
 
-# Examples #
-examples %w| |
+
 
 # Passive #
 def passive

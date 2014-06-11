@@ -9,17 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
 description "Axis Commerce - open source eCommerce software - Requires: PHP and MySQL - Homepage: http://axiscommerce.com/"
 
-# Examples #
-examples %w|
-demo.axiscommerce.com
-demo.axiscommerce.com/admin/
-creativedomainers.com/ht/
-blackstar.dp.ua
-yellowcat.com.au/store/
-www.bethlehemolivewoods.com/store/
-manncoder.com/store/
-www.bsanatural.com
-|
+
 
 # Matches #
 matches [

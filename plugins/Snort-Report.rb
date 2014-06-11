@@ -17,11 +17,7 @@ dorks [
 'intitle:"SNORT Report" inurl:"alerts.php"'
 ]
 
-# Examples #
-examples %w|
-www.bundamulia.ac.id/snortreport/alerts.php
-https://snort.bzug.de/alerts.php
-|
+
 
 # Matches #
 matches [

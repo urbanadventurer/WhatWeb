@@ -13,19 +13,7 @@ description "Cougar video conferencing server - Homepage: http://www.cougarconfe
 # 21,987 for Cougar
 # 21,026 for Cougar Supported
 
-# Examples #
-examples %w|
-71.5.35.137
-210.253.225.53
-64.85.177.32
-200.176.15.86
-66.180.223.227
-61.110.244.185
-222.122.181.50
-84.201.93.4
-193.104.200.14
-195.194.51.14
-|
+
 
 # Passive #
 def passive

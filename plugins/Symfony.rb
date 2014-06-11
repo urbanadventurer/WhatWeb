@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-01-31
 version "0.1"
 description "Symfony - open-source PHP web framework - homepage: http://www.symfony-project.org/"
 
-# Examples #
-examples %w|
-www.symfony-project.org
-symfony-indonesia.org
-|
+
 
 # Matches #
 matches [

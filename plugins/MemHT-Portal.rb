@@ -17,27 +17,7 @@ dorks [
 '"MemHT Portal is a free software released under the GNU/GPL License by Miltenovik Manojlo"'
 ]
 
-# Examples #
-examples %w|
-www.memht.com
-templates.memht.com
-www.actualidadnoticias.com
-www.homesteadbound.com
-helpingyourcommunity.com
-www.anzac.armaholic.eu
-ons.armaholic.eu
-www.rallyingfordemocracy.org
-orkutsite.com
-www.rabbitrivertransport.com
-www.dugalic.com
-exchange.tripua.info
-thevoltsshow.com
-www.youthtune.com
-www.zimbabweonline.info
-facebookservices.info
-www.ffeud.eu
-www.todosudafrica2010.net
-|
+
 
 # Matches #
 matches [

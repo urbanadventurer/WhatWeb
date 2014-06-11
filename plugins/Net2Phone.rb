@@ -17,11 +17,7 @@ dorks [
 'intitle:"Net2Phone Init Page" "Net2Phone, Inc. All Rights Reserved."'
 ]
 
-# Examples #
-examples %w|
-85.114.43.166
-200.110.69.178
-|
+
 
 # Matches #
 matches [

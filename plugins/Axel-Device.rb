@@ -20,18 +20,7 @@ dorks [
 '"Syntax Error or Not Axel XML data"'
 ]
 
-# Examples #
-examples %w|
-www.ocular.co.uk
-137.99.236.15
-216.153.164.92
-137.99.236.12
-99.187.189.89
-194.241.63.247
-69.48.44.26
-128.230.158.23
-216.153.164.140
-|
+
 
 # Passive #
 def passive

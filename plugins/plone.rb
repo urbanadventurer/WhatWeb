@@ -12,13 +12,7 @@ author "Andrew Horton"
 version "0.2"
 description "Plone Content Management System (CMS) - Homepage: http://plone.org"
 
-# Examples #
-examples %w|
-www.norden.org
-www.trolltech.com
-www.plone.net
-www.smeal.psu.edu
-|
+
 
 # Dorks #
 dorks [

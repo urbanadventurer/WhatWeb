@@ -17,23 +17,7 @@ dorks [
 'intitle:"Tickets" "Welcome to Tickets - an Open Source Dispatch System"'
 ]
 
-# Examples #
-examples %w|
-www.ticketscad.org/demo/
-zandolit.com/tickets/top.php
-tjpowell.net/tickets/
-whc.awardspace.us/add.php
-cad.sanandreases.com
-sussex4x4response.org.uk/test/tickets/index.php
-www.misarn.org/ticket/index.php
-www.alertnewengland.com/dispatch/
-peak4x4response.org/control/
-dispatch.freeiz.com/2/
-zandolit.com/tickets/top.php
-tjpowell.net/tickets/
-whc.awardspace.us/add.php
-www.ececraft.com/tickets/
-|
+
 
 # Matches #
 matches [

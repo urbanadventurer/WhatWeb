@@ -16,19 +16,7 @@ dorks [
 'inurl:cgi-sys/netboard.cgi ext:cgi'
 ]
 
-# Examples #
-examples %w|
-dondondon.com/cgi-sys/netboard.cgi
-www.korg.co.kr/cgi-sys/netboard.cgi
-www.jajae.co.kr/cgi-sys/netboard.cgi
-www.epckr.com/cgi-sys/netboard.cgi
-www.bridge-tour.com/cgi-sys/netboard.cgi
-www.youdo.net/cgi-sys/netboard.cgi
-www.shplant.co.kr/cgi-sys/netboard.cgi
-www.world-vacuum.co.kr/cgi-sys/netboard.cgi
-www.silnara.com/cgi-sys/netboard.cgi
-www.kormt.co.kr/cgi-sys/netboard.cgi
-|
+
 
 # Matches #
 matches [

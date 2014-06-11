@@ -12,15 +12,7 @@ description "Pantheon - Homepage: https://www.getpantheon.com/"
 # ShodanHQ results as at 2012-09-29 #
 # 17 for x-pantheon-edge-server
 
-# Examples #
-examples %w|
-50.57.202.16
-50.57.227.82
-50.56.48.73
-108.166.107.229
-50.57.75.55
-50.57.148.219
-|
+
 
 # Matches #
 matches [

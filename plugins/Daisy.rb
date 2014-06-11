@@ -14,17 +14,7 @@ description "Daisy is a content management system that offers rich out-of-the-bo
 # ShodanHQ results as at 2011-06-09 #
 # 26 for X-Daisy-Version
 
-# Examples #
-examples %w|
-91.121.61.160
-64.54.134.54
-88.151.243.70
-128.40.182.18
-64.54.132.11
-64.54.132.14
-208.75.86.26
-64.54.132.119
-|
+
 
 # Passive #
 def passive

@@ -14,13 +14,7 @@ description "Oracle WebDB is a complete solution for building, deploying, and pr
 # 103 for WebDB
 #  76 for WebDB/WEBDB.home
 
-# Examples #
-examples %w|
-14.42.173.72
-148.207.11.2
-213.27.140.136
-213.27.140.140
-|
+
 
 # Matches #
 matches [

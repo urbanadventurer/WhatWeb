@@ -13,27 +13,7 @@ description "directPacket Research, Inc. develops and markets secure and interop
 # 31 for DPWebServer
 # All results are from United States
 
-# Examples #
-examples %w|
-166.102.136.101
-24.227.210.233
-24.227.210.228
-76.225.133.30
-166.109.10.71
-159.121.92.242
-66.162.182.181
-66.162.182.75
-97.79.163.60
-216.110.87.39
-216.146.104.66
-163.153.64.112
-209.137.233.52
-75.11.232.41
-208.85.62.90
-161.7.27.196
-144.30.35.250
-144.30.35.251
-|
+
 
 # Matches #
 matches [

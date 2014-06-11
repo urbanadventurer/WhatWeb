@@ -29,28 +29,7 @@ dorks [
 '"You have successfully installed XAMPP on this system!" intitle:"XAMPP Version"'
 ]
 
-# Examples #
-examples %w|
-https://www.funproins.com
-abc.fohow.com
-clnedge.com/xampp/
-bestwater24.net/xampp/
-www.quangtri.vnpost.vn/xampp/
-www.bukovyna.cv.ua
-www.st.msu.ac.th
-www.kingdom-ro.com
-www.rimari.net/xampp/
-62.244.85.119
-202.51.190.50
-78.46.143.1
-110.55.252.143
-91.23.95.10
-50.16.201.27
-84.150.168.132
-128.101.110.7
-193.111.208.220
-94.22.67.96
-|
+
 
 # Matches #
 matches [

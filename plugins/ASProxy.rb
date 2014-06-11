@@ -18,18 +18,7 @@ dorks [
 '"Surf the web with ASProxy" inurl:(surf|noscript)'
 ]
 
-# Examples #
-examples %w|
-85.185.37.13.zankaweb.net/surf.aspx
-ventil.se/noscript.aspx
-fl.pishgameferdos.com/surf.aspx
-www.christianwirth.de/anonym-surfen/
-mjj.somee.com/surf.aspx
-docs.koukourou.net/default.aspx
-easyfilo.com/surf.aspx
-mypage.ebiz-international.com/surf.aspx
-illuminator.somee.com/surf.aspx
-|
+
 
 # Matches #
 matches [

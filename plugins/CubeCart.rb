@@ -22,21 +22,7 @@ dorks [
 '"powered by cubecart"'
 ]
 
-# Examples #
-examples %w|
-demo.cubecart.com/cc3/
-americankaiju.kaijuphile.com/store/index.php
-myjapantshirt.com
-downloadfitnessmusic.com
-prestonsbooks.com
-sugarsugarbags.com/shop/index.php
-www.bijouxandzoe.com
-www.claudiasbaskets.com
-www.node3-records.com/shop/
-www.thecdguyz.com
-www.trustmagic.com.au/index.php
-www.yanelis3d.net/store/
-|
+
 
 # Matches #
 matches [

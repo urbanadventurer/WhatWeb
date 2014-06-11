@@ -17,16 +17,7 @@ description "Billion router - Homepage: http://www.billion.com/product/product.h
 # 41,859 for Authenticate WebAdmin Conexant-EmWeb
 #  1,462 for Billion Sky
 
-# Examples #
-examples %w|
-41.243.230.220
-209.212.46.141
-67.102.23.129
-203.19.220.32
-218.111.43.185
-201.200.148.61
-72.10.214.96
-|
+
 
 # Matches #
 matches [

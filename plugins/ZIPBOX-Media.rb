@@ -17,22 +17,7 @@ dorks [
 '"POWERED BY ZIPBOX MEDIA" inurl:"album.php"'
 ]
 
-# Examples #
-examples %w|
-www.stetsonlooks.com/album.php
-www.zipboxstyles.com/album.php
-www.rashodholmes.com/album.php
-psalms150live.com/album.php
-damascus180.zipboxmedia.com/album.php
-torisparks.zipboxmedia.com/album.php
-www.abigailrosemusic.com/album.php
-www.wildersongs.com/album.php
-www.contingentmusic.com/album.php
-nadinegrey.com/album.php
-www.legendsembroidery.com/album.php
-jesusandmaryssingingmessenger.com/album.php
-suretyrecordings.com/album.php
-|
+
 
 # Matches #
 matches [

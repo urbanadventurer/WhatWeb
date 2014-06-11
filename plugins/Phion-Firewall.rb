@@ -13,17 +13,7 @@ description "Phion Firewall is now Barracuda NG Firewall - Homepage: http://www.
 # 1,011 for Phion -apache -IIS
 # Most results are from Austria
 
-# Examples #
-examples %w|
-213.33.118.92
-62.225.42.139
-194.49.73.194
-209.82.53.156
-62.157.109.201
-217.7.144.180
-217.6.209.228
-195.145.199.14
-|
+
 
 # Passive #
 def passive

@@ -12,18 +12,7 @@ description "PmWiki is a wiki-based system for collaborative creation and mainte
 # ShodanHQ results as at 2012-03-18 #
 # 30 for imstime
 
-# Examples #
-examples %w|
-www.pmwiki.org
-82.95.200.69
-193.99.40.225
-83.151.20.197
-74.91.217.97
-129.206.112.252
-67.159.220.229
-74.124.5.219
-194.95.202.57
-|
+
 
 # Matches #
 matches [

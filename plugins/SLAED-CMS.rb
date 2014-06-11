@@ -17,18 +17,7 @@ dorks [
 '"Powered by SLAED CMS"'
 ]
 
-# Examples #
-examples %w|
-www.slaed.net
-watch.ox8.ru
-www.oslik.info
-dosecrets.comze.com
-teleshara.com
-cms-guru.ru
-www.worlddebt.es
-aktobeoblmaslihat.kz
-onlinews.ru
-|
+
 
 # Matches #
 matches [

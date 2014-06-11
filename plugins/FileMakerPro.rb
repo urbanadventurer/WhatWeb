@@ -13,24 +13,7 @@ description "FileMaker Pro web publishing - FileMaker Pro is powerful, easy-to-u
 # 951 for FileMakerPro
 # 127 for FileMakerPro -WebCompanion
 
-# Examples #
-examples %w|
-67.95.148.193
-84.53.124.145
-67.95.148.236
-67.95.148.241
-67.95.148.226
-72.43.106.214
-82.171.186.106
-189.129.58.118
-96.57.241.26
-150.146.2.34
-71.254.168.9
-61.115.79.64
-131.172.8.230
-76.102.176.186
-208.71.57.32
-|
+
 
 # Passive #
 def passive

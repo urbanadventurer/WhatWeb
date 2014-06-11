@@ -9,7 +9,7 @@ Plugin.define "MyZone" do
 author "Andrew Horton"
 version "0.1"
 description "Mobile 3G WiFi Rrouter. Homepage: www.netcomm.com.au"
-examples %w| 114.74.149.201 |
+
 
 matches [
 {:regexp=>/<title>MyZone<\/title>.*www\.netcomm\.com\.au/m}

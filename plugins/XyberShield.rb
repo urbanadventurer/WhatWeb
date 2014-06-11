@@ -13,14 +13,7 @@ description "XyberShield is a web-based, Software as a Service web application s
 # 4 for XyberShieldStatus
 # 4 for XyberShieldSession
 
-# Examples #
-examples %w|
-www.xybershield.com
-64.56.212.189
-64.56.216.200
-64.56.216.202
-64.56.216.215
-|
+
 
 # Matches #
 matches [

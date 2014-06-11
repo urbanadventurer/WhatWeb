@@ -20,26 +20,7 @@ dorks [
 '"letoDMS free document management system - www.letodms.com" "This is a classified area. Access is permitted only to authorized personnel"'
 ]
 
-# Examples #
-examples %w|
-194.140.155.96
-88.198.168.46
-87.106.251.214
-85.10.199.123
-91.121.47.58
-92.61.39.132
-118.143.2.113
-61.12.126.67
-140.254.233.38
-178.63.72.167
-demo.letodms.com
-webgamm.com/filebox/
-www.graphskill.co.uk/LetoDMS/op/op.ViewOnline.php?documentid=49&version=1
-www.hollowproject.com/FileStor/
-courseping.com/leto/op/op.Login.php?login=guest
-demos1.softaculous.com/LetoDMS/
-https://www.crerrphc.org.au/dms/
-|
+
 
 # Matches #
 matches [

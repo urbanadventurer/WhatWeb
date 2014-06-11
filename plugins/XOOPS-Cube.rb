@@ -18,16 +18,7 @@ dorks [
 '"Powered by XOOPS Cube"'
 ]
 
-# Examples #
-examples %w|
-xoopscube.org
-xoopscube.jp
-xoopscube.sourceforge.net
-mytrans.myht.org
-xoops.me/xcl/2.2/
-feg.senum.biz/xo_feg/
-www.0en-server.com
-|
+
 
 # Matches #
 matches [

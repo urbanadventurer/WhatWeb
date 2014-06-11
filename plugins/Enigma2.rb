@@ -17,15 +17,7 @@ dorks [
 'intitle:"Enigma2 movielist" filetype:rss'
 ]
 
-# Examples #
-examples %w|
-gokac.ath.cx/web/movielist.rss?tag
-bkeane.dyndns.info/web/movielist.rss?tag
-www.supermaskiner.com:8080/web/movielist.rss?tag
-javardair.no-ip.info:9999/web/movielist.rss?tag
-newcs.homeip.net/web/movielist.rss?tag
-srv.kerlu.org/web/movielist.rss?tag
-|
+
 
 # Matches #
 matches [

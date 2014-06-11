@@ -17,13 +17,7 @@ dorks [
 '"powered by AlstraSoft AskMe Pro" -vulnerability'
 ]
 
-# Examples #
-examples %w|
-www.blizsoft.com/ask/
-www.blizsoft.com/ask/admin/
-www.asklive.co.uk/
-www.asklive.co.uk/admin/
-|
+
 
 matches [
 

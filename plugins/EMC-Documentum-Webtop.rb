@@ -17,29 +17,7 @@ dorks [
 '"Login Name" Repository Webtop intitle:login inurl:component'
 ]
 
-# Examples #
-examples %w|
-documentum.kbr.com/webtop/component/main
-www.kidzaniaarchive.com/kidzania/component/main
-ep-edms-hq.omv.com/edms_admin/component/main
-edms.frep-ipmt.com.cn/webtop/component/main
-202.57.41.61:8080/webtop/component/
-dctm.tsgrp.com/da/component/main
-dctm.smoe.com/webtop/component/main
-docs.nuvasive.com/webtop/component/main
-edm.its.state.nc.us/webtop/component/main
-usa22.usa-extra.com/webtop/component/main
-products.hkmci.com/connectors-doc/jk2
-216.74.29.106/dcm/component/main
-unidadamerica.net/webtop/component/main
-webtop.deere.com/webtop/dtir:/Website/wt_test3.html
-apps.astralconsulting.com.au/webtop/
-webtop.cerpzone.org
-edm.bayer.de/webtop/
-dms.privacycommission.be/docu/component/
-www.cerpzone.info/webtop/
-subcon.dweng.co.kr/dms/component/login
-|
+
 
 # Matches #
 matches [

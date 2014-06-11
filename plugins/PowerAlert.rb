@@ -13,26 +13,7 @@ description "PowerAlert monitors and controls UPS Systems, PDUs, sensors, and th
 # 771 for PowerAlert Login
 #  50 for PowerAlert -Login
 
-# Examples #
-examples %w|
-129.120.253.13
-72.5.80.144
-129.120.253.236
-200.33.20.4
-74.143.181.208
-207.253.192.101
-174.136.34.138
-216.162.156.59
-208.68.162.250
-166.143.183.153
-67.207.111.18
-168.48.21.10
-70.35.63.210
-71.201.202.108
-209.190.233.25
-209.190.231.226
-208.75.45.91
-|
+
 
 # Matches #
 matches [

@@ -19,13 +19,7 @@ dorks [
 '"Error: JavaScript is not enabled" "Please enable JavaScript in your browser or refer to you internal IT support for assistance."'
 ]
 
-# Examples #
-examples %w|
-https://selfservice.asp.aurion.com.au/nswecprd/
-https://ess.catholic.net.au/aurprod10/
-https://aurion.epc.asn.au/aurprod10/
-http://recruitment.transend.com.au/
-|
+
 
 # Matches #
 matches [

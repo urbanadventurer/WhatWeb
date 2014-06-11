@@ -20,19 +20,7 @@ dorks [
 'intitle:"VIDEO WEB SERVER" -intext intext:"Video Web Server" "Any time & Any where" username password'
 ]
 
-# Examples #
-examples %w|
-62.240.190.254
-poulain.italp.qc.ca
-80.51.153.81
-84.232.180.35
-213.10.180.35
-200.42.179.35
-65.82.177.35
-68.173.82.45
-62.38.217.167
-220.132.5.146
-|
+
 
 # Matches #
 matches [

@@ -17,22 +17,7 @@ dorks [
 '"Powered by Axous" "Valid CSS"'
 ]
 
-# Examples #
-examples %w|
-www.axous.com
-www.janusec.com/product/
-www.monitortoolbox.com
-www.fat32-formatter.com/cart.php
-www.westwindsoft.net/page/about.html
-www.zj-fountain.com
-www.ezprog.com/cart.php
-font-manager-mac-software.8bitsoft.com
-www.axous.com/page/contact.html
-www.magic-partition.com/page/about.html
-us.cnsw.us
-www.linren.com
-www.cylogos.com/axous/
-|
+
 
 # Matches #
 matches [

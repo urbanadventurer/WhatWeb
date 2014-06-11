@@ -17,11 +17,7 @@ dorks [
 '"Copyright PreProjects.com All Rights Reserved" inurl:"product_desc.php?pid"'
 ]
 
-# Examples #
-examples %w|
-www.preprojects.com/prestudio/
-printandbindltd.com/store/
-|
+
 
 # Matches #
 matches [

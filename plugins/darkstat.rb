@@ -20,22 +20,7 @@ dorks [
 'intitle:darkstat intitle:"graphs" "graphs" "Running for"'
 ]
 
-# Examples #
-examples %w|
-prototypenl.dyndns.org:666
-www.kahl-com.de:666
-oldi.homelinux.net:666
-live.wuga.org
-flatlinebb.raspberry.feralhosting.com:666
-elorduy.net:667
-www.nutcracker.cz:81
-golfetto.dyndns.org:667
-geoz.co.nz:8080
-noc.7portal.com.ua:667
-rt66.ath.cx:667
-wi-fi.ceikneu.edu.ua:667
-fxmx86.mine.nu:86
-|
+
 
 # Matches #
 matches [

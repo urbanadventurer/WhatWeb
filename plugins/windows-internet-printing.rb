@@ -12,12 +12,7 @@ description "Windows internet printing web frontend - homepage: http://www.micro
 
 # 4 results for inurl:Printers/ipp_0001.asp @ 2010-07-22
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1568
-examples %w|
-ipp.directoutput.com.hk/printers/ipp_0001.asp
-www2.fsg.ulaval.ca/printers/ipp_0001.asp
-dawnmodels.vicp.net:8080/dawnoa/printers/ipp_0001.asp
-webprint.sbcc.edu/printers/ipp_0001.asp
-|
+
 
 matches [
 

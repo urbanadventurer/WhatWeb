@@ -16,28 +16,7 @@ dorks [
 '"powered by Tribiq"'
 ]
 
-# Examples #
-examples %w|
-demo-probusiness-latest.tribiq.com/admin/adminlogin.php
-demo-probusiness-latest.tribiq.com/admin/storekeeper.php
-demo-community-latest.tribiq.com/admin/storekeeper.php
-demo-community-latest.tribiq.com/admin/adminlogin.php
-reading.tribiq.com
-austinfraser.co.uk
-dadya.net
-docs.compliancereports.co.uk
-demo.compliancereports.co.uk
-nightowlquilters.org.au
-predictuwin.tribalforge.net
-www.arlingtonarts.co.uk
-www.arlingtonlabs.co.uk
-www.ashleylawextranet.co.uk
-www.celine-anne.com
-www.fotobureauet.com
-www.luxchristi.net/go/
-www.stlukes-hospice.co.uk
-www.transkatkabel.ru
-|
+
 
 matches [
 

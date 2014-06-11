@@ -12,17 +12,7 @@ description "A small HTTP daemon, which enables you to access and manage service
 # ShodanHQ results as at 2011-04-08 #
 # 213 for RemotelyAnywhere
 
-# Examples #
-examples %w|
-14.198.9.92
-58.177.22.212
-76.123.119.84
-85.48.108.39
-122.41.36.28
-76.16.74.68
-88.103.135.153
-155.246.96.152
-|
+
 
 # Passive #
 def passive

@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-11-11
 version "0.1"
 description "Hughes VoIP Appliance for HughesNet integration - Homepage: http://www.hughes.com/"
 
-# Examples #
-examples %w|
-94.101.70.130
-|
+
 
 # Matches #
 matches [

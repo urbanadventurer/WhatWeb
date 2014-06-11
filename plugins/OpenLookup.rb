@@ -17,14 +17,7 @@ dorks [
 '"OpenLookup Node Status" intitle:Openlookup "To query a node via round-robin DNS"'
 ]
 
-# Examples #
-examples %w|
-any.openlookup.net:5851
-javascript0.org:5851
-193.167.187.133:5851
-crossroads.infrahip.net:5851
-pdis.hiit.fi:5861
-|
+
 
 # Matches #
 matches [

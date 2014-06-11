@@ -19,44 +19,7 @@ dorks [
 '"powered by TheHostingTool"'
 ]
 
-# Examples #
-examples %w|
-100mb.ca/tht/client/
-billing.freeresellers.com
-client.host-it.org/support/
-client.host-it.org/support/
-client.myheberg.com/client/
-client.myheberg.com/order/
-clientes.teratecno.com/client/
-clients.hostspeed.us
-commande.geekheberg.net/order/
-corruptedradio.freehostia.com
-domainelectronic.org/host/admin/
-e-sts.com/admin/
-host2.cz.cc/host/
-hostingbyus.info/tht/
-iconic24.com
-member.bubutech.com/client/
-orders.webmediafusion.com/client/
-p2h.chemicalservers.com/order/
-s3.fspacedns.com/client/support/
-sillyhost.net/my/admin/
-syxe.com/hosting/
-sitebunker.net/clients/client/
-vxnhost.info/order/support/
-zoombastudio.com/client/
-www.000site.net/order/admin/
-www.atacamahost.cl/THT/client/
-www.codnet.com/hosting/support/
-www.esource.perfectz.info/tht/order/
-www.host2x.net/tht/
-www.itneed.net/billing/
-www.ketowebservices.info/order/
-www.lancerhost.net/clientes/
-www.mazvfx.co.uk/hosting/client/
-www.monsite.tk/client/support/
-www.teratecno.com/clientes/
-|
+
 
 matches [
 

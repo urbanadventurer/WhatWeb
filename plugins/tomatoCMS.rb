@@ -14,23 +14,7 @@ dorks [
 '"powered by TomatoCMS"'
 ]
 
-# Examples #
-examples %w|
-demo.tomatocms.com
-www.a2z-adz.com/home/
-www.cheebee.net/tomatocms/
-www.discovery-vn.com
-www.drinkingcatchphrase.com
-home.5olio.com
-home.phono.co.jp
-www.thethao68.com
-www.twimotion.com
-phunutre.vn
-bongda5.com
-www.siamtomato.com
-www.webyeuthuong.com
-www.b-zero.net/Home/install.php
-|
+
 
 matches [
 

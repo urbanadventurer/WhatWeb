@@ -12,18 +12,7 @@ description "Stronghold was a fork of the Apache HTTP Server. Stronghold was cre
 # ShodanHQ results as at 2011-09-04 #
 # 1,179 for Stronghold
 
-# Examples #
-examples %w|
-206.204.3.187
-216.218.241.224
-216.218.198.207
-216.235.71.157
-194.42.236.63
-63.94.171.93
-216.218.198.151
-192.82.11.15
-216.235.74.250
-|
+
 
 # Matches #
 matches [

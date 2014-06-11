@@ -18,16 +18,7 @@ dorks [
 '"Powered by PHPortfolio" inurl:photo.php'
 ]
 
-# Examples #
-examples %w|
-www.theballoonbuffoon.com/phportfolio/search.php
-desertarabians.uni.cc/gal/
-www.classyshots.com/stock_images/index.php
-umgraphics.com/work/
-mlmurray.com/gallery/
-www.thehallofmirrors.net/gal/
-calandide.com/maribel/
-|
+
 
 # Matches #
 matches [

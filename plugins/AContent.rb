@@ -17,10 +17,7 @@ dorks [
 'intitle:"AContent: Learning Content Repository:"'
 ]
 
-# Examples #
-examples %w|
-www.atutor.ca/acontent/demo.php
-|
+
 
 matches [
 

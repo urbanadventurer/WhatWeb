@@ -15,45 +15,7 @@ description "WoW Raid Manager or WRM for short is a PHP based application suppor
 # Google results as at 2010-06-16 #
 # 108,000 for "Raid Management Provided by WoW Raid Manager"
 
-# Examples #
-examples %w|
-converge-guild.net/raid/
-www.ghosty.dk/ar/phpraid/
-www.wediealot.org/raid/
-www.theamazonbasin.com/wow/stormwrm/
-itspallygear.com/raider/
-goblinsguild.com/wrm/
-www.legiosanctus.eu/wrm/
-raid.treehuggery.org
-fadedglory.eu/puz/
-www.warcraftcollege.com/wrm/
-www.tranqguild.com/wrm/
-www.thehordemaycry.66ghz.com/wrm/
-www.wyrdangles.net/wrm/
-www.wow-wolf.com/wrm/
-www.wowsentient.com/raid/
-www.dawnofosiris.eu/wrm4/
-www.readycheck.ro/wrm/
-www.bokraid.com/wrm/
-www.pinkbelly.org/raid/roster.php
-www.digital-matter.net/wrm/
-triage.guildspot.org/wrm/
-www.d-o-j.com/wrmdoj/
-www.zebraguild.com/wrm4/
-kotrwrath.shadowroute.net/wrm/
-www.application-declined.com/raid/newplanner/
-www.dhbaelgun.com/wrm/
-www.obsidianblades.info/wrm/
-hottiehamsters.com/wrm/
-suffragium.net/signup/
-www.wow-wolf.com/wrm/
-grokos.com/phpRaid/
-pulse.malygos.us/raid/
-www.unseenuniversity.nl/manager/
-www.cultofreason.org/raid/
-www.bdsg.eu/raid/
-www.wowsentient.com/raid/
-|
+
 
 # Matches #
 matches [

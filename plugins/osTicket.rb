@@ -18,37 +18,7 @@ dorks [
 '"SUPPORT TICKET SYSTEM" "Home" "Ticket Status" "New Ticket" "Welcome to the support center"'
 ]
 
-# Examples #
-examples %w|
-www.bookmygo.com/osticket_1.6.0/upload/setup/install.php
-www.bl00dh0und.nl/setup/install.php
-cn-nirvana.com/support/
-amfticket.idelfuschini.it
-margaretalbright.com/help/
-nobueno.org
-www.syscomweb.com/support/
-www.guialaboralblog.com
-www.atec-global.com/setup/install.php
-vzlaenlanube.com/osticket/
-traisoft.com/ticketting/index.php
-pdpeval.com
-www.backlinksbud.com/support/
-support.m2i-lorraine.com
-support.hwcenter.org
-www.pro-feedback.com/~support/
-paginaskos.com/osticket_1.6.rc5/upload/
-www.mailer.ae/support/
-www.eroticnights4u.com/contact_center/
-ccc.byu.edu/support/
-www.ccr.edu/helpdesk/
-cgs.wustl.edu/support/
-www.csufresno.edu/studentaffairs/dosarequests/
-webservices.siuc.edu/ticket/
-webteam.poly.edu/support/
-support.rocky.edu/support/
-support.carlalbert.edu
-www.cbs.umn.edu/help/
-|
+
 
 # Matches #
 matches [

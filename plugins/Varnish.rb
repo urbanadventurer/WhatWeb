@@ -12,19 +12,7 @@ description "Varnish is an HTTP accelerator written in C designed for content-he
 # ShodanHQ results as at 2011-04-15 #
 # 14,040 for X-Varnish
 
-# Examples #
-examples %w|
-46.59.89.104
-46.183.140.79
-75.101.139.14
-50.17.218.109
-64.92.222.27
-65.75.148.51
-213.218.127.234
-69.25.189.139
-74.86.155.247
-201.7.178.145
-|
+
 
 # Passive #
 def passive

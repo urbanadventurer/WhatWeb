@@ -18,20 +18,7 @@ description "This plugin identifies instances of 'Powered by x' text and attempt
 # Google results as at 2011-02-15 #
 # 11,360,000,000 for allintext:"powered by"
 
-# Examples #
-examples %w|
-www.conduit.com
-www.cnet.com
-www.pliner.net
-www.weather.com
-www.aol.com
-www.myspace.com
-www.adobe.com
-poweredbywp.com
-xoops.org
-zen-cart.com
-forums.cpanel.net
-|
+
 
 # Matches could be improved by:
 #   Stripping HTML and CSS tags

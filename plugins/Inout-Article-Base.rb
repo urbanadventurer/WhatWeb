@@ -16,14 +16,7 @@ dorks [
 '"Powered by Inoutscripts"'
 ]
 
-# Examples #
-examples %w|
-www.inoutdemo.com/inout_article_base_ultimate/admin/
-www.inoutdemo.com/inout_article_base_ultimate/member/login/
-www.inoutdemo.com/inout_article_base_ultimate/
-www.inoutdemo.com/inout_article_base/
-www.inoutdemo.com/inout_article_base/admin/
-|
+
 
 matches [
 

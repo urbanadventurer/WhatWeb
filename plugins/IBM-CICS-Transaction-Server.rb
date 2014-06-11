@@ -17,13 +17,7 @@ description "IBM Customer Information Control System is the new face of CICS Int
 # 16 for IBM_CICS_Transaction_Server
 # 16 for (zOS) IBM
 
-# Examples #
-examples %w|
-192.86.33.23
-192.86.33.16
-132.68.240.1
-134.121.1.77
-|
+
 
 # Passive #
 def passive

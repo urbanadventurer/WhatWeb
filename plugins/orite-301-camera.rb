@@ -16,16 +16,7 @@ dorks [
 'intitle:"Orite IC301" | intitle:"ORITE Audio IP-Camera IC-301" -the -a'
 ]
 
-# Examples #
-examples %w|
-88.247.195.215:83
-88.250.175.101:75
-81.70.232.167
-wildkatent.homeip.net:50174
-www.wisdomwell.com.hk/pda.htm
-cscheung.com/pda.htm
-offercom.xs4all.nl:8008
-|
+
 
 matches [
 

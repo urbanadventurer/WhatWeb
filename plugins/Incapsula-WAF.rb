@@ -9,12 +9,7 @@ author "Aung Khant <http://yehg.net/>" # 2012-02-10
 version "0.1"
 description "Incapsula-WAF - http://www.incapsula.com"
 
-# Examples #
-examples %w|
-http://www.incapsula.com/
-http://my.incapsula.com/
-http://pycgo7.05.incapdns.net/
-|
+
 
 # Matches #
 matches [

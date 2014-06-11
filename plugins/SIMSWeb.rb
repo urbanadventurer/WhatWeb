@@ -17,15 +17,7 @@ dorks [
 'intitle:"SIMSWeb Login"'
 ]
 
-# Examples #
-examples %w|
-66.170.137.132
-65.68.166.138
-simsweb.dispatchcenter.net
-cmsmonitoringweb.com/SIMSWEB/
-customer.vanguardalarms.com/SIMSWeb/
-simsweb.grahamalarm.com
-|
+
 
 # Matches #
 matches [

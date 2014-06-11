@@ -12,22 +12,7 @@ description "This plugin identifies the x-machine and x-machine-id headers and e
 # ShodanHQ results as at 2011-04-08 #
 # 285 for x-machine
 
-# Examples #
-examples %w|
-205.203.139.11
-216.168.135.217
-205.203.131.98
-216.168.135.218
-216.168.135.229
-65.55.69.144
-216.168.135.223
-205.203.139.219
-67.128.208.45
-216.168.135.232
-50.18.62.13
-198.202.148.15
-198.202.148.86
-|
+
 
 # Passive #
 def passive

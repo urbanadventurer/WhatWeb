@@ -13,21 +13,7 @@ description "thttpd - tiny/turbo/throttling HTTP server - thttpd is a simple, sm
 # 103,691 for thttpd
 #   6,657 for thttpd -2
 
-# Examples #
-examples %w|
-201.88.14.154
-189.56.131.246
-200.181.129.194
-200.135.64.94
-189.30.9.105
-220.133.178.8
-189.31.148.62
-202.214.246.201
-58.70.107.139
-173.20.81.207
-74.51.10.234
-82.229.195.70
-|
+
 
 # Matches #
 matches [

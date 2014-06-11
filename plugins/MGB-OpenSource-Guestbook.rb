@@ -17,15 +17,7 @@ dorks [
 'inurl:"mgb/index.php?p="'
 ]
 
-# Examples #
-examples %w|
-www.cassandradiefrisoerin.de/mgb/index.php?p=17
-dsedens.com/mgb/index.php?p=2
-www.knaben-hcw.de/mgb/index.php?p=42
-www.jetlac.de/mgb/index.php?p=47
-www.oi-thenische.de/oithenische/mgb/index.php?p=85
-bakonyivendeghaz.hu/mgb/index.php?p=38
-|
+
 
 # Matches #
 matches [

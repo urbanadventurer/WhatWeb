@@ -13,21 +13,7 @@ description "Zotonic, The Erlang CMS - Zotonic is an open source content managem
 # 15 for z_pid z_sid
 # 13 for Zotonic
 
-# Examples #
-examples %w|
-zotonic.com
-178.79.139.85
-62.109.14.46
-78.47.231.20
-184.106.217.46
-109.74.203.217
-188.40.113.133
-80.69.73.11
-78.24.222.113
-85.17.170.50
-85.17.151.179
-205.186.148.92
-|
+
 
 # Passive #
 def passive

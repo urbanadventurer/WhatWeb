@@ -20,20 +20,7 @@ dorks [
 'intitle:"Login - OBM" "OBM.org"'
 ]
 
-# Examples #
-examples %w|
-obm.medysys.com
-fosps.force-ouvriere.fr
-intranet.crous-creteil.fr/obm/php/obm.php
-www.environnement-auxerre.fr
-agenda.fhsarl.com
-obm.docubase.com/deal/deal_index.php
-https://demo.obm.org/
-https://mail.cg973.fr/
-https://obm.legos.obs-mip.fr/
-https://obm.asso-croizat.org/calendar/calendar_index.php
-https://extranet.weishardt.com/obm/
-|
+
 
 # Matches #
 matches [

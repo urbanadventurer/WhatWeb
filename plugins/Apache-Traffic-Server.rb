@@ -12,25 +12,7 @@ description "Apache Traffic Server is a fast, scalable and extensible HTTP/1.1 c
 # ShodanHQ results as at 2011-08-05 #
 # 169 for ApacheTrafficServer
 
-# Examples #
-examples %w|
-90.223.204.79
-90.223.198.68
-90.223.204.177
-90.223.204.182
-67.201.31.4
-90.223.198.26
-90.223.198.72
-90.223.198.57
-90.223.204.184
-90.223.204.119
-110.45.220.89
-71.6.217.25
-123.30.184.107
-66.225.209.147
-115.68.20.74
-88.217.226.143
-|
+
 
 # Passive #
 def passive

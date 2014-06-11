@@ -17,23 +17,7 @@ dorks [
 '"Powered by Contrexx Software"'
 ]
 
-# Examples #
-examples %w|
-www.contrexx.com/admin/
-demo.contrexx.com
-demo.contrexx.com/cadmin/
-www.comvation.com
-www.wittwer-engineering.ch/admin/
-www.itsfs.ch
-itsfs.ch.chaplin.sui-inter.net
-www.onlinekommerz.de
-www.itexpertconference.ch
-contrexx.interamedia.ch
-www.ad-ept.ch/admin/
-jungen-daecher.ch/cadmin/
-www.merger-support.ch
-www.switchie.ch/admin/
-|
+
 
 # Matches #
 matches [

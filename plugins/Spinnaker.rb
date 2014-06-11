@@ -16,18 +16,7 @@ description "Spinnaker web server - Searchight Software sold Searchlight BBS, al
 # ShodanHQ results as at 2011-06-04 #
 # 274 for spinnaker http
 
-# Examples #
-examples %w|
-216.170.225.242
-216.170.225.170
-216.170.225.140
-216.170.225.243
-216.170.225.58
-216.170.225.141
-216.170.225.70
-216.170.225.122
-216.170.225.110
-|
+
 
 # Passive #
 def passive

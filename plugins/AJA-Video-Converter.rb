@@ -9,20 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-12-05
 version "0.1"
 description "AJA digital video converter devices - Homepage: http://www.aja.com/en/products/convert/"
 
-# Examples #
-examples %w|
-129.15.37.9
-66.151.63.115
-76.8.60.33
-76.8.60.34
-207.212.211.17
-71.166.174.173
-150.135.129.114
-35.9.117.106
-35.9.117.107
-35.9.117.108
-35.9.117.109
-|
+
 
 # Matches #
 matches [

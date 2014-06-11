@@ -17,15 +17,7 @@ dorks [
 '"Powered by Etano" intitle:"Etano"'
 ]
 
-# Examples #
-examples %w|
-www.datemill.com/friendy/
-demos.softaculous.com/Etano/
-demos2.softaculous.com/Etano/privacy.php
-etano.ccool4.me
-www.kandistrender.se/sprak/
-farmerconnect.net/etano/
-|
+
 
 # Matches #
 matches [

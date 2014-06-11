@@ -22,19 +22,7 @@ dorks [
 'intitle:"iPeer V2 with TeamMaker"'
 ]
 
-# Examples #
-examples %w|
-207.40.43.212
-ipeerverf.ctlt.ubc.ca
-huskinspsych.com/ipeer-2.0.8.3/
-aplusmkt.com/myevals/
-www.thebristolfamily.com/ipeer-2.0.8.3/install
-avosplumes.web.virginia.edu/iPeer/
-ipeer.agsm.edu.au
-www.transformingassessment.com/ipeer/
-https://ipeer.elearning.ubc.ca/loginout/forgot
-myall.services.adelaide.edu.au
-|
+
 
 # Matches #
 matches [

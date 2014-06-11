@@ -12,17 +12,7 @@ description "Avaya Secure Router - Hompage: http://www.avaya.com/usa/products/ca
 # ShodanHQ results as at 2012-08-26 #
 # 19 for "Avaya Http Server v"
 
-# Examples #
-examples %w|
-97.65.241.2
-173.228.226.119
-174.77.155.212
-66.50.5.209
-97.65.63.138
-66.50.5.213
-200.11.217.49
-173.215.246.74
-|
+
 
 # Matches #
 matches [

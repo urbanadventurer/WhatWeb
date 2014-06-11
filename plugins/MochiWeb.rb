@@ -13,13 +13,7 @@ description "MochiWeb is an Erlang library for building lightweight HTTP servers
 # 190 for MochiWeb
 # 155 for MochiWeb -WebMachine
 
-# Examples #
-examples %w|
-69.168.111.70
-62.109.14.46
-184.72.219.121
-184.106.217.46
-|
+
 
 # Passive #
 def passive

@@ -15,12 +15,7 @@ description "This plugin retrieves the KaZaA IP:port combination, network and us
 # About 74 ShodanHQ results for X-Kazaa-Username
 # About 112 ShodanHQ results for X-Kazaa-Network
 
-# Examples #
-examples %w|
-67.240.153.145
-76.97.90.33
-98.235.134.5
-|
+
 
 # Passive #
 def passive

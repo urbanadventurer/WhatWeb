@@ -16,10 +16,7 @@ dorks [
 '"Plandora Project" "User" "Password" "Login" inurl:"pandora/do"'
 ]
 
-# Examples #
-examples %w|
-www.plandora.org/pandora/do/
-|
+
 
 # Matches #
 matches [

@@ -12,18 +12,7 @@ description "Play is an open source web application framework, written in Java, 
 # ShodanHQ results as at 2011-09-21 #
 # 148 for Play Framework
 
-# Examples #
-examples %w|
-129.185.31.173
-161.105.145.34
-77.92.87.225
-61.144.235.43
-79.125.22.72
-64.139.144.29
-80.78.6.244
-203.117.65.199
-78.47.181.67
-|
+
 
 # Matches #
 matches [

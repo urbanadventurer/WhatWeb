@@ -28,15 +28,7 @@ dorks [
 'intitle:"MailSite Express" "MailSite Express Login"'
 ]
 
-# Examples #
-examples %w|
-202.37.232.199
-webmail.oasisonline.com
-www.itsmail.ca/its/
-mail.roar.net.nz/express/
-mail.seiu99.net
-www.cmda.com.ve/content/correo_content.html
-|
+
 
 # Matches #
 matches [

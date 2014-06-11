@@ -33,68 +33,7 @@ dorks [
 'inurl:main.php "Welcome to phpMyAdmin"'
 ]
 
-# Examples #
-examples %w|
-demo.phpmyadmin.net/MAINT_2_11_11/
-demo.phpmyadmin.net/MAINT_3_3_9/
-demo.phpmyadmin.net/QA_3_3/
-demo.phpmyadmin.net/TESTING/
-demo.phpmyadmin.net/STABLE/
-phpmyadmin.hosthat.com
-yohost.com/demo/_/3rdparty/phpMyAdmin/
-dbmy0028.whservidor.com
-www.mars.abzone.cz/phpmyadmin/
-89.223.109.37
-88.57.182.30
-208.43.32.3
-200.27.93.32
-194.150.224.13
-phpmyadmin.registrar.no
-phpmyadmin.nichost.ru
-databaseadmin.co.uk
-webstaging.uvu.edu/wds/phpmyadmin/
-www.artverwandt.net/admin/phpmyadmin/
-maisoncarree.com
-math.uww.edu/admin/
-www.tg777.com
-yourfathersmoustache.ca/phpMyAdmin/
-125.16.213.243/phpmyadmin/
-www.zhuanti.com
-crandeen.co.uk
-ihome.ust.hk/phpMyAdmin/
-secure-dbadmin.com
-www.fcs.uga.edu/pma/
-www.wdcmedia.com/newshub/phpMyAdmin/
-cp1.awardspace.com/phpMyAdmin/
-cp2.awardspace.com/phpMyAdmin/
-cp3.awardspace.com/phpMyAdmin/
-cp4.awardspace.com/phpMyAdmin/
-cp5.awardspace.com/phpMyAdmin/
-cp6.awardspace.com/phpMyAdmin/
-cp7.awardspace.com/phpMyAdmin/
-cp8.awardspace.com/phpMyAdmin/
-cp9.awardspace.com/phpMyAdmin/
-cp10.awardspace.com/phpMyAdmin/
-125.16.213.243/phpmyadmin/
-www.lightningservers.net/cpanel-demo/3rdparty/phpMyAdmin/
-kar-europa.com/phpAdmin/
-sqladmin.service-internet.com
-myadmin.hat.pl
-atriaa.biz
-69.41.166.45
-services.vicnet.net.au/mysql/
-justonedomain.com/phpMyAdmin/
-fluid.jku.at/phpMyAdmin/
-www.itu.dk/mysql/
-www.esl.net/phpMyAdmin-2.2.4/
-www.imuneguerra.com.br/phpmyadmin/
-www.1991lobo.ru/mysql_admin/
-www.kenailaw.com/phpmyadmin/
-www.myatypic.be/phpmyadmin/
-www.realcreation.com/survey/
-xweb.song.fi/phpmyadmin
-kiteless.bladenation.net/phpMyAdmin-2.6.1-pl3/
-|
+
 
 # Matches #
 matches [

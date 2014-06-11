@@ -17,18 +17,7 @@ dorks [
 '"Created using Sphinx" "Copyright"'
 ]
 
-# Examples #
-examples %w|
-sphinx.pocoo.org
-packages.python.org/an_example_pypi_project/
-docs.zope.org
-pyquery.org
-chemistry.apache.org/python/docs/
-www.geotools.org
-opendatamanual.org
-docs.pylonsproject.org
-bluesock.org/~willg/socialmedia/
-|
+
 
 # Matches #
 matches [

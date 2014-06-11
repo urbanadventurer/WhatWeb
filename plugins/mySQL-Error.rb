@@ -24,40 +24,7 @@ dorks [
 '"Warning: mysql_connect" "function.mysql-connect" "Lost connection to MySQL server at \'reading initial communication packet\'" ext:php'
 ]
 
-# Examples #
-examples %w|
-asiatopwebsites.hitsmojo.com
-dr-alkaldi.com
-platiniumhits.com/links/
-www.apnaspace.com
-www.trendybean.com
-www.ses71.com
-www.tayreece.com
-www.winiz.de
-www.norfoxx.com
-www.telnex.com/trouble/customerview/
-www.breastsvision.com
-www.ics2008.org
-www.iconoscomunicadores.info/guestbooks/
-www.pro-starter.com
-www.lacollesurloup.org/gallery2/
-www.nuovoblog.com
-www.itrafficboost.com
-expertdollar.com/ima/ranking.php
-mt.sysmt.com/service_online.php
-www.highenergygraphics.com/hienergy.php
-mvhighpoint.com/resumen.php
-www.eastafricanhomepage.com/index.php
-www.frutiroselandia.com.br/galeria/janela.php
-www.southeastlandmark.com/land.php
-www.txt-clan.com/l4dstatssmx/search.php
-www.tdc.govt.nz/index.php?TasmansFutureDiscussionPaper
-www.nzhotpools.co.nz/hot-pools/tarawera-hotsprings 
-www.jungunternehmer-hp.de/php/news_show.php
-www.franchise-for-sale.com/about.php
-www.uni-math.gwdg.de/skripte/shop/Frameset/top.php
-www.matteoiammarrone.com/public/s-cms/admin/admin.php
-|
+
 
 # Matches #
 matches [

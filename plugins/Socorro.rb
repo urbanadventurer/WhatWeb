@@ -17,10 +17,7 @@ dorks [
 '"Powered by Socorro"'
 ]
 
-# Examples #
-examples %w|
-https://crash-stats.mozilla.com/
-|
+
 
 # Matches #
 matches [

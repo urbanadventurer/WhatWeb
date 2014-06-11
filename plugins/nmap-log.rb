@@ -15,17 +15,7 @@ description "This plugin identifies nmap plain-text logs and extracts the hostna
 # Google results as at 2010-10-21 #
 # 32 for "Starting nmap" "fyodor@insecure.org" (ext:txt | ext:log)
 
-# Examples #
-examples %w|
-web.textfiles.com/hacking/portscan.txt
-www.armory.com/~cerberus/tutorials/unix-black-hat.txt
-www.ossec.net/rootkits/studies/knark.txt
-staff.washington.edu/dittrich/misc/power.analysis.txt
-www.linuxsecurity.com.br/info/microsoft/obscurity.nt.txt
-staff.washington.edu/dittrich/talks/first/mgp00015.txt
-nsh.altervista.org/docs/mdocs/neural/primipassi.txt
-www.ataliba.eti.br/sections/old-hacking/unsekurity/texto1/detonakiddies.txt
-|
+
 
 # Passive #
 def passive

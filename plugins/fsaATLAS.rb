@@ -17,18 +17,7 @@ dorks [
 'intitle:"fsaATLAS Enterprise"'
 ]
 
-# Examples #
-examples %w|
-131.216.9.226
-129.118.190.45
-169.236.82.39
-147.97.50.38
-fsaatlas.unk.edu
-fsaatlas.cc.unt.edu
-fsaatlas.ciee.org
-l-class.lbcc.cc.ca.us
-sevis-scholar.mit.edu
-|
+
 
 # Matches #
 matches [

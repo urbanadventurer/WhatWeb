@@ -20,21 +20,7 @@ dorks [
 'intitle:"Login - Splunk" "If you\'ve forgotten your username or password, please contact your Splunk"'
 ]
 
-# Examples #
-examples %w|
-50.19.211.178
-66.228.42.236
-17.173.255.31
-204.236.133.204
-class6.splunk.com
-panda.splunk.com
-src.4sight.com.au
-dev.surpricer.com
-ve.socialsci.com:8000
-ca.isystematics.com
-https://splunk.its.lsu.edu:8000/
-https://splunk.federalregister.gov/
-|
+
 
 # Matches #
 matches [

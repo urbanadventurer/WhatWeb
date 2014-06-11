@@ -20,18 +20,7 @@ dorks [
 '"powered by My PHP Indexer"'
 ]
 
-# Examples #
-examples %w|
-www.amevasc.org/diplomas/
-manuals.aonly.com
-www.b-tasarim.com/dersler/
-dev.nticafrica.org
-deafboy.cicolina.org/fileman/
-w2.dtps.tp.edu.tw/resources/
-munjiza.com/edukacije/
-www.pa1kh.nl/cmsimple/downloads/
-gallery.bramandityo.com
-|
+
 
 # Matches #
 matches [
