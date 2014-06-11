@@ -227,6 +227,8 @@ class Plugin
 
   extend PluginSugar
   def_field  :author, :version, :description, :matches, :cve, :dorks
+  # deprecated fields
+  def_field :examples
 #, :category
 
 end
