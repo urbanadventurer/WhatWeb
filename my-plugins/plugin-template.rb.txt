@@ -8,7 +8,6 @@
 Plugin.define "Plugin-Template" do
 author "Enter Your Name"
 description "Describe what the plugin identifies. Include the homepage of the software package. Copy this to a new file eg. plugin-name.rb"
-examples %w| include-some.net example-websites.com here.com |
 
 # a comment block here is a good place to make notes for yourself and others
 
