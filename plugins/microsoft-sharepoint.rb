@@ -30,45 +30,7 @@ dorks [
 '"You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page."'
 ]
 
-# Examples #
-examples %w|
-94.55.60.5
-38.100.244.186
-122.49.77.200
-112.169.172.67
-216.10.246.74
-216.185.69.125
-200.94.102.11
-142.229.228.90
-sharepoint.microsoft.com
-thesharepointblog.com
-www.wssdemo.com
-www.sharepointmadscientist.com
-blog.tedpattison.net
-www.heatherwaterman.com
-www.cospug.com
-www.sharepointgrind.com
-www.nwcsupport.com
-www.diegotrashcan.com
-www.spfoxhole.com
-www.sharepointkris.com
-www.sp2010blog.com
-www.cospug.net
-www.bostonsharepointug.org
-member.itknowledgesale.com
-maventor.com
-sharepoint.softwebsolutions.com
-www.phillysharepoint.org
-www.wssclassroom.com
-www.russbasiura.com
-www.blueberryit.co.nz
-www.phillysharepoint.com
-demo2010.binaryrepublik.com
-www.joelstamey.com
-www.baileypoint.com
-www.kroger.com
-www.qresearch.org
-|
+
 
 # Matches #
 matches [

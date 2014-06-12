@@ -21,16 +21,7 @@ dorks [
 '"powered by phpScheduleIt"'
 ]
 
-# Examples #
-examples %w|
-php.brickhost.com/demo/
-www.wherehealthbegins.com/onlinebooking/roschedule.php
-https://zenon.joslin.harvard.edu/FlowSchedule/
-apps.dmc.rice.edu/phpScheduleIt/
-dumbbellstoo.com/schedule/roschedule.php
-https://reservation.cs.iastate.edu
-labschedule.cabfablab.nl/roschedule.php
-|
+
 
 # Matches #
 matches [

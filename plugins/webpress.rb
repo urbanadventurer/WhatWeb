@@ -15,18 +15,7 @@ description "WebPress is the foundation on which we build web sites. It.s our un
 # Google results as at 2010-07-18 #
 # 9 for +"powered by WebPress"
 
-# Examples #
-examples %w|
-www.tvia.com
-www.goywp.com
-jasper.k12.ar.us
-england.k12.ar.us
-www.ridgewaycountryclub.com
-www.ed3online.org
-www.toolcentral.com
-www.rizones30-31.com
-drrandalljones.com
-|
+
 
 # Matches #
 matches [

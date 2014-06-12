@@ -13,11 +13,7 @@ version "0.2"
 description "This plugin identifies open search and extracts the URL. OpenSearch is a collection of simple formats for the sharing of search results."
 # More Info: http://www.opensearch.org/ 
 
-# Examples #
-examples %w|
-www.opensearch.org/Home
-www.nature.com
-|
+
 
 # Matches #
 matches [

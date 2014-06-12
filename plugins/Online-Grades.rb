@@ -18,46 +18,7 @@ dorks [
 '"Powered by Online Grades" -dork'
 ]
 
-# Examples #
-examples %w|
-demo.onlinegrades.org
-demo.onlinegrades.org/admin/
-demo.onlinegrades.org/faculty/
-demo.onlinegrades.org/parents/
-cca-columbia.com/grades/
-resources.wwps.org/onlinegrades/index.php
-www.pggp.com/Grades/index.php
-www.srsmn.org/onlinegrades/
-gradebook.kusd.org
-www.bushnell-pc.k12.il.us/grades/
-grades.hsd401.org
-www.cloud.edu/grades/
-grades.nccscougar.org
-www.vwsd.k12.ms.us/onlinegrades/
-elem.aiias.edu/onlinegrades/
-stpetersschoolet.org/grades/
-www.lcapalmyra.org/og/
-www.kentoncityschools.org/apps/grades/
-119.93.229.141/grades/
-yalla.fi5.us
-www.agape-school.com/Grades/
-www.jeffric.com/lst/
-grades.barriaga.com/
-www.sje.wednet.edu/onlinegrades/
-www.sje.wednet.edu:16080/onlinegrades/
-www2.runnelsstar.com/grades/
-www.gracelions.com/grades/
-mrs.malanga.net/grades/
-grades.millvilleschool.com
-grades.annunciationmsp.org:88/grades/
-www.evangelchristianschool.com/onlinegrades/
-www.peoriachr.info/onlinegrades/
-www.liberty-patriots.org/grades/
-online-ocjene.info
-maysoun.nerdsinthecity.com/maygrades/
-www.sttimothymesa.org/onlinegrades-3.2.5/
-bayonnehs.intelinetwork.com/CheckMyGrades/parents/
-|
+
 
 # Matches #
 matches [

@@ -20,20 +20,7 @@ dorks [
 '"Go offline with Zimbra Desktop" intitle:"Zimbra Web Client Log In"'
 ]
 
-# Examples #
-examples %w|
-webmail.une.net.co
-https://www.it-happens.net/zimbra/
-https://malth.us/zimbra/
-aimailbox.com
-eposta.inonu.edu.tr
-201.49.38.210
-217.15.80.77
-97.107.133.121
-80.172.140.86
-200.251.33.131
-81.80.134.217
-|
+
 
 # Matches #
 matches [

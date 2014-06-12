@@ -23,24 +23,7 @@ dorks [
 'inurl:"dsview/nmmhelp-index.do"'
 ]
 
-# Examples #
-examples %w|
-https://dsview.wallawalla.edu/dsview/protected/login.do
-https://91.82.52.86/dsview/nmmhelp-index.do
-https://kvm2.bta.net.cn/dsview/nmmhelp-index.do
-https://ipkvm.reliablehostingservices.net/dsview/nmmhelp-index.do
-https://220.73.163.52/dsview/nmmhelp-index.do
-https://remote.icomis.com/dsview/nmmhelp-index.do
-https://avocent.medhosters.com/dsview/nmmhelp-index.do
-https://nostrum.unh.edu/dsview/nmmhelp-index.do
-https://serial.gnax.net/dsview/nmmhelp-index.do
-https://ipkonzol.adatpark.hu/
-https://dsview-ksl.case.edu/
-https://remote.koreaidc.com/
-https://kvm.qupra.nl/
-mcssi.com
-dsview.agiliti.net
-|
+
 
 # Matches #
 matches [

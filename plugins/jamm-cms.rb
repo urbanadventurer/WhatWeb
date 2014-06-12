@@ -23,14 +23,7 @@ dorks [
 '"powered by JAMM CMS"'
 ]
 
-# Examples #
-examples %w|
-www.branchen-plz.de/de/cms/index.php?id=1
-www.optik-stockhausen.de/de/cms/
-www.naaimachinetotaal.nl/cms/index.php
-www.miko-heizungsbau.de/cms/index.php?id=1
-www.mondzorgvaals.nl/cms/
-|
+
 
 # Matches #
 matches [

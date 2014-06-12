@@ -19,18 +19,7 @@ dorks [
 '"powered by campsite"'
 ]
 
-# Examples #
-examples %w|
-campsite-demo.sourcefabric.org
-www.mdlf.org
-post.oursammie.net
-birn.eu.com
-www.bim.ba
-blint.org
-jeromehomenews.com
-collegian.lasalle.edu
-www.studio88.ba
-|
+
 
 # Matches #
 matches [

@@ -12,14 +12,7 @@ description "The Major BBS (sometimes MajorBBS or MBBS) was a bulletin board sys
 # ShodanHQ results as at 2011-08-06 #
 # 87 for Worldgroup
 
-# Examples #
-examples %w|
-216.95.249.16
-99.89.65.1
-144.194.16.5
-24.64.244.118
-74.62.15.100
-|
+
 
 # Passive #
 def passive

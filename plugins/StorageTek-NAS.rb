@@ -18,16 +18,7 @@ description "StorageTek Network Attached Storage (NAS) - StorageTek was founded 
 #  4 for StorageTek-HTTPD 5320C NAS
 #  1 for StorageTek-HTTPD 5310 NAS
 
-# Examples #
-examples %w|
-131.215.148.1
-202.121.127.234
-140.78.95.90
-140.78.95.91
-128.114.104.249
-128.114.125.27
-195.38.96.35
-|
+
 
 # Matches #
 matches [

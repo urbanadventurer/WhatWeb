@@ -13,14 +13,7 @@ description "Dell KACE System Management Appliance - Homepage: http://www.kace.c
 # 284 for X-KBOX-WebServer
 # 185 for X-DellKACE-Version
 
-# Examples #
-examples %w|
-66.195.246.235
-169.199.80.116
-67.129.64.8
-97.65.106.46
-114.111.132.51
-|
+
 
 # Matches #
 matches [

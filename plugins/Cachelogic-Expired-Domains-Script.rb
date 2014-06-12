@@ -19,37 +19,7 @@ dorks [
 'allinurl:page domain ext filter hyphen numbers ncharacter'
 ]
 
-# Examples #
-examples %w|
-cachelogic.net/demo/index.php
-expireddomaindigger.com
-www.buyexpireddomains.info
-tldexpired.com
-eatld.com/dropped/
-somacore.com/expir/
-www.newexpireddomains.com/index.php
-irish-sweaters.net
-www.expireddomainvault.com
-ranking-domain.com
-www.dropbydrop.info
-mrdomains.com/expire/index.php
-domains.sdweb.dk/index.php
-www.comfx.net
-pagerankcrunch.com/expireddomains/index.php
-buyexpireddomains.org
-webclassonline.com/domains/index.php
-findhotdomainnames.com/index.php
-hosterbox.com/expireddomains/index.php
-domainthis.com/index.php
-www.sitedetective.net/index.php
-domainrail.com/index.php
-sitedetective.justcrowd.com/index.php
-expireddomains.powerhoster.com/index.php
-www.domainrafter.com/index.php
-zd.se/index.php
-www.webclassonline.com/domains/index.php
-deletedexpired.com/index.php
-|
+
 
 # Matches #
 matches [

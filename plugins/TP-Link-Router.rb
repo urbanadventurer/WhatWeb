@@ -17,19 +17,7 @@ description "Detect TP-Link Router - homepage: http://www.tp-link.com/"
 # ShodanHQ results as at 2011-01-29 #
 # 13,292 for TP-LINK
 
-# Examples #
-examples %w|
-91.150.181.224
-91.150.182.113
-60.12.138.76
-217.96.99.102
-119.33.159.80
-95.51.75.221
-94.240.8.50
-94.240.22.46
-221.7.48.132
-83.2.72.130
-|	
+	
 
 # Matches #
 matches [

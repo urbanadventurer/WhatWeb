@@ -13,24 +13,7 @@ description "Sony projecter - Homepage: http://pro.sony.com/bbsc/ssr/cat-project
 # 91 for Network Projector
 # 15 for Network Projector "Projector User"
 
-# Examples #
-examples %w|
-142.58.48.6
-146.229.42.160
-128.197.198.203
-142.58.157.18
-142.58.56.7
-158.38.47.250
-146.229.42.162
-168.122.101.60
-128.197.198.204
-143.50.106.59
-168.122.101.61
-128.197.198.200
-142.58.157.16
-128.197.198.199
-142.58.157.17
-|
+
 
 # Matches #
 matches [

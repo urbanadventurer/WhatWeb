@@ -22,21 +22,7 @@ dorks [
 'intitle:"Synology DiskStation" inurl:"webman/index.cgi"'
 ]
 
-# Examples #
-examples %w|
-114.32.160.208:5000
-178.192.156.74
-77.251.129.204:5000
-88.183.148.31
-77.248.245.214
-63.201.78.6
-91.72.94.128
-213.93.79.102
-lss.lawsonsupportservices.com:5000
-www.thegpf.com:5000
-evergreenstables.com:5000
-jutten.homeip.net:5000
-|
+
 
 # Matches #
 matches [

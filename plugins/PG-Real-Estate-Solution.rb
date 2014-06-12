@@ -16,15 +16,7 @@ dorks [
 '"powered by PG Real Estate Solution"'
 ]
 
-# Examples #
-examples %w|
-demo.realtysoft.pro/realestate/
-anapavilla.ru/news/
-tiger-realty.ru
-profit-realty.com
-www.shtepiajone.com
-www.vip-real-estate.ru
-|
+
 
 # Matches #
 matches [

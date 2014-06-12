@@ -12,19 +12,7 @@ description "Caching server"
 # ShodanHQ results as at 2011-03-31 #
 # 11,711 for Footprint FPMCP
 
-# Examples #
-examples %w|
-4.27.22.138
-207.123.56.93
-198.78.205.8
-4.26.226.13
-205.128.77.47
-4.26.235.17
-8.12.199.41
-192.221.125.14
-8.27.145.18
-198.78.222.33
-|
+
 
 # Passive #
 def passive

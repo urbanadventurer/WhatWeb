@@ -12,19 +12,7 @@ description "SmugMug is a paid digital photo sharing website - Homepage: http://
 # ShodanHQ results as at 2011-03-16 #
 # 246 for x-powered-by smugmug
 
-# Examples #
-examples %w|
-65.175.86.69
-118.214.52.77
-184.85.132.77
-72.246.236.77
-173.222.52.77
-69.192.36.77
-184.50.52.77
-2.18.164.77
-88.221.48.77
-184.31.116.77
-|
+
 
 # Passive #
 def passive

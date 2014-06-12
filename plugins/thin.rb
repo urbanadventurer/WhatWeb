@@ -12,16 +12,7 @@ description "Thin is a Ruby web server that glues together 3 of the best Ruby li
 # ShodanHQ results as at 2012-03-13 #
 # 86 for thin web server
 
-# Examples #
-examples %w|
-107.20.126.11
-129.130.10.12
-204.236.197.164
-204.236.200.77
-204.236.202.217
-50.17.182.119
-107.20.131.66
-|
+
 
 # Matches #
 matches [

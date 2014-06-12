@@ -13,12 +13,7 @@ description "Simbix Framework [Russian] - Homepage: http://www.simbix.com/"
 # 6 for X-Powered-By: Simbix Framework
 # 2 for X-Simbix-Version
 
-# Examples #
-examples %w|
-62.61.7.144
-109.207.1.223
-109.207.1.219
-|
+
 
 # Matches #
 matches [

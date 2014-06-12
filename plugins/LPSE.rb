@@ -20,25 +20,7 @@ dorks [
 'inurl:"/eproc/app"'
 ]
 
-# Examples #
-examples %w|
-202.4.179.220
-202.152.21.230
-202.134.5.253
-118.97.42.190
-222.124.152.170
-118.98.65.60
-175.103.44.6
-180.249.189.67
-118.97.212.236
-lpse.pasamanbaratkab.go.id
-lpse.depnakertrans.go.id
-lpse.malukuprov.go.id
-lpse.jabarprov.go.id
-eproc-lpse.pln.co.id
-lpse.dpr.go.id
-lpse.depkeu.go.id
-|
+
 
 # Matches #
 matches [

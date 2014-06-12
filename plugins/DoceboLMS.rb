@@ -17,53 +17,7 @@ dorks [
 '"Powered by Docebo"'
 ]
 
-# Examples #
-examples %w|
-demo.docebo.org
-asp.docebo.com
-devel.docebo.com
-training.wellnessinstitute.com
-www.tulipu.com
-mplearning.org
-www.idhs.co.cc
-pcourse.co.cc
-www.uselli.it/d4b/
-www.communitysafetyprofessionals.com/learning/
-www.hamst7oob.com/study/
-techniquelearning.net
-www.frts-elearning.com
-ttaelearn.com
-docebo40.docebo.info
-www.giuseppeamenta.it/docebo4/
-www.teotawki.org
-campus.peacetour.org
-www.esotericeducation.org
-www.microbiologystudents.com/BMS_campus/
-ecollege24.com
-lms4.do-learning.com
-phteamsite.org
-erudinet.com
-www.activeelearning.com/docebolms/index.php
-www.bee-safe.dk
-lms.iaccglobal.com
-www.digitaaltrainen.nl
-www.lascuolasulweb.it/index.php
-www.tanvisoft.com/courses/index.php
-www.lms.magusict.net/index.php
-tracyatisdale.com/docebo/
-eap.panagiotakos.net/
-www.pic.edu.ph/myeClassroom/
-lnx.matefilia.it/docebo/
-academy.icris.nl
-www.ubaldogulotta.eu/docebo/
-chillzee.in
-www.auxiliarenenfermeria.com/docebo4/
-www.vasfitugun.net
-aulavirtualgirona.org
-www.e-unisob.it
-www.itas.co.za/docebo/doceboCore/
-avogadro.fauser.edu/admin.php
-|
+
 
 # Matches #
 matches [

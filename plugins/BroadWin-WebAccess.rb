@@ -20,23 +20,7 @@ dorks [
 'inurl:"broadweb/bwconfig.asp"'
 ]
 
-# Examples #
-examples %w|
-17.60.138.210.bn.2iij.net
-adsl-69-238-110-1.dsl.irvnca.pacbell.net
-60.251.141.84
-203.71.9.150
-www.asysco.jp
-email.coffeygroup.com
-abjbems.advantech.com.cn
-202.39.61.116
-76.227.114.130
-76.202.75.93
-86.47.37.175
-220.221.253.187
-99.60.226.65
-140.136.247.11
-|
+
 
 # Matches #
 matches [

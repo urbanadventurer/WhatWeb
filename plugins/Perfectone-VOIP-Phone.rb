@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
 version "0.1"
 description "Perfectone VOIP phone - Homepage: http://www.perfectone.nl/"
 
-# Examples #
-examples %w|
-89.176.142.164:9999
-|
+
 
 # Matches #
 matches [

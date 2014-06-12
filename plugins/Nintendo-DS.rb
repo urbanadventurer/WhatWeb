@@ -17,11 +17,7 @@ description "Nintendo DS video game console - Homepage: http://www.nintendo.com/
 # ShodanHQ results as at 2011-08-02 #
 # 33 for "Nintendo Wi-Fi Network Adapter"
 
-# Examples #
-examples %w|
-119.26.10.63
-220.40.23.154
-|
+
 
 # Passive #
 def passive

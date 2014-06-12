@@ -12,22 +12,7 @@ description "This plugin retrieves the X-Host, X-HostName, X-Host-Name and X-Hos
 # About 957 ShodanHQ results for X-Host @ 2011-01-08
 # About 20 ShodanHQ results for X-Host-Name @ 2011-01-08
 
-# Examples #
-examples %w|
-217.69.128.106
-98.136.92.82
-81.246.3.122
-217.69.128.87
-199.34.228.122
-203.104.22.33
-81.246.3.122
-213.128.136.66
-62.201.170.12
-81.246.3.155
-207.188.20.150
-212.64.133.250
-159.153.98.31
-|
+
 
 # Passive #
 def passive

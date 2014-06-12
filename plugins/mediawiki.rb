@@ -24,23 +24,7 @@ dorks [
 'inurl:Special:Version "This wiki is powered by MediaWiki"'
 ]
 
-# Examples #
-examples %w|
-http://en.wikipedia.org/wiki/Main_Page
-http://en.wiktionary.org/wiki/Main_Page
-http://en.wikibooks.org/wiki/Main_Page
-http://en.wikisource.org/wiki/Main_Page
-http://en.wikiquote.org/wiki/Main_Page
-http://commons.wikimedia.org/wiki/Main_Page
-http://en.wikinews.org/wiki/Main_Page
-http://species.wikimedia.org/wiki/Main_Page
-http://wiki.case.edu/wiki/Main_Page
-http://www.cgnotebook.com/wiki/Main_Page
-http://en.cinoku.com/wiki/Main_Page
-http://desciclopedia.org/wiki/Main_Page
-http://celestia.pl/Wiki/Main_Page
-http://www.boincatpoland.org/wiki/Main_Page
-|
+
 
 # Matches #
 matches [

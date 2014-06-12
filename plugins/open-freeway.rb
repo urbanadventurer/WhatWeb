@@ -14,27 +14,7 @@ dorks [
 '"Copyright * Zacware" "Welcome Guest" "Advanced Search" "Shopping Cart" "Checkout"'
 ]
 
-# Examples #
-examples %w|
-openfreeway.org/demo/frontdemo/
-ambicentro.com/openfreeway/
-travisnet.com
-shop.mostads.net
-ticketyboo.thespace.com.au
-modajewellery.co.uk
-next.perkinho.com
-ezlabs.biz/store/
-joomlademo.ca/freeway/
-tdsdesertsafari.com
-freeway.isu.edu
-cynthiajhall.com/freeway/
-callingalldogsutah.com/register/
-cyberelectronicsonline.com
-alnaturalhealth.com/freeway/
-www.adairfire.com.au/shop/
-grahamweighcycles.co.uk
-epowertools.com.au/freeway/
-|
+
 
 # Matches #
 matches [

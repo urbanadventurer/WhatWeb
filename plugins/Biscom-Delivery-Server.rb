@@ -20,34 +20,7 @@ dorks [
 'inurl:"bds/Login.do"'
 ]
 
-# Examples #
-examples %w|
-portal.millergrossbard.com/bds/Login.do
-tc.travelingcoaches.com/bds/Login.do
-https://sft.cdm.com/bds/Login.do
-https://download.ibsa.org/bds/Login.do
-https://bds.fslso.com/bds/Login.do
-https://bds.elliemae.com/bds/Login.do
-https://deliveries.bostonbeer.com/bds/Login.do
-https://secure.stinson.com/bds/Login.do
-https://transfer.softprocorp.com/bds/Login.do
-https://ec2-174-129-12-94.compute-1.amazonaws.com/bds/Login.do
-https://send.spacex.com/bds/Login.do
-https://send.spacex.com/bds/Login.do
-https://delivery.caci.com/bds/Login.do
-https://download.fifsinc.com/bds/Login.do
-https://chbft.childrens.harvard.edu/bds/Login.do
-https://bds.fslso.com/bds/Login.do
-https://transfer.hmmh.com/bds/Login.do
-https://dropbox.jwhomes.com/bds/Login.do
-https://share.sapient.com/bds/Login.do
-https://petsrv.tyks.fi/bds/Login.do
-https://secureemail.nih.gov/bds/Login.do
-https://biscomserver.masbilling.com/bds/Login.do
-https://sft.pearson.com/bds/Login.do
-https://mdtclinicaltransfer.com/bds/Login.do
-https://dcp.benefitplanservices.com/bds/Login.do
-|
+
 
 # Matches #
 matches [

@@ -18,28 +18,7 @@ dorks [
 '"powered by KnowledgeTree"'
 ]
 
-# Examples #
-examples %w|
-168.250.53.67/dashboard.php
-168.250.53.67/login.php
-cc.webcomunicaciones.com/dashboard.php
-cc.webcomunicaciones.com/login.php
-dc.phonic.com/dashboard.php
-ged.forthac.com/dashboard.php
-ged.forthac.com/login.php
-knowledgetree.liftkids.org/dashboard.php
-knowledgetree.liftkids.org/login.php
-productsupport.pelco.com/dashboard.php
-productsupport.pelco.com/login.php
-qms.harvestbc.com.au/dashboard.php
-qms.harvestbc.com.au/login.php
-webdms.ciat.org:8080/dashboard.php
-webdms.ciat.org:8080/login.php
-www.apex-telescope.org/knowledgetree/dashboard.php
-www.apex-telescope.org/knowledgetree/login.php
-www.mercyprotocol.com/dashboard.php
-www.mercyprotocol.com/login.php
-|
+
 
 matches [
 

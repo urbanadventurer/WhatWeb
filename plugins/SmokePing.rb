@@ -17,12 +17,7 @@ dorks [
 '"Probing Targets" inurl:"show.cgi?target="'
 ]
 
-# Examples #
-examples %w|
-oss.oetiker.ch/smokeping-demo/
-smokeping.ovh.net
-p19.smokeping.ovh.net
-|
+
 
 # Matches #
 matches [

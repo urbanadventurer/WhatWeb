@@ -165,7 +165,7 @@ fi
 if [[ "$VERBOSE" == "FALSE" ]]; then
 	WHATWEB_QUIET="-q --no-errors"
 	# gggooglescan's quiet mode is broken in v0.4
-	if [[ ! -z `cat "$GOOGLESCAN" | grep "getopts" | grep q` ]]; then
+	if [[ ! -z `grep "getopts" "$GOOGLESCAN" | grep q` ]]; then
 		GSCAN_QUIET="-q"
 	fi
 fi

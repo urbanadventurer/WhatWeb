@@ -34,28 +34,6 @@ Plugin.define "Joomla" do
          '"powered by joomla" inurl:option=com_content'
         ]
   
-  # Examples #
-  examples %w|
-biokolchuga.com
-cosmicfantasia.net.au
-rustedfables.com
-www.1000usi.ch
-www.azrul.com
-www.bittdesign.nl
-www.clubjoomla.com
-www.danone.com
-www.imusictools.com
-www.joomla.org
-www.joomlawebdesigns.com
-www.livelovehope.org
-82.223.114.249
-www.gendervision.org/joomla15/
-da-anime.info
-www.miru.net
-hostingdemo.joomlapolis.com
-www.johngiczewski.com
-|
-    
 # Matches #
     matches [
              { :version=>"1.0", :regexp=>/<meta name="Generator" content="Joomla! - Copyright \(C\) 200[0-9] - 200[0-9] Open Source Matters. All rights reserved." \/>/ },
@@ -284,6 +262,7 @@ www.johngiczewski.com
                       "479cce960362b0e17ca26f2c13790087"],
                      ["components/com_contact/metadata.xml",
                       "24095af7fbd32685fe2c817544df5117"]],
+
                     "1.6.0" =>
                     [["joomla.xml",
                       "f1c5fb5aa195e187b7847ddf3b3c492c"]],
@@ -305,6 +284,7 @@ www.johngiczewski.com
                     "1.6.6" =>
                     [["joomla.xml",
                       "936af8e7615bbc1aecd0181773141f9e"]],
+
                     "1.7.0" =>
                     [["joomla.xml",
                       "b575e7d089b8bfea19bcc9c7393ccfa1"]],
@@ -323,6 +303,7 @@ www.johngiczewski.com
                     "1.7.5" =>
                     [["joomla.xml",
                       "ac25a53c5412bc00cb9b66d5ba657c4d"]],
+
                     "2.5.0" =>
                     [["joomla.xml",
                       "bab83d5cec8aabbdef29509cef797cc1"]],
@@ -343,8 +324,46 @@ www.johngiczewski.com
                       "9a6697bf0a6b3fd8c367d52a8163e289"]],
                     "2.5.6" =>
                     [["joomla.xml",
-                      "fd03f70094e980a288df57b74ba8bdaa"]]]
-    
+                      "fd03f70094e980a288df57b74ba8bdaa"]],
+                    "2.5.7" =>
+                    [["joomla.xml",
+                      "ddfc0ffae42633ae0792879e72848eef"]],
+                    "2.5.8" =>
+                    [["joomla.xml",
+                      "2f60cbc0aacc748ead8942eff735e632"]],
+                    "2.5.9" =>
+                    [["joomla.xml",
+                      "02f88367ece6d41aa277de57c48828b3"]],                     
+                    "2.5.10" =>
+                    [["joomla.xml",
+                      "0327fe30ad173c02eed4d38b9db65326"]],
+                    "2.5.11" =>
+                    [["joomla.xml",
+                      "9dba426830a3728e3fa6c7a53b52502a"]],
+
+                    "3.0.0" =>
+                    [["joomla.xml",
+                      "83829827b08ba0d13fd395aa2c740109"]],
+                    "3.0.1" =>
+                    [["joomla.xml",
+                      "b8a6ca102b9ce957f7f5a313cace883e"]],
+                    "3.0.2" =>
+                    [["joomla.xml",
+                      "a9b6c08ea9a2586f94a99f00a1d2854c"]],
+                    "3.0.3" =>
+                    [["joomla.xml",
+                      "94620da88c804fd899de117b8e93629e"]],
+                    "3.0.4" =>
+                    [["joomla.xml",
+                      "9e3c107a884b973ffb6a1d6aebc2d7e6"]],
+
+                    "3.1.0" =>
+                    [["joomla.xml",
+                      "989c6a5368dcf8eb84103209c3664032"]],
+                    "3.1.1" =>
+                    [["joomla.xml",
+                      "9cf5894facfb6fffbc599e19b939d717"]]]
+
         v = Version.new("Joomla", versions, @base_uri)
 
         version = v.matches_format

@@ -15,13 +15,7 @@ description "WhiteBoard is a fast, powerful, and free open source discussion boa
 # Google rsults as at 2010-08-15 #
 # 21 for "powered by Whiteboard"
 
-# Examples #
-examples %w|
-community.sarosoftware.com
-designbyhand.net/community/index.php
-aduhaii-hp.com/forum/index.php
-moresms.org/forum/index.php
-|
+
 
 # Matches #
 matches [

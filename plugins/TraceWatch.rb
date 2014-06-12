@@ -17,33 +17,7 @@ dorks [
 '"TraceWatch" "Website Statistics and Traffic Analysis Software" "author"'
 ]
 
-# Examples #
-examples %w|
-www.palslimo.com/twatch/
-marcelprestel.com/twatch/
-www.freeetv.com/twatch/
-the1337arcade.com/twatch/
-82.156.61.79/twatch/
-www.dejkam.com/twatch/
-www.2networkit.com/stats/
-www.bogdaniacob.ro/twatch/
-tradestatz.com/twatch/
-www.bangii.com/twatch/
-www.steel-support.no/twatch/
-www.stat.irannevis.com/
-www.judohk.cz/twatch/
-pwuts.ir/twatch/
-eendjeafferden.nl/twatch/
-ssanenergy.net/twatch/
-www.bandliste.de/twatch/
-bbs.jnustu.net/twatch/
-library.virdit.com/floora/aisleb/slotk/
-www.sexylactation.com/twatch/
-www.twatch.saveitwith.us
-support.thaicyberu.go.th/twatch/
-www.mediasoft.bg/twatch/
-gratis-annonser.com/twatch03/
-|
+
 
 # Matches #
 matches [

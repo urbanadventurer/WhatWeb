@@ -18,13 +18,7 @@ dorks [
 '"powered by chillyCMS"'
 ]
 
-# Examples #
-examples %w|
-chillycms.bplaced.net/chillyCMS/core/show.site.php
-demo.opensourcecms.com/chillycms/core/show.site.php
-frozenpepper.de/chillyCMS/core/show.site.php
-www.steffisgarten.de
-|
+
 
 matches [
 

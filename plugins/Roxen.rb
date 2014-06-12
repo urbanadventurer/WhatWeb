@@ -12,20 +12,7 @@ description "Roxen WebServer is a full-featured open-source web server distribut
 # ShodanHQ results as at 2011-04-17 #
 # 1,051 for Roxen
 
-# Examples #
-examples %w|
-princeton.edu
-145.92.233.201
-60.234.1.6
-178.237.32.243
-202.234.167.54
-212.247.28.196
-145.92.233.211
-90.225.64.52
-90.145.59.235
-128.112.133.48
-178.237.32.227
-|
+
 
 # Matches #
 matches [

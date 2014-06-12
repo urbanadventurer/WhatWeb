@@ -17,14 +17,7 @@ dorks [
 'intitle:"Nucleus Install" "Install Nucleus" "Hostname" "Username" "Password"'
 ]
 
-# Examples #
-examples %w|
-mydemo.opensourcecms.com/nucleus1203/
-www.restauracjaitaliana.eu/install.php
-daggerweb.110mb.com/install.php
-rubstor.110mb.com/install.php
-pontona.110mb.com/install.php
-|
+
 
 # Matches #
 matches [

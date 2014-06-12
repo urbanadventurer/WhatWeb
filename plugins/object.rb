@@ -10,11 +10,7 @@ version "0.1"
 description "HTML object tag. This can be audio, video, Flash, ActiveX, Python, etc. More info: http://www.w3schools.com/tags/tag_object.asp"
 
 # Exmples #
-examples %w|
-58.152.54.87
-www.morebankusa.com
-mheller.com/testax.htm
-|
+
 
 # Matches #
 matches [

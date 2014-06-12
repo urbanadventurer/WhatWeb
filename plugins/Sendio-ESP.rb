@@ -15,24 +15,7 @@ description "Sendio's E-mail Security Platform, (formerly known as I.C.E. Box) i
 # Google results as at 2011-09-20 #
 # 6 for inurl:"sendio/ice/ui/"
 
-# Examples #
-examples %w|
-wasd.sendio.com/sendio/ice/ui/
-64.233.217.40/sendio/ice/ui/
-67.108.185.14/sendio/ice/ui/
-208.101.185.12/sendio/ice/ui/
-comptoncity.org/sendio/ice/ui/
-https://vice.bluelakegroup.net/sendio/ice/ui/
-https://icebox.bluelakegroup.com/sendio/ice/ui/
-69.21.201.146
-209.255.178.195
-69.8.120.8
-66.64.162.100
-98.124.169.3
-70.88.236.212
-67.216.68.138
-67.53.113.178
-|
+
 
 # Matches #
 matches [

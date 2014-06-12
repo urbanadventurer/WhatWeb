@@ -18,23 +18,7 @@ dorks [
 'intitle:"Login" inurl:"zport" "Zenoss, Inc." "Version"'
 ]
 
-# Examples #
-examples %w|
-zenoss.wvnoc.com:8080
-zenoss.sea5.speakeasy.net:8080/zport/dmd/Devices/rrdTemplates/ethernetCsmacd
-zenoss.miniclip.com:8080/zport/dmd/
-zenoss.blastro.com:8080
-zenoss.santepediatrics.com:8080
-serah.fp.hamzahkhan.com/zport/acl_users/cookieAuthHelper/login_form
-https://poblano.uits.indiana.edu/zport/acl_users/cookieAuthHelper/login_form
-https://zenoss.stanford.edu/
-https://zenoss.saas.appdynamics.com/
-https://zenoss.sixfeetup.com/
-https://zenoss.hosted.exlibrisgroup.com/ 
-https://servicemon.mtu.edu/zport/dmd/Services/IpService/Privileged/serviceclasses/snmp
-https://ccls.sfsu.edu:8080/zport/acl_users/
-https://poblano.uits.indiana.edu/zport/acl_users/
-|
+
 
 # Matches #
 matches [

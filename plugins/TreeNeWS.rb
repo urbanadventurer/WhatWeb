@@ -13,20 +13,7 @@ description "Probably a 3Com Corporation or Trapeze Networks wireless access poi
 # ShodanHQ results as at 2011-09-18 #
 # 381 for TreeNeWS
 
-# Examples #
-examples %w|
-203.234.39.188
-194.47.182.10
-93.95.110.11
-203.234.39.188
-141.61.112.11
-155.158.170.254
-113.212.224.150
-220.68.131.254
-142.25.92.13
-194.47.178.9
-165.246.3.15
-|
+
 
 # Matches #
 matches [

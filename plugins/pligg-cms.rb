@@ -17,78 +17,7 @@ dorks [
 '"Powered By Pligg CMS"'
 ]
 
-# Examples #
-examples %w|
-1indianews.com
-67.20.75.195
-adsbookmarks.com
-anybookmark.com
-articlesdigg.com
-android-store.com
-blogiddy.com
-webbuildingnews.net
-scholarlinks.net
-bestforvideo.com
-blak-jak.com
-blueprintarticle.com
-digg.bkk.in.th
-entreprise-marketing.com
-feedkr.com
-formula1digger.com
-huntsman08.com
-ithemes.org
-izeby.com
-maseed.com
-masterhubpage.com
-nablr.com
-newsmahal.com
-news.polarmaru.org
-pliggvote.com
-pluggit.org
-poststory.freenice.org
-sabuyshopstore.com
-um.mu
-www.5olio.com/home/
-www.addalo.it
-www.americansnoop.com
-www.articwoof.com
-www.asqit.com
-www.astorefolder.com
-www.bestpricesfvday.com
-www.blogiddy.com
-www.celebwebnews.com
-www.cheapstockmall.com
-www.digb.org
-www.diggdirect.com
-www.digglnw.com
-www.enlightenet.com
-www.ensure.ws
-www.ezdigg.com
-www.find4get.com
-www.forexnewshub.com
-www.formula1digger.com
-www.gimiq.com
-www.imspike.com
-www.indelve.com/index.php
-www.internetshoppingsites.com
-www.jacobsondigital.com/index.php
-www.justzz.com
-www.newsmahal.com
-www.penang360.net
-www.piedmontmission.org
-www.pluggit.org
-www.poststory.freenice.org
-www.rhconseil.net
-www.seofirmthailand.com
-www.streetviewfunny.com
-www.submitpligg.com
-www.twendle.com
-www.ujeed.com
-www.wagill.com
-www.waxxxed.com
-www.webindex4u.com
-www.we-indians.net
-|
+
 
 # Matches #
 matches [
@@ -98,6 +27,9 @@ matches [
 
 # JavaScript # Twitter Feed
 { :text=>"jQuery.jTwitter('pligg', function (userdata) {" },
+
+# Default Favicon
+{ :md5=>"7c548077f2a8cc6099858eb1bf9201b4", :url=>"/favicon.ico" },
 
 ]
 

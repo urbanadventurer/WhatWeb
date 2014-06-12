@@ -15,25 +15,7 @@ description "DeleGate is a multi-purpose application level gateway, or a proxy s
 # ShodanHQ results as at 2011-06-04 #
 # 393 for DeleGate-Ver
 
-# Examples #
-examples %w|
-132.204.42.200
-132.204.42.201
-132.204.42.202
-132.204.42.203
-132.204.42.204
-132.204.42.206
-132.204.42.207
-132.204.42.208
-132.204.42.209
-132.204.42.234
-211.16.122.162
-122.219.129.12
-132.204.42.220
-62.245.234.141
-168.210.113.61
-210.254.60.70
-|
+
 
 # Passive #
 def passive

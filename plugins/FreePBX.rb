@@ -12,12 +12,7 @@ description "FreePBX is an easy to use web based GUI (graphical user interface) 
 # ShodanHQ results as at 2011-06-12 #
 # 10 for FreePBX http
 
-# Examples #
-examples %w|
-80.190.158.133
-67.23.28.142
-200.27.117.19
-|
+
 
 # Passive #
 def passive

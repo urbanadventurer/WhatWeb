@@ -20,17 +20,7 @@ dorks [
 'intitle:"TiVo DVR" "Congratulations" "You\'ve successfully connected your TiVo"'
 ]
 
-# Examples #
-examples %w|
-66.57.118.176
-208.96.183.183
-97.87.141.250
-76.78.179.18
-71.116.244.4
-24.161.58.124
-129.59.56.111
-128.164.248.254
-|
+
 
 # Passive #
 def passive

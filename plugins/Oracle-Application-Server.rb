@@ -15,24 +15,7 @@ description "Oracle Application Server - superseded by Oracle iAS (Internet Appl
 # 15,122 for Oracle-Application-Server-10g
 #    384 for Oracle-Application-Server-11g
 
-# Examples #
-examples %w|
-190.143.144.78
-203.160.254.58
-209.87.180.48
-216.52.116.180
-66.150.25.179
-217.6.182.59
-200.68.83.105
-121.17.30.14
-194.154.157.91
-213.155.107.37
-199.1.72.48
-137.254.172.188
-146.67.140.200
-170.97.67.147
-129.241.56.35
-|
+
 
 # Matches #
 matches [

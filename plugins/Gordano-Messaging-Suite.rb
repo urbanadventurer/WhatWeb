@@ -13,26 +13,7 @@ description "Gordano WebMail Server web interface - Homepage: http://gordano.com
 # 1,344 for Gordano Messaging Suite
 #    18 for Gordano -Messaging
 
-# Examples #
-examples %w|
-62.49.107.82
-217.16.50.138
-69.67.96.180
-217.16.50.178
-91.151.210.214
-69.67.96.176
-77.239.97.218
-69.67.96.152
-93.166.166.214
-207.159.60.226
-83.145.127.235
-83.145.127.225
-83.145.127.2
-83.145.127.231
-83.145.127.7
-83.145.127.181
-194.184.184.5
-|
+
 
 # Matches #
 matches [

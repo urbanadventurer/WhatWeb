@@ -19,10 +19,7 @@ dorks [
 'intitle:"DCS" Camera inurl:web inurl:login'
 ]
 
-# Examples #
-examples %w|
-220.229.22.122
-|
+
 
 matches [
 

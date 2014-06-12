@@ -20,18 +20,7 @@ dorks [
 '"powered by CCMS"'
 ]
 
-# Examples #
-examples %w|
-gameworldcheats.com
-www.tolvuleikir.is
-www.blpnetwork.com/index.php
-nintygamer.co.za/index.php
-ihrgamingnet.com
-www.playstation-3.co.za
-moddit.net
-gcult.the-chosen.ch
-www.gamezbox.co.uk/index.php
-|
+
 
 # Matches #
 matches [

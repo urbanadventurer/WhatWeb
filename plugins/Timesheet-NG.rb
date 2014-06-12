@@ -16,14 +16,7 @@ dorks [
 '"Username" "Timesheet Login" inurl:login ext:php'
 ]
 
-# Examples #
-examples %w|
-demo.timesheetng.org
-sklad.cumc.columbia.edu/timesheets/login.php
-asign.net/login.php
-www.logicplanet.com/timesheet/login.php
-www.reagola.com/time/login.php
-|
+
 
 matches [
 

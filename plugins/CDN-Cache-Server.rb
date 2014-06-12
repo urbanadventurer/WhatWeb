@@ -12,15 +12,7 @@ description "CDN-Cache-Server"
 # ShodanHQ results as at 2011-03-06 #
 # 5,686 for Server: "Cdn Cache Server"
 
-# Examples #
-examples %w|
-58.248.245.53
-113.6.248.43
-58.55.124.92
-220.170.192.89
-183.60.136.25
-218.60.31.175
-|
+
 
 # Passive #
 def passive

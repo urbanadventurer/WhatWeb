@@ -18,16 +18,7 @@ dorks [
 '"Powered by phpMyRealty Professional"'
 ]
 
-# Examples #
-examples %w|
-www.phpmyrealty.com/demo/
-www.phpmyrealty.com/demo/admin/
-www.controlhome.net/pmr/
-realtyworksct.com/schools.php
-www.houses-of-nigeria.com
-www.gpvn.net
-www.realestatebuyerservices.com
-|
+
 
 # Matches #
 matches [

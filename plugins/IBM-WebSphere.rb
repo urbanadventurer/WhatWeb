@@ -20,17 +20,7 @@ dorks [
 'inurl:"snoop" intitle:"Snoop Servlet" "Request method"'
 ]
 
-# Examples #
-examples %w|
-60.30.108.221
-210.28.216.232
-111.75.206.14
-216.105.250.20
-218.31.157.93
-209.5.145.203
-150.183.158.184
-www.cassaedilepg.it:7080/snoop
-|
+
 
 # Matches #
 matches [

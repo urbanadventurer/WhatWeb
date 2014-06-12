@@ -16,18 +16,7 @@ description "Minimal Java HTTP server class. This class implements a very small 
 #  87 for Acme.Serve -JWS -TJWS
 #  87 for Acme.Serve -Rogatkin
 
-# Examples #
-examples %w|
-192.68.223.228
-208.76.173.18
-161.253.152.178
-216.48.129.151
-130.184.96.9
-128.200.129.50
-160.129.6.231
-168.215.123.30
-99.102.26.89
-|
+
 
 # Passive #
 def passive

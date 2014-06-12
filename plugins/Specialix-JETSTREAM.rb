@@ -12,17 +12,7 @@ description "Specialix JETSTREAM Network Access Server allows authorized remote 
 # ShodanHQ results as at 2011-09-04 #
 # 12 for Specialix
 
-# Examples #
-examples %w|
-129.119.35.250
-129.119.22.223
-129.119.231.250
-129.119.233.150
-129.119.26.250
-141.217.128.5
-129.119.42.50
-129.119.19.251
-|
+
 
 # Matches #
 matches [

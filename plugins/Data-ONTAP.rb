@@ -12,18 +12,7 @@ description "Data ONTAP - fully virtualized data management environment. Data ON
 # ShodanHQ results as at 2011-06-05 #
 # 110 for Data ONTAP
 
-# Examples #
-examples %w|
-194.27.180.151
-131.216.9.94
-138.100.243.161
-128.163.2.53
-163.25.104.58
-138.100.8.61
-129.8.15.171
-152.2.235.28
-129.8.15.167
-|
+
 
 # Passive #
 def passive

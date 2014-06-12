@@ -16,11 +16,7 @@ dorks [
 '"KMSoft Guestbook" inurl:form.asp'
 ]
 
-# Examples #
-examples %w|
-www.kmsoft.org/demo/KmsoftGB/form.asp
-directmovies.net/form.asp
-|
+
 
 # Matches #
 matches [

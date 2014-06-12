@@ -12,14 +12,7 @@ description "SuperSalon is one of the newest salon software systems in the marke
 # ShodanHQ results as at 2011-06-22 #
 # 403 for "SuperSalon POS"
 
-# Examples #
-examples %w|
-70.24.92.23
-76.236.75.189
-208.107.212.163
-68.191.186.180
-70.130.157.79
-|
+
 
 # Passive #
 def passive

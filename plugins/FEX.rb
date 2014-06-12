@@ -20,22 +20,7 @@ dorks [
 'intitle:"F*EX - File EXchange" "F*EX - Frams\' Fast File EXchange"'
 ]
 
-# Examples #
-examples %w|
-87.204.56.180
-157.99.62.159
-176.9.82.163
-213.73.74.232
-194.98.76.2
-82.195.74.15
-134.108.32.3
-fex.rus.uni-stuttgart.de
-fex.pink.de
-exo.iee.lu:31416
-server2.rz.uni-leipzig.de
-fex.rus.uni-stuttgart.de:8080/index.html
-https://vermittlerservice.deltalloyd.de
-|
+
 
 # Matches #
 matches [

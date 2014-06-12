@@ -21,13 +21,7 @@ dorks [
 '"FreeNAS" "Please log in" inurl:"account/login/"'
 ]
 
-# Examples #
-examples %w|
-200.236.3.56
-85.235.206.74
-193.219.48.159
-83.150.90.94
-|
+
 
 # Matches #
 matches [

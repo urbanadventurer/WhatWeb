@@ -12,12 +12,7 @@ description "TRIDENT7 Wave7 optical line terminal (OLT) - Homepage: http://www.e
 # ShodanHQ results as at 2012-05-11 #
 # 5 for Wave7 Optics TRIDENT7
 
-# Examples #
-examples %w|
-189.84.190.5
-204.111.60.20
-216.189.209.206
-|
+
 
 # Matches #
 matches [

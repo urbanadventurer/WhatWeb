@@ -16,25 +16,7 @@ description "The Google Search Appliance (GSA) is a piece of hardware that corpo
 # Google results as at 2011-09-16 #
 # 19 for inurl:"EnterpriseController" -code
 
-# Examples #
-examples %w|
-38.106.212.158
-https://38.106.212.158
-https://38.106.212.158:8443
-38.106.212.158:7800
-38.106.212.158:8000
-189.59.8.157
-googlebox.oit.umass.edu:8000/EnterpriseController
-webcrawl2.oit.umass.edu:8000/EnterpriseController
-google.informs.org:8000/EnterpriseController
-google.mars-inc.com:8000/EnterpriseController
-https://search.ku.edu:8443/EnterpriseController
-https://gsa12.enterprisedemo-google.com:8443/EnterpriseController
-https://rummage.murdoch.edu.au:8443/EnterpriseController
-https://search5.iu.edu:8443/EnterpriseController
-https://search.life.ku.dk:8443/EnterpriseController
-https://google.umn.edu:8443/EnterpriseController
-|
+
 
 # Matches #
 matches [

@@ -18,20 +18,7 @@ dorks [
 '"Powered by PHP Photo Album"'
 ]
 
-# Examples #
-examples %w|
-www.phpalbum.net/demo4/
-www.schoenstatt.org/media/
-www.brightbaits.com/MediaSite/main.php
-www.creativeinterests.net/gallery/
-www.gamewelldiaphone.com/gallery/
-www.livefromhawaii.com/photos/
-www.oakburnpark.com/gallery/
-www.domainofdeath3.com/album/
-www.havenzone.com/photos/
-www.showboatlures.com/photos/
-hillbillyjack.com/phpalbum/
-|
+
 
 # Matches #
 matches [

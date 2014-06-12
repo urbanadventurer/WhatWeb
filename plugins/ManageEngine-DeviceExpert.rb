@@ -17,10 +17,7 @@ dorks [
 'intitle:"ManageEngine DeviceExpert" "Best viewed in IE 7.0 and above"'
 ]
 
-# Examples #
-examples %w|
-demo.deviceexpert.com
-|
+
 
 # Matches #
 matches [

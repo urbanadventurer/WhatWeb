@@ -17,12 +17,7 @@ dorks [
 'intitle:"RIPS - A static source code analyser for vulnerabilities in PHP scripts" "Quickstart" "Locate your PHP path/file"'
 ]
 
-# Examples #
-examples %w|
-https://globalcommhost.com/rips/
-www.wtfiml33t.com/index.php
-rodeo111.byethost22.com
-|
+
 
 # Matches #
 matches [

@@ -13,18 +13,7 @@ description "Huawei network switch - Quidway series - Homepage: http://www.huawe
 # 103,440 for Lanswitch
 # 103,166 for Lanswitch HttpServer
 
-# Examples #
-examples %w|
-124.114.235.145
-84.14.134.218
-113.195.135.38
-110.93.195.197
-200.222.73.2
-221.131.22.107
-222.169.175.210
-222.28.255.20
-219.143.28.76
-|
+
 
 # Passive #
 def passive

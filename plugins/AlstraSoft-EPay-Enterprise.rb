@@ -21,19 +21,7 @@ dorks [
 '"Powered by EPay Enterprise" inurl:"shop.htm?cid="'
 ]
 
-# Examples #
-examples %w|
-epayworld.com/shop.htm?cid=32&action=view
-ppxnow.com/shop.htm?cid=17&action=view
-leonardjamespromotions.org/
-payemoney.com/shop.htm?cid=12&action=view
-www.rapid-pay.net/shop.htm?cid=19
-iranwallet.com/shop.htm?cid=33&action=view
-www.blizsoft.com/enterprise/shop.htm?cid=42&action=view
-fbmoney.comoj.com/EPay/shop.htm?cid=11&action=view
-www.lionstridehome.com/shop.htm?cid=17&action=view
-64.191.68.135/shop.htm?cid=8&action=view
-|
+
 
 # Matches #
 matches [

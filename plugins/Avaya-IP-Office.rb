@@ -12,14 +12,7 @@ description "IP Office is Avaya's telephone system for small and medium enterpri
 # ShodanHQ results as at 2011-05-30 #
 # 909 for IPOffice
 
-# Examples #
-examples %w|
-212.247.78.133
-116.90.138.70
-70.88.206.115
-195.182.128.66
-93.186.49.204
-|
+
 
 # Matches #
 matches [

@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
 version "0.1"
 description "TeamViewer - the All-In-One Solution for Remote Access and Support over the Internet - Homepage: http://www.TeamViewer.com"
 
-# Examples #
-examples %w|
-152.1.60.42
-|
+
 
 # Matches #
 matches [

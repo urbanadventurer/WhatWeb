@@ -17,15 +17,7 @@ dorks [
 '"Total" "query" "Time now is" "Powered by 6kbbs"'
 ]
 
-# Examples #
-examples %w|
-www.6kbbs.net
-tenhex.com/online.php
-www.company365.net
-www.club8th.com
-bbs.qd8g.cn/userlist.php
-www.gaopoog.com
-|
+
 
 # Matches #
 matches [

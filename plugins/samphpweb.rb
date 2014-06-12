@@ -9,29 +9,7 @@ Plugin.define "samPHPweb" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
 version "0.1"
 description "samPHPweb is a web feature that is included with the installation of SAM Broadcaster. It allows you to run a PHP driven site from your web host that communicates with your SAM Database. - homepage: http://www.spacialaudio.com/?page=sam-broadcaster&tab=tab-sam-broadcaster-overview"
-examples %w|
-mattersofmusic.com/954
-www.babesociety.dk/playlist.php
-www.theorangeradio.com
-sam.eve-radio.com
-www.stealth.musicvaultradio.com
-www.troika-web.com
-corelinkradio.com/playlist/
-www.zavoyradio.com
-www.southernfriedsounds.com/samHTMweb/
-www.radiodjscott.co.uk/samHTMweb/
-astyria.thaitavern.com
-www.dukii.com/shoutcast/
-listen.scrambledorfriedradio.net/playlist.php
-elfradio.bwworld.ru
-www.dwdc.net/samz/
-request.keeskoster.com
-taxigirl.gamingradio.net/playlist/
-interactive.star1045.net.au
-www.limbikfreq.com/samweb/
-www.stallionradionetwork.com/stallion1/
-www.tobeactive.com/radio/
-|
+
 
 matches [
 

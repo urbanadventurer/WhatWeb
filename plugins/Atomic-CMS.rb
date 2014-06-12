@@ -17,14 +17,7 @@ dorks [
 '"Powered by AtomicCms"'
 ]
 
-# Examples #
-examples %w|
-atomiccms.com
-alexandershapovalov.com
-cookbrownrice.com
-www.bobotics319.com
-dev.conesandsconesicecreamery.com
-|
+
 
 # Matches #
 matches [

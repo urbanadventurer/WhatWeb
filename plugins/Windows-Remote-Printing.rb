@@ -16,13 +16,7 @@ dorks [
 'inurl:Printers/ipp_0001.asp intitle:"All Printers on"'
 ]
 
-# Examples #
-examples %w|
-000s-uniprint.unicard.unimelb.edu.au/printers/ipp_0001.asp
-128.250.167.122/printers/ipp_0001.asp
-www.makouei.ir/printers/ipp_0001.asp
-www.ace-alaska.net/OLDWEB/printers/ipp_0001.asp
-|
+
 
 # Matches #
 matches [

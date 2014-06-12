@@ -21,19 +21,7 @@ dorks [
 '"powered by Netref"'
 ]
 
-# Examples #
-examples %w|
-annuaires.massage-cachemirien.org
-circul.arts.free.fr/annuaire/
-transport.annugratuit.net
-www.gratuit-du-net.net
-www.2aazaide.com/annuaire/
-www.puget-passion.fr/Annuaire/
-www.entrenous74.com/netref/
-www.vacances-faciles.net/annuaire/
-www.novazis.com
-www.autocross-france.net/Divers/Netref4/
-|
+
 
 # Matches #
 matches [

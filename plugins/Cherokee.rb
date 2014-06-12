@@ -12,16 +12,7 @@ description "Cherokee is a very fast, flexible and easy to configure Web Server.
 # ShodanHQ results as at 2011-05-30 #
 # 3,196 for Cherokee
 
-# Examples #
-examples %w|
-www.cherokee-project.com
-50.17.223.157
-184.72.217.203
-161.53.29.203
-81.203.243.120
-184.82.62.162
-139.78.74.200
-|
+
 
 # Passive #
 def passive

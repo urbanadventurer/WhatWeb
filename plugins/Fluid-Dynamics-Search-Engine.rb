@@ -17,45 +17,7 @@ dorks [
 '"Powered by the Fluid Dynamics Search Engine"'
 ]
 
-# Examples #
-examples %w|
-www.cmrb.vic.gov.au/cgi-bin/search/search.pl
-mars1.jpl.nasa.gov/cgi-bin/redplanet/search.pl
-www.stonepages.com/search/search.pl
-www.ajb2.com/search/search.cgi
-demo.nickname.net/latest/sr/search/search.pl
-www.insidepolitics.org/search/search.pl
-www.stenograph.com/cgi-bin/search.pl
-www.xav.com/search.pl
-dpnow.com/search/search.pl
-www.micromountain.com/search/search.pl
-www.asiarecipe.com/search/search.pl
-www.redsearising.net/cgi-bin/search/search.cgi
-www.tentmaker.org/search/search.pl
-www.alexandria.ucsb.edu/search/search.cgi
-www.fdhost.com/search.pl
-www.counterpoint-music.com/search/search.pl
-jpgsonline.com/search/search.pl
-www.africanheart.com/cgi-bin/search/search.cgi
-www.collectorsplants.com/cgi-bin/search/search.pl
-www.plasmas.org/cgi-bin/search/search.cgi
-www.fiftiesweb.com/cgi-bin/search/search.pl
-www.eduscan.info/science/search8/search.pl
-www.pastamachines.com/search/search.cgi
-www.stonepages.com/search/search.pl
-www.sports-media.org/search/search.pl
-citruslocal.com/search/search.pl
-www.newcovpub.com/cgi-bin/search/search.pl
-cimi.webfarm.com/cgi-bin/search/search.pl
-www.kentcounty.com/cgi-bin/search/search.cgi
-www.libwil.com.au/cgi-bin/search/search.pl
-www.traditionalplants.com/cgi-bin/search/search.pl
-www.internationaleducationmedia.com/search/search.pl
-www.amazing1.com/search/search.pl
-www.visitor-flow.com/perl/search/search.pl
-www.polymerclayexpress.com/search/search.pl
-www.migenweb.net/search/search.pl
-|
+
 
 # Matches #
 matches [

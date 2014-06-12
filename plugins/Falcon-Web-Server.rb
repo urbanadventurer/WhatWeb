@@ -12,14 +12,7 @@ description "Falcon Web Server - Homepage: http://www.blueface.com/"
 # ShodanHQ results as at 2011-05-31 #
 # 28 for Falcon Web Server
 
-# Examples #
-examples %w|
-207.174.226.3
-64.111.60.49
-24.199.131.57
-194.204.57.89
-66.15.89.245
-|
+
 
 # Passive #
 def passive

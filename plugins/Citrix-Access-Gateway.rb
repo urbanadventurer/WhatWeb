@@ -20,23 +20,7 @@ dorks [
 'intitle:"Citrix Access Gateway" "To continue logon, use a Web browser that supports JavaScript or enable JavaScript in your current browser."'
 ]
 
-# Examples #
-examples %w|
-https://vdesk.pugetsound.edu/
-https://bshsgateway.ie/
-https://kontor.kystverket.no/
-https://chadam.chadbourne.com/
-https://cag.carpediem.de/
-https://citrix.audit.tas.gov.au/
-https://webisyd.challenger.com.au/
-https://portal.toshiba-teg.com/
-https://citrix.pendersvoetzorg.nl/
-https://connect.igssyd.nsw.edu.au/
-https://ctxsg.agencynet.de/
-https://cwi.monsoon.co.uk/
-https://trenn.net/
-https://portal.hofler.com/
-|
+
 
 # Matches #
 matches [

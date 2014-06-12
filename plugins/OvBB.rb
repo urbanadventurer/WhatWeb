@@ -17,18 +17,7 @@ dorks [
 '"powered by OvBB"'
 ]
 
-# Examples #
-examples %w|
-community.namforum.com
-averonstudio.zoomcities.com/forums/
-ciprodiscussion.com/forum/
-azulblues.com/message/upload/
-www.auditdatabase.com/Forum/
-www.theenglishlab.net/forum/
-www.rv-ideas.com
-www.divineideas.org/message/upload/
-www.aggressiveprostatecancer.com/blog/forum/
-|
+
 
 # Matches #
 matches [

@@ -20,25 +20,7 @@ dorks [
 '"Powered by ChiliProject" intitle:"ChiliProject" -site:chiliproject.org'
 ]
 
-# Examples #
-examples %w|
-81.252.167.65
-129.132.27.201
-140.211.169.171
-78.47.114.189
-130.83.160.73
-173.255.246.180
-85.214.238.37
-demo.chiliproject.org
-www.sourcemage.org
-issues.webos-ports.org
-yourhosts.org
-chiliproject.tetaneutral.net
-https://projects.littlestreamsoftware.com
-https://issues.gitorious.org
-https://chiliproject.finn.de
-https://chili.descom-consulting.ch
-|
+
 
 # Matches #
 matches [

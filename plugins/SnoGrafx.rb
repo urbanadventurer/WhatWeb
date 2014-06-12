@@ -12,13 +12,7 @@ version "0.1"
 description "Image gallery software - homepage: http://snografx.com/"
 
 # 27 results for "powered by SnoGrafx" @ 2010-09-18
-examples %w|
-emma.pandabase.com/cat.php
-flpoi.com
-icyicy.com/club8/04dex.php
-www.icyicy.com/acidhousekings/
-www.silvertulipflorist.net
-|
+
 
 matches [
 

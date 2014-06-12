@@ -13,15 +13,7 @@ description "SitePlayer is an embedded ethernet HTTP server designed to easily a
 # ShodanHQ results as at 2011-05-12 #
 # 24 for SitePlayer
 
-# Examples #
-examples %w|
-131.156.49.67
-74.246.95.132
-74.246.8.93
-67.100.173.142
-74.246.81.76
-74.246.8.82
-|
+
 
 # Passive #
 def passive

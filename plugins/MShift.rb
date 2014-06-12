@@ -17,48 +17,7 @@ dorks [
 'inurl:msestks'
 ]
 
-# Examples #
-examples %w|
-http://www.mshift.com/rbfcudemo/rbfcudemo.jsp
-https://my.mshift.com/c2ht
-https://qa33.mshift.com/gs
-https://www.ba2go.mobi/gs
-https://www.isucu.mobi/gs
-https://www.bankplus2go.net/c2ht
-https://www.cambridgesavings.mobi/gs
-https://go.akusa.org/c2ht
-https://www.ffnm2go.mobi/gs
-https://go.sdfcu.org/c2ht
-https://www.bankbyphone.org/gs
-https://m.teamonecu.org/c2ht
-https://www.66fcu.mobi/gs
-https://m.quicken.com/gs
-https://go.firstcommunity.com/c2ht
-https://go.nwfcu.org/c2ht
-https://m.firstent.org/c2ht
-https://www.myswb.mobi/gs
-https://m.ncsecu.org/gs
-https://www.cardinalonthego.com/gs
-https://www.mibank.mobi/gs
-https://mobile.ccuflorida.org/gs
-https://mobile.aacreditunion.org/gs
-https://m.faaecu.org/c2ht
-https://m.summitcreditunion.com/c2ht
-https://www.mffcu.mobi/gs
-https://www.greatfloridabank.mobi/gs
-https://www.p1fcu.mobi/gs
-https://www.copcu.mobi/gs
-https://m.educationcu.com/gs
-https://m.firstdayfcu.org/gs
-https://mbranch.rcu.org/c2ht
-https://mobile.framinghamcoop.com/gs
-https://go.citybankwa.com/gs
-https://m.staleycu.com/gs
-https://mobile.easternbank.com/gs
-https://m.firstflorida.org/gs
-https://m.beaconcu.org/c2ht
-https://www.ttcu.mobi/gs
-|
+
 
 # Matches #
 matches [

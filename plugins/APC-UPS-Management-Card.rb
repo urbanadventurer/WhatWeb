@@ -13,25 +13,7 @@ description "APC UPS Network Management Cards allow for secure monitoring and co
 # 6,524 for APC Management Card realm
 # 2,064 for APC Management Card -realm
 
-# Examples #
-examples %w|
-211.175.7.253
-150.46.30.33
-208.91.5.254
-216.241.137.124
-69.67.215.104
-64.71.18.98
-213.215.48.43
-209.47.92.124
-193.34.148.20
-216.24.174.80
-178.237.35.251
-222.255.28.153
-219.123.41.230
-219.122.60.126
-218.237.53.171
-217.23.1.5
-|
+
 
 # Matches #
 matches [

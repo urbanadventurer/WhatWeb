@@ -23,26 +23,7 @@ dorks [
 ]
 
 
-# Examples #
-examples %w|
-155.101.3.213
-216.157.144.161
-209.234.101.131
-aisvc.com/ext/netbotz/
-155.101.3.212
-granthandy.com
-netbot-m1-1.inscc.utah.edu
-netbot-m2-1.inscc.utah.edu
-netbot-m2-2.inscc.utah.edu
-155.101.3.211
-129.219.60.184
-155.101.3.210
-198.182.247.199/pages/index.html
-bots1.medhosters.com
-nb500.optrics.net
-24.24.69.166:8083/pages/index.html
-71.168.66.58:5190/pages/index.html
-|
+
 
 # Matches #
 matches [

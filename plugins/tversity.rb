@@ -9,7 +9,7 @@ Plugin.define "TVersity" do
 author "Andrew Horton"
 version "0.1"
 description "The TVersity Media Server lets you manage your Internet and home media. Homepage: tversity.com"
-examples %w| http://iphone.breakthruradio.com/ http://live.wms.webverbosity.com |
+
 
 matches [
 {:md5=>"300b5c3f134d7ec0bca862cf113149d8", :url=>"/favicon.ico" }

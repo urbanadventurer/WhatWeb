@@ -20,11 +20,7 @@ dorks [
 'intitle:"Login settings" "Kordil EDMS Official Website"'
 ]
 
-# Examples #
-examples %w|
-www.iyidere.com/edms/global_group_login.php
-arlsestreladedavi.org.br/EDMSM/global_group_login.php
-|
+
 
 # Matches #
 matches [

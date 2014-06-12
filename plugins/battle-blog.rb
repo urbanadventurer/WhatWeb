@@ -12,19 +12,7 @@ description "Battle Blog is a Fun Debate and Resolution Tool - homepage: http://
 # 12 results for "Powered by Battle Blog" -"Google dork" @ 2010-08-26
 # 4 results inurl:vote.asp vtype=entry grade=promote @ 2010-08-26
 # More examples at http://www.davethewebguy.com/battleblog/c_bbdirectory.asp
-examples %w|
-www.davethewebguy.com/battleblog/
-www.eplt.com/Blog/admin/
-www.iwilldoanythingforanything.com/BattleBlog/admin/
-www.iglesiaprimitivadecristo.org/blog/admin/
-www.demystifyingdigital.com/admin/
-wwbn.info/admin/
-www.tamparail.org/admin/
-www.knuth-family.com
-raunchycrayons.com
-www.lizardwebs.net/battleBlog/
-axgrinding.urbanterror.com/blog/
-|
+
 
 matches [
 

@@ -21,16 +21,7 @@ new page. More info: https://secure.wikimedia.org/wikipedia/en/wiki/Meta_refresh
 # Google results as at 2011-01-31 #
 # 2,510,000 for "you will be redirected in * seconds"
 
-# Examples #
-examples %w|
-www.google.com/mobile/gmail/
-ubi.com/US/
-skilibertyskipatrol.org
-www.eplrs.com
-www.nga-earth.org
-www.maxim.com
-www.cms.il.gov/iisradio/
-|
+
 
 # Matches #
 matches [

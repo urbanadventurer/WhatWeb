@@ -17,61 +17,7 @@ dorks [
 '"Powered by BIGACE" -dork'
 ]
 
-# Examples #
-examples %w|
-www.bigace.de
-dev.bigace.org/nightly_v2/
-dev.bigace-cms.com
-demo.opensourcecms.com/bigace/
-www.geoinformatik2010.de
-www.roth-electronic.eu
-www.the-blue-witch.de
-www.lip.pt/outreach/radao/
-digitware.biz
-www.coonaras.de
-www.11aa.de
-www.gabi.eisenpixel.de
-www.forest.ro
-www.stefanhofer.info
-www.chaltuu-vom-lahberg.de
-einseitighoeren.de
-www.hotelvantis.lv/cms/
-www.trifug.org
-www.sf-gefahrgut.de
-www.ernesti.es
-hvrm.de
-www.kosternet.nl
-ijestem.pl
-www.euroland20-21.de
-www.diemonsterwg.de
-www.r-me.de
-www.roth-electronic.info
-www.pcschmiede.org
-www.tvmovil.com.pa
-aceinvestor.eu/bigace/
-www.juette-kassel.de
-www.die-stars-nackt.com
-www.olivertraxel.ch
-n6roq.us
-www.aguasoltec.com
-www.lalea.fr
-sar-hosting.net
-80.68.45.141/hrn/
-80.108.75.27/bigace/
-www.trifug.org
-iloveyoueatthis.com
-www.natinna.com
-www.ivao.ch/ba_cms/
-pacific-wings-consulting.com
-www.hotelvantis.lv
-behringgifts.com
-www.populationhealthsciences.org
-newgate-consulting.de
-edmc.mobi
-www.kimai.org
-www.leelong.net/prudent/
-www.googleadsend.com
-|
+
 
 # Matches #
 matches [

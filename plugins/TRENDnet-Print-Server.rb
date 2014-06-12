@@ -13,11 +13,7 @@ description "TRENDnet Print Server - Print servers connect printers directly to 
 # 1,142 for PRINT_SERVER WEB
 # 1,142 for PRINT_SERVER WEB 1.0
 
-# Examples #
-examples %w|
-72.64.111.243
-148.204.181.87
-|
+
 
 # Matches #
 matches [

@@ -19,16 +19,7 @@ dorks [
 '"Powered by eSyndiCat Web Directory"'
 ]
 
-# Examples #
-examples %w|
-www.esyndicat.com/demo/
-www.esyndicat.com/demo/admin/
-omega.esyndicat.com
-omega.esyndicat.com/admin/
-www.pornblogsdir.com
-www.spiritueleforum.nl/links/
-www.seksdatabase.nl
-|
+
 
 # Matches #
 matches [

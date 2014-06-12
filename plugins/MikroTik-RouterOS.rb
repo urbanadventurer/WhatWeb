@@ -17,19 +17,7 @@ dorks [
 'intitle:"RouterOS router configuration page" "RouterOS" "You have connected to a router"'
 ]
 
-# Examples #
-examples %w|
-59.167.168.104
-208.110.137.61
-60.28.240.64
-78.158.179.1
-94-40-120-34.tktelekom.pl
-speedtest.macosoft.ro
-189-112-187-004.static.ctbctelecom.com.br
-dsl51b7de93.fixip.t-online.hu
-google.cheef.cz
-60.28.240.64
-|
+
 
 # Matches #
 matches [

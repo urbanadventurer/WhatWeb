@@ -14,17 +14,7 @@ description "A nice web server, easy to setup! lots of features including cgi, s
 # 66 for Web/2 v1
 # 48 for Web/2 v1.3x
 
-# Examples #
-examples %w|
-108.21.92.14
-87.245.181.194
-81.222.114.138
-202.173.129.46
-137.207.3.37
-194.44.157.2
-95.167.1.242
-195.96.171.3
-|
+
 
 # Passive #
 def passive

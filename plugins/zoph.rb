@@ -20,21 +20,7 @@ dorks [
 'inurl:albums.php inurl:parent_album_id'
 ]
 
-# Examples #
-examples %w|
-www.zoph.org/demo/zoph.php
-schoene.homelinux.org/zoph/zoph.php
-zoph.falt-freunde.de/zoph.php
-rawr.ca/zoph/zoph.php
-www.hulsman.info/zoph/zoph.php
-zoph.tenbrinke.net/zoph.php
-tokyojim.com/photos/zoph.php
-www.etcp.co.uk/zoph/zoph.php
-www.hyfr.org/zoph/zoph.php
-www.clean-wire.net/gallery/php/zoph.php
-graphite.chem.nd.edu/html/kgig/zoph.php
-number.ch/zoph/zoph.php
-|
+
 
 matches [
 

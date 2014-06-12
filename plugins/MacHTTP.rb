@@ -13,12 +13,7 @@ description "MacHTTP is a webserver designed to run on Mac OS versions 7.x throu
 # ShodanHQ results as at 2011-06-04 #
 # 40 for machttp
 
-# Examples #
-examples %w|
-66.18.227.237
-129.206.50.244
-165.138.177.80
-|
+
 
 # Passive #
 def passive

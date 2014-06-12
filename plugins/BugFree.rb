@@ -17,17 +17,7 @@ dorks [
 'inurl:"Login.php" intitle:"BugFree"'
 ]
 
-# Examples #
-examples %w|
-www.bugfree.org.cn/demo/Login.php
-www.wisestar.cn:8080/BugFree/Login.php
-www.csbijie.cn/bugfree/Login.php
-szsj.centaur.cn:8000/bugfree/Login.php
-122.227.163.82:9333/bugfree/Login.php
-bugfree.powerpms.cn/bugfree/login.php 
-218.66.13.20:102/bugfree/Login.php
-218.80.198.202/bugfree2/Login.php
-|
+
 
 # Matches #
 matches [

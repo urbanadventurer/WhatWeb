@@ -12,17 +12,7 @@ description "WSN Knowledge Base is an article directory script. It can autopost 
 # Google results as at 2011-03-16 #
 # 1 for "WSN Knowledge Base" inurl:adminlogin.php
 
-# Examples #
-examples %w|
-demo.webmastersite.net/wsnkb/
-demo.webmastersite.net/wsnkbadmin/admin/
-scripts.webmastersite.net/wsnkb/manual/
-scripts.webmastersite.net/wsnkb/manual/adminlogin.php
-www.newspaperabstracts.com
-www.newspaperabstracts.com/adminlogin.php
-www.psychology-online.net
-www.psychology-online.net/adminlogin.php
-|
+
 
 # Matches #
 matches [

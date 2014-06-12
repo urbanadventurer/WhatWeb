@@ -21,17 +21,7 @@ dorks [
 '"powered by Atomic Photo Album" -Vulnerabilities -inurl inurl:apa_album_ID'
 ]
 
-# Examples #
-examples %w|
-blindcry.dod.net/album/photo.php
-photo.monomy.net/2003/photo.php
-www.albumceliynico.com.ar/album/album.php
-www.brzi.info/foto/album.php
-www.cbrandon.com/photos/photo.php
-www.fokoinusa.com.ar/album/album.php
-www.ftu.se/foto/photo.php
-www.jimmysamuelsson.com/photo_album/photo.php
-|
+
 
 # Matches #
 matches [

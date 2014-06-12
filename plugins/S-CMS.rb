@@ -20,13 +20,7 @@ description "CMS - homepage: http://www.matteoiammarrone.com/public/s-cms/"
 # Google results as at 2010-08-30 #
 # 8 for "powered by S-CMS"
 
-# Examples #
-examples %w|
-www.scms.nl/admin/admin.asp
-www.opravafotoaparatov.sk
-www.matteoiammarrone.com/public/s-cms/
-www.scms.altervista.org/fluid/
-|
+
 
 # Matches #
 matches [

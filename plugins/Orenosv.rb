@@ -13,13 +13,7 @@ description "Orenosv is a stable, reliable and high performance HTTP/FTP/FTPS fi
 # 18 for orenosv
 # All results are from Japan
 
-# Examples #
-examples %w|
-110.233.128.248
-110.132.192.122
-110.132.43.236
-218.219.209.8
-|
+
 
 # Passive #
 def passive

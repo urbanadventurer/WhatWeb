@@ -10,18 +10,7 @@ version "0.1"
 description "X-Vortech-PHP HTTP header."
 
 # About 440 ShodanHQ results for "X-Vortech-PHP" @ 2010-10-30
-examples %w|
-216.81.70.129
-216.157.151.216
-216.81.72.225
-216.157.146.105
-216.157.155.176
-216.81.71.167
-216.81.72.198
-216.81.70.201
-216.157.150.15
-216.157.154.194
-|
+
 
 # HTTP Header
 def passive

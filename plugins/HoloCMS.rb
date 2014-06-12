@@ -16,22 +16,7 @@ dorks [
 '"powered by HoloCMS" "Meth0d"'
 ]
 
-# Examples #
-examples %w|
-bobba-story.free-h.fr
-bsshotel.no-ip.biz
-chaoshotel.netne.net
-dorkhotel.netau.net/cms/
-double-session.com/staff.php
-enterserver.en.funpic.de
-hchotel.site50.net
-ouasisgame.fr/staff.php
-probbohotel.pcriot.com/holocms_3.1.1/holo/
-rayane59.free.fr
-stophotel.comoj.com
-www.enriick.0fees.net
-www.habbok.com
-|
+
 
 # Matches #
 matches [

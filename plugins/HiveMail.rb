@@ -21,23 +21,7 @@ dorks [
 '"You are not logged in" "Forgot your password" "Choose a skin"'
 ]
 
-# Examples #
-examples %w|
-mail.hivebox1.com
-mail.hivebox2.com
-66.135.62.28
-emailsda.com
-pratyax.com/checkmail/
-nutbolts.net/email/hmail/hivemail/upload/
-www.sissykissmail.com/
-www.indyamail.com
-www.omail.owowspace.com
-noitmail.com/index2.php
-mail.christsaves.us/
-50.97.134.4/~gonubief/boykiesmail/
-mail.bembang.com
-https://webmail.alternativefuse.com/
-|
+
 
 # Matches #
 matches [

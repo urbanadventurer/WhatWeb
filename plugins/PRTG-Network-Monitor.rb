@@ -20,34 +20,7 @@ dorks [
 '"PRTG Network Monitor" intitle:"PRTG Network Monitor" "Password" "Login Name "GUI" inurl:"install_the_windows_gui"'
 ]
 
-# Examples #
-examples %w|
-202.1.53.57
-prtg.tchmachines.com
-www.es.shipitsmarter.com
-88.149.193.2
-webmonitor.ietnetworks.com:8080
-mail.hth.it
-erostars.be
-213.175.132.14
-itv.no-ip.org:82
-www.jtc-i.co.jp:86
-64.244.58.154
-prtg.demos.eaglegis.co.nz
-wirns.na9d.net:8083
-84.14.198.1
-prtg.datahive.ca
-home.se7en.co.nz:8000
-csincsik.hu:8800
-mail2.zax.ro
-dns6.nwi.com.br
-193.170.162.113:8080
-65.255.143.30:8080
-123.125.18.123:8787
-remote.telluridehelpdesk.com:8181
-ns1.pciol.net
-204.13.230.61:8080
-|
+
 
 # Matches #
 matches [

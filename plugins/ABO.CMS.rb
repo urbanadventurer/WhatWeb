@@ -12,21 +12,7 @@ description "ABO.CMS - Hompage: http://www.abocms.com/"
 # ShodanHQ results as at 2011-04-08 #
 # 54 for A-Powered-By
 
-# Examples #
-examples %w|
-www.abocms.ru
-demo.abocms.ru
-195.42.176.47
-195.9.3.131
-213.184.129.195
-88.198.11.34
-212.193.253.46
-62.117.89.122
-194.85.90.9
-217.199.213.212
-212.193.229.55
-62.117.76.130
-|
+
 
 # Passive #
 def passive

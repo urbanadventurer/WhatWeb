@@ -12,14 +12,7 @@ author "Chris, NetAgence.com"
 version "1.0"
 description "Ecommerce CMS Prestashop. - Homepage: http://www.prestashop.com/"
 
-# Examples #
-examples %w|
-	http://www.unemaisonenbretagne.com/
-	http://www.tartine-et-chocolat-boutique.com/
-	http://www.archiduchesse.com/
-	http://www.presqueparfait.com/
-	http://www.fatherandsons.fr/
-|
+
 
 # Google results as at 2011-07-19 #
 # 989 for inurl:id_cms

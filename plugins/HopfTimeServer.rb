@@ -16,13 +16,7 @@ description "Detect Hopf Time Server CGI application (http://www.hopf.com/)"
 # Google results as at 2011-07-30 #
 # 8 for inurl:/cgi-bin/main.cgi?ntp
 
-# Examples #
-examples %w|
-www.timesync.eu
-www.ntptime.eu/cgi-bin/main.cgi?ntp&0
-www.ntp.at/cgi-bin/main.cgi?ntp&0
-ct.ntp.at/cgi-bin/main.cgi?ntp&0
-|			
+			
 
 # Dorks #
 dorks [

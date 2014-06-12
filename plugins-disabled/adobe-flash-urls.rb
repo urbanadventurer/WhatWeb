@@ -18,17 +18,7 @@ description "This plugin identifies instances of embedded adobe flash files and 
 # Google results as at 2010-10-14 #
 # 244 for "your browser does not support flash"
 
-# Examples #
-examples %w|
-www.arride.com
-www.benchmarktravel.co.uk
-www.centralschoolofballet.co.uk
-www.jijauamalner.org
-www.nexavar-international.com/scripts/pages/en/home/index.php
-www.pizzahut.co.nz
-www.plunkettcooney.com
-www.sachsbikes.co.uk
-|
+
 
 # Matches #
 matches [

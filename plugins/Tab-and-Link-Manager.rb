@@ -17,17 +17,7 @@ dorks [
 '"Powered by Tab and Link Manager Version"'
 ]
 
-# Examples #
-examples %w|
-www.wolfshead-solutions.com
-www.faneditforum.com
-www.nerdcorenow.com/vb/
-www.repairmanjack.com
-www.fanedit.org/forums/
-www.on3network.co.nz
-www.transcendencegaming.org/forums/
-glockhome.com
-|
+
 
 # Matches #
 matches [

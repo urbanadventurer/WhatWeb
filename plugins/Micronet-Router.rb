@@ -12,15 +12,7 @@ description "Micronet Communications Router - Homepage: http://www.micronet.com.
 # ShodanHQ results as at 2012-04-11 #
 # 1,394 for RCTTools (SecureSOHO Web configuration Tools)
 
-# Examples #
-examples %w|
-78.35.141.125
-80.98.42.18
-70.67.162.100
-94.112.166.111
-186.136.117.77
-83.13.62.186
-|
+
 
 # Matches #
 matches [

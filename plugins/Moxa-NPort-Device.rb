@@ -17,15 +17,7 @@ dorks [
 'intitle:"NPort web console"'
 ]
 
-# Examples #
-examples %w|
-58.118.249.52
-213.123.140.2
-83.12.88.26
-86.61.71.48
-87.51.55.146
-147.66.8.23
-|
+
 
 # Matches #
 matches [

@@ -11,9 +11,7 @@ description "Alcatel Lucent's Omniswitch"
 # Default login: admin/switch
 
 # 1 result for intitle:"Webview+Logon+Page" @ 2010-07-15
-examples %w|
-203.251.30.2
-|
+
 
 matches [
 

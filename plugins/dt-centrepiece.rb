@@ -16,13 +16,7 @@ dorks [
 '"powered by DT Centrepiece"'
 ]
 
-# Examples #
-examples %w|
-www.dt.net.nz
-www.talktracy.com
-www.hortidomus.com
-tattoo.gl/c4/
-|
+
 
 matches [
 

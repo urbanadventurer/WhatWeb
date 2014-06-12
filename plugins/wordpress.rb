@@ -18,9 +18,6 @@ Plugin.define "WordPress" do
   version "0.5"
   description "WordPress is an opensource blogging system commonly used as a CMS. Homepage: http://www.wordpress.org/ "
   
-  # Examples #
-  examples %w| http://lonnroth.info/ http://mattbrett.com/ http://www.komodomedia.com/ http://bestwebgallery.com/ http://cssremix.com/ http://www.cssbloom.net/ http://www.screenz.de/ http://www.kineda.com/ http://ifelse.co.uk/ http://fadtastic.net/ http://www.funci.org/en/ |
-    
     # Dorks #
     dorks [
            '"is proudly powered by WordPress"'
@@ -753,10 +750,68 @@ matches [
                     [["readme.html",
                       "9ecbb128295ac324f63a6adc0b6e78ea"],
                      ["wp-includes/js/customize-preview.js",
-                      "617d9fd858e117c7d1d087be168b5643"]]
-                   ]
+                      "617d9fd858e117c7d1d087be168b5643"]],
+
+                      "3.4.2" =>
+                    [["readme.html", "c6514a15e04bd9ec96df4d9b78c17bc5"],
+                      ["wp-includes/js/customize-preview.js", "617d9fd858e117c7d1d087be168b5643"],
+                      ["/wp-admin/css/wp-admin.css", "dc906af62607ada3fe2baac62ac3cceb"] 
+                    ],
+                      "3.5" =>
+                    [["readme.html", "066cfc0f9b29ae6d491aa342ebfb1b71"],
+                      ["wp-admin/css/wp-admin.css", "c8c02c7d0318ddeb985e324f126a19e8"]
+                    ],
+                      "3.5.1" => 
+                    [["readme.html", "05d50a04ef19bd4b0a280362469bf22f"],
+                      ["wp-admin/css/wp-admin.css", "1906ac1bed40e0c5c7de71f2bc42dc20"]
+                    ],
+                      "3.5.2" =>
+                    [["readme.html", "caf7946275c3e885419b1d36b22cb5f3"],
+                      ["wp-admin/css/wp-admin.css", "1906ac1bed40e0c5c7de71f2bc42dc20"]
+                    ],
+                      "3.6" =>
+                    [["readme.html", "477f1e652f31dae76a38e3559c91deb9"],
+                      ["wp-admin/css/wp-admin.css", "25dd20710bf1eec392a00fc892b63fde"]
+                    ],
+                      "3.6.1" =>
+                    [["readme.html", "e82f4fe7d3c1166afb4c00856b875f16"],
+                      ["wp-admin/css/wp-admin.css", "25dd20710bf1eec392a00fc892b63fde"]
+                    ],
+                      "3.7" =>
+                    [["readme.html", "4717bf89e299ff054760ec8b0768c9e1"],
+                      ["wp-admin/css/wp-admin.css", "f0894fa9c9733d0e577fc5beddc726cd"]
+                    ],
+                      "3.7.1" =>
+                    [["readme.html", "4717bf89e299ff054760ec8b0768c9e1"],
+                      ["wp-admin/css/wp-admin.css", "f0894fa9c9733d0e577fc5beddc726cd"]
+                    ],
+                      "3.8" =>
+                    [["readme.html", "38ee273095b8f25b9ffd5ce5018fc4f0"],
+                      ["wp-admin/css/wp-admin.css", "25554fc81989c307119b7d4818dc3963"]
+                    ],
+                      "3.8.1" =>
+                    [["readme.html", "0d0eb101038124a108f608d419387b92"],
+                      ["wp-admin/css/wp-admin.css", "68600417d5dc22244168b4eeb84f0af4"]
+		    ],
+                      "3.8.2" =>
+                    [["readme.html", "e01a2663475f6a7a8363a7c75a73fe23"],
+                      ["wp-admin/css/wp-admin.css", "68600417d5dc22244168b4eeb84f0af4"]
+		    ],
+                      "3.8.3" =>
+                    [["readme.html", "c6de8fc70a18be7e5c36198cd0f99a64"],
+                      ["wp-admin/css/wp-admin.css", "68600417d5dc22244168b4eeb84f0af4"]
+		    ],
+                      "3.9" =>
+                    [["readme.html", "cdbf9b18e3729b3553437fc4e9b6baad"],
+                      ["wp-admin/css/wp-admin.css", "ff37a40c48d23ba4ecc09d9a98da1247"]
+		    ],
+                      "3.9.1" =>
+                    [["readme.html", "84b54c54aa48ae72e633685c17e67457"],
+                      ["wp-admin/css/wp-admin.css", "ff37a40c48d23ba4ecc09d9a98da1247"]
+		    ],
+    ]
     
-    v = Version.new("Joomla", versions, @base_uri)
+    v = Version.new("WordPress", versions, @base_uri)
     
     version = v.matches_format
     

@@ -21,39 +21,7 @@ dorks [
 'intitle:"NetWare Server" "NetWare Management Portal Version"'
 ]
 
-# Examples #
-examples %w|
-165.230.93.86
-196.33.123.114
-213.21.195.53:8008
-herkules.vlo.ids.gda.pl:8008
-herkules.vlo.gda.pl:8008
-153.19.168.70:8008
-the-foxhole.org:8008
-plantpath.ksu.edu
-iff.tu-bs.de
-red-september.com:8008
-www.copyrightphotography.com:8008
-plantpath.k-state.edu
-www.ifs.uw.edu.pl
-130.236.87.5
-156.17.30.104:8008
-213.21.195.53
-137.189.164.120
-bkt.sote.hu
-hen.henson.dal.ca
-193.0.72.132
-scj.rutgers.edu
-196.33.123.114
-165.230.93.86
-66.204.167.139
-68.171.65.204
-142.176.51.114
-128.8.11.185
-159.238.24.46
-167.193.142.31
-202.128.72.6
-|
+
 
 # Matches #
 matches [

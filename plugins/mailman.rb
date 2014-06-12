@@ -23,26 +23,7 @@ dorks [
 'inurl:mailman "Delivered by Mailman"'
 ]
 
-# Examples #
-examples %w|
-http://mail.opensolaris.org/mailman/listinfo
-https://dev.eclipse.org/mailman/listinfo/
-http://lists.hosef.org/listinfo.cgi
-http://lists.apple.com/mailman/
-http://mailman.metu.edu.tr/mailman/listinfo/
-http://lists.natureserve.org/mailman/listinfo
-http://mail.gnome.org/mailman/listinfo
-http://ncsi.iisc.ernet.in/mailman/listinfo/
-http://www.daa.com.au/mailman/listinfo/
-http://www.itk.org/mailman/listinfo/
-http://lists.macosforge.org/mailman/listinfo.cgi
-http://listas.datasus.gov.br/cgi-bin/mailman/listinfo
-https://correo.ingeominas.gov.co/mailman/listinfo/
-http://lists.cendoj.ramajudicial.gov.co/mailman/listinfo/
-http://lists.lsc.gov/mailman/listinfo/
-http://gov.gov1.us/mailman/listinfo
-http://mailman.pge.rs.gov.br/mailman/listinfo
-|
+
 
 # Matches #
 matches [

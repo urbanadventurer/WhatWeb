@@ -16,32 +16,7 @@ dorks [
 '"powered by PhotoPost PHP"'
 ]
 
-# Examples #
-examples %w|
-www.photopost.com/photopost/adm-index.php
-www.photographyblog.com/gallery/index.php
-www.photographyblog.com/gallery/adm-misc.php?admact=mainmenu
-starcraft.incgamers.com/gallery/showgallery.php
-starcraft.incgamers.com/gallery/adm-index.php
-toyfair2010.figures.com/showgallery.php
-toyfair2010.figures.com/adm-index.php
-classicvanhalen.com/photopost/
-forum.surfermag.com/photopost/
-gallery.anipike.com
-www.planetmolosser.com/gallery/
-www.rcflix.com/photopost/index.php
-www.theocshow.com/photopost/index.php
-www.classiccar.com/photopost/index.php
-www.jdmuniverse.com/forums/gallery/index.php
-www.tropicalfishforum.net/photopost/
-www.icompact.com/gallery/
-www.pashweddings.com/gallery/index.php
-www.mustangphotos.com/photopost/
-www.onesixthwarriors.com/photo/index.php
-www.fotoscraps.com/gallery/index.php
-www.christina-a.net/gallery/
-www.scrapvillage.com/gallery/
-|
+
 
 matches [
 

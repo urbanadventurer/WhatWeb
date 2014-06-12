@@ -14,7 +14,7 @@ Plugin.define "WordpressSuperCache" do
 author "Patrik Wallstrom"
 version "0.3"
 description "Cache functionality for Wordpress - http://wordpress.org/extend/plugins/wp-super-cache/"
-examples %w| www.iis.se www.thedailyfix.com www.hollywoodgrind.com|
+
 
 matches [
 {:name=>"supercache comment",

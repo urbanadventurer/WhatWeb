@@ -20,24 +20,7 @@ dorks [
 '"Cactusoft International FZ-LLC & Cactusoft Ltd All rights reserved"'
 ]
 
-# Examples #
-examples %w|
-www.cactushop.com/cs6/
-www.teknic.bikersworldshops.co.uk
-cubixtrading.com
-www.ceramichairirons.co.uk
-redeyewholesale.com
-www.ccw-tools.com
-www.cheerssports.com
-www.contemporarytouches.com/shop/
-www.amp-starters.co.uk
-www.hair-care.co.uk
-www.secure-ipay.com/bammot/
-www.ndme-demo-2.nl
-theheritagemarket.com/cactushop6_standard/
-63.135.105.141
-66.203.150.70
-|
+
 
 # Matches #
 matches [

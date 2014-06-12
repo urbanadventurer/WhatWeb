@@ -20,40 +20,7 @@ dorks [
 '"powered by SimpNews"'
 ]
 
-# Examples #
-examples %w|
-www.boesch-it.de/simpnews/admin/
-www.esquirecaucasians.com/simpnews/news.php
-www.southamericanminerals.com/simpnews/news4.php
-www.zeoxpm.com/simpnews/newsmail.php
-www.wmdnews.org/simpnews/newsframe.php
-www.cockatiel.za.net/ournews/news.php
-www.speedrome.com/newsletter/news.php
-www.mohawknationnews.com/news/news.php
-informatii.cs.ro/newsmail.php
-www.premega.de/simpnews/news.php
-www.korenschaker.nl/simpnews/news.php
-www.st-knud-husum.de/Kolping/simpnews/news.php
-schwimmen-tv-voerde.de/simpnews/news.php
-www.tsv-wennigsen.de/appl/news/simpnews/news.php
-www.blaues-band.de/news2/news.php
-www.aulamagnamagna.it/simpnews/news.php
-www.djkeller.de/news/news.php
-www.bogucka.pl/news/news.php
-www.lifepersonaltraining.de/aktuelles.php
-www.vtz-saarpfalz.de/simpnews/news.php
-nachwuchs.ice-hogs.de/simpnews/news.php
-www.fv-freibad-voerde.de/simpnews/news.php
-stjosef.at/stjosefnews/news.php
-www.stjosef.net/stjosefnews/news.php
-www.portugal-links.de/nachrichten/news.php
-www.caterina.at/stjosefnews/news.php
-exelbonsai.de/Newsticker/news.php
-www.ap-engineer-construction.com/simpnews/news.php
-www.rieden.com/relange/news/news.php
-www.matzemantzke.de/news/news.php
-asff-badminton.com/news/news.php
-|
+
 
 # Matches #
 matches [

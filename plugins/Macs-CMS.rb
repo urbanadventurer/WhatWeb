@@ -10,10 +10,7 @@ version "0.1"
 description "Mac's CMS is a Open Source, Flat-File AJAX CMS built using PHP 5 and was tested and run's perfectly on both IIS and APACHE. - homepage http://macs-framework.sourceforge.net/"
 
 # 6 results for "Site Powered by Mac's PHP MVC Framework" @ 2010-09-18
-examples %w|
-macs-framework.sourceforge.net
-mac.freehostia.com/demo/index.php/main/cms/login
-|
+
 
 matches [
 

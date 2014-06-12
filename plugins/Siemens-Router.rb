@@ -12,10 +12,7 @@ description "Siemens Router - Homepage: https://www.siemens.com/"
 # ShodanHQ results as at 2011-11-22 #
 # 5,120 for Siemens ADSL
 
-# Examples #
-examples %w|
-81.189.86.135
-|
+
 
 # Matches #
 matches [

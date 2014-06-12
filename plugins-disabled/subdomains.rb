@@ -9,15 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-18
 version "0.1"
 description "This plugin finds and extracts subdomains from the href and src parameters of any HTML elements it finds."
 
-# Examples #
-examples %w|
-morningstarsecurity.com
-somethingawful.com
-wordpress.com
-phpbb.com
-mozilla.org
-4chan.org
-|
+
 
 # Passive #
 def passive

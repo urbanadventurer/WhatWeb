@@ -25,31 +25,7 @@ dorks [
 'inurl:"servlet/ContentServer?pagename="'
 ]
 
-# Examples #
-examples %w|
-89.107.242.80
-69.20.90.74
-69.20.90.84
-50.16.242.223
-155.199.166.196
-210.160.254.24
-91.116.143.117
-83.231.223.111
-155.199.18.196
-owner.ford.com/servlet/ContentServer
-press.centerparcs.com/servlet/ContentServer
-https://www.santander.no/servlet/ContentServer
-www.firsttrustbank.co.uk/servlet/ContentServer
-www.amtrak.com/servlet/ContentServer
-solna-stockholm.rezidorparkinn.com/servlet/ContentServer
-www.ksta.de/servlet/ContentServer
-euwahl.fsg.or.at/servlet/ContentServer
-www.proge.at/servlet/ContentServer
-https://www.rspca.co.uk/servlet/ContentServer
-www.arbeit-wirtschaft.at/servlet/ContentServer
-https://www.santander.no/servlet/ContentServer
-press.centerparcs.com/servlet/ContentServer
-|
+
 
 # Matches #
 matches [

@@ -11,9 +11,7 @@ description "Snare - Snare Server Remote Control web interface - Homepage: http:
 
 # Default Port: 6161
 
-# Examples #
-examples %w|
-|
+
 
 # Matches #
 matches [

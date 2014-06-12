@@ -16,30 +16,7 @@ dorks [
 '"powered by PHP-Update"'
 ]
 
-# Examples #
-examples %w|
-cubebot.bots-united.com
-fritzbot.bots-united.com
-familyclan.org
-immo-elsendorf.de
-kirke-helsinge-antennelaug.dk
-noitinery.net
-nieuweburcht.davenieuwenburg.nl
-www.bestphotolessons.com
-www.bjlelectrical.co.uk/index.php
-www.bm-bauservice.de
-www.dukasi.de/empor/
-www.angrypixel.net/pressstart/
-www.fogu.com/hm/
-www.kasinokaraoke.com
-www.katiegoestotokyo.com/text/
-www.kyokushin-etne.net
-www.larsnielsen.nu
-www.modelcreator.com
-www.modelcreator.dk
-www.hsjmotorsport.net
-www.ut.ee/FLKE/
-|
+
 
 matches [
 

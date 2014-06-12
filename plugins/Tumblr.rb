@@ -17,14 +17,7 @@ dorks [
 '"Powered by Tumblr"'
 ]
 
-# Examples #
-examples %w|
-isawyouidrawyou.tumblr.com
-fredwilson.vc
-katyperryblog.tumblr.com
-52weeksofux.com
-tessshebaylo.tumblr.com
-|
+
 
 # Matches #
 matches [

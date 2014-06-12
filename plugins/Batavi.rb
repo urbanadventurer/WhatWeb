@@ -17,20 +17,7 @@ dorks [
 'intitle:"Batavi Administration Tool" "Log Into The Administration Tool"'
 ]
 
-# Examples #
-examples %w|
-demo.batavi.org
-demo.batavi.org/admin/index.php?login
-www.abaton.com.hr/admin/
-80.84.253.175
-83.96.142.135
-83.96.142.134
-83.96.142.131
-83.96.142.133
-83.96.142.137
-83.96.142.129
-80.84.253.175
-|
+
 
 # Matches #
 matches [

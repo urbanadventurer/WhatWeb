@@ -17,15 +17,7 @@ dorks [
 '"Powered by CitusCMS"'
 ]
 
-# Examples #
-examples %w|
-www.bits2pics.de
-teamcup.systemgastronomie.org
-www.sas-gems.de
-mylive.ath.cx
-www.files-4-cms.square7.ch
-menke.tv
-|
+
 
 # Matches #
 matches [

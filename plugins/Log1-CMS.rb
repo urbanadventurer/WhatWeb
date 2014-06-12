@@ -17,18 +17,7 @@ dorks [
 '"POWERED BY LOG1 CMS" -dork'
 ]
 
-# Examples #
-examples %w|
-log1cms.sourceforge.net
-log1cms.sourceforge.net/admin
-log1cms.sourceforge.net/myCMS3/admin/
-www.oe-teile.eu
-www.oe-teile.eu/admin/
-vodafone-walldorf.de
-schmidt-portal.de/microcms/
-schmidt-portal.de/microcms/admin/
-www.vodafone-langen.de
-|
+
 
 # Matches #
 matches [

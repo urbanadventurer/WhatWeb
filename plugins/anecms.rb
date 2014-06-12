@@ -18,13 +18,7 @@ dorks [
 ]
 
 # 11 results for "powered by anecms" @ 2010-06-15
-examples %w|
-anecms.com
-demo.anecms.com
-devalien.com
-87.252.187.245/ane/
-girolaghiamo.delta-support.ch
-|
+
 
 matches [
 

@@ -17,36 +17,7 @@ dorks [
 '"powered by eazyCMS"'
 ]
 
-# Examples #
-examples %w|
-www.eazysitebuilder.com
-www.eazyweb.net
-www.citycentreliving.com
-www.eazyweb.com.au
-www.enertrols.co.uk
-www.oddpearls.com
-luxury-boats.areonlinehere.com
-drmarisaviegas.isonlinehere.com
-70s.areonlinehere.com
-hothomes.isonlinehere.com
-rush.isonlinehere.com
-sandwiches.areonlinehere.com
-sachelle-675.isonlinehere.com
-holidaymasters.areonlinehere.com
-remotepa.isonlinehere.com
-aghashahi.isonlinehere.com
-checkout-advice.isonlinehere.com
-breastsgalore.isonlinehere.com
-ilovegreencheese.isonlinehere.com
-hquang.isonlinehere.com
-freenolog1.isonlinehere.com
-freshportraitscouk.isonlinehere.com
-www.auroraboreal.isonlinehere.com
-m4rco.isonlinehere.com
-cromtown.isonlinehere.com
-nada.isonlinehere.com
-testsite.isonlinehere.com
-|
+
 
 # Matches #
 matches [

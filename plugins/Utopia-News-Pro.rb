@@ -17,19 +17,7 @@ dorks [
 'intitle:"Powered By Utopia News Pro" inurl:"news.php?action="'
 ]
 
-# Examples #
-examples %w|
-www.utopiasoftware.net/news/
-www.eruptionradio.net/1.4.0/upload/index.php
-www.wolfsbanehms.com/blast/
-basssydney.com/news/utopianewspro/
-www.eq2dm.com/eqnews/
-www.kdband.net/news/
-www.richmonddiveclub.com/include/news/
-www.petepritchard.co.uk/news/
-www.forex-strategy.com/forexnewsagency/upload/
-www.bradbosh.com/news/upload/
-|
+
 
 # Matches #
 matches [

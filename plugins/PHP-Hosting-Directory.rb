@@ -17,14 +17,7 @@ dorks [
 '"powered by PHP Hosting Directory 2.0" -Vulnerability'
 ]
 
-# Examples #
-examples %w|
-khmerwebhosting.info
-www.buddingnetrepreneur.com
-www.compare-webhosts.com
-www.ghandismom.com
-www.helmhosts.com
-|
+
 
 # Matches #
 matches [

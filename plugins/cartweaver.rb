@@ -16,15 +16,7 @@ dorks [
 '"powered by Cartweaver"'
 ]
 
-# Examples #
-examples %w|
-www.royalorle.com
-secure.thepaperplace.ca
-www.level-it.com
-www.winenotesconcerts.com/demos/php/basic/cw3/Admin/
-www.winenotesconcerts.com/demos/cfm/basic/cw3/Admin/
-www.winenotesconcerts.com/demos/asp/basic/cw3/Admin/
-|
+
 
 matches [
 

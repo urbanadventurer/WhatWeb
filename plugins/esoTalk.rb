@@ -17,16 +17,7 @@ dorks [
 '"Powered by esoTalk"'
 ]
 
-# Examples #
-examples %w|
-forum.esotalk.com
-demo.forum-software.org/esotalk/
-milfan.xoom.it
-spa8.uucuo.com
-worldwidedancers.com/blacklist/
-www.foollife.com
-www.fuckingurl.net
-|
+
 
 # Matches #
 matches [

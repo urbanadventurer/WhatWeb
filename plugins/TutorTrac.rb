@@ -20,20 +20,7 @@ dorks [
 'intitle:"TutorTrac Learning Center Tracking Software"'
 ]
 
-# Examples #
-examples %w|
-https://tracweb.wku.edu:444/tutortrac/
-https://arcschedule.georgefox.edu/TracWeb40/
-64.106.24.165
-140.198.80.139
-24.159.164.158
-206.176.54.10
-216.19.113.51
-205.155.151.170
-138.202.175.198
-128.123.115.248
-63.224.138.130
-|
+
 
 # Matches #
 matches [

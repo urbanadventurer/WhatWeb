@@ -16,17 +16,7 @@ dorks [
 '"Powered by Free Simple Software (Free Simple CMS / Free Simple Shop / Free Simple Blog / Free Simple Host)"'
 ]
 
-# Examples #
-examples %w|
-www.freesimpleshop.com/index.php?login=admin
-www.freesimplecms.com/index.php?login=admin
-www.freesimpleblog.com/index.php?login=admin
-www.freesimplehost.com/index.php?login=admin
-www.dustincowell.com/index.php?login=admin
-www.everydayrapper.com/index.php?login=admin
-www.rmsutherland.com/index.php?login=admin
-www.tabletidbits.com/index.php?login=admin
-|
+
 
 matches [
 

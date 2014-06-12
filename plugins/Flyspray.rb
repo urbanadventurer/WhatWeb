@@ -17,19 +17,7 @@ dorks [
 '"Powered by Flyspray"'
 ]
 
-# Examples #
-examples %w|
-bugs.archlinuxppc.org
-war3source.com/bugs/
-www.vixn.org/bugs/
-pmlivestaging.com
-bugs.waysoflife.be
-bugtracker.goggosoft.de
-www.observium.org/bugs/
-bugs.archlinux.fr
-dev.oscss.org
-opensource.dyc.edu/flyspray/
-|
+
 
 # Matches #
 matches [

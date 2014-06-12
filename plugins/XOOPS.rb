@@ -17,19 +17,7 @@ dorks [
 '"Powered by XOOPS"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/xoops/
-www.maitsco.com
-xoopscube.sourceforge.net
-www.yamipod.com
-www.xoopsland.com
-www.wolfpackclan.com
-www.thisplace.ca
-www.cyclingproject.com
-www.ifik.eu
-xoops.bestofcoeurdalene.com
-|
+
 
 # Matches #
 matches [

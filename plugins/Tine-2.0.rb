@@ -16,14 +16,7 @@ dorks [
 '"You need to enable javascript to use Tine 2.0"'
 ]
 
-# Examples #
-examples %w|
-demo.tine20.org
-gelinas.cc/tine20/setup.php
-demo.superstatz.com/index.php
-https://zer0.de/tine20/
-demo.sopen.de
-|
+
 
 # Matches #
 matches [

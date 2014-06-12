@@ -17,17 +17,7 @@ dorks [
 '"Powered by AMDSoFT" ext:aspx'
 ]
 
-# Examples #
-examples %w|
-www.panizafzar.com/Main/ContactusEn.aspx
-profiles.tahsil-dari.com/login.aspx
-www.ubconference.com/Main/product.aspx
-novindarbco.com/Main/request.aspx
-www.scoiranfair.com/Main/Aboutus.aspx
-www.gbconference.com/Main/ContactUs.aspx
-www.ab-borhani.com/Main/product.aspx
-pardisgol.com/Main/ContactUs.aspx
-|
+
 
 # Matches #
 matches [

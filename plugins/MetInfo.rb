@@ -17,27 +17,7 @@ dorks [
 '"Powered by MetInfo"'
 ]
 
-# Examples #
-examples %w|
-cqscfphscom.hk2.mydns1.biz
-www.musicdidac.com
-www.cnroyalgroup.com
-www.stonesp.com
-www.tenrytech.com
-www.ktshardware.com
-www.cnwant.com
-www.wanxiantrade.com
-www.extrinsicdecorventures.com
-www.okstarco.com
-www.canalaser.com
-www.yingliled.com
-www.cxboyi.com
-www.vcantec.com
-www.qcants.com
-www.hbdcg.com
-www.steelan.com
-www.winsafele.com
-|
+
 
 # Matches #
 matches [

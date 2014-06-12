@@ -8,16 +8,7 @@ Plugin.define "VideoShareEnterprise" do
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-20
 version "0.1"
 description "online video sharing community web application - homepage: http://www.alstrasoft.com"
-examples %w|
-www.alstrahost.com/vs/
-www.greenindustryeducation.com/greentvtube/vse/
-www.ponyflix.com
-www.cliplocker.com
-www.videobutter.com
-atvriders.tv
-www.logicalstupidity.com/videoshare/
-www.homehilites.com/videoshare/
-|
+
 
 matches [
 

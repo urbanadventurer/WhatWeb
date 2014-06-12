@@ -13,19 +13,7 @@ description "pcextreme server - Homepage: http://www.pcextreme.nl/"
 # 17 for Server PCX -PCX3000 -apache -IIS
 # All results are from Netherlands
 
-# Examples #
-examples %w|
-109.72.85.11
-109.72.85.37
-109.72.85.69
-109.72.85.86
-109.72.85.87
-109.72.85.118
-109.72.85.120
-109.72.86.5
-109.72.86.43
-109.72.86.44
-|
+
 
 # Matches #
 matches [

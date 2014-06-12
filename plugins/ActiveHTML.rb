@@ -12,15 +12,7 @@ description "seliSoft ActiveHTML provides Active-Server-Pages (ASP) to nearly ev
 # ShodanHQ results as at 2011-08-06 #
 # 65 for ActiveHTML
 
-# Examples #
-examples %w|
-211.22.178.47
-213.13.123.56
-85.47.141.73
-82.85.116.118
-207.250.0.196
-81.149.7.77
-|
+
 
 # Passive #
 def passive

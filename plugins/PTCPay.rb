@@ -17,15 +17,7 @@ dorks [
 '"Login into your admin panel" "PTCPay.Com" inurl:"admin"'
 ]
 
-# Examples #
-examples %w|
-ptcpay.com/gen4demo/admin/
-www.alertpay2pk.com/admin/
-www.klikasik.com/admin/
-host-ptc.com/demo/admin/
-cgrolandia.com.br/marc/gen4/admin/
-simplexer.nl/admin/
-|
+
 
 # Matches #
 matches [

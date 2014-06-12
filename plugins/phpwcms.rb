@@ -10,18 +10,7 @@ version "0.1"
 description " is a robust and simple but yet powerful web based content management system running under PHP and MySQL. - homepage: http://www.phpwcms.de/"
 
 # 244 results for "template powered by phpWCMS-templates.de" @ 2010-09-03
-examples %w|
-deanloh.com/index.php
-www.spezialradmesse.de/index.php
-www.rsc-edelherb.de/index.php
-www.jg300.de
-www.feuerwehr-fraureuth.de/www/index.php
-www.vom-auerswalder-teich.de/cms/index.php
-www.feuerwehr-lerbeck-neesen.de/index.php
-www.main-garten.com/garstadt-lauf/index.php
-www.fc-laasphe.de/index.php
-www.kostenlose-leseproben.de
-|
+
 
 matches [
 

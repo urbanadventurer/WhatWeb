@@ -17,17 +17,7 @@ dorks [
 'intitle:Gallarific "Sign in to Gallarific"'
 ]
 
-# Examples #
-examples %w|
-www.gallarific.com/demo/index.php
-www.gallarific.com/demo/gadmin/index.php
-www.kestevenrfc.co.uk/gallery/
-www.kestevenrfc.co.uk/gallery/gadmin/
-k3.hostoi.com
-k3.hostoi.com/gadmin/
-www.bondbug.com/buggallery/
-www.bondbug.com/buggallery/gadmin/index.php
-|
+
 
 # Matches #
 matches [

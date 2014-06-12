@@ -18,14 +18,7 @@ dorks [
 '"Powered by JXT Consulting"'
 ]
 
-# Examples #
-examples %w|
-www.callcentrejobs.com.au
-www.mcs-consulting.com.au
-www.jxt.com.au
-environmental.fmplus.com.au.jxt.net.au
-jobs.itnews.com.au
-|
+
 
 # Matches #
 matches [

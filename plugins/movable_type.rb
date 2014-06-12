@@ -34,36 +34,7 @@ dorks [
 'inurl:/mt-check.cgi intitle:"Movable Type System Check [mt-check.cgi]"'
 ]
 
-# Examples #
-examples %w|
-www.movabletype.org
-blog.comcast.com
-www.ifc.com
-www.treehugger.com
-politicsandsociety.usc.edu
-boeingblogs.com/randy/
-www.mitadmissions.org
-www.seriouseats.com
-talkingpointsmemo.com
-eat.mst.edu
-advisors.it.rit.edu
-blog.ltc.arizona.edu
-www.treehugger.com
-gothamist.com
-nfocentrale.com/status/
-www.ony.unu.edu/news/
-jcet.umbc.edu
-accesspoint.astate.edu
-www.law.wisc.edu
-cssa.dartmouth.edu/blog/
-blog.vcu.edu
-blogs.setonhill.edu/nmj/
-www.plasticmind.com
-blogs.princeton.edu
-blogs.psu.edu
-www.granato.org
-www.discoverborneo.com/blog/
-|
+
 
 # Matches #
 matches [

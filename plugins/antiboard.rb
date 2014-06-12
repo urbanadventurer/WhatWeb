@@ -14,8 +14,7 @@ dorks [
 'inurl: antiboard.php'
 ]
 
-# Examples #
-examples %w|http://www.cultos.org/board/antiboard.php http://www.mishpouka.com/web/antiboard.php http://www.munichmela.de/php/main/bulletinboard.php www.abertillerycricket.com/board.php |
+
 
 # inurl: antiboard.php
 #  <form method="post" action="/antiboard/antiboard.php">

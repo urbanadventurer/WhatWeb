@@ -20,47 +20,7 @@ dorks [
 '"powered by Pc4Uploader"'
 ]
 
-# Examples #
-examples %w|
-3yonic.net
-3inain.com
-5h5h.com
-7eznah.net
-m7li.com
-hicom10.com
-im2up.com
-up.nqeia.com
-up.mansouracity.com
-up.ta7a.com
-up.arjwan.com
-up.mansouracity.com
-ro0o.net
-s4up.com
-w4w5.net
-wa7dani.com
-x7x7x.net
-www.gamr15.org
-www.mlafk.com
-www.q8up.com
-www.zainup.com
-www.dwn1.com
-www.m5azn.com
-www.m7li.com
-www.7ww7.com
-www.imslm.net
-www.shy22.com
-www.v5p.net
-www.wa7dani.com
-www.q8up.com
-www.f9f9f.com/up/
-www.a6iaf.net/up2/
-www.600kb.com
-www.wlidk.net
-www.4-up.biz
-www.mbc66.net/upload/
-www.upoup.com
-www.brg8.org
-|
+
 
 # Matches #
 matches [

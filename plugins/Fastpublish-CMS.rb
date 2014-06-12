@@ -17,33 +17,7 @@ dorks [
 '"Securitycode: (please insert the numbers from the picture into the following field)"'
 ]
 
-# Examples #
-examples %w|
-www.fastpublish.org
-www.fastpublish.de
-hilfe.fastpublish.de
-www.cultureversy.com
-www.taq-dna.com
-www.bundesverband-patentanwaelte.de
-www.numinabiodynamics.org
-www.balkonvermietung.de
-www.t-w-maria.de
-www.showhownyc.com
-www.thelivingtheatreworkshops.com
-www.grassrootlandscaping.com
-northshore.noizart.com
-thelivingtheatreworkshops.noizart.com
-www.advenco.de
-www.youfact.com
-isman.codie.com
-www.codie.com
-www.codie.eu
-www.mingusart.com
-www.dwornigkucki.de
-www.charlesmingus3art.com
-mingus.charlesmingus3art.com
-www.komponistenforum.de
-|
+
 
 # Matches #
 matches [

@@ -23,26 +23,7 @@ description "Google Hack Honeypot is the reaction to a new type of malicious web
 # Dates and filenames are used in favor of HTML comments and version numbers
 # in order to reduce false positives.
 
-# Examples #
-examples %w|
-ghh.sourceforge.net/demo/GHH%20-%20PHP%20Ping/php-ping.php
-ghh.sourceforge.net/demo/GHH%20-%20Haxplorer/1.php
-www.abyss.cba.pl/hnpt/haxplorer/1.php
-www.raveneye1.com/1.php
-ghh.sourceforge.net/demo/GHH%20-%20PhpSysInfo/index.php
-cohrs.web.surftown.se/qwerty/about/phpsysinfo/index.php
-www.abyss.cba.pl/hnpt/php_sysinfo/index.php
-ghh.sourceforge.net/demo/GHH%20-%20PHPFM/index.php
-ironwiretech.com/IWGHH/PHPFM/index.php
-h.ova.cz/phpfm/index.php
-www.abyss.cba.pl/hnpt/phpfm/
-snowmane.cs.washington.edu/hps/phpfm/
-ghh.sourceforge.net/demo/GHH%20v1.1%20-%20passwd.txt/passwd.txt
-www.gialle.org/wwwboard/passwd.txt
-snowmane.cs.washington.edu/hps/files/etc/passwd.txt
-ghh.sourceforge.net/demo/GHH%20-%20SquirrelMail/src/login.php
-snowmane.cs.washington.edu/hps/squirrelmail/src/login.php
-|
+
 
 # Matches #
 matches [

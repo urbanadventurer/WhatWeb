@@ -15,23 +15,7 @@ description "Old forum - homepage: http://www.xchangeboard.de"
 # Google results as at 2010-08-21 #
 # 30 for "powered by XchangeBoard"
 
-# Examples #
-examples %w|
-www.dr-met.de/uni/forum/index.php
-forum.cresta-run.com
-www.forum.gpb-edu.org/Xchange/index.php
-ricqu.com/board/newPost.php
-forum.cresta-run.com/listBoardThreads.php
-www.kleinjung.de/techdata/board/listBoardThreads.php
-www.bushido-muelheim.de/XchangeV170/
-www.kleinjung.org/techdata/board/
-www.wow-rda.de/forum/
-kleinjung.com/techdata/board/
-forum.pfarre-nfh.at
-www.arm-des-gruenen-drachen.de/xboard/
-vs184251.vserver.de/ogameforen/uni27/
-www.mr2-club-europa.de/Clubinside/XchangeV170/
-|
+
 
 # Matches #
 matches [

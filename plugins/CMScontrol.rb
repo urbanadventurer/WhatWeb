@@ -20,31 +20,7 @@ dorks [
 '"CMScontrol" -"SQL Injection" -exploit inurl:"index.php?id_menu="'
 ]
 
-# Examples #
-examples %w|
-www.cmscontrol.com
-www.galsi.it
-www.immobiliarelorenzi.it
-www.makemebeauty.it
-www.cookingexpo.it
-www.rcmitalia.com
-www.unopertutti.com
-www.cilenti.at
-www.promoberg.it
-www.fiamsport.net
-www.alta-quota.it
-www.fieraedile.it
-www.bergamocreattiva.it
-www.bergamofiera.it
-www.legiraffe.it
-www.caniledicaluso.it/index.php
-www.campionaria-bergamo.it
-www.fieradelmobile-bergamo.it
-www.gervaweb.com
-www.bedandbreakfast-italia.info
-62.173.166.171/_cms_demo2
-www.studiodartefioretti.it
-|
+
 
 matches [
 

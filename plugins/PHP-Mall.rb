@@ -19,22 +19,7 @@ dorks [
 '"powered by iBoutique.MALL"'
 ]
 
-# Examples #
-examples %w|
-www.netartmall.com
-www.coolrilla.com/Store/
-www.officialdemos.com/netartmall/
-netartmall.officialdemos.com
-mall.netartmall.com
-www.discountsdealsandbargains.com
-everyonesglass.com
-www.topmall.eu/index.php
-yulstertech.netartmall.com
-www.ishopcaribbean.com/GYSFYN
-serverlads.com/index.php
-www.wscreator.com/roger/index.php
-www.products-from-china.com/index.php
-|
+
 
 # Matches #
 matches [

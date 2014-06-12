@@ -20,16 +20,7 @@ dorks [
 '"powered by Kayako eSupport"'
 ]
 
-# Examples #
-examples %w|
-demo.kayako.com/supportsuite/
-demo.kayako.com/supportsuite/admin/
-demo.kayako.com/supportsuite/staff/
-www.developershed.com/esupport/
-www.customerhelpdesk.org/
-www.customerhelpdesk.org/admin/
-www.developershed.com/esupport/admin/
-|
+
 
 # Matches #
 matches [

@@ -16,24 +16,7 @@ dorks [
 '"Powered by PHP121"'
 ]
 
-# Examples #
-examples %w|
-demo.php121.com/php121/php121login.php
-www.haitisurf.com/netchat/php121/php121login.php
-www.girlsblogspot.com/php121/php121im.php
-www.warforceclan.com/wfcim/php121newuser.php
-www.stlcitycircuitcourt.com/php121-2.2/php121-2.2/php121/php121im.php
-www.im.mesententes.com/php121im.php
-www.star97.com/chat/php121/php121im.php
-www.eglnigeria.com/livechat/php121login.php
-angelslosingsleep.net/php121/php121newuser.php
-sserv.org/IM/php121im.php
-www.amizades.biz/matchmaker/modules/php121/php121im.php
-www.ajjegames.com/php121-2.2/php121/php121login.php
-rockgrip.com/chat/php121/php121newuser.php
-www.ithinkimlost.com/php121/php121im.php
-www.superstarsofhorsetraining.com/php121/php121im.php
-|
+
 
 matches [
 

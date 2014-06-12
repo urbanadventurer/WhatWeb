@@ -22,19 +22,7 @@ dorks [
 '(inurl:"modules/applicationmaster/default.aspx"|inurl:"modules/propertymaster/default.aspx")'
 ]
 
-# Examples #
-examples %w|
-datracker.cessnock.nsw.gov.au/modules/applicationmaster/default.aspx
-hsconline.hornsby.nsw.gov.au/appenquiry/modules/applicationmaster/default.aspx?page=disclaimer
-web.tcdc.govt.nz/MPPuProd/masterplan/enquirer/default.aspx
-planning.nmc.tas.gov.au/modules/PropertyMaster/default.aspx
-planning.mackay.qld.gov.au/masterview/Modules/PropertyMaster/default.aspx?page=login
-203.34.0.76/datracking/modules/propertymaster/default.aspx?page=search
-masterview.cockburn.wa.gov.au/MasterViewUI/modules/PropertyMaster/Default.aspx
-apptracking.lakemac.com.au/modules/PropertyMaster/default.aspx?page=login
-https://www2.bmcc.nsw.gov.au/datracking/Modules/ApplicationMaster/default.aspx?page=disclaimer
-https://epwgate.waverley.nsw.gov.au/DA_Tracking/Modules/PropertyMaster/Default.aspx
-|
+
 
 # Matches #
 matches [

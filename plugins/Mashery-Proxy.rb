@@ -13,32 +13,7 @@ description "The Mashery proxy is our patent pending software that sits between 
 # 92 for Mashery Proxy
 # 78 for X-Mashery-Error-Code
 
-# Examples #
-examples %w|
-support.mashery.com
-developer.mashery.com
-developer.netflix.com
-developer.nytimes.com
-developer.trulia.com
-50.16.233.119
-64.94.14.23
-64.94.14.13
-64.94.14.15
-64.94.14.17
-64.94.14.18
-64.94.14.19
-64.94.14.22
-64.94.14.23
-64.94.14.24
-64.94.14.25
-174.129.152.139
-174.129.236.115
-174.129.247.162
-184.72.211.79
-184.73.101.162
-204.236.229.168
-216.52.244.125
-|
+
 
 # Passive #
 def passive

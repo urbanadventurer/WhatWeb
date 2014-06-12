@@ -12,17 +12,7 @@ description "Qportal web interface for QuesCom telephony devices - Homepage: htt
 # ShodanHQ results as at 2011-05-30 #
 # 842 for OctoWebSvr
 
-# Examples #
-examples %w|
-80.249.2.58
-201.148.21.6/userframes.asp
-80.78.69.252/userframes.asp
-201.144.239.225
-81.209.10.203
-200.30.188.130
-90.84.127.142
-82.108.117.140
-|
+
 
 # Matches #
 matches [

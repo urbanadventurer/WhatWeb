@@ -20,28 +20,7 @@ dorks [
 'intitle:"Welcome to SecureTransport"'
 ]
 
-# Examples #
-examples %w|
-12.180.115.182
-129.33.19.135
-216.190.97.20
-204.254.175.102
-58.246.137.6
-195.36.116.28
-159.240.5.84
-st.geisinger.org
-mft.adaweb.net
-ns1.tensilica.com
-https://exftpp.symantec.com/
-https://valicertext.roche.com/
-https://file.callawaygolf.com/
-https://sftp.kingcounty.gov/
-https://st.ig.com.au/
-https://sft.sso.sas.com/
-https://sftna.xerox.com/
-https://ftp.ameriben.com/
-https://tst-west.sonyusa.com/
-|
+
 
 # Matches #
 matches [

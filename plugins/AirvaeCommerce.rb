@@ -21,15 +21,7 @@ dorks [
 '"powered by AirvaeCommerce" -Vulnerability'
 ]
 
-# Examples #
-examples %w|
-airvaecommerce.com/ACI/
-demo.airvaecommerce.com
-babieswire.info
-www.greatbabyproducts.com
-www.dogncatz.com
-www.inflatablz.com
-|
+
 
 # Matches #
 matches [

@@ -21,12 +21,7 @@ dorks [
 'intitle:"Welcome to Rapid Browser"'
 ]
 
-# Examples #
-examples %w|
-news.alquds.com
-212.235.102.233
-195.226.230.174
-|
+
 
 # Matches #
 matches [

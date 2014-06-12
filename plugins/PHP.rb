@@ -40,58 +40,7 @@ dorks [
 'warning|error PHP inurl:error_log "in /home/*.php on line"'
 ]
 
-# Examples #
-examples %w|
-129.217.108.130
-202.235.202.65
-81.169.165.201
-88.191.98.199
-69.46.9.245
-210.158.243.55
-72.13.88.196
-67.222.45.85
-96.46.184.46
-81.169.173.100
-209.205.127.135
-96.0.245.3
-95.187.225.232
-195.42.102.207
-116.58.194.4
-85.42.95.194
-128.241.54.213
-82.139.7.250
-201.34.79.162
-66.29.49.30
-212.130.55.137
-64.130.117.21
-65.181.183.138
-65.181.154.208
-66.39.68.120
-216.92.197.111
-202.172.29.61
-76.75.214.230
-88.250.196.41
-portal.ics.kagoshima-u.ac.jp/~pcp/main.php
-www.rajawillem.org/master.php?nav=info
-202.28.94.51/users/ngamnij/322731/menu.php
-ddxsamx.com/stats/player.php
-www.imcoimoveis.com.br/search.php
-www.clementsalus.com/notamp.php?not=
-itpak.net/wp-content/themes/default/
-studio306.com/weblog/wp-content/themes/default/
-yvonnelao.com/wp-content/themes/default/
-zendedel.com/blog/wp-content/themes/classic/index.php
-www.nurse-power.com/blog/wp-content/themes/default/
-www.wunschrausch.com/blog/wp-content/themes/default/
-www.parnamirim.rn.gov.br/tinus_parnamirim/ParnamirimOnLine.php
-gp.macau.grandprix.gov.mo/gp/55/schedule.php
-scijinks.jpl.nasa.gov/_calendar/calendar.php
-hscap.kerala.gov.in/statreport/newschool.php
-www.fucoa.gov.cl/radio/radio.php
-www.simerj.rj.gov.br/Petropolis.php
-www.peshawarhighcourt.gov.pk/cause_lists.php
-www.leandertx.gov/page_print.php
-|
+
 
 # Matches #
 matches [

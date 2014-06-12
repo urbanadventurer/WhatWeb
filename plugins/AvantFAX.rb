@@ -23,20 +23,7 @@ dorks [
 '"avantfax login" "Enter your username and password to access the fax interface."'
 ]
 
-# Examples #
-examples %w|
-213.155.192.10
-205.134.248.165
-95.39.23.118
-216.30.213.178
-77.38.12.137
-94.100.70.33
-188.130.75.245avantfax
-ns3.callipigia.com
-4all.lvtestavantfax
-neselresummesreeaai.perta.it
-novella.it
-|
+
 
 # Matches #
 matches [

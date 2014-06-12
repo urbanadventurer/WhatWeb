@@ -20,12 +20,7 @@ dorks [
 'intitle:"WebAdmin" "You have forgotten to enable JavaScript in your Browser!"'
 ]
 
-# Examples #
-examples %w|
-demo01.astaro.com
-demo02.astaro.com
-demo03.astaro.com
-|
+
 
 # Matches #
 matches [

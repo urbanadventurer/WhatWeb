@@ -18,11 +18,7 @@ dorks [
 '"Powered by x10media Torrent Search Engine Script"'
 ]
 
-# Examples #
-examples %w|
-www.x10torrent.com
-hitsandfree.com
-|
+
 
 matches [
 

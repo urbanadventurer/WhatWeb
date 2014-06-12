@@ -10,7 +10,7 @@ author "Andrew Horton"
 version "0.1"
 description "Axis 540/542 Network Print Server. Homepage: http://www.axis.com/products/axis_540p/index.htm"
 
-examples %w| 211.236.164.220 |
+
 
 # 1 result for "Welcome to AXIS 540/542 Network Print Server"
 # Dorks #

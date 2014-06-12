@@ -21,21 +21,7 @@ dorks [
 'inurl:"/Sitefinity/WebsiteTemplates/"'
 ]
 
-# Examples #
-examples %w|
-www.sitefinity.com
-www.telerik.com
-website2pdf.com
-www.purecircle.com
-www.lbs.com.my
-www.fultonscrabhouse.com
-www.fultonsontheriver.com
-catalogue.seaquistclosures.eu
-promaxbda.org
-dev1.promaxbda.org
-demo.iciniti.com
-apca.com.au
-|
+
 
 # Matches #
 matches [

@@ -16,21 +16,7 @@ dorks [
 '"powered by 68 Classifieds Script"'
 ]
 
-# Examples #
-examples %w|
-demo.68classifieds.com
-demo.68classifieds.com/administration/login.php
-www.reefclassifieds.co.uk
-www.rvwholesalers.com/classifieds/
-www.eastcoastbiker.net/classifieds/
-www.advertisecoldlake.com/category.php
-www.contractorresell.com
-www.booksonlineclassifieds.com
-ellapicerohispano.com
-green.powerpoint3.com
-www.ellapicerohispano.com
-www.usedfurnitureshop.co.uk
-|
+
 
 # Matches #
 matches [

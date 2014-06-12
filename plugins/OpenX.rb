@@ -14,27 +14,7 @@ dorks [
 'intitle:OpenX "Welcome to OpenX" "Forgot your password" "Authentication"'
 ]
 
-# Examples #
-examples %w|
-adserver.openx.org
-2i.lt/www/admin/index.php
-www.rxads.info/www/admin/index.php
-openx.autosputnik.com
-a.active.by
-openx.bkk2night.net
-openx.banners.ge
-openx.s-p-m.ch
-kashtan.freesea.ru
-kwaltz.avblog.nl
-ads2.eol.cn
-lad.lbgoo.com
-customer.chinacars.com
-ed3.de
-a.lvmama.com
-connect.hkcosme.com
-a.stanzapub.com
-ad1.dolanadserver.com
-|
+
 
 # Matches #
 matches [

@@ -28,47 +28,7 @@ dorks [
 'inurl:config?Func=AboutSend'
 ]
 
-# Examples #
-examples %w|
-74.221.131.34
-144.118.68.34
-208.226.167.184
-216.153.251.181
-206.181.245.173
-64.80.233.122
-www.metzgerwillard.net
-gsti.miis.edu
-bak.flinn.com
-disk.com.hk
-207.75.211.93
-superstarpillowfight.com
-gossamer.gsu.edu/config?Func=AboutSend
-hamers.chem.wisc.edu
-sunvic.info
-eng.flinn.com
-hatch.cpmc.columbia.edu
-cruzi.pathology.northwestern.edu
-www.sullivanne.com
-qrc2.ess.washington.edu
-chalk.salk.edu
-phaedo.rutgers.edu
-mercyhill-lakecountry.org
-64.199.31.202
-spamsnap80.engr.uc.edu
-207.75.219.250
-cruzi.pathology.northwestern.edu
-gyre.cds.caltech.edu
-snaps.gotdns.org
-mme23.mme.wsu.edu
-onenet.spitnimage.com
-xray.chem.wisc.edu
-coreserver.biochem.okstate.edu
-deadsuperstar.com
-server1.music.olemiss.edu
-141.106.186.50
-snaps.gotdns.org
-onenet.spitnimage.com
-|
+
 
 # Matches #
 matches [

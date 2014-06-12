@@ -12,16 +12,7 @@ description "Some sort of wireless broadband contraption from Aperto Networks - 
 # ShodanHQ results as at 2011-05-11 #
 # 73 for PacketWave
 
-# Examples #
-examples %w|
-83.96.122.33
-59.165.160.49
-83.96.85.73
-83.96.24.103
-64.71.4.196
-69.71.88.5
-83.96.123.66
-|
+
 
 # Matches #
 matches [

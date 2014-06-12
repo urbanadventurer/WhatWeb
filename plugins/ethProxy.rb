@@ -12,18 +12,7 @@ description "ethProxy DDoS (Distributed Denial of Service) Proxy solution offers
 # ShodanHQ results as at 2011-05-13 #
 # 80 for ethProxy
 
-# Examples #
-examples %w|
-199.59.164.43
-204.74.219.48
-208.64.124.245
-208.64.124.203
-74.86.128.204
-74.86.128.194
-74.82.171.188
-67.228.68.195
-208.64.124.101
-|
+
 
 # Matches #
 matches [

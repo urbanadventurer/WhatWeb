@@ -21,43 +21,7 @@ dorks [
 '"team5 studio all rights reserved" site:cn'
 ]
 
-# Examples #
-examples %w|
-www.team5.cn
-cg.sjtu.edu.cn/talk1/
-bbs.gigabyte.cn
-bbs.ite68.cn
-smkxxy.hutc.zj.cn/wjhx/bbs/
-tophr.cn/bbs/
-www.02412316.cn/xys/bbs/
-www.1-pin.com.cn/docc/bbs/
-www.51crossstitch.cn/TEAM/
-www.beilegroup.cn/bbs/
-www.cmiis.cn
-www.cnyzy.cn
-www.cqwsgb.cn/bbs/
-www.cqzh.cn/post/10.html
-www.dv30.com.cn/bbs/
-www.enet.org.cn
-www.epalace.com.cn
-www.eurekar.cn/yulan/bbs/
-www.fw114.gov.cn/bbs/
-www.gzjs.com.cn/bbs/
-www.msjg.cn/SiteMeiShanJinGan/BBS/
-www.nqwsj.gov.cn/bbs/
-www.shyaoming.cn/bbs/
-www.sxwlfz.cn/xlzx/bbs/Default.asp
-www.szlhlib.com.cn/cgbbs/default.asp
-www.teamark.cn/bbs/
-www.tophr.cn/bbs/
-www.watermeter.com.cn/forum/
-www.wfeng.net.cn/bbs/
-www.wnzsw.cn/teams/default.asp
-www.xalhdpf.org.cn/bbs/
-www.xinxuhui.cn/teams/default.asp
-www.xlzl.com.cn/bbs/default.asp
-www.xmonecard.cn/bbs/default.asp
-|
+
 
 # Matches #
 matches [

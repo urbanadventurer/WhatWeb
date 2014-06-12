@@ -22,22 +22,7 @@ dorks [
 '"view : default/article" inurl:404'
 ]
 
-# Examples #
-examples %w|
-demo.ionizecms.com
-demo.ionizecms.com/en/admin/user/login
-demo.ionizecms.com/fr/admin/user/login
-develzone.net
-wednhl.com
-tss-supports.com/ionize96/
-thapaprakash.com.np/ruth/
-network.sintesiadditiva.com/stone/
-178.32.101.117
-213.197.239.129
-141.223.171.52
-93.88.248.154
-87.98.171.22
-|
+
 
 # Matches #
 matches [

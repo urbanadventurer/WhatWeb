@@ -16,42 +16,7 @@ dorks [
 '"powered by RevSense" -Vulnerability'
 ]
 
-# Examples #
-examples %w|
-andgetpaid.com/adserv/
-advertise.sharedcanvas.com
-proutandcompanies.com/adserv/index.php
-revsense.realityx.cz
-adserv.sifir.com
-advertisingmd.com
-ads.greenpassion.org
-ads.escortfrance.ws
-ads.searchclone.com
-resortvideos.info
-islandvideos.info
-adventurevideos.info
-www.findamachine.com/revsense/
-www.integral-ads.com
-www.wizzfone.com/Revsense/index.php
-www.horseshoemedia.com/revsense/
-www.digitalburg.com/revsense/
-www.freedomwire.com/revsense/
-www.avsim.com/rev/
-www.advertizon.com
-www.crazyads.co.uk
-www.thewebhostingreview.com/ads/
-ads.accessnorthga.com
-www.joinads.net/ads/
-www.venom-center.com/advertising/
-www.visualnet.com/visualads/
-www.taxi-martadvertising.co.uk/adserve/
-www.bluemoonmedia.co.uk/adserver/
-www.videosessohardcore.com/revsense/
-www.textlinx.com/adserver/
-www.1cheval.com/0adswin/
-www.4nbf.net/adrev2/index.php
-www.coolrunning.com.au/adsystem/index.php
-|
+
 
 matches [
 

@@ -18,11 +18,7 @@ description "X-Powered-By HTTP header"
 # ShodanHQ results as at 2011-04-02 #
 # 7,122,968 for x-powered-by
 
-# Examples #
-examples %w|
-66.79.186.42
-219.76.176.30
-|
+
 
 # Passive #
 def passive

@@ -23,17 +23,7 @@ dorks [
 'inurl:csc_articles.php'
 ]
 
-# Examples #
-examples %w|
-www.ugg.de/shop/csc_article_details.php
-www.sievers-verlag.de/shop/en/csc_articles.php
-www.iskh.de/demoshop/csc_articles.php
-shop.sesamnet.ch/shop/csc_articles.php
-www.topfkraeuter.de/WebShop/csc_articles.php
-www.western-union-band.de/shop/csc_articles.php
-www.eurokursmuenzen-schach.de/shop/csc_articles.php
-www.life-is-more.at/shop/csc_articles.php
-|
+
 
 # Matches #
 matches [

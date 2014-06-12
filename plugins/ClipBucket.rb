@@ -20,26 +20,7 @@ dorks [
 '"Forged by ClipBucket"'
 ]
 
-# Examples #
-examples %w|
-clipbucket.net/v2/
-clipbucket.net/v2-1/
-222.189.163.250
-50.61.239.246
-12.158.188.207
-184.107.189.20
-119.75.234.225
-107.22.188.73
-69.57.164.58
-200.20.0.88
-109.235.70.116
-tendancetv.us/videoclub/
-brandyfans.com/vault/
-vision.rcinet.ca/clipbucket_2-6/
-ucsc.tv/view_page.php
-libriummedia.com
-clchaup.projects.si.umich.edu/clip/view_page.php
-|
+
 
 # Matches #
 matches [

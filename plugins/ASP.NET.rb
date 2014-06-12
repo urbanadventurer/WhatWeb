@@ -3,6 +3,14 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
+
+# TODO
+# add detection true/false for ViewState MAC and Encryption
+
+
+##
+# Version 0.5 # 2014-06-12
+# Added Detailed errors and ViewState Encrypted. 
 ##
 # Version 0.4 # 2011-03-03 #
 # Merged x-aspnetmvc-version plugin
@@ -40,105 +48,7 @@ dorks [
 'inurl:global.asa ext:asa "ConnectionString"'
 ]
 
-# Examples #
-examples %w|
-www.microsoft.com
-www.asp.net
-gymbox.co.uk
-playnextlevel.com
-rabotadoma-perm.ru
-howlingsword.co.kr
-205.178.163.82
-205.178.185.168
-206.188.222.247
-205.178.158.154
-205.178.172.179
-205.178.175.96
-205.178.180.82
-205.178.166.182
-205.178.159.235
-69.161.209.78
-80.169.204.34
-216.58.235.82
-81.17.69.182
-81.173.203.162
-83.66.57.34
-98.129.142.219
-200.29.69.35
-174.143.14.66
-216.37.57.82
-117.53.170.221
-96.0.207.194
-81.33.11.112
-173.230.226.92
-560889223.net:86/DuolianProject/browser/trunk/DuoLianProject/CenterServer/Website/Web.Config
-dev.tyzoh.jp/trac/kotodama/browser/branches/withweb/wk/web.config
-github.com/mono/mvcwrench/blob/master/web.config
-owu-dnn-clb.googlecode.com/svn-history/r13/trunk/owu-dnn-clb/web.config
-riscoltd.com/skf/web.config
-sourceforge.jp/projects/lightcrm/svn/view/web/Web.config
-svn.koolkraft.net/nblogr/trunk/NBlogr.Web/Web.config
-www.cs.odu.edu/~gpd/msprojects/balak_r.0/source/Application/Web.config
-www.amlsn.org/web.config
-www.danielgranados.net/Trac/axon/browser/trunk/axonweb/Web.config
-auclebanon.com/aucchatroom/_vti_cnf/global.asa
-buyinsuranceez.com/_vti_cnf/global.asa
-globalytics.com/_vti_cnf/global.asa
-hep.brown.edu/users/Greg/NP/_vti_cnf/global.asa
-hep.brown.edu/users/Greg/Physics3_/_vti_cnf/global.asa
-home.rmci.net/mgjurenka/_vti_cnf/global.asa
-members.ziggo.nl/pvp128/_vti_cnf/global.asa
-mfreitas.por.ulusiada.pt/accv/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/execjobs4u.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.advancedintegratedpestmanagement.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.affordableaviation.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.altmarketing.net/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.amandaandstephen.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.amandalynne.biz/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.americanhealthcare.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.andersonroofing.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.anglenfamilyfun.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.armbrusterassoc.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.artistkatiemiller.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.ashleyca.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.asusbilla23.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.aum-online.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.barrons-company.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.believershomepage.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.betterqualitywindows.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.bluemarblecommunications.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.bnctransit.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.bradrmiller.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.brutonsglass.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.brycom.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.cal-alliance.org/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.californiaforarnold.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.cartconst.com/_vti_cnf/global.asa
-mywebspace.sac.winfirst.com/cds/DOMAINS/www.chezsoiinteriors.com/_vti_cnf/global.asa
-niobio.grasa.csic.es/wmoreda/webdepca/_vti_cnf/global.asa
-tars.rollins.edu/development/advserv/Frontpage%20Request%20Database/myweb/_vti_cnf/global.asa
-users.connecttime.net/www/jrhorton/My%20Webs/_vti_cnf/global.asa
-xbiker.kilu.de/_vti_cnf/global.asa
-www.scarborough.me.us/safety/police/_vti_cnf/global.asa
-www.usiu.ac.ke/usiu_old/events/sac_polls/_vti_cnf/global.asa
-www.kyokushinkan.af/En/_vti_cnf/global.asa
-www.translator-spanish-english.com/_vti_cnf/global.asa
-www.tcaa.net.au/_vti_cnf/global.asa
-www.cs.uofs.edu/~tjm5/myweb3/_vti_cnf/global.asa
-www.dickwaddfetish.com/ad/_vti_cnf/global.asa
-www.ratiolink.de/Admin/_vti_cnf/global.asa
-www.chemengr.ucsb.edu/~ceweb/psec/psec06/_vti_cnf/global.asa
-www.creationfood.ca/_vti_cnf/global.asa
-www.dallas.net/~tommyt/myweb4/_vti_cnf/global.asa
-www.dekanatsministranten.de/juref/_vti_cnf/global.asa
-www.parrocchie.it/sarzana/carmine/_vti_cnf/global.asa
-www.coop-anexa.com.ar/_vti_cnf/global.asa
-www.pianreginaftp.it/test_locali/smart-forum/neurosmart/_vti_cnf/global.asa
-www.viajesindaltravel.com/_vti_cnf/global.asa
-www.senatordinniman.com/blog/_vti_cnf/global.asa
-buyinsuranceez.com/_vti_cnf/global.asa
-www.lexitron.net/_vti_cnf/global.asa
-|
+
 
 # Matches #
 matches [
@@ -153,6 +63,13 @@ matches [
 	# Get connection strings # web.config
 	{ :string=>/connectionString="([^\"]+)/ },
 	{ :string=>/<add key="ConnectionString" value="([^\"]+)/ },
+
+	# Detailed errors
+	{ :search=>"body", :string=>"Verbose error messages", :text=> "This error page might contain sensitive information because ASP.NET is configured to show verbose error messages"},
+	{ :search=>"body", :filepath=>/<b> Source File: <\/b> ([^<]+)<b> &nbsp;&nbsp; Line:.*This error page might contain sensitive information because ASP.NET/},
+	
+	# VIEWSTATEENCRYPTED
+	{ :string=>"ViewState Encrypted", :search=>"body", :text=>'name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED"'}
 
 ]
 

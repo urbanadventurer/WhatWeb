@@ -20,12 +20,7 @@ dorks [
 '"powered by LocazoList" -exploit'
 ]
 
-# Examples #
-examples %w|
-thescrapmeet.com
-www.salvageweb.com
-www.ourcommonline.com/tenafly/classifieds/
-|
+
 
 # Matches #
 matches [

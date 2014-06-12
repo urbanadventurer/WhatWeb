@@ -15,19 +15,7 @@ description "Trend Micro InterScan Web Security Suite (IWSS) Proxy server - home
 # ShodanHQ results as at 2010-10-23 #
 # 270 for Proxy-agent:IWSS
 
-# Examples #
-examples %w|
-202.41.220.166
-205.241.31.80
-66.165.168.231
-210.170.0.9
-121.242.23.197
-63.66.72.34
-208.51.138.212
-74.202.255.163
-210.170.0.24
-12.200.16.15
-|
+
 
 # Passive #
 def passive

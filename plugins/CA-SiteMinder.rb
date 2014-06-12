@@ -22,34 +22,7 @@ dorks [
 'ext:fcc inurl:"siteminderagent/forms/login.fcc"'
 ]
 
-# Examples #
-examples %w|
-https://enterpriselogin.disney.com/siteminderagent/pwcgi/smpwservicescgi.exe
-https://sc.oakgov.com/siteminderagent/pwcgi/smpwservicescgi.exe
-https://www.eaccountservices.com/pw/pwserv/smpwservicescgi.exe
-https://oneweb.mellon.com/pw/smpwservicescgi.exe
-https://www.partneragencies.org/siteminderagent/pwcgi/smpwservicescgi.exe
-https://healthservices.concentraaps.com/siteminderagent/pwcgi/smpwservicescgi.exe
-https://was2.hewitt.com/PSP-prod/siteminderagent/pwcgi/smpwservicescgi.exe
-https://secure.agresource.ca/siteminderagent/pwcgi/smpwservicescgi.exe
-https://v3.airbus.com/airbusauthentication/pwcgi/smpwservicescgi.exe
-https://lami01.lazardnet.com/SmFormAuthPWS/SmPWServicesCGI.exe
-https://aimm.wellsfargo.com/siteminderagent/pwcgi/smpwservicescgi.exe
-https://smrp-prod.volvo.com/siteminderagent/pwcgi/smpwservicescgi.exe
-https://was7.hewitt.com/RFM2/siteminderagent/pwcgi/smpwservicescgi.exe
-https://logon-america.econocophillips.com/siteminderagent/pwcgi/smpwservicescgi.exe
-https://mdfweb.a1.net/siteminderagent/pwcgi/smpwservicescgi.exe
-https://hr-uat.qa.bnymellon.com/pw/pwserv/smpwservicescgi.exe
-https://www.guichetunique.ch/siteminderagent/pwcgi/smpwservicescgi.exe
-https://www15.deutsche-leasing.de/siteminderagent/pwcgi/smpwservicescgi.exe
-https://www.agentinside.com/agentforms/agentlogin.fcc
-https://agateway.adp.com/siteminderagent/forms/login.fcc
-https://my.nih.gov/siteminderagent/forms/login.fcc
-https://applications.labor.ny.gov/siteminderagent/forms/login.fcc
-https://team.kc.us.army.mil/siteminderagent/forms/login.fcc
-https://www2.kc.us.army.mil/siteminderagent/forms/login.fcc
-isrtrain.hqda.pentagon.mil/siteminderagent/forms/login.fcc
-|
+
 
 # Matches #
 matches [

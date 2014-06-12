@@ -16,23 +16,7 @@ dorks [
 '"Use a valid username and password to gain access to the console" -lxcenter.org'
 ]
 
-# Examples #
-examples %w|
-http://demo.kloxo.com:7778/login/
-https://78.46.99.21:8887/login/
-http://www.northstarhosting.ca:7778/login/
-https://www.dedicadovirtual.com:8887/login/
-https://www.wisdomcybernetics.com:7777/login/
-https://vpscp.a2hosting.com:8887/login/
-https://vps3.ionic.net.pl:8887/login/
-http://marx.centicero.com:8888/login/
-https://vps.thenynoc.com:8887/login/
-http://vps6.bgwebart.com:7778/login/
-https://88.86.110.6:8887/login/
-http://74.95.64.75:7778/login/
-http://breyn.be:7778/login/
-http://zerghosting.hu:7778/login/
-|
+
 
 # Matches #
 matches [

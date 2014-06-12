@@ -12,18 +12,7 @@ description "The Cisco ACE XML Gateway is a key component of the Cisco Applicati
 # ShodanHQ results as at 2011-09-21 #
 # 231 for ACE XML Gateway
 
-# Examples #
-examples %w|
-198.208.154.52
-64.138.212.22
-199.40.254.97
-156.112.98.186
-156.112.98.164
-208.93.122.18
-155.199.24.30
-196.203.79.184
-208.93.120.38
-|
+
 
 # Matches #
 matches [

@@ -17,63 +17,7 @@ dorks [
 'intitle:"Ganglia:: Cluster Report" "Cluster Report for"'
 ]
 
-# Examples #
-examples %w|
-194.44.31.130
-143.50.154.21
-118.144.126.164
-brux.hep.brown.edu/ganglia/
-www.vital-it.ch/prdpub/ganglia-webfrontend/
-www.emanicslab.org/ganglia/
-iceman.cs.ucsb.edu/ganglia/
-beowulf.ac.brocku.ca/ganglia/
-ferrari.phys.cmu.edu/ganglia/
-www.citysense.net/ganglia/
-aii.irisa.fr/ganglia/
-lovejoy.nerc-essc.ac.uk/ganglia_ClusterGrid/
-application.sb-roscoff.fr/ganglia/
-mastercluster1.lsi.upc.edu/ganglia/
-hcc.unl.edu/ganglia/
-csdms.colorado.edu/ganglia/
-climserv.ipsl.polytechnique.fr/ganglia/
-orbit.psi.edu/ganglia/
-qcd.phys.cmu.edu/ganglia/
-sparrowhawk.cnbc.cmu.edu/ganglia/
-hydra.ft.uam.es/ganglia/
-hpc.icrisat.cgiar.org/ganglia/
-castl.cs.columbia.edu/ganglia/
-cluster.uta.edu/ganglia/
-astrosphere.dartmouth.edu/ganglia/
-borelli.me.udel.edu/ganglia/
-monitor.millennium.berkeley.edu
-meta.rocksclusters.org/ganglia/
-spl.mit.edu/ganglia/
-tmku211.ctw.utwente.nl/ganglia/
-njal.physics.sunysb.edu/ganglia/
-gbio-pbil.ibcp.fr/ganglia_grisbi/
-hpc.ufl.edu/ganglia-phase4/
-monitor.millennium.berkeley.edu/index.php
-msg.its.monash.edu.au/ganglia/
-iceman.cs.ucsb.edu/ganglia/
-qcd.phys.cmu.edu/ganglia/
-siber.cankaya.edu.tr/boron-ganglia/
-green.ssi.swin.edu.au/ganglia/
-www.clusters.arc.georgetown.edu/statistics/
-watcher.sc.fsu.edu/ganglia/
-emperor.cse.psu.edu/ganglia/
-t2srv0013.cmsaf.mit.edu/ganglia/
-spl.mit.edu/ganglia/
-galileo.phys.virginia.edu:8000/ganglia/
-homer.astro.sunysb.edu/ganglia/
-monitor.na.infn.it:7778/ganglia/
-nicadd.niu.edu/ganglia/
-boot.chtc.wisc.edu/ganglia/
-mastercluster1.lsi.upc.edu/ganglia/
-qcd.phys.cmu.edu/ganglia/
-www.psychiatry.uiowa.edu/ganglia/
-umiss001.hep.olemiss.edu/ganglia/
-wing.comp.nus.edu.sg/ganglia/
-|
+
 
 # Matches #
 matches [

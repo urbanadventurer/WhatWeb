@@ -17,13 +17,7 @@ dorks [
 'intitle:"Webgrind" "profiling in the browser" "percent" "milliseconds" "microseconds"'
 ]
 
-# Examples #
-examples %w|
-httpbench.net/webgrind/
-www.yuki-onna.co.uk/projects/experimental/xdebug/webgrind/
-policyinmotion.org/webgrind/
-prod.corpuspro.com/webgrind/
-|
+
 
 # Matches #
 matches [

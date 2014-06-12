@@ -10,60 +10,7 @@ author "Andrew Horton"
 version "0.2"
 description "Acclipse is a web CMS found mainly in New Zealand and Australia. It is popular with accountants. Websites: www.acclipse.co.nz & www.acclipse.com.au"
 
-examples %w|
-http://aguzzogroup.com.au/
-http://anniesnannies.co.nz/
-http://artstyle.co.nz/
-http://barkers.co.nz/
-http://bbtpartners.com.au/
-http://www.bentleys.com.au/
-http://bikehq.co.nz/
-http://billingsellis.com.au/
-http://blissaccountants.com.au/
-http://bmca.co.nz/
-http://btp.co.nz/
-http://bwraccountants.com.au/
-http://cbr.net.nz/
-http://cbxjapan.com/
-http://ckmmortgages.com.au/
-http://clearyhoare.com.au/
-http://cmacc.com.au/
-http://davisford.com.au/
-http://electromold.com.au/
-http://foodshow.co.nz/
-http://gillespiegroup.com.au/
-http://glynmorrisandco.com.au/
-http://gmaccounting.com.au/
-http://gtcfin.com.au/
-http://harakekeflowers.co.nz/
-http://hat.com.au/
-http://hoc.com.au/
-http://hphanna.co.nz/
-http://jacksonandjackson.co.nz/
-http://marriotts.co.nz/
-http://moamagrammar.nsw.edu.au/
-http://momentumfg.com.au/
-http://mortgagebrokermelbourne.net.au/
-http://muscilloromano.com.au/
-http://musclepeople.co.nz/
-http://nelsontriclub.co.nz/
-http://perricootamarinahouseboats.com.au/
-http://pikopiko.co.nz/
-http://projected-images.co.nz/
-http://prtonline.com.au/
-http://robinmajor.co.nz/
-http://sabirk.com.au/
-http://sbs.net.au/
-http://scc.net.au/
-http://sfrito.org.nz/
-http://smefinancial.co.nz/
-http://southerncrossadvisers.com.au/
-http://southerndc3.co.nz/
-http://statusrecruitment.co.nz/
-http://storage2u.co.nz/
-http://undergroundcoffee.co.nz/
-http://valmadreaccountants.com.au/
-http://whitetiecatering.co.nz/|
+
 
 matches [
 {:name=>"Footer link",

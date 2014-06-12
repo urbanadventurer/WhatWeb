@@ -17,15 +17,7 @@ dorks [
 '"powered by EMO Realty Manager"'
 ]
 
-# Examples #
-examples %w|
-buyalldubai.com
-upstaterealestate.com
-coopernj.com/emophp/
-www.pleasantgrovehomes.com
-www.lehihomes.com
-www.lindonhomes.com
-|
+
 
 matches [
 

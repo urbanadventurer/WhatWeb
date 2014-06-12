@@ -17,21 +17,7 @@ description "If the HttpOnly flag is included in the HTTP set-cookie response he
 # ShodanHQ results as at 2011-06-03 #
 # 252,825 for httponly
 
-# Examples #
-examples %w|
-google.com
-twitter.com
-facebook.com
-195.249.65.54
-63.252.14.24
-78.140.150.113
-62.241.4.204
-77.120.110.54
-69.6.207.118
-98.131.163.231
-75.103.122.79
-67.227.50.155
-|
+
 
 # Passive #
 def passive

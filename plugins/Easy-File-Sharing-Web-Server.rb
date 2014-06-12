@@ -12,14 +12,7 @@ description "Easy File Sharing Web Server is a file sharing software that allows
 # ShodanHQ results as at 2011-04-08 #
 # 656 for Easy File Sharing Web Server
 
-# Examples #
-examples %w|
-93.97.48.27
-81.83.13.138
-124.117.219.6
-24.118.54.175
-24.199.230.138
-|
+
 
 # Passive #
 def passive

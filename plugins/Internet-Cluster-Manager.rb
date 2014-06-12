@@ -12,19 +12,7 @@ description "The Internet Cluster Manager (ICM) lets you use Domino clusters to 
 # ShodanHQ results as at 2011-06-07 #
 # 250 for Internet Cluster Manager
 
-# Examples #
-examples %w|
-150.164.68.10
-198.78.253.171
-64.115.7.189
-212.202.163.51
-200.186.251.141
-212.79.53.37
-200.40.175.226
-200.144.7.63
-109.228.5.189
-193.11.38.212
-|
+
 
 # Passive #
 def passive

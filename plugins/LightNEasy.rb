@@ -21,23 +21,7 @@ dorks [
 '"If you are seeing this, that means LightNEasy installation worked!"'
 ]
 
-# Examples #
-examples %w|
-demo.lightneasy.org
-demoflat.lightneasy.org
-www.miosbmx.fr/site/LightNEasy.php
-laser3.ca.astro.it/srt/web/
-www.bestbuystoves.com
-www.fahrzeug-fischer.de
-www.wranglertrc.com/myweb/video/
-www.seelitoivio.com/kalenteri2010/
-www.salemlib.lib.in.us/LightNEasy.php
-hartsough.lawr.ucdavis.edu
-www.newportlibrary.info
-www.lightneasy.jp/mini241/
-www.fahrzeug-fischer.de
-www.maia.ub.edu/~xjarque/en/LightNEasy.php
-|
+
 
 # Matches #
 matches [

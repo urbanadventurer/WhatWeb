@@ -17,19 +17,7 @@ dorks [
 'intitle:"Powered By Cype" intext:"Powered By Cype MSCMS"'
 ]
 
-# Examples #
-examples %w|
-z99.no-ip.org
-hellms.no-ip.org
-www.jacems.com
-71.224.180.150:8080
-the.nisusms.com
-nonamems.comuf.com
-www.ms-u.co.il
-finaldev.netai.net
-piratesms.comoj.com
-katlamaple.co.il
-|
+
 
 # Matches #
 matches [

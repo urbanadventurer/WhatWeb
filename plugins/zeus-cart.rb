@@ -20,20 +20,7 @@ dorks [
 '"powered by ZeusCart"'
 ]
 
-# Examples #
-examples %w|
-points-goo.com
-pc1source.net
-www.natural-health-direct.co.uk/admin/
-ajdemos.com/demo/zeuscart/v3/
-indyabuy.com
-sleep-supply.com
-www.brandonraynor.com/onlinestore/
-a9e9.com/store/
-rhea-lr.com
-pctintas.net
-goldglob.com
-|
+
 
 # Matches #
 matches [

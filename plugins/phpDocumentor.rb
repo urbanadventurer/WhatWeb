@@ -18,17 +18,7 @@ dorks [
 'intitle:"docBuilder - phpDocumentor web interface"'
 ]
 
-# Examples #
-examples %w|
-demos.softaculous.com/phpDocumentor/
-phpdocs.dangerous-minds.net/
-dev.pistoke.org/PhpDocumentor/
-phpdoc.gkirok.com/docbuilder/
-acfcarlosgomes.com.br/acf/libs/pear/data/PhpDocumentor/
-www.dubai-holiday-dreams.com/fileadmin/PhpDocumentor/
-devel.orcoz.com/phpdoc/PhpDocumentor-1.4.2/
-serpan.de/PhpDocumentor-1.4.2/
-|
+
 
 # Matches #
 matches [

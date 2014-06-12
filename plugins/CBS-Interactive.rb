@@ -9,14 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-06-14
 version "0.1"
 description "CBS Interactive - online content network - Homepage: http://www.cbsinteractive.com/"
 
-# Examples #
-examples %w|
-www.metrolyrics.com
-download.cnet.com/windows/
-reviews.cnet.com
-news.cnet.com
-www.cbsnews.com
-|
+
 
 # Matches #
 matches [

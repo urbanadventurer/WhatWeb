@@ -15,16 +15,7 @@ description "This plugin detects instances of applet HTML elements and retrieves
 # Google results as at 2010-10-15 #
 # 183 for "this site requires java"
 
-# Examples #
-examples %w|
-java.sun.com/applets/jdk/1.4/demo/applets/ArcTest/example1.html
-java.sun.com/applets/jdk/1.4/demo/applets/BarChart/example1.html
-java.sun.com/applets/jdk/1.4/demo/applets/TicTacToe/example1.html
-java.sun.com/applets/jdk/1.4/demo/applets/Clock/example1.html
-www.htmlcodetutorial.com/applets/applets.html
-www.htmlcodetutorial.com/applets/_APPLET.html
-www.whitehavenchargers.com
-|
+
 
 # Matches #
 matches [

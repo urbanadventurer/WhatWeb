@@ -226,7 +226,9 @@ class Plugin
   end
 
   extend PluginSugar
-  def_field  :author, :version, :examples, :description, :matches, :cve, :dorks
+  def_field  :author, :version, :description, :matches, :cve, :dorks
+  # deprecated fields
+  def_field :examples
 #, :category
 
 end
@@ -479,14 +481,12 @@ for adding/removing sets of plugins.
 		puts ["Plugin Name".ljust(25),"Details"].join(" ")
 		count=0
 		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |name,plugin|
-			# not include examples	
 			dump=[name,plugin.author,plugin.description,plugin.matches].flatten.compact.to_a.join.downcase
 			if keywords.empty? or keywords.map {|k| dump.include?(k.downcase) }.compact.include?(true)
 				puts name
 				puts "\tAuthor:".ljust(22) + plugin.author
 				puts "\tVersion:".ljust(22) +plugin.version
 	#			puts "\tCategory:".ljust(22) +plugin.category.to_s unless plugin.category.nil?
-				puts "\tExamples:".ljust(22) +plugin.examples.size.to_s if plugin.examples
 				puts "\tMatches:".ljust(22) +plugin.matches.size.to_s if plugin.matches
 				puts "\tDorks:".ljust(22) +plugin.dorks.size.to_s if plugin.dorks
 				puts "\tPassive function: ".ljust(22) + (defined?(plugin.passive) ? "Yes" : "No")

@@ -23,30 +23,7 @@ dorks [
 'inurl:"cas/login?service="'
 ]
 
-# Examples #
-examples %w|
-77.43.2.78:8080/cas/login
-cms.cugb.edu.cn/cas/login
-mystateonline.sdstate.edu/cas/login
-mycourses.msstate.edu
-bloomington.in.gov/login/
-https://mon.armax.ru/cas/login
-https://lycees.netocentre.fr/cas/login
-https://www.lavoroelegalita.it/cas/login
-https://catalog.nypl.org/iii/cas/login
-https://login.unl.edu/cas/login
-https://idp.universite-lyon.fr/cas/login
-https://cas.evergreen.edu/cas/login
-https://cas.insa-rouen.fr/cas/login
-https://idp.universite-lyon.fr/cas/login
-https://intranet.reidhall.com:8443/cas/login
-https://becvert.net/cas/login
-https://one.asburyseminary.edu
-https://signin.bradley.edu/cas/login
-https://su-sso.strathmore.edu/cas-prd/login
-https://portal.tacomacc.edu/cas/login
-https://id1.asyx.com/cas/login
-|
+
 
 # Matches #
 matches [

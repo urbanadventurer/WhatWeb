@@ -17,33 +17,7 @@ dorks [
 '"This forum is powered by Phorum."'
 ]
 
-# Examples #
-examples %w|
-www.phorum.org/demo/
-www.netstate.com/phorum/
-www.breedersworld.com/forum/
-www.ddiglobal.org/forum/
-www.jnp.edu.bt/forum/
-www.cantonese.sheik.co.uk/phorum/
-www.moviedeaths.com/phorum/
-www.ceanational.org/phorum/
-www.worldpuzzle.org/wpfforum/
-www.outinkingston.org/forum/
-www.findmall.com
-www.juggle.org/forum/
-www.farmersinsurancegroupsucks.com/forum/
-phorum.newhaven.edu
-octagon.poly.edu/phorum/
-forum.jab.ie.edu
-avwxworkshops.com/forum/
-forum.piwik.org
-forum.fedora.cz
-forum.lotniczapolska.pl
-phorum.newhaven.edu
-forums.stat.ucla.edu
-www.vstabi.info/forum/
-https://wwws.cs.umn.edu/forum/
-|
+
 
 # Matches #
 matches [

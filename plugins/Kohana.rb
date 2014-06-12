@@ -12,19 +12,7 @@ description "Kohana is an elegant HMVC PHP5 framework that provides a rich set o
 # Google results as at 2011-05-10 #
 # 394 for kohanasession
 
-# Examples #
-examples %w|
-173.236.253.200
-95.211.134.23
-97.74.156.171
-209.197.102.247
-208.38.165.89
-66.161.179.75
-75.101.147.60
-91.211.221.16
-74.206.229.139
-38.103.33.205
-|
+
 
 # Matches #
 matches [

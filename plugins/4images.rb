@@ -10,19 +10,7 @@ version "0.1"
 description "4images is a powerful web-based image gallery management system. Features include comment system, user registration and management, password protected administration area with browser-based upload and HTML templates for page layout and design. - homepage: http://www.4homepages.de/"
 
 # 356 results for "powered by 4images" +4homepages.de @ 2010-09-18
-examples %w|
-felicitari.stancamantuirii.net
-kresby.grafika.cz
-library.lakeforest.edu/collections/benton/4images/
-neisri.ru/4images/
-www.azooz.net
-www.girls-on-bikes.com
-www.opinionsocial.com.ar/imagenes/inicio/
-www.pcm60.org/galerie/
-www.portsaid-online.com/panorama/
-www.quimica.unam.mx/galeria/
-www.voreart.com/vorevideo/
-|
+
 
 matches [
 

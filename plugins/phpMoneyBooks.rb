@@ -17,11 +17,7 @@ dorks [
 '"phpMoneyBooks" "Account ID" "password"'
 ]
 
-# Examples #
-examples %w|
-phpmoneybooks.com/demo/
-www.gkankstest.com/demo/moneybooks/
-|
+
 
 # Matches #
 matches [

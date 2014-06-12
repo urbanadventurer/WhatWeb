@@ -12,16 +12,7 @@ description "4D web application deployment server  - Homepage: http://www.4d.com
 # ShodanHQ results as at 2011-04-11 #
 # 431 for 4D_v11_SQL
 
-# Examples #
-examples %w|
-60.164.175.210
-128.227.160.179
-205.221.40.10
-88.37.190.35
-130.238.222.35
-208.105.173.250
-216.139.201.206
-|
+
 
 # Matches #
 matches [

@@ -15,18 +15,7 @@ description "micro_httpd is a very small Unix-based HTTP server. It runs from in
 # ShodanHQ results as at 2010-10-26 #
 # 957,229 for "server: micro_httpd"
 
-# Examples #
-examples %w|
-78.162.53.58
-197.224.112.230
-183.89.22.130
-97.75.128.112
-190.98.45.133
-41.140.25.69
-94.43.137.3
-190.95.122.49
-89.249.219.51
-|
+
 
 # Matches #
 matches [

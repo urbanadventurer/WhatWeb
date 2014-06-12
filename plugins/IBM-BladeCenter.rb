@@ -21,19 +21,7 @@ dorks [
 'intitle:"Log In" "Welcome to the Advanced Management Module"'
 ]
 
-# Examples #
-examples %w|
-https://141.57.9.217/shared/userlogin.php
-https://bladecenter003.vietlink.ca/
-ibmblade.muvs.cvut.cz
-119.147.115.144
-218.6.16.62
-218.6.16.63
-58.223.251.157
-www.renwick.co.za
-www.office008.com
-201.30.143.8
-|
+
 
 # Matches #
 matches [

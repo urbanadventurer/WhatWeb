@@ -15,8 +15,7 @@ Plugin.define "Coppermine" do
 author "Andrew Horton"
 version "0.3"
 description "PHP & MySQL Photo Gallery homepage: www.coppermine-gallery.net"
-examples %w| http://www.langlandsurf.com/gallery/index.php http://www.botanyphotos.net/ http://www.pngtrekkingadventures.com/gallery/ 
-ralphbakshi.com/gallery makro.arachiusz.pl www.sabre-roads.org.uk/gallery www.desertdave.com www.akronaeros.com/coppermine/ stramm.st.funpic.org/ www.lpod.org/coppermine/ www.alanmclark.com/art |
+
 
 #  Coppermine version: 1.4.19
 =begin

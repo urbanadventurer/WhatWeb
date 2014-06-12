@@ -17,57 +17,7 @@ dorks [
 ]
 
 # Exampels #
-examples %w|
-doorcountyshopping.com
-www.multicart.biz/productdetails.php
-www.turnkeyshops.com/viewcart.php
-clients.iscripts.com/sensibledrivers/
-eclassgives.com/shopping/
-www.zimpay.net/mall/productdetails.php
-www.vendoravenue.com/register.php
-dropships.arehere.info/viewcart.php
-click1market.com
-www.creativeakventures.com
-www.pinoyshopexpress.com
-demo.pinoyshopexpress.com
-www.trendythings.biz/theshop/
-weebimajutus.ee/multicart/expiredmessage.php
-www.tailorplanet.com
-www.basscoastbuylocal.com/showportfolio.php
-ez-dropship.com/productdetails.php
-www.divashops.net/artists/
-www.thedancingpigcraftmall.com
-www.earthslargest.com/artists/
-www.redbarnshopping.com/affiliates/
-snozberry.co.uk
-www.theindianoutlet.com/affiliates/
-www.gmqex.net/store/
-myfashiondesigner.com.au
-www.myfashiondesigner.com.au
-www.webshoppe.com.au
-grepafile.com/store/
-shutterfund.com
-myusedcollege.com/store/
-soskyoutfitters.com
-www.jamaicasearch.net/searchshoppingmall/
-ktiss.com
-whipnstitchmall.com
-shopsnugglebug.com
-catholicfree.com
-kildareshoppingcentre.ie/store/
-www.shopsnugglebugg.com
-www.southernskyoutfitters.com
-www.eraklik.com/toko/
-www.xl-clients.com/OnlineRestaurants/showportfolio.php
-marketafricaner.com/showportfolio.php
-www.howtobizbooks.com/shop/showportfolio.php
-66.7.221.247/~buydirec/
-www.mozame.biz/store/
-auwebbs.com/webshoppe/showportfolio.php
-www.superheromarket.com/showportfolio.php
-www.rdnattural.es/multicentro/
-haitistock.com
-|
+
 
 matches [
 

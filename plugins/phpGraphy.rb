@@ -18,35 +18,7 @@ dorks [
 '"This site is using phpGraphy" -intitle'
 ]
 
-# Examples #
-examples %w|
-christinespics.com
-armaina.com/phpgraphy/
-www.crokeroars.com/phpgraphy/index.php
-www.dbuc.org.au/Photos%20Gallery/phpgraphy-0.9.13a/index.php
-ruppertsecken.homeip.net/phpgraphy-0.9.13a/index.php
-www.cansoma.org/phpgraphy/phpgraphy/index.php
-www.apim.org.mo/ccm/gallery/
-www.hovima-hotels.com/hires-gallery/index.php
-www.bmjenkins.com.au/index.php
-www.kuriachira.com/phpgraphy/index.php
-www.osteriadeisapori.com.au/italian-restaurant/gallery/index.php
-www.gxseries.com/gallery/index.php
-silvanolte.com/photos/index.php
-kawalec.org
-www.phys.ethz.ch/~swood/lcft/gallery/index.php
-www.custom4x4fabrication.com/gallery/
-applesofthemoon.com/phpgraphy/index.php
-www.hoefler-photography.com/phpgraphy/index.php
-www.sgvideo.com/aurora/phpgraphy-0.9.13a/index.php
-www.cheeransoftware.com/photo/phpgraphy-0.9.13b/index.php
-sollex.info/phpgraphy/index.php
-siraaca.org/phpgraphy/index.php
-www.sollex.org/phpgraphy/
-mementh.com/phpgraphy/index.php
-earthbuild.com/gallery2/phpgraphy-0.9.10/
-www.alexladd.com
-|
+
 
 # Matches #
 matches [

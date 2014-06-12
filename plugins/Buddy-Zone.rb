@@ -16,10 +16,7 @@ dorks [
 '"Powered By Buddy Zone"'
 ]
 
-# Examples #
-examples %w|
-www.phpvid.com/buddy_zone/
-|
+
 
 matches [
 

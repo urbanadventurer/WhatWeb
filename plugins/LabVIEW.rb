@@ -16,14 +16,7 @@ description "LabVIEW is a graphical programming environment used by millions of 
 # ShodanHQ results as at 2011-06-02 #
 # 211 for LabVIEW
 
-# Examples #
-examples %w|
-66.90.224.228
-157.88.88.150
-62.97.195.214
-160.85.155.43
-193.146.34.31
-|
+
 
 # Passive #
 def passive

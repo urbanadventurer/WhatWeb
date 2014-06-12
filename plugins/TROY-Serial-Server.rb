@@ -12,16 +12,7 @@ description "TROY500 Serial Server allows connection for devices with RS232, RS4
 # ShodanHQ results as at 2011-03-11 #
 # 200 for XCD Web Admin
 
-# Examples #
-examples %w|
-99.178.244.27
-69.106.70.187
-96.238.213.165
-216.103.95.99
-99.53.181.227
-70.136.225.163
-66.60.141.128
-|
+
 
 # Matches #
 matches [

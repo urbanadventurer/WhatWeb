@@ -18,17 +18,7 @@ description "Microsys PROMOTIC web interface - PROMOTIC is a complex SCADA objec
 # ShodanHQ results as at 2011-04-05 #
 # 341 for server promotic location -apache -iis -nginx -Mikrotik -BigIP
 
-# Examples #
-examples %w|
-88.101.139.40
-85.237.240.81
-195.146.111.89
-77.104.245.205
-85.237.243.80
-83.168.151.166
-90.179.173.115
-88.146.173.222
-|
+
 
 # Matches #
 matches [

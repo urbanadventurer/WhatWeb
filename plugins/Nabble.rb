@@ -17,16 +17,7 @@ dorks [
 '"powered by Nabble"'
 ]
 
-# Examples #
-examples %w|
-webboard.redradio-online.us
-n5.nabble.com
-bear-talk.989250.n3.nabble.com
-elecraft.365791.n2.nabble.com
-nabble-support.1.n2.nabble.com
-forum.whatisfatmagulsfault.com
-forum.reachingperfection.com
-|
+
 
 # Matches #
 matches [

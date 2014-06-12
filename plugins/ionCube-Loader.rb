@@ -18,33 +18,7 @@ dorks [
 'inurl:"loader-wizard.php" ext:php intitle:"ionCube Loader Wizard"'
 ]
 
-# Examples #
-examples %w|
-www.imvn.com/ioncube/loader-wizard.php
-www.kalphastaligi.net/ioncube/loader-wizard.php
-obterhost.net/loader-wizard.php
-www.thechaplins.net/ioncube/loader-wizard.php
-www.tommylee.co.uk/loaders/ioncube/loader-wizard.php
-www.davegagneblog.com/wp-content/plugins/_tagpig/ioncube/loader-wizard.php
-www.profitbuilder.us/ioncube/loader-wizard.php
-www.lifetimeupgrades.com/ioncube/loader-wizard.php
-forcecommunity.arredemo.org/ioncube/loader-wizard.php
-connectseat.com/ioncube/loader-wizard.php
-www.worldwidemart.com/ioncube/loader-wizard.php
-www.chattydogs.com/ioncube/loader-wizard.php
-www.zocagear.net/ioncube/loader-wizard.php
-www.starkwebdesign.co.uk/aomtest/ioncube/loader-wizard.php
-www.yamazakis-notebook.com/ioncube/loader-wizard.php
-jproductions.org/ioncube/loader-wizard.php
-www.apexhacks.com/ioncube/loader-wizard.php
-danish-elite.e-rygere.dk/ioncube/loader-wizard.php
-technofriends.in/search/loader-wizard.php
-pumps-for-ponds.com/ioncube/loader-wizard.php
-www.aliki.it/loaders/ioncube/loader-wizard.php
-emergelert.com/ioncube/ioncube/loader-wizard.php
-www.bogner.net.pl/ioncube/loader-wizard.php
-gamepursuits.net/loader-wizard.php
-|
+
 
 # Matches #
 matches [

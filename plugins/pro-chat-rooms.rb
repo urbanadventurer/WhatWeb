@@ -20,12 +20,7 @@ dorks [
 '"Pro Chat Rooms" "Please enter your login details below." "Select Room"'
 ]
 
-# Examples #
-examples %w|
-textchat.prochatrooms.com
-videochat.prochatrooms.com
-www.chat.gofreeserve.com
-|
+
 
 # Matches #
 matches [

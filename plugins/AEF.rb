@@ -20,21 +20,7 @@ dorks [
 '"Powered By AEF" "Electron Inc."'
 ]
 
-# Examples #
-examples %w|
-www.anelectron.com/board/
-www.knowledgegurukul.org/Forum/
-www.khalsakids.org/forum/
-koopbiz.com/forum/
-primerfan.resisty.com
-forum.mardancity.com
-marquees.co
-forums.newitworld.com
-www.readysteadygosc.com/scooter_forum/
-www.maxazero.yoyo.pl
-etba.info/forum/
-76.103.59.73
-|
+
 
 # Matches #
 matches [

@@ -18,15 +18,7 @@ dorks [
 '"User Id" "Password" intitle:"cApexWEB"'
 ]
 
-# Examples #
-examples %w|
-www.shilpiweb.com:8085/capexweb/capexweb/
-backoffice.ifglonline.com:8080/capexweb/capexweb/
-122.169.250.146:8085/capexweb/capexweb/ 
-sbo.fwslonline.net:8080/capexweb/capexweb/
-accounts.gigantic.in:8085/capexweb/capexweb/
-27.251.84.107:8085/capexweb/capexweb/
-|
+
 
 # Matches #
 matches [

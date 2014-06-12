@@ -13,19 +13,7 @@ description "WebHare Application Portal - Enterprise Content Management - The fl
 # 47 for WebHare Application Portal
 # All results are from the Netherlands
 
-# Examples #
-examples %w|
-80.89.238.35
-194.165.70.20
-130.89.2.72
-130.89.3.100
-130.89.2.74
-87.249.114.11
-84.241.128.78
-130.89.3.101
-80.89.233.66
-80.89.238.34
-|
+
 
 # Passive #
 def passive

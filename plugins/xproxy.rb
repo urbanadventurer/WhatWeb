@@ -13,18 +13,7 @@ description "xproxy"
 # 94 for xproxy -apache -IIS -nginx port:80
 # Most results are from Japan
 
-# Examples #
-examples %w|
-210.141.158.29
-121.111.236.196
-202.214.74.68
-58.138.139.204
-211.4.195.177
-202.214.74.64
-210.164.31.184
-121.111.236.197
-202.214.74.47
-|
+
 
 # Passive #
 def passive

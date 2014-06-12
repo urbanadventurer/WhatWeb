@@ -10,28 +10,7 @@ version "0.1"
 description "This plugin identifies instances of PuTTY log files and attempts to extract usernames, servers and software versions."
 
 # 91 results for "=~=~=~=~=~=~=~=~=~=~=~= PuTTY log " ext:log @ 2010-10-15
-examples %w|
-194.187.105.38/dat/job_sam80/_Buffer/Gather/KONTI/SoftWest/Putty/putty.log
-communities.vmware.com/servlet/JiveServlet/download/878604-6499/esxcfg-info%20-s.log
-filedb.experts-exchange.com/incoming/2009/06_w25/151028/asa.log
-listas.asteriskbrasil.org/pipermail/asteriskbrasil/attachments/20070817/b5c1f182/asterisk-cvvv.obj
-fc.isima.fr/~oliva/ZZ3/IDM/Benny/tp3/MadKit-4.2.0/plugins/designer/scripts/warbot/putty.log
-fc.isima.fr/~oliva/ZZ3/IDM/Benny/tp3/MadKit-4.2.0/plugins/designer/scripts/warbot/src/images/putty.log
-forums.citrix.com/servlet/JiveServlet/download/503-264633-1459365-29762/putty.log
-hallaweb.jlab.org/tech/Detectors/public_html/junk/putty.log
-jira.freeswitch.org/secure/attachment/12966/putty.log
-qpage.ru/upload/iblock/2f5/2f5ef403c8092d1f2438cc884cc00e48.log
-sewer.ps.pl/old/pliki/Programy/putty/putty.log
-supportforums.cisco.com/servlet/JiveServlet/download/3093006-65716/putty.log
-supportforums.cisco.com/servlet/JiveServlet/download/3086006-65352/putty.log
-trac.freetz.org/raw-attachment/ticket/833/putty.log
-trac.freetz.org/raw-attachment/ticket/935/7270v3neu.log
-www.e-neta.jp/~oki/pocketwifi/pocketwifi.log
-www.mail-archive.com/asteriskbrasil@listas.asteriskbrasil.org/msg16523/asterisk-cvvv.log
-www.mail-archive.com/ccie_voice@onlinestudylist.com/msg04643/CMECUE.log
-www.mail-archive.com/debian-laptop@lists.debian.org/msg51870/172.16.254.248_20100417-231446.log
-www.mail-archive.com/debian-user@lists.debian.org/msg559537/putty.log
-|
+
 
 matches [
 

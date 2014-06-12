@@ -17,11 +17,7 @@ dorks [
 '"Powered by gitstat"'
 ]
 
-# Examples #
-examples %w|
-miroslav.suchy.cz/spacewalk/gitstat/
-mantisforge.org/dev/gitstats/
-|
+
 
 # Matches #
 matches [

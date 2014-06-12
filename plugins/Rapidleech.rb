@@ -12,12 +12,7 @@ description "Rapid Leech is a free server transfer script for use on various pop
 # Google results as at 2010-12-30 #
 # 137 for "Credits to Pramode & Checkmate & Kloon" "RapidleechHost Offical Hosting" intitle:"Rapidleech"
 
-# Examples #
-examples %w|
-hossa.org
-www.moxer.co.cc
-www.ventura-calendar.com/css/index.php
-|
+
 
 # Matches #
 matches [

@@ -17,40 +17,7 @@ description "An easy image hosting solution for everyone. - homepage: http://www
 # 355 for "powered by Mihalism Multi Host"
 # 78  for "powered by Mihalism Multi Host" intitle:"MySQL Error (Powered by Mihalism Multi Host)"
 
-# Examples #
-examples %w|
-graphicshost.net
-ph.crosscomp.eu
-abunawaf.cwahi.net
-megapic.ir
-picpower.net
-my-pix.org
-img.nattawat.org
-up2play.orgfree.com
-up.mancity.ir
-getgopix.com/multihost/
-teamocx.org/uploadhinh/
-picxcrazy.info
-nahrejto.cz
-upanhnhanh.co.cc/gallery.php
-exxxposed.net/host/
-images.meremmelek.net/gallery.php
-ubloadimg.internet-caffe.net/install.php
-shadykiller.er-webs.com/M.M.H.v4.0.2/install.php
-www.imageupload2go.com/install.php
-www.kaifkom.com/up/
-www.uploadpixxx.com
-www.imageurlhost.com
-www.image-upload.net/gallery.php
-www.web-biz-solutions.com/imagehost/
-www.maxupload.net
-www.dumppix.com
-www.sinopcity.net/index.php
-www.upni-obrazky.sk
-www.thephade.com
-www.anaqamaghribia.com/pic/
-www.ilhapirata.org/imagehost/gallery.php
-|
+
 
 # Matches #
 matches [

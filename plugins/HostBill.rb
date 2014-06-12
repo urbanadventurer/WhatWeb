@@ -17,14 +17,7 @@ dorks [
 'inurl:"index.php?/tickets/new/" "Powered by HostBill"'
 ]
 
-# Examples #
-examples %w|
-clients.liveboxes.com/index.php?/tickets/new/
-justonehost.com/signin/index.php/tickets/new/
-bill.server-deutschland.net/index.php?/tickets/new/
-clientes.onlihosting.com/cart/hosting-multidominio/index.php?/tickets/new/
-www.monsterhost.pl/clients/index.php?/tickets/new/
-|
+
 
 # Matches #
 matches [

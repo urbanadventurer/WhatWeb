@@ -16,11 +16,7 @@ dorks [
 '"bitcoin-js-remote by tcatm" "This information is not transmitted, it\'ll only be stored in your wallet."'
 ]
 
-# Examples #
-examples %w|
-eu1.bitcoincharts.com/js-remote/
-andrew12.net/bitcoin-js-remote/
-|
+
 
 # Matches #
 matches [

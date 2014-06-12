@@ -15,9 +15,7 @@ Plugin.define "Concrete5" do
     version "0.3"
     description "Concrete5 is an OpenSource CMS written in PHP. Homepage: www.concrete5.org"
 
-    examples %w|
-        www.formcreative.com.au www.around.ch www.smallspaces.ie/ www.clinicasantamaria.com.ec/ www.olex.org/ www.certifiedrecoveryspecialist.org/ http://www.rosecityrollers.com/ davinacohen.com www.stumptownderby.com www.lti-margraten.nl/ 275hill.com/ www.bhinteriordesign.com www.lucasanderson.com www.credostb.at www.s2000carhoods.co.uk www.html2c5.com www.asha-deep.com www.mail-away.co.uk andrewembler.com cynopsis.com http://www.kodiakstarr.com/
-    |
+    
 
     matches [
         {:text=>"concrete/js/jquery.js"},

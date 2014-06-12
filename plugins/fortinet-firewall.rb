@@ -23,15 +23,7 @@ dorks [
 'intitle:"Please Login" "Warning: this page requires Javascript. To correctly view, please enable it in your browser."'
 ]
 
-# Examples #
-examples %w|
-193.251.60.228/login
-www.fortigate.com/login
-eur.daewoo.com/login
-www.optimedia.co.il/login
-lincoln27.net/login
-https://www.fortianalyzer.com/login
-|
+
 
 # Matches #
 matches [

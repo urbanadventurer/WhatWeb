@@ -12,14 +12,7 @@ description "Restlet is a lightweight, comprehensive, open source REST framework
 # ShodanHQ results as at 2011-09-21 #
 # 36 for Restlet-Framework
 
-# Examples #
-examples %w|
-174.129.5.250
-193.239.17.121
-88.191.98.16
-65.182.225.28
-91.121.60.207
-|
+
 
 # Matches #
 matches [

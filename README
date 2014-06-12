@@ -1,4 +1,3 @@
-
 .$$$     $.                                   .$$$     $.
 $$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$.
 $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
@@ -11,7 +10,7 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Readme for WhatWeb - Next generation web scanner.
-By urbanadventurer aka Andrew Horton
+Developed by Andrew Horton aka urbanadventurer and Brendan Coles
 Version: 0.4.8. Unreleased
 License: GPLv2
 
@@ -47,7 +46,7 @@ If you have any questions, comments or concerns regarding WhatWeb, please consul
 
 WhatWeb identifies websites. Its goal is to answer the question, "What is that Website?". WhatWeb recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. WhatWeb has over 1500 plugins, each to recognise something different. WhatWeb also identifies version numbers, email addresses, account IDs, web framework modules, SQL errors, and more.
 
-WhatWeb can be stealthy and fast, or thorough but slow. WhatWeb supports an aggression level to control the trade off between speed and reliability. When you visit a website in your browser, the transaction includes many hints of what web technologies are powering that website. Sometimes a single webpage visit contains enough information to identify a website but when it does not, WhatWeb can interrogate the website further. The default level of aggression, called 'stealthy', is the fastest and requires only one HTTP request of a website. This is suitable for scanning public websites. More aggressive modes were developed for in penetration tests.
+WhatWeb can be stealthy and fast, or thorough but slow. WhatWeb supports an aggression level to control the trade off between speed and reliability. When you visit a website in your browser, the transaction includes many hints of what web technologies are powering that website. Sometimes a single webpage visit contains enough information to identify a website but when it does not, WhatWeb can interrogate the website further. The default level of aggression, called 'stealthy', is the fastest and requires only one HTTP request of a website. This is suitable for scanning public websites. More aggressive modes were developed for use in penetration tests.
 
 Most WhatWeb plugins are thorough and recognise a range of cues from subtle to obvious. For example, most WordPress websites can be identified by the meta HTML tag, e.g. '<meta name="generator" content="WordPress 2.6.5">', but a minority of WordPress websites remove this identifying tag but this does not thwart WhatWeb. The WordPress WhatWeb plugin has over 15 tests, which include checking the favicon, default installation files, login pages, and checking for "/wp-content/" within relative links.
 
@@ -55,7 +54,6 @@ Most WhatWeb plugins are thorough and recognise a range of cues from subtle to o
 Features:
 	* Over 1500 plugins
 	* Control the trade off between speed/stealth and reliability
-	* Plugins include example URLs
 	* Performance tuning. Control how many websites to scan concurrently.
 	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB.
 	* Proxy support including TOR
@@ -94,8 +92,8 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner.
-Version 0.4.8-dev by Andrew Horton aka urbanadventurer
+WhatWeb - Next generation web scanner version 0.4.8-dev.
+Developed by Andrew Horton aka urbanadventurer and Brendan Coles
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
@@ -103,7 +101,8 @@ Usage: whatweb [options] <URLs>
 TARGET SELECTION:
   <URLs>		Enter URLs, filenames or nmap-format IP ranges.
 			Use /dev/stdin to pipe HTML directly
-  --input-file=FILE, -i	Identify URLs found in FILE, eg. -i /dev/stdin
+  --input-file=FILE, -i	Identify URLs found in FILE. You can pipe
+			hostnames or URLs directly with -i /dev/stdin
 
 TARGET MODIFICATION:
   --url-prefix		Add a prefix to target URLs
@@ -136,7 +135,7 @@ HTTP OPTIONS:
 
 AUTHENTICATION:
   --user, -u=<user:password> HTTP basic authentication
-  Add session cookies with --header, e.g. --header "Cookie: SESSID=1a2b3c;"
+  --cookie, -c=COOKIES	Provide cookies, e.g. 'name=value; name2=value2  '
 
 PROXY:
   --proxy		<hostname[:port]> Set proxy hostname and port
@@ -165,8 +164,6 @@ PLUGINS:
 			":md5=>'8666257030b94d3bdb46e05945f60b42'"
 			"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
   --dorks=PLUGIN	List google dorks for the selected plugin
-  --example-urls, -e=PLUGIN Update the target list with example URLs from
-			the selected plugins.
 
 OUTPUT:
   --verbose, -v		Verbose output includes plugin descriptions. Use twice
@@ -394,7 +391,7 @@ Version 0.4.8-dev Unreleased
 10. Credits
 ================================================================================
 
-Written by urbanadventurer aka Andrew Horton from Security-Assessment.com
+Written by urbanadventurer aka Andrew Horton and Brendan Coles
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 License: GPLv2
 
@@ -420,7 +417,14 @@ nk@dsigned.gr
 Steve 'Ashcrow' Milner
 Michal Ambroz for writing the Makefile and Man pages
 Gremwell for improving the MagicTree logging
-
+Sagar Prakash Junnarkar
+GertBerger 
+Quintin Poirier
+Eric Sesterhenn
+dengjw (jawa)
+Pedro Worcel (droop)
+Matthieu Keller (maggick)
+Peter (pvdl)
 
 11. Updates & Additional Information
 ================================================================================

@@ -12,15 +12,7 @@ description "Jigsaw is W3C's leading-edge Web server platform, providing a sampl
 # ShodanHQ results as at 2011-06-07 #
 # 79 for Jigsaw
 
-# Examples #
-examples %w|
-128.30.52.34
-64.105.76.196
-128.30.52.105
-128.30.52.17
-50.16.64.90
-216.201.246.253
-|
+
 
 # Passive #
 def passive

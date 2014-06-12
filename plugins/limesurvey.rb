@@ -14,35 +14,7 @@ dorks [
 '"The following surveys are available" "The Online Survey Tool - Free & Open Source"'
 ]
 
-# Examples #
-examples %w|
-demo.limesurvey.org
-smartnewmedia.com
-www.ei-ie.org/survey/
-wareprise.limeask.com
-auditorh.com
-nestsurvey.com
-online-research-survey.com
-ibbclientsurvey.com
-questionnaire.disc.na.org
-sqysh.com
-optimalsupply.net
-ahcsurvey.com
-georgianc.limequery.com
-share-to-learn.com
-umfragen.schmerbeck.eu
-feedbacker.net
-ivfreport.com
-mikehyde.com
-euromedinculture.org/citoyennete/limesurvey/
-yourviewscount.net
-www.voiceresearch.org/survey/
-opticalsurvey.com
-pmadrsurvey.com
-cmaconnect.org/limesurvey/
-survey.iccr-international.org
-numerox.net
-|
+
 
 matches [
 

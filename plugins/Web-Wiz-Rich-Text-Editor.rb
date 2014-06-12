@@ -17,19 +17,7 @@ dorks [
 'inurl:"RTE_popup_file_atch.asp" ext:asp'
 ]
 
-# Examples #
-examples %w|
-http://loor.ir/sysop/RTE_popup_file_atch.asp
-http://saigondongxuan.com.vn/admin/rte_popup_File_atch.asp
-http://www.yeniguc.com/yazimaraclari/rte_popup_file_atch.asp
-http://coskunerkiremit.com/admin/RTE_popup_file_atch.asp
-http://www.thsfs.com/apps/rte/RTE_popup_file_atch.asp
-http://www.nhssv.org/admin/RTE_popup_file_atch.asp
-http://adnormous.com/RTE_popup_file_atch.asp
-http://www.mistysdiner.com.au/admin/rte/RTE_popup_file_atch.asp
-http://www.woodallsconstruction.com/rte_popup_file_atch.asp
-http://capcomputers.be/RTE_popup_file_atch.asp
-|
+
 
 # Matches #
 matches [

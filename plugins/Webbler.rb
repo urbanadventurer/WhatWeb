@@ -20,25 +20,7 @@ dorks [
 '"Powered by the Webbler"'
 ]
 
-# Examples #
-examples %w|
-www.tincan.co.uk/Webbler
-www.webbler.co.uk
-www.phplist.com
-www.rccil.org.uk
-www.getconnected.org.uk
-www.minorityrights.org
-www.icar.webbler.co.uk
-www.peopleandplanet.net
-www.populationandsustainability.org
-www.stigmaindex.org
-www.liverpoolphil.com
-www.nationaltheatre.org.uk
-pharmitech.net
-www.jubileedebtcampaign.org.uk
-www.corporatewatch.org.uk
-77.240.4.51
-|
+
 
 # Matches #
 matches [

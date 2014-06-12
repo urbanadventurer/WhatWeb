@@ -12,17 +12,7 @@ description "The UserLand Frontier Kernel is a powerful development platform inc
 # ShodanHQ results as at 2011-03-14 #
 # 127 for UserLand Frontier
 
-# Examples #
-examples %w|
-65.18.26.14
-203.86.194.6
-62.54.132.44
-212.23.192.69
-159.54.62.89
-150.160.254.70
-74.94.69.215
-193.197.168.162
-|
+
 
 # Passive #
 def passive

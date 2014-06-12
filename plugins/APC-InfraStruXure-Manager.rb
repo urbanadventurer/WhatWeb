@@ -9,18 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
 version "0.1"
 description "Modular, adaptable, on-demand solutions for data centers. InfraStruxure is a scalable and adaptable data center IT room architecture that dramatically reduces time and complexity from concept and design through installation. - Homepage: http://www.apc.com/products/infrastruxure/index.cfm"
 
-# Examples #
-examples %w|
-isx.iland.com
-192.68.223.228
-208.76.173.18
-161.253.152.178
-216.48.129.151
-130.184.96.9
-128.200.129.50
-160.129.6.231
-168.215.123.30
-|
+
 
 # Matches #
 matches [

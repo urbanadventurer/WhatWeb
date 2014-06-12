@@ -19,19 +19,7 @@ dorks [
 '"powered by BlognPlus"'
 ]
 
-# Examples #
-examples %w|
-fuc.byethost2.com/blog/
-www.acute-girls.com/nega/renew/
-quatrefoil.net
-www.kickout.org
-www.eg2mix.com
-www.hyperntn.net/weblog/
-www.sendai-c.ed.jp/~koorisyo/blognplus/
-www.okinawanet.info/oki/
-www.teamhanes.com/contents/surfin/
-www.q-v-p.com/kyui/
-|
+
 
 matches [
 

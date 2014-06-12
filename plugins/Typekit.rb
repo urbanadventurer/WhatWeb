@@ -9,10 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
 description "JavaScript font manager - Homepage: http://typekit.com/"
 
-# Examples #
-examples %w|
-typekit.com
-|
+
 
 # Matches #
 matches [

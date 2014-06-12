@@ -12,15 +12,7 @@ description "Homepage: http://bayspire.com/"
 # ShodanHQ results as at 2011-01-06 #
 # 116 for Web Crossing(r)
 
-# Examples #
-examples %w|
-66.228.42.190
-173.255.196.227
-173.255.194.156
-178.79.165.243
-70.89.211.91
-208.93.170.38
-|
+
 
 # Matches #
 matches [

@@ -20,17 +20,7 @@ dorks [
 '"Forum software by XenForo" "XenForo Ltd"'
 ]
 
-# Examples #
-examples %w|
-xenforo.com
-xenfans.com
-www.imagicraft.net/forum/index.php
-bukkit.org
-www.xenique.com
-minecraft.mfcpu.net
-420warzone.com/index.php
-alumni.andrews.edu/forum/index.php
-|
+
 
 # Matches #
 matches [

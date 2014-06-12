@@ -17,24 +17,7 @@ dorks [
 'intitle:"TestLink" "New User" "Lost Password" "TestLink project Home" "TestLink is licensed under the GNU GPL"'
 ]
 
-# Examples #
-examples %w|
-testlink.sourceforge.net/demo/login.php
-university.qaplanet.in/test-management/
-gazelle.ihe.net/testlink/login.php
-www.dmxcontrol.de/testlink/login.php
-testaus.cs.tut.fi/testlink/
-www.mattivuori.net/testlink/login.php
-space.edisoft.pt/testlink/login.php?note=expired
-mantis.hgiga.com/testlink/login.php
-testlab.x-base.org/login.php?note=expired
-www.viprints.com/login.php
-testlink.calebfornari.com/login.php
-garyo.net63.net/testlink_18RC1/
-testlinkjp.org/demo/
-testlink.it-sea.com/
-ww.beelc.pl/testlink/login.php
-|
+
 
 # Matches #
 matches [

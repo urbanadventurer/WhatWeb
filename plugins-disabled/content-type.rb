@@ -11,11 +11,7 @@ description "This plugin identifies the document's content type."
 
 # More info: http://en.wikipedia.org/wiki/List_of_HTTP_header_fields
 
-# Examples #
-examples %w|
-morningstarsecurity.com/research/whatweb
-whatweb.net
-|
+
 
 # Passive #
 def passive

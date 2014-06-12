@@ -17,11 +17,7 @@ description "Sagem Router - Distributed by Wanadoo, Maroc Telecom, Sky and other
 # ShodanHQ results as at 2011-08-16 #
 # 2,658 for realm Sagem
 
-# Examples #
-examples %w|
-41.73.111.4
-41.73.99.107
-|
+
 
 # Matches #
 matches [

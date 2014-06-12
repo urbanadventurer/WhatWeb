@@ -13,7 +13,7 @@ author "Andrew Horton"
 version "0.2"
 description "Detects the character set of a page, this is required for MongoDB output. Only checks the meta content tag, not the HTTP header. It tries the specified charset, then ascii, then utf-8 then uses CharDet from the rchardet gem which is CPU intensive / slow. Tests conversion to UTF-8 using Iconv. Returns Failed if unsuccessful."
 
-examples %w| www.163.com pravdu.ru www.melon.co.kr tnap.jp www.paperman.jp|
+
 # requires rchardet
 # https://github.com/jmhodges/rchardet
 # http://www.meeho.net/blog/2010/03/ruby-how-to-detect-the-encoding-of-a-string/

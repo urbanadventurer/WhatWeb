@@ -12,17 +12,7 @@ description "A lightwight but powerful real-time web analytics plugin for WordPr
 # ShodanHQ results as at 2011-08-18 #
 # 92 for slimstat_tracking_code
 
-# Examples #
-examples %w|
-173.254.19.22
-67.202.23.254
-188.121.59.61
-86.188.176.50
-67.20.105.85
-173.254.15.176
-194.218.203.17
-173.201.0.189
-|
+
 
 # Matches #
 matches [

@@ -20,21 +20,7 @@ dorks [
 '"Powered by LionMax Software" intitle:"WWW File Share" -allintext'
 ]
 
-# Examples #
-examples %w|
-www.dferg.org:8085
-69.31.150.217
-hs1fqe.no-ip.info:1000
-ams.nasgur.ru
-stevenamy.homeip.net:8225
-stevensoto.dyndns.tv:8225
-24.5.163.251
-83.132.147.229
-77.126.163.55
-202.130.119.66
-122.117.166.98
-190.187.43.22
-|
+
 
 # Matches #
 matches [

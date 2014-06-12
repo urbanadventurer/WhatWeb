@@ -14,22 +14,7 @@ dorks [
 '"powered by DUclassified" intitle:DUclassified'
 ]
 
-# Examples #
-examples %w|
-http://www.whwebandgraphics.com/DUclassified/
-http://www.mamamx.com/classified/
-http://www.wmha.mb.ca/classifieds/
-http://www.maccallini.it/link_categorie/
-http://www.wcri.coop/dusublets/
-http://www.businesslist.com.au/duclassifieds/
-http://www.qianhu.com/content/DUclassified/
-http://www.wcri.coop/dusublets/
-http://www.wmha.mb.ca/classifieds/
-http://www.qianhu.com/content/DUclassified/
-http://www.andrewfinch.co.uk/4x4/Noticeboard/
-http://www.bichitrainc.com/classified_ads/DUClassified/
-http://www.gtkdata.com/haydenstowing/duclassifieds/ 
-|
+
 
 #<title>DUclassified</title>
 #:<title>DUclassified 4.0</title>

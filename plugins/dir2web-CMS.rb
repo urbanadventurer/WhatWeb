@@ -17,11 +17,7 @@ dorks [
 'inurl:"index.php?wpid=homepage"'
 ]
 
-# Examples #
-examples %w|
-www.monteporziocultura.it/dir2web/index.php?wpid=homepage
-sanchioni.com/index.php?wpid=homepage
-|
+
 
 # Matches #
 matches [

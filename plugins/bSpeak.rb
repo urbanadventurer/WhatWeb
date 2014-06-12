@@ -19,19 +19,7 @@ dorks [
 '"powered by bSpeak"'
 ]
 
-# Examples #
-examples %w|
-www.26thavenue.com/bspeakdemo/
-www.channelc.org/ChCForum/forum/
-72.167.87.238/bspeak/forum/
-www.england-supporters.com/forum/forum/
-www.theirishhammer.com/bspeak110professional/
-www.litclasses.com/bspeak/forum/
-www.gamecockgurus.com/bspeak/
-apocalypticnut.com/bspeak/
-www.teachingmom.com/boards/
-ip-72-167-87-238.ip.secureserver.net/bspeak/forum/
-|
+
 
 # Matches #
 matches [

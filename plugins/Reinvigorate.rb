@@ -9,13 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-07-20
 version "0.1"
 description "Reinvigorate measures your influence on the web in real-time. Simple, real-time web analytics + heatmaps. - Homepage: http://www.reinvigorate.net/"
 
-# Examples #
-examples %w|
-www.reinvigorate.net
-www.igvita.com
-www.creatiu.com
-www.montylounge.com
-|
+
 
 # Matches #
 matches [

@@ -12,22 +12,7 @@ description "Syncrify is a fast incremental remote backup that backs up files us
 # Google results as at 2012-01-29 #
 # 37 for intitle:"Syncrify - Fast incremental backup" "powered by Syncrify"
 
-# Examples #
-examples %w|
-www.davewentzel.com:5800
-borchart.biz:5800/app?operation=about
-https://tradedirectshop.com:8443/app?operation=about
-https://backup.https-ict.nl/app?operation=about
-asterisk.5lex.com/app?operation=about
-soporte.romymar.com:5800/app?operation=about
-legacydark.com:5800/app?operation=about
-syncrify.it-services.co.uk:5800/app?operation=about
-office.atx.be:5800
-backup.securewebusa.net
-informaticosenlared.com/app?operation=downloadClient
-208.66.62.206
-blog.informaticosenlared.com/app?operation=downloadClient
-|
+
 
 # Matches #
 matches [

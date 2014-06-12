@@ -20,21 +20,7 @@ dorks [
 '"powered by XHP CMS" "Site engine is copyright"'
 ]
 
-# Examples #
-examples %w|
-xhp.targetit.ro
-eclipse-sdcc.sourceforge.net
-royal-african-stone.com/XHP/
-www.validtradeantiques.co.za
-www.boorysbusinessmachines.com
-bytepoker.com
-www.dwmchan.com/xhp/
-www.mitfun.ro
-ecu.gt28.ru
-sarberki-minerva.hu
-darkrula.net46.net
-www.nicolai.jellevedel.dk
-|
+
 
 # Matches #
 matches [

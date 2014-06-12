@@ -17,22 +17,7 @@ dorks [
 '"Powered by MagImageBank" "info@magimagebank.com"'
 ]
 
-# Examples #
-examples %w|
-nsp.ndedit.com
-koster.ndedit.com
-www.hockeyfoto.nl
-delftimagebank.com
-www.magstream.nl
-www.reckimages.com
-www.fleurbaaijimagebank.com
-www.ajaximages.com
-treebyimages.com.au
-dutchphotoagency.com
-www.sophie-photographie.com
-www.oneshot-imagebank.com
-promotorimages.com
-|
+
 
 # Matches #
 matches [

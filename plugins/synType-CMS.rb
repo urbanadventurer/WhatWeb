@@ -9,13 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.1"
 description "synType CMS is a free, open source Web Content Management System. synType CMS is fast, secure, stable and easy to learn. - Homepage: http://syntype.org/"
 
-# Examples #
-examples %w|
-syntype.org
-netactivism.net/demo/syntypeV0122/
-netactivism.net/cms14/
-unidbl.sourceforge.net
-|
+
 
 # Matches #
 matches [

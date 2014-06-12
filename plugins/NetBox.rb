@@ -12,19 +12,7 @@ description "NetBox HTTP server [Chinese] - Homepage: http://www.netbox.cn/"
 # ShodanHQ results as at 2011-03-14 #
 # 1,778 for NetBox -realm
 
-# Examples #
-examples %w|
-217.79.237.219
-202.195.195.147
-61.164.59.82
-218.75.53.94
-58.246.90.206
-221.214.7.194
-119.55.242.227
-118.102.27.190
-118.102.27.201
-118.102.27.162
-|
+
 
 # Passive #
 def passive

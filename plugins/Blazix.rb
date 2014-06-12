@@ -12,16 +12,7 @@ description "Blazix is a high-performance full-featured Java application server.
 # ShodanHQ results as at 2011-06-06 #
 # 14 for Blazix
 
-# Examples #
-examples %w|
-129.15.108.219
-67.214.169.162
-67.214.169.165
-67.214.169.164
-67.214.169.166
-75.99.67.91
-67.214.169.163
-|
+
 
 # Passive #
 def passive

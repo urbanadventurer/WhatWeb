@@ -17,21 +17,7 @@ dorks [
 '"Powered By : Yamamah Version 1.00" -dork -exploit'
 ]
 
-# Examples #
-examples %w|
-www.gam-adv.com/y/index.php
-www.pro4arb.net/car/
-police-clup-iq.com/albom/
-www.elquds.ps/photo/
-www.orbinanet.com/album/
-www.top-ben.com/gallery/
-www.algbyat1.com/img/
-www.h5l5.com/pic/
-www.bin-nafe.net/album/
-xn--mgbqr5cjvt.com
-www.imtroodi.com/Gallery/
-www.alaskri.com/photo/
-|
+
 
 # Matches #
 matches [

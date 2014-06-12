@@ -18,25 +18,7 @@ dorks [
 '"Powered by Think+"'
 ]
 
-# Examples #
-examples %w|
-www.detroit.gr/company_en.php
-www.newyearseve.gr/company.php
-www.cyberdefend.us/archive.php
-www.athcon.org/
-myhomephysio.gr/company.php
-georgoula-rapti.gr/services.php
-energyalarm.gr/contact.php
-tentesarkas.gr/company.php
-geani.gr/company.php
-www.omoiostasia.gr/map.php
-stamoulakatos.gr/list.php
-www.rvmixaniki.gr/map.php
-www.potidaia.com/list_de.php
-centerhouse.gr/info.php
-www.capitalinvest.gr/info.php
-www.horsemania.gr/info.php
-|
+
 
 # Matches #
 matches [

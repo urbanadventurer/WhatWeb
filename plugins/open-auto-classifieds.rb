@@ -20,23 +20,7 @@ dorks [
 '"powered by Open Auto Classifieds"'
 ]
 
-# Examples #
-examples %w|
-openautoclassifieds.com
-bavautogroup.com
-gaidaoautomoveis.com
-newchamanmotors.com
-ogm.bz
-schrott-platz.com
-search-used-cars.net
-thetradepolice.com/openauto/
-yourcars.net
-youngsauto.net/listings.php
-zbaron.org/autoclass/
-www.motorex.co.za
-www.vipcarsinc.com
-www.delhiautomobile.com
-|
+
 
 # Matches #
 matches [

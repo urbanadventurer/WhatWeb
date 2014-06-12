@@ -17,21 +17,7 @@ dorks [
 'intitle:"OLAT - Online Learning And Training" "OLAT password"'
 ]
 
-# Examples #
-examples %w|
-demo.olat.org/demo/dmz/
-vortex.ntg.pl/olat/dmz/
-community.olat.org
-olat.exigo.ch/olat/dmz/
-www.campsis.com/olat/dmz/
-www.olat.cz/olattst/dmz/
-ztb-baks.hsu-hh.de/olat/dmz/
-olat.australianmigrationacademy.com.au/olat/
-www.strunkdesign.de/olat/dmz/
-office.frentix.com:81/test7/dmz/
-palantir.ait.gr/base2/dmz/
-awi.interpolska.pl/olat/dmz/
-|
+
 
 # Matches #
 matches [

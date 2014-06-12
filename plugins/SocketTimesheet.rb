@@ -10,10 +10,7 @@ version "0.1"
 description "PHP Timesheet web application - homepage: http://www.sockettimesheet.com/"
 
 # 2 Google results for Login Password Template Access "Enter Login and Password to Proceed" ext:php inurl:login
-examples %w|
-centrifugecorp.com/timesheet/login.php
-www.sockettimesheet.com/demo/login.php
-|
+
 
 matches [
 

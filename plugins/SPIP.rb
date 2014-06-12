@@ -26,26 +26,7 @@ dorks [
 'inurl:"spip.php" "Login (identifiant de connexion au site)"'
 ]
 
-# Examples #
-examples %w|
-69.70.33.3
-81.201.178.225
-82.151.64.2
-91.207.254.82
-62.58.108.110
-147.210.232.193
-195.220.70.6
-194.199.99.4
-213.139.127.54
-213.251.187.134
-217.70.191.175
-www.glpi-project.org
-creamaster.free.fr
-p.arvers.free.fr
-volontaires.ain.free.fr
-www.productivix.com
-printempspoetique.free.fr/spip.php
-|
+
 
 # Matches #
 matches [
@@ -68,6 +49,12 @@ matches [
 
 # HTTP Header # x-spip-cache
 { :search=>"headers[x-spip-cache]", :regexp=>/^.+$/ },
+
+# a href="spip.php
+{ :text=>'<a href="spip.php' },
+
+# img src='/spip
+{ :text=>'<img src=\'/spip' },
 
 ]
 

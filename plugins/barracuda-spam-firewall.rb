@@ -16,23 +16,7 @@ description "The Barracuda Spam & Virus Firewall is an integrated hardware and s
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=900
 # About 1,002 Shodan results for Server:BarracudaHTTP @ 2010-07-24
 
-# Examples #
-examples %w|
-spam4.barracuda.com/cgi-mod/index.cgi
-12.185.109.35/cgi-bin/index.cgi
-66.102.48.16:8000/cgi-bin/index.cgi
-67.137.191.69/cgi-bin/index.cgi
-71.42.144.35/cgi-bin/index.cgi
-72.165.183.132/cgi-bin/index.cgi
-170.158.98.20:8000/cgi-bin/index.cgi
-200.43.15.234/cgi-bin/index.cgi
-202.201.0.214:8000/cgi-bin/index.cgi
-barracuda.pds.org:8000/cgi-bin/index.cgi
-cuda.netpluscom.com:8000/cgi-bin/index.cgi
-ehealthscreen.com/cgi-bin/index.cgi
-mail.asiserve.net:8000/cgi-bin/index.cgi
-spampolice.nijinet.ad.jp:8000/cgi-bin/index.cgi
-|
+
 
 # Matches #
 matches [

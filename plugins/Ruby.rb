@@ -16,20 +16,7 @@ description "Ruby is a dynamic, open source programming language with a focus on
 # 22,172 for server: ruby
 #    822 for WEBrick
 
-# Examples #
-examples %w|
-219.118.99.129
-12.49.88.2
-68.142.82.239
-89.46.128.51
-75.101.162.117
-93.159.43.99
-213.132.96.34
-134.106.62.56
-212.75.96.249
-24.233.112.57
-50.17.236.165
-|
+
 
 # Passive #
 def passive

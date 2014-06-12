@@ -17,24 +17,7 @@ dorks [
 '"OpenDocMan" "Stephen Lawrence" intitle:"Document Repository"'
 ]
 
-# Examples #
-examples %w|
-www.opendocman.com/demo_126/
-www.dellco.ac.me/opendocman/
-www.uta.edu/mpcwic/opendocman/
-www.craigncraigprofrealty.com/docs/
-www.crownhr.co.uk/dms/
-tillp.co.uk/sites/collaborate/opendocman-1.2.5.7/
-doc.teravera.ph
-www.cnpc-nile.com/opendocman/
-elixir.dyndns.org/dms/
-ghumc.dnsalias.org:8081/doc_man/index.php
-www.heidekreis-musikschule.de/opendocman/
-dedemiinterior.com/opendocman/
-papeleriala96.com/docs/
-https://lenkens.net/dms/
-https://agrilife-smp.tamu.edu/
-|
+
 
 # Matches #
 matches [

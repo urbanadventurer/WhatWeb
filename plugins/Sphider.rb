@@ -19,21 +19,7 @@ dorks [
 'intitle:"Sphider installation script" intext:"Sphider installation script" inurl:"install.php"'
 ]
 
-# Examples #
-examples %w|
-www.celarwater.com/sphider/admin/install.php
-www.aastra.kz/install.php
-www.dailycognition.com/search/admin/install.php
-www.theistargroup.com/sphider/admin/install.php
-www.casa-india.org/search/admin_search/install.php
-www.ortopedicosfuturo.com/sphider/admin/install.php
-www.jppimports.com/pages/search/admin/install.php.old
-dev.ambergoffice.com/search.ambergentertainment.com/admin/install.php
-abhilashsaju.in/admin/install.php
-vyhledavac.hustej.net/admin/install.php
-www.hobler.hu/kereso/admin/install.php
-www.sphider.ru.gp/admin/install.php
-|
+
 
 # Matches #
 matches [

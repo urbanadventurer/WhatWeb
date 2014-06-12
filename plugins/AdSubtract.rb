@@ -12,11 +12,7 @@ description "AdSubtract - a Windows proxy which removes popup ads. - Homepage: h
 # ShodanHQ results as at 2011-06-06 #
 # 65 for AdSubtract
 
-# Examples #
-examples %w|
-74.219.194.205
-76.106.152.110
-|
+
 
 # Passive #
 def passive

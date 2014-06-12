@@ -17,33 +17,7 @@ dorks [
 '"powered by ECSHOP"'
 ]
 
-# Examples #
-examples %w|
-www.iamfashion2u.com
-www.facial-shop.com
-www.onlyangel.com
-www.foneso.com
-www.cutiemambabystore.com
-oursportworld.com
-www.kingshowbox.com/index.php
-mycutieshop.com
-m2bstation.com
-www.shop-six.com/index.php
-www.kkperfect.com
-www.d1mobi.com
-shop.mf8.com.cn
-www.enzoautogallery.com
-www.exnod.com
-www.pspywf.com
-www.chinasourcegroup.com
-shingseasonind.com
-www.glitzyeshop.com
-www.777bags.com
-findjoy.net
-www.nnoni.com
-www.buy4ssd.com
-www.epf.com.tw/enshop/index.php
-|
+
 
 # Matches #
 matches [

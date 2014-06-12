@@ -12,22 +12,7 @@ description "MobilityGuard is a suite of security products from the company by t
 # ShodanHQ results as at 2011-08-05 #
 # 123 for MobilityGuard
 
-# Examples #
-examples %w|
-https://m02-mg-local.ext.mobilityguard.se/
-80.254.244.219
-195.198.72.210
-194.22.7.53
-80.254.244.219
-195.198.72.210
-194.22.7.53
-194.16.15.7
-194.103.205.108
-212.214.132.11
-194.71.214.33
-195.84.66.20
-88.131.46.93
-|
+
 
 # Matches #
 matches [

@@ -20,12 +20,7 @@ dorks [
 'intitle:"MineOS Admin Page" "Map type"'
 ]
 
-# Examples #
-examples %w|
-www.codekidz.com:84
-www.asaheim.org
-mineos.phant0m.net/MapServer/
-|
+
 
 # Matches #
 matches [

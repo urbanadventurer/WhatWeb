@@ -12,13 +12,7 @@ description "JagoanStore CMS - Homepage: http://www.jagoanstore.com/"
 # Google results as at 2011-09-04 #
 # 57 for "Toko Online ini menggunakan JagoanStore CMS dari JagoanWeb Indonesia"
 
-# Examples #
-examples %w|
-www.insistcomputer.com
-www.maekokerudung.com/login
-www.tokosurfmurah.com
-www.berkahutamahobby.com
-|
+
 
 # Dorks #
 dorks [

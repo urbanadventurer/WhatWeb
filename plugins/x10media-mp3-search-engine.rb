@@ -22,54 +22,7 @@ dorks [
 '"This search engine is in no way intended for illegal downloads. "'
 ]
 
-# Examples #
-examples %w|
-x10media.com/mp3/
-buscomusic.com
-mp3man.net
-huntmymusic.com
-findmp3s.com
-freemusictown.com/install/
-justfreemp3.com
-mp3iseasy.com
-mp3source.us
-mp3url.net
-musicprowler.com
-myfreemp3s.org
-searchjams.com
-wesearchmusic.com
-songthief.com/search/
-www.smokingmp3.com
-osmp3.com
-www.burunet.com
-www.easymp3.eu
-www.justgamerz.com/Nuevo%20Directorio/New%20install/install/
-www.baixarmusicas.org/baixar/install/
-www.fastdownloadmp3.com
-www.freemp3musicdownloads.ca/search/
-www.t1712.greatnet.de
-www.freemusicdownloadwebsites.com/mp3-search-engine/
-www.indiamp3.com
-www.itrackz.net
-www.officialvideo.org/install/
-www.soundtrack.co
-www.mp351.com
-www.mp3download1.com
-www.mp3lover.info
-www.mp3moo.com
-www.mp3plasma.com
-www.mp3source.us/mp3/
-www.mp3wap.net
-www.musicjaja.com
-www.musicxposure.nl
-www.myfavmusic.net
-www.nutcentre.com
-www.playlistrus.com
-www.rosimusic.com
-www.savemp3.net
-www.searchmuzik.com
-www.searchsongs.net
-|
+
 
 # Matches #
 matches [

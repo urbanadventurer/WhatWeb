@@ -17,14 +17,7 @@ dorks [
 'intitle:"AP Router New Generation" "Sistema"'
 ]
 
-# Examples #
-examples %w|
-201.77.172.118
-187.73.254.112
-187.49.166.78
-187.0.186.89
-wv151.navinet.com.br
-|
+
 
 # Matches #
 matches [

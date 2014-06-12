@@ -18,17 +18,7 @@ dorks [
 'inurl:"/eve/personal?x_myspace_page=profile"'
 ]
 
-# Examples #
-examples %w|
-nyustudyabroad.infopop.cc/eve/personal?x_myspace_page=profile&u=$GS_USER_OID
-nyusummer.infopop.cc/eve/personal?x_myspace_page=profile&u=$GS_USER_OID
-forums.military.com/eve/personal?x_myspace_page=profile&u=$GS_USER_OID
-community.discovery.com/eve/personal?x_myspace_page=profile&u=$GS_USER_OID
-ewmxschools.com/eve/personal?x_myspace_page=profile&u=$GS_USER_OID
-forums.organicgardening.com/eve/personal?x_myspace_page=profile&u=$GS_USER_OID
-fsae.com/eve/personal?x_myspace_page=profile&u=$GS_USER_OID
-community.rachaelleighcook.net/eve/personal?x_myspace_page=profile&u=$GS_USER_OID
-|
+
 
 # Matches #
 matches [

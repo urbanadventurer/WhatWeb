@@ -26,8 +26,7 @@ dorks [
 '"Powered by SMF"'
 ]
 
-# Examples #
-examples %w| http://bangladeshtalks.com/ http://www.petgrowth.com/ http://warriorcatsrpg.com/ http://www.3wanime.org/forums/ http://aportesydescargas.com.ar/foro/ http://aquatropicalfish.com/forum/ http://www.club4g.com/ http://www.win7vista.com|
+
 
 # Matches #
 matches [

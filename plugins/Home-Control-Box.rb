@@ -15,15 +15,7 @@ description "The Home Control Box is a small, powerful computer that integrates 
 # 15 for BoxTalk
 # Most results are from Netherlands
 
-# Examples #
-examples %w|
-94.211.30.164
-195.241.44.16
-212.187.114.247
-109.109.112.10
-86.80.14.97
-213.34.230.238
-|
+
 
 # Passive #
 def passive

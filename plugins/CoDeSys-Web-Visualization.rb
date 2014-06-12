@@ -20,23 +20,7 @@ dorks [
 'inurl:"plc/webvisu.htm" intitle:"CoDeSys WebVisualization"'
 ]
 
-# Examples #
-examples %w|
-90.146.176.251
-77.215.197.52
-178.3.167.61
-90.146.176.251
-217.92.47.192
-77.215.197.52
-85.27.134.147/PLC/webvisu.htm
-krebs-grenchen.ch/plc/webvisu.htm
-dunkhorst.homelinux.org/plc/webvisu.htm
-jan-karina.dlinkddns.com:8080/plc/webvisu.htm
-engineering.dyndns.info:8181/plc/webvisu.htm
-raab-slovakia.dyndns.org/plc/webvisu.htm
-dudenet.homeip.net/plc/webvisu.htm
-zview.dyndns.org:82/plc/webvisu.htm
-|
+
 
 # Matches #
 matches [

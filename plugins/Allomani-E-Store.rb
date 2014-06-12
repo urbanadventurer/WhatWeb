@@ -17,12 +17,7 @@ dorks [
 '"Programmed By Allomani"'
 ]
 
-# Examples #
-examples %w|
-demos.allomani.com/store_en/
-demos.allomani.com/store/
-www.alhinduniques.com
-|
+
 
 # Matches #
 matches [

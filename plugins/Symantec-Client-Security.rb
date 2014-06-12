@@ -17,13 +17,7 @@ dorks [
 'intitle:"Web Deployment Tool" "This browser does not support FRAMESET. Please use Internet Explorer"'
 ]
 
-# Examples #
-examples %w|
-72.10.115.155
-www.kascak.com/AV/default.htm
-forms.cas.msu.edu/
-www.visioninfosys.net/jamali_backup/Source/SAV_10.0.2/CD1A/Rollout/AVServer/CLIENTS/WEBINST/
-|
+
 
 # Matches #
 matches [

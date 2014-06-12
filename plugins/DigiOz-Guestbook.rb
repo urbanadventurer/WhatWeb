@@ -16,18 +16,7 @@ dorks [
 'intitle:"powered by DigiOz Guestbook version"'
 ]
 
-# Examples #
-examples %w|
-digioz.no-ip.org/guestbook/
-www.rivers-avenue.de/gaestebuch2/list.php
-www.meslekidenetim.com/guestbook/list.php
-www.starafm.com/community/guestbook/list_depan.php
-www.ljubek-fan.de/gb/
-www.bluesmail.de/gaestebuch2/basis-cgi/list.php
-www.fabricateatro.com/guestbook/guestbook.php
-www.barrelstay.com/guestbook/list.php
-franfriel.com/guestbook/index.php
-|
+
 
 # Matches #
 matches [

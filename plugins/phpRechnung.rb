@@ -16,14 +16,7 @@ dorks [
 'phpRechnung "Edy Corak . All rights reserved."'
 ]
 
-# Examples #
-examples %w|
-http://www.loenshotel.de/demo/phpRechnung/login/login.php
-http://solvemus.com/phpRechnung/
-http://www.kbbv.de/phpRechnung/
-http://www.ing-kujat.de/phpRechnung/
-http://web69.server123.star-server.info/phpRechnung/
-|
+
 
 matches [
 

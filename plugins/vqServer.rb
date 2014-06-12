@@ -12,12 +12,7 @@ description "vqServer is multi-platform compatible. vqServer is a personal web s
 # ShodanHQ results as at 2011-08-07 #
 # 7 for vqserver
 
-# Examples #
-examples %w|
-87.53.137.48
-62.4.71.232
-80.57.96.154
-|
+
 
 # Passive #
 def passive

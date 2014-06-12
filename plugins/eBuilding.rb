@@ -12,19 +12,6 @@ description "Teletrol Systems Inc. - eBuilding Network Controller - web interfac
 # ShodanHQ results # 2013-07-28
 # 41 for Intrinsyc deviceWEB -PDQ
 
-# Examples #
-examples %w|
-74.223.225.146
-172.8.252.98
-76.195.188.202
-216.110.84.112
-216.110.84.115
-98.23.254.117
-12.48.177.243
-209.74.69.6
-108.201.38.81
-173.185.152.229
-|
 
 # Matches #
 matches [

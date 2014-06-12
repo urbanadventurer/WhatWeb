@@ -15,11 +15,7 @@ author "Caleb Anderson"
 version "0.3"
 description "The Open Graph protocol enables you to integrate your Web pages into the social graph. It is currently designed for Web pages representing profiles of real-world things . things like movies, sports teams, celebrities, and restaurants. Including Open Graph tags on your Web page, makes your page equivalent to a Facebook Page."
 
-# Examples #
-examples %w|
-developers.facebook.com
-www.imdb.com
-|
+
 
 # Matches #
 matches [

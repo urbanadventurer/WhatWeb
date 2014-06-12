@@ -16,17 +16,7 @@ dorks [
 '"powered by PhpMesFilms"'
 ]
 
-# Examples #
-examples %w|
-phpmesfilms.dyndns.org/demo/admin/
-www.zikadonf.net/association/bibliotheque/admin/
-admin.domus.free.fr/video/
-karabos.net/perso/phpmesfilms/
-www.winmac-helper.net/phpmesfilms/
-video.memotek.com
-q2sac.free.fr/phpmesfilms_1.6/
-rapin.gregory.free.fr/MesFilms/
-|
+
 
 matches [
 

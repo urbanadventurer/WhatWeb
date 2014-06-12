@@ -20,24 +20,7 @@ dorks [
 'inurl:"sqlbuddy/login.php" "Host" "Username" "Password" "Database" -sbconfig'
 ]
 
-# Examples #
-examples %w|
-www.bronzas.biz/sqlbuddy
-crlive.com/cometchat/sqlbuddy/
-www.trustbuddyinternational.net/sites/sqlbuddy/
-toolbox.3gnt.net/sqlbuddy/
-www.media.delawareareacc.org/11orej/Wampee-2.1-beta-2/apps/sqlbuddy1.3.2/
-admin.heteml.jp/sqlbuddy/login.php
-www.domes4kids.com/sqlbuddy/
-myslice.ods.org/sqlbuddy/
-home.dark-lord.ru/web/stat/sqlbuddy
-demonstration.ogael.fr
-ns1.metaserver.org/sqlbuddy/
-trustbuddyinternational.net/sites/sqlbuddy/
-m00nsh0ck.aimbot.fr/sqlbuddy/
-safehouse.adsign.no/sites/sqlbuddy/
-ticket.coral.ru
-|
+
 
 # Passive #
 def passive

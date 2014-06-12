@@ -16,14 +16,7 @@ dorks [
 '"powered by Crux CMS" -vulnerability'
 ]
 
-# Examples #
-examples %w|
-www.cruxsoftware.co.uk
-cms.cruxsoftware.co.uk
-www.cruxcms.co.uk/about.php
-www.christian-housesitters.com
-www.web-pa.co.uk/image-gallery/
-|
+
 
 # Matches #
 matches [

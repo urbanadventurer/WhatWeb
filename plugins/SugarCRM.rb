@@ -17,34 +17,7 @@ dorks [
 '"Welcome to" intitle:SugarCRM "SugarCRM Inc. The Program is provided AS IS, without warranty. Licensed under AGPLv3."'
 ]
 
-# Examples #
-examples %w|
-demos.softaculous.com/SugarCRM/index.php
-www.portalondemand.biz/demo/sugarcrm/index.php
-88.255.154.13/sugarcrm/
-letrium.com/sugarcrm_demo/
-www.cornerstonemg.org/crm/
-69.70.67.46/sugarcrm/
-theoverfifties.com/crm/
-auriga-si.com/SugarCRM/
-carsforsalefinder.com/crm/
-nationalhealthplus2.com
-ec2-184-73-47-191.compute-1.amazonaws.com/sugarcrm/
-ec2-75-101-205-77.compute-1.amazonaws.com/sugarcrm/
-compasstsi.com/Sugarcrm/
-lht-systems.net/SugarCrm/
-flourish92.com/office/
-brmg.us/sugar/
-www.pcservicesv.com/crm/
-austcocrm.com/austco/
-www.voxa.biz/CRM/
-msbsupport.org/sugarcrm/
-www.disasterdatabase.org/crm/
-attitudeindia.co.in/SugarCE-Full-6.0.0/
-www.retailerservices.us
-https://www.conectiva.com.br/sugarcrm/
-https://www.ronchi.to/sugarcrm/
-|
+
 
 # Matches #
 matches [

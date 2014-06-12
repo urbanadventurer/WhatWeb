@@ -12,9 +12,7 @@ description "EMC NetWorker (formerly Legato NetWorker) centralizes, automates, a
 # More Info #
 # http://en.wikipedia.org/wiki/EMC_NetWorker
 
-# Examples #
-examples %w|
-|
+
 
 # Matches #
 matches [

@@ -17,21 +17,7 @@ dorks [
 'inurl:"index.php?cmd=10" "Pets Rating"'
 ]
 
-# Examples #
-examples %w|
-www.auxiliumsoftware.com/PetRatePro/index.php?cmd=10&ty=2
-resellscripts.info/demos/petrating/index.php?cmd=10&ty=2
-pullnext.com/demo/ready-to-go/rate-a-pet/index.php?cmd=10&ty=2
-www.zampagemella.it/missmrpet/index.php?cmd=10&ty=2
-petmania.recipelaunch.com/petinfo/bereavement/index.php?cmd=10&ty=1
-www.website-demos.com/PetRatePro/index.php?cmd=10&ty=1
-moj-zwierzak.kalkulator24.net/index.php?cmd=10&ty=2
-pets.sersea.com/index.php?cmd=10&ty=2
-petrate.muravey.com/index.php?cmd=10&ty=2
-allcatsgotoheaven.com/index.php?cmd=10&ty=1
-www.petmania.me/index.php?cmd=10&ty=2
-www.cartercountymarket.com/ccm-pets/index.php?cmd=10&ty=29
-|
+
 
 # Matches #
 matches [

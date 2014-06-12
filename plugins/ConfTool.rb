@@ -17,41 +17,7 @@ dorks [
 '"ConfTool Conference Administration" "User name or e-mail"'
 ]
 
-# Examples #
-examples %w|
-www.conftool.net/demo/standard/
-www.conftool.net/demo/pro/
-conftool.iai.uni-bonn.de/websoft09/
-correlation-net.org/conftoolHiv/
-www.eurohrn.eu/conftool/
-www.slactions.org/2011/conftool/
-www.exmaralda.org/gscl/
-paams.usal.es/conftoolIWPAAMS10/
-bisite1.fis.usal.es/bachis2007/conftool/
-fca2010.univ-lyon1.fr/conftool/index.php
-https://www.stlo.unicaen.fr/icisp/ct/htdocs/
-https://liris.cnrs.fr/dgci2008/conftool/
-195.37.26.249/conftool/
-db.csail.mit.edu/nedbday09/htdocs/index.php
-crin.eng.uts.edu.au/ib2com-conftool/
-elinoam.com/acorn-redecom/htdocs/index.php
-www.gavab.es/conferences/anacap09/
-www.symme.univ-savoie.fr/cat2009/htdocs/index.php
-dipersec.king.ac.uk/conftool/
-apps.fz-juelich.de/parco2007-registration/
-jth2008.ehu.es/conftool/htdocs/index.php
-misc.gis.tu-berlin.de/conf_isprs/htdocs/
-spirit.bv.tu-berlin.de/igg/htdocs/conftool/htdocs/
-icsh.nytud.hu
-conf.fh-pinkafeld.ac.at
-www.eguk.org.uk/conftool/
-conftool.education.illinois.edu/gsc2011/
-rg.epos-focus.org/htdocs/
-141.44.30.179/conftool/
-pleconf.cs.uni-paderborn.de/
-conftool.gewisola2011.de
-www.web.upsa.es/spdece08/conftool/
-|
+
 
 # Matches #
 matches [

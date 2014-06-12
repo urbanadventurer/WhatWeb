@@ -21,20 +21,7 @@ dorks [
 '"powered by Calendarix"'
 ]
 
-# Examples #
-examples %w|
-www.calendarix.com/advanced/calendar.php
-203.71.255.32/calendarix/
-calendar.afghanhounds.biz/
-calendar.euromedrights.org
-dalzellumc.org/calendar/
-depch.chna.edu.tw/calendarix/
-wiki.schwaar.com/budokan/
-www.artemis-cynthia.com/calendar/
-www.dailyxpress.net/specials/calendar/
-www.milamcountycc.com/calendar/calendar.php
-www.prep-hockey.com/Cal/
-|
+
 
 # Matches #
 matches [

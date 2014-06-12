@@ -20,43 +20,7 @@ dorks [
 '"powered by Subrion CMS"'
 ]
 
-# Examples #
-examples %w|
-demo.subrion.com
-publishing.subrion.com
-autos.subrion.com
-realty.subrion.com
-directory.subrion.com
-bedroomblunders.com/install/index.php
-www.backyardconfessions.com/install/index.php
-hopecdc.com/install/index.php
-prayerwave.com/install/index.php
-dwiabogado.com/directory/
-fr.clarase.com
-talktothehill.com
-owensborotrucksales.com
-www.storyalley.com
-www.iqonsworld.com
-www.datingpot.com
-www.intelliresponder.com
-www.triger.co.il
-www.strugglingtomakeit.com
-www.realgirlfriendtalk.com
-www.lyrescript.com
-www.afromusicians.com
-www.london-reviews.com
-www.westcreeknj.com
-www.downlowconfessions.com
-www.lconfessions.com
-howtohowdo.com
-www.intelliants.com
-standingintheneedofprayer.com
-poetryalley.com
-123email.com.br
-www.clarase.com
-www.waterfilterdealers.com
-www.webconcepts.co.il
-|
+
 
 # Matches #
 matches [

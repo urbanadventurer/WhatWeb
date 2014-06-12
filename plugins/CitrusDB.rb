@@ -17,21 +17,7 @@ dorks [
 'intitle:CitrusDB "Enter your username and password" "username" "password"'
 ]
 
-# Examples #
-examples %w|
-img.globalone.bg/citrus/
-techguards.com/billing/
-avidexinfotech.com/demo/citrusdb/citrus/
-gosupernet.com/billing/
-ddogbert.net/support/
-www.tammymcdonaldtraining.com/citrus/index.php
-trameltonis.com/clients/
-sergeinc.dyndns.org/host/website/citrus/
-billing.bluescreentechnologies.com/
-ncinfo.com.pt/aa/
-clients.trameltonis.com/
-billing.report.at/
-|
+
 
 # Matches #
 matches [

@@ -27,35 +27,7 @@ dorks [
 '"Powered by FluxBB"'
 ]
 
-# Examples #
-examples %w|
-fluxbb.org/forums/
-www.amdsquad.com/forums/
-www.le-mesle.net/forum/index.php
-forums.epixplx.com/
-forum.torg.su
-www.badharvest.net/forum
-forum.utorrent.com
-web.dhjh.tcc.edu.tw/~gzqbyr/fluxbb/
-scratch.mit.edu/forums/
-atlaswww.hep.anl.gov/asc/forum/
-support.forumify.com
-www.bhoppers.com/fluxbb/
-forum.phalanx-korgall.eu
-www.fluxbbhacks.com
-demos.softaculous.com/FluxBB/
-smart.edu-bg.eu/forum/
-eduflux.com/fluxbb/
-macscripter.net
-ths-status.net
-www.scriptol.com/forum/
-www.v-sr.nu/forum/
-www.fsf.fluxbb.info
-mazdaspeed.se/board/
-www.moofpack.com/forums/
-forum.exeteraircooled.co.uk
-forum.41squadron.org
-|
+
 
 # Matches #
 matches [

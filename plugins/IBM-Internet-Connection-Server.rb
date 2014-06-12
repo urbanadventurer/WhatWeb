@@ -12,11 +12,7 @@ description "IBM Internet Connection Server - Homepage [offline] : http://www.ic
 # ShodanHQ results as at 2011-06-07 #
 # 3 for ibm internet connection server -IBM_HTTP_Server
 
-# Examples #
-examples %w|
-204.185.167.2
-208.122.79.143
-|
+
 
 # Passive #
 def passive

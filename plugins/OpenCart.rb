@@ -18,29 +18,7 @@ dorks [
 'intitle:"Administration" "Please enter your login details" "Username" "Password" "OpenCart"'
 ]
 
-# Examples #
-examples %w|
-demo.opencart.com
-demo.opencart.com/admin/
-ezisell.com/admin/
-zaskya.com/admin/
-opencart.kulakconsulting.net/admin/index.php?route=catalog/special_manager
-old.printstopolkadots.co.uk/
-www.ed-works.nl/demo/admin/
-free.e-piksel.com/admin/
-www.artsydog.com/admin/
-www.shop.my/demo/opencart/admin/
-giftcardcastle.com/admin/
-14x.e-piksel.com/demo/admin/index.php
-15x.e-piksel.com/demo/admin/index.php
-www.water-beds-uk.com/shop/admin/
-blackwidowbikeworks.com/store/admin/
-demoshop.tvorzasp.com/admin/
-www.toptrainingcourses.co.uk/admin/superadmin.php
-vinag.webege.com/admin/
-playemporium.com/pe_adm1n_pri/
-www.makwin.com/art/store/admin/
-|
+
 
 # Matches #
 matches [

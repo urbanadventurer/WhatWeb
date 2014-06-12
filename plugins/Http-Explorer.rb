@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2012-04-10
 version "0.1"
 description "Http explorer is a free easy-to-use web server with which you can share your musics, videos and images for several web displays - Homepage: http://http-explorer.sourceforge.net/"
 
-# Examples #
-examples %w|
-88.170.185.16
-88.176.190.172
-|
+
 
 # Matches #
 matches [

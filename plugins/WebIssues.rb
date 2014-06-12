@@ -17,25 +17,7 @@ dorks [
 'intitle:"Log in to WebIssues" "Log in to WebIssues" "Manual"'
 ]
 
-# Examples #
-examples %w|
-demo.mimec.org
-www.litenotes.nl
-www.marcomarletta.com/tracking/
-issues.mimec.org
-ei10.eu
-prosmarttoolsissues.com
-gradiskaonline.com/webissues-server-1.0.1/
-gnawtooth.com
-nub-bd.com/webissues-server-1.0/
-issues.g2g-dev-grp.com
-www.wcaevents.com/premiersystem2/
-das-ds.com
-givingu.com
-helpdesk.cadenza-oc.info
-support.anjoda.com
-www.rejuvenateproductions.com/webissues/index.php
-|
+
 
 # Matches #
 matches [

@@ -13,29 +13,7 @@ description "This plugin retrieves the X-XSS-Protection value from the HTTP head
 # 9633 ShodanHQ results for X-XSS-Protection mode @ 2011-01-08
 # 9633 ShodanHQ results for X-XSS-Protection mode=block @ 2011-01-08
 
-# Examples #
-examples %w|
-74.125.167.69
-74.125.113.81
-209.85.157.43
-113.21.241.66
-74.125.210.231
-74.125.160.23
-74.125.77.132
-173.194.0.215
-173.194.24.201
-221.120.218.7
-204.92.112.85
-65.54.205.13
-174.36.41.108
-89.253.241.95
-65.54.186.18
-217.69.130.196
-128.104.236.11
-217.69.128.87
-109.232.193.45
-109.232.193.87
-|
+
 
 # Passive #
 def passive

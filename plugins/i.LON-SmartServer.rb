@@ -12,16 +12,7 @@ description "Echelon's i.LON SmartServer 2.0 is a versatile smart energy manager
 # ShodanHQ results as at 2011-03-15 #
 # 1,567 for i.LON realm wind
 
-# Examples #
-examples %w|
-173.248.228.34
-202.71.202.198
-72.254.77.134
-209.68.147.135
-12.50.72.190
-65.71.234.24
-70.168.77.199
-|
+
 
 # Passive #
 def passive

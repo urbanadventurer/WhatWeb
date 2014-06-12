@@ -20,18 +20,7 @@ dorks [
 'intitle:"BadBlue: the file-sharing web server anyone can use" -intitle'
 ]
 
-# Examples #
-examples %w|
-milesg.dyndns.tv/ext.dll
-89.184.116.10/ext.dll
-dusanpregelj.homeip.net:8888
-174.74.8.72:5631/ext.dll
-fileshare.augustmack.com/ext.dll
-inshadow.servebbs.com/ext.dll
-news.missvalley.com/ext.dll
-dilatedpeoples.no-ip.com:5555/ext.dll
-scorchedsilicon.com:8080/ext.dll
-|
+
 
 # Passive #
 def passive

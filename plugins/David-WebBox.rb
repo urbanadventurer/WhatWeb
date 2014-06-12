@@ -15,22 +15,7 @@ description "David WebBox is a remote data storage center. - Homepage: http://ww
 # Google results as at 2011-08-27 #
 # 14 for intitle:"David InfoCenter Web"
 
-# Examples #
-examples %w|
-212.95.117.189
-mailvie.sytes.net:8080
-hamch.dyndns.org
-www.wkk-uetersen.de
-92.51.137.157:8081
-217.91.73.248
-84.61.27.105
-78.140.90.130
-78.42.180.198
-91.66.55.222
-85.16.66.157
-83.216.239.196
-80.153.102.47
-|
+
 
 # Matches #
 matches [

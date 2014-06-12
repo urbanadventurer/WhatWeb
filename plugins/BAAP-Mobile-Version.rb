@@ -12,12 +12,7 @@ description "The BAAP Mobile Version is a complete toolkit to help mobilize your
 # ShodanHQ results as at 2011-08-29 #
 # 3 for X-Mobilized-By: BAAP Mobile
 
-# Examples #
-examples %w|
-50.6.13.44
-115.146.1.46
-76.228.77.255
-|
+
 
 # Matches #
 matches [

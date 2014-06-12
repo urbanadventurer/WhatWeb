@@ -16,13 +16,7 @@ dorks [
 'ext:js "Copyright (c) 2006-2008 Valerio Proietti" "http://mad4milk.net"'
 ]
 
-# Examples #
-examples %w|
-demos.mootools.net/demos/mootools.js
-mootools.net/assets/scripts/mootools.core.js
-mootools.net/assets/scripts/mootools.more.js
-demos111.mootools.net/demos/mootools.svn.js
-|
+
 
 matches [
 

@@ -14,10 +14,7 @@ dorks [
 '"Powered By CruxPA"'
 ]
 
-# Examples #
-examples %w|
-pa.cruxsoftware.co.uk
-|
+
 
 # Matches #
 matches [

@@ -19,37 +19,7 @@ dorks [
 '"Powered by CMSimple.dk" "welcome"'
 ]
 
-# Examples #
-examples %w|
-www.cmsimple.org/demo/
-www.musicmaulindustries.com/
-www.startrix.de/en/
-www.davaolodgebloodstock.com/
-www.zglywx.com/
-www.giantpicturedictionary.com/
-www.vitaligraf.de/en/
-www.magicplans.com/
-www.rpad.dk/en/
-www.anybody.aau.dk/
-www.informationmanagers.dk/
-www.upmarketseo.com/
-www.alumnae.mtholyoke.edu/~classof1969/
-www.biggreenweekend.org.uk/
-www.whysp.com/
-www.kis-rovinj.com/
-www.koningdecor.com/
-atomcool.rice.edu/
-digined.pe1mew.nl/
-www.fa2011.org/
-www.eichberger.org/en/
-www.koostookogu.ee/et/
-www.cawu.org/
-www.hugeinternetsuperstars.com/
-www.efplighting.com/
-www.trjfas.org/
-www.cj-web.dk/
-www.cidtegypt.com/
-|
+
 
 matches [
 

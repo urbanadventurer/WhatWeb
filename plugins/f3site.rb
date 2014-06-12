@@ -19,27 +19,7 @@ dorks [
 '"powered by F3Site" -exploit -dork'
 ]
 
-# Examples #
-examples %w|
-www.gon.ugu.pl
-www.smolinscy.pl
-www.nowetaniej.pl
-pzhgp-krotoszyn.pl
-kolarstwo-zachodniopomorskie.org
-www.reprotechnika.pl
-www.stspl.eu
-www.hucisko.pl
-zarabianiepieniedzy.net
-www.e-edytor.com/pl2/
-gimnazjum7kielce.pl
-www.pkenha.yoyo.pl
-darklife.kilu.de
-juveblog.pl
-www.rekodzielo.talaska.pl
-p98fongo.ugu.pl
-www.szczakowianka.jaworzno.pl
-erotyka.darmowe-porno.sex.pl
-|
+
 
 matches [
 

@@ -19,10 +19,7 @@ dorks [
 '"powered by WikidForum"'
 ]
 
-# Examples #
-examples %w|
 
-|
 
 # Matches #
 matches [

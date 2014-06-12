@@ -12,15 +12,7 @@ description "OKI printer - Homepage: http://www.okiprintingsolutions.com/"
 # ShodanHQ results as at 2011-05-31 #
 # 240 for OKIDATA-HTTPD
 
-# Examples #
-examples %w|
-129.130.156.124
-140.111.150.12
-147.228.179.10
-212.191.86.121
-131.234.133.140
-163.117.147.154
-|
+
 
 # Passive #
 def passive

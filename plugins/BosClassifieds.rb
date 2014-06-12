@@ -20,30 +20,7 @@ dorks [
 '"powered by BosClassifieds Classified Ads System"'
 ]
 
-# Examples #
-examples %w|
-cjrayburn.com/clas/index.php
-nameokivillagemarine.com/inventory1/index.php
-www.gcca.net/classifieds/index.php
-www.bahads.com
-www.rallyclassified.com
-www.landroverforsale.org
-www.drafthorseclassified.com/classifieds/recent.php
-www.realestateinbelize.org/post.php
-www.jetskiads.com/index.php
-www.galakeview.info
-www.mypurseparties.com/account.php
-www.nameokiboats.com/boats/index.php
-www.catahoulaclassifieds.com/index.php
-www.homoads.com/index.php
-www.flahorse.com/barnsale/index.php
-www.adworldclassifieds.com/index.php
-www.meteorite-times.com/classifieds/index.php
-www.vwforsale.org/index.php
-www.tractorsclassifieds.com/index.php
-www.equinetc.com/horsefairclassifieds/index.php
-www.balsamquarter.com/classifieds/index.php
-|
+
 
 # Matches #
 matches [

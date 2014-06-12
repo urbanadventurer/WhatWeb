@@ -20,48 +20,7 @@ dorks [
 'site:skillport.com inurl:"login.action"'
 ]
 
-# Examples #
-examples %w|
-209.46.44.73
-216.207.81.72
-209.46.44.54
-209.46.44.120
-64.12.151.225
-209.46.44.11
-209.46.44.210
-209.46.44.63
-209.46.44.130
-216.207.81.25
-nci.skillport.com/skillportfe/login.action
-centric.skillport.com/skillportfe//login.action
-centralstationu.skillport.com/skillportfe/login.action
-honeywell.skillport.com/skillportfe/login.action
-uncw.skillport.com/skillportfe/login.action
-is014.skillport.com/skillportfe/login.action
-subway.skillport.com/skillportfe/login.action
-hsbc.skillport.com/skillportfe/login.action
-gt.skillport.com/skillportfe/login.action
-wsu.skillport.com/skillportfe/login.action
-training.skillport.com/skillportfe/login.action
-ons-learning.skillport.com/skillportfe/login.action
-3rdparty.skillport.com/skillportfe/login.action
-usarmy.skillport.com/skillportfe/login.action
-navyiacertprep.skillport.com/skillportfe/login.action
-eval7p.skillport.com/skillportfe/login.action
-pvsp70abfe.skillport.com/skillportfe/login.action
-pvsp70acfe.skillport.com/skillportfe/login.action
-pvsp71miscfe.skillport.com/skillportfe/login.action
-pvsp72cscfe.skillport.com/skillportfe/login.action
-ecampus-fe.vtc.edu.hk/skillportfe/login.action
-mycareeruic.skillport.com/skillportfe/login.action
-target.skillport.com/skillportfe/login.action
-msslive.skillport.com/skillportfe/login.action
-uh.skillport.com/skillportfe/login.action
-cgilearning.skillport.com/skillportfe/login.action
-baesystemsinc.skillport.com/skillportfe/login.action
-fedexamericas.skillport.com/skillportfe/login.action
-mscd.skillport.com/skillportfe/login.action
-|
+
 
 # Matches #
 matches [

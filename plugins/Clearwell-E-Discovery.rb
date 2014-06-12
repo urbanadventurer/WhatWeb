@@ -20,18 +20,7 @@ dorks [
 'intitle:"Clearwell E-Discovery Platform log in"'
 ]
 
-# Examples #
-examples %w|
-clearwell.advanceddiscovery.com
-66.179.235.139
-216.240.184.238
-199.117.49.45
-199.3.11.37
-204.88.30.103
-209.246.60.219
-121.200.231.230
-209.246.60.221
-|
+
 
 # Matches #
 matches [

@@ -21,18 +21,7 @@ dorks [
 'intitle:"Slingbox Setup" "Welcome to Slingbox Setup" "We\'ll help you set up your Slingbox"'
 ]
 
-# Examples #
-examples %w|
-64.74.138.52
-64.74.138.157
-64.74.138.145
-64.74.138.60
-67.148.153.120
-64.74.138.52
-70.42.244.195
-70.42.244.211
-intsetup.sling.com
-|
+
 
 # Matches #
 matches [

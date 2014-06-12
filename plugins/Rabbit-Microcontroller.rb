@@ -13,15 +13,7 @@ description "Rabbit Semiconductor is the company which designs and sells the Rab
 # ShodanHQ results as at 2011-04-08 #
 # 2, 557 for Z-World Rabbit
 
-# Examples #
-examples %w|
-89.147.80.93
-12.145.130.18
-91.188.3.69
-166.159.235.229
-4.245.134.227
-61.215.7.163
-|
+
 
 # Passive #
 def passive

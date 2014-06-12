@@ -17,13 +17,7 @@ dorks [
 '"Web Administration Panel" "by Kaon Softwares. All Rights Reserved."'
 ]
 
-# Examples #
-examples %w|
-products.kaonsoftwares.com/adbrite-clone/admin/
-spendoo.se/__old/admin/
-spendoo.se/admin/
-spendoo.co.uk/admin/
-|
+
 
 matches [
 

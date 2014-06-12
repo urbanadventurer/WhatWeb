@@ -17,12 +17,7 @@ description "Our flagship network monitoring software manages dynamic networks o
 # 2 Google results for "Cannot access main SQL Server database" intitle:"SolarWinds Network Management"
 # 14 results for inurl:netperfmon
 # 2 results for inurl:Orion inurl:login ext:aspx intitle:"Orion Network Performance Monitor"
-examples %w|
-205.214.205.46
-oriondemo.solarwinds.com
-188.136.136.8/Orion/
-infocenter2.chinahk.net:8787/Orion/
-|
+
 
 matches [
 

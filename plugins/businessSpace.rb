@@ -11,14 +11,7 @@ description "BusinessSpace community"
 
 # 15 results for "powered by BusinessSpace" @ 2010-08-12
 # 22 results for inurl:"blogs_all_in_community" @ 2010-08-12
-examples %w|
-oilprolink.com
-www.concierte.com
-viplinked.com
-loki-innovations.com/idea_factory/
-www.journeymuch.com
-professional-community.net
-|
+
 
 matches [
 

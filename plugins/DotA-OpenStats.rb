@@ -17,15 +17,7 @@ dorks [
 'intitle:"DotA OpenStats" "2011 Powered by DotA OpenStats" -dork'
 ]
 
-# Examples #
-examples %w|
-stats.paivanet.com
-84.23.73.153/openstats/
-lustigelanguste.de
-war3.kaniserver.net/DOS/index.php
-botdota.com/keju/
-clan-r3v.v-info.info/index.php?id=2
-|
+
 
 # Matches #
 matches [

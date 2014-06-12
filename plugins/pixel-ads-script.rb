@@ -11,19 +11,7 @@ description "Pixel Ads Script - homepage: http://www.pixel-ads-script.com/"
 # Homepage is on a non-existant domain - software no longer supported?
 
 # 27 results for "Powered by: Pixel-Ads-Script.Com" @ 2010-08-08
-examples %w|
-www.10dollarpixelblock.com/index.php
-tweexel.com
-www.e3laan.com
-bwino.org/sahayta/
-www.drdshat.com
-scrappixels.com
-www.nordicmillioneurosite.com
-www.drdshat.com
-ivoire-pub.com
-yasturk.com/~myuser/
-yasturk.net/~myuser/
-|
+
 
 matches [
 

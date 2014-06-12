@@ -18,24 +18,13 @@ dorks [
 'intitle:"PnPSCADA Login" "Note: This site uses Cookies, JavaScript and Popups"'
 ]
 
-# Examples #
-examples %w|
-41.190.111.19
-196.213.181.69
-41.241.194.9
-196.33.57.60
-sdg.pnpscada.com
-w.pnpscada.com
-impactenergy.pnpscada.com
-enos-l.pnpscada.com
-https://blueskys.pnpscada.com
-https://ww.pnpscada.com
-|
+
 
 # Matches #
 matches [
 
 { :text=>'<TITLE>Welcome to Plug and Play Scada</TITLE>' },
+{ :text=>'<TITLE>Login - PnPSCADA</TITLE>' },
 
 { :version=>/<CENTER><SPAN style='font-family:arial;font-size:10px'>PNPSCADA ([^\s]+) &copy;20[\d]{2} SDG Technologies cc\. All rights strictly reserved\. Please review our <A target='_blank' style='font-family:arial;font-size:10px' href='termsandconditions\.html'>Terms and Conditions<\/A>\. <\/SPAN><\/CENTER>/ },
 

@@ -13,15 +13,7 @@ description "Canon Print Server - Print servers connect printers directly to the
 # 1,142 for PRINT_SERVER WEB
 # 1,142 for PRINT_SERVER WEB 1.0
 
-# Examples #
-examples %w|
-133.5.175.56
-133.95.161.160
-133.46.61.11
-150.46.147.217
-150.7.164.7
-133.6.78.52
-|
+
 
 # Matches #
 matches [

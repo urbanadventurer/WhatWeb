@@ -18,19 +18,7 @@ dorks [
 '("BrewBlogger 2.3.2 Club Edition developed by zkdigital.com"|"BrewBlogger 2.3.2 Personal Edition developed by zkdigital.com")'
 ]
 
-# Examples #
-examples %w|
-www.azhomebrewers.org/brew/
-www.undergroundbrewers.org/brewblogger/
-www.bryggelogg.no
-www.bubbleheadbrewing.com
-www.crapule.qc.ca/brewblogger/
-www.deeperrootsbrewing.com
-www.bullcityhomebrew.com/brewblogger/
-brewblog.beerbarons.org
-foggybrainbrewery.com
-www.clubhomebrew.com
-|
+
 
 # Matches #
 matches [

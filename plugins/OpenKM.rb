@@ -17,19 +17,7 @@ dorks [
 '"Welcome to OpenKM" intitle:"OpenKM login"'
 ]
 
-# Examples #
-examples %w|
-demo.openkm.com/OpenKM/frontend/index.jsp
-braidproject.eu/OpenKM/
-collaborate.oieau.fr/OpenKM/
-jswdms.jsw-ci.com
-fina.net.ua:8070/OpenKM/
-opkm.piechna.com/OpenKM/
-donkey.berndtgroup.net
-demo.hamerle.cz
-docs.mstpartners.sk/OpenKM/
-https://openkm.mmt.inf.tu-dresden.de/OpenKM/
-|
+
 
 # Matches #
 matches [

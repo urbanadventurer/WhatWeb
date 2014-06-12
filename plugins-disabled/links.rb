@@ -12,12 +12,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
 version "0.2"
 description "This plugin attempts to extract all the links from the HTML source."
 
-examples %w|
-itsecuritysolutions.org
-morningstarsecurity.com
-whatweb.net
-yehg.net
-|
+
 
 # Extract links
 def passive

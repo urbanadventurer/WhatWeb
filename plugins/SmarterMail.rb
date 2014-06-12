@@ -12,60 +12,7 @@ description "SmarterMail delivers Exchange-level email server software features 
 # Google results as at 2011-03-14 #
 # 326 for intitle:"SmarterMail Login SmarterMail" "Remember me" "SmarterMail Enterprise"|"SmarterMail Professional"|"SmarterMail Free"
 
-# Examples #
-examples %w|
-mail.verticalwebmedia.com
-mail.iwebspace.com
-mail.singaporerealtors.com
-www.emilystrange.com/webmail/
-mail.viaarena.com
-smartermail.seekdotnet.com
-mail.rapidpat.com
-mail.mrx.net
-mail.hoopa-nsn.gov
-webmail.3tassociates.com
-www.aim.registrarservers.net
-email.cewd.com
-74.121.184.16
-mail.residence.com.my
-www.domainhost.hu/mail/
-webmail.nomer.com.br
-mail.alank.org
-mail.cleanfuelsconsulting.org
-webmail.qcommerce.com
-mail.trader-one.com
-mail.livingadvantageinc.org
-www.bodegaassociation.org
-mail.iiehongkong.org:8080
-mail.inno-tech.com
-webmail.nexion.biz
-newmail.dotnetpark.com
-mail.albayan.edu.qa/
-mail.beaconcollege.edu/Login.aspx
-mail.ndic.com
-webmail-vserver83.3essentials.com
-www.mailwny.com
-www.hline.org
-webmail.lisp.com.au
-mail.hfc-realty.com
-mail.claritytech.com
-mail.pixrite.com
-mail.cbscarlow.net:9998
-mail.rietabh.ac.in
-mail.celsolar.com
-mail.sunlighttaxi.com
-mail.psscloud.com
-mail.pixelmarsala.com
-mail.atsireland.com
-www.godirect.in
-mail.litewire.net
-www.alt-glass.com.au
-cf-ntmail.ci.findlay.oh.us:8383
-looijs.com
-mail.boroughofwenonah.com
-mail.endoradigital.com
-203.150.224.15:9998
-|
+
 
 # Matches #
 matches [

@@ -19,17 +19,7 @@ dorks [
 'intitle:"Sipura SPA Configuration" inurl:admin -ext:htm'
 ]
 
-# Examples #
-examples %w|
-www.rikasakha.ru:8085/admin/
-213.147.44.84/admin/
-echozoe.blogdns.com/admin/
-www.abreumendes.net/admin/
-200.60.62.128/admin/
-90-156-4-90.as.kn.pl/admin/
-ip99.elektrosat.pl/admin/
-87-207-172-198.dynamic.chello.pl/admin/
-|
+
 
 # Matches #
 matches [

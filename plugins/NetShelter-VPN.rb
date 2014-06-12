@@ -12,11 +12,7 @@ description "Fujitsu NetShelter/VPN [Japanese] - an IPSec-compliant VPN device w
 # ShodanHQ results as at 2011-03-07 #
 # 2 for NetShelter
 
-# Examples #
-examples %w|
-211.10.78.132
-210.188.186.211
-|
+
 
 # Matches #
 matches [

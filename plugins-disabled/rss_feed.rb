@@ -12,15 +12,7 @@ author "Caleb Anderson"
 version "0.2"
 description "This plugin detects RSS feeds and extracts the RSS feed source."
 
-# Examples #
-examples %w|
-itsecuritysolutions.org
-morningstarsecurity.com
-ha.ckers.org
-www.kiwicon.org
-adrianlamologs.blogspot.com
-www.wired.com
-|
+
 
 # Matches #
 matches [

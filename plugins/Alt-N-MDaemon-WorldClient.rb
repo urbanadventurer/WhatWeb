@@ -20,38 +20,7 @@ dorks [
 'inurl:WorldClient.dll?View=Main'
 ]
 
-# Examples #
-examples %w|
-212.110.55.37
-213.82.55.227
-ripmax.net
-mail.isfedu.com/WorldClient.dll?View=Main
-minlib.net:3000/WorldClient.dll?View=Main
-https://mail.bimvietnam.com/WorldClient.dll?View=Main
-webmail.oxatis.com/WorldClient.dll?View=Main&lang=fr
-https://www.scnet.com.au/webmail/WorldClient.dll?view=main
-https://mail.tntsupermarket.com/WorldClient.dll?View=Main
-www.mfspchina.com:3000/WorldClient.dll?View=Main
-www.cybeles.net:86/WorldClient.dll?View=Main
-www2.seadpl.com:3000/WorldClient.dll?View=Main
-218.57.19.110:3100/WorldClient.dll?View=Main
-ns9.netcfm.com:3000/WorldClient.dll?View=Main
-mail.grandoak.com/WorldClient.dll?View=Main
-www.lzlnkj.com:3000/WorldClient.dll?View=Main
-smtp1.fthm.mg:3000/WorldClient.dll?View=Main
-www.aniinfonet.net/WorldClient.dll?View=Main
-syzx.xmedu.cn:3000/WorldClient.dll?View=Main
-mail.megacopy.com.ar/WorldClient.dll?View=Main
-mail.computerh.it:8383/WorldClient.dll?View=Main
-mail.studiopecora.it/WorldClient.dll?View=Main
-mail.studiolegalebarbaro.it/WorldClient.dll?View=Main
-mail.connet.net.mx:3000/WorldClient.dll?View=Main
-mail.hhrrc.ac.cn/WorldClient.dll?View=Main
-201.252.232.252:3000/WorldClient.dll?View=Main
-https://mx2.tba.net/WorldClient.dll?View=Main
-mail.studiocatalano.net/WorldClient.dll?View=Main
-mail.ecografiarusso.com/WorldClient.dll?View=Main
-|
+
 
 # Matches #
 matches [

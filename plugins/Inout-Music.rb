@@ -10,16 +10,7 @@ version "0.1"
 description "Inout Music is the most powerful, affordable, flexible, feature rich, customizable music portal script for your website. - homepage: http://www.inoutscripts.com/products/inout_music/"
 
 # 154 results for "Powered by Inoutscripts" @ 2010-10-12
-examples %w|
-www.inoutdemo.com/inout_music_ultimate/
-www.inoutdemo.com/inout_music_ultimate/login/index/
-www.inoutdemo.com/inout_music_ultimate/mobile/
-www.inoutdemo.com/inout_music_ultimate/admin/
-abaytube.com
-abaytube.com/admin/
-www.musicstory.com
-www.musicstory.com/admin/
-|
+
 
 matches [
 

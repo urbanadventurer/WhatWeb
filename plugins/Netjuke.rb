@@ -17,16 +17,7 @@ dorks [
 'inurl:"search.php?do=list.tracks"'
 ]
 
-# Examples #
-examples %w|
-musicalibre.es/netjuke/
-megimg.info/orthodoxmusic/
-www.jimmysizzle.com/netjuke/
-www.singspirationtime.com/
-www.geertjansen.nl/netjuke/
-music.perfect.net.ua
-mp3.im7.de
-|
+
 
 # Matches #
 matches [

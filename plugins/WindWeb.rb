@@ -10,18 +10,7 @@ version "0.1"
 description "WindWeb Webserver"
 
 # About 21746 ShodanHQ results for "server: WindWeb" @ 2010-10-26
-examples %w|
-200.127.173.191
-69.50.53.242
-59.173.148.53
-74.219.67.55
-91.122.72.133
-71.181.124.27
-12.156.196.194
-66.181.117.186
-201.229.38.195
-69.195.60.45
-|
+
 
 # HTTP Header
 def passive

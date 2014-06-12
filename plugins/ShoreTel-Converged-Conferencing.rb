@@ -15,14 +15,7 @@ description "ShoreTel Converged Conferencing - Homepage: http://www.shoretel.com
 # Google results as at 2011-09-20 #
 # 5 for "It appears that you are running a popup blocker that may be preventing *brand_product_acronym* from opening"
 
-# Examples #
-examples %w|
-conference.mobilinkworld.com
-oaklandmyteamwork.gwinnett.k12.ga.us
-conference.showmgr.com
-conf-server.nafsa.org
-208.114.192.85
-|
+
 
 # Matches #
 matches [

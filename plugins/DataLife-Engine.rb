@@ -23,30 +23,7 @@ dorks [
 '"powered by DataLife Engine"'
 ]
 
-# Examples #
-examples %w|
-pc.m7shsh.com
-dle-en.com
-www.bahdla.com
-rapidshara.org
-kurdseed.freevar.com
-cs.youjed.com
-www.netkozmos.com
-bacsivitinh.com
-www.ulvichess.az/dle/ulvichess/index.php
-chohagia.com
-fcnews.site.ge
-dl7all.net
-softs4u.eu
-www.downloadx.in
-chernobili.com
-rusinet.com
-hotgallery.org
-www.era.ge
-digggu.co.cc
-188.126.78.186
-193.16.101.9
-|
+
 
 # Matches #
 matches [

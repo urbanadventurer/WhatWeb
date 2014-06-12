@@ -10,9 +10,7 @@ version "0.1"
 description "This plugin extracts passwords from Steam Steal0r logs."
 
 # 4 results for "Possible Accountnames:" "Steam Steal0r v2" @ 2010-10-15
-examples %w|
-kicki.ki.ohost.de/steam-acc.log
-|
+
 
 # Extract passwords
 def passive

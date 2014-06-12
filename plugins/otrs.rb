@@ -19,19 +19,7 @@ dorks [
 '"Powered by OTRS" inurl:customer.pl'
 ]
 
-# Examples #
-examples %w|
-customer.otrs.org
-support.plimus.com/otrs/customer.pl
-extranet.displaylink.com/otrs/customer.pl
-unix-01.lair.co.za/otrs/customer.pl
-itsm-demo.otrs.com/otrs/customer.pl
-support.iworldaccounts.com/otrs/customer.pl
-inco-support.mtc-berlin.com/otrs/customer.pl
-max.softconf.com/otrs/customer.pl
-otrs.itnsgroup.com/otrs/customer.pl
-support.blaustift.com/otrs/customer.pl
-|
+
 
 matches [
 

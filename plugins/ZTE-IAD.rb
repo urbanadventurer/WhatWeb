@@ -20,14 +20,7 @@ dorks [
 '"Please login to continue" "Username" "Password" "ZTE Corporation" "All rights reserved"'
 ]
 
-# Examples #
-examples %w|
-222.168.177.109
-pywy.net
-cljiexin.com
-222.88.162.6
-200.29.111.193
-|
+
 
 # Matches #
 matches [

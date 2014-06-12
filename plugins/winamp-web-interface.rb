@@ -15,9 +15,7 @@ description "web interface for winamp mp3 player - homepage: http://www.winamp.c
 # Google results as at 2010-07-02 #
 # 5 for "About Winamp Web Interface" intitle:"Winamp Web Interface"
 
-# Examples #
-examples %w|
-|
+
 
 # Matches #
 matches [

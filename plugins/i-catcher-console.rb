@@ -18,23 +18,7 @@ description "i-Catcher is a Digital CCTV system for security, surveillance and r
 # ShodanHQ results as at 2010-07-20 #
 # 189 for Server:i-Catcher Console
 
-# Examples #
-examples %w|
-cctv.icode.co.uk
-cctv.rockwellcottage.com:82
-94.185.130.197
-81.86.49.152:3409/index.htm
-82.69.29.127
-84.92.154.5:8080/index.htm
-166.70.231.34
-81.136.158.35
-216.254.135.35
-81.149.9.153
-70.15.242.34
-81.149.203.34
-217.41.62.178
-81.149.107.89
-|
+
 
 # Matches #
 matches [

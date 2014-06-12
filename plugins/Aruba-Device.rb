@@ -15,22 +15,7 @@ description "Aruba network device - web interface for router, access point, swit
 # ShodanHQ results as at 2011-09-17 #
 # 4,343 for location 4343
 
-# Examples #
-examples %w|
-120.105.3.235
-216.184.65.197
-69.80.162.131
-203.64.105.1
-64.189.61.2
-129.8.215.8
-200.198.202.132
-141.117.171.5
-136.224.32.8
-158.165.236.20
-218.2.65.2
-130.212.128.11
-71.33.255.10
-|
+
 
 # Matches #
 matches [

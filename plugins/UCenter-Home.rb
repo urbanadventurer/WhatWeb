@@ -17,53 +17,7 @@ dorks [
 '"powered by UCenter Home"'
 ]
 
-# Examples #
-examples %w|
-bbs.fy.gov.cn/home/
-bbs.pingyao.gov.cn/myhome/space.php
-bbs.pz.gov.cn/uchome/
-bbs.scfda.gov.cn/home/
-bbs.tz.gov.cn/uchome/
-bbs.yichun.gov.cn/uchome/space.php
-blog.12371.gov.cn
-blog.cqyzfy.gov.cn
-caofeidian.tsgaj.gov.cn/ucenter/home/space.php
-club.jledu.gov.cn/home/space.php
-club.xiangxiang.gov.cn/uchome/space.php
-club.zzgxq.gov.cn/home/space.php
-club.zzty.gov.cn/home/
-djlt.gaogang.gov.cn/home/
-face.talk853.com
-fengrun.tsgaj.gov.cn/ucenter/home/space.php
-gaoxin.tsgaj.gov.cn/ucenter/home/space.php
-gov.icxo.com/space.php
-kaixin.jyq.gov.cn/space.php
-luannan.tsgaj.gov.cn/ucenter/home/space.php
-luanxian.tsgaj.gov.cn/ucenter/home/space.php
-my.jcys120.cn
-pgmj.bjpg.gov.cn
-portal.dsej.gov.mo/www/portalspace/uchome/uchome_c/
-u.snwh.gov.cn/space.php
-vpnbbs.snwh.gov.cn/bbs/uchome/space.php
-yutian.tsgaj.gov.cn/ucenter/home/space.php
-zgnx.gov.cn/home/space.php
-zunhua.tsgaj.gov.cn/ucenter/home/space.php
-www.chanchina.cn
-www.ee23forum.net
-www.on12e.net
-www.otsuka-ai.cn
-www.shengjueshi.com
-www.webchina.net
-www.dgagri.gov.cn/uhome/space.php
-www.gaoyou.gov.cn/home/
-www.hebly.gov.cn/lt/uchome/upload/space.php
-www.hydzb.gov.cn/blog/space.php
-www.jyq.gov.cn/bbs/home/space.php
-www.lcly.gov.cn/bbs/home/
-www.taihe.gov.cn/uchome/space.php
-www.tsgaj.gov.cn/ucenter/home/space.php
-www.zznews.gov.cn/home/space.php
-|
+
 
 matches [
 

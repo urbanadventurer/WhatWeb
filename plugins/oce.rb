@@ -12,7 +12,7 @@ Plugin.define "Oce" do
 author "Andrew Horton"
 version "0.2"
 description "Oce Print Exec Workgroup is easy-to-use, web-based print management software for job submission of sets of technical drawings to a single large format printer. Homepage: global.oce.com/products/print-exec-workgroup/default.aspx"
-examples %w| 222.155.44.88 |
+
 
 # http server 'PEWG/1.2'
 

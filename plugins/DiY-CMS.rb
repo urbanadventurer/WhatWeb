@@ -22,23 +22,7 @@ dorks [
 'intitle:"DIY-CMS Database Error"'
 ]
 
-# Examples #
-examples %w|
-www.diy-cms.com
-www.diy-cms.com/demo/
-www.diy-cms.com/demo/admin/
-arredoesterno.bricoliamo.com
-xn--mgbaacbgb7d8hnafo5a0b.com
-www.arabwriters.net/admin/
-www.betna.net/radio/
-www.bricoliamo.it
-www.bricoliamo.org
-www.egykora.eb2a.com
-www.giardiniamo.com
-www.postgresqlit.org
-www.puponzi.com
-www.rotellaro.com
-|
+
 
 # Matches #
 matches [

@@ -12,10 +12,7 @@ description "PowerWeb is a full 128-bit secure server with unlimited RSA encrypt
 # ShodanHQ results as at 2011-06-04 #
 # 1 for PowerWeb/4
 
-# Examples #
-examples %w|
-64.113.210.197
-|
+
 
 # Passive #
 def passive

@@ -17,32 +17,7 @@ dorks [
 '"Powered by Tradingeye" "You are here: Home"'
 ]
 
-# Examples #
-examples %w|
-demov6.tradingeye.com
-www.pattinsonscientific.com
-www.silveruk925.com
-www.wrightcoachanddevelopment.co.uk
-www.solarsecuritysolutions.co.uk
-halogencom.com
-www.progressive-bikes.co.uk
-halogencom.com
-www.ghceramics.com
-www.otterdisplay.com
-www.shallowfordretrievers.co.uk
-www.dogtrainingharnesses.co.uk
-www.expressdance.co.uk
-logs-uk.co.uk
-www.hotel-solutions.co.uk
-www.scotia-supplies.com
-www.pampaswines.com
-shop.clpe.co.uk
-shop.royalparksfoundation.org
-www.cyclearound.co.uk
-www.premierhh.co.uk
-www.slimbrick.co.uk
-www.westrayrecruitment.co.uk/index/
-|
+
 
 # Matches #
 matches [

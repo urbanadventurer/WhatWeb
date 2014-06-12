@@ -17,22 +17,7 @@ dorks [
 'intitle:"AppServ Open Project" "About AppServ Version"'
 ]
 
-# Examples #
-examples %w|
-www2.mis.kyu.edu.tw
-www2.kyes.tn.edu.tw
-tisecweb.nccu.edu.tw
-chat.sg.thailandtorrent.com
-202.143.173.178
-www.imune-online.com.br
-htys.sgk.gov.tr
-140.130.211.6
-szserv.socio.u-szeged.hu
-163.19.171.220
-147.83.159.151
-140.109.29.147
-163.24.90.120
-|
+
 
 # Matches #
 matches [

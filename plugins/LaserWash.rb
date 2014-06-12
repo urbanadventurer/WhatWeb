@@ -12,14 +12,6 @@ description "PDQ - LaserWash - touchless car wash equipment. - Homepage: http://
 # ShodanHQ results # 2013-07-28
 # 42 for "PDQ Laserwash"
 
-# Examples #
-examples %w|
-99.61.146.62
-24.111.10.26
-108.242.203.234
-99.70.61.76
-173.14.186.186
-|
 
 # Matches #
 matches [

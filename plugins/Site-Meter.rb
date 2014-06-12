@@ -9,14 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
 description "A fast, free Web counter that features custom counters styles. Site Meter creates dynamic 3D charts showing visitors, page views, country maps, visit durations and much more. - Homepage: http://www.sitemeter.com/"
 
-# Examples #
-examples %w|
-www.sitemeter.com
-realmadridfcmania.blogspot.com
-www.popwired.com
-acmilanfcmania.blogspot.com
-golfchannels.net
-|
+
 
 # Matches #
 matches [

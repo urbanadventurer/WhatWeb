@@ -19,10 +19,7 @@ dorks [
 '"BXR Web Login" intitle:"Please Enter Password"'
 ]
 
-# Examples #
-examples %w|
-r.ookee.com/cgi-bin/rookee-xmlrpc.cgi
-|
+
 
 # Matches
 matches [

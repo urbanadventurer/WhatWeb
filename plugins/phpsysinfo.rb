@@ -18,38 +18,7 @@ description "PHPSysInfo is a customizable PHP Script that parses /proc, and form
 # Google results as at 2010-06-09 #
 # 16,400 for "Created by phpSysInfo"
 
-# Examples #
-examples %w|
-phpsysinfo.sourceforge.net/phpsysinfo/
-fountainalleylofts.com
-www.sanjoseurbanliving.com
-www.japantownliving.com
-www.sanjoseurban.com
-oneeastjulian.com
-paloaltolofts.com
-www.thewalnutfactorylofts.com
-www.plant51lofts.com
-sunnyvalelofts.com
-gothenburg.homelinux.com/phpsysinfo/
-sys.onzin.org
-www.rob-smith.co.uk/phpsysinfo/
-www.invinciblehost.com/phpSysInfo/
-www.viperxx.net/phpsysinfo/
-coreybarker.net/phpsysinfo/
-www.rserve.biz/phpsysinfo/
-www.pinakothek.de/phpsysinfo/
-www.lnxgeek.com/phpsysinfo/
-tacanahosting.com/phpsysinfo/
-http://www.leadingit.net/phpsysinfo/
-https://grosjo.net/sysinfo/
-hm1.hostpeek.com/phpsysinfo/
-www.bartbaars.nl/phpsysinfo/
-www.resellerdomain.org/status/phpsysinfo/
-vdr.qlex.org
-whizzcats.com/sysinfo/
-protcluster.biotec.or.th/phpSysInfo/
-cbrc.musc.edu/phpSysInfo/
-|
+
 
 # Matches #
 matches [

@@ -17,53 +17,7 @@ dorks [
 '"QuiXplorer" "Username" "Password" "the QuiX project"'
 ]
 
-# Examples #
-examples %w|
-www.ausatb.atbrider.com
-www.skc.jetos.com
-203.59.132.133/index.php
-www.dandycomputers.com/productions/index.php
-minnesotahousingpartner.org/admin/index.php
-https://cockpit.dubbele.com/quixplorer/
-ftp.sugimura.com
-www.tcx029.com/hang_on/file/
-scopeindonesia.com/qix/index.php
-www.steeldrafting.co.nz/client/
-www.gallaherandbirch.com/quix/
-webdisk.avecplus.net
-www.stormict.com/crew/
-docs.reelgrobman.com/index.php
-up.ftscorp.net
-synapsecrm.com/quix/index.php
-www.sepco.com.tw/webhd/index.php
-www.armans.info/articles/plugins/quixplorer/
-www.thetutorsagency.co.uk/pages/resources/
-www.eh-b-c.com/file_manager/
-zarnochwf1.com/theo_loader/
-candccontractors.com/plans/
-kdharris.net/files
-www.zunga.it/quixplorer/
-bs-gc.net/quix/
-www.gorki.it/eskuola/
-julmago.com.ar
-213.17.139.251
-www.siemensplmsoftware.it/qxpl/index_1.php
-www.williamspartnership.com/filetransfer/
-www.achmonline.org/index.php
-www.smederijdeknijf.be/filemanager/index.php
-hiltnetwork.com/access/
-sampa.if.usp.br/~eloisa/
-www.valenticoaching.com/readings/
-solutely.co.uk
-olesouthweb.com/files/
-claude.sytes.net/ftp/index.php
-ei.et.tudelft.nl/publications/bestandsbeheer/index.php
-bpsgroup.it/members/
-koglib.becev.cz
-https://dropbox.rad.msu.edu/
-www.esi.es/quixplorer/
-aceshare.net
-|
+
 
 # Matches #
 matches [

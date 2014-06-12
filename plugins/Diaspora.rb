@@ -25,22 +25,7 @@ dorks [
 'intitle:"Sign In" "Sign up" "Forgot your password?" inurl:"users/sign_in"'
 ]
 
-# Examples #
-examples %w|
-67.202.61.58
-89.238.82.161
-www.midgeamesphoto.com/users/sign_in
-www.class.in.th/users/sign_in
-londondiaspora.org/users/sign_in
-goldmansterling.co.uk/users/sign_in
-raptjs.com/users/sign_in
-lighthousemontessori.com/users/sign_in
-couchnote.com/users/sign_in
-www.pilotedge.net/users/sign_in
-https://www.genetics-cme.com/users/sign_in
-https://mimi.case.edu/users/sign_in
-https://social.mathaba.net/
-|
+
 
 # Matches #
 matches [

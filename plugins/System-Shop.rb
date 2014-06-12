@@ -10,19 +10,7 @@ version "0.1"
 description "shopping cart - homepage: http://system-shop.at/"
 
 # 62 results for "powered by System Shop" @ 2010-09-18
-examples %w|
-avinum.system-shop.at
-axelrot.system-shop.at
-flexicom24.system-shop.at
-high-heels.system-shop.at
-lichtprofi.system-shop.at
-medaillen.system-shop.at
-seidenstrasse.system-shop.at
-www.friseurbedarf-beranek.at/start.php
-www.hapotrade.at
-www.ntit-net.at
-www.sandali-shop.at/shop.php
-|
+
 
 matches [
 

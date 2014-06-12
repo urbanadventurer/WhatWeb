@@ -17,11 +17,7 @@ dorks [
 ' intitle:"HP StorageWorks" intitle:"Tape Library Webpages" "Command View MSL" "Account Type"'
 ]
 
-# Examples #
-examples %w|
-medicalcollege.kku.edu.sa/login.ssi
-gokhan.gulbiz.org/login.ssi
-|
+
 
 # Matches #
 matches [

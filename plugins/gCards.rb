@@ -19,65 +19,7 @@ dorks [
 'intitle:"eCards Administration Console Login" inurl:login.php'
 ]
 
-# Examples #
-examples %w|
-demo.centipaid.com/gcards/
-www.buddhistchannel.tv/gcards/
-www.luckenbooth.com/gcards/
-packardgoose.ploeg.ws/gcards/
-www.fun-system.com/_fun_system/gallery/login.php
-www.teesarchaeology.com/ecard/login.php
-www.vozao.com.br/gcards/
-www.nvak.no/misc/postcard/
-www.valqueireonline.com.br/webcards/
-200.215.63.48/cartoes/
-www.webcards.francisconi.com.br/login.php
-www.thaigarden.com/database/english/gcards/
-www.floridacards.com/gcards/
-www.militaryecard.com
-www.cccturtle.org/gcards/
-www.digischool.nl/gcards/
-www.christmasgreetingsonline.com/gcards/index.php
-dns.calnek.com/gcards/
-haikeralam.com/gcards/
-www.cholangiocarcinoma.org/gcards/
-www.komputerkraft.com/gcards/
-www.drive-infilm.com/cards/
-www.garlynzoo.com/gcards/
-www.tina-turner.nl/gcards/
-www.tauferberg.com/gcards/
-www.schnattertante.de/qcard/
-www.route66university.com/gcards/
-conserveturtles.com/gcards/
-www.seaturtletracking.com/gcards/
-helmutkuhn.com/gcards/
-www.vastu-vidya.org/ecards/
-www.twoweekwait.com/ecards/
-www.kooikerforum.nl/gcards/
-www.goojf.com/gcards/
-www.webbocah.org/gcards/
-www.karlheinz-ulmer.com/gcards/
-barefootlabradors.com/gcards/
-blackorwhite.nl/ecards/gcards/
-www.revolucion13.com/gcards/
-ecards.kalaiyalive.com
-ecards.mayastepien.nl
-learn-energy.net/kidscorner/postcards/
-www.mailcards.org
-postcards.heathernova.info
-www.barbiexmas.com/cards/
-mymerrychristmas.com/greetings/
-www.merrygreetings.com
-helpingseaturtles.com/gcards/
-www.vastu-vidya.eu/ecards/
-www.cambridgeart.com/cgi-bin/gcards/
-www.blackadderhall.com/ecards/
-www.stephens.edu/alumnae/extras/cards/
-www.xsitecreator.com/hotecards/
-www.bulguide.com/ecards/
-www.archdiocese.la/ecards/
-www.landsbyporten.no/gcards/
-|
+
 
 # Matches #
 matches [

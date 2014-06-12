@@ -14,20 +14,7 @@ description "MJNioHttpDaemon"
 # 12 for MJNioHttpDaemon
 # 12 for MJNIOHTTPDSESSIONID
 
-# Examples #
-examples %w|
-unitedjoy.com
-216.67.236.253
-216.67.236.250
-72.232.207.186
-72.232.178.42
-65.98.57.164
-207.150.167.70
-72.233.90.162
-72.233.112.42
-72.232.218.74
-72.233.34.218
-|
+
 
 # Matches #
 matches [

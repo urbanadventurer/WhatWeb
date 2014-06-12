@@ -22,16 +22,7 @@ description "This plugin identifies instances of embedded adobe flash files."
 dorks [
 'filetype:swf'
 ]
-# Examples #
-examples %w|
-www.arride.com
-www.benchmarktravel.co.uk
-www.centralschoolofballet.co.uk
-www.jijauamalner.org
-www.nexavar-international.com/scripts/pages/en/home/index.php
-www.pizzahut.co.nz
-www.plunkettcooney.com
-|
+
 
 # Matches #
 matches [

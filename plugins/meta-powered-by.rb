@@ -15,14 +15,7 @@ author "Andrew Horton"
 version "0.3"
 description "This plugin extracts the values for meta tags named poweredby, powered-by, and powered by"
 
-# Examples #
-examples %w|
-blog.chris.de
-idempot.net/blog/
-www.thunderboltmountain.com/serendipity/
-www.camerongray.net
-www.harvestdream.org
-|
+
 
 # Matches #
 matches [

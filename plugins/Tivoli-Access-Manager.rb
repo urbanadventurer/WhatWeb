@@ -20,37 +20,7 @@ dorks [
 'intitle:"Access Manager for e-business Login"'
 ]
 
-# Examples #
-examples %w|
-12.9.136.152
-125.56.194.63
-96.17.71.63
-122.178.224.63
-163.202.194.90
-198.212.64.123
-205.168.9.63
-88.221.218.63
-96.17.165.63
-148.183.56.103
-www.avnet-express.fi
-avnet-express.hu
-www.avnetexpress.fi
-www.sinotrans.com
-edge.avnet.com
-mcs.modot.mo.gov/portal/wps/myportal/
-go.dhs.lacounty.gov/wps/myportal
-portal.cnh.com
-www.firstdataeservices.com
-team1.sos.state.tx.us/team/eRegistry/home.jsf
-https://secure.miamidade.gov
-https://ext02.montgomerycountymd.gov/
-https://schools.dlssonline.com/index.asp
-https://www.myvictaulic.com/
-https://qkr.wr.com/projmgmt
-https://login.dtcc.com/
-https://internal.securit.biz/
-https://www.finnair.fi/myidtravel
-|
+
 
 # Matches #
 matches [

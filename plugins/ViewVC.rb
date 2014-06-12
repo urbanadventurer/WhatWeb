@@ -17,54 +17,7 @@ description "ViewVC (formerly known as ViewCVS) is a browser interface for CVS a
 # 107 for inurl:viewvc.cgi ext:cgi
 #  99 for inurl:viewcvs.cgi ext:cgi
 
-# Examples #
-examples %w|
-webwork.maa.org/viewvc
-gcc.gnu.org/viewcvs
-src.chromium.org/viewvc/
-sources.gentoo.org
-cvs.fedoraproject.org/viewvc/
-cvs.rpmfusion.org/viewvc/
-repoze.org/viewcvs/
-www.x86-64.org/viewvc/
-svn.cs.brynmawr.edu/viewvc/
-www.ncbi.nlm.nih.gov/viewvc/
-anonsvn.mit.edu/viewvc/
-anonsvn.internet2.edu/cgi-bin/viewvc.cgi
-svn.middleware.georgetown.edu/view/
-www.gelato.unsw.edu.au/cgi-bin/viewvc.cgi
-cvs.gnupg.org/cgi-bin/viewcvs.cgi
-www.dlib.indiana.edu/cgi-bin/viewvc/viewvc.cgi
-version.1ec5.org/viewvc.cgi
-www.farmanager.com/viewvc/
-rdos.net/vc/viewvc.cgi
-svn.ehas.org/viewvc.cgi
-www.tetrasys.homelinux.org/cgi-bin/viewvc.cgi
-wikitex.org/viewvc/
-debianlive.org/bliss/viewvc/
-www.x86-64.org/viewvc/
-svn.cs.brynmawr.edu/viewvc/
-www.ncbi.nlm.nih.gov/viewvc/
-anonsvn.mit.edu/viewvc/
-anonsvn.internet2.edu/cgi-bin/viewvc.cgi
-svn.middleware.georgetown.edu/view/
-www.gelato.unsw.edu.au/cgi-bin/viewvc.cgi
-cvs.gnupg.org/cgi-bin/viewcvs.cgi
-www.dlib.indiana.edu/cgi-bin/viewvc/viewvc.cgi
-version.1ec5.org/viewvc.cgi
-www.farmanager.com/viewvc/
-rdos.net/vc/viewvc.cgi
-svn.ehas.org/viewvc.cgi
-www.tetrasys.homelinux.org/cgi-bin/viewvc.cgi
-opensvn.csie.org/viewcvs.cgi
-www.freepascal.org/cgi-bin/viewcvs.cgi/
-cvs.snort.org/viewcvs.cgi/snort/
-www.kaffe.org/cgi-bin/viewcvs.cgi
-svn.ircd-hybrid.org:8000/viewcvs.cgi
-viewvc.slicer.org/viewcvs.cgi
-websvn.samba.org/cgi-bin/viewcvs.cgi
-www.cs.uoregon.edu/research/ktau/viewcvs-0.9.4/cgi/viewcvs.cgi
-|
+
 
 # Matches #
 matches [

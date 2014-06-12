@@ -12,21 +12,7 @@ description "Sambar server is a multi-threaded, extensible application server, w
 # ShodanHQ results as at 2011-04-06 #
 # 1,063 for SAMBAR
 
-# Examples #
-examples %w|
-94.81.233.148
-70.90.7.233
-212.91.192.10
-217.10.136.147
-202.72.160.131
-212.16.147.136
-201.245.106.70
-112.168.171.173
-84.15.45.180
-80.11.110.111
-193.251.46.18
-129.100.139.40
-|
+
 
 # Passive #
 def passive

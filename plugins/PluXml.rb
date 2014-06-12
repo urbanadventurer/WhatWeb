@@ -23,31 +23,7 @@ dorks [
 '"par Pluxml en" "Valide xHTML"'
 ]
 
-# Examples #
-examples %w|
-demo.pluxml.org/index.php
-demo.pluxml.org/core/admin/
-braceletsbijoux.com/core/admin/
-chopin.julien.free.fr/core/admin/
-christian.helmich.free.fr/kirin/kagefx/pluxml/admin
-christian.helmich.free.fr/kirin/kagefx/
-design.axenis.net/core/admin/
-idilles-mariage.com/core/admin/
-klingmobile.com/core/admin/
-pluxtest.pluxthemes.com
-pluxtest.pluxthemes.com/core/admin/
-www.axenis.net
-www.axenis.net/core/admin/
-www.giesdesign.com/core/admin/
-www.kagefx.net
-kagefx.sourceforge.net
-www.poweredbyted.com
-www.it-wars.com/core/admin/
-www.yorkiesdelacotin.fr/core/admin/
-www.zeroadteam.com/core/admin/
-www.webcam-teen.fr/core/admin/
-gay.titusblog.com/core/admin/
-|
+
 
 # Matches #
 matches [

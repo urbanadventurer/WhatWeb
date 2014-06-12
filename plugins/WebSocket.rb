@@ -13,18 +13,7 @@ description "WebSocket is a technology providing for bi-directional, full-duplex
 # 48 for Upgrade: websocket
 #  1 for Sec-WebSocket
 
-# Examples #
-examples %w|
-190.248.2.157
-125.56.220.157
-125.56.186.157
-69.31.89.157
-59.144.115.157
-205.168.9.157
-69.195.212.17
-95.110.229.65
-125.56.189.157
-|
+
 
 # Matches #
 matches [

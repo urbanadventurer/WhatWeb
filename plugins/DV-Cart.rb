@@ -19,17 +19,7 @@ dorks [
 '"You must have the proper credentials to access this page. Please login." inurl:"login.php?info=DENIED"'
 ]
 
-# Examples #
-examples %w|
-www.esmistudio.com/dv10dis/admin/
-data.specprint.com/login.php?info=DENIED
-themanagementinstitute.com.au/staff/login.php?info=DENIED
-www.tabletopfashions.net/login.php?info=DENIED
-webpresence.com.ng/login.php?info=DENIED
-www.ouracadia.com/login.php?info=DENIED
-www.moduscreative.co.uk/methodcms/login.php?info=DENIED
-79.170.40.40/batechnologies.com.au/login.php?info=DENIED
-|
+
 
 # Matches #
 matches [

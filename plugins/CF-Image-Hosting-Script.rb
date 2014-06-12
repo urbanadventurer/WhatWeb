@@ -20,17 +20,7 @@ dorks [
 '"powered by CF Image Hosting Script"'
 ]
 
-# Examples #
-examples %w|
-www.chiccosite.de
-www.hostingfotek.pl
-www.arpayeri.com/gg/
-www.alphafolk.000a.biz/imghoste/admin.php
-www.videotronix.net/image_hosting/admin.php
-www.diretube.com/img/
-xtremewallpapers.eu/admin.php
-www.ehealthpromotion.net/image_upload/admin.php
-|
+
 
 # Matches #
 matches [

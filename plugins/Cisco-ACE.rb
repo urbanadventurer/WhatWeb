@@ -17,12 +17,7 @@ dorks [
 'inurl:"/change_password.vm?username"'
 ]
 
-# Examples #
-examples %w|
-https://nadia-mail-vlan210.net.cs.cmu.edu/
-https://ace-al-mail.srv.cs.cmu.edu/
-https://nadia-web-vlan210.net.cs.cmu.edu/
-|
+
 
 # Matches #
 matches [

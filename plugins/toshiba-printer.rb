@@ -12,7 +12,7 @@ Plugin.define "ToshibaPrinter" do
 author "Andrew Horton"
 version "0.2"
 description "Toshiba printer Top Access"
-examples %w| http://203.175.112.6/ |
+
 
 # <TITLE CLASS="clsTitle1">TopAccess</title>
 # Server: TOSHIBA TEC CORPORATION

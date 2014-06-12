@@ -17,34 +17,7 @@ dorks [
 '"powered by Squeak" "Squeak * :: Comanche * :: Swiki"'
 ]
 
-# Examples #
-examples %w|
-wiki.squeak.org
-minnow.cc.gatech.edu
-swiki.hfbk-hamburg.de:8888
-coweb.cc.gatech.edu
-mcl.open.ac.uk
-www.cs.allegheny.edu/swiki/
-home.cc.gatech.edu
-42loop.de:8888
-cool.coa.gatech.edu
-myforexhome.biz
-look.gvsu.edu:8000
-ani.blueplane.jp
-swiki-lifia.info.unlp.edu.ar
-www2.dgb.ch:8080
-222.228.236.133
-perchta.fit.vutbr.cz
-www.cip-arch.uni-hannover.de
-www2.dgb.ch:8080
-swiki.hfbk-hamburg.de:8888
-swiki.cs.colorado.edu
-swiki.fcla.edu:8000
-coweb.cc.gatech.edu
-microbio1.biologie.uni-greifswald.de:8080
-perchta.fit.vutbr.cz
-www2.dgb.ch:8080
-|
+
 
 # Matches #
 matches [

@@ -12,40 +12,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
 description "This plugin recognises web pages for common web hosts who allow domain parking."
 
-# Examples #
-examples %w|
-www.race-walking.com
-chi.chinajade.net
-www.poweracrosstexas.com
-www.speechcheck.com
-survivingasthma.com
-physics.webplasma.com
-sexonada.com
-awards.ntoxicated.com
-ca.slake.org
-www.metaltrussofindiana.com
-www.cementkiln.com
-www.frontierfm.co.ke
-www.safedesk.com
-www.dexcel.co.nz
-nicoledaileyjones.com
-www.akronoh.org
-herbaliciousfl.com
-toaveiro.com
-leieispania.net
-www.zenkaya.co.za
-elikoantiquerugs.com
-abfyjewelers.com
-www.gowamps.com
-www.quincylacrosse.com
-congiong.com
-www.muquehuong.net
-ashwinitambe.com
-ucause.com
-emsta.org
-cubahostels.com
-cubaerotica.com
-|
+
 
 # Matches #
 matches [

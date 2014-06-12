@@ -16,16 +16,7 @@ description "Microsoft Personal Web Server (PWS) is a scaled-down web server sof
 # ShodanHQ results as at 2011-06-04 #
 # 9 for FPWS
 
-# Examples #
-examples %w|
-212.140.140.136
-62.73.169.190
-62.73.169.194
-213.1.251.110
-62.73.169.131
-194.72.143.157
-213.1.251.104
-|
+
 
 # Passive #
 def passive

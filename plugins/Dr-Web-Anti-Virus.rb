@@ -20,23 +20,7 @@ dorks [
 '"Doctor Web" intitle:"Authorization" "Russian anti-virus vendor"'
 ]
 
-# Examples #
-examples %w|
-93.84.116.10
-62.231.185.45
-93.180.7.2
-62.231.185.45
-193.151.12.4
-saas.drweb.com/av-best/
-avdesk.no-ip.org:85/tariffs.php
-cabinet.drweb.inttel.dn.ua
-avdesk.uecardao.ru/tariffs.php
-my.avdesk.kiev.ua/tariffs.php
-avdesk.kotovsk.od.ua/tariffs.php
-avdesk.lcnsoft.ru
-itdl-plus-drweb.com
-drweb.scuto.ru
-|
+
 
 # Matches #
 matches [

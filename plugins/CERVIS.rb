@@ -17,14 +17,7 @@ dorks [
 '"powered by CERVIS" "Contact Us" inurl:"console.php" inurl:"console_id"'
 ]
 
-# Examples #
-examples %w|
-https://www.cervistech.com/acts/console.php?console_id=0000
-https://www.cervistech.com/acts/console.php?console_id=0001
-https://www.cervistech.com/acts/console.php?console_id=0002
-https://www.cervistech.com/acts/console.php?console_id=0003
-https://www.cervistech.com/acts/console.php?console_id=0110
-|
+
 
 # Matches #
 matches [

@@ -24,20 +24,7 @@ dorks [
 'intitle:"NBX NetSet" "Version" "Created"'
 ]
 
-# Examples #
-examples %w|
-68.111.105.58
-69.36.11.66
-66.135.3.20
-75.77.47.244
-24.149.202.215
-66.208.6.190
-12.197.87.100
-66.182.5.45
-98.189.160.22
-telephone.michiganaerospace.com
-rrcs-76-79-236-246.west.biz.rr.com
-|
+
 
 # Matches #
 matches [

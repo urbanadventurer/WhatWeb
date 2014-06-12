@@ -12,19 +12,7 @@ description "Apache-SSL was developed by Ben Laurie and is often referred to as 
 # ShodanHQ results as at 2011-02-08 #
 # 34777 for Ben-SSL
 
-# Examples #
-examples %w|
-128.121.217.70
-60.43.130.107
-198.66.208.223
-198.65.50.32
-60.43.131.52
-87.106.255.9
-212.227.100.152
-209.82.81.3
-87.106.177.131
-129.97.56.41
-|
+
 
 # Passive #
 def passive

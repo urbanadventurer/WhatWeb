@@ -20,23 +20,7 @@ dorks [
 'intitle:"DD-WRT" intitle:build intitle:Info "DD-WRT Control Panel"'
 ]
 
-# Examples #
-examples %w|
-69.80.103.250
-69.80.103.44
-178.73.194.40
-www.itprosoluciones.com:8080
-84.112.85.167
-195.90.161.86:8080
-antsever.com
-www.pienet.tk
-www.powerexenergy.com
-wowpower.burgasnet.com
-musznik.ath.cx:8080
-onlinefixer.com
-oe8chk.org:8080
-streetlegal.myserver.org
-|
+
 
 # Matches #
 matches [

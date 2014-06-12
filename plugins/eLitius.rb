@@ -14,12 +14,7 @@ description "eLitius is a free software package that allows a person to easily c
 
 # 21 results for "Powered by eLitius Version" -exploit -vulnerabilities
 
-# Examples #
-examples %w|
-www.elitius.com/demo/
-secure.iicinternet.com/affilate/
-www.scherrer.tv/eLitius/
-|
+
 
 # Matches #
 matches [

@@ -17,27 +17,7 @@ dorks [
 'inurl:"viewSection.jsf" ext:jsf'
 ]
 
-# Examples #
-examples %w|
-www.comprafacil.com.br
-www.ipirangashop.com
-www.lojasomlivre.com.br
-www.dadalto.com.br
-www.shopdoesporte.com.br
-www.cosmoshopping.com.br
-www.lojakmdevantagens.com.br
-www.prabebe.com.br/
-www.kmdevantagens.com
-www.maniadeesporte.com.br
-www.camaebanho.com.br
-www.maladeferramentas.com.br
-www.allperfumes.com.br
-www.globomarcas.com.br
-www.comprafacil.mobi
-www.cityshoes.com.br
-www.hermesbigshow.com.br/loja/pages/viewSection.jsf
-www.comprafacilempresas.com.br/loja/pages/viewSection.jsf
-|
+
 
 # Matches #
 matches [

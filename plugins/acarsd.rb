@@ -18,15 +18,7 @@ dorks [
 'intitle:"RealTime Web ACARS" "ACARS decoder for Linux and Windows" "Help" "Map" "Reports" "Search"'
 ]
 
-# Examples #
-examples %w|
-acars.melradar.com:8082
-stnsbs.com:8082
-72-5-109-216.acsol.net:81
-acarsnlge.no-ip.info:8080
-netblock-208-127-104-237.dslextreme.com:8080
-pp5amp.no-ip.org:8080
-|
+
 
 # Matches #
 matches [

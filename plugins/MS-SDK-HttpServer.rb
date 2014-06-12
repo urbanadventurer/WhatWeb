@@ -13,12 +13,7 @@ description "The Microsoft .NET Micro Framework Platform SDK is a powerful and f
 # ShodanHQ results as at 2011-05-15 #
 # 39,532 for MS-SDK-HttpServer
 
-# Examples #
-examples %w|
-88.248.120.230
-78.187.25.188
-88.250.172.5
-|
+
 
 # Passive #
 def passive

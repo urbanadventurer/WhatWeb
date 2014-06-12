@@ -21,22 +21,7 @@ dorks [
 'intext:"Powered by CreateLive CMS Version"'
 ]
 
-# Examples #
-examples %w|
-202.199.159.202
-113.16.218.68
-121.18.71.223
-120.195.64.185
-202.119.248.63
-221.181.186.195
-121.28.11.93
-218.92.241.172
-210.76.2.25
-www.lcvc.cn/ycjy/Photo/
-www.xysw.gov.cn
-www.gbdjyw.cn:81
-www.sxdtdx.edu.cn/math/huiyi/ArticleShow.asp
-|
+
 
 # Matches #
 matches [

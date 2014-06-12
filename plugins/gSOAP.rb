@@ -12,19 +12,7 @@ description "gSOAP Toolkit for SOAP Web Services and XML-Based Applications. The
 # ShodanHQ results as at 2011-06-05 #
 # 433 for gSOAP
 
-# Examples #
-examples %w|
-91.209.42.20
-112.221.36.189
-112.171.70.248
-183.99.85.76
-59.5.86.122
-50.18.59.220
-115.91.72.19
-14.33.79.154
-14.37.44.134
-222.98.50.138
-|
+
 
 # Passive #
 def passive

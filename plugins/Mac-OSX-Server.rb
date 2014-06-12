@@ -13,27 +13,7 @@ description "Powerful yet streamlined, Snow Leopard Server makes it easier than 
 # ShodanHQ results as at 2011-03-25 #
 # 246 for "Mac OS X Server Web Services Server"
 
-# Examples #
-examples %w|
-69.60.124.250
-wiki.balwynhs.vic.edu.au
-home-2.arts.ohio-state.edu/users/
-anapod.anadolu.edu.tr/groups/
-wikis.astro.caltech.edu/groups/
-ccn.ucla.edu/users/
-collab.stat.ucla.edu/users/
-arts.osu.edu/groups/
-collaborate.stanwood.wednet.edu
-adaptsys.csse.uwa.edu.au/groups/
-https://amun1.isis.rmit.edu.au/groups/
-podcast.ucmo.edu/users/
-minuet.arts.ohio-state.edu/users/
-www.discovery.edu.hk/groups/
-wikis.astro.caltech.edu/groups/
-ccwwiki.ccw.vic.edu.au/users/
-blogs.umd.umich.edu/users/
-anapod.anadolu.edu.tr/groups/
-|
+
 
 # Matches #
 matches [

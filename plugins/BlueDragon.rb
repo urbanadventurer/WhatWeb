@@ -12,22 +12,7 @@ description "BlueDragon for the Microsoft .NET Framework allows you to natively 
 # ShodanHQ results as at 2011-07-30 #
 # 319 for BlueDragon
 
-# Examples #
-examples %w|
-64.253.129.226
-64.253.129.227
-67.225.238.10
-67.79.174.81
-70.90.116.98
-84.255.212.85
-204.57.104.32
-207.138.236.81
-208.52.138.7
-208.52.138.13
-209.161.21.85
-209.161.21.58
-209.161.21.104
-|
+
 
 # Passive #
 def passive

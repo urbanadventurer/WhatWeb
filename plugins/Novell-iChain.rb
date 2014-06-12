@@ -13,23 +13,7 @@ description "Novell iChain is an integrated solution designed to securely link a
 # 961 for X-Error-Info: Host name received is not for this web site
 #  42 for Novell iChain
 
-# Examples #
-examples %w|
-62.58.192.89
-63.117.220.47
-132.74.189.105
-132.74.189.107
-132.74.189.125
-132.74.189.145
-12.152.255.102
-12.152.255.106
-12.152.255.112
-12.152.255.128
-12.152.255.129
-12.152.255.138
-12.152.255.141
-12.152.255.197
-|
+
 
 # Matches #
 matches [

@@ -17,19 +17,7 @@ dorks [
 '"Diese Webseite basiert auf pragmaMx"'
 ]
 
-# Examples #
-examples %w|
-www.pragmamx.org
-www.altstadtpur.ortenberg.net
-www.schildt-gmbh.de
-www.funteam-radio.de
-www.fokuna.info
-www.waskochstdu.eu
-www.huniek.de
-www.hikaritec.de
-www.spidermania.de
-dienethal.net
-|
+
 
 # Matches #
 matches [

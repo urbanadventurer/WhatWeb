@@ -12,15 +12,7 @@ description "This plugin identifies the X-Hacker HTTP header and returns its val
 # ShodanHQ results as at 2011-04-08 #
 # 23 for x-hacker
 
-# Examples #
-examples %w|
-http://65.52.171.29/
-http://174.129.224.213/
-http://208.69.177.248/
-http://72.52.210.91/
-http://184.73.3.92/
-http://38.99.89.248/
-|
+
 
 # Passive #
 def passive

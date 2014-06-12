@@ -15,17 +15,7 @@ description "The Dreambox is a series of Linux-powered DVB satellite, terrestria
 # 2,372 for Enigma2 TwistedWeb realm
 #    24 for TwistedWeb realm dm
 
-# Examples #
-examples %w|
-81.191.95.225
-91.153.31.8
-83.183.203.64
-84.75.136.8
-213.3.4.128
-188.195.32.115
-217.117.134.75
-85.228.161.169
-|
+
 
 # Matches #
 matches [

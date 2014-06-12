@@ -17,14 +17,7 @@ dorks [
 '"This is a Free & Open Source mailing list manager" -dork'
 ]
 
-# Examples #
-examples %w|
-www.uni-ulm.de/fuese/2008/OpenNewsletter-2.4.2_Erstianmeldung/osd.php
-floripamanha.org/wp/wp-content/plugins/OpenNewsletter/donate.php
-geckostudio.com.my/newsletter/index.php
-www.jlinkservices.co.uk/mailing/index.php
-newsletter.qedgroup.cz
-|
+
 
 # Matches #
 matches [

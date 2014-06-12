@@ -12,13 +12,7 @@ description "Tinyproxy is a light-weight HTTP/HTTPS proxy daemon for POSIX opera
 # ShodanHQ results as at 2011-09-16 #
 # 757 for Tinyproxy
 
-# Examples #
-examples %w|
-78.224.42.36
-193.252.211.48
-121.97.75.134
-41.188.0.38
-|
+
 
 # Matches #
 matches [

@@ -17,25 +17,7 @@ dorks [
 '"Powered by: mevin productions" inurl:event.php'
 ]
 
-# Examples #
-examples %w|
-www.mevin.com/downloads/events2/index.php
-edisonplaza.com/events/event.php
-www.axecapoeira-az.com/events/event.php
-www.themoggies.com/events/event.php
-www.relicriders.ca/events/event.php
-glengarryhistoricalsociety.com/events/event.php
-www.reidville-nl.ca/events/event.php
-www.votechuckk.com/events/event.php
-www.shelleyandcal.com/events/event.php
-www.holyspiritacts.org/events/event.php
-https://probobs.com/event.php
-cwthompsonea.com/event/event.php
-www.electchuckk.com/events/event.php
-litchfieldlanding.com/event.php
-www.boazum.eu/events/event.php
-www.lwrvenlo.nl/eventlister/event.php
-|
+
 
 # Matches #
 matches [

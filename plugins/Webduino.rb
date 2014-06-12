@@ -12,10 +12,7 @@ description "Simple and extensible web server library for the Arduino using the 
 # ShodanHQ results as at 2011-08-25 #
 # 19 for Webduino
 
-# Examples #
-examples %w|
-86.9.121.141
-|
+
 
 # Matches #
 matches [

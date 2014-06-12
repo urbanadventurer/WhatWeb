@@ -15,18 +15,7 @@ description "Fujitsu Switch - Homepage: http://fenics.fujitsu.com/products/sr-s/
 # 1 for SR-S716C2
 # 3 for SR-S316C2
 
-# Examples #
-examples %w|
-158.217.148.253
-210.252.174.90
-133.86.247.3
-133.86.247.4
-202.26.188.100
-220.152.42.50
-163.208.177.142
-210.151.113.65
-150.99.186.218
-|
+
 
 # Passive #
 def passive

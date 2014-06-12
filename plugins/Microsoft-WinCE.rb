@@ -12,18 +12,7 @@ description "Microsoft Windows CE HTTP Server - Homepage: http://msdn.microsoft.
 # ShodanHQ results as at 2011-03-13 #
 # 18,324 for Microsoft-WinCE
 
-# Examples #
-examples %w|
-72.131.118.113
-75.69.52.249
-174.107.145.18
-77.16.27.254
-182.144.112.236
-80.36.19.44
-213.99.154.19
-80.250.154.116
-88.30.151.94
-|
+
 
 # Passive #
 def passive

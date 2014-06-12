@@ -25,25 +25,7 @@ dorks [
 'inurl:railo-context/admin/ ext:cfm'
 ]
 
-# Examples #
-examples %w|
-www.getrailo.com
-classic.railo.ch
-reservations.clubhotel.com
-publicity.payperinterviewpr.com
-188.120.97.56:81
-www.cannonpowercorp.com
-www.vbscripts.com/railo-context/admin/server.cfm
-69.63.147.101
-71.203.84.30
-184.168.78.113
-88.80.214.193
-94.127.2.67
-205.210.189.65
-46.163.69.220
-203.99.147.201
-69.67.30.36
-|
+
 
 # Matches #
 matches [

@@ -11,27 +11,7 @@ description "MHTTPD stands for Minimal Hypertext Transport Protocol Daemon. MHTT
 
 # 1017 ShodanHQ results for "Server: mhttpd v"
 # 472 ShodanHQ results for "Meta-HTML-Engine"
-examples %w|
-62.141.28.184
-80.187.232.56
-85.26.136.53
-89.200.94.124
-91.80.4.173
-91.80.25.135
-94.234.172.107
-160.218.191.221
-212.93.101.98
-207.54.126.212
-216.127.97.198
-216.127.99.157
-216.127.97.229
-216.127.100.103
-216.162.224.49
-216.162.226.85
-216.162.226.107
-216.162.226.109
-216.162.226.161
-|
+
 
 # HTTP Header
 def passive

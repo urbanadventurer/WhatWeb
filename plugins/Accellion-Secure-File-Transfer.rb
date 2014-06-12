@@ -21,26 +21,7 @@ dorks [
 'inurl:"courier/1000@/mail_user_login.html"'
 ]
 
-# Examples #
-examples %w|
-63.149.188.82
-50.16.201.101
-184.94.11.5
-67.221.227.60
-65.205.167.64
-198.37.32.41
-217.34.170.13
-75.144.102.23
-https://sft.onyx-pharm.com
-https://transfer.amvbbdo.com
-https://sendfiles.riotinto.com
-https://transfer.ndc.nasa.gov
-https://accellion.mc.vanderbilt.edu
-https://transfer.bidmc.harvard.edu
-https://transfer.med.cornell.edu
-https://securetransfer.emcor.net
-https://me2usd2.qualcomm.com
-|
+
 
 # Matches #
 matches [

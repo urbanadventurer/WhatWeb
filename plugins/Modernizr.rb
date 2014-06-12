@@ -9,11 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
 version "0.1"
 description "Modernizr adds classes to the <html> element which allow you to target specific browser functionality in your stylesheet. You don't actually need to write any Javascript to use it. [JavaScript] - Homepage: http://www.modernizr.com/"
 
-# Examples #
-examples %w|
-www.modernizr.com
-http://nettuts.s3.amazonaws.com/449_javascriptlibraries/examples/modernizrExample.html
-|
+
 
 # Matches #
 matches [

@@ -17,50 +17,7 @@ dorks [
 '"In order to use all of the features available in Remote Web Workplace, you must enable JavaScript for your Web browser."'
 ]
 
-# Examples #
-examples %w|
-https://paineirasinvestimentos.com.br/remote/
-https://www.kbaonline.com/Remote/
-https://remote.rosssteel.com/remote/
-https://mail.bsiengr.com/
-http://212.130.208.154/
-http://www.lamb-kawakami.com/remote/
-http://www.blandclinic.net/
-https://aereldesign.net/Remote/
-http://txmouser.com/
-http://downeyspacecenter.org/
-https://mail.escrotrans.com/
-https://extranet.softnet.ca.it/remote/
-https://remote.delawarearchitectsllc.com/
-https://remote.synopus.no/remote/
-http://mail.allfast.com/Remote/
-http://rrgllc.com/Remote/
-https://remote.ciampamedical.com/remote/
-https://remote.thelander.info/
-http://remote.croet.com/
-http://remote.dataexplorer.hu/
-http://remote.littledranttel.com/
-https://remote.montanaacademy.com/
-https://mail.excellent-networks.com/
-https://mail.jnjtech.net/
-https://www.worksmart.dk/
-https://linea.mk/remote/
-https://remote.slswchq.com/
-https://remote.azpost.gov/remote
-http://mail.ams-sourcing.com/
-https://remote.salesdelvalle.com.mx/remote/
-https://celebrating-you.org/Remote/
-https://mail.rudolfhorvat.com.au
-https://webmail.bsginc.biz
-https://mail.mosesrest.co.il
-https://mail.lupusconsulting.com
-https://remote.latouchepediatrics.net/remote/
-http://mail.faithluth.org/
-https://remote.etspl.in/
-http://remote.serenitygroup.com/
-http://remote.teamkuptz.com/
-http://mail.popmanufacturing.com/
-|
+
 
 # Matches #
 matches [

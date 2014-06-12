@@ -12,14 +12,7 @@ description "Xitami - Fast, small, secure, portable web server. The Xitami produ
 # ShodanHQ results as at 2011-05-31 #
 # 1,777 for Xitami
 
-# Examples #
-examples %w|
-186.125.221.246
-89.84.127.18
-209.161.7.164
-130.149.130.180
-168.226.217.248
-|
+
 
 # Matches #
 matches [

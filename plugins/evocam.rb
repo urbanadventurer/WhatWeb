@@ -18,32 +18,7 @@ dorks [
 ]
 
 
-# Examples #
-examples %w|
-www.xs4all.nl/~radavi/webcam.html
-www.imomsite.com/pages/yard/robin/webcam.html
-www.paintbycommand.com/webcam.html
-www.hotelaumajordavel.ch/de/webcam.html
-216.67.98.153:8000/webcam.html
-homepage.mac.com/jfstrain/webcam.html
-grinnell.unh.edu:8080/webcam.html
-pleasing.anywebcam.com/webcam.html
-129.15.81.10:8080/webcam.html
-brcl.sytes.net/webcam.html
-imensen.com/webcam/webcam.html
-129.115.90.27:8080/webcam.html
-live.anessa.net/webcam.html
-www.nhrubinos.com:8080/webcam.html
-98.211.56.247:8080/webcam.html
-shaga.edu.kyushu-u.ac.jp:8080/webcam.html
-mapletonfire.no-ip.info:49115/webcam.html
-blacksnow.serveftp.net:8081/1/webcam.html
-dersch.tripod.com/webcam.html
-www.mkhome.net:8080/webcam.html
-www.tetonpeaks.org/webcam.html
-berkeleyboi.tripod.com/webcam/webcam.html
-korat.dyndns.tv:8080/webcam.html
-|
+
 
 matches [
 

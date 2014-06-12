@@ -16,19 +16,7 @@ description "GoServe - A Web and Gopher Server for OS/2. SRE-http is a highly co
 # 32 for GoServe
 # 14 for GoServe -OS
 
-# Examples #
-examples %w|
-2.105.54.146
-148.6.176.241
-137.111.41.83
-64.246.134.196
-99.253.30.199
-87.54.234.173
-87.54.234.171
-66.170.137.132
-87.54.234.168
-87.54.234.165
-|
+
 
 # Passive #
 def passive

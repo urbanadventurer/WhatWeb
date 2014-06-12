@@ -18,37 +18,7 @@ dorks [
 '"powered by EasyConsole-CMS" inurl:"easyconsole.cfm" ext:cfm'
 ]
 
-# Examples #
-examples %w|
-www.cnpmarfinlife.com/easyconsole.cfm
-www.cyprusjune2010.info
-www.pacra.org
-www.experiencegiftsonline.com/easyconsole.cfm
-www.inlimassol.com
-www.aog.co.uk
-www.iac.org.cy
-www.ttgmena.com
-www.cymic.org.cy
-thehoteldatabank.com
-www.cyprus-hire.com
-www.eliavillage.com
-inekoconsultants.com
-aog-alliance.com
-aogalliance.net
-www.nutrimensandmore.com
-www.vilanosproperties.com
-www.aogalliance.co.uk
-www.cyprushire.net
-yourpaediatrician.com
-www.technosound.com.cy
-www.cyprushire.com
-https://www.medwestern.com
-https://www.tassospapadopoulos.com
-www.evysyrou.gr
-www.talos-rtd.com
-musicbox.easyconsole.com
-www.nutrimensandmore.com.cy
-|
+
 
 # Matches #
 matches [

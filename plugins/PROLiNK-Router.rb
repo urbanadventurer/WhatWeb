@@ -20,18 +20,7 @@ dorks [
 '"ADSL Router Status" intitle:"PROLiNK ADSL Router" "This page shows the current status and some basic settings of the device"'
 ]
 
-# Examples #
-examples %w|
-180.193.225.255/status.asp
-124.43.101.0/status.asp
-112.135.5.0/status.asp
-124.43.101.0/status.asp
-112.135.6.0/status.asp
-112.135.39.0/status.asp
-112.135.23.0/status.asp
-124.43.97.255/status.asp
-112.135.62.255/status.asp
-|
+
 
 # Matches #
 matches [

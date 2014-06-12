@@ -12,13 +12,7 @@ description "Monkey is a very small, fast and scalable web server for Linux. - H
 # ShodanHQ results as at 2011-06-02 #
 # 41 for Server Monkey Linux
 
-# Examples #
-examples %w|
-207.12.183.153
-60.234.244.106
-87.247.115.114
-61.61.240.241
-|
+
 
 # Passive #
 def passive

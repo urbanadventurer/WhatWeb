@@ -20,17 +20,7 @@ dorks [
 'intitle:"SentinelServer Login" "SentinelServer Login"'
 ]
 
-# Examples #
-examples %w|
-kazuri.be
-83.149.104.21
-sciacco.net
-62.133.200.240
-80.85.129.112
-85.17.219.27
-85.17.60.188
-85.17.169.131
-|
+
 
 # Matches #
 matches [

@@ -17,17 +17,7 @@ dorks [
 '"Chat Room" "Applet Style" "Nickname" ext:php'
 ]
 
-# Examples #
-examples %w|
-www.jesus.org.uk/chat/index.php
-yfuadmin.securesites.net/pjirc_login/index.php
-www.racecarsgalore.com/phpBB2/chat/index.php
-www.scanbc.com/irc/index.php
-www.goldenagecomics.co.uk/chat/index.php
-www.custompictureframing.com/chatb/index.php
-fungalli.com/txt/chat/index.php
-chat.1488folk.com/index.php
-|
+
 
 # Matches #
 matches [

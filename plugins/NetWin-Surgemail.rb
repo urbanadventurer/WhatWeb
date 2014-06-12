@@ -16,50 +16,7 @@ dorks [
 'intitle:"Surgemail Welcome Page"'
 ]
 
-# Examples #
-examples %w|
-casey.umd.edu
-casey.umd.edu/scripts/webmail.exe
-casey.umd.edu/cgi/user.cgi
-186microtec.com
-186microtec.com/scripts/webmail.exe
-186microtec.com/cgi/user.cgi
-www.escape.com:7080
-www.escape.com:7080/scripts/webmail.exe
-www.escape.com:7080/cgi/user.cgi
-Jmail.umd.edu
-Jmail.umd.edu/scripts/webmail.exe
-Jmail.umd.edu/cgi/user.cgi
-mail.durant.k12.ia.us
-mail.durant.k12.ia.us/scripts/webmail.exe
-mail.durant.k12.ia.us/cgi/user.cgi
-mail.inam.gov.mz
-mail.inam.gov.mz/scripts/webmail.exe
-mail.inam.gov.mz/cgi/user.cgi
-mail.planetc.com
-mail.planetc.com/scripts/webmail.exe
-mail.planetc.com/cgi/user.cgi
-po-1.northeast.k12.ia.us
-po-1.northeast.k12.ia.us/scripts/webmail.exe
-po-1.northeast.k12.ia.us/cgi/user.cgi
-solaci.org
-solaci.org/scripts/webmail.exe
-solaci.org/cgi/user.cgi
-webmail.harveylibrary.org
-webmail.harveylibrary.org/scripts/webmail.exe
-webmail.harveylibrary.org/cgi/user.cgi
-webmail.laphamassoc.com
-webmail.laphamassoc.com/scripts/webmail.exe
-webmail.laphamassoc.com/cgi/user.cgi
-www.escape.com:7080
-www.escape.com:7080/scripts/webmail.exe
-www.hdm01.com
-www.hdm01.com/scripts/webmail.exe
-www.hdm01.com/cgi/user.cgi
-www.tnq.net
-www.tnq.net/scripts/webmail.exe
-www.tnq.net/cgi/user.cgi
-|
+
 
 matches [
 

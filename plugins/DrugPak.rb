@@ -17,18 +17,7 @@ dorks [
 'inurl:dplive.dll'
 ]
 
-# Examples #
-examples %w|
-24.199.131.57
-66.15.89.245
-173.163.210.57/bin/dplive.dll
-www.capitolmro.net/bin/dplive.dll/login
-login.aheadofthekurve.com:8088/bin/dplive.dll/login
-csn-1.no-ip.info/bin/dplive.dll
-dplive.servehttp.com:8080/bin/dplive.dll
-drugtest.nowcare.net/bin/dplive.dll
-results.babermedicalreview.com/bin/dplive.dll
-|
+
 
 # Matches #
 matches [

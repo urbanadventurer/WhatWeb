@@ -20,24 +20,7 @@ dorks [
 'inurl:"people.php?PageAction=SignOutNow"'
 ]
 
-# Examples #
-examples %w|
-www.redskiesguild.com/vanilla12beta/
-shoutland.com
-72.47.215.98
-83.133.121.91
-69.89.12.233
-12.139.75.89
-72.249.114.81
-64.128.235.230
-184.106.223.64
-195.112.128.210
-62.24.66.125
-qasr.com.au/discuss/people.php
-www.acdcfans.net/forum/people.php
-https://www.basesoft.se/myvanilla/people.php
-notalentcunt.com/people.php
-|
+
 
 # Passive #
 def passive

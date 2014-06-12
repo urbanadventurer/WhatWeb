@@ -14,15 +14,7 @@ description "AIHS is a highly-flexible advanced image hosting solution for anyon
 
 # 2 results for "Welcome to install Advanced Image Hosting Script" @ 2010-08-30
 # 1 result for "Powered by Advanced Image Hosting Script" @ 2010-08-30
-examples %w|
-yabsoft.info/demo/aihs/
-yabsoft.info/demo/aihs/admin/
-yabsoft.info/demo/aihspro/
-yabsoft.info/demo/aihspro/admin/login.php?admin=
-hostyourpix.com/admin/login.php?admin=
-hostyourpix.com/install/
-phoqlove.com/install/
-|
+
 
 matches [
 

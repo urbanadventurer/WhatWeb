@@ -9,14 +9,7 @@ author "Andrew Horton"
 version "0.1"
 description "Minify is a PHP5 app that can combine multiple CSS or Javascript files, compress their contents (i.e. removal of unnecessary whitespace/comments), and serve the results with HTTP encoding (gzip/deflate) and headers that allow optimal client-side caching. It uses an enhanced port of Douglas Crockford's JSMin library.  http://code.google.com/p/minify/"
 
-# Examples #
-examples %w|
-http://www.lifehacker.com
-http://www.gizmodo.com
-http://www.gawker.com
-http://www.mrclay.org
-http://www.miamianimalremoval.com
-|
+
 
 # Matches #
 matches [

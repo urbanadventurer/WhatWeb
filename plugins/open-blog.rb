@@ -20,68 +20,7 @@ dorks [
 '"powered by Open blog"'
 ]
 
-# Examples #
-examples %w|
-www.open-blog.info/demo/
-anfyjen.a.gp/blog/install/
-secundaria1.sep.gob.mx/blog/install/
-hristov.com/oblog/
-jeffpatton.net
-buyerofgold.com/blog/
-www.basenlily.nl
-www.sellton.com
-www.t3cnologic.com/blog/
-bluedolphinwalleye.com/openb/
-noabsolutetruths.com
-www.doctorxcv.com/xcv/blogs/
-reusecode.net/blog/
-sharemasterindia.com/blogs/
-zerablog.co.cc/blog/
-www.basenlily.me
-redstreakhosting.com/blog/
-cybercerebral.com
-engrspk.com/openb/
-pinoydigest.org
-ajpower.info/OpenBlog/
-www.davidberga.org/
-web2nu.com/blog/
-usednorstar4less.com
-caradonnadive.com
-steno.co.cc
-peterro.se/blog/
-dragoshsproducts.comunitateamea.com
-www.dfwbankruptcy.net
-www.internetdlafirm.com.pl
-lovemyturtles.freehostingcloud.com/blog/
-wangunyu.co.cc
-batepronto.com/openbate/
-etherealkingdom.com
-www.infopc.tk
-drakeman.info/indb/
-www.internetbijbelcursus.nl/blog/
-www.koszulki.depilacjalaserowa.net
-blog.madmouseman.cz
-diatekma.web.id
-www.kimkiesel.de/brueckenstrasse/erftstadt/blog/
-naim.nom.es/blog/
-jaquemati.cz.cc
-www.memyworld.es/shop/
-www.adventure.waw.pl
-www.imperium-ww.pl
-izune.pl
-www.klubtramwaj.pl
-www.voip.sprzatanie-biur.com.pl
-www.szkolenie.cinepix.com.pl
-www.pozycjonowanie.sosnowiec.pl
-iris.nom.es
-jashk.netau.net
-upsport.info
-koleksipermai.com/openb/
-evangelischdemocraten.nl
-upsport.info
-koleksipermai.com/openb/
-dragoshsproducts.comunitateamea.com
-|
+
 
 # Matches #
 matches [

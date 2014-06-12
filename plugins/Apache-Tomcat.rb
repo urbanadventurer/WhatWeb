@@ -6,22 +6,33 @@
 ##
 # Plugin to detect tomcat 
 # Comment from Andrew Horton - this plugin includes code for a 404 page probe which should be incorporated into whatweb itself
+# v0.3 by Andrew Horton
+# renamed plugin from Tomcat to Apache-Tomcat, added aggressive /RELEASE-NOTES.txt to get version, added footer version, added /manager/status tests
+# to-do, an invalid HTTP verb to a .JSP will reveal Tomcat if nothing else does, e.g. XXX /foobar/.jsp HTTP/1.0
 
-Plugin.define "Tomcat" do 
+Plugin.define "Apache-Tomcat" do 
 	author "Louis Nyffenegger"
 	description "Apache Tomcat Web Server. Homepage: http://tomcat.apache.org/"
-	version "0.2"
+	version "0.3"
 
 	matches [
 		#
 		# Apache tomcat in title from default page
 		{	:name=>"tomcat in title",
 			:regexp=>/<title>Apache Tomcat<\/title>/},
-	
+			
 		# CATALINA_HOME/webapps/ROOT/index.html
 		# by default tomcat homepage contains this file name
 		{	:name=>"catalina home",
-			:regexp=>/CATALINA_HOME\/webapps\/ROOT\/index\.html/}	
+			:regexp=>/CATALINA_HOME\/webapps\/ROOT\/index\.html/},
+
+		{ :name=>"/RELEASE-NOTES.txt", :url=>"/RELEASE-NOTES.txt", :version=>/Apache Tomcat Version ([0-9\.]+)/ },
+		{ :name=>"/RELEASE-NOTES.txt", :url=>"/RELEASE-NOTES.txt", :string=>/(\$Id: RELEASE-NOTES[^\$]+)/},
+		{ :name=>"Java Stack Trace Error", :regexp=>/org\.apache\.tomcat\..*java\.lang\.Thread\.run/},
+		{ :name=>"Tomcat admin /manager/status", :url=>"/manager/status", :text=>"tomcat"},
+		{ :name=>"Footer", :version=>/Apache Tomcat\/([0-9\.]+)<\/h3><\/body><\/html>/}
+
+
 	]
 	
 	def random_string(length=32)

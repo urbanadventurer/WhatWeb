@@ -21,33 +21,7 @@ dorks [
 'intitle:"OpenNMS Web Console" "User" "Password" "OpenNMS Copyright"'
 ]
 
-# Examples #
-examples %w|
-demo.opennms.org
-demo.opennms.com/opennms/index.jsp
-mephesto.internal.opennms.com/
-onms.oregonstate.edu:8980/opennms/index.jsp
-monitor2.mossapp.com
-nms.boxed.no
-zonaopennms.unne.edu.ar:8980/opennms/index.jsp
-nms.datasync.com:8080/opennms/acegilogin.jsp
-www.chathamfreelists.com
-www.chathamlists.com
-git.opennms.org
-watchdog.nmmu.ac.za
-baip2.elearndesign.org
-96.10.7.245
-64.61.100.14:8980/opennms/index.jsp
-208.71.28.4:8980/opennms/
-https://opennms.fasthost.no:8443/opennms/index.jsp
-https://support.smartvoice.telepacific.com/opennms/
-https://nms2.net.lsu.edu/opennms/
-https://smyrna.krupczak.org:8443/opennms/
-https://shemp.academ.com/opennms/index.jsp
-https://nms.velocitynetworks.co.nz:8443/opennms/index.jsp
-https://dashboard.mochimedia.net/opennms/index.jsp
-https://opennms.camosun.bc.ca:8443/
-|
+
 
 # Matches #
 matches [

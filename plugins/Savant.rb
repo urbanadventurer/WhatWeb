@@ -12,15 +12,7 @@ description "Savant is a freeware open source web server that runs on Windows 9x
 # ShodanHQ results as at 2011-08-06 #
 # 65 for Savant
 
-# Examples #
-examples %w|
-213.114.248.201
-114.212.200.19
-96.30.38.147
-134.169.16.243
-219.88.101.105
-66.76.142.146
-|
+
 
 # Passive #
 def passive

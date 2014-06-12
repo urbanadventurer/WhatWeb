@@ -16,25 +16,7 @@ description "SABnzbd is an Open Source Binary Newsreader written in Python. - Ho
 # ShodanHQ results as at 2011-03-05 #
 # 155 for realm SABnzbd
 
-# Examples #
-examples %w|
-217.19.25.113
-184.154.13.24
-82.246.148.36
-67.184.98.31
-217.122.216.183
-95.96.145.165
-195.240.231.115
-85.228.108.74
-84.29.109.249
-alkmaar.kanniets.nl:8080/sabnzbd/
-www.seventh-july.com:7777/sabnzbd/
-starbuck.salgo.net/sabnzbd/
-77.164.145.154:9200/sabnzbd/
-placidus.org:31337/sabnzbd/
-82.74.213.253:9200/sabnzbd/
-www.familiebos.info:9200/sabnzbd/
-|
+
 
 # Matches #
 matches [

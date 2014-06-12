@@ -13,27 +13,7 @@ version "0.2"
 description "360-Web-Manager - homepage: http://www.360webmanager.com"
 
 # About 36,800 results for "powered by 360 Web Manager" @ 2010-06-12
-examples %w|
-www.360webmanager.com/index.php
-www.360web.com.ar/index.php
-www.360webnews.com/index.php
-www.360webmarketing.com.ar/index.php
-www.360webmastertools.net/index.php
-www.excedoboats.com/index1.php
-www.flybynet.net/index.php
-www.ecs.com.ar/index.php
-www.fucoreyes.com/index1.php
-www.lu.net.ar/index.php
-www.clanmacfarlane.com.ar/index1.php
-www.materiaurbana.com/index.php
-www.jornadasalicaceas.com/index.php
-www.flybynet.net/index.php
-www.afcp.org.ar/index.php
-www.sacryc.com.ar/index.php
-wasargentina2011.com/index1.php
-www.cultoasanlamuerte.com/index.php
-www.kalmada.com.ar/index1.php
-|
+
 
 matches [
 

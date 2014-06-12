@@ -12,13 +12,7 @@ description "The Sony SNT-V304 Video Network Station enables video surveillance 
 
 # 1 Google result for intitle:"Sony SNT-V304 Video Network Station" inurl:hsrindex.shtml @ 2010-07-20
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1553
-examples %w|
-livecam1.u-toyama.ac.jp/view/hsrindex.shtml
-livecam2.u-toyama.ac.jp/view/hsrindex.shtml
-livecam3.u-toyama.ac.jp/view/hsrindex.shtml
-livecam4.u-toyama.ac.jp/view/hsrindex.shtml
-livecam5.u-toyama.ac.jp/view/hsrindex.shtml
-|
+
 
 matches [
 

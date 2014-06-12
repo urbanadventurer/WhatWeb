@@ -17,20 +17,7 @@ dorks [
 '"Powered by: Support Center"'
 ]
 
-# Examples #
-examples %w|
-www.isolsoft.com/demo/
-support.life-host.net
-www.breakwatertech.com/support/kb.php?id=0&viewall=1
-secure.wbemsolutions.com/helpdesk/support/kb.php?artid=35
-www.getcis.com/support/kb.php
-support.morandan.com/kb.php?artid=9
-www.link-directory-software.com/support/kb.php?artid=7
-support.taifgedu.gov.sa/kb.php?lang=en
-https://www.asialivesupport.net/kb.php
-support.profhost.biz/login.php?lang=nl
-support.niv.nl
-|
+
 
 # Matches #
 matches [

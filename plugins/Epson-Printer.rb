@@ -22,17 +22,7 @@ dorks [
 'intitle:"EpsonNet (Config|WebAssist) Rev"'
 ]
 
-# Examples #
-examples %w|
-150.214.136.211
-150.69.34.68
-210.240.13.55
-157.181.227.182
-133.11.188.97
-133.95.98.60
-130.75.17.112
-163.22.242.122
-|
+
 
 # Passive #
 def passive

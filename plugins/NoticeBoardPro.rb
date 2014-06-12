@@ -19,15 +19,7 @@ dorks [
 '"noticeboard" "View All Items" "View Items by Category"'
 ]
 
-# Examples #
-examples %w|
-www.noticeboardpro.com/app/
-www.muslimdirectory.co.nz/NoticeBoard/
-www.neighborhood-cafe.info/CAFE/TheBuzz/CafeNoticeBoard/Cafe-List/
-www.dixondevelopment.co.uk/downloads/php/noticeboard/
-apsbqld.asn.au/noticeboard/
-mbaforumindia.com/NoticeBoard/
-|
+
 
 # Matches #
 matches [

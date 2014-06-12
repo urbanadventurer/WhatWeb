@@ -12,15 +12,7 @@ description "Eserv - Mail Server - SMTP/POP3/IMAP/HTTP - Homepage: http://www.es
 # ShodanHQ results as at 2012-10-22 #
 # 14 for 404 Path not found (E4 WIKI)
 
-# Examples #
-examples %w|
-www.eserv.ru
-85.15.69.141
-62.5.186.10
-194.186.66.222
-195.182.159.38
-195.239.73.190
-|
+
 
 # Matches #
 matches [

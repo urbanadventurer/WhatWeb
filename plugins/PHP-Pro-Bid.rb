@@ -17,37 +17,7 @@ dorks [
 '"PLEASE LOGIN TO THE ADMIN AREA" "Current Version"'
 ]
 
-# Examples #
-examples %w|
-www.phpprobid.com/auction-software-demo/admin/login.php
-www.phpprobid.com/v61_beta/admin/login.php
-trueant.com.au/admin/login.php
-ocbay.net/admin/login.php
-www.realecoves.com/admin/login.php
-www.gulfonlineauction.com/admin/login.php
-www.auctionzz.com/admin/login.php
-www.jadeaccessories.co.cc/admin/login.php
-www.horseshowapparelexchange.com/admin/login.php
-www.fishingtackleauction.net/admin/login.php
-www.gundeals.co.uk/admin/login.php
-www.directagsales.com/bid/admin/login.php
-www.aucit.eu/admin/login.php
-gidiyoryakala.com/admin/login.php
-www.casadodesbravador.com/ml/admin/login.php
-www.auktionshaus-royalbay.de/admin/login.php
-www.sellbidandbuy.com/admin/login.php
-www.dudush.com/admin/login.php
-www.happydeal24.de/admin/login.php
-www.usebids.com/admin/login.php
-mo.auctions.buystation.com/admin/login.php
-hk.auctions.buystation.com/admin/login.php
-dev.bidonmybeachhouse.com/admin/login.php
-www.phpproads.com/ads-software-demo/admin/login.php
-www.phpproads.com/profile-ads-demo/admin/login.php
-www.hunterclassifieds.com.au/admin/login.php
-sg.auctions.buystation.com/admin/login.php
-www.boutiquedujour.com/you_bid/v607/admin/login.php
-|
+
 
 # Matches #
 matches [

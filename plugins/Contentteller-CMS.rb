@@ -17,19 +17,7 @@ dorks [
 '"powered by Contentteller"'
 ]
 
-# Examples #
-examples %w|
-www.contentteller.com
-www.power-systems.org
-www.compatdb.org
-livonet.com
-doctorwatson.info/sussex/
-onondagalake.info
-www.linuxcompatible.org
-www.warp2search.net
-www.ntcompatible.com
-www.pedaltothemetal.com
-|
+
 
 # Matches #
 matches [

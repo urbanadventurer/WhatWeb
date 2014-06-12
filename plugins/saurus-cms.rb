@@ -14,26 +14,7 @@ dorks [
 '"powered by saurus cms"'
 ]
 
-# Examples #
-examples %w|
-www.saurus.ee
-demo.saurus.ee
-www.vms.ee
-www.dekvarv.com
-www.yespar.com
-www.zapakazz.ee
-www.rrh.ee
-www.serverimajutus.ee
-familyutz.eu
-www.keskkonnaamet.ee
-saurus.walkingstar.ee
-www.powercom.ee
-www.pkm.ee
-www.depood.ee
-www.tokee.ee
-www.martens.ee
-www.eatl.ee
-|
+
 
 matches [
 

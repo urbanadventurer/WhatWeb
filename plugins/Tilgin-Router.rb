@@ -29,14 +29,7 @@ dorks [
 '"Welcome to the Tilgin router" "Status summary" intitle:VOOD -www.killmail.org'
 ]
 
-# Examples #
-examples %w|
-grefsrud.com
-turap.viditivi.com
-8.19.92.176
-8.23.136.48
-8.25.31.47
-|
+
 
 # Matches #
 matches [

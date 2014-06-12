@@ -17,15 +17,7 @@ dorks [
 '"powered by Video CMS"'
 ]
 
-# Examples #
-examples %w|
-video.artcrazed.com
-kolarchives.com/videocms/
-64.151.98.220/videocms/
-usdrugabuse.com/video/
-www.ratethisgranny.com
-www.nambugun.kr/ucc/
-|
+
 
 # Matches #
 matches [

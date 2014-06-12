@@ -14,13 +14,7 @@ dorks [
 'intitle:"SMS" "Username" "Password" "Register an account" "Forgot password"'
 ]
 
-# Examples #
-examples %w|
-playsms.org/trial/
-my-tz.com/trial/
-smsware.sms-warehouse.net/
-utextme.net/sms/
-|
+
 
 # Matches #
 matches [

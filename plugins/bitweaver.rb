@@ -17,17 +17,7 @@ dorks [
 '"powered by bitweaver"'
 ]
 
-# Examples #
-examples %w|
-www.bitweaver.org
-greenwaylabs.org
-www.netpanzer.org
-voip-info.linuxsys.com/wiki/
-theclones.net/wiki/
-medw.co.uk
-www.ausfirst.com/bitweaver/
-oaktop.com/wiki/
-|
+
 
 # Matches #
 matches [

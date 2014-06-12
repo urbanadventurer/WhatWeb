@@ -14,7 +14,7 @@ Plugin.define "VBulletin" do
 author "Andrew Horton"
 version "0.3"
 description "VBulletin is a PHP forum."
-examples %w|forums.photobucket.com www.hotscripts.com/forums/ www.hardforum.com/ scannerbuff.net/forums/index.php http://mb.winneronline.com www.reggaesound.com/upload/ www.digitalphotopros.com/forums/ www.computerforumz.com/ www.mountainbuzz.com/gallery www.alhesbah.org/v www.diabetesforums.com forums.somethingawful.com|
+
 
 matches [
 {:ghdb=>'"Powered by vBulletin" inurl:newreply.php'},

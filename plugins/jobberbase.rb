@@ -19,32 +19,7 @@ dorks [
 '"Companies" "Sitemap" "Proudly powered by jobberBase"'
 ]
 
-# Examples #
-examples %w|
-www.jobberbase.com/demo/
-jobs.murexusers.org
-www.freelancer-media.com
-www.talentxfactor.com/jobberbase/
-www.jobs.ncdagroup.com/
-recruiter-talk.com/jobberbase_1_5b1/app/
-bestjobsalary.com
-www.rabota.net
-analyticster.com
-www.itdarbas.lt
-www.globaljobwatch.com
-stylishjobs.com
-poslovna-sinergija.com
-www.uieee.com
-jobs.copywritertemps.com
-starjup.com
-www.konek.us
-www.bestjobsalary.com
-jobs.ezthememarket.net
-www.xpail.com
-forum.bartendersco.com
-makerjobs.com/job/
-www.jobs.searchatradie.com.au
-|
+
 
 matches [
 

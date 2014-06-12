@@ -17,18 +17,7 @@ dorks [
 '"Enter your email (login) to get instructions to recover your password" "All Responses" "Powered by" inurl:"responses"'
 ]
 
-# Examples #
-examples %w|
-www.community.useresponse.com/responses/
-support.uswebstyle.com/responses/
-support.pergenex.com/responses/
-goingup.answerlobby.com/responses/
-community.zipato.com/responses/
-support.shirtnetwork.de/responses/
-community.transparent-support.com/responses/
-nalcofb.interaktco.com/responses/
-upfx.answerlobby.com/responses/
-|
+
 
 # Matches #
 matches [

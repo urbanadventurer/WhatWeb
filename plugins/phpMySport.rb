@@ -17,13 +17,7 @@ dorks [
 'intext:"Powered by phpMySport" -intext'
 ]
 
-# Examples #
-examples %w|
-phpmysport.sourceforge.net
-phpmysport.sourceforge.net/demo/index.php
-olmobasket.altervista.org/phpmysport/
-wwwu.edu.uni-klu.ac.at/mflorian/vst/index.php
-|
+
 
 # Matches #
 matches [

@@ -21,42 +21,7 @@ dorks [
 '"powered by MAXdev"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/mdpro/
-demaciro.altervista.org
-www.maxdev.it
-www.maxdev.com.au
-www.maxdevitalia.com
-www.fclefbasses.com
-www.cavalierismoa.net
-www.filcemcgil.it
-www.ciclismofriuli.it
-www.web-design.pointnet.it
-www.giacomobracci.com
-www.canelupocecoslovacco.net/wolf/
-www.boidi.it
-www.lekamar.com
-www.salottiscultore.info
-www.cavalierismoa.it
-www.invention-europe.com
-www.pattininews.it/summa/
-www.cucinet.com
-www.icmonteronidarbia.it
-www.maxsos.it
-www.lauraproperzi.it
-www.passionecacciaepesca.net
-www.discuniroma1.it/comland/
-www.parrocchiasangaetanoroma.it
-www.maresub.it
-www.ceasicani.it
-www.pippy.it
-www.framemods.com
-www.leonellocalvetti.com
-www.mcvallescrivia.com
-www.fclefstore.com
-www.apoolgame.com
-|
+
 
 # Matches #
 matches [

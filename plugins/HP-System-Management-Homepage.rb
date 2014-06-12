@@ -21,15 +21,7 @@ dorks [
 'intitle:"HP System Management Homepage Login" (inurl:2381|inurl:2301)'
 ]
 
-# Examples #
-examples %w|
-217.147.221.2:2301
-134.139.10.131:2301
-132.248.247.1:2301
-https://www.lookinawe.co.uk:2381/
-https://htca.us.es:2381/
-https://206.72.80.10:2381/
-|
+
 
 # Matches #
 matches [

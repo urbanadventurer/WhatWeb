@@ -12,19 +12,7 @@ description "Apache Cocoon is a Spring-based framework (since version 2.2 of Coc
 # ShodanHQ results as at 2011-02-24 #
 # 707 for X-Cocoon-Version
 
-# Examples #
-examples %w|
-198.30.120.223
-62.99.195.18
-144.230.162.33
-89.97.225.114
-128.40.182.18
-62.240.79.77
-130.60.127.19
-12.109.164.254
-219.143.218.138
-210.82.57.92
-|
+
 
 # Passive #
 def passive

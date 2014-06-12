@@ -12,13 +12,7 @@ description "RaidenHTTPD is a fully featured web server software for Windows pla
 # ShodanHQ results as at 2011-09-16 #
 # 542 for RaidenHTTPD
 
-# Examples #
-examples %w|
-163.22.97.1
-114.32.215.39
-114.32.249.44
-122.117.11.240
-|
+
 
 # Matches #
 matches [

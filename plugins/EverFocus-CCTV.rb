@@ -17,19 +17,7 @@ description "EverFoxus CCTV router web interface - Homepage: http://www.everfocu
 # ShodanHQ results as at 2011-04-08 #
 # 5,871 for http server/everfocus
 
-# Examples #
-examples %w|
-174.57.238.243
-163.20.137.103
-91.54.56.236
-24.73.208.30
-98.108.68.194
-141.153.246.138
-96.63.252.30
-219.76.191.68
-66.204.134.139
-65.15.170.96
-|
+
 
 # Matches #
 matches [

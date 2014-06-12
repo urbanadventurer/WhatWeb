@@ -20,27 +20,7 @@ dorks [
 '"powered by Indico" inurl:wcalendar.py'
 ]
 
-# Examples #
-examples %w|
-indico.cern.ch
-indico.fnal.gov
-indico.ihep.ac.cn
-www.npl.illinois.edu/cipanp/
-rich2010.in2p3.fr/indico/
-dmtpc.mit.edu/MaKaC/
-lhcbweb.bo.infn.it/MaKaC/
-conferences.imfm.si
-133.43.118.10
-192.167.0.224
-128.104.255.35
-192.16.185.190
-148.247.182.83
-130.235.185.138
-193.2.67.249
-193.55.211.33
-152.106.18.3
-193.144.240.4
-|
+
 
 # Matches #
 matches [

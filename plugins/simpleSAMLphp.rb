@@ -19,17 +19,7 @@ dorks [
 'intitle:"simpleSAMLphp installation page"'
 ]
 
-# Examples #
-examples %w|
-https://kimlik.ulakbim.gov.tr/simplesaml/module.php/core/frontpage_welcome.php?language=tr
-https://openidp.feide.no/simplesaml/module.php/core/frontpage_welcome.php?language=se
-http://sir.rediris.es/simplesaml/?language=no
-https://ldap.testlogin.kb.dk/module.php/core/frontpage_federation.php?language=en
-http://discotango.test.wayf.dk/module.php/core/frontpage_config.php
-https://hosted.wayf.dk/ku/
-https://beargw.mcc.edu/simplesamlphp/?language=lb
-https://ldap.testlogin.kb.dk/
-|
+
 
 # Matches #
 matches [

@@ -18,12 +18,7 @@ dorks [
 'inurl:"pritlog/index.php/archives"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/pritlog/
-www.drive2.info/blog/pritlog/index.php/archives
-wp10991820.wp276.webpack.hosteurope.de/blog/pritlog/index.php/archives
-|
+
 
 # Matches #
 matches [

@@ -12,17 +12,7 @@ description "GeoHttpServer - Homepage: http://www.geovision.com.tw/english/index
 # ShodanHQ results as at 2011-05-30 #
 # 106,570 for GeoHttpServer
 
-# Examples #
-examples %w|
-184.11.63.186
-155.229.217.241
-200.10.100.26
-90.176.144.193
-206.59.17.155
-82.99.146.1
-190.144.83.134
-213.91.167.68
-|
+
 
 # Matches #
 matches [

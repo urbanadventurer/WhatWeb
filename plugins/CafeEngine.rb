@@ -17,15 +17,7 @@ dorks [
 'Copyright CafeEngine "2008-2009"'
 ]
 
-# Examples #
-examples %w|
-cafeallegrobuffalo.com/menu/
-walkside.biz
-easy.cafeengine.com
-www.westsidecafehamilton.com/menu/
-www.grifedapizza.com.br/cardapio/
-www.shandrathai.com/index.php
-|
+
 
 # Matches #
 matches [

@@ -17,11 +17,7 @@ dorks [
 'intitle:"ATutor: Learning Management System:"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/atutor/login.php
-dev.atutor.ca/atutor/demo.php
-|
+
 
 matches [
 
@@ -33,6 +29,10 @@ matches [
 
 # Default logo HTML
 { :text=>'<a href="http://www.atutor.ca/"><img src="/atutor/images/AT_Logo_1_sm.png"  alt="ATutor Logo" style="border:none;" /></a>' },
+
+# Default Favicon
+{ :md5=>"5b816961f19da96ed5a2bf15e79093cb", :url=>"/favicon.ico" },
+
 
 ]
 

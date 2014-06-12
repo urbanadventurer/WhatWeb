@@ -16,26 +16,7 @@ dorks [
 '"Powered by Diferior, Copyright"'
 ]
 
-# Examples #
-examples %w|
-diferior.com
-diferior.lt
-besttorrentdownloads.com
-copyright.diferior.com
-demo.opensourcecms.com/diferior/
-demo.opensourcecms.com/diferior/user/login.html
-bfdzz.com/Diferior_v8.03/
-lampmaster.dk/diferior/
-psytracker.host56.com
-revan.gdtorrent.com
-rlsmonkey.com
-tracker.kipi-fan.com
-tuto4u.site50.net
-viewcavetorrents.com
-www.gnucommunity.com/torrent/
-www.luxurystock.net
-www.hiddenshard.com/ex/
-|
+
 
 matches [
 

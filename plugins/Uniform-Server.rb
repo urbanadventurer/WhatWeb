@@ -17,18 +17,7 @@ dorks [
 'intitle:"The Uniform Server" "Served Subdirectories" "Developed By The Uniform Server Development Team"'
 ]
 
-# Examples #
-examples %w|
-64.73.205.85
-24.220.192.150
-www.konfyde.com
-auth.ischool.com.tw
-territory.homedns.org
-w.nanaimoproperties.com
-www.cobras-pit.net
-ww.nanaimoproperties.com
-w.nanaimoproperties.com
-|
+
 
 # Matches #
 matches [

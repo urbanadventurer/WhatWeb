@@ -12,10 +12,7 @@ description "Streams audio - homepage: http://www.proscan.org/"
 # ShodanHQ results as at 2011-05-13 #
 # 12 for ProScan
 
-# Examples #
-examples %w|
-66.99.226.27
-|
+
 
 # Passive #
 def passive

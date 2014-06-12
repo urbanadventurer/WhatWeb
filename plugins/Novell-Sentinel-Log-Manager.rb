@@ -17,11 +17,7 @@ dorks [
 'inurl:"novelllogmanager/views/logManager.html"'
 ]
 
-# Examples #
-examples %w|
-https://151.155.69.35:8443/
-https://ncss-test15.lab.novell.com:8443/
-|
+
 
 # Matches #
 matches [

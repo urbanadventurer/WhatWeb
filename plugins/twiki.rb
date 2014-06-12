@@ -8,32 +8,7 @@ Plugin.define "TWiki" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
 version "0.1"
 description "A flexible, powerful, and easy to use enterprise wiki, enterprise collaboration platform, and web application platform. - homepage: http://www.twiki.org/"
-examples %w|
-twiki.org
-www.the-data-mine.com
-iwg.cfa.harvard.edu/twiki4/bin/view.cgi/Main/WebHome
-https://twiki.cern.ch/twiki/bin/view/Atlas/WebHome
-wiki.clamav.net
-www.coinvest.org.uk
-www.boimhc.org
-docs.cpanel.net/twiki/bin/view/Main/WebHome
-hybrid.east.isi.edu
-svperl.org
-fosiki.org
-www.cybergarage.org
-bbcf.epfl.ch
-www.eda.org/twiki/bin/view/
-shareafricainformation.com/twiki/bin/view/
-www.copyright4creativity.eu/bin/view/
-www.texbot.org/do/view/
-https://atlas-france.in2p3.fr/cgi-bin/twiki/bin/view/
-www.cpi.com/twiki/bin/view/
-www.cmsaf.mit.edu/twiki/bin/view/
-52north.org/twiki/bin/view/
-wiki.vtools.ieee.org/bin/view/
-www.maxgigapop.net/twiki/bin/view/TWiki/
-galeon.sourceforge.net/TWiki/
-|
+
 
 matches [
 

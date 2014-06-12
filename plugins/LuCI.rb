@@ -17,48 +17,7 @@ dorks [
 '"Powered by LuCI" inurl:"/cgi-bin/luci/"'
 ]
 
-# Examples #
-examples %w|
-203.142.40.46
-78.41.112.189
-78.41.113.60
-78.41.113.183
-77.87.51.253
-92.198.66.58
-193.238.158.128
-193.238.156.137
-193.238.156.72
-193.238.156.179
-yorick.homelinux.com
-89.147.108.228
-imponderabilia.net
-itforge.info
-80.250.0.133
-www.deritberater.org
-ninjacomputer.com
-ilidium.com
-88.195.202.120
-213.148.21.6
-217.10.15.168
-ns2.sfo.thoughtwave.net
-193.238.159.205
-193.238.159.68
-www.n1c-v.info
-cerbere.aribaud.net
-77.87.48.84
-77.87.48.83
-gate.gotdns.org
-www.digitus.hu/cgi-bin/luci
-www.pulai.hu/cgi-bin/luci
-gandacel.opti.ro
-pes.telecom.sk
-home.ajanata.com
-wifi.sued.straucher6.ext.ffgraz.net
-tirts.linux.ee
-caubios.net
-lumieredusoir.com
-routeur-infinity.oxip.net
-|
+
 
 # Matches #
 matches [

@@ -9,7 +9,7 @@ Plugin.define "Samsung-Printer" do
 author "Andrew Horton"
 version "0.1"
 description "Samsung. SyncThru Web Service - Embedded Web Server"
-examples %w|   |
+
 
 
 matches [

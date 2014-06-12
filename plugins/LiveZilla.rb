@@ -18,33 +18,7 @@ dorks [
 '"LiveZilla - Freeware Live Support" intitle:"LiveZilla - Freeware Live Support - http://www.livezilla.net"'
 ]
 
-# Examples #
-examples %w|
-www.livezilla.net/livezilla/server.php
-www.7only.com/chat/server.php
-www.kovah.de/livezilla/
-www.cherche-prof.com/livezilla/server.php
-carambatours.webcindario.com/livezilla/server.php
-fribook.eu/support/server.php
-netmoney.az/livezilla/server.php
-aday.gediz.edu.tr/onlineDestek/server.php
-www.snoptic.com/LiveZilla/_internal/
-www.webfree.ir
-compuserhn.com/compuserlive/server.php
-jorsat.co.cc/livezilla/server.php
-www.irsa-group.com/live/server.php
-www.creativ-design.eu.ki/support/server.php
-livechat.matbao.vn
-www.hostingneo.com/
-www.hostingneo.com/BKP_CLND/
-live.sellnbuyproperties.com/server.php
-paradisecruises.vn/livesupport/server.php
-www.bestpret.ro/livezilla/server.php
-atendimento.acesseloja.com.br/server.php
-www.suprisulinfo.com.br/chat/server.php
-blazewhm.co.uk/blazechat/server.php
-www.gosoft.com.br/livezilla/server.php
-|
+
 
 # Matches #
 matches [

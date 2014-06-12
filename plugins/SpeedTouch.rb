@@ -13,17 +13,7 @@ description "SpeedTouch is the brand name of a line of networking equipment prod
 # ShodanHQ results as at 2011-05-30 #
 # 435,213 for SpeedTouch -SIP http
 
-# Examples #
-examples %w|
-200.88.218.204
-190.186.56.25
-190.80.150.124
-190.80.174.175
-212.143.238.161
-62.219.159.81
-62.219.125.234
-62.219.118.42
-|
+
 
 # Matches #
 matches [

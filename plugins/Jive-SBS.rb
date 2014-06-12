@@ -45,34 +45,7 @@ dorks [
 '"powered by Jive SBS * community software"'
 ]
 
-# Examples #
-examples %w|
-http://sbs-qa.jiveapps.com
-https://developers.jivesoftware.com
-https://intranet.lago.it
-https://weez.devoteam.com
-https://clientconnect.allscripts.com
-https://community.rea-group.com
-https://hub.glbrc.org
-https://quicklee.sidlee.com
-https://www.on2net.biz
-https://www.santandercommunities.com
-https://supportforums.motorola.com
-https://www.myciscocommunity.com
-https://neo.pearson.com
-https://beta.hopestreetgroup.org
-http://connect.clintonglobalinitiative.org
-http://village.vistage.com
-http://www.harmonycentral.com
-http://talk.sonyericsson.com
-http://community.ashworthcollege.edu
-http://community.exploratorium.edu
-https://libshare.library.gatech.edu
-https://clearspace.occe.ou.edu
-https://govspace.oregon.gov
-https://modelingguru.nasa.gov
-https://oprc.gov
-|
+
 
 # Matches #
 matches [

@@ -19,13 +19,7 @@ dorks [
 'inurl:verpost.php?id_noticia'
 ]
 
-# Examples #
-examples %w|
-agrupacionaci.awardspace.info
-fabioco.cp01.wiroos.com/verpost.php
-www.fabio.com.ar/verpost.php
-watafa.com.ar
-|
+
 
 # Matches #
 matches [

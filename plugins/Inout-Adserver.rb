@@ -16,21 +16,7 @@ dorks [
 '"Powered by Inoutscripts"'
 ]
 
-# Examples #
-examples %w|
-www.420ppc.com/admin/
-www.420ppc.com/ppc-publisher-login.php
-www.geekadz.com/admin/
-www.inoutdemo.com/inout_adserver_ultimate/ppc-user-login.php
-www.inoutdemo.com/inout_adserver_ultimate/ppc-publisher-login.php
-www.inoutdemo.com/inout_adserver_ultimate/admin/
-www.inoutdemo.com/inout_adserver_ultimate/demo-page.php
-www.inoutdemo.com/inout_adserver/ppc-user-login.php
-www.inoutdemo.com/inout_adserver/ppc-publisher-login.php
-www.inoutdemo.com/inout_adserver/admin/
-www.inoutdemo.com/inout_adserver/demo-page.php
-www.ybuzzers.com/admin/
-|
+
 
 matches [
 

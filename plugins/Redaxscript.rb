@@ -17,18 +17,7 @@ dorks [
 '"Powered by Redaxscript"'
 ]
 
-# Examples #
-examples %w|
-demo.redaxscript.com
-www.wip.redaxscript.com
-www.telefoon-nummers.nl
-bk.compeak.net
-qapueue.com
-www.sc9.net
-xenserver.in
-free-csstemplates.org
-denx2nd.cloudapp.net/redaxscript/
-|
+
 
 # Matches #
 matches [

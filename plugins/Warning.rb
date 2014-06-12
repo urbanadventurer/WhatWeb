@@ -13,12 +13,7 @@ description "The warning header contains additional information about the status
 # http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html
 # http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
 
-# Examples #
-examples %w|
-212.15.182.152
-174.35.24.81
-209.18.68.80
-|
+
 
 # Passive #
 def passive

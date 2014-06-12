@@ -16,19 +16,7 @@ dorks [
 '"Powered by: PHP-CSL"'
 ]
 
-# Examples #
-examples %w|
-www.phpidiots.com/phpcode9/
-jxjimmy.com/library/
-www.smileygenerator.us/history/php_library/
-www.jalcom.nl/snippets/
-furrydev.com/Code/index.php
-rcedev.com/index.php
-www.hupsis-e107.de/snippet/index.php
-codeweb.co.uk
-www.spellsbook.co.uk/php-csl/
-www.weierles.homepage.bluewin.ch
-|
+
 
 # Matches #
 matches [

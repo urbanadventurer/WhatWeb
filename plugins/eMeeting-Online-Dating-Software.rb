@@ -20,12 +20,7 @@ dorks [
 '"eMeeting Dating Software Version"'
 ]
 
-# Examples #
-examples %w|
-datingscripts.co.uk/dating-software-demo/
-datingscripts.ws/newadmin/
-datingscripts.ws/index.php
-|
+
 
 # Matches #
 matches [

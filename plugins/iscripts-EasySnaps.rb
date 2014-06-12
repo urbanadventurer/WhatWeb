@@ -16,20 +16,7 @@ dorks [
 '"powered by iScripts EasySnaps" "A premium product from iScripts.com"'
 ]
 
-# Examples #
-examples %w|
-www.flashshare.co.uk
-photoking.org
-www.picshoppe.com
-www.ez-imagehosting.com
-www.insidethecomputer.com/easysnaps/
-www.p1x.co.uk
-www.adam-benjamin.co.uk/adam/
-www.gopromoads.com
-www.frysphoto.com
-www.extremepcphoto.com
-www.ephotohost.com
-|
+
 
 matches [
 

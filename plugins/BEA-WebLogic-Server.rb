@@ -21,28 +21,7 @@ dorks [
 'intitle:"Default BEA WebLogic Server Web Server Index Page"'
 ]
 
-# Examples #
-examples %w|
-203.66.215.48
-203.247.133.195
-218.25.90.48
-124.81.94.72
-212.31.38.11
-202.84.17.66
-218.200.243.54
-213.139.126.218
-196.8.101.86
-12.8.16.37
-83.224.65.191
-210.160.58.51
-218.8.245.10:7777
-94.228.185.254
-lab1.skybridgeglobal.com:9800
-fsportalservers.ucr.edu
-https://pshrwb200.jcpenney.com:7401/
-https://cityjobs.sanjoseca.gov/
-https://pacus.theamericancollege.edu/
-|
+
 
 # Matches #
 matches [

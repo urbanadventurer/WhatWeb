@@ -17,48 +17,7 @@ dorks [
 '"powered by CMScout"'
 ]
 
-# Examples #
-examples %w|
-demo.opensourcecms.com/cmscout/index.php
-thunderwolfdistrict.com
-bsatroop959.com
-troop60.110mb.com
-bsatroop757.org
-216.24.166.217
-cspack106.com
-bsatroop178.us
-scouts.ballan.net.au
-scout3.carahealy.com/index.php
-great.pustral-ugm.org/index.php
-troop1880.net
-wahoopack140.com
-troop136bsa.org
-www.cmscout.co.za
-www.strandscouts.org.za
-www.1stditton.co.uk/cmscout/
-www.9thirene.co.za
-www.knoxgs.org
-www.pack131.com/index.php
-www.9thbenoniscouts.za.org/index.php
-www.1stdursleyscouts.org.uk
-www.lejeuneseacadets.org
-www.7thbramshill.org.uk/index.php
-www.pack372.org
-www.central-notts-scouts.org.uk
-www.fwsg.org.uk/index.php
-www.6thlindsayscouts.ca/index.php
-www.1stwestbury.org.uk
-www.troop937.org
-www.bsatroop915.com/index.php
-www.troop1946.com/index.php
-www.3rdbedford.co.uk
-www.troop60.info
-www.chms-scouting.org
-www.gruposenderodesanpablo.org
-www.airscouts.za.org
-www.troop731.com
-www.529gibraltar.org/troop/index.php
-|
+
 
 matches [
 

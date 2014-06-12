@@ -12,13 +12,7 @@ description "MistCMS is a free Content Management System written in PHP that all
 # Google results as at 2011-03-03 #
 # 1 for MistCMS intitle:MistCMS inurl:admin Username Password
 
-# Examples #
-examples %w|
-www.dvondrake.com
-www.dvondrake.com/mist.php?admin=true
-www.ellelewys.com
-www.ellelewys.com/mist.php?admin=true
-|
+
 
 # Matches #
 matches [

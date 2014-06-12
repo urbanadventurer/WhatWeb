@@ -20,43 +20,7 @@ dorks [
 '"powered by phpQuestionnaire"'
 ]
 
-# Examples #
-examples %w|
-www.chumpsoft.com/products/phpq/demo/
-blindferret.com/surveys/
-cmi2.yale.edu/phpQ/
-acreativerevolution.ca/phpQ/
-itcenter.clemson.edu/surveys/
-vakbladkraamzorg.info/modules/phpQ/
-vote.cnnb.com.cn/phpQ/
-17rp.com/ask/
-public.pcnastream.com/survey/
-foodandhealth.com/survey/
-sfcfarm.com/forms/
-vancouver.wss.yale.edu/phpQ/
-mail5.usana.com/phpQ/
-phpq.kentisd.org
-https://forms.mactech.com/fillsurvey.php
-www.westlakerevelations.com/phpq/
-www.nursesurvey.org/
-www.northbrook.il.us/phpq/
-www.headlight-reform.org/phpQ/
-www.rch.org.au/phpQ/
-www.lp.org/phpQ/
-www.rootocean.com/info/
-www.ats.yorku.ca/phpQ/
-www.migrantclinician.org/survey/
-www.portalcity.com.sg/survey/
-www.sunnycarinasunnyregion.com/public/question/
-www.luguhu.org/web2007/survey/
-www.originlab.com/phpQ/
-www.dmpx.cn/phpq/
-www.hqmeded.com/phpQ/
-www.proz.com/phpQ/
-www.qumedia.nl/qudata/phpQ/
-www.school4educationalassistants.com/phpQ/
-www.juniorconsult.com/survey/
-|
+
 
 # Matches #
 matches [

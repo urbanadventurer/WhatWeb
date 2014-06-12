@@ -13,19 +13,7 @@ description "AirOS is an intuitive, versatile, highly developed Ubiquiti firmwar
 # 8,411 for "Set-Cookie:" "AIROS_SESSIONID" Path= Version=
 # 8,411 for "cookiechecker uri="
 
-# Examples #
-examples %w|
-109.73.178.41
-79.110.115.131
-88.148.20.201
-91.202.136.212
-82.177.204.114
-208.65.187.90
-209.150.15.65
-62.122.121.201
-190.221.44.70
-78.28.122.244
-|
+
 
 matches [
 

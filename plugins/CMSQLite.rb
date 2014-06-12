@@ -17,20 +17,7 @@ dorks [
 '"powered by CMSQLite"'
 ]
 
-# Examples #
-examples %w|
-cmsqlite.net
-demo.opensourcecms.com/cmsqlite/
-www.netzabdruck.de
-www.achimgersmann.de
-www.princess-queens.de
-www.zahnarzt-flassig.de
-dennert-tierplastik.de
-www.landgraf-osteopathie.de
-www.netzcms.de
-achimgersmann.com
-www.tabirent.com
-|
+
 
 matches [
 

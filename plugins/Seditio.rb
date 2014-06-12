@@ -9,13 +9,7 @@ author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.1"
 description "Seditio - homepage: http://www.neocrome.net"
 
-# Examples #
-examples %w|
-www.seditioforge.com
-www.gocoding.com
-www.devosia.com
-eventicboard.com
-|
+
 
 # Matches #
 matches [

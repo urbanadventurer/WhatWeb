@@ -16,18 +16,7 @@ dorks [
 '"Partners" "Powered by" "EasyFeeds" "Ktools.net"'
 ]
 
-# Examples #
-examples %w|
-www.ktoolsdemos.net/easyfeeds/manager/login.php
-www.adultheadlinenews.com/privacy.php
-www.stlfeed.com/contact.php
-awaiter.com
-www.rsswinenews.com
-mahera.com
-erasurenews.com/add.php
-www.ilovesteppin.com/rss/
-www.firsttake.co.uk/rssfeeder/
-|
+
 
 # Matches #
 matches [

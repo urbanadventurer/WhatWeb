@@ -17,12 +17,7 @@ dorks [
 'inurl:"myDoclist.asp" intitle:"CmyDocument"'
 ]
 
-# Examples #
-examples %w|
-cmydoc.cmydocument.com/myDoclist2.asp
-mhcug.mhcug.org/cmydocumentmhcug/myDoclist2.asp
-www.grclark.com/CmyDocument/myDoclist.asp
-|
+
 
 # Matches #
 matches [

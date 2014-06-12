@@ -10,23 +10,7 @@ version "0.1"
 description "This plugin extracts the username and password from TeamSpeak server.log files."
 
 # 15 results for "WARNING,Info,SERVER" ext:log @ 2010-10-15
-examples %w|
-eelektrix.ee.ohost.de/Teamspeak2_RC2/server.log
-gartenlambert.ga.funpic.de/server.log
-home.arcor.de/fl0wer/server.log
-home.arcor.de/hunter_ger/server.log
-home.arcor.de/partiarti/server.log
-membres.multimania.fr/boomlegroupe/server.log
-sandler.sa.funpic.de/server.log
-snaper-ts2.ic.cz/server.log
-teapex.free.fr/TS/server.log
-treetop.tr.ohost.de/server.log
-users.telenet.be/vortex/Teamspeak2_server/server.log
-woodlouse.wo.ohost.de/server.log
-xcelco.on.ca/~bee-mee/Teamspeak2_RC2/server.log
-zamek.hu.cz/team%20speak/Teamspeak2_RC2/server.log
-www.eastwick.ic.cz/server.log
-|
+
 
 matches [
 

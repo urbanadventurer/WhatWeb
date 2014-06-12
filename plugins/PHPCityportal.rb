@@ -17,24 +17,7 @@ dorks [
 '"Powered by PHPCityPortal.com" inurl:"login.php"'
 ]
 
-# Examples #
-examples %w|
-phpcityportal.com/demo/
-visitlancaster.net
-charlottecountydirectory.com/login.php
-www.fashionableferndale.com/login.php
-www.30117.com/login.php
-fredericksburgbusinesses.com/login.php
-potomacvillage.com/login.php
-tinleypark.biz/login.php
-infowestvalley.com/login.php
-www.whatshappeningdesoto.com/login.php
-www.tunisia-express.com/login.php
-orlandsocial.com/login.php
-www.laminerva.taxdebtknowledge.com/login.php
-glastonburytown.co.uk/login.php
-hellocenla.com/login.php
-|
+
 
 # Matches #
 matches [

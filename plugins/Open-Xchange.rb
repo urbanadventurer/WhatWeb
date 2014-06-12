@@ -22,29 +22,7 @@ dorks [
 '"You need to enable JavaScript to access the Open-Xchange Server." +Version inurl:ox'
 ]
 
-# Examples #
-examples %w|
-https://email.1and1.com/ox6/ox.html
-http://amadigi.net/
-https://www.mailxchange.de/ox6/
-http://webmailer.co/ox6/ox.html
-https://webmail.westcoastcloud.com/ox6/ox.html
-https://webmail.eva.mpg.de/ox6/
-http://hyperion.demo-openxchange.fr/ox/
-http://ox.web-vision.de/ox6/
-https://ox.ips-gruppe.de/
-https://www.rheinahrcampus.de/ox/ox6/
-https://webmail.hostpoint.ch/ox.html
-https://webmail.ecloudpanel.com/ox6/ox.html
-192.109.135.30
-81.221.32.68
-81.26.175.25
-66.96.128.85
-194.94.224.6
-84.124.29.114
-66.96.141.35
-217.79.216.216
-|
+
 
 # Matches #
 matches [

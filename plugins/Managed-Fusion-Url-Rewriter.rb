@@ -12,17 +12,7 @@ description "Managed Fusion Url Rewriter is an HttpModule for the Microsoft ASP.
 # ShodanHQ results as at 2011-08-29 #
 # 292 for ManagedFusion
 
-# Examples #
-examples %w|
-199.38.132.28
-195.65.26.74
-63.134.200.25
-77.220.178.140
-59.120.166.169
-173.201.37.72
-212.214.4.178
-38.102.38.209
-|
+
 
 # Matches #
 matches [

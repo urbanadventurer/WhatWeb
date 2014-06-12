@@ -16,11 +16,6 @@ dorks [
 'intitle:"WordFusion.Web" intext:"Get Microsoft Silverlight"'
 ]
 
-# Examples #
-examples %w|
-tui.zumesoft.com
-documentservices.zumesoft.com
-|
 
 # Matches #
 matches [

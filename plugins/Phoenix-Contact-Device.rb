@@ -12,14 +12,7 @@ description "Phoenix Contact manufactures industrial automation, interconnection
 # ShodanHQ results as at 2011-08-02 #
 # 71 for Phoenix-Contact
 
-# Examples #
-examples %w|
-71.244.86.42
-141.28.12.164
-84.125.59.141
-71.249.135.139
-78.186.209.71
-|
+
 
 # Passive #
 def passive

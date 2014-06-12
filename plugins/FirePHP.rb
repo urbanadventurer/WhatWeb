@@ -15,11 +15,7 @@ description "FirePHP enables you to log to your Firebug Console using a simple P
 # 15 for x-wf-1-structure
 # 14 for X-Wf-1-1-1
 
-# Examples #
-examples %w|
-46.20.38.20
-184.82.101.219
-|
+
 
 # Matches #
 matches [

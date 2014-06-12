@@ -13,35 +13,7 @@ description "IceWarp Unified Communications Server is a fully integrated email s
 # 6,632 for IceWarp -WebSrv
 #   259 for IceWarp WebSrv
 
-# Examples #
-examples %w|
-demo.icewarp.com
-74.211.241.235
-62.225.1.71
-97.67.51.250
-151.12.1.16
-82.177.2.72
-217.149.195.217
-193.179.105.241
-80.120.70.41
-139.146.150.222
-80.120.70.41
-83.97.98.12
-97.65.121.91
-202.67.226.70
-70.85.41.166
-212.154.36.82
-203.116.95.32
-218.211.252.77
-87.253.145.122
-213.115.93.91
-mail.alshaya.com
-mail.moffittsystems.com:64000
-mail.nitc-tankers.com:32000
-www.richhabitat.net
-mail.platinbox.org:8080
-post.ird.com
-|
+
 
 # Passive #
 def passive

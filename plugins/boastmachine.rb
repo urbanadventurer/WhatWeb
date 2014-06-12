@@ -19,31 +19,7 @@ dorks [
 '"powered by boastMachine" "Recent posts" -exploit'
 ]
 
-# Examples #
-examples %w|
-www.coolzen.com
-www.askdatabaseblogs.com
-www.leonism.com
-am3n.profusehost.net
-www.cycleanywhere.com/blog/
-tandij.com
-deliwish.ls-aurora.com
-www.pmhub.net/blog/
-www.adaa.org.au/Blog/
-www.intag.org/blog/darwin_onto.php
-www.onemanswisdom.info
-www.meetmadalyn.com/blog/
-www.brionscheidel.com/blog/
-www.hitechreps.com
-www.chellbell.com/blog/
-www.rainbowconceptions.com/rbrbrb/newblog/
-www.goghdesign.com/thunderdog/thunderblog/
-xsafari.com/blog/ekfblog.php
-www.jrlsc.in/allfixonline_new/blog/bmachine/
-gbytes.gsood.com/health.php
-wonderrland.com/index.php
-www.cycleanywhere.com/blog/
-|
+
 
 matches [
 

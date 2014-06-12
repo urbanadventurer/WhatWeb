@@ -17,15 +17,7 @@ dorks [
 '"powered by Bart\'s CMS"'
 ]
 
-# Examples #
-examples %w|
-trinityhome.org
-urlfriendly.trinityhome.org
-www.djansa.be
-www.3care.be/ImageGallery/
-www.strikkies.be
-cms.ccsdemo.nl/Users/
-|
+
 
 # Matches #
 matches [

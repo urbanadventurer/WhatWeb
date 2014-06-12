@@ -17,18 +17,7 @@ dorks [
 '"PHP Support Tickets" "Log In" intitle:"PHP Support Tickets :: Login"'
 ]
 
-# Examples #
-examples %w|
-www.trinitydesign.co.uk/support/index.php
-support.ontariocrackrepair.com
-soporte.inetsur.com
-support.go2hire.com
-www.lomardrivers.com/V2/serviciosweb/phpst_2.2/index.php
-www.profohost.com/support_center/index.php
-soporte.escolapiosaragon.net/phptickets/
-www.luvsms.com/support/index.php
-winzone.us/ticket/
-|
+
 
 # Matches #
 matches [

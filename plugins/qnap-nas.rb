@@ -4,6 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2013-03-29 #
+# Due to a renewed web interface (v3.8), all existing matches didn't see the QNAP anymore
+# New matches need to be determined
+
 # Version 0.4 # 2011-03-22 #
 # Removed aggressive section
 ##
@@ -14,9 +18,9 @@
 # Added passive model, firmware and module extraction support for /cgi-bin/authLogin.cgi
 ## 
 Plugin.define "QNAP-NAS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
-version "0.4"
-description "QNAP provides a series of network attached storage (NAS) products - homepage:http://www.qnap.com/"
+author "Brendan Coles <bcoles@gmail.com>" # 2013-03-29
+version "0.5"
+description "QNAP provides a series of network attached storage (NAS) products and network video recorder (NVR) solutions - homepage:http://www.qnap.com/"
 
 # Tested on TS Models:
 #   TS-109 PRO, TS-109 PRO II, TS-119, TS-209 PRO, TS-209 PRO II,
@@ -31,76 +35,7 @@ dorks [
 'inurl:/cgi-bin/authLogin.cgi'
 ]
 
-# Examples #
-examples %w|
-http://140.113.74.103:8080/cgi-bin/
-http://203.72.160.21:8080/cgi-bin/
-http://163.19.88.200:8080/cgi-bin/
-http://140.123.174.172:8080/cgi-bin/
-http://163.22.115.180:8080/cgi-bin/
-http://120.107.162.9:8080/cgi-bin/
-http://www.guillerault.eu:8080/cgi-bin/
-http://119.247.13.81:8080/cgi-bin/
-http://sousedi.cz:8088/cgi-bin/
-http://www.jgirado.com/cgi-bin/
-http://www.belleandku.info:8080/cgi-bin/
-http://dasistsehr.net:8080/cgi-bin/
-http://harrelsonsplace.com:8080/cgi-bin
-http://www.thatsyummymummy.com:8080/cgi-bin/
-https://rovingjungs.net/cgi-bin/
-http://www.didadi.info:8080/cgi-bin/
-https://www.mindache.com/cgi-bin
-http://pixelhunger.com:8080/cgi-bin/
-http://eendje.org:8080/cgi-bin/
-http://jan.portinga.eu:8080/cgi-bin/
-http://www.jgrimes.co.uk:8080/cgi-bin/
-http://www.silud.com:8080/cgi-bin/
-http://www.zeising.net:8080/cgi-bin/
-http://www.momocable.com:8080/cgi-bin/
-https://qnap.expanic.com/cgi-bin/
-http://193.147.58.206:8080/cgi-bin/
-http://www.hakkahome.com:10101/cgi-bin/
-http://philipsenechal.com:8080/cgi-bin/
-https://mdelattre.com/cgi-bin/
-http://melkes.net:8080/cgi-bin/
-http://123.204.252.119:8080/cgi-bin/
-http://legendav.dynalias.com:8080/cgi-bin/
-http://train-to-attain.com:8080/cgi-bin/
-http://114.32.115.33:8080/cgi-bin/
-http://219.87.144.203:8080/cgi-bin/
-http://www.stehagen.se:8080/cgi-bin/
-http://www.air-village.com:8080/cgi-bin/
-http://www.liwei.de:8080/cgi-bin/
-http://60.251.202.110:8080/cgi-bin/
-http://www.marcjones.co.uk:8080/cgi-bin/
-http://www.nightleo.com:8080/cgi-bin/
-http://www.infotronic-service.com/cgi-bin/
-http://ekodagitim.com.tr:8080/cgi-bin/
-https://www.johos.se/cgi-bin/
-http://www.smaal.nu:8080/cgi-bin/
-http://www.dickyfamily.com:3737/cgi-bin/
-http://www.imetek.com:8080/cgi-bin/
-http://www.ikke.net:8080/cgi-bin/
-http://www.heathens.ca:8080/cgi-bin/
-https://hdproserveur.com/cgi-bin/
-http://www.andrewmacbeth.com:8080/cgi-bin/
-https://www.vanmaurik.org/cgi-bin/
-http://92.79.132.123:8080/cgi-bin/
-http://xn--c3tyik98bwox.net:8080/cgi-bin/
-https://www.boskoe.com/cgi-bin/
-http://163.27.57.9:8080/cgi-bin/
-http://www.rhk4.com:8080/cgi-bin/
-http://www.jr1186.com:8000/cgi-bin/
-http://www.patvibes.com:6000/cgi-bin/
-https://www.cpcupload.com/cgi-bin/
-http://www.qwe4.net:8080/cgi-bin/
-https://www.girlguide.org.sg/cgi-bin/
-http://www.qwe4.com:8080/cgi-bin/
-https://www.fluehmann.net/cgi-bin/
-https://bahaykubo.info:8443/cgi-bin/
-http://kwlo.webhop.net:8080/cgi-bin/
-http://yaohaiping.net:8080/cgi-bin/
-|
+
 
 # Matches #
 matches [
@@ -141,6 +76,15 @@ matches [
 { :text=>'<img id="img_webfile" src="/ajax_obj/images/login_main_5.jpg" longdesc="javascript:onQuickLinkChange(5);" alt="Web File Manager" />', :module=>"Web File Manager" },
 { :text=>'<img id="img_surveillance" src="/ajax_obj/images/login_main_6.jpg" longdesc="javascript:onQuickLinkChange(6);" alt="Surveillance Station" />', :module=>"Surveillance Station" },
 
+# ----- 3.8 version ----- 
+
+# HTML title
+{ :text=>'<title>Welcome to QNAP Turbo NAS</title>' },
+
+# favicon.ico
+{ :url=>"/ajax_obj/images/favicon.ico", :md5=>"9afa5d60e5ef15dc75d7662e418cac72" },
+
+
 ]
 
 # Passive #
@@ -169,6 +113,13 @@ def passive
 
 	end
 
+	# ----- 3.8 version ----- 
+	# Firmware Version Detection
+	if @body =~ /var URL_RANDOM_NUM = "[0-9\.]+";/
+		f=@body.scan(/var URL_RANDOM_NUM = "([0-9\.]+)";/)[0]
+		m << {:name=>"javascript variable", :firmware=>f }
+	end
+	
 	# Return passive matches
 	m
 

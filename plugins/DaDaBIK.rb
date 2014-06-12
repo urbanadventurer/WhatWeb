@@ -17,15 +17,7 @@ dorks [
 '"Powered by: DaDaBIK database front-end" intitle:"DaDaBIK database front-end"'
 ]
 
-# Examples #
-examples %w|
-www.dadabik.org/company_demo/
-your-floor.de
-tbed.org/demo/index.php
-www.casevacanze-caporizzuto.com/admin/
-www.mediaarbetarna.com/union/index.php
-viu.unileoben.ac.at/absolvdb/login.php
-|
+
 
 # Matches #
 matches [

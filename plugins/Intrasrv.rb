@@ -9,9 +9,6 @@ author "Brendan Coles <bcoles@gmail.com>" # 2013-06-02
 version "0.1"
 description "IntraSrv - Simple Web Server - Homepage: http://www.leighb.com/intrasrv.htm"
 
-# Examples #
-examples %w|
-|
 
 # Matches #
 matches [

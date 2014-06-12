@@ -17,13 +17,7 @@ dorks [
 '"Powered by ICEshop"'
 ]
 
-# Examples #
-examples %w|
-www.batavi.org
-www.hkelectronics.com
-www.rapidolimited.co.uk
-www.6b.nl
-|
+
 
 # Matches #
 matches [

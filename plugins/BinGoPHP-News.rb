@@ -18,17 +18,7 @@ dorks [
 'inurl:bnadmin.php'
 ]
 
-# Examples #
-examples %w|
-metalhardrock1.free.fr/bb/new.php
-membres.multimania.fr/robossprog/bnaffiche.php
-metalhardrock1.free.fr/bb/bnadmin.php
-membres.multimania.fr/robossprog/bnadmin.php
-www.lawson.tonsite.biz/lawsonnews/bnadmin.php
-www.domainedegatines.fr/nouvelle/bnadmin.php
-www.fps-gratuits.fr/bnadmin.php
-www.add-pontaudemer.com/bingo/bnadmin.php
-|
+
 
 matches [
 

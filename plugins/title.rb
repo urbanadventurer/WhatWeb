@@ -12,7 +12,7 @@ Plugin.define "Title" do
 author "Andrew Horton"
 version "0.2"
 description "The HTML page title"
-examples %w| www.google.com |
+
 
 #
 

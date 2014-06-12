@@ -18,23 +18,7 @@ dorks [
 ]
 
 # 31 results for "powered by allinta CMS" @ 2010-08-15
-examples %w|
-www.allinta.com
-demo.allinta.com
-demo.allinta.com/demoadmin/
-www.mobilease.com/cmsadmin/
-www.salcuratorealty.com/cmsadmin/
-www.adathisraelnj.org
-63.134.233.104
-www.rain-it.dk
-www.lyskeglen.dk
-www.giwct.org.au
-www.sutherlandhs.co.za/cms/
-www.urbangrocery.com/vegrocery/
-www.dorothy-springer-trust.org.uk
-www.greerauction.com
-www.mywoodhandcross.com
-|
+
 
 matches [
 

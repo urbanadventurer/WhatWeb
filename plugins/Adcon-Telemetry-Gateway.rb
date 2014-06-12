@@ -12,21 +12,7 @@ description "Adcon Telemetry Gateway base station - Manages large networks of UH
 # ShodanHQ results as at 2011-09-23 #
 # 366 for addUPI Server
 
-# Examples #
-examples %w|
-82.177.46.61
-68.44.163.163
-207.204.205.84
-201.116.10.56
-80.59.103.102
-82.177.46.61
-90.157.215.22
-216.215.60.164
-41.222.6.216
-63.200.189.174
-82.177.46.61
-85.126.9.108
-|
+
 
 # Matches #
 matches [

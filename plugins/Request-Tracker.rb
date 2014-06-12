@@ -20,29 +20,7 @@ dorks [
 'intitle:"Login" "Best Practical Solutions, LLC" "corporate logo RT for"'
 ]
 
-# Examples #
-examples %w|
-https://tickets.bestpractical.com
-issues.bestpractical.com
-67.210.169.131
-support.sorbs.net
-help.carthage.edu
-rt3.netglobalis.cl
-safeonlinebilling.com
-afval.amsterdam.nl
-rt.geneseo.edu
-tdtickets.tradedoubler.com
-rt.pau.axione.fr
-rt.mbi.ufl.edu
-rtir.iucc.ac.il
-https://help.mit.edu
-https://rt.etersoft.ru/
-https://soporte.oesia.com/rt/
-https://sugwg-rt.phy.syr.edu/rt3/
-https://web.rcac.purdue.edu:8443/
-https://rt.msoe.edu
-https://rtir.itservices.manchester.ac.uk
-|
+
 
 # Matches #
 matches [

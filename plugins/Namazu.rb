@@ -17,28 +17,7 @@ dorks [
 '"powered by Namazu"'
 ]
 
-# Examples #
-examples %w|
-search.namazu.org
-www.hioki.com/cgi-bin/eng/namazu.cgi
-www.bobcatos.com/hdlist/archives/cgi-bin/namazu.cgi
-www.biostat.wustl.edu/archives/cgi-bin/namazu.cgi.BAK
-www.tamiya.com/cgi-bin/search/namazu.cgi
-www.shitomi.jp
-www.jazzdisco.org/cgi-bin/namazu.cgi
-www.nmri.go.jp/cgi-bin/search-e/search.cgi
-lists.xensource.com/archives/cgi-bin/namazu.cgi
-cgi.mlab.uiah.fi/cgi-bin/mulli/namazu/english/namazu.cgi
-www.xemacs.org/cgi-bin/namazu.cgi
-www.toppan.co.jp/cgi-bin/en/namazu.cgi
-search.senshu-u.ac.jp/cgi-bin/z.cgi
-typhoon.jaea.go.jp/cgi-bin/namazu.cgi
-www.realsoftware.com/listarchives/cgi-bin/namazu.cgi
-dayton.contesting.com/archives//cgi-bin/namazu.cgi
-jos.dent.nihon-u.ac.jp/namazu/namazu.cgi
-doc.fugspbr.org/historico/cgi-bin/namazu.cgi
-www.jseinc.org/namazu/namazu.cgi
-|
+
 
 # Matches #
 matches [

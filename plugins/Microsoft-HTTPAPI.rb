@@ -12,19 +12,7 @@ description "The HTTP Server API enables applications to communicate over HTTP w
 # ShodanHQ results as at 2011-03-13 #
 # 148,635 for Microsoft-HTTPAPI
 
-# Examples #
-examples %w|
-80.156.9.234
-62.109.34.249
-216.201.95.181
-82.85.8.18
-206.83.76.202
-193.183.15.116
-189.204.67.28
-92.61.84.66
-193.33.51.71
-216.70.236.250
-|
+
 
 # Passive #
 def passive

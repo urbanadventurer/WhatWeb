@@ -12,17 +12,7 @@ description "Abyss Web Server is a compact web server available for Windows, Mac
 # ShodanHQ results as at 2011-04-08 #
 # 4,097 for Abyss
 
-# Examples #
-examples %w|
-187.52.192.92
-173.95.133.152
-200.49.150.154
-69.128.95.94
-120.107.171.241
-50.80.36.255
-77.161.215.166
-85.236.196.3
-|
+
 
 # Passive #
 def passive

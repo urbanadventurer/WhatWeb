@@ -19,47 +19,7 @@ dorks [
 '"Powered by Trac" intitle:Trac'
 ]
 
-# Examples #
-examples %w|
-trac.edgewall.org/demo-0.12
-trac.edgewall.org/demo-0.11
-https://projects.honeynet.org/honeywall/
-xcache.lighttpd.net
-eaccelerator.net
-code.djangoproject.com
-dev.wifidog.org
-plagger.org
-code.reddit.com
-munin-monitoring.org
-firestats.cc
-www.xinha.org
-www.maiamailguard.com
-www.cherrypy.org
-byteflow.su
-sourceforge.net/apps/trac/ipcop/
-bitten.edgewall.org
-trac.symfony-project.org
-fedorahosted.org/koji/
-cross-lfs.org
-trac.bjourne.webfactional.com
-www.ntop.org/trac/
-symfonians.org
-trac.enlightenment.org/e/wiki/
-developer.longtailvideo.com/trac/
-trac.fusebox.org
-www.rpm.org
-developer.pidgin.im
-www.phpeclipse.com
-trac.greenstone.org
-dev.mobileread.com
-www.licq.org
-seer.isi.deterlab.net/trac/
-svn.nuxeo.org
-www.eresi-project.org
-www.aminus.net
-trac.osuosl.org/trac/replicant/
-createrepo.baseurl.org
-|
+
 
 matches [
 
