@@ -3,6 +3,14 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
+
+# TODO
+# add detection true/false for ViewState MAC and Encryption
+
+
+##
+# Version 0.5 # 2014-06-12
+# Added Detailed errors and ViewState Encrypted. 
 ##
 # Version 0.4 # 2011-03-03 #
 # Merged x-aspnetmvc-version plugin
@@ -55,6 +63,13 @@ matches [
 	# Get connection strings # web.config
 	{ :string=>/connectionString="([^\"]+)/ },
 	{ :string=>/<add key="ConnectionString" value="([^\"]+)/ },
+
+	# Detailed errors
+	{ :search=>"body", :string=>"Verbose error messages", :text=> "This error page might contain sensitive information because ASP.NET is configured to show verbose error messages"},
+	{ :search=>"body", :filepath=>/<b> Source File: <\/b> ([^<]+)<b> &nbsp;&nbsp; Line:.*This error page might contain sensitive information because ASP.NET/},
+	
+	# VIEWSTATEENCRYPTED
+	{ :string=>"ViewState Encrypted", :search=>"body", :text=>'name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED"'}
 
 ]
 
