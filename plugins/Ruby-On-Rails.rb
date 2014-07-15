@@ -9,7 +9,10 @@ author "Andrew Horton"
 version "0.1"
 description "Ruby on rails is an MVC web application framework written in the ruby language. Doesn't detect all RoR sites. Homepage: http://www.rubyonrails.org."
 
-
+examples %w|
+http://savitri.in/
+http://bigbinary.com/
+|
 
 # Matches #
 matches [
@@ -31,6 +34,13 @@ matches [
 
 # /stylesheets/scaffold.css
 {:url=>"/stylesheets/scaffold.css", :text=>'#errorExplanation h2 {'},
+
+# asset pipeline
+{ :regexp=>/<link[^>]*href="[^"]*\/assets\/application-?\w{32}?\.css"/ },
+{ :regexp=>/<script[^>]*\/assets\/application-?\w{32}?\.js"/ },
+
+# csrf-token
+{ :regexp=>/<meta content="authenticity_token" name="csrf-param"\s?\/>\s?<meta content="[^"]{44}" name="csrf-token"\s?\/>/ },
 
 # Default Page
 {:text=>'<h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>', :string=>'default page'},
