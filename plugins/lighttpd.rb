@@ -13,7 +13,8 @@
 Plugin.define "lighttpd" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.3"
-description "Lightweight open-source web server - Homepage: http://www.lighttpd.net/"
+description "Lightweight open-source web server."
+website "http://www.lighttpd.net/"
 
 # ShodanHQ results as at 2010-10-26 #
 # 124,972 for "server: lighttpd"
