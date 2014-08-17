@@ -103,6 +103,10 @@ class OutputVerbose < Output
 						@f.puts "\t" + " " * 13 + line
 					}
 
+                                        unless Plugin.registered_plugins[plugin_name].website.nil?
+						@f.puts "\tWebsite    : " + Plugin.registered_plugins[plugin_name].website.to_s
+					end
+
 					top_certainty = suj(plugin_results)[:certainty].to_i
 					unless top_certainty == 100
 						@f.puts "\t" + "Certainty".ljust(11) + ": " + certainty_to_words(top_certainty)
