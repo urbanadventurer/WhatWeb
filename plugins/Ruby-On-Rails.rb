@@ -9,11 +9,6 @@ author "Andrew Horton"
 version "0.1"
 description "Ruby on rails is an MVC web application framework written in the ruby language. Doesn't detect all RoR sites. Homepage: http://www.rubyonrails.org."
 
-examples %w|
-http://savitri.in/
-http://bigbinary.com/
-|
-
 # Matches #
 matches [
 
