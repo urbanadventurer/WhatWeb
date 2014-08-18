@@ -7,7 +7,8 @@
 Plugin.define "4D" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.1"
-description "4D web application deployment server  - Homepage: http://www.4d.com/products.html"
+description "4D web application deployment server"
+website "Homepage: http://www.4d.com/products.html"
 
 # ShodanHQ results as at 2011-04-11 #
 # 431 for 4D_v11_SQL
