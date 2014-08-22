@@ -20,7 +20,7 @@ def passive
 	m=[]
  	if @body =~ /<title>[^<]+<\/title>/i
                 title=@body.scan(/<title>([^<]+)<\/title>/i)[0][0]                
-                m << {:name=>"page title",:string=>title} 
+                m << {:name=>"page title",:string=>title.strip} 
     end
  	m
 end
