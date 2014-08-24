@@ -12,7 +12,14 @@ website "http://www.google.com/analytics/"
 
 # Matches #
 matches [
-{ :account=>/_gaq.push\(\['_setAccount', '(.+)'/}
+
+	# Google Analytics
+	# String:  _gaq.push(['_setAccount', 'UA-12345678-1']);
+	{ :account=>/_gaq.push\(\['_setAccount', '(.+)'/},
+
+	# New Google Universal Analytics
+	# String : ga('create', 'UA-12345678-1', 'example.com');
+	{ :account=>/ga\('create', '(.+)',/}
 ]
 
 end
