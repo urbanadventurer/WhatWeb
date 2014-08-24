@@ -15,11 +15,13 @@ matches [
 
 	# Google Analytics
 	# String:  _gaq.push(['_setAccount', 'UA-12345678-1']);
-	{ :account=>/_gaq.push\(\['_setAccount',[\s]*'(.+)'/},
+	# String:  _gaq.push(['_setAccount', 'UA-1234567-12']);
+	{ :name=>"JavaScript", :account=>/_gaq.push\(\['_setAccount',[\s]*'(\w{2}-\d{1,}-\d{1,})'\]/},
 
 	# New Google Universal Analytics
 	# String : ga('create', 'UA-12345678-1', 'example.com');
-	{ :account=>/ga\([\s]*'create',[\s]*'(.+)',/}
+	# String : ga('create', 'UA-1234567-12', 'example.com');
+	{ :name=>"JavaScript", :account=>/ga\([\s]*'create',[\s]*'(\w{2}-\d{1,}-\d{1,})',/}
 ]
 
 end
