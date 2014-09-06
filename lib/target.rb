@@ -66,7 +66,10 @@ class Target
 		end
 
 		if self.is_url?
-			@uri=URI.parse(URI.encode(@target))
+			@uri=URI.parse(@target)
+			if @uri.query
+				@uri.query=URI.encode_www_form(CGI.parse(@uri.query))
+			end
 
 			# is this taking control away from the user?
 			# [400] http://www.alexa.com  [200] http://www.alexa.com/
