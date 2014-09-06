@@ -49,8 +49,8 @@ matches [
 # HTML Comment
 { :text=>'<!-- If you like showing off the fact that your server rocks -->' },
 
+{ :text=>'<div id="bbpress-forums">' },
+
 ]
 
 end
-
-
