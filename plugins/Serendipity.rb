@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2014-10-12 # Napz
+# 2014-10-13 # Napz
 # Added Serendipity text search
 ##
 # Version 0.3 # 2012-08-16 # Andrew Horton
