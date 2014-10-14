@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.4 # 2014-10-12 # Napz
+# Added Serendipity text search
+##
 # Version 0.3 # 2012-08-16 # Andrew Horton
 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
 ##
@@ -48,6 +51,13 @@ matches [
 # Copyright text
 { :text=>'<div class="copyright">Powered by <a href="http://www.s9y.org" title="a PHP Weblog/Blog software">Serendipity</a>' },
 
+{ :text=>'serendipity_entry_body' },
+
+{ :text=>'serendipity_entry_author_Admin' },
+
+{ :text=>'serendipity_entryFooter' },
+
+{ :text=>'<div id="serendipityLeftSideBar">' },
 ]
 
 # Passive #
