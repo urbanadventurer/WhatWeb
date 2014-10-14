@@ -6,7 +6,9 @@
 Plugin.define "Conexant-EmWeb" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.1"
-description "This plugin identifies the Conexant-EmWeb DSL router web interface - homepage: http://www.conexant.com/"
+description "This plugin identifies the Conexant-EmWeb DSL router web interface."
+website "http://www.conexant.com/"
+
 # Flexor 151 user Manual: http://www.voiptalk.org/products/pdf/Flexor_151_User_Manual.pdf
 
 # ShodanHQ results as at 2010-10-30 #

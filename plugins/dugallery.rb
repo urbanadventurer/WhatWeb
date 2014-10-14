@@ -10,7 +10,8 @@
 Plugin.define "DUgallery" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.2"
-description "DUgallery - PHP powered photo gallery - homepage: http://www.duware.com/"
+description "DUgallery - PHP powered photo gallery."
+website "http://www.duware.com/"
 
 # Google results as at 2010-06-05 #
 # 1,490 results for ext:asp inurl:DUgallery intitle:"3.0"

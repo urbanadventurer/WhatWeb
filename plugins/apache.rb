@@ -23,7 +23,8 @@
 Plugin.define "Apache" do
 author "Andrew Horton & Brendan Coles"
 version "0.8"
-description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards. - homepage: http://httpd.apache.org/"
+description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards."
+website "http://httpd.apache.org/"
 
 # Google results as at 2010-10-26 #
 # 190 for intitle:"Test Page for Apache Installation"
