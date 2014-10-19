@@ -8,7 +8,8 @@
 Plugin.define "Axis-PrintServer" do
 author "Andrew Horton"
 version "0.1"
-description "Axis 540/542 Network Print Server. Homepage: http://www.axis.com/products/axis_540p/index.htm"
+description "Axis 540/542 Network Print Server"
+website "http://www.axis.com/products/axis_540p/index.htm"
 
 
 

@@ -8,7 +8,8 @@
 Plugin.define "Embedthis-AppWeb" do
 author "Andrew Horton"
 version "0.1"
-description "Web server for embedded devices. Homepage: http://embedthis.com/products/appweb/embedded-web-server.html"
+description "Web server for embedded devices"
+website "http://embedthis.com/products/appweb/embedded-web-server.html"
 
 
 

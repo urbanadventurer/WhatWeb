@@ -14,7 +14,8 @@
 Plugin.define "ISPConfig" do
 author "Andrew Horton"
 version "0.3"
-description "ISPConfig is a free, opensource hosting control panel. Homepage: http://www.ispconfig.org/"
+description "ISPConfig is a free, opensource hosting control panel"
+website "http://www.ispconfig.org/"
 
 
 

@@ -16,7 +16,8 @@
 Plugin.define "SilverStripe" do
     author "Andrew Horton"
     version "0.3"
-    description "SilverStripe is an opensource CMS written in PHP. It can run on Apache, IIS or lighthttpd. Homepage: http://www.silverstripe.com"
+    description "SilverStripe is an opensource CMS written in PHP. It can run on Apache, IIS or lighthttpd."
+    website "http://www.silverstripe.com"
 
     # Matches #
     matches [

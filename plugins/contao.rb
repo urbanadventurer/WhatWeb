@@ -11,7 +11,8 @@
 Plugin.define "Contao" do
 author "Eric Sesterhenn"
 version "0.1"
-description "Contao is an OpenSource CMS written in PHP. Homepage: www.contao.org"
+description "Contao is an OpenSource CMS written in PHP"
+website "www.contao.org"
 
 
 

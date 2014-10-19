@@ -9,7 +9,8 @@
 Plugin.define "AnyGate" do
 author "Andrew Horton"
 version "0.1"
-description "Korean home wifi/router device. Homepage: http://www.anygate.co.kr/"
+description "Korean home wifi/router device"
+website "http://www.anygate.co.kr/"
 
 
 matches [

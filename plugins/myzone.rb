@@ -8,7 +8,8 @@
 Plugin.define "MyZone" do
 author "Andrew Horton"
 version "0.1"
-description "Mobile 3G WiFi Rrouter. Homepage: www.netcomm.com.au"
+description "Mobile 3G WiFi Rrouter"
+website "www.netcomm.com.au"
 
 
 matches [

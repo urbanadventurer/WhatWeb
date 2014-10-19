@@ -11,7 +11,8 @@
 Plugin.define "DotCMS" do
 author "Andrew Horton"
 version "0.2"
-description "DotCMS is an opensource CMS written in Java. Has enterprise support. Homepage: http://www.dotcms.org/"
+description "DotCMS is an opensource CMS written in Java. Has enterprise support"
+website "http://www.dotcms.org/"
 
 
 

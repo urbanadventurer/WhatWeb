@@ -11,7 +11,8 @@
 Plugin.define "ModxCMS" do
   author "Andrew Horton"
   version "0.2"
-  description "OpenSource CMS written in PHP. Homepage: http://modxcms.com/ Aggressive match"
+  description "OpenSource CMS written in PHP."
+  website "http://modxcms.com/"
   
    
     

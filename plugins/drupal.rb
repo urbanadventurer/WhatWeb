@@ -13,7 +13,8 @@
 Plugin.define "Drupal" do
   author "Andrew Horton"
   version "0.3"
-  description "Drupal is an opensource CMS written in PHP. Homepage: http://www.drupal.org"
+  description "Drupal is an opensource CMS written in PHP."
+  website "http://www.drupal.org"
   
   # hard to identify
   #<a href="http://drupal.org"><img src="/dagboek/misc/powered-black-80x15.png" alt="Powered by Drupal, an open source content management system" title="Powered by Drupal, an open source content management system" width="80" height="15" /></a>  </div>
