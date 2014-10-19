@@ -11,12 +11,11 @@ description "GoServe - A Web and Gopher Server for OS/2. SRE-http is a highly co
 website "http://www2.hursley.ibm.com/goserve"
 
 # More Info #
-# SRE-http is a highly configurable http/1.1 web server for OS/2. To use the SRE-http web server, you will need GoServe (a free, IBM EWS, OS/2 Internet server). "
-website "http://www.srehttp.org/server/
-
+# SRE-http is a highly configurable http/1.1 web server for OS/2. To use the SRE-http web server, you will need GoServe (a free, IBM EWS, OS/2 Internet server). - Homepage: http://www.srehttp.org/server/
 # ShodanHQ results as at 2011-05-31 #
 # 32 for GoServe
 # 14 for GoServe -OS
+
 
 
 
