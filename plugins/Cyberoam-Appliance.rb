@@ -7,7 +7,8 @@
 Plugin.define "Cyberoam-Appliance" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-09
 version "0.1"
-description "Cyberoam UTM appliances integrate multiple security features like Firewall, VPN, Intrusion Prevention System, Anti-Virus & Anti-Spyware, Anti-Spam, Web Filtering, Layer 7 Visibility & Control, Bandwidth Management, Multiple Link Management, and more on a single platform. - Homepage: http://www.cyberoam.com/"
+description "Cyberoam UTM appliances integrate multiple security features like Firewall, VPN, Intrusion Prevention System, Anti-Virus & Anti-Spyware, Anti-Spam, Web Filtering, Layer 7 Visibility & Control, Bandwidth Management, Multiple Link Management, and more on a single platform."
+website "http://www.cyberoam.com/"
 
 # Google results as at 2012-02-09 #
 # 45 for "To use cyberoam console , enable JavaScript by changing your browser options."

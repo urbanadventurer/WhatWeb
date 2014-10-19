@@ -7,7 +7,8 @@
 Plugin.define "Lasso-Web-Data-Engine" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-04
 version "0.1"
-description "Lasso Web Data Engine is a cross-platform Web Application Server - Homepage: http://www.blueworld.com/blueworld/products/"
+description "Lasso Web Data Engine is a cross-platform Web Application Server"
+website "http://www.blueworld.com/blueworld/products/"
 
 # ShodanHQ results as at 2011-09-04 #
 # 619 for Lasso

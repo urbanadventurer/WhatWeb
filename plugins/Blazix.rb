@@ -7,7 +7,8 @@
 Plugin.define "Blazix" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-06
 version "0.1"
-description "Blazix is a high-performance full-featured Java application server. Blazix can be used as an Application Server or as a full Web Server. - Homepage: http://www.blazix.com/"
+description "Blazix is a high-performance full-featured Java application server. Blazix can be used as an Application Server or as a full Web Server."
+website "http://www.blazix.com/"
 
 # ShodanHQ results as at 2011-06-06 #
 # 14 for Blazix

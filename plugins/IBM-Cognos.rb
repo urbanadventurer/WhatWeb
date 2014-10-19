@@ -7,7 +7,8 @@
 Plugin.define "IBM-Cognos" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
-description "IBM Cognos - Business Intelligence and Financial Performance Management - Homepage: http://www-01.ibm.com/software/au/data/cognos/"
+description "IBM Cognos - Business Intelligence and Financial Performance Management"
+website "http://www-01.ibm.com/software/au/data/cognos/"
 
 # Google results as at 2012-08-26 #
 # 47 for inurl:"cognos8/cgi-bin/cognos.cgi"

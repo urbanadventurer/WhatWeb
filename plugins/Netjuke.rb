@@ -7,7 +7,8 @@
 Plugin.define "Netjuke" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-13
 version "0.1"
-description "Netjuke is a Web-Based Audio Streaming Jukebox - Homepage: http://sourceforge.net/projects/netjuke"
+description "Netjuke is a Web-Based Audio Streaming Jukebox"
+website "http://sourceforge.net/projects/netjuke"
 
 # Google results as at 2012-07-13 #
 # 13 for inurl:"search.php?do=list.tracks"

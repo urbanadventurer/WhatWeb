@@ -7,7 +7,8 @@
 Plugin.define "ScrewTurn-Wiki" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-22
 version "0.1"
-description "ScrewTurn Wiki allows you to create, manage and share wikis. - Homepage: http://www.screwturn.eu/"
+description "ScrewTurn Wiki allows you to create, manage and share wikis."
+website "http://www.screwturn.eu/"
 
 # 73 for "Powered by ScrewTurn Wiki version "
 

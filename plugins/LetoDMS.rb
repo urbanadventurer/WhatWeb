@@ -7,7 +7,8 @@
 Plugin.define "LetoDMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-24
 version "0.1"
-description "LetoDMS is an open-source document-management-system based on PHP and MySQL published under the GPL. - Homepage: http://www.letodms.com/"
+description "LetoDMS is an open-source document-management-system based on PHP and MySQL published under the GPL."
+website "http://www.letodms.com/"
 
 # ShodanHQ results as at 2012-08-24 #
 # 30 for out/out.ViewFolder.php

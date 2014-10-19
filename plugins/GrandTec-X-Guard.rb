@@ -7,7 +7,8 @@
 Plugin.define "GrandTec-X-Guard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
 version "0.1"
-description "GrandTec X-Guard PC-based surveillance system - Homepage: http://store.grandtec.com/secsur.html"
+description "GrandTec X-Guard PC-based surveillance system"
+website "http://store.grandtec.com/secsur.html"
 
 # ShodanHQ results as at 2011-08-05 #
 # 25 for WalkGuard

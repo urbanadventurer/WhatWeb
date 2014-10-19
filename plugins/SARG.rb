@@ -7,7 +7,8 @@
 Plugin.define "SARG" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-22
 version "0.1"
-description "Squid Analysis Report Generator (SARG) is a tool that allow you to view where your users are going to on the Internet. - Homepage: http://sarg.sourceforge.net/sarg.php"
+description "Squid Analysis Report Generator (SARG) is a tool that allow you to view where your users are going to on the Internet."
+website "http://sarg.sourceforge.net/sarg.php"
 
 # 195 for inurl:sarg inurl:siteuser.html ext:html
 #  59 for inurl:sarg inurl:siteuser.html ext:html "Squid User Access Report"

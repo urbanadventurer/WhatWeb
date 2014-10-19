@@ -7,7 +7,8 @@
 Plugin.define "Mercurial" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-16
 version "0.1"
-description "Mercurial is a free, distributed source control management tool. - Homepage: http://mercurial.selenic.com/"
+description "Mercurial is a free, distributed source control management tool."
+website "http://mercurial.selenic.com/"
 
 # Google results as at 2011-08-16 #
 # 462 for Mercurial summary shortlog changelog graph tags branches files changeset bz2 zip gz

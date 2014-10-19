@@ -7,7 +7,8 @@
 Plugin.define "PHP-Support-Tickets" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
 version "0.1"
-description "PHP Support Tickets - PHP5 / MySQL helpdesk system. - Homepage: http://www.phpsupporttickets.com/"
+description "PHP Support Tickets - PHP5 / MySQL helpdesk system."
+website "http://www.phpsupporttickets.com/"
 
 # Google results as at 2011-09-12 #
 # 10 for "PHP Support Tickets" "Log In" intitle:"PHP Support Tickets :: Login"

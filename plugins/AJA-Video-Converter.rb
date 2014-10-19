@@ -7,7 +7,8 @@
 Plugin.define "AJA-Video-Converter" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-12-05
 version "0.1"
-description "AJA digital video converter devices - Homepage: http://www.aja.com/en/products/convert/"
+description "AJA digital video converter devices"
+website "http://www.aja.com/en/products/convert/"
 
 
 

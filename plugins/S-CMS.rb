@@ -15,7 +15,8 @@
 Plugin.define "S-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.3"
-description "CMS - homepage: http://www.matteoiammarrone.com/public/s-cms/"
+description "CMS"
+website "http://www.matteoiammarrone.com/public/s-cms/"
 
 # Google results as at 2010-08-30 #
 # 8 for "powered by S-CMS"

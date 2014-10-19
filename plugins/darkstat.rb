@@ -7,7 +7,8 @@
 Plugin.define "darkstat" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-17
 version "0.1"
-description "darkstat captures network traffic, calculates statistics about usage, and serves reports over HTTP. - Homepage: http://unix4lyfe.org/darkstat/"
+description "darkstat captures network traffic, calculates statistics about usage, and serves reports over HTTP."
+website "http://unix4lyfe.org/darkstat/"
 
 # ShodanHQ results as at 2012-02-17 #
 # 11 for darkstat

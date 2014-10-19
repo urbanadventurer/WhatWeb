@@ -7,7 +7,8 @@
 Plugin.define "RobPoll" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
 version "0.1"
-description "RobPoll - CGI poll system - Homepage: Offline"
+description "RobPoll - CGI poll system"
+website "Offline"
 # Default password: robpoll
 
 # Google results as at 2011-04-20 #

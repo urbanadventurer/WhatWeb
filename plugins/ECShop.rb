@@ -7,7 +7,8 @@
 Plugin.define "ECShop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
 version "0.1"
-description "Ecshop is an Open Source Ecommerce Platform - Homepage: http://www.ecshop.org/"
+description "Ecshop is an Open Source Ecommerce Platform"
+website "http://www.ecshop.org/"
 
 # Google results as at 2011-03-18 #
 # 485 for "powered by ECSHOP"

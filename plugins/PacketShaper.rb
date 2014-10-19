@@ -7,7 +7,8 @@
 Plugin.define "PacketShaper" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-19
 version "0.1"
-description "The Blue Coat PacketShaper provides application performance monitoring for an accurate picture of network traffic and ensures business-critical applications have the resources they need to operate effectively - Homepage: http://www.bluecoat.com/products/packetshaper"
+description "The Blue Coat PacketShaper provides application performance monitoring for an accurate picture of network traffic and ensures business-critical applications have the resources they need to operate effectively"
+website "http://www.bluecoat.com/products/packetshaper"
 # Datasheet: http://www.bluecoat.com/doc/7941
 
 # ShodanHQ results as at 2011-04-19 #

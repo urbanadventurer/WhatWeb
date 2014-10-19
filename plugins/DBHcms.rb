@@ -7,7 +7,8 @@
 Plugin.define "DBHcms" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
-description "The DBHcms is a small free Open Source content management system for personal and small business websites. - Homepage: http://www.drbenhur.com"
+description "The DBHcms is a small free Open Source content management system for personal and small business websites."
+website "http://www.drbenhur.com"
 
 # Google results as at 2011-02-27 #
 # 65 for "powered by DBHcms" -dork

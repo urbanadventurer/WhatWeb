@@ -10,7 +10,8 @@
 Plugin.define "Bitrix-Site-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-04
 version "0.1"
-description "Website management, e-commerce and e-marketing solution that delivers extreme value in performance, functionality, and ease-of-use. - Homepage: http://www.bitrixsoft.com/"
+description "Website management, e-commerce and e-marketing solution that delivers extreme value in performance, functionality, and ease-of-use."
+website "http://www.bitrixsoft.com/"
 
 # ShodanHQ results as at 2011-05-04 #
 # 226 for B-Powered-By

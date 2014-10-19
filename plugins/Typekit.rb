@@ -7,7 +7,8 @@
 Plugin.define "Typekit" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
-description "JavaScript font manager - Homepage: http://typekit.com/"
+description "JavaScript font manager"
+website "http://typekit.com/"
 
 
 

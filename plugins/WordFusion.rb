@@ -7,7 +7,8 @@
 Plugin.define "WordFusion" do
 author "Brendan Coles <bcoles@gmail.com>" # 2013-07-25
 version "0.1"
-description "Zumesoft WordFusion - Enterprise document assembly and automation software - Homepage: http://www.zumesoft.com/"
+description "Zumesoft WordFusion - Enterprise document assembly and automation software"
+website "http://www.zumesoft.com/"
 
 # 1 result for intitle:"WordFusion.Web" intext:"Get Microsoft Silverlight" @ 2013-07-25
 

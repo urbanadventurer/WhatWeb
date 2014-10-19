@@ -7,7 +7,8 @@
 Plugin.define "Axel-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
 version "0.1"
-description "Axel design and manufacture innovative TCP/IP based Thin Client Terminals and Office Servers for Windows, Unix/Linux and AS/400 environments. Axel products are unique in having no embedded operating system. - Homepage: http://www.axel.com/"
+description "Axel design and manufacture innovative TCP/IP based Thin Client Terminals and Office Servers for Windows, Unix/Linux and AS/400 environments. Axel products are unique in having no embedded operating system."
+website "http://www.axel.com/"
 
 # ShodanHQ results as at 2011-05-20 #
 # 28 for Axel Admin Server

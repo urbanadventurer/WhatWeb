@@ -7,7 +7,8 @@
 Plugin.define "WebEye-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.1"
-description "WebEye network camera web frontend - homepage: http://www.webgateinc.com/"
+description "WebEye network camera web frontend"
+website "http://www.webgateinc.com/"
 
 # 29 results for +intitle:"Java Applet Page" +inurl:wg_jwebeye +ext:ml @ 2010-07-18
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1351

@@ -7,7 +7,8 @@
 Plugin.define "Sophos-Email-Appliance" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-11
 version "0.1"
-description "Sophos Email Appliances provide simple, powerful protection against spam, malware and data loss. - Homepage: http://www.sophos.com/en-us/products/email/email-appliances.aspx"
+description "Sophos Email Appliances provide simple, powerful protection against spam, malware and data loss."
+website "http://www.sophos.com/en-us/products/email/email-appliances.aspx"
 
 # Documentation #
 # http://sea.sophos.com/docs/esa/

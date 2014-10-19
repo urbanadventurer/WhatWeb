@@ -7,7 +7,8 @@
 Plugin.define "Microsoft-IIS" do
 author "Andrew Horton"
 version "0.1"
-description "Microsoft Internet Information Services (IIS) for Windows Server is a flexible, secure and easy-to-manage Web server for hosting anything on the Web. From media streaming to web application hosting, IIS's scalable and open architecture is ready to handle the most demanding tasks. - homepage: http://www.iis.net/"
+description "Microsoft Internet Information Services (IIS) for Windows Server is a flexible, secure and easy-to-manage Web server for hosting anything on the Web. From media streaming to web application hosting, IIS's scalable and open architecture is ready to handle the most demanding tasks."
+website "http://www.iis.net/"
 
 # About 3137957 ShodanHQ results for "server: IIS" @ 2010-10-26
 

@@ -9,7 +9,8 @@
 Plugin.define "aspWebLinks" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
-description "Web app for categorizing links - homepage: http://www.fullrevolution.com/"
+description "Web app for categorizing links"
+website "http://www.fullrevolution.com/"
 
 # Dorks #
 dorks [

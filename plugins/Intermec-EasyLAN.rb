@@ -7,7 +7,8 @@
 Plugin.define "Intermec-EasyLAN" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
 version "0.1"
-description "Intermec EasyLAN web interface - homepage: http://www.intermec.com"
+description "Intermec EasyLAN web interface"
+website "http://www.intermec.com"
 
 # ShodanHQ results as at 2011-03-10 #
 # 200 for XCD WebAdmin

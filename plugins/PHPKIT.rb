@@ -7,7 +7,8 @@
 Plugin.define "PHPKIT" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
 version "0.1"
-description "PHPKIT WCMS - Web content management system to easily create your personal homepage, blog or business website. - Homepage: http://www.phpkit.com/"
+description "PHPKIT WCMS - Web content management system to easily create your personal homepage, blog or business website."
+website "http://www.phpkit.com/"
 
 # Google results as at 2011-01-30 #
 # 11,700,000 for "PHPKIT ist eine eingetragene Marke der mxbyte GbR"

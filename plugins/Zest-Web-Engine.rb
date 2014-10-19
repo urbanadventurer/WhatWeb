@@ -7,7 +7,8 @@
 Plugin.define "Zest-Web-Engine" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
-description "Zest Web Engine - Homepage: http://www.zest-leisure.com/"
+description "Zest Web Engine"
+website "http://www.zest-leisure.com/"
 
 # Google results as at 2011-04-08 #
 # 83 for inurl:/cgi-bin/web.asp

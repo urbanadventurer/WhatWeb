@@ -7,7 +7,8 @@
 Plugin.define "Datum-TymServe" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-09
 version "0.1"
-description "GPS NTP Network Appliances make it easy to manage and monitor time synchronization through workstations, servers and routers, thus assuring the highest integrity throughout the network. - Homepage: http://www.datum.com/"
+description "GPS NTP Network Appliances make it easy to manage and monitor time synchronization through workstations, servers and routers, thus assuring the highest integrity throughout the network."
+website "http://www.datum.com/"
 
 # ShodanHQ results as at 2011-03-09 #
 # 20 for DATM

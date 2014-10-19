@@ -7,7 +7,8 @@
 Plugin.define "SiteCaddy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-10
 version "0.1"
-description "Site Caddy offers a suite of online tools for marketing, content management, e-commerce and hosting - Homepage: http://info.sitecaddy.com/mysitecaddy/site3/"
+description "Site Caddy offers a suite of online tools for marketing, content management, e-commerce and hosting"
+website "http://info.sitecaddy.com/mysitecaddy/site3/"
 
 # Google results as at 2012-04-10 #
 # 258 for inurl:"mysitecaddy/site"|inurl:"mysitecaddy/site3"

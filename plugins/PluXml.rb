@@ -10,7 +10,8 @@
 Plugin.define "PluXml" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.2"
-description "PluXml - PHP powered CMS [French] - Homepage: http://pluxml.org/"
+description "PluXml - PHP powered CMS [French]"
+website "http://pluxml.org/"
 
 # Google results as at 2012-05-18 #
 # 150 results for "powered by PluXml" @ 2010-10-14

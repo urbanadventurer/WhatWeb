@@ -10,7 +10,8 @@
 Plugin.define "Censura" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
-description "Censura - the flexible, robust, reviews and ratings application. - homepage: http://www.censura.info/"
+description "Censura - the flexible, robust, reviews and ratings application."
+website "http://www.censura.info/"
 
 # 70 results for "Powered by: Censura" @ 2010-08-01
 

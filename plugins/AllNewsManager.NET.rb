@@ -7,7 +7,8 @@
 Plugin.define "AllNewsManager_NET" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.1"
-description "AllNewsManager.NET is a free news/article management system for ASP.NET sites. - Homepage: http://www.allnewsmanager.net/allnewsmanager/homepage.aspx"
+description "AllNewsManager.NET is a free news/article management system for ASP.NET sites."
+website "http://www.allnewsmanager.net/allnewsmanager/homepage.aspx"
 
 # Google results as at 2011-03-04 #
 # 80 for "Powered by AllNewsManager.NET"

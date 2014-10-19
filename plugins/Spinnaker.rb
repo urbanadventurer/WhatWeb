@@ -7,7 +7,8 @@
 Plugin.define "Spinnaker" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.1"
-description "Spinnaker web server - Searchight Software sold Searchlight BBS, along with Spinnaker Web Server, to TeleGrafix Communications in 1998. TeleGrafix Communications, Inc., closed its doors in late 2000. - Homepage: http://www.telegrafix.com/"
+description "Spinnaker web server - Searchight Software sold Searchlight BBS, along with Spinnaker Web Server, to TeleGrafix Communications in 1998. TeleGrafix Communications, Inc., closed its doors in late 2000."
+website "http://www.telegrafix.com/"
 
 # More Info #
 # http://en.wikipedia.org/wiki/Searchlight_BBS

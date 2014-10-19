@@ -7,7 +7,8 @@
 Plugin.define "Sipura-VoIP-Phone" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-10
 version "0.1"
-description "Sipura VoIP phone. Cisco Systems acquired Sipura Technologies for its Linksys division in 2005. - Homepage: http://www.sipura.net/"
+description "Sipura VoIP phone. Cisco Systems acquired Sipura Technologies for its Linksys division in 2005."
+website "http://www.sipura.net/"
 
 # Google results as at 2011-04-10 #
 # 42 for intitle:"Sipura SPA Configuration" inurl:admin

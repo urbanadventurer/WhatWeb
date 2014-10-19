@@ -7,7 +7,8 @@
 Plugin.define "KMSoft-Guestbook" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
 version "0.1"
-description "Guestbook - homepage: http://www.kmsoft.org/"
+description "Guestbook"
+website "http://www.kmsoft.org/"
 
 # 2 results for "KMSoft Guestbook" inurl:form.asp
 

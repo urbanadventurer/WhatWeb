@@ -7,7 +7,8 @@
 Plugin.define "Simple-Phishing-Toolkit" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-12
 version "0.1"
-description "Simple Phishing Toolkit (SPT) - Homepage: http://www.sptoolkit.com/project/"
+description "Simple Phishing Toolkit (SPT)"
+website "http://www.sptoolkit.com/project/"
 
 # Google results as at 2012-08-12 #
 # 2 for intitle:"spt - simple phishing toolkit" "forgot password"

@@ -7,7 +7,8 @@
 Plugin.define "MySQLMan" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
 version "0.1"
-description "MySQLMan is a web based MySQL database manager. - Homepage: http://www.gossamer-threads.com/products/archive.html"
+description "MySQLMan is a web based MySQL database manager."
+website "http://www.gossamer-threads.com/products/archive.html"
 
 # Google results as at 2011-09-21 #
 # 8 for inurl:"mysql.cgi?do="

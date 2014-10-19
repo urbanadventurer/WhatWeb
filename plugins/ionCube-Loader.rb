@@ -7,7 +7,8 @@
 Plugin.define "ionCube-Loader" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-05
 version "0.1"
-description "ionCube Loader handles the reading and execution of ionCube encoded PHP files at run time. - Homepage: http://www.ioncube.com/loaders.php"
+description "ionCube Loader handles the reading and execution of ionCube encoded PHP files at run time."
+website "http://www.ioncube.com/loaders.php"
 # More info: http://en.wikipedia.org/wiki/IonCube
 
 # Google results as at 2011-06-05 #

@@ -7,7 +7,8 @@
 Plugin.define "Huawei-Quidway-Switch" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
-description "Huawei network switch - Quidway series - Homepage: http://www.huawei.com/products/datacomm/catalog.do?id=16"
+description "Huawei network switch - Quidway series"
+website "http://www.huawei.com/products/datacomm/catalog.do?id=16"
 
 # ShodanHQ results as at 2011-08-07 #
 # 103,440 for Lanswitch

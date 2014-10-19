@@ -7,7 +7,8 @@
 Plugin.define "Direct-Packet-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
 version "0.1"
-description "directPacket Research, Inc. develops and markets secure and interoperable solutions for IP voice and video communication - Secure IPC Controller / IPC Router / Secure Endpoint Manager (SEM) - Homepage: http://www.directpacket.com/"
+description "directPacket Research, Inc. develops and markets secure and interoperable solutions for IP voice and video communication - Secure IPC Controller / IPC Router / Secure Endpoint Manager (SEM)"
+website "http://www.directpacket.com/"
 
 # ShodanHQ results as at 2011-03-08 #
 # 31 for DPWebServer

@@ -10,7 +10,8 @@
 Plugin.define "MyPHP-Forum" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-31
 version "0.2"
-description "MyPHP-Forum - homepage: http://www.myphp.ws/"
+description "MyPHP-Forum"
+website "http://www.myphp.ws/"
 
 # Google results as at 2010-08-31 #
 # 23 for "powered by MyPHP Forum" -Vulnerability

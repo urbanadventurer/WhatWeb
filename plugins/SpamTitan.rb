@@ -7,7 +7,8 @@
 Plugin.define "SpamTitan" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-17
 version "0.1"
-description "SpamTitan Anti Spam is a complete software solution to email security offering protection from Spam, Viruses, Trojans, Phishing and unwanted content. - Homepage: http://www.spamtitan.com/products/"
+description "SpamTitan Anti Spam is a complete software solution to email security offering protection from Spam, Viruses, Trojans, Phishing and unwanted content."
+website "http://www.spamtitan.com/products/"
 
 # 212 for intitle:"SpamTitan" "Language" "Czech (Czech)" "German (German)" "English (English)" "Japanese (Japanese)" "Password" "Email Address"
 

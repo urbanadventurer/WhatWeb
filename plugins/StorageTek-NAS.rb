@@ -7,7 +7,8 @@
 Plugin.define "StorageTek-NAS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.1"
-description "StorageTek Network Attached Storage (NAS) - StorageTek was founded in 1969 by four former IBM engineers: Jesse Awieda, Juan Rodriguez, Thomas S. Kavanagh, Zoltan Herger. StorageTek was puchased in 2005 by Sun Microsystems, Inc which was later purchased by Oracle Corporation in 2010. - Homepage: http://www.oracle.com/technetwork/documentation/oracle-unified-ss-193371.html"
+description "StorageTek Network Attached Storage (NAS) - StorageTek was founded in 1969 by four former IBM engineers: Jesse Awieda, Juan Rodriguez, Thomas S. Kavanagh, Zoltan Herger. StorageTek was puchased in 2005 by Sun Microsystems, Inc which was later purchased by Oracle Corporation in 2010."
+website "http://www.oracle.com/technetwork/documentation/oracle-unified-ss-193371.html"
 
 # More Info #
 # http://en.wikipedia.org/wiki/Storage_Technology_Corporation

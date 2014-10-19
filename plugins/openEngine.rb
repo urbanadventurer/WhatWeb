@@ -7,7 +7,8 @@
 Plugin.define "openEngine" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-02
 version "0.1"
-description "openEngine - Content Management System (CMS) - Homepage: http://www.openengine.de/"
+description "openEngine - Content Management System (CMS)"
+website "http://www.openengine.de/"
 
 # ShodanHQ results as at 2011-10-02 #
 # 71 for "CMS by openEngine"

@@ -7,7 +7,8 @@
 Plugin.define "Django" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-27
 version "0.1"
-description "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. - Homepage: https://www.djangoproject.com/"
+description "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design."
+website "https://www.djangoproject.com/"
 
 # ShodanHQ results as at 2012-02-27 #
 # 878 for WSGIServer Python

@@ -7,7 +7,8 @@
 Plugin.define "Cisco-ACE-XML-Gateway" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
 version "0.1"
-description "The Cisco ACE XML Gateway is a key component of the Cisco Application Control Engine (ACE) family of products. The ACE XML Gateway delivers an integrated XML firewall. - Homepage: http://www.cisco.com/en/US/products/ps7314/index.html"
+description "The Cisco ACE XML Gateway is a key component of the Cisco Application Control Engine (ACE) family of products. The ACE XML Gateway delivers an integrated XML firewall."
+website "http://www.cisco.com/en/US/products/ps7314/index.html"
 
 # ShodanHQ results as at 2011-09-21 #
 # 231 for ACE XML Gateway

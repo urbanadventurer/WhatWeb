@@ -7,7 +7,8 @@
 Plugin.define "HostBill" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-10
 version "0.1"
-description "HostBill - Billing software - Homepage: http://hostbillapp.com/"
+description "HostBill - Billing software"
+website "http://hostbillapp.com/"
 
 # Google results as at 2012-02-10 #
 # 31 for inurl:"index.php?/tickets/new/" "Powered by HostBill"

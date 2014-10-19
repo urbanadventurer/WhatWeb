@@ -7,7 +7,8 @@
 Plugin.define "Citrix-XenServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-28
 version "0.1"
-description "Citrix XenServer is a complete, managed server virtualization platform built on the powerful Xen hypervisor. - Homepage: http://www.citrix.com/English/ps2/products/feature.asp?contentID=2300351"
+description "Citrix XenServer is a complete, managed server virtualization platform built on the powerful Xen hypervisor."
+website "http://www.citrix.com/English/ps2/products/feature.asp?contentID=2300351"
 
 # Google results as at 2011-08-28 # Lots of false positives
 # intitle:"XenServer 5.6.100"

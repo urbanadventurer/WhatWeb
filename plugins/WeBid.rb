@@ -10,7 +10,8 @@
 Plugin.define "WeBid" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-17
 version "0.1"
-description "Open source php/mysql fully featured auction script. - Homepage: http://www.webidsupport.com/"
+description "Open source php/mysql fully featured auction script."
+website "http://www.webidsupport.com/"
 
 # ShodanHQ results as at 2011-06-17 #
 # 26 for WEBID_ONLINE

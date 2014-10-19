@@ -7,7 +7,8 @@
 Plugin.define "Raptor-Firewall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "Raptor Firewall (previously known as Raptor EagleNT) was acquired by Symantec and has been discontinued - Homepage: http://www.symantec.com/en/nz/business/support/overview.jsp?pid=52789"
+description "Raptor Firewall (previously known as Raptor EagleNT) was acquired by Symantec and has been discontinued"
+website "http://www.symantec.com/en/nz/business/support/overview.jsp?pid=52789"
 
 # ShodanHQ results as at 2011-03-13 #
 # 55,684 for Simple, Secure Web Server

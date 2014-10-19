@@ -7,7 +7,8 @@
 Plugin.define "Batavi" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-23
 version "0.1"
-description "Batavi open source e-commerce - Homepage: http://www.batavi.org/"
+description "Batavi open source e-commerce"
+website "http://www.batavi.org/"
 
 # Google results as at 2012-02-23 #
 # 4 for intitle:"Batavi Administration Tool" "Log Into The Administration Tool"

@@ -10,7 +10,8 @@
 Plugin.define "Zoph" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
 version "0.2"
-description "Zoph (Zoph Organizes Photos) is a web based digital image presentation and management system. In other words, a photo album. It is built with PHP, MySQL and Perl. - homepage: http://www.zoph.org/"
+description "Zoph (Zoph Organizes Photos) is a web based digital image presentation and management system. In other words, a photo album. It is built with PHP, MySQL and Perl."
+website "http://www.zoph.org/"
 
 # Google results as at 2010-07-10 #
 # 26 for inurl:albums.php inurl:parent_album_id

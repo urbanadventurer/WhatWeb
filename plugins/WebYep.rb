@@ -7,7 +7,8 @@
 Plugin.define "WebYep" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
-description "WebYep is a compact Web Content Management System, making editable Websites extremely easy to create and maintain. Different to bigger WebCMS tools, WebYep offers a low priced alternative for small Websites. Requires: PHP - Homepage: http://www.obdev.at/products/webyep/index.html"
+description "WebYep is a compact Web Content Management System, making editable Websites extremely easy to create and maintain. Different to bigger WebCMS tools, WebYep offers a low priced alternative for small Websites. Requires: PHP"
+website "http://www.obdev.at/products/webyep/index.html"
 
 # Google results as at 2011-03-03 #
 # 36 for intitle:"WebYep Logon"

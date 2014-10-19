@@ -13,7 +13,8 @@
 Plugin.define "OpenCms" do
 author "Emilio Casbas" #mostly
 version "0.3"
-description "OpenCms, professional and easy to use CMS. - Homepage: http://www.opencms.org/"
+description "OpenCms, professional and easy to use CMS."
+website "http://www.opencms.org/"
 
 # ShodanHQ results as at 2011-03-21 #
 # 528 for opencms

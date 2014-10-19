@@ -7,7 +7,8 @@
 Plugin.define "Tilgin-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-04
 version "0.1"
-description "Tilgin router - Homepage: http://www.tilgin.com/Products/"
+description "Tilgin router"
+website "http://www.tilgin.com/Products/"
 
 =begin
 Default Credentials

@@ -7,7 +7,8 @@
 Plugin.define "Jenkins" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-23
 version "0.1"
-description "Jenkins is an application that monitors executions of repeated jobs, such as building a software project or jobs run by cron. - Homepage: http://jenkins-ci.org/"
+description "Jenkins is an application that monitors executions of repeated jobs, such as building a software project or jobs run by cron."
+website "http://jenkins-ci.org/"
 
 # ShodanHQ results as at 2012-02-23 #
 # 100 for x-jenkins

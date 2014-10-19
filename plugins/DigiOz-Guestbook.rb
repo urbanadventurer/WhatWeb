@@ -7,7 +7,8 @@
 Plugin.define "DigiOz-Guestbook" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
 version "0.1"
-description "DigiOz Guestbook - Homepage: http://www.digioz.com/"
+description "DigiOz Guestbook"
+website "http://www.digioz.com/"
 
 # 459 for intitle:"powered by DigiOz Guestbook version"
 

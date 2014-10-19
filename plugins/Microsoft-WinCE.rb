@@ -7,7 +7,8 @@
 Plugin.define "Microsoft-WinCE" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "Microsoft Windows CE HTTP Server - Homepage: http://msdn.microsoft.com/en-us/library/ms834461.aspx"
+description "Microsoft Windows CE HTTP Server"
+website "http://msdn.microsoft.com/en-us/library/ms834461.aspx"
 
 # ShodanHQ results as at 2011-03-13 #
 # 18,324 for Microsoft-WinCE

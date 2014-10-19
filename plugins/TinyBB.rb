@@ -7,7 +7,8 @@
 Plugin.define "TinyBB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
-description "TinyBB is a free, simple bulletin board script. - Homepage: http://tinybb.net/"
+description "TinyBB is a free, simple bulletin board script."
+website "http://tinybb.net/"
 
 # Google results as at 2011-04-17 #
 # 41 for "Proudly powered by TinyBB"

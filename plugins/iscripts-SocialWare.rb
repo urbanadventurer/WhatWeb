@@ -7,7 +7,8 @@
 Plugin.define "iScripts-SocialWare" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
 version "0.1"
-description "iScripts SocialWare is an open source social networking script with customizable features like blogs, albums, gift shop, classifieds ,chat, storefront etc. - homepage: http://www.iscripts.com/socialware/"
+description "iScripts SocialWare is an open source social networking script with customizable features like blogs, albums, gift shop, classifieds ,chat, storefront etc."
+website "http://www.iscripts.com/socialware/"
 
 # 82 results for "powered by iScripts SocialWare" "A premium product from iScripts.com" @ 2010-07-11
 

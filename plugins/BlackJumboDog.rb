@@ -7,7 +7,8 @@
 Plugin.define "BlackJumboDog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "SapporoWorks BlackJumboDog provides server functions (HTTP, FTP, etc) - Homepage: http://www.spw02.sakura.ne.jp/spw/"
+description "SapporoWorks BlackJumboDog provides server functions (HTTP, FTP, etc)"
+website "http://www.spw02.sakura.ne.jp/spw/"
 
 # ShodanHQ results as at 2011-03-13 #
 # 453 for BlackJumboDog

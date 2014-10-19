@@ -7,7 +7,8 @@
 Plugin.define "Micro-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
 version "0.1"
-description "Micro CMS - Homepage: http://www.micro-cms.com/"
+description "Micro CMS"
+website "http://www.micro-cms.com/"
 
 # Google results as at 2011-02-26 #
 # 23 for "Powered by Micro CMS"

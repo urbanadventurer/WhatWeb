@@ -7,7 +7,8 @@
 Plugin.define "Fastpublish-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
-description "fastpublish CMS proudly presents the new Content Management System with the special features: easy to use and fast to publish. - Homepage: http://www.fastpublish.org"
+description "fastpublish CMS proudly presents the new Content Management System with the special features: easy to use and fast to publish."
+website "http://www.fastpublish.org"
 
 # Google results as at 2011-03-03 #
 # 51 for "Securitycode: (please insert the numbers from the picture into the following field)"

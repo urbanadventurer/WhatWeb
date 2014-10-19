@@ -7,7 +7,8 @@
 Plugin.define "Zotonic" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-21
 version "0.1"
-description "Zotonic, The Erlang CMS - Zotonic is an open source content management system for people that want a fast, extensible, flexible and complete system for dynamic web sites. It is built from the ground up with rich internet applications and web publishing in mind. - Homepage: http://zotonic.com/"
+description "Zotonic, The Erlang CMS - Zotonic is an open source content management system for people that want a fast, extensible, flexible and complete system for dynamic web sites. It is built from the ground up with rich internet applications and web publishing in mind."
+website "http://zotonic.com/"
 
 # ShodanHQ results as at 2011-06-21 #
 # 15 for z_pid z_sid

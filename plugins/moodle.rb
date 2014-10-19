@@ -10,7 +10,8 @@
 Plugin.define "Moodle" do
 author "Andrew Horton"
 version "0.2"
-description "Opensource educational software written in PHP. - Homepage: http://www.moodle.org/"
+description "Opensource educational software written in PHP."
+website "http://www.moodle.org/"
 
 # In earlier versions of Moodle, the version number was sometimes available (depending upon the theme used) by hovering over the Moodle logo on the front page. This functionality was removed in Moodle 1.9.7 onwards for security reasons.
 

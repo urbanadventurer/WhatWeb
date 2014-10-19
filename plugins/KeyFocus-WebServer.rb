@@ -7,7 +7,8 @@
 Plugin.define "KeyFocus-WebServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
-description "KeyFocus Web Server is a free HTTP Server that can host an unlimited number of web sites. - Homepage: http://www.keyfocus.net/kfws/"
+description "KeyFocus Web Server is a free HTTP Server that can host an unlimited number of web sites."
+website "http://www.keyfocus.net/kfws/"
 
 # ShodanHQ results as at 2011-04-08 #
 # 753 for KFWebServer

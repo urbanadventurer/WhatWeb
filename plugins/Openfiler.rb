@@ -7,7 +7,8 @@
 Plugin.define "Openfiler" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-09-06
 version "0.1"
-description "Openfiler is an Open Source Network Attached Storage and Storage Area Network Solution. - Homepage: http://www.openfiler.com/ "
+description "Openfiler is an Open Source Network Attached Storage and Storage Area Network Solution."
+website "http://www.openfiler.com/ "
 
 # Default Login # openfiler/password
 # Default Port  # 446 (HTTPS)

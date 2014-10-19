@@ -8,7 +8,8 @@
 Plugin.define "Fidion-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12 
 version "0.1"
-description "CMS - homepage: http://www.fidion.de/"
+description "CMS"
+website "http://www.fidion.de/"
 
 # 14 results for "powered by FCMS Copyright" @ 2010-09-12
 

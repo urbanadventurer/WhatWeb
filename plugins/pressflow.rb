@@ -7,7 +7,8 @@
 Plugin.define "Pressflow" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.1"
-description "Pressflow is a distribution of Drupal with integrated performance, scalability, availability, and testing enhancements. - homepage: http://pressflow.org/"
+description "Pressflow is a distribution of Drupal with integrated performance, scalability, availability, and testing enhancements."
+website "http://pressflow.org/"
 
 # 67 results for +"powered by Pressflow" +"an open source content management system" @ 2010-07-18
 

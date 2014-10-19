@@ -7,7 +7,8 @@
 Plugin.define "Citrix-ConfProxy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.1"
-description "Citrix ConfProxy ISAPI - Homepage: http://www.citrix.com/"
+description "Citrix ConfProxy ISAPI"
+website "http://www.citrix.com/"
 
 # ShodanHQ results as at 2011-04-11 #
 # 73 for confproxy

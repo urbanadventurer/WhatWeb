@@ -7,7 +7,8 @@
 Plugin.define "Centreon" do
     author "Brendan Coles <bcoles@gmail.com>" # 2011-11-09
     version "0.2"
-    description "Centreon is a network, system, applicative supervision and monitoring tool, it is based upon Nagios. - Homepage: http://www.centreon.com/"
+    description "Centreon is a network, system, applicative supervision and monitoring tool, it is based upon Nagios."
+website "http://www.centreon.com/"
 
     # Google results as at 2011-11-11 #
     # 50 for intitle:"Centreon - IT & Network Monitoring" "Centreon Logo"

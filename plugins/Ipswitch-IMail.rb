@@ -7,7 +7,8 @@
 Plugin.define "Ipswitch-IMail" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
 version "0.1"
-description "IMail Server matches the capabilities of Exchange without the maintenance headache or hefty price tag. From install assistance to unlimited tech support, IMail delivers your complete messaging solution. - Homepage: http://www.imailserver.com/"
+description "IMail Server matches the capabilities of Exchange without the maintenance headache or hefty price tag. From install assistance to unlimited tech support, IMail delivers your complete messaging solution."
+website "http://www.imailserver.com/"
 
 # ShodanHQ results as at 2011-03-24 #
 # 5,802 for Ipswitch-IMail

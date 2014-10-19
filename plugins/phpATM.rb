@@ -7,7 +7,8 @@
 Plugin.define "phpATM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-22
 version "0.1"
-description "phpATM (PHP Advanced Transfer Manager) is a free, open source, PHP based Upload and Download manager. But unlike most other of its kind it stores the data in flat text files and therefore does not require a database like MySQL installed on the web server. - Homepage: http://phpatm.org/"
+description "phpATM (PHP Advanced Transfer Manager) is a free, open source, PHP based Upload and Download manager. But unlike most other of its kind it stores the data in flat text files and therefore does not require a database like MySQL installed on the web server."
+website "http://phpatm.org/"
 
 # 304 for "Powered by phpATM"
 # 91 for "Powered by phpATM" inurl:"viewer_bottom.php"

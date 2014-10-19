@@ -7,7 +7,8 @@
 Plugin.define "AppleIDiskServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-02
 version "0.1"
-description "With MobileMe iDisk, it.s easy to store, access, and share files online. You have plenty of storage space . even large files are no problem. Just add the files you need to your iDisk, and whatever you upload will be there for you to download using a web browser on any computer or using the iDisk app for iPhone, iPad, or iPod touch. - Homepage: http://www.apple.com/mobileme/features/idisk.html"
+description "With MobileMe iDisk, it.s easy to store, access, and share files online. You have plenty of storage space . even large files are no problem. Just add the files you need to your iDisk, and whatever you upload will be there for you to download using a web browser on any computer or using the iDisk app for iPhone, iPad, or iPod touch."
+website "http://www.apple.com/mobileme/features/idisk.html"
 
 # ShodanHQ results as at 2011-04-02 #
 # 286 for AppleIDiskServer

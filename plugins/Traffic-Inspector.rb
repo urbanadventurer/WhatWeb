@@ -10,7 +10,8 @@
 Plugin.define "Traffic-Inspector" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-30
 version "0.2"
-description "An integrated gateway solution for controlling access to the Internet and for providing data transmission services. - Homepage: http://www.trafinsp.com/products/Traffic-Inspector/"
+description "An integrated gateway solution for controlling access to the Internet and for providing data transmission services."
+website "http://www.trafinsp.com/products/Traffic-Inspector/"
 
 # ShodanHQ results as at 2011-10-30 #
 # 141 for Traffic inspector

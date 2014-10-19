@@ -7,7 +7,8 @@
 Plugin.define "Vivotek-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-19
 version "0.1"
-description "Vivotek Network Camera web interface - Homepage: http://www.vivotek.com/"
+description "Vivotek Network Camera web interface"
+website "http://www.vivotek.com/"
 
 # ShodanHQ results as at 2011-09-19 #
 # 2,262 for Network Camera -Authenticate

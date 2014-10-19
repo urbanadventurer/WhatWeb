@@ -14,7 +14,8 @@
 Plugin.define "XAMPP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-21
 version "0.3"
-description "XAMPP is an easy to install Apache distribution containing MySQL, PHP and Perl. XAMPP is really very easy to install and to use - just download, extract and start. - homepage: http://www.apachefriends.org/en/xampp.html"
+description "XAMPP is an easy to install Apache distribution containing MySQL, PHP and Perl. XAMPP is really very easy to install and to use - just download, extract and start."
+website "http://www.apachefriends.org/en/xampp.html"
 
 # ShodanHQ results as at 2011-01-21 #
 # 21,462 for location xampp

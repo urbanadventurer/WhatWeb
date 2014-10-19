@@ -10,7 +10,8 @@
 Plugin.define "Squid-Web-Proxy-Cache" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
 version "0.2"
-description "Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. - homepage: http://www.squid-cache.org/"
+description "Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages."
+website "http://www.squid-cache.org/"
 
 # ShodanHQ results as at 2010-10-25 #
 # 115,253 for "Server: squid"

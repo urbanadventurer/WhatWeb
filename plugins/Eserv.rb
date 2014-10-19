@@ -7,7 +7,8 @@
 Plugin.define "Eserv" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-10-22
 version "0.1"
-description "Eserv - Mail Server - SMTP/POP3/IMAP/HTTP - Homepage: http://www.eserv.ru/"
+description "Eserv - Mail Server - SMTP/POP3/IMAP/HTTP"
+website "http://www.eserv.ru/"
 
 # ShodanHQ results as at 2012-10-22 #
 # 14 for 404 Path not found (E4 WIKI)

@@ -7,7 +7,8 @@
 Plugin.define "CHANCE-i-DiViS-DVR" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
-description "CHANCE-i DiViS digital video recorder device - Homepage: http://www.chance-i.com/dvr_system"
+description "CHANCE-i DiViS digital video recorder device"
+website "http://www.chance-i.com/dvr_system"
 
 # ShodanHQ results as at 2011-03-14 #
 # 13,735 for Techno Vision Security System

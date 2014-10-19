@@ -7,7 +7,8 @@
 Plugin.define "Mioot-Live-Chat" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-06
 version "0.1"
-description "Mioot live chat JavaScript - Homepage: http://www.mioot.com/"
+description "Mioot live chat JavaScript"
+website "http://www.mioot.com/"
 
 
 

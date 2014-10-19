@@ -7,7 +7,8 @@
 Plugin.define "phpMyBible" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-24
 version "0.1"
-description "phpMyBible is an online collaborative project to make an e-book of the Holy Bible. - Homepage: http://sourceforge.net/projects/phpmybible/"
+description "phpMyBible is an online collaborative project to make an e-book of the Holy Bible."
+website "http://sourceforge.net/projects/phpmybible/"
 
 # Google results as at 2012-04-24 #
 # 8 for inurl:"index.php?book=" inurl:"version=" inurl:"chapter="

@@ -10,7 +10,8 @@
 Plugin.define "RackCorp-CDN" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
 version "0.2"
-description "RackCorp Content Delivery Network - RackCorp is the preferred hosting provider for critical websites around the world. They specialise in high-uptime, high-reliability, and fast hosting services. Their systems serve some very large content delivery networks (CDN's), allowing them to serve Over a Petabyte of data every month globally from a variety of locations including Australia, US, UK, Germany, and Canada. - homepage: http://www.rackcorp.com/"
+description "RackCorp Content Delivery Network - RackCorp is the preferred hosting provider for critical websites around the world. They specialise in high-uptime, high-reliability, and fast hosting services. Their systems serve some very large content delivery networks (CDN's), allowing them to serve Over a Petabyte of data every month globally from a variety of locations including Australia, US, UK, Germany, and Canada."
+website "http://www.rackcorp.com/"
 
 # ShodanHQ results as at 2011-01-30 #
 # 50 for rackcorpcdn

@@ -7,7 +7,10 @@
 Plugin.define "Request-Tracker" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-13
 version "0.1"
-description "Request Tracker (RT) is an open-source issue tracking system which thousands of organizations use for bug tracking, help desk ticketing, customer service, workflow processes, change management, network operations, youth counselling and even more. - Homepage: http://bestpractical.com/rt/ - RT for Incident Response (RTIR) is an open source incident handling system targeted for computer security teams. - Homepage: http://bestpractical.com/rtir/ - RT FAQ Manager (RTFM) is a knowledge management tool tightly integrated with RT which enables an organization to easily capture and share its employees' collected wisdom. - Homepage: http://bestpractical.com/rtfm/"
+description "Request Tracker (RT) is an open-source issue tracking system which thousands of organizations use for bug tracking, help desk ticketing, customer service, workflow processes, change management, network operations, youth counselling and even more."
+website "http://bestpractical.com/rt/ - RT for Incident Response (RTIR) is an open source incident handling system targeted for computer security teams."
+website "http://bestpractical.com/rtir/ - RT FAQ Manager (RTFM) is a knowledge management tool tightly integrated with RT which enables an organization to easily capture and share its employees' collected wisdom."
+website "http://bestpractical.com/rtfm/"
 
 # ShodanHQ results as at 2011-09-13 #
 # 1,065 for RT_SID

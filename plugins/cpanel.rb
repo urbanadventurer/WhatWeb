@@ -18,7 +18,8 @@
 Plugin.define "cPanel" do
 author "Andrew Horton"
 version "0.5"
-description "Site configuration and management software application. Supporting many operating systems while allowing endusers to control every aspect of their webhosting experience. - Homepage: http://www.cpanel.net/"
+description "Site configuration and management software application. Supporting many operating systems while allowing endusers to control every aspect of their webhosting experience."
+website "http://www.cpanel.net/"
 
 # Google results as at 2012-04-11 #
 # 899 for inurl:":2082/frontend" -demo

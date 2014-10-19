@@ -7,7 +7,8 @@
 Plugin.define "XOOPS-Cube" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-11
 version "0.1"
-description "XOOPS Cube is an Open Source Web Application Platform - Homepage: http://xoopscube.org/"
+description "XOOPS Cube is an Open Source Web Application Platform"
+website "http://xoopscube.org/"
 
 # Google results as at 2011-12-11 #
 # 363 for "Powered by XOOPS Cube"

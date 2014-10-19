@@ -10,7 +10,8 @@
 Plugin.define "Apache-Wicket" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-27
 version "0.2"
-description "Apache Wicket, commonly referred to as Wicket, is a lightweight component-based web application framework for the Java programming language - Homepage: http://wicket.apache.org/"
+description "Apache Wicket, commonly referred to as Wicket, is a lightweight component-based web application framework for the Java programming language"
+website "http://wicket.apache.org/"
 
 # ShodanHQ results as at 2011-08-27 #
 # 85 for wicket

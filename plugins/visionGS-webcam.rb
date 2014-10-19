@@ -7,7 +7,8 @@
 Plugin.define "VisionGS-Webcam" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.1"
-description "VisionGS webcam web interface - homepage: http://www.visiongs.de/"
+description "VisionGS webcam web interface"
+website "http://www.visiongs.de/"
 
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1492
 # 71 Google results for intitle:"VisionGS Webcam Software"|intext:"Powered by VisionGS Webcam" -intext @  2010-07-20

@@ -7,7 +7,8 @@
 Plugin.define "SuperSalon-POS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-22
 version "0.1"
-description "SuperSalon is one of the newest salon software systems in the market, but has already been licensed in thousands of national chain, regional chain and independent salons and cosmetology schools in the US, Canada, Europe and Asia, making it one of the most widely licensed salon POS software in the world. - Homepage: http://www.supersalon.com/"
+description "SuperSalon is one of the newest salon software systems in the market, but has already been licensed in thousands of national chain, regional chain and independent salons and cosmetology schools in the US, Canada, Europe and Asia, making it one of the most widely licensed salon POS software in the world."
+website "http://www.supersalon.com/"
 
 # ShodanHQ results as at 2011-06-22 #
 # 403 for "SuperSalon POS"

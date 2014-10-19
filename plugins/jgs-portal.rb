@@ -10,7 +10,8 @@
 Plugin.define "JGS-Portal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
 version "0.2"
-description "CMS - homepage: http://www.jgs-xa.de"
+description "CMS"
+website "http://www.jgs-xa.de"
 
 # Google results as at 2010-06-26 #
 # 4,580,000 for "Powered by JGS-Portal Version"

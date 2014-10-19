@@ -10,7 +10,8 @@
 Plugin.define "IBM-HTTP-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
 version "0.2"
-description "IBM HTTP Server is based on the Apache HTTP Server (httpd.apache.org), developed by the Apache Software Foundation. IBM HTTP Server can be remotely administered and configured using the WebSphere administrative console - Homepage: http://www.ibm.com/software/webservers/httpservers/"
+description "IBM HTTP Server is based on the Apache HTTP Server (httpd.apache.org), developed by the Apache Software Foundation. IBM HTTP Server can be remotely administered and configured using the WebSphere administrative console"
+website "http://www.ibm.com/software/webservers/httpservers/"
 
 # ShodanHQ results as at 2010-10-25 #
 # 23,022 for "Server: IBM_HTTP_Server"

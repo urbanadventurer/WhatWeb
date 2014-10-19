@@ -7,7 +7,8 @@
 Plugin.define "Amiro-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
-description "Amiro.CMS is a top-notch website development and content management system with several dynamic features and a user-friendly interface. - homepage: http://www.amirocms.com/"
+description "Amiro.CMS is a top-notch website development and content management system with several dynamic features and a user-friendly interface."
+website "http://www.amirocms.com/"
 
 # Dorks #
 dorks [

@@ -7,7 +7,8 @@
 Plugin.define "Keil-Embedded-WEB-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "Keil Embedded WEB Server - Homepage: http://www.keil.com/"
+description "Keil Embedded WEB Server"
+website "http://www.keil.com/"
 # More info: http://www.keil.com/support/man/docs/rlarm/rlarm_tn_cfghttp.htm
 
 # ShodanHQ results as at 2011-05-31 #

@@ -10,7 +10,8 @@
 Plugin.define "activeCollab" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
 version "0.2"
-description "activeCollab - project management & collaboration tool - Requires PHP and MySQL - Homepage: http://www.activecollab.com/"
+description "activeCollab - project management & collaboration tool - Requires PHP and MySQL"
+website "http://www.activecollab.com/"
 
 # Google results as at 2012-05-02 #
 # 569 for "powered by activeCollab" "Forgot password" intitle:"Login"

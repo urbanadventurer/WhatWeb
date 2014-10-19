@@ -7,7 +7,8 @@
 Plugin.define "SmodCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-16
 version "0.1"
-description "SmodCMS - homepage: http://www.smod.pl/"
+description "SmodCMS"
+website "http://www.smod.pl/"
 
 # 13 results for "powered by SmodCMS" @ 2010-08-16
 

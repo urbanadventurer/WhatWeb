@@ -7,7 +7,8 @@
 Plugin.define "Aruba-Mobility-Controller-Config-File" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
-description "Aruba's family of mobility controllers are purpose-built network infrastructure devices, designed from the ground up to provide secure, scalable solutions for campus wireless LAN, wired security, branch office deployments, and remote networking.  - homepage: http://www.arubanetworks.com/products/mobility_controllers.php"
+description "Aruba's family of mobility controllers are purpose-built network infrastructure devices, designed from the ground up to provide secure, scalable solutions for campus wireless LAN, wired security, branch office deployments, and remote networking. "
+website "http://www.arubanetworks.com/products/mobility_controllers.php"
 
 # 4 results for "logging level warnings stm" @ 2010-10-14
 

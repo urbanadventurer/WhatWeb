@@ -10,7 +10,8 @@
 Plugin.define "CubeCart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-10
 version "0.2"
-description "CubeCart is an out of the box ecommerce shopping cart software solution which has been written to run on servers that have PHP & MySQL support. - homepage: http://www.cubecart.com/"
+description "CubeCart is an out of the box ecommerce shopping cart software solution which has been written to run on servers that have PHP & MySQL support."
+website "http://www.cubecart.com/"
 
 # Google results as at 2010-09-10 #
 # 492 results for intitle:"powered by cubecart"

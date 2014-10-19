@@ -10,7 +10,8 @@
 Plugin.define "MicrosoftOfficeWebServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.2"
-description "Microsoft Office Web Server - homepage: http://microsoft.com/"
+description "Microsoft Office Web Server"
+website "http://microsoft.com/"
 
 # About 233,672 ShodanHQ results for MicrosoftOfficeWebServer: @ 2010-10-23
 

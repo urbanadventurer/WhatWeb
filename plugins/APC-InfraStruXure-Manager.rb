@@ -7,7 +7,8 @@
 Plugin.define "APC-InfraStruXure-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
 version "0.1"
-description "Modular, adaptable, on-demand solutions for data centers. InfraStruxure is a scalable and adaptable data center IT room architecture that dramatically reduces time and complexity from concept and design through installation. - Homepage: http://www.apc.com/products/infrastruxure/index.cfm"
+description "Modular, adaptable, on-demand solutions for data centers. InfraStruxure is a scalable and adaptable data center IT room architecture that dramatically reduces time and complexity from concept and design through installation."
+website "http://www.apc.com/products/infrastruxure/index.cfm"
 
 
 

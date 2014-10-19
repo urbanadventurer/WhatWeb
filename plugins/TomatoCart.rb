@@ -7,7 +7,8 @@
 Plugin.define "TomatoCart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description "Shopping Cart - homepage: http://www.tomatocart.com/"
+description "Shopping Cart"
+website "http://www.tomatocart.com/"
 
 # 216 results for "powered by TomatoCart" -Vulnerability @ 2010-09-18
 

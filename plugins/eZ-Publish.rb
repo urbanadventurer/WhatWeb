@@ -7,7 +7,8 @@
 Plugin.define "eZ-Publish" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
 version "0.1"
-description "eZ Publish is an Open Source Content Management System chosen by thousands of enterprises and organizations world wide. - Homepage: http://ez.no/"
+description "eZ Publish is an Open Source Content Management System chosen by thousands of enterprises and organizations world wide."
+website "http://ez.no/"
 
 # ShodanHQ results as at 2011-03-17 #
 # 1,716 for X-Powered-By: eZ Publish

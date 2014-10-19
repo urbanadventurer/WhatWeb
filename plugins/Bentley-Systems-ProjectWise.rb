@@ -7,7 +7,8 @@
 Plugin.define "Bentley-Systems-ProjectWise" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-28
 version "0.1"
-description "ProjectWise - Project Collaboration and Content Management Software for Architecture, Construction, and Engineering Projects - Homepage: http://www.bentley.com/en-US/Products/ProjectWise"
+description "ProjectWise - Project Collaboration and Content Management Software for Architecture, Construction, and Engineering Projects"
+website "http://www.bentley.com/en-US/Products/ProjectWise"
 
 # ShodanHQ results as at 2011-12-28 #
 # 15 for Bentley.WebSession

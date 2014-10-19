@@ -7,7 +7,8 @@
 Plugin.define "PHP-Photo-Album" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
 version "0.1"
-description "PHP Photo Album - Homepage: http://www.phpalbum.net/dw"
+description "PHP Photo Album"
+website "http://www.phpalbum.net/dw"
 
 # Google results as at 2011-11-22 #
 # 456 for "Powered by PHP Photo Album"

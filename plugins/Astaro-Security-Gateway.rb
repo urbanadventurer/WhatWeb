@@ -7,7 +7,8 @@
 Plugin.define "Astaro-Security-Gateway" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-12
 version "0.1"
-description "Astaro Security Gateway - Unified Threat Management (UTF) Firewall device - Homepage: http://www.astaro.com/products/hardware-appliances"
+description "Astaro Security Gateway - Unified Threat Management (UTF) Firewall device"
+website "http://www.astaro.com/products/hardware-appliances"
 
 # Data Sheet #
 # http://www.astaro.com/sites/default/files/Resources/datasheets/astaro-security-gateway-en.pdf

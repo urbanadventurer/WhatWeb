@@ -7,7 +7,8 @@
 Plugin.define "Knopflerfish-HTTP-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-18
 version "0.1"
-description "Knopflerfish HTTP Server - Small footprint OSGi HTTP server implementation for embedded use - Homepage: http://www.knopflerfish.org/"
+description "Knopflerfish HTTP Server - Small footprint OSGi HTTP server implementation for embedded use"
+website "http://www.knopflerfish.org/"
 # More Info: http://www.knopflerfish.org/releases/3.2.0/docs/bundledoc/http/index.html
 
 # ShodanHQ results as at 2012-01-18 #

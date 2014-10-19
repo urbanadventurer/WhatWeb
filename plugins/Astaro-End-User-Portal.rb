@@ -7,7 +7,8 @@
 Plugin.define "Astaro-End-User-Portal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-12
 version "0.1"
-description "Astaro End User Portal - A complete end-user tool suite for managing SMTP and POP3 quarantine. - Homepage: http://www.astaro.com/"
+description "Astaro End User Portal - A complete end-user tool suite for managing SMTP and POP3 quarantine."
+website "http://www.astaro.com/"
 
 
 

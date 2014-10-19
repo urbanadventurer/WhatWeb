@@ -7,7 +7,8 @@
 Plugin.define "Hycus-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.1"
-description "India's first CMS. Free and open-source PHP based CMS. - homepage: http://www.hycus.com/"
+description "India's first CMS. Free and open-source PHP based CMS."
+website "http://www.hycus.com/"
 
 # 1 result for "powered by Hycus CMS" @ 2010-09-12
 

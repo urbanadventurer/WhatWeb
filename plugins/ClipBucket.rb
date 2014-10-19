@@ -7,7 +7,8 @@
 Plugin.define "ClipBucket" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-18
 version "0.1"
-description "ClipBucket is an OpenSource Multimedia Management Script - Homepage: http://clip-bucket.com"
+description "ClipBucket is an OpenSource Multimedia Management Script"
+website "http://clip-bucket.com"
 
 # ShodanHQ  results as at 2012-01-18 #
 # 193 for pageredir

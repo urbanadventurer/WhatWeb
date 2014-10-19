@@ -7,7 +7,8 @@
 Plugin.define "NexusPHP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-01
 version "0.1"
-description "BitTorrent private tracker scripts written in PHP - Homepage: http://sourceforge.net/projects/nexusphp/"
+description "BitTorrent private tracker scripts written in PHP"
+website "http://sourceforge.net/projects/nexusphp/"
 
 # Google results as at 2011-07-01 #
 # 353 for "Powered by NexusPHP"

@@ -7,7 +7,8 @@
 Plugin.define "RiOS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
-description "Riverbed Optimization System (RiOS) - Homepage: http://www.riverbed.com/"
+description "Riverbed Optimization System (RiOS)"
+website "http://www.riverbed.com/"
 
 # Technical Overview #
 # http://www.riverbed.com/assets/fr/media/documents/briefs/TechOverview-Riverbed-RiOS_6.0.pdf

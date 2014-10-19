@@ -7,7 +7,8 @@
 Plugin.define "Hughes-Voice-Appliance" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-11
 version "0.1"
-description "Hughes VoIP Appliance for HughesNet integration - Homepage: http://www.hughes.com/"
+description "Hughes VoIP Appliance for HughesNet integration"
+website "http://www.hughes.com/"
 
 
 

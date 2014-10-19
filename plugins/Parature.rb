@@ -7,7 +7,8 @@
 Plugin.define "Parature" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-29
 version "0.1"
-description "Parature - web-based customer service software combine - Homepage: http://www.parature.com/"
+description "Parature - web-based customer service software combine"
+website "http://www.parature.com/"
 
 # Google results as at 2012-07-29 #
 # 379 for "Help Desk and Customer Support Software by Parature" inurl:"ics/support/default.asp"

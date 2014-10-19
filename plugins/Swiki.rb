@@ -7,7 +7,8 @@
 Plugin.define "Swiki" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-24
 version "0.1"
-description "Swiki is a popular implementation of Ward Cunningham's WikiWikiWeb that runs under Comanche. - Homepage: http://wiki.squeak.org/swiki/"
+description "Swiki is a popular implementation of Ward Cunningham's WikiWikiWeb that runs under Comanche."
+website "http://wiki.squeak.org/swiki/"
 
 # Google results as at 2011-08-24 #
 # 39 for "powered by Squeak" "Squeak * :: Comanche * :: Swiki"

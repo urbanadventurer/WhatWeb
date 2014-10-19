@@ -7,7 +7,8 @@
 Plugin.define "cpCommerce" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.1"
-description "Web shopping cart - homepage: http://cpcommerce.org/"
+description "Web shopping cart"
+website "http://cpcommerce.org/"
 
 # 58 results for "powered by cpCommerce" @ 2010-08-14
 

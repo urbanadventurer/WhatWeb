@@ -7,7 +7,8 @@
 Plugin.define "Tickets-CAD-System" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-05
 version "0.1"
-description "Tickets CAD System - Open Source Dispatch System - Homepage: http://www.ticketscad.org/"
+description "Tickets CAD System - Open Source Dispatch System"
+website "http://www.ticketscad.org/"
 
 # Google results as at 2012-08-05 #
 # 16 for intitle:"Tickets" "Welcome to Tickets - an Open Source Dispatch System"

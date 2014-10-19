@@ -7,7 +7,8 @@
 Plugin.define "LiteRadius" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
 version "0.1"
-description "LiteRadius is a web server software program that interfaces geographic locations to the Google Maps API. Requires PHP and MySQL. - Homepage: http://www.escaperadius.com/er/products/literadius/lr.php"
+description "LiteRadius is a web server software program that interfaces geographic locations to the Google Maps API. Requires PHP and MySQL."
+website "http://www.escaperadius.com/er/products/literadius/lr.php"
 
 # Google results as at 2011-07-14 #
 # 33 for allinurl: locator.php?long=

@@ -7,7 +7,8 @@
 Plugin.define "Yamamah" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
 version "0.1"
-description "Yamamah - Free photo Gallery - homepage: www.yamamah.org/home/"
+description "Yamamah - Free photo Gallery"
+website "www.yamamah.org/home/"
 
 # Google results as at 2011-01-29 #
 # 89 for "Powered By : Yamamah Version 1.00" -dork -exploit

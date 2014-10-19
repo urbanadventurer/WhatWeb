@@ -7,7 +7,8 @@
 Plugin.define "Inout-Music" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
-description "Inout Music is the most powerful, affordable, flexible, feature rich, customizable music portal script for your website. - homepage: http://www.inoutscripts.com/products/inout_music/"
+description "Inout Music is the most powerful, affordable, flexible, feature rich, customizable music portal script for your website."
+website "http://www.inoutscripts.com/products/inout_music/"
 
 # 154 results for "Powered by Inoutscripts" @ 2010-10-12
 

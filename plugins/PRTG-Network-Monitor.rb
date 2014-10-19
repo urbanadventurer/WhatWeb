@@ -7,7 +7,8 @@
 Plugin.define "PRTG-Network-Monitor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
-description "PRTG Network Monitor - Availability and Bandwidth Monitoring - Homepage: http://www.paessler.com/prtg"
+description "PRTG Network Monitor - Availability and Bandwidth Monitoring"
+website "http://www.paessler.com/prtg"
 
 # ShodanHQ results as at 2011-05-30 #
 # 1,687 for PRTG

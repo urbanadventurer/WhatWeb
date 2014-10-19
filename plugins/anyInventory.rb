@@ -10,7 +10,8 @@
 Plugin.define "anyInventory" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
-description "anyInventory, the most flexible and powerful web-based inventory system - homepage: http://anyinventory.sourceforge.net/"
+description "anyInventory, the most flexible and powerful web-based inventory system"
+website "http://anyinventory.sourceforge.net/"
 
 # 51 results for "anyInventory, the most flexible and powerful web-based inventory system" @ 2010-07-25
 

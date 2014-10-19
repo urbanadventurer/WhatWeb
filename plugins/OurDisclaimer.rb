@@ -7,7 +7,8 @@
 Plugin.define "OurDisclaimer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
-description "OurDisclaimer.com - Third party disclaimer service. - homepage: http://ourdisclaimer.com/"
+description "OurDisclaimer.com - Third party disclaimer service."
+website "http://ourdisclaimer.com/"
 
 # 59 results for inurl:"ourdisclaimer.com/?i=" @ 2010-10-14
 

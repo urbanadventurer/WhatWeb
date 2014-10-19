@@ -11,7 +11,8 @@
 Plugin.define "SPIP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-12
 version "0.2"
-description "SPIP is a publishing system for the Internet in which great importance is attached to collaborative working, to multilingual environments, and to simplicity of use for web authors. - Homepage: http://www.spip.net/"
+description "SPIP is a publishing system for the Internet in which great importance is attached to collaborative working, to multilingual environments, and to simplicity of use for web authors."
+website "http://www.spip.net/"
 
 # ShodanHQ results as at 2011-11-20 #
 # 1,825 for Composed-By spip # 1,321 in France

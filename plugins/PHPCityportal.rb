@@ -7,7 +7,8 @@
 Plugin.define "PHPCityportal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-07
 version "0.1"
-description "PHPCityportal - build your own business portal - Requires PHP and MySQL - Homepage: http://phpcityportal.com/"
+description "PHPCityportal - build your own business portal - Requires PHP and MySQL"
+website "http://phpcityportal.com/"
 
 # Google results as at 2011-12-07 #
 # 28 for "Powered by PHPCityPortal.com" inurl:"login.php"

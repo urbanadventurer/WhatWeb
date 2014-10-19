@@ -7,7 +7,8 @@
 Plugin.define "Spree-Commerce" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
 version "0.1"
-description "Spree Commerce is an open source e-commerce solution - Homepage: http://spreecommerce.com/"
+description "Spree Commerce is an open source e-commerce solution"
+website "http://spreecommerce.com/"
 
 # Google results as at 2011-11-22 #
 # 34 for inurl:"products?utf8=" inurl:keywords

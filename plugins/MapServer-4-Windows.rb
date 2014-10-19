@@ -7,7 +7,8 @@
 Plugin.define "MapServer-4-Windows" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
-description "MapServer for Windows (MS4W) - Homepage: http://www.maptools.org/ms4w/"
+description "MapServer for Windows (MS4W)"
+website "http://www.maptools.org/ms4w/"
 
 
 

@@ -7,7 +7,8 @@
 Plugin.define "NextGEN-Gallery" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.1"
-description "NextGEN Gallery is a full integrated Image Gallery plugin for WordPress with dozens of options and features. - Homepage: http://nextgen-gallery.com"
+description "NextGEN Gallery is a full integrated Image Gallery plugin for WordPress with dozens of options and features."
+website "http://nextgen-gallery.com"
 
 
 

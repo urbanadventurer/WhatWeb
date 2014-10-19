@@ -14,7 +14,8 @@
 Plugin.define "Microsoft-Sharepoint" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.3"
-description "Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions. - homepage: http://sharepoint.microsoft.com/"
+description "Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions."
+website "http://sharepoint.microsoft.com/"
 
 # Google results as at 2011-06-04 #
 # 371 for "You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page."

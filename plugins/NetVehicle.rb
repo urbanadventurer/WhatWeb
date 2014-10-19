@@ -7,7 +7,8 @@
 Plugin.define "NetVehicle" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
 version "0.1"
-description "Fujitsu NetVehicle router [Japanese] - Homepage: http://fenics.fujitsu.com/products/netvehicle/"
+description "Fujitsu NetVehicle router [Japanese]"
+website "http://fenics.fujitsu.com/products/netvehicle/"
 
 # ShodanHQ results as at 2011-03-08 #
 # 9 for NetVehicle

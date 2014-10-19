@@ -7,7 +7,8 @@
 Plugin.define "Level1-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-12
 version "0.1"
-description "Level1 Router - Homepage: http://uk.level1.com/"
+description "Level1 Router"
+website "http://uk.level1.com/"
 
 # Google results as at 2012-02-12 #
 # 3 for intitle:"WBR" intitle:"Wireless Broadband NAT Router Web-Console"

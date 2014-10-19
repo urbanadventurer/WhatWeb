@@ -7,7 +7,8 @@
 Plugin.define "Xataface" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-10
 version "0.1"
-description "Xataface is a full-featured Web application framework. It automatically generates the appropriate forms, lists, and menus for a user to interact with a MySQL database without having to know any SQL. - Homepage: http://xataface.com/"
+description "Xataface is a full-featured Web application framework. It automatically generates the appropriate forms, lists, and menus for a user to interact with a MySQL database without having to know any SQL."
+website "http://xataface.com/"
 
 # Google results as at 2011-09-10 #
 # 50 for "Powered by Xataface" inurl:"-table"

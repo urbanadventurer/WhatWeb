@@ -7,7 +7,8 @@
 Plugin.define "RCTTools" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
 version "0.1"
-description "RCTTools - SecureSOHO Web configuration Tools - Homepage: [offline] http://www.redsonic.com/"
+description "RCTTools - SecureSOHO Web configuration Tools"
+website "[offline] http://www.redsonic.com/"
 
 # ShodanHQ results as at 2012-04-11 #
 # 1,394 for RCTTools (SecureSOHO Web configuration Tools)

@@ -10,7 +10,8 @@
 Plugin.define "Connectix-Boards" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
 version "0.2"
-description "Connectix-Boards Forum - homepage: http://www.connectix-boards.org/index.php"
+description "Connectix-Boards Forum"
+website "http://www.connectix-boards.org/index.php"
 
 # Google results as at 2010-08-22 #
 # 99 for "powered by Connectix Boards" -Vulnerability

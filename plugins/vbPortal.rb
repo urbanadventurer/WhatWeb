@@ -10,7 +10,8 @@
 Plugin.define "vbPortal" do
 author "Brendan Coles <bcoles@gmail.com>"
 version "0.2"
-description "Portal and CMS for vBulletin - homepage: http://www.vbportal.com/"
+description "Portal and CMS for vBulletin"
+website "http://www.vbportal.com/"
 
 # Google results as for 2010-08-27 #
 # 154 for "Portal By vbPortal Version "

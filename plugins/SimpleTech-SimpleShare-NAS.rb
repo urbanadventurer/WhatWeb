@@ -7,7 +7,8 @@
 Plugin.define "SimpleTech-SimpleShare-NAS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.1"
-description "Whether it's photos and music, or business presentations and financial data, your files are valuable and must be kept safe, accessible and easily shared with others. SimpleShare Network Attached Storage enables you to do it all. - homepage: http://www.simpleshare.com/"
+description "Whether it's photos and music, or business presentations and financial data, your files are valuable and must be kept safe, accessible and easily shared with others. SimpleShare Network Attached Storage enables you to do it all."
+website "http://www.simpleshare.com/"
 # Default login: admin/simple
 
 # 21 ShodanHQ results for WWW-Authenticate: Basic realm="SimpleShare (default user name is admin and password is simple)"

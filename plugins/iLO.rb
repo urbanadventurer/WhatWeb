@@ -10,7 +10,8 @@
 Plugin.define "iLO" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
 version "0.2"
-description "Integrated Lights-Out, or iLO, is an embedded server management technology exclusive to Hewlett-Packard but similar in functionality to the Lights out management (LOM) technology of other vendors. - homepage: http://en.wikipedia.org/wiki/HP_Integrated_Lights-Out"
+description "Integrated Lights-Out, or iLO, is an embedded server management technology exclusive to Hewlett-Packard but similar in functionality to the Lights out management (LOM) technology of other vendors."
+website "http://en.wikipedia.org/wiki/HP_Integrated_Lights-Out"
 
 # Google results as at 2011-03-31 #
 # 75 for "select 'Yes' to accept the certificate to access Integrated Lights-Out."

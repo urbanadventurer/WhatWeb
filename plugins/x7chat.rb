@@ -10,7 +10,8 @@
 Plugin.define "X7-Chat" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
 version "0.2"
-description "X7 Chat is a free script that can be modified and redistributed in any way that you want as long as the X7 Chat copyright logo remains in place. - homepage: http://x7chat.com/"
+description "X7 Chat is a free script that can be modified and redistributed in any way that you want as long as the X7 Chat copyright logo remains in place."
+website "http://x7chat.com/"
 
 # Google results as at 2010-06-13 #
 # 30 for inurl:x7chat "Please enter your username and password to login"

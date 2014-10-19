@@ -7,7 +7,8 @@
 Plugin.define "WHMCS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
 version "0.1"
-description "WHMCS is an all-in-one client management, billing & support solution for online businesses. - Homepage: http://www.whmcs.com/"
+description "WHMCS is an all-in-one client management, billing & support solution for online businesses."
+website "http://www.whmcs.com/"
 
 # Google results as at 2011-08-25 #
 # 595 for "Powered by WHMCompleteSolution" inurl:cart.php +Language

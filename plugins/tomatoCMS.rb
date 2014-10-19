@@ -7,7 +7,8 @@
 Plugin.define "TomatoCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
 version "0.1"
-description "TomatoCMS considers each web page made up of many different elements called widgets. You can easily create, customize the layout of your site like never before through a visual tool called Layout Editor very easy and convenient. - homepage: http://www.tomatocms.com/"
+description "TomatoCMS considers each web page made up of many different elements called widgets. You can easily create, customize the layout of your site like never before through a visual tool called Layout Editor very easy and convenient."
+website "http://www.tomatocms.com/"
 
 # Dorks #
 dorks [

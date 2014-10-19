@@ -8,7 +8,8 @@
 Plugin.define "Mac-OSX-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "Powerful yet streamlined, Snow Leopard Server makes it easier than ever for the people in your organization to collaborate, communicate, and share information. Up to 2x faster than its predecessor, Mac OS X Server v10.6 Snow Leopard is a full 64-bit UNIX server OS with dozens of new and updated features. - Homepage: http://www.apple.com/server/macosx/"
+description "Powerful yet streamlined, Snow Leopard Server makes it easier than ever for the people in your organization to collaborate, communicate, and share information. Up to 2x faster than its predecessor, Mac OS X Server v10.6 Snow Leopard is a full 64-bit UNIX server OS with dozens of new and updated features."
+website "http://www.apple.com/server/macosx/"
 
 # ShodanHQ results as at 2011-03-25 #
 # 246 for "Mac OS X Server Web Services Server"

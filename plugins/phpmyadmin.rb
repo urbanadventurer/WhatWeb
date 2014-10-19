@@ -19,7 +19,8 @@
 Plugin.define "phpMyAdmin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
 version "0.4"
-description "phpMyAdmin is a free software tool written in PHP intended to handle the administration of MySQL over the World Wide Web. - Homepage: http://www.phpmyadmin.net/home_page/index.php"
+description "phpMyAdmin is a free software tool written in PHP intended to handle the administration of MySQL over the World Wide Web."
+website "http://www.phpmyadmin.net/home_page/index.php"
 
 # Google results as at 2010-10-26 #
 # 3,490 for +intitle:phpMyAdmin +"Language: Afrikaans" +"Welcome to phpMyAdmin"

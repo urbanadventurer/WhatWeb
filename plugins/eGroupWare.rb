@@ -7,7 +7,8 @@
 Plugin.define "eGroupWare" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-06
 version "0.1"
-description "Egroupware is a web based software for team collaboration, central data management and CRM: email client, online calendar, contact and task management, project and file management, trouble ticket system, synchronization. - homepage: http://www.egroupware.org/"
+description "Egroupware is a web based software for team collaboration, central data management and CRM: email client, online calendar, contact and task management, project and file management, trouble ticket system, synchronization."
+website "http://www.egroupware.org/"
 # Manual: http://www.stylite.de/egroupware_manuals
 
 # 25 results for inurl:"phpgw_forward" ext:php @ 2011-01-06

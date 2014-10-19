@@ -7,7 +7,8 @@
 Plugin.define "Cimplicity-WebView" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
 version "0.1"
-description "CIMPLICITY is a client/server based visualization and control solution that helps you visualize your operations, perform supervisory automation and deliver reliable information to higher-level analytic applications. - homepage: http://www.ge-ip.com/products/2819"
+description "CIMPLICITY is a client/server based visualization and control solution that helps you visualize your operations, perform supervisory automation and deliver reliable information to higher-level analytic applications."
+website "http://www.ge-ip.com/products/2819"
 
 # ShodanHQ results as at 2010-11-02 #
 # 58 for CIMPLICITY-HttpSvr

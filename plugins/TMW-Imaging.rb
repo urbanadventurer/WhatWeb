@@ -7,7 +7,8 @@
 Plugin.define "TMW-Imaging" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-16
 version "0.1"
-description "TMW Imaging - Document management system - Homepage: http://www.tmwsystems.com/imaging"
+description "TMW Imaging - Document management system"
+website "http://www.tmwsystems.com/imaging"
 
 # ShodanHQ results as at 2012-11-16 #
 # 9 for TMWImagingSession

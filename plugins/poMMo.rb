@@ -7,7 +7,8 @@
 Plugin.define "poMMo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
 version "0.1"
-description "poMMo is versatile mass mailing software - Requires PHP - Homepage: http://pommo.org/Main_Page"
+description "poMMo is versatile mass mailing software - Requires PHP"
+website "http://pommo.org/Main_Page"
 
 # Google results as at 2012-11-04 #
 # 413 for "Page fueled by poMMo mailing management software"

@@ -7,7 +7,8 @@
 Plugin.define "fnord" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "fnord - yet another small httpd - Homepage: http://www.fefe.de/fnord/"
+description "fnord - yet another small httpd"
+website "http://www.fefe.de/fnord/"
 
 # ShodanHQ results as at 2011-05-31 #
 # 6,444 for fnord

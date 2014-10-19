@@ -7,7 +7,8 @@
 Plugin.define "PEAR" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-16
 version "0.1"
-description "PEAR - PHP Extension and Application Repository - PEAR is a framework and distribution system for reusable PHP components. - Homepage: http://pear.php.net/"
+description "PEAR - PHP Extension and Application Repository - PEAR is a framework and distribution system for reusable PHP components."
+website "http://pear.php.net/"
 
 # Google results as at 2012-011-16 #
 # 47 for intitle:"PEAR :: PEAR_Info" "auto_discover"

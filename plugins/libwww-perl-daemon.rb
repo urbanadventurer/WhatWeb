@@ -7,7 +7,8 @@
 Plugin.define "libwww-perl-daemon" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
-description "Perl CPAN HTTP::Daemon - a simple http server class. Instances of the HTTP::Daemon class are HTTP/1.1 servers that listen on a socket for incoming requests. - Homepage: http://search.cpan.org/~gaas/HTTP-Daemon-6.00/lib/HTTP/Daemon.pm"
+description "Perl CPAN HTTP::Daemon - a simple http server class. Instances of the HTTP::Daemon class are HTTP/1.1 servers that listen on a socket for incoming requests."
+website "http://search.cpan.org/~gaas/HTTP-Daemon-6.00/lib/HTTP/Daemon.pm"
 
 # ShodanHQ results as at 2011-08-20 #
 # 154 for libwww-perl-daemon

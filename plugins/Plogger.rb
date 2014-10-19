@@ -7,7 +7,8 @@
 Plugin.define "Plogger" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description "Plogger is the next generation in open-source photo gallery systems. - homepage: http://www.plogger.org/"
+description "Plogger is the next generation in open-source photo gallery systems."
+website "http://www.plogger.org/"
 
 # 328 results for "powered by Plogger" @ 2010-09-18
 

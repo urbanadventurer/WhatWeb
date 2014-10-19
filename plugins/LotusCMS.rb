@@ -7,7 +7,8 @@
 Plugin.define "LotusCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.1"
-description "LotusCMS (previously ArboroianCMS) brings to the forefront design and design integration into one of the most neglected CMS niches - Databaseless Web-Design and Development. - Homepage: http://www.lotuscms.org/"
+description "LotusCMS (previously ArboroianCMS) brings to the forefront design and design integration into one of the most neglected CMS niches - Databaseless Web-Design and Development."
+website "http://www.lotuscms.org/"
 
 # Google results as at 2011-03-16 #
 # 10 for intitle:"LotusCMS Administration"

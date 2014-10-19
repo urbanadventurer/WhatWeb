@@ -16,7 +16,8 @@
 Plugin.define "WebGuard" do
 author "Andrew Horton"
 version "0.3"
-description "Security surveillance - Homepage: http://novuscctv.com/"
+description "Security surveillance"
+website "http://novuscctv.com/"
 
 # ShodanHQ results as at 2012-02-19 #
 # 618 for gsoap

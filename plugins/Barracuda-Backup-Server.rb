@@ -7,7 +7,8 @@
 Plugin.define "Barracuda-Backup-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-20
 version "0.1"
-description "Local inline Deduplication Backup Systems with available offsite Cloud Storage or site to site replication. - Homepage: https://www.barracudanetworks.com/ns/products/backup_overview.php"
+description "Local inline Deduplication Backup Systems with available offsite Cloud Storage or site to site replication."
+website "https://www.barracudanetworks.com/ns/products/backup_overview.php"
 
 # ShodanHQ results as at 2011-03-13 #
 # 122 for BACKUP_LOCAL_LOCALE

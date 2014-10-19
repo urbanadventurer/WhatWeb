@@ -10,7 +10,8 @@
 Plugin.define "Applet" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
 version "0.2"
-description "This plugin detects instances of applet HTML elements and retrieves the URL from the code parameter. - homepage: http://en.wikipedia.org/wiki/Java_applet"
+description "This plugin detects instances of applet HTML elements and retrieves the URL from the code parameter."
+website "http://en.wikipedia.org/wiki/Java_applet"
 
 # Google results as at 2010-10-15 #
 # 183 for "this site requires java"

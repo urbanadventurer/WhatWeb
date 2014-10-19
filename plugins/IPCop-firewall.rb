@@ -10,7 +10,8 @@
 Plugin.define "IPCop-Firewall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.2"
-description "The IPCop Firewall is a Linux firewall distribution. It is geared towards home and SOHO users. The IPCop web-interface is very user-friendly and makes usage easy. - Homepage: http://sf.net/projects/ipcop/"
+description "The IPCop Firewall is a Linux firewall distribution. It is geared towards home and SOHO users. The IPCop web-interface is very user-friendly and makes usage easy."
+website "http://sf.net/projects/ipcop/"
 
 # Google results as at 2012-11-04 #
 # 6 for intitle:"IPCop - Main page" "IP Address" "Hostname"

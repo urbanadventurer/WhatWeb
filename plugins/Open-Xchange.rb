@@ -7,7 +7,8 @@
 Plugin.define "Open-Xchange" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-14
 version "0.1"
-description "Open-Xchange mail server - Homepage: http://www.open-xchange.com/"
+description "Open-Xchange mail server"
+website "http://www.open-xchange.com/"
 
 # ShodanHQ results as at 2012-07-14 #
 # 38 for Location ox6/ox.html

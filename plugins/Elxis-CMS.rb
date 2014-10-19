@@ -7,7 +7,8 @@
 Plugin.define "Elxis-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
 version "0.1"
-description "Elxis is powerful open source content management system (CMS) released for free under the GNU/GPL license. - homepage: http://www.elxis.org/"
+description "Elxis is powerful open source content management system (CMS) released for free under the GNU/GPL license."
+website "http://www.elxis.org/"
 
 # Google results as at 2010-10-11 #
 # 200 for "powered by Elxis CMS"

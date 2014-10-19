@@ -7,7 +7,8 @@
 Plugin.define "Tribiq" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.1"
-description "Tribiq CMS is a content management system for websites. Without needing technical skills, you can edit and grow your website. - homepage: http://tribiq.com/"
+description "Tribiq CMS is a content management system for websites. Without needing technical skills, you can edit and grow your website."
+website "http://tribiq.com/"
 
 # 130 results for "powered by Tribiq" @ 2010-09-17
 

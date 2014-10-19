@@ -7,7 +7,8 @@
 Plugin.define "Visualware-MyConnection-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
-description "MyConnection Server (MCS) delivers a broad range of support managed automated and user initiated self-help connection testing and monitoring services directly via the browser to any online customer/location anywhere in the world. MCS incorporates testing solutions for critical time dependent applications such as VoIP, Video, IPTV, video conferencing. - Homepage: http://www.myconnectionserver.com/"
+description "MyConnection Server (MCS) delivers a broad range of support managed automated and user initiated self-help connection testing and monitoring services directly via the browser to any online customer/location anywhere in the world. MCS incorporates testing solutions for critical time dependent applications such as VoIP, Video, IPTV, video conferencing."
+website "http://www.myconnectionserver.com/"
 # Default login: admin/admin123
 
 # ShodanHQ results as at 2011-05-30 #

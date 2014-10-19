@@ -7,7 +7,8 @@
 Plugin.define "Sphider" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-23
 version "0.1"
-description "Sphider is a lightweight web spider and search engine written in PHP, using MySQL as its back end database. - Homepage: http://www.sphider.eu/"
+description "Sphider is a lightweight web spider and search engine written in PHP, using MySQL as its back end database."
+website "http://www.sphider.eu/"
 
 # Google results as at 2011-08-23 #
 # 62 for intitle:"Sphider Admin Login" inurl:"admin" +Username +Password

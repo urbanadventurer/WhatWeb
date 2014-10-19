@@ -7,7 +7,8 @@
 Plugin.define "Kentico-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.1"
-description "Kentico CMS for ASP.NET - flexible, all-in-one solution for web developers - Homepage: http://www.kentico.com/"
+description "Kentico CMS for ASP.NET - flexible, all-in-one solution for web developers"
+website "http://www.kentico.com/"
 
 # ShodanHQ results as at 2013-02-06 #
 # 384 for CMSPreferredCulture

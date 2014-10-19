@@ -7,7 +7,8 @@
 Plugin.define "NCSA-HTTPd" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "NCSA HTTPd - Homepage: http://web.archive.org/web/20071020024535/hoohoo.ncsa.uiuc.edu/docs/Overview.html"
+description "NCSA HTTPd"
+website "http://web.archive.org/web/20071020024535/hoohoo.ncsa.uiuc.edu/docs/Overview.html"
 
 # ShodanHQ results as at 2011-03-13 #
 # 306 for NCSA -apache -IIS -TakaC

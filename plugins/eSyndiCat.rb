@@ -10,7 +10,8 @@
 Plugin.define "eSyndiCat" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.2"
-description "eSyndiCat is a professional, affordable directory software solution. - homepage: http://www.esyndicat.com/"
+description "eSyndiCat is a professional, affordable directory software solution."
+website "http://www.esyndicat.com/"
 
 # 8 results for "Powered by eSyndiCat Web Directory" @ 2010-08-08
 

@@ -7,7 +7,8 @@
 Plugin.define "ContentXXL" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
-description "ContentXXL - CMS [German] - Requires: .NET - Homepage: http://www.contentxxl.de/"
+description "ContentXXL - CMS [German] - Requires: .NET"
+website "http://www.contentxxl.de/"
 
 
 

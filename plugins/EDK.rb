@@ -7,7 +7,8 @@
 Plugin.define "EDK" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
-description "EDK is an Open Source Killboard for EVE-Online, maintained by the EVE Development Network. Requirements: PHP >= version 5, the GD Library, MySQL >= version 5 - homepage: http://wiki.eve-id.net/EDK"
+description "EDK is an Open Source Killboard for EVE-Online, maintained by the EVE Development Network. Requirements: PHP >= version 5, the GD Library, MySQL >= version 5"
+website "http://wiki.eve-id.net/EDK"
 
 # Google results as at 2010-09-04 #
 # 355 for (inurl:alliance_detail | inurl:pilot_detail | inurl:corp_detail)

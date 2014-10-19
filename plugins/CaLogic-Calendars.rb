@@ -10,7 +10,8 @@
 Plugin.define "CaLogic-Calendars" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
 version "0.2"
-description "Web calendar - homepage: http://calogic.de/"
+description "Web calendar"
+website "http://calogic.de/"
 
 # Gogle results as at 2010-08-27 #
 # 11 for "This is your Timezone Offset from GMT and is shown in hours."

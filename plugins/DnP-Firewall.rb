@@ -7,7 +7,8 @@
 Plugin.define "DnP-Firewall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-25
 version "0.2"
-description "DnP Firewall Gateway Modification - Homepage: http://www.silveryhat.com/delynie/f142"
+description "DnP Firewall Gateway Modification"
+website "http://www.silveryhat.com/delynie/f142"
 
 # Google results as at 2011-02-25 #
 # 12 for "Protected by DnP Firewall" intitle:"Forum Gateway - Powered by DnP Firewall"

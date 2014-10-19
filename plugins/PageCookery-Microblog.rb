@@ -7,7 +7,8 @@
 Plugin.define "PageCookery-Microblog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
-description "Blog [Chinese] - Homepage: http://www.pagecookery.com/"
+description "Blog [Chinese]"
+website "http://www.pagecookery.com/"
 
 # Google results as at 2011-03-06 #
 # 384 for "Powered by PageCookery Microblog"

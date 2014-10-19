@@ -7,7 +7,8 @@
 Plugin.define "BitKeeper" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.1"
-description "BitKeeper Bug Manager - BitKeeper is paving the way for the next generation of SCM tools. As the leader in distributed configuration management and the culmination of a decade of innovation, BitKeeper has been shown to double the pace of software development. - Homepage: http://bitkeeper.com/"
+description "BitKeeper Bug Manager - BitKeeper is paving the way for the next generation of SCM tools. As the leader in distributed configuration management and the culmination of a decade of innovation, BitKeeper has been shown to double the pace of software development."
+website "http://bitkeeper.com/"
 
 # Google results as at 2011-06-04 #
 # 1 for intitle:"BugManager Home"

@@ -7,7 +7,8 @@
 Plugin.define "Visec" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-05
 version "0.1"
-description "Visec - Surveillance Software - Homepage: http://www.visec.net/"
+description "Visec - Surveillance Software"
+website "http://www.visec.net/"
 
 # ShodanHQ results as at 2012-06-05 #
 # 38 for visec

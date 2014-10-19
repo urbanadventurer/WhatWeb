@@ -7,7 +7,8 @@
 Plugin.define "Kohana" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
 version "0.1"
-description "Kohana is an elegant HMVC PHP5 framework that provides a rich set of components for building web applications. - Homepage: http://kohanaframework.org/"
+description "Kohana is an elegant HMVC PHP5 framework that provides a rich set of components for building web applications."
+website "http://kohanaframework.org/"
 
 # Google results as at 2011-05-10 #
 # 394 for kohanasession

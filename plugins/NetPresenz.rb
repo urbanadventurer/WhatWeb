@@ -7,7 +7,8 @@
 Plugin.define "NetPresenz" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.1"
-description "NetPresenz is a Classic Macintosh implementation of the WWW, Gopher and FTP server protocols. It is compatible with most web browsers and FTP clients. It allows your Mac to act as an FTP server so you (and others) can access your files from anywhere around the world. You can also host a web site directly from your computer. - Homepage: http://www.stairways.com/main/netpresenz"
+description "NetPresenz is a Classic Macintosh implementation of the WWW, Gopher and FTP server protocols. It is compatible with most web browsers and FTP clients. It allows your Mac to act as an FTP server so you (and others) can access your files from anywhere around the world. You can also host a web site directly from your computer."
+website "http://www.stairways.com/main/netpresenz"
 
 # ShodanHQ results as at 2011-06-04 #
 # 26 for netpresenz

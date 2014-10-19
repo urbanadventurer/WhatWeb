@@ -10,7 +10,8 @@
 Plugin.define "E-Xoopport" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
-description "CMS - homepage: http://www.e-xoopport.it/modules/news/"
+description "CMS"
+website "http://www.e-xoopport.it/modules/news/"
 
 # Google results as at 2010-09-18 #
 # 159 for "powered by E-Xoopport"

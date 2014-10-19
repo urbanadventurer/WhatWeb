@@ -12,7 +12,8 @@
 Plugin.define "TP-Link-Router" do
 author "Aung Khant, http://yehg.net"
 version "0.2"
-description "Detect TP-Link Router - homepage: http://www.tp-link.com/"
+description "Detect TP-Link Router"
+website "http://www.tp-link.com/"
 
 # ShodanHQ results as at 2011-01-29 #
 # 13,292 for TP-LINK

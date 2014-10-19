@@ -10,7 +10,8 @@
 Plugin.define "CommonSpot" do
 author "Tonmoy Saikia"
 version "0.2"
-description "The CommonSpot Web content management solution (Web CMS) increases the value of content by creating engaging Web experiences that generate high impact results. - Homepage: http://www.paperthin.com/"
+description "The CommonSpot Web content management solution (Web CMS) increases the value of content by creating engaging Web experiences that generate high impact results."
+website "http://www.paperthin.com/"
 
 
 

@@ -7,7 +7,8 @@
 Plugin.define "Silex-Print-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
 version "0.1"
-description "Silex Print Server - Print servers connect printers directly to the network so that multiple PCs can share them. - Homepage: http://www.silexamerica.com/"
+description "Silex Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."
+website "http://www.silexamerica.com/"
 
 # ShodanHQ results as at 2011-03-08 #
 # 154 for silex Web Admin

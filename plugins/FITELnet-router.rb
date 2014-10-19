@@ -7,7 +7,8 @@
 Plugin.define "FITELnet-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-30
 version "0.1"
-description "FITELnet router - Homepage: http://www.furukawa.co.jp/fitelnet/"
+description "FITELnet router"
+website "http://www.furukawa.co.jp/fitelnet/"
 
 # ShodanHQ results as at 2011-03-30 #
 # 4,374 for GR-HTTPD Server

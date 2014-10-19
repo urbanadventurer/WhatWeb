@@ -7,7 +7,8 @@
 Plugin.define "NSFocus" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
 version "0.1"
-description "NSFOCUS Web Application Firewall - Homepage: http://www.nsfocus.com/"
+description "NSFOCUS Web Application Firewall"
+website "http://www.nsfocus.com/"
 # Manual: http://www.nsfocus.com/jp/3_products/090714WAF.pdf
 
 # ShodanHQ results as at 2011-03-13 #

@@ -10,7 +10,8 @@
 Plugin.define "Calendarix" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
-description "Calendarix is a powerful and easy to use web-based calendar that runs on PHP and MySQL. - homepage: http://www.calendarix.com/"
+description "Calendarix is a powerful and easy to use web-based calendar that runs on PHP and MySQL."
+website "http://www.calendarix.com/"
 
 # 14 results for "powered by Calendarix" @ 2010-09-18
 # 45 results for intitle:"Calendarix User Login" intext:"Calendarix User Login" +Username +Password @ 2010-09-18

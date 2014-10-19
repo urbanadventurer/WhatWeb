@@ -7,7 +7,8 @@
 Plugin.define "Dell-KACE-Appliance" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
 version "0.1"
-description "Dell KACE System Management Appliance - Homepage: http://www.kace.com/products/overview"
+description "Dell KACE System Management Appliance"
+website "http://www.kace.com/products/overview"
 
 # ShodanHQ results as at 2012-05-02 #
 # 284 for X-KBOX-WebServer

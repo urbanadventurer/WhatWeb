@@ -7,7 +7,8 @@
 Plugin.define "System-Shop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description "shopping cart - homepage: http://system-shop.at/"
+description "shopping cart"
+website "http://system-shop.at/"
 
 # 62 results for "powered by System Shop" @ 2010-09-18
 

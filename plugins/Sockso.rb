@@ -7,7 +7,8 @@
 Plugin.define "Sockso" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-16
 version "0.1"
-description "Sockso is a free, open-source, personal music host server - Homepage: http://sockso.pu-gh.com/"
+description "Sockso is a free, open-source, personal music host server"
+website "http://sockso.pu-gh.com/"
 
 # ShodanHQ results as at 2012-03-16 #
 # 25 for Sockso

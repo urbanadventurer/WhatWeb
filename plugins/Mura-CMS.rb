@@ -7,7 +7,8 @@
 Plugin.define "Mura-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "Mura CMS (previously known as Sava CMS) is an open source CMS for ColdFusion. - Homepage: http://www.getmura.com/"
+description "Mura CMS (previously known as Sava CMS) is an open source CMS for ColdFusion."
+website "http://www.getmura.com/"
 
 
 

@@ -7,7 +7,8 @@
 Plugin.define "cInvoice" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-06
 version "0.1"
-description "Forperfect cInvoice system - web-based invoice system. Requires PHP and MySQL. - Homepage: http://www.forperfect.com/seo/cinvoice.php"
+description "Forperfect cInvoice system - web-based invoice system. Requires PHP and MySQL."
+website "http://www.forperfect.com/seo/cinvoice.php"
 
 # Google results as at 2011-07-06 #
 # 37 for "Powered by cInvoice system"

@@ -7,7 +7,8 @@
 Plugin.define "uClinux-httpd" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
-description "The Linux/Microcontroller project (uClinux) is a port of Linux to systems without a Memory Management Unit (MMU). This plugin identifies the version of the uClinux HTTP server - Homepage: http://www.uclinux.org/"
+description "The Linux/Microcontroller project (uClinux) is a port of Linux to systems without a Memory Management Unit (MMU). This plugin identifies the version of the uClinux HTTP server"
+website "http://www.uclinux.org/"
 
 # ShodanHQ results as at 2011-04-08 #
 # 6,633 for uClinux-httpd

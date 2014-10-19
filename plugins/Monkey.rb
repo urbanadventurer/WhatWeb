@@ -7,7 +7,8 @@
 Plugin.define "Monkey" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
-description "Monkey is a very small, fast and scalable web server for Linux. - Homepage: http://www.monkey-project.com/"
+description "Monkey is a very small, fast and scalable web server for Linux."
+website "http://www.monkey-project.com/"
 
 # ShodanHQ results as at 2011-06-02 #
 # 41 for Server Monkey Linux

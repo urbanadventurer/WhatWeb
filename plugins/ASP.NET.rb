@@ -24,7 +24,8 @@
 Plugin.define "ASP_NET" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
 version "0.4"
-description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world. - homepage: http://www.asp.net/"
+description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world."
+website "http://www.asp.net/"
 
 # The Global.asa file is an optional file that can contain declarations of objects, variables, and methods that can be accessed by every page in an ASP application. All valid browser scripts (JavaScript, VBScript, JScript, PerlScript, etc.) can be used within Global.asa. The Global.asa file must be stored in the root directory of the ASP application, and each application can only have one Global.asa file. - http://www.w3schools.com/ASP/asp_globalasa.asp
 

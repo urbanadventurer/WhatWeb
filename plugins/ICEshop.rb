@@ -7,7 +7,8 @@
 Plugin.define "ICEshop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-26
 version "0.1"
-description "ICEshop e-commerce - Homepage: http://www.iceshop.nl/"
+description "ICEshop e-commerce"
+website "http://www.iceshop.nl/"
 
 # Google results as at 2012-02-16 #
 # 66 for "Powered by ICEshop"

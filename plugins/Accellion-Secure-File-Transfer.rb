@@ -7,7 +7,8 @@
 Plugin.define "Accellion-Secure-File-Transfer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-20
 version "0.1"
-description "Accellion Secure File Transfer (SFT) - Homepage: http://www.accellion.com/"
+description "Accellion Secure File Transfer (SFT)"
+website "http://www.accellion.com/"
 
 # ShodanHQ results as at 2011-11-20 #
 # 1,005 for location courier mail_user_login.html

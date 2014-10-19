@@ -10,7 +10,8 @@
 Plugin.define "eMeeting-Online-Dating-Software" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
-description "Dating Software by eMeeting Ltd - homepage: http://www.datingscripts.org/"
+description "Dating Software by eMeeting Ltd"
+website "http://www.datingscripts.org/"
 
 # Google results as at 2010-08-30 #
 # 53 for "eMeeting Dating Software Version"

@@ -7,7 +7,8 @@
 Plugin.define "AMR-WinControl" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.1"
-description "This plugin identifies AMR-WinControl server - homepage: http://amr-wincontrol.software.informer.com/"
+description "This plugin identifies AMR-WinControl server"
+website "http://amr-wincontrol.software.informer.com/"
 
 # 6 ShodanHQ results for "Server: AMR_WinControl" @ 2010-11-01
 

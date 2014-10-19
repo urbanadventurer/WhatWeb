@@ -7,7 +7,8 @@
 Plugin.define "Axentra-HipServ" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
 version "0.1"
-description "Axentra-HipServ - Digital Home/SOHO Software Platform for Internet Gateway and NAS Devices - Homepage: http://www.axentra.com/en/"
+description "Axentra-HipServ - Digital Home/SOHO Software Platform for Internet Gateway and NAS Devices"
+website "http://www.axentra.com/en/"
 
 # ShodanHQ results as at 2011-05-10 #
 # 21,091 for x-axentra-version

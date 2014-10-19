@@ -10,7 +10,8 @@
 Plugin.define "SyndeoCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.2"
-description "A Content Management System (CMS) for primary schools, which helps you manage and maintain your website. It can also be a very usefull CMS for small companies or non profit organizations.  - homepage: http://www.syndeocms.org"
+description "A Content Management System (CMS) for primary schools, which helps you manage and maintain your website. It can also be a very usefull CMS for small companies or non profit organizations. "
+website "http://www.syndeocms.org"
 
 # Google results as at 2010-08-06 #
 # 117 for "powered by SyndeoCMS"

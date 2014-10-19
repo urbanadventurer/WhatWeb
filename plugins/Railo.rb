@@ -7,7 +7,8 @@
 Plugin.define "Railo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "Railo is an Open Source ColdFusion Markup Language (CFML) server. - Homepage: http://getrailo.com/"
+description "Railo is an Open Source ColdFusion Markup Language (CFML) server."
+website "http://getrailo.com/"
 
 # More Info #
 # http://en.wikipedia.org/wiki/Railo

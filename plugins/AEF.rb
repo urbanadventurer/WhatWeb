@@ -7,7 +7,8 @@
 Plugin.define "AEF" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-27
 version "0.1"
-description "Advanced Electron Forum (AEF) - bulletin board software - requires PHP and MySQL - Homepage: http://www.anelectron.com/"
+description "Advanced Electron Forum (AEF) - bulletin board software - requires PHP and MySQL"
+website "http://www.anelectron.com/"
 
 # Google results as at 2011-09-27 #
 # 385 for "Powered By AEF" "Electron Inc."

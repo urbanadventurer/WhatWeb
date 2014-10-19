@@ -7,7 +7,8 @@
 Plugin.define "Home-Control-Box" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
 version "0.1"
-description "The Home Control Box is a small, powerful computer that integrates the various sensors and electronic systems in the home into one single functional system. - Homepage: http://www.homecontrolbox.com/"
+description "The Home Control Box is a small, powerful computer that integrates the various sensors and electronic systems in the home into one single functional system."
+website "http://www.homecontrolbox.com/"
 # The username is the same as the name of your Home Control Box without 'hcb-', so hcb-xxx-yyyy becomes yyy-xxxx
 
 # ShodanHQ results as at 2011-05-23 #

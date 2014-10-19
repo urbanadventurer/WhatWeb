@@ -7,7 +7,8 @@
 Plugin.define "Lussumo-Vanilla" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-07
 version "0.1"
-description "A free, open-source, standards-compliant discussion forum for the web.  - Homepage: http://code.google.com/p/lussumo-vanilla/"
+description "A free, open-source, standards-compliant discussion forum for the web. "
+website "http://code.google.com/p/lussumo-vanilla/"
 
 # ShodanHQ results as at 2011-03-13 #
 # 74 for Lussumo Vanilla

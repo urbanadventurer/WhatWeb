@@ -7,7 +7,8 @@
 Plugin.define "LandShop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-01
 version "0.1"
-description "LandShop - Open Source Real Estate System - Homepage: http://www.landshop.gr/"
+description "LandShop - Open Source Real Estate System"
+website "http://www.landshop.gr/"
 
 # Google results as at 2012-04-01 #
 # 59 for "Powered by LandShop" inurl:"action"

@@ -7,7 +7,8 @@
 Plugin.define "Infinet-bCX1-Controller-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
-description "The Infinet bCX1 Controller Router (bCX1-CR-INF) is a native BACnet/IP protocol controller with a built-in web server. - Homepage: http://plpartner.tac.com/Content?contentId=document/11984"
+description "The Infinet bCX1 Controller Router (bCX1-CR-INF) is a native BACnet/IP protocol controller with a built-in web server."
+website "http://plpartner.tac.com/Content?contentId=document/11984"
 # Data Sheet: http://www.tac.com/data/internal/data/05/64/1177956438925/bCX1+Controller_Router+Series+Datasheet.pdf
 
 # ShodanHQ results as at 2011-03-06 #

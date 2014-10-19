@@ -7,7 +7,8 @@
 Plugin.define "WebObjects" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
 version "0.1"
-description "WebObjects is a Java web application server from Apple Inc., and a web application framework that runs on the server. - Homepage: http://www.apple.com/support/webobjects/"
+description "WebObjects is a Java web application server from Apple Inc., and a web application framework that runs on the server."
+website "http://www.apple.com/support/webobjects/"
 
 # ShodanHQ results as at 2011-05-19 #
 # 141 for "200 Apple WebObjects"

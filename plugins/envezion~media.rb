@@ -7,7 +7,8 @@
 Plugin.define "envezion~media" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.1"
-description "envezion~MEDIA makes it possible for the small business owner to you reach your goals through our consulting services. - homepage: http://envezion.com/"
+description "envezion~MEDIA makes it possible for the small business owner to you reach your goals through our consulting services."
+website "http://envezion.com/"
 
 # 15 results for "powered by envezion~media" @ 2010-08-15
 

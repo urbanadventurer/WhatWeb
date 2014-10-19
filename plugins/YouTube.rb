@@ -7,7 +7,8 @@
 Plugin.define "YouTube" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-16
 version "0.1"
-description "Embedded YouTube video - Homepage: http://youtube.com/"
+description "Embedded YouTube video"
+website "http://youtube.com/"
 
 
 

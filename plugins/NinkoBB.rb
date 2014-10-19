@@ -7,7 +7,8 @@
 Plugin.define "NinkoBB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
-description "NinkoBB - Homepage: http://ninkobb.com/"
+description "NinkoBB"
+website "http://ninkobb.com/"
 
 # Google results as at 2011-02-27 #
 # 55 for "Powered by NinkoBB"

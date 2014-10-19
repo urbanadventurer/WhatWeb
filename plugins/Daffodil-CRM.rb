@@ -7,7 +7,8 @@
 Plugin.define "Daffodil-CRM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-02
 version "0.1"
-description "Daffodil CRM is a software that enables seamless coordination between sales, marketing, customer service, field support and other functions that handle customer contact for an enterprise. - Homepage: http://crm.daffodilsw.com/"
+description "Daffodil CRM is a software that enables seamless coordination between sales, marketing, customer service, field support and other functions that handle customer contact for an enterprise."
+website "http://crm.daffodilsw.com/"
 
 # Google results as at 2011-04-02 #
 # 3 for "Daffodil" inurl:app=forgot_passwd

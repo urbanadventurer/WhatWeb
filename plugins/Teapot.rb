@@ -7,7 +7,8 @@
 Plugin.define "Teapot" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
-description "HTCPCP, a protocol for controlling, monitoring, and diagnosing coffee pots. - Homepage: http://www.apps.ietf.org/rfc/rfc2324.html"
+description "HTCPCP, a protocol for controlling, monitoring, and diagnosing coffee pots."
+website "http://www.apps.ietf.org/rfc/rfc2324.html"
 
 # ShodanHQ results as at 2011-03-14 #
 # 6 for 418 teapot

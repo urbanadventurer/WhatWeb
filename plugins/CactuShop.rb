@@ -7,7 +7,8 @@
 Plugin.define "CactuShop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-19
 version "0.1"
-description "ASP and ASP.NET SEO optimized database-driven e-commerce storefront software. - Homepage: http://www.cactushop.com/"
+description "ASP and ASP.NET SEO optimized database-driven e-commerce storefront software."
+website "http://www.cactushop.com/"
 
 # ShodanHQ results as at 2011-07-19 #
 # 17 for CactuShop

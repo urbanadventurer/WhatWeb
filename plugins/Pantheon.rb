@@ -7,7 +7,8 @@
 Plugin.define "Pantheon" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-29
 version "0.1"
-description "Pantheon - Homepage: https://www.getpantheon.com/"
+description "Pantheon"
+website "https://www.getpantheon.com/"
 
 # ShodanHQ results as at 2012-09-29 #
 # 17 for x-pantheon-edge-server

@@ -7,7 +7,8 @@
 Plugin.define "Axis-Commerce" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
-description "Axis Commerce - open source eCommerce software - Requires: PHP and MySQL - Homepage: http://axiscommerce.com/"
+description "Axis Commerce - open source eCommerce software - Requires: PHP and MySQL"
+website "http://axiscommerce.com/"
 
 
 

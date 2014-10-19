@@ -10,7 +10,8 @@
 Plugin.define "Aardvark-Topsites-PHP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
 version "0.2"
-description "Aardvark Topsites PHP is a free topsites script built on PHP and MySQL. - homepage: http://www.aardvarktopsitesphp.com/topsites/"
+description "Aardvark Topsites PHP is a free topsites script built on PHP and MySQL."
+website "http://www.aardvarktopsitesphp.com/topsites/"
 
 # Dorks #
 dorks [

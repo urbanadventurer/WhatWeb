@@ -7,7 +7,8 @@
 Plugin.define "BloofoxCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
-description "bloofoxCMS is a free open source content management system (CMS). bloofoxCMS is a small and easy to use CMS. - Homepage: http://bloofox.com/"
+description "bloofoxCMS is a free open source content management system (CMS). bloofoxCMS is a small and easy to use CMS."
+website "http://bloofox.com/"
 
 # Google results as at 2011-02-27 #
 # 167 for "Powered by bloofoxCMS"

@@ -7,7 +7,8 @@
 Plugin.define "VLC-Web-Interface" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-20
 version "0.1"
-description "Web interface for VideoLAN media player - Homepage: http://www.videolan.org/"
+description "Web interface for VideoLAN media player"
+website "http://www.videolan.org/"
 
 # Google results as at 2011-06-20 #
 # 5 for intitle:"VLC media player - Web Interface" "VLM interface"

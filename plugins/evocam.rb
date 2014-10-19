@@ -7,7 +7,8 @@
 Plugin.define "Evo-Cam" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-15
 version "0.1"
-description "EvoCam is the ultimate webcam software for Mac OS X - homepage: http://www.evological.com/evocam.html"
+description "EvoCam is the ultimate webcam software for Mac OS X"
+website "http://www.evological.com/evocam.html"
 
 # Google results as at 2010-07-15 #
 # 35 for intitle:"EvoCam" inurl:"webcam.html" -intitle

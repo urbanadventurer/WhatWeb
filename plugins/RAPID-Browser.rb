@@ -7,7 +7,8 @@
 Plugin.define "RAPID-Browser" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
-description "RAPID Browser - Managing news contents, sharing editorial and publishing to paper, web and mobile. - Homepage: http://www.knowledgeview.co.uk/solutions/rapidbrowser"
+description "RAPID Browser - Managing news contents, sharing editorial and publishing to paper, web and mobile."
+website "http://www.knowledgeview.co.uk/solutions/rapidbrowser"
 
 # ShodanHQ results as at 2011-06-02 #
 # 4 for WebLoginCmd

@@ -7,7 +7,8 @@
 Plugin.define "MACOS-Personal-Websharing" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
-description "Web Sharing is a feature in Mac OS X that allows you to serve documents and other files from your computer. - Homepage: http://support.apple.com/kb/HT2973"
+description "Web Sharing is a feature in Mac OS X that allows you to serve documents and other files from your computer."
+website "http://support.apple.com/kb/HT2973"
 
 # More info #
 # http://guides.macrumors.com/Personal_Web_Sharing

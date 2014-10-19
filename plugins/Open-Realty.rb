@@ -7,7 +7,8 @@
 Plugin.define "Open-Realty" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
-description "Open-Realty is a FREE commercial web based real estate listing management application. - homepage: http://www.open-realty.org/"
+description "Open-Realty is a FREE commercial web based real estate listing management application."
+website "http://www.open-realty.org/"
 
 # 207 results for "powered by Open-Realty" @ 2010-10-13
 

@@ -7,7 +7,8 @@
 Plugin.define "Jetty" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-22
 version "0.1"
-description "Jetty is a pure Java application server. Jetty provides an HTTP server, HTTP client, and javax.servlet container. - Homepage: http://jetty.codehaus.org/jetty/"
+description "Jetty is a pure Java application server. Jetty provides an HTTP server, HTTP client, and javax.servlet container."
+website "http://jetty.codehaus.org/jetty/"
 
 # ShodanHQ results as at 2011-08-22 #
 # 18,555 for Jetty

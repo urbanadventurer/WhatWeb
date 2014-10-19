@@ -13,7 +13,8 @@
 Plugin.define "EarlyImpact-ProductCart" do
 author "Andrew Horton"
 version "0.3"
-description "EarlyImpact ProductCart is an ASP commercial ecommerce system  - Homepage: http://www.earlyimpact.com. Version < 2.53 is vulnerable http://www.securityfocus.com/bid/9669"
+description "EarlyImpact ProductCart is an ASP commercial ecommerce system "
+website "http://www.earlyimpact.com. Version < 2.53 is vulnerable http://www.securityfocus.com/bid/9669"
 
 # Dorks #
 dorks [

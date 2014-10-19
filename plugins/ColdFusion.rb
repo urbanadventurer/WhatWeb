@@ -13,7 +13,8 @@
 Plugin.define "ColdFusion" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.3"
-description "Adobe ColdFusion application server and software enables developers to rapidly build, deploy, and maintain robust Internet applications for the enterprise. - homepage: http://www.adobe.com/products/coldfusion/"
+description "Adobe ColdFusion application server and software enables developers to rapidly build, deploy, and maintain robust Internet applications for the enterprise."
+website "http://www.adobe.com/products/coldfusion/"
 
 # ShodanHQ results as at 2012-02-05 #
 # 6,536 for page-completion-status

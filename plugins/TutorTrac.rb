@@ -7,7 +7,8 @@
 Plugin.define "TutorTrac" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
-description "Online management software for learning, writing, tutoring departments, and academic skills centers for traditional and athletic students.  - Homepage: http://www.go-redrock.com/"
+description "Online management software for learning, writing, tutoring departments, and academic skills centers for traditional and athletic students. "
+website "http://www.go-redrock.com/"
 
 # ShodanHQ results as at 2011-06-02 #
 # 65 for TutorTrac

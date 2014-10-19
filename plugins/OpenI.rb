@@ -7,7 +7,8 @@
 Plugin.define "OpenI" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-04
 version "0.1"
-description "OpenI is a Business Intelligence web application for on-demand or SaaS deployments. OpenI enables simple and clean data visualization from OLAP and RDBMS, so users can intuitively build and publish interactive reports, analyses, and dashboards. - Homepage: http://openi.org/"
+description "OpenI is a Business Intelligence web application for on-demand or SaaS deployments. OpenI enables simple and clean data visualization from OLAP and RDBMS, so users can intuitively build and publish interactive reports, analyses, and dashboards."
+website "http://openi.org/"
 
 # Google results as at 2011-08-04 #
 # 4 for "Openi Intelligence Portal" +Username +Password

@@ -10,7 +10,8 @@
 Plugin.define "Sitefinity" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.2"
-description "sitefinity ASP.NET CMS - Homepage: http://www.sitefinity.com/"
+description "sitefinity ASP.NET CMS"
+website "http://www.sitefinity.com/"
 
 # Google results as at 2012-03-09 #
 # 30 for inurl:"/Sitefinity/WebsiteTemplates/"

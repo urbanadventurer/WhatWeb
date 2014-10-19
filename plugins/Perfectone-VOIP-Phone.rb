@@ -7,7 +7,8 @@
 Plugin.define "Perfectone-VOIP-Phone" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
 version "0.1"
-description "Perfectone VOIP phone - Homepage: http://www.perfectone.nl/"
+description "Perfectone VOIP phone"
+website "http://www.perfectone.nl/"
 
 
 

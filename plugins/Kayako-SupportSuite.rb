@@ -10,7 +10,8 @@
 Plugin.define "Kayako-SupportSuite" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-24
 version "0.2"
-description "We offer all of our helpdesk solutions as licensed products (install and host it yourself) or as help desk hosting services. - homepage: http://www.kayako.com/"
+description "We offer all of our helpdesk solutions as licensed products (install and host it yourself) or as help desk hosting services."
+website "http://www.kayako.com/"
 
 # Google results as at 2010-09-24 #
 # 314 for "powered by Kayako eSupport"

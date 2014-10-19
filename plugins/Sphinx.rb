@@ -7,7 +7,8 @@
 Plugin.define "Sphinx" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-04
 version "0.1"
-description "Sphinx is a tool that makes it easy to create intelligent and beautiful documentation - Homepage: http://sphinx.pocoo.org/"
+description "Sphinx is a tool that makes it easy to create intelligent and beautiful documentation"
+website "http://sphinx.pocoo.org/"
 
 # Google results as at 2011-07-04 #
 # 363 for "Created using Sphinx" +Copyright

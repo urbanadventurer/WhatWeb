@@ -7,7 +7,8 @@
 Plugin.define "XWiki" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-08
 version "0.1"
-description "XWiki - Open Source Wiki and Content-Oriented Application Platform - Homepage: http://www.xwiki.org/"
+description "XWiki - Open Source Wiki and Content-Oriented Application Platform"
+website "http://www.xwiki.org/"
 
 # ShodanHQ results as at 2011-11-08 #
 # 143 for location bin/view/Main

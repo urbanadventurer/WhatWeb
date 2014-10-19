@@ -7,7 +7,8 @@
 Plugin.define "MemHT-Portal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-08
 version "0.1"
-description "MemHT Portal is a Free PHP CMS and Blog. It permits the creation and the management online of websites with few and easy steps. It's completely customizable, expandable and suitable for all needs. - Homepage: http://www.memht.com/"
+description "MemHT Portal is a Free PHP CMS and Blog. It permits the creation and the management online of websites with few and easy steps. It's completely customizable, expandable and suitable for all needs."
+website "http://www.memht.com/"
 
 # Google results as at 2011-02-08 #
 # 152 for "MemHT Portal is a free software released under the GNU/GPL License by Miltenovik Manojlo"

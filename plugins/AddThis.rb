@@ -7,7 +7,8 @@
 Plugin.define "AddThis" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
 version "0.1"
-description "AddThis is a free way to boost traffic back to your site by making it easier for visitors to share your content. - Homepage: http://www.addthis.com/"
+description "AddThis is a free way to boost traffic back to your site by making it easier for visitors to share your content."
+website "http://www.addthis.com/"
 
 
 

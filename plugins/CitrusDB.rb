@@ -7,7 +7,8 @@
 Plugin.define "CitrusDB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
 version "0.1"
-description "CitrusDB is a web based customer care and billing software solution (CC&B) - Requires PHP and MySQL - Homepage: http://www.citrusdb.org/"
+description "CitrusDB is a web based customer care and billing software solution (CC&B) - Requires PHP and MySQL"
+website "http://www.citrusdb.org/"
 
 # Google results as at 2012-04-11 #
 # 36 for intitle:CitrusDB "Enter your username and password" "username" "password"

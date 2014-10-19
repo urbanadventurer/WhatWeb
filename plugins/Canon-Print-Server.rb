@@ -7,7 +7,8 @@
 Plugin.define "Canon-Print-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
 version "0.1"
-description "Canon Print Server - Print servers connect printers directly to the network so that multiple PCs can share them. - Homepage: http://canon.com"
+description "Canon Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."
+website "http://canon.com"
 
 # ShodanHQ results as at 2011-03-07 #
 # 1,142 for PRINT_SERVER WEB

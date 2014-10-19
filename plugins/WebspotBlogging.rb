@@ -7,7 +7,8 @@
 Plugin.define "WebspotBlogging" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.1"
-description "Old blog - homepage: http://www.webspot.co.uk/"
+description "Old blog"
+website "http://www.webspot.co.uk/"
 
 # 13 results for "powered by WebspotBlogging" @ 2010-08-21
 

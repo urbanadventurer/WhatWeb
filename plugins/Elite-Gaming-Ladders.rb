@@ -7,7 +7,8 @@
 Plugin.define "Elite-Gaming-Ladders" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-06
 version "0.1"
-description "Elite Gaming Ladders - Leagues, tournaments and online game battles script - Homepage: http://eliteladders.com/"
+description "Elite Gaming Ladders - Leagues, tournaments and online game battles script"
+website "http://eliteladders.com/"
 
 # Google results as at 2011-09-06 #
 # 183 for "Powered by Elite Gaming Ladders"

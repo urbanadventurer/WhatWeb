@@ -7,7 +7,8 @@
 Plugin.define "OLAT" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.1"
-description "OLAT - Online Learning And Training. OLAT offers a flexible online course system along with extensive features to guarantee learning and teaching independent of time and place. It has been created especially for public institutions such as universities, academies or colleges, but it is also suitable for other businesses. - Homepage: http://www.olat.org/website/en/html/index.html"
+description "OLAT - Online Learning And Training. OLAT offers a flexible online course system along with extensive features to guarantee learning and teaching independent of time and place. It has been created especially for public institutions such as universities, academies or colleges, but it is also suitable for other businesses."
+website "http://www.olat.org/website/en/html/index.html"
 
 # Google results as at 2011-06-04 #
 # 13 for intitle:"OLAT - Online Learning And Training" "OLAT password"

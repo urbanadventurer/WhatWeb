@@ -7,7 +7,8 @@
 Plugin.define "Icecast" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
-description "Icecast is a GPL streaming media server project that currently streams in MP3 format. - Homepage: http://www.icecast.org/"
+description "Icecast is a GPL streaming media server project that currently streams in MP3 format."
+website "http://www.icecast.org/"
 
 # ShodanHQ results as at 2011-08-07 #
 # 75 for icecast

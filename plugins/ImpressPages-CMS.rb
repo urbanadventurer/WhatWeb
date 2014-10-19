@@ -7,7 +7,8 @@
 Plugin.define "ImpressPages-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-22
 version "0.1"
-description "ImpressPages - Web CMS built on PHP5.3 and MySQL - Homepage: http://www.impresspages.org/"
+description "ImpressPages - Web CMS built on PHP5.3 and MySQL"
+website "http://www.impresspages.org/"
 
 # Google results as at 2011-10-22 #
 # 303 for "Powered by ImpressPages CMS."

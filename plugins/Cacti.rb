@@ -7,7 +7,8 @@
 Plugin.define "Cacti" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
 version "0.1"
-description "Cacti is a complete network graphing solution designed to harness the power of RRDTool's data storage and graphing functionality. - Homepage: http://www.cacti.net/"
+description "Cacti is a complete network graphing solution designed to harness the power of RRDTool's data storage and graphing functionality."
+website "http://www.cacti.net/"
 
 # Google results as at 2011-11-22 #
 # 86 for inurl:"cacti/graph_view.php?action="

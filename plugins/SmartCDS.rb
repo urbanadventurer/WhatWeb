@@ -7,7 +7,8 @@
 Plugin.define "SmartCDS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-06
 version "0.1"
-description "SmartCDS (Content Delivery Server) hardware [Japanese] - Homepage: http://www.globaldawin.com/product/smartcds.php3"
+description "SmartCDS (Content Delivery Server) hardware [Japanese]"
+website "http://www.globaldawin.com/product/smartcds.php3"
 
 # ShodanHQ results as at 2011-07-06 #
 # 420 for SmartCDS

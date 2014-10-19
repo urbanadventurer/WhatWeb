@@ -7,7 +7,8 @@
 Plugin.define "Atlassian-JIRA" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-11
 version "0.1"
-description "JIRA provides issue tracking and project tracking for software development teams to improve code quality and the speed of development. - Homepage: http://www.atlassian.com/software/jira/"
+description "JIRA provides issue tracking and project tracking for software development teams to improve code quality and the speed of development."
+website "http://www.atlassian.com/software/jira/"
 
 # Google results as at 2011-07-11 #
 # 494 for "Bug tracking and project tracking for software development powered by Atlassian JIRA" "Warning: either you have javascript disabled or your browser does not support javascript"

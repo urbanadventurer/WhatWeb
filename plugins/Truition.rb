@@ -7,7 +7,8 @@
 Plugin.define "Truition" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
 version "0.1"
-description "CDC eCommerce - On Demand eCommerce and Online Auction Software - formerly Truition - Homepage: http://www.truition.com/"
+description "CDC eCommerce - On Demand eCommerce and Online Auction Software - formerly Truition"
+website "http://www.truition.com/"
 
 # Google results as at 2011-01-30 #
 # 28 for "powered by Truition" inurl:ExecMacro inurl:cgi-bin

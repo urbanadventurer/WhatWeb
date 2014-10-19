@@ -7,7 +7,8 @@
 Plugin.define "Syncrify" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-29
 version "0.1"
-description "Syncrify is a fast incremental remote backup that backs up files using the HTTP protocol. - Homepage: http://web.synametrics.com/Syncrify.htm"
+description "Syncrify is a fast incremental remote backup that backs up files using the HTTP protocol."
+website "http://web.synametrics.com/Syncrify.htm"
 
 # Google results as at 2012-01-29 #
 # 37 for intitle:"Syncrify - Fast incremental backup" "powered by Syncrify"

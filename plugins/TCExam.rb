@@ -7,7 +7,8 @@
 Plugin.define "TCExam" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
 version "0.1"
-description "TCExam is a FLOSS Computer-Based Assessment system. - Homepage: http://www.tcexam.org/"
+description "TCExam is a FLOSS Computer-Based Assessment system."
+website "http://www.tcexam.org/"
 
 # Google results as at 2011-07-14 #
 # 307 for "TCExam ver" +Copyright "Nicola Asuni"

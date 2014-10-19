@@ -7,7 +7,8 @@
 Plugin.define "Jcow" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
 version "0.1"
-description "Jcow - social networking - Homepage: http://www.jcow.net/"
+description "Jcow - social networking"
+website "http://www.jcow.net/"
 
 # Google results as at 2011-05-20 #
 # 161 for "Go to" "Admin CP" "Themes" "Username or Email" "Manage Blocks"

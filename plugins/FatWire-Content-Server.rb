@@ -7,7 +7,8 @@
 Plugin.define "FatWire-Content-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
 version "0.1"
-description "FatWire Content Server - previously known as Future Tense Content Server CMS - Homepage: http://www.fatwire.com/"
+description "FatWire Content Server - previously known as Future Tense Content Server CMS"
+website "http://www.fatwire.com/"
 
 # ShodanHQ results as at 2011-09-14 #
 # 38 for host_service FutureTenseContentServer

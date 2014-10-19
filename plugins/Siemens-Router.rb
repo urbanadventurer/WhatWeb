@@ -7,7 +7,8 @@
 Plugin.define "Siemens-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
 version "0.1"
-description "Siemens Router - Homepage: https://www.siemens.com/"
+description "Siemens Router"
+website "https://www.siemens.com/"
 
 # ShodanHQ results as at 2011-11-22 #
 # 5,120 for Siemens ADSL

@@ -7,7 +7,8 @@
 Plugin.define "ASProxy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-25
 version "0.1"
-description "ASProxy is a free and open-source web proxy which allows the user to surf the net anonymously. - Homepage: http://asproxy.sourceforge.net/"
+description "ASProxy is a free and open-source web proxy which allows the user to surf the net anonymously."
+website "http://asproxy.sourceforge.net/"
 
 # Google results as at 2011-05-25 #
 # 26 for "Surf the web with ASProxy" inurl:(surf|noscript)

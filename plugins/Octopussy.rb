@@ -7,7 +7,8 @@
 Plugin.define "Octopussy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-09-12
 version "0.1"
-description "Perl/XML Logs Analyzer, Alerter & Reporter. - Homepage: http://www.8pussy.org/"
+description "Perl/XML Logs Analyzer, Alerter & Reporter."
+website "http://www.8pussy.org/"
 
 # Google results as at 2012-09-12 #
 # 1 for intitle:"Octopussy Login"

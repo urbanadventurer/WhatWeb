@@ -7,7 +7,8 @@
 Plugin.define "CMSQLite" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.1"
-description "CMSQLite is a small, fast, flexible and complete Content-Management-System (CMS).  - homepage: http://cmsqlite.net/"
+description "CMSQLite is a small, fast, flexible and complete Content-Management-System (CMS). "
+website "http://cmsqlite.net/"
 
 # Google results as at 2010-07-18 #
 # 25 results for "powered by CMSQLite"

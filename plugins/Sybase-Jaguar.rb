@@ -7,7 +7,8 @@
 Plugin.define "Sybase-Jaguar" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "Sybase Jaguar server - discontinued - Homepage: http://www.sybase.com/products/archivedproducts/jaguarcts"
+description "Sybase Jaguar server - discontinued"
+website "http://www.sybase.com/products/archivedproducts/jaguarcts"
 
 # ShodanHQ results as at 2011-07-27 #
 # 468 for Server: Jaguar Server Version

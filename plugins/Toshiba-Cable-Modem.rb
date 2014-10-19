@@ -7,7 +7,8 @@
 Plugin.define "Toshiba-Cable-Modem" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
 version "0.1"
-description "Toshiba Cable Modem - Homepage: http://www.toshiba.com/"
+description "Toshiba Cable Modem"
+website "http://www.toshiba.com/"
 
 # ShodanHQ results as at 2011-03-07 #
 # 5,583 for Document follows PCX3000

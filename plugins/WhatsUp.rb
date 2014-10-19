@@ -7,7 +7,8 @@
 Plugin.define "WhatsUp" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
 version "0.1"
-description "WhatsUp - Network and Server Management Software - Homepage: http://www.whatsupgold.com/"
+description "WhatsUp - Network and Server Management Software"
+website "http://www.whatsupgold.com/"
 
 # ShodanHQ results as at 2011-03-13 #
 # 1,127 for WhatsUp -Gold

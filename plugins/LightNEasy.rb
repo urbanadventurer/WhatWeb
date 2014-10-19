@@ -7,7 +7,8 @@
 Plugin.define "LightNEasy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-10
 version "0.1"
-description "LightNEasy is a simple and light Content Management System and Website Builder - Homepage: http://www.lightneasy.org/"
+description "LightNEasy is a simple and light Content Management System and Website Builder"
+website "http://www.lightneasy.org/"
 
 # Google results as at 2011-09-10 #
 # 331 for inurl:"LightNEasy.php?page="

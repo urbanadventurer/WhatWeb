@@ -7,7 +7,8 @@
 Plugin.define "HP-StorageWorks-Library" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-16
 version "0.1"
-description "HP StorageWorks Library and Tape Tools (L&TT) is a diagnostic tool for all of HP's tape storage and magneto-optical storage products. - Homepage: http://h18006.www1.hp.com/products/storageworks/ltt/index.html"
+description "HP StorageWorks Library and Tape Tools (L&TT) is a diagnostic tool for all of HP's tape storage and magneto-optical storage products."
+website "http://h18006.www1.hp.com/products/storageworks/ltt/index.html"
 
 # Google results as at 2012-02-16 #
 # 2 for intitle:"HP StorageWorks" intitle:"Tape Library Webpages" "Command View MSL" "Account Type"

@@ -7,7 +7,8 @@
 Plugin.define "HP-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
 version "0.1"
-description "HP Printer - Homepage: http://www.hp.com/"
+description "HP Printer"
+website "http://www.hp.com/"
 
 # ShodanHQ results as at 2011-09-17 #
 # 1,778 for serial AccessCounter

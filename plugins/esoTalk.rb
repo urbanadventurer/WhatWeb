@@ -7,7 +7,8 @@
 Plugin.define "esoTalk" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-29
 version "0.1"
-description "esoTalk is a simple, fast, free web-forum. - homepage: http://esotalk.com/"
+description "esoTalk is a simple, fast, free web-forum."
+website "http://esotalk.com/"
 
 # Google results as at 2011-01-29 #
 # 93 for "Powered by esoTalk"

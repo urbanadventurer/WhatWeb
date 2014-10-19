@@ -7,7 +7,8 @@
 Plugin.define "CruxPA" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
 version "0.1"
-description "CruxPA - Simple, easy to use task list/CRM - homepage: http://www.cruxsoftware.co.uk/"
+description "CruxPA - Simple, easy to use task list/CRM"
+website "http://www.cruxsoftware.co.uk/"
 
 # Dorks #
 dorks [

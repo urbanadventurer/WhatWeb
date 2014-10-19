@@ -7,7 +7,8 @@
 Plugin.define "Simbix-Framework" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
 version "0.1"
-description "Simbix Framework [Russian] - Homepage: http://www.simbix.com/"
+description "Simbix Framework [Russian]"
+website "http://www.simbix.com/"
 
 # ShodanHQ results as at 2011-08-06 #
 # 6 for X-Powered-By: Simbix Framework

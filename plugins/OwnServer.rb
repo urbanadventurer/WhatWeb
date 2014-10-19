@@ -7,7 +7,8 @@
 Plugin.define "OwnServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
 version "0.1"
-description "OwnServer is a web server used as a webserver for watching security cameras remotly. It allows broadcasting live streaming video on the web through the built-in webserver. - Homepage: http://www.anteco.co.il/"
+description "OwnServer is a web server used as a webserver for watching security cameras remotly. It allows broadcasting live streaming video on the web through the built-in webserver."
+website "http://www.anteco.co.il/"
 
 # ShodanHQ results as at 2011-05-16 #
 # 26,527 for OwnServer

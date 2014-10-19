@@ -7,7 +7,8 @@
 Plugin.define "Netsweeper" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
 version "0.1"
-description "Netsweeper provides internet content filtering and web threat management solutions that foster employee productivity, student safety and secure Internet access. - Homepage: http://www.netsweeper.com/"
+description "Netsweeper provides internet content filtering and web threat management solutions that foster employee productivity, student safety and secure Internet access."
+website "http://www.netsweeper.com/"
 
 # Google results as at 2011-05-12 #
 # 11 for inurl:"8080/webadmin/deny/index.php"

@@ -10,7 +10,8 @@
 Plugin.define "HP-LaserJet-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
-description "HP LaserJet printer web interface - homepage: http://www.hp.com/"
+description "HP LaserJet printer web interface"
+website "http://www.hp.com/"
 
 # 109 Google results for inurl:hp/device/this.LCDispatcher @ 2010-07-22
 

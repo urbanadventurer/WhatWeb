@@ -7,7 +7,8 @@
 Plugin.define "LaserWash" do
 author "Brendan Coles <bcoles@gmail.com>" # 2013-07-28
 version "0.1"
-description "PDQ - LaserWash - touchless car wash equipment. - Homepage: http://www.pdqinc.com/car-wash-equipment/laserwash-360.asp"
+description "PDQ - LaserWash - touchless car wash equipment."
+website "http://www.pdqinc.com/car-wash-equipment/laserwash-360.asp"
 
 # ShodanHQ results # 2013-07-28
 # 42 for "PDQ Laserwash"

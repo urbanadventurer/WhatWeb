@@ -12,7 +12,8 @@
 Plugin.define "Snap-Appliance-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
-description "Snap Appliance Server network attached storage (NAS) - homepage: http://www.overlandstorage.com/"
+description "Snap Appliance Server network attached storage (NAS)"
+website "http://www.overlandstorage.com/"
 
 # Google results as at 2011-05-16 #
 # 92 for inurl:config?Func=AboutSend

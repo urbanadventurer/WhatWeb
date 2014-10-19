@@ -7,7 +7,8 @@
 Plugin.define "Indico" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-11
 version "0.1"
-description "Indico - Integrated Digital Conference - allows you to manage complex conferences, workshops and meetings. - Homepage: http://indico.cern.ch/"
+description "Indico - Integrated Digital Conference - allows you to manage complex conferences, workshops and meetings."
+website "http://indico.cern.ch/"
 
 # Google results as at 2011-05-11 #
 # 27 for "powered by Indico" inurl:wcalendar.py

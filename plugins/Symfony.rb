@@ -7,7 +7,8 @@
 Plugin.define "Symfony" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-31
 version "0.1"
-description "Symfony - open-source PHP web framework - homepage: http://www.symfony-project.org/"
+description "Symfony - open-source PHP web framework"
+website "http://www.symfony-project.org/"
 
 
 

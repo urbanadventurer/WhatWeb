@@ -7,7 +7,8 @@
 Plugin.define "Puppet-Dashboard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-20
 version "0.1"
-description "The Puppet Dashboard is a web interface and reporting tool for a Puppet installation. - Homepage: http://projects.puppetlabs.com/projects/dashboard"
+description "The Puppet Dashboard is a web interface and reporting tool for a Puppet installation."
+website "http://projects.puppetlabs.com/projects/dashboard"
 
 # Google results as at 2012-02-20 #
 # 48 for intitle:"Puppet Node Manager" "Puppet Labs"

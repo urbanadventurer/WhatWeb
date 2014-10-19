@@ -7,7 +7,8 @@
 Plugin.define "Dedicated-Micros-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
 version "0.1"
-description "Dedicated Micros is the world's leading manufacturer of CCTV solutions from megapixel IP cameras to high performance high definition recording, transmission and decoding systems. - Homepage: http://www.dedicatedmicros.com/"
+description "Dedicated Micros is the world's leading manufacturer of CCTV solutions from megapixel IP cameras to high performance high definition recording, transmission and decoding systems."
+website "http://www.dedicatedmicros.com/"
 
 # ShodanHQ results as at 2011-03-11 #
 # 9,855 for ADH-Web

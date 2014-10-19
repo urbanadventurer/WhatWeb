@@ -7,7 +7,8 @@
 Plugin.define "Akiva-WebBoard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-18
 version "0.1"
-description "Akiva WebBoard - Online Communities and Enterprise Collaboration - Homepage: http://www.akiva.com/default.asp?l=1&id=8"
+description "Akiva WebBoard - Online Communities and Enterprise Collaboration"
+website "http://www.akiva.com/default.asp?l=1&id=8"
 
 # Google results as at 2012-01-18 #
 # 590 for "Powered by WebBoard 8" "Log In Options" Username" "Password"

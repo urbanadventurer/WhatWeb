@@ -7,7 +7,8 @@
 Plugin.define "UseResponse" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-06
 version "0.1"
-description "UseResponse is a fully customizable, open-source, self-hosted customer feedback software and support system - Homepage: http://www.useresponse.com/"
+description "UseResponse is a fully customizable, open-source, self-hosted customer feedback software and support system"
+website "http://www.useresponse.com/"
 
 # Google results as at 2012-06-06 #
 # 55 for "Enter your email (login) to get instructions to recover your password" "All Responses" "Powered by" inurl:"responses"

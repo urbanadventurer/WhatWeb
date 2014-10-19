@@ -10,7 +10,8 @@
 Plugin.define "Grandstream-Phone" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.2"
-description "Grandstream Networks is the leading manufacturer of IP voice/video telephony and video surveillance solutions. - Homepage: http://www.grandstream.com/"
+description "Grandstream Networks is the leading manufacturer of IP voice/video telephony and video surveillance solutions."
+website "http://www.grandstream.com/"
 
 # ShodanHQ results as at 2011-03-14 #
 # 25,344 for Grandstream

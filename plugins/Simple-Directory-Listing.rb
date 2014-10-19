@@ -7,7 +7,8 @@
 Plugin.define "Simple-Directory-Listing" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-01
 version "0.1"
-description "A php application that provides a web-based graphical interface similar to apache directory listing. Functions:copy, move, delete, rename files, etc. - Homepage: http://sourceforge.net/simpledirectory"
+description "A php application that provides a web-based graphical interface similar to apache directory listing. Functions:copy, move, delete, rename files, etc."
+website "http://sourceforge.net/simpledirectory"
 
 # Google results as at 2011-08-01 #
 # 72 for "powered by SimpleDirectoryListing"

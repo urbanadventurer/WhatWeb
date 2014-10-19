@@ -10,7 +10,8 @@
 Plugin.define "Perl" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.2"
-description "Perl is a highly capable, feature-rich programming language with over 22 years of development. - homepage: http://www.perl.org/"
+description "Perl is a highly capable, feature-rich programming language with over 22 years of development."
+website "http://www.perl.org/"
 
 # About 309934 ShodanHQ results for "server: perl/v" @ 2010-10-26
 

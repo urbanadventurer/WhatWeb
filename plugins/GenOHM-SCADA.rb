@@ -7,7 +7,8 @@
 Plugin.define "GenOHM-SCADA" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
-description "GenOHM SCADA is a Visualization and Control system for KNX/EIB networks. - Homepage: http://corp.genohm.eu/index.php?option=com_content&view=article&id=39&Itemid=34"
+description "GenOHM SCADA is a Visualization and Control system for KNX/EIB networks."
+website "http://corp.genohm.eu/index.php?option=com_content&view=article&id=39&Itemid=34"
 
 # Google results as at 2012-08-26 #
 # 2 for intitle:"GenOHM Scada Launcher"

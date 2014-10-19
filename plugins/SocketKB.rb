@@ -10,7 +10,8 @@
 Plugin.define "SocketKB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-08
 version "0.2"
-description "Deploy your own professional knowledge base or knowledge repository. Provide your customers the answers to their questions with SocketKB. Increase customer satisfaction and confidence. Easy and fast to install. - homepage: http://socketkb.com/site/home/"
+description "Deploy your own professional knowledge base or knowledge repository. Provide your customers the answers to their questions with SocketKB. Increase customer satisfaction and confidence. Easy and fast to install."
+website "http://socketkb.com/site/home/"
 
 # Google results as at 2010-11-08 #
 # 15 for "Powered by SocketKB version" -intext

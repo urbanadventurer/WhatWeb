@@ -7,7 +7,8 @@
 Plugin.define "MGB-OpenSource-Guestbook" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-22
 version "0.1"
-description "MGB OpenSource Guestbook - Homepage: http://www.m-gb.org/"
+description "MGB OpenSource Guestbook"
+website "http://www.m-gb.org/"
 
 # Google results as at 2012-07-22 #
 # 57 for 'inurl:"mgb/index.php?p="'

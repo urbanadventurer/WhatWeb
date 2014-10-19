@@ -7,7 +7,8 @@
 Plugin.define "Atomic-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.1"
-description "Atomic CMS is a powerful and free open source ASP.NET CMS (content management system) developed on ASP.NET MVC 2 platform. Atomic CMS provides you rich user interface to create, edit, remove pages at your website. - Homepage: http://atomiccms.com/"
+description "Atomic CMS is a powerful and free open source ASP.NET CMS (content management system) developed on ASP.NET MVC 2 platform. Atomic CMS provides you rich user interface to create, edit, remove pages at your website."
+website "http://atomiccms.com/"
 
 # Google results as at 2011-03-04 #
 # 24 for "Powered by AtomicCms"

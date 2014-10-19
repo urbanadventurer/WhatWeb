@@ -7,7 +7,8 @@
 Plugin.define "MiniBB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
-description "MiniBB is a free standalone open source program for building your own Internet forum. - Homepage: http://www.minibb.com/"
+description "MiniBB is a free standalone open source program for building your own Internet forum."
+website "http://www.minibb.com/"
 
 # Google results as at 2011-02-27 #
 # 210 for "Powered by MiniBB"

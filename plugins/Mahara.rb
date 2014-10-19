@@ -7,7 +7,8 @@
 Plugin.define "Mahara" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-05
 version "0.1"
-description "Mahara is an open source e-portfolio system - Homepage: http://mahara.org/"
+description "Mahara is an open source e-portfolio system"
+website "http://mahara.org/"
 
 # Google results as at 2011-11-05 #
 # 116 for "powered by mahara" inurl:"about.php" intitle:"About"

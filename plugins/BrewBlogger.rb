@@ -7,7 +7,8 @@
 Plugin.define "BrewBlogger" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-23
 version "0.1"
-description "BrewBlogger is a easy to set up, easy to use, browser-based homebrew logging and calculation suite. It is a PHP/MySQL-based system that provides today's brewer not only a fast and easy way to record their brewing activities, recipes, and awards, but also forum to share their zymurgistic efforts and expertise with the homebrewing community around the world. - Homepage: http://www.brewblogger.net/"
+description "BrewBlogger is a easy to set up, easy to use, browser-based homebrew logging and calculation suite. It is a PHP/MySQL-based system that provides today's brewer not only a fast and easy way to record their brewing activities, recipes, and awards, but also forum to share their zymurgistic efforts and expertise with the homebrewing community around the world."
+website "http://www.brewblogger.net/"
 
 # 115 for ("BrewBlogger 2.3.2 Club Edition developed by zkdigital.com"|"BrewBlogger 2.3.2 Personal Edition developed by zkdigital.com")
 #  50 for "BrewBlogger 2.3.2 Personal Edition developed by zkdigital.com"

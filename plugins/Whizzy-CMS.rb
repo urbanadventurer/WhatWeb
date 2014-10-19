@@ -10,7 +10,8 @@
 Plugin.define "Whizzy-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
-description "Whizzy-CMS - homepage: http://unverse.net/"
+description "Whizzy-CMS"
+website "http://unverse.net/"
 
 # Google results as at 2010-09-18 #
 # 37 for "powered by Whizzy CMS"

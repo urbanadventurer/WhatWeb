@@ -7,7 +7,8 @@
 Plugin.define "bbPress" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-06
 version "0.1"
-description "bbPress is forum software with a twist from the creators of WordPress. - Homepage: http://bbpress.org/"
+description "bbPress is forum software with a twist from the creators of WordPress."
+website "http://bbpress.org/"
 
 # Google results as at 2011-04-06 #
 # 534 for "is proudly powered by bbPress"
