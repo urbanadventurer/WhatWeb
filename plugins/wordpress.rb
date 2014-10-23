@@ -17,56 +17,57 @@ Plugin.define "WordPress" do
   author "Andrew Horton"
   version "0.5"
   description "WordPress is an opensource blogging system commonly used as a CMS. Homepage: http://www.wordpress.org/ "
-  
+
   # Examples #
   examples %w| http://lonnroth.info/ http://mattbrett.com/ http://www.komodomedia.com/ http://bestwebgallery.com/ http://cssremix.com/ http://www.cssbloom.net/ http://www.screenz.de/ http://www.kineda.com/ http://ifelse.co.uk/ http://fadtastic.net/ http://www.funci.org/en/ |
-    
+
     # Dorks #
     dorks [
            '"is proudly powered by WordPress"'
           ]
-  
+
   # Matches #
 matches [
-         
+
          {:text=>"<meta name=\"generator\" content=\"WordPress.com\" />"},
          {:text=>"<a href=\"http://www.wordpress.com\">Powered by WordPress</a>", :name=>"powered by link"},
          {:regexp=>/"[^"]+\/wp-content\/[^"]+"/, :name=>"wp-content", :certainty=>75 },
-         
+
          {:version=>/<meta name=\"generator\" content=\"(WordPress)[ ]?([0-9\.]+)\"/, :offset=>1  }, # if offset=>1 were missing then it would report "WordPress" as the version.
-         
+
          # url exists, i.e. returns HTTP status 200
          {:url=>"/wp-cron.php"},
-         
+
          #{:url=>"/admin/", :full=>true }, # full means that whatweb will run all plugins against this url - this isn't yet implemented as of 0.4.7
-         
+
          # /wp-login.php  exists & contains a string
          {:url=>"/wp-login.php", :text=>'<a title="Powered by WordPress" href="http://wordpress.org/">'},
          {:url=>"/wp-login.php", :text=>'<a href="http://wordpress.org/" title="Powered by WordPress">', :name=>'wp3 login page'},
          {:url=>"/wp-login.php", :text=>'action=lostpassword'},
-         
+
          {:url=>"/wp-login.php", :tagpattern=>"!doctype,html,head,title,/title,meta,link,link,script,/script,meta,/head,body,div,h1,a,/a,/h1,form,p,label,br,input,/label,/p,p,label,br,input,/label,/p,p,label,input,/label,/p,p,input,input,input,/p,/form,p,a,/a,/p,p,a,/a,/p,/div,script,/script,/body,/html"}, #note that WP plugins can add script tags. tags are delimited by commas so we can count how close it is
          {:url=>"favicon.ico", :md5=>'f420dc2c7d90d7873a90d82cd7fde315'}, # not common, seen on http://s.wordpress.org/favicon.ico
-         {:url=>"favicon.ico", :md5=>'fa54dbf2f61bd2e0188e47f5f578f736'},  # on wordpress.com blogs  http://s2.wp.com/i/favicon.ico 
-         
-         {:url=>"/readme.html", :version=>/<h1.*WordPress.*Version ([0-9a-z\.]+).*<\/h1>/m}
-         
+         {:url=>"favicon.ico", :md5=>'fa54dbf2f61bd2e0188e47f5f578f736'},  # on wordpress.com blogs  http://s2.wp.com/i/favicon.ico
+
+         {:url=>"/readme.html", :version=>/<h1.*WordPress.*Version ([0-9a-z\.]+).*<\/h1>/m},
+         {:version=>/lib\/wpsocialite.css\?ver=([2-4]\.?\d+?\.?\d+?)/m}
+
         ]
-  
+
   # Passive #
   def passive
     m=[]
-    
+
     # detect /wp-content/ on this site but don't be confused by links to other sites.
     #<link rel="stylesheet" href="http://bestwebgallery.com/wp-content/themes/master/style.css" type="text/css" />
-    
+
     if @body =~ /(href|src)="[^"]*\/wp-content\/[^"]*/
       # is it a relative link or on the same site?
       links= @body.scan(/(href|src)="([^"]*\/wp-content\/[^"]*)/).map {|x| x[1].strip }.flatten
       links.each do |thislink|
         # join this link wtih target, check if host part is ==, if so, it's relative
         joined_uri=URI.join(@base_uri.to_s,thislink)
-        
+
         if joined_uri.host == @base_uri.host
           #puts "yes, #{joined_uri.to_s} is relative to #{@base_uri.to_s}"
           m << {:name=>"Relative /wp-content/ link" }
@@ -74,15 +75,15 @@ matches [
         end
       end
     end
-    
+
     # Return passive matches
     m
   end
-  
+
   # Aggressive #
   def aggressive
     m=[]
-    
+
     # the paths are relative to the url path if they don't start with /
     # this path, with this md5 = this version
 
@@ -755,21 +756,21 @@ matches [
                      ["wp-includes/js/customize-preview.js",
                       "617d9fd858e117c7d1d087be168b5643"]]
                    ]
-    
+
     v = Version.new("Joomla", versions, @base_uri)
-    
+
     version = v.matches_format
-    
+
     # Set version if present
     unless version.empty?
         version.each { |ver|
             m << {:name => "md5 sums of files", :version => ver}
         }
     end
-    
+
     # Return aggressive matches
     m
   end
-  
+
 end
 
