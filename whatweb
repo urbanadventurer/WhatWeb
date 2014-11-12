@@ -50,9 +50,9 @@ require 'resolv-replace' # asynchronous DNS
 
 ### ruby 1.9 changes
 if RUBY_VERSION =~ /^1\.9/ || RUBY_VERSION =~ /^2\.0/
-        require 'digest/md5'
+	require 'digest/md5'
 else
-        require 'md5'
+	require 'md5'
 	require 'net/https'
 end
 
@@ -98,13 +98,13 @@ end
 ## set up load paths - must be before loading lib/ files
 # add the directory of the file currently being executed to the load path
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless
-    $:.include?(File.dirname(__FILE__)) || $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
+		$:.include?(File.dirname(__FILE__)) || $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
 $LOAD_PATH << "/usr/share/whatweb/"
 
 # if __FILE__ is a symlink then follow *every* symlink
 if File.symlink?(__FILE__)
-  require 'pathname'
-  $LOAD_PATH << File.dirname( Pathname.new(__FILE__).realpath )
+	require 'pathname'
+	$LOAD_PATH << File.dirname( Pathname.new(__FILE__).realpath )
 end
 
 require 'lib/target.rb'
@@ -273,20 +273,20 @@ def make_target_list(cmdline_args, inputfile=nil,pluginlist = nil)
 	end
 
 
-        genrange=url_list.map do |x|
-	  range=nil
-	  if x =~ /^[0-9\.\-*\/]+$/ and not x =~ /^[\d\.]+$/
-	    # check for nmap
-	    error "Target ranges require nmap to be in the path" if `which nmap` == ""
-	    range=`nmap -n -sL #{x} 2>&1 | egrep -o "([0-9]{1,3}\\.){3}[0-9]{1,3}"`
-	    range=range.split("\n")
-	  end
-	  range
+				genrange=url_list.map do |x|
+		range=nil
+		if x =~ /^[0-9\.\-*\/]+$/ and not x =~ /^[\d\.]+$/
+			# check for nmap
+			error "Target ranges require nmap to be in the path" if `which nmap` == ""
+			range=`nmap -n -sL #{x} 2>&1 | egrep -o "([0-9]{1,3}\\.){3}[0-9]{1,3}"`
+			range=range.split("\n")
+		end
+		range
 	end.compact.flatten
 	
 	url_list= url_list.select {|x| not x =~ /^[0-9\.\-*\/]+$/ or x =~ /^[\d\.]+$/ }
 	url_list += genrange unless genrange.empty?
-     
+
 
 	#make urls friendlier, test if it's a file, if test for not assume it's http://
 	# http, https, ftp, etc
@@ -404,7 +404,7 @@ def word_wrap(s,width=10)
 				line=x + " "
 			end
 		end		
- 	}
+	}
 	ret << line
 	ret
 end
@@ -464,52 +464,52 @@ puts
 puts "Usage: whatweb [options] <URLs>"
 puts "
 TARGET SELECTION:
-  <URLs>\t\tEnter URLs, filenames or nmap-format IP ranges.
+	<URLs>\t\tEnter URLs, filenames or nmap-format IP ranges.
 \t\t\tUse /dev/stdin to pipe HTML directly
-  --input-file=FILE, -i\tIdentify URLs found in FILE. You can pipe
+	--input-file=FILE, -i\tIdentify URLs found in FILE. You can pipe
 \t\t\thostnames or URLs directly with -i /dev/stdin
 
 TARGET MODIFICATION:
-  --url-prefix\t\tAdd a prefix to target URLs
-  --url-suffix\t\tAdd a suffix to target URLs
-  --url-pattern\t\tInsert the targets into a URL. Requires --input-file,
+	--url-prefix\t\tAdd a prefix to target URLs
+	--url-suffix\t\tAdd a suffix to target URLs
+	--url-pattern\t\tInsert the targets into a URL. Requires --input-file,
 \t\t\teg. www.example.com/%insert%/robots.txt 
 
 AGGRESSION:
-  The aggression level controls the trade-off between speed/stealth and
-  reliability.
-  --aggression, -a=LEVEL Set the aggression level. Default: 1
-  Aggression levels are:
-  1. Stealthy\tMakes one HTTP request per target. Also follows redirects.
-  2. Unused
-  3. Aggressive\tCan make a handful of HTTP requests per target. This triggers
-  \t\taggressive plugins for targets only when those plugins are
-  \t\tidentified with a level 1 request first.
-  4. Heavy\tMakes a lot of HTTP requests per target. Aggressive tests from
-  \t\tall plugins are used for all URLs.
+	The aggression level controls the trade-off between speed/stealth and
+	reliability.
+	--aggression, -a=LEVEL Set the aggression level. Default: 1
+	Aggression levels are:
+	1. Stealthy\tMakes one HTTP request per target. Also follows redirects.
+	2. Unused
+	3. Aggressive\tCan make a handful of HTTP requests per target. This triggers
+	\t\taggressive plugins for targets only when those plugins are
+	\t\tidentified with a level 1 request first.
+	4. Heavy\tMakes a lot of HTTP requests per target. Aggressive tests from
+	\t\tall plugins are used for all URLs.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/#{$VERSION}.
-  --header, -H\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a default
+	--user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/#{$VERSION}.
+	--header, -H\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a default
 \t\t\theader will replace it. Specifying an empty value, eg.
 \t\t\t\"User-Agent:\" will remove the header.
-  --follow-redirect=WHEN Control when to follow redirects. WHEN may be `never',
+	--follow-redirect=WHEN Control when to follow redirects. WHEN may be `never',
 \t\t\t`http-only', `meta-only', `same-site', `same-domain'
 \t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}
-  --max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
+	--max-redirects=NUM\tMaximum number of contiguous redirects. Default: 10
 
 AUTHENTICATION:
-  --user, -u=<user:password> HTTP basic authentication
-  --cookie, -c=COOKIES\tProvide cookies, e.g. 'name=value; name2=value2  '
+	--user, -u=<user:password> HTTP basic authentication
+	--cookie, -c=COOKIES\tProvide cookies, e.g. 'name=value; name2=value2  '
 
 PROXY:
-  --proxy\t\t<hostname[:port]> Set proxy hostname and port
+	--proxy\t\t<hostname[:port]> Set proxy hostname and port
 \t\t\tDefault: #{$PROXY_PORT}
-  --proxy-user\t\t<username:password> Set proxy user and password
+	--proxy-user\t\t<username:password> Set proxy user and password
 
 PLUGINS:
-  --list-plugins, -l\tList all plugins
-  --plugins, -p=LIST\tSelect plugins. LIST is a comma delimited set of 
+	--list-plugins, -l\tList all plugins
+	--plugins, -p=LIST\tSelect plugins. LIST is a comma delimited set of
 \t\t\tselected plugins. Default is all.
 \t\t\tEach element can be a directory, file or plugin name and
 \t\t\tcan optionally have a modifier, eg. + or -
@@ -517,66 +517,66 @@ PLUGINS:
 \t\t\ttitle,md5,+./plugins-disabled/
 \t\t\t./plugins-disabled,-md5
 \t\t\t-p + is a shortcut for -p +plugins-disabled
-  --info-plugins, -I=PLUGINS\tDisplay detailed information for plugins.
+	--info-plugins, -I=PLUGINS\tDisplay detailed information for plugins.
 \t\t\tOptionally search with keywords in a comma delimited
 \t\t\tlist.
-  --grep, -g=STRING\tSearch for STRING in HTTP responses. Reports with a
+	--grep, -g=STRING\tSearch for STRING in HTTP responses. Reports with a
 \t\t\tplugin named Grep
-  --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
+	--custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
 \t\t\tExamples: \":text=>'powered by abc'\"
 \t\t\t\":version=>/powered[ ]?by ab[0-9]/\"
 \t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
 \t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
 \t\t\t\"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}\"
-  --dorks=PLUGIN\tList Google dorks for the selected plugin
+	--dorks=PLUGIN\tList Google dorks for the selected plugin
 
 OUTPUT:
-  --verbose, -v\t\tVerbose output includes plugin descriptions. Use twice
+	--verbose, -v\t\tVerbose output includes plugin descriptions. Use twice
 \t\t\tfor debugging.
-  --colour,--color=WHEN\tcontrol whether colour is used. WHEN may be `never',
+	--colour,--color=WHEN\tcontrol whether colour is used. WHEN may be `never',
 \t\t\t`always', or `auto'
-  --quiet, -q\t\tDo not display brief logging to STDOUT
-  --no-errors\t\tSuppress error messages
+	--quiet, -q\t\tDo not display brief logging to STDOUT
+	--no-errors\t\tSuppress error messages
 
 LOGGING:
-  --log-brief=FILE\tLog brief, one-line output
-  --log-verbose=FILE\tLog verbose output
-  --log-xml=FILE\tLog XML format
-  --log-json=FILE\tLog JSON format
+	--log-brief=FILE\tLog brief, one-line output
+	--log-verbose=FILE\tLog verbose output
+	--log-xml=FILE\tLog XML format
+	--log-json=FILE\tLog JSON format
 "+
 #  --log-sql=FILE\tLog SQL INSERT statements
 #  --log-sql-create=FILE\tCreate SQL database tables
 "  --log-json-verbose=FILE Log JSON Verbose format
-  --log-magictree=FILE\tLog MagicTree XML format
-  --log-object=FILE\tLog Ruby object inspection format
-  --log-mongo-database\tName of the MongoDB database
-  --log-mongo-collection Name of the MongoDB collection. Default: whatweb
-  --log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
-  --log-mongo-username\tMongoDB username. Default: nil
-  --log-mongo-password\tMongoDB password. Default: nil
-  --log-errors=FILE\tLog errors
+	--log-magictree=FILE\tLog MagicTree XML format
+	--log-object=FILE\tLog Ruby object inspection format
+	--log-mongo-database\tName of the MongoDB database
+	--log-mongo-collection Name of the MongoDB collection. Default: whatweb
+	--log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
+	--log-mongo-username\tMongoDB username. Default: nil
+	--log-mongo-password\tMongoDB password. Default: nil
+	--log-errors=FILE\tLog errors
 
 PERFORMANCE & STABILITY:
-  --max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
-  --open-timeout\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}
-  --read-timeout\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}
-  --wait=SECONDS\tWait SECONDS between connections
+	--max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
+	--open-timeout\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}
+	--read-timeout\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}
+	--wait=SECONDS\tWait SECONDS between connections
 \t\t\tThis is useful when using a single thread.
 
 HELP & MISCELLANEOUS:
-  --help, -h\t\tThis help
-  --debug\t\tRaise errors in plugins
-  --version\t\tDisplay version information. (WhatWeb #{$VERSION})
+	--help, -h\t\tThis help
+	--debug\t\tRaise errors in plugins
+	--version\t\tDisplay version information. (WhatWeb #{$VERSION})
 
 EXAMPLE USAGE:
 * Scan example.com
-  whatweb example.com
+	whatweb example.com
 * Scan reddit.com slashdot.org with verbose plugin descriptions
-  whatweb -v reddit.com slashdot.org
+	whatweb -v reddit.com slashdot.org
 * An aggressive scan of mashable.com detects the exact version of Wordpress
-  whatweb -a 3 mashable.com
+	whatweb -a 3 mashable.com
 * Scan the local network quickly with 255 threads and suppress errors
-  whatweb --no-errors -t 255 192.168.0.0/24\n"
+	whatweb --no-errors -t 255 192.168.0.0/24\n"
 
 	suggestions=""
 	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
@@ -611,52 +611,52 @@ mongo[:use_mongo_log]=false
 
 
 opts = GetoptLong.new(
-      [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
-      [ '-v','--verbose', GetoptLong::NO_ARGUMENT ],
-      [ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
-      [ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
-      [ '--dorks', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-brief', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-xml', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-json', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-json-verbose', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-magictree', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-verbose', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-collection', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-host', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-username', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-password', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-sql', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-sql-create', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--no-errors', GetoptLong::NO_ARGUMENT ],
-      [ '-i','--input-file', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-a','--aggression', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-t','--max-threads', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--follow-redirect', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--max-redirects', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--proxy', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--proxy-user', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--url-prefix', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--url-suffix', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--url-pattern', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--custom-plugin', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-g','--grep', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--open-timeout', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--header','-H', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--cookie','-c', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--user','-u', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--debug', GetoptLong::NO_ARGUMENT ],
-      [ '--version', GetoptLong::NO_ARGUMENT ],
-      [ '-q','--quiet', GetoptLong::NO_ARGUMENT]
-    )
+			[ '--help', '-h', GetoptLong::NO_ARGUMENT ],
+			[ '-v','--verbose', GetoptLong::NO_ARGUMENT ],
+			[ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
+			[ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
+			[ '--dorks', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-brief', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-xml', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-json', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-json-verbose', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-magictree', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-verbose', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-mongo-collection', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-mongo-host', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-mongo-username', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-mongo-password', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-sql', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-sql-create', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--no-errors', GetoptLong::NO_ARGUMENT ],
+			[ '-i','--input-file', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '-a','--aggression', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '-t','--max-threads', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--follow-redirect', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--max-redirects', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--proxy', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--proxy-user', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--url-prefix', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--url-suffix', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--url-pattern', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--custom-plugin', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '-g','--grep', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--open-timeout', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--header','-H', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--cookie','-c', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--user','-u', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
+			[ '--debug', GetoptLong::NO_ARGUMENT ],
+			[ '--version', GetoptLong::NO_ARGUMENT ],
+			[ '-q','--quiet', GetoptLong::NO_ARGUMENT]
+		)
 
 begin    
 	opts.each do |opt, arg|
@@ -692,15 +692,15 @@ begin
 			when '--log-object'
 				output_list << OutputObject.new(arg)
 			when '--log-brief'
-			 	output_list << OutputBrief.new(arg)
+				output_list << OutputBrief.new(arg)
 			when '--log-xml'
-			 	output_list << OutputXML.new(arg)
+				output_list << OutputXML.new(arg)
 			when '--log-magictree'
 				output_list << OutputMagicTreeXML.new(arg)
 			when '--log-verbose'
 				output_list << OutputVerbose.new(arg)
 			when '--log-sql'
-			 	output_list << OutputSQL.new(arg)
+				output_list << OutputSQL.new(arg)
 			when '--log-sql-create'
 				PluginSupport.load_plugins("+")
 				# delete the file if it already exists
@@ -708,18 +708,18 @@ begin
 					File.delete(arg)
 				rescue
 				end
-			 	OutputSQL.new(arg).create_tables
+				OutputSQL.new(arg).create_tables
 				puts "SQL CREATE statements written to #{arg}"
 				exit
 			when '--log-json'
 				if defined?(JSON)
-			 		output_list << OutputJSON.new(arg)
+					output_list << OutputJSON.new(arg)
 				else
 					raise("Sorry. The JSON gem is required for JSON output")
 				end
 			when '--log-json-verbose'
 				if defined?(JSON)
-			 		output_list << OutputJSONVerbose.new(arg)
+					output_list << OutputJSONVerbose.new(arg)
 				else
 					raise("Sorry. The JSON gem is required for JSONVerbose output")
 				end
@@ -733,7 +733,7 @@ begin
 
 			when '--log-mongo-host'
 				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:host]=arg
+					mongo[:host]=arg
 					mongo[:use_mongo_log]=true
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
@@ -741,29 +741,29 @@ begin
 
 			when '--log-mongo-database'
 				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:database]=arg
+					mongo[:database]=arg
 					mongo[:use_mongo_log]=true
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 			when '--log-mongo-username'
 				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:username]=arg
+					mongo[:username]=arg
 					mongo[:use_mongo_log]=true
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 			when '--log-mongo-password'
 				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:password]=arg
+					mongo[:password]=arg
 					mongo[:use_mongo_log]=true
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
 			when '--log-errors'
-			 	$OUTPUT_ERRORS = OutputErrors.new(arg)
+				$OUTPUT_ERRORS = OutputErrors.new(arg)
 			when '--no-errors'
-			 	$NO_ERRORS = true
+				$NO_ERRORS = true
 			when '-U','--user-agent'
 				$USER_AGENT=arg
 			when '-t','--max-threads'
