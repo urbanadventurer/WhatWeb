@@ -40,5 +40,22 @@ matches [
 
 ]
 
+# Passive #
+  def passive
+    m=[]
+
+    unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?
+
+      # Extract cookie names
+      @headers["set-cookie"].split("\n").each do |cookie|
+        m << { :string=>cookie.split("=")[0], :certainty=>75 } if cookie =~ /csrftoken=/
+      end
+
+    end
+
+    # Return passive match
+    m
+  end
+
 end
 

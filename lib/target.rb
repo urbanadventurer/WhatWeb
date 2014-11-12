@@ -166,8 +166,7 @@ class Target
 			if options[:method] == "POST"
 				req=Net::HTTP::Post.new(getthis, $CUSTOM_HEADERS)
 	                        req.set_form_data(options[:data])
-			end
-
+      end
 
 			if $BASIC_AUTH_USER	
 				req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
@@ -176,9 +175,9 @@ class Target
 			@raw_headers=http.raw.join("\n")
 			@headers={}; res.each_header {|x,y| @headers[x]=y }
 			@headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless @headers["set-cookie"].nil?
-			@body=res.body
-# body is ASCII-8BIT at this stage
+      require 'open-uri'
 
+			@body=Net::HTTP.get(@uri)
 			@status=res.code.to_i
 			puts @uri.to_s + " [#{status}]" if  $verbose > 0 
 
