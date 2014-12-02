@@ -173,7 +173,7 @@ class Target
 				req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
 			end
 			res=http.request(req)
-			@raw_headers=http.raw.join("\n")
+			@raw_headers="#{http.raw}\n"
 			@headers={}; res.each_header {|x,y| @headers[x]=y }
 			@headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless @headers["set-cookie"].nil?
 			@body=res.body
