@@ -21,7 +21,7 @@ matches [
 { :search=>"headers[server]", :regexp=>/^nginx$/ },
 
 # Version Detection
-{ :search=>"headers[server]", :version=>/^nginx\/([^\s]+)$/ },
+{ :search=>"headers[server]", :version=>/^nginx\/([^\s]+).*$/ },
 
 ]
 
