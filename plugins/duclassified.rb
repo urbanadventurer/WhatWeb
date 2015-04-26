@@ -7,7 +7,8 @@
 Plugin.define "DUclassified" do
 author "Tonmoy Saikia"
 version "0.1"
-description "DUclassified is a free Classified Ad Management system - Homepage: http://www.duware.com/"
+description "DUclassified is a free Classified Ad Management system."
+website "http://www.duware.com/"
 
 # Dorks #
 dorks [

@@ -7,12 +7,11 @@
 Plugin.define "RealVNC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "RealVNC provides remote control software which lets you see and interact with desktop applications across any network. - Homepage: http://www.realvnc.com/"
+description "RealVNC provides remote control software which lets you see and interact with desktop applications across any network."
+website "http://www.realvnc.com/"
 
 # ShodanHQ results as at 2011-03-13 #
 # 872 for RealVNC
-
-
 
 # Passive #
 def passive
