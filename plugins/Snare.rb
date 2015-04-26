@@ -11,16 +11,17 @@ description "Snare - Snare Server Remote Control web interface - Homepage: http:
 
 # Default Port: 6161
 
-
-
 # Matches #
 matches [
 
 # HTTP Server Header
-{ :search=>"headers[server]", :regexp=>/^SNARE$/ },
+{ :search=>"headers[server]", :regexp=>/^SNARE\/([\d\.]+)$/ },
 
 # WWW-Authenticate realm
 { :search=>"headers[www-authenticate]", :regexp=>/Digest realm="SNARE"/ },
+
+# Version Detection
+{ :version=>/<H2><CENTER>SNARE Version ([\d\.]+) Status Page<\/H2><\/CENTER>/ },
 
 # 401 Page # Address Tag
 { :certainty=>75, :text=>'<ADDRESS>Snare Server Remote Control facility</ADDRESS>' },
