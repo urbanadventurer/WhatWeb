@@ -19,17 +19,15 @@ fi
 tfile=`tempfile --prefix=verify-nikto-`
 tlog=`tempfile --prefix=whatweb-log-`
 grep -A 999999 "Start Time:" "$fname" | egrep -o "^+.*(/[^:]+)" | cut -d/ -f 2-|cut -d: -f 1| sed 's/^/\//g' > "$tfile"
-hostname=`cat $fname | grep "+ Target Hostname: " "$fname" | cut -d : -f2 | tr -d ' '`
+hostname=`egrep "+ Target (Host|Hostname): " "$fname" | cut -d : -f2 | tr -d ' '`
 port=`grep "+ Target Port: " "$fname"|  cut -d : -f2 | tr -d ' '`
  
-grep -q 'SSL Info' "$fname"
-ssl=$?
-if [ $ssl ]; then
+if grep -q 'SSL Info' "$fname"; then
 prefix='https://'
 else
 prefix='http://'
 fi
- 
+
 echo "------------------------------------------------------------------------------------------------"
 echo "Checking Nikto Log: $fname"
 echo "Running whatweb on $prefix$hostname:$port with `wc -l $tfile` url paths"
