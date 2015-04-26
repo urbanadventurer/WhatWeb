@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 # coding: utf-8
 #
 # Copyright Andrew Horton, 2010
