@@ -234,7 +234,12 @@ puts @raw_headers+"\n"+"*"*40
 		end
 
 		unless @status.nil? or @headers.nil?
-			newtarget_h=URI.join(@target,@headers["location"]).to_s if (300..399) === @status and @headers["location"]
+			# HTTP 3XX redirect
+			if (300..399) === @status and @headers and @headers['location']
+				# downcase location scheme
+				location = @headers["location"].gsub(/^HTTPS:\/\//, 'https://').gsub(/^HTTP:\/\//, 'http://')
+				newtarget_h=URI.join(@target,location).to_s
+			end
 		end
 
 		# if both meta refresh location and HTTP location are set, then the HTTP location overrides
