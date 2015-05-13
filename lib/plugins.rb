@@ -82,15 +82,21 @@ class Plugin
 
   def make_matches(target,match)
       r=[]
-                        search_context = target.body # by default
-			search_context = target.raw_response if match[:search] == "all"
-			search_context = target.raw_headers if match[:search] == "headers"
 
-			if match[:search] =~ /headers\[(.*)\]/
-				if target.headers[$1]
-					search_context = target.headers[$1]
-				else
-					return []
+			# search location
+			search_context = target.body # by default
+			unless match[:search].nil?
+				case match[:search]
+				when 'all'
+					search_context = target.raw_response
+				when 'headers'
+					search_context = target.raw_headers
+				when /headers\[(.*)\]/
+					if target.headers[$1]
+						search_context = target.headers[$1]
+					else
+						return r
+					end
 				end
 			end
 
@@ -134,29 +140,23 @@ class Plugin
 
 			# all previous matches are OR
 			# these are ARE. e.g. required if present
+			return r if r.empty?
 
 			if match[:status]
-				# status cannot match by itself. it needs friends
-				unless r.empty?
-					# this match is discarded unless it matches the status
-					if match[:status] == target.status
-						r << match 
-					else
-						r=[]
-					end
+				if match[:status] == target.status
+					r << match 
+				else
+					r=[]
 				end
 			end
 
 			if match[:url]
-				# url cannot match by itself. it needs friends
-				unless r.empty?		
-					target_url = target.uri.path
-					target_url += "?" + target.uri.query unless target.uri.query.nil?
-					if match[:url] == target_url
-						r << match
-					else
-						r=[]
-					end
+				target_url = target.uri.path
+				target_url += "?" + target.uri.query unless target.uri.query.nil?
+				if match[:url] == target_url
+					r << match
+				else
+					r=[]
 				end
 			end
 
@@ -548,5 +548,3 @@ class PluginChoice
 		end
 	end
 end
-
-
