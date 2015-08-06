@@ -28,10 +28,6 @@ Version 0.4.8-dev Unreleased
 * Changed version from 0.4.8 to 0.4.8-dev to show development version
 * Plugin brief output is now sorted alphabetically by plugin name
 * Removed plugin example URLs
-<<<<<<< HEAD
-*
-=======
->>>>>>> 6364aeede1367e999387eb9780fe0222924cf477
 
 Version 0.4.7 Released April 5th 2011
 * Performance enhancements & bug fixes
