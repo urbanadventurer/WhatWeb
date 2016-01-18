@@ -4,7 +4,7 @@ require 'uri'
 # Modified HTTP to return the real header block
 # This *works* with Ruby1.8.7 and Ruby1.9.1
 
-# HTTPS loses SPI 
+# HTTPS loses SPI
 
 # The ExtendedHTTP class is used in place of the HTTP class
 # for example,
@@ -99,7 +99,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 
         if RUBY_VERSION =~ /^1\.9/ || RUBY_VERSION =~ /^2\./
 	      D "opening connection to #{conn_address()}..."
-	      s = timeout(@open_timeout) { TCPSocket.open(conn_address(), conn_port()) }
+	      s = Timeout.timeout(@open_timeout) { TCPSocket.open(conn_address(), conn_port()) }
 	      D "opened"
 	      if use_ssl?
 		ssl_parameters = Hash.new
@@ -137,7 +137,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 		  @raw = raw
 		  res=x.value
 		  end
-		  timeout(@open_timeout) { s.connect }
+		  Timeout.timeout(@open_timeout) { s.connect }
 		  if @ssl_context.verify_mode != OpenSSL::SSL::VERIFY_NONE
 		    s.post_connection_check(@address)
 		  end
@@ -153,7 +153,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
     end
     private :connect
 
- 
+
     def request(req, body = nil, &block)  # :yield: +response+
       unless started?
         start {
@@ -234,7 +234,7 @@ end
     end
 
 ###################
-    public 
+    public
 #    include HTTPHeader
 
     def initialize(httpv, code, msg)   #:nodoc: internal use only
