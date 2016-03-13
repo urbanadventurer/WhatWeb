@@ -450,9 +450,6 @@ matches [
                     "2.7.1-rc1" =>
                     [["readme.html",
                       "94c4cdfa20778d1bf9784941f9fca133"]],
-                    "2.7-beta1" =>
-                    [["readme.html",
-                      "94c4cdfa20778d1bf9784941f9fca133"]],
                     "2.8" =>
                     [["readme.html",
                       "4a64408bdaaa6c8af7cab9346f0ce380"]],
