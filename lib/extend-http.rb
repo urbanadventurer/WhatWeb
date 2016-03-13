@@ -1,5 +1,6 @@
 require 'net/protocol'
 require 'uri'
+require 'timeout'
 
 # Modified HTTP to return the real header block
 # This *works* with Ruby1.8.7 and Ruby1.9.1
@@ -59,7 +60,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 
 
 	      D "opening connection to #{conn_address()}..."
-	      s = timeout(@open_timeout) { TCPSocket.open(conn_address(), conn_port()) }
+	      s = Timeout::timeout(@open_timeout) { TCPSocket.open(conn_address(), conn_port()) }
 	      D "opened"
 	      if use_ssl?
 		unless @ssl_context.verify_mode
@@ -99,7 +100,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 
         if RUBY_VERSION =~ /^1\.9/ || RUBY_VERSION =~ /^2\./
 	      D "opening connection to #{conn_address()}..."
-	      s = timeout(@open_timeout) { TCPSocket.open(conn_address(), conn_port()) }
+	      s = Timeout::timeout(@open_timeout) { TCPSocket.open(conn_address(), conn_port()) }
 	      D "opened"
 	      if use_ssl?
 		ssl_parameters = Hash.new
@@ -137,7 +138,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 		  @raw = raw
 		  res=x.value
 		  end
-		  timeout(@open_timeout) { s.connect }
+		  Tmeout::timeout(@open_timeout) { s.connect }
 		  if @ssl_context.verify_mode != OpenSSL::SSL::VERIFY_NONE
 		    s.post_connection_check(@address)
 		  end
