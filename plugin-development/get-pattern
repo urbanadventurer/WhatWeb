@@ -10,17 +10,11 @@
 require 'net/http'
 require 'net/https'
 require 'open-uri'
+require 'digest/md5'
+
+
 
 $VERBOSE = false
-
-if RUBY_VERSION =~ /^1\.[0-8]/
-  puts "[-] Error: Ruby 1.9 or newer is required."
-  exit 1
-elsif RUBY_VERSION =~ /^1\.9/
-  require 'digest/md5'
-else
-  require 'md5'
-end
 
 def main
   if ARGV.length < 1
