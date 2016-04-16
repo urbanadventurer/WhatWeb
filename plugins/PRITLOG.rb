@@ -6,6 +6,7 @@
 ##
 Plugin.define "PRITLOG" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-01
+version "0.1"
 description "PRITLOG is an extremely simple, small and powerful blog system. Requires SQLite"
 website "http://pritlog.com/fossil.cgi/home"
 
