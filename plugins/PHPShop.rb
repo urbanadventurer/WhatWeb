@@ -7,7 +7,8 @@
 Plugin.define "PHPShop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
 version "0.1"
-description "PHPShop - A shopping cart application. Documentation, download, demo, and forums are provided. (PHP,MySQL) - Homepage: http://code.google.com/p/phpshop/"
+description "PHPShop - A shopping cart application. Documentation, download, demo, and forums are provided. (PHP,MySQL)"
+website "http://code.google.com/p/phpshop/"
 
 # Google results as at 2011-02-26 #
 # 243 for "powered by PHPShop"

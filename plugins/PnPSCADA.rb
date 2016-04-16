@@ -7,7 +7,8 @@
 Plugin.define "PnPSCADA" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-23
 version "0.1"
-description "Plug 'n' Play SCADA (PnPSCADA) - Hosted service or run on site - Homepage: http://www.pnpscada.com/productoffering.html"
+description "Plug 'n' Play SCADA (PnPSCADA) - Hosted service or run on site"
+website "http://www.pnpscada.com/productoffering.html"
 
 # Google results as at 2011-09-23 #
 # 7 for intitle:"PnPSCADA Login" "Note: This site uses Cookies, JavaScript and Popups"

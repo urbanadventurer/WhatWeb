@@ -7,7 +7,8 @@
 Plugin.define "ZTE-IAD" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-01
 version "0.1"
-description "ZTE IAD (Integrated Access Device) - Homepage: http://wwwen.zte.com.cn/en/solutions/wireless/"
+description "ZTE IAD (Integrated Access Device)"
+website "http://wwwen.zte.com.cn/en/solutions/wireless/"
 
 # ShodanHQ results as at 2011-11-01 #
 # 13,600 for Mini web server ZTE

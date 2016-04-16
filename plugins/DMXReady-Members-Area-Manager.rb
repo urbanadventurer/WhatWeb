@@ -7,7 +7,8 @@
 Plugin.define "DMXReady-Members-Area-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.1"
-description "DMXReady Members Area Manager allows you to quickly create a whole area of your website that is 'members only' so you can control who sees your content. - Homepage: http://www.dmxready.com/?product=members-area-manager"
+description "DMXReady Members Area Manager allows you to quickly create a whole area of your website that is 'members only' so you can control who sees your content."
+website "http://www.dmxready.com/?product=members-area-manager"
 
 # Google results as at 2010-07-25 #
 # 29 for inurl:inc_membersareamanager.asp

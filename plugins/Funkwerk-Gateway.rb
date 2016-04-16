@@ -7,7 +7,8 @@
 Plugin.define "Funkwerk-Gateway" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-24
 version "0.1"
-description "Funkwerk Gateway - Homepage: http://www.funkwerk-ec.com/"
+description "Funkwerk Gateway"
+website "http://www.funkwerk-ec.com/"
 
 # Google results as at 2011-11-24 #
 # 36 for intitle:"Funkwerk * Home Page" "Initial Configuration" "Advanced Configuration"

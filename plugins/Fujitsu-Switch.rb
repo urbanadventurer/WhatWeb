@@ -7,7 +7,8 @@
 Plugin.define "Fujitsu-Switch" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
 version "0.1"
-description "Fujitsu Switch - Homepage: http://fenics.fujitsu.com/products/sr-s/"
+description "Fujitsu Switch"
+website "http://fenics.fujitsu.com/products/sr-s/"
 
 # ShodanHQ results as at 2011-03-12 #
 # 5 for SR-S724

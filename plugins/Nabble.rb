@@ -7,7 +7,8 @@
 Plugin.define "Nabble" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
 version "0.1"
-description "Freed embeddable web apps - Homepage: http://www.nabble.com/"
+description "Freed embeddable web apps"
+website "http://www.nabble.com/"
 
 # Google results as at 2011-05-16 #
 # 480 for "powered by Nabble"

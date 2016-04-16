@@ -7,7 +7,8 @@
 Plugin.define "CruxCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
 version "0.1"
-description "CruxCMS - Online Content Manager - homepage: http://www.cruxsoftware.co.uk/"
+description "CruxCMS - Online Content Manager"
+website "http://www.cruxsoftware.co.uk/"
 
 # 10 results for "powered by Crux CMS" -vulnerability @ 2010-07-10
 

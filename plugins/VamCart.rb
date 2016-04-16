@@ -7,7 +7,8 @@
 Plugin.define "VamCart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-18
 version "0.1"
-description "VamCart - CakePHP Based Open Source Shopping Cart - Homepage: http://vamcart.com/"
+description "VamCart - CakePHP Based Open Source Shopping Cart"
+website "http://vamcart.com/"
 
 # Google results as at 2012-07-18 #
 # 5 for "VamCart" "Shipping and Returns" inurl:"page/shipping--returns.html"

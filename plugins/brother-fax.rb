@@ -7,7 +7,8 @@
 Plugin.define "Brother-Fax" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-14
 version "0.1"
-description "Brother fax web interface - homepage: http://www.brother.com/"
+description "Brother fax web interface"
+website "http://www.brother.com/"
 # Default login: Admin/Access
 
 # ShodanHQ results as at 2011-05-14 #

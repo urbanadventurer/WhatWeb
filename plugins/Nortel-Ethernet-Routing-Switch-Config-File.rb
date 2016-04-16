@@ -7,7 +7,8 @@
 Plugin.define "Nortel-Ethernet-Routing-Switch-Config-File" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
-description "Nortel Ethernet Routing Switch Config File - homepage: http://products.nortel.com/go/product_index.jsp?locale=en-US&lcid=-1"
+description "Nortel Ethernet Routing Switch Config File"
+website "http://products.nortel.com/go/product_index.jsp?locale=en-US&lcid=-1"
 
 # 21 results for "qos queue-set-assignment queue-set" @ 2010-10-14
 

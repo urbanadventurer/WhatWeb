@@ -7,7 +7,8 @@
 Plugin.define "Speakker" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
-description "Crossbrowser JavaScript audio solution based on HTML5 - Homepage: http://www.speakker.com/"
+description "Crossbrowser JavaScript audio solution based on HTML5"
+website "http://www.speakker.com/"
 
 
 

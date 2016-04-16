@@ -7,7 +7,8 @@
 Plugin.define "xt-Commerce" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-15
 version "0.1"
-description "xt-Commerce is a powerfull Opensource e-Commerce Solution, written in php/SQL, with a smarty Template engine, and lots of features for a successfull e-commerce site. - Homepage: http://www.xt-commerce.com/"
+description "xt-Commerce is a powerfull Opensource e-Commerce Solution, written in php/SQL, with a smarty Template engine, and lots of features for a successfull e-commerce site."
+website "http://www.xt-commerce.com/"
 # Project Homepage: http://sourceforge.net/projects/xtcommerce/
 
 # Google results as at 2011-02-15 #

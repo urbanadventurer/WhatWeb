@@ -10,7 +10,8 @@
 Plugin.define "ViewVC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
 version "0.2"
-description "ViewVC (formerly known as ViewCVS) is a browser interface for CVS and Subversion version control repositories. It generates templatized HTML to present navigable directory, revision, and change log listings. It can display specific versions of files as well as diffs between those versions. - Homepage: http://viewvc.tigris.org/"
+description "ViewVC (formerly known as ViewCVS) is a browser interface for CVS and Subversion version control repositories. It generates templatized HTML to present navigable directory, revision, and change log listings. It can display specific versions of files as well as diffs between those versions."
+website "http://viewvc.tigris.org/"
 
 # Google results as at 2011-03-19 #
 # 288 for "Powered by viewvc"

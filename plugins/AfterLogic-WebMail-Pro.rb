@@ -7,7 +7,8 @@
 Plugin.define "AfterLogic-WebMail-Pro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
 version "0.1"
-description "AfterLogic WebMail Pro is a webmail front-end for your existing POP3/IMAP mail server. - Homepage: http://www.afterlogic.com/mailbee/webmail-pro.asp"
+description "AfterLogic WebMail Pro is a webmail front-end for your existing POP3/IMAP mail server."
+website "http://www.afterlogic.com/mailbee/webmail-pro.asp"
 
 # ShodanHQ results as at 2011-05-20 #
 # 226 for PHPWEBMAILSESSID

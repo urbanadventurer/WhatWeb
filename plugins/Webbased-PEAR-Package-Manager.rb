@@ -7,7 +7,8 @@
 Plugin.define "Webbased-PEAR-Package-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-20
 version "0.1"
-description "Webbased PEAR Package Manager - The most accessible way to manage your pear-compatible packages. - Homepage: http://pear.php.net/package/PEAR_Frontend_Web"
+description "Webbased PEAR Package Manager - The most accessible way to manage your pear-compatible packages."
+website "http://pear.php.net/package/PEAR_Frontend_Web"
 
 # Google results as at 2011-03-20 #
 # 58 for "Installed packages" "Webbased PEAR Package Manager" "Search package by name"

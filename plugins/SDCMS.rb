@@ -7,7 +7,8 @@
 Plugin.define "SDCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-29
 version "0.1"
-description "SDCMS - CMS - Requires ASP and Access/MsSql - Homepage: http://www.sdcms.cn/"
+description "SDCMS - CMS - Requires ASP and Access/MsSql"
+website "http://www.sdcms.cn/"
 
 # Google results as at 2011-10-29 #
 # 410 for "Powered By SDCMS"

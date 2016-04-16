@@ -7,7 +7,8 @@
 Plugin.define "XOOPS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-11
 version "0.1"
-description "eXtensible Object Oriented Portal System (XOOPS) open source CMS and portal system - Homepage: http://www.xoops.org/"
+description "eXtensible Object Oriented Portal System (XOOPS) open source CMS and portal system"
+website "http://www.xoops.org/"
 
 # Google results as at 2011-12-11 #
 # 493 for "Powered by XOOPS"

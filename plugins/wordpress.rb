@@ -16,7 +16,8 @@
 Plugin.define "WordPress" do
   author "Andrew Horton"
   version "0.5"
-  description "WordPress is an opensource blogging system commonly used as a CMS. Homepage: http://www.wordpress.org/ "
+  description "WordPress is an opensource blogging system commonly used as a CMS."
+  website "http://www.wordpress.org/"
   
     # Dorks #
     dorks [

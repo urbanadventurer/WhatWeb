@@ -7,7 +7,8 @@
 Plugin.define "PieCrust" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-09-12
 version "0.1"
-description "PieCrust is a static website generator and lightweight CMS that's all managed with text files. - Homepage: http://bolt80.com/piecrust/"
+description "PieCrust is a static website generator and lightweight CMS that's all managed with text files."
+website "http://bolt80.com/piecrust/"
 
 # Dorks #
 dorks [

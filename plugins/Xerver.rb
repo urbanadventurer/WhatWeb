@@ -7,7 +7,8 @@
 Plugin.define "Xerver" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
 version "0.1"
-description "Xerver is an advanced free GNU GPL Web and FTP server. - Homepage: http://www.javascript.nu/xerver/"
+description "Xerver is an advanced free GNU GPL Web and FTP server."
+website "http://www.javascript.nu/xerver/"
 
 # ShodanHQ results as at 2011-05-20 #
 # 182 for Xerver

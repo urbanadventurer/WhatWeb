@@ -7,7 +7,8 @@
 Plugin.define "Geobytes-GeoSelect" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-17
 version "0.1"
-description "GeoSelect gives you easy access to numerous features that you can use to impress your clients.  From geographically customized menus through to log file analysis, your clients will be impressed when they see their web site dynamically transformed to the viewer's location. - Homepage: http://www.geobytes.com/GeoSelect.htm"
+description "GeoSelect gives you easy access to numerous features that you can use to impress your clients.  From geographically customized menus through to log file analysis, your clients will be impressed when they see their web site dynamically transformed to the viewer's location."
+website "http://www.geobytes.com/GeoSelect.htm"
 
 # ShodanHQ results as at 2011-05-17 #
 # 76 for geobytes

@@ -7,7 +7,8 @@
 Plugin.define "WiFiDog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-23
 version "0.1"
-description "The Wifidog project is an open source captive portal solution. Requires: PHP and postgresql - Homepage: http://dev.wifidog.org/"
+description "The Wifidog project is an open source captive portal solution. Requires: PHP and postgresql"
+website "http://dev.wifidog.org/"
 
 # 69 for "I am unable to retrieve the schema version. Either the wifidog database hasn't been created yet, the postgresql server is down, or pg_hba.conf does not allow your web server to connect to the wifidog database." +host +port +dbname
 #  4 for intitle:"Wifidog Auth-server installation and configuration" "Welcome to the WifiDog Auth-Server installation and configuration script"

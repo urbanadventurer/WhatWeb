@@ -7,7 +7,8 @@
 Plugin.define "Parallel-Crystal-Load-Balancer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "Parallel Crystal load balancing server - Homepage: http://www.dynalivery.com/products/parallelcrystal/parallelcrystal2_x.html"
+description "Parallel Crystal load balancing server"
+website "http://www.dynalivery.com/products/parallelcrystal/parallelcrystal2_x.html"
 
 # Manual: http://www.dynalivery.com/products/parallelcrystal/v2_3/V2_3Install-UsersGuide.pdf
 

@@ -7,7 +7,8 @@
 Plugin.define "WikiWebHelp" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
-description "wikiWebHelp - Client side is pure Javascript using mostly original code. Backend is PHP. Database is mySQL. Wiki conversion by Wiky.  Diff processing by simpleDiff. - homepage: http://richardbondi.net/projects.html"
+description "wikiWebHelp - Client side is pure Javascript using mostly original code. Backend is PHP. Database is mySQL. Wiki conversion by Wiky.  Diff processing by simpleDiff."
+website "http://richardbondi.net/projects.html"
 
 # 8 results for "powered by WikiWebHelp" @ 2010-10-14
 

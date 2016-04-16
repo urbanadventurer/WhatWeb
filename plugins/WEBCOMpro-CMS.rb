@@ -7,7 +7,8 @@
 Plugin.define "WEBCOMpro-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
 version "0.1"
-description "WEBCOMpro CMS - Homepage: http://www.webcompro-cms.com/"
+description "WEBCOMpro CMS"
+website "http://www.webcompro-cms.com/"
 
 # ShodanHQ results as at 2011-08-14 #
 # 6 for WEBCOMpro CMS

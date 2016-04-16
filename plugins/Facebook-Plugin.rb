@@ -7,7 +7,8 @@
 Plugin.define "Facebook-Plugin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
-description "This plugin identifies Facebook plugins - Homepage: http://apps.facebook.com/widgets/"
+description "This plugin identifies Facebook plugins"
+website "http://apps.facebook.com/widgets/"
 # More Info: http://developers.facebook.com/docs/plugins
 
 

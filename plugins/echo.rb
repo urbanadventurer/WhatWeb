@@ -10,7 +10,8 @@
 Plugin.define "Echo" do
 author "Andrew Horton"
 version "0.2"
-description "CMS - Homepage: http://www.helloecho.com/"
+description "CMS"
+website "http://www.helloecho.com/"
 
 # Dorks #
 dorks [

@@ -7,7 +7,8 @@
 Plugin.define "Apache-Traffic-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
 version "0.1"
-description "Apache Traffic Server is a fast, scalable and extensible HTTP/1.1 compliant caching proxy server. - Homepage: http://trafficserver.apache.org/"
+description "Apache Traffic Server is a fast, scalable and extensible HTTP/1.1 compliant caching proxy server."
+website "http://trafficserver.apache.org/"
 
 # ShodanHQ results as at 2011-08-05 #
 # 169 for ApacheTrafficServer

@@ -7,7 +7,8 @@
 Plugin.define "wpQuiz" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.1"
-description "wpQuiz is a fully-featured quiz script. - homepage: http://www.wireplastik.com/"
+description "wpQuiz is a fully-featured quiz script."
+website "http://www.wireplastik.com/"
 
 # 42 results for "powered by wpQuiz" intitle:"Register - wpQuiz" inurl:register.php @ 2010-08-21
 

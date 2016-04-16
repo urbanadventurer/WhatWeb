@@ -10,7 +10,8 @@
 Plugin.define "DiY-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.2"
-description "Do It Yourself Content Management System is a feature-rich, php-built, mysql-based, opensource and free CMS. - homepage: http://www.diy-cms.com/"
+description "Do It Yourself Content Management System is a feature-rich, php-built, mysql-based, opensource and free CMS."
+website "http://www.diy-cms.com/"
 
 # Google results as at 2010-09-17 #
 # 41 results for "powered by DiY-CMS"

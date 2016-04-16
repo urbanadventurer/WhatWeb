@@ -7,7 +7,8 @@
 Plugin.define "uTorrent" do
 author "Andrew Horton"
 version "0.1"
-description "The uTorrent GUI is a web interface to the uTorrent BitTorrent client. Homepage: https://web.utorrent.com/"
+description "The uTorrent GUI is a web interface to the uTorrent BitTorrent client"
+website "https://web.utorrent.com/"
 
 
 

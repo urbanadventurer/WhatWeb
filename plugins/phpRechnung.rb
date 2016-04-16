@@ -7,7 +7,8 @@
 Plugin.define "phpRechnung" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
 version "0.1"
-description "phpRechnung is easy-to-use Web-based multilingual accounting software - homepage: http://www.loenshotel.de/phpRechnung/"
+description "phpRechnung is easy-to-use Web-based multilingual accounting software"
+website "http://www.loenshotel.de/phpRechnung/"
 
 # 4 results for phpRechnung "Edy Corak . All rights reserved." @ 2010-12-28
 

@@ -7,7 +7,8 @@
 Plugin.define "Xavante" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
-description "Xavante is a Lua HTTP 1.1 Web server that uses a modular architecture based on URI mapped handlers. - Homepage: http://keplerproject.github.com/xavante/"
+description "Xavante is a Lua HTTP 1.1 Web server that uses a modular architecture based on URI mapped handlers."
+website "http://keplerproject.github.com/xavante/"
 
 # ShodanHQ results as at 2012-08-26 #
 # 143 for Xavante

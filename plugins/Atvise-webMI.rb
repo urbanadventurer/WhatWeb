@@ -7,7 +7,8 @@
 Plugin.define "Atvise-webMI" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
 version "0.1"
-description "Web-based HMI server - atvise webMI compliant web servers can be extremely slim and work on the smallest hardware. - Homepage: http://www.atvise.com/en/how-it-works"
+description "Web-based HMI server - atvise webMI compliant web servers can be extremely slim and work on the smallest hardware."
+website "http://www.atvise.com/en/how-it-works"
 
 # ShodanHQ results as at 2012-04-11 #
 # 7 for atvise

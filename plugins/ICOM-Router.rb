@@ -7,7 +7,8 @@
 Plugin.define "ICOM-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
 version "0.1"
-description "ICOM Router [Japanese] - Homepage: http://www.icom.co.jp/"
+description "ICOM Router [Japanese]"
+website "http://www.icom.co.jp/"
 
 # ShodanHQ results as at 2011-08-06 #
 # 343 for Icom HTTP Server

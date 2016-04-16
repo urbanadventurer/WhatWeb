@@ -7,7 +7,8 @@
 Plugin.define "Windows-Internet-Printing" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.1"
-description "Windows internet printing web frontend - homepage: http://www.microsoft.com/"
+description "Windows internet printing web frontend"
+website "http://www.microsoft.com/"
 # More info: http://support.microsoft.com/kb/313058
 
 # 4 results for inurl:Printers/ipp_0001.asp @ 2010-07-22

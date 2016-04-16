@@ -7,7 +7,8 @@
 Plugin.define "GpsGate-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-20
 version "0.1"
-description "GpsGate Server is a platform for web based GPS tracking of vehicles, valuable assets and persons. The modular GpsGate Server platform also allows you to configure, extend and customize applications to your needs. - Homepage: http://gpsgate.com/products/gpsgate_server"
+description "GpsGate Server is a platform for web based GPS tracking of vehicles, valuable assets and persons. The modular GpsGate Server platform also allows you to configure, extend and customize applications to your needs."
+website "http://gpsgate.com/products/gpsgate_server"
 
 # Google results as at 2011-06-20 #
 # 37 for "GpsGate Server - Login" intitle:"GpsGate Server - Login"

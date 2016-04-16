@@ -7,7 +7,8 @@
 Plugin.define "SMART-SOFT-VCard-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-14
 version "0.1"
-description "SMART-SOFT VCard HTTP/SSL server - Homepage: http://www.smart-soft.ru/"
+description "SMART-SOFT VCard HTTP/SSL server"
+website "http://www.smart-soft.ru/"
 
 # ShodanHQ results as at 2011-05-14 #
 # 36 for SMART-SOFT VCard

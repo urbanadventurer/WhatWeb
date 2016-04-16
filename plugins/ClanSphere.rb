@@ -7,7 +7,8 @@
 Plugin.define "ClanSphere" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description "Free OpenSource Clan CMS - homepage: www.csphere.eu/index/clansphere/about"
+description "Free OpenSource Clan CMS"
+website "www.csphere.eu/index/clansphere/about"
 
 # Google results as at 2010-09-18 #
 # 45 for "powered by ClanSphere"

@@ -7,7 +7,8 @@
 Plugin.define "EMC-Documentum-Webtop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
 version "0.1"
-description "EMC Documentum Webtop is a browser-based interface that provides access to the EMC Documentum repository and content management services. - Homepage: http://www.emc.com/products/detail/software2/webtop.htm"
+description "EMC Documentum Webtop is a browser-based interface that provides access to the EMC Documentum repository and content management services."
+website "http://www.emc.com/products/detail/software2/webtop.htm"
 
 # 40 for "Login Name" Repository Webtop intitle:login
 # 21 for "Login Name" Repository Webtop intitle:login inurl:component

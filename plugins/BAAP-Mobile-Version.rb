@@ -7,7 +7,8 @@
 Plugin.define "BAAP-Mobile-Version" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
 version "0.1"
-description "The BAAP Mobile Version is a complete toolkit to help mobilize your WordPress site. - Homepage: http://wordpress.org/extend/plugins/baap-mobile-version/"
+description "The BAAP Mobile Version is a complete toolkit to help mobilize your WordPress site."
+website "http://wordpress.org/extend/plugins/baap-mobile-version/"
 
 # ShodanHQ results as at 2011-08-29 #
 # 3 for X-Mobilized-By: BAAP Mobile

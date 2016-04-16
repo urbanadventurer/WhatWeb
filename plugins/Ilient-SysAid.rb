@@ -7,7 +7,8 @@
 Plugin.define "Ilient-SysAid" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
 version "0.1"
-description "Ilient SysAid IT Help Desk Software - Homepage: http://www.ilient.com/"
+description "Ilient SysAid IT Help Desk Software"
+website "http://www.ilient.com/"
 
 # ShodanHQ results as at 2012-03-24 #
 # 6 for location sysaid

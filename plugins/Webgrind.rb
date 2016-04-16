@@ -7,7 +7,8 @@
 Plugin.define "Webgrind" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-05
 version "0.1"
-description "Webgrind is an Xdebug profiling web frontend in PHP5. It implements a subset of the features of kcachegrind and installs in seconds and works on all platforms. - Homepage: https://github.com/jokkedk/webgrind"
+description "Webgrind is an Xdebug profiling web frontend in PHP5. It implements a subset of the features of kcachegrind and installs in seconds and works on all platforms."
+website "https://github.com/jokkedk/webgrind"
 
 # Google results as at 2011-03-05 #
 # 10 for intitle:"Webgrind" "profiling in the browser" +percent +milliseconds +microseconds

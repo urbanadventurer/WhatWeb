@@ -7,7 +7,8 @@
 Plugin.define "Gitweb" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-24
 version "0.1"
-description "Gitweb is a Git web interface, the one working on http://www.kernel.org/git/. It is written in Perl, and can be used as a CGI script, or as a mod_perl legacy script (run by ModPerl::Registry handler). It allows browsing a git repository (or a set of git repositories) using a web browser. - homepage: http://git.or.cz/gitwiki/Gitweb"
+description "Gitweb is a Git web interface, the one working on http://www.kernel.org/git/. It is written in Perl, and can be used as a CGI script, or as a mod_perl legacy script (run by ModPerl::Registry handler). It allows browsing a git repository (or a set of git repositories) using a web browser."
+website "http://git.or.cz/gitwiki/Gitweb"
 
 # Google results as at 2011-01-24 #
 # 228 results for "Project" "Description" "Owner" "Last Change" "Search" "summary" "shortlog" "log" "tree" "TXT" "OPML" intitle:git

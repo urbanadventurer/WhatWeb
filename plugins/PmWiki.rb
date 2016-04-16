@@ -7,7 +7,8 @@
 Plugin.define "PmWiki" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-18
 version "0.1"
-description "PmWiki is a wiki-based system for collaborative creation and maintenance of websites. - Homepage: http://www.pmwiki.org/"
+description "PmWiki is a wiki-based system for collaborative creation and maintenance of websites."
+website "http://www.pmwiki.org/"
 
 # ShodanHQ results as at 2012-03-18 #
 # 30 for imstime

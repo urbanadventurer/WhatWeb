@@ -7,7 +7,8 @@
 Plugin.define "LabVIEW" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
-description "LabVIEW is a graphical programming environment used by millions of engineers and scientists to develop sophisticated measurement, test, and control systems using intuitive graphical icons and wires that resemble a flowchart. - Homepage: http://www.ni.com/labview/"
+description "LabVIEW is a graphical programming environment used by millions of engineers and scientists to develop sophisticated measurement, test, and control systems using intuitive graphical icons and wires that resemble a flowchart."
+website "http://www.ni.com/labview/"
 
 # More Info #
 # http://www.ni.com/labview/whatis/

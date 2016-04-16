@@ -7,7 +7,8 @@
 Plugin.define "Siemens-Simatic" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
 version "0.1"
-description "SCADA - Siemens Simatic - Homepage: http://www.automation.siemens.com/mcms/topics/en/simatic/Pages/Default.aspx"
+description "SCADA - Siemens Simatic"
+website "http://www.automation.siemens.com/mcms/topics/en/simatic/Pages/Default.aspx"
 
 # SIMATIC HMI - Homepage: http://www.automation.siemens.com/mcms/automation/en/human-machine-interface/Pages/Default.aspx
 # SIMATIC NET - Homepage: http://www.automation.siemens.com/mcms/topics/en/simatic/industrial-communications/Pages/redi.aspx

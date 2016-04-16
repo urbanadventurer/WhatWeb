@@ -7,7 +7,8 @@
 Plugin.define "webfs" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "This is a simple http server for mostly static content.  You can use it to serve the content of a ftp server via http for example. - Homepage: http://linux.bytesex.org/misc/webfs.html"
+description "This is a simple http server for mostly static content.  You can use it to serve the content of a ftp server via http for example."
+website "http://linux.bytesex.org/misc/webfs.html"
 
 # ShodanHQ results as at 2011-05-31 #
 # 4,713 for webfs

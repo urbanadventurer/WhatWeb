@@ -7,7 +7,8 @@
 Plugin.define "Sun-Web-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
 version "0.1"
-description "Sun web server - Homepage: http://www.sun.com/"
+description "Sun web server"
+website "http://www.sun.com/"
 
 # ShodanHQ results as at 2011-08-06 #
 # 10,988 for Sun-ONE-Web-Server

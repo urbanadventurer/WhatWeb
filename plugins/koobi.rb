@@ -10,7 +10,8 @@
 Plugin.define "Koobi" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
-description "Shop/CMS software [German] - homepage: http://www.Dream4.de/"
+description "Shop/CMS software [German]"
+website "http://www.Dream4.de/"
 
 # Google results as at 2010-08-28 #
 # 262 for "powered by Koobi PRO|SHOP|CMS" -"SQL Injection"

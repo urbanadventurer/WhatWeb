@@ -8,7 +8,8 @@
 Plugin.define "samPHPweb" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
 version "0.1"
-description "samPHPweb is a web feature that is included with the installation of SAM Broadcaster. It allows you to run a PHP driven site from your web host that communicates with your SAM Database. - homepage: http://www.spacialaudio.com/?page=sam-broadcaster&tab=tab-sam-broadcaster-overview"
+description "samPHPweb is a web feature that is included with the installation of SAM Broadcaster. It allows you to run a PHP driven site from your web host that communicates with your SAM Database."
+website "http://www.spacialaudio.com/?page=sam-broadcaster&tab=tab-sam-broadcaster-overview"
 
 
 matches [

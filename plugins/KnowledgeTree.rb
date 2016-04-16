@@ -7,7 +7,8 @@
 Plugin.define "KnowledgeTree" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description "Document Management Software - homepage: http://www.knowledgetree.com/"
+description "Document Management Software"
+website "http://www.knowledgetree.com/"
 
 # 13 results for "powered by KnowledgeTree" "KnowledgeTree Version" @ 2010-09-18
 # 71 results for inurl:kt_path_info="ktcore.actions.document.assist" @ 2010-09-18

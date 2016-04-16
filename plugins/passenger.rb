@@ -7,7 +7,8 @@
 Plugin.define "Passenger" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
 version "0.1"
-description 'Phusion Passenger - a.k.a. mod_rails or mod_rack - makes deployment of Ruby web applications, such as those built on the revolutionary Ruby on Rails web framework, a breeze. It follows the usual Ruby on Rails conventions, such as "Dont-Repeat-Yourself" - Homepage: http://www.modrails.com/'
+description 'Phusion Passenger - a.k.a. mod_rails or mod_rack - makes deployment of Ruby web applications, such as those built on the revolutionary Ruby on Rails web framework, a breeze. It follows the usual Ruby on Rails conventions, such as "Dont-Repeat-Yourself""
+website "http://www.modrails.com/'
 
 # ShodanHQ results as at 2011-03-10 #
 # 83,668 for Phusion_Passenger

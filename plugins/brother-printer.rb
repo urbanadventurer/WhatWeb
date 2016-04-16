@@ -11,7 +11,8 @@
 Plugin.define "Brother-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
-description "Brother printer web interface - homepage: http://www.brother.com/"
+description "Brother printer web interface"
+website "http://www.brother.com/"
 # Default login: Admin/Access
 
 # Google results as at 2010-07-22 #

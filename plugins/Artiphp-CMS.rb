@@ -7,7 +7,8 @@
 Plugin.define "Artiphp-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-17
 version "0.1"
-description "Artiphp CMS - open source CMS - Requires PHP - Homepage: http://www.artiphp.com/"
+description "Artiphp CMS - open source CMS - Requires PHP"
+website "http://www.artiphp.com/"
 
 # Google results as at 2012-05-17 #
 # 251 for "Artiphp" "2001" "est un logiciel libre" "sous licence GPL"

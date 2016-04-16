@@ -7,7 +7,8 @@
 Plugin.define "phpMyRealty" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-19
 version "0.1"
-description "phpMyRealty - customizable real estate web application - Requires: PHP - Homepage: http://www.phpmyrealty.com/"
+description "phpMyRealty - customizable real estate web application - Requires: PHP"
+website "http://www.phpmyrealty.com/"
 
 # Google results as at 2011-08-19 #
 # 374 for intext:Sort By: Submission Date | Bedrooms | Bathrooms |  Price (ASC) | Price (DESC)

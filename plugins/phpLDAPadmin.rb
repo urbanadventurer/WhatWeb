@@ -7,7 +7,8 @@
 Plugin.define "phpLDAPadmin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-01
 version "0.1"
-description "phpLDAPadmin (also known as PLA) is a web-based LDAP client. It provides easy, anywhere-accessible, multi-language administration for your LDAP server.  - Homepage: http://phpldapadmin.sourceforge.net/"
+description "phpLDAPadmin (also known as PLA) is a web-based LDAP client. It provides easy, anywhere-accessible, multi-language administration for your LDAP server. "
+website "http://phpldapadmin.sourceforge.net/"
 
 # Google results as at 2011-08-01 #
 # 227 for "Home" "Purge caches" intitle:phpLDAPadmin

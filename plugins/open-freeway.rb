@@ -7,7 +7,8 @@
 Plugin.define "Open-Freeway" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.1"
-description "Freeway is by far the largest and most fully featured Open Source eCommerce platform. It doesn't just sell products but extends to sell in some very fancy new ways and is very configurable. - homepage: http://www.openfreeway.org/"
+description "Freeway is by far the largest and most fully featured Open Source eCommerce platform. It doesn't just sell products but extends to sell in some very fancy new ways and is very configurable."
+website "http://www.openfreeway.org/"
 
 # Dorks #
 dorks [

@@ -8,7 +8,8 @@ Plugin.define "EasyConsole-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
 description "EasyConsole CMS allows you to manage the content and usage across your Intranet, Extranet or Portal.
-Text, documents, media and virtually any type of information can be securely shared across your organization, your partners or clients through a web-based environment that consistently reflects your branding DNA. - Homepage: http://www.easyconsole.com/web-content-management.html"
+Text, documents, media and virtually any type of information can be securely shared across your organization, your partners or clients through a web-based environment that consistently reflects your branding DNA."
+website "http://www.easyconsole.com/web-content-management.html"
 
 # Google results as at 2011-03-03 #
 # 66 for "powered by EasyConsole-CMS" inurl:"easyconsole.cfm" ext:cfm

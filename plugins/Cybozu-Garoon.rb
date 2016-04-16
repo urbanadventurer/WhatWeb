@@ -7,7 +7,8 @@
 Plugin.define "Cybozu-Garoon" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "Cybozu Garoon is a web-based groupware suite integrating key collaboration applications that provide a ready-to-run intranet solution. - Homepage: http://cybozu.com/en/grn/product/"
+description "Cybozu Garoon is a web-based groupware suite integrating key collaboration applications that provide a ready-to-run intranet solution."
+website "http://cybozu.com/en/grn/product/"
 
 # ShodanHQ results as at 2011-05-31 #
 # 251 for Cybozu-WS

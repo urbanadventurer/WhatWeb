@@ -7,7 +7,8 @@
 Plugin.define "phpDealerLocator" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-16
 version "0.1"
-description "phpDealerLocator is a full featured zip code locator software - Requires: PHP and MySQL - Homepage: http://www.yourphppro.com/version/en-us/content/page_4.html"
+description "phpDealerLocator is a full featured zip code locator software - Requires: PHP and MySQL"
+website "http://www.yourphppro.com/version/en-us/content/page_4.html"
 
 # Google results as at 2011-08-16 #
 # 7 for inurl:Locator/record.php?Dealer_ID

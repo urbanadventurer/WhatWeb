@@ -7,7 +7,8 @@
 Plugin.define "DataflexViNE-VoIP-IAD" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.1"
-description "The ViNE range of VoIP ADSL and VoIP SHDSL IADs support both SIP and MGCP protocols depending on the infrastructure and application for VoIP. Remote updates are possible to switch between either VoIP protocols and VoDSL. - Homepage: http://www.dataflex.com/"
+description "The ViNE range of VoIP ADSL and VoIP SHDSL IADs support both SIP and MGCP protocols depending on the infrastructure and application for VoIP. Remote updates are possible to switch between either VoIP protocols and VoDSL."
+website "http://www.dataflex.com/"
 
 # ShodanHQ results as at 2011-04-11 #
 # 2,609 for DataflexViNE-Webserver

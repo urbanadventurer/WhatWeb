@@ -7,7 +7,8 @@
 Plugin.define "HP-ProCurve-Switch" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
 version "0.1"
-description "HP ProCurve Switch - Homepage: http://www.hp.com/rnd/"
+description "HP ProCurve Switch"
+website "http://www.hp.com/rnd/"
 
 # ShodanHQ results as at 2011-03-12 #
 # 10,344 for eHTTP

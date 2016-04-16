@@ -7,7 +7,8 @@
 Plugin.define "JustAnswer-Professional" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "JustAnswer Professional Script is a PHP script that lets you start your own question answer website just like JustAnswer. - Homepage: http://www.guruscript.com/"
+description "JustAnswer Professional Script is a PHP script that lets you start your own question answer website just like JustAnswer."
+website "http://www.guruscript.com/"
 
 # 5 for inurl:forum_answer.php?que_id= "Powered By Guruscript.com"
 

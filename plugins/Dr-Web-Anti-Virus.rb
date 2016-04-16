@@ -7,7 +7,8 @@
 Plugin.define "Dr-Web-Anti-Virus" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-31
 version "0.1"
-description "Dr.Web anti-virus - Homepage: http://www.drweb.com/"
+description "Dr.Web anti-virus"
+website "http://www.drweb.com/"
 
 # ShodanHQ results as at 2012-07-31 #
 # 39 for DRWEB_PERSONAL_OFFICE

@@ -7,7 +7,8 @@
 Plugin.define "ClickTale" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-26
 version "0.1"
-description "Customer Experience Analytics by ClickTale - discover everything visitors do on your website. Watch Visitor Recordings, Mouse Move Heatmaps, and Form Analytics. - Homepage: http://www.clicktale.com/"
+description "Customer Experience Analytics by ClickTale - discover everything visitors do on your website. Watch Visitor Recordings, Mouse Move Heatmaps, and Form Analytics."
+website "http://www.clicktale.com/"
 
 
 

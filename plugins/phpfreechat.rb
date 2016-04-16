@@ -10,7 +10,8 @@
 Plugin.define "phpFreeChat" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
 version "0.2"
-description "phpFreeChat is a free, simple to install, fast, customizable and multi languages chat that uses a simple filesystem for message and nickname storage. - homepage: http://www.phpfreechat.net/"
+description "phpFreeChat is a free, simple to install, fast, customizable and multi languages chat that uses a simple filesystem for message and nickname storage."
+website "http://www.phpfreechat.net/"
 
 # About 434,000 results for "powered by phpfreechat" @ 2010-06-12
 

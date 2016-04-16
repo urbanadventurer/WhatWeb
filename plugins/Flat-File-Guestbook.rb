@@ -7,7 +7,8 @@
 Plugin.define "Flat-File-Guestbook" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-12
 version "0.1"
-description "The Flat File PHP Guestbook is designed to be lightweight, easy on the server, and simple to install. Requires PHP 4+. - Homepage: http://www.advancebydesign.com/software/php-scripts-and-programmes/mail-and-feedback/php-flat-file-guestbook.html"
+description "The Flat File PHP Guestbook is designed to be lightweight, easy on the server, and simple to install. Requires PHP 4+."
+website "http://www.advancebydesign.com/software/php-scripts-and-programmes/mail-and-feedback/php-flat-file-guestbook.html"
 
 # Google results as at 2011-08-12 #
 # 5 for inurl:ffgb_admin.php "Please enter the administration area login information to manage the guestbook."

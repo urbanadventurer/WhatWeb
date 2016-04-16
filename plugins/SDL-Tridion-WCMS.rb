@@ -7,7 +7,8 @@
 Plugin.define "SDL-Tridion-WCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-20
 version "0.1"
-description "SDL Tridion WCMS - Web Content Management System (WCMS) - Homepage: http://www.sdl.com/en/wcm/products/sdltridion/default.asp"
+description "SDL Tridion WCMS - Web Content Management System (WCMS)"
+website "http://www.sdl.com/en/wcm/products/sdltridion/default.asp"
 
 # ShodanHQ results as at 2011-11-20 #
 # 76 for Product: Tridion Dynamic Content Web Application

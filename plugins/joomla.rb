@@ -23,7 +23,8 @@
 Plugin.define "Joomla" do
   author "Andrew Horton"
   version "0.7"
-  description "Opensource CMS written in PHP. Aggressive version detection compares just 5 files, valid for versions 1.5.0-1.5.22 and 1.6.0-1.6.1. Homepage: http://joomla.org."
+  description "Opensource CMS written in PHP. Aggressive version detection compares just 5 files, valid for versions 1.5.0-1.5.22 and 1.6.0-1.6.1."
+  website "http://joomla.org"
   
   # Google results as at 2011-03-19 #
   # 602 for "powered by joomla" inurl:option=com_content

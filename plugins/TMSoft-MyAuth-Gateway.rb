@@ -7,7 +7,8 @@
 Plugin.define "TMSoft-MyAuth-Gateway" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.1"
-description "MyAuth Gateway 3 is a software for the administration of users to providers of advanced networks, enabling full management of customers, access users, groups, bandwidth control, with administrative access level and access logs of actions of technical support for complete control and ticket, statistics and central billing system via bank transfer of the major national banks. [Translated from Portuguese] - homepage: http://www.myauth.com.br/?console=myauth3_info&site=myauth3"
+description "MyAuth Gateway 3 is a software for the administration of users to providers of advanced networks, enabling full management of customers, access users, groups, bandwidth control, with administrative access level and access logs of actions of technical support for complete control and ticket, statistics and central billing system via bank transfer of the major national banks. [Translated from Portuguese]"
+website "http://www.myauth.com.br/?console=myauth3_info&site=myauth3"
 
 # About 6144 ShodanHQ results for "X-Manager-By:"
 # About 4794 ShodanHQ results for "X-Powered-By: TMSoft MyAuth Gateway"

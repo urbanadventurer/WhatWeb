@@ -7,7 +7,8 @@
 Plugin.define "Flyspray" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
-description "Open source, web based bug tracking system written with a focus on ease-of-use. - Homepage: http://flyspray.org/"
+description "Open source, web based bug tracking system written with a focus on ease-of-use."
+website "http://flyspray.org/"
 
 # Google results as at 2011-04-17 #
 # 381 for "Powered by Flyspray"

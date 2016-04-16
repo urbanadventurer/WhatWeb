@@ -7,7 +7,8 @@
 Plugin.define "Ionize-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
 version "0.1"
-description "Ionize is a powerful & friendly Content Management System - Homepage: http://www.ionizecms.com/"
+description "Ionize is a powerful & friendly Content Management System"
+website "http://www.ionizecms.com/"
 
 # Google results as at 2011-05-16 #
 # 7 for "view : default/article" inurl:404

@@ -7,7 +7,8 @@
 Plugin.define "Check-Point-Firewall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-18
 version "0.1"
-description "Check Point Firewall - Homepage: http://www.checkpoint.com/"
+description "Check Point Firewall"
+website "http://www.checkpoint.com/"
 
 # ShodanHQ results as at 2011-03-13 #
 # 6,527 for fwauthredirect

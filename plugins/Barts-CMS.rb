@@ -7,7 +7,8 @@
 Plugin.define "Barts-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
-description "Bart's CMS is a website Content Management System that is build with Codecharge Studio. - Homepage: http://trinityhome.org/"
+description "Bart's CMS is a website Content Management System that is build with Codecharge Studio."
+website "http://trinityhome.org/"
 
 # Google results as at 2011-03-03 #
 # 93 for "powered by Bart's CMS"

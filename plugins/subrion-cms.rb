@@ -10,7 +10,8 @@
 Plugin.define "Subrion-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.2"
-description "Subrion CMS unites the functionality of articles script, auto classifieds script, realty classifieds script, and web directory script all in one package. - homepage: http://www.subrion.com/"
+description "Subrion CMS unites the functionality of articles script, auto classifieds script, realty classifieds script, and web directory script all in one package."
+website "http://www.subrion.com/"
 
 # Google results as at 2010-08-08 #
 # 88 for "powered by Subrion CMS"

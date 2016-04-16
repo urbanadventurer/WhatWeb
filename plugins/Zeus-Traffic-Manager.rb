@@ -7,7 +7,8 @@
 Plugin.define "Zeus-Traffic-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
 version "0.1"
-description "Zeus Traffic Manager - Application Delivery Controller - allows you to deliver fast, secure and available applications to your users at minimum infrastructure cost across any combination of physical, virtual and cloud infrastructures. - Homepage: http://www.zeus.com/products/traffic-manager/index.html"
+description "Zeus Traffic Manager - Application Delivery Controller - allows you to deliver fast, secure and available applications to your users at minimum infrastructure cost across any combination of physical, virtual and cloud infrastructures."
+website "http://www.zeus.com/products/traffic-manager/index.html"
 
 # ShodanHQ results as at 2011-03-17 #
 # 8,788 for set-cookie X-Mapping

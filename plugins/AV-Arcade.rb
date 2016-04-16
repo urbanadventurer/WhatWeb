@@ -7,7 +7,8 @@
 Plugin.define "AV-Arcade" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description "AV-Arcade. Requires PHP - Homepage: http://www.avscripts.net/avarcade/"
+description "AV-Arcade. Requires PHP"
+website "http://www.avscripts.net/avarcade/"
 
 # Google results as at 2010-09-18 #
 # 284 for "powered by AV Arcade" -Vulnerability

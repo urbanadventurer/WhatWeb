@@ -7,7 +7,8 @@
 Plugin.define "Synology-DiskStation" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
-description "Synology DiskStation provides a full-featured Network Attached Storage (NAS) solution which offers RAID storage, backup, and network surveillance (NVR). - Homepage: http://www.synology.com/"
+description "Synology DiskStation provides a full-featured Network Attached Storage (NAS) solution which offers RAID storage, backup, and network surveillance (NVR)."
+website "http://www.synology.com/"
 
 # ShodanHQ results as at 2011-08-07 #
 # 2,425 for stauts

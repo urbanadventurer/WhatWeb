@@ -7,7 +7,8 @@
 Plugin.define "Entrans" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
-description "Entrans is an online translation tool. The tool can be used by the online community to give suggestions for a list of English words/phrases that needs to be translated into a specific Indic Language. - Homepage: http://entrans.sourceforge.net/"
+description "Entrans is an online translation tool. The tool can be used by the online community to give suggestions for a list of English words/phrases that needs to be translated into a specific Indic Language."
+website "http://entrans.sourceforge.net/"
 
 # Google results as at 2011-02-27 #
 # 6 for "View All Strings" "The tool can be used by the online community"

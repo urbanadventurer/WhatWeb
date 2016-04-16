@@ -7,7 +7,8 @@
 Plugin.define "EulerianWS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-08
 version "0.1"
-description "Eulerian Technologies Web Server (EulerianWS) [French] - homepage: http://www.eulerian.com/fr/"
+description "Eulerian Technologies Web Server (EulerianWS) [French]"
+website "http://www.eulerian.com/fr/"
 
 # About 127 ShodanHQ results for server EulerianWS @ 2011-01-08
 

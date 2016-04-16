@@ -7,7 +7,8 @@
 Plugin.define "Vigor-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-25
 version "0.1"
-description "Vigor router - Homepage: http://www.draytek.com/user/PdInfoDetail.php?Id=20"
+description "Vigor router"
+website "http://www.draytek.com/user/PdInfoDetail.php?Id=20"
 
 # ShodanHQ results as at 2012-03-25 #
 # 2,640 for Vigor

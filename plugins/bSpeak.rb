@@ -10,7 +10,8 @@
 Plugin.define "bSpeak" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
 version "0.2"
-description "bSpeak is 26th Avenue's threaded message board application. It is full-featured and fast, allowing you to create a community, provide online support, or provide announcements for your website. - homepage: http://www.bspeak.com/"
+description "bSpeak is 26th Avenue's threaded message board application. It is full-featured and fast, allowing you to create a community, provide online support, or provide announcements for your website."
+website "http://www.bspeak.com/"
 
 # 23 results for "powered by bSpeak" @ 2010-08-27
 

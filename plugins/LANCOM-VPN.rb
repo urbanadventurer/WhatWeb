@@ -7,7 +7,8 @@
 Plugin.define "LANCOM-VPN" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "Administration of dynamic IP addresses by LANCOM Dynamic VPN devices. Revolutionary in the LANCOM Dynamic VPN technology is that fixed IP addresses are no longer needed: The IP addresses of the respective IPSec gateways are exchanged over ISDN before the connection is established. Internet-based VPN connections thereby escape the restriction of fixed and thus expensive IP addresses. - Homepage: http://www.lancom.es/LANCOM-VPN.279.0.html"
+description "Administration of dynamic IP addresses by LANCOM Dynamic VPN devices. Revolutionary in the LANCOM Dynamic VPN technology is that fixed IP addresses are no longer needed: The IP addresses of the respective IPSec gateways are exchanged over ISDN before the connection is established. Internet-based VPN connections thereby escape the restriction of fixed and thus expensive IP addresses."
+website "http://www.lancom.es/LANCOM-VPN.279.0.html"
 
 # ShodanHQ results as at 2011-03-13 #
 # 12,416 for LANCOM VPN

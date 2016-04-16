@@ -7,7 +7,8 @@
 Plugin.define "NoticeBoardPro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
 version "0.1"
-description "NoticeBoardPro is an online, web-based, notice board system - Homepage: http://www.noticeboardpro.com/"
+description "NoticeBoardPro is an online, web-based, notice board system"
+website "http://www.noticeboardpro.com/"
 
 # Google results as at 2011-05-19 #
 # 5 for inurl:viewAll.php?startnum

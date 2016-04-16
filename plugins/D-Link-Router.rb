@@ -10,7 +10,8 @@
 Plugin.define "D-Link-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-27
 version "0.2"
-description "D-Link Router - D-Link is the global leader in connectivity for small, medium and large enterprise business networking. - homepage: http://www.dlink.com/"
+description "D-Link Router - D-Link is the global leader in connectivity for small, medium and large enterprise business networking."
+website "http://www.dlink.com/"
 
 # Matches #
 matches [

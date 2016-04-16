@@ -7,7 +7,8 @@
 Plugin.define "Buddy-Zone" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
-description "Buddy Zone is a social network script which has all latest technologies needed to run a new version 2.0 Social Network Website. - homepage: http://www.vastal.com/buddy-zone-social-networking-script.html"
+description "Buddy Zone is a social network script which has all latest technologies needed to run a new version 2.0 Social Network Website."
+website "http://www.vastal.com/buddy-zone-social-networking-script.html"
 
 # No results for "Powered By Buddy Zone" @ 2010-09-04
 

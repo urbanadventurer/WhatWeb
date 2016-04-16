@@ -7,7 +7,8 @@
 Plugin.define "ManageEngine-Applications-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-04
 version "0.1"
-description "ManageEngine Applications Manager - monitoring software - includes server monitoring, application server monitoring, database monitoring, web services monitoring, virtualization monitoring, cloud monitoring - Homepage: http://www.manageengine.com/products/applications_manager/"
+description "ManageEngine Applications Manager - monitoring software - includes server monitoring, application server monitoring, database monitoring, web services monitoring, virtualization monitoring, cloud monitoring"
+website "http://www.manageengine.com/products/applications_manager/"
 
 # Google results as at 2012-08-04 #
 # 11 for intitle:"Applications Manager Login Screen" "Applications Manager" "Number of Monitor"

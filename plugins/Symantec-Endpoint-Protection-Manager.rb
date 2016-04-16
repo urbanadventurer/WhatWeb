@@ -7,7 +7,8 @@
 Plugin.define "Symantec-Endpoint-Protection-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-19
 version "0.1"
-description "Antivirus and personal firewall - Homepage: http://www.symantec.com/business/endpoint-protection"
+description "Antivirus and personal firewall"
+website "http://www.symantec.com/business/endpoint-protection"
 
 # Google results as at 2011-11-19 #
 # 2 for intitle:"Symantec Endpoint Protection Manager" "You must have JavaScript enabled to use this Web page."

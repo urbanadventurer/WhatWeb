@@ -7,7 +7,8 @@
 Plugin.define "Oracle-Siebel-CRM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.1"
-description "The world's most complete customer relationship management (CRM) solution, Oracle's Siebel CRM helps organizations differentiate their businesses to achieve maximum top-and bottom-line growth. It delivers a combination of transactional, analytical, and engagement features to manage all customer-facing operations. - homepage: http://www.oracle.com/us/products/applications/siebel/index.html"
+description "The world's most complete customer relationship management (CRM) solution, Oracle's Siebel CRM helps organizations differentiate their businesses to achieve maximum top-and bottom-line growth. It delivers a combination of transactional, analytical, and engagement features to manage all customer-facing operations."
+website "http://www.oracle.com/us/products/applications/siebel/index.html"
 
 # 3 ShodanHQ results for Set-Cookie: BIGipServerSIEBEL
 # 8 ShodanHQ results for start.swe

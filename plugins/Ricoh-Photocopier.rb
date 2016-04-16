@@ -7,7 +7,8 @@
 Plugin.define "Ricoh-Photocopier" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-08
 version "0.1"
-description "Ricoh photocopier web interface - Homepage: http://www.ricoh.com/"
+description "Ricoh photocopier web interface"
+website "http://www.ricoh.com/"
 
 # ShodanHQ results as at 2011-08-08 #
 # 16,004 for CookieOnOffChecker

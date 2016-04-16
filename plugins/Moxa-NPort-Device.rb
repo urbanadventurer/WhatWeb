@@ -7,7 +7,8 @@
 Plugin.define "Moxa-NPort-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-07
 version "0.1"
-description "Moxa serial-to-ethernet NPort device server - Homepage: http://www.moxa.com/product/nport_device_server_1.htm"
+description "Moxa serial-to-ethernet NPort device server"
+website "http://www.moxa.com/product/nport_device_server_1.htm"
 
 # Google results as at 2011-07-07 #
 # 5 for intitle:"NPort web console"

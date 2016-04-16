@@ -7,7 +7,8 @@
 Plugin.define "Nette-Framework" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
-description "Nette Framework is a powerful framework for rapid and easy creation of high quality and innovative web applications in PHP 5.3 - Homepage: http://nette.org/cs/"
+description "Nette Framework is a powerful framework for rapid and easy creation of high quality and innovative web applications in PHP 5.3"
+website "http://nette.org/cs/"
 
 # ShodanHQ results as at 2011-04-08 #
 # 105 for X-Powered-By: Nette Framework

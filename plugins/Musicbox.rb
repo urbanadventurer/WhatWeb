@@ -7,7 +7,8 @@
 Plugin.define "Musicbox" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "Musicbox is a web application for managing a songs database. - Homepage: http://www.musicboxv2.com/"
+description "Musicbox is a web application for managing a songs database."
+website "http://www.musicboxv2.com/"
 
 # Google results as at 2011-07-27 #
 # 111 for inurl:genre_artists.php

@@ -7,7 +7,8 @@
 Plugin.define "MikroTik-RouterOS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
-description "RouterOS is the operating system used on the MikroTik RouterBOARD series of routers. It can also be installed on a PC and will turn it into a router with all the necessary features - routing, firewall, bandwidth management, wireless access point, backhaul link, hotspot gateway, VPN server and more. - Homepage: http://www.mikrotik.com/software.html & http://www.routerboard.com/"
+description "RouterOS is the operating system used on the MikroTik RouterBOARD series of routers. It can also be installed on a PC and will turn it into a router with all the necessary features - routing, firewall, bandwidth management, wireless access point, backhaul link, hotspot gateway, VPN server and more."
+website "http://www.mikrotik.com/software.html & http://www.routerboard.com/"
 
 # Google results as at 2011-08-07 #
 # 14 for intitle:"RouterOS router configuration page" +RouterOS "You have connected to a router"

@@ -7,7 +7,8 @@
 Plugin.define "Zoom-Search-Engine" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-04-11
 version "0.1"
-description "Zoom is a software package that creates a search engine for your website, intranet, CD, or DVD - Homepage: http://www.wrensoft.com/zoom/"
+description "Zoom is a software package that creates a search engine for your website, intranet, CD, or DVD"
+website "http://www.wrensoft.com/zoom/"
 
 # Google results as at 2011-04-11 #
 # 337 for inurl:zoom_per_page

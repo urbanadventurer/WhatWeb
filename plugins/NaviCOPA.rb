@@ -7,7 +7,8 @@
 Plugin.define "NaviCOPA" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-25
 version "0.1"
-description "The NaviCOPA Web Server Software installs on any version of the Microsoft Windows operating system from 98 and up, including Windows Vista, and automatically configures itself for instant HTTP access. NaviCOPA does not limit the number of connections and comfortably serves 1000's of simultaneous connections - Homepage: http://www.navicopa.com/"
+description "The NaviCOPA Web Server Software installs on any version of the Microsoft Windows operating system from 98 and up, including Windows Vista, and automatically configures itself for instant HTTP access. NaviCOPA does not limit the number of connections and comfortably serves 1000's of simultaneous connections"
+website "http://www.navicopa.com/"
 
 # ShodanHQ results as at 2011-03-25 #
 # 4 for InterVations

@@ -10,7 +10,8 @@
 Plugin.define "IWSS-Proxy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.2"
-description "Trend Micro InterScan Web Security Suite (IWSS) Proxy server - homepage: http://us.trendmicro.com/us/products/enterprise/interscan-web-security-suite/"
+description "Trend Micro InterScan Web Security Suite (IWSS) Proxy server"
+website "http://us.trendmicro.com/us/products/enterprise/interscan-web-security-suite/"
 
 # ShodanHQ results as at 2010-10-23 #
 # 270 for Proxy-agent:IWSS

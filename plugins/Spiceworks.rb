@@ -7,7 +7,8 @@
 Plugin.define "Spiceworks" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
 version "0.1"
-description "Spiceworks' single, easy-to-use interface combines Network Inventory, Help Desk, Mapping, Reporting, Monitoring and Troubleshooting - Homepage: http://www.spiceworks.com/product/"
+description "Spiceworks' single, easy-to-use interface combines Network Inventory, Help Desk, Mapping, Reporting, Monitoring and Troubleshooting"
+website "http://www.spiceworks.com/product/"
 
 # ShodanHQ results as at 2011-05-23 #
 # 2,101 for spiceworks_session

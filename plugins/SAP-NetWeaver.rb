@@ -7,7 +7,8 @@
 Plugin.define "SAP-NetWeaver" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
 version "0.1"
-description "SAP NetWeaver provides the technical foundation for SAP applications. In addition, it delivers a portfolio of enterprise technology that allows you to extend your applications to reach more people and to adopt new processes, devices, and consumption models. - Homepage: http://www.sap.com/platform/netweaver/index.epx"
+description "SAP NetWeaver provides the technical foundation for SAP applications. In addition, it delivers a portfolio of enterprise technology that allows you to extend your applications to reach more people and to adopt new processes, devices, and consumption models."
+website "http://www.sap.com/platform/netweaver/index.epx"
 # More info: http://en.wikipedia.org/wiki/SAP_NetWeaver_Application_Server
 
 # Google results as at 2011-03-10 #

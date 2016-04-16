@@ -7,7 +7,8 @@
 Plugin.define "CollegiateLink" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-22
 version "0.1"
-description "CollegiateLink - Homepage: http://www.collegiatelink.net/"
+description "CollegiateLink"
+website "http://www.collegiatelink.net/"
 
 # 120 for "Powered by CollegiateLink Version"
 # 109 for "Powered by CollegiateLink Version" inurl:"Community?action"

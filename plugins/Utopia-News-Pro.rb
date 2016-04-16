@@ -7,7 +7,8 @@
 Plugin.define "Utopia-News-Pro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-30
 version "0.1"
-description "Utopia News Pro - news management system - Homepage: http://www.utopiasoftware.net/newspro/"
+description "Utopia News Pro - news management system"
+website "http://www.utopiasoftware.net/newspro/"
 
 # Google results as at 2012-05-30 #
 # 77 for intitle:"Powered By Utopia News Pro" inurl:"news.php?action="

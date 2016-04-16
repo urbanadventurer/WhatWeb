@@ -7,7 +7,8 @@
 Plugin.define "Xeneo-Web-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
-description "Xeneo Web Server - Homepage: http://www.northernsolutions.com/products/xeneo/"
+description "Xeneo Web Server"
+website "http://www.northernsolutions.com/products/xeneo/"
 
 # ShodanHQ results as at 2011-08-20 #
 # 3 for Xeneo

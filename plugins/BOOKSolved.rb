@@ -7,7 +7,8 @@
 Plugin.define "BOOKSolved" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-16
 version "0.1"
-description "BOOKSolved - guestbook script - Homepage: http://www.usolved.net/scripts_9.html"
+description "BOOKSolved - guestbook script"
+website "http://www.usolved.net/scripts_9.html"
 
 # Google results as at 2011-10-16 #
 # 297 for +BOOKSolved "by USOLVED"

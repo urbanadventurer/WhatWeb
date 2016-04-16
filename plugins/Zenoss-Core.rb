@@ -7,7 +7,8 @@
 Plugin.define "Zenoss-Core" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-29
 version "0.1"
-description "Zenoss (Zenoss Core) is an open-source application, server, and network management platform based on the Zope application server. - Homepage: http://sourceforge.net/projects/zenoss/"
+description "Zenoss (Zenoss Core) is an open-source application, server, and network management platform based on the Zope application server."
+website "http://sourceforge.net/projects/zenoss/"
 
 # Google results as at 2012-01-29 #
 # 27 for intitle:"Login" inurl:"zport" "Zenoss, Inc." "Version"

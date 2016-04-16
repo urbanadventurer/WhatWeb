@@ -7,7 +7,8 @@
 Plugin.define "Advantech-WebAccess" do
 author "Brendan Coles <bcoles@gmail.com>" # 2013-01-09
 version "0.1"
-description "Advantech WebAccess HMI/SCADA software - Homepage: http://webaccess.advantech.com/"
+description "Advantech WebAccess HMI/SCADA software"
+website "http://webaccess.advantech.com/"
 
 # ShodanHQ results as at 2013-01-09 #
 # 220 for broadWeb/bwRoot.asp

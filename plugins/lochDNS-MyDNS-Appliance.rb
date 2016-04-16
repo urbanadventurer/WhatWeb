@@ -7,7 +7,8 @@
 Plugin.define "lochDNS-MyDNS-Appliance" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-09-29
 version "0.1"
-description "lochDNS MyDNS Appliance provides a web-based user interface for appliance administration. - Homepage: http://wiki.rpath.com/wiki/Appliance:LochDNS"
+description "lochDNS MyDNS Appliance provides a web-based user interface for appliance administration."
+website "http://wiki.rpath.com/wiki/Appliance:LochDNS"
 
 # Default Login: admin/password
 

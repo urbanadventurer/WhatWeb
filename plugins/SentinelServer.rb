@@ -7,7 +7,8 @@
 Plugin.define "SentinelServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
 version "0.1"
-description "Monitor application performance and availability - Homepage: http://www.ymor.eu/"
+description "Monitor application performance and availability"
+website "http://www.ymor.eu/"
 
 # ShodanHQ results as at 2011-09-15 #
 # 6 for SentinelServer

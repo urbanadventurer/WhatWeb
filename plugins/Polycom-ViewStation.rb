@@ -7,7 +7,8 @@
 Plugin.define "Polycom-ViewStation" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
 version "0.1"
-description "Polycom ViewStation - video server - Homepage: http://www.polycom.com/"
+description "Polycom ViewStation - video server"
+website "http://www.polycom.com/"
 
 # ShodanHQ results as at 2011-03-11 #
 # 4,489 for Viavideo-Web

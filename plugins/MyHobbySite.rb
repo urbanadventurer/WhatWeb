@@ -10,7 +10,8 @@
 Plugin.define "MyHobbySite" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.2"
-description "MyHobbySite is a website Content Management System (CMS) programmed in PHP and tailored specifically for collectors of live music. Like any other CMS, MyHobbySite supports page creation, file management, and dynamic text editing via a WYSIWYG editor. - homepage: http://www.myhobbysite.net/"
+description "MyHobbySite is a website Content Management System (CMS) programmed in PHP and tailored specifically for collectors of live music. Like any other CMS, MyHobbySite supports page creation, file management, and dynamic text editing via a WYSIWYG editor."
+website "http://www.myhobbysite.net/"
 
 # Google results as at 2010-09-12 #
 # 71 for "Powered by MyHobbySite"

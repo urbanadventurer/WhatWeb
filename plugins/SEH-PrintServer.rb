@@ -8,7 +8,8 @@
 Plugin.define "SEH-KYOCERA-PrintServer" do
 author "Andrew Horton"
 version "0.1"
-description "A complete print server provided as an interface card for attaching KYOCERA printers and multifunctional peripherals (MFP) to the network. Homepage: http://www.seh-technology.com/products/print-servers/printer-interfaces/kyocera.html"
+description "A complete print server provided as an interface card for attaching KYOCERA printers and multifunctional peripherals (MFP) to the network"
+website "http://www.seh-technology.com/products/print-servers/printer-interfaces/kyocera.html"
 
 
 

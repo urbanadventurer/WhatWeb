@@ -7,7 +7,8 @@
 Plugin.define "eFront" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-28
 version "0.1"
-description "eFront is a modern learning system, bundled with key enterprise functionality ranging from skill-gap analysis and branch management to tailor-made reports. - Homepage: http://www.efrontlearning.net/"
+description "eFront is a modern learning system, bundled with key enterprise functionality ranging from skill-gap analysis and branch management to tailor-made reports."
+website "http://www.efrontlearning.net/"
 
 # Google results as at 2011-10-28 #
 # 514 for inurl:"index.php?ctg=contact"

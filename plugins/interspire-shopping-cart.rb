@@ -7,7 +7,8 @@
 Plugin.define "Interspire-Shopping-Cart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.1"
-description "Interspire Shopping Cart is an all-in-one e-commerce and shopping cart software platform that includes absolutely everything you need to sell online and attract more customers using the power, reach and affordability of the Internet. - homepage: http://www.interspire.com/shoppingcart/"
+description "Interspire Shopping Cart is an all-in-one e-commerce and shopping cart software platform that includes absolutely everything you need to sell online and attract more customers using the power, reach and affordability of the Internet."
+website "http://www.interspire.com/shoppingcart/"
 
 # 139 results for "Powered by Interspire Shopping Cart" intitle:"Shopping Cart" inurl:cart.php @ 2010-08-06
 # 307 results for "Powered by Interspire Shopping Cart' @ 2010-08-06

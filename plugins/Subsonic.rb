@@ -7,7 +7,8 @@
 Plugin.define "Subsonic" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
-description "Subsonic is a free, web-based media streamer, providing ubiquitous access to your music. Based on Java technology, Subsonic runs on most platforms, including Windows, Mac, Linux and Unix variants. - Homepage: http://www.subsonic.org/pages/index.jsp"
+description "Subsonic is a free, web-based media streamer, providing ubiquitous access to your music. Based on Java technology, Subsonic runs on most platforms, including Windows, Mac, Linux and Unix variants."
+website "http://www.subsonic.org/pages/index.jsp"
 
 # Google results as at 2011-08-07 #
 # 13 for intitle:"Subsonic" +Username +Password "Remember me" inurl:login.view

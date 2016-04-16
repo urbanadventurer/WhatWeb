@@ -7,7 +7,8 @@
 Plugin.define "Microsoft-SQL-Server-Report-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
-description "Microsoft SQL Server Report Manager - web-based report access and management tool - Homepage: http://msdn.microsoft.com/en-us/library/ms157147%28v=sql.90%29.aspx"
+description "Microsoft SQL Server Report Manager - web-based report access and management tool"
+website "http://msdn.microsoft.com/en-us/library/ms157147%28v=sql.90%29.aspx"
 
 # ShodanHQ results as at 2012-08-26 #
 # 19 for Reports/Pages/Folder.aspx

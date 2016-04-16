@@ -7,7 +7,8 @@
 Plugin.define "AIDeX-Webserver" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
 version "0.1"
-description "AIDeX Webserver - does not support CGI or PHP - Homepage: http://www.aidex.de/software/webserver/"
+description "AIDeX Webserver - does not support CGI or PHP"
+website "http://www.aidex.de/software/webserver/"
 
 # ShodanHQ results as at 2011-08-29 #
 # 272 for aidex

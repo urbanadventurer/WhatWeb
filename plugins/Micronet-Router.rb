@@ -7,7 +7,8 @@
 Plugin.define "Micronet-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
 version "0.1"
-description "Micronet Communications Router - Homepage: http://www.micronet.com.tw/mod/product/index.php?NodeID=23"
+description "Micronet Communications Router"
+website "http://www.micronet.com.tw/mod/product/index.php?NodeID=23"
 
 # ShodanHQ results as at 2012-04-11 #
 # 1,394 for RCTTools (SecureSOHO Web configuration Tools)

@@ -7,7 +7,8 @@
 Plugin.define "Skillsoft-Skillport-LMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-30
 version "0.1"
-description "Skillsoft Skillport - learning management system (LMS) - Homepage: http://www.skillsoft.com/products/skillport/"
+description "Skillsoft Skillport - learning management system (LMS)"
+website "http://www.skillsoft.com/products/skillport/"
 
 # ShodanHQ results as at 2012-05-30 #
 # 43 for SP70FE

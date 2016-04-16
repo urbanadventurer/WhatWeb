@@ -7,7 +7,8 @@
 Plugin.define "SazCart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
 version "0.1"
-description "SazCart is a simple & powerful shopping cart script. With SazCart you can quickly and easily setup an online store. Then customize it to exactly how you want it to work & look. - homepage: http://www.sazcart.com/"
+description "SazCart is a simple & powerful shopping cart script. With SazCart you can quickly and easily setup an online store. Then customize it to exactly how you want it to work & look."
+website "http://www.sazcart.com/"
 
 # 24 results for "powered by SazCart" @ 2010-08-22
 

@@ -10,7 +10,8 @@
 Plugin.define "Loggix" do
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
 version "0.2"
-description "Loggix is a really simple, lightweight PHP and SQlite driven weblog/cms engine. - homepage: http://loggix.gotdns.org/"
+description "Loggix is a really simple, lightweight PHP and SQlite driven weblog/cms engine."
+website "http://loggix.gotdns.org/"
 
 # 22 results for "Powered by Loggix" @ 2010-06-15
 

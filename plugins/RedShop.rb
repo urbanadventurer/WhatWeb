@@ -7,7 +7,8 @@
 Plugin.define "RedShop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
-description "ASP Powered shopping cart software [Chinese] - homepage: http://www.rednetcms.com/redshop/"
+description "ASP Powered shopping cart software [Chinese]"
+website "http://www.rednetcms.com/redshop/"
 
 # 1 result for "Powered by Redshop" @ 2010-10-12
 

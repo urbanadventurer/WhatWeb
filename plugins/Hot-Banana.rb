@@ -7,7 +7,8 @@
 Plugin.define "Hot-Banana" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
-description "Hot Banana is an award-winning, easy-to-use Web Content Management System (Web CMS) that helps marketers build and manage SEO-friendly Web sites that can be automated and optimized for maximum lead generation and conversion performance. - Homepage: http://www.hotbanana.ca/"
+description "Hot Banana is an award-winning, easy-to-use Web Content Management System (Web CMS) that helps marketers build and manage SEO-friendly Web sites that can be automated and optimized for maximum lead generation and conversion performance."
+website "http://www.hotbanana.ca/"
 
 # Google results as at 2011-03-03 #
 # 42 for "powered by hot banana"

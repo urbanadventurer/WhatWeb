@@ -7,7 +7,8 @@
 Plugin.define "Sendcard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
 version "0.1"
-description "Sendcard is a multi-database (It currently supports 9 different databases!) ecards script or virtual postcard program written in PHP. Suitable for large or small sites, it is very easy to setup, and comes with an installation wizard. - Homepage: http://www.sendcard.org/"
+description "Sendcard is a multi-database (It currently supports 9 different databases!) ecards script or virtual postcard program written in PHP. Suitable for large or small sites, it is very easy to setup, and comes with an installation wizard."
+website "http://www.sendcard.org/"
 
 # Google results as at 2011-03-15 #
 # 255 for scscsc320

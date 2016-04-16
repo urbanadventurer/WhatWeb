@@ -7,7 +7,8 @@
 Plugin.define "Apache-Cocoon" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.1"
-description "Apache Cocoon is a Spring-based framework (since version 2.2 of Cocoon) built around the concepts of separation of concerns and component-based development. - homepage: http://cocoon.apache.org/"
+description "Apache Cocoon is a Spring-based framework (since version 2.2 of Cocoon) built around the concepts of separation of concerns and component-based development."
+website "http://cocoon.apache.org/"
 
 # ShodanHQ results as at 2011-02-24 #
 # 707 for X-Cocoon-Version

@@ -10,7 +10,8 @@
 Plugin.define "PHPDirector" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-24
 version "0.2"
-description "PHPDirector is a content management system that allows users to create there own video sharing websites. - homepage: http://www.phpdirector.co.uk/"
+description "PHPDirector is a content management system that allows users to create there own video sharing websites."
+website "http://www.phpdirector.co.uk/"
 
 # Google results as at 2010-07-24 #
 # 181 for "powered by PHP Director"

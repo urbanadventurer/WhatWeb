@@ -10,7 +10,8 @@
 Plugin.define "Open-Blog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.2"
-description "Open blog is a free and open source blogging platform built using the CodeIgniter PHP framework and released under the GPL v3 license. - homepage: http://www.open-blog.info/"
+description "Open blog is a free and open source blogging platform built using the CodeIgniter PHP framework and released under the GPL v3 license."
+website "http://www.open-blog.info/"
 
 # Google results for 2010-08-06 #
 # 107 for "powered by Open blog"

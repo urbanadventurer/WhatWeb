@@ -7,7 +7,8 @@
 Plugin.define "CouchPotato" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-09
 version "0.1"
-description "CouchPotato is an automatic NZB and torrent downloader - Homepage: http://couchpotatoapp.com/"
+description "CouchPotato is an automatic NZB and torrent downloader"
+website "http://couchpotatoapp.com/"
 
 # Google results as at 2012-01-09 #
 # 38 for "Update (diff) available: update now , Check for new version"

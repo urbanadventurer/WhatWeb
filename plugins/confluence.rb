@@ -14,7 +14,8 @@
 Plugin.define "Confluence" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
 version "0.3"
-description "Confluence combines powerful online authoring capabilities, deep Office integration and an extensive plugin catalog to help people work better together and share information effortlessly. - homepage: http://www.atlassian.com/software/confluence/"
+description "Confluence combines powerful online authoring capabilities, deep Office integration and an extensive plugin catalog to help people work better together and share information effortlessly."
+website "http://www.atlassian.com/software/confluence/"
 
 # ShodanHQ results as at 2011-03-19 #
 # 13 for x-confluence

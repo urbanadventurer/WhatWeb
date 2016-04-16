@@ -7,7 +7,8 @@
 Plugin.define "Apache-CouchDB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-03
 version "0.1"
-description "Apache CouchDB is a document-oriented database written in Erlang that can be queried and indexed in a MapReduce fashion using JavaScript. CouchDB provides a RESTful JSON API than can be accessed from any environment that allows HTTP requests. - Homepage: http://couchdb.apache.org/"
+description "Apache CouchDB is a document-oriented database written in Erlang that can be queried and indexed in a MapReduce fashion using JavaScript. CouchDB provides a RESTful JSON API than can be accessed from any environment that allows HTTP requests."
+website "http://couchdb.apache.org/"
 
 # More Info #
 # http://en.wikipedia.org/wiki/CouchDB

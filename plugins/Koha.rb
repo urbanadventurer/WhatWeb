@@ -7,7 +7,8 @@
 Plugin.define "Koha" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "Koha is an open source software library automation package (ILS) - Homepage: http://koha-community.org/"
+description "Koha is an open source software library automation package (ILS)"
+website "http://koha-community.org/"
 
 # Google results as at 2011-07-27 #
 # 262 for inurl:cgi-bin/koha ext:pl

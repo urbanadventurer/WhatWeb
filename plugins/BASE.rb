@@ -7,7 +7,8 @@
 Plugin.define "BASE" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-05
 version "0.1"
-description "Basic Analysis and Security Engine (BASE) - front end for the snort IDS system. - Homepage: http://base.secureideas.net/"
+description "Basic Analysis and Security Engine (BASE) - front end for the snort IDS system."
+website "http://base.secureideas.net/"
 
 # Google as at 2011-12-05 #
 # 8 for "The following pages will prompt you for set up information to finish the install of BASE." intitle:"Basic Analysis and Security Engine (BASE)"

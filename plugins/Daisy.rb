@@ -7,7 +7,8 @@
 Plugin.define "Daisy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-09
 version "0.1"
-description "Daisy is a content management system that offers rich out-of-the-box functionality combined with solid foundations for extensibility and integration. Daisy consists of two main components: a stand-alone repository server accessible through HTTP/XML (using the ReST style of WebServices) and/or a high-level (remote) Java API, and an extensive editing and publishing front-end web application running inside Apache Cocoon. - Homepage: http://daisycms.org/daisy/about.html"
+description "Daisy is a content management system that offers rich out-of-the-box functionality combined with solid foundations for extensibility and integration. Daisy consists of two main components: a stand-alone repository server accessible through HTTP/XML (using the ReST style of WebServices) and/or a high-level (remote) Java API, and an extensive editing and publishing front-end web application running inside Apache Cocoon."
+website "http://daisycms.org/daisy/about.html"
 
 # Documentation: http://cocoondev.org/books/daisy_docs_book--20070924-074927/publications/html-one-page/output/index.html
 

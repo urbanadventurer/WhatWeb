@@ -7,7 +7,8 @@
 Plugin.define "HighWire-Press" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
 version "0.1"
-description "HighWire Press hosting - Homepage: http://highwire.stanford.edu/about/"
+description "HighWire Press hosting"
+website "http://highwire.stanford.edu/about/"
 
 # ShodanHQ results as at 2011-09-21 #
 # 1,886 for X-Highwire

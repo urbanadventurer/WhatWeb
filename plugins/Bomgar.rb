@@ -7,7 +7,8 @@
 Plugin.define "Bomgar" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "Bomgar simplifies support by letting technicians control remote computers, servers, smartphones and network devices over the internet or network. With Bomgar, a support rep can see what customers see or control their computers for support. - Homepage: http://www.bomgar.com/remotedesktopaccess/"
+description "Bomgar simplifies support by letting technicians control remote computers, servers, smartphones and network devices over the internet or network. With Bomgar, a support rep can see what customers see or control their computers for support."
+website "http://www.bomgar.com/remotedesktopaccess/"
 
 # ShodanHQ results as at 2011-05-31 #
 # 3,453 for Bomgar

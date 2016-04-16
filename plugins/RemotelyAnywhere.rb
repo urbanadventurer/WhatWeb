@@ -7,7 +7,8 @@
 Plugin.define "RemotelyAnywhere" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08 #
 version "0.1"
-description "A small HTTP daemon, which enables you to access and manage services, processes, users, and files on the remote computer over the network. - Homepage: http://www.remotelyanywhere.com/"
+description "A small HTTP daemon, which enables you to access and manage services, processes, users, and files on the remote computer over the network."
+website "http://www.remotelyanywhere.com/"
 
 # ShodanHQ results as at 2011-04-08 #
 # 213 for RemotelyAnywhere

@@ -7,7 +7,8 @@
 Plugin.define "Mongrel" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
 version "0.1"
-description "Mongrel is an open-source HTTP library and web server written in Ruby. - Homepage: http://rubyforge.org/projects/mongrel/"
+description "Mongrel is an open-source HTTP library and web server written in Ruby."
+website "http://rubyforge.org/projects/mongrel/"
 
 # ShodanHQ results as at 2011-03-13 #
 # 5,815 for Mongrel

@@ -7,7 +7,8 @@
 Plugin.define "AlstraSoft-EPay-Enterprise" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-07
 version "0.1"
-description "AlstraSoft EPay Enterprise - peer to peer payment system - Requires PHP and MySQL - Homepage: http://www.alstrasoft.com/epay_enterprise.htm"
+description "AlstraSoft EPay Enterprise - peer to peer payment system - Requires PHP and MySQL"
+website "http://www.alstrasoft.com/epay_enterprise.htm"
 
 # ShodanHQ results as at 2011-12-07 #
 # 3 for ln=English PHPSESSID

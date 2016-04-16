@@ -7,7 +7,8 @@
 Plugin.define "Sony-Projector" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
-description "Sony projecter - Homepage: http://pro.sony.com/bbsc/ssr/cat-projectors/"
+description "Sony projecter"
+website "http://pro.sony.com/bbsc/ssr/cat-projectors/"
 
 # ShodanHQ results as at 2011-08-07 #
 # 91 for Network Projector

@@ -10,7 +10,8 @@
 Plugin.define "Atomic-Photo-Album" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
-description "Photo album software - homepage: http://atomicpa.sourceforge.net/"
+description "Photo album software"
+website "http://atomicpa.sourceforge.net/"
 
 # Google results as at 2010-09-18 #
 # 12 for "powered by Atomic Photo Album" -Vulnerabilities inurl:apa_album_ID

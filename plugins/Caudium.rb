@@ -6,7 +6,8 @@
 Plugin.define "Caudium" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
 version "0.1"
-description "Caudium is the name of a GPL-ed (free for commercial and personal use) web server written in Pike and in C. It is originally based on the Roxen Challenger 1.3 code base. - homepage: http://www.caudium.net/"
+description "Caudium is the name of a GPL-ed (free for commercial and personal use) web server written in Pike and in C. It is originally based on the Roxen Challenger 1.3 code base."
+website "http://www.caudium.net/"
 # More info: http://www.http-stats.com/X-Got-Fish
 
 # About 209 ShodanHQ results for Server: Caudium @ 2011-08-02

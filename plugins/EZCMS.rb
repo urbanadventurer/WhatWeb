@@ -10,7 +10,8 @@
 Plugin.define "EZCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
-description "Building your own website is easy with the EZ Websites Builder - homepage: http://www.ezwebsites.com.au"
+description "Building your own website is easy with the EZ Websites Builder"
+website "http://www.ezwebsites.com.au"
 
 # Google results as at 2010-08-28 #
 # 20 for "powered by EZCMS" -Vulnerabilities

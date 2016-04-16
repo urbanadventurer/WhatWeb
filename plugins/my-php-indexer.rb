@@ -10,7 +10,8 @@
 Plugin.define "My-PHP-Indexer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
-description "PHP file indexer - homepage: http://www.mafiatic.com"
+description "PHP file indexer"
+website "http://www.mafiatic.com"
 
 # Google results as at 2010-08-01 #
 # 34 for "powered by My PHP Indexer"

@@ -7,7 +7,8 @@
 Plugin.define "Netscape-Enterprise" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
-description "Netscape Enterprise Server was a web server developed originally by Netscape Communications Corporation. The product has since been renamed Sun Java System Web Server, reflecting the product's acquisition by Sun Microsystems. - Homepage: http://wikis.sun.com/display/WebServer/Sun+Java+System+Web+Server"
+description "Netscape Enterprise Server was a web server developed originally by Netscape Communications Corporation. The product has since been renamed Sun Java System Web Server, reflecting the product's acquisition by Sun Microsystems."
+website "http://wikis.sun.com/display/WebServer/Sun+Java+System+Web+Server"
 
 # ShodanHQ results as at 2011-03-14 #
 # 11,641 for Netscape-Enterprise

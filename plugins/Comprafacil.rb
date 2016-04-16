@@ -7,7 +7,8 @@
 Plugin.define "Comprafacil" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
 version "0.1"
-description "Web shop app [Brazilian] - Homepage: http://www.comprafacil.com.br/"
+description "Web shop app [Brazilian]"
+website "http://www.comprafacil.com.br/"
 
 # Google results as at 2011-05-19 #
 # 81 for inurl:"viewSection.jsf" ext:jsf

@@ -10,7 +10,8 @@
 Plugin.define "Resin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.2"
-description "Resin provides a reliable, fast Web server which can also be used as a load balancer. Resin can operate as a standalone server or as a fast servlet runner for IIS or Apache - homepage: http://www.caucho.com/resin/admin/http-server.xtp"
+description "Resin provides a reliable, fast Web server which can also be used as a load balancer. Resin can operate as a standalone server or as a fast servlet runner for IIS or Apache"
+website "http://www.caucho.com/resin/admin/http-server.xtp"
 
 # Resin provides a fast servlet runner for IIS, allowing IIS to run servlets and JSP files :
 # http://www.caucho.com/resin/admin/starting-resin-iis-7.xtp

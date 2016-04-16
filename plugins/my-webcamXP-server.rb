@@ -10,7 +10,8 @@
 Plugin.define "My-WebCamXP-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-24
 version "0.2"
-description "WebCamXP web interface - homepage: http://www.webcamxp.com"
+description "WebCamXP web interface"
+website "http://www.webcamxp.com"
 
 # Google results as at 2010-07-24 #
 # 332 Google results for "powered by webcamXP"

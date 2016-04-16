@@ -18,7 +18,8 @@
 Plugin.define "Movable-Type" do
 author "Andrew Horton"
 version "0.4"
-description "Blogging platform - Homepage: http://www.movabletype.org/"
+description "Blogging platform"
+website "http://www.movabletype.org/"
 
 # Google results as at 2011-07-07 #
 # 122 for "Powered by Movable Type"

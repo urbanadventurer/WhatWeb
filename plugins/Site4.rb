@@ -7,7 +7,8 @@
 Plugin.define "Site4" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.1"
-description "Site4 is a danish CMS system for webshops and homepages. - homepage: http://www.Site4.dk/"
+description "Site4 is a danish CMS system for webshops and homepages."
+website "http://www.Site4.dk/"
 
 # 4 results for "SITE4.dk is a danish CMS system for webshops and homepages."
 

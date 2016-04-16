@@ -7,7 +7,8 @@
 Plugin.define "iHTML" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.1"
-description "iHTML is a server side internet/web programming and scripting language in used by thousands of sites worldwide to deliver cost effective dynamic database driven web sites. - Homepage: http://www.ihtml.com/"
+description "iHTML is a server side internet/web programming and scripting language in used by thousands of sites worldwide to deliver cost effective dynamic database driven web sites."
+website "http://www.ihtml.com/"
 
 # ShodanHQ results as at 2011-06-04 #
 # 593 for iHTML

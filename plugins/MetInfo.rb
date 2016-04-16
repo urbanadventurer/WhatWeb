@@ -7,7 +7,8 @@
 Plugin.define "MetInfo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
 version "0.1"
-description "MetInfo - Homepage: http://www.metinfo.cn/"
+description "MetInfo"
+website "http://www.metinfo.cn/"
 
 # Google results as at 2011-02-26 #
 # 409 for "Powered by MetInfo"

@@ -7,7 +7,8 @@
 Plugin.define "SugarCRM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-02
 version "0.1"
-description "Commercial open source customer relationship management (CRM). CRM software for sales force automation and customer support deployed on demand or on site. - Homepage: http://www.sugarcrm.com/crm/"
+description "Commercial open source customer relationship management (CRM). CRM software for sales force automation and customer support deployed on demand or on site."
+website "http://www.sugarcrm.com/crm/"
 
 # Google results as at 2011-04-02 #
 # 34 for "Welcome to" intitle:SugarCRM "SugarCRM Inc. The Program is provided AS IS, without warranty. Licensed under AGPLv3."

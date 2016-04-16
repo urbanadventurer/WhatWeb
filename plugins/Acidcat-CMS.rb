@@ -7,7 +7,8 @@
 Plugin.define "Acidcat-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
-description "Acidcat ASP CMS - Homepage: http://www.acidcat.com/"
+description "Acidcat ASP CMS"
+website "http://www.acidcat.com/"
 
 # Google results as at 2011-03-06 #
 # 167 for "Powered by Acidcat CMS"

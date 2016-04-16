@@ -7,7 +7,8 @@
 Plugin.define "phpMyBackupPro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-30
 version "0.1"
-description "phpMyBackup Pro is a very easy to use, free, web-based MySQL backup application, licensed under the GNU GPL. - Homepage: http://www.phpmybackuppro.net/"
+description "phpMyBackup Pro is a very easy to use, free, web-based MySQL backup application, licensed under the GNU GPL."
+website "http://www.phpmybackuppro.net/"
 
 
 

@@ -7,7 +7,8 @@
 Plugin.define "Axous" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-20
 version "0.1"
-description "Axous is an e-shop system for software venders. - Homepage: http://www.axous.com/"
+description "Axous is an e-shop system for software venders."
+website "http://www.axous.com/"
 
 # Google results as at 2012-05-20 #
 # 105 for "Powered by Axous" "Valid CSS"

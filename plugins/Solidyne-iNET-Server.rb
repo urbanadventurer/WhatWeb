@@ -7,7 +7,8 @@
 Plugin.define "Solidyne-iNET-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-17
 version "0.1"
-description "Solidyne iNET Server - web interface for Solidyne devices - Homepage: http://www.solidyne.com/"
+description "Solidyne iNET Server - web interface for Solidyne devices"
+website "http://www.solidyne.com/"
 
 
 

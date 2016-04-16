@@ -9,7 +9,8 @@
 Plugin.define "SnoGrafx" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description "Image gallery software - homepage: http://snografx.com/"
+description "Image gallery software"
+website "http://snografx.com/"
 
 # 27 results for "powered by SnoGrafx" @ 2010-09-18
 

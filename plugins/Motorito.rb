@@ -7,7 +7,8 @@
 Plugin.define "Motorito" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-25
 version "0.1"
-description "Motorito - homepage: http://www.motorito.com/"
+description "Motorito"
+website "http://www.motorito.com/"
 
 # 77 results for inurl:mmod=staticContent @ 2010-09-25
 

@@ -7,7 +7,8 @@
 Plugin.define "Squirrelcart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-15
 version "0.1"
-description "Squirrelcart PHP Shopping Cart software - Requires PHP and MySQL - Homepage: http://www.squirrelcart.com/"
+description "Squirrelcart PHP Shopping Cart software - Requires PHP and MySQL"
+website "http://www.squirrelcart.com/"
 
 # ShodanHQ reuslts as at 2012-06-15 #
 # 274 for SC_referer SC_referral_date

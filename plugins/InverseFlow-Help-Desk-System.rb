@@ -7,7 +7,8 @@
 Plugin.define "InverseFlow-Help-Desk-System" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-24
 version "0.1"
-description "InverseFlow Help Desk System - Homepage: http://www.inverseflow.com/products/helpdesk/index.php"
+description "InverseFlow Help Desk System"
+website "http://www.inverseflow.com/products/helpdesk/index.php"
 
 # Google results as at 2011-10-24 #
 # 76 for inurl:"ticket.php?cmd=lost"

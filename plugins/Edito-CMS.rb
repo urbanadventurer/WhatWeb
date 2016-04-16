@@ -7,7 +7,8 @@
 Plugin.define "Edito-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-20
 version "0.1"
-description "Edito CMS [Polish] - Homepage: http://www.edito.pl/"
+description "Edito CMS [Polish]"
+website "http://www.edito.pl/"
 
 
 

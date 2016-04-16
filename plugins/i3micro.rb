@@ -7,7 +7,8 @@
 Plugin.define "i3micro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
-description "Tilgin was founded under the name i3 micro technology in 1997 and develops equipment for IPTV and VOIP solutions. - Homepage: http://www.tilgin.com/"
+description "Tilgin was founded under the name i3 micro technology in 1997 and develops equipment for IPTV and VOIP solutions."
+website "http://www.tilgin.com/"
 
 # ShodanHQ results as at 2011-05-30 #
 # 5,115 for i3micro -SIP

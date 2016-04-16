@@ -7,7 +7,8 @@
 Plugin.define "ProcessMaker" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-23
 version "0.1"
-description "ProcessMaker - Open source web based workflow software and Business Process Management software. - Homepage: http://www.processmaker.com/"
+description "ProcessMaker - Open source web based workflow software and Business Process Management software."
+website "http://www.processmaker.com/"
 
 # Google results as at 2012-06-23 #
 # 49 for "User" "Password" "Language" "System Information" "Colosa, Inc. All rights reserved."

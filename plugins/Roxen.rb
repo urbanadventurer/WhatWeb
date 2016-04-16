@@ -7,7 +7,8 @@
 Plugin.define "Roxen" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
-description "Roxen WebServer is a full-featured open-source web server distributed under the GPL license. - Homepage: http://www.roxen.com/products/webserver/"
+description "Roxen WebServer is a full-featured open-source web server distributed under the GPL license."
+website "http://www.roxen.com/products/webserver/"
 
 # ShodanHQ results as at 2011-04-17 #
 # 1,051 for Roxen

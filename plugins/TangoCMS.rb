@@ -7,7 +7,8 @@
 Plugin.define "TangoCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "TangoCMS is an open source (GNU/GPL 2.1) PHP Content Management System (CMS). - Homepage: http://tangocms.org/"
+description "TangoCMS is an open source (GNU/GPL 2.1) PHP Content Management System (CMS)."
+website "http://tangocms.org/"
 
 # ShodanHQ results as at 2011-07-27 #
 # 75 for ZULA_6666cd76f96956469e7be39d750cc7d9

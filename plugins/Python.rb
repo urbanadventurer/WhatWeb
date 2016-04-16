@@ -7,7 +7,8 @@
 Plugin.define "Python" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.1"
-description "Python is a programming language that lets you work more quickly and integrate your systems more effectively. You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs. - homepage: http://www.python.org/"
+description "Python is a programming language that lets you work more quickly and integrate your systems more effectively. You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs."
+website "http://www.python.org/"
 
 # About 170076 ShodanHQ results for "server: python" @ 2010-10-26
 

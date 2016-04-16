@@ -7,7 +7,8 @@
 Plugin.define "Oracle-ADF-Faces" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-12
 version "0.1"
-description "Oracle ADF Faces Components is a set of over a 150 Ajax-enabled JSF components that let you build a richer Web user interface for Java EE applications. - Homepage: http://www.oracle.com/technetwork/developer-tools/adf/overview/index-092391.html"
+description "Oracle ADF Faces Components is a set of over a 150 Ajax-enabled JSF components that let you build a richer Web user interface for Java EE applications."
+website "http://www.oracle.com/technetwork/developer-tools/adf/overview/index-092391.html"
 
 # Google results as at 2012-02-12 #
 # 215 for "This page uses JavaScript and requires a JavaScript enabled browser.Your browser is not JavaScript enabled."

@@ -7,7 +7,8 @@
 Plugin.define "Aruba-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
 version "0.1"
-description "Aruba network device - web interface for router, access point, switch, etc - Homepage: http://www.arubanetworks.com/"
+description "Aruba network device - web interface for router, access point, switch, etc"
+website "http://www.arubanetworks.com/"
 
 # Google results as at 2011-09-17 #
 # 3 for "Please Login" "System Name" "JavaScript is disabled on your browser." +intitle:Login

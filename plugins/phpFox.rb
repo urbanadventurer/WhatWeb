@@ -7,7 +7,8 @@
 Plugin.define "phpFox" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
 version "0.1"
-description "phpFox is a featured packed social networking solution that creates communities with features found on major social networking websites like Facebook and MySpace. - Homepage: http://www.phpfox.com/"
+description "phpFox is a featured packed social networking solution that creates communities with features found on major social networking websites like Facebook and MySpace."
+website "http://www.phpfox.com/"
 
 # 336 for "Powered By phpFox Version"
 

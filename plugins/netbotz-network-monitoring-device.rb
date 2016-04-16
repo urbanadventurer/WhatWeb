@@ -11,7 +11,8 @@
 Plugin.define "NetBotz-Network-Monitoring-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.2"
-description "NetBotz monitoring and management web front end - homepage: http://www.netbotz.com/products/index.html"
+description "NetBotz monitoring and management web front end"
+website "http://www.netbotz.com/products/index.html"
 
 # Google results as at 2010-07-20 #
 # 12 for intitle:"Device Status Summary Page" -demo

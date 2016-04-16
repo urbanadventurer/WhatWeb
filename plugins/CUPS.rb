@@ -7,7 +7,8 @@
 Plugin.define "CUPS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-05
 version "0.1"
-description "Common UNIX Printing System (CUPS) - Homepage: http://www.cups.org/"
+description "Common UNIX Printing System (CUPS)"
+website "http://www.cups.org/"
 
 # ShodanHQ results as at 2011-12-05 #
 # 19 for CUPS Upgrade

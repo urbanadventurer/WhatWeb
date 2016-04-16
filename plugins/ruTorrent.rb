@@ -7,7 +7,8 @@
 Plugin.define "ruTorrent" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-13
 version "0.1"
-description "ruTorrent is a front-end for the popular Bittorrent client rTorrent. - Homepage: http://code.google.com/p/rutorrent/"
+description "ruTorrent is a front-end for the popular Bittorrent client rTorrent."
+website "http://code.google.com/p/rutorrent/"
 
 # ShodanHQ results as at 2011-05-13 #
 # 62 for ruTorrent

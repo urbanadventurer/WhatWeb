@@ -7,7 +7,8 @@
 Plugin.define "VidiScript" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.1"
-description "VidiScript - video sharing script - homepage: http://www.VidiScript.com"
+description "VidiScript - video sharing script"
+website "http://www.VidiScript.com"
 
 # Google results as at 2011-02-24 #
 # 286 for "powered by VidiScript"

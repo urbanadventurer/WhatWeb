@@ -7,7 +7,8 @@
 Plugin.define "VisualRoute" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
-description "Traceroute and network diagnostic tool - Homepage: http://www.visualroute.com/"
+description "Traceroute and network diagnostic tool"
+website "http://www.visualroute.com/"
 
 # ShodanHQ results as at 2011-06-02 #
 # 24 for VisualRoute

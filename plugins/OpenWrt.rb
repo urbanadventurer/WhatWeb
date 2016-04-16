@@ -7,7 +7,8 @@
 Plugin.define "OpenWrt" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
 version "0.1"
-description "A GNU/Linux based firmware program for embedded devices such as residential gateways and routers. - Homepage: http://openwrt.org/"
+description "A GNU/Linux based firmware program for embedded devices such as residential gateways and routers."
+website "http://openwrt.org/"
 
 # ShodanHQ results as at 2011-03-07 #
 # 417 for OpenWRT realm

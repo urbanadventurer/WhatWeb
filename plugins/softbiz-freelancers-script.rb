@@ -7,7 +7,8 @@
 Plugin.define "Softbiz-Freelancers-Script" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.1"
-description "Softbiz Freelancers Script is an Extensive and Powerful script written in PHP to launch your own Freelancers website. - homepage: http://www.softbizscripts.com/freelancers-script-features.php"
+description "Softbiz Freelancers Script is an Extensive and Powerful script written in PHP to launch your own Freelancers website."
+website "http://www.softbizscripts.com/freelancers-script-features.php"
 
 # 4 results "powered by Freelancers Script" @ 2010-08-08
 # Dorks #

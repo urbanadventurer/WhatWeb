@@ -7,7 +7,8 @@
 Plugin.define "PHP-Server-Monitor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
 version "0.1"
-description "PHP Server Monitor is a script that checks whether the servers on your list are up and running on the selected ports.It comes with a web based user interface where you can add and remove servers and users from the MySQL database. - Homepage: http://sourceforge.net/projects/phpservermon/"
+description "PHP Server Monitor is a script that checks whether the servers on your list are up and running on the selected ports.It comes with a web based user interface where you can add and remove servers and users from the MySQL database."
+website "http://sourceforge.net/projects/phpservermon/"
 
 # 27 for intitle:"PHP Server Monitor" "Powered by PHP Server Monitor"
 

@@ -7,7 +7,8 @@
 Plugin.define "ChiliProject" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-24
 version "0.1"
-description "ChiliProject is a web based project management system. - Homepage: https://www.chiliproject.org/"
+description "ChiliProject is a web based project management system."
+website "https://www.chiliproject.org/"
 
 # ShodanHQ results as at 2012-07-24 #
 # 25 for _chiliproject_session

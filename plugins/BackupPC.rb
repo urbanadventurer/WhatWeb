@@ -7,7 +7,8 @@
 Plugin.define "BackupPC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
-description "BackupPC is a high-performance, enterprise-grade system for backing up Linux, WinXX and MacOSX PCs and laptops to a server's disk. - Homepage: http://backuppc.sourceforge.net/"
+description "BackupPC is a high-performance, enterprise-grade system for backing up Linux, WinXX and MacOSX PCs and laptops to a server's disk."
+website "http://backuppc.sourceforge.net/"
 
 # ShodanHQ results as at 2011-08-20 #
 # 75 for BackupPC_Admin

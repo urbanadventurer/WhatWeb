@@ -7,7 +7,8 @@
 Plugin.define "Mobile-Joomla" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-15
 version "0.1"
-description "Mobile Joomla - Homepage: http://www.mobilejoomla.com/"
+description "Mobile Joomla"
+website "http://www.mobilejoomla.com/"
 
 # ShodanHQ results as at 2011-03-13 #
 # 70 for mjmarkup

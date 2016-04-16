@@ -10,7 +10,8 @@
 Plugin.define "Webmatic" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
 version "0.2"
-description "Webmatic CMS - homepage: http://www.webmatic.it/it/"
+description "Webmatic CMS"
+website "http://www.webmatic.it/it/"
 
 # Google results as at 2010-08-29 #
 # 173 for "powered by Webmatic"

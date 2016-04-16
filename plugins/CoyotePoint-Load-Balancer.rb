@@ -7,7 +7,8 @@
 Plugin.define "CoyotePoint-Load-Balancer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
 version "0.1"
-description "CoyotePoint load balancing device - Homepage: http://www.coyotepoint.com/products/"
+description "CoyotePoint load balancing device"
+website "http://www.coyotepoint.com/products/"
 
 # ShodanHQ results as at 2011-05-16 #
 # 11 for CoyotePoint

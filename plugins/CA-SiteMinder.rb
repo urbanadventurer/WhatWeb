@@ -7,7 +7,8 @@
 Plugin.define "CA-SiteMinder" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-17
 version "0.1"
-description "CA SiteMinder - Web Access Management - Homepage: http://www.ca.com/us/web-access-management.aspx"
+description "CA SiteMinder - Web Access Management"
+website "http://www.ca.com/us/web-access-management.aspx"
 
 # ShodanHQ results as at 2012-05-17 #
 # 5 for siteminder TARGET

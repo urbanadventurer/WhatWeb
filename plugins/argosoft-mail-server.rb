@@ -17,7 +17,8 @@
 Plugin.define "ArGoSoft-Mail-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
 version "0.4"
-description "ArGoSoft-Mail-Server web interface - homepage: http://www.argosoft.com/"
+description "ArGoSoft-Mail-Server web interface"
+website "http://www.argosoft.com/"
 
 # Google results as at 2010-06-13 #
 # 26 for +intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser -inurl 

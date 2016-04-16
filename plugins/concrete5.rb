@@ -13,7 +13,8 @@
 Plugin.define "Concrete5" do
     author "Andrew Horton"
     version "0.3"
-    description "Concrete5 is an OpenSource CMS written in PHP. Homepage: www.concrete5.org"
+    description "Concrete5 is an OpenSource CMS written in PHP."
+    website "www.concrete5.org"
 
     
 

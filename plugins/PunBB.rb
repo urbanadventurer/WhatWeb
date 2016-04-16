@@ -10,7 +10,8 @@
 Plugin.define "PunBB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-06
 version "0.2"
-description "PunBB is a fast and lightweight PHP-powered discussion board. It is released under the GNU General Public License. - Homepage: http://punbb.informer.com/"
+description "PunBB is a fast and lightweight PHP-powered discussion board. It is released under the GNU General Public License."
+website "http://punbb.informer.com/"
 
 # Google results as at 2011-04-06
 # 302 for "Powered by PunBB, supported by Informer Technologies"

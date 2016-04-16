@@ -7,7 +7,8 @@
 Plugin.define "Kyocera-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "Web interface for Kyocera printers. Some models have built in fax and scanner capabilities. - Homepage: http://global.kyocera.com/"
+description "Web interface for Kyocera printers. Some models have built in fax and scanner capabilities."
+website "http://global.kyocera.com/"
 
 # ShodanHQ results as at 2011-05-31 #
 # 4,783 for JC-HTTPD

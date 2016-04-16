@@ -7,7 +7,8 @@
 Plugin.define "Redaxscript" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-22
 version "0.1"
-description "Redaxscript is a free, PHP and MySQL driven website engine for small business and private websites. It's ultra lightweight, simple and customizable. - Homepage: http://redaxscript.com/"
+description "Redaxscript is a free, PHP and MySQL driven website engine for small business and private websites. It's ultra lightweight, simple and customizable."
+website "http://redaxscript.com/"
 
 # Google results as at 2011-06-22 #
 # 51 for "Powered by Redaxscript"

@@ -7,7 +7,8 @@
 Plugin.define "Kontaktformular" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-13
 version "0.1"
-description "PHP contact form - homepage: http://www.radbekleidung.eu/gratis-kontaktformular.html"
+description "PHP contact form"
+website "http://www.radbekleidung.eu/gratis-kontaktformular.html"
 
 # 49 results for "Script Powered by Kontaktformular" @ 2010-09-13
 

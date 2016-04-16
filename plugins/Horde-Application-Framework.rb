@@ -13,7 +13,8 @@
 Plugin.define "Horde-Application-Framework" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-08
 version "0.3"
-description "A web application framework. Projects using the framework include webmail, a wiki and groupware. (Mostly PHP) - homepage: http://www.horde.org/"
+description "A web application framework. Projects using the framework include webmail, a wiki and groupware. (Mostly PHP)"
+website "http://www.horde.org/"
 
 # ShodanHQ results as at 2011-08-04 #
 # 97 for webmail4prod

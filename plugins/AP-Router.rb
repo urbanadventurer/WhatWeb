@@ -7,7 +7,8 @@
 Plugin.define "AP-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
 version "0.1"
-description "AP Router [Brazilian] - Homepage: http://aprouter.com.br/"
+description "AP Router [Brazilian]"
+website "http://aprouter.com.br/"
 
 # Google results as at 2011-08-14 #
 # 66 for intitle:"AP Router New Generation" +Sistema

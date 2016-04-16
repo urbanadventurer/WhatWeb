@@ -7,7 +7,8 @@
 Plugin.define "Basic-PHP-Events-Lister" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-21
 version "0.1"
-description "PHP event calendar - Homepage: http://www.mevin.com/"
+description "PHP event calendar"
+website "http://www.mevin.com/"
 
 # Google results as at 2011-07-21 #
 # 44 for "Powered by: mevin productions" inurl:event.php

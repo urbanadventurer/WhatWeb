@@ -7,7 +7,8 @@
 Plugin.define "ProScan" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-13
 version "0.1"
-description "Streams audio - homepage: http://www.proscan.org/"
+description "Streams audio"
+website "http://www.proscan.org/"
 
 # ShodanHQ results as at 2011-05-13 #
 # 12 for ProScan

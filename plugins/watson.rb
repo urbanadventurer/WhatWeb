@@ -8,7 +8,8 @@
 Plugin.define "Watson-Router" do
 author "Andrew Horton"
 version "0.1"
-description "Home Router. Default username/password is admin/admin. Homepage: http://www.schmid-telecom.com/"
+description "Home Router. Default username/password is admin/admin"
+website "http://www.schmid-telecom.com/"
 
 
 matches [

@@ -13,7 +13,8 @@
 Plugin.define "InvisionPowerBoard" do
 author "Andrew Horton"
 version "0.3"
-description "Invision Power Board - PHP Web Forum - Homepage: http://www.invisionpower.com/"
+description "Invision Power Board - PHP Web Forum"
+website "http://www.invisionpower.com/"
 
 # Dorks #
 dorks [

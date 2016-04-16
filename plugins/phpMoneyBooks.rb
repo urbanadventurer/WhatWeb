@@ -7,7 +7,8 @@
 Plugin.define "phpMoneyBooks" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-23
 version "0.1"
-description "phpMoneyBooks - Open Source Financial Software - Requires: PHP/MySQL - Homepage: http://phpmoneybooks.com/"
+description "phpMoneyBooks - Open Source Financial Software - Requires: PHP/MySQL"
+website "http://phpmoneybooks.com/"
 
 # Google results as at 2011-03-23 #
 # 2 for "phpMoneyBooks" "Account ID" "password"

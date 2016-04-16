@@ -14,7 +14,8 @@
 Plugin.define "iGuard-Security-System" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.3"
-description "Lucky Technology iGuard security system, based on smart card and biometric fingerprint technology. - Homepage: http://www.lucky-tech.com/p1.php"
+description "Lucky Technology iGuard security system, based on smart card and biometric fingerprint technology."
+website "http://www.lucky-tech.com/p1.php"
 
 # ShodanHQ results as at 2011-08-05 #
 # 280 for iGuard Embedded Web Server

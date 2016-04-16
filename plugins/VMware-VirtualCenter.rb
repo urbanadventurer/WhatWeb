@@ -7,7 +7,8 @@
 Plugin.define "VMware-VirtualCenter" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-06
 version "0.1"
-description "VMware VirtualCenter is a software suite designed to centralize the management of virtualized IT environments. - Homepage: http://www.vmware.com/products/vcenter-server/"
+description "VMware VirtualCenter is a software suite designed to centralize the management of virtualized IT environments."
+website "http://www.vmware.com/products/vcenter-server/"
 
 # Data Sheet #
 # http://www.vmware.com/pdf/vc_datasheet.pdf

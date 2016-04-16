@@ -10,7 +10,8 @@
 Plugin.define "Glossword" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
-description "Glossword helps you to create and publish online multilingual dictionary, glossary, or reference. - homepage: http://glossword.biz/"
+description "Glossword helps you to create and publish online multilingual dictionary, glossary, or reference."
+website "http://glossword.biz/"
 
 # Google results as at 2013-02-06 #
 # 458 for "Powered by Glossword"

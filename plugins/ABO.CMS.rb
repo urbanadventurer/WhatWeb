@@ -7,7 +7,8 @@
 Plugin.define "ABO_CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
-description "ABO.CMS - Hompage: http://www.abocms.com/"
+description "ABO.CMS"
+website "http://www.abocms.com/"
 
 # ShodanHQ results as at 2011-04-08 #
 # 54 for A-Powered-By

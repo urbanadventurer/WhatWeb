@@ -7,7 +7,8 @@
 Plugin.define "SQLiteManager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-14
 version "0.1"
-description "SQLiteManager - Web-based SQLite administration - Homepage: http://www.sqlitemanager.org"
+description "SQLiteManager - Web-based SQLite administration"
+website "http://www.sqlitemanager.org"
 
 # Google results as at 2012-01-14 #
 # 33 for intitle:"SQLite version" "Welcome to SQLiteManager version"

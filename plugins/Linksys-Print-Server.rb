@@ -7,7 +7,8 @@
 Plugin.define "Linksys-Print-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
 version "0.1"
-description "Linksys Print Server - Print servers connect printers directly to the network so that multiple PCs can share them. - Homepage: http://homesupport.cisco.com/en-us/wireless/lbc/PSUS4/download"
+description "Linksys Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."
+website "http://homesupport.cisco.com/en-us/wireless/lbc/PSUS4/download"
 
 # ShodanHQ results as at 2011-03-07 #
 # 1,142 for PRINT_SERVER WEB

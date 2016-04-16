@@ -7,7 +7,8 @@
 Plugin.define "phpDenora" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "phpDenora is the Web Frontend to the Denora Stats Server and provides a complete, nice looking and solid Interface featuring detailed network, channel and user statistics, graphical outputs, multilanguage and template systems, all by following modern web standards. Requires PHP 4.3.1+ and PHP MySQL module - Homepage: http://denorastats.org/"
+description "phpDenora is the Web Frontend to the Denora Stats Server and provides a complete, nice looking and solid Interface featuring detailed network, channel and user statistics, graphical outputs, multilanguage and template systems, all by following modern web standards. Requires PHP 4.3.1+ and PHP MySQL module"
+website "http://denorastats.org/"
 
 # Google results as at 2011-03-13 #
 # 253 for "powered by phpDenora" intitle:"phpDenora"

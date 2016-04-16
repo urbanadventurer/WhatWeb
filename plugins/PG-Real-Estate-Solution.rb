@@ -7,7 +7,8 @@
 Plugin.define "PG-Real-Estate-Solution" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
 version "0.1"
-description "Turnkey Multilingual Real Estate Website script for Real Estate professionals. - homepage: http://www.realtysoft.pro/realestate/index.php"
+description "Turnkey Multilingual Real Estate Website script for Real Estate professionals."
+website "http://www.realtysoft.pro/realestate/index.php"
 
 # 134 results for "powered by PG Real Estate Solution" @ 2010-09-03
 

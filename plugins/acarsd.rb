@@ -7,7 +7,8 @@
 Plugin.define "acarsd" do
 author "Andrew Horton"
 version "0.1"
-description "acarsd is an Aircraft Communication Addressing and Reporting System (ACARS) decoder for a LINUX or Windows. It decodes ACARS transmissions collected from a radio scanner in real-time using sound cards. acarsd also provides realtime webserver. - Homepage: http://www.acarsd.org/"
+description "acarsd is an Aircraft Communication Addressing and Reporting System (ACARS) decoder for a LINUX or Windows. It decodes ACARS transmissions collected from a radio scanner in real-time using sound cards. acarsd also provides realtime webserver."
+website "http://www.acarsd.org/"
 
 # More examples here: http://www.acarsd.org/webservers.html
 # Google results as at 2012-02-21 #

@@ -7,7 +7,8 @@
 Plugin.define "w-agora" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
-description "w-agora is web based forum package. It is entirely customizable through a web browser. It allows web publishing and file upload. - Homepage: "
+description "w-agora is web based forum package. It is entirely customizable through a web browser. It allows web publishing and file upload."
+website ""
 
 # Google results as at 2011-02-27 #
 # 57 for inurl:"w-agora" ext:php3

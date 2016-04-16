@@ -16,7 +16,8 @@
 Plugin.define "JQuery" do
 author "Andrew Horton"
 version "0.4"
-description "A fast, concise, JavaScript that simplifies how to traverse HTML documents, handle events, perform animations, and add AJAX. - Homepage: http://jquery.com/"
+description "A fast, concise, JavaScript that simplifies how to traverse HTML documents, handle events, perform animations, and add AJAX."
+website "http://jquery.com/"
 
 
 

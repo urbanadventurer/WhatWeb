@@ -7,7 +7,8 @@
 Plugin.define "D-Link-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.1"
-description "D-Link network camera web interface - homepage: http://www.dlink.com/"
+description "D-Link network camera web interface"
+website "http://www.dlink.com/"
 
 # Google results as at 2010-07-22 #
 # 1 for inurl:setdo.cgi intext:"Set DO OK"

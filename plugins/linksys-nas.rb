@@ -10,7 +10,8 @@
 Plugin.define "Linksys-NAS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-15
 version "0.2"
-description "Linksys NAS web frontend - homepage: http://www.linksys.com/"
+description "Linksys NAS web frontend"
+website "http://www.linksys.com/"
 
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1669
 # 2 results for intitle:"Ethernet Network Attached Storage Utility" @ 2010-07-15

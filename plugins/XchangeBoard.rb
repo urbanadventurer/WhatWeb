@@ -10,7 +10,8 @@
 Plugin.define "XchangeBoard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.2"
-description "Old forum - homepage: http://www.xchangeboard.de"
+description "Old forum"
+website "http://www.xchangeboard.de"
 
 # Google results as at 2010-08-21 #
 # 30 for "powered by XchangeBoard"

@@ -7,7 +7,8 @@
 Plugin.define "Diferior-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description "Diferior is a multi-purpose content management system, meaning that it provides all the necessary tools to easily publish and organize your content. - homepage: http://diferior.com/"
+description "Diferior is a multi-purpose content management system, meaning that it provides all the necessary tools to easily publish and organize your content."
+website "http://diferior.com/"
 
 # 62 results for "Powered by Diferior, Copyright" @ 2010-09-18
 

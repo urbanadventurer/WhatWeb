@@ -7,7 +7,8 @@
 Plugin.define "Fossil" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-01
 version "0.1"
-description "Simple, high-reliability, distributed software configuration management - Homepage: http://fossil-scm.org/index.html/doc/trunk/www/index.wiki"
+description "Simple, high-reliability, distributed software configuration management"
+website "http://fossil-scm.org/index.html/doc/trunk/www/index.wiki"
 
 # Google results as at 2012-05-01 #
 # 26 for "Fossil version " inurl:"fossil.cgi"

@@ -7,7 +7,8 @@
 Plugin.define "BrowserCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-18
 version "0.1"
-description "The newly redesigned BrowserCMS 2.0 is an easy, affordable way to control, edit, and organize website content. - homepage: http://www.browsercms.com/"
+description "The newly redesigned BrowserCMS 2.0 is an easy, affordable way to control, edit, and organize website content."
+website "http://www.browsercms.com/"
 
 # Google results as at 2010-10-18 #
 # 96 for "powered by BrowserCMS"

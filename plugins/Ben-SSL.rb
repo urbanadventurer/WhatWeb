@@ -7,7 +7,8 @@
 Plugin.define "Ben-SSL" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-08
 version "0.1"
-description "Apache-SSL was developed by Ben Laurie and is often referred to as Ben-SSL - Homepage: http://apache-ssl.org/"
+description "Apache-SSL was developed by Ben Laurie and is often referred to as Ben-SSL"
+website "http://apache-ssl.org/"
 
 # ShodanHQ results as at 2011-02-08 #
 # 34777 for Ben-SSL

@@ -7,7 +7,8 @@
 Plugin.define "zFeeder" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
 version "0.1"
-description "check zFeeder if you want to show other's RSS content (news and much more) on your website, wapsite or use it on your PC (or intranet) as a news reader. - homepage: http://zvonnews.sourceforge.net/"
+description "check zFeeder if you want to show other's RSS content (news and much more) on your website, wapsite or use it on your PC (or intranet) as a news reader."
+website "http://zvonnews.sourceforge.net/"
 
 # Google results as at 2010-08-22 #
 # 319 for "powered by zFeeder"

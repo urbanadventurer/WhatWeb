@@ -7,7 +7,8 @@
 Plugin.define "Allen-Bradley-PLC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
-description "SCADA - Allen Bradley programmable logic controller (PLC) - Homepage: http://ab.rockwellautomation.com/Programmable-Controllers"
+description "SCADA - Allen Bradley programmable logic controller (PLC)"
+website "http://ab.rockwellautomation.com/Programmable-Controllers"
 
 # ShodanHQ results as at 2011-03-06 #
 # 16 for port:161 SLC5

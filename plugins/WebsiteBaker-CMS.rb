@@ -7,7 +7,8 @@
 Plugin.define "WebsiteBaker-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
 version "0.1"
-description "WebsiteBaker open source content management system (CMS). - Homepage: http://www.websitebaker2.org"
+description "WebsiteBaker open source content management system (CMS)."
+website "http://www.websitebaker2.org"
 
 # Google results as at 2011-08-14 #
 # 227 for "powered by websitebaker"

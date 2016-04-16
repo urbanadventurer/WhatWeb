@@ -7,7 +7,8 @@
 Plugin.define "TiVo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-21
 version "0.1"
-description "TiVo is a digital video recorder developed and marketed by TiVo, Inc. - Homepage: http://www.tivo.com/"
+description "TiVo is a digital video recorder developed and marketed by TiVo, Inc."
+website "http://www.tivo.com/"
 
 # Google results as at 2011-05-21 #
 # 1 for intitle:"TiVo DVR" "Congratulations" "You've successfully connected your TiVo"

@@ -7,7 +7,8 @@
 Plugin.define "dir2web-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-08
 version "0.1"
-description "dir2web CMS - Homepage: http://www.dir2web.it/"
+description "dir2web CMS"
+website "http://www.dir2web.it/"
 
 # Google results as at 2012-08-08 #
 # 6 for inurl:"index.php?wpid=homepage"

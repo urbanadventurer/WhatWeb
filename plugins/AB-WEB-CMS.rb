@@ -7,7 +7,8 @@
 Plugin.define "AB-WEB-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "AB WEB CMS [French] - Homepage: http://www.aeline-informatique.com/"
+description "AB WEB CMS [French]"
+website "http://www.aeline-informatique.com/"
 
 # Google results as at 2011-03-13 #
 # 73 for inurl:ab_fct.php?fct=

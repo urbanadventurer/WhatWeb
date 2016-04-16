@@ -7,7 +7,8 @@
 Plugin.define "Novell-NetWare" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-08
 version "0.1"
-description "Novell NetWare server. - Homepage: http://www.novell.com/"
+description "Novell NetWare server."
+website "http://www.novell.com/"
 
 # ShodanHQ results as at 2011-08-08 #
 # 1,838 for NetWare

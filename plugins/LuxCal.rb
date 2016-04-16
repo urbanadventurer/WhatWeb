@@ -7,7 +7,8 @@
 Plugin.define "LuxCal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-10
 version "0.1"
-description "LuxCal is a free user-friendly and lightweight web based event calendar. Requires PHP and MySQL - Homepage: http://www.luxsoft.eu/"
+description "LuxCal is a free user-friendly and lightweight web based event calendar. Requires PHP and MySQL"
+website "http://www.luxsoft.eu/"
 
 # Google results as at 2011-07-10 #
 # 109 for "powered by LuxSoft" +LuxCal "Log In" Monday Tuesday Wednesday Thursday Friday Saturday Sunday

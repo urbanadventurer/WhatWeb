@@ -10,7 +10,8 @@
 Plugin.define "Piwik" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
 version "0.2"
-description "Piwik is a downloadable, open source (GPL licensed) real time web analytics software program. - homepage: http://piwik.org/"
+description "Piwik is a downloadable, open source (GPL licensed) real time web analytics software program."
+website "http://piwik.org/"
 
 # Google results as at 2010-06-06 #
 # 250,000 for +intitle:Piwik "JavaScript must be enabled in order for you to use Piwik in standard view"

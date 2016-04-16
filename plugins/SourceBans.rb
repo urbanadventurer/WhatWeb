@@ -7,7 +7,8 @@
 Plugin.define "SourceBans" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-14
 version "0.1"
-description "SourceBans is a free global administration and banning system for Source engine based servers. - Homepage: http://www.sourcebans.net/"
+description "SourceBans is a free global administration and banning system for Source engine based servers."
+website "http://www.sourcebans.net/"
 
 # Google results as at 2011-02-14 #
 # 10 for inurl:exportbans.php

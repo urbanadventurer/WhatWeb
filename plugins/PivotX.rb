@@ -7,7 +7,8 @@
 Plugin.define "PivotX" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-18
 version "0.1"
-description "PivotX - blog software - Homepage: http://pivotx.net/"
+description "PivotX - blog software"
+website "http://pivotx.net/"
 
 # Google results as at 2012-05-18 #
 # 131 for inurl:"pivotx/ajaxhelper.php"

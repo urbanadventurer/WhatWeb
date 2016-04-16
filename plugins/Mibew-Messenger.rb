@@ -7,7 +7,8 @@
 Plugin.define "Mibew-Messenger" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-02
 version "0.1"
-description "Mibew Messenger (also known as Open Web Messenger) is an open-source live support application written in PHP and MySQL. - Homepage: http://mibew.org/"
+description "Mibew Messenger (also known as Open Web Messenger) is an open-source live support application written in PHP and MySQL."
+website "http://mibew.org/"
 
 # Google results as at 2012-02-02 #
 # 66 for "Mibew Messenger" "2011 mibew.org" intitle:"Mibew Messenger"

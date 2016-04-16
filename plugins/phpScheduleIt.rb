@@ -10,7 +10,8 @@
 Plugin.define "phpScheduleIt" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
-description "A web-based resource scheduling system that allows administered management of reservations on any number of resources. Typical applications are conference room or machine reservation management. Written in PHP and tested on MySQL.  - homepage: http://phpscheduleit.sourceforge.net"
+description "A web-based resource scheduling system that allows administered management of reservations on any number of resources. Typical applications are conference room or machine reservation management. Written in PHP and tested on MySQL. "
+website "http://phpscheduleit.sourceforge.net"
 # Default login: admin/admin
 
 # Google results as at 2010-08-01 #

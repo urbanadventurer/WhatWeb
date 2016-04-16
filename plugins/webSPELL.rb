@@ -11,7 +11,8 @@
 Plugin.define "webSPELL" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.2"
-description "webSPELL is a free Content Management System which was especially developed for the needs of esport related communities. - Homepage: http://www.webspell.org/"
+description "webSPELL is a free Content Management System which was especially developed for the needs of esport related communities."
+website "http://www.webspell.org/"
 
 # ShodanHQ results as at 2012-02-22 #
 # 326 for ws_session

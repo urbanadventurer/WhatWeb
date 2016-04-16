@@ -7,7 +7,8 @@
 Plugin.define "phpwcms" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
 version "0.1"
-description " is a robust and simple but yet powerful web based content management system running under PHP and MySQL. - homepage: http://www.phpwcms.de/"
+description " is a robust and simple but yet powerful web based content management system running under PHP and MySQL."
+website "http://www.phpwcms.de/"
 
 # 244 results for "template powered by phpWCMS-templates.de" @ 2010-09-03
 

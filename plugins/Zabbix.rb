@@ -7,7 +7,8 @@
 Plugin.define "Zabbix" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-25
 version "0.1"
-description "Zabbix is an enterprise-class open source distributed monitoring solution for networks and applications. - Homepage: http://www.zabbix.com/"
+description "Zabbix is an enterprise-class open source distributed monitoring solution for networks and applications."
+website "http://www.zabbix.com/"
 
 # Google results as at 2011-11-25 #
 # 229 for "Zabbix * Copyright * by SIA Zabbix"

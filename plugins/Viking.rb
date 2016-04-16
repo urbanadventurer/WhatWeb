@@ -7,7 +7,8 @@
 Plugin.define "Viking" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
 version "0.1"
-description "Viking is an all-in-one server that provides everything from HTTP and FTP to Gopher, IRC, and NTP; with firewalling, proxying and more - Homepage: http://www.robtex.com/viking.html"
+description "Viking is an all-in-one server that provides everything from HTTP and FTP to Gopher, IRC, and NTP; with firewalling, proxying and more"
+website "http://www.robtex.com/viking.html"
 
 # ShodanHQ results as at 2011-03-07 #
 # 22 for Viking -realm -apache -IIS

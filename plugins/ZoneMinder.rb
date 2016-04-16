@@ -7,7 +7,8 @@
 Plugin.define "ZoneMinder" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-01
 version "0.1"
-description "Linux video camera security and surveillance solution - Web interface - Requires MySQL and PHP - Homepage: http://www.zoneminder.com/"
+description "Linux video camera security and surveillance solution - Web interface - Requires MySQL and PHP"
+website "http://www.zoneminder.com/"
 
 # ShodanHQ results as at 2013-01-22 #
 # 1,020 for ZMSESSID

@@ -7,7 +7,8 @@
 Plugin.define "DoceboLMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
 version "0.1"
-description "DoceboLMS is a SCORM compliant Open Source e-Learning platform used in corporate, government and education markets. - Homepage: http://www.docebo.org/doceboCms/index.php"
+description "DoceboLMS is a SCORM compliant Open Source e-Learning platform used in corporate, government and education markets."
+website "http://www.docebo.org/doceboCms/index.php"
 
 # Google results as at  2011-03-24 #
 # 253 for "Powered by Docebo"

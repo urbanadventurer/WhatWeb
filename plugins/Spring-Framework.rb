@@ -7,7 +7,8 @@
 Plugin.define "Spring-Framework" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
 version "0.1"
-description "Spring Framework is an open source application framework for the Java platform. - Homepage: http://www.springsource.org/"
+description "Spring Framework is an open source application framework for the Java platform."
+website "http://www.springsource.org/"
 
 # ShodanHQ results as at 2011-09-12 #
 # 20 for springframework

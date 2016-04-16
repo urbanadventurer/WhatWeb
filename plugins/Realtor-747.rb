@@ -10,7 +10,8 @@
 Plugin.define "Realtor-747" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
-description "IT747.COM is proudly presenting a property listings management system REALTOR 747 for real estate agents which adopted template based design so that web site designers can fully express their own imagination. - homepage: http://www.it747.com/realtor747/"
+description "IT747.COM is proudly presenting a property listings management system REALTOR 747 for real estate agents which adopted template based design so that web site designers can fully express their own imagination."
+website "http://www.it747.com/realtor747/"
 
 # Google results as at 2010-08-27 #
 # 10 for "powered by Realtor 747"

@@ -7,7 +7,8 @@
 Plugin.define "OpenCart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
 version "0.1"
-description "OpenCart - Open Source Shopping Cart Solution - Homepage: http://www.opencart.com/"
+description "OpenCart - Open Source Shopping Cart Solution"
+website "http://www.opencart.com/"
 
 # Google results as at 2012-04-11 #
 # 308 for intitle:"Powered By OpenCart"

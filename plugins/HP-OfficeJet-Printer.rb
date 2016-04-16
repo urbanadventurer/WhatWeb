@@ -10,7 +10,8 @@
 Plugin.define "HP-OfficeJet-Printer" do
 author "Andrew Horton"
 version "0.2"
-description "HP Officejet Pro and Officejet printers. Homepage: http://www.hp.com/products1/inkjetprinter/officejet.html"
+description "HP Officejet Pro and Officejet printers"
+website "http://www.hp.com/products1/inkjetprinter/officejet.html"
 
 # a list of all OfficeJet models can be found here: http://www8.hp.com/us/en/support-drivers.html
 

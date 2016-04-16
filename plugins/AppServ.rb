@@ -7,7 +7,8 @@
 Plugin.define "AppServ" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-23
 version "0.1"
-description "AppServ is an Apache, MySQL, PHP, phpMyAdmin installer package for Windows and Linux. - Homepage: http://www.appservnetwork.com/"
+description "AppServ is an Apache, MySQL, PHP, phpMyAdmin installer package for Windows and Linux."
+website "http://www.appservnetwork.com/"
 
 # Google results as at 2011-09-23 #
 # 55 for intitle:"AppServ Open Project" "About AppServ Version"

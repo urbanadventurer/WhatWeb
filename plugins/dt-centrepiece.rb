@@ -7,7 +7,8 @@
 Plugin.define "DT-Centrepiece" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.1"
-description "DT Centrepiece is a free open-source content management system (CMS) for commercial or personal use. - homepage: www.dt.net.nz/centrepiece/"
+description "DT Centrepiece is a free open-source content management system (CMS) for commercial or personal use."
+website "www.dt.net.nz/centrepiece/"
 
 # 14 results for "powered by DT Centrepiece" @ 2010-08-06
 

@@ -7,7 +7,8 @@
 Plugin.define "Wing-FTP-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-13
 version "0.1"
-description "Wing FTP server is a secure multi-protocol file server(FTP, HTTP, FTPS, HTTPS, SFTP) for Windows, Linux, Mac OSX and Solaris. - Homepage: http://www.wftpserver.com/"
+description "Wing FTP server is a secure multi-protocol file server(FTP, HTTP, FTPS, HTTPS, SFTP) for Windows, Linux, Mac OSX and Solaris."
+website "http://www.wftpserver.com/"
 
 # Google results as at 2011-08-13 #
 # 5 for intitle:"Wing FTP Server Administrator" "The administration interface requires that you have Javascript enabled on your browser."

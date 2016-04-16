@@ -7,7 +7,8 @@
 Plugin.define "ExtremeWare" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-21
 version "0.1"
-description "Extreme Networks ExtremeWare device - Homepage: http://www.extremenetworks.com/services/software-userguide.aspx"
+description "Extreme Networks ExtremeWare device"
+website "http://www.extremenetworks.com/services/software-userguide.aspx"
 
 # ShodanHQ results as at 2011-11-21 #
 # 250 for ExtremeWare

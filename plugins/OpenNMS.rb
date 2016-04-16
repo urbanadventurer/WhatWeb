@@ -7,7 +7,8 @@
 Plugin.define "OpenNMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-25
 version "0.1"
-description "OpenNMS - Enterprise-Grade Network Management Application Platform - Homepage: http://www.opennms.com/"
+description "OpenNMS - Enterprise-Grade Network Management Application Platform"
+website "http://www.opennms.com/"
 
 # Source: http://sourceforge.net/projects/opennms/
 # Default Port: 8980

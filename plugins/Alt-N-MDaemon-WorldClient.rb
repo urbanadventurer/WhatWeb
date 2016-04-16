@@ -7,7 +7,8 @@
 Plugin.define "Alt-N-MDaemon-WorldClient" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-13
 version "0.1"
-description "MDaemon Messaging Server, mail server software, supports IMAP, SMTP, and POP3 protocols. MDaemon Messaging Server's webmail client, WorldClient is provided free with every version of MDaemon Messaging Server. - Homepage: http://www.altn.com/Products/MDaemon-Email-Server-Windows/WorldClient-WebMail-MDaemon/"
+description "MDaemon Messaging Server, mail server software, supports IMAP, SMTP, and POP3 protocols. MDaemon Messaging Server's webmail client, WorldClient is provided free with every version of MDaemon Messaging Server."
+website "http://www.altn.com/Products/MDaemon-Email-Server-Windows/WorldClient-WebMail-MDaemon/"
 
 # ShodanHQ results as at 2011-08-13 #
 # 5,053 for WDaemon

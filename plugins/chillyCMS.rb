@@ -7,7 +7,8 @@
 Plugin.define "chillyCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-08
 version "0.1"
-description "chillyCMS is a Content Management System. This is a software which allows you to create a website without any programming skills. - homepage: http://chillycms.bplaced.net/"
+description "chillyCMS is a Content Management System. This is a software which allows you to create a website without any programming skills."
+website "http://chillycms.bplaced.net/"
 
 # 8 results for "powered by chillyCMS" @ 2010-09-08
 # 5 results for inurl:chillyCMS/core/show.site.php @ 2010-09-08

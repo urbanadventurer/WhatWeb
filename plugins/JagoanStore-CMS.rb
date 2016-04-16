@@ -7,7 +7,8 @@
 Plugin.define "JagoanStore-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-04
 version "0.1"
-description "JagoanStore CMS - Homepage: http://www.jagoanstore.com/"
+description "JagoanStore CMS"
+website "http://www.jagoanstore.com/"
 
 # Google results as at 2011-09-04 #
 # 57 for "Toko Online ini menggunakan JagoanStore CMS dari JagoanWeb Indonesia"

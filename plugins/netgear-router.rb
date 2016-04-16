@@ -10,7 +10,8 @@
 Plugin.define "Netgear-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.2"
-description "Netgear Router - From wireless routers and adapters to Layer 3 Managed Switches we have the networking equipment you need for your home or small business. - homepage: http://www.netgear.com/products/"
+description "Netgear Router - From wireless routers and adapters to Layer 3 Managed Switches we have the networking equipment you need for your home or small business."
+website "http://www.netgear.com/products/"
 
 # ShodanHQ results as at 2011-03-18 #
 # 22,614 for realm netgear

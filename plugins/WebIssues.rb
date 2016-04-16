@@ -7,7 +7,8 @@
 Plugin.define "WebIssues" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-29
 version "0.1"
-description "WebIssues is an open source, multi-platform system for issue tracking and team collaboration. - Homepage: http://webissues.mimec.org/"
+description "WebIssues is an open source, multi-platform system for issue tracking and team collaboration."
+website "http://webissues.mimec.org/"
 
 # Google results as at 2012-03-29 #
 # 18 for intitle:"Log in to WebIssues" "Log in to WebIssues" "Manual"

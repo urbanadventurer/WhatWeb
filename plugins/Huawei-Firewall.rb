@@ -7,7 +7,8 @@
 Plugin.define "Huawei-Firewall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-03
 version "0.1"
-description "Huawei Firewall - Homepage: http://www.huawei.com/en/products/data-communication/network-security/firewall/index.htm"
+description "Huawei Firewall"
+website "http://www.huawei.com/en/products/data-communication/network-security/firewall/index.htm"
 
 # ShodanHQ results as at 2012-06-03 #
 # 9,018 for Eudemon Server

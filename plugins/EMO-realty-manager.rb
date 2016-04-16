@@ -7,7 +7,8 @@
 Plugin.define "EMO-Realty-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.1"
-description "EMO Realty Manager is a full PHP/MySQL content management system for property companies, real estate agents or FSBO site. - homepage: http://www.emophp.com/"
+description "EMO Realty Manager is a full PHP/MySQL content management system for property companies, real estate agents or FSBO site."
+website "http://www.emophp.com/"
 
 # Google results as at 2010-07-25 #
 # 15 for "powered by EMO Realty Manager"

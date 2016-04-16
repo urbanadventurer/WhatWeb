@@ -7,7 +7,8 @@
 Plugin.define "Axway-SecureTransport" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
 version "0.1"
-description "Axway SecureTransport is a secure, multi-protocol managed file transfer solution - Homepage: http://www.axway.com/products-solutions/mft/gateways/securetransport"
+description "Axway SecureTransport is a secure, multi-protocol managed file transfer solution"
+website "http://www.axway.com/products-solutions/mft/gateways/securetransport"
 
 # ShodanHQ results as at 2012-03-24 #
 # 126 for SecureTransport

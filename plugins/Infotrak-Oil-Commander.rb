@@ -7,7 +7,8 @@
 Plugin.define "Infotrak-Oil-Commander" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-27
 version "0.1"
-description "Web-based system for managing oil samples through the laboratory process and presenting the results to customers. - Homepage: http://www.infotrak.com.au/"
+description "Web-based system for managing oil samples through the laboratory process and presenting the results to customers."
+website "http://www.infotrak.com.au/"
 
 # Google results as at 2011-06-27 #
 # 21 for intitle:"Login - Powered By: Infotrak's Oil Commander"

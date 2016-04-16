@@ -7,7 +7,8 @@
 Plugin.define "iGaming-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.1"
-description "iGaming CMS is a content management system designed for gaming websites. The system is written in PHP and requires a Mysql database for operation.  - homepage: http://www.igamingcms.com/"
+description "iGaming CMS is a content management system designed for gaming websites. The system is written in PHP and requires a Mysql database for operation. "
+website "http://www.igamingcms.com/"
 
 # 24 results for "powered by iGaming CMS" @ 2010-09-12
 

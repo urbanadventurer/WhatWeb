@@ -7,7 +7,8 @@
 Plugin.define "Biscom-Delivery-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-20
 version "0.1"
-description "Biscom Delivery Server - Secure File Transfer (SFT) software - Homepage: http://www.biscomdeliveryserver.com/"
+description "Biscom Delivery Server - Secure File Transfer (SFT) software"
+website "http://www.biscomdeliveryserver.com/"
 
 # ShodanHQ results as at 2011-11-20 #
 # 27 for bds/Login.do

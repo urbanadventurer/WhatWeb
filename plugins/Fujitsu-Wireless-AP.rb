@@ -7,7 +7,8 @@
 Plugin.define "Fujitsu-Wireless-AP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
 version "0.1"
-description "Fujitsu Wireless Access Point - Homepage: http://fenics.fujitsu.com/products/sr-m/"
+description "Fujitsu Wireless Access Point"
+website "http://fenics.fujitsu.com/products/sr-m/"
 
 # ShodanHQ results as at 2011-03-12 #
 # 1 for SR-M20AP1

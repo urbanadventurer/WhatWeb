@@ -7,7 +7,8 @@
 Plugin.define "Microsoft-Remote-Web-Workplace" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-12-30
 version "0.1"
-description "The Remote Web Workplace is a feature of Microsoft's Windows Small Business Server and the midsize business-focused product, Windows Essential Business Server, which enables pre-created users to log in to a front-end network-facing interface of the small business server. - homepage: http://microsoft.com/"
+description "The Remote Web Workplace is a feature of Microsoft's Windows Small Business Server and the midsize business-focused product, Windows Essential Business Server, which enables pre-created users to log in to a front-end network-facing interface of the small business server."
+website "http://microsoft.com/"
 
 # 48 Google results for "In order to use all of the features available in Remote Web Workplace, you must enable JavaScript for your Web browser." @ 2010-12-30
 # 6 ShodanHQ results for /Remote/logon.aspx ReturnUrl=%2fRemote @ 2010-12-30

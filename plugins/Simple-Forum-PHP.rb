@@ -7,7 +7,8 @@
 Plugin.define "Simple-Forum-PHP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
 version "0.1"
-description "Simple Forum PHP is a script that is very easy to install and administer. Visitors to your website will be able to post new topics or discuss and reply other topics. - Homepage: http://www.simpleforumphp.com/"
+description "Simple Forum PHP is a script that is very easy to install and administer. Visitors to your website will be able to post new topics or discuss and reply other topics."
+website "http://www.simpleforumphp.com/"
 
 # Google results as at 2011-02-26 #
 # 4 for intitle:"Simple Forum PHP script - Administration"

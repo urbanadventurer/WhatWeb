@@ -7,7 +7,8 @@
 Plugin.define "CmyDocument" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-04
 version "0.1"
-description "CmyDocument is a Content Management and Document Management application - Homepage: http://cmydocument.com/"
+description "CmyDocument is a Content Management and Document Management application"
+website "http://cmydocument.com/"
 
 # Google results as at 2011-11-04 #
 # 6 for inurl:"myDoclist.asp" intitle:"CmyDocument"

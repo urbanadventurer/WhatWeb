@@ -7,7 +7,8 @@
 Plugin.define "fsaATLAS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-29
 version "0.1"
-description "fsaAtlas is an international student and scholar management system. - Homepage: http://www.sungardhe.com/Solutions/fsaATLAS/"
+description "fsaAtlas is an international student and scholar management system."
+website "http://www.sungardhe.com/Solutions/fsaATLAS/"
 
 # Google results as at 2012-01-29 #
 # 7 for intitle:"fsaATLAS Enterprise"

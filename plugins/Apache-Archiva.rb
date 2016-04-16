@@ -7,7 +7,8 @@
 Plugin.define "Apache-Archiva" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
 version "0.1"
-description "Apache Archiva is an extensible repository management software that helps taking care of your own personal or enterprise-wide build artifact repository. It is the perfect companion for build tools such as Maven, Continuum, and ANT. - Homepage: http://archiva.apache.org/"
+description "Apache Archiva is an extensible repository management software that helps taking care of your own personal or enterprise-wide build artifact repository. It is the perfect companion for build tools such as Maven, Continuum, and ANT."
+website "http://archiva.apache.org/"
 
 # Google results as at 2011-06-01 #
 # 29 for intitle:"Apache Archiva" ext:action "Copyright"

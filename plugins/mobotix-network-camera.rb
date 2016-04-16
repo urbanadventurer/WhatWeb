@@ -10,7 +10,8 @@
 Plugin.define "Mobotix-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
-description "MOBOTIX network camera web interface - homepage: http://www.mobotix.com/"
+description "MOBOTIX network camera web interface"
+website "http://www.mobotix.com/"
 # Default login: admin/meinsm
 
 # Google results as at 2010-07-20 #

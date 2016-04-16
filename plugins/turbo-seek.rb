@@ -7,7 +7,8 @@
 Plugin.define "Turbo-Seek" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15 
 version "0.1"
-description "Turbo Seek enables anyone to build a Search Engine & Directory Portal with the minimum expense and effort. - homepage: http://www.focalmedia.net/index_tb.html"
+description "Turbo Seek enables anyone to build a Search Engine & Directory Portal with the minimum expense and effort."
+website "http://www.focalmedia.net/index_tb.html"
 
 
 

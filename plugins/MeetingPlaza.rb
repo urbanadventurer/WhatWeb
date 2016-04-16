@@ -7,7 +7,8 @@
 Plugin.define "MeetingPlaza" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-21
 version "0.1"
-description "MeetingPlaza Distance Conference Service for internet conferencing, meeting, presentations, seminars, collaboration, events, and training. - Homepage: http://www.meetingplaza.com/e/"
+description "MeetingPlaza Distance Conference Service for internet conferencing, meeting, presentations, seminars, collaboration, events, and training."
+website "http://www.meetingplaza.com/e/"
 
 # ShodanHQ results as at 2011-07-21 #
 # 20 for InterSpace HTTP Tunneling

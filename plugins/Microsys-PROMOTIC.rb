@@ -7,7 +7,8 @@
 Plugin.define "Microsys-PROMOTIC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-05
 version "0.1"
-description "Microsys PROMOTIC web interface - PROMOTIC is a complex SCADA object software tool for creating applications that monitor, control and display technological processes in various industrial areas. - Homepage: http://www.promotic.eu/en/promotic/scada-pm.htm"
+description "Microsys PROMOTIC web interface - PROMOTIC is a complex SCADA object software tool for creating applications that monitor, control and display technological processes in various industrial areas."
+website "http://www.promotic.eu/en/promotic/scada-pm.htm"
 
 # More Info #
 # https://en.wikipedia.org/wiki/PROMOTIC_SCADA_system

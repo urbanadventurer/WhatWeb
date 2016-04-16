@@ -7,7 +7,8 @@
 Plugin.define "net2ftp" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-30
 version "0.1"
-description "net2ftp is a web based FTP client - Homepage: http://www.net2ftp.com/"
+description "net2ftp is a web based FTP client"
+website "http://www.net2ftp.com/"
 
 # Google results as at 2011-10-30 #
 # 211 for intitle:"net2ftp" "Clear cookies"

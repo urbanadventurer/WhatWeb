@@ -10,7 +10,8 @@
 Plugin.define "PrestaShop" do
 author "Chris, NetAgence.com"
 version "1.0"
-description "Ecommerce CMS Prestashop. - Homepage: http://www.prestashop.com/"
+description "Ecommerce CMS Prestashop."
+website "http://www.prestashop.com/"
 
 
 

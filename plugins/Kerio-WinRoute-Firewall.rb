@@ -7,7 +7,8 @@
 Plugin.define "Kerio-WinRoute-Firewall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-11
 version "0.1"
-description "Kerio WinRoute Firewall - Homepage: http://winroute.ru/kerio_winroute_firewall.htm"
+description "Kerio WinRoute Firewall"
+website "http://winroute.ru/kerio_winroute_firewall.htm"
 
 # ShodanHQ results as at 2012-05-11 #
 # 45 for Kerio WinRoute Firewall Embedded Web Server

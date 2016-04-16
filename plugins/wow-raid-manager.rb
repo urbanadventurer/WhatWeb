@@ -10,7 +10,8 @@
 Plugin.define "WoW-Raid-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
 version "0.2"
-description "WoW Raid Manager or WRM for short is a PHP based application supporting World of Warcraft guilds. - homepage: http://www.wowraidmanager.net/"
+description "WoW Raid Manager or WRM for short is a PHP based application supporting World of Warcraft guilds."
+website "http://www.wowraidmanager.net/"
 
 # Google results as at 2010-06-16 #
 # 108,000 for "Raid Management Provided by WoW Raid Manager"

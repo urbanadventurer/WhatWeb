@@ -7,7 +7,8 @@
 Plugin.define "MoxaHttp" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
-description "Device Networking for Industry: device server, industrial ethernet switch. - Homepage: http://www.moxa.com/product/product.aspx"
+description "Device Networking for Industry: device server, industrial ethernet switch."
+website "http://www.moxa.com/product/product.aspx"
 
 # ShodanHQ results as at 2011-05-30 #
 # 3,104 for MoxaHttp

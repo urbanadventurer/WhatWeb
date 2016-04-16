@@ -10,7 +10,8 @@
 Plugin.define "Advanced-Image-Hosting-Script" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
-description "AIHS is a highly-flexible advanced image hosting solution for anyone who wants to offer an image hosting services of any kind. - homepage: http://yabsoft.com/aihs-feature.php"
+description "AIHS is a highly-flexible advanced image hosting solution for anyone who wants to offer an image hosting services of any kind."
+website "http://yabsoft.com/aihs-feature.php"
 
 # 2 results for "Welcome to install Advanced Image Hosting Script" @ 2010-08-30
 # 1 result for "Powered by Advanced Image Hosting Script" @ 2010-08-30

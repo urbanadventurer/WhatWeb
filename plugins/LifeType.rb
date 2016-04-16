@@ -10,7 +10,8 @@
 Plugin.define "LifeType" do
 author "Aung Khant, http://yehg.net"
 version "0.2"
-description "LifeType is an open-source blogging platform with support for multiple blogs and users in a single installation. - homepage: http://lifetype.net"
+description "LifeType is an open-source blogging platform with support for multiple blogs and users in a single installation."
+website "http://lifetype.net"
 
 # Dorks #
 dorks [

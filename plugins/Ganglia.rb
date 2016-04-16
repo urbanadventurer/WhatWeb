@@ -7,7 +7,8 @@
 Plugin.define "Ganglia" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
 version "0.1"
-description "Ganglia is a scalable distributed monitoring system for high-performance computing systems such as clusters and Grids. It is based on a hierarchical design targeted at federations of clusters. It leverages widely used technologies such as XML for data representation, XDR for compact, portable data transport, and RRDtool for data storage and visualization. - Homepage: http://ganglia.sourceforge.net/"
+description "Ganglia is a scalable distributed monitoring system for high-performance computing systems such as clusters and Grids. It is based on a hierarchical design targeted at federations of clusters. It leverages widely used technologies such as XML for data representation, XDR for compact, portable data transport, and RRDtool for data storage and visualization."
+website "http://ganglia.sourceforge.net/"
 
 # 118 for intitle:"Ganglia:: Cluster Report" "Cluster Report for"
 # 94 for intitle:"Ganglia" "Nodes colored by 1-minute load" +legend

@@ -7,7 +7,8 @@
 Plugin.define "Inktomi-Search" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
-description "Inktomi Search engine - Homepage: http://www.inktomi.com/products/search/"
+description "Inktomi Search engine"
+website "http://www.inktomi.com/products/search/"
 
 # ShodanHQ results as at 2011-08-20 #
 # 20 for Inktomi

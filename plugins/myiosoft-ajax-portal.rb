@@ -10,7 +10,8 @@
 Plugin.define "MyioSoft-Ajax-Portal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
-description "AjaxPortal is based on Sajax technology - an open source tool to make programming websites using the Ajax framework known as XMLHTTPRequest or remote scripting as easy as possible. - homepage: http://myiosoft.com/"
+description "AjaxPortal is based on Sajax technology - an open source tool to make programming websites using the Ajax framework known as XMLHTTPRequest or remote scripting as easy as possible."
+website "http://myiosoft.com/"
 
 # Google results as at 2010-08-14 #
 # 20 for "powered by Ajax Portal"

@@ -7,7 +7,8 @@
 Plugin.define "Phion-Firewall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "Phion Firewall is now Barracuda NG Firewall - Homepage: http://www.phion.com/INT/products/perimeter_security/Pages/default.aspx"
+description "Phion Firewall is now Barracuda NG Firewall"
+website "http://www.phion.com/INT/products/perimeter_security/Pages/default.aspx"
 
 # ShodanHQ results as at 2011-03-13 #
 # 1,011 for Phion -apache -IIS

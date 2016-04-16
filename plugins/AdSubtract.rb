@@ -7,7 +7,8 @@
 Plugin.define "AdSubtract" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-06
 version "0.1"
-description "AdSubtract - a Windows proxy which removes popup ads. - Homepage: http://AdSubtract.com"
+description "AdSubtract - a Windows proxy which removes popup ads."
+website "http://AdSubtract.com"
 
 # ShodanHQ results as at 2011-06-06 #
 # 65 for AdSubtract

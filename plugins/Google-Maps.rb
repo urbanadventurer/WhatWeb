@@ -7,7 +7,8 @@
 Plugin.define "Google-Maps" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-16
 version "0.1"
-description "Google Maps - Homepage: http://maps.google.com/"
+description "Google Maps"
+website "http://maps.google.com/"
 
 # Google results as at 2011-04-16 #
 # 539 for "powered by google maps"

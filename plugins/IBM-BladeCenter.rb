@@ -7,7 +7,8 @@
 Plugin.define "IBM-BladeCenter" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-15
 version "0.1"
-description "IBM BladeCenter blade server management console - Homepage: http://www-03.ibm.com/systems/bladecenter/index.html"
+description "IBM BladeCenter blade server management console"
+website "http://www-03.ibm.com/systems/bladecenter/index.html"
 
 # User Guide #
 # http://publib.boulder.ibm.com/infocenter/bladectr/documentation/topic/com.ibm.bladecenter.mgtmod.doc/44R5370.pdf

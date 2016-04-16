@@ -7,7 +7,8 @@
 Plugin.define "Zomplog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
-description "Blog - homepage: http://www.zomp.nl/zomplog/index.php"
+description "Blog"
+website "http://www.zomp.nl/zomplog/index.php"
 
 # 72 results for "powered by Zomplog" -Vulnerability -exploit @ 2010-09-18
 

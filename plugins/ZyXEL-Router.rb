@@ -20,10 +20,12 @@
 Plugin.define "ZyXEL-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.5"
-description "This plugin indentifies ZyXEL routers - Homepage: http://us.zyxel.com/"
+description "This plugin indentifies ZyXEL routers"
+website "http://us.zyxel.com/"
 
 # Tested on models: P-660H-D1, P-660HW-D1, P-660R-D1, P-662H-D1, P-662HW-D3, P-2602H-D1A, P-2602HW-D1A, P-2802HWL-I1, P660RU2, P660HT2, Prestige 660H61
-# ZyXEL VSG-1200 V2 is access server that recognizes new users on network and re-routes all the different IP settings pre-configured on users' computers. - homepage: http://www.zyxel.com/"
+# ZyXEL VSG-1200 V2 is access server that recognizes new users on network and re-routes all the different IP settings pre-configured on users' computers."
+website "http://www.zyxel.com/"
 
 # P-330W EE # Default Login # admin/password
 

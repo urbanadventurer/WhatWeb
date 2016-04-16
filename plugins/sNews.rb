@@ -7,7 +7,8 @@
 Plugin.define "sNews" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
-description "sNews is a completely free, standards compliant, PHP and MySQL driven Content Management System. - homepage: http://www.snewscms.com/"
+description "sNews is a completely free, standards compliant, PHP and MySQL driven Content Management System."
+website "http://www.snewscms.com/"
 
 # Google results as at 2010-10-14 #
 # 326 for "powered by sNews"

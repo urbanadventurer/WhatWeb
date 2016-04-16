@@ -7,7 +7,8 @@
 Plugin.define "reCAPTCHA" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
 version "0.1"
-description "reCAPTCHA is a free CAPTCHA service that helps to digitize books, newspapers and old time radio shows. - Homepage: http://www.google.com/recaptcha"
+description "reCAPTCHA is a free CAPTCHA service that helps to digitize books, newspapers and old time radio shows."
+website "http://www.google.com/recaptcha"
 
 
 

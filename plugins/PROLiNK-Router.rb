@@ -7,7 +7,8 @@
 Plugin.define "PROLiNK-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-21
 version "0.1"
-description "PROLiNK Router - Homepage: http://www.prolink.co.id/"
+description "PROLiNK Router"
+website "http://www.prolink.co.id/"
 
 # ShodanHQ results as at 2011-06-21 #
 # 299 for virtual web

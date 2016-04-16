@@ -7,7 +7,8 @@
 Plugin.define "WebAsyst-Shop-Script" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
 version "0.1"
-description "Shop-Script . ecommerce platform for creating online stores. Available as PHP software and hosted service. - homepage: http://www.shop-script.com/"
+description "Shop-Script . ecommerce platform for creating online stores. Available as PHP software and hosted service."
+website "http://www.shop-script.com/"
 
 # 282 results for "powered by WebAsyst Shop-Script" @ 2010-08-29
 

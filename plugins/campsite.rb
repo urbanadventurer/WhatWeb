@@ -10,7 +10,8 @@
 Plugin.define "Campsite" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.2"
-description "Campsite is a multilingual content management system (CMS) for news websites. - homepage: http://www.sourcefabric.org/"
+description "Campsite is a multilingual content management system (CMS) for news websites."
+website "http://www.sourcefabric.org/"
 
 # 28 results for "powered by campsite" @ 2010-08-15
 

@@ -7,7 +7,8 @@
 Plugin.define "RaidenHTTPD" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-16
 version "0.1"
-description "RaidenHTTPD is a fully featured web server software for Windows platform. - Homepage: http://www.raidenhttpd.com/en/"
+description "RaidenHTTPD is a fully featured web server software for Windows platform."
+website "http://www.raidenhttpd.com/en/"
 
 # ShodanHQ results as at 2011-09-16 #
 # 542 for RaidenHTTPD

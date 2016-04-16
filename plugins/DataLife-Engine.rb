@@ -10,7 +10,8 @@
 Plugin.define "DataLife-Engine" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
 version "0.2"
-description "DataLife Engine CMS - Homepage: http://dle-news.ru"
+description "DataLife Engine CMS"
+website "http://dle-news.ru"
 
 # ShodanHQ results as at 2011-08-27 #
 # 3,348 for dle_hash dle_password dle_user_id

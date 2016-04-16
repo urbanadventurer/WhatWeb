@@ -7,7 +7,8 @@
 Plugin.define "phpMySport" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-01
 version "0.1"
-description "PhpMySport is an open source software designed for all sport clubs and leagues which want to easily create and manage their website. - Homepage: phpmysport.sourceforge.net"
+description "PhpMySport is an open source software designed for all sport clubs and leagues which want to easily create and manage their website."
+website "phpmysport.sourceforge.net"
 
 # Google results as at 2011-02-01 #
 # 9 for intext:"Powered by phpMySport" -intext

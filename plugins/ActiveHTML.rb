@@ -7,7 +7,8 @@
 Plugin.define "ActiveHTML" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
 version "0.1"
-description "seliSoft ActiveHTML provides Active-Server-Pages (ASP) to nearly every web server supporting CGI. - Homepage: http://www.selisoft.com/en/ahtml/"
+description "seliSoft ActiveHTML provides Active-Server-Pages (ASP) to nearly every web server supporting CGI."
+website "http://www.selisoft.com/en/ahtml/"
 
 # ShodanHQ results as at 2011-08-06 #
 # 65 for ActiveHTML

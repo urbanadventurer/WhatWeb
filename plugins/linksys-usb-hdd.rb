@@ -14,7 +14,8 @@
 Plugin.define "Linksys-USB-HDD" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-27
 version "0.3"
-description "Linksys external USB HDD web frontend - homepage: http://www.linksys.com/"
+description "Linksys external USB HDD web frontend"
+website "http://www.linksys.com/"
 
 # Google results as at 2010-06-27 #
 # 7 for intitle:"Network Storage Link for USB 2.0 Disks" Firmware

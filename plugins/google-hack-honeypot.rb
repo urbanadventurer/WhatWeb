@@ -13,7 +13,8 @@
 Plugin.define "Google-Hack-Honeypot" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
 version "0.3"
-description "Google Hack Honeypot is the reaction to a new type of malicious web traffic: search engine hackers. This plugin identifies the following GHH modules: php-ping, HAXPLORER, phpSysInfo, PHPFM, SquirrelMail, wwwboard passwd.txt - Homepage: http://ghh.sourceforge.net/"
+description "Google Hack Honeypot is the reaction to a new type of malicious web traffic: search engine hackers. This plugin identifies the following GHH modules: php-ping, HAXPLORER, phpSysInfo, PHPFM, SquirrelMail, wwwboard passwd.txt"
+website "http://ghh.sourceforge.net/"
 
 # This plugin identifies hard-coded strings in GHH modules.
 # Most GHH templates only use random number generation to appear legitimate.

@@ -7,7 +7,8 @@
 Plugin.define "Data-ONTAP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-05
 version "0.1"
-description "Data ONTAP - fully virtualized data management environment. Data ONTAP provides a virtualized data environment with a simple interface that enables you to create virtual storage volumes, make changes quickly, and achieve superior storage utilization. - Homepage: http://www.netapp.com/us/products/platform-os/data-ontap/"
+description "Data ONTAP - fully virtualized data management environment. Data ONTAP provides a virtualized data environment with a simple interface that enables you to create virtual storage volumes, make changes quickly, and achieve superior storage utilization."
+website "http://www.netapp.com/us/products/platform-os/data-ontap/"
 
 # ShodanHQ results as at 2011-06-05 #
 # 110 for Data ONTAP

@@ -7,7 +7,8 @@
 Plugin.define "podPress" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
 version "0.1"
-description "podPress - A dream plugin for Podcastrs using WordPress. - Homepage: http://www.mightyseek.com/podpress"
+description "podPress - A dream plugin for Podcastrs using WordPress."
+website "http://www.mightyseek.com/podpress"
 
 # Google results as at 2011-03-17 #
 # 523 for "Podcast powered by podPress"

@@ -11,7 +11,8 @@
 Plugin.define "Group-Office" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
-description "Share projects, calendars, files and e-mail online with co-workers and clients. Easy to use and fully customizable, Group-Office takes online collaboration to the next level. - homepage: http://www.group-office.com/"
+description "Share projects, calendars, files and e-mail online with co-workers and clients. Easy to use and fully customizable, Group-Office takes online collaboration to the next level."
+website "http://www.group-office.com/"
 
 # ShodanHQ results as at 2012-10-08 #
 # 309 for groupoffice

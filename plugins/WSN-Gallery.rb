@@ -7,7 +7,8 @@
 Plugin.define "WSN-Gallery" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.1"
-description "WSN Gallery is a media gallery for images, videos and more. It can resize and edit images, and convert videos to play in the integrated flash player for a YouTube-style video site. Translatable to any language, it offers a vast array of features to power your gallery site. - Homepage: http://www.wsngallery.com/"
+description "WSN Gallery is a media gallery for images, videos and more. It can resize and edit images, and convert videos to play in the integrated flash player for a YouTube-style video site. Translatable to any language, it offers a vast array of features to power your gallery site."
+website "http://www.wsngallery.com/"
 
 # Google results as at 2011-03-16 #
 # 2 for "WSN Gallery" "Non-numeric id value given in creating object"

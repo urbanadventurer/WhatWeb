@@ -7,7 +7,8 @@
 Plugin.define "The-PHP-Real-Estate-Script" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.1"
-description "The Real Estate Script is a fully scalable turn-key PHP MySQL Real Estate Classifieds. - homepage: http://www.therealestatescript.com/"
+description "The Real Estate Script is a fully scalable turn-key PHP MySQL Real Estate Classifieds."
+website "http://www.therealestatescript.com/"
 
 # Version 0.1 can fingerprint only the admin login page:
 # - This script is closed source and there are very few online examples.

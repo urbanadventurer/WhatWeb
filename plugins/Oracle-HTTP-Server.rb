@@ -7,7 +7,8 @@
 Plugin.define "Oracle-HTTP-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
 version "0.1"
-description "Oracle HTTP Server - Homepage: http://www.oracle.com/technetwork/middleware/ias/index-091236.html"
+description "Oracle HTTP Server"
+website "http://www.oracle.com/technetwork/middleware/ias/index-091236.html"
 # More Info: http://en.wikipedia.org/wiki/Oracle_HTTP_Server
 
 # ShodanHQ results as at 2011-11-22 #

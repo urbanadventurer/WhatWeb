@@ -7,7 +7,8 @@
 Plugin.define "Squarespace" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
-description "A fully hosted, completely managed environment for creating and maintaining a website, blog or portfolio. - Homepage: http://www.squarespace.com/"
+description "A fully hosted, completely managed environment for creating and maintaining a website, blog or portfolio."
+website "http://www.squarespace.com/"
 
 # Google results as at 2011-03-03 #
 # 116 for "This site is completely powered by the Squarespace platform."

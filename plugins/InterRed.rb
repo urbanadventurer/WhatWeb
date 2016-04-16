@@ -7,7 +7,8 @@
 Plugin.define "InterRed" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
 version "0.1"
-description "InterRed GmbH is a leading technology provider of content management systems (CMS), Knowledge Retrieval (KM), personalization of web sites, live reporting (website statistics) to use analysis of websites and offers print solutions for catalogs, magazines, newspapers Web-to-print, publishing houses. - Homepage: http://www.interred.de/"
+description "InterRed GmbH is a leading technology provider of content management systems (CMS), Knowledge Retrieval (KM), personalization of web sites, live reporting (website statistics) to use analysis of websites and offers print solutions for catalogs, magazines, newspapers Web-to-print, publishing houses."
+website "http://www.interred.de/"
 
 
 

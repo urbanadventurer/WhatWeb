@@ -7,7 +7,8 @@
 Plugin.define "FreeNAC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-20
 version "0.1"
-description "FreeNAC is an OpenSource solution for LAN access control and dynamic Vlan management - Homepage: http://freenac.net/"
+description "FreeNAC is an OpenSource solution for LAN access control and dynamic Vlan management"
+website "http://freenac.net/"
 
 # Google results as at 2012-05-20 #
 # 1 for inurl:"stats.php?graphtype=bar"

@@ -7,7 +7,8 @@
 Plugin.define "VSP-Stats-Processor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
 version "0.1"
-description "vsp stats processor is a multi game log analyzer / stats generator / log parser. - Homepage: http://www.scivox.net/vsp/"
+description "vsp stats processor is a multi game log analyzer / stats generator / log parser."
+website "http://www.scivox.net/vsp/"
 
 
 

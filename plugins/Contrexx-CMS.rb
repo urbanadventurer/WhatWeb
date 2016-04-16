@@ -7,7 +7,8 @@
 Plugin.define "Contrexx-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
-description "Contrexx CMS [Swiss] - Homepage: http://www.contrexx.com/"
+description "Contrexx CMS [Swiss]"
+website "http://www.contrexx.com/"
 
 # Google results as at 2011-03-06 #
 # 28 for "Powered by Contrexx Software"

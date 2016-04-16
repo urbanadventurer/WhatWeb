@@ -10,7 +10,8 @@
 Plugin.define "SolarWinds-Network-Performance-Monitor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-31
 version "0.2"
-description "Our flagship network monitoring software manages dynamic networks of all sizes, simply and affordably. Discover how easy it is to detect, diagnose, and resolve network problems with Orion Network Performance Monitor (NPM). - homepage: http://www.solarwinds.com/products/orion/"
+description "Our flagship network monitoring software manages dynamic networks of all sizes, simply and affordably. Discover how easy it is to detect, diagnose, and resolve network problems with Orion Network Performance Monitor (NPM)."
+website "http://www.solarwinds.com/products/orion/"
 # Manual: http://www.solarwinds.com/support/Orion/docs/OrionQuickStartGuide.pdf
 
 # 2 ShodanHQ results for "Location: /Admin/CriticalError.asp"

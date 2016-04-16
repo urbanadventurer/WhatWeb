@@ -7,7 +7,8 @@
 Plugin.define "phpGraphy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-06
 version "0.1"
-description "phpGraphy is a free PHP photo gallery script released under GPL license. - Homepage: http://phpgraphy.sourceforge.net/"
+description "phpGraphy is a free PHP photo gallery script released under GPL license."
+website "http://phpgraphy.sourceforge.net/"
 
 # Google results as at 2011-05-06 #
 # 397 for "This site is using phpGraphy" -intitle

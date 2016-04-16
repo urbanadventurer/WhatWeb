@@ -7,7 +7,8 @@
 Plugin.define "Toshiba-Projector" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-30
 version "0.1"
-description "Toshiba mobile and conference room projector - Homepage: http://us.toshiba.com/projectors/"
+description "Toshiba mobile and conference room projector"
+website "http://us.toshiba.com/projectors/"
 
 # ShodanHQ results as at 2011-10-30 #
 # 21 for TOSHIBA-Projector

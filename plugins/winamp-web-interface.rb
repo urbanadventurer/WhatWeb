@@ -10,7 +10,8 @@
 Plugin.define "Winamp-Web-Interface" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-02
 version "0.2"
-description "web interface for winamp mp3 player - homepage: http://www.winamp.com/"
+description "web interface for winamp mp3 player"
+website "http://www.winamp.com/"
 
 # Google results as at 2010-07-02 #
 # 5 for "About Winamp Web Interface" intitle:"Winamp Web Interface"

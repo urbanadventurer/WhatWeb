@@ -10,7 +10,8 @@
 Plugin.define "ExpressionEngine" do
 author "Andrew Horton"
 version "0.2"
-description "ExpressionEngine is CMS written in PHP. Free and commercial versions. Homepage: http://expressionengine.com"
+description "ExpressionEngine is CMS written in PHP. Free and commercial versions"
+website "http://expressionengine.com"
 
 # Dorks #
 dorks [

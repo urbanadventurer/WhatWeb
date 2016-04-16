@@ -7,7 +7,8 @@
 Plugin.define "WWW-File-Share-Pro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
 version "0.1"
-description "WWW File Share Pro - Share all kinds of files on the internet or on your intranet with this handy software. - Homepage: http://www.wfshome.com/"
+description "WWW File Share Pro - Share all kinds of files on the internet or on your intranet with this handy software."
+website "http://www.wfshome.com/"
 
 # ShodanHQ results as at 2011-04-20 #
 # 203 for WWW File Share Pro

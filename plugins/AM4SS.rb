@@ -7,7 +7,8 @@
 Plugin.define "AM4SS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-11
 version "0.1"
-description "Advanced Management For Services Sites (AM4SS) - Homepage: http://am4ss.org/"
+description "Advanced Management For Services Sites (AM4SS)"
+website "http://am4ss.org/"
 
 # ShodanHQ results as at 2011-09-11 #
 # 396 for "Powered by AM4SS"

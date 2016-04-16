@@ -7,7 +7,8 @@
 Plugin.define "Open-Admin-for-Schools" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-31
 version "0.1"
-description "Open Admin for Schools is a School Administration Program. - Homepage: http://richtech.ca/openadmin/"
+description "Open Admin for Schools is a School Administration Program."
+website "http://richtech.ca/openadmin/"
 
 # Google results as at 2011-08-31 #
 # 8 for intitle:"Open Admin for Schools" "Open Admin for Schools" "Les Richardson" Main Attendance Discipline Fees Report Cards Timetable Export/Xfer Start/End of Year Help

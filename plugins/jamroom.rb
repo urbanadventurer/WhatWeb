@@ -10,7 +10,8 @@
 Plugin.define "Jamroom" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
-description "Jamroom specializes in building web communities centered around media producers such as musicians, photographers, video enthusiasts and more - Jamroom gives you the capability to provide dozens of different services to your users. - homepage: http://www.jamroom.net/"
+description "Jamroom specializes in building web communities centered around media producers such as musicians, photographers, video enthusiasts and more - Jamroom gives you the capability to provide dozens of different services to your users."
+website "http://www.jamroom.net/"
 
 # Google results as at 2010-07-25 #
 # 201 for "Powered by Jamroom"

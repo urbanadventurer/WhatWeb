@@ -7,7 +7,8 @@
 Plugin.define "Nintendo-DS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
 version "0.1"
-description "Nintendo DS video game console - Homepage: http://www.nintendo.com/"
+description "Nintendo DS video game console"
+website "http://www.nintendo.com/"
 
 # More Info # Wi-Fi Network Adapter (for Wii or DS) #
 # http://wifi.nintendo.co.jp/wap/index.html

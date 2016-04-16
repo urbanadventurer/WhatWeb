@@ -7,7 +7,8 @@
 Plugin.define "Electro-Industries-GaugeTech" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-09
 version "0.1"
-description "Electro Industries GaugeTech Device - Electro Industries meters are known world-wide for their ease of use, advanced power functionality and reliable service. - Homepage: http://www.electroind.com/"
+description "Electro Industries GaugeTech Device - Electro Industries meters are known world-wide for their ease of use, advanced power functionality and reliable service."
+website "http://www.electroind.com/"
 
 # ShodanHQ results as at 2011-03-09 #
 # 102 for EIG Embedded Web Server

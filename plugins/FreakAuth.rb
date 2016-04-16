@@ -7,7 +7,8 @@
 Plugin.define "FreakAuth" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.1"
-description "FreakAuth is a simple authentication library for the Code Igniter PHP framework - Homepage: http://freakauth.4webby.com/"
+description "FreakAuth is a simple authentication library for the Code Igniter PHP framework"
+website "http://freakauth.4webby.com/"
 
 # Google results as at 2011-04-11 #
 # 13 for intitle:"FreakAuth" "Welcome on board ! / Login"

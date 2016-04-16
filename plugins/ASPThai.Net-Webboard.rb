@@ -10,7 +10,8 @@
 Plugin.define "ASPThai_Net-Webboard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
-description "ASPThai.Net Webboard - homepage: http://www.aspthai.net/"
+description "ASPThai.Net Webboard"
+website "http://www.aspthai.net/"
 
 # Google results as at 2010-08-30 #
 # 5 for "powered by ASPThai.Net Webboard version"

@@ -7,7 +7,8 @@
 Plugin.define "Synchronet-BBS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.1"
-description "Synchronet Multinode BBS Software - Open source BBS that works on the DOS, Windows, or OS/2 operating system and supports multiple simultaneous users with hierarchical message and file areas, multi-user chat, and the ever-popular BBS door games. - Homepage: http://www.synchro.net/"
+description "Synchronet Multinode BBS Software - Open source BBS that works on the DOS, Windows, or OS/2 operating system and supports multiple simultaneous users with hierarchical message and file areas, multi-user chat, and the ever-popular BBS door games."
+website "http://www.synchro.net/"
 
 # ShodanHQ results as at 2011-06-04 #
 # 93 for Synchronet BBS
