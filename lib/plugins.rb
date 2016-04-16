@@ -442,21 +442,29 @@ for adding/removing sets of plugins.
 
 	### some UI stuff
 
-
 	def PluginSupport.plugin_list
 		puts "WhatWeb Plugin List"
 		puts
 		puts ["Plugin Name".ljust(25),"Description"].join(" ")
 		puts "-" * 79
 		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |n,p|
-			puts [n.ljust(25), (p.description.delete("\n\r") unless p.description.nil?)].join(" ")[0..78]
+			
+			if p.description
+				show_description = p.description.delete("\n\r")[0..30]
+				show_description += "..." if p.description.delete("\n\r").size > 30
+			else
+				show_description = ""
+			end
+
+			puts [n.ljust(45), show_description].join(" ")
+
 		end
-		puts "-" * 30
-		puts "#{Plugin.registered_plugins.size} Plugins Loaded"
+		puts "-" * 80
+		puts "Total: #{Plugin.registered_plugins.size} Plugins"
+		puts "For a complete description of a plugin use: whatweb --info-plugins <PLUGIN>"
+		puts "For a complete description of all plugins use: whatweb --info-plugins"
 		puts
 	end
-
-
 
 	# Show Google Dorks
 	def PluginSupport.plugin_dorks(plugin_name)
