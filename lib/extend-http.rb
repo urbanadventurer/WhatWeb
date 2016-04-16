@@ -100,11 +100,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 
         if RUBY_VERSION =~ /^1\.9/ || RUBY_VERSION =~ /^2\./
 	      D "opening connection to #{conn_address()}..."
-<<<<<<< HEAD
-	      s = Timeout.timeout(@open_timeout) { TCPSocket.open(conn_address(), conn_port()) }
-=======
 	      s = Timeout::timeout(@open_timeout) { TCPSocket.open(conn_address(), conn_port()) }
->>>>>>> nil0x42-master
 	      D "opened"
 	      if use_ssl?
 		ssl_parameters = Hash.new
@@ -142,11 +138,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 		  @raw = raw
 		  res=x.value
 		  end
-<<<<<<< HEAD
-		  Timeout.timeout(@open_timeout) { s.connect }
-=======
 		  Tmeout::timeout(@open_timeout) { s.connect }
->>>>>>> nil0x42-master
 		  if @ssl_context.verify_mode != OpenSSL::SSL::VERIFY_NONE
 		    s.post_connection_check(@address)
 		  end
