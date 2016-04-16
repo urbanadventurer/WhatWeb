@@ -138,7 +138,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 		  @raw = raw
 		  res=x.value
 		  end
-		  Tmeout::timeout(@open_timeout) { s.connect }
+		  Timeout::timeout(@open_timeout) { s.connect }
 		  if @ssl_context.verify_mode != OpenSSL::SSL::VERIFY_NONE
 		    s.post_connection_check(@address)
 		  end
