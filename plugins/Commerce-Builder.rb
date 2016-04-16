@@ -7,7 +7,8 @@
 Plugin.define "Commerce-Builder" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
 version "0.1"
-description "Internet Factory's Commerce Builder web server [Discontinued] - Homepage: http://www.ifact.com/"
+description "Internet Factory's Commerce Builder web server [Discontinued]"
+website "http://www.ifact.com/"
 
 # ShodanHQ results as at 2011-06-01 #
 # 32 for commerce-builder

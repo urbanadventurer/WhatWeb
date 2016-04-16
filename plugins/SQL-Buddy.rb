@@ -7,7 +7,8 @@
 Plugin.define "SQL-Buddy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-28
 version "0.1"
-description "SQL Buddy - Web based MySQL administration - Homepage: http://www.sqlbuddy.com/"
+description "SQL Buddy - Web based MySQL administration"
+website "http://www.sqlbuddy.com/"
 
 # Google results as at 2011-09-28 #
 # 79 for intitle:"SQL Buddy" +Host +Username +Password +Database -sbconfig -site:www.sqlbuddy.com -site:code.google.com

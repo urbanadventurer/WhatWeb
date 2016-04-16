@@ -7,7 +7,8 @@
 Plugin.define "Astaro-Command-Center" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-12
 version "0.1"
-description "Astaro Command Center is a central management solution which provides direct access for application configuration, enables real-time system status surveillance and maintains device software and pattern updates. - Homepage: http://www.astaro.com/"
+description "Astaro Command Center is a central management solution which provides direct access for application configuration, enables real-time system status surveillance and maintains device software and pattern updates."
+website "http://www.astaro.com/"
 
 # Google results as at 2012-04-12 #
 # 3 for intitle:"WebAdmin" "You have forgotten to enable JavaScript in your Browser!"

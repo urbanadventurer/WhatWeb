@@ -7,7 +7,8 @@
 Plugin.define "Post-Revolution" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
 version "0.1"
-description "Post Revolution - CMS - Homepage: http://postrev.com.ar/"
+description "Post Revolution - CMS"
+website "http://postrev.com.ar/"
 
 # Google results as at 2011-08-06 #
 # 39 for "Powered by Post Revolution"

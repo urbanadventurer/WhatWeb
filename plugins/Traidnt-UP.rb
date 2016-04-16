@@ -10,7 +10,8 @@
 Plugin.define "Traidnt-UP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-26
 version "0.2"
-description "Traidnt UP - homepage: http://www.traidnt.net"
+description "Traidnt UP"
+website "http://www.traidnt.net"
 
 # Google results as at 2010-09-26 #
 # 470 for "powered by Traidnt UP Version"

@@ -7,7 +7,8 @@
 Plugin.define "Oracle-Fusion-Middleware" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-23
 version "0.1"
-description "Oracle Fusion Middleware (OFM) - Homepage: http://www.oracle.com/au/products/middleware/index.html"
+description "Oracle Fusion Middleware (OFM)"
+website "http://www.oracle.com/au/products/middleware/index.html"
 # More Info # http://en.wikipedia.org/wiki/Oracle_Fusion_Middleware
 
 # ShodanHQ results as at 2012-07-23 #

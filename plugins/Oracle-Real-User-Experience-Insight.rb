@@ -7,7 +7,8 @@
 Plugin.define "Oracle-Real-User-Experience-Insight" do
 author "Brendan Coles <bcoles@gmail.com>" # 2013-03-30
 version "0.1"
-description "Oracle Real User Experience Insight - passive network performance analysis and usage analysis - Homepage: http://www.oracle.com/technetwork/oem/uxinsight/"
+description "Oracle Real User Experience Insight - passive network performance analysis and usage analysis"
+website "http://www.oracle.com/technetwork/oem/uxinsight/"
 
 # Google results as at 2013-03-30 #
 # 1 for intitle:"Oracle Real User Experience Insight" inurl:ruei "Please login"

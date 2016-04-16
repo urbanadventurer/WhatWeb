@@ -7,7 +7,8 @@
 Plugin.define "CreateLive-Cms" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-22
 version "0.1"
-description "CreateLive Cms - Homepage: http://www.aspoo.cn/"
+description "CreateLive Cms"
+website "http://www.aspoo.cn/"
 
 # ShodanHQ results as at 2012-07-22 #
 # 143 for Kill=kill

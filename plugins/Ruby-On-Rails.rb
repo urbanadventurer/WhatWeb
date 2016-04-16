@@ -7,7 +7,8 @@
 Plugin.define "Ruby-on-Rails" do
 author "Andrew Horton"
 version "0.1"
-description "Ruby on rails is an MVC web application framework written in the ruby language. Doesn't detect all RoR sites. Homepage: http://www.rubyonrails.org."
+description "Ruby on rails is an MVC web application framework written in the ruby language. Doesn't detect all RoR sites"
+website "http://www.rubyonrails.org."
 
 # Matches #
 matches [

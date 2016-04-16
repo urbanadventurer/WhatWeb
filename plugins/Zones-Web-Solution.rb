@@ -7,7 +7,8 @@
 Plugin.define "Zones-Web-Solution" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "This plugin identifies websites designed by Zones Web Solution - Homepage: http://www.zones.in/"
+description "This plugin identifies websites designed by Zones Web Solution"
+website "http://www.zones.in/"
 
 # Google results as at 2011-07-27 #
 # 16 for "Powered By : Zones Web Solution" "inurl:index.php?manufacturers_id="

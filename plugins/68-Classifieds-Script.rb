@@ -7,7 +7,8 @@
 Plugin.define "68-Classifieds-Script" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-22
 version "0.1"
-description "68 Classifieds Script - Requires PHP - Homepage: http://www.68classifieds.com/"
+description "68 Classifieds Script - Requires PHP"
+website "http://www.68classifieds.com/"
 
 # 83 for "powered by 68 Classifieds Script"
 

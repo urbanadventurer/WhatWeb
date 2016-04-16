@@ -10,7 +10,8 @@
 Plugin.define "GuppY" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.2"
-description "An easy, free web portal, GuppY will allow you to generate very easily a complete and interactive web site. It requires no database. - homepage: http://www.freeguppy.org/?lng=en"
+description "An easy, free web portal, GuppY will allow you to generate very easily a complete and interactive web site. It requires no database."
+website "http://www.freeguppy.org/?lng=en"
 
 # Google results as at 2010-08-06 #
 # 326 for "Powered by GuppY" "CeCILL Free License"

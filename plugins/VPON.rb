@@ -7,7 +7,8 @@
 Plugin.define "VPON" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
 version "0.1"
-description "Video Picture on Net (VPON) is a remote video web server - Homepage: http://www.vpon21.com/"
+description "Video Picture on Net (VPON) is a remote video web server"
+website "http://www.vpon21.com/"
 # Default login: webmonitor/oyo
 
 # Google results as at 2011-04-20 #

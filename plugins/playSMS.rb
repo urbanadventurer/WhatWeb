@@ -7,7 +7,8 @@
 Plugin.define "playSMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-10
 version "0.1"
-description "Free and Open Source SMS Gateway - Homepage: http://playsms.org/"
+description "Free and Open Source SMS Gateway"
+website "http://playsms.org/"
 
 # Dorks #
 dorks [

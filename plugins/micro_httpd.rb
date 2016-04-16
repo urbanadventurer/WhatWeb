@@ -10,7 +10,8 @@
 Plugin.define "micro_httpd" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.2"
-description "micro_httpd is a very small Unix-based HTTP server. It runs from inetd, which means its performance is poor. But for low-traffic sites, it's quite adequate. It implements all the basic features of an HTTP server. - homepage: http://www.acme.com/software/micro_httpd/"
+description "micro_httpd is a very small Unix-based HTTP server. It runs from inetd, which means its performance is poor. But for low-traffic sites, it's quite adequate. It implements all the basic features of an HTTP server."
+website "http://www.acme.com/software/micro_httpd/"
 
 # ShodanHQ results as at 2010-10-26 #
 # 957,229 for "server: micro_httpd"

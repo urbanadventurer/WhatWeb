@@ -7,7 +7,8 @@
 Plugin.define "VideoShareEnterprise" do
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-20
 version "0.1"
-description "online video sharing community web application - homepage: http://www.alstrasoft.com"
+description "online video sharing community web application"
+website "http://www.alstrasoft.com"
 
 
 matches [

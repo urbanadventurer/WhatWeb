@@ -7,7 +7,8 @@
 Plugin.define "Diaspora" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-30
 version "0.1"
-description "Diaspora - social networking service - Homepage: https://joindiaspora.com/"
+description "Diaspora - social networking service"
+website "https://joindiaspora.com/"
 
 # Source: https://github.com/diaspora/diaspora
 

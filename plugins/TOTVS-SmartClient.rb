@@ -7,7 +7,8 @@
 Plugin.define "TOTVS-SmartClient" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-24
 version "0.1"
-description "TOTVS SmartClient MacOS TOTVS Application Server. - Homepage: http://www.totvs.com/"
+description "TOTVS SmartClient MacOS TOTVS Application Server."
+website "http://www.totvs.com/"
 
 # ShodanHQ results as at 2012-04-24 #
 # 17 for TotvsSmartClient

@@ -10,7 +10,8 @@
 Plugin.define "ArticlePublisherPRO" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
-description "The Flexible and Easy Article Publishing System - homepage: http://article-publisher-pro.phparticlescript.com/"
+description "The Flexible and Easy Article Publishing System"
+website "http://article-publisher-pro.phparticlescript.com/"
 
 # Google results as at 2010-08-30 #
 # 31 for "powered by Article Publisher PRO" -Vulnerability

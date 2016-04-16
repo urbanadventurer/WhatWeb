@@ -7,7 +7,8 @@
 Plugin.define "Lotus-Domino" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-22
 version "0.1"
-description "Lotus Domino - Social business application platform - Homepage: https://www-01.ibm.com/software/lotus/products/domino/"
+description "Lotus Domino - Social business application platform"
+website "https://www-01.ibm.com/software/lotus/products/domino/"
 
 # Google results as at 2012-07-22 #
 # 833 for ext:nsf site:edu

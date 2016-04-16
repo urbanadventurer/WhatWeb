@@ -7,7 +7,8 @@
 Plugin.define "Karrigell" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
-description "Karrigell is a flexible Python web framework, with a clear and intuitive syntax. It is independent from any database, ORM or templating engine, and lets the programmer choose between a variety of coding styles. - Homepage: http://karrigell.sourceforge.net/en/index.html"
+description "Karrigell is a flexible Python web framework, with a clear and intuitive syntax. It is independent from any database, ORM or templating engine, and lets the programmer choose between a variety of coding styles."
+website "http://karrigell.sourceforge.net/en/index.html"
 
 # ShodanHQ results as at 2011-05-30 #
 # 69 for Karrigell

@@ -7,7 +7,8 @@
 Plugin.define "Scrutinizer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-10
 version "0.1"
-description "Scrutinizer NetFlow - monitoring solution - Homepage: http://www.plixer.com/products/netflow-sflow/scrutinizer-netflow-sflow.php"
+description "Scrutinizer NetFlow - monitoring solution"
+website "http://www.plixer.com/products/netflow-sflow/scrutinizer-netflow-sflow.php"
 
 # Google results as at 2012-07-10 #
 # 1 for intitle:"Scrutinizer" "For the best Scrutinizer experience possible, please address the issues below"

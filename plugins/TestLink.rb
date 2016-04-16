@@ -7,7 +7,8 @@
 Plugin.define "TestLink" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-21
 version "0.1"
-description "TestLink - open source test management tool - Homepage: http://www.teamst.org/"
+description "TestLink - open source test management tool"
+website "http://www.teamst.org/"
 
 # Google results as at 2012-02-21 #
 # 26 for intitle:"TestLink" "New User" "Lost Password" "TestLink project Home" "TestLink is licensed under the GNU GPL"

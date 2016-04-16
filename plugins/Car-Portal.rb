@@ -7,7 +7,8 @@
 Plugin.define "Car-Portal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-30
 version "0.1"
-description "Car Portal is a powerful, professional looking and easy customizable php script for running auto classieds websites. - Homepage: http://www.netartmedia.net/carsportal"
+description "Car Portal is a powerful, professional looking and easy customizable php script for running auto classieds websites."
+website "http://www.netartmedia.net/carsportal"
 
 # Google results as at 2012-04-30 #
 # 34 for "Powered by Car Portal" "Frequently asked questions"

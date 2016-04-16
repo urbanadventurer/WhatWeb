@@ -7,7 +7,8 @@
 Plugin.define "HeiTel-Digital-Video-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
-description "HeiTel Digital Video Device - Platform-independent live image transmission and camera remote control via PC, Smartphone and PDA browser  - Homepage: http://www.heitel.com/en/products/software/web-server/index.html"
+description "HeiTel Digital Video Device - Platform-independent live image transmission and camera remote control via PC, Smartphone and PDA browser "
+website "http://www.heitel.com/en/products/software/web-server/index.html"
 # Data Sheet: http://www.heitel.com/upload/downloads/en/04-data-sheets/english/pr_ws_gb.pdf
 
 # ShodanHQ results as at 2011-03-14 #

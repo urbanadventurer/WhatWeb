@@ -7,7 +7,8 @@
 Plugin.define "phpBazar" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-29
 version "0.1"
-description "PHP3/PHP4/mySql Classified AD and/or Matchmaking - homepage: http://www.smartisoft.com/"
+description "PHP3/PHP4/mySql Classified AD and/or Matchmaking"
+website "http://www.smartisoft.com/"
 
 # Google results as at 2011-01-29 #
 # 12 for intitle:"phpBazar-AdminPanel" -intitle

@@ -7,7 +7,8 @@
 Plugin.define "qTranslate" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-09
 version "0.1"
-description "qTranslate Wordpress plugin - Homepage: http://www.qianqin.de/qtranslate/"
+description "qTranslate Wordpress plugin"
+website "http://www.qianqin.de/qtranslate/"
 
 # ShodanHQ results as at 2012-03-09 #
 # 1,437 for qtrans_cookie_test

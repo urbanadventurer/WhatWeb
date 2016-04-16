@@ -7,7 +7,8 @@
 Plugin.define "SonicWALL-Firewall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
 version "0.1"
-description "SonicWALL Firewall device - Homepage: http://www.sonicwall.com/us/products/Network_Security.html"
+description "SonicWALL Firewall device"
+website "http://www.sonicwall.com/us/products/Network_Security.html"
 
 # Google results as at 2011-08-05 #
 # 554 for intitle:"SonicWALL - Authentication" +Username +Password +Language

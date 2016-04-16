@@ -7,7 +7,8 @@
 Plugin.define "SiteMajic" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-24
 version "0.1"
-description "SiteMajic - Web Content Management System service - Homepage: http://www.sitemajic.com/"
+description "SiteMajic - Web Content Management System service"
+website "http://www.sitemajic.com/"
 
 # Google results as at 2012-04-24 #
 # 293 for "Website Powered by SiteMajic"

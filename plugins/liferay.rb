@@ -13,7 +13,8 @@
 Plugin.define "Liferay" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
 version "0.3"
-description "Liferay Portal is an enterprise web platform for building business solutions that deliver immediate results and long-term value. - homepage: http://www.liferay.com/"
+description "Liferay Portal is an enterprise web platform for building business solutions that deliver immediate results and long-term value."
+website "http://www.liferay.com/"
 
 # ShodanHQ results as at 2012-04-23 #
 # 707 for COOKIE_SUPPORT GUEST_LANGUAGE_ID

@@ -7,7 +7,8 @@
 Plugin.define "BIGACE" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
 version "0.1"
-description "BIGACE is not just an easy to use Web Content Management System (CMS), but offers also a scripting API and an extensible architecture for developing, maintaining, and deploying applications. - Homepage: http://www.bigace.de/"
+description "BIGACE is not just an easy to use Web Content Management System (CMS), but offers also a scripting API and an extensible architecture for developing, maintaining, and deploying applications."
+website "http://www.bigace.de/"
 
 # Google results as at 2011-03-15 #
 # 344 for "Powered by BIGACE" -dork

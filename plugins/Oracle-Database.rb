@@ -7,7 +7,8 @@
 Plugin.define "Oracle-Database" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
 version "0.1"
-description "Oracle Database - Homepage: http://www.oracle.com/technetwork/database/enterprise-edition/overview/index.html"
+description "Oracle Database"
+website "http://www.oracle.com/technetwork/database/enterprise-edition/overview/index.html"
 # More Info: http://www.oracle.com/technetwork/database/features/xmldb/index.html
 
 # ShodanHQ results as at 2011-11-22 #

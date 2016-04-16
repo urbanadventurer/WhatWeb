@@ -7,7 +7,8 @@
 Plugin.define "Abyss-Web-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
-description "Abyss Web Server is a compact web server available for Windows, Mac OS X, Linux, and FreeBSD operating systems. - Homepage: http://www.aprelium.com/abyssws/"
+description "Abyss Web Server is a compact web server available for Windows, Mac OS X, Linux, and FreeBSD operating systems."
+website "http://www.aprelium.com/abyssws/"
 
 # ShodanHQ results as at 2011-04-08 #
 # 4,097 for Abyss

@@ -7,7 +7,8 @@
 Plugin.define "Mashery-Proxy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
-description "The Mashery proxy is our patent pending software that sits between your developers and your API. The proxy intercepts all calls to your API, does some Mashery magic, passes the call on to your API, intercepts the response, does some more Mashery magic and sends the response back to the caller. The proxy is the mechanism for applying the business rules of your choosing to your new API channel. - Homepage: http://support.mashery.com/SolutionOverview"
+description "The Mashery proxy is our patent pending software that sits between your developers and your API. The proxy intercepts all calls to your API, does some Mashery magic, passes the call on to your API, intercepts the response, does some more Mashery magic and sends the response back to the caller. The proxy is the mechanism for applying the business rules of your choosing to your new API channel."
+website "http://support.mashery.com/SolutionOverview"
 
 # ShodanHQ results as at 2011-03-14 #
 # 92 for Mashery Proxy

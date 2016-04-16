@@ -7,7 +7,8 @@
 Plugin.define "Miniature-JWS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
 version "0.1"
-description "Tiny Java Web Server and Servlet Container (aka Miniature JWS) with security update, J2EE deployment, JSP, and J2EE (without application server) - Homepage: http://tjws.sourceforge.net/"
+description "Tiny Java Web Server and Servlet Container (aka Miniature JWS) with security update, J2EE deployment, JSP, and J2EE (without application server)"
+website "http://tjws.sourceforge.net/"
 
 # ShodanHQ results as at 2011-06-01 #
 # 513 for Acme.Serve Rogatkin

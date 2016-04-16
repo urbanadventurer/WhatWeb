@@ -7,7 +7,8 @@
 Plugin.define "Symantec-Client-Security" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-19
 version "0.1"
-description "Symantec Client Security - Homepage: http://www.symantec.com"
+description "Symantec Client Security"
+website "http://www.symantec.com"
 
 # Google results as at 2011-11-19 #
 # 46 for intitle:"Web Deployment Tool" "This browser does not support FRAMESET. Please use Internet Explorer"

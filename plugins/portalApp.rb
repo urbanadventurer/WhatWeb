@@ -7,7 +7,8 @@
 Plugin.define "PortalApp" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
 version "0.1"
-description "PortalApp is a fast, flexible, configurable CMS and portal system that can be used to create everything from Blogs to Web sites. - homepage: http://www.portalapp.com/"
+description "PortalApp is a fast, flexible, configurable CMS and portal system that can be used to create everything from Blogs to Web sites."
+website "http://www.portalapp.com/"
 
 # 155 results for "powered by PortalApp" -exploit @ 2010-07-10
 

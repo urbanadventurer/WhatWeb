@@ -7,7 +7,8 @@
 Plugin.define "WP-SlimStat" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-18
 version "0.1"
-description "A lightwight but powerful real-time web analytics plugin for WordPress - Homepage: https://wordpress.org/extend/plugins/wp-slimstat/"
+description "A lightwight but powerful real-time web analytics plugin for WordPress"
+website "https://wordpress.org/extend/plugins/wp-slimstat/"
 
 # ShodanHQ results as at 2011-08-18 #
 # 92 for slimstat_tracking_code

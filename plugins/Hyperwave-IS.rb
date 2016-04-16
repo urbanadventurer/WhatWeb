@@ -7,7 +7,8 @@
 Plugin.define "Hyperwave-IS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-07
 version "0.1"
-description "Hyperwave Information Server - Homepage: http://www.hyperwave.com/"
+description "Hyperwave Information Server"
+website "http://www.hyperwave.com/"
 
 # ShodanHQ results as at 2011-06-07 #
 # 46 for hyperwave

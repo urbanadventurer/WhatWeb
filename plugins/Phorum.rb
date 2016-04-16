@@ -7,7 +7,8 @@
 Plugin.define "Phorum" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-25
 version "0.1"
-description "Phorum - Forum - Requires PHP and MySQL - Homepage: http://www.phorum.org/"
+description "Phorum - Forum - Requires PHP and MySQL"
+website "http://www.phorum.org/"
 
 # Google results as at 2011-10-25 #
 # 364 for "This forum is powered by Phorum."

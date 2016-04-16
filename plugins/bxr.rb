@@ -10,7 +10,8 @@
 Plugin.define "BXR" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.2"
-description "BXR is an interface to manage a Blosxom-Based blog through the web or XML-RPC. Current it supports blogger, and metaWeblog APIs. - homepage: http://sourceforge.net/projects/bxr/"
+description "BXR is an interface to manage a Blosxom-Based blog through the web or XML-RPC. Current it supports blogger, and metaWeblog APIs."
+website "http://sourceforge.net/projects/bxr/"
 
 # 1 result for "BXR Web Login" intitle:"Please Enter Password" @ 2010-08-06
 

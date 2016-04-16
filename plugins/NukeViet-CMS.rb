@@ -7,7 +7,8 @@
 Plugin.define "NukeViet-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
 version "0.1"
-description "NukeViet CMS [Vietnamese] - Homepage: http://nukeviet.vn/en/"
+description "NukeViet CMS [Vietnamese]"
+website "http://nukeviet.vn/en/"
 
 # Google results as at 2011-08-05 #
 # 401 for "Powered by NukeViet"

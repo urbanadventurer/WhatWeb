@@ -7,7 +7,8 @@
 Plugin.define "FCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-06
 version "0.1"
-description "Family Connections CMS (FCMS) - Homepage: https://www.familycms.com/index.php"
+description "Family Connections CMS (FCMS)"
+website "https://www.familycms.com/index.php"
 
 # Google results as at 2011-12-06 #
 # 404 for intitle:"powered by Family Connections"

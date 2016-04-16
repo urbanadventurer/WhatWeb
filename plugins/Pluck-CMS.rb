@@ -7,7 +7,8 @@
 Plugin.define "Pluck-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
 version "0.1"
-description "Pluck is a small and simple content management system. - Requires: PHP - Homepage: http://www.pluck-cms.org/"
+description "Pluck is a small and simple content management system. - Requires: PHP"
+website "http://www.pluck-cms.org/"
 
 # Google results as at 2011-08-25 #
 # 66 for "powered by pluck" +admin inurl:file=kop1.php

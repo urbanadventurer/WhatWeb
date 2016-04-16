@@ -7,7 +7,8 @@
 Plugin.define "synType-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.1"
-description "synType CMS is a free, open source Web Content Management System. synType CMS is fast, secure, stable and easy to learn. - Homepage: http://syntype.org/"
+description "synType CMS is a free, open source Web Content Management System. synType CMS is fast, secure, stable and easy to learn."
+website "http://syntype.org/"
 
 
 

@@ -10,7 +10,8 @@
 Plugin.define "Ruby" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.2"
-description "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write. - homepage: http://www.ruby-lang.org/"
+description "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write."
+website "http://www.ruby-lang.org/"
 
 # ShodanHQ results as at 2011-05-24 #
 # 22,172 for server: ruby

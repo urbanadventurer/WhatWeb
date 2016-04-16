@@ -7,7 +7,8 @@
 Plugin.define "PHPWind" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
 version "0.1"
-description "BBS [Chinese] - Homepage: http://www.phpwind.net/"
+description "BBS [Chinese]"
+website "http://www.phpwind.net/"
 
 # Google results as at 2011-03-18 #
 # 602 for "Powered by PHPWind"

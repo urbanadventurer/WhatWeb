@@ -7,7 +7,8 @@
 Plugin.define "IdeaWebServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
-description "home.net.pl hosting - a major polish hosting company home.pl uses its own server software (Idea Web Server) - Homepage: http://home.net.pl"
+description "home.net.pl hosting - a major polish hosting company home.pl uses its own server software (Idea Web Server)"
+website "http://home.net.pl"
 
 # ShodanHQ results as at 2011-03-13 #
 # 91,705 for IdeaWebServer

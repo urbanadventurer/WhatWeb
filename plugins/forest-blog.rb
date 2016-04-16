@@ -10,7 +10,8 @@
 Plugin.define "Forest-Blog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-12
 version "0.2"
-description "Forest Blog - homepage: http://www.hostforest.co.uk/Products/blog.asp"
+description "Forest Blog"
+website "http://www.hostforest.co.uk/Products/blog.asp"
 
 # Google results as at 2010-08-11 #
 # 243 for "powered by Forest Blog"

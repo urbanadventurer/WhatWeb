@@ -7,7 +7,8 @@
 Plugin.define "Wacintaki-Poteto-BBS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-23
 version "0.1"
-description "Wacintaki Poteto BBS is a CSS conversion of Oekaki Poteto 5.x. - Homepage: http://www.ninechime.com/products/"
+description "Wacintaki Poteto BBS is a CSS conversion of Oekaki Poteto 5.x."
+website "http://www.ninechime.com/products/"
 
 # Oekaki is the Japanese term to describe the act of drawing, meaning "doodle or scribble". On the internet oekaki generally means "badly drawn furry porn"
 

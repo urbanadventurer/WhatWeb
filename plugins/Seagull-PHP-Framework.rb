@@ -10,7 +10,8 @@
 Plugin.define "Seagull-PHP-Framework" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.2"
-description "Seagull is a mature OOP framework for building web, command line and GUI applications. Licensed under BSD, the project allows PHP developers to easily integrate and manage code resources, and build complex applications quickly. - homepage: http://seagullproject.org/"
+description "Seagull is a mature OOP framework for building web, command line and GUI applications. Licensed under BSD, the project allows PHP developers to easily integrate and manage code resources, and build complex applications quickly."
+website "http://seagullproject.org/"
 
 # Google results as at 2010-09-12 #
 # 101 for "Powered By Seagull PHP Framework"

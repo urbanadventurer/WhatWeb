@@ -7,7 +7,8 @@
 Plugin.define "thin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-13
 version "0.1"
-description "Thin is a Ruby web server that glues together 3 of the best Ruby libraries in web history: the Mongrel parser, Event Machine, and Rack - Homepage: http://code.macournoyer.com/thin/"
+description "Thin is a Ruby web server that glues together 3 of the best Ruby libraries in web history: the Mongrel parser, Event Machine, and Rack"
+website "http://code.macournoyer.com/thin/"
 
 # ShodanHQ results as at 2012-03-13 #
 # 86 for thin web server

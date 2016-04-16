@@ -7,7 +7,8 @@
 Plugin.define "Quanterra-Q330" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "Quanterra Q330 series - seismic data acquisition systems - Homepage: http://kmi.com/p-163-Home.aspx"
+description "Quanterra Q330 series - seismic data acquisition systems"
+website "http://kmi.com/p-163-Home.aspx"
 
 # More Info #
 # Knowledge Base: http://www.q330.com/

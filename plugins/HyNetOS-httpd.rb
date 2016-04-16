@@ -7,7 +7,8 @@
 Plugin.define "HyNetOS-httpd" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.1"
-description "HyNetOS is a network operating system specifically designed for embedded systems, where computing and memory resources are limited. - Homepage: http://www.msc-ge.com/en/produkte/elekom/mc/hyperstone/sw_hynetos.html"
+description "HyNetOS is a network operating system specifically designed for embedded systems, where computing and memory resources are limited."
+website "http://www.msc-ge.com/en/produkte/elekom/mc/hyperstone/sw_hynetos.html"
 
 # ShodanHQ results as at 2011-04-11 #
 # 6,124 for HyNetOS

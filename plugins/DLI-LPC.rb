@@ -7,7 +7,8 @@
 Plugin.define "DLI-LPC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-15
 version "0.1"
-description "Digital Loggers Inc remote switch with built-in web server for remote reboot and power control - Homepage: http://www.digital-loggers.com/lpc.html"
+description "Digital Loggers Inc remote switch with built-in web server for remote reboot and power control"
+website "http://www.digital-loggers.com/lpc.html"
 
 # Defaults Settings #
 # IP: 192.168.0.100

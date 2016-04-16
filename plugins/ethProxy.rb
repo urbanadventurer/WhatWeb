@@ -7,7 +7,8 @@
 Plugin.define "ethProxy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-13
 version "0.1"
-description "ethProxy DDoS (Distributed Denial of Service) Proxy solution offers full DDoS protection for a wide-range of HTTP-based attacks without changing providers. Web traffic is filtered through the ethProxy systems and routed back to your host. - Homepage: http://www.ethproxy.com/"
+description "ethProxy DDoS (Distributed Denial of Service) Proxy solution offers full DDoS protection for a wide-range of HTTP-based attacks without changing providers. Web traffic is filtered through the ethProxy systems and routed back to your host."
+website "http://www.ethproxy.com/"
 
 # ShodanHQ results as at 2011-05-13 #
 # 80 for ethProxy

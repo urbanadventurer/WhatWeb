@@ -7,7 +7,8 @@
 Plugin.define "Lasernet-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-10
 version "0.1"
-description "Lasernet CMS - Homepage: http://lasernet.gr/cms.php"
+description "Lasernet CMS"
+website "http://lasernet.gr/cms.php"
 
 # Google results as at 2011-08-10 #
 # 53 for intext:"Powered by Lasernet" -intext

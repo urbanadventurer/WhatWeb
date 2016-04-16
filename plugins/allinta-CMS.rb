@@ -10,7 +10,8 @@
 Plugin.define "Allinta-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.2"
-description "Allinta - easy to use ASP CMS (Content Management System) - professional features & superior value. - homepage: http://www.allinta.com/"
+description "Allinta - easy to use ASP CMS (Content Management System) - professional features & superior value."
+website "http://www.allinta.com/"
 
 # Dorks #
 dorks [

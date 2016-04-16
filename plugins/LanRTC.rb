@@ -7,7 +7,8 @@
 Plugin.define "LanRTC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-09
 version "0.1"
-description "LanRTC Device - Homepage: http://www.dorma-time-access.de/prod/content/view/full/36922/%28code%29/product_detail/%28parent%29/36921"
+description "LanRTC Device"
+website "http://www.dorma-time-access.de/prod/content/view/full/36922/%28code%29/product_detail/%28parent%29/36921"
 
 # ShodanHQ results as at 2011-03-09 #
 # 5 for LanRTC

@@ -7,7 +7,8 @@
 Plugin.define "StatusNet" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
 version "0.1"
-description "StatusNet's Open Source social software enables organizations to collaborate, share insights and build relationships in real time. - Homepage: http://status.net/"
+description "StatusNet's Open Source social software enables organizations to collaborate, share insights and build relationships in real time."
+website "http://status.net/"
 
 # 104 for "powered by StatusNet version" inurl:"/main/version" -filetype:html
 # 231 for inurl:"index.php" "It runs the StatusNet microblogging software, version *, available under the GNU Affero General Public License. Site content license"

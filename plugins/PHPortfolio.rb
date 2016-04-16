@@ -7,7 +7,8 @@
 Plugin.define "PHPortfolio" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
 version "0.1"
-description "PHPortfolio is a simple system for photographers to publish a portfolio. Requirements: Unix/Linux, Apache 1.3.x, PHP 4.2+ with GD 2 libraries, and MySQL 3.23+. PHP will need to have short_tags enabled (it usually is). - Homepage: http://www.outshine.com/software/phportfolio/index.php"
+description "PHPortfolio is a simple system for photographers to publish a portfolio. Requirements: Unix/Linux, Apache 1.3.x, PHP 4.2+ with GD 2 libraries, and MySQL 3.23+. PHP will need to have short_tags enabled (it usually is)."
+website "http://www.outshine.com/software/phportfolio/index.php"
 
 # Google results as at 2011-05-23 #
 # 63 for "Powered by PHPortfolio" -Dork -D0rk

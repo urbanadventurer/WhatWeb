@@ -7,7 +7,8 @@
 Plugin.define "XenForo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-16
 version "0.1"
-description "XenForo is a commercial Internet forum software written in the PHP programming language using the Zend Framework. - Homepage: http://xenforo.com/"
+description "XenForo is a commercial Internet forum software written in the PHP programming language using the Zend Framework."
+website "http://xenforo.com/"
 
 # ShodanHQ results as at 2012-01-16 #
 # 123 for xf_session

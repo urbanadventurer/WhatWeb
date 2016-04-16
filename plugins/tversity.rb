@@ -8,7 +8,8 @@
 Plugin.define "TVersity" do
 author "Andrew Horton"
 version "0.1"
-description "The TVersity Media Server lets you manage your Internet and home media. Homepage: tversity.com"
+description "The TVersity Media Server lets you manage your Internet and home media"
+website "tversity.com"
 
 
 matches [

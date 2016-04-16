@@ -10,7 +10,8 @@
 Plugin.define "Microsoft-Office-XML" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.2"
-description "This module detects instances of Microsoft Office documents saved as HTML and attempts to extract the user name, company name and office version. - homepage: http://en.wikipedia.org/wiki/Microsoft_Office_XML_formats"
+description "This module detects instances of Microsoft Office documents saved as HTML and attempts to extract the user name, company name and office version."
+website "http://en.wikipedia.org/wiki/Microsoft_Office_XML_formats"
 
 # About 123,000 results for <o:DocumentProperties> <o:Template> @ 2010-10-14
 

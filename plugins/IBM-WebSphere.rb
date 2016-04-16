@@ -7,7 +7,8 @@
 Plugin.define "IBM-WebSphere" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
-description "IBM WebSphere - Homepage: https://www-01.ibm.com/software/websphere/"
+description "IBM WebSphere"
+website "https://www-01.ibm.com/software/websphere/"
 
 # ShodanHQ results as at 2011-03-13 #
 # 2,176 for WebSphere

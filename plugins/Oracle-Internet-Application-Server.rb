@@ -7,7 +7,8 @@
 Plugin.define "Oracle-Internet-Application-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
 version "0.1"
-description "Oracle iAS (Internet Application Server) - Homepage: http://www.oracle.com/technetwork/middleware/ias/index.html"
+description "Oracle iAS (Internet Application Server)"
+website "http://www.oracle.com/technetwork/middleware/ias/index.html"
 # More Info: https://en.wikipedia.org/wiki/Oracle_Application_Server
 
 # ShodanHQ results as at 2011-11-22 #

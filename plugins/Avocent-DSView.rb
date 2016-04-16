@@ -7,7 +7,8 @@
 Plugin.define "Avocent-DSView" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-24
 version "0.1"
-description "Avocent DSView 3 management software provides data centers with secure, out-of-band, centralized management for all connected IT and network devices. - Homepage: http://www.avocent.com/Products/Category/Data_Center_Management_Software/DSV3_Software.aspx"
+description "Avocent DSView 3 management software provides data centers with secure, out-of-band, centralized management for all connected IT and network devices."
+website "http://www.avocent.com/Products/Category/Data_Center_Management_Software/DSV3_Software.aspx"
 # Data Sheet: http://www.avocent.com/WorkArea/linkit.aspx?LinkIdentifier=id&ItemID=13669
 
 # ShodanHQ results as at 2011-11-24 #

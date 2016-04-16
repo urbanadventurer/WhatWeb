@@ -7,7 +7,8 @@
 Plugin.define "Easy-Site-Edit" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-22
 version "0.1"
-description "EasySiteEdit CMS - Homepage: http://www.easysiteedit.com/"
+description "EasySiteEdit CMS"
+website "http://www.easysiteedit.com/"
 
 # Local file path and FTP username:password are disclosed by install.php #
 

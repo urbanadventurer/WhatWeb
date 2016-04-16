@@ -13,7 +13,8 @@
 Plugin.define "JAMM-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.2"
-description "JAMM CMS - homepage: http://www.branchen-plz.de/"
+description "JAMM CMS"
+website "http://www.branchen-plz.de/"
 
 # Google results as at 2010-08-08 #
 # 6 for "powered by JAMM CMS"

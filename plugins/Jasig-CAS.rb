@@ -7,7 +7,8 @@
 Plugin.define "Jasig-CAS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
 version "0.1"
-description "Jasig Central Authentication Service (CAS) is an authentication system originally created by Yale University to provide a trusted way for an application to authenticate a user. - Homepage: http://www.jasig.org/cas"
+description "Jasig Central Authentication Service (CAS) is an authentication system originally created by Yale University to provide a trusted way for an application to authenticate a user."
+website "http://www.jasig.org/cas"
 
 # ShodanHQ results as at 2011-09-12 #
 # 670 for cas/login

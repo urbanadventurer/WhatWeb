@@ -13,7 +13,8 @@
 Plugin.define "GearHost" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
 version "0.3"
-description "GearHost is a Microsoft Gold Certified Windows Hosting Partner that specializes in complex hosted managed servers, CloudServers and shared Windows Web Hosting Solutions for ASP.NET, ColdFusion, Exchange Business Email and other technologies. - Homepage: http://www.gearhost.com/"
+description "GearHost is a Microsoft Gold Certified Windows Hosting Partner that specializes in complex hosted managed servers, CloudServers and shared Windows Web Hosting Solutions for ASP.NET, ColdFusion, Exchange Business Email and other technologies."
+website "http://www.gearhost.com/"
 
 # ShodanHQ results as at 2010-10-25 #
 # 1,369 for Hosted-With: GearHost Inc. (www.gearhost.com)

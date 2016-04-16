@@ -7,7 +7,8 @@
 Plugin.define "Contentteller-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
-description "Contentteller - A powerful Content Management System with 20 modules designed for high traffic websites. - Homepage: http://www.contentteller.com/en/"
+description "Contentteller - A powerful Content Management System with 20 modules designed for high traffic websites."
+website "http://www.contentteller.com/en/"
 
 # Google results as at 2011-03-03 #
 # 39 for "powered by Contentteller"

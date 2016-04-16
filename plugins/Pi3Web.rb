@@ -7,7 +7,8 @@
 Plugin.define "Pi3Web" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
-description "Pi3Web is a free, multithreaded, highly configurable and extensible HTTP server and development environment for cross platform internet server development and deployment. - Homepage: http://pi3web.sourceforge.net/pi3web/"
+description "Pi3Web is a free, multithreaded, highly configurable and extensible HTTP server and development environment for cross platform internet server development and deployment."
+website "http://pi3web.sourceforge.net/pi3web/"
 
 # ShodanHQ results as at 2011-06-02 #
 # 74 for Pi3Web

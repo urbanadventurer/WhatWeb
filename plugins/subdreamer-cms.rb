@@ -7,7 +7,8 @@
 Plugin.define "Subdreamer-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15 
 version "0.1"
-description "Whether your goal is creating a simple or full scale website, Subdreamer will get you there by providing unbeatable content management tools. - homepage: http://www.subdreamer.com/"
+description "Whether your goal is creating a simple or full scale website, Subdreamer will get you there by providing unbeatable content management tools."
+website "http://www.subdreamer.com/"
 
 
 matches [

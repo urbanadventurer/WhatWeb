@@ -10,7 +10,8 @@
 Plugin.define "Polycom-SoundPoint" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.2"
-description "Polycom SoundPoint VOIP phone - Homepage: http://www.polycom.com/products/voice/desktop_solutions/soundpoint/"
+description "Polycom SoundPoint VOIP phone"
+website "http://www.polycom.com/products/voice/desktop_solutions/soundpoint/"
 
 # ShodanHQ results as at 2011-03-14 #
 # 6,474 for Polycom SoundPoint IP Telephone HTTPd

@@ -7,7 +7,8 @@
 Plugin.define "StarDot-NetCam" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.1"
-description "Stardot network camera web interface - homepage: http://www.stardot-tech.com/ "
+description "Stardot network camera web interface"
+website "http://www.stardot-tech.com/ "
 # default login: admin/admin
 
 # 43 results for +intitle:"NetCam Live Image" -intitle @ 2010-07-18

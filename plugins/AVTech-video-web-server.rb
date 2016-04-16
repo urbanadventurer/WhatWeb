@@ -7,7 +7,8 @@
 Plugin.define "AVTech-Video-Web-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.1"
-description "Video web server front end - homepage: http://www.avtech.com.hk/eng/CCTV_System_Networking_VWS.htm"
+description "Video web server front end"
+website "http://www.avtech.com.hk/eng/CCTV_System_Networking_VWS.htm"
 
 # ShodanHQ results as at 2010-07-20 #
 # About 13,446 Shodan results for Server:"AV787 Video Web Server"

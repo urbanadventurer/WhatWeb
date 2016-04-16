@@ -7,7 +7,8 @@
 Plugin.define "Procon-Electronics-Mod-Mux" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "Procon Electronics Mod-Mux (Serial/Ethernet Converter & Modbus Gateway) is a MODBUS TCP Converter. This converter is used to connect an Ethernet network to a RS485/232 network, and converts the Modbus TCP protocol to the standard Modbus RTU serial protocol on RS485/232. - Homepage: http://www.proconel.com/"
+description "Procon Electronics Mod-Mux (Serial/Ethernet Converter & Modbus Gateway) is a MODBUS TCP Converter. This converter is used to connect an Ethernet network to a RS485/232 network, and converts the Modbus TCP protocol to the standard Modbus RTU serial protocol on RS485/232."
+website "http://www.proconel.com/"
 
 # ShodanHQ results as at 2011-07-27 #
 # 39 for Procon Electronics

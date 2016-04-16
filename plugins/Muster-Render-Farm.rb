@@ -7,7 +7,8 @@
 Plugin.define "Muster-Render-Farm" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-08
 version "0.1"
-description "Muster is a render farm management system for film production, game development, and visual effect industry. - Homepage: http://www.vvertex.com/products.php"
+description "Muster is a render farm management system for film production, game development, and visual effect industry."
+website "http://www.vvertex.com/products.php"
 
 # ShodanHQ results as at 2011-12-08 #
 # 1 for muster dologin.html

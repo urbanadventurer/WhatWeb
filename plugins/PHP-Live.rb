@@ -10,7 +10,8 @@
 Plugin.define "PHP-Live" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
 version "0.2"
-description "PHP Live! enables live help and live customer support communication directly from your website. - homepage: http://www.phplivesupport.com/"
+description "PHP Live! enables live help and live customer support communication directly from your website."
+website "http://www.phplivesupport.com/"
 
 # Google results as at 2010-08-31 #
 # 158 for "powered by PHP Live!" -Vulnerability

@@ -10,7 +10,8 @@
 Plugin.define "Linksys-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
-description "Linksys network camera web interface - homepage: http://www.linksys.com/"
+description "Linksys network camera web interface"
+website "http://www.linksys.com/"
 
 # 14 Google results for inurl:/img/main.cgi inurl:next_file @ 2010-07-22
 

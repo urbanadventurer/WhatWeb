@@ -7,7 +7,8 @@
 Plugin.define "Isolsoft-Support-Center" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-25
 version "0.1"
-description "Support Center is a fully automated Help Desk solution. - Homepage: http://www.isolsoft.com/"
+description "Support Center is a fully automated Help Desk solution."
+website "http://www.isolsoft.com/"
 
 # 115 for "Powered by: Support Center"
 #  53 for "Powered by: Support Center" inurl:kb.php

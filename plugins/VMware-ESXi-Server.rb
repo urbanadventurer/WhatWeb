@@ -10,7 +10,8 @@
 Plugin.define "VMware-ESXi-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-28
 version "0.2"
-description "VMware ESXi Server is virtual infrastructure software for partitioning, consolidating and managing systems in mission-critical environments. VMware ESXi Server provides a highly scalable virtual machine platform with advanced resource management capabilities, which can be managed by vSphere. - Homepage: http://www.vmware.com/products/vsphere-hypervisor/overview.html"
+description "VMware ESXi Server is virtual infrastructure software for partitioning, consolidating and managing systems in mission-critical environments. VMware ESXi Server provides a highly scalable virtual machine platform with advanced resource management capabilities, which can be managed by vSphere."
+website "http://www.vmware.com/products/vsphere-hypervisor/overview.html"
 
 
 

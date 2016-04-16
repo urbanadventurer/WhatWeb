@@ -7,7 +7,8 @@
 Plugin.define "Tele-Data-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-11
 version "0.1"
-description "Tele Data's Contact Management Server - Contact Management Server for Windows / Asterisk - a custom designed HTTP server which act as a front end to a SQLite Database designed to provide contact management services, accessible from a Web Browser, to a single or group of users on a LAN or WAN network. - Homepage: http://teledata.qc.ca/td_cms/"
+description "Tele Data's Contact Management Server - Contact Management Server for Windows / Asterisk - a custom designed HTTP server which act as a front end to a SQLite Database designed to provide contact management services, accessible from a Web Browser, to a single or group of users on a LAN or WAN network."
+website "http://teledata.qc.ca/td_cms/"
 
 # 53 for "Powered by Teledata"
 # 12 for "Powered by Teledata" "Best viewed in IE6"

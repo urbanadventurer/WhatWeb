@@ -7,7 +7,8 @@
 Plugin.define "Gallery" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-10
 version "0.1"
-description "Photo gallery - Requires PHP and MySQL - Homepage: http://gallery.menalto.com/"
+description "Photo gallery - Requires PHP and MySQL"
+website "http://gallery.menalto.com/"
 
 # Google results as at 2012-04-10 #
 # 187 for inurl:"/index.php/login/ajax" "Login" "Username" "Password" "Forgot your password"

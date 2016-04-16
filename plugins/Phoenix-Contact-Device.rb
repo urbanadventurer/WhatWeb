@@ -7,7 +7,8 @@
 Plugin.define "Phoenix-Contact-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
 version "0.1"
-description "Phoenix Contact manufactures industrial automation, interconnection, and interface solutions. It offers terminal blocks, which include relays, signal conditioning, controller system cabling, surge suppression, transition interfaces, and custom interfaces; printed circuit board terminal blocks; controllers and IO; as well as industrial plug connectors. - Homepage: http://www.phoenixcontact.com/"
+description "Phoenix Contact manufactures industrial automation, interconnection, and interface solutions. It offers terminal blocks, which include relays, signal conditioning, controller system cabling, surge suppression, transition interfaces, and custom interfaces; printed circuit board terminal blocks; controllers and IO; as well as industrial plug connectors."
+website "http://www.phoenixcontact.com/"
 
 # ShodanHQ results as at 2011-08-02 #
 # 71 for Phoenix-Contact

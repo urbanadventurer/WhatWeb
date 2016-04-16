@@ -7,7 +7,8 @@
 Plugin.define "McAfee-Secure" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
-description "McAfee Secure sites apparently help keep you safe from identity theft, credit card fraud, spyware, spam, viruses and online scams - Homepage: http://www.mcafeesecure.com/"
+description "McAfee Secure sites apparently help keep you safe from identity theft, credit card fraud, spyware, spam, viruses and online scams"
+website "http://www.mcafeesecure.com/"
 
 
 

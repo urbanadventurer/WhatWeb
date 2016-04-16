@@ -7,7 +7,8 @@
 Plugin.define "Socorro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
-description "A server for collecting, processing, and displaying crash reports from clients using the Breakpad libraries - Homepage: code.google.com/p/socorro/"
+description "A server for collecting, processing, and displaying crash reports from clients using the Breakpad libraries"
+website "code.google.com/p/socorro/"
 
 # Google resutls as at 2011-08-07 #
 # 26 for "Powered by Socorro"

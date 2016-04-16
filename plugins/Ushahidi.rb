@@ -7,7 +7,8 @@
 Plugin.define "Ushahidi" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-05
 version "0.1"
-description "The Ushahidi Platform is a platform for information collection, visualization and interactive mapping. - Homepage: http://www.ushahidi.com/"
+description "The Ushahidi Platform is a platform for information collection, visualization and interactive mapping."
+website "http://www.ushahidi.com/"
 
 # ShodanHQ results as at 2011-06-05 #
 # 22 for ushahidi_data

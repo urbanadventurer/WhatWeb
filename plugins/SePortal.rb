@@ -7,7 +7,8 @@
 Plugin.define "SePortal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
-description "SePortal - The Weblog System - Homepage: http://www.seportal.org/"
+description "SePortal - The Weblog System"
+website "http://www.seportal.org/"
 
 # Google results as at 2011-03-03 #
 # 89 for "Powered by SePortal"

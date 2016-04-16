@@ -7,7 +7,8 @@
 Plugin.define "Dokeos" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
 version "0.1"
-description "Dokeos is an open source online learning suite. It provides all the features needed for e-learning and blended learning management : From Authoring to Reporting. - Homepage: http://www.dokeos.com/"
+description "Dokeos is an open source online learning suite. It provides all the features needed for e-learning and blended learning management : From Authoring to Reporting."
+website "http://www.dokeos.com/"
 
 # Google results as at 2011-03-24 #
 # 3   for intitle:"Dokeos has not been installed"

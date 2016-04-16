@@ -7,7 +7,8 @@
 Plugin.define "Oracle-WebDB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
 version "0.1"
-description "Oracle WebDB is a complete solution for building, deploying, and proactively monitoring Web database applications and content-driven Web sites. - Homepage: http://download.oracle.com/docs/cd/A81042_01/DOC/webdb.816/index.htm"
+description "Oracle WebDB is a complete solution for building, deploying, and proactively monitoring Web database applications and content-driven Web sites."
+website "http://download.oracle.com/docs/cd/A81042_01/DOC/webdb.816/index.htm"
 # More Info: http://docs.oracle.com/cd/A81042_01/DOC/webdb.816/a77075.pdf
 
 # ShodanHQ results as at 2011-11-22 #

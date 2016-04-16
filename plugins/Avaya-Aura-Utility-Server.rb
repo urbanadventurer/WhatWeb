@@ -7,7 +7,8 @@
 Plugin.define "Avaya-Aura-Utility-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
-description "Avaya Aura Utility Server - Homepage: http://www.avaya.com/"
+description "Avaya Aura Utility Server"
+website "http://www.avaya.com/"
 
 
 

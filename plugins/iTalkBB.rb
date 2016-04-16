@@ -7,7 +7,8 @@
 Plugin.define "iTalkBB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-19
 version "0.1"
-description "iTalkBB is a local and long distance calling service provided by iTalk Broadband Corporation. It combines voice and internet networks to provide inbound and outbound long distance and local calling solutions. - Homepage: http://www.italkbb.com/"
+description "iTalkBB is a local and long distance calling service provided by iTalk Broadband Corporation. It combines voice and internet networks to provide inbound and outbound long distance and local calling solutions."
+website "http://www.italkbb.com/"
 # Default Login: 12345678 or 87654321
 
 # 10 for intitle:"V1" "welcome to phone settings" password -intitle

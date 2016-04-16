@@ -7,7 +7,8 @@
 Plugin.define "Nintendo-GameCube" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
 version "0.1"
-description "Nintendo GameCube video game console - Homepage: http://www.nintendo.com/"
+description "Nintendo GameCube video game console"
+website "http://www.nintendo.com/"
 
 # ShodanHQ results as at 2011-08-02 #
 # 18 for GameCube

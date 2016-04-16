@@ -10,7 +10,8 @@
 Plugin.define "GeekLog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-25
 version "0.2"
-description "Geeklog is an open source application for managing dynamic web content. It is written in PHP and supports MySQL, PostgreSQL, or MS SQL as the database backend. - homepage: http://www.geeklog.net/"
+description "Geeklog is an open source application for managing dynamic web content. It is written in PHP and supports MySQL, PostgreSQL, or MS SQL as the database backend."
+website "http://www.geeklog.net/"
 
 # 352 results for "powered by GeekLog" @ 2010-09-25
 # Dorks #

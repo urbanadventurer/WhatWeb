@@ -7,7 +7,8 @@
 Plugin.define "SmarterStats" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
-description "Complete SEO and Web Analytics for Individuals and Enterprises - Homepage: http://www.smartertools.com/smarterstats/web-analytics-seo-software.aspx"
+description "Complete SEO and Web Analytics for Individuals and Enterprises"
+website "http://www.smartertools.com/smarterstats/web-analytics-seo-software.aspx"
 
 # Google results as at 2011-03-13 #
 # 87 for intitle:"Login - SmarterStats" "Login to SmarterStats"

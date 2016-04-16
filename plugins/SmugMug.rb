@@ -7,7 +7,8 @@
 Plugin.define "SmugMug" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.1"
-description "SmugMug is a paid digital photo sharing website - Homepage: http://www.smugmug.com/"
+description "SmugMug is a paid digital photo sharing website"
+website "http://www.smugmug.com/"
 
 # ShodanHQ results as at 2011-03-16 #
 # 246 for x-powered-by smugmug

@@ -7,7 +7,8 @@
 Plugin.define "osTicket" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-24
 version "0.1"
-description "osTicket is a widely-used open source support ticket system - Requires: PHP and MySQL - Homepage: http://www.osticket.com/"
+description "osTicket is a widely-used open source support ticket system - Requires: PHP and MySQL"
+website "http://www.osticket.com/"
 
 # Google results as at 2011-08-24 #
 # 511 for "SUPPORT TICKET SYSTEM" +Home "Ticket Status" "New Ticket" "Welcome to the support center"

@@ -7,7 +7,8 @@
 Plugin.define "Indices" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-17
 version "0.1"
-description "Indices is a set of hacks that makes Apache's default directory index pages pretty and more usable. - Homepage: http://antisleep.com/software/indices"
+description "Indices is a set of hacks that makes Apache's default directory index pages pretty and more usable."
+website "http://antisleep.com/software/indices"
 
 # Google results as at 2012-03-17 #
 # 109 for "Parent Directory" "Indices 1.1"

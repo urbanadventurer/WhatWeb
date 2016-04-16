@@ -7,7 +7,8 @@
 Plugin.define "pragmaMx" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-29
 version "0.1"
-description "pragmaMx - CMS - Homepage: http://www.pragmamx.org/"
+description "pragmaMx - CMS"
+website "http://www.pragmamx.org/"
 
 # Google results as at 2012-05-29 #
 # 325 for "Diese Webseite basiert auf pragmaMx"

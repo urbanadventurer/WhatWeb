@@ -7,7 +7,8 @@
 Plugin.define "Wowza-Media-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-18
 version "0.1"
-description "Wowza Media Server is used for streaming of live and on-demand video, audio, and RIAs (rich Internet applications) over public and private IP networks to desktop, laptop, and tablet computers, mobile devices, IPTV set-top boxes, internet-connected TV sets, and other network-connected devices - Homepage: www.wowza.com/"
+description "Wowza Media Server is used for streaming of live and on-demand video, audio, and RIAs (rich Internet applications) over public and private IP networks to desktop, laptop, and tablet computers, mobile devices, IPTV set-top boxes, internet-connected TV sets, and other network-connected devices"
+website "www.wowza.com/"
 # More info: https://en.wikipedia.org/wiki/Wowza_Media_Server
 
 # ShodanHQ results as at 2012-03-18 #

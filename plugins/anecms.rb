@@ -10,7 +10,8 @@
 Plugin.define "ANECMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15
 version "0.2"
-description "ANECMS - homepage: http://anecms.com/"
+description "ANECMS"
+website "http://anecms.com/"
 
 # Dorks #
 dorks [

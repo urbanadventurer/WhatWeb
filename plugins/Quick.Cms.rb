@@ -10,7 +10,8 @@
 Plugin.define "Quick_Cms" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
-description "Freeware, fast and easy to customize Content Management System. - homepage: http://opensolution.org/quick.cms,en,10.html"
+description "Freeware, fast and easy to customize Content Management System."
+website "http://opensolution.org/quick.cms,en,10.html"
 
 # Google results as at 2010-08-30 #
 # 298 for "powered by Quick.Cms"

@@ -7,7 +7,8 @@
 Plugin.define "Epson-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "Epson printer - Homepage: http://www.epson.com/"
+description "Epson printer"
+website "http://www.epson.com/"
 
 # ShodanHQ results as at 2011-05-31 #
 # 5,191 for EPSON-HTTP

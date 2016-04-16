@@ -7,7 +7,8 @@
 Plugin.define "Uebimiau-Webmail" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-12-29
 version "0.1"
-description "Uebimiau Webmail - Homepage: http://www.uebimiau.org/download.php"
+description "Uebimiau Webmail"
+website "http://www.uebimiau.org/download.php"
 
 # Google results as at 2011-01-29 #
 # 41 for "Uebimiau Webmail v3.2.0-2.0" -disclosure

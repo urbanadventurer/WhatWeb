@@ -7,7 +7,8 @@
 Plugin.define "Novell-Sentinel-Log-Manager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-15
 version "0.1"
-description "Novell Sentinel Log Manager - log management solution - Homepage: http://www.novell.com/promo/slm/slm25.html"
+description "Novell Sentinel Log Manager - log management solution"
+website "http://www.novell.com/promo/slm/slm25.html"
 
 # Google results as at 2012-07-15 #
 # 2 for inurl:"novelllogmanager/views/logManager.html"

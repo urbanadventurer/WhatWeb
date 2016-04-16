@@ -7,7 +7,8 @@
 Plugin.define "AlumniServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
 version "0.1"
-description "Open Source Alumni software (PHP) for universities, schools and other organizations. Features include profile page, photo upload, messages, forum, job market. Admin pages include user management, content management, newsletter, website configuration. - Homepage: http://sourceforge.net/projects/alumniserver/"
+description "Open Source Alumni software (PHP) for universities, schools and other organizations. Features include profile page, photo upload, messages, forum, job market. Admin pages include user management, content management, newsletter, website configuration."
+website "http://sourceforge.net/projects/alumniserver/"
 
 # Google results as at 2011-03-15 #
 # 9 for "AlumniServer project" inurl:AlumniServerProject.php

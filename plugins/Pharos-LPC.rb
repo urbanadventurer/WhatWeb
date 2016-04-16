@@ -7,7 +7,8 @@
 Plugin.define "Pharos-LPC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
 version "0.1"
-description "Pharos LPC web interface - All-in-one control solution for entertainment and LED lighting installations. - Homepage: http://www.pharoscontrols.com/products/lighting_controllers/lpc"
+description "Pharos LPC web interface - All-in-one control solution for entertainment and LED lighting installations."
+website "http://www.pharoscontrols.com/products/lighting_controllers/lpc"
 
 # Two LPC models available: LPC 1 (512 DMX channels) and LPC 2 (1024 DMX channels)
 

@@ -7,7 +7,8 @@
 Plugin.define "QuesCom-Qportal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
-description "Qportal web interface for QuesCom telephony devices - Homepage: http://www.quescom.com/products.asp"
+description "Qportal web interface for QuesCom telephony devices"
+website "http://www.quescom.com/products.asp"
 
 # ShodanHQ results as at 2011-05-30 #
 # 842 for OctoWebSvr

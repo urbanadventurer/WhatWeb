@@ -7,7 +7,8 @@
 Plugin.define "FEX" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-22
 version "0.1"
-description "F*EX (Frams's Fast File EXchange) is a service that can be used to allow users anywhere on the Internet to exchange files of ANY size quickly and conveniently. - Homepage: http://fex.rus.uni-stuttgart.de/fex.html"
+description "F*EX (Frams's Fast File EXchange) is a service that can be used to allow users anywhere on the Internet to exchange files of ANY size quickly and conveniently."
+website "http://fex.rus.uni-stuttgart.de/fex.html"
 
 # ShodanHQ results as at 2012-02-22 #
 # 51 for fexsrv

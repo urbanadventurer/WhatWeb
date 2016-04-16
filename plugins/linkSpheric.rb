@@ -7,7 +7,8 @@
 Plugin.define "linkSpheric" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.1"
-description "linkSpheric. Possibly the world's coolest free online directory software that's absolutely free, no advertising, no spyware, just good old PHP-MySQL. - homepage: http://dataspheric.com/services/software/ls/"
+description "linkSpheric. Possibly the world's coolest free online directory software that's absolutely free, no advertising, no spyware, just good old PHP-MySQL."
+website "http://dataspheric.com/services/software/ls/"
 
 # 61 results for "powered by linkSpheric" -Vulnerability @ 2010-08-21
 

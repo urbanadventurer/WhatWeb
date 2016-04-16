@@ -16,7 +16,8 @@
 Plugin.define "Serendipity" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.3"
-description "Serendipity - a PHP Weblog/Blog software. Serendipity is a PHP-powered weblog application which gives the user an easy way to maintain an online diary, weblog or even a complete homepage. - homepage: http://www.s9y.org"
+description "Serendipity - a PHP Weblog/Blog software. Serendipity is a PHP-powered weblog application which gives the user an easy way to maintain an online diary, weblog or even a complete homepage."
+website "http://www.s9y.org"
 
 # Google results as at 2011-02-24 #
 # 342 for "powered by Serendipity"

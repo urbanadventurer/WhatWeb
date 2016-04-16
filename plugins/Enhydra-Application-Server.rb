@@ -7,7 +7,8 @@
 Plugin.define "Enhydra-Application-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-20
 version "0.1"
-description "Enhydra Application Server - Homepage: http://enhydra.org/"
+description "Enhydra Application Server"
+website "http://enhydra.org/"
 
 # More Info #
 # https://en.wikipedia.org/wiki/Enhydra_Server

@@ -7,7 +7,8 @@
 Plugin.define "PacketWave" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-11
 version "0.1"
-description "Some sort of wireless broadband contraption from Aperto Networks - Homepage: http://www.apertonet.com/products/pmax_productline.html"
+description "Some sort of wireless broadband contraption from Aperto Networks"
+website "http://www.apertonet.com/products/pmax_productline.html"
 
 # ShodanHQ results as at 2011-05-11 #
 # 73 for PacketWave

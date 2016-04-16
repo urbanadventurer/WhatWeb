@@ -7,7 +7,8 @@
 Plugin.define "Pixel-Script" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
 version "0.1"
-description "From simple to complex pixel page advertising system PHP Pixel Script makes it possible. - Homepage: http://www.texmedia.de/"
+description "From simple to complex pixel page advertising system PHP Pixel Script makes it possible."
+website "http://www.texmedia.de/"
 
 # Google results as at 2011-03-19 #
 # 401 for "Powered by Pixel Script"

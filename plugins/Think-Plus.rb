@@ -7,7 +7,8 @@
 Plugin.define "Think-Plus" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-07
 version "0.1"
-description "Think+ - Social Media Marketing - Homepage: http://think-plus.gr/"
+description "Think+ - Social Media Marketing"
+website "http://think-plus.gr/"
 
 # Google results as at 2012-04-07 #
 # 140 for "Powered by Think+"

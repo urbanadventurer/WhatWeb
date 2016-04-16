@@ -7,7 +7,8 @@
 Plugin.define "Vimeo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-22
 version "0.1"
-description "Vimeo.com video player - Homepage: http://vimeo.com/"
+description "Vimeo.com video player"
+website "http://vimeo.com/"
 
 
 

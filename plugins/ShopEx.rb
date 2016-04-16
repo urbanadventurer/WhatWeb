@@ -7,7 +7,8 @@
 Plugin.define "ShopEx" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
 version "0.1"
-description "eCommerce [Chinese] - Homepage: http://www.shopex.cn/"
+description "eCommerce [Chinese]"
+website "http://www.shopex.cn/"
 
 # Dorks #
 dorks [

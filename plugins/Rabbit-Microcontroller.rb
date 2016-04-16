@@ -7,7 +7,8 @@
 Plugin.define "Rabbit-Microcontroller" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
-description "Rabbit Semiconductor is the company which designs and sells the Rabbit family of microcontrollers and microcontroller modules. For development, it provides Dynamic C, a non-standard dialect of C with proprietary structures for multitasking. - Homepage: http://www.rabbitconsulting.com/"
+description "Rabbit Semiconductor is the company which designs and sells the Rabbit family of microcontrollers and microcontroller modules. For development, it provides Dynamic C, a non-standard dialect of C with proprietary structures for multitasking."
+website "http://www.rabbitconsulting.com/"
 # More info: http://en.wikipedia.org/wiki/Rabbit_Semiconductor
 
 # ShodanHQ results as at 2011-04-08 #

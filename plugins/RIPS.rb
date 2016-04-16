@@ -7,7 +7,8 @@
 Plugin.define "RIPS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-25
 version "0.1"
-description "RIPS - A static source code analyser for vulnerabilities in PHP scripts - Homepage: http://sourceforge.net/projects/rips-scanner/"
+description "RIPS - A static source code analyser for vulnerabilities in PHP scripts"
+website "http://sourceforge.net/projects/rips-scanner/"
 
 # Google results as at 2012-03-25 #
 # 4 for intitle:"RIPS - A static source code analyser for vulnerabilities in PHP scripts" "Quickstart" "Locate your PHP path/file"

@@ -10,7 +10,8 @@
 Plugin.define "RunCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
 version "0.2"
-description "RunCms is Ease Of Use for webmasters. One of the worlds finest free CMS systems. - homepage: www.runcms.org/"
+description "RunCms is Ease Of Use for webmasters. One of the worlds finest free CMS systems."
+website "www.runcms.org/"
 
 # Google results as at 2010-07-11 #
 # 57 for "powered by RunCMS" -Vulnerability -exploit inurl:module inurl:viewcat.php

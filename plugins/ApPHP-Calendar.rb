@@ -7,7 +7,8 @@
 Plugin.define "ApPHP-Calendar" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-20
 version "0.1"
-description "The ApPHP Calendar (ApPHP CAL) is a powerful PHP calendar script that may be easily integrated and used with various PHP projects, such as schedulers, event processors etc. The calendar is very simple to install, implement and use. - Homepage: http://www.apphp.com/php-calendar/"
+description "The ApPHP Calendar (ApPHP CAL) is a powerful PHP calendar script that may be easily integrated and used with various PHP projects, such as schedulers, event processors etc. The calendar is very simple to install, implement and use."
+website "http://www.apphp.com/php-calendar/"
 
 # Google results as at 2011-03-20 #
 # 29 for Sunday Monday Tuesday Wednesday Thursday Friday +Satarday inurl:action inurl:view_type

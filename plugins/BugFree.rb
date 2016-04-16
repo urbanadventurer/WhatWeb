@@ -7,7 +7,8 @@
 Plugin.define "BugFree" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-22
 version "0.1"
-description "BugFree [Chinese] - Homepage: http://www.bugfree.org.cn/"
+description "BugFree [Chinese]"
+website "http://www.bugfree.org.cn/"
 
 # Google results as at 2011-10-22 #
 # 12 for inurl:"Login.php" intitle:"BugFree"

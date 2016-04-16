@@ -10,7 +10,8 @@
 Plugin.define "Custom-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
 version "0.2"
-description "Custom CMS Gaming is a Content Management System geared towards all Gamers that would like to maintain and create fully functional gaming sources.  - homepage: http://www.customcms.net/"
+description "Custom CMS Gaming is a Content Management System geared towards all Gamers that would like to maintain and create fully functional gaming sources. "
+website "http://www.customcms.net/"
 
 # Google results as at 2010-09-03 #
 # 165 for "powered by CCMS"

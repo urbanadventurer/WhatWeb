@@ -7,7 +7,8 @@
 Plugin.define "Mission-Control-Application-Shield" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
 version "0.1"
-description "Mission Control Application Shield functions as a Web Application Firewall (WAF) and offers the following features: SSL offloading, single sign-on, high availability through system redundancy, backend server failover and load balancing, session fixation, cookie encryption, different methods of authentication (Radius, NTLM/Kerberos, LDAP), header and form validation and a live log viewer - Homepage: http://www.open.ch/1_1_2_1.html"
+description "Mission Control Application Shield functions as a Web Application Firewall (WAF) and offers the following features: SSL offloading, single sign-on, high availability through system redundancy, backend server failover and load balancing, session fixation, cookie encryption, different methods of authentication (Radius, NTLM/Kerberos, LDAP), header and form validation and a live log viewer"
+website "http://www.open.ch/1_1_2_1.html"
 
 # Since when was session fixation a feature? Perhaps they meant single sign-on.
 # Wait, what? It offers single sign-on AND session fixation? Go figure.

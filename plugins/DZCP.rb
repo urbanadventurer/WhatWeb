@@ -7,7 +7,8 @@
 Plugin.define "DZCP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
 version "0.1"
-description "deV!L`z Clanportal - Homepage: http://www.dzcp.de"
+description "deV!L`z Clanportal"
+website "http://www.dzcp.de"
 
 # Google results as at 2011-02-27 #
 # 419 for "2011 by deV!L`z Clanportal"

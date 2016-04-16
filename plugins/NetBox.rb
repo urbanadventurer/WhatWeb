@@ -7,7 +7,8 @@
 Plugin.define "NetBox" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
-description "NetBox HTTP server [Chinese] - Homepage: http://www.netbox.cn/"
+description "NetBox HTTP server [Chinese]"
+website "http://www.netbox.cn/"
 
 # ShodanHQ results as at 2011-03-14 #
 # 1,778 for NetBox -realm

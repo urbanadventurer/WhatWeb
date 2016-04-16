@@ -7,7 +7,8 @@
 Plugin.define "Splunk" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-17
 version "0.1"
-description "Splunk indexes and makes searchable data from any app, server or network device in real time including logs, config files, messages, alerts, scripts and metrics. - Homepage: http://www.splunk.com"
+description "Splunk indexes and makes searchable data from any app, server or network device in real time including logs, config files, messages, alerts, scripts and metrics."
+website "http://www.splunk.com"
 
 # ShodanHQ results as at 2011-04-17 #
 # 18 for session_id_8000

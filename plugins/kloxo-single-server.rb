@@ -7,7 +7,8 @@
 Plugin.define "Kloxo-Single-Server" do # aka HyperVM aka LxAdmin
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
 version "0.1"
-description "Kloxo (aka HyperVM aka LxAdmin) is a fully scriptable, distributed and a 100% object oriented hosting platform - Homepage: http://www.lxcenter.org/kloxo.htm"
+description "Kloxo (aka HyperVM aka LxAdmin) is a fully scriptable, distributed and a 100% object oriented hosting platform"
+website "http://www.lxcenter.org/kloxo.htm"
 
 # 70 results for "Use a valid username and password to gain access to the console" -lxcenter.org @ 2010-05-09
 

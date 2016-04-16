@@ -7,7 +7,8 @@
 Plugin.define "SysMaster" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "SysMaster is a leading vendor of voice, video and wireless products and solutions, serving telecoms and service providers worldwide. - Homepage: http://www.sysmaster.com/"
+description "SysMaster is a leading vendor of voice, video and wireless products and solutions, serving telecoms and service providers worldwide."
+website "http://www.sysmaster.com/"
 
 # ShodanHQ results as at 2011-05-31 #
 # 181 for SysMaster

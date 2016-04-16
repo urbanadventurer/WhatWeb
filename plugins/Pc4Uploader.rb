@@ -10,7 +10,8 @@
 Plugin.define "Pc4Uploader" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.2"
-description "File upload web app - homepage: http://www.pc4arb.com/"
+description "File upload web app"
+website "http://www.pc4arb.com/"
 
 # Google results as at 2010-09-17 #
 # 266 results for "powered by Pc4Uploader"

@@ -7,7 +7,8 @@
 Plugin.define "Tradingeye" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-13
 version "0.1"
-description "Tradingeye is a fully-featured web standards compliant Shopping Cart & CMS, built from the ground up with web accessibility and SEO in mind. - Homepage: http://tradingeye.com/"
+description "Tradingeye is a fully-featured web standards compliant Shopping Cart & CMS, built from the ground up with web accessibility and SEO in mind."
+website "http://tradingeye.com/"
 
 # Google results as at 2011-07-13 #
 # 267 for "Powered by Tradingeye" "You are here: Home"

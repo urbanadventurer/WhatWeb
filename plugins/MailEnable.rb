@@ -7,7 +7,8 @@
 Plugin.define "MailEnable" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-14
 version "0.1"
-description "Windows mail server software with webmail, caldav, carddav, antivirus, spam filtering and more. - Homepage: http://www.mailenable.com/"
+description "Windows mail server software with webmail, caldav, carddav, antivirus, spam filtering and more."
+website "http://www.mailenable.com/"
 
 # Google results as at 2012-01-14 #
 # 87 for intitle:"MailEnable - Webmail" "Account Login" "MailEnable"

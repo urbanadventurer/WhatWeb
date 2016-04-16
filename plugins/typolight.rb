@@ -11,7 +11,8 @@
 Plugin.define "TypoLight" do
 author "Andrew Horton"
 version "0.2"
-description "TypoLight is an OpenSource CMS written in PHP. Homepage: www.typolight.org"
+description "TypoLight is an OpenSource CMS written in PHP"
+website "www.typolight.org"
 
 
 

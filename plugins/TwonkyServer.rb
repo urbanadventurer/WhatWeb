@@ -7,7 +7,8 @@
 Plugin.define "TwonkyServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
 version "0.1"
-description "Twonky is a line of computer and mobile applications that finds all of your digital media collections and shares them with PCs, TVs, stereos and other devices connected to your network. - Homepage: http://www.twonky.com/"
+description "Twonky is a line of computer and mobile applications that finds all of your digital media collections and shares them with PCs, TVs, stereos and other devices connected to your network."
+website "http://www.twonky.com/"
 
 # Google results as at 2011-09-17 #
 # 30 for inurl:":9000" PacketVideo corporation (intitle:"TwonkyMedia"|intitle:"TwonkyServer")

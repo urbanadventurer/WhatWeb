@@ -7,7 +7,8 @@
 Plugin.define "OpenKM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-09
 version "0.1"
-description "OpenKM - Open Source Electronic Document Management System - Homepage: http://www.openkm.com/en/"
+description "OpenKM - Open Source Electronic Document Management System"
+website "http://www.openkm.com/en/"
 
 # Google results as at 2012-01-09 #
 # 17 for "Welcome to OpenKM" intitle:"OpenKM login"

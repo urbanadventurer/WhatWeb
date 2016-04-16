@@ -7,7 +7,8 @@
 Plugin.define "MyBB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
 version "0.1"
-description "MyBB is a powerful, efficient and free forum package developed in PHP and MySQL. MyBB has been designed with the end users in mind, you and your subscribers. Full control over your discussion system is presented right at the tip of your fingers, from multiple styles and themes to the ultimate customization of your forums using the template system. - Homepage: http://mybb.com/"
+description "MyBB is a powerful, efficient and free forum package developed in PHP and MySQL. MyBB has been designed with the end users in mind, you and your subscribers. Full control over your discussion system is presented right at the tip of your fingers, from multiple styles and themes to the ultimate customization of your forums using the template system."
+website "http://mybb.com/"
 
 # Google results as at 2011-02-26 #
 # 289 for "Powered By MyBB"

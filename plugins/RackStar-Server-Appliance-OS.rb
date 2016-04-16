@@ -7,7 +7,8 @@
 Plugin.define "RackStar-Server-Appliance-OS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.1"
-description "RackStar can be installed on almost any PC platform. That's what makes the RackStar Server Appliance Software so great! Now anyone can host sites! Still got a Cobalt RAQ? No problem! RackStar runs on that too! - homepage: http://www.rackstar.net/"
+description "RackStar can be installed on almost any PC platform. That's what makes the RackStar Server Appliance Software so great! Now anyone can host sites! Still got a Cobalt RAQ? No problem! RackStar runs on that too!"
+website "http://www.rackstar.net/"
 
 # 322 ShodanHQ results for www.rackstar.net
 

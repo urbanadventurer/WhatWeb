@@ -7,7 +7,8 @@
 Plugin.define "OKI-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "OKI printer - Homepage: http://www.okiprintingsolutions.com/"
+description "OKI printer"
+website "http://www.okiprintingsolutions.com/"
 
 # ShodanHQ results as at 2011-05-31 #
 # 240 for OKIDATA-HTTPD

@@ -7,7 +7,8 @@
 Plugin.define "ez-oscommerce" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
-description "PHP powered shopping cart - homepage: http://www.eptcel.com.br/"
+description "PHP powered shopping cart"
+website "http://www.eptcel.com.br/"
 
 # 1 result for "powered by ez oscommerce" @ 2010-10-12
 

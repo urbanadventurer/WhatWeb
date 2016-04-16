@@ -7,7 +7,8 @@
 Plugin.define "qdPM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-15
 version "0.1"
-description "qdPM is a free web-based project management tool suitable for a small team working on multiple projects. - Homepage: http://qdpm.net/"
+description "qdPM is a free web-based project management tool suitable for a small team working on multiple projects."
+website "http://qdpm.net/"
 
 # ShodanHQ results as at 2012-06-15 #
 # 8 for Set-Cookie qdpm

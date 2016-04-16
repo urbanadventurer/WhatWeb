@@ -7,7 +7,8 @@
 Plugin.define "Op5-Monitor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-24
 version "0.1"
-description "Op5-Monitor - Enterprise Open Source Monitoring - Homepage: https://www.op5.com/demo"
+description "Op5-Monitor - Enterprise Open Source Monitoring"
+website "https://www.op5.com/demo"
 
 # Dorks #
 dorks [

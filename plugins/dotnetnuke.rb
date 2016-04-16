@@ -23,7 +23,8 @@
 Plugin.define "DotNetNuke" do
     author "Andrew Horton"
     version "0.5"
-    description "DotNetNuke is an opensource CMS for Microsoft .Net Homepage: www.dotnetnuke.com. Passively detects modules and the copyright year."
+    description "DotNetNuke is an opensource CMS for Microsoft .Net. Passively detects modules and the copyright year."
+    website "www.dotnetnuke.com"
 
     # ShodanHQ reuslts as at 2012-4-19 #
     # 713 for DotNetNukeAnonymous

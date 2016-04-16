@@ -7,7 +7,8 @@
 Plugin.define "PHP-Pro-Bid" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
-description "PHP Pro Bid - Auction software - Homepage: http://www.phpprobid.com/"
+description "PHP Pro Bid - Auction software"
+website "http://www.phpprobid.com/"
 
 # Google results as at 2011-02-27 #
 # 33 for "PLEASE LOGIN TO THE ADMIN AREA" "Current Version"

@@ -7,7 +7,8 @@
 Plugin.define "Cisco-ACE" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
 version "0.1"
-description "Cisco Application Control Engine (ACE) Device Manager - Homepage: http://www.cisco.com/en/US/products/ps6906/index.html"
+description "Cisco Application Control Engine (ACE) Device Manager"
+website "http://www.cisco.com/en/US/products/ps6906/index.html"
 
 # Google results as at 2012-05-04 #
 # 4 for inurl:"/change_password.vm?username"

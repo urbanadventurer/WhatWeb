@@ -7,7 +7,8 @@
 Plugin.define "eXtplorer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-12-31
 version "0.1"
-description "eXtplorer is a PHP and Javascript-based File Manager - Homepage: http://extplorer.net/"
+description "eXtplorer is a PHP and Javascript-based File Manager"
+website "http://extplorer.net/"
 
 # ShodanHQ results as at 2012-12-31 #
 # 412 for Set-Cookie eXtplorer

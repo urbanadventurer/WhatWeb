@@ -10,7 +10,8 @@
 Plugin.define "SegPub" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-19
 version "0.2"
-description "SegPub, a hosting solutions provider based in Sydney, Australia - Homepage: http://segpub.net/"
+description "SegPub, a hosting solutions provider based in Sydney, Australia"
+website "http://segpub.net/"
 
 # ShodanHQ resuls as at 2011-02-19 #
 # 458 for Server SegPache

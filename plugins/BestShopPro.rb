@@ -7,7 +7,8 @@
 Plugin.define "BestShopPro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-02
 version "0.1"
-description "BestShopPro - Homepage: http://www.bst.pl/"
+description "BestShopPro"
+website "http://www.bst.pl/"
 
 # Google results as at 2011-11-02 #
 # 157 for inurl:"pokaz_podkat.php?idkat="

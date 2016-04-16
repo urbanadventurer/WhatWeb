@@ -7,7 +7,8 @@
 Plugin.define "AxCMS_net" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.1"
-description "AxCMS.net - the free ASP.NET CMS by Axinom - Homepage: http://en.axcms.net/"
+description "AxCMS.net - the free ASP.NET CMS by Axinom"
+website "http://en.axcms.net/"
 
 # Google results as at 2011-03-04 #
 # 59 for "powered by axcms"

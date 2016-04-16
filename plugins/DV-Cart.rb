@@ -7,7 +7,8 @@
 Plugin.define "DV-Cart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
 version "0.1"
-description "DV Cart - fully featured Shopping Cart software - Requires: PHP and MySQL - Homepage: http://www.esmistudio.com/"
+description "DV Cart - fully featured Shopping Cart software - Requires: PHP and MySQL"
+website "http://www.esmistudio.com/"
 
 # This plugin requires additional matches
 

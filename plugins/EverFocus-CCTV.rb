@@ -7,7 +7,8 @@
 Plugin.define "EverFocus-CCTV" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
-description "EverFoxus CCTV router web interface - Homepage: http://www.everfocus.com/products.cfm"
+description "EverFoxus CCTV router web interface"
+website "http://www.everfocus.com/products.cfm"
 
 # Default Logins:
 # EverFocus - PowerPlex - admin:admin

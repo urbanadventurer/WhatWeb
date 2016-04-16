@@ -10,7 +10,8 @@
 Plugin.define "MailSiteExpress" do
 author "Andrew Horton"
 version "0.2"
-description "Webmail in ASP. Versions < 6.1.2 insecure http://marc.info/?l=bugtraq&m=113053680631151&w=2 -  Homepage: http://www.mailsite.com/products/express-webmail-server.asp"
+description "Webmail in ASP. Versions < 6.1.2 insecure http://marc.info/?l=bugtraq&m=113053680631151&w=2 -"
+website "http://www.mailsite.com/products/express-webmail-server.asp"
 
 # <!-- This software is copyright 1999, 2000 Rockliffe systems, Inc. -->
 # <!-- default.asp ver. 4.5.6 -->

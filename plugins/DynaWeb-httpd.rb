@@ -7,7 +7,8 @@
 Plugin.define "DynaWeb-httpd" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
-description "DynaWeb web server. Ships with Sun Microsystem's AnswerBook - Homepage: http://www.oracle.com/"
+description "DynaWeb web server. Ships with Sun Microsystem's AnswerBook"
+website "http://www.oracle.com/"
 
 # More Info #
 # http://osdir.com/ml/os.solaris.sunhelp/2001-09/msg00527.html

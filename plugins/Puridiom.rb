@@ -7,7 +7,8 @@
 Plugin.define "Puridiom" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
 version "0.1"
-description "Puridiom - eProcurement software - Homepage: http://www.puridiom.com/"
+description "Puridiom - eProcurement software"
+website "http://www.puridiom.com/"
 
 # Google results as at 2011-07-14 #
 # 5 for intitle:"Enabling Self-Service Procurement" "Loading Page"

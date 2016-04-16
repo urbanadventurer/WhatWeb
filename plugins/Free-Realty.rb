@@ -7,7 +7,8 @@
 Plugin.define "Free-Realty" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-15
 version "0.1"
-description "Free Realty is primarily designed for real estate agents and offices to list properties on the internet. - Homepage: http://freerealty.rwcinc.net/"
+description "Free Realty is primarily designed for real estate agents and offices to list properties on the internet."
+website "http://freerealty.rwcinc.net/"
 
 # Google results as at 2012-05-15 #
 # 19 for inurl:"propview.php" "equal housing logo This tool is Open Source and released under the GPL "

@@ -7,7 +7,8 @@
 Plugin.define "SMA-Sunny-WebBox" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-27
 version "0.1"
-description "Sunny WebBox is a high-performance communication hub for medium to large-scale solar power plants. It features system monitoring, remote diagnosis, data storage and visualization. - Homepage: http://www.sma-america.com/en_US/products/monitoring-systems/sunny-webbox.html"
+description "Sunny WebBox is a high-performance communication hub for medium to large-scale solar power plants. It features system monitoring, remote diagnosis, data storage and visualization."
+website "http://www.sma-america.com/en_US/products/monitoring-systems/sunny-webbox.html"
 
 # Manual #
 # http://files.sma.de/dl/2585/SWebBox-BEN111033.pdf

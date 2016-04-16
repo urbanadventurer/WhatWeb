@@ -7,7 +7,8 @@
 Plugin.define "CalendarScript" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
 version "0.1"
-description "CalendarScript is a fully customizable event-publishing solution. It gives you everything you'll need to begin, then gives you the power to redefine it to fit your specific needs. - Homepage: http://www.calendarscript.com/"
+description "CalendarScript is a fully customizable event-publishing solution. It gives you everything you'll need to begin, then gives you the power to redefine it to fit your specific needs."
+website "http://www.calendarscript.com/"
 
 # Google results as at 2011-03-19 #
 # 401 for "Powered by CalendarScript"

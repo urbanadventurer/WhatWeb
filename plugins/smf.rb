@@ -19,7 +19,8 @@
 Plugin.define "SMF" do
 author "Andrew Horton"
 version "0.5"
-description "SMF (Simple Machines Forum) is an opensource forum written in PHP. Homepage: www.simplemachines.org"
+description "SMF (Simple Machines Forum) is an opensource forum written in PHP"
+website "www.simplemachines.org"
 
 # Dorks #
 dorks [

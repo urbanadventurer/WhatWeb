@@ -16,7 +16,8 @@
 Plugin.define "PHPNuke" do
 author "Andrew Horton"
 version "0.4"
-description "PHP-Nuke is a free CMS. Homepage: phpnuke.org. The plugin passively recognises modules. An obvious improvement would be to aggresively discover modules and discover the phpnuke version"
+description "PHP-Nuke is a free CMS"
+website "phpnuke.org. The plugin passively recognises modules. An obvious improvement would be to aggresively discover modules and discover the phpnuke version"
 
 # Google results as at 2011-03-06 #
 # 497 for allinurl:"modules.php?name=Your_Account"

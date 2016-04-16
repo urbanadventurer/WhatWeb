@@ -7,7 +7,8 @@
 Plugin.define "Digital-Scribe" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-31
 version "0.1"
-description "The Digital Scribe is a free, intuitive system designed to help teachers put student work and homework assignments online. Requires: PHP & MySQL. - Homepage: http://www.digital-scribe.org/"
+description "The Digital Scribe is a free, intuitive system designed to help teachers put student work and homework assignments online. Requires: PHP & MySQL."
+website "http://www.digital-scribe.org/"
 
 # Google results as at 2011-07-31 #
 # 7 for +copyright "Digital Scribe * All Rights Reserved"

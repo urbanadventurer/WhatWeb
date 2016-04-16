@@ -7,7 +7,8 @@
 Plugin.define "Empire-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-04
 version "0.1"
-description "Open source CMS - homepage: http://www.phome.net/"
+description "Open source CMS"
+website "http://www.phome.net/"
 
 # 371 results for "powered by EmpireCMS" @ 2010-08-04
 

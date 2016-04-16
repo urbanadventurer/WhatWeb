@@ -7,7 +7,8 @@
 Plugin.define "Saman-Portal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-13
 version "0.1"
-description "Saman Portal - Homepage: http://www.sis-eg.com/"
+description "Saman Portal"
+website "http://www.sis-eg.com/"
 
 # ShodanHQ results as at 2012-03-13 #
 # 7 for SAMANPORTALSID

@@ -7,7 +7,8 @@
 Plugin.define "PithCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
-description "PithCMS - requirements: Linux, PHP 4.4.4-8 - homepage: http://pithcms.altervista.org/index.php?pagina=data/info.php"
+description "PithCMS - requirements: Linux, PHP 4.4.4-8"
+website "http://pithcms.altervista.org/index.php?pagina=data/info.php"
 
 # 23 results for "powered by pithcms" @ 2010-10-14
 

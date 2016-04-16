@@ -7,7 +7,8 @@
 Plugin.define "Fujitsu-InfoProvider-Pro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.1"
-description "Fujitsu-InfoProvider-Pro web server - homepage: http://software.fujitsu.com"
+description "Fujitsu-InfoProvider-Pro web server"
+website "http://software.fujitsu.com"
 
 # ShodanHQ results as at 2011-02-24 #
 # 188 for Fujitsu-InfoProvider-Pro

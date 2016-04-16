@@ -10,7 +10,8 @@
 Plugin.define "xGB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
-description "xGB guestbook - homepage: http://www.x-gfx.de/"
+description "xGB guestbook"
+website "http://www.x-gfx.de/"
 
 # Google results as at 2010-08-14 #
 # 126 for allinurl:"xGb.php"

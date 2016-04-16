@@ -7,7 +7,8 @@
 Plugin.define "bitweaver" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.1"
-description "Bitweaver is a free and open source web application framework and content management system. Its speed and power are ideal for large-scale community websites and corporate applications, but it is simple enough for non-technical small site users to set up and administrate. It comes fully featured on install but is modular and easy to extend. - Homepage: http://www.bitweaver.org/"
+description "Bitweaver is a free and open source web application framework and content management system. Its speed and power are ideal for large-scale community websites and corporate applications, but it is simple enough for non-technical small site users to set up and administrate. It comes fully featured on install but is modular and easy to extend."
+website "http://www.bitweaver.org/"
 
 # Google results as at 2011-02-24 #
 # 151 for "powered by bitweaver"

@@ -7,7 +7,8 @@
 Plugin.define "Nucleus-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-23
 version "0.1"
-description "Nucleus CMS - Homepage: http://nucleuscms.org/"
+description "Nucleus CMS"
+website "http://nucleuscms.org/"
 
 # Google results as at 2011-03-13 #
 # 3 for intitle:"Nucleus Install" "Install Nucleus" +Hostname +Username +Password

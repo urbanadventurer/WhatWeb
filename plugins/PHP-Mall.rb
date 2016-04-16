@@ -7,7 +7,8 @@
 Plugin.define "PHP-Mall" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-20
 version "0.1"
-description "PHP Mall (formerly iBoutique.MALL) is a powerful and flexible multi vendors mall solution. - Homepage: http://www.netartmedia.net/mall"
+description "PHP Mall (formerly iBoutique.MALL) is a powerful and flexible multi vendors mall solution."
+website "http://www.netartmedia.net/mall"
 
 # Google results as at 2012-06-20 #
 # 117 for "powered by PHP Mall"

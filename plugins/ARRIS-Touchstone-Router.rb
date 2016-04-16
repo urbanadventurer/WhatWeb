@@ -10,7 +10,8 @@
 Plugin.define "ARRIS-Touchstone-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
 version "0.2"
-description "ARRIS Touchstone router - Homepage: http://www.arrisi.com/products/touchstone/"
+description "ARRIS Touchstone router"
+website "http://www.arrisi.com/products/touchstone/"
 
 # ShodanHQ results as at 2011-09-14 #
 # 211,058 for NET-DK

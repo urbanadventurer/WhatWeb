@@ -7,7 +7,8 @@
 Plugin.define "ShoreTel-Converged-Conferencing" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-20
 version "0.1"
-description "ShoreTel Converged Conferencing - Homepage: http://www.shoretel.com/"
+description "ShoreTel Converged Conferencing"
+website "http://www.shoretel.com/"
 
 # User Guide #
 # http://support.shoretel.com/products/converged_conferencing/7.1/downloads/converged_conferencing_7.1_user_guide.pdf

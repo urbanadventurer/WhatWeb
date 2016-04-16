@@ -11,7 +11,8 @@
 Plugin.define "Billion-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
 version "0.2"
-description "Billion router - Homepage: http://www.billion.com/product/product.html"
+description "Billion router"
+website "http://www.billion.com/product/product.html"
 
 # ShodanHQ results as at 2012-01-08 #
 # 41,859 for Authenticate WebAdmin Conexant-EmWeb

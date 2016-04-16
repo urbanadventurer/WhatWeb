@@ -7,7 +7,8 @@
 Plugin.define "BigDump" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
 version "0.1"
-description "BigDump: Staggered MySQL Dump Importer  - Homepage: http://www.ozerov.de/bigdump.php"
+description "BigDump: Staggered MySQL Dump Importer "
+website "http://www.ozerov.de/bigdump.php"
 
 # 230 for intitle:"BigDump ver" +Filename "BigDump: Staggered MySQL Dump Importer"
 # 210 for inurl:"bigdump.php" intitle:"BigDump ver" +Filename "BigDump: Staggered MySQL Dump Importer"

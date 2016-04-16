@@ -7,7 +7,8 @@
 Plugin.define "web2Project" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-02
 version "0.1"
-description "web2Project is a Free Open Source business-oriented Project Management System (PMS) - Homepage: http://web2project.net/"
+description "web2Project is a Free Open Source business-oriented Project Management System (PMS)"
+website "http://web2project.net/"
 
 # ShodanHQ results as at 2012-11-04 #
 # 63 for web2project

@@ -8,7 +8,8 @@
 Plugin.define "BM-Classifieds" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.1"
-description "A complete classifieds site ready to run in 15 minutes. - homepage: http://www.bmscripts.com/"
+description "A complete classifieds site ready to run in 15 minutes."
+website "http://www.bmscripts.com/"
 
 # Dorks #
 dorks [

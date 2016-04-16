@@ -7,7 +7,8 @@
 Plugin.define "WSTOOL" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-09
 version "0.1"
-description "WSTOOL is OS-independence Web vulnerability scanner - Homepage: http://wstool.sourceforge.net/"
+description "WSTOOL is OS-independence Web vulnerability scanner"
+website "http://wstool.sourceforge.net/"
 
 # Google results as at 2012-01-09 #
 # 1 for intitle:"Server Error & SQL Injection Sacnner" "Server info" "Domain or IP"

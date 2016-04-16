@@ -7,7 +7,8 @@
 Plugin.define "Covalent-Enterprise-Ready-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
 version "0.1"
-description "The Covalent Enterprise Ready Server is a stand-alone, manually-managed instance of an Apache 2.0 Web server with Covalent extensions. - Homepage: http://www.covalent.net/resource/documentation/ers/2.1.0/HTML/InstallGuide/installers.html"
+description "The Covalent Enterprise Ready Server is a stand-alone, manually-managed instance of an Apache 2.0 Web server with Covalent extensions."
+website "http://www.covalent.net/resource/documentation/ers/2.1.0/HTML/InstallGuide/installers.html"
 # Product guide: http://www.covalent.net/resource/documentation/ers/2.4.0/ers-2.4.0-ProductGuide.pdf
 
 # ShodanHQ results as at 2011-05-12 #

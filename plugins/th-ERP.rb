@@ -7,7 +7,8 @@
 Plugin.define "th-ERP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-22
 version "0.1"
-description "ERP application, including point-of-sale (POS), stock (inventory/warehouse), purchase, payables, receivables, general ledger (accounting), payroll, human resource (HR), time tracking, project management. th-ERP is written in PHP and using MySQL. - Homepage: http://sourceforge.net/projects/therp/"
+description "ERP application, including point-of-sale (POS), stock (inventory/warehouse), purchase, payables, receivables, general ledger (accounting), payroll, human resource (HR), time tracking, project management. th-ERP is written in PHP and using MySQL."
+website "http://sourceforge.net/projects/therp/"
 
 # Google results as at 2011-06-22 #
 # 7 for intitle:"thERP - Login" Username Password

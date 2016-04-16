@@ -13,7 +13,8 @@
 Plugin.define "Novell-Groupwise" do
 author "Andrew Horton"
 version "0.3"
-description "Novell GroupWise collaboration software is a premier collaboration tool for large enterprise. GroupWise WebAccess was released as an add-on to Novell GroupWise, providing internet-based access to GroupWise from a web browser. - Homepage: http://www.novell.com/products/groupwise/"
+description "Novell GroupWise collaboration software is a premier collaboration tool for large enterprise. GroupWise WebAccess was released as an add-on to Novell GroupWise, providing internet-based access to GroupWise from a web browser."
+website "http://www.novell.com/products/groupwise/"
 
 # 414 for intitle:"novell webaccess" -filetype:html
 # 206 for inurl:servlet/webacc -filetype:html

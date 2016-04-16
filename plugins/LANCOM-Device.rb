@@ -7,7 +7,8 @@
 Plugin.define "LANCOM-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
-description "LANCOM Systems is a provider of innovative and reliable communications solutions, Secure Access, VPN and Wireless LAN with high technological capabilities, easy configuration and unified control of all products. - Homepage: http://www.lancom-systems.nl/"
+description "LANCOM Systems is a provider of innovative and reliable communications solutions, Secure Access, VPN and Wireless LAN with high technological capabilities, easy configuration and unified control of all products."
+website "http://www.lancom-systems.nl/"
 
 # ShodanHQ results as at 2011-06-02 #
 # 32,344 for LANCOM

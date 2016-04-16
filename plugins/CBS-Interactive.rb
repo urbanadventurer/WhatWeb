@@ -7,7 +7,8 @@
 Plugin.define "CBS-Interactive" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-14
 version "0.1"
-description "CBS Interactive - online content network - Homepage: http://www.cbsinteractive.com/"
+description "CBS Interactive - online content network"
+website "http://www.cbsinteractive.com/"
 
 
 

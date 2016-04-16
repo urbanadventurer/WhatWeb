@@ -7,7 +7,8 @@
 Plugin.define "Pivotal-CRM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-07
 version "0.1"
-description "Pivotal CRM is a customer relationship management (CRM) software system offered by CDC Software. - Homepage: http://www.cdcsoftware.com/en/PivotalCRM.aspx"
+description "Pivotal CRM is a customer relationship management (CRM) software system offered by CDC Software."
+website "http://www.cdcsoftware.com/en/PivotalCRM.aspx"
 
 # Google results as at 2011-04-07 #
 # 33 for g_PORTAL_TITLE

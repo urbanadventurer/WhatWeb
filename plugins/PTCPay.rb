@@ -7,7 +7,8 @@
 Plugin.define "PTCPay" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
-description "PTCPay is a sofware development company that develops and supports the GeN4 Security+ GPT/PTC/Bux script. - Homepage: http://ptcpay.com/"
+description "PTCPay is a sofware development company that develops and supports the GeN4 Security+ GPT/PTC/Bux script."
+website "http://ptcpay.com/"
 
 # Google results as at 2011-02-27 #
 # 7 for "Login into your admin panel" "PTCPay.Com" inurl:"admin"

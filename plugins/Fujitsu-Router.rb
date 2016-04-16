@@ -7,7 +7,8 @@
 Plugin.define "Fujitsu-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
 version "0.1"
-description "Fujitsu-Router - Homepage: http://fujitsu.com/"
+description "Fujitsu-Router"
+website "http://fujitsu.com/"
 
 # ShodanHQ results as at 2011-03-11 #
 # All results as are from Japan

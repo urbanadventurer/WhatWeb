@@ -7,7 +7,8 @@
 Plugin.define "BlueDragon" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-30
 version "0.1"
-description "BlueDragon for the Microsoft .NET Framework allows you to natively integrate and deploy your ColdFusion applications on the .NET platform. - Homepage: http://www.newatlanta.com/products/bluedragon/product_info/overview.cfm"
+description "BlueDragon for the Microsoft .NET Framework allows you to natively integrate and deploy your ColdFusion applications on the .NET platform."
+website "http://www.newatlanta.com/products/bluedragon/product_info/overview.cfm"
 
 # ShodanHQ results as at 2011-07-30 #
 # 319 for BlueDragon

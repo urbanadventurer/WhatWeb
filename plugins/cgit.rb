@@ -10,7 +10,8 @@
 Plugin.define "cgit" do
 author "Fabian Affolter <fabian@engineering.ch>" # 2014-07-20
 version "0.1"
-description "A web frontend for git repositories written in C. - Homepage: http://git.zx2c4.com/cgit/"
+description "A web frontend for git repositories written in C."
+website "http://git.zx2c4.com/cgit/"
 
 # Matches #
 matches [

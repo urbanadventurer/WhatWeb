@@ -7,7 +7,8 @@
 Plugin.define "Qcodo-Development-Framework" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
-description "The Qcodo Development Framework is an open-source PHP framework that focuses on freeing developers from unnecessary tedious, mundane coding. - Homepage: http://www.qcodo.com/"
+description "The Qcodo Development Framework is an open-source PHP framework that focuses on freeing developers from unnecessary tedious, mundane coding."
+website "http://www.qcodo.com/"
 
 # Google results as at 2011-03-14 #
 # 11 for "qcodo/_devtools/codegen.php" intitle:"Development Framework - Start Page"

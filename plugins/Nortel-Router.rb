@@ -7,7 +7,8 @@
 Plugin.define "Nortel-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
 version "0.1"
-description "Nortel router - Homepage: http://www.nortel.com/"
+description "Nortel router"
+website "http://www.nortel.com/"
 
 # ShodanHQ results as at 2011-09-15 #
 # 620 for Nortel Http Server

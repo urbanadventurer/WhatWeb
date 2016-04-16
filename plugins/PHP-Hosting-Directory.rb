@@ -7,7 +7,8 @@
 Plugin.define "PHP-Hosting-Directory" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
 version "0.1"
-description "PHP Hosting Directory - Homepage: http://www.jnshosts.com/php-hosting-directory.html"
+description "PHP Hosting Directory"
+website "http://www.jnshosts.com/php-hosting-directory.html"
 
 # Google results as at 2010-10-10 #
 # 17 for "powered by PHP Hosting Directory 2.0" -Vulnerability

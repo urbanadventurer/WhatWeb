@@ -7,7 +7,8 @@
 Plugin.define "DirectAdmin" do
 author "Brendan Coles <bcoles@gmail.com>" # 201-04-22
 version "0.1"
-description "Control panel for web hosting companies running Red Hat 7.x, 8.x, 9.x, Red Hat Enterprise and FreeBSD. - Homepage: http://www.directadmin.com/"
+description "Control panel for web hosting companies running Red Hat 7.x, 8.x, 9.x, Red Hat Enterprise and FreeBSD."
+website "http://www.directadmin.com/"
 
 # 24 for intitle:"DirectAdmin Login" "DirectAdmin Login Page" "Please enter your Username and Password"
 

@@ -7,7 +7,8 @@
 Plugin.define "Rapidleech" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-19
 version "0.1"
-description "Rapid Leech is a free server transfer script for use on various popular upload/download sites such as megaupload.com, Rapidshare.com and more than 45 others. The famous Rapidleech script transfers files from Rapidshare, Megaupload, Depositfiles.com, Easy-share.com, etc, via your fast servers connection speed and dumps the file on your server. You may then download these files from your server anytime later. Rapidleech script has being used by more than 5 million users worldwide and has being installed on more than 2000 servers. - Homepage: http://code.google.com/p/rapidleech/"
+description "Rapid Leech is a free server transfer script for use on various popular upload/download sites such as megaupload.com, Rapidshare.com and more than 45 others. The famous Rapidleech script transfers files from Rapidshare, Megaupload, Depositfiles.com, Easy-share.com, etc, via your fast servers connection speed and dumps the file on your server. You may then download these files from your server anytime later. Rapidleech script has being used by more than 5 million users worldwide and has being installed on more than 2000 servers."
+website "http://code.google.com/p/rapidleech/"
 
 # Google results as at 2010-12-30 #
 # 137 for "Credits to Pramode & Checkmate & Kloon" "RapidleechHost Offical Hosting" intitle:"Rapidleech"

@@ -10,7 +10,8 @@
 Plugin.define "PhilBoard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-27
 version "0.2"
-description "PhilBoard - ASP powered forum - homepage: http://www.philboards.com/"
+description "PhilBoard - ASP powered forum"
+website "http://www.philboards.com/"
 
 # 47 results for "powered by philboard" -Vulnerabilities -Vulnerability @ 2010-06-27
 

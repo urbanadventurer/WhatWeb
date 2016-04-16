@@ -7,7 +7,8 @@
 Plugin.define "SQL-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.1"
-description "SQL CMS is a Multi Award Winning web based Content Management System (CMS) for Microsoft SQL Server. SQL CMS is designed to be very simple to use, it was built with the end user in mind so is perfect for developers or their clients. - Requires: .Net Framework Installed (v3.5) - Homepage: http://www.developerinabox.com/"
+description "SQL CMS is a Multi Award Winning web based Content Management System (CMS) for Microsoft SQL Server. SQL CMS is designed to be very simple to use, it was built with the end user in mind so is perfect for developers or their clients. - Requires: .Net Framework Installed (v3.5)"
+website "http://www.developerinabox.com/"
 
 # Google results as at 2011-03-04 #
 # 2 for inurl:"Login.aspx" Username Password SQLCMS

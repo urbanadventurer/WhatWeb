@@ -7,7 +7,8 @@
 Plugin.define "ocPortal" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
 version "0.1"
-description "Cutting-edge CMS for building and maintaining a sophisticated social website. Fully flexible, themeable and extendible: suitable for building almost any kind of website. - Homepage: http://ocportal.com"
+description "Cutting-edge CMS for building and maintaining a sophisticated social website. Fully flexible, themeable and extendible: suitable for building almost any kind of website."
+website "http://ocportal.com"
 
 # ShodanHQ results as at 2011-05-12 #
 # 24 for X-Powered-By ocPortal

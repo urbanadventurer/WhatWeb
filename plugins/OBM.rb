@@ -7,7 +7,8 @@
 Plugin.define "OBM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-28
 version "0.1"
-description "OBM is a free messaging and collaboration software including Groupware, Messaging, CRM, LDAP, Domain management, Smartphones and PDA synchronization - Homepage: http://obm.org/"
+description "OBM is a free messaging and collaboration software including Groupware, Messaging, CRM, LDAP, Domain management, Smartphones and PDA synchronization"
+website "http://obm.org/"
 
 # ShodanHQ results as at 2011-12-28 #
 # 4 for OBM_Session

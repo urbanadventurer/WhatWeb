@@ -7,7 +7,8 @@
 Plugin.define "Cougar" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
-description "Cougar video conferencing server - Homepage: http://www.cougarconference.com/"
+description "Cougar video conferencing server"
+website "http://www.cougarconference.com/"
 
 # ShodanHQ results as at 2011-07-27 #
 # 21,987 for Cougar

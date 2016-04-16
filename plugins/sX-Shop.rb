@@ -7,7 +7,8 @@
 Plugin.define "sX-Shop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
-description "PHP powered Shopping cart - homepage: http://www.source-worx.de/"
+description "PHP powered Shopping cart"
+website "http://www.source-worx.de/"
 
 # 24 results for "powered by sX-Shop" -inurl -Vulnerabilities -Vulnerability @ 2010-10-14
 

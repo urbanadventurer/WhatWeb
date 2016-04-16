@@ -10,7 +10,8 @@
 Plugin.define "AvantFAX" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
 version "0.2"
-description "AvantFAX is a web application for managing faxes on HylaFAX fax servers. - Homepage: http://avantfax.com/"
+description "AvantFAX is a web application for managing faxes on HylaFAX fax servers."
+website "http://avantfax.com/"
 
 # ShodanHQ results as at 2011-05-10 #
 # 216 for AvantFAX

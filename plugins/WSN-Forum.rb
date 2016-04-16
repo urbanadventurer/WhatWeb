@@ -7,7 +7,8 @@
 Plugin.define "WSN-Forum" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.1"
-description "WSN Forum is a complete, free, full-featured and multilingual discussion forum script. More than just a great forum, it includes instant messaging and chat room features out of the box. - Homepage: http://www.wsnforum.com/"
+description "WSN Forum is a complete, free, full-featured and multilingual discussion forum script. More than just a great forum, it includes instant messaging and chat room features out of the box."
+website "http://www.wsnforum.com/"
 
 
 

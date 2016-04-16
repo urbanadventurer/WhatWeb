@@ -7,7 +7,8 @@
 Plugin.define "Hitbox-Gateway" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
-description "Adobe Omniture Hitbox Gateway collects HTTP headers for web site usage statistics - Homepage: http://login.hitbox.com/"
+description "Adobe Omniture Hitbox Gateway collects HTTP headers for web site usage statistics"
+website "http://login.hitbox.com/"
 
 # ShodanHQ results as at 2011-06-03 #
 # 463 for Server Hitbox Gateway

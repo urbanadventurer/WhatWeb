@@ -7,7 +7,8 @@
 Plugin.define "Gossamer-Forum" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
 version "0.1"
-description "Gossamer Forum is the ideal software solution to create, or enhance, any online community. Great features including a WYSIWYG Editor and powerful search makes Gossamer Forum one of the most fully featured forum scripts out there. - Homepage: http://www.gossamer-threads.com/products/gossamer-forum/"
+description "Gossamer Forum is the ideal software solution to create, or enhance, any online community. Great features including a WYSIWYG Editor and powerful search makes Gossamer Forum one of the most fully featured forum scripts out there."
+website "http://www.gossamer-threads.com/products/gossamer-forum/"
 
 # Google results as at 2011-03-19 #
 # 74 for "Powered by Gossamer Forum" filetype:cgi inurl:gforum.cgi

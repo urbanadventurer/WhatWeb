@@ -7,7 +7,8 @@
 Plugin.define "Fpoll" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
 version "0.1"
-description "Fpoll is a simple and easily customizable open source web poll script - Requires: PHP and MySQL - Homepage: http://www.phpfront.com/fpoll.php"
+description "Fpoll is a simple and easily customizable open source web poll script - Requires: PHP and MySQL"
+website "http://www.phpfront.com/fpoll.php"
 
 # Google results as at 2011-08-25 #
 # 8 for intitle:"Fpoll" intitle:"AdminCP" inurl:admincp ext:php

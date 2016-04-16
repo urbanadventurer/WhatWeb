@@ -7,7 +7,8 @@
 Plugin.define "SkaLinks" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.1"
-description "SkaLinks - Free Links Exchange software - homepage: http://www.skalinks.com/"
+description "SkaLinks - Free Links Exchange software"
+website "http://www.skalinks.com/"
 
 # 305 results for "powered by SkaLinks" "Link Exchange Script" @ 2010-08-14
 

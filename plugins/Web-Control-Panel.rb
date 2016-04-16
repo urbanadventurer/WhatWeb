@@ -7,7 +7,8 @@
 Plugin.define "Web-Control-Panel" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-27
 version "0.1"
-description "Web Control Panel used for CommuniLink hosting - Homepage: http://communilink.com/"
+description "Web Control Panel used for CommuniLink hosting"
+website "http://communilink.com/"
 
 # Google results as at 2011-09-27 #
 # 29 for "New Webmail by CommuniLink. Many new features added and support multi-language."

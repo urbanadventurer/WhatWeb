@@ -7,7 +7,8 @@
 Plugin.define "activeWeb-Content-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-25
 version "0.1"
-description "Content Server is a comprehensive, scalable content management platform for professional demands. It combines editorial system, website management and development environment for Web applications in one package. - Homepage: http://www.active-web.de/"
+description "Content Server is a comprehensive, scalable content management platform for professional demands. It combines editorial system, website management and development environment for Web applications in one package."
+website "http://www.active-web.de/"
 
 # ShodanHQ results as at 2011-03-25 #
 # 19 for X-AwCache

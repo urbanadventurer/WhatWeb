@@ -7,7 +7,8 @@
 Plugin.define "LEAP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
 version "0.1"
-description "LEAP is a Content Management System (LEAP CMS), yet so much more than this. Because of its wide range of features that go beyond content management, it is also referred to as a Website Operating System. - Homepage: http://www.leapcms.com/"
+description "LEAP is a Content Management System (LEAP CMS), yet so much more than this. Because of its wide range of features that go beyond content management, it is also referred to as a Website Operating System."
+website "http://www.leapcms.com/"
 
 # Google results as at 2011-03-15 #
 # 113 for inurl:LEAP/error.lasso

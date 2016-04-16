@@ -7,7 +7,8 @@
 Plugin.define "Falcon-Web-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
-description "Falcon Web Server - Homepage: http://www.blueface.com/"
+description "Falcon Web Server"
+website "http://www.blueface.com/"
 
 # ShodanHQ results as at 2011-05-31 #
 # 28 for Falcon Web Server

@@ -11,7 +11,8 @@
 Plugin.define "Sun-Java-System-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.2"
-description "Sun Java System Web/Proxy Server. - homepage: http://developers.sun.com/appserver/"
+description "Sun Java System Web/Proxy Server."
+website "http://developers.sun.com/appserver/"
 
 # ShodanHQ results as at 2010-10-23 #
 # 2722 results for Server: Sun-Java-System-Web-Server

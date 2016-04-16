@@ -7,7 +7,8 @@
 Plugin.define "cApexWEB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-19
 version "0.1"
-description "cApexWEB - web based Backoffice client - Homepage: http://www.capitalsoft.com/"
+description "cApexWEB - web based Backoffice client"
+website "http://www.capitalsoft.com/"
 
 # Google results as at 2011-12-19 #
 # 147 for "User Id" "Password" intitle:"cApexWEB"

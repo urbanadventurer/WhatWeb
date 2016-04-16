@@ -10,7 +10,8 @@
 Plugin.define "CMScontrol" do
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
 version "0.2"
-description "CMScontrol - homepage: http://www.cmscontrol.com/"
+description "CMScontrol"
+website "http://www.cmscontrol.com/"
 
 # Google results as at 2010-06-15 #
 # 79 for +CMScontrol -"SQL Injection" -exploit +inurl:"index.php?id_menu="

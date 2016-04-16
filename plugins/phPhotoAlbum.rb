@@ -10,7 +10,8 @@
 Plugin.define "phPhotoAlbum" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
-description "PHP Photo Album - homepage: http://www.phphq.net/?script=phPhotoAlbum"
+description "PHP Photo Album"
+website "http://www.phphq.net/?script=phPhotoAlbum"
 
 # Google results as at 2010-08-14 #
 # 4 for "powered by PHPhotoalbum" intitle:My Picture Album"

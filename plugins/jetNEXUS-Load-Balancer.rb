@@ -7,7 +7,8 @@
 Plugin.define "jetNEXUS-Load-Balancer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
 version "0.1"
-description "jetNEXUS provide leading edge load balancing and traffic management solutions to accelerate application performance and availability, enabling clients to create and deliver resilient and scalable online services. - Homepage: http://www.jetnexus.com/"
+description "jetNEXUS provide leading edge load balancing and traffic management solutions to accelerate application performance and availability, enabling clients to create and deliver resilient and scalable online services."
+website "http://www.jetnexus.com/"
 
 # ShodanHQ results as at 2011-05-23 #
 # 4 for jetNEXUS: Streaming Compression On

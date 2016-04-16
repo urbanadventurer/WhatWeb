@@ -7,7 +7,8 @@
 Plugin.define "LK-IHC-Controller" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
 version "0.1"
-description "Visualization of an IHC Control electrical installation. - Homepage: http://www.prolor.dk/ihc.php"
+description "Visualization of an IHC Control electrical installation."
+website "http://www.prolor.dk/ihc.php"
 
 # Google results as at 2011-06-01 #
 # 5 for intitle:"LK IHC controller forside" +SceneView

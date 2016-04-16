@@ -7,7 +7,8 @@
 Plugin.define "GeoHttpServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
-description "GeoHttpServer - Homepage: http://www.geovision.com.tw/english/index.asp"
+description "GeoHttpServer"
+website "http://www.geovision.com.tw/english/index.asp"
 
 # ShodanHQ results as at 2011-05-30 #
 # 106,570 for GeoHttpServer

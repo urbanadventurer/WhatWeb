@@ -10,7 +10,8 @@
 Plugin.define "CMS-WebManager-Pro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.2"
-description "CMS WebManager-Pro - is a software product for creating and maintaining websites of any complexity. - homepage: http://webmanager-pro.com/"
+description "CMS WebManager-Pro - is a software product for creating and maintaining websites of any complexity."
+website "http://webmanager-pro.com/"
 
 # Google results as at 2010-09-04 #
 # 2 for "powered by CMS WebManager-Pro"

@@ -16,7 +16,8 @@
 Plugin.define "Axis-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
 version "0.2"
-description "Axis network camera - homepage: http://www.axis.com/"
+description "Axis network camera"
+website "http://www.axis.com/"
 
 # Google results as at 2010-06-27 #
 # 312 for allintitle: Axis 2.10 OR 2.12 OR 2.30 OR 2.31 OR 2.32 OR 2.33 OR 2.34 OR 2.40 OR 2.42 OR 2.43 "Network Camera"

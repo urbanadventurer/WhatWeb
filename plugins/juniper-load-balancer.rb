@@ -10,7 +10,8 @@
 Plugin.define "Juniper-Load-Balancer" do
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
 version "0.2"
-description "Juniper Networks Application Acceleration and Load Balancing Platforms - Homepage: http://juniper.net/ - Note: This will slow down your web app pentest scanning. Use only manual fuzzing with time throttling."
+description "Juniper Networks Application Acceleration and Load Balancing Platforms"
+website "http://juniper.net/ - Note: This will slow down your web app pentest scanning. Use only manual fuzzing with time throttling."
 
 
 

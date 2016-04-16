@@ -7,7 +7,8 @@
 Plugin.define "noVNC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
 version "0.1"
-description "VNC client using HTML5 (Web Sockets, Canvas) with encryption (wss://) support. - Homepage: https://github.com/kanaka/noVNC"
+description "VNC client using HTML5 (Web Sockets, Canvas) with encryption (wss://) support."
+website "https://github.com/kanaka/noVNC"
 
 # Google results as at 2011-08-25 #
 # 6 for intitle:"noVNC" inurl:vnc_auto.html +Loading "Canvas not supported."

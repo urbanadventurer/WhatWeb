@@ -7,7 +7,8 @@
 Plugin.define "Softbiz-Online-Classifieds" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.1"
-description "Softbiz Online Classifieds PLUS Script is a highly Advanced and Powerful PHP script to run your classifieds site. It has potential to generate very heavy revenues for you. Script is built with focus on increase ease of users and profits of webmasters. - homepage: http://www.softbizscripts.com/classified-ads-plus-script-features.php"
+description "Softbiz Online Classifieds PLUS Script is a highly Advanced and Powerful PHP script to run your classifieds site. It has potential to generate very heavy revenues for you. Script is built with focus on increase ease of users and profits of webmasters."
+website "http://www.softbizscripts.com/classified-ads-plus-script-features.php"
 
 # 3 results for "Softbiz Classifieds PLUS Script - ADMIN PANEL" @ 2010-08-08
 

@@ -7,7 +7,8 @@
 Plugin.define "Vanilla-Forums" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
 version "0.1"
-description "Vanilla Forums - open-source, standards-compliant, customizable discussion forums. - Homepage: http://vanillaforums.org/"
+description "Vanilla Forums - open-source, standards-compliant, customizable discussion forums."
+website "http://vanillaforums.org/"
 
 # ShodanHQ results as at 2012-04-11 #
 # 81 for X-Garden-Version

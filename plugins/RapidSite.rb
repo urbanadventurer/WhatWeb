@@ -7,7 +7,8 @@
 Plugin.define "RapidSite" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
 version "0.1"
-description "RapidSite is the world's largest and most experienced Web hosting entity. - Homepage: http://www.rapidsite.net/"
+description "RapidSite is the world's largest and most experienced Web hosting entity."
+website "http://www.rapidsite.net/"
 
 # ShodanHQ results as at 2011-03-08 #
 # 166,648 for Rapidsite/Apa

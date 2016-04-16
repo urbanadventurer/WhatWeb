@@ -7,7 +7,8 @@
 Plugin.define "Ruckus-Wireless-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-16
 version "0.1"
-description "Ruckus Wireless Router web interface - Homepage: http://www.ruckuswireless.com/"
+description "Ruckus Wireless Router web interface"
+website "http://www.ruckuswireless.com/"
 
 # ShodanHQ results as at 2012-05-16 #
 # 6,277 for Ruckus Wireless Inc

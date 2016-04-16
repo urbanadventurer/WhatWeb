@@ -7,7 +7,8 @@
 Plugin.define "PHPOpenChat" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-23
 version "0.1"
-description "PHPOpenChat is a high performance php-based chat server software for a live chat-room - Homepage: http://www.phpopenchat.org/"
+description "PHPOpenChat is a high performance php-based chat server software for a live chat-room"
+website "http://www.phpopenchat.org/"
 
 # Google results as at 2011-08-23 #
 # 13 for intitle:"PHPOpenChat Installation" inurl:"admin/install.php"

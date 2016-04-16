@@ -7,7 +7,8 @@
 Plugin.define "Piwigo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.1"
-description "Piwigo is a photo gallery software for the web, built by an active community of users and developers. - homepage: http://piwigo.org/"
+description "Piwigo is a photo gallery software for the web, built by an active community of users and developers."
+website "http://piwigo.org/"
 
 # Google results as at 2010-09-12 #
 # 271 results for "powered by piwigo"

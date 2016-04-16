@@ -7,7 +7,8 @@
 Plugin.define "TAC-Xenta-Controller" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
-description "SCADA - The TAC Xenta devices are multifunctional control systems with an embedded web server that allows you to access your control application and configuration pages via a web browser anywhere in the world, anytime. - Homepage: http://www.tac.com/ap/Navigate?node=1656"
+description "SCADA - The TAC Xenta devices are multifunctional control systems with an embedded web server that allows you to access your control application and configuration pages via a web browser anywhere in the world, anytime."
+website "http://www.tac.com/ap/Navigate?node=1656"
 
 
 

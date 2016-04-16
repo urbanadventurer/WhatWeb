@@ -7,7 +7,8 @@
 Plugin.define "BinGoPHP-News" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
 version "0.1"
-description "News administration web app - homepage: http://bingophp.free.fr"
+description "News administration web app"
+website "http://bingophp.free.fr"
 
 # Google results as at 2010-08-29 #
 # 18 for "Script réiséar BinGo PHP" -Vulnerability @

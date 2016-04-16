@@ -7,7 +7,8 @@
 Plugin.define "David-WebBox" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-27
 version "0.1"
-description "David WebBox is a remote data storage center. - Homepage: http://www.tobit.com/davidfx/access/"
+description "David WebBox is a remote data storage center."
+website "http://www.tobit.com/davidfx/access/"
 
 # ShodanHQ results as at 2011-08-27 #
 # 9,486 for David-WebBox

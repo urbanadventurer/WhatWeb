@@ -7,7 +7,8 @@
 Plugin.define "VMware-Zimbra" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-15
 version "0.1"
-description "Zimbra is a next-generation collaboration server that provides organizations greater overall flexibility and simplicity with integrated email, contacts, calendaring, sharing and document management plus mobility and desktop synchronization to users on any computer. - Homepage: http://www.zimbra.com/products/"
+description "Zimbra is a next-generation collaboration server that provides organizations greater overall flexibility and simplicity with integrated email, contacts, calendaring, sharing and document management plus mobility and desktop synchronization to users on any computer."
+website "http://www.zimbra.com/products/"
 
 # ShodanHQ results as at 2011-05-15 #
 # 12,258 for ZM_TEST

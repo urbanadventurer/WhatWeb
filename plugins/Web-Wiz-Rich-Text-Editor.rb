@@ -7,7 +7,8 @@
 Plugin.define "Web-Wiz-Rich-Text-Editor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2013-04-01
 version "0.1"
-description "Web Wiz Rich Text Editor - Homepage: http://www.richtexteditor.org/"
+description "Web Wiz Rich Text Editor"
+website "http://www.richtexteditor.org/"
 
 # Google results as at 2013-04-01 #
 # 40 for inurl:"RTE_popup_file_atch.asp" ext:asp

@@ -7,7 +7,8 @@
 Plugin.define "Chamilo" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-16
 version "0.1"
-description "Chamilo is a fully-fledged e-learning system. Chamilo can be connected to any open-specification system. - Homepage: http://www.chamilo.org/"
+description "Chamilo is a fully-fledged e-learning system. Chamilo can be connected to any open-specification system."
+website "http://www.chamilo.org/"
 
 # ShodanHQ results as at 2011-08-16 #
 # 2 for X-Powered-By Chamilo

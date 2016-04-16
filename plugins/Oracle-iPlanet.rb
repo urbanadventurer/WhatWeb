@@ -10,7 +10,8 @@
 Plugin.define "Oracle-iPlanet" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.2"
-description "Oracle-iPlanet Web Server and Proxy Server. - Homepage: http://www.oracle.com/technetwork/middleware/iplanetwebserver-098726.html"
+description "Oracle-iPlanet Web Server and Proxy Server."
+website "http://www.oracle.com/technetwork/middleware/iplanetwebserver-098726.html"
 
 # ShodanHQ results as at 2010-10-23 #
 # 277 for Proxy-agent:iPlanet-Web-Proxy-Server

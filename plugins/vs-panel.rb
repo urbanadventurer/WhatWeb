@@ -10,7 +10,8 @@
 Plugin.define "VS-Panel" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
 version "0.2"
-description "VS-Panel - homepage: http://www.vertigostudios.com"
+description "VS-Panel"
+website "http://www.vertigostudios.com"
 
 # Google results as at 2010-08-29 #
 # 56 for "powered by VS PANEL" -Vulnerability

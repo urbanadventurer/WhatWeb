@@ -12,7 +12,8 @@
 
 Plugin.define "Apache-Tomcat" do 
 	author "Louis Nyffenegger"
-	description "Apache Tomcat Web Server. Homepage: http://tomcat.apache.org/"
+	description "Apache Tomcat Web Server"
+website "http://tomcat.apache.org/"
 	version "0.3"
 
 	matches [

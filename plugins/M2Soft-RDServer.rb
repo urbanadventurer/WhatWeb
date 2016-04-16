@@ -7,7 +7,8 @@
 Plugin.define "M2Soft-RDServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-03
 version "0.1"
-description "M2Soft Report Designer Server - reporting tool - Homepage: http://www.m2soft.co.kr/english/reporting-tool.asp"
+description "M2Soft Report Designer Server - reporting tool"
+website "http://www.m2soft.co.kr/english/reporting-tool.asp"
 
 # ShodanHQ results as at 2012-06-03 #
 # 5 for RDServer

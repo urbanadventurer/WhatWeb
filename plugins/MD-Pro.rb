@@ -11,7 +11,8 @@
 Plugin.define "MD-Pro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
-description "MaxDev is proud to introduce MD-Pro, the most complete, flexible and reliable CMS available on the market. - homepage: http://www.maxdev.com/AboutMD.phtml"
+description "MaxDev is proud to introduce MD-Pro, the most complete, flexible and reliable CMS available on the market."
+website "http://www.maxdev.com/AboutMD.phtml"
 
 # Google results as at 2010-08-28 #
 # 64 for "powered by MAXdev"

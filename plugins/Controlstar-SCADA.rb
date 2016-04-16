@@ -7,7 +7,8 @@
 Plugin.define "Controlstar-SCADA" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
-description "Controlstar SCADA - Homepage: http://www.controlstar.com/product_scada.php"
+description "Controlstar SCADA"
+website "http://www.controlstar.com/product_scada.php"
 
 
 

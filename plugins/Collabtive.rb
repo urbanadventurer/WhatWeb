@@ -7,7 +7,8 @@
 Plugin.define "Collabtive" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-10
 version "0.1"
-description "Collabtive - Open Source Collaboration - Homepage: http://collabtive.o-dyn.de/"
+description "Collabtive - Open Source Collaboration"
+website "http://collabtive.o-dyn.de/"
 
 # Google results as at 2012-06-10 #
 # 21 for "Project Management" "Stay logged in" intitle:"Login" intitle:"Collabtive"

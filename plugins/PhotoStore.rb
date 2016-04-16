@@ -7,7 +7,8 @@
 Plugin.define "PhotoStore" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-05
 version "0.1"
-description "PhotoStore allows you to setup a complete photo selling website on your server or hosting space and in just minutes you can start selling photos on your website. - Homepage: http://www.ktools.net/photostore/sell-photos-online/"
+description "PhotoStore allows you to setup a complete photo selling website on your server or hosting space and in just minutes you can start selling photos on your website."
+website "http://www.ktools.net/photostore/sell-photos-online/"
 
 # 339 for "Powered By PhotoStore" "Sell Photos Online by Ktools.net LLC"
 #   8 for "PhotoStore Version" inurl:login.php

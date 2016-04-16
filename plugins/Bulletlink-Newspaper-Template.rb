@@ -7,7 +7,8 @@
 Plugin.define "Bulletlink-Newspaper-Template" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-13
 version "0.1"
-description "Ready-to-use online newspaper templates - Homepage: http://bulletlink.com/"
+description "Ready-to-use online newspaper templates"
+website "http://bulletlink.com/"
 
 # Google results as at 2011-09-13 #
 # 252 for allinurl:target_form.asp?pform=

@@ -21,7 +21,8 @@
 Plugin.define "PHP" do
 author "Andrew Horton & Brendan Coles" # 2010-10-26
 version "0.5"
-description "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML. This plugin identifies PHP errors, modules and versions and extracts the local file path and username if present. - Homepage: http://www.php.net/"
+description "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML. This plugin identifies PHP errors, modules and versions and extracts the local file path and username if present."
+website "http://www.php.net/"
 
 # ShodanHQ results as at 2011-05-25 #
 # 5,345,848 for "server: PHP"

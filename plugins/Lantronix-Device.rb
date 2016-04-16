@@ -7,7 +7,8 @@
 Plugin.define "Lantronix-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
-description "Lantronix provides device networking and remote access products for remote IT management allowing remote computer access and offsite device control. Manage industrial control systems, or administer your entire data center using KVM over IP switches. - Homepage: http://www.lantronix.com/"
+description "Lantronix provides device networking and remote access products for remote IT management allowing remote computer access and offsite device control. Manage industrial control systems, or administer your entire data center using KVM over IP switches."
+website "http://www.lantronix.com/"
 
 # ShodanHQ results as at 2011-06-02 #
 # 823 for Gordian Embedded

@@ -10,7 +10,8 @@
 Plugin.define "phpRaid" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
 version "0.2"
-description "phpRaid is a raid management tool for World of Warcraft - a MMORPG developed by Blizzard. - homepage: http://www.spiffyjr.com/"
+description "phpRaid is a raid management tool for World of Warcraft - a MMORPG developed by Blizzard."
+website "http://www.spiffyjr.com/"
 
 # Google results as at 2010-06-16 #
 # 32,800 for "Raid Management Provided by phpRaid"

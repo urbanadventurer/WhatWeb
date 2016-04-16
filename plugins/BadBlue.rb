@@ -7,7 +7,8 @@
 Plugin.define "BadBlue" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
 version "0.1"
-description "A free, very small Windows web server for sharing, publishing and serving files. - Homepage: http://www.badblue.com/"
+description "A free, very small Windows web server for sharing, publishing and serving files."
+website "http://www.badblue.com/"
 
 # Google results as at 2011-04-20 #
 # 12 for intitle:"BadBlue: the file-sharing web server anyone can use" -intitle

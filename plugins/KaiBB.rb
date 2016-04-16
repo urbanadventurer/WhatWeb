@@ -7,7 +7,8 @@
 Plugin.define "KaiBB" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
 version "0.1"
-description "KaiBB Free and Open Bulletin Board Software - Requires: PHP and MySQL - Homepage: http://www.kaibb.co.uk/"
+description "KaiBB Free and Open Bulletin Board Software - Requires: PHP and MySQL"
+website "http://www.kaibb.co.uk/"
 
 # Google results as at 2011-08-05 #
 # 24 for "Powered by KaiBB"

@@ -7,7 +7,8 @@
 Plugin.define "TimeLive" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-29
 version "0.1"
-description "TimeLive Time and Expense Tracking - TimeLive Web timesheet suite is an integrated suite for time record, time tracking and time billing software. - Homepage: http://www.livetecs.com/"
+description "TimeLive Time and Expense Tracking - TimeLive Web timesheet suite is an integrated suite for time record, time tracking and time billing software."
+website "http://www.livetecs.com/"
 
 # Google results as at 2011-09-29 #
 # 19 for intitle:"TimeLive" "TimeLive LogIn" +Username +Password

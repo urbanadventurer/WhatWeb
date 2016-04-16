@@ -7,7 +7,8 @@
 Plugin.define "EasyFeeds" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-05
 version "0.1"
-description "EasyFeeds is a powerful PHP based RSS reader and news aggregator. - Homepage: http://www.ktools.net/easyfeeds/"
+description "EasyFeeds is a powerful PHP based RSS reader and news aggregator."
+website "http://www.ktools.net/easyfeeds/"
 
 # 54 for "Partners" "Powered by" +EasyFeeds +"Ktools.net"
 

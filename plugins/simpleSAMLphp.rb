@@ -7,7 +7,8 @@
 Plugin.define "simpleSAMLphp" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-18
 version "0.1"
-description "A PHP implementation of SAML 2.0 service provider and identity provider functionality. - Homepage: http://simplesamlphp.org"
+description "A PHP implementation of SAML 2.0 service provider and identity provider functionality."
+website "http://simplesamlphp.org"
 
 # Google results as at 2012-01-18 #
 # 29 for intitle:"simpleSAMLphp installation page"

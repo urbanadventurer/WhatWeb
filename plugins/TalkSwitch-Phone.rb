@@ -7,7 +7,8 @@
 Plugin.define "TalkSwitch-Phone" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-21
 version "0.1"
-description "TalkSwitch designs and builds telephone systems for small and multi-location businesses. The company's Private branch exchange (PBX) and hybrid IP-PBX products enable communication over telephone and Voice over IP (VoIP) networks. - Homepage: http://www.talkswitch.com/"
+description "TalkSwitch designs and builds telephone systems for small and multi-location businesses. The company's Private branch exchange (PBX) and hybrid IP-PBX products enable communication over telephone and Voice over IP (VoIP) networks."
+website "http://www.talkswitch.com/"
 
 # ShodanHQ results as at 2011-05-21 #
 # 1,620 for TalkSwitch HTTP Server

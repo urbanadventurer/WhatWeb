@@ -13,7 +13,8 @@
 Plugin.define "Fortinet-Firewall" do
 author "Aung Khant, http://yehg.net"
 version "0.2"
-description "Fortinet firewall technology combines ASIC-accelerated stateful inspection with an arsenal of integrated application security engines to quickly identify and block complex threats. - Homepage: http://www.fortinet.com/solutions/firewall.html"
+description "Fortinet firewall technology combines ASIC-accelerated stateful inspection with an arsenal of integrated application security engines to quickly identify and block complex threats."
+website "http://www.fortinet.com/solutions/firewall.html"
 
 # Google results as at 2011-09-14 #
 # 8 for intitle:"Please Login" "Warning: this page requires Javascript. To correctly view, please enable it in your browser."

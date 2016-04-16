@@ -7,7 +7,8 @@
 Plugin.define "IceWarp-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
 version "0.1"
-description "IceWarp Unified Communications Server is a fully integrated email server, webmail server, groupware, instant messaging, VoIP / SIP, text messaging. - Homepage: http://www.icewarp.com/"
+description "IceWarp Unified Communications Server is a fully integrated email server, webmail server, groupware, instant messaging, VoIP / SIP, text messaging."
+website "http://www.icewarp.com/"
 
 # ShodanHQ results as at 2011-03-17 #
 # 6,632 for IceWarp -WebSrv

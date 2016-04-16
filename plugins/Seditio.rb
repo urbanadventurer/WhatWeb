@@ -7,7 +7,8 @@
 Plugin.define "Seditio" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.1"
-description "Seditio - homepage: http://www.neocrome.net"
+description "Seditio"
+website "http://www.neocrome.net"
 
 
 

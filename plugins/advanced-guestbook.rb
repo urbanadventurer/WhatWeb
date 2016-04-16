@@ -10,7 +10,8 @@
 Plugin.define "Advanced-Guestbook" do
 author "Andrew Horton"
 version "0.3"
-description "Web guestbook script. Homepage: http://proxy2.de/scripts.php. http://johnny.ihackstuff.com/ghdb/?function=detail&id=228 Version 2.2 is vulnerable http://www.securityfocus.com/bid/10209/info"
+description "Web guestbook script. http://johnny.ihackstuff.com/ghdb/?function=detail&id=228 Version 2.2 is vulnerable http://www.securityfocus.com/bid/10209/info."
+website "http://proxy2.de/scripts.php"
 
 # Dorks #
 dorks [

@@ -7,7 +7,8 @@
 Plugin.define "iGiveTest" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-23
 version "0.1"
-description "iGiveTest is a comprehensive solution for creating, administering, and providing thorough analysis of tests on the Internet and Intranet. It is a quick and professional way to create and organize tests for employees, students, and people in training. - Homepage: http://igivetest.com/"
+description "iGiveTest is a comprehensive solution for creating, administering, and providing thorough analysis of tests on the Internet and Intranet. It is a quick and professional way to create and organize tests for employees, students, and people in training."
+website "http://igivetest.com/"
 
 # Google results as at 2011-03-23 #
 # 175 for "Powered by iGiveTest"

@@ -7,7 +7,8 @@
 Plugin.define "Intoto-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-18
 version "0.1"
-description "Intoto router - Homepage: http://www.intoto.com/"
+description "Intoto router"
+website "http://www.intoto.com/"
 
 # ShodanHQ results as at 2011-08-18 #
 # 11,956 for Intoto Http Server

@@ -7,7 +7,8 @@
 Plugin.define "SmokePing" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-05
 version "0.1"
-description "SmokePing keeps track of your network latency - Homepage: http://oss.oetiker.ch/smokeping/index.en.html"
+description "SmokePing keeps track of your network latency"
+website "http://oss.oetiker.ch/smokeping/index.en.html"
 
 # Google results as at 2012-03-05 #
 # 365 for "Probing Targets" inurl:"show.cgi?target="

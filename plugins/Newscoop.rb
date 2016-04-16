@@ -7,7 +7,8 @@
 Plugin.define "Newscoop" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-09
 version "0.1"
-description "Open content management system for professional journalists & online newspapers. - Homepage: http://www.sourcefabric.org/en/newscoop/"
+description "Open content management system for professional journalists & online newspapers."
+website "http://www.sourcefabric.org/en/newscoop/"
 
 # Google results as at 2012-04-10 #
 # 49 for intitle:"Login" inurl:admin "Newscoop" "the open content management system for professional journalists."

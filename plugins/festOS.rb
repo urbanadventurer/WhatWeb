@@ -7,7 +7,8 @@
 Plugin.define "FestOS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.1"
-description "FestOS is web-based arts-n-crafts festival management software - homepage: http://festengine.org/"
+description "FestOS is web-based arts-n-crafts festival management software"
+website "http://festengine.org/"
 
 # 5 results for +"powered by FestOS" @ 2010-07-18
 

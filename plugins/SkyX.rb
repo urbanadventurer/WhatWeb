@@ -7,7 +7,8 @@
 Plugin.define "SkyX" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
-description "The Mentat SkyX series were designed for TCP acceleration/compression and high latency link optimization. Mentat was acquired by Packeteer in 2004. Packeteer was acquired by Blue Coat Systems in 2008 and the SkyX series was discontinued - Homepage: http://www.bluecoat.com/"
+description "The Mentat SkyX series were designed for TCP acceleration/compression and high latency link optimization. Mentat was acquired by Packeteer in 2004. Packeteer was acquired by Blue Coat Systems in 2008 and the SkyX series was discontinued"
+website "http://www.bluecoat.com/"
 
 # More Info #
 # http://www.bluecoat.com/landing/packeteer-end-life-matrix

@@ -7,7 +7,8 @@
 Plugin.define "Internet-Rimon-Filter" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-15
 version "0.1"
-description "Internet Rimon (Israeli ISP) server based filtering server - Homepage: http://internet-rimon.com/"
+description "Internet Rimon (Israeli ISP) server based filtering server"
+website "http://internet-rimon.com/"
 
 # More Info:
 #  http://www.jewishsexuality.com/porn-filter

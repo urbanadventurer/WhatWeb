@@ -7,7 +7,8 @@
 Plugin.define "Restlet-Framework" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
 version "0.1"
-description "Restlet is a lightweight, comprehensive, open source REST framework for the Java platform. - Homepage: http://www.restlet.org/"
+description "Restlet is a lightweight, comprehensive, open source REST framework for the Java platform."
+website "http://www.restlet.org/"
 
 # ShodanHQ results as at 2011-09-21 #
 # 36 for Restlet-Framework

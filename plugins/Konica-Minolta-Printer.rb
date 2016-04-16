@@ -7,7 +7,8 @@
 Plugin.define "Konica-Minolta-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-22
 version "0.1"
-description "Konica Minolta Printer - Homepage: http://konicaminolta.com/"
+description "Konica Minolta Printer"
+website "http://konicaminolta.com/"
 
 # ShodanHQ results as at 2011-09-22 #
 # 819 for LPC Http Server

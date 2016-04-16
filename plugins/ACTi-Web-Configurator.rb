@@ -7,7 +7,8 @@
 Plugin.define "ACTi-Web-Configurator" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-27
 version "0.1"
-description "ACTi Web Configurator - camera web interface - Homepage: http://www.acti.com/home/index.asp"
+description "ACTi Web Configurator - camera web interface"
+website "http://www.acti.com/home/index.asp"
 
 # Google results as at 2012-04-27 #
 # 69 for intitle:"Web Configurator" "ACTi Corporation All Rights Reserved"

@@ -11,7 +11,8 @@
 Plugin.define "Mihalism-Multi-Host" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
-description "An easy image hosting solution for everyone. - homepage: http://www.mihalism.com/product/mmh/"
+description "An easy image hosting solution for everyone."
+website "http://www.mihalism.com/product/mmh/"
 
 # Google results as at 2010-08-28 #
 # 355 for "powered by Mihalism Multi Host"

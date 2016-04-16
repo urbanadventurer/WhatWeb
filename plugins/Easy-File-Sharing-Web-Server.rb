@@ -7,7 +7,8 @@
 Plugin.define "Easy-File-Sharing-Web-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
-description "Easy File Sharing Web Server is a file sharing software that allows visitors to upload/download files easily through a Web Browser - Homepage: http://www.sharing-file.com/"
+description "Easy File Sharing Web Server is a file sharing software that allows visitors to upload/download files easily through a Web Browser"
+website "http://www.sharing-file.com/"
 
 # ShodanHQ results as at 2011-04-08 #
 # 656 for Easy File Sharing Web Server

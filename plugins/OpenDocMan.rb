@@ -7,7 +7,8 @@
 Plugin.define "OpenDocMan" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
-description "OpenDocMan - Open Source Document Management System - Requires PHP - Homepage: http://www.opendocman.com/"
+description "OpenDocMan - Open Source Document Management System - Requires PHP"
+website "http://www.opendocman.com/"
 
 # Google results as at 2012-08-26 #
 # 29 for "OpenDocMan" "Stephen Lawrence" intitle:"Document Repository"

@@ -7,7 +7,8 @@
 Plugin.define "Adobe-Connect" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-05
 version "0.1"
-description "Adobe Connect is an enterprise web conferencing solution for online meetings, eLearning, and webinars used by leading corporations and government agencies. - Homepage: https://www.adobe.com/products/adobeconnect.html"
+description "Adobe Connect is an enterprise web conferencing solution for online meetings, eLearning, and webinars used by leading corporations and government agencies."
+website "https://www.adobe.com/products/adobeconnect.html"
 
 # ShodanHQ results as at 2011-03-13 #
 # 2,459 for BREEZESESSION

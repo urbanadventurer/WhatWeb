@@ -7,7 +7,8 @@
 Plugin.define "Epiware" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-09-16
 version "0.1"
-description "Epiware - Enterprise Document Management - Homepage: http://www.epiware.com/"
+description "Epiware - Enterprise Document Management"
+website "http://www.epiware.com/"
 
 # Google results as at 2012-09-16 #
 # 31 for intitle:"Epiware" "This web-site requires javascript. Please enable javascript to access this web-site."

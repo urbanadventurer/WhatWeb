@@ -7,7 +7,8 @@
 Plugin.define "MagImageBank" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-01
 version "0.1"
-description "The MagImageBank is a easy to use and flexible web-based DAM (digital asset management) for managing images, videos and documents - Homepage: http://www.magimagebank.com/"
+description "The MagImageBank is a easy to use and flexible web-based DAM (digital asset management) for managing images, videos and documents"
+website "http://www.magimagebank.com/"
 
 # Google results as at 2011-09-01 #
 # 179 for "Powered by MagImageBank" +"info@magimagebank.com"

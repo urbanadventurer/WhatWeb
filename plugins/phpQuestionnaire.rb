@@ -10,7 +10,8 @@
 Plugin.define "phpQuestionnaire" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.2"
-description "phpQuestionnaire - homepage: http://www.chumpsoft.com/products/phpq/"
+description "phpQuestionnaire"
+website "http://www.chumpsoft.com/products/phpq/"
 
 # Google results as at 2010-08-21 #
 # 56 for "powered by phpQuestionnaire"

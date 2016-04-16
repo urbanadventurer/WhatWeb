@@ -7,7 +7,8 @@
 Plugin.define "Allomani-E-Store" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
 version "0.1"
-description "E-Store with shopping cart for online shopping websites , hosting & designing , Paid services , etc ... Requirements : PHP, MySQL, ionCube - Homepage: http://allomani.com/en/store_script.html"
+description "E-Store with shopping cart for online shopping websites , hosting & designing , Paid services , etc ... Requirements : PHP, MySQL, ionCube"
+website "http://allomani.com/en/store_script.html"
 
 # Google results as at 2011-02-08 #
 # 71 for "Programmed By Allomani"

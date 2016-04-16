@@ -7,7 +7,8 @@
 Plugin.define "Magento" do
 author "Andrew Horton"
 version "0.1"
-description "Opensource ecommerce platform written in PHP. Homepage: http://www.magentocommerce.com"
+description "Opensource ecommerce platform written in PHP"
+website "http://www.magentocommerce.com"
 
 
 #<a href="http://www.magentocommerce.com/bug-tracking" id="bug_tracking_link"><strong>Report All Bugs</strong></a> (ver. 1.4.0.1)

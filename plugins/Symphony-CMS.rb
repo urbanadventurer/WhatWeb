@@ -11,7 +11,8 @@
 Plugin.define "Symphony-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.1"
-description "Symphony CMS - XSLT-powered open source content management system - Homepage: http://symphony-cms.com/"
+description "Symphony CMS - XSLT-powered open source content management system"
+website "http://symphony-cms.com/"
 
 # Google results as at 2011-01-31 #
 # 13 for "powered by symphony CMS 3"

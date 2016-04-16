@@ -18,7 +18,8 @@
 Plugin.define "Plesk" do
 author "Andrew Horton"
 version "0.4"
-description "Plesk is a web control panel - Homepage: http://www.parallels.com/products/plesk/"
+description "Plesk is a web control panel"
+website "http://www.parallels.com/products/plesk/"
 
 # Google results as at 2011-09-15 #
 # 258 for intitle:"Default Parallels Plesk Panel Page"

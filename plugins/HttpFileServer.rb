@@ -7,7 +7,8 @@
 Plugin.define "HttpFileServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
-description "You can use HFS (HTTP File Server) to send and receive files. Access your remote files, over the network. - Homepage: http://www.rejetto.com/hfs/"
+description "You can use HFS (HTTP File Server) to send and receive files. Access your remote files, over the network."
+website "http://www.rejetto.com/hfs/"
 
 # ShodanHQ results as at 2011-05-30 #
 # 5,253 for HFS

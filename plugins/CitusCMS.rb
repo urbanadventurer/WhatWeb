@@ -7,7 +7,8 @@
 Plugin.define "CitusCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-23
 version "0.1"
-description "CitusCMS - Open Source Content Management System - Homepage: http://www.citus-cms.org/"
+description "CitusCMS - Open Source Content Management System"
+website "http://www.citus-cms.org/"
 
 # Google results as at 2011-06-23 #
 # 53 for "Powered by CitusCMS"

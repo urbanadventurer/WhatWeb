@@ -10,7 +10,8 @@
 Plugin.define "ashnews" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
-description "ashnews is a simple program using PHP/MySQL that allows you to easily add a news/blog system to your site. - homepage: http://projects.ashwebstudio.com/"
+description "ashnews is a simple program using PHP/MySQL that allows you to easily add a news/blog system to your site."
+website "http://projects.ashwebstudio.com/"
 
 # 19 results for "News powered by ashNews" -allinurl -Vulnerabilities @ 2010-08-28
 

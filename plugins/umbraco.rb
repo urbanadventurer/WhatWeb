@@ -10,7 +10,8 @@
 Plugin.define "Umbraco" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
 version "0.2"
-description "umbraco is an open source project with roots back to year 2000 even though it wasn't released as open source until 2004. - homepage: http://www.umbraco.org"
+description "umbraco is an open source project with roots back to year 2000 even though it wasn't released as open source until 2004."
+website "http://www.umbraco.org"
 
 # About 24,400 results for "powered by umbraco" @ 2010-06-08
 # 27 results for "site powered by umbraco" @ 2010-06-08

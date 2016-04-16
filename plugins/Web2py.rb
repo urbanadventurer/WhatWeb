@@ -9,7 +9,8 @@
 Plugin.define "Web2py" do
 author "Napz <napzs@rocketmail.com>"
 version "0.1"
-description "Web2py - Free open source full-stack framework written in Python Homepage: http://www.web2py.com/"
+description "Web2py - Free open source full-stack framework written in Pytho"
+website "http://www.web2py.com/"
 
 # Dorks #
 dorks [

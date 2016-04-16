@@ -10,7 +10,8 @@
 Plugin.define "TYPO3" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-09
 version "0.2"
-description "TYPO3 is a free Open Source content management system for enterprise purposes on the web and in intranets. It offers full flexibility and extendability while featuring an accomplished set of ready-made interfaces, functions and modules. - Homepage: http://typo3.com/"
+description "TYPO3 is a free Open Source content management system for enterprise purposes on the web and in intranets. It offers full flexibility and extendability while featuring an accomplished set of ready-made interfaces, functions and modules."
+website "http://typo3.com/"
 
 # More examples here: http://welovet3.com/
 

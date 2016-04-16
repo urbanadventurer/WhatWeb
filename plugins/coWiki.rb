@@ -10,7 +10,8 @@
 Plugin.define "coWiki" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
-description "coWiki - wiki - homepage: http://www.cowiki.org/"
+description "coWiki - wiki"
+website "http://www.cowiki.org/"
 
 # Google results as at 2010-07-22 #
 # 8 for "powered by coWiki"

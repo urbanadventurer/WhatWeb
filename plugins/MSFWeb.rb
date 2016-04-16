@@ -7,7 +7,8 @@
 Plugin.define "MSFWeb" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
-description "Metasploit Framework Web Console - Homepage: http://www.metasploit.com/"
+description "Metasploit Framework Web Console"
+website "http://www.metasploit.com/"
 
 # Matches #
 matches [

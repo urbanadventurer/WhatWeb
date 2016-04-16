@@ -7,7 +7,8 @@
 Plugin.define "IP-Logger-Pro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
-description "The IP Logger PRO provides a straightforward and efficient way to record and analyze your website visitors completely. - Homepage: http://www.debilsoft.de/"
+description "The IP Logger PRO provides a straightforward and efficient way to record and analyze your website visitors completely."
+website "http://www.debilsoft.de/"
 
 # Google results as at 2011-03-03 #
 # 50 for "Logdaten - Bitte hier klicken." inurl:"iplog.php?action=show"

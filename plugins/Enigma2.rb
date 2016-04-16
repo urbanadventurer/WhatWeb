@@ -7,7 +7,8 @@
 Plugin.define "Enigma2" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-10
 version "0.1"
-description "Enigma2 is a framebuffer-based zapping application (GUI) for linux. - Homepage: http://dream.reichholf.net/wiki/Enigma2"
+description "Enigma2 is a framebuffer-based zapping application (GUI) for linux."
+website "http://dream.reichholf.net/wiki/Enigma2"
 
 # Google results as at 2011-01-10 #
 # 159 for intitle:"Enigma2 movielist" filetype:rss

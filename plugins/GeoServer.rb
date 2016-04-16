@@ -7,7 +7,8 @@
 Plugin.define "GeoServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-26
 version "0.1"
-description "GeoServer is part of The OpenGeo Suite and allows users to share and edit geospatial data. The GeoServer project is a full transactional Java (J2EE) implementation of the OpenGIS Consortium's Web Feature Server specification and Web Coverage Server specification, with an integrated Web Map Server. - Homepage: http://opengeo.org/technology/geoserver/"
+description "GeoServer is part of The OpenGeo Suite and allows users to share and edit geospatial data. The GeoServer project is a full transactional Java (J2EE) implementation of the OpenGIS Consortium's Web Feature Server specification and Web Coverage Server specification, with an integrated Web Map Server."
+website "http://opengeo.org/technology/geoserver/"
 
 # Google results as at 2011-08-26 #
 # 114 for "This GeoServer belongs to" "This GeoServer instance is running version" intitle:"GeoServer: Welcome"

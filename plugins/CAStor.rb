@@ -7,7 +7,8 @@
 Plugin.define "CAStor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
 version "0.1"
-description "CAStor is object storage software designed to store unstructured data also referred to as fixed content or reference information. This includes documents, e-mail, images, audio, video, voice mails, ring tones, and medical images and records. - Homepage: http://www.caringo.com/"
+description "CAStor is object storage software designed to store unstructured data also referred to as fixed content or reference information. This includes documents, e-mail, images, audio, video, voice mails, ring tones, and medical images and records."
+website "http://www.caringo.com/"
 
 # Data Sheets #
 # http://www.caringo.com/resources/datasheets.html

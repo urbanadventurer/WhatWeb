@@ -7,7 +7,8 @@
 Plugin.define "Jigsaw" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-07
 version "0.1"
-description "Jigsaw is W3C's leading-edge Web server platform, providing a sample HTTP 1.1 implementation and a variety of other features on top of an advanced architecture implemented in Java. - Homepage: http://www.w3.org/Jigsaw/"
+description "Jigsaw is W3C's leading-edge Web server platform, providing a sample HTTP 1.1 implementation and a variety of other features on top of an advanced architecture implemented in Java."
+website "http://www.w3.org/Jigsaw/"
 
 # ShodanHQ results as at 2011-06-07 #
 # 79 for Jigsaw

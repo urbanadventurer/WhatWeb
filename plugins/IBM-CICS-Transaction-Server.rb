@@ -7,7 +7,8 @@
 Plugin.define "IBM-CICS-Transaction-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-22
 version "0.1"
-description "IBM Customer Information Control System is the new face of CICS Integration point for CICS tooling with rich CICS views, data, and methods. CICS Transaction Server for z/OS is a modern, dependable, and cost effective application platform. z/OS is a 64-bit operating system for mainframe computers, produced by IBM. - Homepage:  http://www-01.ibm.com/software/htp/cics/tserver/v41/"
+description "IBM Customer Information Control System is the new face of CICS Integration point for CICS tooling with rich CICS views, data, and methods. CICS Transaction Server for z/OS is a modern, dependable, and cost effective application platform. z/OS is a 64-bit operating system for mainframe computers, produced by IBM."
+website " http://www-01.ibm.com/software/htp/cics/tserver/v41/"
 
 # More Info:
 #  http://en.wikipedia.org/wiki/Z/OS
