@@ -10,8 +10,12 @@
 require 'net/http'
 require 'net/https'
 require 'open-uri'
-require 'digest/md5'
 
+if RUBY_VERSION =~ /^1\.9/ || RUBY_VERSION =~ /^2\./
+        require 'digest/md5'
+else
+	require 'md5'
+end
 
 
 $VERBOSE = false
