@@ -443,26 +443,30 @@ for adding/removing sets of plugins.
 	### some UI stuff
 
 	def PluginSupport.plugin_list
+		terminal_width = 80
 		puts "WhatWeb Plugin List"
 		puts
-		puts ["Plugin Name".ljust(25),"Description"].join(" ")
-		puts "-" * 79
+		puts "Plugin Name - Description"
+		puts "-" * terminal_width
 		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |n,p|
 			
-			if p.description
-				show_description = p.description.delete("\n\r")[0..30]
-				show_description += "..." if p.description.delete("\n\r").size > 30
-			else
-				show_description = ""
+			# output fits more description onto a line
+			line = "#{n} - "
+			line += p.description.delete("\r\n") if p.description
+			
+			if line.size > terminal_width
+				line = line[0..terminal_width - 3] + "..."
 			end
-
-			puts [n.ljust(45), show_description].join(" ")
+			puts line
 
 		end
-		puts "-" * 80
+		puts "-" * terminal_width
+		puts
 		puts "Total: #{Plugin.registered_plugins.size} Plugins"
-		puts "For a complete description of a plugin use: whatweb --info-plugins <PLUGIN>"
-		puts "For a complete description of all plugins use: whatweb --info-plugins"
+		puts
+		puts "Hint:"
+		puts "For complete plugin descriptions use : whatweb --info-plugins <SEARCH>"
+		puts "Use it without a search term for a complete description of all plugins."
 		puts
 	end
 
