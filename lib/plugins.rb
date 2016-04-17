@@ -454,8 +454,8 @@ for adding/removing sets of plugins.
 			line = "#{n} - "
 			line += p.description.delete("\r\n") if p.description
 			
-			if line.size > terminal_width
-				line = line[0..terminal_width - 3] + "..."
+			if line.size > terminal_width-1
+				line = line[0..terminal_width - 4] + "..."
 			end
 			puts line
 
@@ -496,6 +496,8 @@ for adding/removing sets of plugins.
 		count=0
 		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |name,plugin|
 			dump=[name,plugin.author,plugin.description,plugin.website,plugin.matches].flatten.compact.to_a.join.downcase
+		
+			# this will fail is an expected variable is not defined or empty
 			if keywords.empty? or keywords.map {|k| dump.include?(k.downcase) }.compact.include?(true)
 				puts name
 				puts "\tAuthor:".ljust(22) + plugin.author
