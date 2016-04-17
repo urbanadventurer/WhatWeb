@@ -1,6 +1,7 @@
 Version 0.4.8-dev Unreleased
 * Fixed bugs for Ruby 1.9.x and Ruby 2.x. Dropped support for Ruby 1.8.x. Thanks to nil0x42 and pvdl for bug fixes
 * Updated plugin list output
+* Updated plugin info output
 * Renamed scripts in plugin-development/ that update the Alexa lists and IP Country Database
 * Updated get-pattern for Ruby 2.x
 * Added over 700 new plugins

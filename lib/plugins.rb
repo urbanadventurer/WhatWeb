@@ -539,7 +539,7 @@ for adding/removing sets of plugins.
 				puts " " * 16 + "[#{ defined?(plugin.passive) ? "Yes" : "No" }]".ljust(7) + "Function for passive matches"
 				puts " " * 16 + "[#{ defined?(plugin.aggressive) ? "Yes" : "No" }]".ljust(7) + "Function for aggressive matches"
 
-				count[:version_detection] +=1 if defined?(plugin.version_detection?)
+				count[:version_detection] +=1 if plugin.version_detection?
 				count[:passive] +=1 if defined?(plugin.passive)
 				count[:aggressive] +=1 if defined?(plugin.aggressive)
 
@@ -577,7 +577,7 @@ for adding/removing sets of plugins.
 		puts "=" * terminal_width
 
 		puts "Total plugins: #{count[:plugins]}"
-		#puts "Total version detection from pattern matching: #{count[:version_detection]}"
+		puts "Total version detection from pattern matching: #{count[:version_detection]}"
 		puts "Total pattern matching patterns: #{count[:matches]}"
 		puts "Total Google dorks: #{count[:dorks]}"
 		puts "Total aggressive functions: #{count[:aggressive]}"
