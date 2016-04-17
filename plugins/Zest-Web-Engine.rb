@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 #
+# Removed passive function and replaced with :search=>"headers[location]"
+# Added the Powered by the match
+##
 Plugin.define "Zest-Web-Engine" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
-version "0.1"
+version "0.2"
 description "Zest Web Engine"
 website "http://www.zest-leisure.com/"
 
@@ -21,27 +25,12 @@ dorks [
 'inurl:/cgi-bin/web.asp'
 ]
 
-
-
 # Matches #
 matches [
-
 # Version Detection # Powered by logo+url+text
 { :version=>/Powered by the <br \/><img src='http:\/\/www.[^\/]+\/images\/zestlogo\.gif' style='border:0 ; ' alt='Zest Web Engine' \/><br \/>Zest web engine<br \/>V([\d\.]+)<br \/>/ },
-
+{ :search=>"headers[location]", :text=>"/cgi-bin/web.asp?title"},
+{ :text=>"Powered by the <a href='http://www.zest-leisure.com/'>Zest Web Engine</a>"}
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# Location HTTP Header
-	m << { :name=>"Location HTTP Header" } if @headers["location"] =~ /cgi-bin\/web\.asp\?title=\*home$/
-
-	# Return passive matches
-	m
 end
-
-end
-
-
