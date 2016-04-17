@@ -448,7 +448,7 @@ for adding/removing sets of plugins.
 		puts
 		puts "Plugin Name - Description"
 		puts "-" * terminal_width
-		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |n,p|
+		Plugin.registered_plugins.sort_by {|a,b| a.downcase }.each do |n,p|
 			
 			# output fits more description onto a line
 			line = "#{n} - "
@@ -475,7 +475,7 @@ for adding/removing sets of plugins.
 		dorks=[]
 
 		# Loop through plugins
-		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.each do |n,p|
+		Plugin.registered_plugins.each do |n,p|
 			if n.downcase == plugin_name.downcase
 				pp "Google Dorks for #{n}:" if $verbose > 2
 				dorks << p.dorks unless p.dorks.nil?
@@ -494,7 +494,7 @@ for adding/removing sets of plugins.
 
 		puts ["Plugin Name".ljust(25),"Details"].join(" ")
 		count=0
-		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |name,plugin|
+		Plugin.registered_plugins.sort_by {|a,b| a.downcase }.each do |name,plugin|
 			dump=[name,plugin.author,plugin.description,plugin.website,plugin.matches].flatten.compact.to_a.join.downcase
 		
 			# this will fail is an expected variable is not defined or empty
