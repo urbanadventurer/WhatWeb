@@ -4,10 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2015-04-17 # Andrew Horton
+# Added website parameter and description
+##
 Plugin.define "TCMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
-version "0.1"
-description "homepage: http://www.tcms-sep.com"
+version "0.2"
+description "Content management system by Tanzarine Technology Ltd"
+website "http://www.tanzarine.co.uk/Articles/cms.html"
 
 # 26 results for "powered by TCMS" @ 2010-08-28
 
@@ -16,12 +20,8 @@ dorks [
 '"powered by TCMS"'
 ]
 
-
-
 matches [
-
 { :ghdb=>'"powered by TCMS"', :certainty=>75 },
-
 ]
 
 def passive
@@ -47,7 +47,6 @@ def passive
         m
 
 end
-
 
 end
 

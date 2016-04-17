@@ -4,20 +4,20 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+##
+# Version 0.2 # 2015-04-17 # Andrew Horton
+# Added website parameter and description
+##
 Plugin.define "UCenter-Home" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
-version "0.1"
-description "homepage: http://u.discuz.net"
-
-# 431 results for "powered by UCenter Home" @ 2010-10-12
-# 89 results "powered by UCenter Home" inurl:.gov @ 2010-10-12
+version "0.2"
+description "Social networking platform developed by Comsenz. Uses PHP and MySQL. Wikipedia page: https://zh.wikipedia.org/wiki/UCenter_Home"
+website "http://www.comsenz.com/downloads/install/uchome"
 
 # Dorks #
 dorks [
 '"powered by UCenter Home"'
 ]
-
-
 
 matches [
 

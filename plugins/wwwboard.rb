@@ -4,11 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2015-04-17 # Andrew Horton
+# Added website parameter
+##
 Plugin.define "WWWBoard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
-version "0.1"
-description "WWWBoard is a threaded World Wide Web discussion forum and message board, which allows users to post new messages, followup to existing ones and more. - homepage:http://www.scriptarchive.com/wwwboard.html"
-
+version "0.2"
+description "WWWBoard is a threaded World Wide Web discussion forum and message board, which allows users to post new messages, followup to existing ones and more."
+website "http://www.scriptarchive.com/wwwboard.html"
 
 # <html><head><title>WWWAdmin For WWWBoard</title></head>
 # <head><title>WWWAdmin For WWWBoard</title></head>

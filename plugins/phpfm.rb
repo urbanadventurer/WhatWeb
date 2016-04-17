@@ -4,13 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2015-04-17 # Andrew Horton
+# Added website parameter and updated description
+##
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
 Plugin.define "PHPFM" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09
-version "0.2"
-description "A file manager written in PHP. - homepage:http://www.php-fusion.co.uk/"
+version "0.3"
+description "PHP-Fusion is a lightweight open source content management system (CMS). It uses PHP and MySQL."
+website "http://www.php-fusion.co.uk/"
 
 # Google results as at 2010-06-09 #
 # 36,400 for "powered by PHPFM" -username

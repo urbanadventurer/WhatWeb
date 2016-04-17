@@ -4,15 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2015-04-17 # Andrew Horton
+# Added website
+##
 # Version 0.2
 # removed :name and :certainty=>100
 ##
 Plugin.define "DiBos" do
 author "Andrew Horton"
-version "0.2"
-description "DiBos security surveillance system homepage: www.boschsecurity.com"
-
-
+version "0.3"
+description "DiBos security surveillance system"
+website "http://www.boschsecurity.com/"
 
 # Dorks #
 dorks [

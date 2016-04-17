@@ -4,21 +4,23 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2015-04-17 # Andrew Horton
+# Added website parameter and description
+##
 # Version 0.2 #
 # Fixed bug with returned modules not comma seperated
 ##
 Plugin.define "TheHostingTool" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
-version "0.2"
-description "homepage: http://thehostingtool.com/"
-
+version "0.3"
+description "Free Open-Source hosting tool similar to cPanel"
+website "http://thehostingtool.com/"
 # 161 results for "powered by TheHostingTool" @ 2010-10-12
 
 # Dorks #
 dorks [
 '"powered by TheHostingTool"'
 ]
-
 
 
 matches [

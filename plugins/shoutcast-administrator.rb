@@ -4,10 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2015-04-17 # Andrew Horton
+# Added website parameter and description
+##
 Plugin.define "SHOUTcast-Administrator" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-03
-version "0.1"
-description "homepage: http://www.shoutcast.com/"
+version "0.2"
+description "SHOUTcast is free cross-platform proprietary software for streaming media over the Internet. The software, developed by Nullsoft, allows digital audio content, primarily in MP3 or HE-AAC format, to be broadcast to and from media player software, enabling the creation of Internet radio stations. Wikipedia: https://en.wikipedia.org/wiki/SHOUTcast"
+website "http://www.shoutcast.com/"
 
 
 matches [

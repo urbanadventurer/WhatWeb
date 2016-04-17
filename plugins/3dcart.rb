@@ -16,8 +16,6 @@ dorks [
 '"powered by 3dcart"'
 ]
 
-
-
 # Matches #
 matches [
 

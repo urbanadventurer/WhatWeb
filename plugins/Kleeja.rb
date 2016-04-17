@@ -4,10 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2015-04-17 # Andrew Horton
+# Added website parameter and description
+##
 Plugin.define "Kleeja" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
-version "0.1"
-description "homepage: http://www.kleeja.com/"
+version "0.2"
+description "Kleeja is a free, open-source file upload system"
+website "http://www.kleeja.com/"
 
 # 55 results for intitle:"(powered by kleeja)" @ 2010-09-18
 # 311 results for "powered by kleeja" @ 2010-09-18
@@ -16,8 +20,6 @@ description "homepage: http://www.kleeja.com/"
 dorks [
 '"powered by kleeja"'
 ]
-
-
 
 matches [
 

@@ -4,13 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2015-04-17 # Andrew Horton
+# Added website parameter and description
+##
 # Version 0.2 # 2011-01-23 #
 # Updated version detection
 ##
 Plugin.define "CaupoShop-Classic" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
-version "0.2"
-description "homepage: http://www.caupo.net"
+version "0.3"
+description "German eCommerce and Content management system"
+website "http://www.caupo.net/"
 
 # Google results as at 2010-08-29 #
 # 6   for "powered by CaupoShop Classic ver"

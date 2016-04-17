@@ -4,10 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2015-04-17 # Andrew Horton
+# Added website parameter
+##
 Plugin.define "WSN-Links" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
-version "0.1"
-description "WSN Links is a links directory with google pageranks, link checking, reciprocal linking facilities and much more. Multilingual and highly extensible, it offers more than you could imagine in a links directory. - homepage www.wsnlinks.com/"
+version "0.2"
+description "WSN Links is a links directory with google pageranks, link checking, reciprocal linking facilities and much more. Multilingual and highly extensible, it offers more than you could imagine in a links directory."
+website "http://www.wsnlinks.com/"
 
 # Google results as at 2011-03-16 #
 # 12 results for "WSN Links is unable to render this page. The reason is described below: " intitle:"WSN Links"

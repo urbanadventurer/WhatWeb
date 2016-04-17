@@ -4,11 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2015-04-17 # Andrew Horton
+# Added website parameter
+##
 Plugin.define "AMX-Mod-X" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
-version "0.1"
-description "AMX Mod X is a versatile Half-Life metamod plugin which is targetted toward server administration. - homepage http://www.amxmodx.org/"
-
+version "0.2"
+description "AMX Mod X is a versatile Half-Life metamod plugin which is targetted toward server administration."
+website "http://www.amxmodx.org/"
 # Dorks #
 dorks [
 'ext:cfg "Linux users may encounter problems if they specify"'

@@ -6,14 +6,16 @@
 ##
 # Plugin to detect tomcat 
 # Comment from Andrew Horton - this plugin includes code for a 404 page probe which should be incorporated into whatweb itself
+##
 # v0.3 by Andrew Horton
 # renamed plugin from Tomcat to Apache-Tomcat, added aggressive /RELEASE-NOTES.txt to get version, added footer version, added /manager/status tests
 # to-do, an invalid HTTP verb to a .JSP will reveal Tomcat if nothing else does, e.g. XXX /foobar/.jsp HTTP/1.0
+##
 
 Plugin.define "Apache-Tomcat" do 
 	author "Louis Nyffenegger"
 	description "Apache Tomcat Web Server"
-website "http://tomcat.apache.org/"
+	website "http://tomcat.apache.org/"
 	version "0.3"
 
 	matches [

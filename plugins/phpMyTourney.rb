@@ -4,11 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2015-04-17 # Andrew Horton
+# Added website parameter and description
+##
 Plugin.define "phpMyTourney" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
-version "0.1"
-description "homepage: http://phpmytourney.sourceforge.net/"
-
+version "0.2"
+description "phpMyTourney is a PHP and MySQL script provide tournament hosting. Websites used to be http://phpmytourney.sourceforge.net/ and http://phpmytourney.servegame.com/"
+website "https://sourceforge.net/projects/phpmytourney/"
 # 23 results for "Powered by phpmytourney" +Version @ 2010-08-29
 
 # Dorks #

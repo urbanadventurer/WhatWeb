@@ -20,8 +20,6 @@ dorks [
 'inurl:"pritlog/index.php/archives"'
 ]
 
-
-
 # Matches #
 matches [
 

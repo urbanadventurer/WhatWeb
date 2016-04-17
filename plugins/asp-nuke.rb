@@ -4,22 +4,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.4 # 2015-04-17 # Andrew Horton
+# Added website parameter
+##
+# Version 0.3
+# Uses :version=>//
+##
 # Changelog
 # Version 0.2
 # Removed :name and :probility
-# Version 0.3
-# Uses :version=>//
-
 
 Plugin.define "ASP-Nuke" do
 author "Andrew Horton"
-version "0.3"
-description "ASP Nuke  homepage: www.aspnuke.com
-ASP Nuke is an open-source software application for running a community-based web site on a web server. The requirements for the ASP Nuke content management system are: 1. Microsoft SQL Server 2000 and 2. Microsoft Internet Information Server (IIS) 5.0"
-
-
-
+version "0.4"
+description "ASP Nuke is an open-source software application for running a community-based web site on a web server. The requirements for the ASP Nuke content management system are: 1. Microsoft SQL Server 2000 and 2. Microsoft Internet Information Server (IIS) 5.0"
+website "http://www.aspnuke.com/"
 
 # http://www.portal.fezalar.org
 # <meta name="Generator" CONTENT="ASP-Nuke community v1.4 SP4">
@@ -60,7 +59,6 @@ matches [
 {:version=>/<a href="http:\/\/www.aspnuke.it" target="_blank">Asp-Nuke ([\d\.]+)<\/a>/,  :name=>"aspnuke.it" },
 
 ]
-
 
 def passive
    #P3P: CP="NOI CUR OUR IND UNI COM NAV INT"

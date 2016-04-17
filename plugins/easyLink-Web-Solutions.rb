@@ -4,13 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2015-04-17 # Andrew Horton
+# Added website parameter and description
+##
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
 Plugin.define "easyLink-Web-Solutions" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
-version "0.2"
-description "homepage: http://www.mountaingrafix.at/"
+version "0.3"
+description "German Content Management System"
+website "http://www.mountaingrafix.eu/tag/easylink/"
 
 # Google rsults as at 2010-09-03 #
 # 308 for "powered by easyLink"
