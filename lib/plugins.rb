@@ -586,48 +586,6 @@ for adding/removing sets of plugins.
 		puts
 	end
 
-	# Show plugin information
-	def PluginSupport.old_plugin_info(keywords= nil)
-		puts "WhatWeb Plugin Information"
-		puts "Searching for " + keywords.join(",") unless keywords.nil?
-		puts "-" * 80
-
-		puts ["Plugin Name".ljust(25),"Details"].join(" ")
-		count=0
-		Plugin.registered_plugins.sort_by {|a,b| a.downcase }.each do |name,plugin|
-			dump=[name,plugin.author,plugin.description,plugin.website,plugin.matches].flatten.compact.to_a.join.downcase
-		
-			# this will fail is an expected variable is not defined or empty
-			if keywords.empty? or keywords.map {|k| dump.include?(k.downcase) }.compact.include?(true)
-				puts name
-				puts "\tAuthor:".ljust(22) + plugin.author
-				puts "\tVersion:".ljust(22) + plugin.version
-	#			puts "\tCategory:".ljust(22) + plugin.category.to_s unless plugin.category.nil?
-				puts "\tMatches:".ljust(22) + plugin.matches.size.to_s if plugin.matches
-				puts "\tDorks:".ljust(22) + plugin.dorks.size.to_s if plugin.dorks
-				puts "\tPassive function: ".ljust(22) + (defined?(plugin.passive) ? "Yes" : "No")
-				puts "\tAggressive function: ".ljust(22) + (defined?(plugin.aggressive) ? "Yes" : "No")
-				puts "\tVersion detection: ".ljust(22) + (plugin.version_detection? ? "Yes" : "No")
-
-				if plugin.description
-					puts "\tDescription: "
-					word_wrap(plugin.description,72).each {|line| puts "\t" + line }
-				end
-
-				if plugin.website
-					puts "\tWebsite: ".ljust(22) + plugin.website
-				end
-
-				puts
-				puts "-" * 80
-				count+=1
-			end
-		end
-		puts "#{count} plugins found"
-		puts
-	end
-
-
 end
 
 
