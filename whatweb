@@ -16,7 +16,7 @@ Author: Andrew Horton aka urbanadventurer
  
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-Copyright 2009-2012 Andrew Horton <andrew at morningstarsecurity dot com>
+Copyright 2009-2016 Andrew Horton <andrew at morningstarsecurity dot com>
 
 This file is part of WhatWeb.
 
@@ -541,12 +541,12 @@ OUTPUT:
 LOGGING:
   --log-brief=FILE\tLog brief, one-line output
   --log-verbose=FILE\tLog verbose output
+  --log-errors=FILE\tLog errors
   --log-xml=FILE\tLog XML format
   --log-json=FILE\tLog JSON format
-"+
-#  --log-sql=FILE\tLog SQL INSERT statements
-#  --log-sql-create=FILE\tCreate SQL database tables
-"  --log-json-verbose=FILE Log JSON Verbose format
+  --log-sql=FILE\tLog SQL INSERT statements
+  --log-sql-create=FILE\tCreate SQL database tables
+  --log-json-verbose=FILE Log JSON Verbose format
   --log-magictree=FILE\tLog MagicTree XML format
   --log-object=FILE\tLog Ruby object inspection format
   --log-mongo-database\tName of the MongoDB database
@@ -554,8 +554,7 @@ LOGGING:
   --log-mongo-host\tMongoDB hostname or IP address. Default: 0.0.0.0
   --log-mongo-username\tMongoDB username. Default: nil
   --log-mongo-password\tMongoDB password. Default: nil
-  --log-errors=FILE\tLog errors
-
+  
 PERFORMANCE & STABILITY:
   --max-threads, -t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
   --open-timeout\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}
@@ -991,4 +990,3 @@ output_list.each {|o|
 Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }
 
 #pp $PLUGIN_TIMES.sort_by {|x,y|y }
-
