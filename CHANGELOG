@@ -1,5 +1,8 @@
 Version 0.4.8-dev Unreleased
-* Added support for Ruby 1.9.1
+* Fixed bugs for Ruby 1.9.x and Ruby 2.x. Dropped support for Ruby 1.8.x. Thanks to nil0x42 and pvdl for bug fixes
+* Updated plugin list output
+* Renamed scripts in plugin-development/ that update the Alexa lists and IP Country Database
+* Updated get-pattern for Ruby 2.x
 * Added over 700 new plugins
 * Added aggressive version detection using md5 static file matches to several plugins
 * Added support for raw HTTP headers when scanning local files
@@ -8,11 +11,11 @@ Version 0.4.8-dev Unreleased
 * Added ./addons/hunter
 * Added ./addons/gggooglescan
 * Added ./addons/country-scanner
-* Added SQL logging with `--log-sql` and `--log-sql-create` arguments. These are not listed in the usage.
+* Added SQL logging with `--log-sql` and `--log-sql-create` arguments.
 * Added raw header support by monkey patching the net/http library
 * Added context searching for plugin matches[]. Added the matches keyword, :search. Values can be "headers","headers[server]"(or any other HTTP header),"body"(default), "all" (the raw headers + body)
 * Added methods for aggressive plugins to send HEAD and POST requests
-* Added --grep, -g option to be easier than --custom-plugin. (Requested by Scott Bell)
+* Added --grep, -g option. Similar usage to --custom-plugin. (Requested by Scott Bell)
 * Removed the spidering feature and dependence on the customised and unsupported Anemone gem
 * Removed the extra_urls feature
 * Removed dependency on em-resolv-replace
