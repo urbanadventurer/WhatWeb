@@ -118,8 +118,6 @@ require 'lib/version_class.rb'
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
-
-
 # nothing says pro-developer like using global variables
 $VERSION="0.4.8-dev"
 $WWDEBUG = false # raise exceptions in plugins, etc
@@ -509,6 +507,9 @@ PROXY:
 
 PLUGINS:
   --list-plugins, -l\tList all plugins
+  --info-plugins, -I=[SEARCH]\tDisplay detailed information for all plugins.
+\t\t\tOptionally search with keywords in a comma delimited
+\t\t\tlist.
   --plugins, -p=LIST\tSelect plugins. LIST is a comma delimited set of 
 \t\t\tselected plugins. Default is all.
 \t\t\tEach element can be a directory, file or plugin name and
@@ -517,9 +518,7 @@ PLUGINS:
 \t\t\ttitle,md5,+./plugins-disabled/
 \t\t\t./plugins-disabled,-md5
 \t\t\t-p + is a shortcut for -p +plugins-disabled
-  --info-plugins, -I=PLUGINS\tDisplay detailed information for plugins.
-\t\t\tOptionally search with keywords in a comma delimited
-\t\t\tlist.
+ 
   --grep, -g=STRING\tSearch for STRING in HTTP responses. Reports with a
 \t\t\tplugin named Grep
   --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,

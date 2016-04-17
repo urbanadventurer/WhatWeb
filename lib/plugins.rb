@@ -68,7 +68,7 @@ class Plugin
   end
 
   def init (target)
-        @target=target
+    @target=target
   	@body=target.body
   	@headers=target.headers
   	@status=target.status
@@ -486,8 +486,108 @@ for adding/removing sets of plugins.
 		dorks.size > 0 ? puts(dorks) : error("Google dork lookup failed: Invalid plugin name or no dorks available")
 	end
 
+
+
+
 	# Show plugin information
-	def PluginSupport.plugin_info(keywords= nil)
+	def PluginSupport.plugin_info(keywords = nil)
+		terminal_width = 80
+
+		puts "WhatWeb Detailed Plugin List"		
+		puts "Searching for " + keywords.join(",") unless keywords.empty?
+
+		count = {plugins: 0, version_detection: 0, matches: 0, dorks: 0, aggressive: 0, passive: 0 }
+
+		Plugin.registered_plugins.sort_by {|a,b| a.downcase }.each do |name,plugin|
+			dump=[name,plugin.author,plugin.description,plugin.website,plugin.matches].flatten.compact.to_a.join.downcase
+		
+			# this will fail is an expected variable is not defined or empty
+			if keywords.empty? or keywords.map {|k| dump.include?(k.downcase) }.compact.include?(true)
+
+				puts "=" * terminal_width
+				puts "Plugin:".ljust(16) + name
+				puts "-" * terminal_width
+				
+				if plugin.description
+					word_wrap(plugin.description, terminal_width - 16).each_with_index do |line,index|
+						if index == 0
+							print "Description:".ljust(16)
+						else
+							print " " * 16
+						end
+						puts line
+					end
+				else
+					print "Description:".ljust(16) + "<Not defined>"
+				end
+
+				puts "Website:".ljust(16) + (plugin.website || "<Not defined>")
+				puts
+				puts "Author:".ljust(16) + (plugin.author || "<Not defined>")
+				puts "Version:".ljust(16) + (plugin.version || "<Not defined>")
+				puts
+				print "Features:".ljust(16)
+				print "[#{ defined?(plugin.matches) and plugin.matches ? "Yes" : "No" }]".ljust(7) + "Pattern Matching"
+				
+				if defined?(plugin.matches) and plugin.matches
+					puts " (#{plugin.matches.size})"
+				else
+					puts
+				end
+
+				puts " " * 16 + "[#{ plugin.version_detection? ? "Yes" : "No" }]".ljust(7) + "Version detection from pattern matching"
+				puts " " * 16 + "[#{ defined?(plugin.passive) ? "Yes" : "No" }]".ljust(7) + "Function for passive matches"
+				puts " " * 16 + "[#{ defined?(plugin.aggressive) ? "Yes" : "No" }]".ljust(7) + "Function for aggressive matches"
+
+				count[:version_detection] +=1 if defined?(plugin.version_detection?)
+				count[:passive] +=1 if defined?(plugin.passive)
+				count[:aggressive] +=1 if defined?(plugin.aggressive)
+
+				print " " * 16 + "[#{ plugin.dorks ? "Yes" : "No" }]".ljust(7) + "Google Dorks"				
+				if plugin.dorks
+					puts " (#{plugin.dorks.size})"
+				else
+					puts
+				end
+
+				puts
+
+				if plugin.dorks
+					puts "Google Dorks:"
+					plugin.dorks.each_with_index do |dork, index|					
+						puts "[#{index + 1 }] #{dork}"
+					end
+					puts
+					count[:dorks] += plugin.dorks.size	
+				end
+				
+				if defined?(plugin.matches) and plugin.matches
+					puts "Pattern Matching:"
+					plugin.matches.each_with_index do |match, index|					
+						puts "[#{index + 1 }] #{match}"
+					end
+					puts
+					count[:matches] += plugin.matches.size					
+				end
+
+				count[:plugins] += 1
+			end
+		end
+
+		puts "=" * terminal_width
+
+		puts "Total plugins: #{count[:plugins]}"
+		#puts "Total version detection from pattern matching: #{count[:version_detection]}"
+		puts "Total pattern matching patterns: #{count[:matches]}"
+		puts "Total Google dorks: #{count[:dorks]}"
+		puts "Total aggressive functions: #{count[:aggressive]}"
+		puts "Total passive functions: #{count[:passive]}"
+
+		puts
+	end
+
+	# Show plugin information
+	def PluginSupport.old_plugin_info(keywords= nil)
 		puts "WhatWeb Plugin Information"
 		puts "Searching for " + keywords.join(",") unless keywords.nil?
 		puts "-" * 80
