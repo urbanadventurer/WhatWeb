@@ -22,9 +22,9 @@ website "http://www.acme.com/java/software/Acme.Serve.Serve.html"
 
 matches [
 	# Version Detection
-	{ :search=>"headers[server]", :version=>/^Acme\.Serve\/v([\d\.]+) of [\d]{2}[a-z]{3}[\d]{2}$/) },
+	{ :search=>"headers[server]", :version=>/^Acme\.Serve\/v([\d\.]+) of [\d]{2}[a-z]{3}[\d]{2}$/ },
 	# Date Detection
-	{ :name=>"Date from server header", :search=>"headers[server]", :string=>/^Acme\.Serve\/v[\d\.]+ of ([\d]{2}[a-z]{3}[\d]{2})$/) },
+	{ :name=>"Date from server header", :search=>"headers[server]", :string=>/^Acme\.Serve\/v[\d\.]+ of ([\d]{2}[a-z]{3}[\d]{2})$/ },
 ]
 
 end

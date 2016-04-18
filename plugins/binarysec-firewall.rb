@@ -16,9 +16,9 @@ version "0.3"
 description "BinarySec Web Application Firewall - http://www.binarysec.com"
 
 matches [
-	{:name=>"X-BinarySEC-Via header", :text=>"", :search=>"header[x-binarysec-via]"},
-	{:name=>"X-BinarySEC-NoCache header", :text=>"", :search=>"header[x-binarysec-nocache]"},
-	{:name=>"X-BinarySEC-NoCache header", :version=>/BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/, :search=>"header[server]"},
+	{:name=>"X-BinarySEC-Via header", :text=>"", :search=>"headers[x-binarysec-via]"},
+	{:name=>"X-BinarySEC-NoCache header", :text=>"", :search=>"headers[x-binarysec-nocache]"},
+	{:name=>"X-BinarySEC-NoCache header", :version=>/BinarySEC\/(\d{1,3}\.\d{1,4}\.\d{1,4})/, :search=>"headers[server]"},
 ]
 
 end
