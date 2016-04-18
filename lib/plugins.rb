@@ -92,8 +92,10 @@ class Plugin
 				when 'headers'
 					search_context = target.raw_headers
 				when /headers\[(.*)\]/
-					if target.headers[$1]
-						search_context = target.headers[$1]
+					header = $1.downcase
+					
+					if target.headers[header]
+						search_context = target.headers[header]					
 					else
 						return r
 					end
@@ -427,8 +429,9 @@ for adding/removing sets of plugins.
 			# open tmp file
 			f=Tempfile.new('whatweb-custom-plugin')
 			# write
-			f.write(custom)
+			f.write(custom)			
 			f.close
+			pp custom if $verbose > 2
 			# load
 			load f.path
 			f.unlink
