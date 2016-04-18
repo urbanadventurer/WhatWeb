@@ -13,8 +13,6 @@ website "Homepage: http://www.4d.com/products.html"
 # ShodanHQ results as at 2011-04-11 #
 # 431 for 4D_v11_SQL
 
-
-
 # Matches #
 matches [
 

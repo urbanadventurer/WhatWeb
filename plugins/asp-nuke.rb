@@ -4,10 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2015-04-18 # Andrew Horton
+# Version 0.5 # 2016-04-18 # Andrew Horton
 # Replaced passive function with :search=>"headers[p3p]" pattern
 ##
-# Version 0.4 # 2015-04-17 # Andrew Horton
+# Version 0.4 # 2016-04-17 # Andrew Horton
 # Added website parameter
 ##
 # Version 0.3

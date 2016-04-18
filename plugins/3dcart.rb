@@ -4,12 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 Andrew Horton
+# Added website parameter
+##
 # 2014-11-04 # Napz
 ##
 Plugin.define "3dcart" do
 author "Napz <napzs@rocketmail.com>"
-version "0.1"
-description "3dcart - The 3dcart Shopping Cart Software is a complete ecommerce solution for anyone: http://www.3dcart.com/"
+version "0.2"
+description "3dcart - The 3dcart Shopping Cart Software is a complete ecommerce solution for anyone."
+website "http://www.3dcart.com/"
 
 # Dorks #
 dorks [

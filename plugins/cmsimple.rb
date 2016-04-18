@@ -4,7 +4,7 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2015-04-17 # Andrew Horton
+# Version 0.3 # 2016-04-17 # Andrew Horton
 # Added website
 ##
 # Version 0.2 #

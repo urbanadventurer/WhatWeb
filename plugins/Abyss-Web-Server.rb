@@ -4,27 +4,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-18 # Andrew Horton
+# Replaced passive function with match
+##
 Plugin.define "Abyss-Web-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
-version "0.1"
+version "0.2"
 description "Abyss Web Server is a compact web server available for Windows, Mac OS X, Linux, and FreeBSD operating systems."
 website "http://www.aprelium.com/abyssws/"
 
 # ShodanHQ results as at 2011-04-08 #
 # 4,097 for Abyss
 
-
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^Abyss\/([^\s]+)/) } if @headers["server"] =~ /^Abyss\/([^\s]+)/
-
-	# Return passive matches
-	m
-end
+matches [
+	{ :version=>/^Abyss\/([^\s]+)/, :search=>"headers[server]" } 
+]
 
 end
 

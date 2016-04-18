@@ -6,8 +6,12 @@
 
 # TODO
 # add detection true/false for ViewState MAC and Encryption
-
-
+##
+# Version 0.6 # 2016-04-18 # Andrew Horton
+# Replaced passive function with match for:
+# 1. x-powered-by HTTP header
+# 2. X-AspNet-Version HTTP header
+# 3. AnonymousIdentificationModule
 ##
 # Version 0.5 # 2014-06-12
 # Added Detailed errors and ViewState Encrypted. 
@@ -23,7 +27,7 @@
 ##
 Plugin.define "ASP_NET" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
-version "0.4"
+version "0.6"
 description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world."
 website "http://www.asp.net/"
 
@@ -70,7 +74,17 @@ matches [
 	{ :search=>"body", :filepath=>/<b> Source File: <\/b> ([^<]+)<b> &nbsp;&nbsp; Line:.*This error page might contain sensitive information because ASP.NET/},
 	
 	# VIEWSTATEENCRYPTED
-	{ :string=>"ViewState Encrypted", :search=>"body", :text=>'name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED"'}
+	{ :string=>"ViewState Encrypted", :search=>"body", :text=>'name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED"'},
+
+	# x-powered-by HTTP header
+	{ :name=>"x-powered-by HTTP header", :search=>"headers[x-powered-by]", :regexp=>/asp\.net/ },
+
+	# Version Detection # X-AspNet-Version HTTP header
+	{ :name=>"X-AspNet-Version HTTP header", :search=>"headers[x-aspnet-version]", :version=>/^(.*)$/ },
+
+	# AnonymousIdentificationModule
+	{ :module=>"AnonymousIdentificationModule", :search=>"headers[set-cookie]", :regexp => /^anonymousID=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/},
+	{ :module=>"AnonymousIdentificationModule", :search=>"headers[set-cookie]", :regexp => /^chkvalues=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/},
 
 ]
 
@@ -78,18 +92,8 @@ matches [
 def passive
 	m=[]
 
-	# x-powered-by HTTP header
-	m << { :name=>"x-powered-by" } if @headers['x-powered-by'] =~ /asp\.net/i
-
-	# Version Detection # X-AspNet-Version HTTP header
-	m << { :version=>@headers['x-aspnet-version'].to_s } unless @headers['x-aspnet-version'].nil?
-
 	# Version Detection # X-AspNetmvc-version HTTP header
 	m << { :string=>"MVC"+@headers['x-aspnetmvc-version'].to_s } unless @headers['x-aspnetmvc-version'].nil?
-
-	# AnonymousIdentificationModule
-	m << { :module=>"AnonymousIdentificationModule" } if @headers['set-cookie'] =~ /^anonymousID=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
-	m << { :module=>"AnonymousIdentificationModule" } if @headers['set-cookie'] =~ /^chkvalues=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/
 
 	# Return passive results
 	m

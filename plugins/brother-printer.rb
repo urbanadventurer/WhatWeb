@@ -4,13 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-04-18 #
+# Replaced passive function with matches
+##
 # Version 0.2 # 2011-01-08 #
 # Updated model detection
 # Added frameset match
 ##
 Plugin.define "Brother-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
-version "0.2"
+version "0.3"
 description "Brother printer web interface"
 website "http://www.brother.com/"
 # Default login: Admin/Access
@@ -45,20 +48,10 @@ matches [
 	# Tested models: HL-6050D_DN / HL-5370DW / HL-5250DN / HL-5250DN /  HL-5270DN / HL-5370DW / HL-1650_1670N / HL-2150N / HL-2460 / HL-2170W / HL-2070N
 	# This regex could be improved
 	{ :model=>/<TITLE>Brother ([0-9A-Z\-\_]+) series[\ \(\ SLEEP\ \)|\ \(\ PAUSE\ \)|\ \(\ READY\ \)]*<\/TITLE>/ },
+	{ :certainty=>25, :search=>"headers[server]", :version=>/^[Dd]ebut\/([\d\.]+)$/ },
 
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	# This header is also used by brother faxes
-	m << { :certainty=>25, :version=>@headers["server"].scan(/^[Dd]ebut\/([\d\.]+)$/) } if @headers["server"] =~ /^[Dd]ebut\/([\d\.]+)$/
-
-	# Return passive matches
-	m
-end
 
 end
 

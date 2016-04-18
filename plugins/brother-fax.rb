@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-18 #
+# Replaced passive function with matches
+##
 Plugin.define "Brother-Fax" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-14
-version "0.1"
+version "0.2"
 description "Brother fax web interface"
 website "http://www.brother.com/"
 # Default login: Admin/Access
@@ -23,26 +26,13 @@ dorks [
 'intitle:"brother mfc" inurl:"/main/main.html"'
 ]
 
-
-
 # Matches #
 matches [
-
 # Model Detection # Default Title
 { :model=>/<TITLE>\nBrother (MFC-[\dA-Z]+)\n<\/TITLE>/ },
+{ :certainty=>25, :search=>"headers[server]", :version=>/^[Dd]ebut\/([\d\.]+)$/ }
 
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	# This header is also used by some brother printers
-	m << { :certainty=>25, :version=>@headers["server"].scan(/^[Dd]ebut\/([\d\.]+)$/) } if @headers["server"] =~ /^[Dd]ebut\/([\d\.]+)$/
-
-	# Return passive matches
-	m
-end
 end
 

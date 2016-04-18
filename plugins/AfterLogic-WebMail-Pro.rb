@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-18 # Andrew Horton
+# Replaced passive function with match for cookies
+##
 Plugin.define "AfterLogic-WebMail-Pro" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
-version "0.1"
+version "0.2"
 description "AfterLogic WebMail Pro is a webmail front-end for your existing POP3/IMAP mail server."
 website "http://www.afterlogic.com/mailbee/webmail-pro.asp"
 
@@ -33,21 +36,12 @@ matches [
 { :version=>/AfterLogic Corporation<\/a>\s?<\/div>\s+<\/body>\s<\/html>\s<!--\s?([\d\.]+)\s?-->/ },
 { :version=>/AfterLogic Corporation<\/a>\s?<\/div>\s+<!--\s?([\d\.]+)\s?-->\s<\/body>\s<\/html>/ },
 
+# PHPWEBMAILSESSID cookie
+{ :name=>"PHPWEBMAILSESSID cookie", :search=>"headers[set-cookie]", :regexp=>/^PHPWEBMAILSESSID=[^;]+;/ },
+
+# PHPWMADMINSESSID cookie
+{ :name=>"PHPWMADMINSESSID cookie", :search=>"headers[set-cookie]", :regexp=>/^PHPWEBMAILSESSID=[^;]+;/ },
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# PHPWEBMAILSESSID cookie
-	m << { :name=>"PHPWEBMAILSESSID cookie" } if @headers["set-cookie"] =~ /^PHPWEBMAILSESSID=[^;]+;/
-
-	# PHPWMADMINSESSID cookie
-	m << { :name=>"PHPWMADMINSESSID cookie" } if @headers["set-cookie"] =~ /^PHPWMADMINSESSID=[^;]+;/
-
-	# Return passive matches
-	m
-end
 
 end
 

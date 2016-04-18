@@ -15,7 +15,6 @@ website "http://www.360webmanager.com"
 
 # About 36,800 results for "powered by 360 Web Manager" @ 2010-06-12
 
-
 matches [
 
 # Powered by text
