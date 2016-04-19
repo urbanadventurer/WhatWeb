@@ -507,9 +507,10 @@ PROXY:
 
 PLUGINS:
   --list-plugins, -l\tList all plugins
-  --info-plugins, -I=[SEARCH]\tDisplay detailed information for all plugins.
+  --info-plugins, -I=[SEARCH]\tList all plugins with detailed information.
 \t\t\tOptionally search with keywords in a comma delimited
 \t\t\tlist.
+  --search-plugins=STRING\tSearch plugins for a keyword.
   --plugins, -p=LIST\tSelect plugins. LIST is a comma delimited set of 
 \t\t\tselected plugins. Default is all.
 \t\t\tEach element can be a directory, file or plugin name and
@@ -613,7 +614,7 @@ opts = GetoptLong.new(
       [ '-v','--verbose', GetoptLong::NO_ARGUMENT ],
       [ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
       [ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-I','--info-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
+      [ '-I','--info-plugins','--search-plugins', GetoptLong::OPTIONAL_ARGUMENT ],            
       [ '--dorks', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
