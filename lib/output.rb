@@ -70,6 +70,195 @@ class OutputObject < Output
 	end
 end
 
+
+=begin
+WhatWeb v4.1 ( http://www.morningstarsecurity.com/research/whatweb)
+Scan started at Tue Apr 19 00:46:50 AEST 2016
+X targets loaded
+
+WhatWeb report for http://www.apple.com
+Status  : 200 OK
+Title   : Apple
+IP      : 23.66.255.148
+Country : UNITED STATES,US
+
+HTTP Headers
+	HTTP/1.1 200 OK
+	Content-Length: 31253     
+	Server: Apache
+	Accept-Ranges: bytes
+	Content-Type: text/html; charset=UTF-8
+	Cache-Control: max-age=523
+	Expires: Mon, 18 Apr 2016 14:22:50 GMT
+	Date: Mon, 18 Apr 2016 14:14:07 GMT
+	Connection: keep-alive
+
+Detected Plugins:
+-----------------
+Short list: Apache, HTTPServer[Apache], Script[text/javascript], X-Frame-Options[DENY]
+
+[ Apache ]
+	The Apache HTTP Server Project is an effort to develop and maintain...
+
+	Detected Version: 5.4
+	Detected Modules: 1.2
+	Detected Strings: XYZ
+
+	Aggressive function available
+	Google Dorks: (1)
+	Website: http://apache.org/
+
+[ HTML5 ]
+	HTML version 5, detected by the doctype declaration
+	
+[ Meta-Author ]
+	This plugin retrieves the author name from the meta name tag
+	Authors name: Apple Inc.
+
+[ Open-Graph-Protocol ]
+	Strings: website	
+
+[ X-UA-Compatible ]
+	Strings: IE=EmulateIE7
+
+[ Script ]
+	Strings: application/ld+json,text/javascript
+=end
+
+
+
+class NewOutputVerbose < Output
+	def coloured(s, colour)
+		use_colour = ((@f == STDOUT and $use_colour=="auto") or ($use_colour=="always"))
+
+		if use_colour
+			send colour, s
+		else
+			s
+		end
+	end
+
+	def out(target, status, results)
+		$semaphore.synchronize do
+
+=begin
+WhatWeb report for http://www.apple.com
+Status  : 200 OK
+Title   : Apple
+IP      : 23.66.255.148
+Country : UNITED STATES,US
+=end
+
+pp results
+pp suj(results.first)
+
+			display={
+				title:"<None>",
+				ip:"<Unknown>",
+				country:"<Unknown>"
+			}
+
+			display[:title] = results["Title"][:string] if results["Title"][:string] 
+			display[:ip] = results["IP"][:string] if results["IP"][:string]
+			display[:country] = results["country"][:string] if results["Country"][:string]
+
+			@f.puts "WhatWeb report for #{target}"
+			@f.puts "Status".ljust(9) + " : #{status}"
+			
+			@f.puts "Title".ljust(9) + " : " + display[:title]
+			@f.puts "IP".ljust(9) + " : " + results["ip"].string
+			@f.puts "Country".ljust(9) + " : " + results["country"].string
+
+pp results
+exit
+
+
+			@f.puts "URL".ljust(7) + ": #{coloured(target,'blue')}"
+			@f.puts "Status".ljust(7) + ": #{status}"
+			results.sort.each do |plugin_name, plugin_results|
+				unless plugin_results.empty?
+				
+					@f.puts "   " + coloured(plugin_name, "yellow") + " " + coloured("-"*(80-5-plugin_name.size), "dark_blue")
+				
+					description = [""]
+					unless Plugin.registered_plugins[plugin_name].description.nil?
+						d = Plugin.registered_plugins[plugin_name].description[0..350] 
+						d += "..." if d.size == 251
+						description = word_wrap(d, 60)
+					end
+#					@f.puts "\tCategory   : " + Plugin.registered_plugins[plugin_name].category.first unless Plugin.registered_plugins[plugin_name].category.nil?
+
+					@f.puts "\tDescription: " + description.first
+					description[1..-1].each { |line|
+						@f.puts "\t" + " " * 13 + line
+					}
+
+                                        unless Plugin.registered_plugins[plugin_name].website.nil?
+						@f.puts "\tWebsite    : " + Plugin.registered_plugins[plugin_name].website.to_s
+					end
+
+					top_certainty = suj(plugin_results)[:certainty].to_i
+					unless top_certainty == 100
+						@f.puts "\t" + "Certainty".ljust(11) + ": " + certainty_to_words(top_certainty)
+					end
+
+					plugin_results.map { |x| sortuniq(x) }.each do |pr|
+						if pr[:name]
+							name_of_match = pr[:name]
+						else
+							name_of_match = [pr[:regexp_compiled], pr[:text], pr[:regexp].to_s,
+										pr[:ghdb], pr[:md5], pr[:tagpattern]].compact.join("|")
+						end
+
+						pr.each do |key,value|
+							next unless [:version, :os, :string, :account, :model, 
+									:firmware, :module, :filepath, :url].include?(key)
+
+							next if value.class==Regexp
+
+							@f.print "\t" + key.to_s.capitalize.ljust(11) + ": "
+
+							c = case key
+								when :version then "green"
+								when :string then "cyan"
+								when :certainty then "grey"
+								when :os then "red"
+								when :account then "cyan"
+								when :model then "dark_green"
+								when :firmware then "dark_green"
+								when :module then "magenta"
+								when :filepath then "dark_green"
+								else "grey"
+							end
+
+							if value.is_a?(String)
+								@f.print coloured(value.to_s,c)
+							elsif value.is_a?(Array)
+								@f.print coloured(value.join(",").to_s,c)
+							else
+								@f.print coloured(value.inspect,c)
+							end
+						
+							unless name_of_match.empty?
+								@f.print " (from #{name_of_match})"
+							end
+							unless pr[:certainty] == 100
+								@f.print " (Certainty: #{ certainty_to_words pr[:certainty]} )"
+							end
+
+							@f.puts
+						end
+
+						@f.puts "\t" + coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
+					end
+					@f.puts			
+				end
+			end
+		end
+	end
+end
+
+
 class OutputVerbose < Output
 	def coloured(s, colour)
 		use_colour = ((@f == STDOUT and $use_colour=="auto") or ($use_colour=="always"))

@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "EulerianWS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-08
-version "0.1"
+version "0.2"
 description "Eulerian Technologies Web Server (EulerianWS) [French]"
 website "http://www.eulerian.com/fr/"
 
@@ -19,19 +22,10 @@ matches [
 
 	# Version Detection # Version footer HTML
 	{ :version=>/<td align="right"><address>EulerianWS\/([\d\.]+)<\/address><\/td><\/tr>/ },
+	# HTTP Server Header
+	{ :version=>/^[\s]*EulerianWS\/([^\s^\r^\n]+)/, :search=>"headers[server]" },
 
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header
-	m << { :version=>@headers["server"].to_s.scan(/^[\s]*EulerianWS\/([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /^[\s]*EulerianWS\/([^\s^\r^\n]+)/i
-
-	m
-
-end
 
 end
 

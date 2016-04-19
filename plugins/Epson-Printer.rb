@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Epson-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
-version "0.1"
+version "0.2"
 description "Epson printer"
 website "http://www.epson.com/"
 
@@ -23,26 +26,12 @@ dorks [
 'intitle:"EpsonNet (Config|WebAssist) Rev"'
 ]
 
-
-
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header
-	if @headers["server"] =~ /^EPSON-HTTP\/([^\s]+)/
-
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^EPSON-HTTP\/([^\s]+)/).flatten }
-
-		# Module Detection # Title
-		m << { :module=>@body.scan(/<TITLE>EpsonNet (WebAssist |Config )Rev\.([^<]+)<\/TITLE>/).flatten } if @body =~ /<TITLE>EpsonNet (WebAssist |Config )Rev\.([^<]+)<\/TITLE>/
-
-	end
-
-	# Return passive matches
-	m
-end
+matches [
+	# Version Detection
+	{ :version=>/^EPSON-HTTP\/([^\s]+)/, :search=>"headers[server]" },
+	# Module Detection # Title
+	{ :module=>/<TITLE>EpsonNet (WebAssist |Config )Rev\.([^<]+)<\/TITLE>/ },
+]
 
 end
 

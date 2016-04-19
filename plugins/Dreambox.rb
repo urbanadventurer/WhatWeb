@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Dreambox" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
-version "0.1"
+version "0.2"
 description "The Dreambox is a series of Linux-powered DVB satellite, terrestrial and cable digital television receivers (set-top box), produced by German multimedia vendor Dream Multimedia. Enigma2 WebInterface - Control a DreamBox using a Browser. The Dreambox Webinterface (short WebIf) is included in all newer Images. - More info: http://en.wikipedia.org/wiki/Dreambox"
 # More info on Enigma2: http://dream.reichholf.net/wiki/Enigma2:WebInterface
 
@@ -23,14 +26,17 @@ matches [
 # Aggressive # /web-data/img/favicon.ico
 { :url=>"/web-data/img/favicon.ico", :md5=>"d9aa63661d742d5f7c7300d02ac18d69" },
 
+# Version Detection # HTTP Server Header
+{ :version=>/^Enigma2 WebInterface Server ([\d\.]+)$/, :search=>"headers[server]" },
+
+# HTTP Server Header
+{ :regexp=>/^TwistedWeb/, :search=>"headers[server]" },
+
 ]
 
 # Passive #
 def passive
 	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^Enigma2 WebInterface Server ([\d\.]+)$/) } if @headers["server"] =~ /^Enigma2 WebInterface Server ([\d\.]+)$/
 
 	# HTTP Server Header # TwistedWeb
 	if @headers["server"] =~ /^TwistedWeb\/[\d\.]+$/

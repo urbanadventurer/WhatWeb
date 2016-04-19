@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "DirectAdmin" do
 author "Brendan Coles <bcoles@gmail.com>" # 201-04-22
-version "0.1"
+version "0.2"
 description "Control panel for web hosting companies running Red Hat 7.x, 8.x, 9.x, Red Hat Enterprise and FreeBSD."
 website "http://www.directadmin.com/"
 
@@ -16,8 +19,6 @@ website "http://www.directadmin.com/"
 dorks [
 'intitle:"DirectAdmin Login" "DirectAdmin Login Page" "Please enter your Username and Password"'
 ]
-
-
 
 # Matches #
 matches [
@@ -30,18 +31,10 @@ matches [
 
 { :text=>"onload=\"document.form.username.focus();if(document.form.referer.value.indexOf('#')==-1)document.form.referer.value+=location.hash;\">" },
 
+# Version Detection # HTTP Server Header
+{ :version=>/^DirectAdmin Daemon v([^\s]+) Registered to /, :search=>"headers[server]" },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^DirectAdmin Daemon v([^\s]+) Registered to /) } if @headers["server"] =~ /^DirectAdmin Daemon v([^\s]+) Registered to /
-
-	# Return passive matches
-	m
-end
 
 end
 
