@@ -3,9 +3,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Conexant-EmWeb" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
-version "0.1"
+version "0.2"
 description "This plugin identifies the Conexant-EmWeb DSL router web interface."
 website "http://www.conexant.com/"
 
@@ -65,6 +68,11 @@ matches [
 # Allied Telesyn-iMG634A-R2 # Help page
 { :text=>'<p class="help_data"><b>Note:</b> If "Checking Firmware Upgrades Automatically" or "Image Upgrade" fails then please contact your service provider.</p>', :url=>"/help.html", :model=>"Allied Telesyn-iMG634A-R2" },
 
+# Server version
+{:version=>/Conexant-EmWeb\/([^\r^\n]+)/, :search=>"headers[server]"},
+{:version=>/Virata-EmWeb\/([^\r^\n]+)/, :search=>"headers[server]"},
+
+
 ]
 
 # Passive #
@@ -73,11 +81,6 @@ def passive
 
 	# Check HTTP Header
 	if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/ or @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
-
-		# Server version
-		m << { :version=>@headers["server"].scan(/Conexant-EmWeb\/([^\r^\n]+)/) } if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/
-		m << { :version=>@headers["server"].scan(/Virata-EmWeb\/([^\r^\n]+)/) } if @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
-
 
 		# e-con # Model Detection # Default page # Default Logo
 		m << { :model=>"e-con "+@body.scan(/<img src="\/webconfig\/images\/logo.gif" alt="LOGO" title="LOGO" hspace="0" vspace="0" width="220" height="45"><\/td><td class="rbtop" width="100%"><h1 class="pname">e-con ([^\s]+) Ethernet Router<\/h1>/).flatten.first } if @body =~ /<img src="\/webconfig\/images\/logo.gif" alt="LOGO" title="LOGO" hspace="0" vspace="0" width="220" height="45"><\/td><td class="rbtop" width="100%"><h1 class="pname">e-con ([^\s]+) Ethernet Router<\/h1>/	
@@ -94,11 +97,6 @@ def aggressive
 
 	# Check HTTP Header
 	if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/ or @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
-
-		# Server Version
-		m << { :version=>@headers["server"].scan(/Conexant-EmWeb\/([^\r^\n]+)/).flatten } if @headers["server"] =~ /Conexant-EmWeb\/([^\r^\n]+)/
-		m << { :version=>@headers["server"].scan(/Virata-EmWeb\/([^\r^\n]+)/).flatten } if @headers["server"] =~ /Virata-EmWeb\/([^\r^\n]+)/
-
 
 		# Allied Telesyn # Status page
 		target = URI.join(@base_uri.to_s,"/status/Status_1.htm").to_s
