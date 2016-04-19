@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Covalent-Enterprise-Ready-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
-version "0.1"
+version "0.2"
 description "The Covalent Enterprise Ready Server is a stand-alone, manually-managed instance of an Apache 2.0 Web server with Covalent extensions."
 website "http://www.covalent.net/resource/documentation/ers/2.1.0/HTML/InstallGuide/installers.html"
 # Product guide: http://www.covalent.net/resource/documentation/ers/2.4.0/ers-2.4.0-ProductGuide.pdf
@@ -15,21 +18,14 @@ website "http://www.covalent.net/resource/documentation/ers/2.1.0/HTML/InstallGu
 # 160 for CovalentSNMP
 # 62 for secured_by_Covalent
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
 	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/secured_by_Covalent\/([^\s]+)/) } if @headers["server"] =~ /secured_by_Covalent\/([^\s]+)/
+	{ :search=>"headers[server]", :version=>/secured_by_Covalent\/([^\s]+)/ },
 
 	# CovalentSNMP
-	m << { :module=>@headers["server"].scan(/(CovalentSNMP\/[^\s]+)/) } if @headers["server"] =~ /CovalentSNMP\/[^\s]+/
+	{ :search=>"headers[server]", :version=>/(CovalentSNMP\/[^\s]+)/ },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Cybozu-Garoon" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
-version "0.1"
+version "0.2"
 description "Cybozu Garoon is a web-based groupware suite integrating key collaboration applications that provide a ready-to-run intranet solution."
 website "http://cybozu.com/en/grn/product/"
 
@@ -14,18 +17,11 @@ website "http://cybozu.com/en/grn/product/"
 # 251 for Cybozu-WS
 # Most results are from Japan
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
 	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^Cybozu-WS\/([^\s]+)$/) } if @headers["server"] =~ /^Cybozu-WS\/([^\s]+)$/
+	{ :search=>"headers[server]", :version=>/^Cybozu-WS\/([^\s]+)$/ },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

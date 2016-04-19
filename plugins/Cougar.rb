@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Cougar" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
-version "0.1"
+version "0.2"
 description "Cougar video conferencing server"
 website "http://www.cougarconference.com/"
 
@@ -14,17 +17,11 @@ website "http://www.cougarconference.com/"
 # 21,987 for Cougar
 # 21,026 for Cougar Supported
 
+matches [
 
+	{ :search=>"headers[server]", :version=>/^Cougar\/([\d\.]+)$/ }
 
-# Passive #
-def passive
-	m=[]
+]
 
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^Cougar\/([\d\.]+)$/) } if @headers["server"] =~ /^Cougar\/([\d\.]+)$/
-
-	# Return passive matches
-	m
-end
 end
 

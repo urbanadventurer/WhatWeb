@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Day-Communique" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
-version "0.1"
+version "0.2"
 description "Day Communique (CQ5) WCM is a web content management system based on CRX for the content repository and Apache Sling as a web framework. Day Content Repository Extreme (Day CRX) is a content repository that implements the content repository API for Java (JSR-170). It is based on the open source reference implementation Apache Jackrabbit and serves as the foundation of all other products by Day Software."
 website "http://www.day.com/"
 # More Info: http://en.wikipedia.org/wiki/Day_Software
@@ -14,27 +17,17 @@ website "http://www.day.com/"
 # ShodanHQ results as at 2011-06-04 #
 # 246 for Communique
 
+matches [
+	# HTTP Server
+	{ :search=>"headers[server]", :regexp=>/^Communique/ },
 
+	# Version Detection
+	{ :search=>"headers[server]", :version=>/Communique\/([^\s]+ \([^\)]+\))/ },
 
-# Passive #
-def passive
-	m=[]
+	{ :search=>"headers[server]", :version=>/Communique\/([^\s]+)/ },
 
-	# HTTP Server Header
-	if @headers["server"] =~ /Communique\/([^\s]+)/
+]
 
-		# Version Detection
-		if @headers["server"] =~ /Communique\/([^\s]+ \([^\)]+\))/
-			m << { :version=>@headers["server"].scan(/Communique\/([^\s]+ \([^\)]+\))/) }
-		else
-			m << { :version=>@headers["server"].scan(/Communique\/([^\s]+)/) }
-		end
-
-	end
-
-	# Return passive matches
-	m
-end
 
 end
 
