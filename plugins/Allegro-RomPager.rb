@@ -4,12 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-04-19 # Andrew Horton
+# Replaced passive function with match
+##
 # Version 0.2 #
 # Added EXT HTTP header
 ##
 Plugin.define "Allegro-RomPager" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
-version "0.1"
+version "0.3"
 description "The RomPager suite of products enable your engineering team to leverage proven Web-based technologies in your networked embedded device."
 website "http://www.allegrosoft.com/embedded-web-server"
 
@@ -18,24 +21,17 @@ website "http://www.allegrosoft.com/embedded-web-server"
 # 190,212   for "server: Allegro-Software-RomPager" 
 # 2,087,647 for "EXT: "
 
-
-
-# Passive # HTTP Headers
-def passive
-	m=[]
-
+matches [
 	# Server # RomPager
-	m << { :version=>@headers["server"].to_s.scan(/^[\s]*RomPager\/([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /^[\s]*RomPager\/([^\s^\r^\n]+)/i
+	{ :version=>/^[\s]*RomPager\/([^\s^\r^\n]+)/, :search=>"headers[server]" },
 
 	# Server # Allegro-Software-RomPager
-	m << { :version=>@headers["server"].to_s.scan(/^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/i
-
+	{ :version=>/^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/, :search=>"headers[server]" },
+	
 	# EXT
-	m << { :name=>"EXT HTTP Header" } if @headers["ext"] =~ //
+	{ :text=>"", :search=>"headers[ext]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

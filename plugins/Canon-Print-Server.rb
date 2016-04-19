@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Replaced passive function with match
+##
 Plugin.define "Canon-Print-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
-version "0.1"
+version "0.2"
 description "Canon Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."
 website "http://canon.com"
 
@@ -41,18 +44,11 @@ matches [
 # Model Detection # Meta Generator # NetHawk N-111
 { :text=>'<meta name="GENERATOR" content="Mozilla/4.7 [ja] (Win98; I) [Netscape]">', :model=>"NetHawk N-111", :certainty=>25 },
 
+# HTTP server header
+{ :certainty=>25, :version=>/^PRINT_SERVER WEB ([\d\.]+)$/, :search=>"headers[server]" },
+
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# Server: PRINT_SERVER WEB # Also used by other printer servers
-	m << { :certainty=>25, :version=>@headers["server"].scan(/^PRINT_SERVER WEB ([\d\.]+)$/) } if @headers["server"] =~ /^PRINT_SERVER WEB ([\d\.]+)$/
-
-	# Return passive matches
-	m
-end
 
 end
 

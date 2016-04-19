@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Replaced passive function with matches
+##
 Plugin.define "Allen-Bradley-PLC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
-version "0.1"
+version "0.2"
 description "SCADA - Allen Bradley programmable logic controller (PLC)"
 website "http://ab.rockwellautomation.com/Programmable-Controllers"
 
@@ -34,18 +37,10 @@ matches [
 # Default logo # 1766 Series
 { :url=>"/ralogo.gif", :md5=>"640eeef53f64fac202eb0673ed269be1", :model=>"1766 Series" },
 
+{ :version=>/^A-B WWW\/([\d\.]{3})/, :search=>"headers[server]" },
+
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# Server Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^A-B WWW\/([\d\.]{3})/) } if @headers["server"] =~ /^A-B WWW\/([\d\.]{3})/
-
-	# Return passive matches
-	m
-end
 
 end
 

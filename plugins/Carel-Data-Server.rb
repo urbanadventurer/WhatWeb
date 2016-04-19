@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Move HTTP server match from passive function to matches[]
+##
 Plugin.define "Carel-Data-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
-version "0.1"
+version "0.2"
 description "Pl@ntVisor is a communication data server distributed by CAREL Italy. It is now obsolete and replaced by Pl@ntVisorPRO"
 
 # ShodanHQ results as at 2011-03-07 #
@@ -27,6 +30,9 @@ matches [
 # Default background image
 { :url=>"/plv_primoLW.jpg", :md5=>"df1e885e87f6ab393a90b908b6ce5dc4" },
 
+# Version Detection # HTTP Server header
+{ :version=>/^CarelDataServer\/([\d\.]{1,10})/, :search=>"headers[server]" },
+
 ]
 
 # Passive #
@@ -35,9 +41,6 @@ def passive
 
 	# Server: CarelDataServer
 	if @headers["server"] =~ /^CarelDataServer\/[\d\.]{1,10}/
-
-		# Version Detection # HTTP Server header
-		m << { :version=>@headers["server"].scan(/^CarelDataServer\/([\d\.]{1,10})/) }
 
 		# Account Detection # LoginName select tag
 		accounts = @body.scan(/<select name='LoginName'>(.*)<\/select>/m).flatten if @body =~ /<select name='LoginName'>(.*)<\/select>/m
@@ -50,5 +53,3 @@ def passive
 end
 
 end
-
-

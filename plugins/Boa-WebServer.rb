@@ -4,7 +4,10 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-08 #
+# Version 0.3 # 2016-04-19 # Andrew Horton
+# Replaced passive function with match
+##
+# Version 0.3 # 2011-01-08 #
 # Updated HTTP Server Header match
 ##
 Plugin.define "Boa-WebServer" do
@@ -15,18 +18,12 @@ website "http://www.boa.org/"
 
 # About 176872 ShodanHQ results for "server: boa" @ 2010-10-26
 
+matches [
+	
+	{ :version=>/^[\s]*Boa\/([^\s^\r^\n]+)/, :search=>"headers[server]" },
 
+]
 
-# Passive #
-def passive
-	m=[]
-
-	# HTTP Server Header
-	m << { :version=>@headers["server"].to_s.scan(/^[\s]*Boa\/([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /^[\s]*Boa\/([^\s^\r^\n]+)/i
-
-	m
-
-end
 
 end
 

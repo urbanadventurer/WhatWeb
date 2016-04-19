@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Replaced passive function with match
+##
 Plugin.define "BadBlue" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
-version "0.1"
+version "0.2"
 description "A free, very small Windows web server for sharing, publishing and serving files."
 website "http://www.badblue.com/"
 
@@ -21,18 +24,9 @@ dorks [
 'intitle:"BadBlue: the file-sharing web server anyone can use" -intitle'
 ]
 
-
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^BadBlue\/([\d\.]+)$/) } if @headers["server"] =~ /^BadBlue\/([\d\.]+)$/
-
-	# Return passive matches
-	m
-end
+matches [
+	{ :version=>/^BadBlue\/([\d\.]+)$/, :search=>"headers[server]" } 
+]
 
 end
 
