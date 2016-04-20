@@ -565,11 +565,11 @@ for adding/removing sets of plugins.
 				end
 				
 				if defined?(plugin.matches) and plugin.matches
-					puts "Pattern Matching:"
-					plugin.matches.each_with_index do |match, index|					
-						puts "[#{index + 1 }] #{match}"
-					end
-					puts
+					#puts "Pattern Matching:"
+					#plugin.matches.each_with_index do |match, index|					
+					#	puts "[#{index + 1 }] #{match}"
+					#end
+					#puts
 					count[:matches] += plugin.matches.size					
 				end
 
@@ -580,8 +580,8 @@ for adding/removing sets of plugins.
 		puts "=" * terminal_width
 
 		puts "Total plugins: #{count[:plugins]}"
-		puts "Total version detection from pattern matching: #{count[:version_detection]}"
-		puts "Total pattern matching patterns: #{count[:matches]}"
+		puts "Total plugins with version detection from pattern matching: #{count[:version_detection]}"
+		puts "Total patterns (regular expressions, text, MD5 hashes, etc): #{count[:matches]}"
 		puts "Total Google dorks: #{count[:dorks]}"
 		puts "Total aggressive functions: #{count[:aggressive]}"
 		puts "Total passive functions: #{count[:passive]}"
