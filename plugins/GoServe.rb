@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-20 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "GoServe" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
-version "0.1"
+version "0.2"
 description "GoServe - A Web and Gopher Server for OS/2. SRE-http is a highly configurable http server which requires GoServe"
 website "http://www2.hursley.ibm.com/goserve"
 
@@ -16,34 +19,20 @@ website "http://www2.hursley.ibm.com/goserve"
 # 32 for GoServe
 # 14 for GoServe -OS
 
-
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
 	# HTTP Server Header
-	if @headers["server"] =~ /^GoServe/
+	{ :regexp=>/^GoServe/, :search=>"headers[server]" },
 
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^GoServe\/([^\s]+)$/) } if @headers["server"] =~ /^GoServe\/([^\s]+)$/
+	# Version Detection
+	{ :version=>/^GoServe\/([^\s]+)$/, :search=>"headers[server]" },
 
-		if @headers["server"] =~ /^GoServe for OS\/2, version [^\s^;]+; SRE-http [\d\.]+$/
+	# Version Detection
+	{ :version=>/^GoServe for OS\/2, version ([^\s^;]+); SRE-http [\d\.]+$/, :search=>"headers[server]" },
 
-			# Version Detection
-			m << { :version=>@headers["server"].scan(/^GoServe for OS\/2, version ([^\s^;]+); SRE-http [\d\.]+$/) }
+	# Module Detection
+	{ :module=>/^GoServe for OS\/2, version [^\s^;]+; (SRE-http [\d\.]+)$/, :search=>"headers[server]" },
+]
 
-			# Module Detection
-			m << { :module=>@headers["server"].scan(/^GoServe for OS\/2, version [^\s^;]+; (SRE-http [\d\.]+)$/) }
-
-		end
-
-	end
-
-	# Return passive matches
-	m
-end
 
 end
 

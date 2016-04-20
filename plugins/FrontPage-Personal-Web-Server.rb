@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-20 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "FrontPage-Personal-Web-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
-version "0.1"
+version "0.2"
 description "Microsoft Personal Web Server (PWS) is a scaled-down web server software for Windows operating systems. It has fewer features than Microsoft's Internet Information Services (IIS) and its functions have been superseded by IIS and Visual Studio. Since Windows 2000 and FrontPage 2000, PWS was replaced by IIS as a standard Windows component. Personal Web Server was originally created by Vermeer Technologies, the same company which created Microsoft FrontPage, before they were acquired by Microsoft."
 website "http://www.microsoft.com/"
 
@@ -17,18 +20,11 @@ website "http://www.microsoft.com/"
 # ShodanHQ results as at 2011-06-04 #
 # 9 for FPWS
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
 	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^FPWS\/([^\s]+)/) } if @headers["server"] =~ /^FPWS\/([^\s]+)/
-
-	# Return passive matches
-	m
-end
+	{ :version=>/^FPWS\/([^\s]+)/, :search=>"headers[server]" },
+	{ :regexp=>/^FPWS/, :search=>"headers[server]" },
+]
 
 end
 

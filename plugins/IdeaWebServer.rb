@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-20 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "IdeaWebServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
-version "0.1"
+version "0.2"
 description "home.net.pl hosting - a major polish hosting company home.pl uses its own server software (Idea Web Server)"
 website "http://home.net.pl"
 
@@ -14,19 +17,12 @@ website "http://home.net.pl"
 # 91,705 for IdeaWebServer
 # All results are from Poland
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
+	
 	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^IdeaWebServer\/v([\d\.]+)$/) } if @headers["server"] =~ /^IdeaWebServer\/v([\d\.]+)$/
-
-	# Return passive matches
-	m
-
-end
+	{ :version=>/^IdeaWebServer\/v([\d\.]+)$/, :search=>"headers[server]" },
+	
+]
 
 end
 

@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-20 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "IceWarp-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
-version "0.1"
+version "0.2"
 description "IceWarp Unified Communications Server is a fully integrated email server, webmail server, groupware, instant messaging, VoIP / SIP, text messaging."
 website "http://www.icewarp.com/"
 
@@ -14,22 +17,17 @@ website "http://www.icewarp.com/"
 # 6,632 for IceWarp -WebSrv
 #   259 for IceWarp WebSrv
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
+	
+	{ :regexp=>/^IceWarp/, :search=>"headers[server]" },
 
 	# Version Detection # IceWarp
-	m << { :version=>@headers["server"].scan(/^IceWarp\/(.+)$/) } if @headers["server"] =~ /^IceWarp( WebSrv)?\/(.+)$/
+	{ :version=>/^IceWarp\/(.+)$/, :search=>"headers[server]" },
 
 	# Version Detection # IceWarp WebSrv
-	m << { :version=>@headers["server"].scan(/^IceWarp WebSrv\/(.+)$/) } if @headers["server"] =~ /^IceWarp( WebSrv)?\/(.+)$/
-
-	# Return passive matches
-	m
-
-end
+	{ :version=>/^IceWarp WebSrv\/(.+)$/, :search=>"headers[server]" },
+	
+]
 
 end
 

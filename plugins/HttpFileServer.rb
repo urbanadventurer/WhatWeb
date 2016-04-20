@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-20 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "HttpFileServer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
-version "0.1"
+version "0.2"
 description "You can use HFS (HTTP File Server) to send and receive files. Access your remote files, over the network."
 website "http://www.rejetto.com/hfs/"
 
@@ -31,18 +34,12 @@ matches [
 # Version Detection # Footer
 { :version=>/<div id=footer>[\s]+<a href="http:\/\/www\.rejetto\.com\/hfs\/">HttpFileServer ([^<]+)<\/a>[\s]+<br \/>Servertime/ },
 
+# Version Detection # HTTP Server Header
+{ :version=>/^HFS (\d\.\d.+)$/, :search=>"headers[server]" },
+
+{ :regexp=>/^HFS /, :search=>"headers[server]" },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^HFS (\d\.\d.+)$/) } if @headers["server"] =~ /HFS (\d\.\d.+)$/
-
-	# Return passive matches
-	m
-end
 
 end
 

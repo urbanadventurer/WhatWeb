@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-20 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Hitbox-Gateway" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
-version "0.1"
+version "0.2"
 description "Adobe Omniture Hitbox Gateway collects HTTP headers for web site usage statistics"
 website "http://login.hitbox.com/"
 
@@ -14,26 +17,16 @@ website "http://login.hitbox.com/"
 # 463 for Server Hitbox Gateway
 # All results are from the United States
 
-
-
-# Matches #
 matches [
-
-# /favicon.ico
-{ :url=>"/favicon.ico", :md5=>"0c7fdff990b60f5c7ec6ecf995c6f59f" },
-
-]
-
-# Passive #
-def passive
-	m=[]
+	{ :regexp=>/^Hitbox Gateway/, :search=>"headers[server]" },
 
 	# Version Detection # Server: Hitbox Gateway
-	m << { :version=>@headers["server"].scan(/^Hitbox Gateway ([^\s^\r^\n]{1,10})$/) } if @headers["server"] =~ /^Hitbox Gateway ([^\s^\r^\n]{1,10})$/
+	{ :version=>/^Hitbox Gateway ([^\s^\r^\n]{1,10})$/, :search=>"headers[server]" },
+	
+	# /favicon.ico
+	{ :url=>"/favicon.ico", :md5=>"0c7fdff990b60f5c7ec6ecf995c6f59f" },	
+]
 
-	# Return passive matches
-	m
-end
 
 end
 
