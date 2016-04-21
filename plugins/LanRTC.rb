@@ -4,15 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-21 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "LanRTC" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-09
-version "0.1"
+version "0.2"
 description "LanRTC Device"
 website "http://www.dorma-time-access.de/prod/content/view/full/36922/%28code%29/product_detail/%28parent%29/36921"
 
 # ShodanHQ results as at 2011-03-09 #
 # 5 for LanRTC
-
 
 
 # Matches #
@@ -33,18 +35,14 @@ matches [
 # Menu HTML
 { :text=>'<p><font size=-1><strong><a href="javascript:window.history.back()">Back</a> | <a href="Index.htm">System Info</a> | <a href="TmStatus.htm?TM=1">TM Status</a> | <a href="LanStat.htm">LAN Akt.</a> | <a href="de/Buchen.htm">Booking</a></strong></font></p></body></html>' },
 
+# Version Detection # HTTP Server Header
+{ :version=>/^LanRTC\/([\d\.]{1,5})$/, :search=>"headers[server]" },
+
+# HTTP Server Header
+{ :regexp=>/^LanRTC/, :search=>"headers[server]" },
+
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^LanRTC\/([\d\.]{1,5})$/) } if @headers["server"] =~ /^LanRTC\/([\d\.]{1,5})$/
-
-	# Return passive matches
-	m
-end
 
 end
 

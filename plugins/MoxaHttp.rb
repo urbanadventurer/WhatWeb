@@ -4,27 +4,25 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-21 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "MoxaHttp" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
-version "0.1"
+version "0.2"
 description "Device Networking for Industry: device server, industrial ethernet switch."
 website "http://www.moxa.com/product/product.aspx"
 
 # ShodanHQ results as at 2011-05-30 #
 # 3,104 for MoxaHttp
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
+	# HTTP Server Header
+	{ :regexp=>/^MoxaHttp/, :search=>"headers[server]" },
 	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^MoxaHttp\/([^\s]+)$/) } if @headers["server"] =~ /^MoxaHttp\/([^\s]+)$/
+	{ :version=>/^MoxaHttp\/([^\s]+)$/, :search=>"headers[server]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

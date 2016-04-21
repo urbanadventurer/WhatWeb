@@ -157,7 +157,7 @@ pp suj(results.first)
 				ip:"<Unknown>",
 				country:"<Unknown>"
 			}
-
+#r.select {|x| x.first == "Country"}.empty?
 			display[:title] = results["Title"][:string] if results["Title"][:string] 
 			display[:ip] = results["IP"][:string] if results["IP"][:string]
 			display[:country] = results["country"][:string] if results["Country"][:string]

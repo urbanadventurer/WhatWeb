@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-21 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Kyocera-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
-version "0.1"
+version "0.2"
 description "Web interface for Kyocera printers. Some models have built in fax and scanner capabilities."
 website "http://global.kyocera.com/"
 
@@ -16,7 +19,24 @@ website "http://global.kyocera.com/"
 # 1,943 for KM-httpd
 # 1,324 for KM-MFP-http
 
+matches [
 
+	# HTTP Server Detection
+	{ :regexp=>/^KM-MFP-http/, :search=>"headers[server]" },
+
+	# Version Detection
+	{ :version=>/^KM-MFP-http\/V([\d\.]+)$/, :search=>"headers[server]" },
+
+	# Version Detection # HTTP Server Header # KM-httpd
+	{ :version=>/^KM-httpd\/([\d\.]+)$/, :search=>"headers[server]" },
+
+	# Version Detection # HTTP Server Header # JC-HTTPD
+	{ :version=>/^JC-HTTPD\/([\d\.]+)$/, :search=>"headers[server]" },
+
+	# Version Detection # HTTP Server Header # NetworkScanner WebServer Ver
+	{ :string=>"Scanner", :version=>/^NetworkScanner WebServer Ver([\d\.]+)$/, :search=>"headers[server]" },
+
+]
 
 # Passive #
 def passive
@@ -25,22 +45,10 @@ def passive
 	# HTTP Server Header # KM-MFP-http
 	if @headers["server"] =~ /^KM-MFP-http\/V([\d\.]+)$/
 
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^KM-MFP-http\/V([\d\.]+)$/) }
-
 		# Model Detection
 		m << { :model=>@body.scan(/^var ModelName="([^"]+)";/) } if @body =~ /^var ModelName="([^"]+)";/
 
 	end
-
-	# Version Detection # HTTP Server Header # KM-httpd
-	m << { :version=>@headers["server"].scan(/^KM-httpd\/([\d\.]+)$/) } if @headers["server"] =~ /^KM-httpd\/([\d\.]+)$/
-
-	# Version Detection # HTTP Server Header # JC-HTTPD
-	m << { :version=>@headers["server"].scan(/^JC-HTTPD\/([\d\.]+)$/) } if @headers["server"] =~ /^JC-HTTPD\/([\d\.]+)$/
-
-	# Version Detection # HTTP Server Header # NetworkScanner WebServer Ver
-	m << { :string=>"Scanner", :version=>@headers["server"].scan(/^NetworkScanner WebServer Ver([\d\.]+)$/) } if @headers["server"] =~ /^NetworkScanner WebServer Ver([\d\.]+)$/
 
 	# Return passive matches
 	m

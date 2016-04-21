@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-21 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Lantronix-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
-version "0.1"
+version "0.2"
 description "Lantronix provides device networking and remote access products for remote IT management allowing remote computer access and offsite device control. Manage industrial control systems, or administer your entire data center using KVM over IP switches."
 website "http://www.lantronix.com/"
 
@@ -27,6 +30,13 @@ matches [
 # Model Detection # /navigation.html
 { :url=>"/navigation.html", :model=>/<font face="Arial,Helvetica" color="#660066"><b>([^<]+)<\/b><\/font><br><br>/ },
 
+# Version Detection
+{ :version=>/^Gordian Embedded([\d\.]+)$/, :search=>"headers[server]" },
+
+# HTTP Server Header
+{ :regexp=>/^Gordian Embedded/, :search=>"headers[server]" },
+
+
 ]
 
 # Passive #
@@ -35,10 +45,7 @@ def passive
 
 	# HTTP Server Header
 	if @headers["server"] =~ /^Gordian Embedded([\d\.]+)$/
-
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^Gordian Embedded([\d\.]+)$/) }
-
+		
 		# Model Detection
 		m << { :model=>@body.scan(/<font face="Arial,Helvetica" color="#660066"><b>([^<]+)<\/b><\/font><br><br>/) } if @body =~ /<font face="Arial,Helvetica" color="#660066"><b>([^<]+)<\/b><\/font><br><br>/
 

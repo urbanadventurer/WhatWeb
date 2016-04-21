@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-21 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Miniature-JWS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
-version "0.1"
+version "0.2"
 description "Tiny Java Web Server and Servlet Container (aka Miniature JWS) with security update, J2EE deployment, JSP, and J2EE (without application server)"
 website "http://tjws.sourceforge.net/"
 
@@ -15,24 +18,14 @@ website "http://tjws.sourceforge.net/"
 # 505 for Acme.Serve JWS
 #   8 for Acme.Serve TJWS
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
 	# HTTP Server Header
-	if @headers["server"] =~ /^(D\. )?Rogatkin/
+	{ :regexp=>/^(D\. )?Rogatkin/, :search=>"headers[server]" },
+	# Version Detection # HTTP Server Header
+	{ :version=>/^Rogatkin's JWS based on Acme\.Serve\/\$Revision: ([\d\.]+) \$$/, :search=>"headers[server]" },
+	{ :version=>/^D\. Rogatkin's TJWS based on Acme\.Serve\/Version [^,]+, \$Revision: ([\d\.]+) \$$/, :search=>"headers[server]" },
 
-		# Version Detection # HTTP Server Header
-		m << { :version=>@headers["server"].scan(/^Rogatkin's JWS based on Acme\.Serve\/\$Revision: ([\d\.]+) \$$/) } if @headers["server"] =~ /^Rogatkin's JWS based on Acme\.Serve\/\$Revision: ([\d\.]+) \$$/
-		m << { :version=>@headers["server"].scan(/^D\. Rogatkin's TJWS based on Acme\.Serve\/Version [^,]+, \$Revision: ([\d\.]+) \$$/) } if @headers["server"] =~ /^D\. Rogatkin's TJWS based on Acme\.Serve\/Version [^,]+, \$Revision: ([\d\.]+) \$$/
-
-	end
-
-	# Return passive matches
-	m
-end
+]
 
 end
 
