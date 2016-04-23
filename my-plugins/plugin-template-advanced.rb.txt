@@ -29,6 +29,8 @@ website "An URL for additional details (eg. software developer, hardware manufac
 # :string        -- this is used to return data
 # :firmware      -- this is used to return data
 # :filepath      -- this is used to return data
+# :offset		 -- select the regex offset starting at 0. 
+							
 
 
 # Matches are enclosed in {} brackets and separated by commas
@@ -50,6 +52,14 @@ matches [
 # tags are delimited by commas. fuzzy matching is coming in the future
 
 {:url=>"favicon.ico", :md5=>'f420dc2c7d90d7873a90d82cd7fde315'} # not common, seen on http://s.wordpress.org/favicon.ico
+
+# offets for regular expressions
+
+# this matches WWServer
+{:regexp=>/(WWServer) v(\d+)/, :offset=>0 }
+# this matches the version number
+{:version=>/(WWServer) v(\d+)/, :offset=>1 } 
+
 ]
 
 # this always runs
