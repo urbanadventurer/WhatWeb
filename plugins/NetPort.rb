@@ -4,29 +4,29 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "NetPort" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
-version "0.1"
+version "0.2"
 description "NetPort server - used by several routers."
 
 # ShodanHQ results as at 2011-05-30 #
 # 83,817 for NetPort
 
+matches [
+	
+	# HTTP Server Header
+	{ :regexp=>/^NetPort Software/, :search=>"headers[server]" },
 
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^NetPort Software ([^\s]+)$/) } if @headers["server"] =~ /^NetPort Software ([^\s]+)$/
+	# Version Detection
+	{ :version=>/^NetPort Software ([^\s]+)$/, :search=>"headers[server]" },
 
 	# Netport HTTP Header # Netport: Power by NetPort
-	m << { :name=>"Netport HTTP Header" } if @headers["netport"] =~ /^Power by NetPort$/
+	{ :name=>"Netport HTTP Header", :regexp=>/^Power by NetPort$/, :search=>"headers[netport]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

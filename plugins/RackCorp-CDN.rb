@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 # Version 0.2 # 2011-03-06 #
 # Updated OS detection
 ##
@@ -17,20 +20,16 @@ website "http://www.rackcorp.com/"
 # 50 for rackcorpcdn
 # Australia 21 # United States 14 # Germany 10 # United Kingdom 4 # India 1 #
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
+	# HTTP Server Header # Server
+	{ :regexp=>/^[\s]*rackcorpcdn/, :search=>"headers[server]" },
 
 	# HTTP Server Header # Server and OS Detection #
 	# Web servers are Apache or Nginx # OS is Linux
 	# As per : http://blog.rackcorp.com/?p=31
-	m << { :version=>@headers["server"].scan(/^[\s]*rackcorpcdn\/([\d\.]{3,6})/), :string=>"Apache or Nginx", :os=>"Linux" } if @headers["server"] =~ /^[\s]*rackcorpcdn\/[\d\.]{3,6}/
+	{ :version=>/^[\s]*rackcorpcdn\/([\d\.]{3,6})/, :search=>"headers[server]", :string=>"Apache or Nginx", :os=>"Linux"  },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

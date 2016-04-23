@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
+
 Plugin.define "Daisy" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-09
-version "0.1"
+version "0.2"
 description "Daisy is a content management system that offers rich out-of-the-box functionality combined with solid foundations for extensibility and integration. Daisy consists of two main components: a stand-alone repository server accessible through HTTP/XML (using the ReST style of WebServices) and/or a high-level (remote) Java API, and an extensive editing and publishing front-end web application running inside Apache Cocoon."
 website "http://daisycms.org/daisy/about.html"
 
@@ -15,26 +19,19 @@ website "http://daisycms.org/daisy/about.html"
 # ShodanHQ results as at 2011-06-09 #
 # 26 for X-Daisy-Version
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
 
 	# HTTP X-Daisy-Version Header
-	unless @headers["x-daisy-version"].nil?
+	{ :regexp=>//, :search=>"headers[x-daisy-version]" },
 
-		# Version Detection
-		m << { :version=>@headers["x-daisy-version"].scan(/^([^\s]+) \(build: [^\s]+/).flatten } if @headers["x-daisy-version"] =~ /^([^\s]+) \(build:( [^\s]+)/
+	# HTTP X-Daisy-Version # Version Detection
+	{ :version=>/^([^\s]+) \(build: [^\s]+/, :search=>"headers[x-daisy-version]" },
 
-		# Build Detection
-		m << { :string=>@headers["x-daisy-version"].scan(/^[^\s]+ \(build: ([^\s]+)/).flatten } if @headers["x-daisy-version"] =~ /^[^\s]+ \(build: ([^\s]+)/
+	# HTTP X-Daisy-Version # Build Detection
+	{ :string=>/^[^\s]+ \(build: ([^\s]+)/, :search=>"headers[x-daisy-version]" },
 
-	end
+]
 
-	# Return passive matches
-	m
-end
 
 end
 

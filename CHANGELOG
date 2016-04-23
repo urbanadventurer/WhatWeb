@@ -1,4 +1,5 @@
 Version 0.4.8-dev Unreleased
+* Updated plugins. Moved 100s of patterns in passive functions to matches[]
 * Added --search-plugins
 * Fixed bug where :search => headers[xyz] was not case insensitive
 * Fixed bugs for Ruby 1.9.x and Ruby 2.x. Dropped support for Ruby 1.8.x. Thanks to nil0x42 and pvdl for bug fixes

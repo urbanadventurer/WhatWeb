@@ -4,30 +4,30 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "SmugMug" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
-version "0.1"
+version "0.2"
 description "SmugMug is a paid digital photo sharing website"
 website "http://www.smugmug.com/"
 
 # ShodanHQ results as at 2011-03-16 #
 # 246 for x-powered-by smugmug
 
+matches [
 
-
-# Passive #
-def passive
-	m=[]
+	# X-Powered-By
+	{ :regexp=>/^SmugMug/, :search=>"headers[x-powered-by]" },
 
 	# Version Detection # X-Powered-By
-	m << { :version=>@headers["x-powered-by"].scan(/^SmugMug\/([\d\.]+)$/i) } if @headers["x-powered-by"] =~ /^SmugMug\/([\d\.]+)$/i
+	{ :version=>/^SmugMug\/([\d\.]+)$/, :search=>"headers[x-powered-by]" },
 
 	# X-SmugMug-Values
-	m << { :name=>"X-SmugMug-Values HTTP Header" } unless @headers["x-smugmug-values"].nil?
+	{ :name=>"X-SmugMug-Values HTTP Header", :regexp=>//, :search=>"headers[x-smugmug-values]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

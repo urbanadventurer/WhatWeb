@@ -4,27 +4,25 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
+
 Plugin.define "ABO_CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
-version "0.1"
+version "0.2"
 description "ABO.CMS"
 website "http://www.abocms.com/"
 
 # ShodanHQ results as at 2011-04-08 #
 # 54 for A-Powered-By
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
+	
 	# Version Detection # A-Powered-By Header
-	m << { :version=>@headers["a-powered-by"].scan(/^ABO\.CMS( E-commerce| Corporative)? ([\d\.]+)/)[0][1] } if @headers["a-powered-by"] =~ /^ABO\.CMS( E-commerce| Corporative)? ([\d\.]+)/
+	{ :version=>/^ABO\.CMS( E-commerce| Corporative)? ([\d\.]+)/, :offset=>1 , :search=>"headers[a-powered-by]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

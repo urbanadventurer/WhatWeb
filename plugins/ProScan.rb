@@ -4,30 +4,29 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "ProScan" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-13
-version "0.1"
+version "0.2"
 description "Streams audio"
 website "http://www.proscan.org/"
 
 # ShodanHQ results as at 2011-05-13 #
 # 12 for ProScan
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
+	# HTTP Server Header
+	{ :regexp=>/^ProScan/, :search=>"headers[server]" },
 
 	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^ProScan ([^\s]+)$/) } if @headers["server"] =~ /^ProScan ([^\s]+)$/
-
+	{ :version=>/^ProScan ([^\s]+)$/, :search=>"headers[server]" },
+	
 	# icy-notice2 Header
-	m << { :name=>"icy-notice2 header" } if @headers["icy-notice2"] =~ /^ProScan\.\.\. see http:\/\/www\.proscan\.org$/
+	{ :name=>"icy-notice2 header", :regexp=>/^ProScan/, :search=>"headers[icy-notice2]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

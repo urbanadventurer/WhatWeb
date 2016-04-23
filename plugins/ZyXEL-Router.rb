@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.6 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 # Version 0.5 Andrew Horton - added version detection for Prestige models
-
+##
 # Version 0.4 # 2011-06-04
 # Updated regex
 # Added www-authenticate HTTP header matches
@@ -19,7 +22,7 @@
 ##
 Plugin.define "ZyXEL-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
-version "0.5"
+version "0.6"
 description "This plugin indentifies ZyXEL routers"
 website "http://us.zyxel.com/"
 
@@ -76,7 +79,17 @@ matches [
 
 # Prestige
 {:version=>/<td height="40" colspan="4" class="Auth">Prestige ([^<]+)</},
-{:model=>/<td height="40" colspan="4" class="Auth">(Prestige)</}
+{:model=>/<td height="40" colspan="4" class="Auth">(Prestige)</},
+
+# HTTP Server Header # ZyXEL-RomPager
+{ :name=>"HTTP Server Header", :regexp=>/^ZyXEL-RomPager/, :search=>"headers[server]" },
+
+# HTTP Server Header # ZyXEL-RomPager # Version Detection
+{ :name=>"HTTP Server Header", :version=>/^ZyXEL-RomPager\/([^\s]+)$/, :search=>"headers[server]" },
+
+# HTTP Server Header # RomPager
+{ :name=>"HTTP Server Header", :regexp=>/^RomPager/, :search=>"headers[server]" },
+
 
 
 ]
@@ -87,11 +100,6 @@ def passive
 
 	# HTTP Server Header # ZyXEL-RomPager
 	if @headers["server"] =~ /^ZyXEL-RomPager/
-
-		m << { :name=>"HTTP Server Header" }
-
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^ZyXEL-RomPager\/([^\s]+)$/) } if @headers["server"] =~ /^ZyXEL-RomPager\/([^\s]+)$/
 
 		# Model Detection # WWW-Authenticate # Prestige
 		m << { :model=>@headers["www-authenticate"].scan(/^Basic realm="(Prestige [^"]+)( Web)?"/)[0][0] } if @headers["www-authenticate"] =~ /^Basic realm="(Prestige [^"]+)( Web)?"/

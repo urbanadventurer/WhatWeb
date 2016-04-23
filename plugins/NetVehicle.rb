@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "NetVehicle" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
-version "0.1"
+version "0.2"
 description "Fujitsu NetVehicle router [Japanese]"
 website "http://fenics.fujitsu.com/products/netvehicle/"
 
@@ -24,18 +27,13 @@ matches [
 # Logo
 { :url=>"/nv_logo.gif", :md5=>"efff3142fb8f4e34836ca5b38ca40512" },
 
+# HTTP Server Header
+{ :regexp=>/^NetVehicle/, :search=>"headers[server]" },
+
+# Model Detection
+{ :model=>/^NetVehicle-([A-Z\d]{1,3})/, :search=>"headers[server]" },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# Model Detection # HTTP Server Header
-	m << { :model=>@headers["server"].scan(/^NetVehicle-([A-Z\d]{1,3})/) } if @headers["server"] =~ /^NetVehicle-([A-Z\d]{1,3})/
-
-	# Return passive matches
-	m
-end
 
 end
 

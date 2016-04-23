@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Lussumo-Vanilla" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-07
-version "0.1"
+version "0.2"
 description "A free, open-source, standards-compliant discussion forum for the web. "
 website "http://code.google.com/p/lussumo-vanilla/"
 
@@ -21,18 +24,15 @@ dorks [
 'inurl:"people.php?PageAction=SignOutNow"'
 ]
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
+	
+	# HTTP x-powered-by
+	{ :version=>/Lussumo Vanilla/, :search=>"headers[x-powered-by]" },
 
 	# Version Detection # HTTP x-powered-by
-	m << { :version=>@headers["x-powered-by"].scan(/Lussumo Vanilla ([^\s]+)/) } if @headers["x-powered-by"] =~ /Lussumo Vanilla ([^\s]+)/
+	{ :version=>/Lussumo Vanilla ([^\s]+)/, :search=>"headers[x-powered-by]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

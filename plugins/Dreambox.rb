@@ -18,8 +18,6 @@ description "The Dreambox is a series of Linux-powered DVB satellite, terrestria
 # 2,372 for Enigma2 TwistedWeb realm
 #    24 for TwistedWeb realm dm
 
-
-
 # Matches #
 matches [
 
@@ -32,6 +30,9 @@ matches [
 # HTTP Server Header
 { :regexp=>/^TwistedWeb/, :search=>"headers[server]" },
 
+# HTTP Server Header # Version Detection
+{ :version=>/^TwistedWeb\/([\d\.]+)/, :search=>"headers[server]" },
+
 ]
 
 # Passive #
@@ -39,7 +40,7 @@ def passive
 	m=[]
 
 	# HTTP Server Header # TwistedWeb
-	if @headers["server"] =~ /^TwistedWeb\/[\d\.]+$/
+	if @headers["server"] =~ /^TwistedWeb/
 
 		# WWW-Authenticate # basic realm="Enigma2 WebInterface"
 		m << { :name=>"TwistedWeb server + WWW-Authenticate realm" } if @headers["www-authenticate"] =~ /^basic realm="Enigma2 WebInterface"$/

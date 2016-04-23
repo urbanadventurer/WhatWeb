@@ -4,27 +4,26 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Replaced passive function with matches
+##
 Plugin.define "CoyotePoint-Load-Balancer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
-version "0.1"
+version "0.2"
 description "CoyotePoint load balancing device"
 website "http://www.coyotepoint.com/products/"
 
 # ShodanHQ results as at 2011-05-16 #
 # 11 for CoyotePoint
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
+	# HTTP Server Header
+	{ :regexp=>/^CoyotePoint/, :search=>"headers[server]" },
 
 	# Model Detection # HTTP Server Header
-	m << { :model=>@headers["server"].scan(/^CoyotePoint (L[\d]) Load Balancer$/) } if @headers["server"] =~ /^CoyotePoint (L[\d]) Load Balancer$/
+	{ :model=>/^CoyotePoint (L[\d]) Load Balancer$/, :search=>"headers[server]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

@@ -23,17 +23,10 @@ matches [
 	# Version Detection # x-powered-by header
 	{ :version=>/BlueDragon Server\/([^\s^,]+)/, :search=>"headers[x-powered-by]" },
 
+	# Version Detection # HTTP Server Header
+	{ :version=>/BlueDragon Server( JXAS| JX)?(\/| )([\d\.]+)/, :offset=>2, :search=>"headers[server]" },
+	
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/BlueDragon Server( JXAS| JX)?(\/| )([\d\.]+)/)[0][2] } if @headers["server"] =~ /BlueDragon Server( JXAS| JX)?(\/| )([\d\.]+)/
-
-	# Return passive matches
-	m
-end
 end
 

@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.4 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 # Version 0.3 # 2011-03-21 # Brendan Coles <bcoles@gmail.com>
 # Updated regex
 ##
@@ -12,7 +15,7 @@
 ##
 Plugin.define "OpenCms" do
 author "Emilio Casbas" #mostly
-version "0.3"
+version "0.4"
 description "OpenCms, professional and easy to use CMS."
 website "http://www.opencms.org/"
 
@@ -24,30 +27,25 @@ website "http://www.opencms.org/"
 # Matches #
 matches [
 
-# Meta Generator
-{ :regexp=>/<meta name="generator"[^>]+content="OpenCms"( \/)?>/ },
+	# Meta Generator
+	{ :regexp=>/<meta name="generator"[^>]+content="OpenCms"( \/)?>/ },
 
-# Version Detection # Meta Generator
-{ :version=>/<meta name="generator"[^>]+content="Opencms version ([\d\.]+)"( \/)?>/ },
+	# Version Detection # Meta Generator
+	{ :version=>/<meta name="generator"[^>]+content="Opencms version ([\d\.]+)"( \/)?>/ },
 
-# Relative link or img tag # /(opencms|export)/(sites|system)/
-{ :certainty=>75, :regexp=>/<(link|img)[^>]+(href|src)="[^"^:]*\/(opencms|export)\/(sites|system)\/[^"]+"[^>]*>/ },
+	# Relative link or img tag # /(opencms|export)/(sites|system)/
+	{ :certainty=>75, :regexp=>/<(link|img)[^>]+(href|src)="[^"^:]*\/(opencms|export)\/(sites|system)\/[^"]+"[^>]*>/ },
 
-# Relative link or img tag # /opencms/
-{ :certainty=>25, :regexp=>/<(link|img)[^>]+(href|src)="[^"^:]*\/opencms\/[^"]+"[^>]*>/ },
+	# Relative link or img tag # /opencms/
+	{ :certainty=>25, :regexp=>/<(link|img)[^>]+(href|src)="[^"^:]*\/opencms\/[^"]+"[^>]*>/ },
+
+	# HTTP Server Header
+	{ :regexp=>/^OpenCms/, :search=>"headers[server]" },
+
+	# Version Detection
+	{ :version=>/^OpenCms\/([a-z\d\.]+)/, :search=>"headers[server]" },
 
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << {:name=>"HTTP Server String", :version=>@headers["server"].scan(/^OpenCms\/([a-z\d\.]+)/) } if @headers["server"] =~ /^OpenCms\/[a-z\d\.]+/
-
-	# Return passive matches
-	m
-end
 
 end
 

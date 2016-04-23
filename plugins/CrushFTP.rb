@@ -4,22 +4,35 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Replaced passive function with matches
+##
 Plugin.define "CrushFTP" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-02
-version "0.1"
+version "0.2"
 description "A full-scale FTP server by Ben Spink written in Java using the SWING user interface libraries. [Mac OS/Windows/Linux]"
 website "http://www.crushftp.com/"
 
 # ShodanHQ results as at 2011-04-02 #
 # 33 for CrushFTP
 
-
-
 # Matches #
 matches [
 
 # JavaScript
 { :certainty=>25, :text=>'<script type="text/javascript" src="crushftp_functions.js"></script>' },
+
+# HTTP Server header
+{ :regexp=>/^CrushFTP /, :search=>"headers[server]" },
+
+# Version Detection # HTTP Server
+{ :version=>/^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/, :offset=>1, :search=>"headers[server]" },
+
+# CrushAuth Cookie
+{ :name=>"CrushAuth Cookie", :regexp=>/^CrushAuth=/,  :search=>"headers[set-cookie]" },
+
+# WWW-Authenticate
+{ :name=>"WWW-Authenticate", :version=>/^Basic realm="CrushFTP Server Version ([\d\.]+)"$/,  :search=>"headers[www-authenticate]" },
 
 ]
 
@@ -28,20 +41,11 @@ def passive
 	m=[]
 
 	# HTTP Server header
-	if @headers["server"] =~ /^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/
-
-		# Version Detection # HTTP Server
-		m << { :version=>@headers["server"].scan(/^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/)[0][1] } if @headers["server"] =~ /^CrushFTP (HTTP[\d]? Server )?Version ([\d\.]+)$/
+	if @headers["server"] =~ /^CrushFTP /
 
 		# Account Detection # X-dmUser
 		m << { :account=>@headers["x-dmuser"] } unless @headers["x-dmuser"].nil?
 	end
-
-	# CrushAuth Cookie
-	m << { :name=>"CrushAuth Cookie" } if @headers["set-cookie"] =~ /^CrushAuth=/
-
-	# WWW-Authenticate
-	m << { :version=>@headers["www-authenticate"].scan(/^Basic realm="CrushFTP Server Version ([\d\.]+)"$/) } if @headers["www-authenticate"] =~ /^Basic realm="CrushFTP Server Version ([\d\.]+)"$/
 
 	# Return passive matches
 	m

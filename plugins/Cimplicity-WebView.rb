@@ -4,8 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved 1 pattern from passive function to matches[]
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved HTTP Server pattern from passive function to matches[]
 ##
 Plugin.define "Cimplicity-WebView" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
@@ -27,9 +27,11 @@ matches [
 	# Java Applet MD5 hash
 	{ :md5=>"be47085f5ac23b78c5b6a952ea0947b3", :url=>"/ProwlerClient.jar" },
 
-	# Version Detection # HTTP Server Header
-	{:version=>/^CIMPLICITY-HttpSvr\/([\d\.]+)/, :search=>"headers[server]"},
+	# HTTP Server Header
+	{ :regexp=>/^CIMPLICITY-HttpSvr/, :search=>"headers[server]"},
 
+	# Version Detection # HTTP Server Header
+	{ :version=>/^CIMPLICITY-HttpSvr\/([\d\.]+)/, :search=>"headers[server]"},
 
 ]
 

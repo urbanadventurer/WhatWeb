@@ -4,12 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 # Version 0.2 # 2011-05-24 #
 # Added WEBrick detection
 ##
 Plugin.define "Ruby" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
-version "0.2"
+version "0.3"
 description "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write."
 website "http://www.ruby-lang.org/"
 
@@ -17,28 +20,24 @@ website "http://www.ruby-lang.org/"
 # 22,172 for server: ruby
 #    822 for WEBrick
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
+	
+	# Ruby Server 
+	{ :regexp=>/Ruby/, :search=>"headers[server]" },
 
 	# Server # Version Detection
-	m << { :version=>@headers["server"].to_s.scan(/Ruby\/([^\s^\/^\(]+)/).to_s } if @headers["server"].to_s =~ /Ruby\/([^\s^\/^\(]+)/
+	{ :version=>/Ruby\/([^\s^\/^\(]+)/, :search=>"headers[server]" },
 
-	if @headers["server"] =~ /^WEBrick\/[\d\.]+ \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/
+	# WEBrick Server 
+	{ :regexp=>/^WEBrick/, :search=>"headers[server]" },
 
-		# WEBrick Version Detection
-		m << { :module=>@headers["server"].scan(/^(WEBrick\/[\d\.]+) \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/).flatten }
+	# WEBrick Server # Version Detection
+	{ :version=>/^(WEBrick\/[\d\.]+) \(Ruby\/[\d\.]+\/[\d]{4}-[\d]{2}-[\d]{2}\)/, :search=>"headers[server]" },
 
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^WEBrick\/[\d\.]+ \(Ruby\/([\d\.]+)\/[\d]{4}-[\d]{2}-[\d]{2}\)/).flatten }
+	# WEBrick Server # Ruby Version Detection
+	{ :version=>/^WEBrick\/[\d\.]+ \(Ruby\/([\d\.]+)\/[\d]{4}-[\d]{2}-[\d]{2}\)/, :search=>"headers[server]" },
 
-	end
-
-	# Return passive matches
-	m
-end
+]
 
 end
 

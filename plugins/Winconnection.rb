@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Winconnection" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
-version "0.1"
+version "0.2"
 description "The Winconnection 6 is a gateway to access the Internet developed within the UTM (Unified Threat Management) philosophy."
 website "http://www.winco.com.br/"
 
@@ -14,29 +17,17 @@ website "http://www.winco.com.br/"
 # 136 for Winconnection
 # All results are from Brazil
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
 
 	# HTTP Server Header
-	if @headers["server"] =~ /^Winconnection V([^\s]+) \(server ([A-Z\d]{6})\)$/
+	{ :regexp=>/^Winconnection /, :search=>"headers[server]" },
 
-		match=@headers["server"].scan(/^Winconnection V([^\s]+) \(server ([A-Z\d]{6})\)$/)
+	# HTTP Server Header # Version Detection
+	{ :version=>/^Winconnection V([^\s]+) \(server ([A-Z\d]{6})\)$/, :offset=>0 , :search=>"headers[server]" },
 
-		# Version Detection
-		m << { :version=>match[0][0] }
+	{ :string=>/^Winconnection V([^\s]+) \(server ([A-Z\d]{6})\)$/, :offset=>1 , :search=>"headers[server]" },
 
-		# Server Detection
-		m << { :string=>match[0][1] }
-
-	end
-
-	# Return passive matches
-	m
-
-end
+]
 
 end
 

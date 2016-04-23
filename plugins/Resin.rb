@@ -4,12 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 # Version 0.2 # 2011-03-11 #
 # Updated version detection
 ##
 Plugin.define "Resin" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
-version "0.2"
+version "0.3"
 description "Resin provides a reliable, fast Web server which can also be used as a load balancer. Resin can operate as a standalone server or as a fast servlet runner for IIS or Apache"
 website "http://www.caucho.com/resin/admin/http-server.xtp"
 
@@ -21,21 +24,17 @@ website "http://www.caucho.com/resin/admin/http-server.xtp"
 # ShodanHQ results as at 2011-02-24 #
 # 25,565 for server Resin
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
+	# Version Detection # HTTP Server Header # Standalone
+	{ :regexp=>/^Resin/, :search=>"headers[server]" },
 
 	# Version Detection # HTTP Server Header # Standalone
-	m << { :version=>@headers["server"].scan(/^Resin\/([^\s]+)/), :string=>"Standalone" } if @headers["server"] =~ /^Resin\/([^\s]+)/
-
+	{ :string=>"Standalone", :version=>/^Resin\/([^\s]+)/, :search=>"headers[server]" },
+	
 	# Version Detection # HTTP Server Header # Plugin
-	m << { :version=>@headers["server"].scan(/[\s]+Resin\/([^\s]+)/), :string=>"Plugin" } if @headers["server"] =~ /[\s]+Resin\/([^\s]+)/
+	{ :string=>"Plugin", :version=>/[\s]+Resin\/([^\s]+)/, :search=>"headers[server]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

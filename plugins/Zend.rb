@@ -4,22 +4,25 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# 0.1 
+# Version 0.4 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
+# Version 3.0 by Andrew Horton
+# new routine for POST requests
+##
+# Version 2.0 by Andrew Horton
+# Added meta generator match and vendor matches. bug fixes. new random string function
+##
+# Version 0.1 
 # detection works mainly for default installation state 
 # tomatocms is based on zend framework
-# v2.0 by Andrew Horton
-# Added meta generator match and vendor matches. bug fixes. new random string function
-# v3.0 by Andrew Horton
-# new routine for POST requests
-
+##
 Plugin.define "Zend" do
 author "Aung Khant <http://yehg.net>"
-version "0.2"
+version "0.4"
 description "Zend PHP Framework (http://framework.zend.com/) and Zend Server (http://zend.com) Detection"
 
 	
-
 matches [
 # 2010-10-14
 # About 1,640,000 results (0.24 seconds) 
@@ -38,44 +41,23 @@ matches [
 {:string=>'Zend_Controller_Router_Exception',:url=>randstr(),:text=>"/Zend/Controller/Router/Rewrite.php</b> on line <b>"},
 
 {:version=>/<meta name="generator" content="Zend.com CMS ([\d\.]+)"/ },
-{:text=>'<meta name="vendor" content="Zend Technologies'}
+{:text=>'<meta name="vendor" content="Zend Technologies'},
+
+
+# X-Powered-By=Zend Framework
+# X-Powered-By=Zend Framework 1.10
+# X-Powered-By: Zend Core/2.5.0
+
+{ :regexp=>/Zend Framework/, :search=>"headers[x-powered-by]" },
+{ :version=>/Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/, :string=>"Framework", :search=>"headers[x-powered-by]" },
+{ :version=>/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/, :string=>"Core", :search=>"headers[x-powered-by]" },
+
+# Server: Zend Core/2.5.0
+{ :regexp=>/^Zend /, :search=>"headers[server]" },
+{ :version=>/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/, :string=>"Core", :search=>"headers[server]" },
 
 ]
 
-
-def passive
-# X-Powered-By=Zend Framework
-# X-Powered-By=Zend Framework 1.10
-# Server: Zend Core/2.5.0
-# X-Powered-By: Zend Core/2.5.0
-      m=[]
-      version = ''
-      unless @headers.nil?
-           
-		unless @headers["x-powered-by"].nil?
-		        if @headers["x-powered-by"] =~ /Zend Framework/i
-				m << {:name=>'X-Powered-By'}
-		        end
-		        if @headers["x-powered-by"] =~ /Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/i
-				version = 'Framework: ' + @headers["x-powered-by"].scan(/Zend Framework ([a-zA-Z0-9\.\/\+\-\(\)]+)/i).flatten.first
-				m << {:version=>version}
-		        end	
-		
-			if @headers["x-powered-by"] =~ /Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i			
-				version = 'Core: ' + @headers["x-powered-by"].scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i).flatten.first 
-				m << {:version=>version}
-			end
-		end
-	
-		unless @headers["server"].nil?
-			if @headers["server"] =~ /Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i
-				version = 'Core: ' + @headers["server"].scan(/Zend Core\/([a-zA-Z0-9\.\/\+\-\(\)]+)/i).flatten.first
-				m << {:version=>version}
-			end
-		end
-      end
-     m
-end
 
 def aggressive
 # when submiting invalid post to valid controller 

@@ -4,15 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "SpirePRO-CMS" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
-version "0.1"
+version "0.2"
 description "Custom CMS from Boston web design and hosting company 1stOmni - http://www.1stomni.com/"
 
 # ShodanHQ results as at 2011-05-16 #
 # 8 for SpirePRO CMS
-
-
 
 # Matches #
 matches [
@@ -26,21 +27,16 @@ matches [
 # Spire-Editor
 { :regexp=>/<meta name="Spire-Editor" content="([^"]+)">/ },
 
+# x-generator header
+{ :string=>/^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /, :search=>"headers[x-generator]" },
+
+# generator header
+{ :string=>/^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /, :search=>"headers[generator]" },
+
+# SpirePRO CMS in any header
+{ :regexp=>/^SpirePRO CMS/, :search=>"headers" },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# x-generator header
-	m << { :string=>@headers["x-generator"].scan(/^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /) } if @headers["x-generator"] =~ /^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /
-
-	# generator header
-	m << { :string=>@headers["generator"].scan(/^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /) } if @headers["generator"] =~ /^SpirePRO CMS v([\d\.]+ \(Microkernel v[\d]+; CMS Server v[\d]+\)) /
-
-	# Return passive matches
-	m
-end
 
 end
 

@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-19 # Andrew Horton
+# Replaced passive function with matches
+##
 Plugin.define "Fujitsu-Router" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
-version "0.1"
+version "0.2"
 description "Fujitsu-Router"
 website "http://fujitsu.com/"
 
@@ -18,18 +21,12 @@ website "http://fujitsu.com/"
 # 109 for Si-R180B
 # 302 for Si-R170
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
 
 	# Model Detection # HTTP Server Header
-	m << { :model=>@headers["server"].scan(/^(Si-[A-Za-z\d]{4,10})$/) } if @headers["server"] =~ /^Si-[A-Za-z\d]{4,10}$/
+	{ :model=>/^(Si-[A-Za-z\d]{4,10})$/, :search=>"headers[server]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

@@ -4,28 +4,26 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Kerio-Connect" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
-version "0.1"
+version "0.2"
 description "Kerio Connect (previously Kerio MailServer) is the best email, messaging, collaboration and full groupware single server solution designed for small to medium organizations, offering full support for Outlook, Entourage, Apple Mail and iCal clients and more - Homeage: http://www.kerio.com/connect"
 
 # ShodanHQ results as at 2011-03-13 #
 # 9,241 for Kerio Connect
 # 4,730 for Kerio MailServer
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
 	# HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^Kerio (MailServer|Connect) (.+)$/)[0][1] } if @headers["server"] =~ /^Kerio (MailServer|Connect) (.+)$/
+	{ :regexp=>/^Kerio/, :search=>"headers[server]" },
+	
+	# HTTP Server Header # Version Detect
+	{ :version=>/^Kerio (MailServer|Connect) (.+)$/, :offset=>1, :search=>"headers[server]" },
 
-	# Return passive matches
-	m
-
-end
+]
 
 end
 

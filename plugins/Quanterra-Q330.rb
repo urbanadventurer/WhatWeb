@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Quanterra-Q330" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
-version "0.1"
+version "0.2"
 description "Quanterra Q330 series - seismic data acquisition systems"
 website "http://kmi.com/p-163-Home.aspx"
 
@@ -44,26 +47,20 @@ dorks [
 'intitle:"Q330 Web Server" -"$ID$"'
 ]
 
-
-
 # Matches #
 matches [
 
-# Form
-{ :text=>'<form action="BALEPWR.HTM" method="POST"><input type="SUBMIT" name="PWR" value="Turn on Baler Power"><br>' },
+	# Form
+	{ :text=>'<form action="BALEPWR.HTM" method="POST"><input type="SUBMIT" name="PWR" value="Turn on Baler Power"><br>' },
+
+	# HTTP Server Header
+	{ :regexp=>/^Q330/, :search=>"headers[server]" },
+
+	# Version Detection # HTTP Server Header
+	{ :version=>/^Q330 V([^\s]+)$/, :search=>"headers[server]" },
 
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^Q330 V([^\s]+)$/) } if @headers["server"] =~ /^Q330 V([^\s]+)$/
-
-	# Return passive matches
-	m
-end
 
 end
 

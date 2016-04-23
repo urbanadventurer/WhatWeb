@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "PRTG-Network-Monitor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
-version "0.1"
+version "0.2"
 description "PRTG Network Monitor - Availability and Bandwidth Monitoring"
 website "http://www.paessler.com/prtg"
 
@@ -32,18 +35,14 @@ matches [
 # Version Detection
 { :version=>/<link rel="stylesheet" type="text\/css" href="\/css\/prtgmini\.css\?prtgversion=([^"]+)" media="print,screen,projection" \/>/ },
 
+#  HTTP Server Header
+{ :version=>/^PRTG/, :search=>"headers[server]" },
+
+# Version Detection # HTTP Server Header
+{ :version=>/^PRTG\/([^\s]+)$/, :search=>"headers[server]" },
+
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^PRTG\/([^\s]+)$/) } if @headers["server"] =~ /^PRTG\/([^\s]+)$/
-
-	# Return passive matches
-	m
-end
 
 end
 

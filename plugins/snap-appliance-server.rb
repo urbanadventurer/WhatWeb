@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 # Version 0.2 # 2011-05-16 #
 # Updated regex
 # Added version detection
@@ -11,7 +14,7 @@
 ##
 Plugin.define "Snap-Appliance-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
-version "0.2"
+version "0.3"
 description "Snap Appliance Server network attached storage (NAS)"
 website "http://www.overlandstorage.com/"
 
@@ -49,21 +52,19 @@ matches [
 # JavaScript # /config?Func=AboutSend popup
 { :text=>'   window.open("/config?Func=AboutSend","AboutSnap","toolbar=no,location=no,status=no,menubar=no,scrollbars=no,width=500,height=395,resizable=yes,dependent=yes"); '},
 
+# Snap Appliance(s) # HTTP Server Header
+{ :regexp=>/^Snap Appliance/, :search=>"headers[server]" },
+
+# Quantum Corporation # HTTP Server Header
+{ :regexp=>/^Quantum Corporation/, :search=>"headers[server]" },
+
+# Version Detection # Snap Appliance(s) # HTTP Server Header
+{ :version=>/^Snap Appliances?, Inc\.\/([\d\.]+)$/, :search=>"headers[server]" },
+
+# Version Detection # Quantum Corporation # HTTP Server Header
+{ :version=>/^Quantum Corporation\.\/([\d\.]+)$/, :search=>"headers[server]" },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # Snap Appliance(s) # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^Snap Appliances?, Inc\.\/([\d\.]+)$/) } if @headers["server"] =~ /^Snap Appliances?, Inc\.\/([\d\.]+)$/
-
-	# Version Detection # Quantum Corporation # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^Quantum Corporation\.\/([\d\.]+)$/) } if @headers["server"] =~ /^Quantum Corporation\.\/([\d\.]+)$/
-
-	# Return passive matches
-	m
-end
 
 end
 

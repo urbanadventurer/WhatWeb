@@ -4,9 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.6 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 # Version 0.5 # 2011-08-23 # Andrew Horton
-# 
-#
+##
 # Version 0.4 # 2011-05-25 # Brendan Coles <bcoles@gmail.com>
 # Merged php-error plugin and PHP plugin
 # Added aggressive version detection using PHP credits page
@@ -20,7 +22,7 @@
 ##
 Plugin.define "PHP" do
 author "Andrew Horton & Brendan Coles" # 2010-10-26
-version "0.5"
+version "0.6"
 description "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML. This plugin identifies PHP errors, modules and versions and extracts the local file path and username if present."
 website "http://www.php.net/"
 
@@ -59,41 +61,33 @@ matches [
 # PHP-Error # Extract username from windows style file path
 { :account=>/<b>(Warning|Fatal error)<\/b>: .* in <b>[A-Z]{1}:\\(Documents and Settings|Users)\\([^<^\\]+)\\[^<]*<\/b> on line <b>[0-9]+<\/b><br \/>/i, :offset=>2 },
 
+
+# HTTP # Server # Version Detection
+{ :version=>/[^\r^\n]*PHP\/([^\s^\r^\n]+)/, :search=>"headers[server]" },
+
+# HTTP # Server # Module Detection
+{ :module=>/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/, :search=>"headers[server]" },
+
+# HTTP # X-Powered-By
+{ :version=>/[^\r^\n]*PHP\/([^\s^\r^\n]+)/, :search=>"headers[x-powered-by]" },
+
+# HTTP # X-Powered-By # Module Detection
+{ :module=>/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/, :search=>"headers[x-powered-by]" },
+
+# PHP Error # PHP HTTP Header
+{ :regexp=>/^Error parsing (.+) on line [\d]+$/, :search=>"headers[php]" },
+
+# Local Filethpath Detection # PHP HTTP Header
+{ :filepath=>/^Error parsing (.+) on line [\d]+$/, :search=>"headers[php]" },
+
+# Account Detection # PHP HTTP Header
+{ :filepath=>/^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/, :search=>"headers[php]" },
+
+# PHP Warning Header
+{ :name=>"PHP Warning Header", :regexp=>//, :search=>"headers[php warning]" },
+
 ]
 
-# Passive #
-def passive
-	m=[]
-
-	# HTTP # Server # Version Detection
-	m << { :version=>@headers["server"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
-
-	# HTTP # Server # Module Detection
-	m << { :module=>@headers["server"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).flatten } if @headers["server"] =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
-
-	# HTTP # X-Powered-By
-	m << { :version=>@headers["x-powered-by"].to_s.scan(/[^\r^\n]*PHP\/([^\s^\r^\n]+)/i).flatten } if @headers["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/([^\s^\r^\n]+)/i
-
-	# HTTP # X-Powered-By # Module Detection
-	m << { :module=>@headers["x-powered-by"].scan(/[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i).flatten } if @headers["x-powered-by"].to_s =~ /[^\r^\n]*PHP\/[^\s^\r^\n]+ with (Hardening-Patch|Suhosin-Patch)/i
-
-	# PHP Error # PHP HTTP Header
-	if @headers["php"] =~ /^Error parsing (.+) on line [\d]+$/
-
-		# Local Filethpath Detection
-		m << { :filepath=>@headers["php"].scan(/^Error parsing (.+) on line [\d]+$/).flatten } unless @headers["php"] =~ /^Error parsing \/php\.ini on line [\d]+$/
-
-		# Account Detection
-		m << { :account=>@headers["php"].scan(/^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/).flatten } if @headers["php"] =~ /^Error parsing \/home\/([^\/]+)\/.+ on line [\d]+$/
-
-	end
-
-	# PHP Warning Header
-	m << { :name=>"PHP Warning Header" } unless @headers["php warning"].nil?
-
-	# Return passive matches
-	m
-end
 
 end
 

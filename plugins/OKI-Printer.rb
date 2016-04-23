@@ -4,16 +4,26 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "OKI-Printer" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
-version "0.1"
+version "0.2"
 description "OKI printer"
 website "http://www.okiprintingsolutions.com/"
 
 # ShodanHQ results as at 2011-05-31 #
 # 240 for OKIDATA-HTTPD
 
+matches [
+	# HTTP Server Header
+	{ :regexp=>/^OKIDATA-HTTPD/, :search=>"headers[server]" },
+	
+	# Version
+	{ :version=>/^OKIDATA-HTTPD\/([^\s]+)$/, :search=>"headers[server]" },
 
+]
 
 # Passive #
 def passive
@@ -21,9 +31,6 @@ def passive
 
 	# HTTP Server Header
 	if @headers["server"] =~ /^OKIDATA-HTTPD\/([^\s]+)$/
-
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^OKIDATA-HTTPD\/([^\s]+)$/) }
 
 		# Model Detection
 		m << { :model=>@body.scan(/<title>([^<]+)<\/title>/) } if @body =~ /<title>([^<]+)<\/title>/

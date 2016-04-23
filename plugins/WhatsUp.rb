@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "WhatsUp" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
-version "0.1"
+version "0.2"
 description "WhatsUp - Network and Server Management Software"
 website "http://www.whatsupgold.com/"
 
@@ -14,25 +17,18 @@ website "http://www.whatsupgold.com/"
 # 1,127 for WhatsUp -Gold
 #   647 for WhatsUp -ipswitch
 
-
-
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :string=>"Gold", :version=>@headers["server"].scan(/^WhatsUp_Gold\/([\d\.]+)/) } if @headers["server"] =~ /^WhatsUp_Gold\/([\d\.]+)/
-
-	# WWW-Authenticate # HTTP Server Header
-	m << { :string=>"Gold", :certainty=>75, :name=>"WWW-Authenticate" } if @headers["www-authenticate"] =~ /^Basic realm="WhatsUp[\s]?Gold"/
+matches [
 
 	# HTTP Server Header
-	m << { :name=>"HTTP Server Header" } if @headers["server"] =~ /^WhatsUp/
+	{ :name=>"HTTP Server Header", :regexp=>/^WhatsUp/, :search=>"headers[server]" },
 
-	# Return passive matches
-	m
+	# Version Detection # HTTP Server Header
+	{ :string=>"Gold", :version=>/^WhatsUp_Gold\/([\d\.]+)/, :search=>"headers[server]" },
 
-end
+	# WWW-Authenticate # HTTP Server Header
+	{ :string=>"Gold", :certainty=>75, :name=>"WWW-Authenticate", :regexp=>/^Basic realm="WhatsUp[\s]?Gold"/, :search=>"headers[www-authenticate]" },
+
+]
 
 end
 

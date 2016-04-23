@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "SAP-NetWeaver" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
-version "0.1"
+version "0.2"
 description "SAP NetWeaver provides the technical foundation for SAP applications. In addition, it delivers a portfolio of enterprise technology that allows you to extend your applications to reach more people and to adopt new processes, devices, and consumption models."
 website "http://www.sap.com/platform/netweaver/index.epx"
 # More info: http://en.wikipedia.org/wiki/SAP_NetWeaver_Application_Server
@@ -24,29 +27,17 @@ dorks [
 'intitle:"Logon - SAP Web Application Server"'
 ]
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
 	# Application Server
-	if @headers["server"] =~ /^SAP (Web|NetWeaver) Application Server/
+	{ :name=>"HTTP Server Header", :regexp=>/^SAP (Web|NetWeaver)/, :search=>"headers[server]" },
 
-		# Server Detection
-		m << { :name=>"HTTP Server Header" }
-
-		# Version Detection
-		m << { :string=>@headers["server"].scan(/^SAP (Web|NetWeaver) Application Server [\/]?[\ ]?[\(]?([^\)^\r^\n]+)[\)]?/)[0][1] } if @headers["server"] =~ /^SAP (Web|NetWeaver) Application Server [\/]?[\ ]?[\(]?([^\)^\r^\n]+)[\)]?/
-
-	end
+	# Version Detection
+	{ :string=>/^SAP (Web|NetWeaver) Application Server [\/]?[\ ]?[\(]?([^\)^\r^\n]+)[\)]?/, :offset=>1, :search=>"headers[server]" },
 
 	# J2EE Engine
-	m << { :module=>"J2EE", :version=>@headers["server"].scan(/^SAP J2EE Engine\/([\d\.]{1,4})/).flatten } if @headers["server"] =~ /^SAP J2EE Engine\/([\d\.]{1,4})/
+	{ :module=>"J2EE", :version=>/^SAP J2EE Engine\/([\d\.]{1,4})/, :search=>"headers[server]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

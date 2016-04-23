@@ -4,9 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Orenosv" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-09
-version "0.1"
+version "0.2"
 description "Orenosv is a stable, reliable and high performance HTTP/FTP/FTPS file server that can operate in 24H/365D. Orenosv runs on Windows platforms (NT, 2000, XP and 2003) and Linux x86. "
 website "http://www.orenosv.com/orenosv_en.html"
 
@@ -14,18 +17,15 @@ website "http://www.orenosv.com/orenosv_en.html"
 # 18 for orenosv
 # All results are from Japan
 
+matches [
+	
+	# HTTP Server Header
+	{ :version=>/^orenosv/, :search=>"headers[server]" },
 
+	# Version Detection
+	{ :version=>/^orenosv\/([^\s]+)$/, :search=>"headers[server]" },
 
-# Passive #
-def passive
-	m=[]
-
-	# Version Detection # HTTP Server Header
-	m << { :version=>@headers["server"].scan(/^orenosv\/([^\s]+)$/) } if @headers["server"] =~ /^orenosv\/([^\s]+)$/
-
-	# Return passive matches
-	m
-end
+]
 
 end
 

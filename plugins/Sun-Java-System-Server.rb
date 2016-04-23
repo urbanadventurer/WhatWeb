@@ -4,13 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 # Version 0.2 # 2011-01-30 #
 # Updated version detection
 # Added Application Server version detection
 ##
 Plugin.define "Sun-Java-System-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
-version "0.2"
+version "0.3"
 description "Sun Java System Web/Proxy Server."
 website "http://developers.sun.com/appserver/"
 
@@ -19,21 +22,21 @@ website "http://developers.sun.com/appserver/"
 # 252 results for Proxy-agent: Sun-Java-System-Web-Proxy-Server
 # 202 for Proxy-agent: Sun-Java-System-Web-Server
 
+matches [
 
+	# Application Server
+	{ :regexp=>/^[\s]*Sun[\-\ ]{1}Java[\-\ ]{1}System[\/\ ]{1}Application[\-\ ]{1}Server/, :search=>"headers[server]" },
+
+	# Version Detection # Proxy-Agent
+	{ :version=>/^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/, :search=>"headers[proxy-agent]", :module=>"Proxy Server" },
+
+	# Version Detection # Web Server
+	{ :version=>/^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/, :search=>"headers[server]", :module=>"Web Server" },
+]
 
 # Passive #
 def passive
 	m=[]
-
-	# Version Detection # Proxy-Agent
-	if @headers["proxy-agent"].to_s =~ /^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/
-		m << { :version=>@headers["proxy-agent"].scan(/^[\s]*Sun-Java-System-Web-[Proxy-]*Server\/([\d\.]+)/).flatten, :module=>"Proxy Server" }
-	end
-
-	# Version Detection # Web Server
-	if @headers["server"].to_s =~ /^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/
-		m << { :version=>@headers["server"].scan(/^[\s]*Sun-Java-System-Web-Server\/([\d\.]+)/).flatten, :module=>"Web Server" }
-	end
 
 	# Version Detection # Application Server
 	if @headers["server"].to_s =~ /^[\s]*Sun[\-\ ]{1}Java[\-\ ]{1}System[\/\ ]{1}Application[\-\ ]{1}Server/

@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
+
 Plugin.define "ADTRAN-Device" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
-version "0.1"
+version "0.2"
 description "ADTRAN device - Total Access and NetVanta Network Management - Includes: Fast Ethernet switches, Gigabit Ethernet switches, Power over Ethernet Switches, Integrated switch-routers, Fixed port Routers, Modular Routers, Multiservice Access Routers, Internet security/firewall appliance, IP Business Gateways, IP Communication Platforms, IP Phones, Integrated Access Devices, 802.11a/b/g Wireless Access Points, Network Management"
 website "http://www.adtran.com/web/page/portal/Adtran/group/3310"
 
@@ -20,26 +24,18 @@ website "http://www.adtran.com/web/page/portal/Adtran/group/3310"
 #  2,328 for Total Access http -sip -Gen
 #     86 for netvanta http -sip
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
 
 	# HTTP Server Header
-	if @headers["server"] =~ /^ADTRAN, Inc\.$/ or @headers["server"] =~ /^ADTRAN$/
-		m << { :name=>"HTTP Server Header" }
-	end
+	{ :regexp=>/^ADTRAN/, :search=>"headers[server]", :name=>"HTTP Server Header" },
 
 	# NetVanta Series # Model Detection # WWW-Authenticate Header
-	m << { :string=>"NetVanta", :model=>@headers["www-authenticate"].scan(/^Basic realm="Net[Vv]anta ([^"]+)"$/) } if @headers["www-authenticate"] =~ /^Basic realm="Net[Vv]anta ([^"]+)"$/
+	{ :string=>"NetVanta", :model=>/^Basic realm="Net[Vv]anta ([^"]+)"$/, :search=>"headers[www-authenticate]" },
 
 	# Total Access Series # Model Detection # WWW-Authenticate Header
-	m << { :string=>"Total Access", :model=>@headers["www-authenticate"].scan(/^Basic realm="Total Access ([^"]+)"$/) } if @headers["www-authenticate"] =~ /^Basic realm="Total Access ([^"]+)"$/
+	{ :string=>"Total Access", :model=>/^Basic realm="Total Access ([^"]+)"$/, :search=>"headers[www-authenticate]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 

@@ -4,41 +4,33 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "VisualRoute" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
-version "0.1"
+version "0.2"
 description "Traceroute and network diagnostic tool"
 website "http://www.visualroute.com/"
 
 # ShodanHQ results as at 2011-06-02 #
 # 24 for VisualRoute
 
-
-
-# Passive #
-def passive
-	m=[]
-
+matches [
+	
 	# HTTP Server Header
-	if @headers["server"] =~ /^VisualRoute /
+	{ :regexp=>/^VisualRoute /, :search=>"headers[server]" },
 
-		# Version Detection
-		m << { :version=>@headers["server"].scan(/^VisualRoute \((tm|R)\) ([^\s]+)$/)[0][1] } if @headers["server"] =~ /^VisualRoute \((tm|R)\) ([^\s]+)$/
+	# HTTP Server Header # Version Detection
+	{ :version=>/^VisualRoute \((tm|R)\) ([^\s]+)$/, :offset=>1, :search=>"headers[server]" },
 
-		if @headers["server"] =~ /^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/
-			# Edition Detection
-			m << { :string=>@headers["server"].scan(/^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/)[0][1] }
+	# HTTP Server Header # Edition Detection
+	{ :string=>/^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/, :offset=>1, :search=>"headers[server]" },
 
-			# Version Detection
-			m << { :version=>@headers["server"].scan(/^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/)[0][2] }
+	# HTTP Server Header # Version Detection
+	{ :version=>/^VisualRoute \((tm|R)\) ([\d]{4} .+ Edition) \(v([^\)]+)\)$/, :offset=>2, :search=>"headers[server]" },
 
-		end
-
-	end
-
-	# Return passive matches
-	m
-end
+]
 
 end
 

@@ -84,7 +84,8 @@ matches [
 {:regexp=>/^Apache/i,  :search=>"headers[server]", :name=>"HTTP Server Header"},
 {:version=>/^Apache\/([\d\.]+)/i, :search=>"headers[server]", :name=>"HTTP Server Header"},
 {:certainty=>75, :module=>"mod_security", :regexp=>/^NOYB$/, :search=>"headers[server]"},
-{:certainty=>75, :name=>"htacess WWW-Authenticate realm", :search=>"headers[www-authenticate]", :regexp=>/Basic realm="htaccess password prompt"/}
+{:certainty=>75, :name=>"htacess WWW-Authenticate realm", :search=>"headers[www-authenticate]", :regexp=>/Basic realm="htaccess password prompt"/},
+
 
 ]
 

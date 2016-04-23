@@ -4,30 +4,30 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 Plugin.define "Passenger" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
-version "0.1"
+version "0.2"
 description 'Phusion Passenger - a.k.a. mod_rails or mod_rack - makes deployment of Ruby web applications, such as those built on the revolutionary Ruby on Rails web framework, a breeze. It follows the usual Ruby on Rails conventions, such as "Dont-Repeat-Yourself""
 website "http://www.modrails.com/'
 
 # ShodanHQ results as at 2011-03-10 #
 # 83,668 for Phusion_Passenger
 
-
-
-# Passive #
-def passive
-	m=[]
+matches [
 
 	# Server
-	m << { :version=>@headers["server"].scan(/[\s]+Phusion_Passenger\/([\d\.]+)/) } if @headers["server"] =~ /[\s]+Phusion_Passenger\/([\d\.]+)/
+	{ :regexp=>/.*Phusion_Passenger/, :search=>"headers[server]" },
 
+	# Server # Version
+	{ :version=>/[\s]+Phusion_Passenger\/([\d\.]+)/, :search=>"headers[server]" },
+	
 	# X-Powered-By: Phusion Passenger (mod_rails/mod_rack)
-	m << { :version=>@headers["x-powered-by"].scan(/Phusion Passenger \(mod_rails\/mod_rack\) ([\d\.]+)/) } if @headers["x-powered-by"] =~ /Phusion Passenger \(mod_rails\/mod_rack\) ([\d\.]+)/
+	{ :version=>/Phusion Passenger \(mod_rails\/mod_rack\) ([\d\.]+)/, :search=>"headers[x-powered-by]" },
 
-	# Return passive matches
-	m
-end
+]
 
 end
 
