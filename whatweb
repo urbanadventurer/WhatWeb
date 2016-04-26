@@ -569,13 +569,18 @@ HELP & MISCELLANEOUS:
 
 EXAMPLE USAGE:
 * Scan example.com
-  whatweb example.com
+  ./whatweb example.com
 * Scan reddit.com slashdot.org with verbose plugin descriptions
-  whatweb -v reddit.com slashdot.org
+  ./whatweb -v reddit.com slashdot.org
 * An aggressive scan of mashable.com detects the exact version of Wordpress
-  whatweb -a 3 mashable.com
-* Scan the local network quickly with 255 threads and suppress errors
-  whatweb --no-errors -t 255 192.168.0.0/24\n"
+  ./whatweb -a 3 mashable.com
+* Scan the local network quickly and suppress errors
+  whatweb --no-errors 192.168.0.0/24
+* Scan the local network for https websites
+  whatweb --no-errors --url-prefix https:// 192.168.0.0/24
+* Scan for crossdomain policies in the Alexa Top 1000
+  ./whatweb -i plugin-development/alexa-top-100.txt \\
+  --url-suffix /crossdomain.xml -p crossdomain_xml\n"
 
 	suggestions=""
 	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
