@@ -915,7 +915,6 @@ rescue Errno::EPIPE
 	exit
 rescue StandardError, GetoptLong::Error => err
 	puts
-	usage_short
 	error err
 	exit
 end
