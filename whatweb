@@ -913,6 +913,11 @@ begin
 rescue Errno::EPIPE
 	exit
 rescue StandardError, GetoptLong::Error => err
+	
+	# Disable colours in Windows environments for errors in usage
+	if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
+		$use_colour = false
+	end
 	puts
 	error err
 	exit
