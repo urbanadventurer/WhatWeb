@@ -843,6 +843,7 @@ begin
 			when '-t','--max-threads'
 				$MAX_THREADS=arg.to_i
 			when '-a','--aggression'
+				raise "Agression level must be 1,3, or 4. #{arg} is invalid." unless [1,3,4].include? arg.to_i
 				$AGGRESSION=arg.to_i
 			when '--proxy'
 				$USE_PROXY=true
