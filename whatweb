@@ -122,7 +122,6 @@ PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if F
 $VERSION="0.4.8-dev"
 $WWDEBUG = false # raise exceptions in plugins, etc
 $verbose=0 # $VERBOSE is reserved in ruby
-#$USE_EXAMPLE_URLS=false
 $use_colour="auto"
 $USER_AGENT="WhatWeb/#{$VERSION}"
 $MAX_THREADS=25
@@ -923,12 +922,6 @@ end
 if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
 	$use_colour = false
 end
-
-# example URLs are only allowed with selected plugins, not all plugins
-#if $USE_EXAMPLE_URLS and not plugin_selection
-#	error "You must select plugins with -p or --plugins to include examples in the target list"
-#	exit 1
-#end
 
 ### PLUGINS
 plugin_selection += ",+Custom-Plugin" 	if use_custom_plugin and plugin_selection
