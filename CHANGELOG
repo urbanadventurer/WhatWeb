@@ -1,4 +1,7 @@
 Version 0.4.8-dev Unreleased
+* New Verbose output
+* Added short usage help
+* Converted all plugins to lowercase filenames
 * Updated plugins. Moved 100s of patterns in passive functions to matches[]
 * Added --search-plugins
 * Fixed bug where :search => headers[xyz] was not case insensitive
