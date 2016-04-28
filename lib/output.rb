@@ -1,5 +1,5 @@
 =begin
-Copyright 2009 to 2013, Andrew Horton
+Copyright 2009 to 2016, Andrew Horton
 
 This file is part of WhatWeb.
 
@@ -18,7 +18,7 @@ along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
 class Output
-  # if no f, output to STDOUT, 
+ 	# if no f, output to STDOUT, 
 	# if f is a filename then open it, if f is a file use it	
 	def initialize(f = STDOUT)
 	  f = STDOUT if f == "-"
@@ -71,63 +71,7 @@ class OutputObject < Output
 end
 
 
-=begin
-WhatWeb v4.1 ( http://www.morningstarsecurity.com/research/whatweb)
-Scan started at Tue Apr 19 00:46:50 AEST 2016
-X targets loaded
-
-WhatWeb report for http://www.apple.com
-Status  : 200 OK
-Title   : Apple
-IP      : 23.66.255.148
-Country : UNITED STATES,US
-
-HTTP Headers
-	HTTP/1.1 200 OK
-	Content-Length: 31253     
-	Server: Apache
-	Accept-Ranges: bytes
-	Content-Type: text/html; charset=UTF-8
-	Cache-Control: max-age=523
-	Expires: Mon, 18 Apr 2016 14:22:50 GMT
-	Date: Mon, 18 Apr 2016 14:14:07 GMT
-	Connection: keep-alive
-
-Detected Plugins:
------------------
-Short list: Apache, HTTPServer[Apache], Script[text/javascript], X-Frame-Options[DENY]
-
-[ Apache ]
-	The Apache HTTP Server Project is an effort to develop and maintain...
-
-	Detected Version: 5.4
-	Detected Modules: 1.2
-	Detected Strings: XYZ
-
-	Aggressive function available
-	Google Dorks: (1)
-	Website: http://apache.org/
-
-[ HTML5 ]
-	HTML version 5, detected by the doctype declaration
-	
-[ Meta-Author ]
-	This plugin retrieves the author name from the meta name tag
-	Authors name: Apple Inc.
-
-[ Open-Graph-Protocol ]
-	Strings: website	
-
-[ X-UA-Compatible ]
-	Strings: IE=EmulateIE7
-
-[ Script ]
-	Strings: application/ld+json,text/javascript
-=end
-
-
-
-class NewOutputVerbose < Output
+class OutputVerbose < Output
 	def coloured(s, colour)
 		use_colour = ((@f == STDOUT and $use_colour=="auto") or ($use_colour=="always"))
 
@@ -140,66 +84,116 @@ class NewOutputVerbose < Output
 
 	def out(target, status, results)
 		$semaphore.synchronize do
-
-=begin
-WhatWeb report for http://www.apple.com
-Status  : 200 OK
-Title   : Apple
-IP      : 23.66.255.148
-Country : UNITED STATES,US
-=end
-
-pp results
-pp suj(results.first)
+			# make a hash of the matches array
+			results_hash={}
+			results.map { |k,v| results_hash[k]=v }
 
 			display={
 				title:"<None>",
 				ip:"<Unknown>",
-				country:"<Unknown>"
+				country:"<Unknown>",
+				status:"<Unknown>"
 			}
-#r.select {|x| x.first == "Country"}.empty?
-			display[:title] = results["Title"][:string] if results["Title"][:string] 
-			display[:ip] = results["IP"][:string] if results["IP"][:string]
-			display[:country] = results["country"][:string] if results["Country"][:string]
 
-			@f.puts "WhatWeb report for #{target}"
-			@f.puts "Status".ljust(9) + " : #{status}"
+			display[:country] = results_hash["Country"].map {|r| "#{r[:string]}, #{r[:module]}" }.join(",") if results_hash["Country"]
+			display[:ip] = results_hash["IP"].map {|r| r[:string] }.join(",") if results_hash["Country"]
+			display[:title] = results_hash["Title"].map {|r| r[:string] }.join(",") if results_hash["Title"]
+			display[:status] = "#{status}"
+
+			@f.puts "WhatWeb report for #{coloured(target,'blue')}"
+			@f.puts "Status".ljust(9) + " : "+ display[:status]
+			@f.puts "Title".ljust(9) + " : #{coloured(display[:title],'white')}"
+			@f.puts "IP".ljust(9) + " : " + display[:ip]
+			@f.puts "Country".ljust(9) + " : " + display[:country]
+			@f.puts
 			
-			@f.puts "Title".ljust(9) + " : " + display[:title]
-			@f.puts "IP".ljust(9) + " : " + results["ip"].string
-			@f.puts "Country".ljust(9) + " : " + results["country"].string
+			################### Short list
+			################### Basically Output Brief
 
-pp results
-exit
+			brief_results = []
+			results.each do |plugin_name, plugin_results|
+				next if ['Title','IP','Country'].include? plugin_name
 
+				unless plugin_results.empty?
+					suj = suj(plugin_results)
 
-			@f.puts "URL".ljust(7) + ": #{coloured(target,'blue')}"
-			@f.puts "Status".ljust(7) + ": #{status}"
+					certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty].to_i,suj[:version],suj[:os],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
+
+					# colour the output
+					# be more DRY		
+					# if plugins have categories or tags this would be better, eg. all hash plugins are grey
+					if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
+						 coloured_string = yellow(string)
+						 coloured_string = cyan(string) if plugin_name == "HTTPServer"
+	 				 	 coloured_string = dark_green(string) if plugin_name == "Title"
+
+	 				 	 coloured_string = grey(string) if plugin_name == "MD5" 				 	 
+	 				 	 coloured_string = grey(string) if plugin_name == "Header-Hash"
+	 				 	 coloured_string = grey(string) if plugin_name == "Footer-Hash"
+	 				 	 coloured_string = grey(string) if plugin_name == "CSS"
+						 coloured_string = grey(string) if plugin_name == "Tag-Hash"
+	 					 
+						 coloured_plugin = white(plugin_name)
+						 coloured_plugin = grey(plugin_name) if plugin_name == "MD5"
+						 coloured_plugin = grey(plugin_name) if plugin_name == "Header-Hash"
+						 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"  					 
+						 coloured_plugin = grey(plugin_name) if plugin_name == "CSS"
+						 coloured_plugin = grey(plugin_name) if plugin_name == "Tag-Hash"
+	  					 					 
+						 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
+						   coloured_plugin + (!version.empty? ? "["+green(version)+"]" : "") +
+						   (!os.empty? ? "[" + red(os)+"]" : "") +	
+						   (!string.empty? ? "[" + coloured_string+"]" : "") +
+						   (!accounts.empty? ? "["+ cyan(accounts)+"]" : "" ) +
+						   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
+						   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
+						   (!filepath.empty? ? "["+ dark_green(filepath)+"]" : "" ) +
+						   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
+						 
+						 brief_results << p
+					else
+
+						brief_results << ((certainty and certainty < 100) ? certainty_to_words(certainty)+ " " : "")  +
+						   plugin_name + (!version.empty? ? "[" + version +"]" : "") +
+						   (!os.empty? ? "[" + os+"]" : "") +
+						   (!string.empty? ? "[" + string+"]" : "") +
+						   (!accounts.empty? ? " ["+ accounts+"]" : "" ) +
+						   (!model.empty? ? "["+ model+"]" : "" ) +
+						   (!firmware.empty? ? "["+ firmware+"]" : "" ) +
+						   (!filepath.empty? ? "["+ filepath+"]" : "" ) +
+						   (!modules.empty? ? "["+ modules+"]" : "" )
+					end	
+				end
+			end
+		
+		brief_results_final = brief_results.join(", ")		
+		
+		@f.puts "Summary".ljust(9) + " : " + brief_results_final
+		@f.puts
+		@f.puts "Detected Plugins:"
+
 			results.sort.each do |plugin_name, plugin_results|
+				next if ['Title','IP','Country'].include? plugin_name
 				unless plugin_results.empty?
 				
-					@f.puts "   " + coloured(plugin_name, "yellow") + " " + coloured("-"*(80-5-plugin_name.size), "dark_blue")
+					@f.puts "[ " + coloured(plugin_name, "yellow") + " ]"
 				
 					description = [""]
-					unless Plugin.registered_plugins[plugin_name].description.nil?
-						d = Plugin.registered_plugins[plugin_name].description[0..350] 
-						d += "..." if d.size == 251
+					if Plugin.registered_plugins[plugin_name].description
+						d = Plugin.registered_plugins[plugin_name].description						
 						description = word_wrap(d, 60)
 					end
 #					@f.puts "\tCategory   : " + Plugin.registered_plugins[plugin_name].category.first unless Plugin.registered_plugins[plugin_name].category.nil?
 
-					@f.puts "\tDescription: " + description.first
+					@f.puts "\t" + description.first
 					description[1..-1].each { |line|
-						@f.puts "\t" + " " * 13 + line
+						@f.puts "\t" + line
 					}
-
-                                        unless Plugin.registered_plugins[plugin_name].website.nil?
-						@f.puts "\tWebsite    : " + Plugin.registered_plugins[plugin_name].website.to_s
-					end
+					@f.puts
 
 					top_certainty = suj(plugin_results)[:certainty].to_i
 					unless top_certainty == 100
-						@f.puts "\t" + "Certainty".ljust(11) + ": " + certainty_to_words(top_certainty)
+						@f.puts "\t" + "Certainty".ljust(13) + ": " + certainty_to_words(top_certainty)
 					end
 
 					plugin_results.map { |x| sortuniq(x) }.each do |pr|
@@ -216,7 +210,11 @@ exit
 
 							next if value.class==Regexp
 
-							@f.print "\t" + key.to_s.capitalize.ljust(11) + ": "
+							unless key == :os 
+								@f.print "\t" + key.to_s.capitalize.ljust(13) + ": "
+							else
+								@f.print "\t" + "OS".ljust(13) + ": "
+							end
 
 							c = case key
 								when :version then "green"
@@ -251,15 +249,34 @@ exit
 
 						@f.puts "\t" + coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
 					end
-					@f.puts			
+					
+					if defined? Plugin.registered_plugins[plugin_name].aggressive
+ 						@f.puts "\tAggressive function available (check plugin file or details)."
+					end		
+
+					if Plugin.registered_plugins[plugin_name].dorks
+						@f.puts "\tGoogle Dorks".ljust(13)+ ": (#{Plugin.registered_plugins[plugin_name].dorks.size})"
+					end
+
+					if Plugin.registered_plugins[plugin_name].website
+						@f.puts "\tWebsite".ljust(13)+ ": " + Plugin.registered_plugins[plugin_name].website.to_s
+					end
+					
+					@f.puts
 				end
 			end
+
+			@f.puts "HTTP Headers:"
+			target.raw_headers.each_line do |header|
+				@f.puts "\t#{header}"
+			end
+			
 		end
 	end
 end
 
 
-class OutputVerbose < Output
+class OldOutputVerbose < Output
 	def coloured(s, colour)
 		use_colour = ((@f == STDOUT and $use_colour=="auto") or ($use_colour=="always"))
 
@@ -387,7 +404,6 @@ class OutputBrief < Output
 				suj = suj(plugin_results)
 
 				certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty].to_i,escape(suj[:version]),escape(suj[:os]),escape(suj[:string]), escape(suj[:account]),escape(suj[:model]),escape(suj[:firmware]),escape(suj[:module]),escape(suj[:filepath])
-
 
 				# colour the output
 				# be more DRY		
@@ -775,7 +791,7 @@ class OutputJSON < Output
 
 	def out(target, status, results)
 		# nice
-		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
+		foo= {:target=>target.to_s, :http_status=>status, :plugins=>{} } 
 		
 		results.each do |plugin_name,plugin_results|		
 #			thisplugin = {:name=>plugin_name}
@@ -884,7 +900,7 @@ class OutputMongo < Output
 
 	def out(target, status, results)
 		# nice
-		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
+		foo= {:target=>target.to_s, :http_status=>status, :plugins=>{} } 
 		
 		results.each do |plugin_name,plugin_results|		
 #			thisplugin = {:name=>plugin_name}

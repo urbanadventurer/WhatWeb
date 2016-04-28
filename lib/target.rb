@@ -9,7 +9,6 @@ class Target
 
   @@meta_refresh_regex=/<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"'>]+)['"]?[^>]*>/i
 
-
   def inspect
     #	"#{target} " + [@uri,@status,@ip,@body,@headers,@raw_headers,@raw_response,@cookies,@md5sum,@tag_pattern,@is_url,@is_file].join(",")
     "URI\n#{'*' * 40}\n#{@uri}" +
@@ -180,7 +179,7 @@ class Target
 
       @body=Net::HTTP.get(@uri)
       @status=res.code.to_i
-      puts @uri.to_s + " [#{status}]" if  $verbose > 0
+      puts @uri.to_s + " [#{status}]" if  $verbose > 1
 
 =begin
 if @raw_headers =~ /^Server:.*^Server:/m

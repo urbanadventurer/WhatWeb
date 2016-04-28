@@ -382,7 +382,7 @@ end
 def word_wrap(s,width=10)
 	ret=[]
 	line=""
-	s.split.map {|x|
+	s.split.map { |x|
 		word=x
 		if line.size + x.size + 1 <= width
 			line += x + " "
@@ -402,7 +402,8 @@ def word_wrap(s,width=10)
 			end
 		end		
  	}
-	ret << line
+	ret << line unless line.empty?
+
 	ret
 end
 
@@ -945,7 +946,7 @@ end
 PluginSupport.precompile_regular_expressions 
 
 ### OUTPUT
-output_list << OutputBrief.new unless $QUIET # by default output brief
+output_list << OutputBrief.new unless $QUIET or $verbose > 0 # by default output brief
 output_list << OutputObject.new() if $verbose > 1 # full output if -vv
 output_list << OutputVerbose.new() if $verbose > 0 # full output if -v
 
@@ -959,11 +960,9 @@ if mongo[:use_mongo_log]
 	end
 end
 
-
 ## Headers
 $CUSTOM_HEADERS["User-Agent"]=$USER_AGENT unless $CUSTOM_HEADERS["User-Agent"]
 $CUSTOM_HEADERS.delete_if {|k,v| v=="" }
-
 
 ### TARGETS
 # clean up urls, add example urls if needed
@@ -1024,7 +1023,7 @@ while t = next_target
 				# multiple output plugins simultaneously, some stdout, some files
 				output_list.each do |o|
 					begin
-						o.out(target.to_s, target.status, results)
+						o.out(target, target.status, results)
 					rescue => err
 						#srsly, logging failed
 						error("ERROR Logging failed: #{target.to_s} - #{err}")

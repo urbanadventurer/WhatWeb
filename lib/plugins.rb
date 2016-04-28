@@ -207,9 +207,9 @@ class Plugin
                                 aggressivetarget=Target.new(newbase_uri)
 			        aggressivetarget.open
 				
-				if $verbose >1
+#				if $verbose >1
 #				  puts "#{@plugin_name} Aggressive: #{aggressivetarget.uri.to_s} [#{aggressivetarget.status}]"
-				end
+#				end
 
 				results += make_matches(aggressivetarget,match)
 			end
