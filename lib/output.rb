@@ -745,6 +745,20 @@ end
 # JSON Output #
 class OutputJSON < Output
 
+	def initialize(f=STDOUT)
+		super
+		# opening bracket
+		@f.puts "["
+	end
+
+	def close
+		# empty hash because each hash ends with a comma
+		@f.puts "{}" 
+		# closing bracket
+		@f.puts "]"
+		@f.close
+	end
+
 	def flatten_elements!(obj)
 		if obj.class == Hash
 			obj.each_value {|x| 
@@ -842,7 +856,7 @@ class OutputJSON < Output
 		end
 
 		$semaphore.synchronize do 
-			@f.puts JSON::generate(foo)
+			@f.puts JSON::generate(foo) + ","
 		end
 	end
 end
@@ -952,7 +966,7 @@ class OutputMongo < Output
 end
 
 
-
+# This is not JSON compliant as a list
 class OutputJSONVerbose < Output
 	def out(target, status, results)
 		# brutal and simple
