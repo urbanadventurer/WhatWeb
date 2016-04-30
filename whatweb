@@ -630,18 +630,16 @@ puts
 puts "Usage: whatweb [options] <URLs>"
 puts "
 TARGET SELECTION:
-  <TARGETs>\t\tEnter URLs, hostnames, IP adddresses, or nmap-format IP 
-  \t\t\tranges.
-  --input-file=FILE, -i\tRead targets from a file.
+  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, or 
+  \t\t\t\tnmap-format IP ranges.
+  --input-file=FILE, -i\t\tRead targets from a file.
 
 AGGRESSION:
-  The aggression level controls the trade-off between speed/stealth and
-  reliability.
-  --aggression, -a=LEVEL Set the aggression level. Default: 1.
-  Aggression levels are:
-  1. Stealthy\tMakes one HTTP request per target and also follows redirects.
-  3. Aggressive\tIf a level 1 plugin is matched, additional requests will be
-  made.
+  --aggression, -a=LEVEL\tSet the aggression level. Default: 1.
+  1. Stealthy\t\t\tMakes one HTTP request per target and also 
+  \t\t\t\tfollows redirects.
+  3. Aggressive\t\t\tIf a level 1 plugin is matched, additional
+  \t\t\t\trequests will be made.
 
 PLUGINS:
   --list-plugins, -l\t\tList all plugins.
@@ -651,14 +649,14 @@ PLUGINS:
   --grep, -g=STRING\t\tSearch for STRING in HTTP responses. Reports
 \t\t\t\twith a plugin named Grep.
 OUTPUT:
-  --verbose, -v\t\tVerbose output includes plugin descriptions. Use twice
-\t\t\tfor debugging.
-  --colour,--color=WHEN\tcontrol whether colour is used. WHEN may be `never',
-\t\t\t`always', or `auto'.
+  --verbose, -v\t\t\tVerbose output includes plugin descriptions. 
+\t\t\t\tUse twice for debugging.
+  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be 
+\t\t\t\t`never', `always', or `auto'.
  
 HELP & MISCELLANEOUS:
-  --short-help\t\tThis short usage help.
-  --help, -h\t\tComplete usage help.
+  --short-help\t\t\tThis short usage help.
+  --help, -h\t\t\tComplete usage help.
 
 EXAMPLE USAGE:
 * Scan example.com.
