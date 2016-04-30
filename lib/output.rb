@@ -98,7 +98,7 @@ class OutputVerbose < Output
 			display[:country] = results_hash["Country"].map {|r| "#{r[:string]}, #{r[:module]}" }.join(",") if results_hash["Country"]
 			display[:ip] = results_hash["IP"].map {|r| r[:string] }.join(",") if results_hash["Country"]
 			display[:title] = results_hash["Title"].map {|r| r[:string] }.join(",") if results_hash["Title"]
-			display[:status] = "#{status}"
+			display[:status] = "#{status}" + " " + HTTP_Status.code(status)
 
 			@f.puts "WhatWeb report for #{coloured(target,'blue')}"
 			@f.puts "Status".ljust(9) + " : "+ display[:status]
@@ -455,11 +455,13 @@ class OutputBrief < Output
 			end
 		end
 		
+		status_code = HTTP_Status.code(status)
+
 
 		if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
-			brief_results_final= blue(target) + " [#{status}] " + brief_results.join(", ")
+			brief_results_final= blue(target) + " [#{status} #{status_code}] " + brief_results.join(", ")
 		else
-			brief_results_final= target.to_s + " [#{status}] " + brief_results.join(", ")
+			brief_results_final= target.to_s + " [#{status} #{status_code}] " + brief_results.join(", ")
 		end	
 		$semaphore.synchronize do
 			@f.puts brief_results_final

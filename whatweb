@@ -129,6 +129,8 @@ require 'lib/output.rb'
 require 'lib/colour.rb'
 require 'lib/tld.rb'
 require 'lib/version_class.rb'
+require 'lib/http-status.rb'
+HTTP_Status.initialize
 
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
@@ -953,7 +955,6 @@ if $plugins_to_use.size == 0
 	error "No plugins selected, exiting."
 	exit 1
 end
-
 
 # optimise plugins
 PluginSupport.precompile_regular_expressions 
