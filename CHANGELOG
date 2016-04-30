@@ -1,9 +1,14 @@
 Version 0.4.8-dev Unreleased
+* New colour scheme for brief output
 * New Verbose output
+* --color, --colour now takes case insensitive arguments
+* HTTP Status descriptions are now included in brief and verbose output
 * Added short usage help
 * Converted all plugins to lowercase filenames
 * Updated plugins. Moved 100s of patterns in passive functions to matches[]
 * Added --search-plugins
+* Fixed bug with relative :url matching
+* Fixed bug with JSON output parsing
 * Fixed bug where :search => headers[xyz] was not case insensitive
 * Fixed bugs for Ruby 1.9.x and Ruby 2.x. Dropped support for Ruby 1.8.x. Thanks to nil0x42 and pvdl for bug fixes
 * Added TLSv1 support for Ruby 1.9.x and Ruby 2.x
