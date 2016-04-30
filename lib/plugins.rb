@@ -119,7 +119,7 @@ class Plugin
 				r << match if target.tag_pattern == match[:tagpattern]
 			end
 
-			unless match[:regexp_compiled].nil?
+			if !match[:regexp_compiled].nil? and !search_context.nil?
 				[:regexp,:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
 					if match[symbol] and match[symbol].class==Regexp
 						regexpmatch = search_context.scan(match[:regexp_compiled])
