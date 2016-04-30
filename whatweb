@@ -767,7 +767,7 @@ begin
 				exit
 
 			when '--color','--colour'
-				case arg
+				case arg.downcase
 					when 'auto'
 						$use_colour="auto"
 					when 'always'
