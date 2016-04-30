@@ -4,10 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "cloudflare" do
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+# Change plugin name captilization
+##
+Plugin.define "CloudFlare" do
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
-version "0.1"
-description "ClouldFlare - https://www.cloudflare.com/"
+version "0.2"
+description "ClouldFlare. Security protection including Web Application Firewall and DDOS"
+website "https://www.cloudflare.com/"
 
 # Google results as at 2011-04-12 #
 # 14 for "Performance & Security by Cloudflare"
@@ -26,18 +31,11 @@ matches [
 
 {:name => 'footer', :text => '&nbsp;&nbsp;Performance &amp; Security by <a id="FooterCloudFlare" href="https://www.cloudflare.com" target="_blank">CloudFlare</a>'},
 
+{:search=>"headers[server]", :regexp => /cloudflare\-nginx/, :name=>"server header" },
+
+{:search=>"headers[set-cookie]", :regexp => /__cfduid/, :name=>"__cfduid cookie" },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	m << {:name=>"__cfduid cookie" } if @headers["set-cookie"] =~ /__cfduid/i
-	m << {:name=>"server header" } if @headers["server"] =~ /cloudflare\-nginx/i
-
-	# Return passive matches
-	m
-end
 
 end
 
