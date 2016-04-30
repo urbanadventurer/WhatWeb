@@ -97,7 +97,7 @@ class Plugin
 					if target.headers[header]
 						search_context = target.headers[header]					
 					else
-						error "Invalid search context. :search => #{match[:search]}"
+						#error "Invalid search context :search => #{match[:search]}"
 						return r
 					end
 				end
