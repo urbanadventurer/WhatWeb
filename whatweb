@@ -605,11 +605,8 @@ EXAMPLE USAGE:
 	unless suggestions.empty?
 		print "\nOPTIONAL DEPENDENCIES\n--------------------------------------------------------------------------------\n" + suggestions + "\n"
 	end
-if RUBY_VERSION =~ /^1\.9/
-	puts "WARNING: Ruby 1.9 support is experimental. For stable usage use Ruby 1.8 instead. Please report bugs at https://github.com/urbanadventurer/WhatWeb/issue\n\n"
-end
-puts
 
+	puts
 end
 
 def usage_short()

@@ -390,6 +390,7 @@ To enable MongoDB logging install the mongo gem.
 
 To enable character set detection and MongoDB logging install the rchardet gem.
 	gem install rchardet
+  cp plugins-disabled/charset.rb my-plugins/
 
 
 
