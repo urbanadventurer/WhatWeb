@@ -144,31 +144,82 @@ class Plugin
 			# these are ARE. e.g. required if present
 			return r if r.empty?
 
+
+			# if url and status are present, they must both match
+			# url and status cannot be alone. there must be something else that has already matched
+			url_matched = false
+			status_matched = false
+			
 			if match[:status]
-				if match[:status] == target.status
-					r << match 
-				else
-					r=[]
-				end
+				status_matched = true if match[:status] == target.status
 			end
 
 			if match[:url]
-				target_url = target.uri.path
-				target_url += "?" + target.uri.query unless target.uri.query.nil?
-				if match[:url] == target_url
-					r << match
-				else
-					r=[]
+				# url is not relative if :url starts with /
+				# url is relative if :url starts with [^/]
+				# url query is only checked if :url has a ?
+				# {:url="edit?action=stop" } will only match if the end of the path and the entire query matches.
+				# :url is for URIs not regexes
+
+				if match[:url] =~ /^\//
+					is_relative = false
+				else 
+					is_relative = true
+				end
+
+				if match[:url] =~ /\?/
+					has_query = true
+				else 
+					has_query = false
+				end
+
+				if is_relative and not has_query
+					url_matched = true if target.uri.path =~ /#{match[:url]}$/
+				end
+
+				if is_relative and has_query
+					if target.uri.query
+						url_matched = true if target.uri.path + "?" + target.uri.query =~ /#{match[:url]}$/
+					end
+				end
+
+				if not is_relative and has_query
+					if target.uri.query
+						url_matched = true if target.uri.path + "?" + target.uri.query == match[:url]
+					end
+				end
+
+				if not is_relative and not has_query
+					url_matched = true if target.uri.path == match[:url]
 				end
 			end
 
+			# determine whether to return a match
 			if match[:status] and match[:url]
-				unless match[:status] == target.status and match[:url] == target.uri.path
-					r=[]
-				else
+				if url_matched and status_matched
 					r << match
+				else
+					r = []
 				end
+				
+			elsif match[:status] and match[:url].nil?
+				if status_matched
+					r << match
+				else
+					r = []
+				end
+				
+			elsif match[:status].nil? and match[:url]
+				if url_matched
+					r << match 
+				else
+					r = []
+				end
+				
+			elsif match[:status].nil? and match[:url].nil?
+				# nothing to do
 			end
+
 	  r
   end
 
