@@ -269,6 +269,8 @@ class OutputVerbose < Output
 			@f.puts "HTTP Headers:"
 			target.raw_headers.each_line do |header|
 				@f.puts "\t#{header}"
+
+				#pp target.raw_headers
 			end
 			
 		end
