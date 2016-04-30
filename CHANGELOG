@@ -6,6 +6,7 @@ Version 0.4.8-dev Unreleased
 * Added --search-plugins
 * Fixed bug where :search => headers[xyz] was not case insensitive
 * Fixed bugs for Ruby 1.9.x and Ruby 2.x. Dropped support for Ruby 1.8.x. Thanks to nil0x42 and pvdl for bug fixes
+* Added TLSv1 support for Ruby 1.9.x and Ruby 2.x
 * Updated plugin list output
 * Updated plugin info output
 * Renamed scripts in plugin-development/ that update the Alexa lists and IP Country Database
