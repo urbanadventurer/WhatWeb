@@ -123,7 +123,7 @@ class OutputVerbose < Output
 					# be more DRY		
 					# if plugins have categories or tags this would be better, eg. all hash plugins are grey
 					if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
-						 coloured_string = yellow(string)
+						 coloured_string = grey(string)
 						 coloured_string = cyan(string) if plugin_name == "HTTPServer"
 	 				 	 coloured_string = dark_green(string) if plugin_name == "Title"
 
@@ -176,7 +176,7 @@ class OutputVerbose < Output
 				next if ['Title','IP','Country'].include? plugin_name
 				unless plugin_results.empty?
 				
-					@f.puts "[ " + coloured(plugin_name, "yellow") + " ]"
+					@f.puts "[ " + coloured(plugin_name, "white") + " ]"
 				
 					description = [""]
 					if Plugin.registered_plugins[plugin_name].description
@@ -411,7 +411,7 @@ class OutputBrief < Output
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
 				if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
-					 coloured_string = yellow(string)
+					 coloured_string = grey(string)
 					 coloured_string = cyan(string) if plugin_name == "HTTPServer"
  				 	 coloured_string = dark_green(string) if plugin_name == "Title"
 
@@ -437,7 +437,6 @@ class OutputBrief < Output
 					   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
 					   (!filepath.empty? ? "["+ dark_green(filepath)+"]" : "" ) +
 					   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
-
 					 
 					 brief_results << p
 				else
@@ -456,7 +455,6 @@ class OutputBrief < Output
 		end
 		
 		status_code = HTTP_Status.code(status)
-
 
 		if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
 			brief_results_final= blue(target) + " [#{status} #{status_code}] " + brief_results.join(", ")
