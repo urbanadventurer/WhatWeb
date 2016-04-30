@@ -292,65 +292,87 @@ for adding/removing sets of plugins.
 --plugins +/tmp/moo.rb
 --plugins foobar (only select foobar)
 --plugins ./plugins-disabled,-md5 (select only plugins from the plugins-disabled folder, remove the md5 plugin from the selected list)
+
+does not work correctly with mixed plugin names and files
+
 =end
 
 	def PluginSupport.load_plugins(list=nil)
-		# separate l into a and b
+		# separate list into a and b
 		#	a = make list of dir & filenames
 		#	b = make list of assumed pluginnames
-		a=[];b=[]
 
-		plugin_dirs=PLUGIN_DIRS.clone
-		plugin_dirs.map {|p| p=File.expand_path(p) }
+		a=[]
+		b=[]
+
+		plugin_dirs = PLUGIN_DIRS.clone
+		plugin_dirs.map {|p| p = File.expand_path(p) }
 
 		if list
 			list=list.split(",")
 
-			plugins_disabled_location = ["plugins-disabled"].map {|x|
-					$LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } 
+			plugins_disabled_location = ["plugins-disabled"].map { |x|
+					$LOAD_PATH.map { |y| y + "/" + x if File.exists?( y + "/" + x ) } 
 				}.flatten.compact.first
 
-			list.each {|x| x.gsub!(/^\+$/,"+#{plugins_disabled_location}") } # + is short for +plugins-disabled
+			list.each { |x| x.gsub!(/^\+$/,"+#{plugins_disabled_location}") } # + is short for +plugins-disabled
 
 			list.each do |p|
-				choice=PluginChoice.new
+				choice = PluginChoice.new
 				choice.fill(p)
 				a << choice if choice.type == "file"
 				b << choice if choice.type == "plugin"
 			end
   
-			# sort by neither, add, minus
-			a=a.sort
+			#puts "a: list of dir + filenames"
+			#pp a
+			#puts "b: list of plugin names"
+			#pp b
+			#puts "Plugin Dirs"
+			#pp plugin_dirs
 
-			if a.map {|c| c.modifier }.include?(nil)
-				plugin_dirs=[]
+			# sort by neither, add, minus
+			a = a.sort
+
+			# plugin_dirs gets wiped out if no modifier is used on a file/folder
+			if a.map { |c| c.modifier }.include?(nil)
+				plugin_dirs = []				
 			end
 
 			minus_files = [] # make list of files not to load
-			a.map {|c|
+			a.map { |c|
 				plugin_dirs << c.name if c.modifier.nil? or c.modifier == "+"
 				plugin_dirs -= [c.name] if c.modifier == "-" # for Dirs
 				minus_files << c.name if c.modifier == "-"    # for files
 			}
 		
+			#puts "Plugin Dirs"
+	  		#pp plugin_dirs
+	  
+			#puts "before plugin_dirs.each "
+			#pp Plugin.registered_plugins.size
+
 			# load files from plugin_dirs unless a file is minused
 			plugin_dirs.each do |d|
 				# if a folder, then load all files
 				if File.directory?(d)
-					(Dir.glob("#{d}/*.rb")-minus_files).each {|x| PluginSupport.load_plugin(x) }
+					(Dir.glob("#{d}/*.rb") - minus_files).each {|x| PluginSupport.load_plugin(x) }
 				elsif File.exists?(d)
 					PluginSupport.load_plugin(d)
 				else
 					error("Error: #{d} is not Dir or File")
 				end
 			end
-		
+
+			#puts "after plugin_dirs.each "
+			#pp Plugin.registered_plugins.size
+
 			# make list of plugins to run
 			# go through all plugins, remove from list any that match b minus
-			selected_plugin_names=[]
+			selected_plugin_names = []
 
 			if b.map {|c| c.modifier }.include?(nil)
-				selected_plugin_names=[]
+				selected_plugin_names = []
 			else
 				selected_plugin_names = Plugin.registered_plugins.map {|n,p| n.downcase }
 			end
@@ -359,7 +381,12 @@ for adding/removing sets of plugins.
 				selected_plugin_names << c.name if c.modifier.nil? or c.modifier=="+"
 				selected_plugin_names -= [c.name] if c.modifier == "-"
 			}
+
+			#pp selected_plugin_names
+			# Plugin.registered_plugins is getting wiped out
+
 			plugins_to_use = Plugin.registered_plugins.map {|n,p| [n,p] if selected_plugin_names.include?(n.downcase) }.compact
+			#puts "after "
 
 			# report on plugins that couldn't be found
 			unfound_plugins = selected_plugin_names - plugins_to_use.map {|n,p| n.downcase }
@@ -376,6 +403,9 @@ for adding/removing sets of plugins.
 			end
 			plugins_to_use = Plugin.registered_plugins
 		end
+
+		#puts "-" * 80
+		#pp plugins_to_use 
 
 		plugins_to_use
 	end
