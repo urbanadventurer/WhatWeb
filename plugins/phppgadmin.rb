@@ -9,38 +9,25 @@ author "Brendan Coles <bcoles@gmail.com>" # 2010-06-14
 version "0.1"
 description "phpPgAdmin is a web-based administration tool for PostgreSQL. It is perfect for PostgreSQL DBAs, newbies and hosting services"
 website "http://phppgadmin.sourceforge.net/"
+# Source: https://github.com/xzilla/phppgadmin
+
 
 # Dorks #
 dorks [
-'intitle:phpPgAdmin "Welcome to phpPgAdmin"'
+'inurl:"phppgadmin/intro.php"'
 ]
 
 
-
+# Matches #
 matches [
 
-# 17 results @ 2010-06-14
-{:name=>'GHDB: +intitle:phpPgAdmin "Welcome to phpPgAdmin"',
-:certainty=>75,
-:ghdb=>'+intitle:phpPgAdmin "Welcome to phpPgAdmin"'
-},
+{ :name=>"PPA_ID Cookie", :search=>"headers[set-cookie]", :regexp=>/^PPA_ID=[a-z0-9]+/ },
 
-# <h1>phpPgAdmin 4.0.1 (PHP 5.2.0-8+etch15)</h1>
-# <h1>phpPgAdmin 4.2.2 (PHP 5.3.2-1ubuntu4.2)</h1>
-# <h1>phpPgAdmin 4.0.1 (PHP 5.2.2)</h1>
-# an aggressive plugin could get the version from intro.php
-{:name=>"default h1 version", 
-:certainty=>100,
-:regexp=>/<h1>phpPgAdmin [0-9a-zA-Z\ \.\(\)\+-_]+<\/h1>/
-},
+# intro.php
+{ :text => '<td><span class="appname">phpPgAdmin</span></td>' },
+{ :version => %r{<span class="appname">phpPgAdmin</span> <span class="version">([\d\.]+)</span>} },
 
 ]
-
-def passive
-        m=[]
-        m << {:name=>"PPA_ID Cookie", :certainty=>100 } if @headers["set-cookie"] =~ /PPA_ID=[a-z0-9]+/
-        m
-end
 
 end
 
