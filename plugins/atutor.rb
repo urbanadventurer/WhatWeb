@@ -6,34 +6,25 @@
 ##
 Plugin.define "ATutor" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
-version "0.1"
+version "0.2"
 description "ATutor is a free Open Source Web-based elearning environment designed with accessibility and adaptability in mind."
 website "http://www.atutor.ca/"
-
-# Google results as at 2010-09-17 #
-# 34 for intitle:"ATutor: Learning Management System:"
+# Source: https://github.com/atutor/ATutor/
 
 # Dorks #
 dorks [
-'intitle:"ATutor: Learning Management System:"'
+'For guidance on using ATutor see the official ATutor Handbook',
+'inurl:"mods/_standard/social/index_public.php"'
 ]
 
-
-
+# Matches #
 matches [
 
-# Default title
-{ :text=>'<title>ATutor: Learning Management System:' },
+{ :name => "Meta Generator", :string => %r{<meta name="Generator" content="ATutor - Copyright ([0-9]{4}) by http://atutor.ca" />} },
 
-# Default meta generator
-{ :text=>'<meta name="Generator" content="ATutor - Copyright 2010 by http://atutor.ca" />' },
+{ :name => "JavaScript", :certainty => 75, :text => 'ATutor.course = ATutor.course || {};' },
 
-# Default logo HTML
-{ :text=>'<a href="http://www.atutor.ca/"><img src="/atutor/images/AT_Logo_1_sm.png"  alt="ATutor Logo" style="border:none;" /></a>' },
-
-# Default Favicon
-{ :md5=>"5b816961f19da96ed5a2bf15e79093cb", :url=>"/favicon.ico" },
-
+{ :name => "Documentation link", :text => '<span id="howto">For guidance on using ATutor see the official' },
 
 ]
 
