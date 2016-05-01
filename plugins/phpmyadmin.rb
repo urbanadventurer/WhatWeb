@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2016-05-1 # Brendan Coles
+# Updated phpMyAdmin Cookie
+##
 # Version 0.4 # 2012-08-16 # Andrew Horton
 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
 ##
@@ -64,7 +67,7 @@ def passive
 	m=[]
 
 	# Cookies
-	m << {:name=>"phpMyAdmin Cookie" } if @headers["set-cookie"] =~ /phpMyAdmin=[0-9]{32}/
+	m << {:name=>"phpMyAdmin Cookie" } if @headers["set-cookie"] =~ /phpMyAdmin=[a-z0-9]+/
 	m << {:name=>"pma_theme Cookie" } if @headers["set-cookie"] =~ /pma_theme=original/
 
 	# Return passive matches
