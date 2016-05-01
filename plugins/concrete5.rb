@@ -17,10 +17,10 @@ Plugin.define "Concrete5" do
     website "www.concrete5.org"
 
     
-
     matches [
-        {:text=>"concrete/js/jquery.js"},
-        {:version=>/<meta name=\"generator\" content=\"concrete5[ \-]+([0-9\.a-z]+)\"/,  :name=>"meta generator tag" } #"
+        { :name => "JavaScript", :regexp => /\bvar CCM_DISPATCHER_FILENAME ?=/ },
+        { :version => %r{<meta name="generator" content="concrete5 - ([0-9\.a-z]+)"}, :name => "meta generator tag" },
+        { :name => "CONCRETE5 cookie", :search => "headers[set-cookie]", :regexp => /^CONCRETE5=/i },
     ]
 
 # <meta name="generator" content="concrete5 - 5.4.0.6a1" />
@@ -28,13 +28,6 @@ Plugin.define "Concrete5" do
 # <meta name="generator" content="concrete5 - 5.4.0.5" />
 
 # Set-Cookie: CONCRETE5=8d653f8a1afccc70f75646ab8d44420f; path=/
-
-    def passive
-        m=[]        
-        m << {:name=>"CONCRETE5 cookie", :certainty=>100 } if @headers["set-cookie"] =~ /CONCRETE5=/i
-    
-        m
-    end
 
     def aggressive
         m = []
