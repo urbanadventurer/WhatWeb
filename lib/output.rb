@@ -477,16 +477,9 @@ class OutputXML < Output
 		super
 		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
 
-		# only output <?xml line if it's a new file or STDOUT
-		if RUBY_VERSION =~ /^1\.8/
-			if @f == STDOUT or @f.stat.size == 0
-				@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
-			end
-		else
-		  # ruby 1.9
-			if @f == STDOUT or @f.size == 0
-				@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
-			end
+		# only output <?xml line if it's a new file or STDOUT	
+		if @f == STDOUT or @f.size == 0
+			@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
 		end
 
 		@f.puts "<log>"

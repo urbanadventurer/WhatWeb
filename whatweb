@@ -73,10 +73,7 @@ elsif RUBY_VERSION =~ /^2\./
 	require 'lib/extend-http_ruby2.rb'
 
 elsif RUBY_VERSION =~ /^1\.8/
-	require 'md5'
-	require 'net/https'
-	require 'lib/extend-http_ruby1.8.rb'
-	puts "Ruby 1.8 is not supported. "
+	puts "Sorry but Ruby 1.8 is not supported. WhatWeb requires Ruby 1.9 or later."
 	exit 1
 
 else
