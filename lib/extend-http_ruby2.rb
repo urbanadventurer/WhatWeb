@@ -18,7 +18,6 @@ require 'timeout'
 class ExtendedHTTP < Net::HTTP   #:nodoc:
    include Net
 
-
     # Creates a new Net::HTTP object for the specified server address,
     # without opening the TCP connection or initializing the HTTP session.
     # The +address+ should be a DNS hostname or IP address.
@@ -50,6 +49,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
       @ssl_session = nil
       @enable_post_connection_check = true
       @sspi_enabled = false
+
       SSL_IVNAMES.each do |ivname|
         instance_variable_set ivname, nil
       end
@@ -93,6 +93,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
         end
         @ssl_context = OpenSSL::SSL::SSLContext.new
         @ssl_context.set_params(ssl_parameters)
+        
         D "starting SSL for #{conn_address}:#{conn_port}..."
         s = OpenSSL::SSL::SSLSocket.new(s, @ssl_context)
         s.sync_close = true
@@ -154,7 +155,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
             # added for whatweb
             #res = HTTPResponse.read_new(@socket)
             res, y = ExtendedHTTPResponse.read_new(@socket)
-	  		@raw << y
+	  		    @raw << y
 	  		#
             res.decode_content = req.decode_content
           end while res.kind_of?(HTTPContinue)

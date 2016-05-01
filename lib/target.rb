@@ -158,37 +158,29 @@ class Target
       req=nil
 
       if options[:method] == "GET"
-        req=Net::HTTP::Get.new(getthis, $CUSTOM_HEADERS)
+        req=ExtendedHTTP::Get.new(getthis, $CUSTOM_HEADERS)
       end
       if options[:method] == "HEAD"
-        req=Net::HTTP::Head.new(getthis, $CUSTOM_HEADERS)
+        req=ExtendedHTTP::Head.new(getthis, $CUSTOM_HEADERS)
       end
       if options[:method] == "POST"
-        req=Net::HTTP::Post.new(getthis, $CUSTOM_HEADERS)
+        req=ExtendedHTTP::Post.new(getthis, $CUSTOM_HEADERS)
         req.set_form_data(options[:data])
       end
 
       if $BASIC_AUTH_USER
         req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
       end
+
       res=http.request(req)
+      
       @raw_headers=http.raw.join("\n")
       @headers={}; res.each_header { |x, y| @headers[x]=y }
       @headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless @headers["set-cookie"].nil?
-      require 'open-uri'
 
-      @body=Net::HTTP.get(@uri)
+      @body=res.body            
       @status=res.code.to_i
       puts @uri.to_s + " [#{status}]" if  $verbose > 1
-
-=begin
-if @raw_headers =~ /^Server:.*^Server:/m
-	puts "raw_headers-"*20
-	puts @raw_headers
-	exit
-end
-puts @raw_headers+"\n"+"*"*40
-=end
 
     rescue SocketError => err
       error(@target + " ERROR: Socket error #{err}")
