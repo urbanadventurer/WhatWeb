@@ -207,7 +207,7 @@ end
           else
             yield key, value if key
             key, value = line.strip.split(/\s*:\s*/, 2)
-            raise HTTPBadResponse, 'wrong header line format' if value.nil?
+            raise Net::HTTPBadResponse, 'wrong header line format' if value.nil?
           end
         end
         yield key, value if key
