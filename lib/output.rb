@@ -568,15 +568,9 @@ class OutputMagicTreeXML < Output
 		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
 
 		# only output <?xml line if it's a new file or STDOUT
-		if RUBY_VERSION =~ /^1\.8/
-			if @f.stat.size == 0
-				@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
-			end
-		else
-			if @f.size == 0
-				@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
-			end
-		end
+		if @f.size == 0
+			@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
+		end		
 		@f.puts '<magictree class="MtBranchObject">'
 	end
 
