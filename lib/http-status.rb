@@ -1,23 +1,23 @@
 class HTTP_Status
-# return HTTP Status Code as a string
-# from https://raw.githubusercontent.com/Mr-Pi/httpStatusCodes/master/priv/http-status-codes-1.csv
+  # return HTTP status code as a string
+  def self.code(number)
+    number = number.to_s
 
-def HTTP_Status.code(number)
-	number = number.to_s
+    abort('HTTP_Status must be initialized') unless @status_codes
 
-	abort("HTTP_Status must be initialized") unless @status_codes
+    if @status_codes[number]
+      @status_codes[number]
+    else
+      'Unassigned'
+    end
+  end
 
-	if @status_codes[number]
-		@status_codes[number]
-	else
-		"Unassigned"
-	end
-end
+  # Status code list from:
+  # https://raw.githubusercontent.com/Mr-Pi/httpStatusCodes/master/priv/http-status-codes-1.csv
+  def self.initialize
+    @status_codes = {}
 
-def HTTP_Status.initialize
-@status_codes={}
-
-text="
+    text = "
 100,Continue,[RFC2616]
 101,Switching Protocols,[RFC2616]
 102,Processing,[RFC2518]
@@ -87,10 +87,8 @@ text="
 511,Network Authentication Required,[RFC6585]
 512-599,Unassigned,
 "
-	text.scan(/^([0-9]+),([^,]+)/).each do |k,v| 
-		@status_codes[k] = v
-	end
-
-end
-
+    text.scan(/^([0-9]+),([^,]+)/).each do |k, v|
+      @status_codes[k] = v
+    end
+  end
 end
