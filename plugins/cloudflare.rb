@@ -4,13 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-05-10
+# David P Robinson <david@intruder.io>
+# Added regex to detect CloudFlare email address protection feature
+##
+##
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 # Change plugin name captilization
 ##
 Plugin.define "CloudFlare" do
-author "Aung Khant <http://yehg.net/>" # 2011-02-04
-version "0.2"
+author "Aung Khant <http://yehg.net/> & David P Robinson <david@intruder.io>" # 2011-02-04
+version "0.3"
 description "ClouldFlare. Security protection including Web Application Firewall and DDOS"
 website "https://www.cloudflare.com/"
 
@@ -35,8 +40,8 @@ matches [
 
 {:search=>"headers[set-cookie]", :regexp => /__cfduid/, :name=>"__cfduid cookie" },
 
+{:name => "email address protection", :regexp => /\/cdn-cgi\/l\/email-protection#[a-f0-9]{36}/ }
+
 ]
 
 end
-
-
