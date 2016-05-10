@@ -16,7 +16,7 @@
 Plugin.define "CloudFlare" do
 author "Aung Khant <http://yehg.net/> & David P Robinson <david@intruder.io>" # 2011-02-04
 version "0.3"
-description "ClouldFlare. Security protection including Web Application Firewall and DDOS"
+description "CloudFlare is a content delivery network. Its features include DDoS protection and Web Application Firewall functionality"
 website "https://www.cloudflare.com/"
 
 # Google results as at 2011-04-12 #
