@@ -102,9 +102,9 @@ class OutputVerbose < Output
 
 			@f.puts "WhatWeb report for #{coloured(target,'blue')}"
 			@f.puts "Status".ljust(9) + " : "+ display[:status]
-			@f.puts "Title".ljust(9) + " : #{coloured(display[:title],'white')}"
+			@f.puts "Title".ljust(9) + " : #{coloured(display[:title],'yellow')}"
 			@f.puts "IP".ljust(9) + " : " + display[:ip]
-			@f.puts "Country".ljust(9) + " : " + display[:country]
+			@f.puts "Country".ljust(9) + " : #{coloured(display[:country],'red')}" 
 			@f.puts
 			
 			################### Short list
@@ -125,7 +125,7 @@ class OutputVerbose < Output
 					if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
 						 coloured_string = grey(string)
 						 coloured_string = cyan(string) if plugin_name == "HTTPServer"
-	 				 	 coloured_string = dark_green(string) if plugin_name == "Title"
+	 				 	 coloured_string = yellow(string) if plugin_name == "Title"
 
 	 				 	 coloured_string = grey(string) if plugin_name == "MD5" 				 	 
 	 				 	 coloured_string = grey(string) if plugin_name == "Header-Hash"
@@ -413,7 +413,7 @@ class OutputBrief < Output
 				if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
 					 coloured_string = grey(string)
 					 coloured_string = cyan(string) if plugin_name == "HTTPServer"
- 				 	 coloured_string = dark_green(string) if plugin_name == "Title"
+ 				 	 coloured_string = yellow(string) if plugin_name == "Title"
 
  				 	 coloured_string = grey(string) if plugin_name == "MD5" 				 	 
  				 	 coloured_string = grey(string) if plugin_name == "Header-Hash"
@@ -436,7 +436,7 @@ class OutputBrief < Output
 					   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
 					   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
 					   (!filepath.empty? ? "["+ dark_green(filepath)+"]" : "" ) +
-					   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
+					   (!modules.empty? ? "["+ red(modules)+"]" : "" )
 					 
 					 brief_results << p
 				else
