@@ -693,8 +693,7 @@ output_list = []
 mongo={}
 mongo[:use_mongo_log]=false
 
-
-
+# optional arguments work badly with URLs
 opts = GetoptLong.new(
       [ '-h', '--help', GetoptLong::NO_ARGUMENT ],
       [ '--short-help', GetoptLong::NO_ARGUMENT ],      
@@ -765,6 +764,7 @@ begin
 				exit
 
 			when '--color','--colour'
+				$use_colour="always" unless arg # no argument
 				case arg.downcase
 					when 'auto'
 						$use_colour="auto"
@@ -926,7 +926,6 @@ begin
 rescue Errno::EPIPE
 	exit
 rescue StandardError, GetoptLong::Error => err
-	
 	# Disable colours in Windows environments for errors in usage
 	if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
 		$use_colour = false
@@ -936,9 +935,9 @@ rescue StandardError, GetoptLong::Error => err
 	exit
 end
 
-# sanity check # Disable colours in Windows environments
+# sanity check # Disable colours in Windows environments when set to auto
 if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
-	$use_colour = false
+	$use_colour = false unless $use_colour == "always"
 end
 
 ### PLUGINS
