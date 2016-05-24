@@ -1,7 +1,7 @@
 Version 0.4.8-dev Unreleased
 * New colour scheme for brief output
 * New Verbose output
-* --color, --colour now takes case insensitive arguments
+* --color, --colour now takes case insensitive arguments, and can be enabled under Windows
 * HTTP Status descriptions are now included in brief and verbose output
 * Added short usage help
 * Converted all plugins to lowercase filenames
