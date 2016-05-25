@@ -11,7 +11,7 @@
 # Added cookie detection
 ##
 Plugin.define "Plugin-Tutorial-7" do
-author "Your preferred name <email@address>"
+author "Your preferred name <email@address>" # 1999-12-31
 version "0.3"
 description "Describe what the plugin identifies"
 website "http://example.com/"

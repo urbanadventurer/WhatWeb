@@ -5,7 +5,7 @@
 # http://www.morningstarsecurity.com/research/whatweb
 #
 Plugin.define "Plugin-Tutorial-6" do
-author "Your preferred name <email@address>"
+author "Your preferred name <email@address>" # 1999-12-31
 version "0.1"
 description "Describe what the plugin identifies"
 website "http://example.com/"

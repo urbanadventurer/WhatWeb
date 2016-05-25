@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 #
 Plugin.define "Plugin-Tutorial-5" do
-author "Your preferred name <email@address>"
+author "Your preferred name <email@address>" # 1999-12-31
+version "0.1"
 description "GenericRouter is a home router using the ARM processor and busybox Linux."
 website "http://example.com/"
 
