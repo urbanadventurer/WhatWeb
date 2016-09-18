@@ -204,7 +204,7 @@ class Target
     end
 
     begin
-      @ip=IPSocket.getaddress(@uri.host)
+      @ip = Resolv.getaddress(@uri.host)
     rescue StandardError => err
       err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
       error(@target + " ERROR: #{err}")
