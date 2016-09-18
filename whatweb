@@ -134,7 +134,7 @@ HTTP_Status.initialize
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
 # nothing says pro-developer like using global variables
-$VERSIO = "0.4.8-dev"
+$VERSION = "0.4.8-dev"
 $WWDEBUG = false # raise exceptions in plugins, etc
 $verbose = 0 # $VERBOSE is reserved in ruby
 $use_colour = "auto"
