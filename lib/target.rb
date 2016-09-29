@@ -151,6 +151,7 @@ class Target
       # i wont worry about certificates, verfication, etc
       if @uri.class == URI::HTTPS
         http.use_ssl = true
+	OpenSSL::SSL::SSLContext::DEFAULT_PARAMS[:ciphers] = "TLSv1:TLSv1.1:TLSv1.2:SSLv3:SSLv2"
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
 
