@@ -1,4 +1,6 @@
 Version 0.4.8-dev Unreleased
+
+* Added support for all ciphers - TLSv1:TLSv1.1:TLSv1.2:SSLv3:SSLv2.  Thanks milo2012
 * New colour scheme for brief output
 * New Verbose output
 * --color, --colour now takes case insensitive arguments, and can be enabled under Windows
