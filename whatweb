@@ -319,8 +319,18 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 			#IDN domains support
 			if $IDN
 				# removed the http:// from "x" because SimpleIDN does not expect the http://
-				domain = SimpleIDN.to_ascii(x.sub(/^[a-z]+:\/\//, ''))
-				x = domain.sub(/^/,"http://")
+        regex_protocol = /^[a-z]+:\/\//
+        url_preffix = x[regex_protocol]
+        stripped_uri = x.sub(regex_protocol, '')
+        
+        # removed the port because SimpleIDN does not expect :80
+        regex_port = /:[0-9]+$/
+        port = x[regex_port]
+        stripped_uri = stripped_uri.sub(regex_port, '') if port
+        
+				domain = SimpleIDN.to_ascii(stripped_uri)
+				x = domain.sub(/^/, url_preffix) 
+        x = x.sub(/$/, port) if port
 			end
 			x
 		end
@@ -917,7 +927,12 @@ begin
 			when '--debug'
 				$WWDEBUG = true
       when '--idn'
-        $IDN = true
+        if defined?(SimpleIDN)
+          $IDN = true
+        else
+          raise("Sorry. The SimpleIDN gem is required to support IDN domain names.
+Run `gem install simpleidn`.")
+      end
 			when '--short-help'
 				usage_short
 				exit
