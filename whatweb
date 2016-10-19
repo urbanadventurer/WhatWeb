@@ -377,7 +377,6 @@ def error( s )
 			# we're already locked. This was expected.
 		end
 	end
-
 	if ( $use_colour=="auto" ) or ( $use_colour=="always" )
 		STDERR.puts red( s )
 	else
@@ -1006,7 +1005,7 @@ while t = next_target
 			begin
 				target = Target.new(thistarget) # we set the target within the thread
 			rescue => err
-				error("ZOBI "+err)
+				error(err)
 				next
 			end
 

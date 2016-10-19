@@ -981,9 +981,9 @@ class OutputMongo < Output
 		collection=s[:collection] || "whatweb"
 
 		# should make databse and collection comma or fullstop delimited, eg. test,scan
-		@db = Mongo::Client.new([host], :database => database) # resolve-replace means we can't connect to localhost by name and must use 0.0.0.0
+		@db = Mongo::Connection.new(host).db(database) # resolve-replace means we can't connect to localhost by name and must use 0.0.0.0
 		auth = @db.authenticate(s[:username], s[:password]) if s[:username]
-		@coll=@db[collection]
+		@coll=@db.collection(collection)
 		@charset=nil
 	end
 
@@ -1067,7 +1067,7 @@ class OutputMongo < Output
 		unless @charset.nil? or @charset == "Failed"
 			utf8_elements!(foo) # convert foo to utf-8
 			flatten_elements!(foo)
-			@coll.insert_one(foo)
+			@coll.insert(foo)
 		else
 			error("#{target}: Failed to detect Character set and log to MongoDB")
 		end
