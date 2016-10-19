@@ -49,7 +49,6 @@ require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
 
 
-
 ## set up load paths - must be before loading lib/ files
 # add the directory of the file currently being executed to the load path
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless
@@ -378,6 +377,7 @@ def error( s )
 			# we're already locked. This was expected.
 		end
 	end
+
 	if ( $use_colour=="auto" ) or ( $use_colour=="always" )
 		STDERR.puts red( s )
 	else
@@ -566,6 +566,8 @@ LOGGING:
 \t\t\t\tDefault: 0.0.0.0.
   --log-mongo-username\t\tMongoDB username. Default: nil.
   --log-mongo-password\t\tMongoDB password. Default: nil.
+  --log-elastic-index\t\tName of the index to store results. Default: whatweb 
+  --log-elastic-host\t\tHost:port of the elastic http interface. Default: 127.0.0.1:9200
   
 PERFORMANCE & STABILITY:
   --max-threads, -t\t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
@@ -689,6 +691,8 @@ input_file=nil
 output_list = []
 mongo={}
 mongo[:use_mongo_log]=false
+elastic={}
+elastic[:use_elastic_log]=false
 
 # optional arguments work badly with URLs
 opts = GetoptLong.new(
@@ -712,6 +716,8 @@ opts = GetoptLong.new(
       [ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-username', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-mongo-password', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-elastic-index', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--log-elastic-host', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-sql', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-sql-create', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
@@ -843,6 +849,12 @@ begin
 				else
 					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
 				end
+			when '--log-elastic-index'
+				elastic[:index]=arg
+				elastic[:use_elastic_log]=true
+			when '--log-elastic-host'
+				elastic[:host] = arg
+				elastic[:use_elastic_log]=true
 			when '--log-errors'
 			 	$OUTPUT_ERRORS = OutputErrors.new(arg)
 			when '--no-errors'
@@ -967,6 +979,10 @@ if mongo[:use_mongo_log]
 	end
 end
 
+if elastic[:use_elastic_log]
+	output_list << OutputElastic.new(elastic)
+end
+
 ## Headers
 $CUSTOM_HEADERS["User-Agent"]=$USER_AGENT unless $CUSTOM_HEADERS["User-Agent"]
 $CUSTOM_HEADERS.delete_if {|k,v| v=="" }
@@ -990,7 +1006,7 @@ while t = next_target
 			begin
 				target = Target.new(thistarget) # we set the target within the thread
 			rescue => err
-				error(err)
+				error("ZOBI "+err)
 				next
 			end
 
