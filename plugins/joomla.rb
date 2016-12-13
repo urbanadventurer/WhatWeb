@@ -362,7 +362,128 @@ Plugin.define "Joomla" do
                       "989c6a5368dcf8eb84103209c3664032"]],
                     "3.1.1" =>
                     [["joomla.xml",
-                      "9cf5894facfb6fffbc599e19b939d717"]]]
+                      "9cf5894facfb6fffbc599e19b939d717"]],
+
+                    # Arman : Update for Joomla measurements
+                    "3.1.4" =>
+                    [["joomla.xml",
+                      "f75a9e69384d31a4fe4f30680d0c91ea"]],
+                    "3.1.5" =>
+                    [["joomla.xml",
+                      "0d96b9b19d27ad895c9cad2792504ad2"]],
+                    "3.1.6" =>
+                    [["joomla.xml",
+                      "9c5f607fca3ae0cc35fa1466a8acf47e"]],
+
+
+                    "3.2.0" =>
+                    [["joomla.xml",
+                      "d3c7970633a70c67d180cf58b320443e"]],
+                    "3.2.1" =>
+                    [["joomla.xml",
+                      "5a17be6ea10efebf675bfa352cca16b8"]],
+                    "3.2.2" =>
+                    [["joomla.xml",
+                      "6d56cb64300bc9180b9a05040f40bacb"]],
+                    "3.2.3" =>
+                    [["joomla.xml",
+                      "4dec33384dc38b361dda12288a64eee8"]],
+                    "3.2.4" =>
+                    [["joomla.xml",
+                      "1e880e70cc37b6152c4514923c65addc"]],
+                    "3.2.5" =>
+                    [["joomla.xml",
+                      "55dfd3d2095289ae4382610102c88297"]],
+                    "3.2.6" =>
+                    [["joomla.xml",
+                      "6dfefda126eab8c83d23a85d049f05eb"]],
+                    "3.2.7" =>
+                    [["joomla.xml",
+                      "036c196a5f70a74c1ebc5478cf9adecb"]],
+
+
+                    "3.3.0" =>
+                    [["joomla.xml",
+                      "5177511de6cdcd532ad411f5f426d44d"]],
+                    "3.3.1" =>
+                    [["joomla.xml",
+                      "886e505b40c82afc350cac0520e3c689"]],
+                    "3.3.2" =>
+                    [["joomla.xml",
+                      "561a8cd4bd6dcdc0fcf2824319fe4654"]],
+                    "3.3.3" =>
+                    [["joomla.xml",
+                      "306a4272113e1deb839daaef12325f2a"]],
+                    "3.3.4" =>
+                    [["joomla.xml",
+                      "a6a131fbd6de228f8e3075cc31d77f4b"]],
+                    "3.3.5" =>
+                    [["joomla.xml",
+                      "8f1c0919c712280538980a8ea960c6ed"]],
+                    "3.3.6" =>
+                    [["joomla.xml",
+                      "0c7f302a589b86e5f7257df323936976"]],
+
+
+                    "3.4.0" =>
+                    [["joomla.xml",
+                      "5cb248c234708f80aa1f3b9bf5a58f34"]],
+                    "3.4.1" =>
+                    [["joomla.xml",
+                      "50af84b82156734f2b3a18c42497ed45"]],
+                    "3.4.2" =>
+                    [["joomla.xml",
+                      "70544ca6ecc727916e481ac903aca41f"]],
+                    "3.4.3" =>
+                    [["joomla.xml",
+                      "e71dc2439b21e4e9e3fe102d5fddcd18"]],
+                    "3.4.4" =>
+                    [["joomla.xml",
+                      "a1c85a51822b8b99448295b5e905d49a"]],
+                    "3.4.5" =>
+                    [["joomla.xml",
+                      "c3c4e2dfca8431dc98baa865d25a6b71"]],
+                    "3.4.6" =>
+                    [["joomla.xml",
+                      "71312a05540240f96e0658fcf1f56249"]],
+                    "3.4.7" =>
+                    [["joomla.xml",
+                      "6ea92d7eabbdd5818cbee9864661f7eb"]],
+                    "3.4.8" =>
+                    [["joomla.xml",
+                      "7d78371ee69904f34df8b1c4a29c1b83"]],
+
+
+                    "3.5.0" =>
+                    [["plugins/system/sef/sef.xml",
+                      "ea74bb8fde3fa515aa201cb4b81c0e80"]],
+                    "3.5.1" =>
+                    [["plugins/system/sef/sef.xml",
+                      "db2183b9c63470d0321635145b68aeab"]],
+
+
+                    "3.6.0" =>
+                    [["plugins/editors/tinymce/tinymce.xml",
+                      "26dd40542cfbbadacb89aed9d4db34d8"]],
+                    "3.6.1" =>
+                    [["plugins/editors/tinymce/tinymce.xml",
+                      "57dfa8f3f74823e470a9b6957123b756"]],
+                    "3.6.2" =>
+                    [["language/en-GB/en-GB.xml",
+                      "626eb97099a409e906e476798b730df2"]],
+                    "3.6.3" =>
+                    [["language/en-GB/en-GB.xml",
+                      "95bd31c91168a75e08b93448b00955d2"]],
+                    "3.6.4" =>
+                    [["language/en-GB/en-GB.xml",
+                      "28dc4f3c6dd4e19b984bbe3c98369f6a"]],
+
+
+
+    ]
+
+
+
 
         v = Version.new("Joomla", versions, @base_uri)
 
