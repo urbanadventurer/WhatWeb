@@ -7,7 +7,8 @@
 Plugin.define "b2evolution" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
 version "0.1"
-description "b2evolution is a powerful blog tool you can install on your own website. - homepage: http://b2evolution.net/"
+description "b2evolution is a powerful blog tool you can install on your own website."
+website "http://b2evolution.net/"
 
 # Dorks #
 dorks [

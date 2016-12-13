@@ -13,7 +13,8 @@
 Plugin.define "Xerox-Printers" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
-description "Xerox printers web interface - homepage: http://www.xerox.com/"
+description "Xerox printers web interface"
+website "http://www.xerox.com/"
 
 # ShodanHQ results as at 2011-09-16 #
 # 710 for xerox Phaser -Authenticate

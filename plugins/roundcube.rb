@@ -11,7 +11,8 @@
 Plugin.define "RoundCube" do
 author "Andrew Horton"
 version "0.2"
-description "Opensource Webmail written in PHP. Homepage: http://roundcube.net/"
+description "Opensource Webmail written in PHP"
+website "http://roundcube.net/"
 
 # Version detection notes: older versions don't have the anti-CSRF token
 

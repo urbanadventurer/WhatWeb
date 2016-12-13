@@ -11,7 +11,8 @@
 Plugin.define "PHP-Fusion" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04 
 version "0.2"
-description "PHP-Fusion, a light-weight open-source content management system (CMS) - Requires: PHP and MySQL - Homepage: http://www.php-fusion.co.uk/"
+description "PHP-Fusion, a light-weight open-source content management system (CMS) - Requires: PHP and MySQL"
+website "http://www.php-fusion.co.uk/"
 
 # ShodanHQ results as at 2011-08-18 #
 # 1,668 for fusion_visited=yes

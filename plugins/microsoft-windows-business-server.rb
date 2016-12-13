@@ -14,7 +14,8 @@
 Plugin.define "Microsoft-Windows-Business-Server" do
 author "Andrew Horton"
 version "0.3"
-description "Microsoft Small/Essential Business Server - homepage: http://www.microsoft.com/"
+description "Microsoft Small/Essential Business Server"
+website "http://www.microsoft.com/"
 
 # Microsoft Small Business Server homepage: homepage:www.microsoft.com/sbs/
 # Windows Essential Business Server homepage: http://www.microsoft.com/ebs/

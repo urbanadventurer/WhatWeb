@@ -11,7 +11,8 @@
 Plugin.define "Canon-Printer" do
 author "Andrew Horton"
 version "0.2"
-description "Remote UI for Canon Printers. Homepage: http://www.canon.com/"
+description "Remote UI for Canon Printers"
+website "http://www.canon.com/"
 
 # Google results as at 2011-09-21 #
 # 10 for intitle:"Remote UI" intitle:"Top Page" intitle:Canon

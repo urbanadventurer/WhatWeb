@@ -7,7 +7,8 @@
 Plugin.define "6kbbs" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-29
 version "0.1"
-description "6kbbs - Forum - Homepage: http://www.6kbbs.net/"
+description "6kbbs - Forum"
+website "http://www.6kbbs.net/"
 
 # Google results as at 2011-10-29 #
 # 178 for "Total" "query" "Time now is" "Powered by 6kbbs"

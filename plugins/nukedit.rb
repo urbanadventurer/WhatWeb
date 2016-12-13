@@ -10,7 +10,8 @@
 Plugin.define "Nukedit" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
-description "Nukedit CMS - homepage: http://www.nukedit.com/"
+description "Nukedit CMS"
+website "http://www.nukedit.com/"
 
 # Google results as at 2010-07-25 #
 # 122 for "powered by Nukedit"

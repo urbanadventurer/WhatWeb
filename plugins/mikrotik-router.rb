@@ -14,7 +14,8 @@
 Plugin.define "MikroTik" do
 author "Andrew Horton"
 version "0.4"
-description "MikroTik router. Homepage: http://www.mikrotik.com"
+description "MikroTik router"
+website "http://www.mikrotik.com"
 
 # identifying strings
 # <title>mikrotik routeros > administration</title>

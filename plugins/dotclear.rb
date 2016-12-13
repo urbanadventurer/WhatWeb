@@ -7,7 +7,8 @@
 Plugin.define "dotclear" do
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-29 #
 version "0.1"
-description "dotclear - blog - Homepage: http://dotclear.org/"
+description "dotclear - blog"
+website "http://dotclear.org/"
 
 # Google results as at 2012-02-28 #
 # 561 for "powered by dotclear"

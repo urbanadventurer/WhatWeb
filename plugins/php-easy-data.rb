@@ -4,14 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-04-17 # Andrew Horton
+# Added website parameter and description
+##
 # Version 0.2 #
 # Updated regex and version detection
 ##
 Plugin.define "PHPEasyData" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-16
-version "0.2"
-description "homepage: http://www.phpeasydata.com/"
-
+version "0.3"
+description "PHPEasyData is a French Content Management System"
+website "http://www.phpeasydata.com/"
 # Dorks #
 dorks [
 '"powered by PHPEasyData"'

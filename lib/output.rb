@@ -1,5 +1,5 @@
 =begin
-Copyright 2009 to 2013, Andrew Horton
+Copyright 2009 to 2016, Andrew Horton
 
 This file is part of WhatWeb.
 
@@ -18,7 +18,7 @@ along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
 class Output
-  # if no f, output to STDOUT, 
+ 	# if no f, output to STDOUT, 
 	# if f is a filename then open it, if f is a file use it	
 	def initialize(f = STDOUT)
 	  f = STDOUT if f == "-"
@@ -70,7 +70,215 @@ class OutputObject < Output
 	end
 end
 
+
 class OutputVerbose < Output
+	def coloured(s, colour)
+		use_colour = ((@f == STDOUT and $use_colour=="auto") or ($use_colour=="always"))
+
+		if use_colour
+			send colour, s
+		else
+			s
+		end
+	end
+
+	def out(target, status, results)
+		$semaphore.synchronize do
+			# make a hash of the matches array
+			results_hash={}
+			results.map { |k,v| results_hash[k]=v }
+
+			display={
+				title:"<None>",
+				ip:"<Unknown>",
+				country:"<Unknown>",
+				status:"<Unknown>"
+			}
+
+			display[:country] = results_hash["Country"].map {|r| "#{r[:string]}, #{r[:module]}" }.join(",") if results_hash["Country"]
+			display[:ip] = results_hash["IP"].map {|r| r[:string] }.join(",") if results_hash["Country"]
+			display[:title] = results_hash["Title"].map {|r| r[:string] }.join(",") if results_hash["Title"]
+			display[:status] = "#{status}" + " " + HTTP_Status.code(status)
+
+			@f.puts "WhatWeb report for #{coloured(target,'blue')}"
+			@f.puts "Status".ljust(9) + " : "+ display[:status]
+			@f.puts "Title".ljust(9) + " : #{coloured(display[:title],'yellow')}"
+			@f.puts "IP".ljust(9) + " : " + display[:ip]
+			@f.puts "Country".ljust(9) + " : #{coloured(display[:country],'red')}" 
+			@f.puts
+			
+			################### Short list
+			################### Basically Output Brief
+
+			brief_results = []
+			results.each do |plugin_name, plugin_results|
+				next if ['Title','IP','Country'].include? plugin_name
+
+				unless plugin_results.empty?
+					suj = suj(plugin_results)
+
+					certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty].to_i,suj[:version],suj[:os],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
+
+					# colour the output
+					# be more DRY		
+					# if plugins have categories or tags this would be better, eg. all hash plugins are grey
+					if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
+						 coloured_string = grey(string)
+						 coloured_string = cyan(string) if plugin_name == "HTTPServer"
+	 				 	 coloured_string = yellow(string) if plugin_name == "Title"
+
+	 				 	 coloured_string = grey(string) if plugin_name == "MD5" 				 	 
+	 				 	 coloured_string = grey(string) if plugin_name == "Header-Hash"
+	 				 	 coloured_string = grey(string) if plugin_name == "Footer-Hash"
+	 				 	 coloured_string = grey(string) if plugin_name == "CSS"
+						 coloured_string = grey(string) if plugin_name == "Tag-Hash"
+	 					 
+						 coloured_plugin = white(plugin_name)
+						 coloured_plugin = grey(plugin_name) if plugin_name == "MD5"
+						 coloured_plugin = grey(plugin_name) if plugin_name == "Header-Hash"
+						 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"  					 
+						 coloured_plugin = grey(plugin_name) if plugin_name == "CSS"
+						 coloured_plugin = grey(plugin_name) if plugin_name == "Tag-Hash"
+	  					 					 
+						 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
+						   coloured_plugin + (!version.empty? ? "["+green(version)+"]" : "") +
+						   (!os.empty? ? "[" + red(os)+"]" : "") +	
+						   (!string.empty? ? "[" + coloured_string+"]" : "") +
+						   (!accounts.empty? ? "["+ cyan(accounts)+"]" : "" ) +
+						   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
+						   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
+						   (!filepath.empty? ? "["+ dark_green(filepath)+"]" : "" ) +
+						   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
+						 
+						 brief_results << p
+					else
+
+						brief_results << ((certainty and certainty < 100) ? certainty_to_words(certainty)+ " " : "")  +
+						   plugin_name + (!version.empty? ? "[" + version +"]" : "") +
+						   (!os.empty? ? "[" + os+"]" : "") +
+						   (!string.empty? ? "[" + string+"]" : "") +
+						   (!accounts.empty? ? " ["+ accounts+"]" : "" ) +
+						   (!model.empty? ? "["+ model+"]" : "" ) +
+						   (!firmware.empty? ? "["+ firmware+"]" : "" ) +
+						   (!filepath.empty? ? "["+ filepath+"]" : "" ) +
+						   (!modules.empty? ? "["+ modules+"]" : "" )
+					end	
+				end
+			end
+		
+		brief_results_final = brief_results.join(", ")		
+		
+		@f.puts "Summary".ljust(9) + " : " + brief_results_final
+		@f.puts
+		@f.puts "Detected Plugins:"
+
+			results.sort.each do |plugin_name, plugin_results|
+				next if ['Title','IP','Country'].include? plugin_name
+				unless plugin_results.empty?
+				
+					@f.puts "[ " + coloured(plugin_name, "white") + " ]"
+				
+					description = [""]
+					if Plugin.registered_plugins[plugin_name].description
+						d = Plugin.registered_plugins[plugin_name].description						
+						description = word_wrap(d, 60)
+					end
+#					@f.puts "\tCategory   : " + Plugin.registered_plugins[plugin_name].category.first unless Plugin.registered_plugins[plugin_name].category.nil?
+
+					@f.puts "\t" + description.first
+					description[1..-1].each { |line|
+						@f.puts "\t" + line
+					}
+					@f.puts
+
+					top_certainty = suj(plugin_results)[:certainty].to_i
+					unless top_certainty == 100
+						@f.puts "\t" + "Certainty".ljust(13) + ": " + certainty_to_words(top_certainty)
+					end
+
+					plugin_results.map { |x| sortuniq(x) }.each do |pr|
+						if pr[:name]
+							name_of_match = pr[:name]
+						else
+							name_of_match = [pr[:regexp_compiled], pr[:text], pr[:regexp].to_s,
+										pr[:ghdb], pr[:md5], pr[:tagpattern]].compact.join("|")
+						end
+
+						pr.each do |key,value|
+							next unless [:version, :os, :string, :account, :model, 
+									:firmware, :module, :filepath, :url].include?(key)
+
+							next if value.class==Regexp
+
+							unless key == :os 
+								@f.print "\t" + key.to_s.capitalize.ljust(13) + ": "
+							else
+								@f.print "\t" + "OS".ljust(13) + ": "
+							end
+
+							c = case key
+								when :version then "green"
+								when :string then "cyan"
+								when :certainty then "grey"
+								when :os then "red"
+								when :account then "cyan"
+								when :model then "dark_green"
+								when :firmware then "dark_green"
+								when :module then "magenta"
+								when :filepath then "dark_green"
+								else "grey"
+							end
+
+							if value.is_a?(String)
+								@f.print coloured(value.to_s,c)
+							elsif value.is_a?(Array)
+								@f.print coloured(value.join(",").to_s,c)
+							else
+								@f.print coloured(value.inspect,c)
+							end
+						
+							unless name_of_match.empty?
+								@f.print " (from #{name_of_match})"
+							end
+							unless pr[:certainty] == 100
+								@f.print " (Certainty: #{ certainty_to_words pr[:certainty]} )"
+							end
+
+							@f.puts
+						end
+
+						@f.puts "\t" + coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
+					end
+					
+					if defined? Plugin.registered_plugins[plugin_name].aggressive
+ 						@f.puts "\tAggressive function available (check plugin file or details)."
+					end		
+
+					if Plugin.registered_plugins[plugin_name].dorks
+						@f.puts "\tGoogle Dorks".ljust(13)+ ": (#{Plugin.registered_plugins[plugin_name].dorks.size})"
+					end
+
+					if Plugin.registered_plugins[plugin_name].website
+						@f.puts "\tWebsite".ljust(13)+ ": " + Plugin.registered_plugins[plugin_name].website.to_s
+					end
+					
+					@f.puts
+				end
+			end
+
+			@f.puts "HTTP Headers:"
+			target.raw_headers.each_line do |header|
+				@f.puts "\t#{header}"
+
+				#pp target.raw_headers
+			end
+			
+		end
+	end
+end
+
+
+class OldOutputVerbose < Output
 	def coloured(s, colour)
 		use_colour = ((@f == STDOUT and $use_colour=="auto") or ($use_colour=="always"))
 
@@ -102,6 +310,10 @@ class OutputVerbose < Output
 					description[1..-1].each { |line|
 						@f.puts "\t" + " " * 13 + line
 					}
+
+                                        unless Plugin.registered_plugins[plugin_name].website.nil?
+						@f.puts "\tWebsite    : " + Plugin.registered_plugins[plugin_name].website.to_s
+					end
 
 					top_certainty = suj(plugin_results)[:certainty].to_i
 					unless top_certainty == 100
@@ -195,14 +407,13 @@ class OutputBrief < Output
 
 				certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty].to_i,escape(suj[:version]),escape(suj[:os]),escape(suj[:string]), escape(suj[:account]),escape(suj[:model]),escape(suj[:firmware]),escape(suj[:module]),escape(suj[:filepath])
 
-
 				# colour the output
 				# be more DRY		
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
 				if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
-					 coloured_string = yellow(string)
+					 coloured_string = grey(string)
 					 coloured_string = cyan(string) if plugin_name == "HTTPServer"
- 				 	 coloured_string = dark_green(string) if plugin_name == "Title"
+ 				 	 coloured_string = yellow(string) if plugin_name == "Title"
 
  				 	 coloured_string = grey(string) if plugin_name == "MD5" 				 	 
  				 	 coloured_string = grey(string) if plugin_name == "Header-Hash"
@@ -225,8 +436,7 @@ class OutputBrief < Output
 					   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
 					   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
 					   (!filepath.empty? ? "["+ dark_green(filepath)+"]" : "" ) +
-					   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
-
+					   (!modules.empty? ? "["+ red(modules)+"]" : "" )
 					 
 					 brief_results << p
 				else
@@ -244,11 +454,12 @@ class OutputBrief < Output
 			end
 		end
 		
+		status_code = HTTP_Status.code(status)
 
 		if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
-			brief_results_final= blue(target) + " [#{status}] " + brief_results.join(", ")
+			brief_results_final= blue(target) + " [#{status} #{status_code}] " + brief_results.join(", ")
 		else
-			brief_results_final= target.to_s + " [#{status}] " + brief_results.join(", ")
+			brief_results_final= target.to_s + " [#{status} #{status_code}] " + brief_results.join(", ")
 		end	
 		$semaphore.synchronize do
 			@f.puts brief_results_final
@@ -266,16 +477,9 @@ class OutputXML < Output
 		super
 		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
 
-		# only output <?xml line if it's a new file or STDOUT
-		if RUBY_VERSION =~ /^1\.8/
-			if @f == STDOUT or @f.stat.size == 0
-				@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
-			end
-		else
-		  # ruby 1.9
-			if @f == STDOUT or @f.size == 0
-				@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
-			end
+		# only output <?xml line if it's a new file or STDOUT	
+		if @f == STDOUT or @f.size == 0
+			@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
 		end
 
 		@f.puts "<log>"
@@ -364,15 +568,9 @@ class OutputMagicTreeXML < Output
 		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
 
 		# only output <?xml line if it's a new file or STDOUT
-		if RUBY_VERSION =~ /^1\.8/
-			if @f.stat.size == 0
-				@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
-			end
-		else
-			if @f.size == 0
-				@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
-			end
-		end
+		if @f.size == 0
+			@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
+		end		
 		@f.puts '<magictree class="MtBranchObject">'
 	end
 
@@ -534,6 +732,20 @@ end
 # JSON Output #
 class OutputJSON < Output
 
+	def initialize(f=STDOUT)
+		super
+		# opening bracket
+		@f.puts "["
+	end
+
+	def close
+		# empty hash because each hash ends with a comma
+		@f.puts "{}" 
+		# closing bracket
+		@f.puts "]"
+		@f.close
+	end
+
 	def flatten_elements!(obj)
 		if obj.class == Hash
 			obj.each_value {|x| 
@@ -582,7 +794,7 @@ class OutputJSON < Output
 
 	def out(target, status, results)
 		# nice
-		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
+		foo= {:target=>target.to_s, :http_status=>status, :plugins=>{} } 
 		
 		results.each do |plugin_name,plugin_results|		
 #			thisplugin = {:name=>plugin_name}
@@ -631,7 +843,7 @@ class OutputJSON < Output
 		end
 
 		$semaphore.synchronize do 
-			@f.puts JSON::generate(foo)
+			@f.puts JSON::generate(foo) + ","
 		end
 	end
 end
@@ -691,7 +903,7 @@ class OutputMongo < Output
 
 	def out(target, status, results)
 		# nice
-		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
+		foo= {:target=>target.to_s, :http_status=>status, :plugins=>{} } 
 		
 		results.each do |plugin_name,plugin_results|		
 #			thisplugin = {:name=>plugin_name}
@@ -741,7 +953,7 @@ class OutputMongo < Output
 end
 
 
-
+# This is not JSON compliant as a list
 class OutputJSONVerbose < Output
 	def out(target, status, results)
 		# brutal and simple

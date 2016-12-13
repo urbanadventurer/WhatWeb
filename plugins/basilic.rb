@@ -10,7 +10,8 @@
 Plugin.define "Basilic" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
-description "Basilic is a bibliography server for research laboratories. It automates and facilitates the diffusion of research publications over the internet, automatically generating web pages from a publication database. - homepage: http://artis.imag.fr/Software/Basilic"
+description "Basilic is a bibliography server for research laboratories. It automates and facilitates the diffusion of research publications over the internet, automatically generating web pages from a publication database."
+website "http://artis.imag.fr/Software/Basilic"
 
 # 14 results for "powered by basilic" @ 2010-08-14
 

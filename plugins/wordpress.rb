@@ -16,21 +16,24 @@
 Plugin.define "WordPress" do
   author "Andrew Horton"
   version "0.5"
-  description "WordPress is an opensource blogging system commonly used as a CMS. Homepage: http://www.wordpress.org/ "
+  description "WordPress is an opensource blogging system commonly used as a CMS."
+  website "http://www.wordpress.org/"
   
-    # Dorks #
-    dorks [
+  # Dorks #
+  dorks [
            '"is proudly powered by WordPress"'
-          ]
+        ]
   
   # Matches #
   matches [
          
-         {:text=>"<meta name=\"generator\" content=\"WordPress.com\" />"},
-         {:text=>"<a href=\"http://www.wordpress.com\">Powered by WordPress</a>", :name=>"powered by link"},
+         {:text=>'<meta name="generator" content="WordPress.com" />'},
+         {:text=>'<a href="http://www.wordpress.com">Powered by WordPress</a>', :name=>'powered by link'},
+         {:text=>"<link rel='https://api.w.org/'", :name=>'REST API link'},
+
          {:regexp=>/"[^"]+\/wp-content\/[^"]+"/, :name=>"wp-content", :certainty=>75 },
          
-         {:version=>/<meta name=\"generator\" content=\"(WordPress)[ ]?([0-9\.]+)\"/, :offset=>1  }, # if offset=>1 were missing then it would report "WordPress" as the version.
+         {:version=>/<meta name="generator" content="WordPress ([0-9\.]+)"/ },
          
          # url exists, i.e. returns HTTP status 200
          {:url=>"/wp-cron.php"},
@@ -44,7 +47,7 @@ Plugin.define "WordPress" do
          
          {:url=>"/wp-login.php", :tagpattern=>"!doctype,html,head,title,/title,meta,link,link,script,/script,meta,/head,body,div,h1,a,/a,/h1,form,p,label,br,input,/label,/p,p,label,br,input,/label,/p,p,label,input,/label,/p,p,input,input,input,/p,/form,p,a,/a,/p,p,a,/a,/p,/div,script,/script,/body,/html"}, #note that WP plugins can add script tags. tags are delimited by commas so we can count how close it is
          {:url=>"favicon.ico", :md5=>'f420dc2c7d90d7873a90d82cd7fde315'}, # not common, seen on http://s.wordpress.org/favicon.ico
-         {:url=>"favicon.ico", :md5=>'fa54dbf2f61bd2e0188e47f5f578f736'},  # on wordpress.com blogs  http://s2.wp.com/i/favicon.ico 
+         {:url=>"favicon.ico", :md5=>'fa54dbf2f61bd2e0188e47f5f578f736', :name=>'WordPress.com favicon'},  # on wordpress.com blogs  http://s2.wp.com/i/favicon.ico
          
          {:url=>"/readme.html", :version=>/<h1.*WordPress.*Version ([0-9a-z\.]+).*<\/h1>/m}
          

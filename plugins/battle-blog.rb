@@ -7,7 +7,8 @@
 Plugin.define "Battle-Blog" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-26
 version "0.1"
-description "Battle Blog is a Fun Debate and Resolution Tool - homepage: http://www.davethewebguy.com/battleblog/"
+description "Battle Blog is a Fun Debate and Resolution Tool"
+website "http://www.davethewebguy.com/battleblog/"
 
 # 12 results for "Powered by Battle Blog" -"Google dork" @ 2010-08-26
 # 4 results inurl:vote.asp vtype=entry grade=promote @ 2010-08-26

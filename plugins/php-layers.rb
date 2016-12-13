@@ -10,7 +10,8 @@
 Plugin.define "PHP-Layers" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
 version "0.2"
-description 'PHP Layers Menu is a hierarchical menu system to prepare "on the fly" DHTML menus relying on the PHP scripting engine for the processing of data items. - Homepage: http://phplayersmenu.sourceforge.net'
+description 'PHP Layers Menu is a hierarchical menu system to prepare "on the fly" DHTML menus relying on the PHP scripting engine for the processing of data items."
+website "http://phplayersmenu.sourceforge.net'
 
 # Google results as at 2010-06-13 #
 # 33 for "Powered by PHP Layers"

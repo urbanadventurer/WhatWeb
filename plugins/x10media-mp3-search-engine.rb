@@ -10,7 +10,8 @@
 Plugin.define "X10media-MP3-Search-Engine" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
-description "X10media MP3 search engine - homepage: http://www.x10media.com/mp3-script.php"
+description "X10media MP3 search engine"
+website "http://www.x10media.com/mp3-script.php"
 
 # Google results as at 2010-08-01 #
 # 134 for "powered by x10media.com a MP3 Search Script"

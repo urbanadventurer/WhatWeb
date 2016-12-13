@@ -13,7 +13,8 @@
 Plugin.define "SquirrelMail" do
 author "Andrew Horton"
 version "0.3"
-description "Opensource Webmail written in PHP. Homepage: http://squirrelmail.org"
+description "Opensource Webmail written in PHP"
+website "http://squirrelmail.org"
 
 # tends to get customised
 

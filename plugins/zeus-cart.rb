@@ -10,7 +10,8 @@
 Plugin.define "Zeus-Cart" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.2"
-description "Control every facet of your store, from merchandising to promotions and more. There are no limits to creativity with ZeusCart. - homepage: http://www.ajsquare.com/AJE-Commerce/product-home.php"
+description "Control every facet of your store, from merchandising to promotions and more. There are no limits to creativity with ZeusCart."
+website "http://www.ajsquare.com/AJE-Commerce/product-home.php"
 
 # Google results as at 2010-08-06 #
 # 43 for "powered by ZeusCart"

@@ -23,7 +23,8 @@
 Plugin.define "Apache" do
 author "Andrew Horton & Brendan Coles"
 version "0.8"
-description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards. - homepage: http://httpd.apache.org/"
+description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards."
+website "http://httpd.apache.org/"
 
 # Google results as at 2010-10-26 #
 # 190 for intitle:"Test Page for Apache Installation"
@@ -83,7 +84,8 @@ matches [
 {:regexp=>/^Apache/i,  :search=>"headers[server]", :name=>"HTTP Server Header"},
 {:version=>/^Apache\/([\d\.]+)/i, :search=>"headers[server]", :name=>"HTTP Server Header"},
 {:certainty=>75, :module=>"mod_security", :regexp=>/^NOYB$/, :search=>"headers[server]"},
-{:certainty=>75, :name=>"htacess WWW-Authenticate realm", :search=>"headers[www-authenticate]", :regexp=>/Basic realm="htaccess password prompt"/}
+{:certainty=>75, :name=>"htacess WWW-Authenticate realm", :search=>"headers[www-authenticate]", :regexp=>/Basic realm="htaccess password prompt"/},
+
 
 ]
 

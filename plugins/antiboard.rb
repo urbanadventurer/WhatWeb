@@ -4,17 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-17 # Andrew Horton
+# Updated description
+##
 Plugin.define "Antiboard" do
 author "Andrew Horton"
-version "0.1"
-description "PHP forum. homepage (gone):http://www.resynthesize.com/code/antiboard.php."
+version "0.2"
+description "Antiboard is a PHP forum. Homepage used to be http://www.resynthesize.com/code/antiboard.php."
 
 # Dorks #
 dorks [
 'inurl: antiboard.php'
 ]
-
-
 
 # inurl: antiboard.php
 #  <form method="post" action="/antiboard/antiboard.php">

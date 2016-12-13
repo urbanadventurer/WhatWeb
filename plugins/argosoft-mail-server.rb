@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 # Version 0.4 # 2011-03-06 #
 # Updated OS detection
 ##
@@ -16,8 +19,9 @@
 ##
 Plugin.define "ArGoSoft-Mail-Server" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
-version "0.4"
-description "ArGoSoft-Mail-Server web interface - homepage: http://www.argosoft.com/"
+version "0.5"
+description "ArGoSoft-Mail-Server web interface"
+website "http://www.argosoft.com/"
 
 # Google results as at 2010-06-13 #
 # 26 for +intitle:"adding new user" "ArGoSoft Mail Server" +inurl:addnewuser -inurl 
@@ -40,25 +44,12 @@ matches [
 	{ :version=>/ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)<\/p>/, :os=>"Windows NT/2000" },
 	{ :version=>/ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)<\/p>/, :os=>"Windows NT/2000/XP" },
 
+	# Version and OS detection # HTTP Header Server
+	{ :search=>"headers[server]", :version=>/ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)/, :os=>"Windows NT/2000" },
+
+	{ :search=>"headers[server]", :version=>/ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)/, :os=>"Windows NT/2000/XP" },
+
 ]
-
-# Passive #
-def passive
-	m=[]
-
-	# Version and OS detection # HTTP Header Server text
-	if @headers["server"] =~ /ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)/
-		version=@headers["server"].scan(/ArGoSoft Mail Server Pro for WinNT\/2000, Version [\d\.]+ \(([\d\.]+)\)/)[0][0]
-		m << { :version=>version, :os=>"Windows NT/2000" }
-	end
-	if @headers["server"] =~ /ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)/
-		version=@headers["server"].scan(/ArGoSoft Mail Server Pro for WinNT\/2000\/XP, Version [\d\.]+ \(([\d\.]+)\)/)[0][0]
-		m << { :version=>version, :os=>"Windows NT/2000/XP" }
-	end
-
-	m
-
-end
 
 end
 

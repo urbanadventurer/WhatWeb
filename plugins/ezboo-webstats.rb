@@ -7,7 +7,8 @@
 Plugin.define "ezBOO-WebStats" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.1"
-description "ezBOO WebStats is a high level statistical tool for web sites monitoring. - Homepage: http://www.ezboo.com/softs/"
+description "ezBOO WebStats is a high level statistical tool for web sites monitoring."
+website "http://www.ezboo.com/softs/"
 
 # 624 results for +"Administrator Panel" +intitle:"ezBOO WebStats" @ 2010-06-05
 

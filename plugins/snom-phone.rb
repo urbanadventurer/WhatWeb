@@ -4,20 +4,22 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-04-17 # Andrew Horton
+# Added website parameter and description
+##
 # Version 0.2
 # removed :certainty=>100
 ##
 Plugin.define "SnomPhone" do
 author "Andrew Horton"
-version "0.2"
-description "voip phone homepage:www.snom.com"
+version "0.3"
+description "VoIP phones and teleconferencing systems"
+website "http://www.snom.com/"
 
 # Dorks #
 dorks [
 '"You can enter a simple telephone number (e.g. 0114930398330) or URI like info@snom.com."'
 ]
-
-
 
 # &copy; 2000-2008 <a href="http://snom.com">snom AG</a><br>
 # <tr><td class="flyoutLink" colspan="2"><b><a href=http://wiki.snom.com/wiki/index.php/snom300>Manual</a>

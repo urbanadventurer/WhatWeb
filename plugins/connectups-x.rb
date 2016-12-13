@@ -7,7 +7,8 @@
 Plugin.define "ConnectUPS-X" do
 author "Andrew Horton"
 version "0.1"
-description "The ConnectUPS-X Web/SNMP device allows you to connect various types of UPS directly to the Ethernet network and the Internet. It provides telnet, SSH, SNMP and a web interface. Homepage: http://powerquality.eaton.com/Products-services/Power-Management/Connectivity/connectups.asp"
+description "The ConnectUPS-X Web/SNMP device allows you to connect various types of UPS directly to the Ethernet network and the Internet. It provides telnet, SSH, SNMP and a web interface"
+website "http://powerquality.eaton.com/Products-services/Power-Management/Connectivity/connectups.asp"
 
 # Default Password is 'admin'
 

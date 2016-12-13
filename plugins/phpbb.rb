@@ -13,7 +13,8 @@
 Plugin.define "phpBB" do
 author "Andrew Horton"
 version "0.3"
-description "phpBB is a free forum - Homepage: http://phpbb.org/"
+description "phpBB is a free forum"
+website "http://phpbb.org/"
 
 # Dorks #
 dorks [

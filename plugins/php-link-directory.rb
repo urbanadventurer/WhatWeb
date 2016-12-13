@@ -10,7 +10,8 @@
 Plugin.define "PHP-Link-Directory" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
 version "0.2"
-description "phpLD is the most widely used directory script on the internet, installed on over 100,000 websites. phpLD is a great addition to any site, and is easy to install. - homepage: http://www.phplinkdirectory.com/"
+description "phpLD is the most widely used directory script on the internet, installed on over 100,000 websites. phpLD is a great addition to any site, and is easy to install."
+website "http://www.phplinkdirectory.com/"
 
 # 186 results for "powered by phpLinkDirectory" @ 2010-08-07
 

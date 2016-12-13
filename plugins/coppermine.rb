@@ -4,18 +4,20 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-# Version 0.2
-# removed :name and :certainty=>100
+# Version 0.4 # 2016-04-17 # Andrew Horton
+# Updated description and added website
+##
 # Version 0.3
 # Uses :version=>//
-
+##
+# Version 0.2
+# removed :name and :certainty=>100
+##
 Plugin.define "Coppermine" do
 author "Andrew Horton"
-version "0.3"
-description "PHP & MySQL Photo Gallery homepage: www.coppermine-gallery.net"
-
+version "0.4"
+description "Open-source Photo Gallery powered by PHP & MySQL"
+website "http://www.coppermine-gallery.net/"
 
 #  Coppermine version: 1.4.19
 =begin
@@ -45,21 +47,20 @@ description "PHP & MySQL Photo Gallery homepage: www.coppermine-gallery.net"
 # <a href="displayimage.php?album=lastup&amp;cat=0&amp;pos=6">
 
 matches [
-{:text=>"<title>Coppermine Photo Gallery - Home</title>" },
-{:regexp=>/Coppermine version: ([0-9\.]+)[ \n]*\$Revision/ },
-{:text=>"<!-- BEGIN album_list -->" },
-{:name=>"powered by link",
-:regexp=>/Powered by <a href="http:\/\/(coppermine-gallery.net|coppermine.sf.net|coppermine.sourceforge.net)\/" [^>]+>Coppermine Photo Gallery<\/a>/ },
-{:regexp=>/<!--Coppermine Photo Gallery ([\d\.]+)[^>]+-->/ },
-{:name=>"displayimage.php url",
-:certainty=>50,
-:regexp=>/<a href="[^"]*\/displayimage.php\?album=[a-z0-9]+&pos=">/ }, # "
 
-{:version=>/<!--Coppermine Photo Gallery ([\d\.]+[^>]+)-->/,  :name=>"<!--Coppermine Photo Gallery" } #"
-								]
-# 
+	{:text=>"<title>Coppermine Photo Gallery - Home</title>" },
+	{:regexp=>/Coppermine version: ([0-9\.]+)[ \n]*\$Revision/ },
+	{:text=>"<!-- BEGIN album_list -->" },
+	{:name=>"powered by link",
+	:regexp=>/Powered by <a href="http:\/\/(coppermine-gallery.net|coppermine.sf.net|coppermine.sourceforge.net)\/" [^>]+>Coppermine Photo Gallery<\/a>/ },
+	{:regexp=>/<!--Coppermine Photo Gallery ([\d\.]+)[^>]+-->/ },
+	{:name=>"displayimage.php url",
+	:certainty=>50,
+	:regexp=>/<a href="[^"]*\/displayimage.php\?album=[a-z0-9]+&pos=">/ }, # "
 
+	{:version=>/<!--Coppermine Photo Gallery ([\d\.]+[^>]+)-->/,  :name=>"<!--Coppermine Photo Gallery" } #"
 
+]
 end
 
 

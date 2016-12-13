@@ -7,7 +7,8 @@
 Plugin.define "pcextreme" do
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
 version "0.1"
-description "pcextreme server - Homepage: http://www.pcextreme.nl/"
+description "pcextreme server"
+website "http://www.pcextreme.nl/"
 
 # ShodanHQ results as at 2011-03-07 #
 # 17 for Server PCX -PCX3000 -apache -IIS

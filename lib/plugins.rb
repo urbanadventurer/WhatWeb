@@ -68,7 +68,7 @@ class Plugin
   end
 
   def init (target)
-        @target=target
+    @target=target
   	@body=target.body
   	@headers=target.headers
   	@status=target.status
@@ -82,15 +82,24 @@ class Plugin
 
   def make_matches(target,match)
       r=[]
-                        search_context = target.body # by default
-			search_context = target.raw_response if match[:search] == "all"
-			search_context = target.raw_headers if match[:search] == "headers"
 
-			if match[:search] =~ /headers\[(.*)\]/
-				if target.headers[$1]
-					search_context = target.headers[$1]
-				else
-					return []
+			# search location
+			search_context = target.body # by default
+			unless match[:search].nil?
+				case match[:search]
+				when 'all'
+					search_context = target.raw_response
+				when 'headers'
+					search_context = target.raw_headers
+				when /headers\[(.*)\]/
+					header = $1.downcase
+					
+					if target.headers[header]
+						search_context = target.headers[header]					
+					else
+						#error "Invalid search context :search => #{match[:search]}"
+						return r
+					end
 				end
 			end
 
@@ -110,7 +119,7 @@ class Plugin
 				r << match if target.tag_pattern == match[:tagpattern]
 			end
 
-			unless match[:regexp_compiled].nil?
+			if !match[:regexp_compiled].nil? and !search_context.nil?
 				[:regexp,:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
 					if match[symbol] and match[symbol].class==Regexp
 						regexpmatch = search_context.scan(match[:regexp_compiled])
@@ -134,39 +143,84 @@ class Plugin
 
 			# all previous matches are OR
 			# these are ARE. e.g. required if present
+			return r if r.empty?
 
+
+			# if url and status are present, they must both match
+			# url and status cannot be alone. there must be something else that has already matched
+			url_matched = false
+			status_matched = false
+			
 			if match[:status]
-				# status cannot match by itself. it needs friends
-				unless r.empty?
-					# this match is discarded unless it matches the status
-					if match[:status] == target.status
-						r << match 
-					else
-						r=[]
-					end
-				end
+				status_matched = true if match[:status] == target.status
 			end
 
 			if match[:url]
-				# url cannot match by itself. it needs friends
-				unless r.empty?		
-					target_url = target.uri.path
-					target_url += "?" + target.uri.query unless target.uri.query.nil?
-					if match[:url] == target_url
-						r << match
-					else
-						r=[]
+				# url is not relative if :url starts with /
+				# url is relative if :url starts with [^/]
+				# url query is only checked if :url has a ?
+				# {:url="edit?action=stop" } will only match if the end of the path and the entire query matches.
+				# :url is for URIs not regexes
+
+				if match[:url] =~ /^\//
+					is_relative = false
+				else 
+					is_relative = true
+				end
+
+				if match[:url] =~ /\?/
+					has_query = true
+				else 
+					has_query = false
+				end
+
+				if is_relative and not has_query
+					url_matched = true if target.uri.path =~ /#{match[:url]}$/
+				end
+
+				if is_relative and has_query
+					if target.uri.query
+						url_matched = true if target.uri.path + "?" + target.uri.query =~ /#{match[:url]}$/
 					end
+				end
+
+				if not is_relative and has_query
+					if target.uri.query
+						url_matched = true if target.uri.path + "?" + target.uri.query == match[:url]
+					end
+				end
+
+				if not is_relative and not has_query
+					url_matched = true if target.uri.path == match[:url]
 				end
 			end
 
+			# determine whether to return a match
 			if match[:status] and match[:url]
-				unless match[:status] == target.status and match[:url] == target.uri.path
-					r=[]
-				else
+				if url_matched and status_matched
 					r << match
+				else
+					r = []
 				end
+				
+			elsif match[:status] and match[:url].nil?
+				if status_matched
+					r << match
+				else
+					r = []
+				end
+				
+			elsif match[:status].nil? and match[:url]
+				if url_matched
+					r << match 
+				else
+					r = []
+				end
+				
+			elsif match[:status].nil? and match[:url].nil?
+				# nothing to do
 			end
+
 	  r
   end
 
@@ -205,9 +259,9 @@ class Plugin
                                 aggressivetarget=Target.new(newbase_uri)
 			        aggressivetarget.open
 				
-				if $verbose >1
+#				if $verbose >1
 #				  puts "#{@plugin_name} Aggressive: #{aggressivetarget.uri.to_s} [#{aggressivetarget.status}]"
-				end
+#				end
 
 				results += make_matches(aggressivetarget,match)
 			end
@@ -290,65 +344,87 @@ for adding/removing sets of plugins.
 --plugins +/tmp/moo.rb
 --plugins foobar (only select foobar)
 --plugins ./plugins-disabled,-md5 (select only plugins from the plugins-disabled folder, remove the md5 plugin from the selected list)
+
+does not work correctly with mixed plugin names and files
+
 =end
 
 	def PluginSupport.load_plugins(list=nil)
-		# separate l into a and b
+		# separate list into a and b
 		#	a = make list of dir & filenames
 		#	b = make list of assumed pluginnames
-		a=[];b=[]
 
-		plugin_dirs=PLUGIN_DIRS.clone
-		plugin_dirs.map {|p| p=File.expand_path(p) }
+		a=[]
+		b=[]
+
+		plugin_dirs = PLUGIN_DIRS.clone
+		plugin_dirs.map {|p| p = File.expand_path(p) }
 
 		if list
 			list=list.split(",")
 
-			plugins_disabled_location = ["plugins-disabled"].map {|x|
-					$LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } 
+			plugins_disabled_location = ["plugins-disabled"].map { |x|
+					$LOAD_PATH.map { |y| y + "/" + x if File.exists?( y + "/" + x ) } 
 				}.flatten.compact.first
 
-			list.each {|x| x.gsub!(/^\+$/,"+#{plugins_disabled_location}") } # + is short for +plugins-disabled
+			list.each { |x| x.gsub!(/^\+$/,"+#{plugins_disabled_location}") } # + is short for +plugins-disabled
 
 			list.each do |p|
-				choice=PluginChoice.new
+				choice = PluginChoice.new
 				choice.fill(p)
 				a << choice if choice.type == "file"
 				b << choice if choice.type == "plugin"
 			end
   
-			# sort by neither, add, minus
-			a=a.sort
+			#puts "a: list of dir + filenames"
+			#pp a
+			#puts "b: list of plugin names"
+			#pp b
+			#puts "Plugin Dirs"
+			#pp plugin_dirs
 
-			if a.map {|c| c.modifier }.include?(nil)
-				plugin_dirs=[]
+			# sort by neither, add, minus
+			a = a.sort
+
+			# plugin_dirs gets wiped out if no modifier is used on a file/folder
+			if a.map { |c| c.modifier }.include?(nil)
+				plugin_dirs = []				
 			end
 
 			minus_files = [] # make list of files not to load
-			a.map {|c|
+			a.map { |c|
 				plugin_dirs << c.name if c.modifier.nil? or c.modifier == "+"
 				plugin_dirs -= [c.name] if c.modifier == "-" # for Dirs
 				minus_files << c.name if c.modifier == "-"    # for files
 			}
 		
+			#puts "Plugin Dirs"
+	  		#pp plugin_dirs
+	  
+			#puts "before plugin_dirs.each "
+			#pp Plugin.registered_plugins.size
+
 			# load files from plugin_dirs unless a file is minused
 			plugin_dirs.each do |d|
 				# if a folder, then load all files
 				if File.directory?(d)
-					(Dir.glob("#{d}/*.rb")-minus_files).each {|x| PluginSupport.load_plugin(x) }
+					(Dir.glob("#{d}/*.rb") - minus_files).each {|x| PluginSupport.load_plugin(x) }
 				elsif File.exists?(d)
 					PluginSupport.load_plugin(d)
 				else
 					error("Error: #{d} is not Dir or File")
 				end
 			end
-		
+
+			#puts "after plugin_dirs.each "
+			#pp Plugin.registered_plugins.size
+
 			# make list of plugins to run
 			# go through all plugins, remove from list any that match b minus
-			selected_plugin_names=[]
+			selected_plugin_names = []
 
 			if b.map {|c| c.modifier }.include?(nil)
-				selected_plugin_names=[]
+				selected_plugin_names = []
 			else
 				selected_plugin_names = Plugin.registered_plugins.map {|n,p| n.downcase }
 			end
@@ -357,7 +433,12 @@ for adding/removing sets of plugins.
 				selected_plugin_names << c.name if c.modifier.nil? or c.modifier=="+"
 				selected_plugin_names -= [c.name] if c.modifier == "-"
 			}
+
+			#pp selected_plugin_names
+			# Plugin.registered_plugins is getting wiped out
+
 			plugins_to_use = Plugin.registered_plugins.map {|n,p| [n,p] if selected_plugin_names.include?(n.downcase) }.compact
+			#puts "after "
 
 			# report on plugins that couldn't be found
 			unfound_plugins = selected_plugin_names - plugins_to_use.map {|n,p| n.downcase }
@@ -374,6 +455,9 @@ for adding/removing sets of plugins.
 			end
 			plugins_to_use = Plugin.registered_plugins
 		end
+
+		#puts "-" * 80
+		#pp plugins_to_use 
 
 		plugins_to_use
 	end
@@ -427,8 +511,9 @@ for adding/removing sets of plugins.
 			# open tmp file
 			f=Tempfile.new('whatweb-custom-plugin')
 			# write
-			f.write(custom)
+			f.write(custom)			
 			f.close
+			pp custom if $verbose > 2
 			# load
 			load f.path
 			f.unlink
@@ -442,28 +527,40 @@ for adding/removing sets of plugins.
 
 	### some UI stuff
 
-
 	def PluginSupport.plugin_list
+		terminal_width = 80
 		puts "WhatWeb Plugin List"
 		puts
-		puts ["Plugin Name".ljust(25),"Description"].join(" ")
-		puts "-" * 79
-		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |n,p|
-			puts [n.ljust(25), (p.description.delete("\n\r") unless p.description.nil?)].join(" ")[0..78]
+		puts "Plugin Name - Description"
+		puts "-" * terminal_width
+		Plugin.registered_plugins.sort_by {|a,b| a.downcase }.each do |n,p|
+			
+			# output fits more description onto a line
+			line = "#{n} - "
+			line += p.description.delete("\r\n") if p.description
+			
+			if line.size > terminal_width-1
+				line = line[0..terminal_width - 4] + "..."
+			end
+			puts line
+
 		end
-		puts "-" * 30
-		puts "#{Plugin.registered_plugins.size} Plugins Loaded"
+		puts "-" * terminal_width
+		puts
+		puts "Total: #{Plugin.registered_plugins.size} Plugins"
+		puts
+		puts "Hint:"
+		puts "For complete plugin descriptions use : whatweb --info-plugins <SEARCH>"
+		puts "Use it without a search term for a complete description of all plugins."
 		puts
 	end
-
-
 
 	# Show Google Dorks
 	def PluginSupport.plugin_dorks(plugin_name)
 		dorks=[]
 
 		# Loop through plugins
-		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.each do |n,p|
+		Plugin.registered_plugins.each do |n,p|
 			if n.downcase == plugin_name.downcase
 				pp "Google Dorks for #{n}:" if $verbose > 2
 				dorks << p.dorks unless p.dorks.nil?
@@ -474,45 +571,105 @@ for adding/removing sets of plugins.
 		dorks.size > 0 ? puts(dorks) : error("Google dork lookup failed: Invalid plugin name or no dorks available")
 	end
 
+
+
+
 	# Show plugin information
-	def PluginSupport.plugin_info(keywords= nil)
-		puts "WhatWeb Plugin Information"
-		puts "Searching for " + keywords.join(",") unless keywords.nil?
-		puts "-" * 80
+	def PluginSupport.plugin_info(keywords = nil)
+		terminal_width = 80
 
-		puts ["Plugin Name".ljust(25),"Details"].join(" ")
-		count=0
-		Plugin.registered_plugins.delete_if {|n,p| n == "\302\277" }.sort_by {|a,b| a.downcase }.each do |name,plugin|
+		puts "WhatWeb Detailed Plugin List"		
+		puts "Searching for " + keywords.join(",") unless keywords.empty?
+
+		count = {plugins: 0, version_detection: 0, matches: 0, dorks: 0, aggressive: 0, passive: 0 }
+
+		Plugin.registered_plugins.sort_by {|a,b| a.downcase }.each do |name,plugin|
 			dump=[name,plugin.author,plugin.description,plugin.website,plugin.matches].flatten.compact.to_a.join.downcase
+		
+			# this will fail is an expected variable is not defined or empty
 			if keywords.empty? or keywords.map {|k| dump.include?(k.downcase) }.compact.include?(true)
-				puts name
-				puts "\tAuthor:".ljust(22) + plugin.author
-				puts "\tVersion:".ljust(22) + plugin.version
-	#			puts "\tCategory:".ljust(22) + plugin.category.to_s unless plugin.category.nil?
-				puts "\tMatches:".ljust(22) + plugin.matches.size.to_s if plugin.matches
-				puts "\tDorks:".ljust(22) + plugin.dorks.size.to_s if plugin.dorks
-				puts "\tPassive function: ".ljust(22) + (defined?(plugin.passive) ? "Yes" : "No")
-				puts "\tAggressive function: ".ljust(22) + (defined?(plugin.aggressive) ? "Yes" : "No")
-				puts "\tVersion detection: ".ljust(22) + (plugin.version_detection? ? "Yes" : "No")
 
+				puts "=" * terminal_width
+				puts "Plugin:".ljust(16) + name
+				puts "-" * terminal_width
+				
 				if plugin.description
-					puts "\tDescription: "
-					word_wrap(plugin.description,72).each {|line| puts "\t" + line }
+					word_wrap(plugin.description, terminal_width - 16).each_with_index do |line,index|
+						if index == 0
+							print "Description:".ljust(16)
+						else
+							print " " * 16
+						end
+						puts line
+					end
+				else
+					print "Description:".ljust(16) + "<Not defined>"
 				end
 
-				if plugin.website
-					puts "\tWebsite: ".ljust(22) + plugin.website
+				puts "Website:".ljust(16) + (plugin.website || "<Not defined>")
+				puts
+				puts "Author:".ljust(16) + (plugin.author || "<Not defined>")
+				puts "Version:".ljust(16) + (plugin.version || "<Not defined>")
+				puts
+				print "Features:".ljust(16)
+				print "[#{ defined?(plugin.matches) and plugin.matches ? "Yes" : "No" }]".ljust(7) + "Pattern Matching"
+				
+				if defined?(plugin.matches) and plugin.matches
+					puts " (#{plugin.matches.size})"
+				else
+					puts
+				end
+
+				puts " " * 16 + "[#{ plugin.version_detection? ? "Yes" : "No" }]".ljust(7) + "Version detection from pattern matching"
+				puts " " * 16 + "[#{ defined?(plugin.passive) ? "Yes" : "No" }]".ljust(7) + "Function for passive matches"
+				puts " " * 16 + "[#{ defined?(plugin.aggressive) ? "Yes" : "No" }]".ljust(7) + "Function for aggressive matches"
+
+				count[:version_detection] +=1 if plugin.version_detection?
+				count[:passive] +=1 if defined?(plugin.passive)
+				count[:aggressive] +=1 if defined?(plugin.aggressive)
+
+				print " " * 16 + "[#{ plugin.dorks ? "Yes" : "No" }]".ljust(7) + "Google Dorks"				
+				if plugin.dorks
+					puts " (#{plugin.dorks.size})"
+				else
+					puts
 				end
 
 				puts
-				puts "-" * 80
-				count+=1
+
+				if plugin.dorks
+					puts "Google Dorks:"
+					plugin.dorks.each_with_index do |dork, index|					
+						puts "[#{index + 1 }] #{dork}"
+					end
+					puts
+					count[:dorks] += plugin.dorks.size	
+				end
+				
+				if defined?(plugin.matches) and plugin.matches
+					#puts "Pattern Matching:"
+					#plugin.matches.each_with_index do |match, index|					
+					#	puts "[#{index + 1 }] #{match}"
+					#end
+					#puts
+					count[:matches] += plugin.matches.size					
+				end
+
+				count[:plugins] += 1
 			end
 		end
-		puts "#{count} plugins found"
+
+		puts "=" * terminal_width
+
+		puts "Total plugins: #{count[:plugins]}"
+		puts "Total plugins with version detection from pattern matching: #{count[:version_detection]}"
+		puts "Total patterns (regular expressions, text, MD5 hashes, etc): #{count[:matches]}"
+		puts "Total Google dorks: #{count[:dorks]}"
+		puts "Total aggressive functions: #{count[:aggressive]}"
+		puts "Total passive functions: #{count[:passive]}"
+
 		puts
 	end
-
 
 end
 
@@ -548,5 +705,3 @@ class PluginChoice
 		end
 	end
 end
-
-

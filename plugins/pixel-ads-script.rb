@@ -7,7 +7,8 @@
 Plugin.define "Pixel-Ads-Script" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.1"
-description "Pixel Ads Script - homepage: http://www.pixel-ads-script.com/"
+description "Pixel Ads Script"
+website "http://www.pixel-ads-script.com/"
 # Homepage is on a non-existant domain - software no longer supported?
 
 # 27 results for "Powered by: Pixel-Ads-Script.Com" @ 2010-08-08

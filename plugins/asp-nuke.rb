@@ -4,42 +4,24 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
+# Version 0.5 # 2016-04-18 # Andrew Horton
+# Replaced passive function with :search=>"headers[p3p]" pattern
+##
+# Version 0.4 # 2016-04-17 # Andrew Horton
+# Added website parameter
+##
+# Version 0.3
+# Uses :version=>//
+##
 # Changelog
 # Version 0.2
 # Removed :name and :probility
-# Version 0.3
-# Uses :version=>//
-
 
 Plugin.define "ASP-Nuke" do
 author "Andrew Horton"
-version "0.3"
-description "ASP Nuke  homepage: www.aspnuke.com
-ASP Nuke is an open-source software application for running a community-based web site on a web server. The requirements for the ASP Nuke content management system are: 1. Microsoft SQL Server 2000 and 2. Microsoft Internet Information Server (IIS) 5.0"
-
-
-
-
-# http://www.portal.fezalar.org
-# <meta name="Generator" CONTENT="ASP-Nuke community v1.4 SP4">
-# <a href="/gotoURL.asp?url=/articles.asp?cat=8">FAQ - Asp-Nuke - HowTo</a>
-# <div align='center'><b><span class='copyright'>&nbsp;&#169; 2002-2009 - Site Sahibine Ulasin - <a href="javascript:encodeemail('webmaster','fezalar.org');">webmaster (a) fezalar.org</a> - Site Tasarim <a href="http://www.rot.dk" target="_blank">Asp-Nuke</a> community v1.4 SP4
-# 
-
-# <meta name="Generator" content="ASPNUKE v2.0 - distributed under GPL license">
-# <link rel="Shortcut Icon" href="http://www.fiei.it/aspnuke.ico">
-# <span class="small"><a href="/gotoURL.asp?url=http%3A%2F%2Fwww%2Efilef%2Einfo" target="_blank">Filef INFO</a> (IT)</span><br>
-
-# <a href="javascript:encodemail('fiei','fiei.org')">Contattami</a><br>
-#			Realizzato con <a href="http://www.aspnuke.it" target="_blank">ASP-Nuke 2.0.7</a>&nbsp;derivato da <a href="http://www.asp-nuke.com" target="_blank">ASP-Nuke v1.2</a><br>
-
-# http://www.asbru.dk/technet/
-#<meta name="Generator" CONTENT="ASP-Nuke community v1.4 SP4">
-# <form name='Authentication' method='post' action='/technet/authent.asp'>
-# Designed with <a href="http://www.asp-nuke.net" target="_blank">ASP-Nuke</a> community v1.4 SP4
-
-#P3P: CP="NOI CUR OUR IND UNI COM NAV INT"
+version "0.5"
+description "ASP Nuke is an open-source software application for running a community-based web site on a web server. The requirements for the ASP Nuke content management system are: 1. Microsoft SQL Server 2000 and 2. Microsoft Internet Information Server (IIS) 5.0"
+website "http://www.aspnuke.com/"
 
 matches [
 {:text=>"<meta name=\"Generator\" CONTENT=\"ASP-Nuke" },
@@ -59,17 +41,8 @@ matches [
 
 {:version=>/<a href="http:\/\/www.aspnuke.it" target="_blank">Asp-Nuke ([\d\.]+)<\/a>/,  :name=>"aspnuke.it" },
 
+{:name=>"P3P Privacy Headers", :certainty=>25, :search=>"headers[p3p]", :text=>"CP=\"NOI CUR OUR IND UNI COM NAV INT\"" },
+
 ]
 
-
-def passive
-   #P3P: CP="NOI CUR OUR IND UNI COM NAV INT"
-   m=[]   
-   m << {:name=>"P3P Privacy Headers", :certainty=>25 } if @headers["p3p"] == "CP=\"NOI CUR OUR IND UNI COM NAV INT\""
-   
-   m
 end
-
-
-end
-

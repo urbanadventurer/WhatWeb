@@ -10,7 +10,8 @@
 Plugin.define "WhiteBoard" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.2"
-description "WhiteBoard is a fast, powerful, and free open source discussion board solution. - homepage: http://sarosoftware.com/"
+description "WhiteBoard is a fast, powerful, and free open source discussion board solution."
+website "http://sarosoftware.com/"
 
 # Google rsults as at 2010-08-15 #
 # 21 for "powered by Whiteboard"

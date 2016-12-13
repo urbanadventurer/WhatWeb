@@ -7,7 +7,8 @@
 Plugin.define "Linksys-Wireless-G-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.1"
-description "Linksys Wireless-G Camera web interface - homepage: http://www.linksys.com/"
+description "Linksys Wireless-G Camera web interface"
+website "http://www.linksys.com/"
 
 # 40 Google results for inurl:/img/vr.htm @ 2010-07-20
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1591

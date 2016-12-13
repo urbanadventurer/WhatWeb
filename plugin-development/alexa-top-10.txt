@@ -1,10 +1,10 @@
 google.com
-facebook.com
 youtube.com
-yahoo.com
+facebook.com
 baidu.com
-wikipedia.org
-twitter.com
-qq.com
-taobao.com
+yahoo.com
 amazon.com
+wikipedia.org
+qq.com
+google.co.in
+twitter.com

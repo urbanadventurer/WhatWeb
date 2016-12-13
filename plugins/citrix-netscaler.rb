@@ -4,28 +4,22 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-04-23 # Andrew Horton
+# Moved patterns from passive function to matches[]
+##
 
 Plugin.define "Citrix-NetScaler" do
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
-version "0.1"
+version "0.2"
 description "Citrix NetScaler  - http://www.citrix.com/netscaler"
 
+matches [
 
+	{ :regexp=>/NS\-CACHE/, :search=>"headers[via]" },
 
-def passive
-    m = []
+	{ :version=>/NS\-CACHE\-(\d{1,4}\.\d{1,4}):/, :search=>"headers[via]" },	
 
-    m << {:name=>"http via" } if @headers["via"] =~ /NS\-CACHE/i
-
-    if @headers["via"] =~ /NS\-CACHE\-(\d{1,4}\.\d{1,4}):/i
-        version = @headers["via"].scan(/NS\-CACHE\-(\d{1,4}\.\d{1,4})/i)
-        m << {:version=>version.to_s}        
-    end
-
-    m
-
-end
-
+]
 
 end
 

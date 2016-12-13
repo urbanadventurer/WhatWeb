@@ -10,7 +10,8 @@
 Plugin.define "Pixie" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.2"
-description "pixie is a free, open source web application that will help you quickly create your own website - homepage: http://www.getpixie.co.uk/"
+description "pixie is a free, open source web application that will help you quickly create your own website"
+website "http://www.getpixie.co.uk/"
 
 # Google results as at 2010-07-18 #
 # 5 for +"powered by pixie" -"Powered by Pixie Dust" +theme

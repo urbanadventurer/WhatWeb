@@ -11,7 +11,8 @@
 Plugin.define "Escenic" do
 author "Erik Inge Bolsø <knan+whatweb@redpill-linpro.com> & nikosk <nk@dsigned.gr>"
 version "0.3"
-description "Escenic is a commercial CMS popular in the Nordic region. - Homepage: http://escenic.com/"
+description "Escenic is a commercial CMS popular in the Nordic region."
+website "http://escenic.com/"
 
 # Google results as at 2011-03-19 #
 # 273 for filetype:ece

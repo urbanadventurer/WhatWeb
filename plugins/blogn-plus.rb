@@ -10,7 +10,8 @@
 Plugin.define "BlognPlus" do
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
 version "0.2"
-description "BlognPlus - homepage: http://www.blogn.org/"
+description "BlognPlus"
+website "http://www.blogn.org/"
 
 # 106 results for "powered by BlognPlus" @ 2010-06-15
 

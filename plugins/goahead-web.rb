@@ -16,7 +16,8 @@
 Plugin.define "GoAhead-Webs" do
 author "Andrew Horton"
 version "0.4"
-description "Opensource, embedded webserver. Homepage: http://embedthis.com/products/goahead/"
+description "Opensource, embedded webserver"
+website "http://embedthis.com/products/goahead/"
 
 # ShodanHQ results as at 2011-01-29 #
 # 453222 for GoAhead Webs

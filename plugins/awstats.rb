@@ -10,7 +10,8 @@
 Plugin.define "AWStats" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04
 version "0.2"
-description "AWStats - Free log file analyzer for advanced statistics (GNU GPL). - homepage:http://awstats.sourceforge.net/"
+description "AWStats - Free log file analyzer for advanced statistics (GNU GPL)."
+website "http://awstats.sourceforge.net/"
 
 # Dorks #
 dorks [

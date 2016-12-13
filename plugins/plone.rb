@@ -10,7 +10,8 @@
 Plugin.define "Plone" do
 author "Andrew Horton"
 version "0.2"
-description "Plone Content Management System (CMS) - Homepage: http://plone.org"
+description "Plone Content Management System (CMS)"
+website "http://plone.org"
 
 
 

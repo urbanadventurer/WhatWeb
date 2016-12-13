@@ -16,12 +16,11 @@ description "This plugin detects instances of frame and iframe HTML elements."
 # 213 for "your browser does not support frames"
 
 
-
-# Passive #
+# Matches #
 matches [
 
 # Detect (i)frame
-{ :regexp=>/<[\s]*[i]?frame[^>]+src[\s]*=[\s]*["|']?([^>^"^'^\s]+)/i },
+{ :regexp => /<i?frame\s+/i }
 
 ]
 

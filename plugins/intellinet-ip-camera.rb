@@ -10,7 +10,8 @@
 Plugin.define "Intellinet-IP-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.2"
-description "Intellinet IP camera - homepage: http://www.intellinet-network.com"
+description "Intellinet IP camera"
+website "http://www.intellinet-network.com"
 # default login: admin/admin
 
 # Google results as at 2010-07-18 #

@@ -17,7 +17,8 @@
 Plugin.define "FluxBB" do
 author "Andrew Horton"
 version "0.5"
-description "Open Source forum written in PHP - Homepage: http://fluxbb.org/ - Aggressive matches can identify 1.2.x, 1.3.x and 1.4.x"
+description "Open Source forum written in PHP"
+website "http://fluxbb.org/ - Aggressive matches can identify 1.2.x, 1.3.x and 1.4.x"
 
 # Google results as at 2011-04-06 #
 # 357 for "Powered by FluxBB"

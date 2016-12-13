@@ -10,7 +10,8 @@
 Plugin.define "Sony-Network-Camera" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
-description "SONY network video camera web interface - homepage: http://www.sony.com/"
+description "SONY network video camera web interface"
+website "http://www.sony.com/"
 
 # Google results as at 2010-06-29 #
 # 29 for intitle:"SONY Network Camera SNC-P1"

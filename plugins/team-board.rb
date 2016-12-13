@@ -10,7 +10,8 @@
 Plugin.define "Team-Board" do
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
-description "Team Board forum [Chinese] - homepage: http://www.team5.cn/"
+description "Team Board forum [Chinese]"
+website "http://www.team5.cn/"
 # Default Login: admin/123
 
 # Google results as at 2010-07-25 #

@@ -13,7 +13,8 @@
 Plugin.define "WordPressSpamFree" do
 author "Andrew Horton"
 version "0.3"
-description "Wordpress SpamFree module. Get your WordPress Blog Spam-Free with this plugin. Normal users doesnt even know your using it. But it keeps away the spammers. - Homepage: http://wordpress.org/extend/plugins/spam-free/"
+description "Wordpress SpamFree module. Get your WordPress Blog Spam-Free with this plugin. Normal users doesnt even know your using it. But it keeps away the spammers."
+website "http://wordpress.org/extend/plugins/spam-free/"
 
 # Matches #
 matches [
