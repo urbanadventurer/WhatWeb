@@ -23,7 +23,7 @@
 Plugin.define "Joomla" do
   author "Andrew Horton"
   version "0.7"
-  description "Opensource CMS written in PHP. Aggressive version detection compares just 5 files, valid for versions 1.5.0-1.5.22 and 1.6.0-1.6.1."
+  description "Opensource CMS written in PHP. Aggressive version detection compares just 5 files, checks for version 1.0.0 up to 3.6.4"
   website "http://joomla.org"
   
   # Google results as at 2011-03-19 #
@@ -40,7 +40,7 @@ Plugin.define "Joomla" do
              { :version=>"1.0", :regexp=>/<meta name="Generator" content="Joomla! - Copyright \(C\) 200[0-9] - 200[0-9] Open Source Matters. All rights reserved." \/>/ },
              { :version=>/<meta name="generator" content="Joomla! (\d\.\d) - Open Source Content Management" \/>/ },
              { :text=>'Powered by <a href="http://www.joomla.org">Joomla!</a>.' },
-             
+
              { :url=>'/administrator/', :regexp=>/<div id="joomla"><img src="[^"]*\/images\/header_text.png" alt="Joomla! Logo"/ , :name=>'admin page'} #"
             ]
    
@@ -96,20 +96,26 @@ Plugin.define "Joomla" do
                     [["administrator/images/install.png",
                       "98781b97253bf4f08717dcace0f18f5e"]],
                     "1.0.5" =>
-                    [["administrator/images/install.png",
-                      "49fad9c07d820e7a4c9a1ce181a1facd"],
+                    [["mambots/editors/tinymce.xml",
+                      "2130a77181699f126f6b7f90d062ff1c"],
                      ["htaccess.txt",
-                      "5e5b5d8a7eead9c108bb9f20731c545f"]],
+                      "5e5b5d8a7eead9c108bb9f20731c545f"]], #
+                    # 1.0.6 and 1.0.7 are not distinguishable from world readable files
                     "1.0.6" =>
                     [["administrator/images/install.png",
                       "49fad9c07d820e7a4c9a1ce181a1facd"],
+                     ["mambots/editors/tinymce.xml",
+                      "58d5b50f7a96582c4d3b02961dd307e4"],
                      ["htaccess.txt",
                       "e4ddb334509c5c68c4f79e98e9b74730"]],
                     "1.0.7" =>
                     [["administrator/images/install.png",
                       "49fad9c07d820e7a4c9a1ce181a1facd"],
+                     ["mambots/editors/tinymce.xml",
+                      "58d5b50f7a96582c4d3b02961dd307e4"],
                      ["htaccess.txt",
                       "e4ddb334509c5c68c4f79e98e9b74730"]],
+
                     "1.0.8" =>
                     [["htaccess.txt",
                       "9a31c03b78bc47c924f6cf70ca60aa5f"],
@@ -135,11 +141,10 @@ Plugin.define "Joomla" do
                     "1.0.14-rc1" =>
                     [["modules/mod_wrapper.xml",
                       "1ecb889511e8b878b42e8cef476b5d3b"]],
+                    # 1.0.14 and 1.0.15 are not distinguishable from world readable files
                     "1.0.14" =>
                     [["htaccess.txt",
                       "aacd62b8919a1081ab954d7062affb0f"],
-                     ["administrator/images/install.png",
-                      "49fad9c07d820e7a4c9a1ce181a1facd"],
                      ["administrator/modules/mod_components.xml",
                       "0b5554f8f2da6df6b7d979d0042c7fbf"],
                      ["mambots/editors/tinymce.xml",
@@ -147,8 +152,6 @@ Plugin.define "Joomla" do
                     "1.0.15" =>
                     [["htaccess.txt",
                       "aacd62b8919a1081ab954d7062affb0f"],
-                     ["administrator/images/install.png",
-                      "49fad9c07d820e7a4c9a1ce181a1facd"],
                      ["administrator/modules/mod_components.xml",
                       "0b5554f8f2da6df6b7d979d0042c7fbf"],
                      ["mambots/editors/tinymce.xml",
@@ -203,6 +206,7 @@ Plugin.define "Joomla" do
                     "1.5.12" =>
                     [["plugins/editors/tinymce.xml",
                       "88c25322c0e878b6944cf9ea462c5071"]],
+                    # 1.5.13 and 1.5.14 are not distinguishable from world readable files
                     "1.5.13" =>
                     [["plugins/editors/tinymce.xml",
                       "e6537f60fc9e6a04eda14d55f852a9d8"]],
@@ -223,26 +227,28 @@ Plugin.define "Joomla" do
                       "0fbcf1a962b227a6626be84cc4a9ebca"],
                      ["components/com_contact/metadata.xml",
                       "9ea9550db4b1ae1eb7af7d7770301d16"]],
+                    # 1.5.19 and 1.5.20, 1.5.21, 1.5.22 are not distinguishable from world readable files
                     "1.5.19" =>
                     [["htaccess.txt",
                       "d83c45a3aca4c5e7c8d55def31b6b85d"],
-                     ["components/com_contact/metadata.xml",
-                      "24095af7fbd32685fe2c817544df5117"]],
+                     ["plugins/system/mtupgrade.xml",
+                      "5be607638c998cd461f40551223e1dd0"]],
                     "1.5.20" =>
                     [["htaccess.txt",
                       "d83c45a3aca4c5e7c8d55def31b6b85d"],
-                     ["components/com_contact/metadata.xml",
-                      "24095af7fbd32685fe2c817544df5117"]],
+                     ["plugins/system/mtupgrade.xml",
+                      "5be607638c998cd461f40551223e1dd0"]],
                     "1.5.21" =>
                     [["htaccess.txt",
                       "d83c45a3aca4c5e7c8d55def31b6b85d"],
-                     ["components/com_contact/metadata.xml",
-                      "24095af7fbd32685fe2c817544df5117"]],
+                     ["plugins/system/mtupgrade.xml",
+                      "5be607638c998cd461f40551223e1dd0"]],
                     "1.5.22" =>
                     [["htaccess.txt",
                       "d83c45a3aca4c5e7c8d55def31b6b85d"],
-                     ["components/com_contact/metadata.xml",
-                      "24095af7fbd32685fe2c817544df5117"]],
+                     ["plugins/system/mtupgrade.xml",
+                      "5be607638c998cd461f40551223e1dd0"]],
+                    # 1.5.23 and 1.5.24 1.5.25, 1.5.26 are not distinguishable from world readable files
                     "1.5.23" =>
                     [["htaccess.txt",
                       "479cce960362b0e17ca26f2c13790087"],
