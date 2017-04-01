@@ -3,9 +3,10 @@ module PluginSugar
     class_eval do
       names.each do |name|
         define_method(name) do |*args|
-          case args.size
-          when 0 then instance_variable_get("@#{name}")
-          else    instance_variable_set("@#{name}", *args)
+          if args.empty?
+            instance_variable_get("@#{name}")
+          else
+            instance_variable_set("@#{name}", *args)
           end
         end
       end
@@ -15,6 +16,11 @@ end
 
 
 class Plugin
+  extend PluginSugar
+  def_field  :author, :version, :description, :website, :matches, :cve, :dorks
+  # deprecated fields
+  def_field :examples
+#, :category
   @registered_plugins = {}
 
   class << self
@@ -38,22 +44,15 @@ class Plugin
   end
 
   def version_detection?
-    r=false
-    if @matches and !@matches.empty?
-      if !@matches.map {|m| m[:version] }.compact.empty?
-        r=true
-      end
-    end
-    r
+    return false unless @matches
+    !@matches.map { |m| m[:version] }.compact.empty?
   end
 
-  def startup
-    # individual plugins can override this
-  end
+  # individual plugins can override this
+  def startup; end
 
-  def shutdown
-    # individual plugins can override this
-  end
+  # individual plugins can override this
+  def shutdown; end
 
   def lock
     @locked=true
@@ -68,19 +67,19 @@ class Plugin
   end
 
   def init (target)
-    @target=target
-    @body=target.body
-    @headers=target.headers
-    @status=target.status
-    @base_uri=target.uri
-    @md5sum=target.md5sum
-    @tagpattern=target.tag_pattern
-    @ip=target.ip
+    @target = target
+    @body = target.body
+    @headers = target.headers
+    @status = target.status
+    @base_uri = target.uri
+    @md5sum = target.md5sum
+    @tagpattern = target.tag_pattern
+    @ip = target.ip
     @raw_response = target.raw_response
     @raw_headers = target.raw_headers
   end
 
-  def make_matches(target,match)
+  def make_matches(target, match)
     r = []
 
     # search location
@@ -120,7 +119,7 @@ class Plugin
     end
 
     if !match[:regexp_compiled].nil? and !search_context.nil?
-      [:regexp,:account,:version,:os,:module,:model,:string,:firmware,:filepath].each do |symbol|
+      [:regexp, :account, :version, :os, :module, :model, :string, :firmware, :filepath].each do |symbol|
         if match[symbol] and match[symbol].class==Regexp
           regexpmatch = search_context.scan(match[:regexp_compiled])
           unless regexpmatch.empty?
@@ -178,13 +177,13 @@ class Plugin
 
       if is_relative and has_query
         if target.uri.query
-          url_matched = true if target.uri.path + "?" + target.uri.query =~ /#{match[:url]}$/
+          url_matched = true if "#{target.uri.path}?#{target.uri.query}" =~ /#{match[:url]}$/
         end
       end
 
       if not is_relative and has_query
         if target.uri.query
-          url_matched = true if target.uri.path + "?" + target.uri.query == match[:url]
+          url_matched = true if "#{target.uri.path}?#{target.uri.query}" == match[:url]
         end
       end
 
@@ -221,15 +220,15 @@ class Plugin
 
   # execute plugin
   def x
-    results=[]
+    results = []
     unless @matches.nil?
       @matches.each do |match|
-        results+=make_matches(@target,match)
+        results += make_matches(@target, match)
       end
     end
 
     # if the plugin has a passive method, use it
-     results += self.passive if defined? self.passive
+    results += self.passive if defined? self.passive
 
     # if the plugin has an aggressive method and we're in aggressive mode, use it
     # or if we're guessing all URLs
@@ -243,40 +242,32 @@ class Plugin
       # we have no caching, so we sort the URLs to fetch and only get 1 unique url per plugin. not great..
       unless @matches.nil?
         lastbase_uri = nil
-        thisstatus,thisurl,thisbody,thisheaders = nil # this shouldn't be necessary but ruby thinks its a local variable to the if end statement
+        thisstatus, thisurl, thisbody, thisheaders = nil # this shouldn't be necessary but ruby thinks its a local variable to the if end statement
 
-        @matches.map {|x| x if x[:url]}.compact.sort_by {|x| x[:url] }.map do |match|
-          r=[] # temp results
+        @matches.map { |x| x if x[:url] }.compact.sort_by { |x| x[:url] }.map do |match|
+          r = [] # temp results
 
-                                  newbase_uri=URI.join(@base_uri.to_s, match[:url]).to_s
-                                  aggressivetarget=Target.new(newbase_uri)
-                aggressivetarget.open
+          newbase_uri = URI.join(@base_uri.to_s, match[:url]).to_s
+          aggressivetarget = Target.new(newbase_uri)
+          aggressivetarget.open
 
   #        if $verbose >1
   #          puts "#{@plugin_name} Aggressive: #{aggressivetarget.uri.to_s} [#{aggressivetarget.status}]"
   #        end
 
-          results += make_matches(aggressivetarget,match)
+          results += make_matches(aggressivetarget, match)
         end
       end
-
     end
     # clean up results
     unless results.empty?
       results.each do |r|
-        r[:certainty]=100 if r[:certainty].nil?
+        r[:certainty] = 100 if r[:certainty].nil?
       end
     end
 
     results
   end
-
-  extend PluginSugar
-  def_field  :author, :version, :description, :website, :matches, :cve, :dorks
-  # deprecated fields
-  def_field :examples
-#, :category
-
 end
 
 
@@ -292,18 +283,17 @@ class PluginSupport
       error("Error: Failed to load - #{err}")
     rescue SystemExit, Interrupt
       error("ERROR: Failed to load plugins: Interrupted")
-      if $WWDEBUG==true or $verbose > 1
+      if $WWDEBUG == true or $verbose > 1
         raise
       end
       exit 1
     end
   end
 
-
   # precompile regular expressions in plugins for performance
   def PluginSupport.precompile_regular_expressions
     Plugin.registered_plugins.each do |thisplugin|
-      matches=thisplugin[1].matches
+      matches = thisplugin[1].matches
       unless matches.nil?
         matches.each do |thismatch|
           unless thismatch[:regexp].nil?
@@ -312,20 +302,19 @@ class PluginSupport
           end
 
           [:version, :os, :string, :account, :model, :firmware, :module, :filepath].each do |label|
-            if !thismatch[label].nil? and thismatch[label].class==Regexp
-              thismatch[:regexp_compiled]=Regexp.new(thismatch[label])
+            if !thismatch[label].nil? and thismatch[label].class == Regexp
+              thismatch[:regexp_compiled] = Regexp.new(thismatch[label])
               #pp thismatch
             end
           end
 
           unless thismatch[:text].nil?
-            thismatch[:regexp_compiled]=Regexp.new(Regexp.escape(thismatch[:text]))
+            thismatch[:regexp_compiled] = Regexp.new(Regexp.escape(thismatch[:text]))
           end
         end
       end
     end
   end
-
 
 =begin
 for adding/removing sets of plugins.
@@ -338,26 +327,28 @@ for adding/removing sets of plugins.
 does not work correctly with mixed plugin names and files
 
 =end
-
-  def PluginSupport.load_plugins(list=nil)
+  def PluginSupport.load_plugins(list = nil)
     # separate list into a and b
     #  a = make list of dir & filenames
     #  b = make list of assumed pluginnames
 
-    a=[]
-    b=[]
+    a = []
+    b = []
 
     plugin_dirs = PLUGIN_DIRS.clone
-    plugin_dirs.map {|p| p = File.expand_path(p) }
+    plugin_dirs.map { |p| p = File.expand_path(p) }
 
     if list
-      list=list.split(",")
+      list = list.split(",")
 
-      plugins_disabled_location = ["plugins-disabled"].map { |x|
-          $LOAD_PATH.map { |y| y + "/" + x if File.exists?( y + "/" + x ) }
-        }.flatten.compact.first
+      plugins_disabled_location = ["plugins-disabled"].map do |x|
+        $LOAD_PATH.map do |y|
+          path = "#{y}/#{x}"
+          path if File.exists?(path)
+        end
+      end.flatten.compact.first
 
-      list.each { |x| x.gsub!(/^\+$/,"+#{plugins_disabled_location}") } # + is short for +plugins-disabled
+      list.each { |x| x.gsub!(/^\+$/, "+#{plugins_disabled_location}") } # + is short for +plugins-disabled
 
       list.each do |p|
         choice = PluginChoice.new
@@ -398,7 +389,7 @@ does not work correctly with mixed plugin names and files
       plugin_dirs.each do |d|
         # if a folder, then load all files
         if File.directory?(d)
-          (Dir.glob("#{d}/*.rb") - minus_files).each {|x| PluginSupport.load_plugin(x) }
+          (Dir.glob("#{d}/*.rb") - minus_files).each { |x| PluginSupport.load_plugin(x) }
         elsif File.exists?(d)
           PluginSupport.load_plugin(d)
         else
@@ -416,22 +407,24 @@ does not work correctly with mixed plugin names and files
       if b.map {|c| c.modifier }.include?(nil)
         selected_plugin_names = []
       else
-        selected_plugin_names = Plugin.registered_plugins.map {|n,p| n.downcase }
+        selected_plugin_names = Plugin.registered_plugins.map { |n, p| n.downcase }
       end
 
       b.map {|c|
-        selected_plugin_names << c.name if c.modifier.nil? or c.modifier=="+"
+        selected_plugin_names << c.name if c.modifier.nil? or c.modifier == "+"
         selected_plugin_names -= [c.name] if c.modifier == "-"
       }
 
       #pp selected_plugin_names
       # Plugin.registered_plugins is getting wiped out
 
-      plugins_to_use = Plugin.registered_plugins.map {|n,p| [n,p] if selected_plugin_names.include?(n.downcase) }.compact
+      plugins_to_use = Plugin.registered_plugins.map do |n, p|
+        [n, p] if selected_plugin_names.include?(n.downcase)
+      end.compact
       #puts "after "
 
       # report on plugins that couldn't be found
-      unfound_plugins = selected_plugin_names - plugins_to_use.map {|n,p| n.downcase }
+      unfound_plugins = selected_plugin_names - plugins_to_use.map { |n, p| n.downcase }
       unless unfound_plugins.empty?
         puts "Error: The following plugins were not found: " + unfound_plugins.join(",")
       end
@@ -439,9 +432,7 @@ does not work correctly with mixed plugin names and files
     else
       # no selection, so it's default
       plugin_dirs.each do |d|
-        Dir.glob("#{d}/*.rb").each {|x|
-          PluginSupport.load_plugin(x)
-        }
+        Dir.glob("#{d}/*.rb").each { |x| PluginSupport.load_plugin(x) }
       end
       plugins_to_use = Plugin.registered_plugins
     end
@@ -452,13 +443,11 @@ does not work correctly with mixed plugin names and files
     plugins_to_use
   end
 
-
-  def PluginSupport.custom_plugin(c,*option)
-
+  def PluginSupport.custom_plugin(c, *option)
     if option == ["grep"]
-      matches="matches [:text=>\"#{c}\"]"
+      matches = "matches [:text=>\"#{c}\"]"
 
-      custom="# coding: ascii-8bit
+      custom = "# coding: ascii-8bit
       Plugin.define \"Grep\" do
       author \"Unknown\"
       description \"User defined\"
@@ -478,12 +467,12 @@ does not work correctly with mixed plugin names and files
 
       # this isn't checked for sanity... loading plugins = cmd exec anyway
       if c =~ /\{.*\}/
-        matches="matches [#{c}]"
+        matches = "matches [#{c}]"
       end
 
       abort("Invalid custom plugin syntax: #{c}") if matches.nil?
 
-      custom="# coding: ascii-8bit
+      custom = "# coding: ascii-8bit
       Plugin.define \"Custom-Plugin\" do
       author \"Unknown\"
       description \"User defined\"
@@ -495,7 +484,7 @@ does not work correctly with mixed plugin names and files
 
     begin
       # open tmp file
-      f=Tempfile.new('whatweb-custom-plugin')
+      f = Tempfile.new('whatweb-custom-plugin')
       # write
       f.write(custom)
       f.close
@@ -511,24 +500,21 @@ does not work correctly with mixed plugin names and files
   end
 
   ### some UI stuff
-
   def PluginSupport.plugin_list
     terminal_width = 80
     puts "WhatWeb Plugin List"
     puts
     puts "Plugin Name - Description"
     puts "-" * terminal_width
-    Plugin.registered_plugins.sort_by {|a,b| a.downcase }.each do |n,p|
-
+    Plugin.registered_plugins.sort_by { |a, b| a.downcase }.each do |n, p|
       # output fits more description onto a line
       line = "#{n} - "
       line += p.description.delete("\r\n") if p.description
 
-      if line.size > terminal_width-1
+      if line.size > terminal_width - 1
         line = line[0..terminal_width - 4] + "..."
       end
       puts line
-
     end
     puts "-" * terminal_width
     puts
@@ -540,13 +526,12 @@ does not work correctly with mixed plugin names and files
     puts
   end
 
-
   # Show Google Dorks
   def PluginSupport.plugin_dorks(plugin_name)
-    dorks=[]
+    dorks = []
 
     # Loop through plugins
-    Plugin.registered_plugins.each do |n,p|
+    Plugin.registered_plugins.each do |n, p|
       if n.downcase == plugin_name.downcase
         pp "Google Dorks for #{n}:" if $verbose > 2
         dorks << p.dorks unless p.dorks.nil?
@@ -554,9 +539,12 @@ does not work correctly with mixed plugin names and files
     end
 
     # Show results if present, else show error message
-    dorks.size > 0 ? puts(dorks) : error("Google dork lookup failed: Invalid plugin name or no dorks available")
+    if dorks.size > 0
+      puts dorks
+    else
+      error("Google dork lookup failed: Invalid plugin name or no dorks available")
+    end
   end
-
 
   # Show plugin information
   def PluginSupport.plugin_info(keywords = nil)
@@ -567,18 +555,17 @@ does not work correctly with mixed plugin names and files
 
     count = {plugins: 0, version_detection: 0, matches: 0, dorks: 0, aggressive: 0, passive: 0 }
 
-    Plugin.registered_plugins.sort_by {|a,b| a.downcase }.each do |name,plugin|
-      dump=[name,plugin.author,plugin.description,plugin.website,plugin.matches].flatten.compact.to_a.join.downcase
+    Plugin.registered_plugins.sort_by { |a, b| a.downcase }.each do |name, plugin|
+      dump = [name, plugin.author, plugin.description, plugin.website, plugin.matches].flatten.compact.to_a.join.downcase
 
       # this will fail is an expected variable is not defined or empty
-      if keywords.empty? or keywords.map {|k| dump.include?(k.downcase) }.compact.include?(true)
-
+      if keywords.empty? or keywords.map { |k| dump.include?(k.downcase) }.compact.include?(true)
         puts "=" * terminal_width
         puts "Plugin:".ljust(16) + name
         puts "-" * terminal_width
 
         if plugin.description
-          word_wrap(plugin.description, terminal_width - 16).each_with_index do |line,index|
+          word_wrap(plugin.description, terminal_width - 16).each_with_index do |line, index|
             if index == 0
               print "Description:".ljust(16)
             else
@@ -596,7 +583,7 @@ does not work correctly with mixed plugin names and files
         puts "Version:".ljust(16) + (plugin.version || "<Not defined>")
         puts
         print "Features:".ljust(16)
-        print "[#{ defined?(plugin.matches) and plugin.matches ? "Yes" : "No" }]".ljust(7) + "Pattern Matching"
+        print "[#{defined?(plugin.matches) and plugin.matches ? "Yes" : "No"}]".ljust(7) + "Pattern Matching"
 
         if defined?(plugin.matches) and plugin.matches
           puts " (#{plugin.matches.size})"
@@ -604,15 +591,15 @@ does not work correctly with mixed plugin names and files
           puts
         end
 
-        puts " " * 16 + "[#{ plugin.version_detection? ? "Yes" : "No" }]".ljust(7) + "Version detection from pattern matching"
-        puts " " * 16 + "[#{ defined?(plugin.passive) ? "Yes" : "No" }]".ljust(7) + "Function for passive matches"
-        puts " " * 16 + "[#{ defined?(plugin.aggressive) ? "Yes" : "No" }]".ljust(7) + "Function for aggressive matches"
+        puts " " * 16 + "[#{plugin.version_detection? ? "Yes" : "No" }]".ljust(7) + "Version detection from pattern matching"
+        puts " " * 16 + "[#{defined?(plugin.passive) ? "Yes" : "No"}]".ljust(7) + "Function for passive matches"
+        puts " " * 16 + "[#{defined?(plugin.aggressive) ? "Yes" : "No"}]".ljust(7) + "Function for aggressive matches"
 
-        count[:version_detection] +=1 if plugin.version_detection?
-        count[:passive] +=1 if defined?(plugin.passive)
-        count[:aggressive] +=1 if defined?(plugin.aggressive)
+        count[:version_detection] += 1 if plugin.version_detection?
+        count[:passive] += 1 if defined?(plugin.passive)
+        count[:aggressive] += 1 if defined?(plugin.aggressive)
 
-        print " " * 16 + "[#{ plugin.dorks ? "Yes" : "No" }]".ljust(7) + "Google Dorks"
+        print " " * 16 + "[#{plugin.dorks ? "Yes" : "No"}]".ljust(7) + "Google Dorks"
         if plugin.dorks
           puts " (#{plugin.dorks.size})"
         else
@@ -644,17 +631,14 @@ does not work correctly with mixed plugin names and files
     end
 
     puts "=" * terminal_width
-
     puts "Total plugins: #{count[:plugins]}"
     puts "Total plugins with version detection from pattern matching: #{count[:version_detection]}"
     puts "Total patterns (regular expressions, text, MD5 hashes, etc): #{count[:matches]}"
     puts "Total Google dorks: #{count[:dorks]}"
     puts "Total aggressive functions: #{count[:aggressive]}"
     puts "Total passive functions: #{count[:passive]}"
-
     puts
   end
-
 end
 
 
@@ -664,19 +648,19 @@ class PluginChoice
 
   def <=>(s)
     x = -1 if self.modifier.nil?
-    x = 0 if self.modifier=="+"
-    x = 1 if self.modifier=="-"
+    x = 0 if self.modifier == "+"
+    x = 1 if self.modifier == "-"
     x
   end
 
   def fill(s)
     self.modifier = nil
-    self.modifier=s[0].chr if ["+","-"].include?(s[0].chr)
+    self.modifier = s[0].chr if ["+", "-"].include?(s[0].chr)
 
     if self.modifier
-      self.name=s[1..-1]
+      self.name = s[1..-1]
     else
-      self.name=s
+      self.name = s
     end
 
     # figure out and store the filename or pluginname
