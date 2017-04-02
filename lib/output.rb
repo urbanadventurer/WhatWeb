@@ -219,7 +219,7 @@ class OutputVerbose < Output
                   when :module then "magenta"
                   when :filepath then "dark_green"
                   else "grey"
-              end
+                  end
 
               if value.is_a?(String)
                 @f.print coloured(value.to_s,c)
@@ -324,17 +324,17 @@ class OldOutputVerbose < Output
               @f.print "\t" + key.to_s.capitalize.ljust(11) + ": "
 
               c = case key
-                when :version then "green"
-                when :string then "cyan"
-                when :certainty then "grey"
-                when :os then "red"
-                when :account then "cyan"
-                when :model then "dark_green"
-                when :firmware then "dark_green"
-                when :module then "magenta"
-                when :filepath then "dark_green"
-                else "grey"
-              end
+                  when :version then "green"
+                  when :string then "cyan"
+                  when :certainty then "grey"
+                  when :os then "red"
+                  when :account then "cyan"
+                  when :model then "dark_green"
+                  when :firmware then "dark_green"
+                  when :module then "magenta"
+                  when :filepath then "dark_green"
+                  else "grey"
+                  end
 
               if value.is_a?(String)
                 @f.print coloured(value.to_s, c)
@@ -478,7 +478,7 @@ class OutputXML < Output
   def escape(t)
     text = t.to_s.dup
     # use sort_by so that & is before &quot;, etc.
-    @substitutions.sort_by { |a, b| a == "&" ? 0 : 1 }.map{ |from, to| text.gsub!(from, to) }
+    @substitutions.sort_by { |a, _| a == "&" ? 0 : 1 }.map{ |from, to| text.gsub!(from, to) }
 
     # Encode all special characters
     # More info: http://www.asciitable.com/
@@ -576,7 +576,7 @@ class OutputMagicTreeXML < Output
     text
   end
 
-  def out(target, status, results)
+  def out(target, _status, results)
     $semaphore.synchronize do
       # Parse target URL and initialize host node details
       uri = URI.parse(target.to_s)
@@ -730,15 +730,11 @@ class OutputJSON < Output
 
   def utf8_elements!(obj)
     if obj.class == Hash
-      obj.each_value {|x|
-        utf8_elements!(x)
-      }
+      obj.each_value { |x| utf8_elements!(x) }
     end
 
     if obj.class == Array
-      obj.each {|x|
-        utf8_elements!(x)
-      }
+      obj.each { |x| utf8_elements!(x) }
     end
 
     if obj.class == String
@@ -750,10 +746,10 @@ class OutputJSON < Output
       # replace invalid UTF-8 chars
       # based on http://stackoverflow.com/a/8873922/388038
       if String.method_defined?(:encode)
-        obj.encode!('UTF-16', 'UTF-8', :invalid => :replace, :replace => '')
+        obj.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
         obj.encode!('UTF-8', 'UTF-16')
       end
-      obj = obj.force_encoding('UTF-8')
+      obj.force_encoding('UTF-8')
 
   #  obj=obj.force_encoding("ASCII-8BIT")
 #puts obj.encoding.name
@@ -829,7 +825,7 @@ class OutputMongo < Output
 
     # should make databse and collection comma or fullstop delimited, eg. test,scan
     @db = Mongo::Connection.new(host).db(database) # resolve-replace means we can't connect to localhost by name and must use 0.0.0.0
-    auth = @db.authenticate(s[:username], s[:password]) if s[:username]
+    @db.authenticate(s[:username], s[:password]) if s[:username]
     @coll = @db.collection(collection)
     @charset = nil
   end
@@ -864,7 +860,7 @@ class OutputMongo < Output
     if obj.class == String
 #      obj=obj.upcase!
 #      obj=Iconv.iconv("UTF-8",@charset,obj).join
-            obj = obj.force_encoding('UTF-8')
+      obj.force_encoding('UTF-8')
     end
   end
 
@@ -971,7 +967,7 @@ class OutputSQL < Output
     @f.puts "INSERT INTO plugins (name) VALUES ('Custom-Plugin');"
     @f.puts "INSERT INTO plugins (name) VALUES ('Grep');"
 
-    Plugin::registered_plugins.each do |n,p|
+    Plugin::registered_plugins.each do |n, _|
       @f.puts "INSERT INTO plugins (name) VALUES (#{escape_for_sql(n)});"
     end
   end
