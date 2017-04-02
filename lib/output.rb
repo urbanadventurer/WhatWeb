@@ -87,11 +87,11 @@ class OutputVerbose < Output
       results_hash={}
       results.map { |k, v| results_hash[k] = v }
 
-      display={
-        title:"<None>",
-        ip:"<Unknown>",
-        country:"<Unknown>",
-        status:"<Unknown>"
+      display = {
+        title: "<None>",
+        ip: "<Unknown>",
+        country: "<Unknown>",
+        status: "<Unknown>"
       }
 
       display[:country] = results_hash["Country"].map { |r| "#{r[:string]}, #{r[:module]}" }.join(",") if results_hash["Country"]
@@ -757,17 +757,17 @@ class OutputJSON < Output
 
   #  obj=obj.force_encoding("ASCII-8BIT")
 #puts obj.encoding.name
-#    obj.encode!("UTF-8",{:invalid=>:replace,:undef=>:replace})
+#    obj.encode!("UTF-8",{invalid: :replace,undef: :replace})
 
     end
   end
 
   def out(target, status, results)
     # nice
-    foo= {:target=>target.to_s, :http_status=>status, :plugins=>{} }
+    foo = {target: target.to_s, http_status: status, plugins: {}}
 
     results.each do |plugin_name,plugin_results|
-#      thisplugin = {:name=>plugin_name}
+#      thisplugin = {name: plugin_name}
       thisplugin = {}
 
       unless plugin_results.empty?
@@ -870,10 +870,10 @@ class OutputMongo < Output
 
   def out(target, status, results)
     # nice
-    foo= {:target=>target.to_s, :http_status=>status, :plugins=>{} }
+    foo = {target: target.to_s, http_status: status, plugins: {}}
 
     results.each do |plugin_name, plugin_results|
-#      thisplugin = {:name=>plugin_name}
+#      thisplugin = {name: plugin_name}
       thisplugin = {}
 
       unless plugin_results.empty?
@@ -978,7 +978,7 @@ class OutputSQL < Output
 
   def out(target, status, results)
     # nice
-    foo= {:target=>target, :http_status=>status, :plugins=>{} }
+    foo = {target: target, http_status: status, plugins: {}}
 
     results.each do |plugin_name, plugin_results|
       thisplugin = {}
