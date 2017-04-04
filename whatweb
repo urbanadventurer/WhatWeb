@@ -321,43 +321,6 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 	url_list = url_list.flatten #.sort.uniq
 end
 
-def next_target
-	t = nil
-
-	puts "Target List:" + $targets.inspect if $verbose > 2
-
-	while $recent_targets.include?(t) or t.nil?
-		t = $targets.shift
-		puts "# t at the end of the $targets list" if $verbose > 2
-		# t at the end of the $targets list
-		if t.nil?
-			puts "t is nil" if $verbose > 2
-			if $targets.empty?
-				if Thread.list.size > 1
-					if $verbose > 2
-						puts "Thread list size: #{Thread.list.size}"
-						Thread.list.each do |thread|
-							puts "Thread: #{thread.inspect} is #{thread.status}"
-						end
-					end
-					#sleep 1
-					Thread.pass
-				else
-					puts "breaking now" if $verbose > 2
-					break
-				end
-			end
-		end
-	end
-
-	puts "Recent Targets:" + $recent_targets.join(",") if $verbose > 2
-
-	$recent_targets.push t
-	$recent_targets.pop if $recent_targets.size > 100 # we dont need to care about mroe than 100
-
-	t
-end
-
 # backwards compatible convenience method for plugins to use
 def open_target( url )
 	newt = Target.new(url)
@@ -366,28 +329,27 @@ def open_target( url )
 end
 
 ### output
-
-def error( s )
-	return if $NO_ERRORS
-	if defined?( $semaphore )
-		# We want the output mutex locked.
-		# Has our current thread already locked the Mutex?
-		begin
-			$semaphore.lock
-		rescue ThreadError
-			# we're already locked. This was expected.
-		end
-	end
-	if ( $use_colour=="auto" ) or ( $use_colour=="always" )
-		STDERR.puts red( s )
-	else
-		STDERR.puts s
-	end
-	STDERR.flush
-	unless $OUTPUT_ERRORS.nil?
-		$OUTPUT_ERRORS.out( s )
-	end
-	$semaphore.unlock if defined?( $semaphore )
+$semaphore = Mutex.new
+# this is noisy in debug
+def $semaphore.reentrant_synchronize(&work)
+  begin
+    # This test is noisy in debug, shame there isn't a good way to test for mutex ownership
+    $semaphore.lock
+    $semaphore.unlock
+  rescue ThreadError
+    work.call
+  else
+    $semaphore.synchronize(&work)
+  end
+end
+def error(s)
+  return if $NO_ERRORS
+  $semaphore.reentrant_synchronize do
+    # TODO: make use_color smart, so it detects a tty
+    STDERR.puts((($use_colour == "auto") or ($use_colour == "always"))? red(s) : s)
+    STDERR.flush
+    $OUTPUT_ERRORS.out(s) if $OUTPUT_ERRORS
+  end
 end
 
 # takes a string and returns an array of lines. used by plugin_info
@@ -973,102 +935,93 @@ $CUSTOM_HEADERS.delete_if {|k,v| v=="" }
 
 ### TARGETS
 # clean up urls, add example urls if needed
-$targets=make_target_list(ARGV, input_file, $plugins_to_use)
-$recent_targets=[]
+$targets = make_target_list(ARGV, input_file, $plugins_to_use)
 
 # fail & show usage if no targets.
-if $targets.size <1
-	error "No targets selected"		
-	exit 1
+if $targets.size < 1
+  error("No targets selected")
+  exit 1
 end
 
-$semaphore=Mutex.new
+# try to make a new Target object, may return nil
+def prepare_target(url)
+  begin
+    Target.new(url)
+  rescue => err
+    error(err)
+    nil
+  end
+end
+
+target_queue = Queue.new() # workers consume from this
+result_queue = Queue.new() # workers return results here for output
+result_mutex = Mutex.new()
 Thread.abort_on_exception = true if $WWDEBUG
 
-while t = next_target
-		Thread.new(t) do |thistarget|
-			begin
-				target = Target.new(thistarget) # we set the target within the thread
-			rescue => err
-				error(err)
-				next
-			end
+workers = (1..$MAX_THREADS).map do
+  Thread.new() do
+    # keep reading in root tasks until a nil is received
+    loop do
+      target = target_queue.pop
+      Thread.exit unless target
+      redirects = 0
+      # keep processing until there are no more redirects or the limit is hit
+      while target
+        begin
+          target.open
+        rescue => err
+          error("ERROR Opening: #{target} - #{err}")
+          raise if $WWDEBUG
+          next
+        end
+        result = run_plugins(target)
+        result_mutex.synchronize do
+          result_queue << [target, result]
+        end
+        redirect_url = target.get_redirection_target
+        if redirect_url
+          redirects += 1
+          target = prepare_target(redirect_url)
+          if redirects > $MAX_REDIRECTS
+            error("ERROR Too many redirects: #{target}")
+            break
+          end
+        else
+          target = nil
+        end
+      end
+    end
+  end
+end
+$targets.each do |url|
+  target = prepare_target(url)
+  target_queue << target if target
+end
+loop do
+  break if result_mutex.synchronize do
+    # more defensive than comparing against $MAX_THREADS
+    alive = workers.map { |worker| worker if worker.alive? }.compact.length
+    alive == target_queue.num_waiting and result_queue.empty?
+  end
+  begin
+    target, result = result_queue.pop(true)
+  rescue ThreadError
+    sleep 0.1
+    next
+  end
+  output_list.each do |output|
+    begin
+      output.out(target, target.status, result)
+    rescue => err
+      error("ERROR Logging failed: #{target} - #{err}")
+      raise if $WWDEBUG == true
+    end
+  end
+end
 
-			puts Thread.current.to_s + " started for " + target.to_s if $verbose>1
-			sleep $WAIT unless $WAIT.nil? # wait
-
-			# follow redirects
-			no_redirects =false
-			num_redirects = 0
-			while no_redirects == false do
-				no_redirects=true if target.is_file?
-				# if we redirect 10 times we give up
-				if num_redirects == $MAX_REDIRECTS
-					error("ERROR Too many redirects: #{target.to_s}")
-					no_redirects=true
-					next
-				end
-
-				begin
-					target.open
-				rescue => err
-					error("ERROR Opening target: #{target.to_s} - #{err}")
-					no_redirects = true # without this we can get stuck in a loop
-					raise if $WWDEBUG
-					next
-				end
-
-				if target.is_url? and target.status.nil?
-					# assume all HTTP sites return a status
-					no_redirects=true
-					next
-				end
-
-				results = run_plugins(target)
-
-				# reporting
-				# multiple output plugins simultaneously, some stdout, some files
-				output_list.each do |o|
-					begin
-						o.out(target, target.status, results)
-					rescue => err
-						#srsly, logging failed
-						error("ERROR Logging failed: #{target.to_s} - #{err}")
-						raise if $WWDEBUG==true
-					end
-				end
-
-				# REDIRECTION
-				unless no_redirects
-					begin
-						if newtarget = target.get_redirection_target		
-							num_redirects+=1 
-							target=Target.new(newtarget)
-						else
-							no_redirects=true 
-						end
-					rescue => err
-						error("ERROR Redirection broken: #{target.to_s} - #{err}")
-						no_redirects=true
-						raise if $WWDEBUG==true
-					end
-				end
-			end # while no_redirects
-		end # Thread.new
-
-	while Thread.list.size>($MAX_THREADS+1)
-		puts "Thread list full, passing control" if $verbose>1
-		#sleep 0.5
-		Thread.pass
-	end
-end # targets.each
-
-# close output logs
-output_list.each {|o| 
-	o.close
-}
-
-# shutdown plugins
-Plugin.registered_plugins.map {|name,plugin| plugin.shutdown }
-
+# Shut down workers, output, and plugins
+(1..$MAX_THREADS).each { target_queue << nil }
+workers.each { |worker| worker.join }
+output_list.each { |output| output.close }
+Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
 #pp $PLUGIN_TIMES.sort_by {|x,y|y }
