@@ -1003,12 +1003,11 @@ loop do
     alive = workers.map { |worker| worker if worker.alive? }.compact.length
     alive == target_queue.num_waiting and result_queue.empty?
   end
-  begin
-    target, result = result_queue.pop(true)
-  rescue ThreadError
+  if result_queue.empty?
     sleep 0.1
     next
   end
+  target, result = result_queue.pop(true)
   output_list.each do |output|
     begin
       output.out(target, target.status, result)
