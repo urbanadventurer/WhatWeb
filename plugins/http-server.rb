@@ -20,7 +20,7 @@ version "0.4"
 description "HTTP server header string. This plugin also attempts to identify the operating system from the server header."
 
 # Passive #
-def passive
+passive do
 	m=[]
 	
 	unless @headers["server"].nil?

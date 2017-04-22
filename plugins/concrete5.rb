@@ -30,7 +30,7 @@ name "Concrete5"
 
 # Set-Cookie: CONCRETE5=8d653f8a1afccc70f75646ab8d44420f; path=/
 
-    def aggressive
+    aggressive do
         m = []
 
         versions = Hash[

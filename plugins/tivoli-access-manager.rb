@@ -42,7 +42,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate # realm="Access Manager for e-business"

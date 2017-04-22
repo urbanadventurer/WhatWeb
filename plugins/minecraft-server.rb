@@ -37,7 +37,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate Header

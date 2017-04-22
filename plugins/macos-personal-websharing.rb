@@ -21,7 +21,7 @@ website "http://support.apple.com/kb/HT2973"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

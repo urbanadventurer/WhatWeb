@@ -27,7 +27,7 @@ matches [
 # <title>Hydro Energie Roth :: TYPOlight Open Source CMS 2.8</title>
 # TYPOlight webCMS :: TYPOlight webCMS 2.7
 
-def aggressive
+aggressive do
 	m=[]
 	
 	target = URI.join(@base_uri.to_s,"/typolight/").to_s

@@ -52,7 +52,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
         m << {:name=>"sdsessionid Cookie" } if @headers["set-cookie"] =~ /sdsessionid=[a-z0-9]{32}/
 	m

@@ -29,7 +29,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# z_pid and z_sid cookies

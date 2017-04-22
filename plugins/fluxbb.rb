@@ -52,7 +52,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 # the paths are relative to the url path if they don't start with /

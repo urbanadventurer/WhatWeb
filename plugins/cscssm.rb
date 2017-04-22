@@ -19,7 +19,7 @@ description "CSCSSM Proxy server"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Proxy-Agent HTTP Header

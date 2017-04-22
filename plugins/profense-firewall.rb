@@ -15,7 +15,7 @@ description "Profense Web Application Firewall -  http://www.armorlogic.com/prof
 
 
 
-def passive
+passive do
     m = []   
       
     m << {:name=>"PLBSID cookie" } if @headers["set-cookie"] =~ /PLBSID=/i  

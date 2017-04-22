@@ -18,7 +18,7 @@ website "http://www.huawei.com/products/datacomm/catalog.do?id=16"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

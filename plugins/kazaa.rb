@@ -19,7 +19,7 @@ description "This plugin retrieves the KaZaA IP:port combination, network and us
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Kazaa-IP

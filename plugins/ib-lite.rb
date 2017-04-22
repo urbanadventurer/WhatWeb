@@ -29,7 +29,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Firmware / Bootloader Detection

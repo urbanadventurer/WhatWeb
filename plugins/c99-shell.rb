@@ -25,7 +25,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# Get local file path # Must start with "/" to avoid c99 source

@@ -49,7 +49,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# /style/ # Trigger error message

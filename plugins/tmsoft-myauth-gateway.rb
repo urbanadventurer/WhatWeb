@@ -30,7 +30,7 @@ matches [
 ]
 
 # Passive # HTTP Header
-def passive
+passive do
 	m=[]
 	
 	# X-Software-*

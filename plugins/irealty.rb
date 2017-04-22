@@ -33,7 +33,7 @@ matches [
 ]
 
 # Match PHPSESSID%28_%29 cookie
-def passive
+passive do
         m=[]
 
 	m << { :name=>"iRealty PHPSESSID%28_%29 cookie" } if @headers["set-cookie"] =~ /^PHPSESSID%28_%29=[a-z0-9]{32}/

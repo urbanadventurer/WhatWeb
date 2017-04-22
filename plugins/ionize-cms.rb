@@ -53,7 +53,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ionize_session Cookie

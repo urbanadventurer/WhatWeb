@@ -70,7 +70,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# wwwboard passwd.txt # GHDB Signature 1122
@@ -87,7 +87,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# wwwboard passwd.txt # GHDB Signature 1122

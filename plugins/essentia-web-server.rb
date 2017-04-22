@@ -13,7 +13,7 @@ description "Essentia Web Server - High performance HTTP/1.1 compliant multi-thr
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

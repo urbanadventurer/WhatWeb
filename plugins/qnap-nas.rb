@@ -89,7 +89,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# /cgi-bin/authLogin.cgi # Check document is QNAP XML

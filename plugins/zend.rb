@@ -60,7 +60,7 @@ matches [
 ]
 
 
-def aggressive
+aggressive do
 # when submiting invalid post to valid controller 
 #<h1>Application error!</h1>
 #<p>An application error occured!</p>

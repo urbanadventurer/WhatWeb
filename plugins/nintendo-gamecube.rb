@@ -26,7 +26,7 @@ dorks [
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Server: GameCube

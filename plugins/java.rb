@@ -25,7 +25,7 @@ website "http://www.java.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# JSESSIONID Cookie

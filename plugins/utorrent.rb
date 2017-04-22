@@ -14,7 +14,7 @@ website "https://web.utorrent.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 	m<< {:name=>"Page body is 'invalid request'" } if @body == "invalid request"
 	m<< {:name=>'Basic realm="uTorrent"' } if @headers['www-authenticate'] == 'Basic realm="uTorrent"'

@@ -19,7 +19,7 @@ description "This plugin extracts the proxy server details from the Via param of
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Via HTTP header

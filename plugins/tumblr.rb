@@ -36,7 +36,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Username Detection # x-tumblr-user Header

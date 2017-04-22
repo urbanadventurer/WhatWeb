@@ -17,7 +17,7 @@ description "This plugin retrieves the X-Frame-Options value from the HTTP heade
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Frame-Options HTTP Header

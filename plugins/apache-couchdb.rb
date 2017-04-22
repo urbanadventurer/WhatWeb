@@ -21,7 +21,7 @@ website "http://couchdb.apache.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

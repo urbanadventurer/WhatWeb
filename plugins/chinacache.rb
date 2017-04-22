@@ -20,7 +20,7 @@ website "http://www.chinacache.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# powered-by-chinacache HTTP Header

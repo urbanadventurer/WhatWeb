@@ -17,7 +17,7 @@ website "http://code.google.com/p/rutorrent/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate realm

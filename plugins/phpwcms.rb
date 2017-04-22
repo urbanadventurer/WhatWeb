@@ -23,7 +23,7 @@ matches [
 ]
 
 # Version detection using html comment
-def passive
+passive do
         m=[]
 
         if @body =~ /phpwcms \| open source web content management system/

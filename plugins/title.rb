@@ -16,7 +16,7 @@ author "Andrew Horton"
 version "0.3"
 description "The HTML page title"
 
-def passive
+passive do
 	m=[]
  	if @body =~ /<title>[^<]+<\/title>/i
 		title=@body.scan(/<title>([^<]+)<\/title>/i)[0][0]

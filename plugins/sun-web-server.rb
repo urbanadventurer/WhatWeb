@@ -19,7 +19,7 @@ website "http://www.sun.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	if @headers["server"] =~ /^Sun/

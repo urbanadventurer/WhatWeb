@@ -18,7 +18,7 @@ website "http://en.wikipedia.org/wiki/Microsoft_Office_XML_formats"
 
 
 # Extract version, usernames and company
-def passive
+passive do
 	m=[]
 
 	# Excel

@@ -25,7 +25,7 @@ matches [
 { :ghdb=>'"powered by TCMS"', :certainty=>75 },
 ]
 
-def passive
+passive do
         m=[]
 
 	# TCMS_SESS_ID cookie

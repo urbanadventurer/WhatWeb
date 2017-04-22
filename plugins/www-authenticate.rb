@@ -27,7 +27,7 @@ description "This plugin identifies the WWW-Authenticate HTTP header and extract
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Check HTTP Header for www-authenticate

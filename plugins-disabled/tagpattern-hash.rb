@@ -25,7 +25,7 @@ description "Fuzzy pattern matching. Analyze the structure of HTML tags. Turns t
 # convert number to hex 
 
 
-def passive	
+passive do	
 	hash=Digest::MD5.hexdigest(@tagpattern)
 	[{:name=>"tag pattern hash",:string=>hash}]
 end

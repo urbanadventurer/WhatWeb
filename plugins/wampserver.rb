@@ -17,7 +17,7 @@ website "http://www.wampserver.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Title and h1 heading

@@ -1,33 +1,34 @@
-module PluginSugar
-  def def_field(*names)
-    class_eval do
-      names.each do |name|
-        define_method(name) do |*args|
-          if args.empty?
-            instance_variable_get("@#{name}")
-          else
-            instance_variable_set("@#{name}", *args)
-          end
-        end
+class Plugin
+  %i[
+    aggressive
+    author
+    cve
+    description
+    dorks
+    matches
+    name
+    passive
+    version
+    website
+  ].each do |symbol|
+    define_method(symbol) do |*value, &block|
+      name = "@#{symbol}"
+      if block
+          instance_variable_set(name, block)
+      elsif !value.empty?
+        instance_variable_set(name, *value)
+      else
+        instance_variable_get(name)
       end
     end
   end
-end
 
-
-class Plugin
-  extend PluginSugar
-  def_field :name, :author, :version, :description, :website, :matches, :cve, :dorks
-  # deprecated fields
-  def_field :examples
-#, :category
   @registered_plugins = {}
-  attr :mutex
+  attr_reader(:mutex)
 
   class << self
     attr_reader :registered_plugins
     private :new
-    attr_reader :plugin_name
   end
 
   def initialize
@@ -35,14 +36,10 @@ class Plugin
   end
 
   def self.define(&block)
-    p = new
+    p = new()
     p.instance_eval(&block)
-    p.startup
+    p.startup()
     Plugin.registered_plugins[p.name] = p
-  end
-
-  def set_plugin_name(s)
-    @plugin_name = s
   end
 
   def version_detection?
@@ -56,17 +53,6 @@ class Plugin
   # individual plugins can override this
   def shutdown; end
 
-  def lock
-    @locked=true
-  end
-
-  def unlock
-    @locked=false
-  end
-
-  def locked?
-    @locked
-  end
 
   def init (target)
     @target = target
@@ -230,12 +216,12 @@ class Plugin
     end
 
     # if the plugin has a passive method, use it
-    results += self.passive if defined? self.passive
+    results += passive.call if passive
 
     # if the plugin has an aggressive method and we're in aggressive mode, use it
     # or if we're guessing all URLs
     if ($AGGRESSION == 3 and !results.empty?) or ($AGGRESSION == 4)
-      results += self.aggressive if defined? self.aggressive
+      results += aggressive.call if aggressive
 
       # if any of our matches have a url then fetch it
       # and check the matches[]

@@ -31,14 +31,14 @@ matches [
 #Set-Cookie: exp_last_activity=1274602411; expires=Mon, 23-May-2011 03:13:31 GMT; path=/
 #Set-Cookie: exp_tracker=a%3A1%3A%7Bi%3A0%3Bs%3A5%3A%22index%22%3B%7D; path=/
 
-def passive
+passive do
         m=[]        
         m << {:name=>"exp_last_visit cookie" } if @headers["set-cookie"] =~ /exp_last_visit=/
         m
 end
 
 # these plugins only identify the system. they don't find out the version, etc
-def aggressive
+aggressive do
 	m=[]
 	
 	target = URI.join(@base_uri.to_s,"READ_THIS_FIRST.txt").to_s

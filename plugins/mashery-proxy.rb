@@ -18,7 +18,7 @@ website "http://support.mashery.com/SolutionOverview"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

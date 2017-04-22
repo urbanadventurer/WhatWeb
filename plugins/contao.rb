@@ -22,7 +22,7 @@ matches [
 {:text=>'<!-- indexer::continue -->'}
 ]
 
-def aggressive
+aggressive do
 	m=[]
 	
 	target = URI.join(@base_uri.to_s,"/contao/").to_s

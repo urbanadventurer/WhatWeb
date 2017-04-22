@@ -17,7 +17,7 @@ website "http://juniper.net/ - Note: This will slow down your web app pentest sc
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Cookie

@@ -40,7 +40,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Redirect location # /plc/webvisu.htm

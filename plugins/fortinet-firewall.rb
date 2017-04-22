@@ -55,7 +55,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# APSCOOKIE and log_filters cookies

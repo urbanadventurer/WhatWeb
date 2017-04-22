@@ -22,7 +22,7 @@ website "http://www.nintendo.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate Header

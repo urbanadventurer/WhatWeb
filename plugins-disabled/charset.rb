@@ -36,7 +36,7 @@ def get_charset(body)
 	charset
 end
 
-def passive
+passive do
 	m=[]
 	
 	body=@body

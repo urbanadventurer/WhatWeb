@@ -16,7 +16,7 @@ description "This plugin extracts the proxy server details from the X-Forwarded-
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Via HTTP header

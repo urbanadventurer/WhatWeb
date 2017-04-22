@@ -13,7 +13,7 @@ description "This plugin extracts the HTTP headers for plugin development purpos
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract Headers

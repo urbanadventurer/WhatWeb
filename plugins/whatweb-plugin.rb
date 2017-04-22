@@ -17,7 +17,7 @@ description "This plugin detects instances of WhatWeb plugins. If this plugin is
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract plugin details

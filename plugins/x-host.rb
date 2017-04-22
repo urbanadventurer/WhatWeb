@@ -16,7 +16,7 @@ description "This plugin retrieves the X-Host, X-HostName, X-Host-Name and X-Hos
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Host HTTP Header

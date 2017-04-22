@@ -17,7 +17,7 @@ description "This plugin extracts the value for the vary HTTP header. This is ra
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Vary HTTP Header

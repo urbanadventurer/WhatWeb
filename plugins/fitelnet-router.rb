@@ -18,7 +18,7 @@ website "http://www.furukawa.co.jp/fitelnet/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

@@ -10,7 +10,7 @@ name "LiteSpeed"
   version "1.0"
   description "LiteSpeed web server, which is able to read Apache configuration directly and used together with web hosting control panels by replacing Apache"
 
-	def passive
+	passive do
 		m=[]
 		m << {:name=>"LiteSpeed server" } if @headers["server"] =~ /LiteSpeed/i
 		m

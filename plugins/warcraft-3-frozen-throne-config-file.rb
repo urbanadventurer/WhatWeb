@@ -20,7 +20,7 @@ matches [
 ]
 
 # Grab mySQL username, server and database details
-def passive
+passive do
         m=[]
 
         if @body =~ /wc3_sql_dbhost		"([^\"]+)"/ and @body =~ /wc3_sql_dbuser		"([^\"]+)"/ and @body =~ /wc3_sql_dbpass		"([^\"]*)"/

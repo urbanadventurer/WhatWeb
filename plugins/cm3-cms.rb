@@ -26,7 +26,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 	# cm2
 	target = URI.join(@base_uri.to_s,'admin/').to_s	

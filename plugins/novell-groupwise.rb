@@ -49,7 +49,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# NJSCN Cookie

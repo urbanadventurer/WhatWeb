@@ -22,7 +22,7 @@ matches [
 ]
 
 
-def passive
+passive do
 	m=[]
 	re=/<link .*?type=["']application\/atom\+xml["'].*?>/im #"
 	if @body =~ re

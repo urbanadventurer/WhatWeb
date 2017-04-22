@@ -37,7 +37,7 @@ website "http://www.centreon.com/"
 
     ]
 
-    def aggressive
+    aggressive do
         m = []
 
         versions = Hash[

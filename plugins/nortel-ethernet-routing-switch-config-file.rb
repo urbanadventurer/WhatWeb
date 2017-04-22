@@ -14,7 +14,7 @@ website "http://products.nortel.com/go/product_index.jsp?locale=en-US&lcid=-1"
 # 21 results for "qos queue-set-assignment queue-set" @ 2010-10-14
 
 
-def passive
+passive do
 	m=[]
 
 	if @body =~ /qos queue-set-assignment queue-set/

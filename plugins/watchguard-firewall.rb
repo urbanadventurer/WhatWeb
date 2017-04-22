@@ -22,7 +22,7 @@ description "WatchGuard Firewall - http://www.watchguard.com/products/edge-e/ove
 
 
 # Passive #
-def passive
+passive do
 	m = []
 
 	# HTTP Server Header

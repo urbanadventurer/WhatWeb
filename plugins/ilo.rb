@@ -54,7 +54,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Get server nic name # JavaScript

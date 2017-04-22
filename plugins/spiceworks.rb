@@ -32,7 +32,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# spiceworks_session cookie

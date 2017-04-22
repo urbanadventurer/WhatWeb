@@ -15,7 +15,7 @@ website "http://www.python.org/"
 
 
 # HTTP Header
-def passive
+passive do
 	m=[]
 
 	# Server # Version Detection

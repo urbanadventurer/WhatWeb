@@ -33,7 +33,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Local File Path Detection # Confirm match # Find application base path

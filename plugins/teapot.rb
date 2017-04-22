@@ -17,7 +17,7 @@ website "http://www.apps.ietf.org/rfc/rfc2324.html"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTCPCP 418 Status Code

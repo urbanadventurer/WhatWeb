@@ -90,7 +90,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # X-AspNetmvc-version HTTP header

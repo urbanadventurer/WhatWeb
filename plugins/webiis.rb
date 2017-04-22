@@ -17,7 +17,7 @@ description "WebIIS - Mini ASP Web Server [Chinese]"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP WebIIS Header

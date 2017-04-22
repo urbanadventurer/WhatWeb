@@ -20,7 +20,7 @@ website "http://www.squid-cache.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Squid-Error # Also used by iPrism, CachePower, and MecGuard 
