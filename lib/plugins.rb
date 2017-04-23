@@ -32,13 +32,18 @@ class Plugin
   end
 
   def initialize
-    @mutex = Mutex.new
+    @matches = []
+    @dorks = []
+    @passive = nil
+    @aggressive = nil
   end
 
   def self.define(&block)
     p = new()
     p.instance_eval(&block)
     p.startup()
+    # TODO: make sure required attributes are set
+    # TODO: freeze attributes
     Plugin.registered_plugins[p.name] = p
   end
 
@@ -53,8 +58,19 @@ class Plugin
   # individual plugins can override this
   def shutdown; end
 
+  def scan(target)
+    scan_context = ScanContext.new(self, target)
+    return scan_context.x
+  end
+end
 
-  def init (target)
+class ScanContext
+  def initialize(plugin, target)
+    @plugin = plugin
+    @matches = plugin.matches
+    define_singleton_method(:passive_scan, plugin.passive) if plugin.passive
+    define_singleton_method(:aggressive_scan, plugin.aggressive) if plugin.aggressive
+
     @target = target
     @body = target.body
     @headers = target.headers
@@ -216,12 +232,12 @@ class Plugin
     end
 
     # if the plugin has a passive method, use it
-    results += passive.call if passive
+    results += passive_scan() if @plugin.passive
 
     # if the plugin has an aggressive method and we're in aggressive mode, use it
     # or if we're guessing all URLs
     if ($AGGRESSION == 3 and !results.empty?) or ($AGGRESSION == 4)
-      results += aggressive.call if aggressive
+      results += aggressive_scan() if @plugin.aggressive
 
       # if any of our matches have a url then fetch it
       # and check the matches[]
