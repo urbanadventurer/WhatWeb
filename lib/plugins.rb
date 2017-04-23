@@ -8,6 +8,7 @@ class Plugin
     matches
     name
     passive
+    variables
     version
     website
   ].each do |symbol|
@@ -39,6 +40,7 @@ class Plugin
   end
 
   def self.define(&block)
+    # TODO: plugins should isolated isolated
     p = new()
     p.instance_eval(&block)
     p.startup()
@@ -60,6 +62,7 @@ class Plugin
 
   def scan(target)
     scan_context = ScanContext.new(self, target)
+    scan_context.instance_variable_set(:@variables, @variables)
     return scan_context.x
   end
 end
