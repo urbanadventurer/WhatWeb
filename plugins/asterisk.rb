@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Asterisk" do
+Plugin.define do
+name "Asterisk"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
 version "0.1"
 description "Asterisk - communications server software. Asterisk powers IP PBXs, VoIP gateways, call center ACDs and IVR systems."

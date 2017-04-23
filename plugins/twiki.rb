@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TWiki" do
+Plugin.define do
+name "TWiki"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
 version "0.1"
 description "A flexible, powerful, and easy to use enterprise wiki, enterprise collaboration platform, and web application platform."
@@ -35,7 +36,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
         m << {:name=>"TWIKISID Cookie" } if @headers["set-cookie"] =~ /TWIKISID=[0-9a-z]{32}/
         m

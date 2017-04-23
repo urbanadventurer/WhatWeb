@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SX-Webserver" do
+Plugin.define do
+name "SX-Webserver"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.1"
 description "SX-Webserver - a simple tcp socket web server - coded by: neotek of soldierx.com"

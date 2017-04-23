@@ -8,7 +8,8 @@
 # Added website parameter
 #  
 ##
-Plugin.define "Barracuda-Load-Balancer" do
+Plugin.define do
+name "Barracuda-Load-Balancer"
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
 version "0.2"
 description "Barracuda Load Balancer"
@@ -19,7 +20,7 @@ matches [
     {:name=>"BNI_BARRACUDA_LB_COOKIE cookie", :text => "BNI_BARRACUDA_LB_COOKIE", :search => "headers[set-cookie]" },
 ]
 
-def passive
+passive do
     m = []
     
     if @headers["set-cookie"] =~ /BARRACUDA_LB_COOKIE=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/i

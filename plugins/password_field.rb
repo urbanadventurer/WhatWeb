@@ -6,7 +6,8 @@
 ##
 
 
-Plugin.define "PasswordField" do
+Plugin.define do
+name "PasswordField"
 author "Caleb Anderson"
 version "0.1"
 description "find password fields"
@@ -21,7 +22,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
     m=[]
     fields=@body.scan(/<input [^>]*?type=["']password["'][^>]*>/i)
     fields.each do |field|

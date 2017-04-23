@@ -13,7 +13,8 @@
 # Version 0.2
 # removed :name & :probability
 ##
-Plugin.define "GoAhead-Webs" do
+Plugin.define do
+name "GoAhead-Webs"
 author "Andrew Horton"
 version "0.4"
 description "Opensource, embedded webserver"
@@ -32,7 +33,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server header

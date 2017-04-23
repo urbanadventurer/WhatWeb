@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "RaidenHTTPD" do
+Plugin.define do
+name "RaidenHTTPD"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-16
 version "0.1"
 description "RaidenHTTPD is a fully featured web server software for Windows platform."

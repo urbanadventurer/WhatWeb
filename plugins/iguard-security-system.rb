@@ -11,7 +11,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated version detection
 ##
-Plugin.define "iGuard-Security-System" do
+Plugin.define do
+name "iGuard-Security-System"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.3"
 description "Lucky Technology iGuard security system, based on smart card and biometric fingerprint technology."
@@ -48,7 +49,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

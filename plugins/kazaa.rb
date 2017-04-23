@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-25 #
 # Updated regex
 ##
-Plugin.define "KaZaA" do
+Plugin.define do
+name "KaZaA"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
 version "0.2"
 description "This plugin retrieves the KaZaA IP:port combination, network and username from the HTTP headers."
@@ -18,7 +19,7 @@ description "This plugin retrieves the KaZaA IP:port combination, network and us
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Kazaa-IP

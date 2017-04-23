@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated version detection
 ##
-Plugin.define "xGB" do
+Plugin.define do
+name "xGB"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
 description "xGB guestbook"

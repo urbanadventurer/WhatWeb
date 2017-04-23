@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-10 #
 # Updated version detection
 ##
-Plugin.define "CMS-WebManager-Pro" do
+Plugin.define do
+name "CMS-WebManager-Pro"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.2"
 description "CMS WebManager-Pro - is a software product for creating and maintaining websites of any complexity."

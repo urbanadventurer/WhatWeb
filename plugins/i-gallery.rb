@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "i-Gallery" do
+Plugin.define do
+name "i-Gallery"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
 description "i-Gallery is a complete online photo gallery. Easy to navigate thumbnails with paging. Enlarged views offer print & email buttons."

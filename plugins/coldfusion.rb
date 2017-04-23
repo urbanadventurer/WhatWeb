@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-04-25 #
 # Added cookie matches
 ##
-Plugin.define "ColdFusion" do
+Plugin.define do
+name "ColdFusion"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.3"
 description "Adobe ColdFusion application server and software enables developers to rapidly build, deploy, and maintain robust Internet applications for the enterprise."
@@ -70,7 +71,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# CFID and CFTOKEN cookie

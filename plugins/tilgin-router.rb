@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Tilgin-Router" do
+Plugin.define do
+name "Tilgin-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-04
 version "0.1"
 description "Tilgin router"
@@ -53,7 +54,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	if @body =~ /<TABLE class="control">[\s]+<TBODY>[\s]+<TR>[\s]+<TD class="first">Product name:<\/TD>/

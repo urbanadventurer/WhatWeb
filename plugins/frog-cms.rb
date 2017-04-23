@@ -11,7 +11,8 @@
 # Version 0.3
 # changed Propulsé  to Propuls.{2}
 
-Plugin.define "FrogCMS" do
+Plugin.define do
+name "FrogCMS"
 author "Andrew Horton"
 version "0.3"
 description "Opensource CMS written in PHP. Frog CMS is a PHP version of Radiant CMS, a well known Ruby on Rails application. This CMS is not easily identified, expect some false-negatives"

@@ -7,12 +7,13 @@
 # Version 0.2 #
 # Fixed regex
 ##
-Plugin.define "Vulnerable-To-XSS" do
+Plugin.define do
+name "Vulnerable-To-XSS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
 version "0.2"
 description "This plugin can be used as a very basic xss scanner. It searches for instances of <script>alert(*)</script> in the HTML source."
 
-def passive
+passive do
         m=[]
         result=""
         if @body =~ /<script>([\s]*)(alert\([a-zA-Z0-9\/\'\"]+\))([\s]*[\;]?[\s]*)<\/script>/i

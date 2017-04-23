@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Data-ONTAP" do
+Plugin.define do
+name "Data-ONTAP"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-05
 version "0.2"
 description "Data ONTAP - fully virtualized data management environment. Data ONTAP provides a virtualized data environment with a simple interface that enables you to create virtual storage volumes, make changes quickly, and achieve superior storage utilization."

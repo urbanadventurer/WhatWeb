@@ -13,7 +13,8 @@
 # Added model detection
 # Added module detection
 ##
-Plugin.define "Axis-Network-Camera" do
+Plugin.define do
+name "Axis-Network-Camera"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
 version "0.2"
 description "Axis network camera"

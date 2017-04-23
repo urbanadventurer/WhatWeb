@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-19 #
 # Added local file path aggressive match
 ##
-Plugin.define "ViewVC" do
+Plugin.define do
+name "ViewVC"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
 version "0.2"
 description "ViewVC (formerly known as ViewCVS) is a browser interface for CVS and Subversion version control repositories. It generates templatized HTML to present navigable directory, revision, and change log listings. It can display specific versions of files as well as diffs between those versions."
@@ -41,7 +42,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Local File Path Detection # Find application base path

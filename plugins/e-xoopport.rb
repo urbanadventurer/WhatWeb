@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-16 #
 # Updated version detection
 ##
-Plugin.define "E-Xoopport" do
+Plugin.define do
+name "E-Xoopport"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
 description "CMS"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CuteFlow" do
+Plugin.define do
+name "CuteFlow"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-20
 version "0.1"
 description "CuteFlow - web-based workflow management"

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Added website parameter
 ##
-Plugin.define "AMX-Mod-X" do
+Plugin.define do
+name "AMX-Mod-X"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.2"
 description "AMX Mod X is a versatile Half-Life metamod plugin which is targetted toward server administration."
@@ -28,7 +29,7 @@ matches [
 ]
 
 # Grab mySQL username, server and database details
-def passive
+passive do
 	m=[]
 
 	if @body =~ /amx_sql_host[\s]+"([^\"]*)"/ and @body =~ /amx_sql_user[\s]+"([^\"]+)"/ and @body =~ /amx_sql_pass[\s]+"([^\"]*)"/

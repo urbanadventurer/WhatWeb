@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Open-Freeway" do
+Plugin.define do
+name "Open-Freeway"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.1"
 description "Freeway is by far the largest and most fully featured Open Source eCommerce platform. It doesn't just sell products but extends to sell in some very fancy new ways and is very configurable."
@@ -30,7 +31,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 	m << {:name=>"fEcom Cookie", :certainty=>75 } if @headers["set-cookie"] =~ /fEcom=/
         m

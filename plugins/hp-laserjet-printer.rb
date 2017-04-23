@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated model detection
 ##
-Plugin.define "HP-LaserJet-Printer" do
+Plugin.define do
+name "HP-LaserJet-Printer"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
 description "HP LaserJet printer web interface"
@@ -48,7 +49,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# Server: HP-ChaiServer

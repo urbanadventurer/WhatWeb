@@ -6,7 +6,8 @@
 ##
 
 
-Plugin.define "DublinCore" do
+Plugin.define do
+name "DublinCore"
 author "Caleb Anderson"
 version "0.1"
 description "Dublin Core Metadata Initiative (DCMI) supports shared innovation in metadata design and best practices across a broad range of purposes and business models."

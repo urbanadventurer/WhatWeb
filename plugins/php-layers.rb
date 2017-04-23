@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-18 #
 # Updated version detection
 ##
-Plugin.define "PHP-Layers" do
+Plugin.define do
+name "PHP-Layers"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
 version "0.2"
 description 'PHP Layers Menu is a hierarchical menu system to prepare "on the fly" DHTML menus relying on the PHP scripting engine for the processing of data items."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-02 #
 # Updated model detection
 ##
-Plugin.define "Sony-Network-Camera" do
+Plugin.define do
+name "Sony-Network-Camera"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
 description "SONY network video camera web interface"

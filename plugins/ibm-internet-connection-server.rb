@@ -8,7 +8,8 @@
 # Moved patterns from passive function to matches[]
 ##
 
-Plugin.define "IBM-Internet-Connection-Server" do
+Plugin.define do
+name "IBM-Internet-Connection-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-07
 version "0.2"
 description "IBM Internet Connection Server - Homepage [offline] : http://www.ics.raleigh.ibm.com"

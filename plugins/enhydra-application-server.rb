@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Enhydra-Application-Server" do
+Plugin.define do
+name "Enhydra-Application-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-20
 version "0.1"
 description "Enhydra Application Server"

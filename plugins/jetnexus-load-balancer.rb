@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "jetNEXUS-Load-Balancer" do
+Plugin.define do
+name "jetNEXUS-Load-Balancer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
 version "0.1"
 description "jetNEXUS provide leading edge load balancing and traffic management solutions to accelerate application performance and availability, enabling clients to create and deliver resilient and scalable online services."
@@ -16,7 +17,7 @@ website "http://www.jetnexus.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# jetNEXUS Header

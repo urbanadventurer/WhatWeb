@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Fixed regex
 ##
-Plugin.define "Zoph" do
+Plugin.define do
+name "Zoph"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
 version "0.2"
 description "Zoph (Zoph Organizes Photos) is a web based digital image presentation and management system. In other words, a photo album. It is built with PHP, MySQL and Perl."
@@ -33,7 +34,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
         # new versions

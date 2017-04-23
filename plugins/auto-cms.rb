@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Auto-CMS" do
+Plugin.define do
+name "Auto-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
 description "With Auto CMS you can have a website in 1 minute!, upload the package by FTP to your Hosting, and do click on simbol (*) in the footer, and enjoy of your own website, with the minimal requeriments for your presence on Internet."

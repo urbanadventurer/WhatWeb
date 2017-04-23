@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Subsonic" do
+Plugin.define do
+name "Subsonic"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
 description "Subsonic is a free, web-based media streamer, providing ubiquitous access to your music. Based on Java technology, Subsonic runs on most platforms, including Windows, Mac, Linux and Unix variants."

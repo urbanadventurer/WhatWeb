@@ -10,7 +10,8 @@
 # Version 0.2 #
 # Added version detection. Updated matches.
 ##
-Plugin.define "CMSimple" do
+Plugin.define do
+name "CMSimple"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.3"
 description "CMSimple is a simple content management system for smart maintainance of small commercial or private sites."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Proxy-Authenticate" do
+Plugin.define do
+name "Proxy-Authenticate"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-09
 version "0.2"
 description "This plugin extracts the realm from the proxy-authenticate HTTP header."

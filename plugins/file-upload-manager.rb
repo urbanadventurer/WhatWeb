@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated version detection
 ##
-Plugin.define "File-Upload-Manager" do
+Plugin.define do
+name "File-Upload-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.3"
 description "Web based file upload manager written in PHP."

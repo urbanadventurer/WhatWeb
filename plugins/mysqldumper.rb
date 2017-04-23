@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MySqlDumper" do
+Plugin.define do
+name "MySqlDumper"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
 version "0.1"
 description "MySQLDumper is a free PHP/Perl script to backup your important MySQL-Data safe and secure and restore them in the case of an emergency."
@@ -39,7 +40,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# MySQLDumper Cookie

@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :name & :probability
 ##
-Plugin.define "InvisionPowerBoard" do
+Plugin.define do
+name "InvisionPowerBoard"
 author "Andrew Horton"
 version "0.3"
 description "Invision Power Board - PHP Web Forum"

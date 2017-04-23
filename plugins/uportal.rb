@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated version detection
 ##
-Plugin.define "uPortal" do
+Plugin.define do
+name "uPortal"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
 version "0.2"
 description "uPortal"
@@ -34,7 +35,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
 	if @headers["uportal-version"] =~ /uPortal_rel-([\-0-9]+)/i

@@ -14,7 +14,8 @@
 # Added document root detection
 # Added cpanel credentials detection
 ##
-Plugin.define "phpinfo" do
+Plugin.define do
+name "phpinfo"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-07 
 version "0.3"
 description "This plugin detects instances of phpinfo() results and extracts the operating system, PHP version, document root and remote cpanel credentials."
@@ -32,7 +33,7 @@ dorks [
 
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# Check if the document is a valid phpinfo() file

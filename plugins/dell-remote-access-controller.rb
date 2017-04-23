@@ -8,7 +8,8 @@
 # Updated Version Detection
 # Added internal IP detection
 ##
-Plugin.define "Dell-Remote-Access-Controller" do
+Plugin.define do
+name "Dell-Remote-Access-Controller"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.2"
 description "Dell Remote Access Controller or DRAC, an interface card from Dell Inc, provides out-of-band management facilities. The controller has its own processor, memory, network connection, and access to the system bus. Key features include power management, virtual media access and remote console capabilities, all available through a supported web browser or command line interface."

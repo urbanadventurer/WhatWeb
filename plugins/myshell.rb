@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MyShell" do
+Plugin.define do
+name "MyShell"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
 version "0.1"
 description "MyShell - PHP powered shell"

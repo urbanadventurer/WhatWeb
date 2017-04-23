@@ -25,7 +25,8 @@
 # Version 0.2 # 2011-01-28 #
 # Added version detection
 ##
-Plugin.define "ASP_NET" do
+Plugin.define do
+name "ASP_NET"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
 version "0.6"
 description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world."
@@ -89,7 +90,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # X-AspNetmvc-version HTTP header

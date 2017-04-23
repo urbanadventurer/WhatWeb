@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP-Pro-Bid" do
+Plugin.define do
+name "PHP-Pro-Bid"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
 description "PHP Pro Bid - Auction software"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Tine-2" do
+Plugin.define do
+name "Tine-2"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-24
 version "0.1"
 description "Tine 2.0 is an open source project which combines groupware and CRM in one consistent interface. Tine 2.0 is web-based and optimises collaboration and organisation of groups in a lasting manner."
@@ -40,7 +41,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# TINE20SESSID Cookie

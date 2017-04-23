@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated model detection
 ##
-Plugin.define "Xerox-Printers" do
+Plugin.define do
+name "Xerox-Printers"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
 description "Xerox printers web interface"

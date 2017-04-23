@@ -6,7 +6,8 @@
 ##
 # Version 0.2 #
 # Updated version detection #
-Plugin.define "aspWebLinks" do
+Plugin.define do
+name "aspWebLinks"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
 description "Web app for categorizing links"

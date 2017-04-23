@@ -6,7 +6,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Conexant-EmWeb" do
+Plugin.define do
+name "Conexant-EmWeb"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.2"
 description "This plugin identifies the Conexant-EmWeb DSL router web interface."
@@ -76,7 +77,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Check HTTP Header
@@ -92,7 +93,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Check HTTP Header

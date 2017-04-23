@@ -10,7 +10,8 @@
 # Version 0.2 #
 # Fixed bug with returned modules not comma seperated
 ##
-Plugin.define "TheHostingTool" do
+Plugin.define do
+name "TheHostingTool"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.3"
 description "Free Open-Source hosting tool similar to cPanel"
@@ -30,7 +31,7 @@ matches [
 
 ]
 
-def passive
+passive do
 	m=[]
 
 	# PHP Version detection

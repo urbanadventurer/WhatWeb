@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Added website parameter and description
 ##
-Plugin.define "TCMS" do
+Plugin.define do
+name "TCMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
 version "0.2"
 description "Content management system by Tanzarine Technology Ltd"
@@ -24,7 +25,7 @@ matches [
 { :ghdb=>'"powered by TCMS"', :certainty=>75 },
 ]
 
-def passive
+passive do
         m=[]
 
 	# TCMS_SESS_ID cookie

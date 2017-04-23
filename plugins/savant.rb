@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Savant" do
+Plugin.define do
+name "Savant"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
 version "0.1"
 description "Savant is a freeware open source web server that runs on Windows 9x, ME, NT, 2000, and XP."
@@ -16,7 +17,7 @@ website "http://savant.sourceforge.net/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-18 #
 # Replaced passive function with matches
 ##
-Plugin.define "Brother-Fax" do
+Plugin.define do
+name "Brother-Fax"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-14
 version "0.2"
 description "Brother fax web interface"

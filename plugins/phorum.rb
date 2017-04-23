@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Phorum" do
+Plugin.define do
+name "Phorum"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-25
 version "0.1"
 description "Phorum - Forum - Requires PHP and MySQL"

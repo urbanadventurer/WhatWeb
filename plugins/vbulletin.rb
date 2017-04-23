@@ -10,7 +10,8 @@
 # Version 0.3
 # Uses :version=>//
 
-Plugin.define "VBulletin" do
+Plugin.define do
+name "VBulletin"
 author "Andrew Horton"
 version "0.3"
 description "VBulletin is a PHP forum."

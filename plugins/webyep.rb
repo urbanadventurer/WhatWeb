@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WebYep" do
+Plugin.define do
+name "WebYep"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
 description "WebYep is a compact Web Content Management System, making editable Websites extremely easy to create and maintain. Different to bigger WebCMS tools, WebYep offers a low priced alternative for small Websites. Requires: PHP"

@@ -7,7 +7,8 @@
 # Version 0.2 by Andrew Horton
 ## changed a match so it doens't use both url and status as this is leading to false positives because of a bug in the core in 0.4.8-dev
 
-Plugin.define "Traffic-Inspector" do
+Plugin.define do
+name "Traffic-Inspector"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-30
 version "0.2"
 description "An integrated gateway solution for controlling access to the Internet and for providing data transmission services."

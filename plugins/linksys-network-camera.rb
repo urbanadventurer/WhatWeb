@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Changed :version to :model
 ##
-Plugin.define "Linksys-Network-Camera" do
+Plugin.define do
+name "Linksys-Network-Camera"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
 description "Linksys network camera web interface"

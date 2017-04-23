@@ -17,7 +17,8 @@
 # Version 0.2 #
 # Added passive model, firmware and module extraction support for /cgi-bin/authLogin.cgi
 ## 
-Plugin.define "QNAP-NAS" do
+Plugin.define do
+name "QNAP-NAS"
 author "Brendan Coles <bcoles@gmail.com>" # 2013-03-29
 version "0.5"
 description "QNAP provides a series of network attached storage (NAS) products and network video recorder (NVR) solutions - homepage:http://www.qnap.com/"
@@ -88,7 +89,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# /cgi-bin/authLogin.cgi # Check document is QNAP XML

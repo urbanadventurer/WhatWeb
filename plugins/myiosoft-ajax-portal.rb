@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-18 #
 # Updated version detection
 ##
-Plugin.define "MyioSoft-Ajax-Portal" do
+Plugin.define do
+name "MyioSoft-Ajax-Portal"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
 description "AjaxPortal is based on Sajax technology - an open source tool to make programming websites using the Ajax framework known as XMLHTTPRequest or remote scripting as easy as possible."
@@ -32,7 +33,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ajaxp cookie

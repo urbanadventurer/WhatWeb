@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "IBM-BladeCenter" do
+Plugin.define do
+name "IBM-BladeCenter"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-15
 version "0.1"
 description "IBM BladeCenter blade server management console"

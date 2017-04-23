@@ -19,7 +19,8 @@
 # Added favicon md5 hash
 # Added cookie matches
 ##
-Plugin.define "phpMyAdmin" do
+Plugin.define do
+name "phpMyAdmin"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
 version "0.5"
 description "phpMyAdmin is a free software tool written in PHP intended to handle the administration of MySQL over the World Wide Web."
@@ -63,7 +64,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Cookies
@@ -75,7 +76,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 # the paths are relative to the url path if they don't start with /

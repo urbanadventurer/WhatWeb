@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Proxmox-VE" do
+Plugin.define do
+name "Proxmox-VE"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
 version "0.1"
 description "Proxmox Virtual Environment is an easy to use Open Source virtualization platform for running Virtual Appliances and Virtual Machines."

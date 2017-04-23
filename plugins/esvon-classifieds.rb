@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Esvon-Classifieds" do
+Plugin.define do
+name "Esvon-Classifieds"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-13
 version "0.1"
 description "Intense research, development and testing has brought us to what we call Esvon Classifieds. This package is a good base for building a successful website and is created with high performance and scalable technology using PHP and MySQL."

@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-03-11 #
 # Updated version detection
 ##
-Plugin.define "Resin" do
+Plugin.define do
+name "Resin"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.3"
 description "Resin provides a reliable, fast Web server which can also be used as a load balancer. Resin can operate as a standalone server or as a fast servlet runner for IIS or Apache"

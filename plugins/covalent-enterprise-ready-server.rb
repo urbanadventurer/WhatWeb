@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Covalent-Enterprise-Ready-Server" do
+Plugin.define do
+name "Covalent-Enterprise-Ready-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
 version "0.2"
 description "The Covalent Enterprise Ready Server is a stand-alone, manually-managed instance of an Apache 2.0 Web server with Covalent extensions."

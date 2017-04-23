@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "FCMS" do
+Plugin.define do
+name "FCMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-06
 version "0.1"
 description "Family Connections CMS (FCMS)"

@@ -13,7 +13,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "Coppermine" do
+Plugin.define do
+name "Coppermine"
 author "Andrew Horton"
 version "0.4"
 description "Open-source Photo Gallery powered by PHP & MySQL"

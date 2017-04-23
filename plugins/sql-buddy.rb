@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SQL-Buddy" do
+Plugin.define do
+name "SQL-Buddy"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-28
 version "0.1"
 description "SQL Buddy - Web based MySQL administration"
@@ -24,7 +25,7 @@ dorks [
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Help link

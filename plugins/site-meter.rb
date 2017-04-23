@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Site-Meter" do
+Plugin.define do
+name "Site-Meter"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
 description "A fast, free Web counter that features custom counters styles. Site Meter creates dynamic 3D charts showing visitors, page views, country maps, visit durations and much more."

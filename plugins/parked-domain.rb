@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-06 #
 # Added matches for multiple hosts
 ##
-Plugin.define "Parked-Domain" do
+Plugin.define do
+name "Parked-Domain"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
 description "This plugin recognises web pages for common web hosts who allow domain parking."

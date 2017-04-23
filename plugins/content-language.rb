@@ -6,13 +6,14 @@
 ##
 
 ##
-Plugin.define "Content-Language" do
+Plugin.define do
+name "Content-Language"
 author "Peter van der Laan"
 version "0.1"
 description "Detect the content-language setting from the HTTP header."
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header # Content-Language

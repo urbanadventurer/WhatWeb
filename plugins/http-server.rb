@@ -13,13 +13,14 @@
 # Version 0.2
 # removed :probability
 ##
-Plugin.define "HTTPServer" do
+Plugin.define do
+name "HTTPServer"
 author "Andrew Horton"
 version "0.4"
 description "HTTP server header string. This plugin also attempts to identify the operating system from the server header."
 
 # Passive #
-def passive
+passive do
 	m=[]
 	
 	unless @headers["server"].nil?

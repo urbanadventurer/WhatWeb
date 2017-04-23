@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Oracle-Fusion-Middleware" do
+Plugin.define do
+name "Oracle-Fusion-Middleware"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-23
 version "0.1"
 description "Oracle Fusion Middleware (OFM)"

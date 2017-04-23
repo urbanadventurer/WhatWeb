@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Swiki" do
+Plugin.define do
+name "Swiki"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-24
 version "0.1"
 description "Swiki is a popular implementation of Ward Cunningham's WikiWikiWeb that runs under Comanche."
@@ -29,7 +30,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # Squeak / Comanche / Swiki

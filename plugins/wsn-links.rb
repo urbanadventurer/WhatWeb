@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Added website parameter
 ##
-Plugin.define "WSN-Links" do
+Plugin.define do
+name "WSN-Links"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.2"
 description "WSN Links is a links directory with google pageranks, link checking, reciprocal linking facilities and much more. Multilingual and highly extensible, it offers more than you could imagine in a links directory."
@@ -43,7 +44,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection

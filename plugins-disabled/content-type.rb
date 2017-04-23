@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Content-Type" do
+Plugin.define do
+name "Content-Type"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-24
 version "0.1"
 description "This plugin identifies the document's content type."
@@ -14,7 +15,7 @@ description "This plugin identifies the document's content type."
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract conent type

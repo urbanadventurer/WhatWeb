@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-18 # Andrew Horton
 # Replaced passive function with match for cookies
 ##
-Plugin.define "AfterLogic-WebMail-Pro" do
+Plugin.define do
+name "AfterLogic-WebMail-Pro"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
 version "0.2"
 description "AfterLogic WebMail Pro is a webmail front-end for your existing POP3/IMAP mail server."

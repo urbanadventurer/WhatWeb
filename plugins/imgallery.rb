@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "IMGallery" do
+Plugin.define do
+name "IMGallery"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-27
 version "0.1"
 description "image gallery web app"

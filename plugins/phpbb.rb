@@ -10,7 +10,8 @@
 # Version 0.2 #
 # remove :certainty and :name, change :regexp to :text
 ##
-Plugin.define "phpBB" do
+Plugin.define do
+name "phpBB"
 author "Andrew Horton"
 version "0.3"
 description "phpBB is a free forum"
@@ -64,7 +65,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	if @headers["set-cookie"] =~ /([^ ]+)_u=1; expires/
@@ -77,7 +78,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	target = URI.join(@base_uri.to_s,"docs/CHANGELOG.html").to_s

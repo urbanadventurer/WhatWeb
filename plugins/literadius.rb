@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "LiteRadius" do
+Plugin.define do
+name "LiteRadius"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
 version "0.1"
 description "LiteRadius is a web server software program that interfaces geographic locations to the Google Maps API. Requires PHP and MySQL."

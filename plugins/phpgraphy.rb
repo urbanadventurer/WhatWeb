@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpGraphy" do
+Plugin.define do
+name "phpGraphy"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-06
 version "0.1"
 description "phpGraphy is a free PHP photo gallery script released under GPL license."

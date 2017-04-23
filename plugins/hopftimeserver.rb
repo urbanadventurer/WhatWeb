@@ -8,7 +8,8 @@
 # Added examples URLs, cookie match and google dork
 # Updated matches and version detection
 ##
-Plugin.define "HopfTimeServer" do
+Plugin.define do
+name "HopfTimeServer"
 author "Aung Khant, http://yehg.net"
 version "0.2"
 description "Detect Hopf Time Server CGI application (http://www.hopf.com/)"
@@ -41,7 +42,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# NCD_COOKIE Cookie

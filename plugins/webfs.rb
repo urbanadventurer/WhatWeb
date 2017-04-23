@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "webfs" do
+Plugin.define do
+name "webfs"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.2"
 description "This is a simple http server for mostly static content.  You can use it to serve the content of a ftp server via http for example."

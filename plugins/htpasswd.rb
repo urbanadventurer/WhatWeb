@@ -13,7 +13,8 @@
 # Now requires htpasswd in the URL path to reduce false positives
 #
 ##
-Plugin.define "htpasswd" do
+Plugin.define do
+name "htpasswd"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.3"
 description ".htpasswd is a flat-file used to store usernames and password for basic authentication of Apache HTTP Server. This plugin attempts to retrievs credentials from .htpasswd files in user:pass format. - More info: http://en.wikipedia.org/wiki/Htpasswd"
@@ -39,7 +40,7 @@ dorks [
 # Extract credentials in user{2-255}:pass{1-80} format
 # Accepts : sha1, md4, md5, plaintext
 # The code is pretty ugly, but fast. Formatted for 80x24. Improvements welcomed.
-def passive
+passive do
 m=[]
 
 # Check if the current file is a .htpasswd file

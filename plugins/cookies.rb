@@ -16,7 +16,8 @@
 # Version 0.2
 # removed :certainty=>100
 ##
-Plugin.define "Cookies" do
+Plugin.define do
+name "Cookies"
 author "Andrew Horton"
 version "0.5"
 description "Display the names of cookies in the HTTP headers. The values are not returned to save on space."
@@ -27,7 +28,7 @@ description "Display the names of cookies in the HTTP headers. The values are no
 # 17 for set-cookie path=/home/ /public_html
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?

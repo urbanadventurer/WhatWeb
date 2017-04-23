@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Clearwell-E-Discovery" do
+Plugin.define do
+name "Clearwell-E-Discovery"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-21
 version "0.1"
 description "The Clearwell E-Discovery Platform is the leading enterprise e-discovery solution that enables enterprises, governments, and law firms to manage legal, regulatory, and investigative matters using a single application. The Clearwell Platform was purpose-built for e-discovery, making it easy for organizations to defensibly solve real-world challenges across the entire e-discovery lifecycle from legal hold and collections through analysis, review and production."
@@ -35,7 +36,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

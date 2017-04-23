@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-01-23 #
 # Updated version detection
 ##
-Plugin.define "Google-Hack-Honeypot" do
+Plugin.define do
+name "Google-Hack-Honeypot"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
 version "0.3"
 description "Google Hack Honeypot is the reaction to a new type of malicious web traffic: search engine hackers. This plugin identifies the following GHH modules: php-ping, HAXPLORER, phpSysInfo, PHPFM, SquirrelMail, wwwboard passwd.txt"
@@ -69,7 +70,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# wwwboard passwd.txt # GHDB Signature 1122
@@ -86,7 +87,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# wwwboard passwd.txt # GHDB Signature 1122

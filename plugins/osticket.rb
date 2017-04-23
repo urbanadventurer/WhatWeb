@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "osTicket" do
+Plugin.define do
+name "osTicket"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-24
 version "0.1"
 description "osTicket is a widely-used open source support ticket system - Requires: PHP and MySQL"

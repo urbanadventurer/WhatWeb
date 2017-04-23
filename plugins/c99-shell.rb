@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "c99-Shell" do
+Plugin.define do
+name "c99-Shell"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-08
 version "0.1"
 description "c99 PHP Backdoor"
@@ -24,7 +25,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# Get local file path # Must start with "/" to avoid c99 source

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-25 #
 # Updated version detection
 ##
-Plugin.define "GetSimple" do
+Plugin.define do
+name "GetSimple"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
 description "GetSimple is an open source CMS that utilizes the speed and convenience of XML, a best-in-class UI and the easiest learning curve of any simple Content Management System out there."

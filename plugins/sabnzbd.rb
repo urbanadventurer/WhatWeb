@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SABnzbd" do
+Plugin.define do
+name "SABnzbd"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-05
 version "0.1"
 description "SABnzbd is an Open Source Binary Newsreader written in Python."
@@ -28,7 +29,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate # realm="SABnzbd"

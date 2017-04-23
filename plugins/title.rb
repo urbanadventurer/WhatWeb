@@ -10,12 +10,13 @@
 # Version 0.2
 # removed :certainty=>100
 
-Plugin.define "Title" do
+Plugin.define do
+name "Title"
 author "Andrew Horton"
 version "0.3"
 description "The HTML page title"
 
-def passive
+passive do
 	m=[]
  	if @body =~ /<title>[^<]+<\/title>/i
 		title=@body.scan(/<title>([^<]+)<\/title>/i)[0][0]

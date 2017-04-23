@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Magento" do
+Plugin.define do
+name "Magento"
 author "Andrew Horton"
 version "0.1"
 description "Opensource ecommerce platform written in PHP"

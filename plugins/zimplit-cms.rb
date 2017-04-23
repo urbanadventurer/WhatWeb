@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-30 #
 # Updated regex
 ##
-Plugin.define "Zimplit-CMS" do
+Plugin.define do
+name "Zimplit-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
 version "0.2"
 description "Zimplit CMS: The easiest Open Source Content Management System for small web- and minisites"

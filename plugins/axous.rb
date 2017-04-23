@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Axous" do
+Plugin.define do
+name "Axous"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-20
 version "0.1"
 description "Axous is an e-shop system for software venders."

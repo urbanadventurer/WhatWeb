@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Turbo-Seek" do
+Plugin.define do
+name "Turbo-Seek"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15 
 version "0.1"
 description "Turbo Seek enables anyone to build a Search Engine & Directory Portal with the minimum expense and effort."

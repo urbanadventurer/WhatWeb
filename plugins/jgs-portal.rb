@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-16 #
 # Updated version detection
 ##
-Plugin.define "JGS-Portal" do
+Plugin.define do
+name "JGS-Portal"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
 version "0.2"
 description "CMS"

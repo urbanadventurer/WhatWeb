@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-08 #
 # Updated version detection
 ##
-Plugin.define "Basilic" do
+Plugin.define do
+name "Basilic"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
 description "Basilic is a bibliography server for research laboratories. It automates and facilitates the diffusion of research publications over the internet, automatically generating web pages from a publication database."

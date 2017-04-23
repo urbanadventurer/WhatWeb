@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated regex and version detection
 ##
-Plugin.define "Advanced-Image-Hosting-Script" do
+Plugin.define do
+name "Advanced-Image-Hosting-Script"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
 description "AIHS is a highly-flexible advanced image hosting solution for anyone who wants to offer an image hosting services of any kind."

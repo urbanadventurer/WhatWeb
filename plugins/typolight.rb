@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :certainty=>100 & :name
 
-Plugin.define "TypoLight" do
+Plugin.define do
+name "TypoLight"
 author "Andrew Horton"
 version "0.2"
 description "TypoLight is an OpenSource CMS written in PHP"
@@ -26,7 +27,7 @@ matches [
 # <title>Hydro Energie Roth :: TYPOlight Open Source CMS 2.8</title>
 # TYPOlight webCMS :: TYPOlight webCMS 2.7
 
-def aggressive
+aggressive do
 	m=[]
 	
 	target = URI.join(@base_uri.to_s,"/typolight/").to_s

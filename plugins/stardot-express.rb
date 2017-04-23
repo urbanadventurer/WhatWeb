@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Stardot-Express" do
+Plugin.define do
+name "Stardot-Express"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.1"
 description "The Express 6 Video Server is a small standalone server that streams video from up to six video cameras that plug into the back of it."

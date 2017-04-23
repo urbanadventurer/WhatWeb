@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-10 #
 # Updated version detection
 ##
-Plugin.define "GuppY" do
+Plugin.define do
+name "GuppY"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.2"
 description "An easy, free web portal, GuppY will allow you to generate very easily a complete and interactive web site. It requires no database."

@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-04-02 #
 # Updated regex
 ##
-Plugin.define "BinarySec-Firewall" do
+Plugin.define do
+name "BinarySec-Firewall"
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
 version "0.3"
 description "BinarySec Web Application Firewall - http://www.binarysec.com"

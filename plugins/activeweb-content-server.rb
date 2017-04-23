@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-18 # Andrew Horton
 # Moved HTTP header patterns from passive function to matches[]
 ##
-Plugin.define "activeWeb-Content-Server" do
+Plugin.define do
+name "activeWeb-Content-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-25
 version "0.2"
 description "Content Server is a comprehensive, scalable content management platform for professional demands. It combines editorial system, website management and development environment for Web applications in one package."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-07 #
 # Updated version detection
 ##
-Plugin.define "ASPThai_Net-Webboard" do
+Plugin.define do
+name "ASPThai_Net-Webboard"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
 description "ASPThai.Net Webboard"

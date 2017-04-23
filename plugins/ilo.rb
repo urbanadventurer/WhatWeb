@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-31 #
 # Updated regex
 ##
-Plugin.define "iLO" do
+Plugin.define do
+name "iLO"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
 version "0.2"
 description "Integrated Lights-Out, or iLO, is an embedded server management technology exclusive to Hewlett-Packard but similar in functionality to the Lights out management (LOM) technology of other vendors."
@@ -53,7 +54,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Get server nic name # JavaScript

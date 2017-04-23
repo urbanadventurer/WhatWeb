@@ -14,7 +14,8 @@
 # Version 0.3
 # removed :name and :certainty=>100
 ##
-Plugin.define "FluxBB" do
+Plugin.define do
+name "FluxBB"
 author "Andrew Horton"
 version "0.5"
 description "Open Source forum written in PHP"
@@ -51,7 +52,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 # the paths are relative to the url path if they don't start with /

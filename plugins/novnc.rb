@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "noVNC" do
+Plugin.define do
+name "noVNC"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
 version "0.1"
 description "VNC client using HTML5 (Web Sockets, Canvas) with encryption (wss://) support."

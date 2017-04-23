@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Hitbox-Gateway" do
+Plugin.define do
+name "Hitbox-Gateway"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.2"
 description "Adobe Omniture Hitbox Gateway collects HTTP headers for web site usage statistics"

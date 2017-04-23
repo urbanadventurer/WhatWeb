@@ -11,7 +11,8 @@
 # Updated firmware version detection.
 # Added model detection.
 ##
-Plugin.define "Linksys-USB-HDD" do
+Plugin.define do
+name "Linksys-USB-HDD"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-27
 version "0.3"
 description "Linksys external USB HDD web frontend"

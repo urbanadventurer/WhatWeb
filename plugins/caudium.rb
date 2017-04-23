@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved 2 patterns from passive function to matches[]
 ##
-Plugin.define "Caudium" do
+Plugin.define do
+name "Caudium"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
 version "0.2"
 description "Caudium is the name of a GPL-ed (free for commercial and personal use) web server written in Pike and in C. It is originally based on the Roxen Challenger 1.3 code base."
@@ -26,7 +27,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Pike Version Detection # HTTP X-Got-Fish Header

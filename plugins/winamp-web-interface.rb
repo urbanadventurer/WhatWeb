@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Winamp-Web-Interface" do
+Plugin.define do
+name "Winamp-Web-Interface"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-02
 version "0.2"
 description "web interface for winamp mp3 player"

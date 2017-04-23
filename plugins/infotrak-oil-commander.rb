@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Infotrak-Oil-Commander" do
+Plugin.define do
+name "Infotrak-Oil-Commander"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-27
 version "0.1"
 description "Web-based system for managing oil samples through the laboratory process and presenting the results to customers."

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpwcms" do
+Plugin.define do
+name "phpwcms"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
 version "0.1"
 description " is a robust and simple but yet powerful web based content management system running under PHP and MySQL."
@@ -22,7 +23,7 @@ matches [
 ]
 
 # Version detection using html comment
-def passive
+passive do
         m=[]
 
         if @body =~ /phpwcms \| open source web content management system/

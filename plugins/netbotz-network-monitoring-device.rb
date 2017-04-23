@@ -8,7 +8,8 @@
 # Updated version detection
 # Added WWW-Authenticate match
 ##
-Plugin.define "NetBotz-Network-Monitoring-Device" do
+Plugin.define do
+name "NetBotz-Network-Monitoring-Device"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.2"
 description "NetBotz monitoring and management web front end"
@@ -50,7 +51,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP WWW Authenticate header

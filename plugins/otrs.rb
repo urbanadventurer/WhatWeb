@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated matches and version detection
 ##
-Plugin.define "Open-Source-Ticket-Request-System" do
+Plugin.define do
+name "Open-Source-Ticket-Request-System"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
 version "0.2"
 description "OTRS is an Open source Ticket Request System (also well known as trouble ticket system) with many features to manage customer telephone calls and e-mails."

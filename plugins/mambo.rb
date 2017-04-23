@@ -21,7 +21,8 @@
 # Version 0.2
 # removed :name & :certainty
 ##
-Plugin.define "Mambo" do
+Plugin.define do
+name "Mambo"
 author "Andrew Horton"
 version "0.6"
 description "Mambo CMS (http://mambo-foundation.org)"
@@ -49,7 +50,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# /administrator/ # Confirm the presence of Mambo with 100% certainty
@@ -81,7 +82,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Open base_uri + /administrator/

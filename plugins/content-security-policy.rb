@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Content-Security-Policy" do
+Plugin.define do
+name "Content-Security-Policy"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-17
 version "0.1"
 description "Content Security Policy (CSP) - More Info: https://en.wikipedia.org/wiki/Content_Security_Policy"

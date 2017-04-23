@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-09 #
 # Updated version detection
 ##
-Plugin.define "CaLogic-Calendars" do
+Plugin.define do
+name "CaLogic-Calendars"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
 version "0.2"
 description "Web calendar"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Internet-Rimon-Filter" do
+Plugin.define do
+name "Internet-Rimon-Filter"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-15
 version "0.1"
 description "Internet Rimon (Israeli ISP) server based filtering server"
@@ -24,7 +25,7 @@ website "http://internet-rimon.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Rimon Header

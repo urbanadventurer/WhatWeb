@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "imperva-securesphere" do
+Plugin.define do
+name "imperva-securesphere"
 author "Aung Khant <http://yehg.net/>" # 2012-02-12
 version "0.1"
 description "Imperva SecureSphere - http://www.impervaguard.com/SecureSphere-Platform.asp"
@@ -22,7 +23,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 	target = URI.join(@base_uri.to_s,'SecureSphere/secsphLogin.jsp').to_s	
 	status,url,ip,body,headers=open_target(target)	

@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated version detection
 ##
-Plugin.define "anyInventory" do
+Plugin.define do
+name "anyInventory"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
 description "anyInventory, the most flexible and powerful web-based inventory system"

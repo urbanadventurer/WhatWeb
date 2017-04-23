@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OpenDocMan" do
+Plugin.define do
+name "OpenDocMan"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
 description "OpenDocMan - Open Source Document Management System - Requires PHP"

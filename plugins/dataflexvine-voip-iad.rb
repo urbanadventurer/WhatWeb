@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "DataflexViNE-VoIP-IAD" do
+Plugin.define do
+name "DataflexViNE-VoIP-IAD"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.2"
 description "The ViNE range of VoIP ADSL and VoIP SHDSL IADs support both SIP and MGCP protocols depending on the infrastructure and application for VoIP. Remote updates are possible to switch between either VoIP protocols and VoDSL."

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Evo-Cam" do
+Plugin.define do
+name "Evo-Cam"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-15
 version "0.1"
 description "EvoCam is the ultimate webcam software for Mac OS X"

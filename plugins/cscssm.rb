@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-12 #
 # Updated regex match
 ##
-Plugin.define "CSCSSM" do
+Plugin.define do
+name "CSCSSM"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.2"
 description "CSCSSM Proxy server"
@@ -18,7 +19,7 @@ description "CSCSSM Proxy server"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Proxy-Agent HTTP Header

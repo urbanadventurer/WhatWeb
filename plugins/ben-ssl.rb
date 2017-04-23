@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Replaced passive function with match
 ##
-Plugin.define "Ben-SSL" do
+Plugin.define do
+name "Ben-SSL"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-08
 version "0.2"
 description "Apache-SSL was developed by Ben Laurie and is often referred to as Ben-SSL"

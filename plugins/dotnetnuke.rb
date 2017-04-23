@@ -20,7 +20,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "DotNetNuke" do
+Plugin.define do
+name "DotNetNuke"
     author "Andrew Horton"
     version "0.5"
     description "DotNetNuke is an opensource CMS for Microsoft .Net. Passively detects modules and the copyright year."
@@ -81,7 +82,7 @@ Plugin.define "DotNetNuke" do
 
     ]
 
-    def aggressive
+    aggressive do
         m=[]
         versions = Hash[
             "05.06.04" => [

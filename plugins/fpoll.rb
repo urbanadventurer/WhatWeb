@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Fpoll" do
+Plugin.define do
+name "Fpoll"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
 version "0.1"
 description "Fpoll is a simple and easily customizable open source web poll script - Requires: PHP and MySQL"

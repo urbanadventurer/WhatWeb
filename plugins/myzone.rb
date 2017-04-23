@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "MyZone" do
+Plugin.define do
+name "MyZone"
 author "Andrew Horton"
 version "0.1"
 description "Mobile 3G WiFi Rrouter"

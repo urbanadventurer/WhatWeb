@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Microsoft-SQL-Server-Report-Manager" do
+Plugin.define do
+name "Microsoft-SQL-Server-Report-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
 description "Microsoft SQL Server Report Manager - web-based report access and management tool"

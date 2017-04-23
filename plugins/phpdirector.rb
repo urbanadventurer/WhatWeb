@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated version detection
 ##
-Plugin.define "PHPDirector" do
+Plugin.define do
+name "PHPDirector"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-24
 version "0.2"
 description "PHPDirector is a content management system that allows users to create there own video sharing websites."

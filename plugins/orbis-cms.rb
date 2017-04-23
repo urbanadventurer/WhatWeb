@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Orbis-CMS" do
+Plugin.define do
+name "Orbis-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
 description "Orbis CMS is a simple and stylish management solution for small websites."

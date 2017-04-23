@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Added :status=>200 matches
 ##
-Plugin.define "Linksys-Router" do
+Plugin.define do
+name "Linksys-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-28
 version "0.2"
 description "Linksys router"

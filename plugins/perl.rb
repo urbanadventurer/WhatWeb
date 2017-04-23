@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Added content-type application/perl match
 ##
-Plugin.define "Perl" do
+Plugin.define do
+name "Perl"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.2"
 description "Perl is a highly capable, feature-rich programming language with over 22 years of development."
@@ -17,7 +18,7 @@ website "http://www.perl.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

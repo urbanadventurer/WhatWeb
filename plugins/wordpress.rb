@@ -13,7 +13,8 @@
 # Version 0.3
 # Now using :version=>// instead of a passive function, added description, examples and included relative /wp-content/ link detection
 ##
-Plugin.define "WordPress" do
+Plugin.define do
+name "WordPress"
   author "Andrew Horton"
   version "0.5"
   description "WordPress is an opensource blogging system commonly used as a CMS."
@@ -54,7 +55,7 @@ matches [
         ]
   
   # Passive #
-  def passive
+  passive do
     m=[]
     
     # detect /wp-content/ on this site but don't be confused by links to other sites.
@@ -80,7 +81,7 @@ matches [
   end
   
   # Aggressive #
-  def aggressive
+  aggressive do
     m=[]
     
     # the paths are relative to the url path if they don't start with /

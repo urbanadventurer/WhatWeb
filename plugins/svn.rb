@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "SVN" do
+Plugin.define do
+name "SVN"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.2"
 description "SVN HTTP header."

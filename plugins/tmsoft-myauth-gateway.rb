@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "TMSoft-MyAuth-Gateway" do
+Plugin.define do
+name "TMSoft-MyAuth-Gateway"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.2"
 description "MyAuth Gateway 3 is a software for the administration of users to providers of advanced networks, enabling full management of customers, access users, groups, bandwidth control, with administrative access level and access logs of actions of technical support for complete control and ticket, statistics and central billing system via bank transfer of the major national banks. [Translated from Portuguese]"
@@ -29,7 +30,7 @@ matches [
 ]
 
 # Passive # HTTP Header
-def passive
+passive do
 	m=[]
 	
 	# X-Software-*

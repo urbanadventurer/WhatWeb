@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-21 #
 # Updated version detection
 ##
-Plugin.define "phpQuestionnaire" do
+Plugin.define do
+name "phpQuestionnaire"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.2"
 description "phpQuestionnaire"

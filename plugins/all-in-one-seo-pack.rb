@@ -8,7 +8,8 @@
 # Renamed to all-in-one-SEO-pack.rb 
 # Updated version detection method
 ##
-Plugin.define "All-in-one-SEO-Pack" do
+Plugin.define do
+name "All-in-one-SEO-Pack"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
 description "The all in one SEO pack automatically optimizes your WordPress blog for Search Engines (Search Engine Optimization)."

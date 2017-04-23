@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PieCrust" do
+Plugin.define do
+name "PieCrust"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-09-12
 version "0.1"
 description "PieCrust is a static website generator and lightweight CMS that's all managed with text files."

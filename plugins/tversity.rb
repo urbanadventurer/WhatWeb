@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "TVersity" do
+Plugin.define do
+name "TVersity"
 author "Andrew Horton"
 version "0.2"
 description "The TVersity Media Server lets you manage your Internet and home media"

@@ -8,7 +8,8 @@
 # Version 0.1
 # Based on the contao plugin
 
-Plugin.define "Contao" do
+Plugin.define do
+name "Contao"
 author "Eric Sesterhenn"
 version "0.1"
 description "Contao is an OpenSource CMS written in PHP"
@@ -21,7 +22,7 @@ matches [
 {:text=>'<!-- indexer::continue -->'}
 ]
 
-def aggressive
+aggressive do
 	m=[]
 	
 	target = URI.join(@base_uri.to_s,"/contao/").to_s

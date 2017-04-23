@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "TalkSwitch-Phone" do
+Plugin.define do
+name "TalkSwitch-Phone"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-21
 version "0.2"
 description "TalkSwitch designs and builds telephone systems for small and multi-location businesses. The company's Private branch exchange (PBX) and hybrid IP-PBX products enable communication over telephone and Voice over IP (VoIP) networks."
@@ -38,7 +39,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

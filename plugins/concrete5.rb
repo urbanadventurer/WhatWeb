@@ -10,7 +10,8 @@
 # Version 0.3
 # Uses :version=>//
 
-Plugin.define "Concrete5" do
+Plugin.define do
+name "Concrete5"
     author "Andrew Horton"
     version "0.3"
     description "Concrete5 is an OpenSource CMS written in PHP."
@@ -29,7 +30,7 @@ Plugin.define "Concrete5" do
 
 # Set-Cookie: CONCRETE5=8d653f8a1afccc70f75646ab8d44420f; path=/
 
-    def aggressive
+    aggressive do
         m = []
 
         versions = Hash[

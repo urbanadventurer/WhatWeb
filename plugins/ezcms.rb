@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "EZCMS" do
+Plugin.define do
+name "EZCMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
 description "Building your own website is easy with the EZ Websites Builder"

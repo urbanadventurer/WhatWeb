@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Level1-Router" do
+Plugin.define do
+name "Level1-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-12
 version "0.1"
 description "Level1 Router"

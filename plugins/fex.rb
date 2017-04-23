@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "FEX" do
+Plugin.define do
+name "FEX"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-22
 version "0.1"
 description "F*EX (Frams's Fast File EXchange) is a service that can be used to allow users anywhere on the Internet to exchange files of ANY size quickly and conveniently."

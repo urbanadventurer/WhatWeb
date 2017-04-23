@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Werkzeug" do
+Plugin.define do
+name "Werkzeug"
 author "Brendan Coles <bcoles@gmail.com>" # 2015-04-30
 version "0.1"
 description "Werkzeug is a WSGI utility library for Python. - Homepage: http://werkzeug.pocoo.org/"

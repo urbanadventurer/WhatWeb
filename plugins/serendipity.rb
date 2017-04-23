@@ -13,7 +13,8 @@
 # Version 0.2 # 2011-04-09 # Brendan Coles <bcoles at gmail dot com>
 # Added aggressive md5 matches
 ##
-Plugin.define "Serendipity" do
+Plugin.define do
+name "Serendipity"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.3"
 description "Serendipity - a PHP Weblog/Blog software. Serendipity is a PHP-powered weblog application which gives the user an easy way to maintain an online diary, weblog or even a complete homepage."
@@ -62,7 +63,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# x-serendipity-interfacelang
@@ -79,7 +80,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 # the paths are relative to the url path if they don't start with /

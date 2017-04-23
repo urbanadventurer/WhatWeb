@@ -11,7 +11,8 @@
 # Version 0.2
 # removed :certainty=>100 & :name
 ##
-Plugin.define "Microsoft-Windows-Business-Server" do
+Plugin.define do
+name "Microsoft-Windows-Business-Server"
 author "Andrew Horton"
 version "0.3"
 description "Microsoft Small/Essential Business Server"

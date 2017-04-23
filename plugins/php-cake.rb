@@ -9,14 +9,15 @@
 # Version 0.2
 # remove :certainty
 
-Plugin.define "PHPCake" do
+Plugin.define do
+name "PHPCake"
 author "Andrew Horton"
 version "0.2"
 description "PHP MVC web framework"
 
 # Set-Cookie: CAKEPHP=f3780e7684b29ac421af120d774f1ca9; expires=Tue, 08 Aug 2034 13:47:56 GMT; path=/
 
-def passive
+passive do
   m=[]
   m << {:name=>"CAKEPHP Cookie" } if @headers["set-cookie"] =~ /CAKEPHP=.*/
   m

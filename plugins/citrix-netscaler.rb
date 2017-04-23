@@ -8,7 +8,8 @@
 # Moved patterns from passive function to matches[]
 ##
 
-Plugin.define "Citrix-NetScaler" do
+Plugin.define do
+name "Citrix-NetScaler"
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
 version "0.2"
 description "Citrix NetScaler  - http://www.citrix.com/netscaler"

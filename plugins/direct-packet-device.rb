@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Direct-Packet-Device" do
+Plugin.define do
+name "Direct-Packet-Device"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
 version "0.2"
 description "directPacket Research, Inc. develops and markets secure and interoperable solutions for IP voice and video communication - Secure IPC Controller / IPC Router / Secure Endpoint Manager (SEM)"

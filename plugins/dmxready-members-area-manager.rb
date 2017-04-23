@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DMXReady-Members-Area-Manager" do
+Plugin.define do
+name "DMXReady-Members-Area-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.1"
 description "DMXReady Members Area Manager allows you to quickly create a whole area of your website that is 'members only' so you can control who sees your content."

@@ -11,7 +11,8 @@
 # renamed from Meta-Refresh to Meta-Refresh-Redirect
 # Expanded description
 ##
-Plugin.define "Meta-Refresh-Redirect" do
+Plugin.define do
+name "Meta-Refresh-Redirect"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-26
 version "0.3"
 description "Meta refresh tag is a deprecated URL element that can be
@@ -31,7 +32,7 @@ matches [
 
 ]
 
-def passive
+passive do
 
 	x=@body.scan(Target::meta_refresh_regex).flatten
 

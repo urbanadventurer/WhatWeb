@@ -13,7 +13,8 @@
 # Version 0.4
 # added another match line from Eric Sesterhenn
 
-Plugin.define "JQuery" do
+Plugin.define do
+name "JQuery"
 author "Andrew Horton"
 version "0.4"
 description "A fast, concise, JavaScript that simplifies how to traverse HTML documents, handle events, perform animations, and add AJAX."

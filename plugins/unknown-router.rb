@@ -13,7 +13,8 @@
 # Version 0.2 # 2011-01-09 #
 # Updated model detection
 ##
-Plugin.define "Router" do
+Plugin.define do
+name "Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-03
 version "0.4"
 description "This plugin identifies routers for which the vendor is unknown or where fingerprinting is exceptionally difficult."
@@ -36,7 +37,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# About 62 ShodanHQ results for WWW-Authenticate: Basic realm="LOGIN Enter Password (default is private)"

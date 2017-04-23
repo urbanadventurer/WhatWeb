@@ -7,7 +7,8 @@
 # Version 0.2 # 2012-05-08
 # Added 3 matches from Steve 'Ashcrow' Milner
 ##
-Plugin.define "Apache-Wicket" do
+Plugin.define do
+name "Apache-Wicket"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-27
 version "0.2"
 description "Apache Wicket, commonly referred to as Wicket, is a lightweight component-based web application framework for the Java programming language"

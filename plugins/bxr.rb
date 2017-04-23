@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-08 #
 # Updated version detection
 ##
-Plugin.define "BXR" do
+Plugin.define do
+name "BXR"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.2"
 description "BXR is an interface to manage a Blosxom-Based blog through the web or XML-RPC. Current it supports blogger, and metaWeblog APIs."

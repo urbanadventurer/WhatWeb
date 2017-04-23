@@ -13,7 +13,8 @@
 # Version 0.2 # 2011-03-06 # Andrew Horton
 # fixed examples= bug
 ##
-Plugin.define "OpenCms" do
+Plugin.define do
+name "OpenCms"
 author "Emilio Casbas" #mostly
 version "0.4"
 description "OpenCms, professional and easy to use CMS."

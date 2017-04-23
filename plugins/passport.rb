@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Passport" do
+Plugin.define do
+name "Passport"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-09
 version "0.1"
 description "This plugin detects instances of Microsoft Live Passport servers using the MSNSERVER, X-MSNSERVER and PPServer HTTP headers."
@@ -16,7 +17,7 @@ description "This plugin detects instances of Microsoft Live Passport servers us
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# PPServer HTTP Header # Retrieve local host name

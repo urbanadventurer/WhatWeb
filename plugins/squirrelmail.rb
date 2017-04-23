@@ -10,7 +10,8 @@
 # Version 0.3
 # Uses :version=>//
 
-Plugin.define "SquirrelMail" do
+Plugin.define do
+name "SquirrelMail"
 author "Andrew Horton"
 version "0.3"
 description "Opensource Webmail written in PHP"
@@ -29,7 +30,7 @@ matches [
 # <SMALL>SquirrelMail version 1.2.7<BR>
 # <small>SquirrelMail version 1.4.4<
 # <small>SquirrelMail version 1.4.9a<br />
-def passive
+passive do
 	m=[]
 	
 	# Set-Cookie: SQMSESSID=5055d75dbcac067f72b509effc42cc50; path=/

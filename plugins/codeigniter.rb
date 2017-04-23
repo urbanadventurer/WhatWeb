@@ -10,7 +10,8 @@
 # v2.0 by Andrew Horton
 # new random string
 
-Plugin.define "CodeIgniter-PHP-Framework" do
+Plugin.define do
+name "CodeIgniter-PHP-Framework"
 author "Aung Khant <YGN Ethical Hacker Group, Myanmar, http://yehg.net>"
 version "0.2"
 description "CodeIgniter PHP Framework - http://codeigniter.com/ "
@@ -30,7 +31,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
         m=[]
         m << {:string=>"ci_session Cookie" } if @headers["set-cookie"] =~ /ci_session=/
 	m

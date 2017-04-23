@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Forest-Blog" do
+Plugin.define do
+name "Forest-Blog"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-12
 version "0.2"
 description "Forest Blog"

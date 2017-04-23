@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ruby-on-Rails" do
+Plugin.define do
+name "Ruby-on-Rails"
 author "Andrew Horton"
 version "0.1"
 description "Ruby on rails is an MVC web application framework written in the ruby language. Doesn't detect all RoR sites"
@@ -54,7 +55,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 	m << {:name=>'5 JS files', :certainty=>75} if @body =~ /javascripts\/prototype\.js\?[0-9]+/ and @body =~ /javascripts\/effects\.js\?[0-9]+/ and @body =~ /javascripts\/dragdrop\.js\?[0-9]+/ and @body =~ /javascripts\/controls\.js\?[0-9]+/ and @body =~ /javascripts\/application\.js\?[0-9]+/
 

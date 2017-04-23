@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Cyberoam-Appliance" do
+Plugin.define do
+name "Cyberoam-Appliance"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-09
 version "0.1"
 description "Cyberoam UTM appliances integrate multiple security features like Firewall, VPN, Intrusion Prevention System, Anti-Virus & Anti-Spyware, Anti-Spam, Web Filtering, Layer 7 Visibility & Control, Bandwidth Management, Multiple Link Management, and more on a single platform."

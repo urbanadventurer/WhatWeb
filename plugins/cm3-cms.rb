@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "cm3-cms" do
+Plugin.define do
+name "cm3-cms"
 author "Aung Khant <http://yehg.net/>" # 2012-02-12
 version "0.1"
 description "CM3/CM2 CMS - http://www.cm3cms.com/ , CM2 was based on ASP, CM3 was based on ASP.NET."
@@ -25,7 +26,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 	# cm2
 	target = URI.join(@base_uri.to_s,'admin/').to_s	

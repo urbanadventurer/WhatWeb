@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Mason" do
+Plugin.define do
+name "Mason"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-04
 version "0.1"
 description "Mason is a powerful Perl-based templating system for generating HTML or other dynamic content."

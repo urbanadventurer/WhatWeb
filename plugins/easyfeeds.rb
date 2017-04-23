@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "EasyFeeds" do
+Plugin.define do
+name "EasyFeeds"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-05
 version "0.1"
 description "EasyFeeds is a powerful PHP based RSS reader and news aggregator."

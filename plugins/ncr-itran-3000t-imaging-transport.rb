@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "NCR-iTRAN-3000t-Imaging-Transport" do
+Plugin.define do
+name "NCR-iTRAN-3000t-Imaging-Transport"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-16
 version "0.1"
 description "A full function, image-based table top check imaging and payment processing device"

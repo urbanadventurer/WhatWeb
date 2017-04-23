@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "Profense-Firewall" do
+Plugin.define do
+name "Profense-Firewall"
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
 version "0.1"
 description "Profense Web Application Firewall -  http://www.armorlogic.com/profense_overview.html"
@@ -14,7 +15,7 @@ description "Profense Web Application Firewall -  http://www.armorlogic.com/prof
 
 
 
-def passive
+passive do
     m = []   
       
     m << {:name=>"PLBSID cookie" } if @headers["set-cookie"] =~ /PLBSID=/i  

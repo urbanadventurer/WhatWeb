@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "WolfCMS" do
+Plugin.define do
+name "WolfCMS"
 author "Andrew Horton"
 version "1.0"
 description "WolfCMS is an open-source content management system built with PHP."

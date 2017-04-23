@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-06 #
 # Updated regex
 ##
-Plugin.define "mySQL-Error" do
+Plugin.define do
+name "mySQL-Error"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.2"
 description "This plugin detects mySQL errors and grabs the username, server and database details."

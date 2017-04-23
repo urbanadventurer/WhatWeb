@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-31 #
 # Updated regex
 ##
-Plugin.define "SocketKB" do
+Plugin.define do
+name "SocketKB"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-08
 version "0.2"
 description "Deploy your own professional knowledge base or knowledge repository. Provide your customers the answers to their questions with SocketKB. Increase customer satisfaction and confidence. Easy and fast to install."

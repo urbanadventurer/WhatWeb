@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "RapidSite" do
+Plugin.define do
+name "RapidSite"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
 version "0.2"
 description "RapidSite is the world's largest and most experienced Web hosting entity."
@@ -29,7 +30,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

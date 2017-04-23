@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-21 #
 # Updated version detection
 ##
-Plugin.define "phPhotoAlbum" do
+Plugin.define do
+name "phPhotoAlbum"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
 version "0.2"
 description "PHP Photo Album"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TwistedWeb" do
+Plugin.define do
+name "TwistedWeb"
 author "Andrew Horton" # 2015-05-06
 version "0.1"
 description "Twisted web is the HTTP server provided by Twisted, an event-driven networking engine written in Python and licensed under the open source MIT license. Developed by Twisted Matrix Labs. Homepage - https://twistedmatrix.com/"

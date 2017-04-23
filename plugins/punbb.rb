@@ -7,7 +7,8 @@
 # Version 0.2 # 2012-08-16 # Andrew Horton
 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
 ##
-Plugin.define "PunBB" do
+Plugin.define do
+name "PunBB"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-06
 version "0.2"
 description "PunBB is a fast and lightweight PHP-powered discussion board. It is released under the GNU General Public License."
@@ -41,7 +42,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# the paths are relative to the url path if they don't start with /

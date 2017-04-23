@@ -10,7 +10,8 @@
 # Version 0.2 #
 # Updated version detection
 ##
-Plugin.define "IQeye-Netcam" do
+Plugin.define do
+name "IQeye-Netcam"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
 version "0.3"
 description "IQeye netcam web interface"

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-10 #
 # Updated version detection
 ##
-Plugin.define "GeekLog" do
+Plugin.define do
+name "GeekLog"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-25
 version "0.2"
 description "Geeklog is an open source application for managing dynamic web content. It is written in PHP and supports MySQL, PostgreSQL, or MS SQL as the database backend."

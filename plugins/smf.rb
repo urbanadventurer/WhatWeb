@@ -16,7 +16,8 @@
 # Version 0.2
 # removed :certainty=>100
 ##
-Plugin.define "SMF" do
+Plugin.define do
+name "SMF"
 author "Andrew Horton"
 version "0.5"
 description "SMF (Simple Machines Forum) is an opensource forum written in PHP"
@@ -47,7 +48,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 # the paths are relative to the url path if they don't start with /

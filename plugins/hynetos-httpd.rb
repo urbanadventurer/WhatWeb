@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "HyNetOS-httpd" do
+Plugin.define do
+name "HyNetOS-httpd"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.2"
 description "HyNetOS is a network operating system specifically designed for embedded systems, where computing and memory resources are limited."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2012-08-16 # Andrew Horton
 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
 ##
-Plugin.define "TYPO3" do
+Plugin.define do
+name "TYPO3"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-09
 version "0.2"
 description "TYPO3 is a free Open Source content management system for enterprise purposes on the web and in intranets. It offers full flexibility and extendability while featuring an accomplished set of ready-made interfaces, functions and modules."
@@ -29,7 +30,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# the paths are relative to the url path if they don't start with /

@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated version detection
 ##
-Plugin.define "Trac" do
+Plugin.define do
+name "Trac"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15
 version "0.2"
 description "Trac is an enhanced wiki and issue tracking system for software development projects."
@@ -33,7 +34,7 @@ matches [
 ]
 
 # Fingerprint cookie
-def passive
+passive do
         m=[]
 
         m << {:name=>"trac_form_token Cookie", :probability=>100 } if @headers["set-cookie"] =~ /trac_form_token=/

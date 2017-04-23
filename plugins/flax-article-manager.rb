@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-17 #
 # Updated version detection
 ##
-Plugin.define "Flax-Article-Manager" do
+Plugin.define do
+name "Flax-Article-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.2"
 description "Managing large dynamic websites has always been a difficult task for several webmasters, we have developed Flax Article Manager keeping you in mind. By using this system one can easily manage their news and/or articles quite easily."

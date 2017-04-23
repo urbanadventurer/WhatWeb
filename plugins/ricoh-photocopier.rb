@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ricoh-Photocopier" do
+Plugin.define do
+name "Ricoh-Photocopier"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-08
 version "0.1"
 description "Ricoh photocopier web interface"
@@ -46,7 +47,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# cookieOnOffChecker Cookie

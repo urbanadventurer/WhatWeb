@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Silex-Print-Server" do
+Plugin.define do
+name "Silex-Print-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
 version "0.1"
 description "Silex Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."
@@ -35,7 +36,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

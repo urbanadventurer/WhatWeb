@@ -8,7 +8,8 @@
 # Updated regex
 # Added version detection and script src path extraction
 ##
-Plugin.define "evercookie" do
+Plugin.define do
+name "evercookie"
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
 version "0.2"
 description "EverCookie - evercookie is a javascript API available that produces extremely persistent cookies in a browser. Its goal is to identify a client even after they've removed standard cookies, Flash cookies (Local Shared Objects or LSOs), and others."

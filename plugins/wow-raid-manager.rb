@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "WoW-Raid-Manager" do
+Plugin.define do
+name "WoW-Raid-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
 version "0.2"
 description "WoW Raid Manager or WRM for short is a PHP based application supporting World of Warcraft guilds."

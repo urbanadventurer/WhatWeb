@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BrewBlogger" do
+Plugin.define do
+name "BrewBlogger"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-23
 version "0.1"
 description "BrewBlogger is a easy to set up, easy to use, browser-based homebrew logging and calculation suite. It is a PHP/MySQL-based system that provides today's brewer not only a fast and easy way to record their brewing activities, recipes, and awards, but also forum to share their zymurgistic efforts and expertise with the homebrewing community around the world."

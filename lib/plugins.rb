@@ -1,49 +1,51 @@
-module PluginSugar
-  def def_field(*names)
-    class_eval do
-      names.each do |name|
-        define_method(name) do |*args|
-          if args.empty?
-            instance_variable_get("@#{name}")
-          else
-            instance_variable_set("@#{name}", *args)
-          end
-        end
+class Plugin
+  class << self
+    attr_reader :registered_plugins, :attributes
+    private :new
+  end
+
+  @registered_plugins = {}
+  @attributes = %i[
+    aggressive
+    author
+    description
+    dorks
+    matches
+    name
+    passive
+    version
+    website
+  ]
+
+  @attributes.each do |symbol|
+    define_method(symbol) do |*value, &block|
+      name = "@#{symbol}"
+      if block
+        instance_variable_set(name, block)
+      elsif !value.empty?
+        instance_variable_set(name, *value)
+      else
+        instance_variable_get(name)
       end
     end
   end
-end
-
-
-class Plugin
-  extend PluginSugar
-  def_field  :author, :version, :description, :website, :matches, :cve, :dorks
-  # deprecated fields
-  def_field :examples
-#, :category
-  @registered_plugins = {}
-  attr :mutex
-
-  class << self
-    attr_reader :registered_plugins
-    private :new
-    attr_reader :plugin_name
-  end
 
   def initialize
-    @mutex = Mutex.new
+    @matches = []
+    @dorks = []
+    @passive = nil
+    @aggressive = nil
+    @variables = {}
   end
 
-  def self.define(name, &block)
-    p = new
-    p.set_plugin_name(name)
+  def self.define(&block)
+    # TODO: plugins should isolated isolated
+    p = new()
     p.instance_eval(&block)
-    p.startup
-    Plugin.registered_plugins[name] = p
-  end
-
-  def set_plugin_name(s)
-    @plugin_name = s
+    p.startup()
+    # TODO: make sure required attributes are set
+    Plugin.attributes.each { |symbol| p.instance_variable_get("@#{symbol}").freeze }
+    Plugin.registered_plugins[p.name] = p
   end
 
   def version_detection?
@@ -57,19 +59,20 @@ class Plugin
   # individual plugins can override this
   def shutdown; end
 
-  def lock
-    @locked=true
+  def scan(target)
+    scan_context = ScanContext.new(self, target)
+    scan_context.instance_variable_set(:@variables, @variables)
+    return scan_context.x
   end
+end
 
-  def unlock
-    @locked=false
-  end
+class ScanContext
+  def initialize(plugin, target)
+    @plugin = plugin
+    @matches = plugin.matches
+    define_singleton_method(:passive_scan, plugin.passive) if plugin.passive
+    define_singleton_method(:aggressive_scan, plugin.aggressive) if plugin.aggressive
 
-  def locked?
-    @locked
-  end
-
-  def init (target)
     @target = target
     @body = target.body
     @headers = target.headers
@@ -231,12 +234,12 @@ class Plugin
     end
 
     # if the plugin has a passive method, use it
-    results += self.passive if defined? self.passive
+    results += passive_scan() if @plugin.passive
 
     # if the plugin has an aggressive method and we're in aggressive mode, use it
     # or if we're guessing all URLs
     if ($AGGRESSION == 3 and !results.empty?) or ($AGGRESSION == 4)
-      results += self.aggressive if defined? self.aggressive
+      results += aggressive_scan() if @plugin.aggressive
 
       # if any of our matches have a url then fetch it
       # and check the matches[]
@@ -450,14 +453,15 @@ does not work correctly with mixed plugin names and files
     if option == ["grep"]
       matches = "matches [:text=>\"#{c}\"]"
 
-      custom = "# coding: ascii-8bit
-      Plugin.define \"Grep\" do
-      author \"Unknown\"
-      description \"User defined\"
-      website \"User defined\"
-      #{matches}
+      custom = %{# coding: ascii-8bit
+      Plugin.define do
+        name "Grep"
+        author "Unknown"
+        description "User defined"
+        website "User defined"
+        #{matches}
       end
-      "
+      }
     else
       # define a custom plugin on the cmdline
       # ":text=>'powered by abc'" or
@@ -475,14 +479,15 @@ does not work correctly with mixed plugin names and files
 
       abort("Invalid custom plugin syntax: #{c}") if matches.nil?
 
-      custom = "# coding: ascii-8bit
-      Plugin.define \"Custom-Plugin\" do
-      author \"Unknown\"
-      description \"User defined\"
-      website \"User defined\"
-      #{matches}
+      custom = %{# coding: ascii-8bit
+      Plugin.define do
+        name "Custom-Plugin"
+        author "Unknown"
+        description "User defined"
+        website "User defined"
+        #{matches}
       end
-      "
+      }
     end
 
     begin

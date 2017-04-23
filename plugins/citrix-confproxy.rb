@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Citrix-ConfProxy" do
+Plugin.define do
+name "Citrix-ConfProxy"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.2"
 description "Citrix ConfProxy ISAPI"

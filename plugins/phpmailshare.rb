@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpMailShare" do
+Plugin.define do
+name "phpMailShare"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-18
 version "0.1"
 description "phpMailShare is a small php script that allows you to share emails with your friends. It uses IMAP to access your mail account and can be used with any mail server that provides IMAP access, including Gmail."

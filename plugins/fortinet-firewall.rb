@@ -10,7 +10,8 @@
 # Changed :string to :name
 # Added JavaScript match, aggressive image match and google dork
 ##
-Plugin.define "Fortinet-Firewall" do
+Plugin.define do
+name "Fortinet-Firewall"
 author "Aung Khant, http://yehg.net"
 version "0.2"
 description "Fortinet firewall technology combines ASIC-accelerated stateful inspection with an arsenal of integrated application security engines to quickly identify and block complex threats."
@@ -54,7 +55,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# APSCOOKIE and log_filters cookies

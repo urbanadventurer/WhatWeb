@@ -13,7 +13,8 @@
 # Version 0.2
 # removed :certainty=>100 and :name
 ##
-Plugin.define "SilverStripe" do
+Plugin.define do
+name "SilverStripe"
     author "Andrew Horton"
     version "0.3"
     description "SilverStripe is an opensource CMS written in PHP. It can run on Apache, IIS or lighthttpd."
@@ -39,7 +40,7 @@ Plugin.define "SilverStripe" do
     ] 
 
     # Passive #
-    def passive
+    passive do
         m=[]
 
         # Set-Cookie: PastVisitor
@@ -49,7 +50,7 @@ Plugin.define "SilverStripe" do
             m
     end
 
-    def aggressive
+    aggressive do
         m=[]
         versions = Hash[
             "2.4.10" => [

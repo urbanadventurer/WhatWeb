@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpFox" do
+Plugin.define do
+name "phpFox"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
 version "0.1"
 description "phpFox is a featured packed social networking solution that creates communities with features found on major social networking websites like Facebook and MySpace."
@@ -29,7 +30,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Meta Generator (is base64 of "phpFox") or Meta Author

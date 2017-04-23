@@ -7,7 +7,8 @@
 # Version 0.2 # 2012-03-09 #
 # Added match. Added google dork. Updated version detection.
 ##
-Plugin.define "Sitefinity" do
+Plugin.define do
+name "Sitefinity"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.2"
 description "sitefinity ASP.NET CMS"

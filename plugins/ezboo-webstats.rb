@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ezBOO-WebStats" do
+Plugin.define do
+name "ezBOO-WebStats"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.1"
 description "ezBOO WebStats is a high level statistical tool for web sites monitoring."

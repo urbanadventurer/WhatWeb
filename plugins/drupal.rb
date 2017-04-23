@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "Drupal" do
+Plugin.define do
+name "Drupal"
   author "Andrew Horton"
   version "0.3"
   description "Drupal is an opensource CMS written in PHP."
@@ -58,7 +59,7 @@ Plugin.define "Drupal" do
             ]
 
   # Aggressive #
-  def aggressive
+  aggressive do
     m=[]
     
     # the paths are relative to the url path if they don't start with /

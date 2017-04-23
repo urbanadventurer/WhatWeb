@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Apache-Forrest" do
+Plugin.define do
+name "Apache-Forrest"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-19
 version "0.1"
 description "Apache Forrest software is a publishing framework that transforms input from various sources into a unified presentation in one or more output formats."

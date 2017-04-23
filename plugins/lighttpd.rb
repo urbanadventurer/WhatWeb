@@ -13,7 +13,8 @@
 # Version 0.2 # 2011-01-25 #
 # Updated version detection
 ##
-Plugin.define "lighttpd" do
+Plugin.define do
+name "lighttpd"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.4"
 description "Lightweight open-source web server."

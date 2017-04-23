@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-05 # Brendan Coles <bcoles@gmail.com>
 # Updated error code string detection to reduce false positives
 ##
-Plugin.define "Microsoft-ODBC-Error" do
+Plugin.define do
+name "Microsoft-ODBC-Error"
 author "Caleb Anderson"
 version "0.2"
 description "This plugin identifies Microsoft ODBC error codes."
@@ -21,7 +22,7 @@ description "This plugin identifies Microsoft ODBC error codes."
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ODBC Error Code

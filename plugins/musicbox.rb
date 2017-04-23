@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Musicbox" do
+Plugin.define do
+name "Musicbox"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
 description "Musicbox is a web application for managing a songs database."

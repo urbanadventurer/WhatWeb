@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Quick_Cms" do
+Plugin.define do
+name "Quick_Cms"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.2"
 description "Freeware, fast and easy to customize Content Management System."

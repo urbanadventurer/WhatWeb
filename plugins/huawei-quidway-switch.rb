@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Huawei-Quidway-Switch" do
+Plugin.define do
+name "Huawei-Quidway-Switch"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
 description "Huawei network switch - Quidway series"
@@ -17,7 +18,7 @@ website "http://www.huawei.com/products/datacomm/catalog.do?id=16"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

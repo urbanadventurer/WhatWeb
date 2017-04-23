@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-18 #
 # Updated version detection
 ##
-Plugin.define "Connectix-Boards" do
+Plugin.define do
+name "Connectix-Boards"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
 version "0.2"
 description "Connectix-Boards Forum"

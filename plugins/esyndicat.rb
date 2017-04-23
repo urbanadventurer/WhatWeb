@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-25 #
 # Updated version detection
 ##
-Plugin.define "eSyndiCat" do
+Plugin.define do
+name "eSyndiCat"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.2"
 description "eSyndiCat is a professional, affordable directory software solution."

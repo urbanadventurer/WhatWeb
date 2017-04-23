@@ -20,7 +20,8 @@
 # Version 0.2 # 2011-01-19 # Brendan Coles <bcoles@gmail.com>
 # Updated regex matches
 ##
-Plugin.define "PHP" do
+Plugin.define do
+name "PHP"
 author "Andrew Horton & Brendan Coles" # 2010-10-26
 version "0.6"
 description "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML. This plugin identifies PHP errors, modules and versions and extracts the local file path and username if present."

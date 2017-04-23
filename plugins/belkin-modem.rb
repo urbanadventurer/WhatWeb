@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 
-Plugin.define "Belkin-Modem" do
+Plugin.define do
+name "Belkin-Modem"
 author "Andrew Horton"
 version "0.2"
 description "Homepage: http://www.belkin.com/"

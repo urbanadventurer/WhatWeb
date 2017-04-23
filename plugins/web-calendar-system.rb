@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Web-Calendar-System" do
+Plugin.define do
+name "Web-Calendar-System"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15
 version "0.2"
 description "web calendar system"
