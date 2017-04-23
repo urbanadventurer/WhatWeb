@@ -10,7 +10,8 @@
 # Version 0.3
 # Uses :version=>//
 
-Plugin.define "VP-ASP" do
+Plugin.define do
+name "VP-ASP"
 author "Andrew Horton"
 version "0.3"
 

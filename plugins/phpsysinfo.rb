@@ -13,7 +13,8 @@
 # Version 0.2 #
 # Updated version detection. Added OS extraction.
 ##
-Plugin.define "phpSysInfo" do
+Plugin.define do
+name "phpSysInfo"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
 version "0.4"
 description "PHPSysInfo is a customizable PHP Script that parses /proc, and formats information nicely. It will display information about system facts like Uptime, CPU, Memory, PCI devices, SCSI devices, IDE devices, Network adapters, Disk usage, and more."

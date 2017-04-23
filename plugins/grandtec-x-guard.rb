@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "GrandTec-X-Guard" do
+Plugin.define do
+name "GrandTec-X-Guard"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
 version "0.1"
 description "GrandTec X-Guard PC-based surveillance system"

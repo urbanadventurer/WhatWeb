@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpMoneyBooks" do
+Plugin.define do
+name "phpMoneyBooks"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-23
 version "0.1"
 description "phpMoneyBooks - Open Source Financial Software - Requires: PHP/MySQL"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ethProxy" do
+Plugin.define do
+name "ethProxy"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-13
 version "0.1"
 description "ethProxy DDoS (Distributed Denial of Service) Proxy solution offers full DDoS protection for a wide-range of HTTP-based attacks without changing providers. Web traffic is filtered through the ethProxy systems and routed back to your host."

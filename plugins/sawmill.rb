@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sawmill" do
+Plugin.define do
+name "Sawmill"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-20
 version "0.1"
 description "Sawmill is a universal log analysis/reporting tool for almost any log including web, media, email, security, network and application logs."

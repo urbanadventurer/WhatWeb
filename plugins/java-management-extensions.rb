@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Java-Management-Extensions" do
+Plugin.define do
+name "Java-Management-Extensions"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
 version "0.1"
 description "Java Management Extensions (JMX) is a Java technology that supplies tools for managing and monitoring applications, system objects, devices (e. g. printers) and service oriented networks. - info: http://en.wikipedia.org/wiki/Java_Management_Extensions"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AJ-Auction-Pro" do
+Plugin.define do
+name "AJ-Auction-Pro"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-28
 version "0.1"
 description "AJ Auction is a PHP-based Auction portal software which is a simple to use auction portal script with an effective administrative interface. You can control every aspect of your website through this all-inclusive user friendly Admin Panel with minimal server requirements."

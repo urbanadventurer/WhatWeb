@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Updated description
 ##
-Plugin.define "Antiboard" do
+Plugin.define do
+name "Antiboard"
 author "Andrew Horton"
 version "0.2"
 description "Antiboard is a PHP forum. Homepage used to be http://www.resynthesize.com/code/antiboard.php."

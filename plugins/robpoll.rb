@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "RobPoll" do
+Plugin.define do
+name "RobPoll"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
 version "0.1"
 description "RobPoll - CGI poll system"

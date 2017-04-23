@@ -6,7 +6,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "SnoGrafx" do
+Plugin.define do
+name "SnoGrafx"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
 description "Image gallery software"

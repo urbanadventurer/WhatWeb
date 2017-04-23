@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Kajona" do
+Plugin.define do
+name "Kajona"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-19
 version "0.1"
 description "Kajona - Open Source Content Management System - Requires PHP & MySQL"

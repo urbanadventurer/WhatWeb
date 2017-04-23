@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Shadowed-Portal" do
+Plugin.define do
+name "Shadowed-Portal"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
 description "Shadowed Portal CMS- Homepage [offline] : http://www.shad0wed.com/"

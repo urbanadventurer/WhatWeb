@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-09 #
 # Updated version detection
 ##
-Plugin.define "Censura" do
+Plugin.define do
+name "Censura"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
 description "Censura - the flexible, robust, reviews and ratings application."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-18 # Andrew Horton
 # Replaced passive function with match
 ##
-Plugin.define "ActiveHTML" do
+Plugin.define do
+name "ActiveHTML"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
 version "0.2"
 description "seliSoft ActiveHTML provides Active-Server-Pages (ASP) to nearly every web server supporting CGI."

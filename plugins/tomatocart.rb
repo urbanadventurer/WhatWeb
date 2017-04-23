@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TomatoCart" do
+Plugin.define do
+name "TomatoCart"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.1"
 description "Shopping Cart"

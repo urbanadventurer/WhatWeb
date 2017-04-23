@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-16 #
 # Removed redundant @headers["Via"] match
 ##
-Plugin.define "Via-Proxy" do
+Plugin.define do
+name "Via-Proxy"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.2"
 description "This plugin extracts the proxy server details from the Via param of the HTTP header."

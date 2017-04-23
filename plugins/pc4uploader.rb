@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
-Plugin.define "Pc4Uploader" do
+Plugin.define do
+name "Pc4Uploader"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.2"
 description "File upload web app"

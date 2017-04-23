@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "LiveZilla" do
+Plugin.define do
+name "LiveZilla"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
 version "0.1"
 description "LiveZilla, the Next Generation Live Help and Live Support System connects you to your website visitors. Use LiveZilla to provide Live Chats and monitor your website visitors in real-time."

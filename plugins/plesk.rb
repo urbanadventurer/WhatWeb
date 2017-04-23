@@ -15,7 +15,8 @@
 # Added version detection
 # Added matches for favicon, redirect page and headers
 ##
-Plugin.define "Plesk" do
+Plugin.define do
+name "Plesk"
 author "Andrew Horton"
 version "0.4"
 description "Plesk is a web control panel"

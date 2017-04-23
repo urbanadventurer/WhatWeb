@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SonicWALL-GMS" do
+Plugin.define do
+name "SonicWALL-GMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.1"
 description "The SonicWALL Global Management System (GMS) provides organizations of any size, distributed enterprises and service providers with a flexible, powerful and intuitive solution to centrally manage and rapidly deploy SonicWALL appliances and security policy configurations. SonicWALL GMS also provides centralized real-time monitoring, and comprehensive policy and compliance reporting."

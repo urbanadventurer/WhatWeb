@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SARG" do
+Plugin.define do
+name "SARG"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-22
 version "0.1"
 description "Squid Analysis Report Generator (SARG) is a tool that allow you to view where your users are going to on the Internet."

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Atomic-CMS" do
+Plugin.define do
+name "Atomic-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.1"
 description "Atomic CMS is a powerful and free open source ASP.NET CMS (content management system) developed on ASP.NET MVC 2 platform. Atomic CMS provides you rich user interface to create, edit, remove pages at your website."

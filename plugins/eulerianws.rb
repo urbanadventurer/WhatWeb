@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "EulerianWS" do
+Plugin.define do
+name "EulerianWS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-08
 version "0.2"
 description "Eulerian Technologies Web Server (EulerianWS) [French]"

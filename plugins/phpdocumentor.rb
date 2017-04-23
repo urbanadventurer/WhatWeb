@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpDocumentor" do
+Plugin.define do
+name "phpDocumentor"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
 version "0.1"
 description "phpDocumentor, sometimes referred to as phpdoc or phpdocu, is the current standard auto-documentation tool for the php language. Similar to Javadoc, and written in php, phpDocumentor can be used from the command line or a web interface to create professional documentation from php source code."

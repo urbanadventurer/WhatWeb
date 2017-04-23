@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Kerio-WebSTAR" do
+Plugin.define do
+name "Kerio-WebSTAR"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.2"
 description "Kerio WebSTAR (formerly 4D WebSTAR and StarNine WebSTAR) is an HTTP web server for Mac OS X with older versions running on classic Mac OS. On June 30, 2008, WebSTAR was officially discontinued. Technical support for the product ended on June 30, 2009. - More info: en.wikipedia.org/wiki/Kerio_WebSTAR"

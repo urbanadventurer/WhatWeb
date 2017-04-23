@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TRIDENT7-Wave7-OLT" do
+Plugin.define do
+name "TRIDENT7-Wave7-OLT"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-11
 version "0.1"
 description "TRIDENT7 Wave7 optical line terminal (OLT)"

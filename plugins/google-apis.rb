@@ -8,7 +8,8 @@
 # Updated regex
 # Added dynamic match
 ##
-Plugin.define "Google-API" do
+Plugin.define do
+name "Google-API"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09 
 version "0.2"
 description "This plugin identifies references to Google API in <script>."

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ACollab" do
+Plugin.define do
+name "ACollab"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.1"
 description "ACollab is an accessible, open source, multi-group, Web-based collaborative work environment. ACollab is available as a work groups addon for ATutor 1.4+ , and as a standalone collaborative work environment that will run on its own."

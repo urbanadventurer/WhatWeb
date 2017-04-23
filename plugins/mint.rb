@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Mint" do
+Plugin.define do
+name "Mint"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
 version "0.1"
 description "Mint is an extensible, self-hosted web site analytics program"

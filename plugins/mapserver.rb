@@ -9,7 +9,8 @@
 ##
 # Version 0.3 Andrew Horton. Replaced aggressive function with matches
 
-Plugin.define "MapServer" do
+Plugin.define do
+name "MapServer"
 author "Aung Khant, http://yehg.net"
 version "0.3"
 description "Detect MapServer CGI application (http://www.mapserver.org/)"

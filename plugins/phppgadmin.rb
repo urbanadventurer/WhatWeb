@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpPgAdmin" do
+Plugin.define do
+name "phpPgAdmin"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-14 
 version "0.1"
 description "phpPgAdmin is a web-based administration tool for PostgreSQL. It is perfect for PostgreSQL DBAs, newbies and hosting services"

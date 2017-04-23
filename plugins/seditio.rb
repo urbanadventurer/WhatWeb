@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Seditio" do
+Plugin.define do
+name "Seditio"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.1"
 description "Seditio"

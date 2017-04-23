@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "KodiTV" do
+Plugin.define do
+name "KodiTV"
 author "Andrew Horton"
 version "0.1"
 description "KODI is a media center. It was formerly known as XBMC Media Center."

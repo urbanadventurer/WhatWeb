@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "SAP-NetWeaver" do
+Plugin.define do
+name "SAP-NetWeaver"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
 version "0.2"
 description "SAP NetWeaver provides the technical foundation for SAP applications. In addition, it delivers a portfolio of enterprise technology that allows you to extend your applications to reach more people and to adopt new processes, devices, and consumption models."

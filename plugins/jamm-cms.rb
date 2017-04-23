@@ -10,7 +10,8 @@
 # Version 0.2 #
 # Fixed regex and ghdb matches
 ##
-Plugin.define "JAMM-CMS" do
+Plugin.define do
+name "JAMM-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.2"
 description "JAMM CMS"

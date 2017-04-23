@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DokuWiki" do
+Plugin.define do
+name "DokuWiki"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-20
 version "0.1"
 description "DokuWiki is a standards compliant, simple to use Wiki, mainly aimed at creating documentation of any kind."

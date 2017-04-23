@@ -10,7 +10,8 @@
 # Version 0.2 # 1999-12-31 # Your Name      # <----- updated from tutorial 1
 # Added cookie detection
 ##
-Plugin.define "Plugin-Tutorial-7" do
+Plugin.define do
+name "Plugin-Tutorial-7"
 author "Your preferred name <email@address>" # 1999-12-31
 version "0.3"
 description "Describe what the plugin identifies"

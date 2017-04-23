@@ -11,7 +11,8 @@
 # Version 0.3
 # make powered by case insensitive, added 2nd example
 
-Plugin.define "ISPConfig" do
+Plugin.define do
+name "ISPConfig"
 author "Andrew Horton"
 version "0.3"
 description "ISPConfig is a free, opensource hosting control panel"

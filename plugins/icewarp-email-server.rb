@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "IceWarp-Email-Server" do
+Plugin.define do
+name "IceWarp-Email-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
 version "0.1"
 description "IceWarp Email Server is at the core of IceWarp Unified Communications Server. Time-tested and robust, it provides unsurpassed power and unparalleled flexibility. For over a decade, companies that demand stability, security, speed, power and ease-of-use have deployed IceWarp Email Server on over 50,000 servers around the globe, supporting 50 million users."

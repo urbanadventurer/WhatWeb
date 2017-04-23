@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-05 #
 # Updated string detection
 ##
-Plugin.define "OpenSearch" do
+Plugin.define do
+name "OpenSearch"
 author "Caleb Anderson"
 version "0.2"
 description "This plugin identifies open search and extracts the URL. OpenSearch is a collection of simple formats for the sharing of search results."

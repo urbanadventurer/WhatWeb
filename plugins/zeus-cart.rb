@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Zeus-Cart" do
+Plugin.define do
+name "Zeus-Cart"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.2"
 description "Control every facet of your store, from merchandising to promotions and more. There are no limits to creativity with ZeusCart."

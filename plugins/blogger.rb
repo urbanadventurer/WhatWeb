@@ -8,7 +8,8 @@
 # Version 0.2
 # fixed examples= bug
 
-Plugin.define "Blogger" do
+Plugin.define do
+name "Blogger"
 author "Andrew Horton"
 version "0.2"
 description "Blogger.com free blogging site"

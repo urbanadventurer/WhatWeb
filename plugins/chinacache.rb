@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-23 #
 # Updated regex
 ##
-Plugin.define "ChinaCache" do
+Plugin.define do
+name "ChinaCache"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.2"
 description "ChinaCache is a leading content distribution network (CDN) service provider in China. This header, vehicolated through squid, not only tells the world where the content is coming from, it also brings some (obscure) info with it. What is sure is that there is no open standard on how to use this server header field. Probably it is there only for debugging purposes by the employees of ChinaCache."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
-Plugin.define "Team-Board" do
+Plugin.define do
+name "Team-Board"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
 description "Team Board forum [Chinese]"

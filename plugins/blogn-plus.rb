@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated regex matches and version detection
 ##
-Plugin.define "BlognPlus" do
+Plugin.define do
+name "BlognPlus"
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
 version "0.2"
 description "BlognPlus"

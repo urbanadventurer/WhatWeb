@@ -7,7 +7,8 @@
 
 # Version 0.2 by Andrew Horton. Updated everything
 
-Plugin.define "HP-OfficeJet-Printer" do
+Plugin.define do
+name "HP-OfficeJet-Printer"
 author "Andrew Horton"
 version "0.2"
 description "HP Officejet Pro and Officejet printers"

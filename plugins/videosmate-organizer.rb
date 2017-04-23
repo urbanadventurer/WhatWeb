@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Videosmate-Organizer" do
+Plugin.define do
+name "Videosmate-Organizer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
 version "0.1"
 description "Videosmate Organizer - Organize your favorite YouTube & Vimeo Videos on your own site in minutes. The script contains an API that can pull videos automatically from YouTube to your site based on the channel name or keywords that you enter. "

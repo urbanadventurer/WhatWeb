@@ -13,7 +13,8 @@
 # Version 0.2
 # remove :certainty
 ##
-Plugin.define "PHPNuke" do
+Plugin.define do
+name "PHPNuke"
 author "Andrew Horton"
 version "0.4"
 description "PHP-Nuke is a free CMS"

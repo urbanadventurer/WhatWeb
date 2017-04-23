@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
-Plugin.define "easyLink-Web-Solutions" do
+Plugin.define do
+name "easyLink-Web-Solutions"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
 version "0.3"
 description "German Content Management System"

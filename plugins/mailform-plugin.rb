@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "MailForm-Plugin" do
+Plugin.define do
+name "MailForm-Plugin"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
 description "PHP contact form"

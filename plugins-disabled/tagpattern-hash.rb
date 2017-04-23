@@ -8,7 +8,8 @@
 # Version 0.1
 
 
-Plugin.define "Tag-Hash" do
+Plugin.define do
+name "Tag-Hash"
 author "Andrew Horton"
 version "0.2"
 description "Fuzzy pattern matching. Analyze the structure of HTML tags. Turns the opening and closing tag order into a signature. Threshold is set at at least 12 open or closing tags. This can be used to group websites created with something unexpected. The signature is hashed to save log file size. Unhashed signatures could be used to group by similarity."

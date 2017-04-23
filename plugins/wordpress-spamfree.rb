@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :certainty=>100
 ##
-Plugin.define "WordPressSpamFree" do
+Plugin.define do
+name "WordPressSpamFree"
 author "Andrew Horton"
 version "0.3"
 description "Wordpress SpamFree module. Get your WordPress Blog Spam-Free with this plugin. Normal users doesnt even know your using it. But it keeps away the spammers."

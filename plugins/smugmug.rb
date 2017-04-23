@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "SmugMug" do
+Plugin.define do
+name "SmugMug"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.2"
 description "SmugMug is a paid digital photo sharing website"

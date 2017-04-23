@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Kampyle" do
+Plugin.define do
+name "Kampyle"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
 description "Feedback form solutions for websites & software. [JavaScript]"

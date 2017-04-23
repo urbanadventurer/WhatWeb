@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Netquery" do
+Plugin.define do
+name "Netquery"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
 version "0.1"
 description "Netquery is a complete PHP/SQL open-source toolkit of network utilities. Available as a standalone application and as a module for the following CMSs: e107, PHP-Fusion, Xaraya, Xoops and Zikula."

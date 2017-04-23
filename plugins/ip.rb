@@ -8,7 +8,8 @@
 # Version 0.2
 # added - unless @ip.empty?
 
-Plugin.define "IP" do
+Plugin.define do
+name "IP"
 author "Andrew Horton"
 version "0.2"
 description "IP address of the target, if available."

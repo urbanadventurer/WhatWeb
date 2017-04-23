@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Added description
 ##
-Plugin.define "PHP-Update" do
+Plugin.define do
+name "PHP-Update"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
 description "Open-source Content Management System. Homepage used to be http://www.php-update.co.uk"

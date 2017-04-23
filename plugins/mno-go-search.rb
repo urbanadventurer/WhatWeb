@@ -10,7 +10,8 @@
 # Version 0.2
 # remove :certainty, :name and vulnerability description
 ##
-Plugin.define "MnoGoSearch" do
+Plugin.define do
+name "MnoGoSearch"
 author "Andrew Horton"
 version "0.3"
 description "mnoGoSearch is an opensource website search engine. Homepage http://www.mnogosearch.org"

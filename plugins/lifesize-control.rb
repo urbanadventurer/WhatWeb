@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "LifeSize-Control" do
+Plugin.define do
+name "LifeSize-Control"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
 version "0.1"
 description "LifeSize Control is an all-in-one video management software platform that provides centralized management of your entire video conferencing network, including multivendor environments."

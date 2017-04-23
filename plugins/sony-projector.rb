@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sony-Projector" do
+Plugin.define do
+name "Sony-Projector"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
 description "Sony projecter"

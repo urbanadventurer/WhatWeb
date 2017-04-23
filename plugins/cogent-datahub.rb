@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Cogent-DataHub" do
+Plugin.define do
+name "Cogent-DataHub"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
 version "0.1"
 description "Cogent DataHub - real-time data monitoring. DataHub WebView is a Silverlight application"

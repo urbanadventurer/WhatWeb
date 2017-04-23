@@ -10,7 +10,8 @@
 # Version 0.2 by Andrew Horton
 ## Updated to return the CLSID as a module. Bugfix - quotes around classid are optional
 #
-Plugin.define "ActiveX" do
+Plugin.define do
+name "ActiveX"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.3"
 description "ActiveX is a framework based on Microsoft's Component Object Model (COM) and Object Linking and Embedding (OLE) technologies. ActiveX components officially operate only with Microsoft's Internet Explorer web browser and the Microsoft Windows operating system. - More info: http://en.wikipedia.org/wiki/ActiveX"

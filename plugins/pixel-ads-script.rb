@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Pixel-Ads-Script" do
+Plugin.define do
+name "Pixel-Ads-Script"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.1"
 description "Pixel Ads Script"

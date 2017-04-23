@@ -9,7 +9,8 @@
 # Added HTTP server header match
 # Added 401 error match
 ##
-Plugin.define "TP-Link-Router" do
+Plugin.define do
+name "TP-Link-Router"
 author "Aung Khant, http://yehg.net"
 version "0.2"
 description "Detect TP-Link Router"

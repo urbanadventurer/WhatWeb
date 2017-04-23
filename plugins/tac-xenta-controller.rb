@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "TAC-Xenta-Controller" do
+Plugin.define do
+name "TAC-Xenta-Controller"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.2"
 description "SCADA - The TAC Xenta devices are multifunctional control systems with an embedded web server that allows you to access your control application and configuration pages via a web browser anywhere in the world, anytime."

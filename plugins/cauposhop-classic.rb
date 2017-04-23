@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-01-23 #
 # Updated version detection
 ##
-Plugin.define "CaupoShop-Classic" do
+Plugin.define do
+name "CaupoShop-Classic"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
 version "0.3"
 description "German eCommerce and Content management system"

@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :probability & :name
 
-Plugin.define "Index-Of" do
+Plugin.define do
+name "Index-Of"
 author "Andrew Horton"
 version "0.2"
 description "Index of"

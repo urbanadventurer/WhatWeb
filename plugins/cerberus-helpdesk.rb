@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Cerberus-Helpdesk" do
+Plugin.define do
+name "Cerberus-Helpdesk"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-10-22
 version "0.1"
 description "Cerberus Helpdesk - fast and flexible web-based platform for business collaboration and automation"

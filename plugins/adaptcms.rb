@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AdaptCMS" do
+Plugin.define do
+name "AdaptCMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
 description "AdaptCMS is a PHP CMS that is made for complete control of your website, easiness of use and easily adaptable to any type of website"

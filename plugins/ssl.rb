@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Added content-type match
 ##
-Plugin.define "SSL-Certificate" do
+Plugin.define do
+name "SSL-Certificate"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-29
 version "0.2"
 description "This plugin retrieves details from SSL certificate files."

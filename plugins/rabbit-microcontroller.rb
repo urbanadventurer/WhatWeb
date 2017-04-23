@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Rabbit-Microcontroller" do
+Plugin.define do
+name "Rabbit-Microcontroller"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
 description "Rabbit Semiconductor is the company which designs and sells the Rabbit family of microcontrollers and microcontroller modules. For development, it provides Dynamic C, a non-standard dialect of C with proprietary structures for multitasking."

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Flyspray" do
+Plugin.define do
+name "Flyspray"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
 description "Open source, web based bug tracking system written with a focus on ease-of-use."

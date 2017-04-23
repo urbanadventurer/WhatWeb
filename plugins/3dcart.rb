@@ -9,7 +9,8 @@
 ##
 # 2014-11-04 # Napz
 ##
-Plugin.define "3dcart" do
+Plugin.define do
+name "3dcart"
 author "Napz <napzs@rocketmail.com>"
 version "0.2"
 description "3dcart - The 3dcart Shopping Cart Software is a complete ecommerce solution for anyone."

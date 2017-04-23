@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TutorTrac" do
+Plugin.define do
+name "TutorTrac"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
 description "Online management software for learning, writing, tutoring departments, and academic skills centers for traditional and athletic students. "

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "D-Link-Network-Camera" do
+Plugin.define do
+name "D-Link-Network-Camera"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.1"
 description "D-Link network camera web interface"

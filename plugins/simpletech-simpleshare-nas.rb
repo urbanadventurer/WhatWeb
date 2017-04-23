@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SimpleTech-SimpleShare-NAS" do
+Plugin.define do
+name "SimpleTech-SimpleShare-NAS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.1"
 description "Whether it's photos and music, or business presentations and financial data, your files are valuable and must be kept safe, accessible and easily shared with others. SimpleShare Network Attached Storage enables you to do it all."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Hyperwave-IS" do
+Plugin.define do
+name "Hyperwave-IS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-07
 version "0.2"
 description "Hyperwave Information Server"

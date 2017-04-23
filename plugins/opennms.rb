@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OpenNMS" do
+Plugin.define do
+name "OpenNMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-25
 version "0.1"
 description "OpenNMS - Enterprise-Grade Network Management Application Platform"

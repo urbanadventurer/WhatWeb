@@ -7,7 +7,8 @@
 
 # Version 0.2
 # removed :probability
-Plugin.define "Header-Hash" do
+Plugin.define do
+name "Header-Hash"
 author "Andrew Horton"
 version "0.1"
 description "Analyze the header of the HTML. Turns the first 500 characters into a signature. This can be used to group websites created with something unexpected. It's successful if it returns the same hash for more than 10% of samples. Some types of sites have more variation than others."

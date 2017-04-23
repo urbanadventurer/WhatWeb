@@ -8,7 +8,8 @@
 # Replaced passive[] with matches
 # Added google dork and module detection
 ##
-Plugin.define "SPIP" do
+Plugin.define do
+name "SPIP"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-12
 version "0.2"
 description "SPIP is a publishing system for the Internet in which great importance is attached to collaborative working, to multilingual environments, and to simplicity of use for web authors."

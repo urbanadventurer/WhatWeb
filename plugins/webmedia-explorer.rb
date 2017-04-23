@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-12 #
 # Updated version detection
 ##
-Plugin.define "Webmedia-Explorer" do
+Plugin.define do
+name "Webmedia-Explorer"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-07
 version "0.2"
 description "Webmedia Explorer scans and indexes everything under a folder called 'media' under the document root and builds a website automaticaly, generating file and folder listings, image galleries, message boards, news or simply text, anywhere it finds the corresponding data."

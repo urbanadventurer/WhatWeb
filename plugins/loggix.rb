@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updates matches and version detection
 ##
-Plugin.define "Loggix" do
+Plugin.define do
+name "Loggix"
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
 version "0.2"
 description "Loggix is a really simple, lightweight PHP and SQlite driven weblog/cms engine."

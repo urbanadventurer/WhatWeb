@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-07 #
 # Updated version detection
 ##
-Plugin.define "Axigen-Mail-Server" do
+Plugin.define do
+name "Axigen-Mail-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.2"
 description "Axigen is an integrated email, calendaring & collaboration platform, masterfully built on our unique Linux mail server technology, for increased speed & security."

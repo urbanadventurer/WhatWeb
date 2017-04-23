@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 
-Plugin.define "Citrix-Metaframe" do
+Plugin.define do
+name "Citrix-Metaframe"
 author "Andrew Horton"
 version "0.2"
 description "Citrix-Metaframe. Thin clients."

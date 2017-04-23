@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Timesheet-NG" do
+Plugin.define do
+name "Timesheet-NG"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-08
 version "0.1"
 description "Timesheet NG is a free Open Source online time tracking application. Focusing on ease of use, Timesheet NG allows multiple employees and contractors to track and log their time spent on multiple projects."

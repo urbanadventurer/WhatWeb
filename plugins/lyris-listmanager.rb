@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Lyris-ListManager" do
+Plugin.define do
+name "Lyris-ListManager"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-21
 version "0.1"
 description "Lyris ListManager email marketing software is a secure, installed solution with email deliverability and reporting"

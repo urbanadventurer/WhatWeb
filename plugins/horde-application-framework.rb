@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-01-31 #
 # Updated version detection
 ##
-Plugin.define "Horde-Application-Framework" do
+Plugin.define do
+name "Horde-Application-Framework"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-08
 version "0.3"
 description "A web application framework. Projects using the framework include webmail, a wiki and groupware. (Mostly PHP)"

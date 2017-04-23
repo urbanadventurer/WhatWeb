@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-18 # Andrew Horton
 # Replaced passive function with match for server header
 ##
-Plugin.define "AdSubtract" do
+Plugin.define do
+name "AdSubtract"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-06
 version "0.2"
 description "AdSubtract - a Windows proxy which removes popup ads."

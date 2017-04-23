@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Replaced passive function with matches
 ##
-Plugin.define "BlueDragon" do
+Plugin.define do
+name "BlueDragon"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-30
 version "0.2"
 description "BlueDragon for the Microsoft .NET Framework allows you to natively integrate and deploy your ColdFusion applications on the .NET platform."

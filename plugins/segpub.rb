@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-06 #
 # Updated OS detection
 ##
-Plugin.define "SegPub" do
+Plugin.define do
+name "SegPub"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-19
 version "0.2"
 description "SegPub, a hosting solutions provider based in Sydney, Australia"

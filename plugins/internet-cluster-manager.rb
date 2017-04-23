@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Internet-Cluster-Manager" do
+Plugin.define do
+name "Internet-Cluster-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-07
 version "0.2"
 description "The Internet Cluster Manager (ICM) lets you use Domino clusters to provide failover and workload balancing to HTTP clients."

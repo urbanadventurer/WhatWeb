@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "newswall" do
+Plugin.define do
+name "newswall"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-12
 version "0.1"
 description "newswall"

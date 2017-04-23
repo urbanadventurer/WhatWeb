@@ -10,7 +10,8 @@
 # Version 0.2 #
 # Update version detection and ghdb match
 ##
-Plugin.define "Liferay" do
+Plugin.define do
+name "Liferay"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
 version "0.3"
 description "Liferay Portal is an enterprise web platform for building business solutions that deliver immediate results and long-term value."

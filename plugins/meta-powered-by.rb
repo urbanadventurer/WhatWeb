@@ -10,7 +10,8 @@
 # Version 0.2
 # remove :certainty
 ##
-Plugin.define "MetaPoweredBy" do
+Plugin.define do
+name "MetaPoweredBy"
 author "Andrew Horton"
 version "0.3"
 description "This plugin extracts the values for meta tags named poweredby, powered-by, and powered by"

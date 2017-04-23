@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :name
 
-Plugin.define "BlogSmithMedia" do
+Plugin.define do
+name "BlogSmithMedia"
 author "Andrew Horton"
 version "0.2"
 description "Pro bloggers - www.blogsmithmedia.com"

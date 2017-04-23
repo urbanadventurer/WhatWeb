@@ -7,7 +7,8 @@
 # Version 0.2 # Brendan Coles <bcoles@gmail.com>
 # Fixed regex
 ##
-Plugin.define "RSS-Feed" do
+Plugin.define do
+name "RSS-Feed"
 author "Caleb Anderson"
 version "0.2"
 description "This plugin detects RSS feeds and extracts the RSS feed source."

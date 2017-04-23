@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "i3micro" do
+Plugin.define do
+name "i3micro"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.2"
 description "Tilgin was founded under the name i3 micro technology in 1997 and develops equipment for IPTV and VOIP solutions."

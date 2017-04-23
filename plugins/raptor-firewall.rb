@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Raptor-Firewall" do
+Plugin.define do
+name "Raptor-Firewall"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.2"
 description "Raptor Firewall (previously known as Raptor EagleNT) was acquired by Symantec and has been discontinued"

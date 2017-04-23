@@ -7,7 +7,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "Echo" do
+Plugin.define do
+name "Echo"
 author "Andrew Horton"
 version "0.2"
 description "CMS"

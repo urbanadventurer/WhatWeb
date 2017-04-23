@@ -7,7 +7,8 @@
 # Version 0.2 by Andrew Horton
 # Added version detection
 ##
-Plugin.define "AWStats" do
+Plugin.define do
+name "AWStats"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04
 version "0.2"
 description "AWStats - Free log file analyzer for advanced statistics (GNU GPL)."

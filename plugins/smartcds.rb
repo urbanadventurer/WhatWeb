@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "SmartCDS" do
+Plugin.define do
+name "SmartCDS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-06
 version "0.2"
 description "SmartCDS (Content Delivery Server) hardware [Japanese]"

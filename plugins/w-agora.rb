@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "w-agora" do
+Plugin.define do
+name "w-agora"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
 description "w-agora is web based forum package. It is entirely customizable through a web browser. It allows web publishing and file upload."

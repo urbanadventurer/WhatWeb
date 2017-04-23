@@ -13,7 +13,8 @@
 # Version 0.2 # 2011-03-02 #
 # Added favicon and beefmagic.js.php matches
 ##
-Plugin.define "BeEF" do
+Plugin.define do
+name "BeEF"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04
 version "0.4"
 description "BeEF - Browser Exploitation Framework"

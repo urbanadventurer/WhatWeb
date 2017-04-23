@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MySource-Matrix" do
+Plugin.define do
+name "MySource-Matrix"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
 description "MySource Matrix is a feature-rich, enterprise-class Supported Open Source CMS (Content Management System)."

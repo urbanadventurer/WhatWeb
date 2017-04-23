@@ -7,7 +7,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "ExpressionEngine" do
+Plugin.define do
+name "ExpressionEngine"
 author "Andrew Horton"
 version "0.2"
 description "ExpressionEngine is CMS written in PHP. Free and commercial versions"

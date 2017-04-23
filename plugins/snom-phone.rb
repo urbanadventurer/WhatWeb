@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :certainty=>100
 ##
-Plugin.define "SnomPhone" do
+Plugin.define do
+name "SnomPhone"
 author "Andrew Horton"
 version "0.3"
 description "VoIP phones and teleconferencing systems"

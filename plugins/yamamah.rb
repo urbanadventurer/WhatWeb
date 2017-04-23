@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Yamamah" do
+Plugin.define do
+name "Yamamah"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
 version "0.1"
 description "Yamamah - Free photo Gallery"

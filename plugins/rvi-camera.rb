@@ -6,7 +6,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "RVI-Camera" do
+Plugin.define do
+name "RVI-Camera"
 author "Andrew Horton"
 version "0.1"
 

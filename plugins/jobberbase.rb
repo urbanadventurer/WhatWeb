@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Update regex and ghdb matches
 ##
-Plugin.define "jobberBase" do
+Plugin.define do
+name "jobberBase"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
 version "0.2"
 description "jobberBase is the open-source job board software that helps you set up a jobsite in minutes!"

@@ -11,7 +11,8 @@
 # Updated regex
 # Renamed from FrontPage to FrontPage-Extensions
 ##
-Plugin.define "FrontPage-Extensions" do
+Plugin.define do
+name "FrontPage-Extensions"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.3"
 description "Microsoft FrontPage (full name Microsoft Office FrontPage) is a WYSIWYG HTML editor and web site administration tool from Microsoft for the Microsoft Windows line of operating systems. This plugin identifies the FrontPage HTTP server header which is indicates the presence of FrontPage extensions."

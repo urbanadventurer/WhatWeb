@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-02-10 #
 # Updated regex match
 ##
-Plugin.define "GearHost" do
+Plugin.define do
+name "GearHost"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
 version "0.3"
 description "GearHost is a Microsoft Gold Certified Windows Hosting Partner that specializes in complex hosted managed servers, CloudServers and shared Windows Web Hosting Solutions for ASP.NET, ColdFusion, Exchange Business Email and other technologies."

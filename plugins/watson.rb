@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "Watson-Router" do
+Plugin.define do
+name "Watson-Router"
 author "Andrew Horton"
 version "0.1"
 description "Home Router. Default username/password is admin/admin"

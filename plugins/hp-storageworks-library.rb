@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "HP-StorageWorks-Library" do
+Plugin.define do
+name "HP-StorageWorks-Library"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-16
 version "0.1"
 description "HP StorageWorks Library and Tape Tools (L&TT) is a diagnostic tool for all of HP's tape storage and magneto-optical storage products."

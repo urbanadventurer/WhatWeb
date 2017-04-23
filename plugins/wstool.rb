@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WSTOOL" do
+Plugin.define do
+name "WSTOOL"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-09
 version "0.1"
 description "WSTOOL is OS-independence Web vulnerability scanner"

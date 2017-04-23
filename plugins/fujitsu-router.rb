@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Replaced passive function with matches
 ##
-Plugin.define "Fujitsu-Router" do
+Plugin.define do
+name "Fujitsu-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
 version "0.2"
 description "Fujitsu-Router"

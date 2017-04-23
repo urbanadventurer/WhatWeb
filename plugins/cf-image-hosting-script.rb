@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "CF-Image-Hosting-Script" do
+Plugin.define do
+name "CF-Image-Hosting-Script"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.2"
 description "A simple easy to use standalone image hosting script. This script aims to make it easy to setup image hosting site or just a site for you to share your photo with your friends,family,and collegues."

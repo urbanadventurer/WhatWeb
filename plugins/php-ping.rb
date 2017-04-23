@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated regex
 ##
-Plugin.define "php-ping" do
+Plugin.define do
+name "php-ping"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
 version "0.2"
 description "php-ping - PHP powered ping web interface."

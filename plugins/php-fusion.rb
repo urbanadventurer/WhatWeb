@@ -8,7 +8,8 @@
 # Added a few matches
 ##
 
-Plugin.define "PHP-Fusion" do
+Plugin.define do
+name "PHP-Fusion"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04 
 version "0.2"
 description "PHP-Fusion, a light-weight open-source content management system (CMS) - Requires: PHP and MySQL"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Nintendo-Wii" do
+Plugin.define do
+name "Nintendo-Wii"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
 version "0.1"
 description "Nintendo Wii video game console"

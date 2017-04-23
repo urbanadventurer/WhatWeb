@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Flat-File-Guestbook" do
+Plugin.define do
+name "Flat-File-Guestbook"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-12
 version "0.1"
 description "The Flat File PHP Guestbook is designed to be lightweight, easy on the server, and simple to install. Requires PHP 4+."

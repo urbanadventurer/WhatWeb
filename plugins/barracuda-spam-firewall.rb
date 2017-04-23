@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-07 #
 # Updated version detection
 ##
-Plugin.define "Barracuda-Spam-Firewall" do
+Plugin.define do
+name "Barracuda-Spam-Firewall"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
 description "The Barracuda Spam & Virus Firewall is an integrated hardware and software solution designed to protect your email server from spam, virus, spoofing, phishing and spyware attacks."

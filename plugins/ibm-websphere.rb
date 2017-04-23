@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "IBM-WebSphere" do
+Plugin.define do
+name "IBM-WebSphere"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
 description "IBM WebSphere"

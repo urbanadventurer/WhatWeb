@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-04-12 #
 # Updated regex
 ##
-Plugin.define "WhatWeb-Plugin" do
+Plugin.define do
+name "WhatWeb-Plugin"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-16
 version "0.2"
 description "This plugin detects instances of WhatWeb plugins. If this plugin is returned then chances are the other results are false positives."
@@ -23,17 +24,17 @@ def passive
 	if @body =~ /^# redistribution and commercial restrictions. Please see the WhatWeb/ or @body =~ /^# This file is part of WhatWeb and may be subject to/
 
 		# Extract version
-		if @body =~ /^version "([^\"]+)"/
+		if @body =~ /^\s*version "([^\"]+)"/
 			m << { :version=>@body.scan(/^version "([^\"]+)"/) }
 		end
 
 		# Extract plugin name
-		if @body =~ /^Plugin.define "([^\"]+)" do/
-			m << { :string=>@body.scan(/^Plugin.define "([^\"]+)" do/) }
+		if @body =~ /^\s*name "([^\"]+)" do/
+			m << { :string=>@body.scan(/^\s*name "([^\"]+)"/) }
 		end
 
 		# Extract modules
-		if @body =~ /^def ([a-z]+)[\s]?$/
+		if @body =~ /^\s*def ([a-z]+)[\s]?$/
 			m << { :module=>@body.scan(/^def ([a-z]+)[\s]?$/) }
 		end
 

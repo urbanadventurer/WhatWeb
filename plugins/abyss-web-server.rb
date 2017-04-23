@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-18 # Andrew Horton
 # Replaced passive function with match
 ##
-Plugin.define "Abyss-Web-Server" do
+Plugin.define do
+name "Abyss-Web-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.2"
 description "Abyss Web Server is a compact web server available for Windows, Mac OS X, Linux, and FreeBSD operating systems."

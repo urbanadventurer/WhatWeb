@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ChiliProject" do
+Plugin.define do
+name "ChiliProject"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-24
 version "0.1"
 description "ChiliProject is a web based project management system."

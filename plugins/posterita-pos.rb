@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Posterita-POS" do
+Plugin.define do
+name "Posterita-POS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-18
 version "0.1"
 description "Posterita POS is a full web POS for large distribution and multi-site Point of Sale for thousands of users. Posterita POS is built on Adempiere/ERP."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
-Plugin.define "SyndeoCMS" do
+Plugin.define do
+name "SyndeoCMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
 version "0.2"
 description "A Content Management System (CMS) for primary schools, which helps you manage and maintain your website. It can also be a very usefull CMS for small companies or non profit organizations. "

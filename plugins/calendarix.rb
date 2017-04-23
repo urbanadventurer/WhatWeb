@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-10 #
 # Updated version detection
 ##
-Plugin.define "Calendarix" do
+Plugin.define do
+name "Calendarix"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
 description "Calendarix is a powerful and easy to use web-based calendar that runs on PHP and MySQL."

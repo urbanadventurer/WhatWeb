@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OpenX" do
+Plugin.define do
+name "OpenX"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-15
 version "0.1"
 description "OpenX (aka phpAdsNew) is an open-source ad server, with an integrated banner management interface and tracking system for gathering statistics. With OpenX you can easily rotate paid banners and your own in-house advertisements."

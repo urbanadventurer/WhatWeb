@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Fixed regex to return multiple frames
 ##
-Plugin.define "Frame" do
+Plugin.define do
+name "Frame"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-13
 version "0.2"
 description "This plugin detects instances of frame and iframe HTML elements."

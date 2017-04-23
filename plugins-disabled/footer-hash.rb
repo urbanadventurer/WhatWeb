@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :probability
 
-Plugin.define "Footer-Hash" do
+Plugin.define do
+name "Footer-Hash"
 author "Andrew Horton"
 version "0.2"
 description "Analyze the footer of the HTML. Turns the last 500 characters into a signature. Only activates for sites with more than 1000 characters on the page. This can be used to group websites created with something unexpected. It's successful if it returns the same hash for more than 10% of samples. Some types of sites have more variation than others."

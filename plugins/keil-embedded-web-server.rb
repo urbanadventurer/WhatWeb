@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Keil-Embedded-WEB-Server" do
+Plugin.define do
+name "Keil-Embedded-WEB-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.2"
 description "Keil Embedded WEB Server"

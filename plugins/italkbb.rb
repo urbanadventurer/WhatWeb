@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "iTalkBB" do
+Plugin.define do
+name "iTalkBB"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-19
 version "0.1"
 description "iTalkBB is a local and long distance calling service provided by iTalk Broadband Corporation. It combines voice and internet networks to provide inbound and outbound long distance and local calling solutions."

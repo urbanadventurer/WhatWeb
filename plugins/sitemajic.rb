@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SiteMajic" do
+Plugin.define do
+name "SiteMajic"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-24
 version "0.1"
 description "SiteMajic - Web Content Management System service"

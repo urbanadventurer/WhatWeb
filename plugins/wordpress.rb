@@ -13,7 +13,8 @@
 # Version 0.3
 # Now using :version=>// instead of a passive function, added description, examples and included relative /wp-content/ link detection
 ##
-Plugin.define "WordPress" do
+Plugin.define do
+name "WordPress"
   author "Andrew Horton"
   version "0.5"
   description "WordPress is an opensource blogging system commonly used as a CMS."

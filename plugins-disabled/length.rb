@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "Len" do
+Plugin.define do
+name "Len"
 author "Andrew Horton"
 version "0.1"
 description "The length of the HTML body"

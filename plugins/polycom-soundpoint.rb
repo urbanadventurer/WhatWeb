@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-06-11
 # Added account detection
 ##
-Plugin.define "Polycom-SoundPoint" do
+Plugin.define do
+name "Polycom-SoundPoint"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.2"
 description "Polycom SoundPoint VOIP phone"

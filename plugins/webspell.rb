@@ -8,7 +8,8 @@
 # Added Google dorks
 # Added cookie match
 ##
-Plugin.define "webSPELL" do
+Plugin.define do
+name "webSPELL"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.2"
 description "webSPELL is a free Content Management System which was especially developed for the needs of esport related communities."

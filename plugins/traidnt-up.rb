@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-21 #
 # Updated version detection
 ##
-Plugin.define "Traidnt-UP" do
+Plugin.define do
+name "Traidnt-UP"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-26
 version "0.2"
 description "Traidnt UP"

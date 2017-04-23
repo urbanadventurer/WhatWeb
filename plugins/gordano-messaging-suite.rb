@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Gordano-Messaging-Suite" do
+Plugin.define do
+name "Gordano-Messaging-Suite"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
 version "0.1"
 description "Gordano WebMail Server web interface"

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Fujitsu-Switch" do
+Plugin.define do
+name "Fujitsu-Switch"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
 version "0.2"
 description "Fujitsu Switch"

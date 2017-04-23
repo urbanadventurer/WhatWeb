@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Infomaster" do
+Plugin.define do
+name "Infomaster"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-16
 version "0.1"
 description "InfoMaster ePlanning software - asset management and property development application tracking and planning"

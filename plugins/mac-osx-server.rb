@@ -5,7 +5,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Mac-OSX-Server" do
+Plugin.define do
+name "Mac-OSX-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
 description "Powerful yet streamlined, Snow Leopard Server makes it easier than ever for the people in your organization to collaborate, communicate, and share information. Up to 2x faster than its predecessor, Mac OS X Server v10.6 Snow Leopard is a full 64-bit UNIX server OS with dozens of new and updated features."

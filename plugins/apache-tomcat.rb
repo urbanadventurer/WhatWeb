@@ -12,7 +12,8 @@
 # to-do, an invalid HTTP verb to a .JSP will reveal Tomcat if nothing else does, e.g. XXX /foobar/.jsp HTTP/1.0
 ##
 
-Plugin.define "Apache-Tomcat" do 
+Plugin.define do
+name "Apache-Tomcat" 
 	author "Louis Nyffenegger"
 	description "Apache Tomcat Web Server"
 	website "http://tomcat.apache.org/"

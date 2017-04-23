@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated version detection and regex
 ##
-Plugin.define "Arab-Portal" do
+Plugin.define do
+name "Arab-Portal"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
 description "Arab-Portal"

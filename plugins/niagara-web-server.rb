@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Niagara-Web-Server" do
+Plugin.define do
+name "Niagara-Web-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.2"
 description "Niagara Web Server"

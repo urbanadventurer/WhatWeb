@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated regex and ghdb matches
 ##
-Plugin.define "CMScontrol" do
+Plugin.define do
+name "CMScontrol"
 author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
 version "0.2"
 description "CMScontrol"

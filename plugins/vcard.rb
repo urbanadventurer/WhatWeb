@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "vcard" do
+Plugin.define do
+name "vcard"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-07
 version "0.1"
 description "vCard is a file format standard for electronic business cards. This plugin identifies vcards and extracts the vcard version, name, full name and organization details."

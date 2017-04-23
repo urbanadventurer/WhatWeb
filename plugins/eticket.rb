@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "eTicket" do
+Plugin.define do
+name "eTicket"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-09-15
 version "0.1"
 description "eTicket is a PHP-based electronic support ticket system that can receive tickets via email (pop3/pipe) or a web form."

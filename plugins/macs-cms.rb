@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Added website parameter
 ##
-Plugin.define "Macs-CMS" do
+Plugin.define do
+name "Macs-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
 description "Mac's CMS is a Open Source, Flat-File AJAX CMS built using PHP 5 and was tested and run's perfectly on both IIS and APACHE."

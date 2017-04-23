@@ -7,7 +7,8 @@
 # Version 0.1 # 2014-07-20 #
 # Initial version
 ##
-Plugin.define "cgit" do
+Plugin.define do
+name "cgit"
 author "Fabian Affolter <fabian@engineering.ch>" # 2014-07-20
 version "0.1"
 description "A web frontend for git repositories written in C."

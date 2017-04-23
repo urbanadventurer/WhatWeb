@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Pixie" do
+Plugin.define do
+name "Pixie"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.2"
 description "pixie is a free, open source web application that will help you quickly create your own website"

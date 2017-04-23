@@ -10,7 +10,8 @@
 # Version 0.3 #
 # Added Server DAV/[\d\.]+ version detection
 ##
-Plugin.define "WebDAV" do
+Plugin.define do
+name "WebDAV"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
 version "0.3"
 description "Web-based Distributed Authoring and Versioning (WebDAV) is a set of methods based on the Hypertext Transfer Protocol (HTTP) that facilitates collaboration between users in editing and managing documents and files stored on World Wide Web servers. - More Info: http://en.wikipedia.org/wiki/WebDAV"

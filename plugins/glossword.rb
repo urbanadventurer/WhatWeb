@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-29 #
 # Updated version detection
 ##
-Plugin.define "Glossword" do
+Plugin.define do
+name "Glossword"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
 description "Glossword helps you to create and publish online multilingual dictionary, glossary, or reference."

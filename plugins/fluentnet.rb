@@ -7,7 +7,8 @@
 # Version 0.2 # 
 # Fixed GHDB and regex matches
 ##
-Plugin.define "FluentNET" do
+Plugin.define do
+name "FluentNET"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
 version "0.2"
 description "FluentNET, DotContent's powerful content management software, empowers business users to create, manage and publish web content for both general public access as well as internal use, and maximises the value of web-based information."

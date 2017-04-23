@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "TaskFreak" do
+Plugin.define do
+name "TaskFreak"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
 version "0.2"
 description "TaskFreak! Original is a simple but efficient web based task manager written in PHP."

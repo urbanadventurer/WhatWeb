@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DZCP" do
+Plugin.define do
+name "DZCP"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
 version "0.1"
 description "deV!L`z Clanportal"

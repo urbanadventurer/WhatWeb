@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Squarespace" do
+Plugin.define do
+name "Squarespace"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
 description "A fully hosted, completely managed environment for creating and maintaining a website, blog or portfolio."

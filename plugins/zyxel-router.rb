@@ -20,7 +20,8 @@
 # Version 0.2 # 2011-01-09 #
 # Updated model detection
 ##
-Plugin.define "ZyXEL-Router" do
+Plugin.define do
+name "ZyXEL-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.6"
 description "This plugin indentifies ZyXEL routers"

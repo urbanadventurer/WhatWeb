@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Google-Analytics" do
+Plugin.define do
+name "Google-Analytics"
 author "Peter van der Laan"
 version "0.1"
 description "This plugin identifies the Google Analytics account."

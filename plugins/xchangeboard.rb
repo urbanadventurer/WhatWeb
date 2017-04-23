@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated version detection
 ##
-Plugin.define "XchangeBoard" do
+Plugin.define do
+name "XchangeBoard"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.2"
 description "Old forum"

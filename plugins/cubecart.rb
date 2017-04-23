@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-25 #
 # Updated version detection
 ##
-Plugin.define "CubeCart" do
+Plugin.define do
+name "CubeCart"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-10
 version "0.2"
 description "CubeCart is an out of the box ecommerce shopping cart software solution which has been written to run on servers that have PHP & MySQL support."

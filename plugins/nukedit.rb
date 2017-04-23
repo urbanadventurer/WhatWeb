@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Nukedit" do
+Plugin.define do
+name "Nukedit"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
 description "Nukedit CMS"

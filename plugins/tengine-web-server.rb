@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Tengine-Web-Server" do
+Plugin.define do
+name "Tengine-Web-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-17
 version "0.1"
 description "Tengine is a web server originated by Taobao, the largest e-commerce website in Asia. It is based on the popular Nginx HTTP server."

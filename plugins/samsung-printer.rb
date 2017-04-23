@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "Samsung-Printer" do
+Plugin.define do
+name "Samsung-Printer"
 author "Andrew Horton"
 version "0.1"
 description "Samsung. SyncThru Web Service - Embedded Web Server"

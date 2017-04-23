@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
-Plugin.define "MyPHP-Forum" do
+Plugin.define do
+name "MyPHP-Forum"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-31
 version "0.2"
 description "MyPHP-Forum"

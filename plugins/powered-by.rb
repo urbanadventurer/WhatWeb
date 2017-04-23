@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :certainty
 ##
-Plugin.define "PoweredBy" do
+Plugin.define do
+name "PoweredBy"
 author "Andrew Horton"
 version "0.3"
 description "This plugin identifies instances of 'Powered by x' text and attempts to extract the value for x."

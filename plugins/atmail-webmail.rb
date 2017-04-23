@@ -11,7 +11,8 @@
 # Updated version detection method
 # Added MailServer detection
 ##
-Plugin.define "Atmail-WebMail" do
+Plugin.define do
+name "Atmail-WebMail"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-26
 version "0.3"
 description "Atmail allows users to access IMAP Mailboxes on any server of your choice. You and your users can experience webmail via a fluid, intuitive interface that excels aesthetically and functionally; a benchmark that very few webmail clients have achieved."

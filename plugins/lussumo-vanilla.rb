@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Lussumo-Vanilla" do
+Plugin.define do
+name "Lussumo-Vanilla"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-07
 version "0.2"
 description "A free, open-source, standards-compliant discussion forum for the web. "

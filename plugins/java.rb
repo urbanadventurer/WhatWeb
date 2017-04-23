@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-06 #
 # Updated OS detection
 ##
-Plugin.define "Java" do
+Plugin.define do
+name "Java"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-28
 version "0.2"
 description "Java allows you to play online games, chat with people around the world, calculate your mortgage interest, and view images in 3D, just to name a few. It's also integral to the intranet applications and other e-business solutions that are the foundation of corporate computing."

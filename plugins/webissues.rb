@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WebIssues" do
+Plugin.define do
+name "WebIssues"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-29
 version "0.1"
 description "WebIssues is an open source, multi-platform system for issue tracking and team collaboration."

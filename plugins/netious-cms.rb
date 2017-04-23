@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Netious-CMS" do
+Plugin.define do
+name "Netious-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.1"
 description "Netious CMS - http://www.netious.com/"

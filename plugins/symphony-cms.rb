@@ -8,7 +8,8 @@
 # Renamed from "symphony" to "Symphony-CMS"
 # Updated version detection
 ##
-Plugin.define "Symphony-CMS" do
+Plugin.define do
+name "Symphony-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.1"
 description "Symphony CMS - XSLT-powered open source content management system"

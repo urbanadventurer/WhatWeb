@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Added website parameter and description
 ##
-Plugin.define "Kleeja" do
+Plugin.define do
+name "Kleeja"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
 description "Kleeja is a free, open-source file upload system"

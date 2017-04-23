@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Kentico-CMS" do
+Plugin.define do
+name "Kentico-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
 version "0.1"
 description "Kentico CMS for ASP.NET - flexible, all-in-one solution for web developers"

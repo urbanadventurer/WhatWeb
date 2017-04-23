@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-18 #
 # Updated version detection
 ##
-Plugin.define "Whizzy-CMS" do
+Plugin.define do
+name "Whizzy-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
 description "Whizzy-CMS"

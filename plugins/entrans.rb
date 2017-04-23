@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Entrans" do
+Plugin.define do
+name "Entrans"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
 version "0.1"
 description "Entrans is an online translation tool. The tool can be used by the online community to give suggestions for a list of English words/phrases that needs to be translated into a specific Indic Language."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-08 #
 # Updated version detection
 ##
-Plugin.define "BlueNet-Video-Server" do
+Plugin.define do
+name "BlueNet-Video-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.2"
 description "BlueNet Video Server - video camera web interface"
