@@ -1,21 +1,27 @@
 class Plugin
-  %i[
+  class << self
+    attr_reader :registered_plugins, :attributes
+    private :new
+  end
+
+  @registered_plugins = {}
+  @attributes = %i[
     aggressive
     author
-    cve
     description
     dorks
     matches
     name
     passive
-    variables
     version
     website
-  ].each do |symbol|
+  ]
+
+  @attributes.each do |symbol|
     define_method(symbol) do |*value, &block|
       name = "@#{symbol}"
       if block
-          instance_variable_set(name, block)
+        instance_variable_set(name, block)
       elsif !value.empty?
         instance_variable_set(name, *value)
       else
@@ -24,19 +30,12 @@ class Plugin
     end
   end
 
-  @registered_plugins = {}
-  attr_reader(:mutex)
-
-  class << self
-    attr_reader :registered_plugins
-    private :new
-  end
-
   def initialize
     @matches = []
     @dorks = []
     @passive = nil
     @aggressive = nil
+    @variables = {}
   end
 
   def self.define(&block)
@@ -45,7 +44,7 @@ class Plugin
     p.instance_eval(&block)
     p.startup()
     # TODO: make sure required attributes are set
-    # TODO: freeze attributes
+    Plugin.attributes.each { |symbol| p.instance_variable_get("@#{symbol}").freeze }
     Plugin.registered_plugins[p.name] = p
   end
 
