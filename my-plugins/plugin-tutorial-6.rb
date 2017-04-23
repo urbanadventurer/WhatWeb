@@ -54,7 +54,6 @@ Plugin.define do
   end
   # Check other plugins with passive functions for examples.
 
-
   ##
   # The Aggressive function will only sometimes execute
   # At aggressive level 3 if a match is found, then the aggressive function executes
@@ -72,12 +71,13 @@ Plugin.define do
   #
   # This executes when the plugin is first loaded
   def startup
+    # @variables is made available to passive+aggressive procs
     @variables = {my_var: 1}
   end
 
   # This executes when the plugin is closed on whatweb shutdown
   def shutdown
-    puts("my_var is #{@variables[:my_var]}")
+    # puts("my_var is #{@variables[:my_var]}")
   end
 
 end
