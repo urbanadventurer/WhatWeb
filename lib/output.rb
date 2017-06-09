@@ -18,8 +18,8 @@ along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
 class Output
- 	# if no f, output to STDOUT, 
-	# if f is a filename then open it, if f is a file use it	
+ 	# if no f, output to STDOUT,
+	# if f is a filename then open it, if f is a file use it
 	def initialize(f = STDOUT)
 	  f = STDOUT if f == "-"
 		@f = f if f.class == IO or f.class == File
@@ -50,7 +50,7 @@ class Output
 				t = p[thissymbol]
 				t = t.flatten.compact.sort.uniq if t.is_a?(Array)
 				su[thissymbol] = t unless t.nil?
-			end					
+			end
 		end
 		# certainty is different, it's a number
 		su[:certainty] = p[:certainty].to_i
@@ -60,11 +60,11 @@ end
 
 
 class OutputObject < Output
-	def out(target, status, results) 
-		$semaphore.synchronize do 
+	def out(target, status, results)
+		$semaphore.synchronize do
 			@f.puts "Identifying: " + target.to_s
 			@f.puts "HTTP-Status: " + status.to_s
-			@f.puts results.pretty_inspect unless results.empty?	
+			@f.puts results.pretty_inspect unless results.empty?
 			@f.puts
 		end
 	end
@@ -104,9 +104,9 @@ class OutputVerbose < Output
 			@f.puts "Status".ljust(9) + " : "+ display[:status]
 			@f.puts "Title".ljust(9) + " : #{coloured(display[:title],'yellow')}"
 			@f.puts "IP".ljust(9) + " : " + display[:ip]
-			@f.puts "Country".ljust(9) + " : #{coloured(display[:country],'red')}" 
+			@f.puts "Country".ljust(9) + " : #{coloured(display[:country],'red')}"
 			@f.puts
-			
+
 			################### Short list
 			################### Basically Output Brief
 
@@ -120,36 +120,36 @@ class OutputVerbose < Output
 					certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty].to_i,suj[:version],suj[:os],suj[:string], suj[:account],suj[:model],suj[:firmware],suj[:module],suj[:filepath]
 
 					# colour the output
-					# be more DRY		
+					# be more DRY
 					# if plugins have categories or tags this would be better, eg. all hash plugins are grey
 					if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
 						 coloured_string = grey(string)
 						 coloured_string = cyan(string) if plugin_name == "HTTPServer"
 	 				 	 coloured_string = yellow(string) if plugin_name == "Title"
 
-	 				 	 coloured_string = grey(string) if plugin_name == "MD5" 				 	 
+	 				 	 coloured_string = grey(string) if plugin_name == "MD5"
 	 				 	 coloured_string = grey(string) if plugin_name == "Header-Hash"
 	 				 	 coloured_string = grey(string) if plugin_name == "Footer-Hash"
 	 				 	 coloured_string = grey(string) if plugin_name == "CSS"
 						 coloured_string = grey(string) if plugin_name == "Tag-Hash"
-	 					 
+
 						 coloured_plugin = white(plugin_name)
 						 coloured_plugin = grey(plugin_name) if plugin_name == "MD5"
 						 coloured_plugin = grey(plugin_name) if plugin_name == "Header-Hash"
-						 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"  					 
+						 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"
 						 coloured_plugin = grey(plugin_name) if plugin_name == "CSS"
 						 coloured_plugin = grey(plugin_name) if plugin_name == "Tag-Hash"
-	  					 					 
+
 						 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
 						   coloured_plugin + (!version.empty? ? "["+green(version)+"]" : "") +
-						   (!os.empty? ? "[" + red(os)+"]" : "") +	
+						   (!os.empty? ? "[" + red(os)+"]" : "") +
 						   (!string.empty? ? "[" + coloured_string+"]" : "") +
 						   (!accounts.empty? ? "["+ cyan(accounts)+"]" : "" ) +
 						   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
 						   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
 						   (!filepath.empty? ? "["+ dark_green(filepath)+"]" : "" ) +
 						   (!modules.empty? ? "["+ magenta(modules)+"]" : "" )
-						 
+
 						 brief_results << p
 					else
 
@@ -162,12 +162,12 @@ class OutputVerbose < Output
 						   (!firmware.empty? ? "["+ firmware+"]" : "" ) +
 						   (!filepath.empty? ? "["+ filepath+"]" : "" ) +
 						   (!modules.empty? ? "["+ modules+"]" : "" )
-					end	
+					end
 				end
 			end
-		
-		brief_results_final = brief_results.join(", ")		
-		
+
+		brief_results_final = brief_results.join(", ")
+
 		@f.puts "Summary".ljust(9) + " : " + brief_results_final
 		@f.puts
 		@f.puts "Detected Plugins:"
@@ -175,12 +175,12 @@ class OutputVerbose < Output
 			results.sort.each do |plugin_name, plugin_results|
 				next if ['Title','IP','Country'].include? plugin_name
 				unless plugin_results.empty?
-				
+
 					@f.puts "[ " + coloured(plugin_name, "white") + " ]"
-				
+
 					description = [""]
 					if Plugin.registered_plugins[plugin_name].description
-						d = Plugin.registered_plugins[plugin_name].description						
+						d = Plugin.registered_plugins[plugin_name].description
 						description = word_wrap(d, 60)
 					end
 #					@f.puts "\tCategory   : " + Plugin.registered_plugins[plugin_name].category.first unless Plugin.registered_plugins[plugin_name].category.nil?
@@ -205,12 +205,12 @@ class OutputVerbose < Output
 						end
 
 						pr.each do |key,value|
-							next unless [:version, :os, :string, :account, :model, 
+							next unless [:version, :os, :string, :account, :model,
 									:firmware, :module, :filepath, :url].include?(key)
 
 							next if value.class==Regexp
 
-							unless key == :os 
+							unless key == :os
 								@f.print "\t" + key.to_s.capitalize.ljust(13) + ": "
 							else
 								@f.print "\t" + "OS".ljust(13) + ": "
@@ -236,7 +236,7 @@ class OutputVerbose < Output
 							else
 								@f.print coloured(value.inspect,c)
 							end
-						
+
 							unless name_of_match.empty?
 								@f.print " (from #{name_of_match})"
 							end
@@ -249,10 +249,10 @@ class OutputVerbose < Output
 
 						@f.puts "\t" + coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
 					end
-					
+
 					if defined? Plugin.registered_plugins[plugin_name].aggressive
  						@f.puts "\tAggressive function available (check plugin file or details)."
-					end		
+					end
 
 					if Plugin.registered_plugins[plugin_name].dorks
 						@f.puts "\tGoogle Dorks".ljust(13)+ ": (#{Plugin.registered_plugins[plugin_name].dorks.size})"
@@ -261,7 +261,7 @@ class OutputVerbose < Output
 					if Plugin.registered_plugins[plugin_name].website
 						@f.puts "\tWebsite".ljust(13)+ ": " + Plugin.registered_plugins[plugin_name].website.to_s
 					end
-					
+
 					@f.puts
 				end
 			end
@@ -272,7 +272,7 @@ class OutputVerbose < Output
 
 				#pp target.raw_headers
 			end
-			
+
 		end
 	end
 end
@@ -295,12 +295,12 @@ class OldOutputVerbose < Output
 			@f.puts "Status".ljust(7) + ": #{status}"
 			results.sort.each do |plugin_name, plugin_results|
 				unless plugin_results.empty?
-				
+
 					@f.puts "   " + coloured(plugin_name, "yellow") + " " + coloured("-"*(80-5-plugin_name.size), "dark_blue")
-				
+
 					description = [""]
 					unless Plugin.registered_plugins[plugin_name].description.nil?
-						d = Plugin.registered_plugins[plugin_name].description[0..350] 
+						d = Plugin.registered_plugins[plugin_name].description[0..350]
 						d += "..." if d.size == 251
 						description = word_wrap(d, 60)
 					end
@@ -329,7 +329,7 @@ class OldOutputVerbose < Output
 						end
 
 						pr.each do |key,value|
-							next unless [:version, :os, :string, :account, :model, 
+							next unless [:version, :os, :string, :account, :model,
 									:firmware, :module, :filepath, :url].include?(key)
 
 							next if value.class==Regexp
@@ -356,7 +356,7 @@ class OldOutputVerbose < Output
 							else
 								@f.print coloured(value.inspect,c)
 							end
-						
+
 							unless name_of_match.empty?
 								@f.print " (from #{name_of_match})"
 							end
@@ -369,7 +369,7 @@ class OldOutputVerbose < Output
 
 						@f.puts "\t" + coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
 					end
-					@f.puts			
+					@f.puts
 				end
 			end
 		end
@@ -408,36 +408,36 @@ class OutputBrief < Output
 				certainty, version, os, string, accounts,model,firmware,modules,filepath = suj[:certainty].to_i,escape(suj[:version]),escape(suj[:os]),escape(suj[:string]), escape(suj[:account]),escape(suj[:model]),escape(suj[:firmware]),escape(suj[:module]),escape(suj[:filepath])
 
 				# colour the output
-				# be more DRY		
+				# be more DRY
 				# if plugins have categories or tags this would be better, eg. all hash plugins are grey
 				if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
 					 coloured_string = grey(string)
 					 coloured_string = cyan(string) if plugin_name == "HTTPServer"
  				 	 coloured_string = yellow(string) if plugin_name == "Title"
 
- 				 	 coloured_string = grey(string) if plugin_name == "MD5" 				 	 
+ 				 	 coloured_string = grey(string) if plugin_name == "MD5"
  				 	 coloured_string = grey(string) if plugin_name == "Header-Hash"
  				 	 coloured_string = grey(string) if plugin_name == "Footer-Hash"
  				 	 coloured_string = grey(string) if plugin_name == "CSS"
 					 coloured_string = grey(string) if plugin_name == "Tag-Hash"
- 					 
+
 					 coloured_plugin = white(plugin_name)
 					 coloured_plugin = grey(plugin_name) if plugin_name == "MD5"
 					 coloured_plugin = grey(plugin_name) if plugin_name == "Header-Hash"
-					 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"  					 
+					 coloured_plugin = grey(plugin_name) if plugin_name == "Footer-Hash"
 					 coloured_plugin = grey(plugin_name) if plugin_name == "CSS"
 					 coloured_plugin = grey(plugin_name) if plugin_name == "Tag-Hash"
-  					 					 
+
 					 p = ((certainty and certainty < 100) ? grey(certainty_to_words(certainty))+ " " : "")  +
 					   coloured_plugin + (!version.empty? ? "["+green(version)+"]" : "") +
-					   (!os.empty? ? "[" + red(os)+"]" : "") +	
+					   (!os.empty? ? "[" + red(os)+"]" : "") +
 					   (!string.empty? ? "[" + coloured_string+"]" : "") +
 					   (!accounts.empty? ? "["+ cyan(accounts)+"]" : "" ) +
 					   (!model.empty? ? "["+ dark_green(model)+"]" : "" ) +
 					   (!firmware.empty? ? "["+ dark_green(firmware)+"]" : "" ) +
 					   (!filepath.empty? ? "["+ dark_green(filepath)+"]" : "" ) +
 					   (!modules.empty? ? "["+ red(modules)+"]" : "" )
-					 
+
 					 brief_results << p
 				else
 
@@ -450,17 +450,17 @@ class OutputBrief < Output
 					   (!firmware.empty? ? "["+ firmware+"]" : "" ) +
 					   (!filepath.empty? ? "["+ filepath+"]" : "" ) +
 					   (!modules.empty? ? "["+ modules+"]" : "" )
-				end	
+				end
 			end
 		end
-		
+
 		status_code = HTTP_Status.code(status)
 
 		if (@f == STDOUT and $use_colour=="auto") or ($use_colour=="always")
 			brief_results_final= blue(target) + " [#{status} #{status_code}] " + brief_results.join(", ")
 		else
 			brief_results_final= target.to_s + " [#{status} #{status_code}] " + brief_results.join(", ")
-		end	
+		end
 		$semaphore.synchronize do
 			@f.puts brief_results_final
 		end
@@ -477,7 +477,7 @@ class OutputXML < Output
 		super
 		@substitutions={'&'=>'&amp;', '"'=>'&quot;', '<'=>'&lt;', '>'=>'&gt;'}
 
-		# only output <?xml line if it's a new file or STDOUT	
+		# only output <?xml line if it's a new file or STDOUT
 		if @f == STDOUT or @f.size == 0
 			@f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
 		end
@@ -490,7 +490,7 @@ class OutputXML < Output
 		@f.close
 	end
 
-	def escape(t)		
+	def escape(t)
 		text=t.to_s.dup
 		# use sort_by so that & is before &quot;, etc.
 		@substitutions.sort_by { |a,b| a=="&" ? 0 : 1 }.map{ |from,to| text.gsub!(from,to) }
@@ -507,13 +507,26 @@ class OutputXML < Output
 		text
 	end
 
-	def out(target, status, results)	
-		$semaphore.synchronize do 
+	def out(target, status, results)
+		$semaphore.synchronize do
 			@f.puts "<target>"
 			@f.puts "\t<uri>#{escape(target)}</uri>"
 			@f.puts "\t<http-status>#{escape(status)}</http-status>"
 
-			results.each do |plugin_name,plugin_results|		
+			@f.puts "\t<request-config>"
+			@f.puts "\t\t<proxy>" if $USE_PROXY
+			@f.puts "\t\t\t<proxy-host>#{escape($PROXY_HOST)}:#{escape($PROXY_PORT)}</proxy-host>" if $PROXY_HOST and $PROXY_PORT
+			@f.puts "\t\t\t<proxy-user>#{escape($PROXY_USER)}</proxy-user>" if $PROXY_USER
+			@f.puts "\t\t</proxy>" if $USE_PROXY
+			$CUSTOM_HEADERS.each do |header_name, header_value|
+				@f.puts "\t\t<header>"
+				@f.puts "\t\t\t<header-name>#{escape(header_name)}</header-name>"
+				@f.puts "\t\t\t<header-value>#{escape(header_value)}</header-value>"
+				@f.puts "\t\t</header>"
+			end
+			@f.puts "\t</request-config>"
+
+			results.each do |plugin_name,plugin_results|
 				@f.puts "\t<plugin>"
 				@f.puts "\t\t<name>#{escape(plugin_name)}</name>"
 
@@ -570,7 +583,7 @@ class OutputMagicTreeXML < Output
 		# only output <?xml line if it's a new file or STDOUT
 		if @f.size == 0
 			@f.puts '<?xml version="1.0" encoding="UTF-8"?>'
-		end		
+		end
 		@f.puts '<magictree class="MtBranchObject">'
 	end
 
@@ -579,7 +592,7 @@ class OutputMagicTreeXML < Output
 		@f.close
 	end
 
-	def escape(t)		
+	def escape(t)
 		text = t.to_s.dup
 		# use sort_by so that & is before &quot;, etc.
 		@substitutions.sort_by {|a,b| a == "&" ? 0 : 1 }.map{ |from,to| text.gsub!(from,to) }
@@ -691,7 +704,7 @@ class OutputMagicTreeXML < Output
 						modules.map {|x| @f.write "<module>#{escape(x)}</module>" } unless plugin_name =~ /^Country$/
 					end
 
-					# Accounts # MagicTree generally uses "user" nodes for account 
+					# Accounts # MagicTree generally uses "user" nodes for account
 					if accounts.size > 0
 						accounts.map {|x| @f.write "<user>#{escape(x)}</user>" }
 					end
@@ -740,7 +753,7 @@ class OutputJSON < Output
 
 	def close
 		# empty hash because each hash ends with a comma
-		@f.puts "{}" 
+		@f.puts "{}"
 		# closing bracket
 		@f.puts "]"
 		@f.close
@@ -748,7 +761,7 @@ class OutputJSON < Output
 
 	def flatten_elements!(obj)
 		if obj.class == Hash
-			obj.each_value {|x| 
+			obj.each_value {|x|
 				flatten_elements!(x)
 			}
 		end
@@ -760,13 +773,13 @@ class OutputJSON < Output
 
 	def utf8_elements!(obj)
 		if obj.class == Hash
-			obj.each_value {|x| 
+			obj.each_value {|x|
 				utf8_elements!(x)
 			}
 		end
 
 		if obj.class == Array
-			obj.each {|x| 
+			obj.each {|x|
 				utf8_elements!(x)
 			}
 		end
@@ -794,12 +807,26 @@ class OutputJSON < Output
 
 	def out(target, status, results)
 		# nice
-		foo= {:target=>target.to_s, :http_status=>status, :plugins=>{} } 
-		
-		results.each do |plugin_name,plugin_results|		
+		foo= {:target=>target.to_s, :http_status=>status, :request_config=>{}, :plugins=>{} }
+
+		# request-config
+		req_config = {}
+		if $USE_PROXY
+			req_config[:proxy] = {:proxy_host=>$PROXY_HOST, :proxy_port=>$PROXY_PORT}
+			req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
+		end
+
+		req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
+		$CUSTOM_HEADERS.each do |header_name, header_value|
+			req_config[:headers][header_name] = header_value.dup
+		end
+		foo[:request_config] = req_config
+
+		# plugins
+		results.each do |plugin_name,plugin_results|
 #			thisplugin = {:name=>plugin_name}
 			thisplugin = {}
-			
+
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
@@ -836,13 +863,13 @@ class OutputJSON < Output
 
 		unless @charset.nil? or @charset == "Failed"
 			utf8_elements!(foo) # convert foo to utf-8
-			flatten_elements!(foo)			
+			flatten_elements!(foo)
 		else
 			# could not find encoding force UTF-8 anyway
-			utf8_elements!(foo) 
+			utf8_elements!(foo)
 		end
 
-		$semaphore.synchronize do 
+		$semaphore.synchronize do
 			@f.puts JSON::generate(foo) + ","
 		end
 	end
@@ -852,7 +879,7 @@ end
 # basically the same as OutputJSON
 class OutputMongo < Output
 
-	def initialize(s)		
+	def initialize(s)
 		host=s[:host] || "0.0.0.0"
 		database=s[:database] || raise("Missing MongoDB database name")
 		collection=s[:collection] || "whatweb"
@@ -870,7 +897,7 @@ class OutputMongo < Output
 
 	def flatten_elements!(obj)
 		if obj.class == Hash
-			obj.each_value {|x| 
+			obj.each_value {|x|
 				flatten_elements!(x)
 			}
 		end
@@ -883,13 +910,13 @@ class OutputMongo < Output
 
 	def utf8_elements!(obj)
 		if obj.class == Hash
-			obj.each_value {|x| 
+			obj.each_value {|x|
 				utf8_elements!(x)
 			}
 		end
 
 		if obj.class == Array
-			obj.each {|x| 
+			obj.each {|x|
 				utf8_elements!(x)
 			}
 		end
@@ -903,17 +930,31 @@ class OutputMongo < Output
 
 	def out(target, status, results)
 		# nice
-		foo= {:target=>target.to_s, :http_status=>status, :plugins=>{} } 
-		
-		results.each do |plugin_name,plugin_results|		
+		foo= {:target=>target.to_s, :http_status=>status, :request_config=>{}, :plugins=>{} }
+
+		# request-config
+		req_config = {}
+		if $USE_PROXY
+			req_config[:proxy] = {:proxy_host=>$PROXY_HOST, :proxy_port=>$PROXY_PORT}
+			req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
+		end
+
+		req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
+		$CUSTOM_HEADERS.each do |header_name, header_value|
+			req_config[:headers][header_name] = header_value.dup
+		end
+		foo[:request_config] = req_config
+
+		# plugins
+		results.each do |plugin_name,plugin_results|
 #			thisplugin = {:name=>plugin_name}
 			thisplugin = {}
-			
+
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
 
-				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last					
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.compact.sort.uniq.last
 				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq
 				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp }.flatten.compact.sort.uniq
 				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.flatten.compact.sort.uniq
@@ -940,7 +981,7 @@ class OutputMongo < Output
 		end
 
 		@charset=results.map {|n,r| r[0][:string] if n=="Charset" }.compact.first
-		
+
 		unless @charset.nil? or @charset == "Failed"
 			utf8_elements!(foo) # convert foo to utf-8
 			flatten_elements!(foo)
@@ -957,7 +998,7 @@ end
 class OutputJSONVerbose < Output
 	def out(target, status, results)
 		# brutal and simple
-		$semaphore.synchronize do 
+		$semaphore.synchronize do
 			@f.puts JSON::fast_generate([target,status,results])
 		end
 	end
@@ -972,10 +1013,10 @@ end
 
 
 class OutputSQL < Output
-	
+
 	def flatten_elements!(obj)
 		if obj.class == Hash
-			obj.each_value {|x| 
+			obj.each_value {|x|
 				flatten_elements!(x)
 			}
 		end
@@ -997,13 +1038,14 @@ class OutputSQL < Output
 	def initialize(f=STDOUT)
 		super
 	end
-	
+
 	def create_tables
 		# feel free to modify this
 		@f.puts "CREATE TABLE plugins (plugin_id int NOT NULL AUTO_INCREMENT, name varchar(255) NOT NULL,PRIMARY KEY (plugin_id), UNIQUE (name));"
 		@f.puts "CREATE TABLE targets (target_id int NOT NULL AUTO_INCREMENT, target varchar(900) NOT NULL, status varchar(10),PRIMARY KEY (target_id), UNIQUE (target, status) );"
-		@f.puts "CREATE TABLE scans (scan_id int NOT NULL AUTO_INCREMENT, plugin_id INT NOT NULL, target_id INT NOT NULL, version varchar(255), os varchar(255), string varchar(1024), account varchar(1024), model varchar(1024), firmware varchar(1024), module varchar(1024), filepath varchar(1024), certainty varchar(10) ,PRIMARY KEY (scan_id));"
-	
+		@f.puts "CREATE TABLE request_configs (config_id int NOT NULL AUTO_INCREMENT, value TEXT NOT NULL, PRIMARY KEY (config_id) );"
+		@f.puts "CREATE TABLE scans (scan_id int NOT NULL AUTO_INCREMENT, config_id INT NOT NULL, plugin_id INT NOT NULL, target_id INT NOT NULL, version varchar(255), os varchar(255), string varchar(1024), account varchar(1024), model varchar(1024), firmware varchar(1024), module varchar(1024), filepath varchar(1024), certainty varchar(10) ,PRIMARY KEY (scan_id));"
+
 		# plugins table
 		@f.puts "INSERT INTO plugins (name) VALUES ('Custom-Plugin');"
 		@f.puts "INSERT INTO plugins (name) VALUES ('Grep');"
@@ -1016,11 +1058,25 @@ class OutputSQL < Output
 	def out(target, status, results)
 
 		# nice
-		foo= {:target=>target, :http_status=>status, :plugins=>{} } 
-		
-		results.each do |plugin_name,plugin_results|		
+		foo= {:target=>target, :http_status=>status, :plugins=>{}, :request_config=>{}}
+
+		# config
+		req_config = {}
+		if $USE_PROXY
+			req_config[:proxy] = {:proxy_host=>$PROXY_HOST, :proxy_port=>$PROXY_PORT}
+			req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
+		end
+
+		req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
+		$CUSTOM_HEADERS.each do |header_name, header_value|
+			req_config[:headers][header_name] = header_value.dup
+		end
+		foo[:request_config] = req_config
+
+		# plugins
+		results.each do |plugin_name,plugin_results|
 			thisplugin = {}
-			
+
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
@@ -1054,14 +1110,19 @@ class OutputSQL < Output
 			end
 		end
 
-		flatten_elements!(foo)			
-		
+		flatten_elements!(foo)
+
 		i_target = escape_for_sql(foo[:target])
 		insert = [escape_for_sql(foo[:http_status]), i_target].join(",")
 
 		query = "INSERT IGNORE INTO targets (status,target) VALUES (#{ insert });";
 		@f.puts query
-		foo[:plugins].each do |x| 
+
+		insert = [escape_for_sql(JSON.dump(foo[:request_config]))].join(",")
+		query = "INSERT INTO request_configs (value) VALUES (#{insert})"
+		@f.puts query
+
+		foo[:plugins].each do |x|
 
 			plugin_name = escape_for_sql(x.first.to_s)
 
@@ -1070,10 +1131,9 @@ class OutputSQL < Output
 					escape_for_sql(x[1][:firmware].join(",").to_s),	escape_for_sql(x[1][:module].join(",").to_s), escape_for_sql(x[1][:filepath].join(",").to_s),
 					escape_for_sql(x[1][:certainty].to_s) ].join(",")
 
-			query = "INSERT INTO scans (target_id, plugin_id, version, os, string, account, model, firmware, module, filepath, certainty) VALUES ( (SELECT target_id from targets WHERE target = #{i_target}),(SELECT plugin_id from plugins WHERE name = #{plugin_name}), #{insert} );";
+			query = "INSERT INTO scans (target_id, config_id, plugin_id, version, os, string, account, model, firmware, module, filepath, certainty) VALUES ( (SELECT target_id from targets WHERE target = #{i_target}),(SELECT MAX(config_id) from request_configs),(SELECT plugin_id from plugins WHERE name = #{plugin_name}), #{insert} );";
 			@f.puts query
 		end
 
 	end
 end
-
