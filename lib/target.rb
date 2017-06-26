@@ -186,7 +186,7 @@ class Target
     rescue SocketError => err
       error(@target + " ERROR: Socket error #{err}")
       return
-    rescue TimeoutError => err
+    rescue Timeout::Error => err
       error(@target + " ERROR: Timed out #{err}")
       return
     rescue Errno::ETIMEDOUT => err # for ruby 1.8.7 patch level 249
