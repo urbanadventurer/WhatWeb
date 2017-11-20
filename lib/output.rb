@@ -999,10 +999,18 @@ class OutputSQL < Output
 	end
 	
 	def create_tables
+		# Note that you may encounter the error "1709 - Index column size too large. The maximum column size is 767 bytes." 
+		# when using MySQL <= 5.6 with the innodb engine and the utf8mb4 character set
+		# 
+		# max_hostname_length = 253
+		# max_uri_prefix = 10 # covers https://
+		# max_url_length = 2048 # old IE limit
+		max_taget_length = 2048
+		
 		# feel free to modify this
 		@f.puts "CREATE TABLE plugins (plugin_id int NOT NULL AUTO_INCREMENT, name varchar(255) NOT NULL,PRIMARY KEY (plugin_id), UNIQUE (name));"
-		@f.puts "CREATE TABLE targets (target_id int NOT NULL AUTO_INCREMENT, target varchar(200) NOT NULL, status varchar(10),PRIMARY KEY (target_id), UNIQUE (target, status) );"
-		@f.puts "CREATE TABLE scans (scan_id int NOT NULL AUTO_INCREMENT, plugin_id INT NOT NULL, target_id INT NOT NULL, version varchar(255), os varchar(255), string varchar(1024), account varchar(1024), model varchar(1024), firmware varchar(1024), module varchar(1024), filepath varchar(1024), certainty varchar(10) ,PRIMARY KEY (scan_id));"
+		@f.puts "CREATE TABLE targets (target_id int NOT NULL AUTO_INCREMENT, target text(#{max_target_length}) NOT NULL, status varchar(10),PRIMARY KEY (target_id), UNIQUE (target, status) );"
+		@f.puts "CREATE TABLE scans (scan_id int NOT NULL AUTO_INCREMENT, plugin_id INT NOT NULL, target_id INT NOT NULL, version varchar(255), os varchar(255), string text(1024), account text(1024), model text(1024), firmware text(1024), module text(1024), filepath textf(1024), certainty varchar(10) ,PRIMARY KEY (scan_id));"
 	
 		# plugins table
 		@f.puts "INSERT INTO plugins (name) VALUES ('Custom-Plugin');"
