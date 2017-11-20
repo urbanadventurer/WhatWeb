@@ -188,7 +188,9 @@ LOGGING:
   --log-mongo-collection  Name of the MongoDB collection. Default: whatweb.
   --log-mongo-host        MongoDB hostname or IP address. Default: 0.0.0.0.
   --log-mongo-username    MongoDB username. Default: nil.
-  --log-mongo-password    MongoDB password. Default: nil.
+  --log-mongo-password    MongoDB password. Default: nil.  
+  --log-elastic-index     Name of the index to store results. Default: whatweb 
+  --log-elastic-host      Host:port of the elastic http interface. Default: 127.0.0.1:9200
   
 PERFORMANCE & STABILITY:
   --max-threads, -t       Number of simultaneous threads. Default: 25.
@@ -243,6 +245,8 @@ The following types of logging are supported:
 	--log-mongo-host	MongoDB hostname or IP address. Default: 0.0.0.0
 	--log-mongo-username	MongoDB username. Default: nil
 	--log-mongo-password	MongoDB password. Default: nil
+	--log-elastic-index		Name of the index to store results. Default: whatweb 
+	--log-elastic-host		Host:port of the elastic http interface. Default: 127.0.0.1:9200
 	--log-errors=FILE	Log errors. This is usually printed to the screen in red.
 
 You can output to multiple logs simultaneously by specifying multiple command line logging options. Advanced users who want SQL output should read the source code to see unsupported features.
