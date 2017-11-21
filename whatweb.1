@@ -1,6 +1,6 @@
-.TH WHATWEB 1 "April 5th, 2011"
+.TH WHATWEB 1 "November 22nd, 2017"
 .SH NAME
-WhatWeb \- Web scanner to identify what websites are running.
+WhatWeb \- Next generation Web scanner. Identify technologies used by websites.
 .SH SYNOPSIS
 .B whatweb
 .RI [ options ] 
@@ -9,7 +9,7 @@ WhatWeb \- Web scanner to identify what websites are running.
 .br
 .SH DESCRIPTION
 .PP
-WhatWeb identifies websites. It's goal is to answer the question, "What is that Website?". WhatWeb recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. WhatWeb has over 900 plugins, each to recognise something different. WhatWeb also identifies version numbers, email addresses, account ID's, web framework modules, SQL errors, and more.
+WhatWeb identifies websites. It's goal is to answer the question, "What is that Website?". WhatWeb recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. WhatWeb has over 1700 plugins, each to recognise something different. WhatWeb also identifies version numbers, email addresses, account ID's, web framework modules, SQL errors, and more.
 
 WhatWeb can be stealthy and fast, or thorough but slow. WhatWeb supports an aggression level to control the trade off between speed and reliability. When you visit a website in your browser, the transaction includes many hints of what web technologies are powering that website. Sometimes a single webpage visit contains enough information to identify a website but when it does not, WhatWeb can interrogate the website further. The default level of aggression, called 'passive', is the fastest and requires only one HTTP request of a website. This is suitable for scanning public websites. More aggressive modes were developed for in penetration tests.
 
@@ -19,7 +19,7 @@ Most WhatWeb plugins are thorough and recognise a range of cues from subtle to o
 .B
 Features:
 .TP
-	* Over 1000 plugins
+	* Over 1700 plugins
 .TP
 	* Control the trade off between speed/stealth and reliability
 .TP
@@ -44,143 +44,14 @@ Features:
 	* Custom plugins defined on the command line
 
 
-.SH OPTIONS
+.SH TARGET SELECTION
 .TP
 .B \<URLs\>
 Enter URLs, filenames or nmap-format IP ranges. Use /dev/stdin to pipe HTML directly
 .TP
 .B \-\-input-file=FILE \-i
 Identify URLs found in FILE
-.TP
-.B \-\-aggression \-a
-1 (Stealthy) - Makes one HTTP request per target. Also follows redirects.
-
-2 (Unused) - 
-
-3 (Aggressive) - Can make a handful of HTTP requests per target. This triggers aggressive plugins for targets only when those plugins are identified with a level 1 request first.
-
-4 (Heavy) - Makes a lot of HTTP requests per target. Aggressive tests from
- all plugins are used for all URLs.
-
-.TP
-.B \-\-list-plugins \-l
-List the plugins
-.TP
-.B \-\-plugins \-p
-Comma delimited set of selected plugins. Default is all.
- Each element can be a directory, file or plugin name and
- can optionally have a modifier, eg. + or -
- Examples: +/tmp/moo.rb,+/tmp/foo.rb
- title,md5,+./plugins-disabled/
- ./plugins-disabled,-md5
-.TP
-.B \-\-info-plugins \-I
-Display information for all plugins. Optionally search
- with keywords in a comma delimited list.
-.TP
-.B \-\-grep \-g
-Search for a string. Reports in a plugin called Grep
-.TP
-.B \-\-colour=[WHEN] \-\-color=[WHEN]
-control whether colour is used. WHEN may be "never", "always", or "auto"
-.TP
-.B \-\-log-verbose=FILE
-Log verbose output
-.TP
-.B \-\-quiet, \-q
-Do not display brief logging to STDOUT
-.TP
-.B \-\-log-brief=FILE
-Log brief, one-line output
-.TP
-.B \-\-log-xml=FILE
-Log XML format
-.TP
-.B \-\-log-json=FILE
-Log JSON format
-.TP
-.B \-\-log\-sql=FILE
-Log SQL INSERT statements
-.TP
-.B \-\-log\-sql\-create=FILE
-Create SQL database tables
-.TP
-.B \-\-log-json-verbose=FILE
-Log JSON Verbose format
-.TP
-.B \-\-log-magictree=FILE
-Log MagicTree XML format
-.TP
-.B \-\-log-object=FILE
-Log Ruby object inspection format
-.TP
-.B \-\-log-mongo-database=NAME
-Name of the MongoDB database
-.TP
-.B \-\-log-mongo-collection=NAME
-Name of the MongoDB collection. Default: whatweb
-.TP
-.B \-\-log-mongo-host=NAME
-MongoDB hostname or IP address. Default: 0.0.0.0
-.TP
-.B \-\-log-mongo-username=NAME
-MongoDB username. Default: nil
-.TP
-.B \-\-log-mongo-password=NAME
-MongoDB password. Default: nil
-.TP
-.B \-\-log-errors=FILE
-Log errors
-.TP
-.B \-\-no-errors
-Suppress error messages
-.TP
-.B \-\-user-agent \-U
-Identify as user-agent instead of WhatWeb/VERSION.
-.TP
-.B \-\-user \-u <user:password>
-HTTP basic authentication
-.TP
-.B \-\-header \-H
-Add an HTTP header. eg "Foo:Bar". Specifying a default
- header will replace it. Specifying an empty value, eg.
- "User-Agent:" will remove the header.
-.TP
-.B \-\-max-threads \-t
-Number of simultaneous threads. Default is 25.
-.TP
-.B \-\-follow-redirect=WHEN
-Control when to follow redirects. WHEN may be "never", "http-only", "meta-only", "same-site", "same-domain" or "always"
-.TP
-.B \-\-max-redirects=NUM	
-Maximum number of contiguous redirects. Default: 10
-.TP
-.B \-\-proxy <hostname[:port]>
-Set proxy hostname and port (default: 8080)
-.TP
-.B \-\-proxy-user <username:password>
-Set proxy user and password
-.TP
-.B \-\-open-timeout
-Time in seconds. Default: 15
-.TP
-.B \-\-read-timeout
-Time in seconds. Default: 30
-.TP
-.B \-\-wait=SECONDS
-Wait SECONDS between connections.
-This is useful when using a single thread.
-.TP
-.B \-\-custom-plugin
-Define a custom plugin call Custom,
-Examples: ":text=>'powered by abc'"
-":regexp=>/powered[ ]?by ab[0-9]/"
-":ghdb=>'intitle:abc "powered by abc"'"
-":md5=>'8666257030b94d3bdb46e05945f60b42'"
-"{:text=>'powered by abc'},{:regexp=>/abc [ ]?1/i}"
-.TP
-.B \-\-dorks <plugin name>
-List google dorks for the selected plugin
+.SH TARGET MODIFICATION
 .TP
 .B \-\-url-prefix
 Add a prefix to target URLs
@@ -191,32 +62,201 @@ Add a suffix to target URLs
 .B \-\-url-pattern
 Insert the targets into a URL. Requires --input-file,
 eg. www.example.com/%insert%/robots.txt
+.SH AGGRESSION
 .TP
-.B \-\-help \-h
-Display usage
+The aggression level controls the trade-off between speed/stealth and reliability.
 .TP
-.B \-\-verbose \-v
-Increase verbosity (recommended), use twice for debugging.
+.B \-\-aggression \-a=LEVEL
+Set the aggression level. Default: 1.
+.TP .nf
+ 1. Stealthy       Makes one HTTP request per target and also follows redirects. 
+ 3. Aggressive     If a level 1 plugin is matched, additional requests will be made.
+ 4. Heavy          Makes a lot of HTTP requests per target. URLs from all plugins are attempted.
+.ni
+.SH HTTP OPTIONS
 .TP
-.B \-\-debug
+.B  \-\-user-agent, \-U=AGENT
+Identify as AGENT instead of WhatWeb/0.4.9.
+.TP
+.B  \-\-header, \-H
+Add an HTTP header. eg "Foo:Bar". Specifying a default header will replace it. Specifying an empty value, e.g. "User-Agent:" will remove it.
+.TP
+.B  \-\-follow\-redirect=WHEN
+Control when to follow redirects. WHEN may be `never', `http-only', `meta-only', `same-site', `same-domain' or `always'. Default: always.
+.TP
+.B  \-\-max\-redirects=NUM
+Maximum number of redirects. Default: 10.
+
+.SH AUTHENTICATION
+.TP
+.B  \-\-user, \-u=<user:password>
+HTTP basic authentication.
+.TP
+.B  \-\-cookie, \-c=COOKIES
+Use cookies, e.g. 'name=value; name2=value2'.
+
+.SH PROXY
+.B  \-\-proxy
+<hostname[:port]> Set proxy hostname and port. Default: 8080.
+.TP
+.B  \-\-proxy-user
+<username:password> Set proxy user and password.
+
+.SH PLUGINS
+.TP
+.B  \-\-list\-plugins, \-l
+List all plugins.
+.TP
+.B  \-\-info\-plugins, \-I=[SEARCH]
+List all plugins with detailed information. Optionally search with keywords in a comma delimited list.
+.TP
+.B  \-\-search\-plugins=STRING
+Search plugins for a keyword.
+.TP
+.B  \-\-plugins, -p=LIST
+Select plugins. LIST is a comma delimited set of selected plugins. Default is all. 
+Each element can be a directory, file or plugin name and can optionally have a modifier, +/-.
+.TP
+.nf
+Examples: +/tmp/moo.rb,+/tmp/foo.rb
+title,md5,+./plugins-disabled/
+./plugins-disabled,-md5
+\-p + is a shortcut for -p +plugins\-disabled.
+.ni
+.TP
+.B  \-\-grep, \-g=STRING
+Search for STRING in HTTP responses. Reports with a plugin named Grep.
+.TP
+.B  \-\-custom\-plugin=DEFINITION
+Define a custom plugin named Custom-Plugin,
+.TP .nf
+Examples: ":text=>'powered by abc'"
+":version=>/powered[ ]?by ab[0-9]/"
+":ghdb=>'intitle:abc \"powered by abc\"'"
+":md5=>'8666257030b94d3bdb46e05945f60b42'"
+"{:text=>'powered by abc'}"
+.ni
+.TP
+.B  \-\-dorks=PLUGIN
+List Google dorks for the selected plugin.
+
+
+.SH OUTPUT
+.TP
+.B  \-\-verbose, \-v
+Verbose output includes plugin descriptions. Use twice for debugging.
+.TP
+.B  \-\-colour,\-\-color=WHEN
+control whether colour is used. WHEN may be `never', `always', or `auto'.
+.TP
+.B  \-\-quiet, \-q
+Do not display brief logging to STDOUT.
+.TP
+.B  \-\-no\-errors
+Suppress error messages.
+
+.SH LOGGING
+.TP
+.B  \-\-log\-brief=FILE
+Log brief, one\-line output.
+.TP
+.B  \-\-log\-verbose=FILE
+Log verbose output.
+.TP
+.B  \-\-log\-errors=FILE
+Log errors.
+.TP
+.B  \-\-log\-xml=FILE
+Log XML format.
+.TP
+.B  \-\-log\-json=FILE
+Log JSON format.
+.TP
+.B  \-\-log\-sql=FILE
+Log SQL INSERT statements.
+.TP
+.B  \-\-log\-sql\-create=FILE
+Create SQL database tables.
+.TP
+.B  \-\-log\-json\-verbose=FILE
+Log JSON Verbose format.
+.TP
+.B  \-\-log\-magictree=FILE
+Log MagicTree XML format.
+.TP
+.B  \-\-log\-object=FILE
+Log Ruby object inspection format.
+.TP
+.B  \-\-log\-mongo\-database
+Name of the MongoDB database.
+.TP
+.B  \-\-log\-mongo\-collection
+Name of the MongoDB collection. Default: whatweb.
+.TP
+.B  \-\-log\-mongo\-host
+MongoDB hostname or IP address. Default: 0.0.0.0.
+.TP
+.B  \-\-log\-mongo\-username
+MongoDB username. Default: nil.
+.TP
+.B  \-\-log\-mongo\-password
+MongoDB password. Default: nil.
+.TP
+.B  \-\-log\-elastic\-index
+Name of the index to store results. Default: whatweb 
+.TP
+.B  \-\-log\-elastic\-host
+Host:port of the elastic http interface. Default: 127.0.0.1:9200s
+  
+
+.SH PERFORMANCE & STABILITY
+.TP
+.B  \-\-max\-threads, \-t
+Number of simultaneous threads. Default: 25.
+.TP
+.B  \-\-open\-timeout
+Time in seconds. Default: 15.
+.TP
+.B  \-\-read\-timeout
+Time in seconds. Default: 30.
+.TP
+.B  \-\-wait=SECONDS
+Wait SECONDS between connections. This is useful when using a single thread.
+
+.SH HELP & MISCELLANEOUS
+.TP
+.B  \-\-short\-help
+Short usage help.
+.TP
+.B  \-\-help, \-h
+Complete usage help.
+.TP
+.B  \-\-debug
 Raise errors in plugins.
 .TP
-.B \-\-version
+.B  \-\-version
 Display version information.
 
-.SH EXAMPLES
+.SH EXAMPLE USAGE
 .TP
-.B Passive:
- whatweb example.com
+.B Scan example.com.
+ ./whatweb example.com
 .TP
-.B Passive (Verbose):
- whatweb -v example.com
+.B Scan reddit.com slashdot.org with verbose plugin descriptions.
+ ./whatweb -v reddit.com slashdot.org
 .TP
-.B Aggressive:
- whatweb -a 3 example.com
+.B An aggressive scan of wired.com detects the exact version of WordPress.
+ ./whatweb -a 3 www.wired.com
 .TP
-.B IP Ranges
- whatweb 192.168.1.0/24
+.B Scan the local network quickly and suppress errors.
+ whatweb --no-errors 192.168.0.0/24
+.TP
+.B Scan the local network for https websites.
+ whatweb --no-errors --url-prefix https://192.168.0.0/24
+.TP
+.B Scan for crossdomain policies in the Alexa Top 1000.
+ ./whatweb -i plugin-development/alexa-top-100.txt --url-suffix /crossdomain.xml -p crossdomain_xml
+
 
 .SH BUGS
 Report bugs and feature requests to https://github.com/urbanadventurer/WhatWeb
