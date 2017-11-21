@@ -42,6 +42,7 @@ class Output
     suj
   end
 
+
   # sort and uniq but no join. just for one plugin result
   def sortuniq(p)
     su = {}
@@ -60,6 +61,7 @@ end
 
 
 class OutputObject < Output
+  
   def out(target, status, results)
     $semaphore.synchronize do
       @f.puts "Identifying: #{target.to_s}"
@@ -496,6 +498,19 @@ class OutputXML < Output
       @f.puts "\t<uri>#{escape(target)}</uri>"
       @f.puts "\t<http-status>#{escape(status)}</http-status>"
 
+      @f.puts "\t<request-config>"
+			@f.puts "\t\t<proxy>" if $USE_PROXY
+			@f.puts "\t\t\t<proxy-host>#{escape($PROXY_HOST)}:#{escape($PROXY_PORT)}</proxy-host>" if $PROXY_HOST and $PROXY_PORT
+			@f.puts "\t\t\t<proxy-user>#{escape($PROXY_USER)}</proxy-user>" if $PROXY_USER
+			@f.puts "\t\t</proxy>" if $USE_PROXY
+			$CUSTOM_HEADERS.each do |header_name, header_value|
+				@f.puts "\t\t<header>"
+				@f.puts "\t\t\t<header-name>#{escape(header_name)}</header-name>"
+				@f.puts "\t\t\t<header-value>#{escape(header_value)}</header-value>"
+				@f.puts "\t\t</header>"
+			end
+			@f.puts "\t</request-config>"
+      
       results.each do |plugin_name,plugin_results|
         @f.puts "\t<plugin>"
         @f.puts "\t\t<name>#{escape(plugin_name)}</name>"
@@ -828,7 +843,7 @@ class OutputElastic < Output
 
 	def flatten_elements!(obj)
 		if obj.class == Hash
-			obj.each_value {|x| 
+			obj.each_value {|x|
 				flatten_elements!(x)
 			}
 		end
@@ -840,13 +855,13 @@ class OutputElastic < Output
 
 	def utf8_elements!(obj)
 		if obj.class == Hash
-			obj.each_value {|x| 
+			obj.each_value {|x|
 				utf8_elements!(x)
 			}
 		end
 
 		if obj.class == Array
-			obj.each {|x| 
+			obj.each {|x|
 				utf8_elements!(x)
 			}
 		end
@@ -873,13 +888,15 @@ class OutputElastic < Output
 	end
 
 	def out(target, status, results)
+
 		# nice | date be like 2009-11-15T14:12:12 to be autodetected by elastic
 		foo= {:target=>target.to_s, :http_status=>status, :date=>Time.now.strftime('%FT%T'), :plugins=>{} } 
 		
 		results.each do |plugin_name,plugin_results|		
+
 #			thisplugin = {:name=>plugin_name}
 			thisplugin = {}
-			
+
 			unless plugin_results.empty?
 				# important info in brief mode is version, type and ?
 				# what's the highest probability for the match?
@@ -916,10 +933,10 @@ class OutputElastic < Output
 
 		unless @charset.nil? or @charset == "Failed"
 			utf8_elements!(foo) # convert foo to utf-8
-			flatten_elements!(foo)			
+			flatten_elements!(foo)
 		else
 			# could not find encoding force UTF-8 anyway
-			utf8_elements!(foo) 
+			utf8_elements!(foo)
 		end
 
 		url = URI('http://' + @host + '/' + @index + '/whatwebresult')
@@ -1041,12 +1058,14 @@ end
 
 # This is not JSON compliant as a list
 class OutputJSONVerbose < Output
+
   def out(target, status, results)
     # brutal and simple
     $semaphore.synchronize do
       @f.puts JSON::fast_generate([target,status,results])
     end
   end
+
 end
 
 
@@ -1091,17 +1110,36 @@ class OutputSQL < Output
 		
 		# feel free to modify this
 		@f.puts "CREATE TABLE plugins (plugin_id int NOT NULL AUTO_INCREMENT, name varchar(255) NOT NULL,PRIMARY KEY (plugin_id), UNIQUE (name));"
-		@f.puts "CREATE TABLE targets (target_id int NOT NULL AUTO_INCREMENT, target varchar(#{max_target_length}) NOT NULL, status varchar(10),PRIMARY KEY (target_id), UNIQUE (target, status) );"
-		@f.puts "CREATE TABLE scans (scan_id int NOT NULL AUTO_INCREMENT, plugin_id INT NOT NULL, target_id INT NOT NULL, version varchar(255), os varchar(255), string varchar(1024), account varchar(1024), model varchar(1024), firmware varchar(1024), module varchar(1024), filepath varchar(1024), certainty varchar(10) ,PRIMARY KEY (scan_id));"
+    @f.puts "CREATE TABLE targets (target_id int NOT NULL AUTO_INCREMENT, target varchar(#{max_target_length}) NOT NULL, status varchar(10),PRIMARY KEY (target_id), UNIQUE (target, status) );"    
+    @f.puts "CREATE TABLE scans (scan_id int NOT NULL AUTO_INCREMENT, config_id INT NOT NULL, plugin_id INT NOT NULL, target_id INT NOT NULL, version varchar(255), os varchar(255), string varchar(1024), account varchar(1024), model varchar(1024), firmware varchar(1024), module varchar(1024), filepath varchar(1024), certainty varchar(10) ,PRIMARY KEY (scan_id));"
+    @f.puts "CREATE TABLE request_configs (config_id int NOT NULL AUTO_INCREMENT, value TEXT NOT NULL, PRIMARY KEY (config_id) );"
+    
+    # plugins table
+		@f.puts "INSERT INTO plugins (name) VALUES ('Custom-Plugin');"
+		@f.puts "INSERT INTO plugins (name) VALUES ('Grep');"
 
     Plugin::registered_plugins.each do |n, _|
       @f.puts "INSERT INTO plugins (name) VALUES (#{escape_for_sql(n)});"
     end
   end
+    
 
   def out(target, status, results)
     # nice
-    foo = {target: target, http_status: status, plugins: {}}
+    foo= {:target=>target, :http_status=>status, :plugins=>{}, :request_config=>{}}
+
+		# config
+		req_config = {}
+		if $USE_PROXY
+			req_config[:proxy] = {:proxy_host=>$PROXY_HOST, :proxy_port=>$PROXY_PORT}
+			req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
+		end
+
+		req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
+		$CUSTOM_HEADERS.each do |header_name, header_value|
+			req_config[:headers][header_name] = header_value.dup
+		end
+		foo[:request_config] = req_config
 
     results.each do |plugin_name, plugin_results|
       thisplugin = {}
@@ -1142,7 +1180,11 @@ class OutputSQL < Output
     insert = [escape_for_sql(foo[:http_status]), i_target].join(",")
 
     query = "INSERT IGNORE INTO targets (status,target) VALUES (#{ insert });";
-    @f.puts query
+   
+		insert = [escape_for_sql(JSON.dump(foo[:request_config]))].join(",")
+		query = "INSERT INTO request_configs (value) VALUES (#{insert})"
+		@f.puts query
+    
     foo[:plugins].each do |x|
       plugin_name = escape_for_sql(x.first.to_s)
       insert = [escape_for_sql(x[1][:version].join(",").to_s), escape_for_sql(x[1][:os].join(",").to_s),
@@ -1150,8 +1192,10 @@ class OutputSQL < Output
           escape_for_sql(x[1][:firmware].join(",").to_s),  escape_for_sql(x[1][:module].join(",").to_s), escape_for_sql(x[1][:filepath].join(",").to_s),
           escape_for_sql(x[1][:certainty].to_s)].join(",")
 
-      query = "INSERT INTO scans (target_id, plugin_id, version, os, string, account, model, firmware, module, filepath, certainty) VALUES ( (SELECT target_id from targets WHERE target = #{i_target}),(SELECT plugin_id from plugins WHERE name = #{plugin_name}), #{insert} );";
+      query = "INSERT INTO scans (target_id, config_id, plugin_id, version, os, string, account, model, firmware, module, filepath, certainty) VALUES ( (SELECT target_id from targets WHERE target = #{i_target}),(SELECT MAX(config_id) from request_configs),(SELECT plugin_id from plugins WHERE name = #{plugin_name}), #{insert} );";
       @f.puts query
     end
   end
 end
+                    
+        
