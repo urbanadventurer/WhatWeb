@@ -415,7 +415,7 @@ class OutputBrief < Output
            coloured_plugin = grey(plugin_name) if plugin_name == "Tag-Hash"
 
            p = ((certainty and certainty < 100) ? "#{grey(certainty_to_words(certainty))} " : "")  +
-             coloured_plugin + (!version.empty? ? "[#{+green(version)}]" : "") +
+             coloured_plugin + (!version.empty? ? "[#{green(version)}]" : "") +
              (!os.empty? ? "[#{red(os)}]" : "") +
              (!string.empty? ? "[#{coloured_string}]" : "") +
              (!accounts.empty? ? "[#{cyan(accounts)}]" : "" ) +
