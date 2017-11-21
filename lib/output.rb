@@ -775,8 +775,24 @@ class OutputJSON < Output
 
   def out(target, status, results)
     # nice
-    foo = {target: target.to_s, http_status: status, plugins: {}}
 
+    foo= {:target=>target.to_s, :http_status=>status, :request_config=>{}, :plugins=>{} }
+
+    # request-config
+    req_config = {}
+    if $USE_PROXY
+      req_config[:proxy] = {:proxy_host=>$PROXY_HOST, :proxy_port=>$PROXY_PORT}
+      req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
+    end
+
+    req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
+    $CUSTOM_HEADERS.each do |header_name, header_value|
+      req_config[:headers][header_name] = header_value.dup
+    end
+    foo[:request_config] = req_config
+
+    # plugins
+	  
     results.each do |plugin_name,plugin_results|
 #      thisplugin = {name: plugin_name}
       thisplugin = {}
@@ -959,9 +975,9 @@ end
 class OutputMongo < Output
 
   def initialize(s)
-    host=s[:host] || "0.0.0.0"
-    database=s[:database] || raise("Missing MongoDB database name")
-    collection=s[:collection] || "whatweb"
+    host = s[:host] || "0.0.0.0"
+    database = s[:database] || raise("Missing MongoDB database name")
+    collection = s[:collection] || "whatweb"
 
     # should make databse and collection comma or fullstop delimited, eg. test,scan
     @db = Mongo::Connection.new(host).db(database) # resolve-replace means we can't connect to localhost by name and must use 0.0.0.0
@@ -1006,8 +1022,22 @@ class OutputMongo < Output
 
   def out(target, status, results)
     # nice
-    foo = {target: target.to_s, http_status: status, plugins: {}}
+   
+    foo= {:target=>target.to_s, :http_status=>status, :request_config=>{}, :plugins=>{} }
 
+		# request-config
+		req_config = {}
+		if $USE_PROXY
+			req_config[:proxy] = {:proxy_host=>$PROXY_HOST, :proxy_port=>$PROXY_PORT}
+			req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
+		end
+
+		req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
+		$CUSTOM_HEADERS.each do |header_name, header_value|
+			req_config[:headers][header_name] = header_value.dup
+		end
+    foo[:request_config] = req_config
+    
     results.each do |plugin_name, plugin_results|
 #      thisplugin = {name: plugin_name}
       thisplugin = {}
