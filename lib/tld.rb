@@ -4,7 +4,7 @@
 #
 # Copyright Andrew Horton, 2010
 # Permission is granted for use of this source code to be used within WhatWeb
-#
+# note that is out-dated
 
 
 
@@ -82,7 +82,7 @@ class TLD
 "az"=>{"type"=>"country","tld"=>"az","2nd_level_registration"=>true,"foreign_registration"=>false,"country"=>"Azerbaijan","slds"=>[]},
 "ba"=>{"type"=>"country","tld"=>"ba","2nd_level_registration"=>true,"foreign_registration"=>false,"country"=>"Bosnia and Herzegovina","slds"=>[]},
 "bb"=>{"type"=>"country","tld"=>"bb","2nd_level_registration"=>true,"foreign_registration"=>false,"country"=>"Barbados","slds"=>[]},
-"bd"=>{"type"=>"country","tld"=>"bd","2nd_level_registration"=>true,"foreign_registration"=>false,"country"=>"Bangladesh","slds"=>["com.bd","edu.bd","ac.bd","net.bd","gov.bd","org.bd","mil.bd"]},
+"bd"=>{"type"=>"country","tld"=>"bd","2nd_level_registration"=>false,"foreign_registration"=>false,"country"=>"Bangladesh","slds"=>["com.bd","edu.bd","ac.bd","net.bd","gov.bd","org.bd","mil.bd"]},
 "be"=>{"type"=>"country","tld"=>"be","2nd_level_registration"=>true,"foreign_registration"=>true,"country"=>"Belgium","slds"=>[]},
 "bf"=>{"type"=>"country","tld"=>"bf","2nd_level_registration"=>true,"foreign_registration"=>false,"country"=>"Burkina Faso","slds"=>[]},
 "bg"=>{"type"=>"country","tld"=>"bg","2nd_level_registration"=>true,"foreign_registration"=>false,"country"=>"Bulgaria","slds"=>[]},
