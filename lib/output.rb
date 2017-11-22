@@ -1,5 +1,5 @@
 =begin
-Copyright 2009 to 2016, Andrew Horton
+Copyright 2009 to 2017, Andrew Horton
 
 This file is part of WhatWeb.
 
@@ -1208,8 +1208,8 @@ class OutputSQL < Output
 
     i_target = escape_for_sql(foo[:target])
     insert = [escape_for_sql(foo[:http_status]), i_target].join(",")
-
     query = "INSERT IGNORE INTO targets (status,target) VALUES (#{ insert });";
+    @f.puts query
    
 		insert = [escape_for_sql(JSON.dump(foo[:request_config]))].join(",")
 		query = "INSERT INTO request_configs (value) VALUES (#{insert})"
