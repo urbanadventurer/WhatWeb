@@ -17,14 +17,14 @@ class WhatWebTest < Minitest::Test
     res = p.read.to_s
     p.close
     assert res
-    assert res =~ %r{^WhatWeb version \d.\d.\d-dev \( http://www.morningstarsecurity.com/research/whatweb/ \)$}
+    assert res =~ %r{^WhatWeb version \d.\d.\d[-dev]? \( http://www.morningstarsecurity.com/research/whatweb/ \)$}
   end
 
   def test_invalid_url
     p = IO.popen(['./whatweb',
       '--color', 'never',
       '--no-errors',
-      'http://'], 'r+')
+      'https://'], 'r+')
     res = p.read.to_s
     p.close
     assert res
@@ -35,7 +35,7 @@ class WhatWebTest < Minitest::Test
     p = IO.popen(['./whatweb',
       '--color', 'never',
       '--log-xml', '/dev/stdout',
-      "http://#{@test_host}/"], 'r+')
+      "https://#{@test_host}/"], 'r+')
     res = p.read.to_s
     p.close
     assert res
@@ -46,7 +46,7 @@ class WhatWebTest < Minitest::Test
     p = IO.popen(['./whatweb',
       '--color', 'never',
       '--log-json', '/dev/stdout',
-      "http://#{@test_host}/"], 'r+')
+      "https://#{@test_host}/"], 'r+')
     res = p.read.to_s
     p.close
     assert res
@@ -57,11 +57,11 @@ class WhatWebTest < Minitest::Test
     p = IO.popen(['./whatweb',
       '--color', 'never',
       '--log-object', '/dev/stdout',
-      "http://#{@test_host}/"], 'r+')
+      "https://#{@test_host}/"], 'r+')
     res = p.read.to_s
     p.close
     assert res
-    assert res =~ %r{Identifying: http://#{@test_host}/}
+    assert res =~ %r{Identifying: https://#{@test_host}/}
     assert res =~ %r{^HTTP-Status: 200$}
     assert res =~ %r{:name=>"server string", :string=>"Apache", :certainty=>100}
   end
@@ -70,40 +70,40 @@ class WhatWebTest < Minitest::Test
     p = IO.popen(['./whatweb',
       '--color', 'never',
       '--log-sql', '/dev/stdout',
-      "http://#{@test_host}/"], 'r+')
+      "https://#{@test_host}/"], 'r+')
     res = p.read.to_s
     p.close
     assert res
-    assert res.split("\n").flatten.first =~ %r{^INSERT IGNORE INTO targets \(status,target\) VALUES \('200','http://#{@test_host}/'\);$}
+    assert res.split("\n").flatten.first =~ %r{^INSERT IGNORE INTO targets \(status,target\) VALUES \('200','https://#{@test_host}/'\);$}
   end
 
   def test_verbose_output
     p = IO.popen(['./whatweb',
       '--color', 'never',
       '--verbose',
-      "http://#{@test_host}/"], 'r+')
+      "https://#{@test_host}/"], 'r+')
     res = p.read.to_s
     p.close
     assert res
-    assert res.split("\n").flatten.first =~ %r{WhatWeb report for http://#{@test_host}/$}
+    assert res.split("\n").flatten.first =~ %r{WhatWeb report for https://#{@test_host}/$}
   end
 
   def test_plugins
     p = IO.popen(['./whatweb',
       '--color', 'never',
       '-phttpserver,title',
-      "http://#{@test_host}/"], 'r+')
+      "https://#{@test_host}/"], 'r+')
     res = p.read.to_s
     p.close
     assert res
-    assert res =~ %r{^http://#{@test_host}/ \[200 OK\] HTTPServer\[Apache\], Title\[WhatWeb - Next generation web scanner.\]$}
+    assert res =~ %r{^https://#{@test_host}/ \[200 OK\] HTTPServer\[Apache\], Title\[WhatWeb - Next generation web scanner.\]$}
   end
 
   def test_custom_plugin
     p = IO.popen(['./whatweb',
       '--color', 'never',
       '--custom-plugin', ':text=>"WhatWeb - Next generation web scanner."',
-      "http://#{@test_host}/"], 'r+')
+      "https://#{@test_host}/"], 'r+')
     res = p.read.to_s
     p.close
     assert res
@@ -116,7 +116,7 @@ class WhatWebTest < Minitest::Test
       '--color', 'never',
       '--no-errors',
       '--custom-plugin', ":text=>#{junk}",
-      "http://#{@test_host}/"], 'r+')
+      "https://#{@test_host}/"], 'r+')
     res = p.read.to_s
     p.close
     assert res
