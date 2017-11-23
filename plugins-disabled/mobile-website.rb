@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-30 #
 # Updated regex
 ##
-Plugin.define "Mobile-Website" do
+Plugin.define do
+name "Mobile-Website"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
 version "0.2"
 description "This plugin detects websites designed for mobile devices."

@@ -7,7 +7,8 @@
 # Version 0.2 # 
 # Fixed regex to return multiple scripts
 ##
-Plugin.define "Script-URLs" do
+Plugin.define do
+name "Script-URLs"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.2"
 description "This plugin detects instances of script HTML elements and retrieves the URL."
