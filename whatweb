@@ -12,8 +12,8 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 
 WhatWeb - Next generation web scanner.
-Author: Andrew Horton aka urbanadventurer
- 
+Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
+
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
 Copyright 2009-2017 Andrew Horton <andrew at morningstarsecurity dot com>
@@ -584,7 +584,7 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 "
 
-puts "WhatWeb - Next generation web scanner version #{$VERSION}.\nDeveloped by Andrew Horton aka urbanadventurer and Brendan Coles."
+puts "WhatWeb - Next generation web scanner version #{$VERSION}.\nDeveloped by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)"
 puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
 puts
 puts "Usage: whatweb [options] <URLs>"
