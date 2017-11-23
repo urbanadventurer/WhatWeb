@@ -80,7 +80,7 @@ Plugin.define do
 
 	# This executes when the plugin is closed on whatweb shutdown
 	def shutdown
-		puts("my_var is #{@variables[:my_var]}")
+		# puts("my_var is #{@variables[:my_var]}")
 	end
 
 end
