@@ -467,7 +467,8 @@ does not work correctly with mixed plugin names and files
       matches = "matches [:text=>\"#{c}\"]"
 
       custom = %{ # coding: ascii-8bit
-      Plugin.define "Grep" do
+      Plugin.define do
+      name "Grep"
       author "Unknown"
       description "User defined"
       website "User defined"
@@ -492,7 +493,8 @@ does not work correctly with mixed plugin names and files
       abort("Invalid custom plugin syntax: #{c}") if matches.nil?
 
       custom = %{# coding: ascii-8bit
-      Plugin.define "Custom-Plugin" do
+      Plugin.define do
+      name "Custom-Plugin"
       author "Unknown"
       description "User defined"
       website "User defined"
