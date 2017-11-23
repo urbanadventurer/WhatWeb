@@ -30,7 +30,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Meta Generator (is base64 of "phpFox") or Meta Author

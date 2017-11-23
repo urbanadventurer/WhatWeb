@@ -82,7 +82,7 @@ name "DotNetNuke"
 
     ]
 
-    def aggressive
+    aggressive do
         m=[]
         versions = Hash[
             "05.06.04" => [

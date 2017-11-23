@@ -28,7 +28,7 @@ description "Display the names of cookies in the HTTP headers. The values are no
 # 17 for set-cookie path=/home/ /public_html
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?

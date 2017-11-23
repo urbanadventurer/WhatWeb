@@ -46,7 +46,7 @@ name "Joomla"
             ]
    
   # Passive #
-  def passive
+  passive do
     m=[]
     
     # mosvisitor cookie # Also used by mambo
@@ -78,7 +78,7 @@ name "Joomla"
   end
   
   # Aggressive #
-  def aggressive
+  aggressive do
     m=[]
     
     versions = Hash["1.0.0" =>

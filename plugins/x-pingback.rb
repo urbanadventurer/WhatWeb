@@ -16,7 +16,7 @@ description "A pingback is one of three types of linkbacks, methods for Web auth
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 	
 	# X-Pingback HTTP Header

@@ -18,7 +18,7 @@ website "http://store.sony.com/p/LF-X1/en/p/LFX1"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

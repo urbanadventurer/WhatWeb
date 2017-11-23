@@ -23,7 +23,7 @@ website "http://kssproject.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Ksscommands HTTP Header

@@ -19,7 +19,7 @@ website "http://microsoft.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# MicrosoftOfficeWebServer HTTP Header

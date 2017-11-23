@@ -14,7 +14,7 @@ website "https://code.google.com/p/msolo/wiki/wiseguy"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

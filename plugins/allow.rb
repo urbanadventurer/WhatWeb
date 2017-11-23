@@ -15,7 +15,7 @@ description "This plugin retrieves the allowed methods from the HTTP Allow heade
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Allow HTTP Header

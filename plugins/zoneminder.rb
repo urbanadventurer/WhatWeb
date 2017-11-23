@@ -50,7 +50,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Combined Match # h1 Heading and Password field

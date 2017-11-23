@@ -28,7 +28,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# realm=XBMC # realm="Keimo-XBMC" # realm="XBMC WebServer"

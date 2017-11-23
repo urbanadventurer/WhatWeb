@@ -17,7 +17,7 @@ website "http://trafficserver.apache.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

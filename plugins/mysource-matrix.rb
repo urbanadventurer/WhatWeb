@@ -33,7 +33,7 @@ matches [
 ]
 
 # Version detection
-def passive
+passive do
         m=[]
 
 	# Powered by text

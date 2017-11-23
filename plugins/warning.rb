@@ -18,7 +18,7 @@ website "http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.46"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

@@ -19,7 +19,7 @@ matches [
 
 ]
 
-def passive
+passive do
 	m=[]
 
 	# Extract URL

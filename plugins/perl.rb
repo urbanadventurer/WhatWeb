@@ -18,7 +18,7 @@ website "http://www.perl.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

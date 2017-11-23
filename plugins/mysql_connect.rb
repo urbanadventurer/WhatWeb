@@ -24,7 +24,7 @@ description "This plugin detects instances of the mysql_connect() function in PH
 
 # Passive #
 # Detect instances of the mysql_connect function and extract details
-def passive
+passive do
 	m=[]
 	hup={}; hup[:host] = []; hup[:user] = []; hup[:pass] = []
 

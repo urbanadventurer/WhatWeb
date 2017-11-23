@@ -25,7 +25,7 @@ website "http://internet-rimon.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Rimon Header

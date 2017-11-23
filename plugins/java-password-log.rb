@@ -20,7 +20,7 @@ dorks [
 
 
 # Extract username, password and URL
-def passive
+passive do
 	m=[]
 
 	if @body =~ /END_FILE/

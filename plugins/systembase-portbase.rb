@@ -19,7 +19,7 @@ website "http://www.sysbas.com/e-Products/?sNum=261"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Server: WindWeb # WWW-Authenticate: Basic realm="PortBase"

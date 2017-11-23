@@ -14,7 +14,7 @@ description "WindWeb Webserver"
 
 
 # HTTP Header
-def passive
+passive do
 	m=[]
 
 	# Server

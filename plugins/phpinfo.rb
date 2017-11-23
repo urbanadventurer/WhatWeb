@@ -33,7 +33,7 @@ dorks [
 
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# Check if the document is a valid phpinfo() file

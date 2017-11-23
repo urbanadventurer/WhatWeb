@@ -39,7 +39,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTML Comment # Copyright Notice

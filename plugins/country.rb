@@ -78,7 +78,7 @@ def startup
 	end
 end
 
-def passive
+passive do
 m=[]
 
   if @rfile and @ip and @ip =~ /^([0-9]{1,3}\.){3}[0-9]{1,3}$/

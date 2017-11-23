@@ -31,7 +31,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
         m=[]
         m << {:string=>"ci_session Cookie" } if @headers["set-cookie"] =~ /ci_session=/
 	m

@@ -15,7 +15,7 @@ website "http://www.applicure.com/"
 # 6 for dotDefender
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-dotDefender-denied Header

@@ -17,7 +17,7 @@ website "http://www.varnish-cache.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Varnish Header

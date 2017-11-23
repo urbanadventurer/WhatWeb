@@ -16,7 +16,7 @@ description "This plugin identifies the X-Hacker HTTP header and returns its val
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 	
 	# X-Hacker HTTP Header

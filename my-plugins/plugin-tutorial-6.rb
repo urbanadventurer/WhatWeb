@@ -42,7 +42,7 @@ matches [
 #	@tagpattern
 #	@ip
 ##
-def passive
+passive do
 	# make a matches array
 	m=[]
 	
@@ -66,7 +66,7 @@ end
 # At aggressive level 3 if a match is found, then the aggressive function executes
 # At aggressive level 4, the aggressive function always executes
 ##
-def aggressive
+aggressive do
 	# make a matches array. this returns the equivalent of the matches[] block above
 	m=[]
 

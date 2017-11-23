@@ -42,7 +42,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# NCD_COOKIE Cookie

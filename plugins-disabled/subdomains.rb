@@ -12,7 +12,7 @@ description "This plugin finds and extracts subdomains from the href and src par
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract subdomains

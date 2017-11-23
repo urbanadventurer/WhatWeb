@@ -21,7 +21,7 @@ matches [
 ]
 
 # Extract passwords
-def passive
+passive do
 	m=[]
 
 	if @body =~ /-------------- log started at /

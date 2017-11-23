@@ -23,7 +23,7 @@ website "http://www.pharoscontrols.com/products/lighting_controllers/lpc"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Default Title

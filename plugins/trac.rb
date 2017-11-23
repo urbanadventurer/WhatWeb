@@ -34,7 +34,7 @@ matches [
 ]
 
 # Fingerprint cookie
-def passive
+passive do
         m=[]
 
         m << {:name=>"trac_form_token Cookie", :probability=>100 } if @headers["set-cookie"] =~ /trac_form_token=/

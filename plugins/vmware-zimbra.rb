@@ -51,7 +51,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ZM_TEST Cookie

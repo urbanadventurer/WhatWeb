@@ -25,7 +25,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
         if @body =~ /	 <td nowrap class="hst">&nbsp; &nbsp;Version:<\/td>/

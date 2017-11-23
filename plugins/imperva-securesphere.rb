@@ -23,7 +23,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 	target = URI.join(@base_uri.to_s,'SecureSphere/secsphLogin.jsp').to_s	
 	status,url,ip,body,headers=open_target(target)	

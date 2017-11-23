@@ -14,7 +14,7 @@ description "This plugin identifies the document's content type."
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract conent type

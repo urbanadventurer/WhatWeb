@@ -33,7 +33,7 @@ matches [
 ]
 
 # Version detection using powered by text
-def passive
+passive do
         m=[]
 
         if @body =~ /Powered by <a href="http:\/\/phpmytourney.sourceforge.net\/"[^>]+>phpMyTourney<\/a>./

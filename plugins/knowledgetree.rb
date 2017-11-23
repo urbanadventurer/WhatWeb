@@ -39,7 +39,7 @@ matches [
 ]
 
 # Version detection
-def passive
+passive do
         m=[]
 
 	# Login page

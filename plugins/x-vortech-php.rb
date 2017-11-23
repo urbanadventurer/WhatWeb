@@ -14,7 +14,7 @@ description "X-Vortech-PHP HTTP header."
 
 
 # HTTP Header
-def passive
+passive do
 	m=[]
 
 	m << { :version=>@headers["x-vortech-php"].to_s } unless @headers["x-vortech-php"].nil?

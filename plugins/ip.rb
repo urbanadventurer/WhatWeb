@@ -14,7 +14,7 @@ author "Andrew Horton"
 version "0.2"
 description "IP address of the target, if available."
 
-def passive
+passive do
 m=[]
 
 m << {:string=>@ip } unless @ip.nil? or @ip.empty?

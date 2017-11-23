@@ -55,7 +55,7 @@ matches [
         ]
   
   # Passive #
-  def passive
+  passive do
     m=[]
     
     # detect /wp-content/ on this site but don't be confused by links to other sites.
@@ -81,7 +81,7 @@ matches [
   end
   
   # Aggressive #
-  def aggressive
+  aggressive do
     m=[]
     
     # the paths are relative to the url path if they don't start with /

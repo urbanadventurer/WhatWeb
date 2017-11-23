@@ -40,7 +40,7 @@ dorks [
 # Extract credentials in user{2-255}:pass{1-80} format
 # Accepts : sha1, md4, md5, plaintext
 # The code is pretty ugly, but fast. Formatted for 80x24. Improvements welcomed.
-def passive
+passive do
 m=[]
 
 # Check if the current file is a .htpasswd file

@@ -35,7 +35,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ./setup/index.php # PHP Version Detection

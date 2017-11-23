@@ -22,7 +22,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
         if @body =~ /<span class='big'><b><img src='img\/mainlogo.png' alt='[^\']+' \/> [\d\.a-z]+<\/b><\/span>/

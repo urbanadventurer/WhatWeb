@@ -64,7 +64,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Redirect Location #
@@ -79,7 +79,7 @@ end
 # /xampp/navi.php	# Installed Apps (phpMyAdmin, Webalizer, FileZilla, etc)
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Extract details from /phpinfo.php

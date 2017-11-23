@@ -35,7 +35,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
 	if @headers["uportal-version"] =~ /uPortal_rel-([\-0-9]+)/i

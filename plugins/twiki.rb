@@ -36,7 +36,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
         m << {:name=>"TWIKISID Cookie" } if @headers["set-cookie"] =~ /TWIKISID=[0-9a-z]{32}/
         m

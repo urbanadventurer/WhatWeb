@@ -40,7 +40,7 @@ name "SilverStripe"
     ] 
 
     # Passive #
-    def passive
+    passive do
         m=[]
 
         # Set-Cookie: PastVisitor
@@ -50,7 +50,7 @@ name "SilverStripe"
             m
     end
 
-    def aggressive
+    aggressive do
         m=[]
         versions = Hash[
             "2.4.10" => [

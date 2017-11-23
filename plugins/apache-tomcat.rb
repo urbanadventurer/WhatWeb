@@ -64,7 +64,7 @@ name "Apache-Tomcat"
 		info
 	end
 	
-	def aggressive
+	aggressive do
 		info=version_from_404
 		
 		unless info.empty?

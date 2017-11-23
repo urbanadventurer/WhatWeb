@@ -17,7 +17,7 @@ website "http://store.grandtec.com/secsur.html"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

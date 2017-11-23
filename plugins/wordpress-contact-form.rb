@@ -21,7 +21,7 @@ matches [
 ]
 
 # Version Detection # Default HTML form input
-def passive
+passive do
 	m=[]
 
 	if @body =~ /<input type="hidden" name="_wpcf([\d]+)_version" value="[\d\.]+" \/>/

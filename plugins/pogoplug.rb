@@ -20,7 +20,7 @@ website "http://www.pogoplug.com/products.html"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

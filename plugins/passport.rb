@@ -17,7 +17,7 @@ description "This plugin detects instances of Microsoft Live Passport servers us
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# PPServer HTTP Header # Retrieve local host name

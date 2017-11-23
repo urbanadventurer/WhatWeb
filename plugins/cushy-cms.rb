@@ -31,7 +31,7 @@ matches [
 {:regexp=>/<[^>]+class="cushycms"/}
 ]
 
-def passive
+passive do
   m=[]
   m << {:name=>"Cushy Cookie" } if @headers["set-cookie"] =~ /_cushy_session=.*/
   m

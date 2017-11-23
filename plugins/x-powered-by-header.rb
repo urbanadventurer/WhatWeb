@@ -22,7 +22,7 @@ description "X-Powered-By HTTP header"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Powered-By Headers

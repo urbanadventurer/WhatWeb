@@ -23,7 +23,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-UA-Compatible HTTP Header

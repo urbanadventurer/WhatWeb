@@ -44,7 +44,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# x-confluence-cluster-node

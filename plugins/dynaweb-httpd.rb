@@ -20,7 +20,7 @@ website "http://www.oracle.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

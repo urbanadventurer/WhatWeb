@@ -45,7 +45,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # Install Page # Title and h1 heading

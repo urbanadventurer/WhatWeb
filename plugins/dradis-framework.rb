@@ -46,7 +46,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# _dradis_session cookie

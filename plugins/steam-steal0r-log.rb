@@ -14,7 +14,7 @@ description "This plugin extracts passwords from Steam Steal0r logs."
 
 
 # Extract passwords
-def passive
+passive do
 	m=[]
 
 	if @body =~ /^--------------------[\s]+Steam Steal0r v2 by -=Player=-/

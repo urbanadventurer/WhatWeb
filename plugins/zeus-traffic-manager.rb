@@ -17,7 +17,7 @@ website "http://www.zeus.com/products/traffic-manager/index.html"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Set-Cookie # X-Mapping

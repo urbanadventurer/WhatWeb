@@ -54,7 +54,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	if @body =~ /<TABLE class="control">[\s]+<TBODY>[\s]+<TR>[\s]+<TD class="first">Product name:<\/TD>/

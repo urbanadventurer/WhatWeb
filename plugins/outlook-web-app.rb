@@ -69,7 +69,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # x-owa-version HTTP Header

@@ -29,7 +29,7 @@ matches [
 ]
 
 # Grab mySQL username, server and database details
-def passive
+passive do
 	m=[]
 
 	if @body =~ /amx_sql_host[\s]+"([^\"]*)"/ and @body =~ /amx_sql_user[\s]+"([^\"]+)"/ and @body =~ /amx_sql_pass[\s]+"([^\"]*)"/

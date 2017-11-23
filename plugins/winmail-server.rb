@@ -52,7 +52,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# magicwinmail_default_language cookie

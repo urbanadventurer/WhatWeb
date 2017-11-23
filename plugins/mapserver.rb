@@ -34,7 +34,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 	# Error Message # Empty QUERY_STRING
 	if @body == "No query information to decode. QUERY_STRING is set, but empty.\n"

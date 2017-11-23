@@ -17,7 +17,7 @@ description "This plugin retrieves the X-XSS-Protection value from the HTTP head
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-XSS-Protection HTTP Header

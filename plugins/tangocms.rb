@@ -36,7 +36,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ZULA_6666cd76f96956469e7be39d750cc7d9 Cookie

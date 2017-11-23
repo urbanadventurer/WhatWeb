@@ -17,7 +17,7 @@ website "http://www.freepbx.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate realm

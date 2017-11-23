@@ -16,7 +16,7 @@ description "The Major BBS (sometimes MajorBBS or MBBS) was a bulletin board sys
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

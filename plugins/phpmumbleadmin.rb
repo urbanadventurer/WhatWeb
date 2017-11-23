@@ -17,7 +17,7 @@ website "http://phpmumbleadmin.sourceforge.net/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Set-Cookie: phpMumbleADMIN_session

@@ -22,7 +22,7 @@ matches [
 
 ]
 
-def passive
+passive do
 	m=[]
 
 	if @body =~ /ids-policy rate-frame-type-param disassoc node-time-interval/ or @body =~/logging level warnings stm/ or @body =~ /packet-capture-defaults tcp disable udp disable sysmsg disable other disable/
