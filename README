@@ -11,7 +11,7 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 Readme for WhatWeb - Next generation web scanner.
 Developed by Andrew Horton aka urbanadventurer and Brendan Coles
-Version: 0.4.8. Unreleased
+Version: 0.4.9. November 23rd, 2017
 License: GPLv2
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,7 +55,7 @@ Features:
 	* Over 1700 plugins
 	* Control the trade off between speed/stealth and reliability
 	* Performance tuning. Control how many websites to scan concurrently.
-	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB.
+	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB, ElasticSearch, SQL.
 	* Proxy support including TOR
 	* Custom HTTP headers
 	* Basic HTTP authentication
@@ -92,7 +92,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner version 0.4.8-dev.
+WhatWeb - Next generation web scanner version 0.4.9.
 Developed by Andrew Horton aka urbanadventurer and Brendan Coles.
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
@@ -116,7 +116,6 @@ AGGRESSION:
   --aggression, -a=LEVEL Set the aggression level. Default: 1.
   Aggression levels are:
   1. Stealthy   Makes one HTTP request per target. Also follows redirects.
-  2. Unused
   3. Aggressive If a level 1 plugin is matched, additional requests will be
       made.
   4. Heavy      Makes a lot of HTTP requests per target. Aggressive tests from
@@ -410,7 +409,9 @@ Version 0.4.4 Released June 29th, 2010
 Version 0.4.5 Released August 17th, 2010
 Version 0.4.6 Released March 25th, 2011
 Version 0.4.7 Released April 5th, 2011
-Version 0.4.8-dev Unreleased
+Version 0.4.8-dev (Continuous release from 2012 to 2017)
+Version 0.4.9 Released November 23rd, 2017
+
 
 10. Credits
 ================================================================================
@@ -433,7 +434,7 @@ Thank you to the following people who have contributed to WhatWeb.
 Emilio Casbas
 Louis Nyffenegger
 Patrik Wallström (pawal)
-Caleb Anderson (alhazred)
+Caleb Anderson (dirtyfilthy)
 Tonmoy Saikia
 Aung Khant (yehgdotnet)
 Erik Inge Bolsø
@@ -465,6 +466,11 @@ Artem Taranyuk (610)
 Matti Paksula (matti)
 Tim Smith (tas50)
 Sarthak Munshi (saru95)
+@rdubourguais
+@SlivTaMere
+@Code0x58
+@iGeek098
+@andreas-becker
 
 Please let me know if I need to add any more names. 
 
