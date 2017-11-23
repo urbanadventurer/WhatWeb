@@ -38,25 +38,22 @@ matches [
 #  	@cookies
 #  	@status
 #  	@base_uri
-#	@md5sum
-#	@tagpattern
-#	@ip
+#		@md5sum
+#		@tagpattern
+#		@ip
 ##
 passive do
-	# make a matches array
-	m=[]
-	
-	# If the HTTP status is 302 and the redirection location is /admin/genericcms.php then match
-	if @status.to_s =~ /^302$/ and @headers["location"] =~ /^\/admin\/genericcms\.php$/
-		m << { :name => "302 redirection to /admin/genericcms.php" }
-	end
-
-	# You can add debugging and check the value of variables
-	# pp @status
-	# pp @headers
-	
-	# return the matches array, even if it's empty
-	m
+  # make a matches array
+  m = []
+  # If the HTTP status is 302 and the redirection location is /admin/genericcms.php then match
+  if @status.to_s =~ /^302$/ and @headers["location"] =~ /^\/admin\/genericcms\.php$/
+    m << { :name => "302 redirection to /admin/genericcms.php" }
+  end
+  # You can add debugging and check the value of variables
+  # pp @status
+  # pp @headers
+  # return the matches array, even if it's empty
+  m
 end
 # Check other plugins with passive functions for examples.
 
@@ -66,23 +63,25 @@ end
 # At aggressive level 3 if a match is found, then the aggressive function executes
 # At aggressive level 4, the aggressive function always executes
 ##
+
 aggressive do
-	# make a matches array. this returns the equivalent of the matches[] block above
-	m=[]
-
-
-	# return the matches array, even if it's emtpy
-	m
+  @variables[:my_var] += 1
+  # make a matches array. this returns the equivalent of the matches[] block above
+  m = []
+  # return the matches array, even if it's emtpy
+  m
 end
 
 ## Very few plugins need startup and shutdown functions
 #
 # This executes when the plugin is first loaded
 def startup
+	@variables = {my_var: 1}
 end
 
 # This executes when the plugin is closed on whatweb shutdown
 def shutdown
+	puts("my_var is #{@variables[:my_var]}")
 end
 
 end
