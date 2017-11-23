@@ -16,7 +16,7 @@ Author: Andrew Horton aka urbanadventurer
  
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-Copyright 2009-2016 Andrew Horton <andrew at morningstarsecurity dot com>
+Copyright 2009-2017 Andrew Horton <andrew at morningstarsecurity dot com>
 
 This file is part of WhatWeb.
 
@@ -105,6 +105,7 @@ def gem_available_new_rubygems?(gemname)
 	end
 end
 
+# requires gem "mongoid", "~> 2.0"
 gems = %w|json mongo rchardet |
 
 gems.each do |thisgem|
@@ -133,7 +134,7 @@ HTTP_Status.initialize
 PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
 
 # nothing says pro-developer like using global variables
-$VERSION = "0.4.8-dev"
+$VERSION = "0.4.9"
 $WWDEBUG = false # raise exceptions in plugins, etc
 $verbose = 0 # $VERBOSE is reserved in ruby
 $use_colour = "auto"
@@ -935,7 +936,7 @@ if mongo[:use_mongo_log]
 	if $plugins_to_use.map { |a,b| a }.include?("Charset")
 		output_list << OutputMongo.new(mongo) 
 	else
-		error("MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/Charset.rb to enable it.")
+		error("MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/charset.rb to enable it.")
 		exit
 	end
 end

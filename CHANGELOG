@@ -1,6 +1,24 @@
-Version 0.4.8-dev Unreleased
 
-* Added support for all ciphers - TLSv1:TLSv1.1:TLSv1.2:SSLv3:SSLv2.  Thanks milo2012
+
+Version 0.4.9 November 23rd 2017
+* Added unit testing with rake @bcoles
+* Added Elastic Search output @SlivTaMere
+* Source code formatting cleanup @Code0x58
+* Thread reuse and logging through a single thread @Code0x58
+* Fixed max-redirection bug @Code0x58
+* Fixed bug when using a proxy and HTTPS (unknown user)
+* Fixed timeout deprecation warning @iGeek098
+* New plugins and plugin updates @guikcd @bcoles @andreas-becker
+* Added proxy and user-agent to logging @rdubourguais
+* Updated Alexa top websites lists
+* Updated update-alexa script
+* Updated IP to Country database
+* Updated man page
+* Updated Mongo DB output for Mongo 2.x
+
+Version 0.4.8-dev (Continuous release 2012 - 2017)
+
+* Added support for all ciphers - TLSv1:TLSv1.1:TLSv1.2:SSLv3:SSLv2.  Thanks @milo2012
 * New colour scheme for brief output
 * New Verbose output
 * --color, --colour now takes case insensitive arguments, and can be enabled under Windows
