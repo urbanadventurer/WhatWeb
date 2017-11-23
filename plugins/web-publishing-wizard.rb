@@ -16,7 +16,7 @@ description "If your Internet service provider (ISP) provides space for publishi
 
 
 # Extract details
-def passive
+passive do
 	m=[]
 
 	if @body =~ /<TITLE> WEB POSTING INFORMATION <\/TITLE>/i

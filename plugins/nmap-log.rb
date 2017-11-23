@@ -20,7 +20,7 @@ website "http://www.insecure.org/nmap/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract details

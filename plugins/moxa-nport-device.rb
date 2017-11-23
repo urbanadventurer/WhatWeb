@@ -46,7 +46,7 @@ matches [
 # Extract system details
 # This could be looped however some models provide the in different formats
 # Models with system details in HTML rather than JS are currently not supported
-def passive
+passive do
 	m=[]
 
 	device={};

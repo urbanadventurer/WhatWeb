@@ -17,7 +17,7 @@ website "http://savant.sourceforge.net/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

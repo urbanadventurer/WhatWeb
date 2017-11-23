@@ -17,7 +17,7 @@ website "http://www.jetnexus.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# jetNEXUS Header

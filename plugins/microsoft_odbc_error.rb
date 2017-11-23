@@ -22,7 +22,7 @@ description "This plugin identifies Microsoft ODBC error codes."
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ODBC Error Code

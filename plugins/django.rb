@@ -43,7 +43,7 @@ matches [
 ]
 
 # Passive #
-  def passive
+  passive do
     m=[]
 
     unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?

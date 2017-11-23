@@ -17,7 +17,7 @@ description "vCard is a file format standard for electronic business cards. This
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract vcard Details

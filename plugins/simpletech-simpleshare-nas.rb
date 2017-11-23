@@ -16,7 +16,7 @@ website "http://www.simpleshare.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Check Server

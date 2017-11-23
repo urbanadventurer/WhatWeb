@@ -24,7 +24,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
         if @body =~ /<tr><td height=14 align=right><font class=ltv><a id=ltv href="http:\/\/www.shoutcast.com\/">SHOUTcast Server Version [0-9a-zA-Z\-\.\/\\_]+<\/a><\/font><\/td><\/tr>/

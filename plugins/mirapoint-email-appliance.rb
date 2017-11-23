@@ -21,7 +21,7 @@ website "http://www.mirapoint.com/index.php?id=products"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

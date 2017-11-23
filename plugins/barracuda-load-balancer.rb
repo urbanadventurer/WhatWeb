@@ -20,7 +20,7 @@ matches [
     {:name=>"BNI_BARRACUDA_LB_COOKIE cookie", :text => "BNI_BARRACUDA_LB_COOKIE", :search => "headers[set-cookie]" },
 ]
 
-def passive
+passive do
     m = []
     
     if @headers["set-cookie"] =~ /BARRACUDA_LB_COOKIE=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/i

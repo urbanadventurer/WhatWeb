@@ -17,7 +17,7 @@ website "http://www.polycom.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

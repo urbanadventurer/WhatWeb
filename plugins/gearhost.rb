@@ -23,7 +23,7 @@ website "http://www.gearhost.com/"
 
 
 # HTTP Header
-def passive
+passive do
 	m=[]
 
 	# Hosted-With HTTP Header

@@ -13,7 +13,7 @@ version "0.2"
 description "MD5 sum of html body. Useful to find matching pages"
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# MD5 hash of HTML source # :string=>Digest::MD5.hexdigest(@body)	

@@ -17,7 +17,7 @@ website "http://www.powerdns.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate: Basic realm="PowerDNS" 

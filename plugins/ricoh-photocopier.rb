@@ -47,7 +47,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# cookieOnOffChecker Cookie

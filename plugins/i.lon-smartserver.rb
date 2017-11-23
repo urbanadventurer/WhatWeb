@@ -17,7 +17,7 @@ website "http://www.echelon.com/products/cis/smartserver/default.htm"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Server(WindRiver or WindWeb) and WWW-Authenticate(Basic realm="i.LON")

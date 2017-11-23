@@ -21,7 +21,7 @@ description "If the HttpOnly flag is included in the HTTP set-cookie response he
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Set-Cookie Header

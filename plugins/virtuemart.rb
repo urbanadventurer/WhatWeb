@@ -28,7 +28,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# virtuemart cookie

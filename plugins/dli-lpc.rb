@@ -45,7 +45,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# DLILPC Cookie

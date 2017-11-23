@@ -17,7 +17,7 @@ website "http://www.tandberg.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header or HTTP "Server " Header

@@ -17,7 +17,7 @@ website "http://www.softplc.com/products.php"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# No HTTP Server Header

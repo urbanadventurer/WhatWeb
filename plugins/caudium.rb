@@ -27,7 +27,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Pike Version Detection # HTTP X-Got-Fish Header

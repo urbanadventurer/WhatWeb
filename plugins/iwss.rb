@@ -20,7 +20,7 @@ website "http://us.trendmicro.com/us/products/enterprise/interscan-web-security-
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Proxy-Agent HTTP Header

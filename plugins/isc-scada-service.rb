@@ -14,7 +14,7 @@ description "ISC SCADA Service"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Check HTTP Server
@@ -48,7 +48,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Check Server

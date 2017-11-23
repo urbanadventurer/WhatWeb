@@ -34,7 +34,7 @@ matches [
 # www.amirocms.com 
 # ">
 
-def passive
+passive do
         m=[]
 
         if @body =~ /<meta name="GENERATOR" content="/ and @body =~ / -= Amiro.CMS \(c\) =- / and (@body =~ / www.amiro.ru / or @body =~ / www.amirocms.com /)

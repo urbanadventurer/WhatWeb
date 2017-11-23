@@ -71,7 +71,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# CFID and CFTOKEN cookie

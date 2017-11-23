@@ -11,7 +11,7 @@ version "0.1"
 description "The length of the HTML body"
 
 
-def passive
+passive do
 	[{:string=>@body.size}]
 end
 

@@ -22,7 +22,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Check HTTP Server Header

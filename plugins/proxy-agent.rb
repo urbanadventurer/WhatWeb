@@ -14,7 +14,7 @@ description "This plugin retrieves the proxy agent from the HTTP header."
 
 
 # HTTP Header
-def passive
+passive do
 	m=[]
 
 	m << { :string=>@headers["proxy-agent"].to_s } unless @headers["proxy-agent"].nil?

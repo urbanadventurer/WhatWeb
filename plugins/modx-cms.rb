@@ -37,7 +37,7 @@ name "ModxCMS"
   
   
   # Aggressive #
-  def aggressive
+  aggressive do
     m = []
 
     versions = Hash[
@@ -235,7 +235,7 @@ name "ModxCMS"
     m
   end
 
-  def passive
+  passive do
     m=[]
     m << {:name=>"SN4 Cookie", :certainty=>75 } if @headers["set-cookie"] =~ /^SN4[a-z0-9]{12}=/
     m << {:name=>"P3P" } if @headers["P3P"] =~ /CP="NOI NID ADMa OUR IND UNI COM NAV"/

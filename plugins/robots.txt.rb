@@ -22,7 +22,7 @@ description "This plugin identifies robots.txt files and extracts both allowed a
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract directories if current file is robots.txt

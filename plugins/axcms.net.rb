@@ -43,7 +43,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Powered-By: AxCMS.net

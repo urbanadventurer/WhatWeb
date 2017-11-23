@@ -34,7 +34,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
         # new versions

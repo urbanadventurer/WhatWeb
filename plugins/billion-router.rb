@@ -31,7 +31,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate: Basic realm="Billion Sky" 

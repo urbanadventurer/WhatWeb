@@ -16,7 +16,7 @@ description "Analyze the header of the HTML. Turns the first 500 characters into
 
 # expect some noise. 100 matched too much, 1000 matched too litte. 500 is ok
 
-def passive		
+passive do		
 	if @body.size > 4
 		hash=Digest::MD5.hexdigest(@body[0..500])	
 		[{:name=>"hash",:string=>hash}]

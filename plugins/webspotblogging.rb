@@ -14,7 +14,7 @@ website "http://www.webspot.co.uk/"
 # 13 results for "powered by WebspotBlogging" @ 2010-08-21
 
 
-def passive
+passive do
         m=[]
 
         if @body =~ /Powered By <a href='http:\/\/www.webspot.co.uk\/' target='_blank'>WebspotBlogging<\/a> v[\d\.]+<BR>/

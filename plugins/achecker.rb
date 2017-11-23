@@ -29,7 +29,7 @@ matches [
 ]
 
 # Version detection
-def passive
+passive do
         m=[]
 
         if @body =~ /	<br \/><h1>Web Accessibility Checker<\/h1>/

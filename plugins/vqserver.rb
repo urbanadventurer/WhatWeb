@@ -16,7 +16,7 @@ description "vqServer is multi-platform compatible. vqServer is a personal web s
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

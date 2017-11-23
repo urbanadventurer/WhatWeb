@@ -16,7 +16,7 @@ description "This plugin identifies the x-machine and x-machine-id headers and e
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 	
 	# X-Machine HTTP Header

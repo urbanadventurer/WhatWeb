@@ -42,7 +42,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Local File Path Detection # Find application base path

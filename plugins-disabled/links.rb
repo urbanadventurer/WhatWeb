@@ -15,7 +15,7 @@ description "This plugin attempts to extract all the links from the HTML source.
 
 
 # Extract links
-def passive
+passive do
 	m=[]
 
 	# href

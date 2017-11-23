@@ -35,7 +35,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# TorrentFlux cookie

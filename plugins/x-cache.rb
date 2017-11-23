@@ -18,7 +18,7 @@ description "This plugin identifies the X-Cache HTTP header and extracts the val
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Cache

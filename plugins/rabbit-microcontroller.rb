@@ -18,7 +18,7 @@ website "http://www.rabbitconsulting.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

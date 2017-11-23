@@ -18,7 +18,7 @@ description "This plugin identifies and extracts the value for X-Backend, X-Back
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Header # X-Backend

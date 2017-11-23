@@ -79,7 +79,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# webmail_version Cookie

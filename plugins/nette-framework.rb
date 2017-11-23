@@ -17,7 +17,7 @@ website "http://nette.org/cs/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Powered-By Header

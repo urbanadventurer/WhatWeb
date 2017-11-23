@@ -17,7 +17,7 @@ website "http://www.beckmann-gmbh.de/en/products/pc_software/ems_entry_com"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

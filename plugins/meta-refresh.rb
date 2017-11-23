@@ -32,7 +32,7 @@ matches [
 
 ]
 
-def passive
+passive do
 
 	x=@body.scan(Target::meta_refresh_regex).flatten
 

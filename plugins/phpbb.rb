@@ -65,7 +65,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	if @headers["set-cookie"] =~ /([^ ]+)_u=1; expires/
@@ -78,7 +78,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	target = URI.join(@base_uri.to_s,"docs/CHANGELOG.html").to_s

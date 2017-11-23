@@ -16,7 +16,7 @@ description "This plugin idenitfies instances of Remote File Include Scanner bot
 
 
 # Extract bot config
-def passive
+passive do
 	m=[]
 
 	if @body =~ /^## + RFI Scan & Exploit \(Exploit per engine\)        ##/ or @body =~ /^######################################################/ or @body =~ /^##   perl feelscanz.pl <chan w\/o #> <server> <port> ##/ or @body =~ /##\[ RUTIN SEARCH ENGINE \]##/ or @body =~ /^## + Fixed cryptz command \(v4.5\)/ and @body =~ /^#!\/usr\/bin\/perl/

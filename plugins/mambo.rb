@@ -50,7 +50,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# /administrator/ # Confirm the presence of Mambo with 100% certainty
@@ -82,7 +82,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Open base_uri + /administrator/

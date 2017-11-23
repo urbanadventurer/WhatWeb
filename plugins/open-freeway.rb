@@ -31,7 +31,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 	m << {:name=>"fEcom Cookie", :certainty=>75 } if @headers["set-cookie"] =~ /fEcom=/
         m

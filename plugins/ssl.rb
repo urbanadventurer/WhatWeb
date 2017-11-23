@@ -17,7 +17,7 @@ description "This plugin retrieves details from SSL certificate files."
 # 6 results for "-----BEGIN CERTIFICATE-----" "Signature Algorithm"  "-----END CERTIFICATE-----" ext:der
 
 
-def passive
+passive do
 	m=[]
 
 	# Extract certificate details

@@ -33,7 +33,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
     # Version detection
 	if @body =~ /<meta name='generator' content='cgit v([^\s]+)'\/>/

@@ -22,7 +22,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
     m=[]
     fields=@body.scan(/<input [^>]*?type=["']password["'][^>]*>/i)
     fields.each do |field|

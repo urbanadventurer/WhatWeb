@@ -56,7 +56,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# MicrosoftSharePointTeamServices HTTP Header

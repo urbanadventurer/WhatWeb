@@ -23,7 +23,7 @@ website "http://segpub.net/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Server: SegPache

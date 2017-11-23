@@ -18,7 +18,7 @@ website "http://www.icom.co.jp/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header
