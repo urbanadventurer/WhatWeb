@@ -123,5 +123,106 @@ class WhatWebTest < Minitest::Test
     assert_equal '', res
   end
 
+  def test_list_plugins
+    p = IO.popen(['./whatweb',
+      '--color', 'never',
+      '--list'], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert res =~ %r{Total: [\d]+ Plugins}
+  end
+
+
+  def test_info_plugins
+    p = IO.popen(['./whatweb',
+      '--color', 'never',
+      '--info-plugins','wordpress'], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert res =~ %r{www.wordpress.org}
+  end
+
+  def test_search_plugins
+    p = IO.popen(['./whatweb',
+      '--color', 'never',
+      '--search','struts'], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert res =~ %r{struts.apache.org}
+  end
+
+  def test_grep_plugin
+    p = IO.popen(['./whatweb',
+      '--color', 'never',
+      '--grep', 'Next generation web scanner',
+      "https://#{@test_host}/"], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert_match %r{, Grep,}, res
+  end
+
+  def test_dorks
+    p = IO.popen(['./whatweb',
+      '--color', 'never',
+      '--dorks', 'wordpress',
+      "https://#{@test_host}/"], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert res =~ %r{is proudly powered by WordPress}
+  end
+
+  def test_quiet
+    p = IO.popen(['./whatweb',
+      '--quiet',
+      "https://#{@test_host}/"], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert_empty res
+  end
+
+  def test_no_errors
+    p = IO.popen(['./whatweb',
+      '--color', 'never',
+      '--no-errors',
+      "https://#{@test_host}:99/"], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    refute res =~ %r{ERROR:}
+  end
+
+  def test_url_suffix
+    p = IO.popen(['./whatweb',
+      '--color', 'never',
+      '--url-suffix','robots.txt',
+      "https://#{@test_host}/"], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert_match %r{rm -rf}, res
+  end
+
+   def test_url_prefix
+    p = IO.popen(['./whatweb',
+      '--color', 'never',
+      '--url-prefix','https://',
+      "#{@test_host}/"], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert_match %r{WhatWeb - Next generation web scanner.}, res
+  end
+  
+# add test for IDN name
+# www.ødegaard.dk
+# http://www.詹姆斯.com/
+
+
 end
 
