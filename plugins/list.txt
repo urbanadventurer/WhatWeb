@@ -1,0 +1,14 @@
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/advance_digitalmg.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/aspforum.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/blox.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/fusionbb.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/gannett.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/kinja.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/lithium.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/mcclatchy_interactive.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/newbay_media.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/stackexchange.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/trbas.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/tribune.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/xenforo.rb
+https://raw.githubusercontent.com/csalazar/WhatWeb/fb/my-plugins/yaf.rb
