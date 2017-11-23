@@ -406,6 +406,15 @@ def run_plugins(target)
 end
 
 
+# try to make a new Target object, may return nil
+def prepare_target(url)
+  begin
+    Target.new(url)
+  rescue => err
+    error("Prepare Target Failed - #{err}")
+    nil
+  end
+end
 
 
 def usage_full()
@@ -893,7 +902,7 @@ rescue StandardError, GetoptLong::Error => err
 		$use_colour = false
 	end
 	puts
-	error err
+	error("Error in processing commandline options - #{err}")
 	exit
 end
 
@@ -948,16 +957,6 @@ $targets = make_target_list(ARGV, input_file, $plugins_to_use)
 if $targets.size < 1
   error("No targets selected")
   exit 1
-end
-
-# try to make a new Target object, may return nil
-def prepare_target(url)
-  begin
-    Target.new(url)
-  rescue => err
-    error(err)
-    nil
-  end
 end
 
 target_queue = Queue.new() # workers consume from this
