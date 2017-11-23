@@ -29,7 +29,7 @@ end
 
 class Plugin
   extend PluginSugar
-  def_field  :author, :version, :description, :website, :matches, :cve, :dorks
+  def_field  :name, :author, :version, :description, :website, :matches, :cve, :dorks
   # deprecated fields
   def_field :examples
 #, :category
@@ -46,12 +46,11 @@ class Plugin
     attr_reader :plugin_name
   end
 
-  def self.define(name, &block)
+  def self.define(&block)
     p = new
-    p.set_plugin_name(name)
     p.instance_eval(&block)
     p.startup
-    Plugin.registered_plugins[name] = p
+    Plugin.registered_plugins[p.name] = p
   end
 
   def set_plugin_name(s)
@@ -462,14 +461,14 @@ does not work correctly with mixed plugin names and files
     if option == ["grep"]
       matches = "matches [:text=>\"#{c}\"]"
 
-      custom = "# coding: ascii-8bit
-      Plugin.define \"Grep\" do
-      author \"Unknown\"
-      description \"User defined\"
-      website \"User defined\"
+      custom = %{ # coding: ascii-8bit
+      Plugin.define "Grep" do
+      author "Unknown"
+      description "User defined"
+      website "User defined"
       #{matches}
       end
-      "
+      }
     else
       # define a custom plugin on the cmdline
       # ":text=>'powered by abc'" or
@@ -487,14 +486,14 @@ does not work correctly with mixed plugin names and files
 
       abort("Invalid custom plugin syntax: #{c}") if matches.nil?
 
-      custom = "# coding: ascii-8bit
-      Plugin.define \"Custom-Plugin\" do
-      author \"Unknown\"
-      description \"User defined\"
-      website \"User defined\"
+      custom = %{# coding: ascii-8bit
+      Plugin.define "Custom-Plugin" do
+      author "Unknown"
+      description "User defined"
+      website "User defined"
       #{matches}
       end
-      "
+      }
     end
 
     begin
