@@ -1,5 +1,6 @@
 
-Plugin.define "GeneXus" do
+Plugin.define do
+name "GeneXus"
 author "Daniel Maldonado"
 version "0.1"
 description "GeneXus is a tool for agile development."
