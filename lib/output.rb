@@ -1,5 +1,5 @@
 =begin
-Copyright 2009 to 2017, Andrew Horton
+Copyright 2009 to 2017, Andrew Horton and Brendan Coles
 
 This file is part of WhatWeb.
 
