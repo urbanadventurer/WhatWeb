@@ -342,6 +342,7 @@ def $semaphore.reentrant_synchronize(&work)
     $semaphore.synchronize(&work)
   end
 end
+
 def error(s)
   return if $NO_ERRORS
   $semaphore.reentrant_synchronize do
@@ -381,37 +382,30 @@ def word_wrap( s,width=10 )
 	ret
 end
 
+
+
+
+
 ### core
-
 def run_plugins(target)
-		results=[]
-		$plugins_to_use.each do |name,plugin|
-			begin			
-				while plugin.locked?
-					#sleep 0.1
-					puts "Waiting for plugin:#{name} to unlock" if $verbose > 2
-					Thread.pass
-				end
-				plugin.lock
-
-				plugin.init(target)
-				
-				# eXecute the plugin			
-				#start_time = Time.now
-				result=plugin.x
-				#end_time = Time.now
-				#$PLUGIN_TIMES[name] += end_time - start_time
-
-				plugin.unlock
-
-			rescue Exception => err
-				error("ERROR: Plugin #{name} failed for #{target.to_s}. #{err}")
-				plugin.unlock
-				raise if $WWDEBUG == true
-			end
-			results << [name, result] unless result.nil? or result.empty?
-		end
-	results
+    results = []
+    $plugins_to_use.each do |name, plugin|
+      result = plugin.mutex.synchronize do
+        begin
+          plugin.init(target)
+          # eXecute the plugin
+          #start_time = Time.now
+          plugin.x
+          #end_time = Time.now
+          #$PLUGIN_TIMES[name] += end_time - start_time
+        rescue Exception => err
+          error("ERROR: Plugin #{name} failed for #{target}. #{err}")
+          raise if $WWDEBUG == true
+        end
+      end
+      results << [name, result] unless result.nil? or result.empty?
+    end
+  results
 end
 
 

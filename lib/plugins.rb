@@ -34,13 +34,16 @@ class Plugin
   def_field :examples
 #, :category
   @registered_plugins = {}
+  attr :mutex
+
+  def initialize
+    @mutex = Mutex.new
+   end
 
   class << self
     attr_reader :registered_plugins
     private :new
-    attr_reader :locked
     attr_reader :plugin_name
-    @locked=false
   end
 
   def self.define(name, &block)
