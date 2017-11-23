@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Electro-Industries-GaugeTech" do
+Plugin.define do
+name "Electro-Industries-GaugeTech"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-09
 version "0.1"
 description "Electro Industries GaugeTech Device - Electro Industries meters are known world-wide for their ease of use, advanced power functionality and reliable service."

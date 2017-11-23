@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
-Plugin.define "PHP-Live" do
+Plugin.define do
+name "PHP-Live"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
 version "0.2"
 description "PHP Live! enables live help and live customer support communication directly from your website."

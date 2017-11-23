@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Axel-Device" do
+Plugin.define do
+name "Axel-Device"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
 version "0.1"
 description "Axel design and manufacture innovative TCP/IP based Thin Client Terminals and Office Servers for Windows, Unix/Linux and AS/400 environments. Axel products are unique in having no embedded operating system."

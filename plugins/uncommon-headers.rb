@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :certainty=>100
 ##
-Plugin.define "UncommonHeaders" do
+Plugin.define do
+name "UncommonHeaders"
 author "Andrew Horton"
 version "0.3"
 description "Uncommon HTTP server headers. The blacklist includes all the standard headers and many non standard but common ones. Interesting but fairly common headers should have their own plugins, eg. x-powered-by, server and x-aspnet-version. Info about headers can be found at www.http-stats.com"

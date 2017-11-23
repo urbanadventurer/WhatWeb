@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-30 #
 # Updated regex
 ##
-Plugin.define "Squid-Web-Proxy-Cache" do
+Plugin.define do
+name "Squid-Web-Proxy-Cache"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
 version "0.2"
 description "Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages."

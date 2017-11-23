@@ -10,7 +10,8 @@
 # Version 0.3
 # Uses :version=>//
 
-Plugin.define "FormMail" do
+Plugin.define do
+name "FormMail"
 author "Andrew Horton"
 version "0.3"
 description "Common form email script.

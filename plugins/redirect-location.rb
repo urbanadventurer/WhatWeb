@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :certainty=>100
 
-Plugin.define "RedirectLocation" do
+Plugin.define do
+name "RedirectLocation"
 author "Andrew Horton"
 version "0.2"
 description "HTTP Server string location. used with http-status 301 and 302"

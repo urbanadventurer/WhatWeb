@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-05 # Brendan Coles <bcoles@gmail.com>
 # Updated version detection
 ##
-Plugin.define "Mailman" do
+Plugin.define do
+name "Mailman"
 author "Tonmoy Saikia"
 version "0.2"
 description "Mailman is free software for managing electronic mail discussion and e-newsletter lists. WEB:http://www.gnu.org/software/mailman/index.html"

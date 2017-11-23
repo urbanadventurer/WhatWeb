@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Batavi" do
+Plugin.define do
+name "Batavi"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-23
 version "0.1"
 description "Batavi open source e-commerce"

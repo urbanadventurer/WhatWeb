@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CitrusDB" do
+Plugin.define do
+name "CitrusDB"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
 version "0.1"
 description "CitrusDB is a web based customer care and billing software solution (CC&B) - Requires PHP and MySQL"

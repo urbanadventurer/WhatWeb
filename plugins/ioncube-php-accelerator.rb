@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "ionCube-PHP-Accelerator" do
+Plugin.define do
+name "ionCube-PHP-Accelerator"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.2"
 description "The ionCube PHP Accelerator is an easily installed PHP Zend engine extension that provides a PHP cache, and is capable of delivering a substantial acceleration of PHP scripts without requiring any script changes, loss of dynamic content, or other application compromises."

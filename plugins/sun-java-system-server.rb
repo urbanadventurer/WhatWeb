@@ -11,7 +11,8 @@
 # Updated version detection
 # Added Application Server version detection
 ##
-Plugin.define "Sun-Java-System-Server" do
+Plugin.define do
+name "Sun-Java-System-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.3"
 description "Sun Java System Web/Proxy Server."

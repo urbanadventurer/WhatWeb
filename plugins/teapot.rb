@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Teapot" do
+Plugin.define do
+name "Teapot"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
 description "HTCPCP, a protocol for controlling, monitoring, and diagnosing coffee pots."

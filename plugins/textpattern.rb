@@ -8,7 +8,8 @@
 # Version 0.2 by Andrew Horton
 # Removed the aggressive function as it causes false postives
 
-Plugin.define "Textpattern" do
+Plugin.define do
+name "Textpattern"
 author "Tonmoy Saikia"
 version "0.2"
 description "A flexible, elegant and easy-to-use CMS. Homepage:http://textpattern.com/"

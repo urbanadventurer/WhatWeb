@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "iScripts-SocialWare" do
+Plugin.define do
+name "iScripts-SocialWare"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
 version "0.1"
 description "iScripts SocialWare is an open source social networking script with customizable features like blogs, albums, gift shop, classifieds ,chat, storefront etc."

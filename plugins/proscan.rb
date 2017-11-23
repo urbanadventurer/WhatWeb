@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "ProScan" do
+Plugin.define do
+name "ProScan"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-13
 version "0.2"
 description "Streams audio"

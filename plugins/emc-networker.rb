@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "EMC-NetWorker" do
+Plugin.define do
+name "EMC-NetWorker"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-09-01
 version "0.1"
 description "EMC NetWorker (formerly Legato NetWorker) centralizes, automates, and accelerates data backup and recovery."

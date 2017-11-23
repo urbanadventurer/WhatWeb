@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PowerMTA" do
+Plugin.define do
+name "PowerMTA"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
 version "0.1"
 description "PowerMTA - email gateway software (SMTP server) that makes it easy for senders to adopt the latest authentication specifications (SenderID, SPF, Domain Keys and DKIM) and comply with policies for accountable outbound email delivery."

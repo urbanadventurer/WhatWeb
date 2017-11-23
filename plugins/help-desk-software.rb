@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Help-Desk-Software" do
+Plugin.define do
+name "Help-Desk-Software"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-24
 version "0.1"
 description "Help Desk Software - a simple yet powerful helpdesk solution - Requires: PHP and MySQL"

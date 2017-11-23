@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MGB-OpenSource-Guestbook" do
+Plugin.define do
+name "MGB-OpenSource-Guestbook"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-07-22
 version "0.1"
 description "MGB OpenSource Guestbook"

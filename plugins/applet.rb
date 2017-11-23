@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-07 #
 # Updated URL extraction method
 ##
-Plugin.define "Applet" do
+Plugin.define do
+name "Applet"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
 version "0.2"
 description "This plugin detects instances of applet HTML elements and retrieves the URL from the code parameter."

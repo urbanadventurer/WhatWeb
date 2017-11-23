@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Fixed regex
 ##
-Plugin.define "PHP-Link-Directory" do
+Plugin.define do
+name "PHP-Link-Directory"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
 version "0.2"
 description "phpLD is the most widely used directory script on the internet, installed on over 100,000 websites. phpLD is a great addition to any site, and is easy to install."

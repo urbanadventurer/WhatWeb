@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "siteGENIUS" do
+Plugin.define do
+name "siteGENIUS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.1"
 description "siteGENIUS, a custom website builder that lets you create your own website."

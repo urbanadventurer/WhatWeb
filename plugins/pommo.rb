@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "poMMo" do
+Plugin.define do
+name "poMMo"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
 version "0.1"
 description "poMMo is versatile mass mailing software - Requires PHP"

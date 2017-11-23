@@ -9,7 +9,8 @@
 # Version 0.2
 # removed :probability & :name
 
-Plugin.define "Lightbox" do
+Plugin.define do
+name "Lightbox"
 author "Andrew Horton"
 version "0.2"
 description "Javascript for nice image popups"

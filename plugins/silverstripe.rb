@@ -13,7 +13,8 @@
 # Version 0.2
 # removed :certainty=>100 and :name
 ##
-Plugin.define "SilverStripe" do
+Plugin.define do
+name "SilverStripe"
     author "Andrew Horton"
     version "0.3"
     description "SilverStripe is an opensource CMS written in PHP. It can run on Apache, IIS or lighthttpd."

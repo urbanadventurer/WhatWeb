@@ -13,7 +13,8 @@
 # Version 0.2
 # Removed :certainty=>100 & :name
 ##
-Plugin.define "WebGuard" do
+Plugin.define do
+name "WebGuard"
 author "Andrew Horton"
 version "0.3"
 description "Security surveillance"

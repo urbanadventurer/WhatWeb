@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ACTi-Web-Configurator" do
+Plugin.define do
+name "ACTi-Web-Configurator"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-27
 version "0.1"
 description "ACTi Web Configurator - camera web interface"

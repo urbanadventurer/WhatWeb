@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "HP-ProCurve-Switch" do
+Plugin.define do
+name "HP-ProCurve-Switch"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
 version "0.2"
 description "HP ProCurve Switch"

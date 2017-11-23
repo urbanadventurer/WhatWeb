@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-02 #
 # Updated version detection
 ##
-Plugin.define "X7-Chat" do
+Plugin.define do
+name "X7-Chat"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
 version "0.2"
 description "X7 Chat is a free script that can be modified and redistributed in any way that you want as long as the X7 Chat copyright logo remains in place."

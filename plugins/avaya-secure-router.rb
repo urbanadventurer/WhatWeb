@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Avaya-Secure-Router" do
+Plugin.define do
+name "Avaya-Secure-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
 description "Avaya Secure Router - Hompage: http://www.avaya.com/usa/products/category--branch-routers"

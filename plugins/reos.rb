@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ReOS" do
+Plugin.define do
+name "ReOS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-04
 version "0.1"
 description "REOS is hi-end software solution designed to help real estate agents, brokers and offices to easily present their properties on the internet."

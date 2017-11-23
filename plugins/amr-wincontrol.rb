@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-18 # Andrew Horton
 # Replaced passive function with match
 ##
-Plugin.define "AMR-WinControl" do
+Plugin.define do
+name "AMR-WinControl"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
 version "0.2"
 description "This plugin identifies AMR-WinControl server"

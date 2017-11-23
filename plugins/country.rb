@@ -10,7 +10,8 @@
 # version 0.3
 # fix crash with ipv6 addresses, update comments, update database
 
-Plugin.define "Country" do
+Plugin.define do
+name "Country"
 author "Andrew Horton"
 version "0.3"
 description "Shows the country the IPv4 address belongs to. This uses the GeoIP IP2Country database from http://software77.net/geo-ip/. Instructions on updating the database are in the plugin comments."

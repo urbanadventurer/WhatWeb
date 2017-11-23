@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 #
-Plugin.define "Plugin-Tutorial-1" do
+Plugin.define do
+name "Plugin-Tutorial-1"
 author "Your preferred name <email@address>"
 description "Generic CMS is an open-source Content Management System developed in PHP."
 website "http://example.com/"

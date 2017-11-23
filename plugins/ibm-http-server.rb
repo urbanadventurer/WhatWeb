@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-01-25 #
 # Updated version detection
 ##
-Plugin.define "IBM-HTTP-Server" do
+Plugin.define do
+name "IBM-HTTP-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
 version "0.3"
 description "IBM HTTP Server is based on the Apache HTTP Server (httpd.apache.org), developed by the Apache Software Foundation. IBM HTTP Server can be remotely administered and configured using the WebSphere administrative console"

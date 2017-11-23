@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :certainty=>100 & :name
 
-Plugin.define "TypePad" do
+Plugin.define do
+name "TypePad"
 author "Andrew Horton"
 version "0.2"
 description "Blogging platform http://www.typepad.com/"

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-17 # Brendan Coles <bcoles@gmail.com>
 # Updated version detection
 ##
-Plugin.define "CommonSpot" do
+Plugin.define do
+name "CommonSpot"
 author "Tonmoy Saikia"
 version "0.2"
 description "The CommonSpot Web content management solution (Web CMS) increases the value of content by creating engaging Web experiences that generate high impact results."

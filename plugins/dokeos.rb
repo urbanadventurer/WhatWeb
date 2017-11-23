@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Dokeos" do
+Plugin.define do
+name "Dokeos"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
 version "0.1"
 description "Dokeos is an open source online learning suite. It provides all the features needed for e-learning and blended learning management : From Authoring to Reporting."

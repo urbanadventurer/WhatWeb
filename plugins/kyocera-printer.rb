@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-21 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Kyocera-Printer" do
+Plugin.define do
+name "Kyocera-Printer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.2"
 description "Web interface for Kyocera printers. Some models have built in fax and scanner capabilities."

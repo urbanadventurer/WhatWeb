@@ -7,7 +7,8 @@
 # Version 0.2
 # removed :probability & :name
 ##
-Plugin.define "MailSiteExpress" do
+Plugin.define do
+name "MailSiteExpress"
 author "Andrew Horton"
 version "0.2"
 description "Webmail in ASP. Versions < 6.1.2 insecure http://marc.info/?l=bugtraq&m=113053680631151&w=2 -"

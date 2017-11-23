@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BAB_Stats" do
+Plugin.define do
+name "BAB_Stats"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.1"
 description "BAB.Stats is a statistics system for the Delta Force series of games by Novalogic."

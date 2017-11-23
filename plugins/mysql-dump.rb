@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-02 #
 # Updated regex
 ##
-Plugin.define "MySQL-dump" do
+Plugin.define do
+name "MySQL-dump"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
 version "0.2"
 description "Extracts MySQL host, database and server version from MySQL-dump .sql files."

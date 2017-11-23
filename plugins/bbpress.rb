@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "bbPress" do
+Plugin.define do
+name "bbPress"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-06
 version "0.1"
 description "bbPress is forum software with a twist from the creators of WordPress."

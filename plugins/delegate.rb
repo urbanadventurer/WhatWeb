@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-06-04 #
 # Updated regex
 ##
-Plugin.define "DeleGate" do
+Plugin.define do
+name "DeleGate"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.3"
 description "DeleGate is a multi-purpose application level gateway, or a proxy server which runs on multiple platforms (Unix, Windows, MacOS X and OS/2). DeleGate mediates communication of various protocols (HTTP, FTP, NNTP, SMTP, POP, IMAP, LDAP, Telnet, SOCKS, DNS, etc.), applying cache and conversion for mediated data, controlling access from clients and routing toward servers."

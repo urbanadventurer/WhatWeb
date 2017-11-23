@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-10 #
 # Updated version detection
 ##
-Plugin.define "Campsite" do
+Plugin.define do
+name "Campsite"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.2"
 description "Campsite is a multilingual content management system (CMS) for news websites."

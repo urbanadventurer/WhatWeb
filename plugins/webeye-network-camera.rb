@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WebEye-Network-Camera" do
+Plugin.define do
+name "WebEye-Network-Camera"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.1"
 description "WebEye network camera web frontend"

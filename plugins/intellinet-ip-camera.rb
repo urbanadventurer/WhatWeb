@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-02 #
 # Updated firmware version detection
 ##
-Plugin.define "Intellinet-IP-Camera" do
+Plugin.define do
+name "Intellinet-IP-Camera"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.2"
 description "Intellinet IP camera"

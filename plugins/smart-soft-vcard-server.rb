@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "SMART-SOFT-VCard-Server" do
+Plugin.define do
+name "SMART-SOFT-VCard-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-14
 version "0.2"
 description "SMART-SOFT VCard HTTP/SSL server"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "KeyFocus-WebServer" do
+Plugin.define do
+name "KeyFocus-WebServer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
 description "KeyFocus Web Server is a free HTTP Server that can host an unlimited number of web sites."

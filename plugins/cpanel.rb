@@ -15,7 +15,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "cPanel" do
+Plugin.define do
+name "cPanel"
 author "Andrew Horton"
 version "0.5"
 description "Site configuration and management software application. Supporting many operating systems while allowing endusers to control every aspect of their webhosting experience."

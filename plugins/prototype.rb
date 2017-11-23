@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :certainty
 
-Plugin.define "Prototype" do
+Plugin.define do
+name "Prototype"
 author "Andrew Horton"
 version "0.2"
 description "Javascript library"

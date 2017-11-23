@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Textpattern-CMS" do
+Plugin.define do
+name "Textpattern-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-13
 version "0.1"
 description "A flexible, elegant and easy-to-use CMS"

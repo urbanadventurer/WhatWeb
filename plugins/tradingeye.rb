@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Tradingeye" do
+Plugin.define do
+name "Tradingeye"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-13
 version "0.1"
 description "Tradingeye is a fully-featured web standards compliant Shopping Cart & CMS, built from the ground up with web accessibility and SEO in mind."

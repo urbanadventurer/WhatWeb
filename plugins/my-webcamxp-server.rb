@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated version detection
 ##
-Plugin.define "My-WebCamXP-Server" do
+Plugin.define do
+name "My-WebCamXP-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-24
 version "0.2"
 description "WebCamXP web interface"

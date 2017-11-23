@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :name, :certainty=>100, and changed regexp to text
 
-Plugin.define "Bing-SearchEngine" do
+Plugin.define do
+name "Bing-SearchEngine"
 author "Andrew Horton"
 version "0.1"
 description "Bing.com is Microsoft's search engine"

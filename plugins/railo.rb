@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Railo" do
+Plugin.define do
+name "Railo"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.1"
 description "Railo is an Open Source ColdFusion Markup Language (CFML) server."

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "nginx" do
+Plugin.define do
+name "nginx"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
 description "Nginx (Engine-X) is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server."

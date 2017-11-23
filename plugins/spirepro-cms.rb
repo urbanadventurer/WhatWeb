@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "SpirePRO-CMS" do
+Plugin.define do
+name "SpirePRO-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
 version "0.2"
 description "Custom CMS from Boston web design and hosting company 1stOmni - http://www.1stomni.com/"

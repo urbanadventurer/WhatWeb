@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "QuesCom-Qportal" do
+Plugin.define do
+name "QuesCom-Qportal"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.1"
 description "Qportal web interface for QuesCom telephony devices"

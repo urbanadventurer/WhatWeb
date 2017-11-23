@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "IBM-WebSEAL" do
+Plugin.define do
+name "IBM-WebSEAL"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-12
 version "0.1"
 description "IBM WebSEAL is a high-performance, multi-threaded Web server that applies fine-grained security policy to the Tivoli Access Manager protected Web object space."

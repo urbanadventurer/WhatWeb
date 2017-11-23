@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PowerAlert" do
+Plugin.define do
+name "PowerAlert"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
 version "0.1"
 description "PowerAlert monitors and controls UPS Systems, PDUs, sensors, and the computers and equipment they support."

@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-05-24 #
 # Added WEBrick detection
 ##
-Plugin.define "Ruby" do
+Plugin.define do
+name "Ruby"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.3"
 description "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write."

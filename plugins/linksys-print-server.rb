@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-21 Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Linksys-Print-Server" do
+Plugin.define do
+name "Linksys-Print-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
 version "0.2"
 description "Linksys Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."

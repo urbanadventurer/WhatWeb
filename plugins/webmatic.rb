@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated version detection
 ##
-Plugin.define "Webmatic" do
+Plugin.define do
+name "Webmatic"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
 version "0.2"
 description "Webmatic CMS"

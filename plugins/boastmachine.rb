@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated matches, removed certainty and updated version detection
 ##
-Plugin.define "boastMachine" do
+Plugin.define do
+name "boastMachine"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
 version "0.2"
 description "boastMachine blog"

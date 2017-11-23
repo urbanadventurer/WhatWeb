@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "FreakAuth" do
+Plugin.define do
+name "FreakAuth"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
 version "0.1"
 description "FreakAuth is a simple authentication library for the Code Igniter PHP framework"

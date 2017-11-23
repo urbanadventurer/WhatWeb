@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "SimpNews" do
+Plugin.define do
+name "SimpNews"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
 version "0.2"
 description "Simply a News system"

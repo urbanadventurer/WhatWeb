@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-26 #
 # Updated version detection regex
 ##
-Plugin.define "MicrosoftOfficeWebServer" do
+Plugin.define do
+name "MicrosoftOfficeWebServer"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.2"
 description "Microsoft Office Web Server"

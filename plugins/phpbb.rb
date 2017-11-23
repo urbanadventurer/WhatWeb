@@ -10,7 +10,8 @@
 # Version 0.2 #
 # remove :certainty and :name, change :regexp to :text
 ##
-Plugin.define "phpBB" do
+Plugin.define do
+name "phpBB"
 author "Andrew Horton"
 version "0.3"
 description "phpBB is a free forum"

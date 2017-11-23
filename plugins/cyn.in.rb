@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Cyn_in" do
+Plugin.define do
+name "Cyn_in"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.1"
 description "Cyn.in is a collaboration software that inter-connects your people with each other and their collective knowledge, seamlessly."

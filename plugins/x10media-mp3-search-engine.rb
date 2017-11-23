@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-02 #
 # Updated version detection
 ##
-Plugin.define "X10media-MP3-Search-Engine" do
+Plugin.define do
+name "X10media-MP3-Search-Engine"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
 description "X10media MP3 search engine"

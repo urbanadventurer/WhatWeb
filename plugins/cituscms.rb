@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CitusCMS" do
+Plugin.define do
+name "CitusCMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-23
 version "0.1"
 description "CitusCMS - Open Source Content Management System"

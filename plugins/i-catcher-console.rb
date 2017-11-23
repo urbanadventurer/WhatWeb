@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "i-Catcher-Console" do
+Plugin.define do
+name "i-Catcher-Console"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.2"
 description "i-Catcher is a Digital CCTV system for security, surveillance and remote monitoring applications."

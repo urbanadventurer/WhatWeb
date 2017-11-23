@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Fujitsu-InfoProvider-Pro" do
+Plugin.define do
+name "Fujitsu-InfoProvider-Pro"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.1"
 description "Fujitsu-InfoProvider-Pro web server"

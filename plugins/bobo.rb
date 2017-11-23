@@ -8,7 +8,8 @@
 # Moved patterns from passive function to matches[]
 ##
 
-Plugin.define "Bobo" do
+Plugin.define do
+name "Bobo"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
 version "0.2"
 description "Bobo is a light-weight framework for creating WSGI web applications. It's goal is to be easy to use and remember. It addresses 2 problems: 1) mapping URLs to objects and 2) calling objects to generate HTTP responses. Bobo doesn't have a templating language, a database integration layer, or a number of other features that are better provided by WSGI middle-ware or application-specific libraries. Bobo builds on other frameworks, most notably WSGI and WebOb."

@@ -11,7 +11,8 @@
 # Updated model detection
 # Added frameset match
 ##
-Plugin.define "Brother-Printer" do
+Plugin.define do
+name "Brother-Printer"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.3"
 description "Brother printer web interface"

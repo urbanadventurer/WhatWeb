@@ -8,7 +8,8 @@
 # Moved patterns from passive function to matches[]
 ##
 
-Plugin.define "ABO_CMS" do
+Plugin.define do
+name "ABO_CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.2"
 description "ABO.CMS"

@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :name & :certainty=>100
 
-Plugin.define "Scriptaculous" do
+Plugin.define do
+name "Scriptaculous"
 author "Andrew Horton"
 version "0.2"
 description "Javascript library"

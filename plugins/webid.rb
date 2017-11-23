@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-08-23 #
 # Added version detection
 ##
-Plugin.define "WeBid" do
+Plugin.define do
+name "WeBid"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-17
 version "0.1"
 description "Open source php/mysql fully featured auction script."

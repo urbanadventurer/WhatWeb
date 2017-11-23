@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Webalizer-Log" do
+Plugin.define do
+name "Webalizer-Log"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
 version "0.1"
 description "Webalizer is a fast, free web server log file analysis program. It produces highly detailed, easily configurable usage reports in HTML format, for viewing with a standard web browser."

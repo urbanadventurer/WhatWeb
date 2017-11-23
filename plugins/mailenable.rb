@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MailEnable" do
+Plugin.define do
+name "MailEnable"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-14
 version "0.1"
 description "Windows mail server software with webmail, caldav, carddav, antivirus, spam filtering and more."

@@ -10,7 +10,8 @@
 # Version 0.3
 # Changed Wallström to Wallstrom
 
-Plugin.define "WordpressSuperCache" do
+Plugin.define do
+name "WordpressSuperCache"
 author "Patrik Wallstrom"
 version "0.3"
 description "Cache functionality for Wordpress - http://wordpress.org/extend/plugins/wp-super-cache/"

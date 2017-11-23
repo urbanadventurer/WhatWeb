@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Biscom-Delivery-Server" do
+Plugin.define do
+name "Biscom-Delivery-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-20
 version "0.1"
 description "Biscom Delivery Server - Secure File Transfer (SFT) software"

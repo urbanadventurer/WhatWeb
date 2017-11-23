@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Nera-SatLink" do
+Plugin.define do
+name "Nera-SatLink"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
 version "0.1"
 description "Nera SatLink router [Norwegian] - The Nera SatLink family of DVB-RCS Terminals act as IP routers to interface one or more PCs for bilateral communication via the satellite network."

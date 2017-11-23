@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "iHTML" do
+Plugin.define do
+name "iHTML"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.2"
 description "iHTML is a server side internet/web programming and scripting language in used by thousands of sites worldwide to deliver cost effective dynamic database driven web sites."

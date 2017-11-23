@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Netsweeper" do
+Plugin.define do
+name "Netsweeper"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
 version "0.1"
 description "Netsweeper provides internet content filtering and web threat management solutions that foster employee productivity, student safety and secure Internet access."

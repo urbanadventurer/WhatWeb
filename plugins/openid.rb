@@ -6,7 +6,8 @@
 ##
 
 
-Plugin.define "OpenID" do
+Plugin.define do
+name "OpenID"
 author "Caleb Anderson"
 version "0.1"
 description "openid detection"

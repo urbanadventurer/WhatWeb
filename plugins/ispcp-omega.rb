@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :probability
 ##
-Plugin.define "ispCP-Omega" do
+Plugin.define do
+name "ispCP-Omega"
 author "Andrew Horton"
 version "0.3"
 description "PHP opensource, virtual hosting system"

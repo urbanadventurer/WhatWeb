@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "AirTiesRouter" do
+Plugin.define do
+name "AirTiesRouter"
 author "Andrew Horton"
 version "0.1"
 description "AirTies Wireless Router"

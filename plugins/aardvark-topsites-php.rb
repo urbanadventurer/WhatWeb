@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated regex and version detection
 ##
-Plugin.define "Aardvark-Topsites-PHP" do
+Plugin.define do
+name "Aardvark-Topsites-PHP"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
 version "0.2"
 description "Aardvark Topsites PHP is a free topsites script built on PHP and MySQL."

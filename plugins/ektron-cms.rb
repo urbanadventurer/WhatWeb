@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ektron-CMS" do
+Plugin.define do
+name "Ektron-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-09
 version "0.1"
 description "Ektron provides web content management and social software. Ektron's primary product is CMS400.NET, which is built on the Microsoft .NET Framework."

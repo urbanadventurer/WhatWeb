@@ -8,7 +8,8 @@
 # Added description. Added website parameter
 ##
 
-Plugin.define "Zylone-IT" do
+Plugin.define do
+name "Zylone-IT"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.2"
 description "Zylone IT is an IT company in Singapore providing web design, web solutions and internet marketing."

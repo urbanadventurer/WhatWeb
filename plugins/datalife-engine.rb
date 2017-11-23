@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-08-27 #
 # Added cookie matches
 ##
-Plugin.define "DataLife-Engine" do
+Plugin.define do
+name "DataLife-Engine"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
 version "0.2"
 description "DataLife Engine CMS"

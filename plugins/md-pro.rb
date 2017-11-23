@@ -8,7 +8,8 @@
 # Updated version detection
 # Renamed from MAXdev to MD-Pro
 ##
-Plugin.define "MD-Pro" do
+Plugin.define do
+name "MD-Pro"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
 description "MaxDev is proud to introduce MD-Pro, the most complete, flexible and reliable CMS available on the market."

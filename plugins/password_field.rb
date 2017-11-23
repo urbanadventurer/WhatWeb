@@ -6,7 +6,8 @@
 ##
 
 
-Plugin.define "PasswordField" do
+Plugin.define do
+name "PasswordField"
 author "Caleb Anderson"
 version "0.1"
 description "find password fields"

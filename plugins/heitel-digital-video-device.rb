@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "HeiTel-Digital-Video-Device" do
+Plugin.define do
+name "HeiTel-Digital-Video-Device"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.2"
 description "HeiTel Digital Video Device - Platform-independent live image transmission and camera remote control via PC, Smartphone and PDA browser "

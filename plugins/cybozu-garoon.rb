@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Cybozu-Garoon" do
+Plugin.define do
+name "Cybozu-Garoon"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.2"
 description "Cybozu Garoon is a web-based groupware suite integrating key collaboration applications that provide a ready-to-run intranet solution."

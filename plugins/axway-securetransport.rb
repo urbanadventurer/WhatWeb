@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Axway-SecureTransport" do
+Plugin.define do
+name "Axway-SecureTransport"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
 version "0.1"
 description "Axway SecureTransport is a secure, multi-protocol managed file transfer solution"

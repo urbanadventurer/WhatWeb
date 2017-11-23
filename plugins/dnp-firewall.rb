@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DnP-Firewall" do
+Plugin.define do
+name "DnP-Firewall"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-25
 version "0.2"
 description "DnP Firewall Gateway Modification"

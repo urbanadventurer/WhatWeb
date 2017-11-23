@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Hycus-CMS" do
+Plugin.define do
+name "Hycus-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
 version "0.1"
 description "India's first CMS. Free and open-source PHP based CMS."

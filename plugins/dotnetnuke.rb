@@ -20,7 +20,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "DotNetNuke" do
+Plugin.define do
+name "DotNetNuke"
     author "Andrew Horton"
     version "0.5"
     description "DotNetNuke is an opensource CMS for Microsoft .Net. Passively detects modules and the copyright year."

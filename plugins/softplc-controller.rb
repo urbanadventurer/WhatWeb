@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SoftPLC-Controller" do
+Plugin.define do
+name "SoftPLC-Controller"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.1"
 description "All SoftPLC controller CPUs provide the same rich set of features. Every SoftPLC is a high-performance, feature-rich Programmable Automation Controller (PAC), combining the functions of a proprietary PLC with the benefits of both an open architecture design and computer technologies."

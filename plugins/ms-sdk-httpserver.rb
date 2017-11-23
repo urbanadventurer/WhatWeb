@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-21 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "MS-SDK-HttpServer" do
+Plugin.define do
+name "MS-SDK-HttpServer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-15
 version "0.2"
 description "The Microsoft .NET Micro Framework Platform SDK is a powerful and flexible platform for rapidly creating embedded device firmware with Microsoft Visual Studio. This plugin identifies servers based on the HttpServer sample provided with the SDK."

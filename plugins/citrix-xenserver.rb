@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Citrix-XenServer" do
+Plugin.define do
+name "Citrix-XenServer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-28
 version "0.1"
 description "Citrix XenServer is a complete, managed server virtualization platform built on the powerful Xen hypervisor."

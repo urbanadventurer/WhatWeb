@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Infinet-Wireless-WANFleX-Router" do
+Plugin.define do
+name "Infinet-Wireless-WANFleX-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-13
 version "0.1"
 description "Infinet Wireless WANFleX Router"

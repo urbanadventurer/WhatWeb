@@ -7,7 +7,8 @@
 # Version 0.2
 # removed :probability
 ##
-Plugin.define "HTML5" do
+Plugin.define do
+name "HTML5"
 author "Andrew Horton"
 version "0.2"
 description "HTML version 5, detected by the doctype declaration"

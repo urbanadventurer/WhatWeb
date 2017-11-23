@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Roxen" do
+Plugin.define do
+name "Roxen"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
 version "0.1"
 description "Roxen WebServer is a full-featured open-source web server distributed under the GPL license."

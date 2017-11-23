@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-10 #
 # Updated regex match
 ##
-Plugin.define "IWSS-Proxy" do
+Plugin.define do
+name "IWSS-Proxy"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.2"
 description "Trend Micro InterScan Web Security Suite (IWSS) Proxy server"

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "NSFocus" do
+Plugin.define do
+name "NSFocus"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
 version "0.2"
 description "NSFOCUS Web Application Firewall"

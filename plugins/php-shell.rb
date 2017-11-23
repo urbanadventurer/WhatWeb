@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Fixed regex
 ##
-Plugin.define "PHP-Shell" do
+Plugin.define do
+name "PHP-Shell"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
 version "0.2"
 description "php remote shell and file explorer"

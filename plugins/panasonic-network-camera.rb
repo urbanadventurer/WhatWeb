@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Fixed regex
 ##
-Plugin.define "Panasonic-Network-Camera" do
+Plugin.define do
+name "Panasonic-Network-Camera"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.2"
 description "Panasonic network cameras"

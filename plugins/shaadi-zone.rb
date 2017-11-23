@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Shaadi-Zone" do
+Plugin.define do
+name "Shaadi-Zone"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
 description "Shaadi Zone is the best solution if you are looking to run a matrimonial services services. We have integrated many features which you can use and take full advantage of the matrimonial services. You can run a site like shaadi or bharatmatrimoniy easily."

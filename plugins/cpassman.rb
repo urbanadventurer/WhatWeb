@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "cPassMan" do
+Plugin.define do
+name "cPassMan"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
 description "cPassMan is a Passwords Manager dedicated for managing passwords in a collaborative way. It is especially designed to provide passwords access security for allowed people."

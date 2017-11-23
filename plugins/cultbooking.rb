@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CultBooking" do
+Plugin.define do
+name "CultBooking"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.1"
 description "A comprehensive and free-of-charge Internet Booking Engine (IBE)"

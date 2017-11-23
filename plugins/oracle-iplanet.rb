@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-11-22 #
 # Updated matches to use matches instead of passive
 ##
-Plugin.define "Oracle-iPlanet" do
+Plugin.define do
+name "Oracle-iPlanet"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
 version "0.2"
 description "Oracle-iPlanet Web Server and Proxy Server."

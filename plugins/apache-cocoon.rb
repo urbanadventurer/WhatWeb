@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Replaced passive function with match for server header
 ##
-Plugin.define "Apache-Cocoon" do
+Plugin.define do
+name "Apache-Cocoon"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
 version "0.2"
 description "Apache Cocoon is a Spring-based framework (since version 2.2 of Cocoon) built around the concepts of separation of concerns and component-based development."

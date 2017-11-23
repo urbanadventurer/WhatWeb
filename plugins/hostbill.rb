@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "HostBill" do
+Plugin.define do
+name "HostBill"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-10
 version "0.1"
 description "HostBill - Billing software"

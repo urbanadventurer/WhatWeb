@@ -21,7 +21,8 @@
 # Version 0.2
 # removed :name & :certainty
 ##
-Plugin.define "Mambo" do
+Plugin.define do
+name "Mambo"
 author "Andrew Horton"
 version "0.6"
 description "Mambo CMS (http://mambo-foundation.org)"

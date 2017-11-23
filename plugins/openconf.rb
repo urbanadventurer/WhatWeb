@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OpenConf" do
+Plugin.define do
+name "OpenConf"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-03
 version "0.1"
 description "OpenConf is an abstract and peer-review management system that greatly facilitates the submission and review processes for conferences, workshops, and symposia."

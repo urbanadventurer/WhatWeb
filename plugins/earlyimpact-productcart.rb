@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "EarlyImpact-ProductCart" do
+Plugin.define do
+name "EarlyImpact-ProductCart"
 author "Andrew Horton"
 version "0.3"
 description "EarlyImpact ProductCart is an ASP commercial ecommerce system "

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "X-Cache" do
+Plugin.define do
+name "X-Cache"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
 version "0.1"
 description "This plugin identifies the X-Cache HTTP header and extracts the value."

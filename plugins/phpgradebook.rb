@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHPGradeBook" do
+Plugin.define do
+name "PHPGradeBook"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-23
 version "0.1"
 description "PHP_GradeBook is a program for teachers to input students points for assignments and keep a running online tally for the students to view online."

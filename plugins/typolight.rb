@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :certainty=>100 & :name
 
-Plugin.define "TypoLight" do
+Plugin.define do
+name "TypoLight"
 author "Andrew Horton"
 version "0.2"
 description "TypoLight is an OpenSource CMS written in PHP"

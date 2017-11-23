@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DUclassified" do
+Plugin.define do
+name "DUclassified"
 author "Tonmoy Saikia"
 version "0.1"
 description "DUclassified is a free Classified Ad Management system."

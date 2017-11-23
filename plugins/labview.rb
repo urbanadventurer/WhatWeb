@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-21 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "LabVIEW" do
+Plugin.define do
+name "LabVIEW"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.2"
 description "LabVIEW is a graphical programming environment used by millions of engineers and scientists to develop sophisticated measurement, test, and control systems using intuitive graphical icons and wires that resemble a flowchart."

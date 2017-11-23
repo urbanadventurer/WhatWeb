@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 ##
-Plugin.define "DiBos" do
+Plugin.define do
+name "DiBos"
 author "Andrew Horton"
 version "0.3"
 description "DiBos security surveillance system"

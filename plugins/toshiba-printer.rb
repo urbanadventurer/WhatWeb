@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :certainty=>100 & :name. convert :regexp to :text
 
-Plugin.define "ToshibaPrinter" do
+Plugin.define do
+name "ToshibaPrinter"
 author "Andrew Horton"
 version "0.2"
 description "Toshiba printer Top Access"

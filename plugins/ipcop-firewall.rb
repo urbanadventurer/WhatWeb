@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated version detection
 ##
-Plugin.define "IPCop-Firewall" do
+Plugin.define do
+name "IPCop-Firewall"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.2"
 description "The IPCop Firewall is a Linux firewall distribution. It is geared towards home and SOHO users. The IPCop web-interface is very user-friendly and makes usage easy."

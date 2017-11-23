@@ -12,7 +12,8 @@
 # Added version detection
 # Added server name detection
 ##
-Plugin.define "Snap-Appliance-Server" do
+Plugin.define do
+name "Snap-Appliance-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.3"
 description "Snap Appliance Server network attached storage (NAS)"

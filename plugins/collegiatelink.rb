@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CollegiateLink" do
+Plugin.define do
+name "CollegiateLink"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-22
 version "0.1"
 description "CollegiateLink"

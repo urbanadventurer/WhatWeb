@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "enVision" do
+Plugin.define do
+name "enVision"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
 version "0.1"
 description "Content Interface Corp enVision - interactive WYSIWYG layout editor"

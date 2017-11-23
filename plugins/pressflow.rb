@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Pressflow" do
+Plugin.define do
+name "Pressflow"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
 version "0.1"
 description "Pressflow is a distribution of Drupal with integrated performance, scalability, availability, and testing enhancements."

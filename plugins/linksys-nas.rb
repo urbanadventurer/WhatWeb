@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Fixed regex
 ##
-Plugin.define "Linksys-NAS" do
+Plugin.define do
+name "Linksys-NAS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-15
 version "0.2"
 description "Linksys NAS web frontend"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "NoticeBoardPro" do
+Plugin.define do
+name "NoticeBoardPro"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
 version "0.1"
 description "NoticeBoardPro is an online, web-based, notice board system"

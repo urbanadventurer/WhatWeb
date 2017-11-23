@@ -9,7 +9,8 @@
 # Added the Powered by the match
 # Added another version match
 ##
-Plugin.define "Zest-Web-Engine" do
+Plugin.define do
+name "Zest-Web-Engine"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.2"
 description "Zest Web Engine"

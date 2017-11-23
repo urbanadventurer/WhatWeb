@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "CHANCE-i-DiViS-DVR" do
+Plugin.define do
+name "CHANCE-i-DiViS-DVR"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.2"
 description "CHANCE-i DiViS digital video recorder device"

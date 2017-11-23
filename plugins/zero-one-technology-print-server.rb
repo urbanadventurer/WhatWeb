@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Zero-One-Technology-Print-Server" do
+Plugin.define do
+name "Zero-One-Technology-Print-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.2"
 description "Zero One Technology Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."

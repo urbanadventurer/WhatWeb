@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Replaced passive function with matches
 ##
-Plugin.define "Allen-Bradley-PLC" do
+Plugin.define do
+name "Allen-Bradley-PLC"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.2"
 description "SCADA - Allen Bradley programmable logic controller (PLC)"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "3COM-NBX" do
+Plugin.define do
+name "3COM-NBX"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-09
 version "0.1"
 description "3COM NBX phone system. The NBX NetSet utility is a web interface in which you configure and manage the NBX system. NBX systems present the NBX NetSet utility through an embedded web server that is integrated in system software."

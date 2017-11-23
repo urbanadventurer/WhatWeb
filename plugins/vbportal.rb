@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
-Plugin.define "vbPortal" do
+Plugin.define do
+name "vbPortal"
 author "Brendan Coles <bcoles@gmail.com>"
 version "0.2"
 description "Portal and CMS for vBulletin"

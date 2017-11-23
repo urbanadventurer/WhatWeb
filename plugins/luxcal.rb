@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "LuxCal" do
+Plugin.define do
+name "LuxCal"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-10
 version "0.1"
 description "LuxCal is a free user-friendly and lightweight web based event calendar. Requires PHP and MySQL"

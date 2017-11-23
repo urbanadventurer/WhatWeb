@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-21 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "LANCOM-Device" do
+Plugin.define do
+name "LANCOM-Device"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.2"
 description "LANCOM Systems is a provider of innovative and reliable communications solutions, Secure Access, VPN and Wireless LAN with high technological capabilities, easy configuration and unified control of all products."

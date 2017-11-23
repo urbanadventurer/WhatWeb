@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "cInvoice" do
+Plugin.define do
+name "cInvoice"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-06
 version "0.1"
 description "Forperfect cInvoice system - web-based invoice system. Requires PHP and MySQL."

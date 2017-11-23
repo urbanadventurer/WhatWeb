@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "CDN-Cache-Server" do
+Plugin.define do
+name "CDN-Cache-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
 version "0.2"
 description "CDN-Cache-Server"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Zoom-Search-Engine" do
+Plugin.define do
+name "Zoom-Search-Engine"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-04-11
 version "0.1"
 description "Zoom is a software package that creates a search engine for your website, intranet, CD, or DVD"

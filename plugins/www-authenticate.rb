@@ -9,7 +9,8 @@
 # Updated regex to accept more than one www-authenticate header
 # Added examples
 ##
-Plugin.define "WWW-Authenticate" do
+Plugin.define do
+name "WWW-Authenticate"
 author "Aung Khant, http://yehg.net" # modified by Andrew Horton
 version "0.2"
 description "This plugin identifies the WWW-Authenticate HTTP header and extracts the authentication method and realm."

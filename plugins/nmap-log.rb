@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-22 #
 # Updated regex
 ##
-Plugin.define "Nmap-Log" do
+Plugin.define do
+name "Nmap-Log"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-21
 version "0.2"
 description "This plugin identifies nmap plain-text logs and extracts the hostname, OS, active ports and nmap version. It does not work for logs in the XML file format."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Jigsaw" do
+Plugin.define do
+name "Jigsaw"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-07
 version "0.2"
 description "Jigsaw is W3C's leading-edge Web server platform, providing a sample HTTP 1.1 implementation and a variety of other features on top of an advanced architecture implemented in Java."

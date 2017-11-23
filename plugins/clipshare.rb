@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ClipShare" do
+Plugin.define do
+name "ClipShare"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.1"
 description "With a huge variety of features and options, at an extremely affordable price, ClipShare is the ultimate video script for starting your highly profitable video sharing community website just like the big boys: Youtube, DailyMotion, Metacafe, or Google Video."

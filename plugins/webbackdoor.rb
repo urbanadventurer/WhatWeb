@@ -6,7 +6,8 @@
 ##
 ## setting passive might produce a lot of false positives
 
-Plugin.define "webbackdoor" do
+Plugin.define do
+name "webbackdoor"
 author "Aung Khant, http://yehg.net"
 version "0.1"
 description "Detect common web doors (asp,jsp,php,jsp,pl,cgi)  using fuzz-db list and others"

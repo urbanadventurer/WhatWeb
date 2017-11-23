@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 
-Plugin.define "ComersusCart" do
+Plugin.define do
+name "ComersusCart"
 author "Andrew Horton"
 version "0.3"
 

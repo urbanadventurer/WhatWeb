@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BEA-WebLogic-Server" do
+Plugin.define do
+name "BEA-WebLogic-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
 version "0.1"
 description "BEA WebLogic Server is an enterprise-ready Java EE application server that supports the deployment of mission-critical applications in a robust, secure, highly available, and scalable environment."

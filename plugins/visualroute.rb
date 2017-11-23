@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "VisualRoute" do
+Plugin.define do
+name "VisualRoute"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.2"
 description "Traceroute and network diagnostic tool"

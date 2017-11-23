@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Oracle-ADF-Faces" do
+Plugin.define do
+name "Oracle-ADF-Faces"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-12
 version "0.1"
 description "Oracle ADF Faces Components is a set of over a 150 Ajax-enabled JSF components that let you build a richer Web user interface for Java EE applications."

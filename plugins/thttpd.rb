@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "thttpd" do
+Plugin.define do
+name "thttpd"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
 description "thttpd - tiny/turbo/throttling HTTP server - thttpd is a simple, small, portable, fast, and secure HTTP server."

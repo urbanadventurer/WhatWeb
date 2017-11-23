@@ -10,7 +10,8 @@
 # Version 0.2
 # removed :certainty=>100
 ##
-Plugin.define "X-Powered-By" do
+Plugin.define do
+name "X-Powered-By"
 author "Andrew Horton"
 version "0.3"
 description "X-Powered-By HTTP header"

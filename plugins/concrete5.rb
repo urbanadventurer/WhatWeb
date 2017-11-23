@@ -10,7 +10,8 @@
 # Version 0.3
 # Uses :version=>//
 
-Plugin.define "Concrete5" do
+Plugin.define do
+name "Concrete5"
     author "Andrew Horton"
     version "0.3"
     description "Concrete5 is an OpenSource CMS written in PHP."

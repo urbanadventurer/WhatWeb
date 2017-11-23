@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHPOpenChat" do
+Plugin.define do
+name "PHPOpenChat"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-23
 version "0.1"
 description "PHPOpenChat is a high performance php-based chat server software for a live chat-room"

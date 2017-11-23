@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :name & :certainty=>100
 
-Plugin.define "RoundCube" do
+Plugin.define do
+name "RoundCube"
 author "Andrew Horton"
 version "0.2"
 description "Opensource Webmail written in PHP"

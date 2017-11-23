@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "DiY-CMS" do
+Plugin.define do
+name "DiY-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
 version "0.2"
 description "Do It Yourself Content Management System is a feature-rich, php-built, mysql-based, opensource and free CMS."

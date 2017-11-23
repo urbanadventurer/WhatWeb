@@ -9,7 +9,8 @@
 # Added HTTP Server Header match
 # Added string extraction from www-authenticate realm
 ##
-Plugin.define "WatchGuard-Firewall" do
+Plugin.define do
+name "WatchGuard-Firewall"
 author "Aung Khant <http://yehg.net/>" # 2011-02-04
 version "0.2"
 description "WatchGuard Firewall - http://www.watchguard.com/products/edge-e/overview.asp"

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Fujitsu-Wireless-AP" do
+Plugin.define do
+name "Fujitsu-Wireless-AP"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
 version "0.2"
 description "Fujitsu Wireless Access Point"

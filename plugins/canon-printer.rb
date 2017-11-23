@@ -8,7 +8,8 @@
 # Updated model detection
 # Updated http server header matches
 ##
-Plugin.define "Canon-Printer" do
+Plugin.define do
+name "Canon-Printer"
 author "Andrew Horton"
 version "0.2"
 description "Remote UI for Canon Printers"

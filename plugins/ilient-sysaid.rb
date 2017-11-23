@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ilient-SysAid" do
+Plugin.define do
+name "Ilient-SysAid"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
 version "0.1"
 description "Ilient SysAid IT Help Desk Software"

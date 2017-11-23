@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Quanterra-Q330" do
+Plugin.define do
+name "Quanterra-Q330"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.2"
 description "Quanterra Q330 series - seismic data acquisition systems"

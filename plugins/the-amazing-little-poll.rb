@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "The-Amazing-Little-Poll" do
+Plugin.define do
+name "The-Amazing-Little-Poll"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-04
 version "0.1"
 description "The Amazing Little Poll is a very simple php polling script. - Homepage: http://www.mr-corner.com/LittlePoll/index.html"

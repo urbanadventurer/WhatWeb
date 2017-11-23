@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SlingBox" do
+Plugin.define do
+name "SlingBox"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-17
 version "0.1"
 description "The Slingbox is a TV streaming media device that encodes video for transmission over the Internet"

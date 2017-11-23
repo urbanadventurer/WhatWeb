@@ -10,7 +10,8 @@
 # Version 0.2
 # remove :certainty
 ##
-Plugin.define "MetaGenerator" do
+Plugin.define do
+name "MetaGenerator"
 author "Andrew Horton"
 version "0.3"
 description "This plugin identifies meta generator tags and extracts its value."

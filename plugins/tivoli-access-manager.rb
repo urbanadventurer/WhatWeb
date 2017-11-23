@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Tivoli-Access-Manager" do
+Plugin.define do
+name "Tivoli-Access-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-05 #
 version "0.1"
 description "Tivoli Access Manager for e-business software is a highly scalable user authentication, authorization and Web SSO solution for enforcing security policies over a wide range of Web and application resources. It centralizes user access management for online portal and business initiatives."

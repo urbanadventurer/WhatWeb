@@ -17,7 +17,8 @@
 # Version 0.2 #
 # Updated matches and version detection
 ##
-Plugin.define "ArGoSoft-Mail-Server" do
+Plugin.define do
+name "ArGoSoft-Mail-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
 version "0.5"
 description "ArGoSoft-Mail-Server web interface"

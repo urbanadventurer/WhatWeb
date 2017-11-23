@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-20 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "fnord" do
+Plugin.define do
+name "fnord"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.2"
 description "fnord - yet another small httpd"

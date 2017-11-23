@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Cisco-Adaptive-Security-Appliance" do
+Plugin.define do
+name "Cisco-Adaptive-Security-Appliance"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-11
 version "0.1"
 description "The Cisco Adaptive Security Appliance (ASA) family of security devices protects corporate networks. It provides users with highly secure access to data - anytime, anywhere, using any device."
