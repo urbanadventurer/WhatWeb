@@ -10,7 +10,6 @@ name "Lithium"
 author "Mateusz Golewski"
 version "0.1"
 description "A Lithium forum engine."
-examples %w|http://community.giffgaff.com/|
 
 matches [
 

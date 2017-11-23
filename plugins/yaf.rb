@@ -10,7 +10,6 @@ name "YAF.NET"
 author "Eugene Amirov"
 version "0.1"
 description "YAF is a .NET forum engine."
-examples %w|http://www.theiphonedev.com/Forum/tabid/141/Default.aspx|
 
 matches [
 {

@@ -10,7 +10,6 @@ name "FusionBB"
 author "Claudio Salazar"
 version "0.1"
 description "FusionBB is a PHP forum."
-examples %w|http://www.chevytalk.org/fusionbb/index.php?|
 
 matches [
 

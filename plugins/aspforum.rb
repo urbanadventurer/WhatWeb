@@ -10,7 +10,6 @@ name "ASPForum"
 author "Mateusz Golewski"
 version "0.1"
 description "Kind of ASP forum."
-examples %w|http://forums.vetteweb.com/|
 
 matches [
 

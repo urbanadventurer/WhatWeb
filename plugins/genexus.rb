@@ -10,12 +10,4 @@ matches [
 	{:text=>"<meta name=\"Generator\" content=\"GeneXus\" />"},
 ]
 
-def passive
-	m=[]
-end
-
-def aggressive
-	m=[]
-end
-
 end

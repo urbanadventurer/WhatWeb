@@ -10,7 +10,6 @@ name "StackExchange"
 author "Mateusz Golewski"
 version "0.1"
 description "StackExchange family Q&A forums."
-examples %w|http://stackoverflow.com/|
 
 matches [
 

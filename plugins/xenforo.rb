@@ -10,7 +10,6 @@ name "Xenforo"
 author "Mateusz Golewski"
 version "0.1"
 description "A forum engine."
-examples %w|http://www.ifans.com/forums/|
 
 matches [
 
