@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Cougar" do
+Plugin.define do
+name "Cougar"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.2"
 description "Cougar video conferencing server"

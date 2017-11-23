@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sendio-ESP" do
+Plugin.define do
+name "Sendio-ESP"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-20
 version "0.1"
 description "Sendio's E-mail Security Platform, (formerly known as I.C.E. Box) is an appliance solution which eliminates spam and viruses."

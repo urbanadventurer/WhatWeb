@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Avocent-DSView" do
+Plugin.define do
+name "Avocent-DSView"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-24
 version "0.1"
 description "Avocent DSView 3 management software provides data centers with secure, out-of-band, centralized management for all connected IT and network devices."

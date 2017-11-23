@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-09 #
 # Updated version detection
 ##
-Plugin.define "LifeType" do
+Plugin.define do
+name "LifeType"
 author "Aung Khant, http://yehg.net"
 version "0.2"
 description "LifeType is an open-source blogging platform with support for multiple blogs and users in a single installation."

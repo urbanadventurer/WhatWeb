@@ -7,7 +7,8 @@
 # Version 0.2 by Andrew Horton
 ## added org.apache.struts.action. seen in stack traces and GET/POST request parameter names
 
-Plugin.define "Apache-Struts" do
+Plugin.define do
+name "Apache-Struts"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-08
 version "0.2"
 description "The Apache Struts web framework is a free open-source solution for creating Java web applications."

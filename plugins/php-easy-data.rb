@@ -10,7 +10,8 @@
 # Version 0.2 #
 # Updated regex and version detection
 ##
-Plugin.define "PHPEasyData" do
+Plugin.define do
+name "PHPEasyData"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-16
 version "0.3"
 description "PHPEasyData is a French Content Management System"

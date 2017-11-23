@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Harris-NetVX" do
+Plugin.define do
+name "Harris-NetVX"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-30
 version "0.1"
 description "NetVX combines standards-compliant audio, video and data networking interfaces to integrate with any video plant"

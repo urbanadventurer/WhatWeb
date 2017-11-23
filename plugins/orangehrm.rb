@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OrangeHRM" do
+Plugin.define do
+name "OrangeHRM"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-18
 version "0.1"
 description "OrangeHRM - Open Source Human Resource Management Software (HRMS)"

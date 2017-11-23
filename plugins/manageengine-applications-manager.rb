@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ManageEngine-Applications-Manager" do
+Plugin.define do
+name "ManageEngine-Applications-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-04
 version "0.1"
 description "ManageEngine Applications Manager - monitoring software - includes server monitoring, application server monitoring, database monitoring, web services monitoring, virtualization monitoring, cloud monitoring"

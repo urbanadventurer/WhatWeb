@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-03-18 #
 # Added model detection
 ##
-Plugin.define "Netgear-Router" do
+Plugin.define do
+name "Netgear-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
 version "0.3"
 description "Netgear Router - From wireless routers and adapters to Layer 3 Managed Switches we have the networking equipment you need for your home or small business."

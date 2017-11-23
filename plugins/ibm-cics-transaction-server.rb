@@ -8,7 +8,8 @@
 # Moved patterns from passive function to matches[]
 ##
 
-Plugin.define "IBM-CICS-Transaction-Server" do
+Plugin.define do
+name "IBM-CICS-Transaction-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-22
 version "0.2"
 description "IBM Customer Information Control System is the new face of CICS Integration point for CICS tooling with rich CICS views, data, and methods. CICS Transaction Server for z/OS is a modern, dependable, and cost effective application platform. z/OS is a 64-bit operating system for mainframe computers, produced by IBM."

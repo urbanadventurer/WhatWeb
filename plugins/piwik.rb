@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Piwik" do
+Plugin.define do
+name "Piwik"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
 version "0.2"
 description "Piwik is a downloadable, open source (GPL licensed) real time web analytics software program."

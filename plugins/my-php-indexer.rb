@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-18 #
 # Updated version detection
 ##
-Plugin.define "My-PHP-Indexer" do
+Plugin.define do
+name "My-PHP-Indexer"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
 version "0.2"
 description "PHP file indexer"

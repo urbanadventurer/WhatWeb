@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Pi3Web" do
+Plugin.define do
+name "Pi3Web"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.2"
 description "Pi3Web is a free, multithreaded, highly configurable and extensible HTTP server and development environment for cross platform internet server development and deployment."

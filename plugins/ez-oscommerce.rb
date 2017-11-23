@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ez-oscommerce" do
+Plugin.define do
+name "ez-oscommerce"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
 description "PHP powered shopping cart"

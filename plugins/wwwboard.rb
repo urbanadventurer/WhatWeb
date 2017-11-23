@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Added website parameter
 ##
-Plugin.define "WWWBoard" do
+Plugin.define do
+name "WWWBoard"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
 version "0.2"
 description "WWWBoard is a threaded World Wide Web discussion forum and message board, which allows users to post new messages, followup to existing ones and more."

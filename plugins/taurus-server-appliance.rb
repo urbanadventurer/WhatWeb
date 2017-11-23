@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Taurus-Server-Appliance" do
+Plugin.define do
+name "Taurus-Server-Appliance"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-19
 version "0.1"
 description "The Taurus Server Appliance is an all-in-one networking device solution for the small to midsize business."

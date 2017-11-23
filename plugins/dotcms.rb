@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :name and :certainty=>100
 
-Plugin.define "DotCMS" do
+Plugin.define do
+name "DotCMS"
 author "Andrew Horton"
 version "0.2"
 description "DotCMS is an opensource CMS written in Java. Has enterprise support"

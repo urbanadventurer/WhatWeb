@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-02-24 #
 # Updated version detection
 ##
-Plugin.define "PHPFM" do
+Plugin.define do
+name "PHPFM"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09
 version "0.3"
 description "PHP-Fusion is a lightweight open source content management system (CMS). It uses PHP and MySQL."

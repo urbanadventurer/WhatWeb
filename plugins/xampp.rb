@@ -11,7 +11,8 @@
 # Updated version detection
 # Added match for 403 error page
 ##
-Plugin.define "XAMPP" do
+Plugin.define do
+name "XAMPP"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-21
 version "0.3"
 description "XAMPP is an easy to install Apache distribution containing MySQL, PHP and Perl. XAMPP is really very easy to install and to use - just download, extract and start."

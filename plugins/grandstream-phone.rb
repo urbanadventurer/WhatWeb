@@ -9,7 +9,8 @@
 ##
 #version 0.2 Andrew Horton - added matches[] for devices without a Server: header, removed out of date examples
 ##
-Plugin.define "Grandstream-Phone" do
+Plugin.define do
+name "Grandstream-Phone"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
 version "0.3"
 description "Grandstream Networks is the leading manufacturer of IP voice/video telephony and video surveillance solutions."

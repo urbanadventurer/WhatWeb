@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "sNews" do
+Plugin.define do
+name "sNews"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.1"
 description "sNews is a completely free, standards compliant, PHP and MySQL driven Content Management System."

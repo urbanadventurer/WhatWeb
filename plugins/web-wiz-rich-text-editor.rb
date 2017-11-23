@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Web-Wiz-Rich-Text-Editor" do
+Plugin.define do
+name "Web-Wiz-Rich-Text-Editor"
 author "Brendan Coles <bcoles@gmail.com>" # 2013-04-01
 version "0.1"
 description "Web Wiz Rich Text Editor"

@@ -9,7 +9,8 @@
 # Version 0.2
 # remove :certainty
 
-Plugin.define "PHPCake" do
+Plugin.define do
+name "PHPCake"
 author "Andrew Horton"
 version "0.2"
 description "PHP MVC web framework"

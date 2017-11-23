@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "VCalendar" do
+Plugin.define do
+name "VCalendar"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-03
 version "0.1"
 description "VCalendar is an open source Web calendar application for posting and maintaining events and schedules online. A free solution for use by online Web communities and any commercial and non-commercial organizations, available in PHP, ASP, C# and VB.NET."

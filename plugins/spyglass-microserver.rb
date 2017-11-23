@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Spyglass-MicroServer" do
+Plugin.define do
+name "Spyglass-MicroServer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.2"
 description "Spyglass MicroServer is a small footprint, scalable, embedded Web server that is standards-based, customizable and features dynamic content generation with multi-platform support."

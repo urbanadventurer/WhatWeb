@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "I-O-DATA-Router" do
+Plugin.define do
+name "I-O-DATA-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
 version "0.1"
 description "I-O DATA router [Japanese] - http://www.iodata.jp/product/"

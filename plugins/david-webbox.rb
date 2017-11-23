@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "David-WebBox" do
+Plugin.define do
+name "David-WebBox"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-27
 version "0.1"
 description "David WebBox is a remote data storage center."

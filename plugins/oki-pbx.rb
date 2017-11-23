@@ -9,7 +9,8 @@
 # Version 0.2
 # remove :certainty and :name, change regexp to text
 
-Plugin.define "OkiPBX" do
+Plugin.define do
+name "OkiPBX"
 author "Andrew Horton"
 version "0.2"
 description "OKI PBX (phone exchange) http://www.oki.com/en/iptel/products/mxsx/maintenance.html"

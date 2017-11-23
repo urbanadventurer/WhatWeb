@@ -10,7 +10,8 @@
 # Version 0.2 #
 # Updated matches and removed ghdb match
 ##
-Plugin.define "Zen-Cart" do
+Plugin.define do
+name "Zen-Cart"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
 version "0.3"
 description "Zen Cart. truly is the art of e-commerce; free, user-friendly, open source shopping cart software."

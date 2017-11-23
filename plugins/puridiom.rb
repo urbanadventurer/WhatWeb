@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Puridiom" do
+Plugin.define do
+name "Puridiom"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
 version "0.1"
 description "Puridiom - eProcurement software"

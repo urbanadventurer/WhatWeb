@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Replaced passive function with matches
 ##
-Plugin.define "CrushFTP" do
+Plugin.define do
+name "CrushFTP"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-02
 version "0.2"
 description "A full-scale FTP server by Ben Spink written in Java using the SWING user interface libraries. [Mac OS/Windows/Linux]"

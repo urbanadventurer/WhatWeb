@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-04-12 #
 # Updated regex
 ##
-Plugin.define "WhatWeb-Plugin" do
+Plugin.define do
+name "WhatWeb-Plugin"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-16
 version "0.2"
 description "This plugin detects instances of WhatWeb plugins. If this plugin is returned then chances are the other results are false positives."

@@ -11,7 +11,8 @@
 # Version 0.4
 # Added md5 match for 401 page
 ##
-Plugin.define "MikroTik" do
+Plugin.define do
+name "MikroTik"
 author "Andrew Horton"
 version "0.4"
 description "MikroTik router"

@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated version detection and ghdb match
 ##
-Plugin.define "PhilBoard" do
+Plugin.define do
+name "PhilBoard"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-27
 version "0.2"
 description "PhilBoard - ASP powered forum"

@@ -10,7 +10,8 @@
 # Version 0.2 # 2010-10-22 # Brendan Coles <bcoles@gmail.com> #
 # Added type, user id and app id extraction
 ##
-Plugin.define "Open-Graph-Protocol" do
+Plugin.define do
+name "Open-Graph-Protocol"
 author "Caleb Anderson"
 version "0.3"
 description "The Open Graph protocol enables you to integrate your Web pages into the social graph. It is currently designed for Web pages representing profiles of real-world things . things like movies, sports teams, celebrities, and restaurants. Including Open Graph tags on your Web page, makes your page equivalent to a Facebook Page."

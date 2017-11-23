@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BASE" do
+Plugin.define do
+name "BASE"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-12-05
 version "0.1"
 description "Basic Analysis and Security Engine (BASE) - front end for the snort IDS system."

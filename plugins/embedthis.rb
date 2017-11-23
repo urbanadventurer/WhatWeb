@@ -8,7 +8,8 @@
 # Moved patterns from passive function to matches[]
 ##
 
-Plugin.define "Embedthis-AppWeb" do
+Plugin.define do
+name "Embedthis-AppWeb"
 author "Andrew Horton"
 version "0.2"
 description "Web server for embedded devices"

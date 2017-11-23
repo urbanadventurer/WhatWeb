@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :certainty=>100 & :name, convert :regexp to :text
 
-Plugin.define "XtraBusinessHosting" do
+Plugin.define do
+name "XtraBusinessHosting"
 author "Andrew Horton"
 version "0.2"
 description "Hosting at Xtra.co.nz"

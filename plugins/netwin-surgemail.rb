@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "NetWin-Surgemail" do
+Plugin.define do
+name "NetWin-Surgemail"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
 description "SurgeMail is the fastest, most robust and secure, full-featured email server on the market today supporting all the protocols and standards. Over 10,000 servers installed, serving millions of email accounts world wide."

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Vivotek-Network-Camera" do
+Plugin.define do
+name "Vivotek-Network-Camera"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-19
 version "0.1"
 description "Vivotek Network Camera web interface"

@@ -7,7 +7,8 @@
 ############################
 # WhatWeb plugin by NetAgence.com
 ############################
-Plugin.define "PrestaShop" do
+Plugin.define do
+name "PrestaShop"
 author "Chris, NetAgence.com"
 version "1.0"
 description "Ecommerce CMS Prestashop."

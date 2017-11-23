@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Replaced passive function with matches
 ##
-Plugin.define "Avaya-IP-Office" do
+Plugin.define do
+name "Avaya-IP-Office"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.2"
 description "IP Office is Avaya's telephone system for small and medium enterprises. IP Office systems can be run in several modes."

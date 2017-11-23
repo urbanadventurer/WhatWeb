@@ -8,7 +8,8 @@
 # Moved patterns from passive function to matches[]
 ##
 
-Plugin.define "Axentra-HipServ" do
+Plugin.define do
+name "Axentra-HipServ"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
 version "0.2"
 description "Axentra-HipServ - Digital Home/SOHO Software Platform for Internet Gateway and NAS Devices"

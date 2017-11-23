@@ -17,7 +17,8 @@
 # detection works mainly for default installation state 
 # tomatocms is based on zend framework
 ##
-Plugin.define "Zend" do
+Plugin.define do
+name "Zend"
 author "Aung Khant <http://yehg.net>"
 version "0.4"
 description "Zend PHP Framework (http://framework.zend.com/) and Zend Server (http://zend.com) Detection"

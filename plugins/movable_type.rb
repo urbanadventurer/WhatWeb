@@ -15,7 +15,8 @@
 # remove :certainty
 ##
 
-Plugin.define "Movable-Type" do
+Plugin.define do
+name "Movable-Type"
 author "Andrew Horton"
 version "0.4"
 description "Blogging platform"

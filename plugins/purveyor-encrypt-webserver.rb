@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Purveyor-Encrypt-WebServer" do
+Plugin.define do
+name "Purveyor-Encrypt-WebServer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-21
 version "0.2"
 description "Purveyor Encrypt WebServer for OpenVMS combines the reliability, security and scalability of the OpenVMS platform with the graphical ease-of-use and functionality of World Wide Web technologies. OpenVMS (Open Virtual Memory System), previously known as VAX-11/VMS, VAX/VMS or (informally) VMS, is a high-end computer server operating system that runs on VAX, Alpha and Itanium-based families of computers. - More info: http://www.sss.co.nz/software/purveyor/purvpage.htm"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Nette-Framework" do
+Plugin.define do
+name "Nette-Framework"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
 version "0.1"
 description "Nette Framework is a powerful framework for rapid and easy creation of high quality and innovative web applications in PHP 5.3"

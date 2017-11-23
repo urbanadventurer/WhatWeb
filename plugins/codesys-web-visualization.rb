@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CoDeSys-Web-Visualization" do
+Plugin.define do
+name "CoDeSys-Web-Visualization"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-20
 version "0.1"
 description "CoDeSys can create XML descriptions of the visualization objects and download them to the PLC. There a Web-Server will provide the PLC data in XML format too and thus can create a continuously updated visualization which can be opened in the Web Browser of any computer which is connected via Internet, independently from the target platform (e.g. useful for remote maintenance purposes)."

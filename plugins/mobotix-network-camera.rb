@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Mobotix-Network-Camera" do
+Plugin.define do
+name "Mobotix-Network-Camera"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
 description "MOBOTIX network camera web interface"

@@ -9,7 +9,8 @@
 # Intiial version of plugin created
 ##
 
-Plugin.define "BugTracker.NET" do
+Plugin.define do
+name "BugTracker.NET"
 author "David P Robinson <david@intruder.io>"
 version "0.1"
 description "BugTracker.NET is a free, open-source, web-based bug tracking and general purpose issue tracking application. It is written using ASP.NET, C#, and Microsoft SQL Server"

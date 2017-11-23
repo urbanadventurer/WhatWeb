@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "YouTube" do
+Plugin.define do
+name "YouTube"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-16
 version "0.1"
 description "Embedded YouTube video"

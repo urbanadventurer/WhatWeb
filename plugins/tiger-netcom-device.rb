@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Tiger-Netcom-Device" do
+Plugin.define do
+name "Tiger-Netcom-Device"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
 version "0.2"
 description "Tiger Netcom is a manufacturer and distributor of Voice over Internet Protocol (VoIP) equipment."

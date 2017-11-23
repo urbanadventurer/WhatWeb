@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TBDev-YSE" do
+Plugin.define do
+name "TBDev-YSE"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-14
 version "0.1"
 description "TBDev Yuna Scatari Edition - Torrent tracker"

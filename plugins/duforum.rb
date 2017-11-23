@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Updated description
 ##
-Plugin.define "DUforum" do
+Plugin.define do
+name "DUforum"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-02 
 version "0.2"
 description "Forum. Homepage used to be http://www.duware.com/"

@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Jasig-CAS" do
+Plugin.define do
+name "Jasig-CAS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
 version "0.1"
 description "Jasig Central Authentication Service (CAS) is an authentication system originally created by Yale University to provide a trusted way for an application to authenticate a user."

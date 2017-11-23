@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Added version detection. Updated matches.
 ##
-Plugin.define "SolarWinds-Network-Performance-Monitor" do
+Plugin.define do
+name "SolarWinds-Network-Performance-Monitor"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-31
 version "0.2"
 description "Our flagship network monitoring software manages dynamic networks of all sizes, simply and affordably. Discover how easy it is to detect, diagnose, and resolve network problems with Orion Network Performance Monitor (NPM)."

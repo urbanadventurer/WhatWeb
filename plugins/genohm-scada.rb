@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "GenOHM-SCADA" do
+Plugin.define do
+name "GenOHM-SCADA"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
 version "0.1"
 description "GenOHM SCADA is a Visualization and Control system for KNX/EIB networks."

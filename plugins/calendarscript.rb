@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CalendarScript" do
+Plugin.define do
+name "CalendarScript"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
 version "0.1"
 description "CalendarScript is a fully customizable event-publishing solution. It gives you everything you'll need to begin, then gives you the power to redefine it to fit your specific needs."

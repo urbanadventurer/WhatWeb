@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Added :status=>200 matches
 ##
-Plugin.define "D-Link-Router" do
+Plugin.define do
+name "D-Link-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-27
 version "0.2"
 description "D-Link Router - D-Link is the global leader in connectivity for small, medium and large enterprise business networking."

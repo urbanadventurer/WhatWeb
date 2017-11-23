@@ -10,7 +10,8 @@
 # Version 0.3
 # Uses :version=>//
 
-Plugin.define "SquirrelMail" do
+Plugin.define do
+name "SquirrelMail"
 author "Andrew Horton"
 version "0.3"
 description "Opensource Webmail written in PHP"

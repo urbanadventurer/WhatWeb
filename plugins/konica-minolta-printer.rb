@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Konica-Minolta-Printer" do
+Plugin.define do
+name "Konica-Minolta-Printer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-22
 version "0.1"
 description "Konica Minolta Printer"

@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "RealVNC" do
+Plugin.define do
+name "RealVNC"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
 version "0.2"
 description "RealVNC provides remote control software which lets you see and interact with desktop applications across any network."

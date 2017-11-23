@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "WhatsUp" do
+Plugin.define do
+name "WhatsUp"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
 version "0.2"
 description "WhatsUp - Network and Server Management Software"

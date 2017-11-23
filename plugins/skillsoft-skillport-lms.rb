@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Skillsoft-Skillport-LMS" do
+Plugin.define do
+name "Skillsoft-Skillport-LMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-05-30
 version "0.1"
 description "Skillsoft Skillport - learning management system (LMS)"

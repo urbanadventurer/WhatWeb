@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-07 #
 # Updated version detection
 ##
-Plugin.define "Atomic-Photo-Album" do
+Plugin.define do
+name "Atomic-Photo-Album"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
 version "0.2"
 description "Photo album software"

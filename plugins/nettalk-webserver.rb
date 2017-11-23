@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "NetTalk-WebServer" do
+Plugin.define do
+name "NetTalk-WebServer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
 version "0.2"
 description "Webserver using NetTalk. NetTalk is the de-facto standard tool for TCP/IP networking in Clarion."

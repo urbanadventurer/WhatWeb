@@ -10,7 +10,8 @@
 # Version 0.2 #
 # Added EXT HTTP header
 ##
-Plugin.define "Allegro-RomPager" do
+Plugin.define do
+name "Allegro-RomPager"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
 version "0.3"
 description "The RomPager suite of products enable your engineering team to leverage proven Web-based technologies in your networked embedded device."

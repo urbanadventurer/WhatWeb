@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Pivotal-CRM" do
+Plugin.define do
+name "Pivotal-CRM"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-07
 version "0.1"
 description "Pivotal CRM is a customer relationship management (CRM) software system offered by CDC Software."

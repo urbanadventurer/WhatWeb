@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated regex
 ##
-Plugin.define "Microsoft-Office-XML" do
+Plugin.define do
+name "Microsoft-Office-XML"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.2"
 description "This module detects instances of Microsoft Office documents saved as HTML and attempts to extract the user name, company name and office version."

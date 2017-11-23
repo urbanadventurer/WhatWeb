@@ -8,7 +8,8 @@
 # Replaced matches, replaced Google dork, replaced examples
 # Plugin still needs to be tested on all versions of MRTG
 
-Plugin.define "MRTG" do
+Plugin.define do
+name "MRTG"
 author "Aung Khant <http://yehg.net/>" # 2012-02-10
 version "0.2"
 description "MRTG - Multi Router Traffic Grapher - http://oss.oetiker.ch/mrtg/"

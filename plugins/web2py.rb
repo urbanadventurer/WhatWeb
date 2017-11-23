@@ -6,7 +6,8 @@
 ##
 # 2014-10-13 # Napz
 ##
-Plugin.define "Web2py" do
+Plugin.define do
+name "Web2py"
 author "Napz <napzs@rocketmail.com>"
 version "0.1"
 description "Web2py - Free open source full-stack framework written in Pytho"

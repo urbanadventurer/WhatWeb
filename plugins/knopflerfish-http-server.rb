@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Knopflerfish-HTTP-Server" do
+Plugin.define do
+name "Knopflerfish-HTTP-Server"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-01-18
 version "0.1"
 description "Knopflerfish HTTP Server - Small footprint OSGi HTTP server implementation for embedded use"

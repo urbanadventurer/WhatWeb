@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-01-08 #
 # Updated version detection
 ##
-Plugin.define "bSpeak" do
+Plugin.define do
+name "bSpeak"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
 version "0.2"
 description "bSpeak is 26th Avenue's threaded message board application. It is full-featured and fast, allowing you to create a community, provide online support, or provide announcements for your website."

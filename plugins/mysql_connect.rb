@@ -7,7 +7,8 @@
 
 # Version 0.2 Haiku edits by Andrew Horton
 
-Plugin.define "mysql_connect" do
+Plugin.define do
+name "mysql_connect"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-01-19
 version "0.2"
 description "This plugin detects instances of the mysql_connect() function in PHP source code and retrieves the mysql server hostname, username and password if it's in plain-text. Alternatively, if the connection details are stored in variables it will return the variable names with possible values for those variables returned in :string=>"

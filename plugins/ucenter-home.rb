@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Added website parameter and description
 ##
-Plugin.define "UCenter-Home" do
+Plugin.define do
+name "UCenter-Home"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.2"
 description "Social networking platform developed by Comsenz. Uses PHP and MySQL. Wikipedia page: https://zh.wikipedia.org/wiki/UCenter_Home"

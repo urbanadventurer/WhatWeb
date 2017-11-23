@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TOTVS-SmartClient" do
+Plugin.define do
+name "TOTVS-SmartClient"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-24
 version "0.1"
 description "TOTVS SmartClient MacOS TOTVS Application Server."

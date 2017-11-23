@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ImpressPages-CMS" do
+Plugin.define do
+name "ImpressPages-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-10-22
 version "0.1"
 description "ImpressPages - Web CMS built on PHP5.3 and MySQL"

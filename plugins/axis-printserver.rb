@@ -5,7 +5,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "Axis-PrintServer" do
+Plugin.define do
+name "Axis-PrintServer"
 author "Andrew Horton"
 version "0.1"
 description "Axis 540/542 Network Print Server"

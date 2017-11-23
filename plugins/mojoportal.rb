@@ -10,7 +10,8 @@
 # Version 0.2 # 2011-03-04 #
 # Added match for setup page
 ##
-Plugin.define "mojoPortal" do
+Plugin.define do
+name "mojoPortal"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09 
 version "0.3"
 description "mojoPortal is Free and Open Source. Create accessible, standards compliant web pages and content right in the browser. Powerful content management, easy to learn, easy to use."

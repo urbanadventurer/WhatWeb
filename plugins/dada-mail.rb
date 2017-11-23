@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Dada-Mail" do
+Plugin.define do
+name "Dada-Mail"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
 version "0.1"
 description "Dada Mail is a Contemporary Mailing List Manager. Dada Mail works brilliantly - especially when you want to run a verified, closed loop opt-in subscription-based mailing list that your subscribers can trust."

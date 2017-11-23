@@ -8,7 +8,8 @@
 # Version 0.3 # 2011-03-30 # Brendan Coles <bcoles@gmail.com>
 # Updated regex to decrease false positives & merged EscenicEngine5 plugin
 ##
-Plugin.define "Escenic" do
+Plugin.define do
+name "Escenic"
 author "Erik Inge Bolsø <knan+whatweb@redpill-linpro.com> & nikosk <nk@dsigned.gr>"
 version "0.3"
 description "Escenic is a commercial CMS popular in the Nordic region."

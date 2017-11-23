@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "APC-InfraStruXure-Manager" do
+Plugin.define do
+name "APC-InfraStruXure-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
 version "0.1"
 description "Modular, adaptable, on-demand solutions for data centers. InfraStruxure is a scalable and adaptable data center IT room architecture that dramatically reduces time and complexity from concept and design through installation."

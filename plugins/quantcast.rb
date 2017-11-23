@@ -8,7 +8,8 @@
 # Version 0.2
 # removed :certainty
 
-Plugin.define "Quantcast" do
+Plugin.define do
+name "Quantcast"
 author "Andrew Horton"
 version "0.1"
 description "Visitor demographics and statistics. www.quantcast.com"

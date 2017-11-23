@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "coWiki" do
+Plugin.define do
+name "coWiki"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
 description "coWiki - wiki"

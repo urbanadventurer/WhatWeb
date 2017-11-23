@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Inout-Article-Base" do
+Plugin.define do
+name "Inout-Article-Base"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
 version "0.1"
 description "Inout Article Base is a powerful, feature rich, fully customizable article script from inoutscripts.com. This is a highly Search Engine Optimized script which helps you to publish unlimited number of articles."

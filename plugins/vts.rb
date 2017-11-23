@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "VTS" do
+Plugin.define do
+name "VTS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
 version "0.2"
 description "VTS Server"

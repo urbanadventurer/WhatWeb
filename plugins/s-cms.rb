@@ -12,7 +12,8 @@
 # Version 0.3 # 2011-02-25 #
 # Updated powered by match
 ##
-Plugin.define "S-CMS" do
+Plugin.define do
+name "S-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
 version "0.3"
 description "CMS"

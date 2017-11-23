@@ -8,7 +8,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Mihalism-Multi-Host" do
+Plugin.define do
+name "Mihalism-Multi-Host"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
 description "An easy image hosting solution for everyone."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-09-14 #
 # Updated model/version detection and added server header match.
 ##
-Plugin.define "ARRIS-Touchstone-Router" do
+Plugin.define do
+name "ARRIS-Touchstone-Router"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
 version "0.2"
 description "ARRIS Touchstone router"

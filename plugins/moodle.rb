@@ -7,7 +7,8 @@
 # Version 0.2
 # remove :name & :certainty, updated description
 ##
-Plugin.define "Moodle" do
+Plugin.define do
+name "Moodle"
 author "Andrew Horton"
 version "0.2"
 description "Opensource educational software written in PHP."

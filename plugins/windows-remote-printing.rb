@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Windows-Remote-Printing" do
+Plugin.define do
+name "Windows-Remote-Printing"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-04-19
 version "0.1"
 description "The Windows remote printing interface displays networked printers, print job owner usernames and internal IP addresses."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2012-05-18 #
 # Added a couple of matches, google dorks and example urls
 ##
-Plugin.define "PluXml" do
+Plugin.define do
+name "PluXml"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
 version "0.2"
 description "PluXml - PHP powered CMS [French]"

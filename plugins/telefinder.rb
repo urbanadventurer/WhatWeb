@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "TeleFinder" do
+Plugin.define do
+name "TeleFinder"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
 version "0.2"
 description "TeleFinder is a Macintosh-based bulletin-board system written by Spider Island Software, based on a client.server model whose client end provides a Mac-like GUI. - More Info: http://en.wikipedia.org/wiki/TeleFinder"

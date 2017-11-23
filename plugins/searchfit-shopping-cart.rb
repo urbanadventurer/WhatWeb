@@ -10,7 +10,8 @@
 # Version 0.3
 # Uses :version=>//
 
-Plugin.define "SearchFitShoppingCart" do
+Plugin.define do
+name "SearchFitShoppingCart"
 author "Andrew Horton"
 version "0.3"
 description "Commercial ecommerce system written in PHP"

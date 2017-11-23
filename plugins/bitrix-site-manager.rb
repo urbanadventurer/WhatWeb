@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-11-04 #
 # Updated matches to use :search instead of passive[]
 ##
-Plugin.define "Bitrix-Site-Manager" do
+Plugin.define do
+name "Bitrix-Site-Manager"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-04
 version "0.1"
 description "Website management, e-commerce and e-marketing solution that delivers extreme value in performance, functionality, and ease-of-use."

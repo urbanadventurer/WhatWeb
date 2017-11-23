@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpVID" do
+Plugin.define do
+name "phpVID"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
 description "phpVID is a video sharing software or a video shating script and has all the features that are needed to run a successful video sharing website like youtube.com."

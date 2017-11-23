@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated version detection
 ##
-Plugin.define "Jamroom" do
+Plugin.define do
+name "Jamroom"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
 version "0.2"
 description "Jamroom specializes in building web communities centered around media producers such as musicians, photographers, video enthusiasts and more - Jamroom gives you the capability to provide dozens of different services to your users."

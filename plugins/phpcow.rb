@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHPCow" do
+Plugin.define do
+name "PHPCow"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
 version "0.1"
 description "PHPCow news publishing content management system - Homepage [offline] : http://www.phpcow.com/"

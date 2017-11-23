@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP121" do
+Plugin.define do
+name "PHP121"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
 version "0.1"
 description "PHP121 is a web based instant messenger - written entirely in PHP. This means that it will work in any browser on any operating system including Windows and Linux, anywhere! If traditional messaging programs like MSN Messenger or Yahoo! Messenger are blocked at your school or workplace, PHP121 will still work."

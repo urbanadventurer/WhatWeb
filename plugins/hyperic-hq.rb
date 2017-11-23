@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Hyperic-HQ" do
+Plugin.define do
+name "Hyperic-HQ"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-19
 version "0.1"
 description "Hyperic HQ - platform for custom web application monitoring and performance management in physical, virtual, and cloud environments."

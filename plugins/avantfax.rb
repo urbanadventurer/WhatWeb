@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-08-23 # Brendan Coles <bcoles@gmail.com>
 # Added version detection and google dorks
 ##
-Plugin.define "AvantFAX" do
+Plugin.define do
+name "AvantFAX"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
 version "0.2"
 description "AvantFAX is a web application for managing faxes on HylaFAX fax servers."

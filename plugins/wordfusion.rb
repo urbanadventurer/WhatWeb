@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WordFusion" do
+Plugin.define do
+name "WordFusion"
 author "Brendan Coles <bcoles@gmail.com>" # 2013-07-25
 version "0.1"
 description "Zumesoft WordFusion - Enterprise document assembly and automation software"

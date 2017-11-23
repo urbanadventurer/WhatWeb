@@ -10,7 +10,8 @@
 # Added <embed> element detection
 # Added flash file path retrieval
 ##
-Plugin.define "Adobe-Flash" do
+Plugin.define do
+name "Adobe-Flash"
 author "Caleb Anderson"
 version "0.2"
 description "This plugin identifies instances of embedded adobe flash files."

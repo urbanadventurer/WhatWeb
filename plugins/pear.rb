@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PEAR" do
+Plugin.define do
+name "PEAR"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-11-16
 version "0.1"
 description "PEAR - PHP Extension and Application Repository - PEAR is a framework and distribution system for reusable PHP components."

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-02 #
 # Updated version detection
 ##
-Plugin.define "Koobi" do
+Plugin.define do
+name "Koobi"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
 version "0.2"
 description "Shop/CMS software [German]"

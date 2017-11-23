@@ -10,7 +10,8 @@
 # Version 0.2 #
 # Fixed regex
 ##
-Plugin.define "iDVR" do
+Plugin.define do
+name "iDVR"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
 version "0.3"
 description "iDVR (formerly Devloution Security System) is a video surveillance system for the Linux/X11 platform."

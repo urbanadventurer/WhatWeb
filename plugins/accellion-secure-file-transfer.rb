@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Accellion-Secure-File-Transfer" do
+Plugin.define do
+name "Accellion-Secure-File-Transfer"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-11-20
 version "0.1"
 description "Accellion Secure File Transfer (SFT)"

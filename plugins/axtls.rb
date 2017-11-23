@@ -8,7 +8,8 @@
 # Replaced passive function with :search=>"headers[server]" pattern
 # Added website parameter
 ##
-Plugin.define "axTLS" do
+Plugin.define do
+name "axTLS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.2"
 description "The axTLS embedded SSL project is a highly configurable client/server TLSv1 SSL library designed for platforms with small memory requirements. It comes with a small HTTP/HTTPS server and additional test tools."

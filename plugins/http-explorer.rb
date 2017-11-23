@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Http-Explorer" do
+Plugin.define do
+name "Http-Explorer"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-04-10
 version "0.1"
 description "Http explorer is a free easy-to-use web server with which you can share your musics, videos and images for several web displays"

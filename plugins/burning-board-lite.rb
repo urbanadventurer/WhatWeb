@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated matches and version detection
 ##
-Plugin.define "Burning-Board-Lite" do
+Plugin.define do
+name "Burning-Board-Lite"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
 version "0.2"
 description "Burning Board 3 is the modern, secure and user friendly solution for your discussion board!"

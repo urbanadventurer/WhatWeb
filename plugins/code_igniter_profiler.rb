@@ -6,7 +6,8 @@
 ##
 
 
-Plugin.define "CodeIgniterProfiler" do
+Plugin.define do
+name "CodeIgniterProfiler"
 author "Caleb Anderson"
 version "0.1"
 description "Find codeigniter profiler debug divs"

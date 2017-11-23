@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ruby-on-Rails" do
+Plugin.define do
+name "Ruby-on-Rails"
 author "Andrew Horton"
 version "0.1"
 description "Ruby on rails is an MVC web application framework written in the ruby language. Doesn't detect all RoR sites"

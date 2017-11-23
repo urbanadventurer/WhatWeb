@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MySQLMan" do
+Plugin.define do
+name "MySQLMan"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
 version "0.1"
 description "MySQLMan is a web based MySQL database manager."

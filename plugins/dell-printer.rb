@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-25 #
 # Updated model detection
 ##
-Plugin.define "Dell-Printer" do
+Plugin.define do
+name "Dell-Printer"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
 version "0.2"
 description "Dell printer web frontend - http://www.dell.com/" 

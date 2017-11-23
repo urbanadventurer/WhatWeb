@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-19 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Datum-TymServe" do
+Plugin.define do
+name "Datum-TymServe"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-09
 version "0.2"
 description "GPS NTP Network Appliances make it easy to manage and monitor time synchronization through workstations, servers and routers, thus assuring the highest integrity throughout the network."

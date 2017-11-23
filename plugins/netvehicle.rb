@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "NetVehicle" do
+Plugin.define do
+name "NetVehicle"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
 version "0.2"
 description "Fujitsu NetVehicle router [Japanese]"

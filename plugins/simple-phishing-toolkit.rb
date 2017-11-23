@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Simple-Phishing-Toolkit" do
+Plugin.define do
+name "Simple-Phishing-Toolkit"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-12
 version "0.1"
 description "Simple Phishing Toolkit (SPT)"

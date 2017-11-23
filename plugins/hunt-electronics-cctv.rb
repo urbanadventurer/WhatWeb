@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Hunt-Electronics-CCTV" do
+Plugin.define do
+name "Hunt-Electronics-CCTV"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
 description "Hunt Electronics is staffed with highly trained, experienced, and creative individuals specializing in the development and manufacturing of high performance CCTV solutions."

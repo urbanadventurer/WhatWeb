@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "dir2web-CMS" do
+Plugin.define do
+name "dir2web-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-08-08
 version "0.1"
 description "dir2web CMS"

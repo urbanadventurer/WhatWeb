@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "EDK" do
+Plugin.define do
+name "EDK"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
 version "0.1"
 description "EDK is an Open Source Killboard for EVE-Online, maintained by the EVE Development Network. Requirements: PHP >= version 5, the GD Library, MySQL >= version 5"

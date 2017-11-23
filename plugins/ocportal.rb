@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "ocPortal" do
+Plugin.define do
+name "ocPortal"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
 version "0.2"
 description "Cutting-edge CMS for building and maintaining a sophisticated social website. Fully flexible, themeable and extendible: suitable for building almost any kind of website."

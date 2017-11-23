@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated GHDB match and version detection
 ##
-Plugin.define "phpFreeChat" do
+Plugin.define do
+name "phpFreeChat"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
 version "0.2"
 description "phpFreeChat is a free, simple to install, fast, customizable and multi languages chat that uses a simple filesystem for message and nickname storage."

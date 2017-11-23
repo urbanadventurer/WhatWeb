@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-17 # Andrew Horton
 # Added website parameter and description
 ##
-Plugin.define "PhpMesFilms" do
+Plugin.define do
+name "PhpMesFilms"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
 version "0.2"
 description "Film database powered by PHP. Website used to be http://phpmesfilms.dyndns.org/"

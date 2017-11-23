@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Spinnaker" do
+Plugin.define do
+name "Spinnaker"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
 version "0.2"
 description "Spinnaker web server - Searchight Software sold Searchlight BBS, along with Spinnaker Web Server, to TeleGrafix Communications in 1998. TeleGrafix Communications, Inc., closed its doors in late 2000."

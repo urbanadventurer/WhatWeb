@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Card-Reader-Adapter" do
+Plugin.define do
+name "Card-Reader-Adapter"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
 version "0.1"
 description "Card Reader Adapter - Unknown manufacturer [Korean]"

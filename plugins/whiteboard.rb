@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-02-19 #
 # Updated version detection
 ##
-Plugin.define "WhiteBoard" do
+Plugin.define do
+name "WhiteBoard"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
 version "0.2"
 description "WhiteBoard is a fast, powerful, and free open source discussion board solution."

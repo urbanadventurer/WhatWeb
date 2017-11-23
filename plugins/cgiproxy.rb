@@ -7,7 +7,8 @@
 # Version 0.2 #
 # Updated version detection and matches
 ##
-Plugin.define "CGIProxy" do
+Plugin.define do
+name "CGIProxy"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
 version "0.2"
 description "This CGI script acts as an HTTP or FTP proxy. Through it, you can retrieve any resource that is accessible from the server it runs on."

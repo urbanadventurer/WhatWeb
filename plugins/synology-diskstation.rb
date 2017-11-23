@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Synology-DiskStation" do
+Plugin.define do
+name "Synology-DiskStation"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
 version "0.1"
 description "Synology DiskStation provides a full-featured Network Attached Storage (NAS) solution which offers RAID storage, backup, and network surveillance (NVR)."

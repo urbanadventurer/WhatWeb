@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "uTorrent" do
+Plugin.define do
+name "uTorrent"
 author "Andrew Horton"
 version "0.1"
 description "The uTorrent GUI is a web interface to the uTorrent BitTorrent client"

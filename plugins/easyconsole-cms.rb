@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "EasyConsole-CMS" do
+Plugin.define do
+name "EasyConsole-CMS"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
 version "0.1"
 description "EasyConsole CMS allows you to manage the content and usage across your Intranet, Extranet or Portal.

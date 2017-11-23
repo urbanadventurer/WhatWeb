@@ -6,7 +6,8 @@
 # http://www.morningstarsecurity.com/research/whatweb
 ##
 
-Plugin.define "AnyGate" do
+Plugin.define do
+name "AnyGate"
 author "Andrew Horton"
 version "0.1"
 description "Korean home wifi/router device"

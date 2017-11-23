@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Xerver" do
+Plugin.define do
+name "Xerver"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
 version "0.2"
 description "Xerver is an advanced free GNU GPL Web and FTP server."

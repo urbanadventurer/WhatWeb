@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved HTTP Server pattern from passive function to matches[]
 ##
-Plugin.define "Cimplicity-WebView" do
+Plugin.define do
+name "Cimplicity-WebView"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
 version "0.2"
 description "CIMPLICITY is a client/server based visualization and control solution that helps you visualize your operations, perform supervisory automation and deliver reliable information to higher-level analytic applications."

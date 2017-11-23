@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "InterRed" do
+Plugin.define do
+name "InterRed"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
 version "0.1"
 description "InterRed GmbH is a leading technology provider of content management systems (CMS), Knowledge Retrieval (KM), personalization of web sites, live reporting (website statistics) to use analysis of websites and offers print solutions for catalogs, magazines, newspapers Web-to-print, publishing houses."

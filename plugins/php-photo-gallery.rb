@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP-Photo-Gallery" do
+Plugin.define do
+name "PHP-Photo-Gallery"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
 version "0.1"
 description "Easily create your own photo album on the internet. With the easy installation you can have your gallery up and running within 5 minutes with unlimited albums and photos."

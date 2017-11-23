@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DrugPak" do
+Plugin.define do
+name "DrugPak"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
 version "0.1"
 description "The DrugPak Software Suite is the premier random drug and alcohol testing management software available today. Hundreds of employers, TPAs, MROs, SAPs, clinics, hospitals, and occupational health departments use DrugPak to effectively and efficiently manage drug testing."

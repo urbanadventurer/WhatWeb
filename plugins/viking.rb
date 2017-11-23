@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-23 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "Viking" do
+Plugin.define do
+name "Viking"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
 version "0.2"
 description "Viking is an all-in-one server that provides everything from HTTP and FTP to Gopher, IRC, and NTP; with firewalling, proxying and more"

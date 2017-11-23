@@ -7,7 +7,8 @@
 # Version 0.2 # 2016-04-21 # Andrew Horton
 # Moved patterns from passive function to matches[]
 ##
-Plugin.define "MoxaHttp" do
+Plugin.define do
+name "MoxaHttp"
 author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
 version "0.2"
 description "Device Networking for Industry: device server, industrial ethernet switch."

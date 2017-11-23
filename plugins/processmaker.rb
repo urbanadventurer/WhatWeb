@@ -4,7 +4,8 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ProcessMaker" do
+Plugin.define do
+name "ProcessMaker"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-06-23
 version "0.1"
 description "ProcessMaker - Open source web based workflow software and Business Process Management software."

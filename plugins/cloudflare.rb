@@ -13,7 +13,8 @@
 # Moved patterns from passive function to matches[]
 # Change plugin name captilization
 ##
-Plugin.define "CloudFlare" do
+Plugin.define do
+name "CloudFlare"
 author "Aung Khant <http://yehg.net/> & David P Robinson <david@intruder.io>" # 2011-02-04
 version "0.3"
 description "CloudFlare is a content delivery network. Its features include DDoS protection and Web Application Firewall functionality"
