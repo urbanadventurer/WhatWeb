@@ -48,6 +48,8 @@ if [ -f "alexa-top-1m.txt" ]; then
 	echo "[*] Wrote: alexa-top-100.txt"
 	head -n 10 alexa-top-1m.txt > alexa-top-10.txt
 	echo "[*] Wrote: alexa-top-10.txt"
+	echo "[*] Remove top-1m.csv"
+	rm -f top-1m.csv
 else
 	echo "[*] Fatal Error: alexa-top-1m.txt does not exist - Aborting..."
 	exit 1
