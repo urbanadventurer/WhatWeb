@@ -10,7 +10,6 @@ name "Gannett"
 author "Eugene Amirov"
 version "0.1"
 description "Gannett websites"
-examples %w|http://tennessean.com|
 
 matches [
 {

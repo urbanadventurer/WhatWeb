@@ -11,12 +11,6 @@ author "Shuai Lin"
 version "0.1"
 description "BLOX is a CMS from townnews.com"
 
-examples %w|
-http://www.omaha.com/
-http://thetandd.com/
-http://www.billingsgazette.com/
-|
-
 matches [
 
 {:regexp => /BLOX CMS version: [\d.]+/},
