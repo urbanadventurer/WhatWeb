@@ -7,7 +7,8 @@
 # Version 0.2
 # remove :certainty
 ##
-Plugin.define "MD5" do
+Plugin.define do
+name "MD5"
 author "Andrew Horton"
 version "0.2"
 description "MD5 sum of html body. Useful to find matching pages"

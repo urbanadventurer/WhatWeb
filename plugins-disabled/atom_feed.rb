@@ -6,7 +6,8 @@
 ##
 
 
-Plugin.define "AtomFeed" do
+Plugin.define do
+name "AtomFeed"
 author "Caleb Anderson"
 version "0.1"
 description "Atom feed detection"

@@ -7,7 +7,8 @@
 # Version 0.2 # 2011-03-31 #
 # Updated regex
 ##
-Plugin.define "Meta-City" do
+Plugin.define do
+name "Meta-City"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
 version "0.2"
 description "This plugin retrieves the city from the meta city tag. This tag is used by the Gigablast search engine."
