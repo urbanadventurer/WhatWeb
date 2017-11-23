@@ -26,7 +26,6 @@ class Plugin
     matches
     name
     passive
-    variables
     version
     website
   ]
@@ -44,18 +43,12 @@ class Plugin
     end
   end
 
-  attr_reader(:mutex)
-
   def initialize
     @matches = []
     @dorks = []
     @passive = nil
     @aggressive = nil
-  end
-
-  class << self
-    attr_reader :registered_plugins
-    private :new
+    @variables = {}
   end
 
   def self.define(&block)
@@ -64,12 +57,8 @@ class Plugin
     p.instance_eval(&block)
     p.startup()
     # TODO: make sure required attributes are set
-    # TODO: freeze attributes
+    Plugin.attributes.each { |symbol| p.instance_variable_get("@#{symbol}").freeze }
     Plugin.registered_plugins[p.name] = p
-  end
-
-  def set_plugin_name(s)
-    @plugin_name = s
   end
 
   def version_detection?
