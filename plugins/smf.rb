@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.6 # 2013-12-31 # @csalazar
+# Added a new version detection match
+##
 # Version 0.5 # 2012-08-16 # Andrew Horton
 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
 ##
@@ -19,7 +22,7 @@
 Plugin.define do
 name "SMF"
 author "Andrew Horton"
-version "0.5"
+version "0.6"
 description "SMF (Simple Machines Forum) is an opensource forum written in PHP"
 website "www.simplemachines.org"
 
@@ -44,6 +47,10 @@ matches [
 
 # Version Detection # Powered by text
 { :version=>/<a href="http:\/\/www.simplemachines.org\/" title="Simple Machines Forum" target="_blank"( class="new_win")?>Powered by SMF ([^<]+)/, :offset=>1 },
+
+# Version Detection 
+{ :version=>/<a href=".*?" title="Simple Machines Forum" target="_blank" class="new_win">SMF ([^<]+)/},
+
 
 ]
 
