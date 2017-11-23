@@ -10,31 +10,40 @@ WhatWeb is distributed in the hope that it will be useful, but WITHOUT ANY WARRA
 You should have received a copy of the GNU General Public License along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
-module PluginSugar
-  def def_field(*names)
-    class_eval do
-      names.each do |name|
-        define_method(name) do |*args|
-          if args.empty?
-            instance_variable_get("@#{name}")
-          else
-            instance_variable_set("@#{name}", *args)
-          end
-        end
+
+class Plugin
+  class << self
+    attr_reader :registered_plugins, :attributes
+    private :new
+  end
+
+  @registered_plugins = {}
+  @attributes = %i[
+    aggressive
+    author
+    description
+    dorks
+    matches
+    name
+    passive
+    version
+    website
+  ]
+
+  @attributes.each do |symbol|
+    define_method(symbol) do |*value, &block|
+      name = "@#{symbol}"
+      if block
+        instance_variable_set(name, block)
+      elsif !value.empty?
+        instance_variable_set(name, *value)
+      else
+        instance_variable_get(name)
       end
     end
   end
-end
 
-
-class Plugin
-  extend PluginSugar
-  def_field  :name, :author, :version, :description, :website, :matches, :cve, :dorks
-  # deprecated fields
-  def_field :examples
-#, :category
-  @registered_plugins = {}
-  attr :mutex
+  attr_reader(:mutex)
 
   def initialize
     @mutex = Mutex.new
@@ -43,13 +52,12 @@ class Plugin
   class << self
     attr_reader :registered_plugins
     private :new
-    attr_reader :plugin_name
   end
 
   def self.define(&block)
-    p = new
+    p = new()
     p.instance_eval(&block)
-    p.startup
+    p.startup()
     Plugin.registered_plugins[p.name] = p
   end
 
@@ -242,12 +250,12 @@ class Plugin
     end
 
     # if the plugin has a passive method, use it
-    results += self.passive if defined? self.passive
+    results += passive.call if passive
 
     # if the plugin has an aggressive method and we're in aggressive mode, use it
     # or if we're guessing all URLs
     if ($AGGRESSION == 3 and !results.empty?) or ($AGGRESSION == 4)
-      results += self.aggressive if defined? self.aggressive
+      results += aggressive.call if aggressive
 
       # if any of our matches have a url then fetch it
       # and check the matches[]
