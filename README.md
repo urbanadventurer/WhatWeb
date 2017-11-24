@@ -10,7 +10,7 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 ```
 
 # WhatWeb - Next generation web scanner
-Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
+Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
 Latest Release: v0.4.9. November 23rd, 2017
 
