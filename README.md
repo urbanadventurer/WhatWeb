@@ -20,7 +20,7 @@ This product is subject to the terms detailed in the license agreement. For more
 
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-Wiki:   https://github.com/urbanadventurer/WhatWeb/wiki/
+Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
 
 If you have any questions, comments or concerns regarding WhatWeb, please consult the documentation prior to contacting one of the developers. Your feedback is always welcome. 
 
@@ -417,7 +417,7 @@ License: GPLv2
 ### Developers
 
 + Andrew Horton (@urbanadventurer)
-+ Brendan Coles
++ Brendan Coles (@bcoles)
 
 ### Contributors
 
@@ -425,39 +425,39 @@ Thank you to the following people who have contributed to WhatWeb.
 
 + Emilio Casbas
 + Louis Nyffenegger
-+ Patrik Wallström (pawal)
-+ Caleb Anderson (dirtyfilthy)
++ Patrik Wallström (@pawal)
++ Caleb Anderson (@dirtyfilthy)
 + Tonmoy Saikia
-+ Aung Khant (yehgdotnet)
++ Aung Khant (@yehgdotnet)
 + Erik Inge Bolsø
 + nk@dsigned.gr
-+ Steve Milner (ashcrow)
++ Steve Milner (@ashcrow)
 + Michal Ambroz
 + Gremwell
-+ Sagar Prakash Junnarkar (sagarjunnarkar)
++ Sagar Prakash Junnarkar (@sagarjunnarkar)
 + GertBerger 
 + Quintin Poirier
 + Eric Sesterhenn
-+ dengjw (jawa)
-+ Pedro Worcel (droop)
-+ Matthieu Keller (maggick)
-+ Peter (pvdl)
-+ Napz (RootCon)
-+ nilx042
-+ Fabian Affolter (fabaff)
-+ Andrew Silvernail (buff3r)
-+ Andre Ricardo (andrericardo)
++ dengjw (@jawa)
++ Pedro Worcel (@droop)
++ Matthieu Keller (@maggick)
++ Peter (2pvdl)
++ Napz (@RootCon)
++ @nilx042
++ Fabian Affolter (@fabaff)
++ Andrew Silvernail (@buff3r)
++ Andre Ricardo (@andrericardo)
 + nikosk
-+ Patrick Thomas (coffeetocode)
-+ Guillaume Delcaour (guikcd)
-+ Sean (wiifm69)
-+ Matthieu Keller (maggick)
-+ Raul (raurodse)
-+ Andrew Petro (apetro)
-+ Artem Taranyuk (610)
-+ Matti Paksula (matti)
-+ Tim Smith (tas50)
-+ Sarthak Munshi (saru95)
++ Patrick Thomas (@coffeetocode)
++ Guillaume Delcaour (@guikcd)
++ Sean (@wiifm69)
++ Matthieu Keller (@maggick)
++ Raul (@raurodse)
++ Andrew Petro (@apetro)
++ Artem Taranyuk (@610)
++ Matti Paksula (@matti)
++ Tim Smith (@tas50)
++ Sarthak Munshi (@saru95)
 + @rdubourguais
 + @SlivTaMere
 + @Code0x58
