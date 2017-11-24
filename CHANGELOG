@@ -5,7 +5,9 @@ Version 0.5.0 - In development
 * Plugin name defined within plugin as variable. @Code0x58
 * Changed from functions to blocks for passive and aggressive plugins. @Code0x58
 * Changed plugin locking  @Code0x58
-* New plugins and plugin updates from @csalazar @golewski @Allactaga @lins05 @eliasdorneles @sigit dewanto @elcodigok
+* New plugins and plugin updates from @csalazar @golewski @Allactaga @lins05 @eliasdorneles @sigit dewanto @elcodigok 
+* Updated aggressive version detection for Joomla and WordPress @anozoozian
+
 
 Version 0.4.9 November 23rd 2017
 * Added unit testing with rake @bcoles
