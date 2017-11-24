@@ -74,7 +74,6 @@ http://www.reddit.com/ [200] Frame, PasswordField[passwd,passwd2], Script, HTTPS
 ```
 
 
-
 ## Usage
 ```
 
@@ -379,21 +378,19 @@ To enable character set detection and MongoDB logging install the rchardet gem.
   cp plugins-disabled/charset.rb my-plugins/
 
 
-
 ## Release History
 
-Version 0.3   Released at Kiwicon III (kiwicon.org), November 2nd, 2009
-Version 0.4   Released March 14th, 2010
-Version 0.4.1 Released April 28th, 2010
-Version 0.4.2 Released April 30th, 2010
-Version 0.4.3 Released May 24th, 2010
-Version 0.4.4 Released June 29th, 2010
-Version 0.4.5 Released August 17th, 2010
-Version 0.4.6 Released March 25th, 2011
-Version 0.4.7 Released April 5th, 2011
-Version 0.4.8-dev (Continuous release from 2012 to 2017)
-Version 0.4.9 Released November 23rd, 2017
-
+- Version 0.4.9 Released November 23rd, 2017
+- Version 0.4.8-dev (Continuous release from 2012 to 2017)
+- Version 0.4.7 Released April 5th, 2011
+- Version 0.4.6 Released March 25th, 2011
+- Version 0.4.5 Released August 17th, 2010
+- Version 0.4.4 Released June 29th, 2010
+- Version 0.4.3 Released May 24th, 2010
+- Version 0.4.2 Released April 30th, 2010
+- Version 0.4.1 Released April 28th, 2010
+- Version 0.4   Released March 14th, 2010
+- Version 0.3   Released at Kiwicon III (kiwicon.org), November 2nd, 2009
 
 ## Credits
 
@@ -401,12 +398,12 @@ Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 License: GPLv2
 
-### DEVELOPERS
+### Developers
 
 + Andrew Horton (@urbanadventurer)
 + Brendan Coles
 
-### CONTRIBUTORS
+### Contributors
 
 Thank you to the following people who have contributed to WhatWeb. 
 
