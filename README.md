@@ -380,9 +380,14 @@ To enable character set detection and MongoDB logging install the rchardet gem.
 
 ## Writing Plugins
 
-Plugins are easy to write. Start by going through the plugin tutorials in the [my-plugins/ folder](https://github.com/urbanadventurer/WhatWeb/tree/master/my-plugins).
+Plugins are easy to write. Start by going through the plugin tutorials in the [my-plugins/ folder].
+
+* [Plugin Tutorials](https://github.com/urbanadventurer/WhatWeb/tree/master/my-plugins).
 
 After progressing through the tutorials read through the Development section of the [wiki](https://github.com/urbanadventurer/WhatWeb/wiki/). 
+
+* [Sources for Plugin Writing](https://github.com/urbanadventurer/WhatWeb/wiki/Sources-for-Plugin-Writing)
+* [How to Develop WhatWeb Plugins (not up to date)](https://github.com/urbanadventurer/WhatWeb/wiki/How-to-develop-WhatWeb-plugins)
 
 ## Updates & Additional Information
 
