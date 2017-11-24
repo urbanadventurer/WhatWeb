@@ -415,10 +415,6 @@ Browse the wiki for more documentation and advanced usage techniques.
 
 ## Credits
 
-Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
-Homepage: http://www.morningstarsecurity.com/research/whatweb
-License: GPLv2
-
 ### Developers
 
 + Andrew Horton (@urbanadventurer)
