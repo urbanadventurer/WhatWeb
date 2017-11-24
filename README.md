@@ -11,13 +11,16 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 # WhatWeb - Next generation web scanner.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
+
 Latest Release: v0.4.9. November 23rd, 2017
+
 License: GPLv2
 
 This product is subject to the terms detailed in the license agreement. For more information about WhatWeb visit:
 
-  Homepage: http://www.morningstarsecurity.com/research/whatweb
-  Wiki:   https://github.com/urbanadventurer/WhatWeb/wiki/
+Homepage: http://www.morningstarsecurity.com/research/whatweb
+
+Wiki:   https://github.com/urbanadventurer/WhatWeb/wiki/
 
 If you have any questions, comments or concerns regarding WhatWeb, please consult the documentation prior to contacting one of the developers. Your feedback is always welcome. 
 
