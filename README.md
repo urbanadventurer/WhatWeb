@@ -9,7 +9,7 @@ $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 ```
 
-# WhatWeb - Next generation web scanner.
+# WhatWeb - Next generation web scanner
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 
 Latest Release: v0.4.9. November 23rd, 2017
@@ -34,9 +34,10 @@ If you have any questions, comments or concerns regarding WhatWeb, please consul
 * Aggression
 * Performance & Stability
 * Optional Dependencies
+* Writing Plugins
+* Updates & Additional Information
 * Release History
 * Credits
-* Updates & Additional Information
 ---
 
 ## About WhatWeb
@@ -377,6 +378,21 @@ To enable character set detection and MongoDB logging install the rchardet gem.
   gem install rchardet
   cp plugins-disabled/charset.rb my-plugins/
 
+## Writing Plugins
+
+Plugins are easy to write. Start by going through the plugin tutorials in the [my-plugins/ folder](https://github.com/urbanadventurer/WhatWeb/tree/master/my-plugins).
+
+After progressing through the tutorials read through the Development section of the [wiki](https://github.com/urbanadventurer/WhatWeb/wiki/). 
+
+## Updates & Additional Information
+
+The WhatWeb development build features regular updates.
+
+* Check the development branches for unreleased updates.
+
+Browse the wiki for more documentation and advanced usage techniques.
+
+* Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
 
 ## Release History
 
@@ -459,15 +475,3 @@ Thank you to the following people who have contributed to WhatWeb.
 + @anozoozian
 
 Please let me know if I need to add any more names. 
-
-
-## Updates & Additional Information
-
-The WhatWeb development build features regular updates.
-
-* WhatWeb-dev:    https://github.com/urbanadventurer/WhatWeb/
-* WhatWeb-dev-unstable: https://github.com/bcoles/WhatWeb/
-
-Browse the wiki for more documentation and advanced usage techniques.
-
-* Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
