@@ -82,6 +82,37 @@ name "WordPress"
         end
       end
     end
+	
+	if @body =~ /(href|src)="[^"]*\/wp-includes\/[^"]*/
+      # is it a relative link or on the same site?
+      links= @body.scan(/(href|src)="([^"]*\/wp-includes\/[^"]*)/).map {|x| x[1].strip }.flatten
+      links.each do |thislink|
+        # join this link wtih target, check if host part is ==, if so, it's relative
+        joined_uri=URI.join(@base_uri.to_s,thislink)
+
+        if joined_uri.host == @base_uri.host
+          #puts "yes, #{joined_uri.to_s} is relative to #{@base_uri.to_s}"
+          m << {:name=>"Relative /wp-includes/ link" }
+          break
+        end
+      end
+    end
+
+    if @body =~ /(href|src)="[^"]*\/wp-json\/[^"]*/
+      # is it a relative link or on the same site?
+      links= @body.scan(/(href|src)="([^"]*\/wp-json\/[^"]*)/).map {|x| x[1].strip }.flatten
+      links.each do |thislink|
+        # join this link wtih target, check if host part is ==, if so, it's relative
+        joined_uri=URI.join(@base_uri.to_s,thislink)
+
+        if joined_uri.host == @base_uri.host
+          #puts "yes, #{joined_uri.to_s} is relative to #{@base_uri.to_s}"
+          m << {:name=>"Relative /wp-json/ link" }
+          break
+        end
+      end
+    end
+
     
     # Return passive matches
     m
