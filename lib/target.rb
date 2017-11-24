@@ -119,7 +119,13 @@ class Target
     begin
       # target is a file
       @body=File.open(@target).read
-
+      if String.method_defined?(:encode)
+          @body.encode!('UTF-16', 'UTF-8', :invalid => :replace, :replace => '')
+          @body.encode!('UTF-8', 'UTF-16')
+      else
+         ic = Iconv.new('UTF-8', 'UTF-8//IGNORE')
+         @body = ic.iconv(@body)
+      end
       # target is a http packet file
       if @body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
         # extract http header
