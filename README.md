@@ -11,7 +11,7 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 # WhatWeb - Next generation web scanner.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
-Version: 0.4.9. November 23rd, 2017
+Latest Release: v0.4.9. November 23rd, 2017
 License: GPLv2
 
 This product is subject to the terms detailed in the license agreement. For more information about WhatWeb visit:
@@ -22,17 +22,18 @@ This product is subject to the terms detailed in the license agreement. For more
 If you have any questions, comments or concerns regarding WhatWeb, please consult the documentation prior to contacting one of the developers. Your feedback is always welcome. 
 
 ##  Contents
-1.  About WhatWeb
-2.  Example Usage
-3.  Usage 
-4.  Logging & Output
-5.  Plugins
-6.  Aggression
-7.  Performance & Stability
-8.  Optional Dependencies
-9.  Release History
-10. Credits
-11. Updates & Additional Information
+
+* About WhatWeb
+* Example Usage
+* Usage 
+* Logging & Output
+* Plugins
+* Aggression
+* Performance & Stability
+* Optional Dependencies
+* Release History
+* Credits
+* Updates & Additional Information
 ---
 
 ## About WhatWeb
@@ -399,7 +400,7 @@ License: GPLv2
 
 ### DEVELOPERS
 
-+ Andrew Horton
++ Andrew Horton (@urbanadventurer)
 + Brendan Coles
 
 ### CONTRIBUTORS
@@ -470,5 +471,3 @@ The WhatWeb development build features regular updates.
 Browse the wiki for more documentation and advanced usage techniques.
 
 * Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
-
-
