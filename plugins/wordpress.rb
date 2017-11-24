@@ -4,6 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.7 # 2016-12-16 @anoroozian
+# Aggressive version detection matches 4.0 -> 4.0-beta4
+# Plugin format update
+##
+# Version 0.6 # 2012-03-05
+# Added regex version detection for /readme.html
+##
 # Version 0.5 # 2012-03-05
 # Added regex version detection for /readme.html
 ##
@@ -16,7 +23,7 @@
 Plugin.define do
 name "WordPress"
   author "Andrew Horton"
-  version "0.5"
+  version "0.7"
   description "WordPress is an opensource blogging system commonly used as a CMS."
   website "http://www.wordpress.org/"
   
