@@ -3,7 +3,10 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
-
+##
+# Version 0.9 # 2016-12-16 @anozoozian
+# Updated aggressive version detection for Joomla 3.1.4 -> 3.6.4
+##
 # Vesion 0.8 # Andrew
 #  Added aggressive match for /administrator/. Use match now
 ##
@@ -23,7 +26,7 @@
 Plugin.define do
 name "Joomla"
   author "Andrew Horton"
-  version "0.7"
+  version "0.9"
   description "Opensource CMS written in PHP. Aggressive version detection compares just 5 files, checks for version 1.0.0 up to 3.6.4"
   website "http://joomla.org"
   
