@@ -881,7 +881,8 @@ begin
 			when '--cookie-jar'
 				begin
 					raise if not File.readable?(arg)
-					# cookie-jar handling permits empty lines, trailing spaces, and semicolons on the end of the line are optional.
+					# Reads cookies in document.cookie format
+					# Permits empty lines and trailing spaces. Semicolons on the end of the line are optional.
 					$CUSTOM_HEADERS["Cookie"] = File.readlines(arg).delete_if { |line| line=~ /^$/ }.map {|line| line.strip!; line.sub(/([^;])$/,'\1;'); line += " " }.join
 				rescue
 					raise("Could not read cookies from #{arg}.")
