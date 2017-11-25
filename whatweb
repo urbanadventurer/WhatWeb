@@ -471,6 +471,7 @@ HTTP OPTIONS:
 AUTHENTICATION:
   --user, -u=<user:password>\tHTTP basic authentication.
   --cookie, -c=COOKIES\t\tUse cookies, e.g. 'name=value; name2=value2'.
+  --cookiejar=FILE\t\tRead cookies from a file.
 
 PROXY:
   --proxy\t\t\t<hostname[:port]> Set proxy hostname and port.
@@ -701,6 +702,7 @@ opts = GetoptLong.new(
       [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--header','-H', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--cookie','-c', GetoptLong::REQUIRED_ARGUMENT ],
+      [ '--cookie-jar', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--user','-u', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--debug', GetoptLong::NO_ARGUMENT ],
@@ -875,6 +877,14 @@ begin
 					$CUSTOM_HEADERS["Cookie"]=arg
 				rescue
 					raise("Cookie require a parameter, e.g. name=value; name2=value2")
+				end
+			when '--cookie-jar'
+				begin
+					raise if not File.readable?(arg)
+					# cookie-jar handling permits empty lines, trailing spaces, and semicolons on the end of the line are optional.
+					$CUSTOM_HEADERS["Cookie"] = File.readlines(arg).delete_if { |line| line=~ /^$/ }.map {|line| line.strip!; line.sub(/([^;])$/,'\1;'); line += " " }.join
+				rescue
+					raise("Could not read cookies from #{arg}.")
 				end
 			when '-u','--user'
 				$BASIC_AUTH_USER=arg.split(":").first
