@@ -7,6 +7,9 @@
 # TODO
 # add detection true/false for ViewState MAC and Encryption
 ##
+# Version 0.7 # 2016-08-19 # Bhavin Senjaliya
+# Add 4 cookies
+##
 # Version 0.6 # 2016-04-18 # Andrew Horton
 # Replaced passive function with match for:
 # 1. x-powered-by HTTP header
@@ -28,7 +31,7 @@
 Plugin.define do
 name "ASP_NET"
 author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
-version "0.6"
+version "0.7"
 description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world."
 website "http://www.asp.net/"
 
@@ -86,6 +89,11 @@ matches [
 	# AnonymousIdentificationModule
 	{ :module=>"AnonymousIdentificationModule", :search=>"headers[set-cookie]", :regexp => /^anonymousID=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/},
 	{ :module=>"AnonymousIdentificationModule", :search=>"headers[set-cookie]", :regexp => /^chkvalues=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/},
+
+	{ :search => "headers[set-cookie]", :regexp => /^__RequestVerificationToken/, :name=>"__RequestVerificationToken cookie" },
+	{ :search => "headers[set-cookie]", :regexp => /^.ASPXANONYMOUS/, :name=>".ASPXANONYMOUS cookie" },
+	{ :search => "headers[set-cookie]", :regexp => /^ASP.NET_SessionId/, :name=>"ASP.NET_SessionId cookie" },
+	{ :search => "headers[set-cookie]", :regexp => /^ASPSESSIONID/, :name=>"ASPSESSIONID cookie" },
 
 ]
 
