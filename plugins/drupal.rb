@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.4 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
+# Added SSESS cookie
+##
 # Version 0.3 # 2011-04-09 # Brendan Coles <bcoles@gmail.com>
 # Added aggressive md5 matches
 ##
@@ -13,7 +16,7 @@
 Plugin.define do
 name "Drupal"
   author "Andrew Horton"
-  version "0.3"
+  version "0.4"
   description "Drupal is an opensource CMS written in PHP."
   website "http://www.drupal.org"
   
@@ -49,6 +52,9 @@ name "Drupal"
              
              # SESS Drupal Cookie
              { :name=>"SESS Drupal Cookie", :certainty=>75, :search=>"headers[set-cookie]", :regexp=>/^SESS[a-z0-9]{32}=[a-z0-9]{32}/ },
+
+             # SESS Drupal Cookie
+             { :name=>"SSESS Drupal Cookie", :certainty=>75, :search=>"headers[set-cookie]", :regexp=>/^SSESS[a-z0-9]{32}=[a-z0-9]{32}/ },
              
              # Mobile Plugin Cookie
              { :module=>"Mobile Plugin", :name=>"Mobile Plugin Cookie", :search=>"headers[set-cookie]", :regexp=>/mobileplugin_group=/ },
