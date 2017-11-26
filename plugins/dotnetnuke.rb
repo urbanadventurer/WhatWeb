@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.7 # 2016-08-19 # Bhavin Senjaliya
+# added dnn_IsMobile cookie 
+##
 # Version 0.6 # 2014-xx-xx # Pedro Worcel <pedro.worcel@security-Assessment.com>
 # general things
 ##
@@ -23,7 +26,7 @@
 Plugin.define do
 name "DotNetNuke"
     author "Andrew Horton"
-    version "0.5"
+    version "0.7"
     description "DotNetNuke is an opensource CMS for Microsoft .Net. Passively detects modules and the copyright year."
     website "www.dotnetnuke.com"
 
@@ -58,27 +61,29 @@ name "DotNetNuke"
         {:name=>"VIEWSTATE contains DotNetNuke",
             :regexp=>/__VIEWSTATE" value="[^"]*RG90TmV0TnVrZ|RvdE5ldE51a2|3ROZXROdWtl/},
 
-            # Default div id
-            {:text=>'<div id="dnn_ctr'},
-            {:certainty=>75, :text=>'<div id="dnn_'},
+        # Default div id
+        {:text=>'<div id="dnn_ctr'},
+        {:certainty=>75, :text=>'<div id="dnn_'},
 
-            # Hidden input tag name and id # reliable
-            {:text=>'<input name="__dnnVariable" type="hidden" id="__dnnVariable"'},
+        # Hidden input tag name and id # reliable
+        {:text=>'<input name="__dnnVariable" type="hidden" id="__dnnVariable"'},
 
-            # Version Detection # Meta Generator
-            { :version=>/<META[^>]+NAME="GENERATOR" CONTENT="DotNetNuke ([\d\.]{1,10})">/i },
+        # Version Detection # Meta Generator
+        { :version=>/<META[^>]+NAME="GENERATOR" CONTENT="DotNetNuke ([\d\.]{1,10})">/i },
 
-            # Module Detection # modules are in the path /DesktopModules/xxx
-            { :module=>/(href|src)="\/DesktopModules\/([^\/]+)\//, :offset=>1 },
+        # Module Detection # modules are in the path /DesktopModules/xxx
+        { :module=>/(href|src)="\/DesktopModules\/([^\/]+)\//, :offset=>1 },
 
-            # Copyright year
-            { :string=>/<!-- DotNetNuke[^<]*<!-- Copyright \(c\) 2002-([0-9]{4})/ },
+        # Copyright year
+        { :string=>/<!-- DotNetNuke[^<]*<!-- Copyright \(c\) 2002-([0-9]{4})/ },
 
-            # DotNetNukeAnonymous Cookie # some sites have this cookie
-            { :search=>"headers[set-cookie]", :name=>"DotNetNukeAnonymous Cookie", :regexp=>/DotNetNukeAnonymous=/ },
+        # DotNetNukeAnonymous Cookie # some sites have this cookie
+        { :search=>"headers[set-cookie]", :name=>"DotNetNukeAnonymous Cookie", :regexp=>/DotNetNukeAnonymous=/ },
 
-            # /logo.gif
-            { :url=>"/logo.gif", :md5=>"6eef6123d31c45ace6b9003edb34772e" },
+        { :search => "headers[set-cookie]", :regexp => /dnn_IsMobile/, :name=>"dnn_IsMobile cookie" },
+
+        # /logo.gif
+        { :url=>"/logo.gif", :md5=>"6eef6123d31c45ace6b9003edb34772e" },
 
     ]
 
