@@ -1,15 +1,96 @@
 Version 0.5.0 - In development
 * Added 9 unit tests
 * Better error reporting in commandline options.
+* Updated README and converted to Markdown format.
+* Added loading cookies from a FILE with --cookie-jar=FILE in the document.cookie format
 * Plugins instance variable handling improvement. @Code0x58
 * Plugin name defined within plugin as variable. @Code0x58
 * Changed from functions to blocks for passive and aggressive plugins. @Code0x58
 * Changed plugin locking  @Code0x58
-* New plugins and plugin updates from @csalazar @golewski @Allactaga @lins05 @eliasdorneles @sigit dewanto @elcodigok @SlivTaMere @andreas-becker
-* Updated aggressive version detection for Joomla and WordPress @anozoozian
 * Bug fix - clean incorrent UTF-8 byte sequences when loading from file @dirtyfilthy
-* Updated README and converted to Markdown format
-* Added loading cookies from a FILE with --cookie-jar=FILE in the document.cookie format
+* Merged 31 new plugins by Bhavin Senjaliya and 22 plugin updates from the unofficial WhatWeb gem at https://rubygems.org/gems/whatweb/
+
+* 48 New plugins
+	1n1-hosting.rb - Bhavin Senjaliya
+	amazon-elastic-load-balancer.rb - Bhavin Senjaliya
+	azure.rb - Bhavin Senjaliya
+	bad-behaviour-anti-spam-plugin.rb - Bhavin Senjaliya
+	clickmotive.rb - Bhavin Senjaliya
+  cdk-connected-website.rb - Bhavin Senjaliya
+  craftcms.rb - Bhavin Senjaliya
+	f5-big-ip.rb - Bhavin Senjaliya
+	hubspot.rb - Bhavin Senjaliya
+	jw-player.rb - Bhavin Senjaliya
+	laravel.rb - Bhavin Senjaliya
+	mezzanine.rb - Bhavin Senjaliya
+	moonfruit.rb - Bhavin Senjaliya
+	netsuite.rb - Bhavin Senjaliya
+	nop-commerce.rb - Bhavin Senjaliya
+	pyro-cms.rb - Bhavin Senjaliya
+	sailsjs.rb - Bhavin Senjaliya
+	schoolwires-centricity.rb - Bhavin Senjaliya
+	shopify.rb - Bhavin Senjaliya
+	sitecore.rb - Bhavin Senjaliya
+	square-space.rb - Bhavin Senjaliya
+	tealeaf.rb - Bhavin Senjaliya
+	teleflora.rb - Bhavin Senjaliya
+	unbounce.rb - Bhavin Senjaliya
+	website-tonight.rb - Bhavin Senjaliya
+	webtrends.rb - Bhavin Senjaliya
+	weebly.rb - Bhavin Senjaliya
+	wix.rb - Bhavin Senjaliya
+	wordfence.rb - Bhavin Senjaliya
+	world-now.rb - Bhavin Senjaliya
+	wpml.rb - Bhavin Senjaliya
+	bigcommerce.rb - Claudio Salazar (@csalazar)
+	demandware.rb - Claudio Salazar (@csalazar)
+	ocp.rb - Claudio Salazar (@csalazar)
+	aspforum.rb - Mateusz Golewski (@golewski)
+	lithium.rb - Mateusz Golewski (@golewski)
+	stackexchange.rb - Mateusz Golewski (@golewski)
+	xenforo.rb - Mateusz Golewski (@golewski)
+	kinja.rb - Sigit Dewanto
+	trbas.rb - Sigit Dewanto
+	advance_digitalmg.rb - Elias Dorneles (@eliasdorneles)
+	newbay_media.rb - Elias Dorneles (@eliasdorneles)
+	gannett.rb - Eugene Amirov (@Allactaga)
+	yaf.rb - Eugene Amirov (@Allactaga)
+	blox.rb - Shuai Lin (@lins05)
+	mcclatchy_interactive.rb - Shuai Lin (@lins05)
+	tribune.rb - Shuai Lin (@lins05)
+	genexus.rb - Daniel Maldonado (@elcodigok)
+
+* 29 plugins updated
+	3dcart.rb - Bhavin Senjaliya 
+	asp-net.rb - Bhavin Senjaliya
+	big-commerce.rb  - Bhavin Senjaliya
+	blox.rb - Bhavin Senjaliya
+	demandware.rb - Bhavin Senjaliya
+	django.rb  - Bhavin Senjaliya
+	dot-cms.rb - Bhavin Senjaliya
+	DotNetNuke.rb - Bhavin Senjaliya
+	drupal.rb - Bhavin Senjaliya
+	ektron.rb - Bhavin Senjaliya
+	expression-engine.rb  - Bhavin Senjaliya
+	incapsula.rb - Bhavin Senjaliya
+	kentico.rb - Bhavin Senjaliya
+	magento.rb  - Bhavin Senjaliya
+	nitix-netscaler.rb - Bhavin Senjaliya
+	piwik.rb  - Bhavin Senjaliya
+	prestashop.rb  - Bhavin Senjaliya
+	ruby-on-rails.rb  - Bhavin Senjaliya
+	symfony.rb  - Bhavin Senjaliya
+  blox.rb - Bhavin Senjaliya
+	typo3.rb  - Bhavin Senjaliya
+	vbulletin.rb - Bhavin Senjaliya
+	xenforo.rb - Bhavin Senjaliya
+	smf.rb - Claudio Salazar (@csalazar)
+	vbulletin.rb - Claudio Salazar (@csalazar)
+	bbpress.rb - Shuai Lin (@lins05)
+	wordpress.rb - @SlivTaMere
+	joomla.rb (aggressive version detection) - @anozoozian
+	wordpress.rb (aggressive version detection) - @anozoozian
+	+ 30 plugins updated by Andrew Horton (@urbanadventurer)
 
 Version 0.4.9 November 23rd 2017
 * Added unit testing with rake @bcoles
