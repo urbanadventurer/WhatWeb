@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-08-19 # "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>" 
+# Added affiliate cookie
+##
 # Version 0.2 Andrew Horton
 # Added website parameter
 ##
@@ -12,7 +15,7 @@
 Plugin.define do
 name "3dcart"
 author "Napz <napzs@rocketmail.com>"
-version "0.2"
+version "0.3"
 description "3dcart - The 3dcart Shopping Cart Software is a complete ecommerce solution for anyone."
 website "http://www.3dcart.com/"
 
@@ -31,7 +34,8 @@ matches [
 
 { :search=>"headers[set-cookie]", :regexp=>/3dvisit/ },
 
-]
+{ :search => "headers[set-cookie]", :regexp => /^affiliate\s/, :name=>"affiliate cookie", :certainty => 25 },
 
+]
 
 end
