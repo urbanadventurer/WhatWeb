@@ -9,7 +9,7 @@
 ##
 
 Plugin.define do
-name "new-AmazonElasticLoadBalancer"
+name "AmazonElasticLoadBalancer"
 author "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>" # 2016-08-19
 version "0.2"
 description "Amazon Elastic Load Balancer"
