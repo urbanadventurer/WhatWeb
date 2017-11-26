@@ -4,10 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
+# Added ^request_method cookie
+##
+
 Plugin.define do
 name "Ruby-on-Rails"
 author "Andrew Horton"
-version "0.1"
+version "0.2"
 description "Ruby on rails is an MVC web application framework written in the ruby language. Doesn't detect all RoR sites"
 website "http://www.rubyonrails.org."
 
@@ -51,6 +55,9 @@ matches [
 
 # Error Page # div id="session_dump"
 { :text=>'<div id="session_dump" style="display:none"><pre class=\'debug_dump\'>---' },
+
+# Cookie
+{ :search => "headers[set-cookie]", :regexp => /^request_method/, :name=>"request_method cookie" },
 
 ]
 

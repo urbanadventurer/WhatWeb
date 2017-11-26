@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.5 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
+# Added cookies
+##
 # Version 0.4 # 2014-01-07 @csalazar
 # 5 new version detection matches
 ##
@@ -15,7 +18,7 @@
 Plugin.define do
 name "VBulletin"
 author "Andrew Horton"
-version "0.4"
+version "0.5"
 description "VBulletin is a PHP forum."
 
 
@@ -44,6 +47,12 @@ matches [
 {:version=>/\/vbulletin\/clientscript\/guestforum\.js\?v=(\d+)/,  :name=>"version" },
 {:version=>/clientscript\/vbulletin_global\.js\?v=(\d+)/,  :name=>"version" },
 {:version=>/\/vbulletin_read_marker\.js\?v=(\d+)/,  :name=>"version" },
+
+# Cookie
+{ :search => "headers[set-cookie]", :regexp => /bblastactivity/, :name=>"bblastactivity cookie" },
+{ :search => "headers[set-cookie]", :regexp => /bblastvisit/, :name=>"bblastvisit cookie" },
+{ :search => "headers[set-cookie]", :regexp => /bbsessionhash/, :name=>"bbsessionhash cookie" },
+
 
 ]
 

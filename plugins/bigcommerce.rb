@@ -6,7 +6,6 @@
 #
 # Version 0.3 # 2017-11-27 # Andrew Horton
 # Update website and adjust certainty
-#
 ## 
 # Version 0.2 # 2016-08-19 # Bhavin Senjaliya
 # Add 3 cookies

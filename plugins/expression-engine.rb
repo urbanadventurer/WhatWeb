@@ -4,6 +4,9 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.3 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
+# Removed passive block. Added 3 new cookies
+##
 # Version 0.2
 # removed :name and :certainty=>100
 ##
@@ -11,7 +14,7 @@ Plugin.define do
 name "ExpressionEngine"
 author "Andrew Horton"
 version "0.2"
-description "ExpressionEngine is CMS written in PHP. Free and commercial versions"
+description "ExpressionEngine is CMS written in PHP. Free and commercial versions."
 website "http://expressionengine.com"
 
 # Dorks #
@@ -19,23 +22,24 @@ dorks [
 '"Powered by ExpressionEngine"'
 ]
 
-
-
 #Powered by <a href="http://expressionengine.com/">ExpressionEngine</a>   uncommon
 
 matches [
-{:regexp=>/owered by <a href="http:\/\/expressionengine.com\/">ExpressionEngine<\/a>/}
+
+	{:regexp=>/owered by <a href="http:\/\/expressionengine.com\/">ExpressionEngine<\/a>/},
+
+	# Cookie 
+	{ :search => "headers[set-cookie]", :regexp => /^exp_last_visit/, :name=>"exp_last_visit cookie" },
+	{ :search => "headers[set-cookie]", :regexp => /^exp_last_activity/, :name=>"exp_last_activity cookie" },
+	{ :search => "headers[set-cookie]", :regexp => /^exp_tracker/, :name=>"exp_tracker cookie" },
+	{ :search => "headers[set-cookie]", :regexp => /^exp_csrf_token/, :name=>"exp_csrf_token cookie" },
+
 ]
 
 #Set-Cookie: exp_last_visit=959242411; expires=Mon, 23-May-2011 03:13:31 GMT; path=/
 #Set-Cookie: exp_last_activity=1274602411; expires=Mon, 23-May-2011 03:13:31 GMT; path=/
 #Set-Cookie: exp_tracker=a%3A1%3A%7Bi%3A0%3Bs%3A5%3A%22index%22%3B%7D; path=/
 
-passive do
-        m=[]        
-        m << {:name=>"exp_last_visit cookie" } if @headers["set-cookie"] =~ /exp_last_visit=/
-        m
-end
 
 # these plugins only identify the system. they don't find out the version, etc
 aggressive do

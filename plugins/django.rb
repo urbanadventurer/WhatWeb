@@ -4,16 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
+# Version 0.2 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
+# Added and updated cookies
+##
+#
 Plugin.define do
 name "Django"
 author "Brendan Coles <bcoles@gmail.com>" # 2012-02-27
-version "0.1"
+version "0.2"
 description "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 website "https://www.djangoproject.com/"
 
 # ShodanHQ results as at 2012-02-27 #
 # 878 for WSGIServer Python
-
 
 
 # Matches #
@@ -40,24 +43,12 @@ matches [
 # Login Page
 { :certainty=>75, :text=>'<input type="hidden" name="this_is_the_login_form" value="1" />' },
 
+# Cookie 
+{ :search => "headers[set-cookie]", :regexp => /csrftoken/i, :name=>"csrftoken cookie" },
+{ :search => "headers[set-cookie]", :regexp => /django_/, :name=>"django_ cookie" },
+
 ]
 
-# Passive #
-  passive do
-    m=[]
-
-    unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?
-
-      # Extract cookie names
-      @headers["set-cookie"].split("\n").each do |cookie|
-        m << { :string=>cookie.split("=")[0], :certainty=>75 } if cookie =~ /csrftoken=/
-      end
-
-    end
-
-    # Return passive match
-    m
-  end
 
 end
 
