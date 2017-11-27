@@ -15,7 +15,7 @@ description "Mezzanine is a CMS built using Django."
 website "http://mezzanine.jupo.org/"
 
 # Matches #
-matches []
+matches [
 
 	# Cookie 
 	{ :regexp => /mezzanine_login_interface/, :name=>"Admin Login Page " },
