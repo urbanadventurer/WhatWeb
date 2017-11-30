@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 =begin
 
-.$$$     $.                                   .$$$     $.         
-$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
+.$$$     $.                                   .$$$     $.
+$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$.
 $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
 $ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
 $. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
@@ -35,7 +35,7 @@ along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
 
-#require 'profile' 
+#require 'profile'
 require 'getoptlong'
 require 'pp'
 require 'net/http'
@@ -65,7 +65,7 @@ end
 # Ruby Version Compatability
 if RUBY_VERSION =~ /^1\.9/
 	require 'digest/md5'
-    require 'lib/extend-http_ruby1.9.rb'   
+    require 'lib/extend-http_ruby1.9.rb'
 
 elsif RUBY_VERSION =~ /^2\./
 	require 'digest/md5'
@@ -101,18 +101,18 @@ def gem_available_new_rubygems?(gemname)
 	begin
 		true if Gem::Specification.find_by_name(gemname)
 	rescue LoadError
-		false 
+		false
 	end
 end
 
 # requires gem "mongoid", "~> 2.0"
-gems = %w|json mongo rchardet |
+gems = %w|json mongo rchardet simpleidn|
 
 gems.each do |thisgem|
 	begin
 		require 'rubygems' # rubygems is optional
 		if gem_available?(thisgem) #
-			require thisgem			
+			require thisgem
 		else
 end
 	rescue LoadError
@@ -172,7 +172,7 @@ def make_tag_pattern(b)
 	# don't bother with  !--, --> or noscript and /noscript
 	inscript = false;
 
-	b.scan(/<([^\s>]*)/).flatten.map {|x| 
+	b.scan(/<([^\s>]*)/).flatten.map {|x|
 			x.downcase!
 			r = nil
 			r = x if inscript == false
@@ -203,14 +203,14 @@ end
 # some plugins want a random string in URLs
 def randstr
 	rand(36 ** 8).to_s(36)
-end 
+end
 
 
 def match_ghdb(ghdb, body, meta, status, base_uri)
 	# this could be made faster by creating code to eval once for each plugin
 
 	pp "match_ghdb", ghdb if $verbose > 2
-	
+
 	# take a GHDB string and turn it into code to be evaluated
 	matches = [] # fill with true or false. succeeds if all true
 	s = ghdb
@@ -246,23 +246,23 @@ def match_ghdb(ghdb, body, meta, status, base_uri)
 	# split the remaining words except those enclosed in quotes, remove the quotes and sort them
 
 	remaining_words = s.scan( /([^ "]+)|("[^"]+")/i ).flatten.compact.each { |w| w.delete!('"') }.sort.uniq
-	
+
 	pp "Remaining GHDB words", remaining_words if $verbose > 2
-	
-	remaining_words.each do |w| 	
+
+	remaining_words.each do |w|
 		# does it start with a - ?
 		if w[0..0] == '-'
 			# reverse true/false if it begins with a -
-			matches << (( body =~ /#{Regexp.escape(w[1..-1])}/i ).nil? ? true : false) 
+			matches << (( body =~ /#{Regexp.escape(w[1..-1])}/i ).nil? ? true : false)
 		else
 			w = w[1..-1] if w[0..0] == '+' # if it starts with +, ignore the 1st char
 			matches << (( body =~ /#{Regexp.escape(w)}/i ).nil? ? false : true)
-		end	
+		end
 	end
 
 	pp matches if $verbose > 2
 
-	# if all matcbhes are true, then true	
+	# if all matcbhes are true, then true
 	if matches.uniq == [true]
 		true
 	else
@@ -292,14 +292,14 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 		end
 		range
 	end.compact.flatten
-	
+
 	url_list = url_list.select {|x| not x =~ /^[0-9\.\-*\/]+$/ or x =~ /^[\d\.]+$/ }
 	url_list += genrange unless genrange.empty?
-     
+
 
 	#make urls friendlier, test if it's a file, if test for not assume it's http://
 	# http, https, ftp, etc
-	url_list = url_list.map do |x|   
+	url_list = url_list.map do |x|
 		if File.exists?(x)
 			x
 		else
@@ -313,9 +313,27 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 			if x =~ (/^[a-z]+:\/\//)
 				x
 			else
-				x.sub(/^/,"http://")
+				x = x.sub(/^/,"http://")
 			end
-		end	
+
+			#IDN domains support
+			if $IDN
+				# removed the http:// from "x" because SimpleIDN does not expect the http://
+        regex_protocol = /^[a-z]+:\/\//
+        url_preffix = x[regex_protocol]
+        stripped_uri = x.sub(regex_protocol, '')
+        
+        # removed the port because SimpleIDN does not expect :80
+        regex_port = /:[0-9]+$/
+        port = x[regex_port]
+        stripped_uri = stripped_uri.sub(regex_port, '') if port
+        
+				domain = SimpleIDN.to_ascii(stripped_uri)
+				x = domain.sub(/^/, url_preffix) 
+        x = x.sub(/$/, port) if port
+			end
+			x
+		end
 	end
 
 	url_list = url_list.flatten #.sort.uniq
@@ -374,7 +392,7 @@ def word_wrap( s,width=10 )
 				ret << line
 				line = x + " "
 			end
-		end		
+		end
  	}
 	ret << line unless line.empty?
 
@@ -386,7 +404,7 @@ end
 def run_plugins(target)
 		results=[]
 		$plugins_to_use.each do |name,plugin|
-			begin			
+			begin
 				while plugin.locked?
 					#sleep 0.1
 					puts "Waiting for plugin:#{name} to unlock" if $verbose > 2
@@ -395,8 +413,8 @@ def run_plugins(target)
 				plugin.lock
 
 				plugin.init(target)
-				
-				# eXecute the plugin			
+
+				# eXecute the plugin
 				#start_time = Time.now
 				result=plugin.x
 				#end_time = Time.now
@@ -419,8 +437,8 @@ end
 
 def usage_full()
 puts"
-.$$$     $.                                   .$$$     $.         
-$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
+.$$$     $.                                   .$$$     $.
+$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$.
 $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
 $ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
 $. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
@@ -436,7 +454,7 @@ puts
 puts "Usage: whatweb [options] <URLs>"
 puts "
 TARGET SELECTION:
-  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, 
+  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses,
   \t\t\t\tfilenames, or nmap-format IP address ranges.
   --input-file=FILE, -i\t\tRead targets from a file. You can pipe
 \t\t\t\thostnames or URLs directly with -i /dev/stdin.
@@ -451,17 +469,17 @@ AGGRESSION:
 The aggression level controls the trade-off between speed/stealth and
 reliability.
   --aggression, -a=LEVEL\tSet the aggression level. Default: 1.
-  1. Stealthy\t\t\tMakes one HTTP request per target and also 
+  1. Stealthy\t\t\tMakes one HTTP request per target and also
   \t\t\t\tfollows redirects.
   3. Aggressive\t\t\tIf a level 1 plugin is matched, additional
   \t\t\t\trequests will be made.
-  4. Heavy\t\t\tMakes a lot of HTTP requests per target. URLs 
+  4. Heavy\t\t\tMakes a lot of HTTP requests per target. URLs
   \t\t\t\tfrom all plugins are attempted.
 
 HTTP OPTIONS:
   --user-agent, -U=AGENT\tIdentify as AGENT instead of WhatWeb/#{$VERSION}.
-  --header, -H\t\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a 
-\t\t\t\tdefault header will replace it. Specifying an 
+  --header, -H\t\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a
+\t\t\t\tdefault header will replace it. Specifying an
 \t\t\t\tempty value, e.g. \"User-Agent:\" will remove it.
   --follow-redirect=WHEN\tControl when to follow redirects. WHEN may be
 \t\t\t\t`never', `http-only', `meta-only', `same-site',
@@ -483,16 +501,16 @@ PLUGINS:
 \t\t\t\tOptionally search with keywords in a comma
 \t\t\t\tdelimited list.
   --search-plugins=STRING\tSearch plugins for a keyword.
-  --plugins, -p=LIST\t\tSelect plugins. LIST is a comma delimited set 
+  --plugins, -p=LIST\t\tSelect plugins. LIST is a comma delimited set
 \t\t\t\tof selected plugins. Default is all.
-\t\t\t\tEach element can be a directory, file or plugin 
+\t\t\t\tEach element can be a directory, file or plugin
 \t\t\t\tname and can optionally have a modifier, +/-.
 \t\t\t\tExamples: +/tmp/moo.rb,+/tmp/foo.rb
 \t\t\t\ttitle,md5,+./plugins-disabled/
 \t\t\t\t./plugins-disabled,-md5
 \t\t\t\t-p + is a shortcut for -p +plugins-disabled.
 
-  --grep, -g=STRING\t\tSearch for STRING in HTTP responses. Reports 
+  --grep, -g=STRING\t\tSearch for STRING in HTTP responses. Reports
 \t\t\t\twith a plugin named Grep.
   --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
 \t\t\t\tExamples: \":text=>'powered by abc'\"
@@ -503,9 +521,9 @@ PLUGINS:
   --dorks=PLUGIN\t\tList Google dorks for the selected plugin.
 
 OUTPUT:
-  --verbose, -v\t\t\tVerbose output includes plugin descriptions. 
+  --verbose, -v\t\t\tVerbose output includes plugin descriptions.
 \t\t\t\tUse twice for debugging.
-  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be 
+  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be
 \t\t\t\t`never', `always', or `auto'.
   --quiet, -q\t\t\tDo not display brief logging to STDOUT.
   --no-errors\t\t\tSuppress error messages.
@@ -573,8 +591,8 @@ end
 
 def usage_short()
 puts"
-.$$$     $.                                   .$$$     $.         
-$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
+.$$$     $.                                   .$$$     $.
+$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$.
 $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
 $ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
 $. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
@@ -590,13 +608,13 @@ puts
 puts "Usage: whatweb [options] <URLs>"
 puts "
 TARGET SELECTION:
-  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, or 
+  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, or
   \t\t\t\tnmap-format IP ranges.
   --input-file=FILE, -i\t\tRead targets from a file.
 
 AGGRESSION:
   --aggression, -a=LEVEL\tSet the aggression level. Default: 1.
-  1. Stealthy\t\t\tMakes one HTTP request per target and also 
+  1. Stealthy\t\t\tMakes one HTTP request per target and also
   \t\t\t\tfollows redirects.
   3. Aggressive\t\t\tIf a level 1 plugin is matched, additional
   \t\t\t\trequests will be made.
@@ -609,11 +627,11 @@ PLUGINS:
   --grep, -g=STRING\t\tSearch for STRING in HTTP responses. Reports
 \t\t\t\twith a plugin named Grep.
 OUTPUT:
-  --verbose, -v\t\t\tVerbose output includes plugin descriptions. 
+  --verbose, -v\t\t\tVerbose output includes plugin descriptions.
 \t\t\t\tUse twice for debugging.
-  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be 
+  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be
 \t\t\t\t`never', `always', or `auto'.
- 
+
 HELP & MISCELLANEOUS:
   --short-help\t\t\tThis short usage help.
   --help, -h\t\t\tComplete usage help.
@@ -633,7 +651,7 @@ EXAMPLE USAGE:
   ./whatweb -i plugin-development/alexa-top-100.txt \\
   --url-suffix /crossdomain.xml -p crossdomain_xml
 
-  Note: This is the short usage help. 
+  Note: This is the short usage help.
   For the complete usage help use -h or --help.\n"
 
 puts
@@ -643,7 +661,7 @@ end
 
 if ARGV.size==0 # faster usage info
 	usage_short
-	exit 
+	exit
 end
 
 plugin_selection=nil
@@ -659,11 +677,11 @@ elastic[:use_elastic_log]=false
 # optional arguments work badly with URLs
 opts = GetoptLong.new(
       [ '-h', '--help', GetoptLong::NO_ARGUMENT ],
-      [ '--short-help', GetoptLong::NO_ARGUMENT ],      
+      [ '--short-help', GetoptLong::NO_ARGUMENT ],
       [ '-v','--verbose', GetoptLong::NO_ARGUMENT ],
       [ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
       [ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-I','--info-plugins','--search-plugins', GetoptLong::OPTIONAL_ARGUMENT ],            
+      [ '-I','--info-plugins','--search-plugins', GetoptLong::OPTIONAL_ARGUMENT ],
       [ '--dorks', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
@@ -705,10 +723,11 @@ opts = GetoptLong.new(
       [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
       [ '--debug', GetoptLong::NO_ARGUMENT ],
       [ '--version', GetoptLong::NO_ARGUMENT ],
-      [ '-q','--quiet', GetoptLong::NO_ARGUMENT]
+      [ '-q','--quiet', GetoptLong::NO_ARGUMENT],
+      [ '--idn', GetoptLong::NO_ARGUMENT]
     )
 
-begin    
+begin
 	opts.each do |opt, arg|
 		case opt
 			when '-i','--input-file'
@@ -719,7 +738,7 @@ begin
 				exit
 			when '-p','--plugins'
 				plugin_selection=arg
-			when '-I','--info-plugins'                
+			when '-I','--info-plugins'
 				PluginSupport.load_plugins
 				PluginSupport.plugin_info(arg.split(","))
 				exit
@@ -831,7 +850,7 @@ begin
 			when '--proxy'
 				$USE_PROXY=true
 				$PROXY_HOST = arg.to_s.split(":")[0]
-				$PROXY_PORT = arg.to_s.split(":")[1].to_i if arg.to_s.include?(":")		
+				$PROXY_PORT = arg.to_s.split(":")[1].to_i if arg.to_s.include?(":")
 			when '--proxy-user'
 				$PROXY_USER=arg.to_s.split(":")[0]
 				$PROXY_PASS=arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
@@ -847,7 +866,7 @@ begin
 				use_custom_plugin=true if PluginSupport.custom_plugin(arg)
 			when '--grep','-g'
 				use_custom_grep_plugin=true if PluginSupport.custom_plugin(arg,"grep")
-			when '--follow-redirect'	
+			when '--follow-redirect'
 				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
 					$FOLLOW_REDIRECT=arg.downcase
 				else
@@ -855,9 +874,9 @@ begin
 				end
 			when '--max-redirects'
 				$MAX_REDIRECTS=arg.to_i
-			when '--open-timeout'					
+			when '--open-timeout'
 				$HTTP_OPEN_TIMEOUT=arg.to_i
-			when '--read-timeout'					
+			when '--read-timeout'
 				$HTTP_READ_TIMEOUT=arg.to_i
 			when '--wait'
 				$WAIT = arg.to_i
@@ -881,6 +900,13 @@ begin
 				$BASIC_AUTH_PASS=arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
 			when '--debug'
 				$WWDEBUG = true
+      when '--idn'
+        if defined?(SimpleIDN)
+          $IDN = true
+        else
+          raise("Sorry. The SimpleIDN gem is required to support IDN domain names.
+Run `gem install simpleidn`.")
+      end
 			when '--short-help'
 				usage_short
 				exit
@@ -893,7 +919,7 @@ begin
 				puts "WhatWeb version #{$VERSION} ( http://www.morningstarsecurity.com/research/whatweb/ )"
 				exit
 		end
-	end		
+	end
 rescue Errno::EPIPE
 	exit
 rescue StandardError, GetoptLong::Error => err
@@ -924,7 +950,7 @@ if $plugins_to_use.size == 0
 end
 
 # optimise plugins
-PluginSupport.precompile_regular_expressions 
+PluginSupport.precompile_regular_expressions
 
 ### OUTPUT
 output_list << OutputBrief.new unless $QUIET or $verbose > 0 # by default output brief
@@ -934,7 +960,7 @@ output_list << OutputVerbose.new() if $verbose > 0 # full output if -v
 ## output dependencies
 if mongo[:use_mongo_log]
 	if $plugins_to_use.map { |a,b| a }.include?("Charset")
-		output_list << OutputMongo.new(mongo) 
+		output_list << OutputMongo.new(mongo)
 	else
 		error("MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/charset.rb to enable it.")
 		exit
