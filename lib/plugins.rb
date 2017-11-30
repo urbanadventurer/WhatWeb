@@ -317,7 +317,7 @@ class PluginSupport
         matches.each do |thismatch|
           unless thismatch[:regexp].nil?
             #pp thismatch
-            thismatch[:regexp_compiled]=Regexp.new(thismatch[:regexp])
+            thismatch[:regexp_compiled] = Regexp.new(thismatch[:regexp])
           end
 
           [:version, :os, :string, :account, :model, :firmware, :module, :filepath].each do |label|
@@ -530,7 +530,7 @@ does not work correctly with mixed plugin names and files
     Plugin.registered_plugins.sort_by { |a, b| a.downcase }.each do |n, p|
       # output fits more description onto a line
       line = "#{n} - "
-      line += p.description.delete("\r\n") if p.description
+      line += p.description.delete("\r\n") unless p.description.empty?
 
       if line.size > terminal_width - 1
         line = line[0..terminal_width - 4] + "..."
@@ -555,7 +555,7 @@ does not work correctly with mixed plugin names and files
     Plugin.registered_plugins.each do |n, p|
       if n.downcase == plugin_name.downcase
         pp "Google Dorks for #{n}:" if $verbose > 2
-        dorks << p.dorks unless p.dorks.nil?
+        dorks << p.dorks unless p.dorks.empty?
       end
     end
 
@@ -595,33 +595,41 @@ does not work correctly with mixed plugin names and files
             puts line
           end
         else
-          print "Description:".ljust(16) + "<Not defined>"
+          puts "Description:".ljust(16) + "<Not defined>"
         end
 
         puts "Website:".ljust(16) + (plugin.website || "<Not defined>")
         puts
-        puts "Authors:".ljust(16) + (plugin.authors.join(", ") || "<Not defined>")
+
+        authors = (unless plugin.authors.empty?
+          plugin.authors.join(", ") 
+        else
+          "<Not defined>"
+        end) 
+        puts "Authors:".ljust(16) + authors
+        
         puts "Version:".ljust(16) + (plugin.version || "<Not defined>")
         puts
         print "Features:".ljust(16)
-        print "[#{defined?(plugin.matches) and plugin.matches ? "Yes" : "No"}]".ljust(7) + "Pattern Matching"
 
-        if defined?(plugin.matches) and plugin.matches
+        print "[#{plugin.matches.any? ? "Yes" : "No"}]".ljust(7) + "Pattern Matching"
+
+        if plugin.matches.any?
           puts " (#{plugin.matches.size})"
         else
           puts
         end
 
         puts " " * 16 + "[#{plugin.version_detection? ? "Yes" : "No" }]".ljust(7) + "Version detection from pattern matching"
-        puts " " * 16 + "[#{defined?(plugin.passive) ? "Yes" : "No"}]".ljust(7) + "Function for passive matches"
-        puts " " * 16 + "[#{defined?(plugin.aggressive) ? "Yes" : "No"}]".ljust(7) + "Function for aggressive matches"
+        puts " " * 16 + "[#{plugin.passive ? "Yes" : "No"}]".ljust(7) + "Function for passive matches"
+        puts " " * 16 + "[#{plugin.aggressive ? "Yes" : "No"}]".ljust(7) + "Function for aggressive matches"
 
         count[:version_detection] += 1 if plugin.version_detection?
-        count[:passive] += 1 if defined?(plugin.passive)
-        count[:aggressive] += 1 if defined?(plugin.aggressive)
+        count[:passive] += 1 if plugin.passive
+        count[:aggressive] += 1 if plugin.aggressive
 
-        print " " * 16 + "[#{plugin.dorks ? "Yes" : "No"}]".ljust(7) + "Google Dorks"
-        if plugin.dorks
+        print " " * 16 + "[#{plugin.dorks.any? ? "Yes" : "No"}]".ljust(7) + "Google Dorks"
+        unless plugin.dorks.empty?
           puts " (#{plugin.dorks.size})"
         else
           puts
@@ -629,7 +637,7 @@ does not work correctly with mixed plugin names and files
 
         puts
 
-        if plugin.dorks
+        unless plugin.dorks.empty?
           puts "Google Dorks:"
           plugin.dorks.each_with_index do |dork, index|
             puts "[#{index + 1 }] #{dork}"
@@ -638,15 +646,9 @@ does not work correctly with mixed plugin names and files
           count[:dorks] += plugin.dorks.size
         end
 
-        if defined?(plugin.matches) and plugin.matches
-          #puts "Pattern Matching:"
-          #plugin.matches.each_with_index do |match, index|
-          #  puts "[#{index + 1 }] #{match}"
-          #end
-          #puts
+        if plugin.matches
           count[:matches] += plugin.matches.size
         end
-
         count[:plugins] += 1
       end
     end

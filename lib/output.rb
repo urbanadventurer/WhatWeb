@@ -244,11 +244,11 @@ class OutputVerbose < Output
             @f.puts "\t" + coloured(pr.inspect.to_s,"dark_blue") if $verbose > 1
           end
 
-          if defined? Plugin.registered_plugins[plugin_name].aggressive
+          if Plugin.registered_plugins[plugin_name].aggressive
              @f.puts "\tAggressive function available (check plugin file or details)."
           end
 
-          if Plugin.registered_plugins[plugin_name].dorks
+          if Plugin.registered_plugins[plugin_name].dorks.any?
             @f.puts "\tGoogle Dorks".ljust(13)+ ": (#{Plugin.registered_plugins[plugin_name].dorks.size})"
           end
 
