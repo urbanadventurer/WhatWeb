@@ -22,6 +22,11 @@ group :rchardet do
   #gem 'rchardet'
 end
 
+# IDN domain names support - optional
+group :idn do
+  gem 'addressable'
+end
+
 # Development dependencies required for tests
 group :test do
   gem 'rake'

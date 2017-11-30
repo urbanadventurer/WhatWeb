@@ -106,7 +106,7 @@ def gem_available_new_rubygems?(gemname)
 end
 
 # requires gem "mongoid", "~> 2.0"
-gems = %w|json mongo rchardet simpleidn|
+gems = %w|json mongo rchardet addressable|
 
 gems.each do |thisgem|
 	begin
@@ -318,24 +318,12 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 
 			#IDN domains support
 			if $IDN
-				# removed the http:// from "x" because SimpleIDN does not expect the http://
-        regex_protocol = /^[a-z]+:\/\//
-        url_preffix = x[regex_protocol]
-        stripped_uri = x.sub(regex_protocol, '')
-        
-        # removed the port because SimpleIDN does not expect :80
-        regex_port = /:[0-9]+$/
-        port = x[regex_port]
-        stripped_uri = stripped_uri.sub(regex_port, '') if port
-        
-				domain = SimpleIDN.to_ascii(stripped_uri)
-				x = domain.sub(/^/, url_preffix) 
-        x = x.sub(/$/, port) if port
+        domain = Addressable::URI.parse(x)
+        x = domain.normalize.to_s
 			end
 			x
 		end
 	end
-
 	url_list = url_list.flatten #.sort.uniq
 end
 
@@ -901,11 +889,11 @@ begin
 			when '--debug'
 				$WWDEBUG = true
       when '--idn'
-        if defined?(SimpleIDN)
+        if defined?(Addressable)
           $IDN = true
         else
-          raise("Sorry. The SimpleIDN gem is required to support IDN domain names.
-Run `gem install simpleidn`.")
+          raise("Sorry. The addressable gem is required to support IDN domain names.
+Run `gem install addressable`.")
       end
 			when '--short-help'
 				usage_short
