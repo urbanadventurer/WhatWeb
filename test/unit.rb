@@ -208,7 +208,7 @@ class WhatWebTest < Minitest::Test
     assert_match %r{rm -rf}, res
   end
 
-   def test_url_prefix
+  def test_url_prefix
     p = IO.popen(['./whatweb',
       '--color', 'never',
       '--url-prefix','https://',
