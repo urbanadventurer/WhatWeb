@@ -418,7 +418,7 @@ end
 
 
 def usage_full()
-puts"
+puts blue("
 .$$$     $.                                   .$$$     $.         
 $$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
 $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
@@ -428,7 +428,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-"
+")
 
 puts "WhatWeb - Next generation web scanner version #{$VERSION}.\nDeveloped by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)."
 puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
@@ -573,7 +573,7 @@ EXAMPLE USAGE:
 end
 
 def usage_short()
-puts"
+puts blue("
 .$$$     $.                                   .$$$     $.         
 $$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
 $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
@@ -583,7 +583,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-"
+")
 
 puts "WhatWeb - Next generation web scanner version #{$VERSION}.\nDeveloped by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)"
 puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
