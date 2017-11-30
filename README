@@ -10,8 +10,8 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Readme for WhatWeb - Next generation web scanner.
-Developed by Andrew Horton aka urbanadventurer and Brendan Coles
-Version: 0.4.8. Unreleased
+Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
+Version: 0.4.9. November 23rd, 2017
 License: GPLv2
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,7 +55,7 @@ Features:
 	* Over 1700 plugins
 	* Control the trade off between speed/stealth and reliability
 	* Performance tuning. Control how many websites to scan concurrently.
-	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB.
+	* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB, ElasticSearch, SQL.
 	* Proxy support including TOR
 	* Custom HTTP headers
 	* Basic HTTP authentication
@@ -92,8 +92,8 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner version 0.4.8-dev.
-Developed by Andrew Horton aka urbanadventurer and Brendan Coles.
+WhatWeb - Next generation web scanner version 0.4.9.
+Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
@@ -116,14 +116,13 @@ AGGRESSION:
   --aggression, -a=LEVEL Set the aggression level. Default: 1.
   Aggression levels are:
   1. Stealthy   Makes one HTTP request per target. Also follows redirects.
-  2. Unused
   3. Aggressive If a level 1 plugin is matched, additional requests will be
       made.
   4. Heavy      Makes a lot of HTTP requests per target. Aggressive tests from
       all plugins are used for all URLs.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.8-dev.
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.9.
   --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
                         header will replace it. Specifying an empty value, eg.
                         "User-Agent:" will remove the header.
@@ -188,7 +187,9 @@ LOGGING:
   --log-mongo-collection  Name of the MongoDB collection. Default: whatweb.
   --log-mongo-host        MongoDB hostname or IP address. Default: 0.0.0.0.
   --log-mongo-username    MongoDB username. Default: nil.
-  --log-mongo-password    MongoDB password. Default: nil.
+  --log-mongo-password    MongoDB password. Default: nil.  
+  --log-elastic-index     Name of the index to store results. Default: whatweb 
+  --log-elastic-host      Host:port of the elastic http interface. Default: 127.0.0.1:9200
   
 PERFORMANCE & STABILITY:
   --max-threads, -t       Number of simultaneous threads. Default: 25.
@@ -201,7 +202,7 @@ HELP & MISCELLANEOUS:
   --short-help            Short usage help.
   --help, -h              Complete usage help.
   --debug                 Raise errors in plugins.
-  --version               Display version information. (WhatWeb 0.4.8-dev).
+  --version               Display version information. (WhatWeb 0.4.9).
 
 EXAMPLE USAGE:
 * Scan example.com.
@@ -243,6 +244,8 @@ The following types of logging are supported:
 	--log-mongo-host	MongoDB hostname or IP address. Default: 0.0.0.0
 	--log-mongo-username	MongoDB username. Default: nil
 	--log-mongo-password	MongoDB password. Default: nil
+	--log-elastic-index		Name of the index to store results. Default: whatweb 
+	--log-elastic-host		Host:port of the elastic http interface. Default: 127.0.0.1:9200
 	--log-errors=FILE	Log errors. This is usually printed to the screen in red.
 
 You can output to multiple logs simultaneously by specifying multiple command line logging options. Advanced users who want SQL output should read the source code to see unsupported features.
@@ -406,12 +409,14 @@ Version 0.4.4 Released June 29th, 2010
 Version 0.4.5 Released August 17th, 2010
 Version 0.4.6 Released March 25th, 2011
 Version 0.4.7 Released April 5th, 2011
-Version 0.4.8-dev Unreleased
+Version 0.4.8-dev (Continuous release from 2012 to 2017)
+Version 0.4.9 Released November 23rd, 2017
+
 
 10. Credits
 ================================================================================
 
-Written by urbanadventurer aka Andrew Horton and Brendan Coles
+Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 License: GPLv2
 
@@ -429,7 +434,7 @@ Thank you to the following people who have contributed to WhatWeb.
 Emilio Casbas
 Louis Nyffenegger
 Patrik Wallström (pawal)
-Caleb Anderson (alhazred)
+Caleb Anderson (dirtyfilthy)
 Tonmoy Saikia
 Aung Khant (yehgdotnet)
 Erik Inge Bolsø
@@ -461,6 +466,11 @@ Artem Taranyuk (610)
 Matti Paksula (matti)
 Tim Smith (tas50)
 Sarthak Munshi (saru95)
+@rdubourguais
+@SlivTaMere
+@Code0x58
+@iGeek098
+@andreas-becker
 
 Please let me know if I need to add any more names. 
 
