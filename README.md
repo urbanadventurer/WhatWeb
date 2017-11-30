@@ -1,3 +1,4 @@
+```
 .$$$     $.                                   .$$$     $.
 $$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$.
 $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
@@ -6,15 +7,16 @@ $. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
 $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Readme for WhatWeb - Next generation web scanner.
+## Readme for WhatWeb - Next generation web scanner.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
+
 Version: 0.4.9. November 23rd, 2017
+
 License: GPLv2
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
 This product is subject to the terms detailed in the license agreement. For more information about WhatWeb visit:
 
@@ -24,25 +26,23 @@ This product is subject to the terms detailed in the license agreement. For more
 If you have any questions, comments or concerns regarding WhatWeb, please consult the documentation prior to contacting one of the developers. Your feedback is always welcome. 
 
 
-	Contents
-	========================================================================
-	1.  About WhatWeb
-	2.  Example Usage
-	3.  Usage
-	4.  Logging & Output
-	5.  Plugins
-	6.  Aggression
-	7.  Performance & Stability
-	8.  Optional Dependencies
-	9.  Release History
-	10. Credits
-	11. Updates & Additional Information
-	========================================================================
-
-
+## Contents
+1.  About WhatWeb
+2.  Example Usage
+3.  Usage
+4.  Logging & Output
+5.  Plugins
+6.  Aggression
+7.  Performance & Stability
+8.  Optional Dependencies
+9.  Release History
+10. Credits
+11. Updates & Additional Information
+	
+---
 
 1. About WhatWeb
-================================================================================
+--------------------------------------------------------------------------------
 
 WhatWeb identifies websites. Its goal is to answer the question, "What is that Website?". WhatWeb recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. WhatWeb has over 1700 plugins, each to recognise something different. WhatWeb also identifies version numbers, email addresses, account IDs, web framework modules, SQL errors, and more.
 
@@ -68,7 +68,7 @@ Features:
 
 
 2. Example Usage
-================================================================================
+--------------------------------------------------------------------------------
 
 Using WhatWeb on a couple of websites (standard WhatWeb output is in colour):
 
@@ -81,8 +81,8 @@ http://www.reddit.com/ [200] Frame, PasswordField[passwd,passwd2], Script, HTTPS
 
 
 3. Usage
-================================================================================
-
+--------------------------------------------------------------------------------
+```
 .$$$     $.                                   .$$$     $.         
 $$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
 $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
@@ -91,24 +91,28 @@ $. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
 $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
-
+```
 WhatWeb - Next generation web scanner version 0.4.9.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-Usage: whatweb [options] <URLs>
-
+```
+ Usage: whatweb [options] <URLs>
+```
 TARGET SELECTION:
+```
   <TARGETs>             Enter URLs, hostnames, IP adddresses, filenames,
                         or nmap-format IP address ranges.
   --input-file=FILE, -i Read targets from a file. You can pipe
                         hostnames or URLs directly with -i /dev/stdin.
-
+```
 TARGET MODIFICATION:
+```
   --url-prefix          Add a prefix to target URLs.
   --url-suffix          Add a suffix to target URLs.
   --url-pattern         Insert the targets into a URL. Requires --input-file,
                         eg. www.example.com/%insert%/robots.txt 
+```
 
 AGGRESSION:
   The aggression level controls the trade-off between speed/stealth and
@@ -122,6 +126,7 @@ AGGRESSION:
       all plugins are used for all URLs.
 
 HTTP OPTIONS:
+```
   --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.9.
   --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
                         header will replace it. Specifying an empty value, eg.
@@ -130,17 +135,20 @@ HTTP OPTIONS:
                         `http-only', `meta-only', `same-site', `same-domain'
                         or `always'. Default: always.
   --max-redirects=NUM   Maximum number of contiguous redirects. Default: 10.
-
+```
 AUTHENTICATION:
+```
   --user, -u=<user:password> HTTP basic authentication.
   --cookie, -c=COOKIES  Provide cookies, e.g. 'name=value; name2=value2'.
-
+```
 PROXY:
+```
   --proxy           <hostname[:port]> Set proxy hostname and port.
                     Default: 8080.
   --proxy-user      <username:password> Set proxy user and password.
-
+```
 PLUGINS:
+```
   --list-plugins, -l            List all plugins.
   --info-plugins, -I=[SEARCH]   List all plugins with detailed information.
                                 Optionally search with keywords in a comma
@@ -163,16 +171,18 @@ PLUGINS:
                         ":ghdb=>'intitle:abc \"powered by abc\"'"
                         ":md5=>'8666257030b94d3bdb46e05945f60b42'"
   --dorks=PLUGIN        List Google dorks for the selected plugin.
-
+```
 OUTPUT:
+```
   --verbose, -v         Verbose output includes plugin descriptions. Use twice
                         for debugging.
   --colour,--color=WHEN control whether colour is used. WHEN may be `never',
                         `always', or `auto'.
   --quiet, -q           Do not display brief logging to STDOUT.
   --no-errors           Suppress error messages.
-
+```
 LOGGING:
+```
   --log-brief=FILE        Log brief, one-line output.
   --log-verbose=FILE      Log verbose output.
   --log-errors=FILE       Log errors.
@@ -190,21 +200,24 @@ LOGGING:
   --log-mongo-password    MongoDB password. Default: nil.  
   --log-elastic-index     Name of the index to store results. Default: whatweb 
   --log-elastic-host      Host:port of the elastic http interface. Default: 127.0.0.1:9200
-  
+```
 PERFORMANCE & STABILITY:
+```
   --max-threads, -t       Number of simultaneous threads. Default: 25.
   --open-timeout          Time in seconds. Default: 15.
   --read-timeout          Time in seconds. Default: 30.
   --wait=SECONDS          Wait SECONDS between connections.
                           This is useful when using a single thread.
-
+```
 HELP & MISCELLANEOUS:
+```
   --short-help            Short usage help.
   --help, -h              Complete usage help.
   --debug                 Raise errors in plugins.
   --version               Display version information. (WhatWeb 0.4.9).
-
+```
 EXAMPLE USAGE:
+```
 * Scan example.com.
   ./whatweb example.com
 * Scan reddit.com slashdot.org with verbose plugin descriptions.
@@ -218,20 +231,19 @@ EXAMPLE USAGE:
 * Scan for crossdomain policies in the Alexa Top 1000.
   ./whatweb -i plugin-development/alexa-top-100.txt \
   --url-suffix /crossdomain.xml -p crossdomain_xml
-
+```
 OPTIONAL DEPENDENCIES
 --------------------------------------------------------------------------------
 To enable MongoDB logging install the mongo gem.
+
 To enable character set detection and MongoDB logging install the rchardet gem.
 
 
-
-
-
 4. Logging & Output
-================================================================================
+--------------------------------------------------------------------------------
 
 The following types of logging are supported:
+```
 	--log-brief=FILE	Brief, one-line, greppable format
 	--log-verbose=FILE	Verbose
 	--log-xml=FILE		XML format. XSL stylesheet is provided
@@ -247,12 +259,12 @@ The following types of logging are supported:
 	--log-elastic-index		Name of the index to store results. Default: whatweb 
 	--log-elastic-host		Host:port of the elastic http interface. Default: 127.0.0.1:9200
 	--log-errors=FILE	Log errors. This is usually printed to the screen in red.
-
+```
 You can output to multiple logs simultaneously by specifying multiple command line logging options. Advanced users who want SQL output should read the source code to see unsupported features.
 
 
 5. Plugins
-================================================================================
+--------------------------------------------------------------------------------
 
 Matches are made with:
         * Text strings (case sensitive)
@@ -265,12 +277,13 @@ Matches are made with:
 
 To list the plugins supported:
 
-$ ./whatweb -l
+> $ ./whatweb -l
 
 WhatWeb Plugin List
 
 Plugin Name - Description
 --------------------------------------------------------------------------------
+```
 1024-CMS - 1024 is one of a few CMS's leading the way with the implementation...
 360-Web-Manager - 360-Web-Manager
 3COM-NBX - 3COM NBX phone system. The NBX NetSet utility is a web interface i...
@@ -278,14 +291,14 @@ Plugin Name - Description
 4D - 4D web application deployment server
 4images - 4images is a powerful web-based image gallery management system. Fe...
 ... (truncated)
-
+```
 
 To view more detail about a plugin or search plugins for a keyword:
-
+```
 $ ./whatweb -I phpBB
 WhatWeb Detailed Plugin List
 Searching for phpBB
-================================================================================
+--------------------------------------------------------------------------------
 Plugin:         phpBB
 --------------------------------------------------------------------------------
 Description:    phpBB is a free forum 
@@ -302,8 +315,8 @@ Features:       [Yes]  Pattern Matching (7)
 
 Google Dorks:
 [1] "Powered by phpBB"
-================================================================================
-
+--------------------------------------------------------------------------------
+```
 
 All plugins are loaded by default.
 
@@ -328,11 +341,11 @@ The --grep, -g command line option searches the target page for the selected str
 
 
 6. Aggression
-================================================================================
+--------------------------------------------------------------------------------
 
 WhatWeb features several levels of aggression. By default the aggression level is set to 1 (stealthy) which sends a single HTTP GET request and also follows redirects.
 
---aggression, -a
+> --aggression, -a
 
 	1. Stealthy	Makes one HTTP request per target. Also follows redirects.
   	2. Unused
@@ -362,16 +375,16 @@ WhatWeb has no caching so if you use aggressive plugins on redirecting URLs you 
 
 
 7. Performance & Stability
-================================================================================
+--------------------------------------------------------------------------------
 
 WhatWeb features several options to increase performance and stability.
-
+```
   --max-threads, -t     Number of simultaneous threads. Default: 25.
   --open-timeout        Time in seconds. Default: 15
   --read-timeout        Time in seconds. Default: 30
   --wait=SECONDS        Wait SECONDS between connections
                         This is useful when using a single thread.
-
+```
 The --wait and --max-threads commands can be used to assist in IDS evasion.
 
 Changing the user-agent using the -U or --user-agent command line option will avoid the Snort IDS rule for WhatWeb.
@@ -383,108 +396,108 @@ Character set detection, with the Charset plugin dramatically decreases performa
 
 
 8. Optional Dependencies
-================================================================================
+--------------------------------------------------------------------------------
 
 To enable JSON logging install the json gem.
-	gem install json
+
+`gem install json`
 
 To enable MongoDB logging install the mongo gem.
-	gem install mongo
+
+`gem install mongo`
 
 To enable character set detection and MongoDB logging install the rchardet gem.
-	gem install rchardet
-  cp plugins-disabled/charset.rb my-plugins/
 
-
+```
+gem install rchardet
+cp plugins-disabled/charset.rb my-plugins/
+```
 
 9. Release History
-================================================================================
+--------------------------------------------------------------------------------
 
-Version 0.3   Released at Kiwicon III (kiwicon.org), November 2nd, 2009
-Version 0.4   Released March 14th, 2010
-Version 0.4.1 Released April 28th, 2010
-Version 0.4.2 Released April 30th, 2010
-Version 0.4.3 Released May 24th, 2010
-Version 0.4.4 Released June 29th, 2010
-Version 0.4.5 Released August 17th, 2010
-Version 0.4.6 Released March 25th, 2011
-Version 0.4.7 Released April 5th, 2011
-Version 0.4.8-dev (Continuous release from 2012 to 2017)
-Version 0.4.9 Released November 23rd, 2017
-
+	Version 0.3   Released at Kiwicon III (kiwicon.org), November 2nd, 2009
+	Version 0.4   Released March 14th, 2010
+	Version 0.4.1 Released April 28th, 2010
+	Version 0.4.2 Released April 30th, 2010
+	Version 0.4.3 Released May 24th, 2010
+	Version 0.4.4 Released June 29th, 2010
+	Version 0.4.5 Released August 17th, 2010
+	Version 0.4.6 Released March 25th, 2011
+	Version 0.4.7 Released April 5th, 2011
+	Version 0.4.8-dev (Continuous release from 2012 to 2017)
+	Version 0.4.9 Released November 23rd, 2017
 
 10. Credits
-================================================================================
+--------------------------------------------------------------------------------
 
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 License: GPLv2
 
 
-DEVELOPERS
+### DEVELOPERS
 
 Andrew Horton
 Brendan Coles
 
 
-CONTRIBUTORS
+### CONTRIBUTORS
 
 Thank you to the following people who have contributed to WhatWeb. 
 
-Emilio Casbas
-Louis Nyffenegger
-Patrik Wallström (pawal)
-Caleb Anderson (dirtyfilthy)
-Tonmoy Saikia
-Aung Khant (yehgdotnet)
-Erik Inge Bolsø
-nk@dsigned.gr
-Steve Milner (ashcrow)
-Michal Ambroz
-Gremwell
-Sagar Prakash Junnarkar (sagarjunnarkar)
-GertBerger 
-Quintin Poirier
-Eric Sesterhenn
-dengjw (jawa)
-Pedro Worcel (droop)
-Matthieu Keller (maggick)
-Peter (pvdl)
-Napz (RootCon)
-nilx042
-Fabian Affolter (fabaff)
-Andrew Silvernail (buff3r)
-Andre Ricardo (andrericardo)
-nikosk
-Patrick Thomas (coffeetocode)
-Guillaume Delcaour (guikcd)
-Sean (wiifm69)
-Matthieu Keller (maggick)
-Raul (raurodse)
-Andrew Petro (apetro)
-Artem Taranyuk (610)
-Matti Paksula (matti)
-Tim Smith (tas50)
-Sarthak Munshi (saru95)
-@rdubourguais
-@SlivTaMere
-@Code0x58
-@iGeek098
-@andreas-becker
+	Emilio Casbas
+	Louis Nyffenegger
+	Patrik Wallström (pawal)
+	Caleb Anderson (dirtyfilthy)
+	Tonmoy Saikia
+	Aung Khant (yehgdotnet)
+	Erik Inge Bolsø
+	nk@dsigned.gr
+	Steve Milner (ashcrow)
+	Michal Ambroz
+	Gremwell
+	Sagar Prakash Junnarkar (sagarjunnarkar)
+	GertBerger 
+	Quintin Poirier
+	Eric Sesterhenn
+	dengjw (jawa)
+	Pedro Worcel (droop)
+	Matthieu Keller (maggick)
+	Peter (pvdl)
+	Napz (RootCon)
+	nilx042
+	Fabian Affolter (fabaff)
+	Andrew Silvernail (buff3r)
+	Andre Ricardo (andrericardo)
+	nikosk
+	Patrick Thomas (coffeetocode)
+	Guillaume Delcaour (guikcd)
+	Sean (wiifm69)
+	Matthieu Keller (maggick)
+	Raul (raurodse)
+	Andrew Petro (apetro)
+	Artem Taranyuk (610)
+	Matti Paksula (matti)
+	Tim Smith (tas50)
+	Sarthak Munshi (saru95)
+	@rdubourguais
+	@SlivTaMere
+	@Code0x58
+	@iGeek098
+	@andreas-becker
 
 Please let me know if I need to add any more names. 
 
 
 11. Updates & Additional Information
-================================================================================
+--------------------------------------------------------------------------------
 
 The WhatWeb development build features regular updates.
 
-	* WhatWeb-dev:		https://github.com/urbanadventurer/WhatWeb/
-	* WhatWeb-dev-unstable:	https://github.com/bcoles/WhatWeb/
+* WhatWeb-dev:		https://github.com/urbanadventurer/WhatWeb/
+* WhatWeb-dev-unstable:	https://github.com/bcoles/WhatWeb/
 
 Browse the wiki for more documentation and advanced usage techniques.
 
-	* Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
-
-
+* Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
