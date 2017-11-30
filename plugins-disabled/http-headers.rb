@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HTTP-Headers"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-23
+]
 version "0.1"
 description "This plugin extracts the HTTP headers for plugin development purposes. - More info: http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"
 

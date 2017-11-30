@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Address"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-25
+]
 version "0.1"
 description "This plugin identifies the 'address' (X)HTML/XML element and extracts its value."
 

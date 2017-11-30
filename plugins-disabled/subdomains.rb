@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Subdomains"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-18
+]
 version "0.1"
 description "This plugin finds and extracts subdomains from the href and src parameters of any HTML elements it finds."
 

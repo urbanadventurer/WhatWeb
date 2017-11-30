@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :probability
 Plugin.define do
 name "Header-Hash"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :probability
+]
 version "0.1"
 description "Analyze the header of the HTML. Turns the first 500 characters into a signature. This can be used to group websites created with something unexpected. It's successful if it returns the same hash for more than 10% of samples. Some types of sites have more variation than others."
 # successfully finds: blogspot pages, vbulletin, microtik routers, ning sites, 

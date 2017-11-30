@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Content-Type"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-24
+]
 version "0.1"
 description "This plugin identifies the document's content type."
 

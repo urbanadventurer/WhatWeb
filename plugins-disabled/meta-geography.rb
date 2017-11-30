@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Meta-Geography"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-20
+]
 version "0.1"
 description "This plugin retrieves the geography from the meta geography, geo.position, geo.placename and geo.region tags."
 
