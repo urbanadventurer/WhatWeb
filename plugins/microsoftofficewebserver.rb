@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-26 #
-# Updated version detection regex
-##
 Plugin.define do
 name "MicrosoftOfficeWebServer"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-23
+  # v0.2 # 2011-01-26 # Updated version detection regex. 
+]
 version "0.2"
 description "Microsoft Office Web Server"
 website "http://microsoft.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MySource-Matrix"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-04
+]
 version "0.1"
 description "MySource Matrix is a feature-rich, enterprise-class Supported Open Source CMS (Content Management System)."
 website "http://www.squiz.co.uk/mysource-matrix-open-source-cms"

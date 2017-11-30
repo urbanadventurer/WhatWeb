@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TWiki"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-13
+]
 version "0.1"
 description "A flexible, powerful, and easy to use enterprise wiki, enterprise collaboration platform, and web application platform."
 website "http://www.twiki.org/"

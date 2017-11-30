@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Oracle-Fusion-Middleware"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-23
+]
 version "0.1"
 description "Oracle Fusion Middleware (OFM)"
 website "http://www.oracle.com/au/products/middleware/index.html"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Vigor-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-25
+]
 version "0.1"
 description "Vigor router"
 website "http://www.draytek.com/user/PdInfoDetail.php?Id=20"

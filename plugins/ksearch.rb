@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "KSearch"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-20
+]
 version "0.1"
 description "KSearch is the easiest website search engine to integrate, implement and use. KSearch is fully customizable - you can add or remove any features you want, without permission. KSearch is Open Source Software."
 website "http://www.kscripts.com/"

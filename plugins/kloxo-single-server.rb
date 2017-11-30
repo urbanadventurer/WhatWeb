@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Kloxo-Single-Server" # aka HyperVM aka LxAdmin
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-01 
+]
 version "0.1"
 description "Kloxo (aka HyperVM aka LxAdmin) is a fully scriptable, distributed and a 100% object oriented hosting platform"
 website "http://www.lxcenter.org/kloxo.htm"

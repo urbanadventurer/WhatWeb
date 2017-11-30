@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Empire-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-04
+]
 version "0.1"
 description "Open source CMS"
 website "http://www.phome.net/"

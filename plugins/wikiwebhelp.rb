@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WikiWebHelp"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+]
 version "0.1"
 description "wikiWebHelp - Client side is pure Javascript using mostly original code. Backend is PHP. Database is mySQL. Wiki conversion by Wiky.  Diff processing by simpleDiff."
 website "http://richardbondi.net/projects.html"

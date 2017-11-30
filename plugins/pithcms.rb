@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PithCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+]
 version "0.1"
 description "PithCMS - requirements: Linux, PHP 4.4.4-8"
 website "http://pithcms.altervista.org/index.php?pagina=data/info.php"

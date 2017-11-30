@@ -4,20 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
-# Added cookies
-##
-# Version 0.4 # 2014-01-07 @csalazar
-# 5 new version detection matches
-##
-# Version 0.2
-# removed :certainty=>100 & :name
-# Version 0.3
-# Uses :version=>//
-
 Plugin.define do
 name "VBulletin"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 & :name
+  # v0.3 # Uses :version=>//
+  "@csalazar", # v0.4 # 2014-01-07 # 5 new version detection matches. 
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.5 # 2016-08-19 # Added cookies. 
+]
 version "0.5"
 description "VBulletin is a PHP forum."
 

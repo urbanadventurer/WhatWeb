@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Video-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "Video CMS is the ultimate online video content publishing tool for professional webmasters. Whether you want to create a informational video website, video tutorial website, video sharing website, paid video service, or simply to develop your unique idea, Video CMS will help you do exactly that."
 website "http://www.codemight.com/"

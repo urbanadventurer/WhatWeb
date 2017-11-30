@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SentinelServer"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-15
+]
 version "0.1"
 description "Monitor application performance and availability"
 website "http://www.ymor.eu/"

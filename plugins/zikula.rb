@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Zikula"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-12
+]
 version "0.1"
 description "Zikula is a Web Application Toolkit, which allows you to run impressive websites and build powerful online applications."
 website "http://zikula.org"

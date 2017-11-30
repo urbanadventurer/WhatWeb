@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Tab-and-Link-Manager"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-23
+]
 version "0.1"
 description "The Tab And Link Manager engine is a total replacement for the default vBulletin NavBar"
 website "http://www.wolfshead-solutions.com/ws-products/product-1"

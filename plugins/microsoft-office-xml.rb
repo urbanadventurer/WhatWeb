@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated regex
-##
 Plugin.define do
 name "Microsoft-Office-XML"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+  # v0.2 # Updated regex. 
+]
 version "0.2"
 description "This module detects instances of Microsoft Office documents saved as HTML and attempts to extract the user name, company name and office version."
 website "http://en.wikipedia.org/wiki/Microsoft_Office_XML_formats"

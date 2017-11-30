@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WP-SlimStat"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-18
+]
 version "0.1"
 description "A lightwight but powerful real-time web analytics plugin for WordPress"
 website "https://wordpress.org/extend/plugins/wp-slimstat/"

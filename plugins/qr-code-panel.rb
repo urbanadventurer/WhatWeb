@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "QR-Code-Panel"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-18
+]
 version "0.1"
 description "QR-Code Panel for PHP-Fusion"
 website "http://www.g0lgs.co.uk/downloads.php"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "X-Backend"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-16
+]
 version "0.1"
 description "This plugin identifies and extracts the value for X-Backend, X-Backend-Server, X-BackendHost and X-Backend-Host from the HTTP headers."
 

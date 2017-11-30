@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Astaro-Security-Gateway"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-12
+]
 version "0.1"
 description "Astaro Security Gateway - Unified Threat Management (UTF) Firewall device"
 website "http://www.astaro.com/products/hardware-appliances"

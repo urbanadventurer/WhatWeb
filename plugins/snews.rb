@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "sNews"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+]
 version "0.1"
 description "sNews is a completely free, standards compliant, PHP and MySQL driven Content Management System."
 website "http://www.snewscms.com/"

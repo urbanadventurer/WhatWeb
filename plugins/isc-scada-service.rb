@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ISC-SCADA-Service"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-01
+]
 version "0.1"
 description "ISC SCADA Service"
 

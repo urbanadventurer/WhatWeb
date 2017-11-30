@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Trend-Micro"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-12
+]
 version "0.1"
 description "Trend Micro server - http://www.trendmicro.com/"
 

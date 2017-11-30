@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Perfectone-VOIP-Phone"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-14
+]
 version "0.1"
 description "Perfectone VOIP phone"
 website "http://www.perfectone.nl/"

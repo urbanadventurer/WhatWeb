@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TangoCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-27
+]
 version "0.1"
 description "TangoCMS is an open source (GNU/GPL 2.1) PHP Content Management System (CMS)."
 website "http://tangocms.org/"

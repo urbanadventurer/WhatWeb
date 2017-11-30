@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty=>100 & :name
-
 Plugin.define do
 name "TypoLight"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 & :name
+]
 version "0.2"
 description "TypoLight is an OpenSource CMS written in PHP"
 website "www.typolight.org"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Comprafacil"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-19
+]
 version "0.1"
 description "Web shop app [Brazilian]"
 website "http://www.comprafacil.com.br/"

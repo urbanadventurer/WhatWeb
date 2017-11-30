@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "phpGraphy"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-06
+]
 version "0.1"
 description "phpGraphy is a free PHP photo gallery script released under GPL license."
 website "http://phpgraphy.sourceforge.net/"

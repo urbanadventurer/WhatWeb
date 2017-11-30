@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "cPassMan"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "cPassMan is a Passwords Manager dedicated for managing passwords in a collaborative way. It is especially designed to provide passwords access security for allowed people."
 website "http://www.cpassman.org/"

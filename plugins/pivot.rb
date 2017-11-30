@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Pivot"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-18
+]
 version "0.1"
 description "Pivot is a web-based tool to help you maintain dynamic sites, like weblogs or online journals."
 website "http://www.pivotlog.net/"

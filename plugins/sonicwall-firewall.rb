@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SonicWALL-Firewall"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-25
+]
 version "0.1"
 description "SonicWALL Firewall device"
 website "http://www.sonicwall.com/us/products/Network_Security.html"

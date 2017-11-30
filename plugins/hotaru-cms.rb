@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Hotaru-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-17
+]
 version "0.1"
 description "Hotaru CMS is an open source, plugin-powered PHP content management system (CMS)"
 website "http://hotarucms.org/"

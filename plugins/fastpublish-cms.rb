@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Fastpublish-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "fastpublish CMS proudly presents the new Content Management System with the special features: easy to use and fast to publish."
 website "http://www.fastpublish.org"

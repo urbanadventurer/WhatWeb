@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ASProxy"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-25
+]
 version "0.1"
 description "ASProxy is a free and open-source web proxy which allows the user to surf the net anonymously."
 website "http://asproxy.sourceforge.net/"

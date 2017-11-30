@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SePortal"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "SePortal - The Weblog System"
 website "http://www.seportal.org/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ModLogAn"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-11-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-11-11
+]
 version "0.1"
 description "Modlogan is a modular logfile analyzer which is currently able to parse ftp-, webserver and squid logs."
 website "http://modlogan.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Pygopherd"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-19
+]
 version "0.1"
 description "An open source multi-protocol gopher server written in Python. Also works as an HTTP and WAP server."
 website "http://quux.org:70/devel/gopher/pygopherd"

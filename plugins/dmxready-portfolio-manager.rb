@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DMXReady-Portfolio-Manager"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-06
+]
 version "0.1"
 description "DMXReady Portfolio Manager is a fast and easy way to organize and display your online portfolio."
 website "http://www.dmxready.com/?product=portfolio-manager"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "VoIP-Router-Gateway"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-01
+]
 version "0.1"
 description "ALLWIN Tech VoIP Router Gateway device [ Chinese ] - Runs EIA AOS software"
 # Default login: admin/admin

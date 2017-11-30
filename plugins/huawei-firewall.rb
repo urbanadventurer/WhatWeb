@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Huawei-Firewall"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-03
+]
 version "0.1"
 description "Huawei Firewall"
 website "http://www.huawei.com/en/products/data-communication/network-security/firewall/index.htm"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SDCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-29
+]
 version "0.1"
 description "SDCMS - CMS - Requires ASP and Access/MsSql"
 website "http://www.sdcms.cn/"

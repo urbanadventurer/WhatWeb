@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CultBooking"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-13
+]
 version "0.1"
 description "A comprehensive and free-of-charge Internet Booking Engine (IBE)"
 website "http://www.cultuzz.com/cultbooking"

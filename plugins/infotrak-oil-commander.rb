@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Infotrak-Oil-Commander"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-27
+]
 version "0.1"
 description "Web-based system for managing oil samples through the laboratory process and presenting the results to customers."
 website "http://www.infotrak.com.au/"

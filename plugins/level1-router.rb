@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Level1-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-12
+]
 version "0.1"
 description "Level1 Router"
 website "http://uk.level1.com/"

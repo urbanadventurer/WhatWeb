@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHPortfolio"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-23
+]
 version "0.1"
 description "PHPortfolio is a simple system for photographers to publish a portfolio. Requirements: Unix/Linux, Apache 1.3.x, PHP 4.2+ with GD 2 libraries, and MySQL 3.23+. PHP will need to have short_tags enabled (it usually is)."
 website "http://www.outshine.com/software/phportfolio/index.php"

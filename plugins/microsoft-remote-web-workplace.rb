@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Microsoft-Remote-Web-Workplace"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-12-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-12-30
+]
 version "0.1"
 description "The Remote Web Workplace is a feature of Microsoft's Windows Small Business Server and the midsize business-focused product, Windows Essential Business Server, which enables pre-created users to log in to a front-end network-facing interface of the small business server."
 website "http://microsoft.com/"

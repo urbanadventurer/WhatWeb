@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHP-Photo-Album"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-22
+]
 version "0.1"
 description "PHP Photo Album"
 website "http://www.phpalbum.net/dw"

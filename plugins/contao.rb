@@ -4,13 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.1
-# Based on the contao plugin
-
 Plugin.define do
 name "Contao"
-author "Eric Sesterhenn"
+authors [
+  "Eric Sesterhenn", # v0.1 # Based on the contao plugin
+]
 version "0.1"
 description "Contao is an OpenSource CMS written in PHP"
 website "www.contao.org"

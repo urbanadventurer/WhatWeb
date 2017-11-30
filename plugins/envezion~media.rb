@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "envezion~media"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-15
+]
 version "0.1"
 description "envezion~MEDIA makes it possible for the small business owner to you reach your goals through our consulting services."
 website "http://envezion.com/"

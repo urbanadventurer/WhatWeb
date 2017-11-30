@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DXSock"
-author "Brendan Coles <bcoles@gmail.com>" # 2015-05-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2015-05-05
+]
 version "0.1"
 description "DXSock is a developer library sold with full source code. The product is geared towards low-level client and server development. Supporting TCP/IP and UDP/IP solution, along with low-level Linux and Mac file devices. - Homepage: http://www.dxsock.com/view/"
 

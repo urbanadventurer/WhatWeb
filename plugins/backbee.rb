@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "BackBee"
-author "Guillaume Delacour <gui@iroqwa.org>" # 2016-04-22
+authors [
+  "Guillaume Delacour <gui@iroqwa.org>", # 2016-04-22
+]
 version "0.1"
 description "BackBee is an open source Content Management System (CMS)"
 

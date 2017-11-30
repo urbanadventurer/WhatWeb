@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WebSVN"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-04
+]
 version "0.1"
 description "WebSVN offers a view onto your subversion repositories that's been designed to reflect the Subversion methodology. You can view the log of any file or directory and see a list of all the files changed, added or deleted in any given revision. You can also view compare two versions of a file so as to see exactly what was changed in a particular revision. Since it's written using PHP, WebSVN is very portable and easy to install."
 website "http://www.websvn.info/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Mint"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-15
+]
 version "0.1"
 description "Mint is an extensible, self-hosted web site analytics program"
 website "http://www.haveamint.com/"

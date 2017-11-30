@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved 2 patterns from passive function to matches[]
-##
 Plugin.define do
 name "Caudium"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-02
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved 2 patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Caudium is the name of a GPL-ed (free for commercial and personal use) web server written in Pike and in C. It is originally based on the Roxen Challenger 1.3 code base."
 website "http://www.caudium.net/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "EasyConsole-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "EasyConsole CMS allows you to manage the content and usage across your Intranet, Extranet or Portal.
 Text, documents, media and virtually any type of information can be securely shared across your organization, your partners or clients through a web-based environment that consistently reflects your branding DNA."

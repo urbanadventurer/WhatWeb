@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "EMC-Documentum-Webtop"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-14
+]
 version "0.1"
 description "EMC Documentum Webtop is a browser-based interface that provides access to the EMC Documentum repository and content management services."
 website "http://www.emc.com/products/detail/software2/webtop.htm"

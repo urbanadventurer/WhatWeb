@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-22 #
-# Updated regex
-##
 Plugin.define do
 name "Nmap-Log"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-21
+  # v0.2 # 2011-03-22 # Updated regex. 
+]
 version "0.2"
 description "This plugin identifies nmap plain-text logs and extracts the hostname, OS, active ports and nmap version. It does not work for logs in the XML file format."
 website "http://www.insecure.org/nmap/"

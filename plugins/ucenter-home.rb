@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Added website parameter and description
-##
 Plugin.define do
 name "UCenter-Home"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+  "Andrew Horton", # v0.2 # 2016-04-17 # Added website parameter and description. 
+]
 version "0.2"
 description "Social networking platform developed by Comsenz. Uses PHP and MySQL. Wikipedia page: https://zh.wikipedia.org/wiki/UCenter_Home"
 website "http://www.comsenz.com/downloads/install/uchome"

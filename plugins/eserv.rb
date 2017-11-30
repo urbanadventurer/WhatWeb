@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Eserv"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-10-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-10-22
+]
 version "0.1"
 description "Eserv - Mail Server - SMTP/POP3/IMAP/HTTP"
 website "http://www.eserv.ru/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHP-Mall"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-20
+]
 version "0.1"
 description "PHP Mall (formerly iBoutique.MALL) is a powerful and flexible multi vendors mall solution."
 website "http://www.netartmedia.net/mall"

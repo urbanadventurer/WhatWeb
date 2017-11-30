@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Open-Admin-for-Schools"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-31
+]
 version "0.1"
 description "Open Admin for Schools is a School Administration Program."
 website "http://richtech.ca/openadmin/"

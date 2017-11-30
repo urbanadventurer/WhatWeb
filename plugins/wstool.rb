@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WSTOOL"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-09
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-09
+]
 version "0.1"
 description "WSTOOL is OS-independence Web vulnerability scanner"
 website "http://wstool.sourceforge.net/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Dedicated-Micros-Device"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-11
+]
 version "0.1"
 description "Dedicated Micros is the world's leading manufacturer of CCTV solutions from megapixel IP cameras to high performance high definition recording, transmission and decoding systems."
 website "http://www.dedicatedmicros.com/"

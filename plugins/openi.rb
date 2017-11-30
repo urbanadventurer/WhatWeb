@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "OpenI"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-04
+]
 version "0.1"
 description "OpenI is a Business Intelligence web application for on-demand or SaaS deployments. OpenI enables simple and clean data visualization from OLAP and RDBMS, so users can intuitively build and publish interactive reports, analyses, and dashboards."
 website "http://openi.org/"

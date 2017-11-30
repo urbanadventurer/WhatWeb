@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Indices"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-17
+]
 version "0.1"
 description "Indices is a set of hacks that makes Apache's default directory index pages pretty and more usable."
 website "http://antisleep.com/software/indices"

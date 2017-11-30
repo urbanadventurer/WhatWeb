@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TRENDnet-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-18
+]
 version "0.1"
 description "TRENDnet router"
 website "http://www.trendnet.com/"

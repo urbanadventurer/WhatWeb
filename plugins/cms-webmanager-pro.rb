@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-10 #
-# Updated version detection
-##
 Plugin.define do
 name "CMS-WebManager-Pro"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-04
+  # v0.2 # 2011-01-10 # Updated version detection. 
+]
 version "0.2"
 description "CMS WebManager-Pro - is a software product for creating and maintaining websites of any complexity."
 website "http://webmanager-pro.com/"

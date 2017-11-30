@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "IBM-BladeCenter"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-15
+]
 version "0.1"
 description "IBM BladeCenter blade server management console"
 website "http://www-03.ibm.com/systems/bladecenter/index.html"

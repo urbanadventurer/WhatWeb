@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Kordil-EDMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-26
+]
 version "0.1"
 description "Kordil EDMS - Electronic Document Management System"
 website "http://www.kordil.com/"

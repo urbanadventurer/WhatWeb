@@ -4,12 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-#Version 0.3 
-# using :version=>// instead of a passive plugin for version detection
 Plugin.define do
 name "Advanced-Guestbook"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+# Version 0.3 
+# using :version=>// instead of a passive plugin for version detection  
+]
 version "0.3"
 description "Web guestbook script. http://johnny.ihackstuff.com/ghdb/?function=detail&id=228 Version 2.2 is vulnerable http://www.securityfocus.com/bid/10209/info."
 website "http://proxy2.de/scripts.php"

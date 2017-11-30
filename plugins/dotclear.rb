@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "dotclear"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-29 #
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-29 #
+]
 version "0.1"
 description "dotclear - blog"
 website "http://dotclear.org/"

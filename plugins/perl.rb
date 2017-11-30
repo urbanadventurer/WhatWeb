@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Added content-type application/perl match
-##
 Plugin.define do
 name "Perl"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-26
+  # v0.2 # Added content-type application/perl match. 
+]
 version "0.2"
 description "Perl is a highly capable, feature-rich programming language with over 22 years of development."
 website "http://www.perl.org/"

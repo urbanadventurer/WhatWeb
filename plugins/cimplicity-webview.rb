@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved HTTP Server pattern from passive function to matches[]
-##
 Plugin.define do
 name "Cimplicity-WebView"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-02
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved HTTP Server pattern from passive function to matches[]. 
+]
 version "0.2"
 description "CIMPLICITY is a client/server based visualization and control solution that helps you visualize your operations, perform supervisory automation and deliver reliable information to higher-level analytic applications."
 website "http://www.ge-ip.com/products/2819"

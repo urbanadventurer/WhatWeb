@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ExtremeWare"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-21
+]
 version "0.1"
 description "Extreme Networks ExtremeWare device"
 website "http://www.extremenetworks.com/services/software-userguide.aspx"

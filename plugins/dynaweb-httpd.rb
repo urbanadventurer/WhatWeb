@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DynaWeb-httpd"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-07
+]
 version "0.1"
 description "DynaWeb web server. Ships with Sun Microsystem's AnswerBook"
 website "http://www.oracle.com/"

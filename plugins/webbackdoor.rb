@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-## setting passive might produce a lot of false positives
-
 Plugin.define do
 name "webbackdoor"
-author "Aung Khant, http://yehg.net"
+authors [
+  "Aung Khant, http://yehg.net",
+  ## setting passive might produce a lot of false positives
+]
 version "0.1"
 description "Detect common web doors (asp,jsp,php,jsp,pl,cgi)  using fuzz-db list and others"
 

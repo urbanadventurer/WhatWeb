@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Added :status=>200 matches
-##
 Plugin.define do
 name "Linksys-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-28
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-28
+  # v0.2 # Added :status=>200 matches. 
+]
 version "0.2"
 description "Linksys router"
 website "http://www.linksys.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Post-Revolution"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-06
+]
 version "0.1"
 description "Post Revolution - CMS"
 website "http://postrev.com.ar/"

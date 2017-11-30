@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HttpOnly"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-03
+]
 version "0.1"
 description "If the HttpOnly flag is included in the HTTP set-cookie response header and the browser supports it then the cookie cannot be accessed through client side script - More Info: http://en.wikipedia.org/wiki/HTTP_cookie"
 

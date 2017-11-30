@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "playSMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-10
+]
 version "0.1"
 description "Free and Open Source SMS Gateway"
 website "http://playsms.org/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TCExam"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-14
+]
 version "0.1"
 description "TCExam is a FLOSS Computer-Based Assessment system."
 website "http://www.tcexam.org/"

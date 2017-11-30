@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # Bhavin Senjaliya # 2016-08-19
-# Added 3 cookies. Added admin page link.
-##
 Plugin.define do
 name "Kentico-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-04
+  # v0.2 # Added 3 cookies. Added admin page link.. 
+]
 version "0.2"
 description "Kentico CMS for ASP.NET - flexible, all-in-one solution for web developers"
 website "http://www.kentico.com/"

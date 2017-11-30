@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Jetty"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-22
+]
 version "0.1"
 description "Jetty is a pure Java application server. Jetty provides an HTTP server, HTTP client, and javax.servlet container."
 website "http://jetty.codehaus.org/jetty/"

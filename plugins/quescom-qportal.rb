@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "QuesCom-Qportal"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+]
 version "0.1"
 description "Qportal web interface for QuesCom telephony devices"
 website "http://www.quescom.com/products.asp"

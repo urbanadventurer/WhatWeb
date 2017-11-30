@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Op5-Statistics"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-24
+]
 version "0.1"
 description "Op5 Statistics"
 website "http://op5.com/"

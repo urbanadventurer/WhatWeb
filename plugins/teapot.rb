@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Teapot"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+]
 version "0.1"
 description "HTCPCP, a protocol for controlling, monitoring, and diagnosing coffee pots."
 website "http://www.apps.ietf.org/rfc/rfc2324.html"

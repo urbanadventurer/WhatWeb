@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TMW-Imaging"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-11-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-11-16
+]
 version "0.1"
 description "TMW Imaging - Document management system"
 website "http://www.tmwsystems.com/imaging"

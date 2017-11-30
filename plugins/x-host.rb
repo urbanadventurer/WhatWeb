@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "X-Host"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-08
+]
 version "0.1"
 description "This plugin retrieves the X-Host, X-HostName, X-Host-Name and X-Host-IP value from the HTTP header."
 

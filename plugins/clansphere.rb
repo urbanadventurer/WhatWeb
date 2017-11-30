@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ClanSphere"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-18
+]
 version "0.1"
 description "Free OpenSource Clan CMS"
 website "www.csphere.eu/index/clansphere/about"

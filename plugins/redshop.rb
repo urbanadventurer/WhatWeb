@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "RedShop"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "ASP Powered shopping cart software [Chinese]"
 website "http://www.rednetcms.com/redshop/"

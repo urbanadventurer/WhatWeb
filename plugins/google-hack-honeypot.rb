@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-05-06 #
-# Added support for HAXPLORER, phpSysInfo, PHPFM, SquirrelMail and wwwboard passwd.txt
-##
-# Version 0.2 # 2011-01-23 #
-# Updated version detection
-##
 Plugin.define do
 name "Google-Hack-Honeypot"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-13
+  # v0.2 # 2011-01-23 # Updated version detection. 
+  # v0.3 # 2011-05-06 # Added support for HAXPLORER, phpSysInfo, PHPFM, SquirrelMail and wwwboard passwd.txt. 
+]
 version "0.3"
 description "Google Hack Honeypot is the reaction to a new type of malicious web traffic: search engine hackers. This plugin identifies the following GHH modules: php-ping, HAXPLORER, phpSysInfo, PHPFM, SquirrelMail, wwwboard passwd.txt"
 website "http://ghh.sourceforge.net/"

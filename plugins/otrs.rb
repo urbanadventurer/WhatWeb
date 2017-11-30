@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated matches and version detection
-##
 Plugin.define do
 name "Open-Source-Ticket-Request-System"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-06
+  # v0.2 # Updated matches and version detection. 
+]
 version "0.2"
 description "OTRS is an Open source Ticket Request System (also well known as trouble ticket system) with many features to manage customer telephone calls and e-mails."
 website "http://otrs.org/"

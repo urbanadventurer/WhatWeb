@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Saman-Portal"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-13
+]
 version "0.1"
 description "Saman Portal"
 website "http://www.sis-eg.com/"

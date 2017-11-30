@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "VisionWEB"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-09-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-09-01
+]
 version "0.1"
 description "VisionWEB - video server web interface - Homepage [offline]: http://www.cieffe.com/"
 

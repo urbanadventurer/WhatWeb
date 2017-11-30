@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WampServer"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-16
+]
 version "0.1"
 description "WampServer is a Windows web development environment. It allows you to create web applications with Apache, PHP and the MySQL database. It also comes with PHPMyAdmin to easily manage your databases."
 website "http://www.wampserver.com/"

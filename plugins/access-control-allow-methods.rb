@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Access-Control-Allow-Methods"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-20
+]
 version "0.1"
 description "Specifies the method or methods allowed when accessing a resource"
 website "http://www.w3.org/TR/2008/WD-access-control-20080912/"

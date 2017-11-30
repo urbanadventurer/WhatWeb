@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-05 # Brendan Coles <bcoles@gmail.com>
-# Updated error code string detection to reduce false positives
-##
 Plugin.define do
 name "Microsoft-ODBC-Error"
-author "Caleb Anderson"
+authors [
+  "Caleb Anderson",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-03-05 # Updated error code string detection to reduce false positives. 
+]
 version "0.2"
 description "This plugin identifies Microsoft ODBC error codes."
 

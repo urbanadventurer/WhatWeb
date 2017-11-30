@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Plandora"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-04
+]
 version "0.1"
 description "Web-based project management suite including time track, dashboard gadgets, requests, BSC (KPI), knowledge base, risks, agile board, resource capacity, surveys, SVN integration and gantt chart."
 website "http://www.plandora.org/"

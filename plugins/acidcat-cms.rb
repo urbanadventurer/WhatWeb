@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Acidcat-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+]
 version "0.1"
 description "Acidcat ASP CMS"
 website "http://www.acidcat.com/"

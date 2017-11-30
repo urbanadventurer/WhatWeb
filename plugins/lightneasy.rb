@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "LightNEasy"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-10
+]
 version "0.1"
 description "LightNEasy is a simple and light Content Management System and Website Builder"
 website "http://www.lightneasy.org/"

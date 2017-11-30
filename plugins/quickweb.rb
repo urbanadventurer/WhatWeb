@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "QuickWeb"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-24
+]
 version "0.1"
 description "QuickWeb [Italian]"
 

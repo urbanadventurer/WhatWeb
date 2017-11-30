@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Axway-SecureTransport"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-24
+]
 version "0.1"
 description "Axway SecureTransport is a secure, multi-protocol managed file transfer solution"
 website "http://www.axway.com/products-solutions/mft/gateways/securetransport"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TreeNeWS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-18
+]
 version "0.1"
 description "Probably a 3Com Corporation or Trapeze Networks wireless access point"
 # Any idea what this is? Please contact me

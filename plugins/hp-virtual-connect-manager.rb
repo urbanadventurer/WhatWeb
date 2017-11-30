@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HP-Virtual-Connect-Manager"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-07
+]
 version "0.1"
 description "HP Virtual Connect Enterprise Manager (VCEM) centralizes connection management and workload mobility for HP BladeSystem servers that use Virtual Connect to access LANs, SANs and converged network infrastructures. Virtual Connect is technology that rethinks how blade servers are connected to your LAN and SAN. With HP Virtual Connect, you can connect and pre-assign all of the LAN MAC addresses and SAN WWNs that the server pool might ever need at the same time that you wire the rack and enclosures."
 website "http://h18004.www1.hp.com/products/blades/components/ethernet/vcem/index.html"

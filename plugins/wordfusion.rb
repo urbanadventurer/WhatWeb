@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WordFusion"
-author "Brendan Coles <bcoles@gmail.com>" # 2013-07-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-07-25
+]
 version "0.1"
 description "Zumesoft WordFusion - Enterprise document assembly and automation software"
 website "http://www.zumesoft.com/"

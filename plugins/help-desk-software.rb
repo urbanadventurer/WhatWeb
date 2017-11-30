@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Help-Desk-Software"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-24
+]
 version "0.1"
 description "Help Desk Software - a simple yet powerful helpdesk solution - Requires: PHP and MySQL"
 website "http://freehelpdesk.org/"

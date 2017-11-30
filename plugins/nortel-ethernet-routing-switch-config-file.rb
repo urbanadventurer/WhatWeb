@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Nortel-Ethernet-Routing-Switch-Config-File"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+]
 version "0.1"
 description "Nortel Ethernet Routing Switch Config File"
 website "http://products.nortel.com/go/product_index.jsp?locale=en-US&lcid=-1"

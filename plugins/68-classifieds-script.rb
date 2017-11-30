@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "68-Classifieds-Script"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-22
+]
 version "0.1"
 description "68 Classifieds Script - Requires PHP"
 website "http://www.68classifieds.com/"

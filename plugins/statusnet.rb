@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "StatusNet"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-21
+]
 version "0.1"
 description "StatusNet's Open Source social software enables organizations to collaborate, share insights and build relationships in real time."
 website "http://status.net/"

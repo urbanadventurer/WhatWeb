@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TRIDENT7-Wave7-OLT"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-11
+]
 version "0.1"
 description "TRIDENT7 Wave7 optical line terminal (OLT)"
 website "http://www.enablence.com/access/product-lines/trident7"

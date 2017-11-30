@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "uTorrent"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+]
 version "0.1"
 description "The uTorrent GUI is a web interface to the uTorrent BitTorrent client"
 website "https://web.utorrent.com/"

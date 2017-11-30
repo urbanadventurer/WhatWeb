@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "FreakAuth"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-11
+]
 version "0.1"
 description "FreakAuth is a simple authentication library for the Code Igniter PHP framework"
 website "http://freakauth.4webby.com/"

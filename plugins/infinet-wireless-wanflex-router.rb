@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Infinet-Wireless-WANFleX-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-13
+]
 version "0.1"
 description "Infinet Wireless WANFleX Router"
 website "http://www.infinetwireless.com/products"

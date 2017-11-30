@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "phplist"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-04
+]
 version "0.1"
 description "phplist is the world's most popular open source email campaign manager."
 website "http://www.phplist.com/"

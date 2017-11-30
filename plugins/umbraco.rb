@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated matches and version detection
-##
 Plugin.define do
 name "Umbraco"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-12
+  # v0.2 # Updated matches and version detection. 
+]
 version "0.2"
 description "umbraco is an open source project with roots back to year 2000 even though it wasn't released as open source until 2004."
 website "http://www.umbraco.org"

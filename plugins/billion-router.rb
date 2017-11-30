@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2012-01-08 #
-# Added logo image matches
-# Added www-authenticate header match
-##
 Plugin.define do
 name "Billion-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-05
+  # v0.2 # 2012-01-08 # Added logo image matches. Added www-authenticate header match. 
+]
 version "0.2"
 description "Billion router"
 website "http://www.billion.com/product/product.html"

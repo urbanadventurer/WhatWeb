@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Think-Plus"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-07
+]
 version "0.1"
 description "Think+ - Social Media Marketing"
 website "http://think-plus.gr/"

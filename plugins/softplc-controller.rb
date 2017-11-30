@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SoftPLC-Controller"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-02
+]
 version "0.1"
 description "All SoftPLC controller CPUs provide the same rich set of features. Every SoftPLC is a high-performance, feature-rich Programmable Automation Controller (PAC), combining the functions of a proprietary PLC with the benefits of both an open architecture design and computer technologies."
 website "http://www.softplc.com/products.php"

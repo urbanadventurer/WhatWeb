@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "GridSite"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-31
+]
 version "0.1"
 description "In its simplest application, GridSite uses X.509 certificates loaded into unmodified versions of web browsers like Internet Explorer, Netscape or Mozilla to authenticate users, and then grants read and write authorization on this basis. HTML and text files can be edited within a browser window, or pages and binary files can be uploaded from local disk. Certificate based authentification of users is now far more practical with the start of large scale issuing of X.509 certificates within Grid projects."
 website "http://www.gridsite.org/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "iPeer"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-25
+]
 version "0.1"
 description "iPeer - a web-based platform/database independent application to develop and deliver peer evaluations - Requires PHP"
 website "http://ipeer.ctlt.ubc.ca/trac"

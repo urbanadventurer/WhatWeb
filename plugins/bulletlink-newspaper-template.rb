@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Bulletlink-Newspaper-Template"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-13
+]
 version "0.1"
 description "Ready-to-use online newspaper templates"
 website "http://bulletlink.com/"

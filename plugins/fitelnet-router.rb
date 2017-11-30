@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "FITELnet-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-30
+]
 version "0.1"
 description "FITELnet router"
 website "http://www.furukawa.co.jp/fitelnet/"

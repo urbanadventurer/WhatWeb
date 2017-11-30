@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WebAsyst-Shop-Script"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-29
+]
 version "0.1"
 description "Shop-Script . ecommerce platform for creating online stores. Available as PHP software and hosted service."
 website "http://www.shop-script.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Kandidat-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-24
+]
 version "0.1"
 description "Kandidat-CMS [Russian] - Homepage http://www.kan-studio.ru/"
 

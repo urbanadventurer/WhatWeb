@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "3COM-NBX"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-09
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-09
+]
 version "0.1"
 description "3COM NBX phone system. The NBX NetSet utility is a web interface in which you configure and manage the NBX system. NBX systems present the NBX NetSet utility through an embedded web server that is integrated in system software."
 website "http://inpath.com/products/3com-nbx.html"

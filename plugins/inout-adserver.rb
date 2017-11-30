@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Inout-Adserver"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "Inout Adserver  is powerful, feature rich, fully customizable PayPerClick advertiser/publisher networking script from inoutscripts.com. Advertisers can register into adserver and can post their text/ banner/catalog PayPerClick(PPC) ads."
 website "http://www.inoutscripts.com/products/adserver/"

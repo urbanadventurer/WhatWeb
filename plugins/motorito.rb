@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Motorito"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-25
+]
 version "0.1"
 description "Motorito"
 website "http://www.motorito.com/"

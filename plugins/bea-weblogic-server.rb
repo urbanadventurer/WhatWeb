@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "BEA-WebLogic-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-14
+]
 version "0.1"
 description "BEA WebLogic Server is an enterprise-ready Java EE application server that supports the deployment of mission-critical applications in a robust, secure, highly available, and scalable environment."
 website "http://download.oracle.com/docs/cd/E13222_01/wls/docs100/index.html"

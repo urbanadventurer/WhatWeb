@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Astaro-End-User-Portal"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-12
+]
 version "0.1"
 description "Astaro End User Portal - A complete end-user tool suite for managing SMTP and POP3 quarantine."
 website "http://www.astaro.com/"

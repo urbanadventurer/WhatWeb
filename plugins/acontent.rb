@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AContent"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-17
+]
 version "0.1"
 description "AContent  is an open source learning content authoring system and respository used to create interoperable, accessible, adaptive Web-based learning content."
 website "http://www.atutor.ca/acontent/"

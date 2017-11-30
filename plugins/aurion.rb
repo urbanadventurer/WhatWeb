@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Aurion"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-25
+]
 version "0.1"
 description "Integrated HR and Payroll software available online, hosted or in-house. [Australian]"
 website "http://www.aurion.com.au/"

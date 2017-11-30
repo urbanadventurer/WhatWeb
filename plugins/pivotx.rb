@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PivotX"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-18
+]
 version "0.1"
 description "PivotX - blog software"
 website "http://pivotx.net/"

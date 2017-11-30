@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2
-# removed :probability & :name
-##
 Plugin.define do
 name "MailSiteExpress"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :probability & :name. 
+]
 version "0.2"
 description "Webmail in ASP. Versions < 6.1.2 insecure http://marc.info/?l=bugtraq&m=113053680631151&w=2 -"
 website "http://www.mailsite.com/products/express-webmail-server.asp"

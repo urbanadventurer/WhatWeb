@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Canon-Network-Camera"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-29
+]
 version "0.1"
 description "Canon's new all-in-one VB-C50i and VB-C50iR (in a reverse mount) pan/tilt/zoom (PTZ) network video cameras allow individuals, whether in the back storage room or airport waiting room, to remotely view live video footage even in the most adverse conditions. - http://www.usa.canon.com/templatedata/pressrelease/20040331_vbc50i.html"
 # Design spec: http://www.usa.canon.com/app/pdf/nvideo/VB-C50i_AE_Spec_May1_07.pdf

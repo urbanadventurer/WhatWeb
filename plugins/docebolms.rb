@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DoceboLMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-24
+]
 version "0.1"
 description "DoceboLMS is a SCORM compliant Open Source e-Learning platform used in corporate, government and education markets."
 website "http://www.docebo.org/doceboCms/index.php"

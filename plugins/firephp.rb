@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "FirePHP"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-15
+]
 version "0.1"
 description "FirePHP enables you to log to your Firebug Console using a simple PHP method call. FirePHP works by sending JSON encoded debug data in the response headers instead of the page content."
 website "http://www.firephp.org/"

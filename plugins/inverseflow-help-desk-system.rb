@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "InverseFlow-Help-Desk-System"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-24
+]
 version "0.1"
 description "InverseFlow Help Desk System"
 website "http://www.inverseflow.com/products/helpdesk/index.php"

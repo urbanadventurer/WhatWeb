@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AIDeX-Webserver"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-29
+]
 version "0.1"
 description "AIDeX Webserver - does not support CGI or PHP"
 website "http://www.aidex.de/software/webserver/"

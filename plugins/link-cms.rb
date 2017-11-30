@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "LINK-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "LINK-CMS: PHP based CMS"
 website "http://www.link-softsolutions.com/SoftLink-Content-Management-System---CMS_20_1"

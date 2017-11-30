@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Koha"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-27
+]
 version "0.1"
 description "Koha is an open source software library automation package (ILS)"
 website "http://koha-community.org/"

@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-
 Plugin.define do
 name "Axentra-HipServ"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-10
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Axentra-HipServ - Digital Home/SOHO Software Platform for Internet Gateway and NAS Devices"
 website "http://www.axentra.com/en/"

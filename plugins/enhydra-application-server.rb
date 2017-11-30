@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Enhydra-Application-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-20
+]
 version "0.1"
 description "Enhydra Application Server"
 website "http://enhydra.org/"

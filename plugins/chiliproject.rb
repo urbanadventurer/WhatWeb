@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ChiliProject"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-24
+]
 version "0.1"
 description "ChiliProject is a web based project management system."
 website "https://www.chiliproject.org/"

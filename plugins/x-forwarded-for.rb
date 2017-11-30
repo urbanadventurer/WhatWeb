@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "X-Forwarded-For"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-07
+]
 version "0.1"
 description "This plugin extracts the proxy server details from the X-Forwarded-For param of the HTTP header. X-Forwarded-For is a non-standard header introduced by the developers of the Squid proxy before the Via header was added to HTTP."
 

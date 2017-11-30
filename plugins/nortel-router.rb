@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Nortel-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-15
+]
 version "0.1"
 description "Nortel router"
 website "http://www.nortel.com/"

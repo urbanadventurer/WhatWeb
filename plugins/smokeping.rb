@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SmokePing"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-05
+]
 version "0.1"
 description "SmokePing keeps track of your network latency"
 website "http://oss.oetiker.ch/smokeping/index.en.html"

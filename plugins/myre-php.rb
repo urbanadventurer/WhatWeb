@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MYRE-PHP"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-12
+]
 version "0.1"
 description "MYREPHP - MYRE Real Estate Software, MYRE Holiday Rental Manager, MYRE Realty Manager and MYRE Classifieds scripts"
 website "http://www.myrephp.com/"

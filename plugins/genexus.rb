@@ -1,7 +1,10 @@
 
+##
 Plugin.define do
 name "GeneXus"
-author "Daniel Maldonado"
+authors [
+  "Daniel Maldonado",
+]
 version "0.1"
 description "GeneXus is a tool for agile development."
 website "http://caceriadespammers.com.ar"

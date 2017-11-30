@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Musicbox"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-27
+]
 version "0.1"
 description "Musicbox is a web application for managing a songs database."
 website "http://www.musicboxv2.com/"

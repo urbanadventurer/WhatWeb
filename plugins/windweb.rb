@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WindWeb"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-26
+]
 version "0.1"
 description "WindWeb Webserver"
 

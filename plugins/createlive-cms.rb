@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CreateLive-Cms"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-22
+]
 version "0.1"
 description "CreateLive Cms"
 website "http://www.aspoo.cn/"

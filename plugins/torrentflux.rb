@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TorrentFlux"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-13
+]
 version "0.1"
 description "Open source PHP client for web based management of torrents. Features, downloads, forum. - http://www.torrentflux.com/"
 

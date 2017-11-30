@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Konica-Minolta-Printer"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-22
+]
 version "0.1"
 description "Konica Minolta Printer"
 website "http://konicaminolta.com/"

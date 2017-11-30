@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CGI:IRC"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-08
+]
 version "0.1"
 description "CGI:IRC is a Perl/CGI program to use IRC from a web browser. This plugin extracts the version and the default server, channel and nickname"
 website "http://cgiirc.org/"

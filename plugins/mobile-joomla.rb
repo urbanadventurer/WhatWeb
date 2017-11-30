@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Mobile-Joomla"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-15
+]
 version "0.1"
 description "Mobile Joomla"
 website "http://www.mobilejoomla.com/"

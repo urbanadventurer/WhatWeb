@@ -3,14 +3,13 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
-## 
-# Version 0.2 # 2017-11-27 # Andrew Horton
-# Update Website. Remove comments
 ##
-
 Plugin.define do
 name "AmazonElasticLoadBalancer"
-author "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>" # 2016-08-19
+authors [
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # 2016-08-19
+  "Andrew Horton", # v0.2 # 2017-11-27 # Update Website. Remove comments. 
+]
 version "0.2"
 description "Amazon Elastic Load Balancer"
 website "https://aws.amazon.com/elasticloadbalancing/"

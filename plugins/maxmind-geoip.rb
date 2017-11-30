@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MaxMind-GeoIP"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-03
+]
 version "0.1"
 description "MaxMind JavaScript is a service offered by MaxMind to return the country of your web visitors."
 website "https://www.maxmind.com/app/javascript"

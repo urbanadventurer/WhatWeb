@@ -4,28 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.8 # 2016-12-16 @anoroozian
-# Aggressive version detection matches 4.0 -> 4.0-beta4
-# Plugin format update
-##
-# Version 0.7 # 2016-10-25 @SlivTaMere
-# Added "wp-includes" and "wp-json" in href and src detection.
-##
-# Version 0.6 # 2012-03-05
-# Added regex version detection for /readme.html
-##
-# Version 0.5 # 2012-03-05
-# Added regex version detection for /readme.html
-##
-# Version 0.4 # 2011-04-06 #
-# Added aggressive md5 matches
-##
-# Version 0.3
-# Now using :version=>// instead of a passive function, added description, examples and included relative /wp-content/ link detection
-##
 Plugin.define do
 name "WordPress"
-  author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.3 # Now using :version=>// instead of a passive function, added description, examples and included relative /wp-content/ link detection. 
+  # v0.4 # 2011-04-06 # Added aggressive md5 matches. 
+  # v0.5 # 2012-03-05 # Added regex version detection for /readme.html. 
+  # v0.6 # 2012-03-05 # Added regex version detection for /readme.html. 
+  "@SlivTaMere", # v0.7 # 2016-10-25 # Added "wp-includes" and "wp-json" in href and src detection.. 
+  "@anoroozian", # v0.8 # 2016-12-16 # Aggressive version detection matches 4.0 -> 4.0-beta4. Plugin format update. 
+]
   version "0.8"
   description "WordPress is an opensource blogging system commonly used as a CMS."
   website "http://www.wordpress.org/"

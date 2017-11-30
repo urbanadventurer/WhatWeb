@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "NeXpose-Security-Console"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-05
+]
 version "0.1"
 description "NeXpose Security Console - Identifying vulnerabilities across networks, operating systems, databases, Web applications and a wide-range of system platforms through an integrated, intelligent scan engine, Rapid7 NeXpose prioritizes vulnerabilities using exploit risk scoring and asset criticality ratings. As a result, NeXpose customers benefit from lower risk exposure and remediation costs."
 website "http://www.rapid7.com/products/vulnerability-management.jsp"

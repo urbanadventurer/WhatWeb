@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Intraxxion-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "Intraxxion - CMS"
 website "http://intraxxion.com/"

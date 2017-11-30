@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Vanilla-Forums"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-11
+]
 version "0.1"
 description "Vanilla Forums - open-source, standards-compliant, customizable discussion forums."
 website "http://vanillaforums.org/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ExtJS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-15
+]
 version "0.1"
 description "Ext JS is a cross-browser JavaScript library for building rich internet applications."
 website "http://www.sencha.com/products/extjs/"

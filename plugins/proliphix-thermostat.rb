@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Proliphix-Thermostat"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-09
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-09
+]
 version "0.1"
 description "Network thermostats specifically designed for Internet access and control. They provide the features and functions of a conventional programmable thermostat with an easy-to-use, browser-based interface that significantly simplifies HVAC programming and control."
 website "http://www.proliphix.com/"

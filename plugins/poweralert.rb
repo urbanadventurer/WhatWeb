@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PowerAlert"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-23
+]
 version "0.1"
 description "PowerAlert monitors and controls UPS Systems, PDUs, sensors, and the computers and equipment they support."
 website "http://www.tripplite.com/en/products/poweralert-software.cfm"

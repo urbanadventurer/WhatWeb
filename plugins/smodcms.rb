@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SmodCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-16
+]
 version "0.1"
 description "SmodCMS"
 website "http://www.smod.pl/"

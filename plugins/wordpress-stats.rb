@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WordPress-Stats"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-12
+]
 version "0.1"
 description "WordPress.com Stats"
 website "https://wordpress.com"

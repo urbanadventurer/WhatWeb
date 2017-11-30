@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "dwr"
-author "Aung Khant <http://yehg.net/>" # 2012-02-12
+authors [
+  "Aung Khant <http://yehg.net/>", # 2012-02-12
+]
 version "0.1"
 description "Direct Web Remoting - http://directwebremoting.org"
 

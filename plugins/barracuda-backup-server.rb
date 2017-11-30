@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Barracuda-Backup-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-20
+]
 version "0.1"
 description "Local inline Deduplication Backup Systems with available offsite Cloud Storage or site to site replication."
 website "https://www.barracudanetworks.com/ns/products/backup_overview.php"

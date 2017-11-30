@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Huawei-Quidway-Switch"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-07
+]
 version "0.1"
 description "Huawei network switch - Quidway series"
 website "http://www.huawei.com/products/datacomm/catalog.do?id=16"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Ruckus-Wireless-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-16
+]
 version "0.1"
 description "Ruckus Wireless Router web interface"
 website "http://www.ruckuswireless.com/"

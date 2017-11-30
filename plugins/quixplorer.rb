@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "QuiXplorer"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-16
+]
 version "0.1"
 description "QuiXplorer is a multi-user, web-based file-manager. It allows you to manage and/or share files over the internet, or an intranet."
 website "http://quixplorer.sourceforge.net/"

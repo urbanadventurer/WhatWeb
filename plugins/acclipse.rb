@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define do
 name "Acclipse"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+]
 version "0.2"
 description "Acclipse is a web CMS found mainly in New Zealand and Australia. It is popular with accountants. Websites: www.acclipse.co.nz & www.acclipse.com.au"
 

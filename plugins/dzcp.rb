@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DZCP"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-12-28
+]
 version "0.1"
 description "deV!L`z Clanportal"
 website "http://www.dzcp.de"

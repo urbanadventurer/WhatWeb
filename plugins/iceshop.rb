@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ICEshop"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-26
+]
 version "0.1"
 description "ICEshop e-commerce"
 website "http://www.iceshop.nl/"

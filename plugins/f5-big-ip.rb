@@ -3,14 +3,13 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
-#
-##
-# Version 0.2 # 2017-11-27 # Andrew Horton
-# Tidy up description. Add website.
 ##
 Plugin.define do
 name "F5-BigIP"
-author "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>" # 2016-08-19
+authors [
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # 2016-08-19
+  "Andrew Horton", # v0.2 # 2017-11-27 # Tidy up description. Add website.. 
+]
 version "0.2"
 description "F5 BIG IP provides application delivery networking (ADN) technology for the delivery of web applications and the security, performance, availability of servers, data storage devices, and other network and cloud resources."
 website "https://f5.com/products/big-ip"

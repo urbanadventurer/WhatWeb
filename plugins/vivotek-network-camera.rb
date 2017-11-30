@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Vivotek-Network-Camera"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-19
+]
 version "0.1"
 description "Vivotek Network Camera web interface"
 website "http://www.vivotek.com/"

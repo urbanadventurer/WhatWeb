@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
-# Added _pk_ cookie
-##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
 Plugin.define do
 name "Piwik"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-06
+  # v0.2 # 2011-02-25 # Updated version detection. 
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.3 # 2016-08-19 # Added _pk_ cookie. 
+]
 version "0.3"
 description "Piwik is a downloadable, open source (GPL licensed) real time web analytics software program."
 website "http://piwik.org/"

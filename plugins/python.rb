@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Python"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-26
+]
 version "0.1"
 description "Python is a programming language that lets you work more quickly and integrate your systems more effectively. You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs."
 website "http://www.python.org/"

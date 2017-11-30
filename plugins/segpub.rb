@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-06 #
-# Updated OS detection
-##
 Plugin.define do
 name "SegPub"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-19
+  # v0.2 # 2011-03-06 # Updated OS detection. 
+]
 version "0.2"
 description "SegPub, a hosting solutions provider based in Sydney, Australia"
 website "http://segpub.net/"

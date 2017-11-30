@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CrazyEgg"
-author "Peter van der Laan"
+authors [
+  "Peter van der Laan",
+]
 version "0.1"
 description "Visualizes where your visitors click"
 website "http://www.crazyegg.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "X-Vortech-PHP"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-30
+]
 version "0.1"
 description "X-Vortech-PHP HTTP header."
 

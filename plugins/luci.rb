@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "LuCI"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+]
 version "0.1"
 description "LuCI was founded in March 2008 as 'FFLuCI' as part of the efforts to create a port of the Freifunk-Firmware from OpenWrt Whiterussian to Kamikaze"
 website "http://luci.subsignal.org/"

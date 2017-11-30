@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Knopflerfish-HTTP-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-18
+]
 version "0.1"
 description "Knopflerfish HTTP Server - Small footprint OSGi HTTP server implementation for embedded use"
 website "http://www.knopflerfish.org/"

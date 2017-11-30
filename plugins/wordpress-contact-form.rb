@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Wordpress-Contact-Form"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-25
+]
 version "0.1"
 description "WordPress Contact Form plugin - Contact Form 7 can manage multiple contact forms, plus you can customize the form and the mail contents flexibly with simple markup. The form supports Ajax-powered submitting, CAPTCHA, Akismet spam filtering and so on."
 website "http://wordpress.org/extend/plugins/contact-form-7/"

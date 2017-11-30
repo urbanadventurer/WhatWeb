@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Kolab"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-12
+]
 version "0.1"
 description "Kolab is a Groupware Solution for Emails, Appointments, Contacts and more. It supports mixed client environments (Outlook/KDE) because of an open storage format. Any email client speaking standard protocols can be served."
 website "http://www.kolab.org/"

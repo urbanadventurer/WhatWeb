@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DMXReady-Secure-Document-Library"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-06
+]
 version "0.1"
 description "DMXReady Secure Document Library secures files so that only registered members can access and download them."
 website "http://www.dmxready.com/?product=secure-document-library"

@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
 Plugin.define do
 name "Dart-WebServer-Tool"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Build web applications in any familiar software development environment. Use WebServer for ActiveX to add web-based access to traditional compiled applications"
 website "http://www.dart.com/ptwbs.aspx"

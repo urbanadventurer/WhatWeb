@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Zomplog"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-18
+]
 version "0.1"
 description "Blog"
 website "http://www.zomp.nl/zomplog/index.php"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Managed-Fusion-Url-Rewriter"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-29
+]
 version "0.1"
 description "Managed Fusion Url Rewriter is an HttpModule for the Microsoft ASP.NET Web Framework, or IIS 7.0 Integrated Pipeline. All rules are managed in a plain text using Apache mod_rewrite syntax."
 website "http://managedfusion.com/"

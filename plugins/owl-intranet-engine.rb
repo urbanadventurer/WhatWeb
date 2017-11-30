@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Owl-Intranet-Engine"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-30
+]
 version "0.1"
 description "Owl is a multi user document repository (knowledge base) system written in PHP for publishing files/documents onto the web."
 website "http://owl.anytimecomm.com"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "KnowledgeTree"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-18
+]
 version "0.1"
 description "Document Management Software"
 website "http://www.knowledgetree.com/"

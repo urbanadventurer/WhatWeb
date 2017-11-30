@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AppServ"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-23
+]
 version "0.1"
 description "AppServ is an Apache, MySQL, PHP, phpMyAdmin installer package for Windows and Linux."
 website "http://www.appservnetwork.com/"

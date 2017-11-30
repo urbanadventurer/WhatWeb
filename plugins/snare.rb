@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Snare"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-12
+]
 version "0.1"
 description "Snare - Snare Server Remote Control web interface"
 website "http://www.intersectalliance.com/projects/"

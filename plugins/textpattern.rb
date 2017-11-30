@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2 by Andrew Horton
-# Removed the aggressive function as it causes false postives
-
 Plugin.define do
 name "Textpattern"
-author "Tonmoy Saikia"
+authors [
+  "Tonmoy Saikia",
+  "Andrew Horton", # v0.2 # Removed the aggressive function as it causes false postives 
+]
 version "0.2"
 description "A flexible, elegant and easy-to-use CMS. Homepage:http://textpattern.com/"
 

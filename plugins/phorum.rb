@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Phorum"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-25
+]
 version "0.1"
 description "Phorum - Forum - Requires PHP and MySQL"
 website "http://www.phorum.org/"

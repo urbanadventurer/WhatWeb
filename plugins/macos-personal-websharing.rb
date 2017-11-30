@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MACOS-Personal-Websharing"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-02
+]
 version "0.1"
 description "Web Sharing is a feature in Mac OS X that allows you to serve documents and other files from your computer."
 website "http://support.apple.com/kb/HT2973"

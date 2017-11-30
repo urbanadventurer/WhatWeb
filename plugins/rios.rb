@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "RiOS"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-26
+]
 version "0.1"
 description "Riverbed Optimization System (RiOS)"
 website "http://www.riverbed.com/"

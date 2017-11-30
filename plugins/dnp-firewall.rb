@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DnP-Firewall"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-25
+]
 version "0.2"
 description "DnP Firewall Gateway Modification"
 website "http://www.silveryhat.com/delynie/f142"

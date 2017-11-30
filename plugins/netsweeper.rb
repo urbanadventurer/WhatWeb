@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Netsweeper"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-12
+]
 version "0.1"
 description "Netsweeper provides internet content filtering and web threat management solutions that foster employee productivity, student safety and secure Internet access."
 website "http://www.netsweeper.com/"

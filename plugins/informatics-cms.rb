@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Informatics-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-20
+]
 version "0.1"
 description "Informatics custom Content Management System (CMS)"
 website "http://www.informaticsinc.com/Content/Services/Web-Design-and-Development/Content-Management-Systems.aspx"

@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
-# Added cookie
-#
-
 Plugin.define do
 name "Varnish"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-15
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.2 # 2016-08-19 # Added cookie
+]
 version "0.2"
 description "Varnish is an HTTP accelerator written in C designed for content-heavy dynamic web sites. In contrast to other HTTP accelerators, such as Squid, which began life as a client-side cache, or Apache, which is primarily an origin server, Varnish was designed from the ground up as an HTTP accelerator."
 website "http://www.varnish-cache.org/"

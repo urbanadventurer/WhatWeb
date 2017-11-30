@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Webgrind"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-05
+]
 version "0.1"
 description "Webgrind is an Xdebug profiling web frontend in PHP5. It implements a subset of the features of kcachegrind and installs in seconds and works on all platforms."
 website "https://github.com/jokkedk/webgrind"

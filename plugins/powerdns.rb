@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PowerDNS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-20
+]
 version "0.1"
 description "PowerDNS is a high performance, non-BIND nameserver written in c++"
 website "http://www.powerdns.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "UseResponse"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-06
+]
 version "0.1"
 description "UseResponse is a fully customizable, open-source, self-hosted customer feedback software and support system"
 website "http://www.useresponse.com/"

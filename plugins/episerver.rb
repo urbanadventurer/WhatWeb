@@ -5,14 +5,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2 by Andrew Horton
-# removed VIEWSTATE match as it matches ASP.NET, removed :probability=>100
-# Version 0.3 by Andrew Horton - added version detection with EPiServer logos and more examples from http://www.episerver.com/en/Customers/
-
 Plugin.define do
 name "EPiServer"
-author "Patrik Wallström"
+authors [
+  "Patrik Wallström",
+  "Andrew Horton", # v0.2 # removed VIEWSTATE match as it matches ASP.NET, removed :probability=>100
+  # v0.3 # Andrew Horton # added version detection with EPiServer logos and more examples from http://www.episerver.com/en/Customers/
+]
 version "0.2"
 description "CMS from EPiServer - http://episerver.com/"
 

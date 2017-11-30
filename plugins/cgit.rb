@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.1 # 2014-07-20 #
-# Initial version
-##
 Plugin.define do
 name "cgit"
-author "Fabian Affolter <fabian@engineering.ch>" # 2014-07-20
+authors [
+  "Fabian Affolter <fabian@engineering.ch>", # 2014-07-20
+  # v0.1 # 2014-07-20 # Initial version. 
+]
 version "0.1"
 description "A web frontend for git repositories written in C."
 website "http://git.zx2c4.com/cgit/"

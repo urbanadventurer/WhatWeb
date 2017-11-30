@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MobilityGuard"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-05
+]
 version "0.1"
 description "MobilityGuard is a suite of security products from the company by the same name."
 website "http://www.mobilityguard.com/"

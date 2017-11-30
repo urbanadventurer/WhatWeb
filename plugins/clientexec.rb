@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ClientExec"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-23
+]
 version "0.1"
 description "ClientExec is a comprehensive and flexible web hosting billing solution designed for customer billing, helpdesk, e-mail and (team) management and communication. ClientExec was conceived and built with small to mid-sized hosting companies in mind."
 website "http://www.clientexec.com/"

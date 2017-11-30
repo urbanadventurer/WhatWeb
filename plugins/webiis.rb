@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WebIIS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-10
+]
 version "0.1"
 description "WebIIS - Mini ASP Web Server [Chinese]"
 

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "cm3-cms"
-author "Aung Khant <http://yehg.net/>" # 2012-02-12
+authors [
+  "Aung Khant <http://yehg.net/>", # 2012-02-12
+]
 version "0.1"
 description "CM3/CM2 CMS - http://www.cm3cms.com/ , CM2 was based on ASP, CM3 was based on ASP.NET."
 

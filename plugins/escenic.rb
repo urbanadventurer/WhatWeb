@@ -5,12 +5,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-03-30 # Brendan Coles <bcoles@gmail.com>
-# Updated regex to decrease false positives & merged EscenicEngine5 plugin
-##
 Plugin.define do
 name "Escenic"
-author "Erik Inge Bolsø <knan+whatweb@redpill-linpro.com> & nikosk <nk@dsigned.gr>"
+authors [
+  "Erik Inge Bolsø <knan+whatweb@redpill-linpro.com>",
+  "nikosk <nk@dsigned.gr>",
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2011-03-30 # Updated regex to decrease false positives & merged EscenicEngine5 plugin. 
+]
 version "0.3"
 description "Escenic is a commercial CMS popular in the Nordic region."
 website "http://escenic.com/"

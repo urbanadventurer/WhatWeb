@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Simple-Phishing-Toolkit"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-12
+]
 version "0.1"
 description "Simple Phishing Toolkit (SPT)"
 website "http://www.sptoolkit.com/project/"

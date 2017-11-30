@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Micro-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-26
+]
 version "0.1"
 description "Micro CMS"
 website "http://www.micro-cms.com/"

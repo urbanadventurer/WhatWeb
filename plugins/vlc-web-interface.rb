@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "VLC-Web-Interface"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-20
+]
 version "0.1"
 description "Web interface for VideoLAN media player"
 website "http://www.videolan.org/"

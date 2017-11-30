@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# fixed examples= bug
-
 Plugin.define do
 name "Blogger"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+   # v0.2 # fixed examples= bug
+]
 version "0.2"
 description "Blogger.com free blogging site"
 

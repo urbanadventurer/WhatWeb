@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "fsaATLAS"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-29
+]
 version "0.1"
 description "fsaAtlas is an international student and scholar management system."
 website "http://www.sungardhe.com/Solutions/fsaATLAS/"

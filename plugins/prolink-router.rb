@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PROLiNK-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-21
+]
 version "0.1"
 description "PROLiNK Router"
 website "http://www.prolink.co.id/"

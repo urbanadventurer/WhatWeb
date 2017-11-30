@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HP-Printer"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-17
+]
 version "0.1"
 description "HP Printer"
 website "http://www.hp.com/"

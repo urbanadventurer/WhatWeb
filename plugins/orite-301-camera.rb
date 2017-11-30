@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ORITE-301-Camera"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-15
+]
 version "0.1"
 description "Orite IC301 web cam interface"
 

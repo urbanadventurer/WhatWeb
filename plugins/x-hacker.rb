@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "x-hacker"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+]
 version "0.1"
 description "This plugin identifies the X-Hacker HTTP header and returns its value."
 

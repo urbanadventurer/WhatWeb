@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DBHcms"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "The DBHcms is a small free Open Source content management system for personal and small business websites."
 website "http://www.drbenhur.com"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHP-XMLRPC"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-17
+]
 version "0.1"
 description "XML-RPC for PHP is a library implementing the XML-RPC protocol, written in PHP. It is also known as PHPXMLRPC."
 website "http://phpxmlrpc.sourceforge.net/"

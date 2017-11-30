@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2012-08-16 # Andrew Horton
-# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
-##
 Plugin.define do
 name "PunBB"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-06
+  "Andrew Horton", # v0.2 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array. 
+]
 version "0.2"
 description "PunBB is a fast and lightweight PHP-powered discussion board. It is released under the GNU General Public License."
 website "http://punbb.informer.com/"

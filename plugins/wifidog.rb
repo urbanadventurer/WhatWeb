@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WiFiDog"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-23
+]
 version "0.1"
 description "The Wifidog project is an open source captive portal solution. Requires: PHP and postgresql"
 website "http://dev.wifidog.org/"

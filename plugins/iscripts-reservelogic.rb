@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "iScripts-ReserveLogic"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-11
+]
 version "0.1"
 description "iScripts ReserveLogic offers an online web based reservation system for the hospitality industry for service providers."
 website "http://www.iscripts.com/reservelogic/"

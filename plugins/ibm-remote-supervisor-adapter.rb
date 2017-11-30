@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "IBM-Remote-Supervisor-Adapter"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-15
+]
 version "0.1"
 description "IBM Remote Supervisor Adapter (RSA) is the out-of-band management interface card optional on most IBM x86-based servers."
 website "https://www-947.ibm.com/support/entry/portal/docdisplay?lndocid=MIGR-50116"

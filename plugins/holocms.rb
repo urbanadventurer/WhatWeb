@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HoloCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+]
 version "0.1"
 description "HoloCMS. Requires PHP."
 

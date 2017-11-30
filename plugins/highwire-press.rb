@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HighWire-Press"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-21
+]
 version "0.1"
 description "HighWire Press hosting"
 website "http://highwire.stanford.edu/about/"

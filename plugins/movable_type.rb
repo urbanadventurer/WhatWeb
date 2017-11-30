@@ -4,20 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2011-07-07 # Brendan Coles <bcoles@gmail.com>
-# updated regex
-# added example urls, google dorks and version/path detection with mt-check.cgi
-##
-# Version 0.3
-# Uses :version=>//
-##
-# Version 0.2
-# remove :certainty
-##
-
 Plugin.define do
 name "Movable-Type"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty. 
+  # v0.3 # Uses :version=>//. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.4 # 2011-07-07 # updated regex. added example urls, google dorks and version/path detection with mt-check.cgi. 
+]
 version "0.4"
 description "Blogging platform"
 website "http://www.movabletype.org/"

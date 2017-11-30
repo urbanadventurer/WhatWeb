@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Infomaster"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-16
+]
 version "0.1"
 description "InfoMaster ePlanning software - asset management and property development application tracking and planning"
 website "http://www.infomaster.com.au/"

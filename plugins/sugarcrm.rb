@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SugarCRM"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-02
+]
 version "0.1"
 description "Commercial open source customer relationship management (CRM). CRM software for sales force automation and customer support deployed on demand or on site."
 website "http://www.sugarcrm.com/crm/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHP-Pro-Bid"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "PHP Pro Bid - Auction software"
 website "http://www.phpprobid.com/"

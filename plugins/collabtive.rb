@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Collabtive"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-10
+]
 version "0.1"
 description "Collabtive - Open Source Collaboration"
 website "http://collabtive.o-dyn.de/"

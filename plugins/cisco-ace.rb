@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Cisco-ACE"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-02
+]
 version "0.1"
 description "Cisco Application Control Engine (ACE) Device Manager"
 website "http://www.cisco.com/en/US/products/ps6906/index.html"

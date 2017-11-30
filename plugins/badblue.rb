@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Replaced passive function with match
-##
 Plugin.define do
 name "BadBlue"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-20
+  "Andrew Horton", # v0.2 # 2016-04-19 # Replaced passive function with match. 
+]
 version "0.2"
 description "A free, very small Windows web server for sharing, publishing and serving files."
 website "http://www.badblue.com/"

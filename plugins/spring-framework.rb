@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Spring-Framework"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-12
+]
 version "0.1"
 description "Spring Framework is an open source application framework for the Java platform."
 website "http://www.springsource.org/"

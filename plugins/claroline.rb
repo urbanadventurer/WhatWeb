@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Claroline"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-24
+]
 version "0.1"
 description "Claroline is an Open Source eLearning and eWorking platform allowing teachers to build effective online courses and to manage learning and collaborative activities on the web. Translated into 35 languages, Claroline has a large worldwide community"
 website "http://www.claroline.net/"

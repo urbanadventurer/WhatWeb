@@ -4,17 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-############################
-# WhatWeb plugin by NetAgence.com
-############################
-##
-# Version 0.2 # # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
-# Reduced version from 1.0 to 0.2.
-# Added Bhavin's cookie
-##
 Plugin.define do
 name "PrestaShop"
-author "Chris, NetAgence.com"
+authors [
+  "Chris@NetAgence.com", # WhatWeb plugin by NetAgence.com
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.2 # Reduced version from 1.0 to 0.2.. Added Bhavin's cookie. 
+]
 version "0.2"
 description "Ecommerce CMS Prestashop."
 website "http://www.prestashop.com/"

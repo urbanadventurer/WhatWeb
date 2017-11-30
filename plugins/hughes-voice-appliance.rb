@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Hughes-Voice-Appliance"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-11-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-11-11
+]
 version "0.1"
 description "Hughes VoIP Appliance for HughesNet integration"
 website "http://www.hughes.com/"

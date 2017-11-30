@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Sagem-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-16
+]
 version "0.1"
 description "Sagem Router - Distributed by Wanadoo, Maroc Telecom, Sky and others."
 

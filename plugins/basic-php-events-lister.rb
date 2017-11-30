@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Basic-PHP-Events-Lister"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-21
+]
 version "0.1"
 description "PHP event calendar"
 website "http://www.mevin.com/"

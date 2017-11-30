@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Tiger-IP-Connect"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-30
+]
 version "0.1"
 description "Tiger IP Connect - is a Windows based software solution to manage a single Nomadix powered Hot-Spot."
 website "http://www.tigercomms.com/tiger-ip-connect-lite"

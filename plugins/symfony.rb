@@ -3,13 +3,13 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
-###
-# Version 0.2 # 2016-08-19 # author "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>" 
-# Added cookie and updated website
-#
+##
 Plugin.define do
 name "Symfony"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-31
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.2 # 2016-08-19 # Added cookie and updated website
+]
 version "0.2"
 description "Symfony - open-source PHP web framework"
 website "https://symfony.com/"

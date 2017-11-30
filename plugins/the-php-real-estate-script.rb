@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "The-PHP-Real-Estate-Script"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+]
 version "0.1"
 description "The Real Estate Script is a fully scalable turn-key PHP MySQL Real Estate Classifieds."
 website "http://www.therealestatescript.com/"

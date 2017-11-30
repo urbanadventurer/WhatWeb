@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Spree-Commerce"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-22
+]
 version "0.1"
 description "Spree Commerce is an open source e-commerce solution"
 website "http://spreecommerce.com/"

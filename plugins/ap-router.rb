@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AP-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-14
+]
 version "0.1"
 description "AP Router [Brazilian]"
 website "http://aprouter.com.br/"

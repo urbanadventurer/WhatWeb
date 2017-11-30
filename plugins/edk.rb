@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "EDK"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-04
+]
 version "0.1"
 description "EDK is an Open Source Killboard for EVE-Online, maintained by the EVE Development Network. Requirements: PHP >= version 5, the GD Library, MySQL >= version 5"
 website "http://wiki.eve-id.net/EDK"

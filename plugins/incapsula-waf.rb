@@ -4,16 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2017-11-27 # Andrew Horton
-# Add website
-##
-# Version 0.2 # 2016-08-19 # Bhavin Senjaliya
-# Add visid_incap_ cookie
-##
-
 Plugin.define do
 name "Incapsula-WAF"
-author "Aung Khant <http://yehg.net/>" # 2012-02-10
+authors [
+  "Aung Khant <http://yehg.net/>", # 2012-02-10
+  "Bhavin Senjaliya", # v0.2 # 2016-08-19 # Add visid_incap_ cookie. 
+  "Andrew Horton", # v0.3 # 2017-11-27 # Add website. 
+]
 version "0.3"
 description "Incapsula-WAF"
 website "http://www.incapsula.com"

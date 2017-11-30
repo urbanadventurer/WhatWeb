@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Ushahidi"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-05
+]
 version "0.1"
 description "The Ushahidi Platform is a platform for information collection, visualization and interactive mapping."
 website "http://www.ushahidi.com/"

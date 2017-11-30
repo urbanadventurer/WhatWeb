@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "linkSpheric"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-21
+]
 version "0.1"
 description "linkSpheric. Possibly the world's coolest free online directory software that's absolutely free, no advertising, no spyware, just good old PHP-MySQL."
 website "http://dataspheric.com/services/software/ls/"

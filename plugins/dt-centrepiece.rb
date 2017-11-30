@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DT-Centrepiece"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-06
+]
 version "0.1"
 description "DT Centrepiece is a free open-source content management system (CMS) for commercial or personal use."
 website "www.dt.net.nz/centrepiece/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Kajona"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-19
+]
 version "0.1"
 description "Kajona - Open Source Content Management System - Requires PHP & MySQL"
 website "http://www.kajona.de/"

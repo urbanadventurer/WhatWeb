@@ -3,17 +3,14 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
-#
-# Version 0.3 # 2017-11-27 # Andrew Horton
-# Update website and adjust certainty
-## 
-# Version 0.2 # 2016-08-19 # Bhavin Senjaliya
-# Add 3 cookies
-#
-
+##
 Plugin.define do
 name "BigCommerce"
-author "Claudio Salazar <csalazar at spect dot cl>"
+authors [
+  "Claudio Salazar <csalazar at spect dot cl>",
+  "Bhavin Senjaliya", # v0.2 # 2016-08-19 #  Add 3 cookies
+  "Andrew Horton", # v0.3 # 2017-11-27 # Update website and adjust certainty. 
+]
 version "0.3"
 description "Fully loaded with killer features."
 website "http://www.bigcommerce.com/"

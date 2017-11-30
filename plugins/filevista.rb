@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "FileVista"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-07
+]
 version "0.1"
 description "FileVista is a web file manager for storing, managing and sharing files online through your web browser."
 website "http://www.gleamtech.com/products/filevista/web-file-manager"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AMDSoFT"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-21
+]
 version "0.1"
 description "CMS [Iranian]"
 website "http://www.iranfairit.com/main/index.aspx"

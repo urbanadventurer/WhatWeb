@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated matches and version detection
-##
 Plugin.define do
 name "DUgallery"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-05 
+  # v0.2 # Updated matches and version detection. 
+]
 version "0.2"
 description "DUgallery - PHP powered photo gallery."
 website "http://www.duware.com/"

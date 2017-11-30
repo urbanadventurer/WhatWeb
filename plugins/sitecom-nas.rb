@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Sitecom-NAS"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-09-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-09-07
+]
 version "0.1"
 description "Sitecom Home Storage Center - Network Attached Storage (NAS)"
 website "http://www.sitecom.com/home-storage-center/p/863"

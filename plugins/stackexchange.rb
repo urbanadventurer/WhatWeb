@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define do
 name "StackExchange"
-author "Mateusz Golewski"
+authors [
+  "Mateusz Golewski",
+]
 version "0.1"
 description "StackExchange family Q&A forums."
 

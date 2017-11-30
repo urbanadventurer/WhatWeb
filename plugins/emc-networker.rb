@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "EMC-NetWorker"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-09-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-09-01
+]
 version "0.1"
 description "EMC NetWorker (formerly Legato NetWorker) centralizes, automates, and accelerates data backup and recovery."
 website "http://www.emc.com/domains/legato/index.htm"

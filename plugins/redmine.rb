@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Redmine"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-15
+]
 version "0.1"
 description "Redmine is a flexible project management web application. Written using Ruby on Rails framework, it is cross-platform and cross-database."
 

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHPWind"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-18
+]
 version "0.1"
 description "BBS [Chinese]"
 website "http://www.phpwind.net/"

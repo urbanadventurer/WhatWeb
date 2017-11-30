@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Zones-Web-Solution"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-27
+]
 version "0.1"
 description "This plugin identifies websites designed by Zones Web Solution"
 website "http://www.zones.in/"

@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-09 #
-# Updated version detection
-##
 Plugin.define do
 name "LifeType"
-author "Aung Khant, http://yehg.net"
+authors [
+  "Aung Khant, http://yehg.net",
+  # v0.2 # 2011-01-09 # Updated version detection. 
+]
 version "0.2"
 description "LifeType is an open-source blogging platform with support for multiple blogs and users in a single installation."
 website "http://lifetype.net"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ShoreTel-Converged-Conferencing"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-20
+]
 version "0.1"
 description "ShoreTel Converged Conferencing"
 website "http://www.shoretel.com/"

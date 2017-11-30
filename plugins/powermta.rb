@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PowerMTA"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-14
+]
 version "0.1"
 description "PowerMTA - email gateway software (SMTP server) that makes it easy for senders to adopt the latest authentication specifications (SenderID, SPF, Domain Keys and DKIM) and comply with policies for accountable outbound email delivery."
 website "http://www.port25.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Pligg-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-11
+]
 version "0.1"
 description "Pligg is an open source CMS (Content Management System) that you can download and use for free."
 website "http://www.pligg.com/"

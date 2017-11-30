@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "EdgePrism"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-24
+]
 version "0.1"
 description "Edge Prism Content Delivery Network (CDN)"
 

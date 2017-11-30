@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WebEye-Network-Camera"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-18
+]
 version "0.1"
 description "WebEye network camera web frontend"
 website "http://www.webgateinc.com/"

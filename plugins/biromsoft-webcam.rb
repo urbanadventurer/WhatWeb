@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Biromsoft-WebCam"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-22
+]
 version "0.1"
 description "Biromsoft webcam web interface - http://www.biromsoft.com/"
 

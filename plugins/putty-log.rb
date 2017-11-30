@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PuTTY-Log"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-15
+]
 version "0.1"
 description "This plugin identifies instances of PuTTY log files and attempts to extract usernames, servers and software versions."
 

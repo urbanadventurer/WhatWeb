@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "BOOKSolved"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-16
+]
 version "0.1"
 description "BOOKSolved - guestbook script"
 website "http://www.usolved.net/scripts_9.html"

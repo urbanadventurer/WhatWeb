@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHPShop"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-26
+]
 version "0.1"
 description "PHPShop - A shopping cart application. Documentation, download, demo, and forums are provided. (PHP,MySQL)"
 website "http://code.google.com/p/phpshop/"

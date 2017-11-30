@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Auxilium-PetRatePro"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-09-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-09-18
+]
 version "0.1"
 description "Auxilium PetRatePro"
 website "http://www.auxiliumsoftware.com/PetRatePro/"

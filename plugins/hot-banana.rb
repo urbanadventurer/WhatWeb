@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Hot-Banana"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "Hot Banana is an award-winning, easy-to-use Web Content Management System (Web CMS) that helps marketers build and manage SEO-friendly Web sites that can be automated and optimized for maximum lead generation and conversion performance."
 website "http://www.hotbanana.ca/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Epiware"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-09-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-09-16
+]
 version "0.1"
 description "Epiware - Enterprise Document Management"
 website "http://www.epiware.com/"

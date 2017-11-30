@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Nette-Framework"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+]
 version "0.1"
 description "Nette Framework is a powerful framework for rapid and easy creation of high quality and innovative web applications in PHP 5.3"
 website "http://nette.org/cs/"

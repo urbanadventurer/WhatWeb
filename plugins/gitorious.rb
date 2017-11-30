@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Gitorious"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-13
+]
 version "0.1"
 description "Gitorious provides open source infrastructure for hosting open source projects that use Git - Requires: Ruby."
 website "https://gitorious.org/gitorious"

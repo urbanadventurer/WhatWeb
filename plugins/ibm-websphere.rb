@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "IBM-WebSphere"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-20
+]
 version "0.1"
 description "IBM WebSphere"
 website "https://www-01.ibm.com/software/websphere/"

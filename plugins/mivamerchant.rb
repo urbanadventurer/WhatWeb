@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MivaMerchant"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-10
+]
 version "0.1"
 description "MivaMerchant is a flexible and powerful eCommerce software that help businesses set up a professional online store, shopping cart system, secure checkout, and more."
 website "http://www.mivamerchant.com/"

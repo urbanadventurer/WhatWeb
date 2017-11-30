@@ -1,6 +1,9 @@
+##
 Plugin.define do
 name "AdvanceDigital"
-author "Elias Dorneles"
+authors [
+  "Elias Dorneles",
+]
 version "0.1"
 description "Identifies a news website by Advance Digital MG network"
 

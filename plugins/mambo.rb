@@ -4,26 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.6 # 2011-03-19 # Brendan Coles <bcoles@gmail.com>
-# Added aggressive match for /administrator/
-# Updated matches to remove false positives
-##
-# Version 0.5 # 2011-03-06 # Brendan Coles <bcoles@gmail.com>
-# Updated module detection
-##
-# Version 0.4 by Andrew Horton
-# added matches suggested by Aung Khant including 'meta name="description' and /<a href="[^"]*index.php\?option=com_/ from the Joomla plugin
-##
-# Version 0.3
-# Andrew Horton added examples, changed time since epoch match for less false positives with Joomla, added mosvisitor cookie match
-# Aung Khant(http://yehg.net) added description, README.php match, Mambo Admin match
-##
-# Version 0.2
-# removed :name & :certainty
-##
 Plugin.define do
 name "Mambo"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name & :certainty. 
+  # v0.3 # Andrew Horton added examples, changed time since epoch match for less false positives with Joomla, added mosvisitor cookie match. Aung Khant(http://yehg.net) added description, README.php match, Mambo Admin match. 
+  # v0.4 # added matches suggested by Aung Khant including 'meta name="description' and /<a href="[^"]*index.php\?option=com_/ from the Joomla plugin. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.5 # 2011-03-06 # Updated module detection. 
+  # Brendan Coles <bcoles@gmail.com>, # v0.6 # 2011-03-19 # Added aggressive match for /administrator/. Updated matches to remove false positives. 
+]
 version "0.6"
 description "Mambo CMS (http://mambo-foundation.org)"
 

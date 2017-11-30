@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated matches and version detection
-##
 Plugin.define do
 name "F3Site"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-27
+  # v0.2 # Updated matches and version detection. 
+]
 version "0.2"
 description "F3Site is a lightweight CMS written in XHTML 1.0 Strict, CSS and PHP 5. It lets you create multilingual websites without necessity of separate installation for each language."
 website "http://compmaster.prv.pl"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "KMSoft-Guestbook"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-11
+]
 version "0.1"
 description "Guestbook"
 website "http://www.kmsoft.org/"

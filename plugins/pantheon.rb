@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Pantheon"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-29
+]
 version "0.1"
 description "Pantheon"
 website "https://www.getpantheon.com/"

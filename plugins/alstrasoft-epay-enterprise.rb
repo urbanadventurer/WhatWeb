@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AlstraSoft-EPay-Enterprise"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-07
+]
 version "0.1"
 description "AlstraSoft EPay Enterprise - peer to peer payment system - Requires PHP and MySQL"
 website "http://www.alstrasoft.com/epay_enterprise.htm"

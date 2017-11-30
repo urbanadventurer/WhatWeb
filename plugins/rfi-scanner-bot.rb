@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "RFI-Scanner-Bot"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-15
+]
 version "0.1"
 description "This plugin idenitfies instances of Remote File Include Scanner bots (aka feelscanz.pl, gmjk.pl, FeeLCoMz.pl, rfi.pl) and extracts the command and control servers, channels and passwords."
 

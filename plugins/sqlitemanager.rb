@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SQLiteManager"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-14
+]
 version "0.1"
 description "SQLiteManager - Web-based SQLite administration"
 website "http://www.sqlitemanager.org"

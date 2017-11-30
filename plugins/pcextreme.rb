@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "pcextreme"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+]
 version "0.1"
 description "pcextreme server"
 website "http://www.pcextreme.nl/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Scrutinizer"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-10
+]
 version "0.1"
 description "Scrutinizer NetFlow - monitoring solution"
 website "http://www.plixer.com/products/netflow-sflow/scrutinizer-netflow-sflow.php"

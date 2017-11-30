@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "vqServer"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-07
+]
 version "0.1"
 description "vqServer is multi-platform compatible. vqServer is a personal web server with support for password protection, file uploading, Java servlets and CGI scripts."
 

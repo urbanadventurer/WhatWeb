@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Sputnik"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-21
+]
 version "0.1"
 description "Sputnik - An Extensible Wiki Engine in Lua - Sputnik is a content management system designed for extensibility. It works as a wiki out of the box, but can be extended into other things."
 website "http://sputnik.freewisdom.org/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Evo-Cam"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-15
+]
 version "0.1"
 description "EvoCam is the ultimate webcam software for Mac OS X"
 website "http://www.evological.com/evocam.html"

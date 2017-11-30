@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MySQLMan"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-21
+]
 version "0.1"
 description "MySQLMan is a web based MySQL database manager."
 website "http://www.gossamer-threads.com/products/archive.html"

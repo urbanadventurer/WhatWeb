@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Jasig-CAS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-12
+]
 version "0.1"
 description "Jasig Central Authentication Service (CAS) is an authentication system originally created by Yale University to provide a trusted way for an application to authenticate a user."
 website "http://www.jasig.org/cas"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "LaserWash"
-author "Brendan Coles <bcoles@gmail.com>" # 2013-07-28
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-07-28
+]
 version "0.1"
 description "PDQ - LaserWash - touchless car wash equipment."
 website "http://www.pdqinc.com/car-wash-equipment/laserwash-360.asp"

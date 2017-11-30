@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Atlassian-JIRA"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-11
+]
 version "0.1"
 description "JIRA provides issue tracking and project tracking for software development teams to improve code quality and the speed of development."
 website "http://www.atlassian.com/software/jira/"

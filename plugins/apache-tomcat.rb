@@ -4,21 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Plugin to detect tomcat 
-# Comment from Andrew Horton - this plugin includes code for a 404 page probe which should be incorporated into whatweb itself
-##
-# v0.3 by Andrew Horton
-# renamed plugin from Tomcat to Apache-Tomcat, added aggressive /RELEASE-NOTES.txt to get version, added footer version, added /manager/status tests
-# to-do, an invalid HTTP verb to a .JSP will reveal Tomcat if nothing else does, e.g. XXX /foobar/.jsp HTTP/1.0
-##
-# v0.4 update by Code0x58
-# change random string function and new aggressive plugin behaviour
-#
-##
 
 Plugin.define do
 	name "Apache-Tomcat" 
-	author "Louis Nyffenegger"
+	authors [
+		"Louis Nyffenegger",
+		"Andrew Horton", # v0.3 by Andrew Horton # renamed plugin from Tomcat to Apache-Tomcat, added aggressive /RELEASE-NOTES.txt to get version, added footer version, added /manager/status tests
+    "Code0x58" # v0.4 # change random string function and new aggressive plugin behaviour
+		] 
 	description "Apache Tomcat Web Server"
 	website "http://tomcat.apache.org/"
 	version "0.4"

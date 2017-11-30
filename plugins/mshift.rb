@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MShift"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-12
+]
 version "0.1"
 description "MShift - Comprehensive Mobile Banking - Over 200 US Financial Institutions are MShift clients. With a base comprised of the largest banks in the world, as well as regional credit unions and local banks, MShift is the standard by which Mobile Banking is measured."
 website "http://www.mshift.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "OpenNewsletter"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-15
+]
 version "0.1"
 description "Open source mailing list manager with builds from Self Exile, NetMeans.Net and Quadro.Net"
 

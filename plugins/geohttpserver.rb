@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "GeoHttpServer"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+]
 version "0.1"
 description "GeoHttpServer"
 website "http://www.geovision.com.tw/english/index.asp"

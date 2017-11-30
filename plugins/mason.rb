@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Mason"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-11-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-11-04
+]
 version "0.1"
 description "Mason is a powerful Perl-based templating system for generating HTML or other dynamic content."
 website "http://www.masonhq.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DVWA"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-05
+]
 version "0.1"
 description "Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable."
 website "http://www.dvwa.co.uk/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Xitami"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-31
+]
 version "0.1"
 description "Xitami - Fast, small, secure, portable web server. The Xitami product line stretches back to 1996. X5 is built using iMatix's current Base2 technology for multithreading applications."
 website "http://www.xitami.com/"

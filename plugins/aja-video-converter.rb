@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AJA-Video-Converter"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-12-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-12-05
+]
 version "0.1"
 description "AJA digital video converter devices"
 website "http://www.aja.com/en/products/convert/"

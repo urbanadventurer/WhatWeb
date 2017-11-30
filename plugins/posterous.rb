@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Posterous"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-19
+]
 version "0.1"
 description "Posterous publishing platform. If you can email, you can manage a website and share it with small groups or the world using Posterous. - https://posterous.com/"
 
