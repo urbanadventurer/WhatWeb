@@ -1027,7 +1027,15 @@ loop do
   target, result = result_queue.pop(true)
   output_list.each do |output|
     begin
-      output.out(target, target.status, result)
+
+    	unless use_custom_grep_plugin
+      	output.out(target, target.status, result)
+      else
+				if result.map {|plugin_name, plugin_result| plugin_name }.include? "Grep"
+      		output.out(target, target.status, result)
+      	end 
+      end
+    
     rescue => err
       error("ERROR Logging failed: #{target} - #{err}")
       raise if $WWDEBUG == true
