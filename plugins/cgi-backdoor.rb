@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CGI-Backdoor"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-19
+]
 version "0.1"
 description "Simple CGI backdoor by DK (http://michaeldaw.org)"
 

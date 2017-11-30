@@ -7,7 +7,9 @@
 ##
 Plugin.define do
 name "Fidion-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12 
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-12 
+]
 version "0.1"
 description "CMS"
 website "http://www.fidion.de/"

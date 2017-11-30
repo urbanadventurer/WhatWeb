@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Nintendo-DS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-02
+]
 version "0.1"
 description "Nintendo DS video game console"
 website "http://www.nintendo.com/"

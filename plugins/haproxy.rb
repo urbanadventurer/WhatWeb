@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HAProxy"
-author "Brendan Coles <bcoles@gmail.com>" # 2013-02-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-02-27
+]
 version "0.1"
 description "Reliable, High Performance TCP/HTTP Load Balancer"
 website "http://haproxy.1wt.eu/"

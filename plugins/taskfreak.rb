@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
 Plugin.define do
 name "TaskFreak"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-10
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "TaskFreak! Original is a simple but efficient web based task manager written in PHP."
 website "http://www.taskfreak.com/original/"

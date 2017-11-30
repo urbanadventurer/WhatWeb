@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "chillyCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-08
+]
 version "0.1"
 description "chillyCMS is a Content Management System. This is a software which allows you to create a website without any programming skills."
 website "http://chillycms.bplaced.net/"

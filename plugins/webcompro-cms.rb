@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WEBCOMpro-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-14
+]
 version "0.1"
 description "WEBCOMpro CMS"
 website "http://www.webcompro-cms.com/"

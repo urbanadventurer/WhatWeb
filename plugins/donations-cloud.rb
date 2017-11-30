@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Donations-Cloud"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-11
+]
 version "0.1"
 description "The donations cloud is something like a tag cloud, only that it displays . donations. The more a person donates, the larger the link to his/her website will be."
 website "http://www.zirona.com/software/wordpress-donations-cloud/"

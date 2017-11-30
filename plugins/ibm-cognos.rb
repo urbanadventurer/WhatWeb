@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "IBM-Cognos"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-26
+]
 version "0.1"
 description "IBM Cognos - Business Intelligence and Financial Performance Management"
 website "http://www-01.ibm.com/software/au/data/cognos/"

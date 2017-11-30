@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MistCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "MistCMS is a free Content Management System written in PHP that allows you to dynamically edit the content on your website without having to reupload everything every time you want to make a change."
 

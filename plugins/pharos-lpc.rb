@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Pharos-LPC"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-14
+]
 version "0.1"
 description "Pharos LPC web interface - All-in-one control solution for entertainment and LED lighting installations."
 website "http://www.pharoscontrols.com/products/lighting_controllers/lpc"

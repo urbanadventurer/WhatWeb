@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty=>100 & :name
-# Version 0.3
-# Uses :version=>//
-
 Plugin.define do
 name "VSNSLemon"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 & :name
+  # v0.3 # Uses :version=>//
+]
 version "0.3"
 description "VSNS is a Very Simple News System written in PHP. VSNS Lemon vulnerabilities: http://evuln.com/vulns/106/summary.html"
 

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ECShop"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-18
+]
 version "0.1"
 description "Ecshop is an Open Source Ecommerce Platform"
 website "http://www.ecshop.org/"

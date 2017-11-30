@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-30 # Andrew Horton
-# Added strict-transport-security
-##
-# Version 0.2
-# removed :certainty=>100
-##
 Plugin.define do
 name "UncommonHeaders"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100. 
+  # Andrew Horton, # v0.3 # 2016-04-30 # Added strict-transport-security. 
+]
 version "0.3"
 description "Uncommon HTTP server headers. The blacklist includes all the standard headers and many non standard but common ones. Interesting but fairly common headers should have their own plugins, eg. x-powered-by, server and x-aspnet-version. Info about headers can be found at www.http-stats.com"
 

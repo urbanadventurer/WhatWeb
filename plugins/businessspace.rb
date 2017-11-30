@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "BusinessSpace"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-12
+]
 version "0.1"
 description "BusinessSpace community"
 

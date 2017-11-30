@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Unimep-Station-Controller"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-16
+]
 version "0.1"
 description "Mepsan fuel pump controller"
 website "http://www.mepsan.com.tr/eng/index.htm"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DVR-WebClient"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+]
 version "0.1"
 description "DVR camera"
 

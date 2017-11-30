@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-18 # Andrew Horton
-# Replaced passive function with match
-##
 Plugin.define do
 name "ActiveHTML"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-06
+  "Andrew Horton", # v0.2 # 2016-04-18 # Replaced passive function with match. 
+]
 version "0.2"
 description "seliSoft ActiveHTML provides Active-Server-Pages (ASP) to nearly every web server supporting CGI."
 website "http://www.selisoft.com/en/ahtml/"

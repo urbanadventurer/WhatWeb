@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Truition"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-30
+]
 version "0.1"
 description "CDC eCommerce - On Demand eCommerce and Online Auction Software - formerly Truition"
 website "http://www.truition.com/"

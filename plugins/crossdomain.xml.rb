@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "crossdomain_xml"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-09
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-09
+]
 version "0.1"
 description "This plugin extracts allowed domain from crossdomain.xml"
 

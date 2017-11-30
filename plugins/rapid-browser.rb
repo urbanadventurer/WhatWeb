@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "RAPID-Browser"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-02
+]
 version "0.1"
 description "RAPID Browser - Managing news contents, sharing editorial and publishing to paper, web and mobile."
 website "http://www.knowledgeview.co.uk/solutions/rapidbrowser"

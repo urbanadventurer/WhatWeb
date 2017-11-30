@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "FreeNAC"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-20
+]
 version "0.1"
 description "FreeNAC is an OpenSource solution for LAN access control and dynamic Vlan management"
 website "http://freenac.net/"

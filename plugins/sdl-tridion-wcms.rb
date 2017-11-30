@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SDL-Tridion-WCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-20
+]
 version "0.1"
 description "SDL Tridion WCMS - Web Content Management System (WCMS)"
 website "http://www.sdl.com/en/wcm/products/sdltridion/default.asp"

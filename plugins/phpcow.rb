@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHPCow"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-16
+]
 version "0.1"
 description "PHPCow news publishing content management system - Homepage [offline] : http://www.phpcow.com/"
 

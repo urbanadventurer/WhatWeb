@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Pressflow"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-18
+]
 version "0.1"
 description "Pressflow is a distribution of Drupal with integrated performance, scalability, availability, and testing enhancements."
 website "http://pressflow.org/"

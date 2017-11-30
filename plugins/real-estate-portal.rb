@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "NetArtMedia-Real-Estate-Portal"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-03
+]
 version "0.1"
 description "NetArtMedia Real Estate Portal allows you to launch powerful and professional looking real estate portals with rich functionalities for the private sellers, buyers and real estate agents to list properties for sale or rent, search in the database, show featured ads and many others."
 website "http://www.netartmedia.net/realestate/"

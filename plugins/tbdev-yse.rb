@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TBDev-YSE"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-14
+]
 version "0.1"
 description "TBDev Yuna Scatari Edition - Torrent tracker"
 website "http://bit-torrent.kiev.ua/"

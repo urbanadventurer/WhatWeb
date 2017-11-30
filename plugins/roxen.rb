@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Roxen"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-17
+]
 version "0.1"
 description "Roxen WebServer is a full-featured open-source web server distributed under the GPL license."
 website "http://www.roxen.com/products/webserver/"

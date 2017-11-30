@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "EazyCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-16
+]
 version "0.1"
 description "eazyCMS offers the functionality that would, in a custom-made system, cost thousands or tens of thousands - and it's all available online through your browser CMS stands for Content Management System - it is an eazy way to interactively change the contents of your site - the titles of pages, what they contain, and the number and structure of pages that make up your site. - http://www.eazycms.com/home.php?page_id=2"
 

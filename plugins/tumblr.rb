@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Tumblr"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-30
+]
 version "0.1"
 description "A feature rich and free blog hosting platform offering professional and fully customizable templates, bookmarklets, photos, mobile apps, and social network"
 website "http://www.tumblr.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Visec"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-05
+]
 version "0.1"
 description "Visec - Surveillance Software"
 website "http://www.visec.net/"

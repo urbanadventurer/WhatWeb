@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Epic-Web-Honeypot"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-23
+]
 version "0.1"
 description "Epic Web Honeypot"
 

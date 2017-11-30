@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Sockso"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-16
+]
 version "0.1"
 description "Sockso is a free, open-source, personal music host server"
 website "http://sockso.pu-gh.com/"

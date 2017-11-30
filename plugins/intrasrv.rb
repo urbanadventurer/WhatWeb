@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Intrasrv"
-author "Brendan Coles <bcoles@gmail.com>" # 2013-06-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-06-02
+]
 version "0.1"
 description "IntraSrv - Simple Web Server"
 website "http://www.leighb.com/intrasrv.htm"

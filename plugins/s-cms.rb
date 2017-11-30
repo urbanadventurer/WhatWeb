@@ -5,16 +5,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-##
-# Version 0.3 # 2011-02-25 #
-# Updated powered by match
-##
 Plugin.define do
 name "S-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-30
+  # v0.3 # 2011-02-25 # Updated powered by match. 
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.3"
 description "CMS"
 website "http://www.matteoiammarrone.com/public/s-cms/"

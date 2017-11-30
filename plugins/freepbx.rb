@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "FreePBX"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-12
+]
 version "0.1"
 description "FreePBX is an easy to use web based GUI (graphical user interface) that controls and manages Asterisk"
 website "http://www.freepbx.org/"

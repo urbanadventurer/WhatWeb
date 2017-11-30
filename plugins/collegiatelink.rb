@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CollegiateLink"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-22
+]
 version "0.1"
 description "CollegiateLink"
 website "http://www.collegiatelink.net/"

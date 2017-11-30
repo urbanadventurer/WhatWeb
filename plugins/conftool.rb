@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ConfTool"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-24
+]
 version "0.1"
 description "ConfTool is a Web-based event management system that was developed to support the organization of conferences, workshops, congresses and seminars. - Hompage: http://www.conftool.net/"
 

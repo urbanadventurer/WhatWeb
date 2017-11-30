@@ -4,16 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-08-19 # Bhavin Senjaliya
-# Added cookie
-##
-# Version 0.2
-# removed :name and :certainty=>100
-##
-
 Plugin.define do
 name "DotCMS"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100. 
+  "Bhavin Senjaliya", # v0.3 # 2016-08-19 # Added cookie. 
+]
 version "0.3"
 description "DotCMS is an opensource CMS written in Java. Has enterprise support"
 website "http://www.dotcms.org/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Siemens-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-22
+]
 version "0.1"
 description "Siemens Router"
 website "https://www.siemens.com/"

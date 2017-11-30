@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Axous"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-20
+]
 version "0.1"
 description "Axous is an e-shop system for software venders."
 website "http://www.axous.com/"

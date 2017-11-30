@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ShopEx"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-19
+]
 version "0.1"
 description "eCommerce [Chinese]"
 website "http://www.shopex.cn/"

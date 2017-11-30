@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Fujitsu-InfoProvider-Pro"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-24
+]
 version "0.1"
 description "Fujitsu-InfoProvider-Pro web server"
 website "http://software.fujitsu.com"

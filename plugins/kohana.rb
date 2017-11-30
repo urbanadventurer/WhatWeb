@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Kohana"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-10
+]
 version "0.1"
 description "Kohana is an elegant HMVC PHP5 framework that provides a rich set of components for building web applications."
 website "http://kohanaframework.org/"

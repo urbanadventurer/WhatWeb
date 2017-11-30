@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TutorTrac"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-02
+]
 version "0.1"
 description "Online management software for learning, writing, tutoring departments, and academic skills centers for traditional and athletic students. "
 website "http://www.go-redrock.com/"

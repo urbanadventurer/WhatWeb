@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AV-Arcade"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-18
+]
 version "0.1"
 description "AV-Arcade. Requires PHP"
 website "http://www.avscripts.net/avarcade/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MGB-OpenSource-Guestbook"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-22
+]
 version "0.1"
 description "MGB OpenSource Guestbook"
 website "http://www.m-gb.org/"

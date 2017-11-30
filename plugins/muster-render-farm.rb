@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Muster-Render-Farm"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-08
+]
 version "0.1"
 description "Muster is a render farm management system for film production, game development, and visual effect industry."
 website "http://www.vvertex.com/products.php"

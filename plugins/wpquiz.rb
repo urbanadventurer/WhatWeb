@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "wpQuiz"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-21
+]
 version "0.1"
 description "wpQuiz is a fully-featured quiz script."
 website "http://www.wireplastik.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Deluge-web"
-author "Andrew Horton" # 2015-05-06
+authors [
+  "Andrew Horton", # 2015-05-06
+]
 version "0.1"
 description "Deluge-web is a web interface to deluge, an open source, cross-platform BitTorrent client. Homepage - http://deluge-torrent.org/"
 

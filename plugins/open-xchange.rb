@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Open-Xchange"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-14
+]
 version "0.1"
 description "Open-Xchange mail server"
 website "http://www.open-xchange.com/"

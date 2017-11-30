@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HP-SiteScope"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-06
+]
 version "0.1"
 description "HP SiteScope is an agentless monitoring software focused on monitoring the availability and performance of distributed IT infrastructures, including servers, operating systems, network and Internet services, applications and application components. Originally written by Freshwater Software in 1996, a company acquired by Mercury Interactive in 2001. Mercury Interactive was subsequently acquired by Hewlett Packard (HP) in 2006."
 website "More Info: http://en.wikipedia.org/wiki/HP_SiteScope"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Symantec-Client-Security"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-19
+]
 version "0.1"
 description "Symantec Client Security"
 website "http://www.symantec.com"

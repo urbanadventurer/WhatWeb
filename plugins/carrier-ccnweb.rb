@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Carrier-CCNWeb"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-06
+]
 version "0.1"
 description 'Carrier CCNWeb - a web-based HVAC front-end for a Carrier CCN Controls system. Comes out of the box with the ability to "Self-Learn" the building controls and then automatically display them."
 website "'

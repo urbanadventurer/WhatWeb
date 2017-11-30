@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Google-Analytics"
-author "Peter van der Laan"
+authors [
+  "Peter van der Laan",
+]
 version "0.1"
 description "This plugin identifies the Google Analytics account."
 website "http://www.google.com/analytics/"

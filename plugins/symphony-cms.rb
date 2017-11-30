@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-31 #
-# Renamed from "symphony" to "Symphony-CMS"
-# Updated version detection
-##
 Plugin.define do
 name "Symphony-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-12
+  # v0.2 # 2011-01-31 # Renamed from "symphony" to "Symphony-CMS". Updated version detection. 
+]
 version "0.1"
 description "Symphony CMS - XSLT-powered open source content management system"
 website "http://symphony-cms.com/"

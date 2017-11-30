@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Dada-Mail"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-18
+]
 version "0.1"
 description "Dada Mail is a Contemporary Mailing List Manager. Dada Mail works brilliantly - especially when you want to run a verified, closed loop opt-in subscription-based mailing list that your subscribers can trust."
 website "http://dadamailproject.com/"

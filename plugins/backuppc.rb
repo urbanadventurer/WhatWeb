@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "BackupPC"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-20
+]
 version "0.1"
 description "BackupPC is a high-performance, enterprise-grade system for backing up Linux, WinXX and MacOSX PCs and laptops to a server's disk."
 website "http://backuppc.sourceforge.net/"

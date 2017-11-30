@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-19 #
-# Added local file path aggressive match
-##
 Plugin.define do
 name "ViewVC"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-18
+  # v0.2 # 2011-03-19 # Added local file path aggressive match. 
+]
 version "0.2"
 description "ViewVC (formerly known as ViewCVS) is a browser interface for CVS and Subversion version control repositories. It generates templatized HTML to present navigable directory, revision, and change log listings. It can display specific versions of files as well as diffs between those versions."
 website "http://viewvc.tigris.org/"

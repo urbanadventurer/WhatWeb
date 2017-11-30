@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Toshiba-Cable-Modem"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+]
 version "0.1"
 description "Toshiba Cable Modem"
 website "http://www.toshiba.com/"

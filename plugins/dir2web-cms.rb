@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "dir2web-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-08
+]
 version "0.1"
 description "dir2web CMS"
 website "http://www.dir2web.it/"

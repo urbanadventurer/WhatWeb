@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "FCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-06
+]
 version "0.1"
 description "Family Connections CMS (FCMS)"
 website "https://www.familycms.com/index.php"

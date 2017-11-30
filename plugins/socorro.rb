@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Socorro"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-07
+]
 version "0.1"
 description "A server for collecting, processing, and displaying crash reports from clients using the Breakpad libraries"
 website "code.google.com/p/socorro/"

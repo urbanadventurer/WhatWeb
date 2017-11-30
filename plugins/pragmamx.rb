@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "pragmaMx"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-29
+]
 version "0.1"
 description "pragmaMx - CMS"
 website "http://www.pragmamx.org/"

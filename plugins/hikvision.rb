@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HikVision"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-15
+]
 version "0.1"
 description "HikVision cameras, Digital Video Servers (DVS) and Digital Video Records (DVR)"
 website "http://www.hikvisionusa.com/"

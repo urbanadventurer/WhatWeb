@@ -4,19 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 3 # 2017-11-27 # Andrew Horton
-# Tidied up. Added website.
-##
-# v2.0 by Andrew Horton
-# new random string
-##
-# v1.0
-# not so foolproof if the site uses its own custom 404 and custom cookie name
-#
-
 Plugin.define do
 name "CodeIgniter-PHP-Framework"
-author "Aung Khant <YGN Ethical Hacker Group, Myanmar, http://yehg.net>"
+authors [
+  "Aung Khant <YGN Ethical Hacker Group, Myanmar, http://yehg.net>",
+  # v2.0 # new random string
+  "Andrew Horton", # v3 # 2017-11-27 # Tidied up. Added website.. 
+]
 version "0.3"
 description "CodeIgniter PHP Framework"
 website "http://codeigniter.com/"	

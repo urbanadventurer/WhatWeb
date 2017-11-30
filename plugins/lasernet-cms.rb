@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Lasernet-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-10
+]
 version "0.1"
 description "Lasernet CMS"
 website "http://lasernet.gr/cms.php"

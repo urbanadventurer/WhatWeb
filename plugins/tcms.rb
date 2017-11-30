@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Added website parameter and description
-##
 Plugin.define do
 name "TCMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-29
+  "Andrew Horton", # v0.2 # 2016-04-17 # Added website parameter and description. 
+]
 version "0.2"
 description "Content management system by Tanzarine Technology Ltd"
 website "http://www.tanzarine.co.uk/Articles/cms.html"

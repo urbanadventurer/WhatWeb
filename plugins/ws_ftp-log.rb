@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WS_FTP-log"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-15
+]
 version "0.1"
 description "This plugin extratcs ftp servers from WS_FTP log files - As the leading developer of secure and managed file transfer solutions, Ipswitch offers WS_FTP Professional.the most secure and easy-to-use FTP client available."
 website "http://www.ipswitchft.com/products/ws_ftp_pro/index.aspx?n=1&k_id=ipshome"

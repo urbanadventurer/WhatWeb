@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Adcon-Telemetry-Gateway"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-23
+]
 version "0.1"
 description "Adcon Telemetry Gateway base station - Manages large networks of UHF, GSM and GPRS RTUs automatically."
 website "http://www.adcon.at/"

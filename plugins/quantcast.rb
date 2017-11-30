@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty
-
 Plugin.define do
 name "Quantcast"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty
+]
 version "0.1"
 description "Visitor demographics and statistics. www.quantcast.com"
 

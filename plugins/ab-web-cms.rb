@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AB-WEB-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-13
+]
 version "0.1"
 description "AB WEB CMS [French]"
 website "http://www.aeline-informatique.com/"

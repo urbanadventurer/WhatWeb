@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "D-Link-Network-Camera"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-22
+]
 version "0.1"
 description "D-Link network camera web interface"
 website "http://www.dlink.com/"

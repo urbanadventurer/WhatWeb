@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Batavi"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-23
+]
 version "0.1"
 description "Batavi open source e-commerce"
 website "http://www.batavi.org/"

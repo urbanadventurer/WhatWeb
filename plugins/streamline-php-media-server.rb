@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Streamline-PHP-Media-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-27
+]
 version "0.1"
 description "Streamline is a streaming media web application written in php."
 website "http://streamline.sourceforge.net/about.php"

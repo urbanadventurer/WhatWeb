@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Zeus-Web-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-25
+]
 version "0.1"
 description "Zeus Web Server is the most scalable, high-performance web server software available, underpinning business-critical solutions for the world's leading web hosting, content provider and secure e-commerce companies."
 website "http://www.zeus.com/products/web-server/"

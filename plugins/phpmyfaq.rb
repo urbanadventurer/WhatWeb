@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "phpMyFAQ"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "phpMyFAQ - The FAQ system"
 website "http://faq.phpmyfaq.de/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ZoneMinder"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-01
+]
 version "0.1"
 description "Linux video camera security and surveillance solution - Web interface - Requires MySQL and PHP"
 website "http://www.zoneminder.com/"

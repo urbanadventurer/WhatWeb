@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "iRealty"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+]
 version "0.1"
 description "iRealty is an advanced flexible php real estate software and CMS with open source code."
 website "http://www.irealtysoft.com/"

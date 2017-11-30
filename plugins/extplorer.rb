@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "eXtplorer"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-12-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-12-31
+]
 version "0.1"
 description "eXtplorer is a PHP and Javascript-based File Manager"
 website "http://extplorer.net/"

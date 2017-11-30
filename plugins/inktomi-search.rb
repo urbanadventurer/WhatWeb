@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Inktomi-Search"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-20
+]
 version "0.1"
 description "Inktomi Search engine"
 website "http://www.inktomi.com/products/search/"

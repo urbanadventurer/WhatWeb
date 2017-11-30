@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MSFWeb"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+]
 version "0.1"
 description "Metasploit Framework Web Console"
 website "http://www.metasploit.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Web-Crossing-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-06
+]
 version "0.1"
 description "Homepage: http://bayspire.com/"
 

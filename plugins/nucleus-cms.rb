@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Nucleus-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-23
+]
 version "0.1"
 description "Nucleus CMS"
 website "http://nucleuscms.org/"

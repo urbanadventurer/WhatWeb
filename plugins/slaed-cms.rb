@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SLAED-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-12
+]
 version "0.1"
 description "Homepage: http://slaed.net/"
 

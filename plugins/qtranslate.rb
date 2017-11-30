@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "qTranslate"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-09
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-09
+]
 version "0.1"
 description "qTranslate Wordpress plugin"
 website "http://www.qianqin.de/qtranslate/"

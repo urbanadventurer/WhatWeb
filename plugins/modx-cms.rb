@@ -4,13 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# remove :name & :certainty
-
 Plugin.define do
 name "ModxCMS"
-  author "Andrew Horton"
+authors [
+  "Andrew Horton",
+]
   version "0.2"
   description "OpenSource CMS written in PHP."
   website "http://modxcms.com/"

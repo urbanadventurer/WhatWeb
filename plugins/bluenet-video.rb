@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "BlueNet-Video"
-author "Andrew Horton" # 2015-05-07
+authors [
+  "Andrew Horton", # 2015-05-07
+]
 version "0.1"
 description "BlueNet Video Server is an device that can stream CTV video over the internet. It uses an ActiveX plugin. Product listing - http://kelgor.net/kelcart/products/Bluenet-Video-Server.html"
 website "http://www.batblue.com/themes/BatBlue/videos/BlueNETVideo.html"

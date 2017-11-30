@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Card-Reader-Adapter"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-19
+]
 version "0.1"
 description "Card Reader Adapter - Unknown manufacturer [Korean]"
 # Returns "Card Reader Adapter" over SNMP

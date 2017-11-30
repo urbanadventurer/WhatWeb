@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "podPress"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-17
+]
 version "0.1"
 description "podPress - A dream plugin for Podcastrs using WordPress."
 website "http://www.mightyseek.com/podpress"

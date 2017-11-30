@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Vimeo"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-22
+]
 version "0.1"
 description "Vimeo.com video player"
 website "http://vimeo.com/"

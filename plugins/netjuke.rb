@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Netjuke"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-13
+]
 version "0.1"
 description "Netjuke is a Web-Based Audio Streaming Jukebox"
 website "http://sourceforge.net/projects/netjuke"

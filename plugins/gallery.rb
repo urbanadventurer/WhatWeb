@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Gallery"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-10
+]
 version "0.1"
 description "Photo gallery - Requires PHP and MySQL"
 website "http://gallery.menalto.com/"

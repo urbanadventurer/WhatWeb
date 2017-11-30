@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "EverFocus-CCTV"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+]
 version "0.1"
 description "EverFoxus CCTV router web interface"
 website "http://www.everfocus.com/products.cfm"

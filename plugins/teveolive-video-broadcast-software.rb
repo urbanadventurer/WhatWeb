@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TeveoLive-Video-Broadcast-Software"
-author "Brendan Coles <bcoles@gmail.com>" # 2015-05-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2015-05-05
+]
 version "0.1"
 description "TeveoLive webcam - Homepage [offline]: http://www.teveo.com/"
 

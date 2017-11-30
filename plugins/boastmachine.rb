@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated matches, removed certainty and updated version detection
-##
 Plugin.define do
 name "boastMachine"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-16
+  # v0.2 # Updated matches, removed certainty and updated version detection. 
+]
 version "0.2"
 description "boastMachine blog"
 website "http://boastology.com/"

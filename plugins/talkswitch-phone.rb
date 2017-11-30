@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
 Plugin.define do
 name "TalkSwitch-Phone"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-21
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "TalkSwitch designs and builds telephone systems for small and multi-location businesses. The company's Private branch exchange (PBX) and hybrid IP-PBX products enable communication over telephone and Voice over IP (VoIP) networks."
 website "http://www.talkswitch.com/"

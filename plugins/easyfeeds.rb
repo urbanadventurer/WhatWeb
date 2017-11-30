@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "EasyFeeds"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-05
+]
 version "0.1"
 description "EasyFeeds is a powerful PHP based RSS reader and news aggregator."
 website "http://www.ktools.net/easyfeeds/"

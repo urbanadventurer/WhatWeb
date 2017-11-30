@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Fixed regex
-##
 Plugin.define do
 name "Linksys-NAS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-15
+  # v0.2 # Fixed regex. 
+]
 version "0.2"
 description "Linksys NAS web frontend"
 website "http://www.linksys.com/"

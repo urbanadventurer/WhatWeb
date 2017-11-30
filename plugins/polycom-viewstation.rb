@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Polycom-ViewStation"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-11
+]
 version "0.1"
 description "Polycom ViewStation - video server"
 website "http://www.polycom.com/"

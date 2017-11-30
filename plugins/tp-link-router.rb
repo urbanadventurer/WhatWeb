@@ -4,14 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-29 # Brendan Coles <bcoles@gmail.com>
-# Added model detection
-# Added HTTP server header match
-# Added 401 error match
-##
 Plugin.define do
 name "TP-Link-Router"
-author "Aung Khant, http://yehg.net"
+authors [
+  "Aung Khant, http://yehg.net",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-01-29 # Added model detection. Added HTTP server header match. Added 401 error match. 
+]
 version "0.2"
 description "Detect TP-Link Router"
 website "http://www.tp-link.com/"

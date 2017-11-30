@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Tinyproxy"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-16
+]
 version "0.1"
 description "Tinyproxy is a light-weight HTTP/HTTPS proxy daemon for POSIX operating systems."
 website "https://banu.com/tinyproxy/"

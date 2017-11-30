@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "VideoDB"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-13
+]
 version "0.1"
 description "VideoDB is a web application to manage a personal video collection - Requires: PHP and MySQL"
 website "http://www.videodb.net/"

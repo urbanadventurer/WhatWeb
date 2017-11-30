@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "LetoDMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-24
+]
 version "0.1"
 description "LetoDMS is an open-source document-management-system based on PHP and MySQL published under the GPL."
 website "http://www.letodms.com/"

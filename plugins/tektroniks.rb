@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Tektroniks"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-03
+]
 version "0.1"
 description "Tektroniks monitoring Solutions, Wireless monitoring Systems, Wireless data loggers & data loggers. Products include Wireless Monitoring System, Gas Leak Detection, Refrigeration Control Systems, DataLogger, Temperature sensors and Hand Held Thermometers."
 website "http://www.tek-troniks.com/site/products/"

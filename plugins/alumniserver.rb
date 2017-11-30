@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AlumniServer"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-15
+]
 version "0.1"
 description "Open Source Alumni software (PHP) for universities, schools and other organizations. Features include profile page, photo upload, messages, forum, job market. Admin pages include user management, content management, newsletter, website configuration."
 website "http://sourceforge.net/projects/alumniserver/"

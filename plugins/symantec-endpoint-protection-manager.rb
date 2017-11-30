@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Symantec-Endpoint-Protection-Manager"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-19
+]
 version "0.1"
 description "Antivirus and personal firewall"
 website "http://www.symantec.com/business/endpoint-protection"

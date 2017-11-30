@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
-# Removed passive block. Added 3 new cookies
-##
-# Version 0.2
-# removed :name and :certainty=>100
-##
 Plugin.define do
 name "ExpressionEngine"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100. 
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.3 # 2016-08-19 # Removed passive block. Added 3 new cookies. 
+]
 version "0.2"
 description "ExpressionEngine is CMS written in PHP. Free and commercial versions."
 website "http://expressionengine.com"

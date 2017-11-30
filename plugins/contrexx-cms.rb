@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Contrexx-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+]
 version "0.1"
 description "Contrexx CMS [Swiss]"
 website "http://www.contrexx.com/"

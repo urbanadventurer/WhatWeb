@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Added description
-##
-# Version 0.2 # 2011-02-15 #
-# Updated version detection
-##
 Plugin.define do
 name "Netref"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-03
+  # v0.2 # 2011-02-15 # Updated version detection. 
+  "Andrew Horton", # v0.3 # 2016-04-17 # Added description. 
+]
 version "0.3"
 description "Website used to be http://www.netref.net/"
 

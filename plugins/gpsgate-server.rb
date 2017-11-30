@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "GpsGate-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-20
+]
 version "0.1"
 description "GpsGate Server is a platform for web based GPS tracking of vehicles, valuable assets and persons. The modular GpsGate Server platform also allows you to configure, extend and customize applications to your needs."
 website "http://gpsgate.com/products/gpsgate_server"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "NukeViet-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-05
+]
 version "0.1"
 description "NukeViet CMS [Vietnamese]"
 website "http://nukeviet.vn/en/"

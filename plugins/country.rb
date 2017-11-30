@@ -4,19 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-##
-# version 0.2
-# display full country names
-##
-# version 0.3
-# fix crash with ipv6 addresses, update comments, update database
-##
-# v0.4 update by Code0x58
-# new plugin behaviour
-##
 Plugin.define do
 name "Country"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # display full country names
+  # v0.3 # fix crash with ipv6 addresses, update comments, update database
+  "Code0x58", # v0.4 # new plugin behaviour
+]
 version "0.4"
 description "Shows the country the IPv4 address belongs to. This uses the GeoIP IP2Country database from http://software77.net/geo-ip/. Instructions on updating the database are in the plugin comments."
 

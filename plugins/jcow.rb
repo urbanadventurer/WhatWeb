@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Jcow"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-20
+]
 version "0.1"
 description "Jcow - social networking"
 website "http://www.jcow.net/"

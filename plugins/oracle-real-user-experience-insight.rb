@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Oracle-Real-User-Experience-Insight"
-author "Brendan Coles <bcoles@gmail.com>" # 2013-03-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-03-30
+]
 version "0.1"
 description "Oracle Real User Experience Insight - passive network performance analysis and usage analysis"
 website "http://www.oracle.com/technetwork/oem/uxinsight/"

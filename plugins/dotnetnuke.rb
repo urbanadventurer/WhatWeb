@@ -4,28 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.7 # 2016-08-19 # Bhavin Senjaliya
-# added dnn_IsMobile cookie 
-##
-# Version 0.6 # 2014-xx-xx # Pedro Worcel <pedro.worcel@security-Assessment.com>
-# general things
-##
-##
-# Version 0.5 # 2011-03-06 # Brendan Coles <bcoles@gmail.com>
-# Updated module and version detection
-##
-# Version 0.4
-# uses :module now
-##
-# Version 0.3
-# changed DotNetNuke� to DotNetNuke.{3}
-##
-# Version 0.2
-# removed :name and :certainty=>100
-##
 Plugin.define do
 name "DotNetNuke"
-    author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100. 
+  # v0.3 # changed DotNetNuke� to DotNetNuke.{3}. 
+  # v0.4 # uses :module now. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.5 # 2011-03-06 # Updated module and version detection. 
+  "Pedro Worcel <pedro.worcel@security-Assessment.com>", # v0.6 # 2014- # general things. 
+  "Bhavin Senjaliya", # v0.7 # 2016-08-19 # added dnn_IsMobile cookie . 
+]
     version "0.7"
     description "DotNetNuke is an opensource CMS for Microsoft .Net. Passively detects modules and the copyright year."
     website "www.dotnetnuke.com"

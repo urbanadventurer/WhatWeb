@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AVTech-Video-Web-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+]
 version "0.1"
 description "Video web server front end"
 website "http://www.avtech.com.hk/eng/CCTV_System_Networking_VWS.htm"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Webbler"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-05
+]
 version "0.1"
 description "The Webbler is a powerful tool to build new websites or add additional areas or functionality to your existing website. It is a Content Management System (CMS) and an Application Toolkit that we customise to suit your needs."
 website "http://www.tincan.co.uk/Webbler"

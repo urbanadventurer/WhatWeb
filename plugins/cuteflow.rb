@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CuteFlow"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-20
+]
 version "0.1"
 description "CuteFlow - web-based workflow management"
 website "http://sourceforge.net/projects/cuteflow/"

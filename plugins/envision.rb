@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "enVision"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-24
+]
 version "0.1"
 description "Content Interface Corp enVision - interactive WYSIWYG layout editor"
 website "http://www.contentinterface.com/index.php?option=com_content&task=view&id=14&Itemid=26"

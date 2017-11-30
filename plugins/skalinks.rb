@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SkaLinks"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-14
+]
 version "0.1"
 description "SkaLinks - Free Links Exchange software"
 website "http://www.skalinks.com/"

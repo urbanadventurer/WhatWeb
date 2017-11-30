@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Chamilo"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-16
+]
 version "0.1"
 description "Chamilo is a fully-fledged e-learning system. Chamilo can be connected to any open-specification system."
 website "http://www.chamilo.org/"

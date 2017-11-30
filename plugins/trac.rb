@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated version detection
-##
 Plugin.define do
 name "Trac"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-15
+  # v0.2 # Updated version detection. 
+]
 version "0.2"
 description "Trac is an enhanced wiki and issue tracking system for software development projects."
 website "http://trac.edgewall.org/"

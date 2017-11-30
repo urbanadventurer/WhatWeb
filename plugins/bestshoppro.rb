@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "BestShopPro"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-02
+]
 version "0.1"
 description "BestShopPro"
 website "http://www.bst.pl/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "?"
-author "Brendan Coles"
+authors [
+  "Brendan Coles",
+]
 description "In celebration of our 500th plugin - 2010-10-18"
 version "1.0"
 

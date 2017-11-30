@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Google-Results"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-25
+]
 version "0.1"
 description "This plugin identifies Google search results pages and extracts the result URLs, query and number of results from the results."
 website "http://www.google.com/"

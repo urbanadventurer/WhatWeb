@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Netious-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-01
+]
 version "0.1"
 description "Netious CMS - http://www.netious.com/"
 

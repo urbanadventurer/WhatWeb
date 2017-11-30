@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Falcon-Web-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-31
+]
 version "0.1"
 description "Falcon Web Server"
 website "http://www.blueface.com/"

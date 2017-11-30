@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Tilgin-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-04
+]
 version "0.1"
 description "Tilgin router"
 website "http://www.tilgin.com/Products/"

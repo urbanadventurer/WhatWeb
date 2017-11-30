@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated matches
-##
 Plugin.define do
 name "Site-Sift"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-29
+  # v0.2 # Updated matches. 
+]
 version "0.2"
 description "Site Sift Listings is a FREE directory script with many features that webmasters want including creation of static pages. Site Sift Listings can be customized to create the look and feel you want from a directory. Requirements: PHP."
 website "http://scripts.site-sift.com/"

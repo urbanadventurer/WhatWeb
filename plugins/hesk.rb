@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "HESK"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-05
+]
 version "0.1"
 description "Web-based help desk software featuring unlimited tickets, categories, knowledgebase, attachments and more. - Requires: PHP and MySQL"
 website "http://www.hesk.com/"

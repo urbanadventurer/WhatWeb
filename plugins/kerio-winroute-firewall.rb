@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Kerio-WinRoute-Firewall"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-11
+]
 version "0.1"
 description "Kerio WinRoute Firewall"
 website "http://winroute.ru/kerio_winroute_firewall.htm"

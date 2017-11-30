@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Microsoft-SQL-Server-Report-Manager"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-26
+]
 version "0.1"
 description "Microsoft SQL Server Report Manager - web-based report access and management tool"
 website "http://msdn.microsoft.com/en-us/library/ms157147%28v=sql.90%29.aspx"

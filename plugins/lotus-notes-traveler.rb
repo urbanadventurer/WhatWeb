@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Lotus-Notes-Traveler"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-22
+]
 version "0.1"
 description "IBM Lotus Notes Traveler is a push email solution providing quick access to email, calendar, address book, journal, and to-do list for Lotus Notes mobile users."
 website "https://www-01.ibm.com/software/lotus/products/notes/traveler.html"

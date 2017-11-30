@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Easy-Site-Edit"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-22
+]
 version "0.1"
 description "EasySiteEdit CMS"
 website "http://www.easysiteedit.com/"

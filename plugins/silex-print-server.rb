@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Silex-Print-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-08
+]
 version "0.1"
 description "Silex Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."
 website "http://www.silexamerica.com/"

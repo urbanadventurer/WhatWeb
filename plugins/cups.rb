@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CUPS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-05
+]
 version "0.1"
 description "Common UNIX Printing System (CUPS)"
 website "http://www.cups.org/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "System-Shop"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-18
+]
 version "0.1"
 description "shopping cart"
 website "http://system-shop.at/"

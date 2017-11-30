@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Seditio"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-24
+]
 version "0.1"
 description "Seditio"
 website "http://www.neocrome.net"

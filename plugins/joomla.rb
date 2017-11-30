@@ -4,28 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.9 # 2016-12-16 @anozoozian
-# Updated aggressive version detection for Joomla 3.1.4 -> 3.6.4
-##
-# Vesion 0.8 # Andrew
-#  Added aggressive match for /administrator/. Use match now
-##
-# Version 0.7 # 2011-03-19 # Brendan Coles <bcoles@gmail.com>
-# Added aggressive match for /administrator/
-# Updated matches to remove false positives
-##
-# Version 0.6
-# added seconds since epoch match from the mambo plugin
-##
-# Version 0.5
-# uses :module instead of :string, changed the 3rd regexp from 75 certainty to 25.
-##
-# Version 0.4
-# removed :probability & :name
-##
 Plugin.define do
 name "Joomla"
-  author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.4 # removed :probability & :name. 
+  # v0.5 # uses :module instead of :string, changed the 3rd regexp from 75 certainty to 25.. 
+  # v0.6 # added seconds since epoch match from the mambo plugin. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.7 # 2011-03-19 # Added aggressive match for /administrator/. Updated matches to remove false positives. 
+  # Andrew Horton # v0.8 #  Added aggressive match for /administrator/. Use match now
+  "@anozoozian", # v0.9 # 2016-12-16 # Updated aggressive version detection for Joomla 3.1.4 -> 3.6.4. 
+]
   version "0.9"
   description "Opensource CMS written in PHP. Aggressive version detection compares just 5 files, checks for version 1.0.0 up to 3.6.4"
   website "http://joomla.org"

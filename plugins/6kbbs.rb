@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "6kbbs"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-29
+]
 version "0.1"
 description "6kbbs - Forum"
 website "http://www.6kbbs.net/"

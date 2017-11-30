@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "WSN-Directory"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-16
+]
 version "0.1"
 description "WSN Directory is a powerful, translatable business directory script. Show google maps of business locations or search businesses by distance from your location. Make money with sponsored listings."
 website "http://www.wsndirectory.com/"

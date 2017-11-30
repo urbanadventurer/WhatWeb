@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Facebook-Plugin"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+]
 version "0.1"
 description "This plugin identifies Facebook plugins"
 website "http://apps.facebook.com/widgets/"

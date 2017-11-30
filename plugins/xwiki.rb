@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "XWiki"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-08
+]
 version "0.1"
 description "XWiki - Open Source Wiki and Content-Oriented Application Platform"
 website "http://www.xwiki.org/"

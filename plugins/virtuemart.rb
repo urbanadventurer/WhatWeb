@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "VirtueMart"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-23
+]
 version "0.1"
 description "VirtueMart is an Open Source E-Commerce solution to be used together with a Content Management System (CMS) called Joomla!. Joomla! and VirtueMart are written in PHP and can be used in typical PHP/MySQL environments."
 website "http://virtuemart.net/"

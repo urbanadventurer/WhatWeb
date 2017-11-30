@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-31 #
-# Updated regex
-##
 Plugin.define do
 name "iLO"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-15
+  # v0.2 # 2011-03-31 # Updated regex. 
+]
 version "0.2"
 description "Integrated Lights-Out, or iLO, is an embedded server management technology exclusive to Hewlett-Packard but similar in functionality to the Lights out management (LOM) technology of other vendors."
 website "http://en.wikipedia.org/wiki/HP_Integrated_Lights-Out"

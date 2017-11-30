@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Turbo-Seek"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15 
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-15 
+]
 version "0.1"
 description "Turbo Seek enables anyone to build a Search Engine & Directory Portal with the minimum expense and effort."
 website "http://www.focalmedia.net/index_tb.html"

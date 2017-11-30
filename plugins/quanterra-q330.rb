@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
 Plugin.define do
 name "Quanterra-Q330"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-31
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Quanterra Q330 series - seismic data acquisition systems"
 website "http://kmi.com/p-163-Home.aspx"

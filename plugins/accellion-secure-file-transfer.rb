@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Accellion-Secure-File-Transfer"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-20
+]
 version "0.1"
 description "Accellion Secure File Transfer (SFT)"
 website "http://www.accellion.com/"

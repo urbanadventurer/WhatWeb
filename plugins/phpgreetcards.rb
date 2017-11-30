@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "phpGreetCards"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-01
+]
 version "0.1"
 description "PHP greeting card mailer"
 website "http://www.w2b.ru/webapplications/index.php"

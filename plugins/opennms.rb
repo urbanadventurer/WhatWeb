@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "OpenNMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-25
+]
 version "0.1"
 description "OpenNMS - Enterprise-Grade Network Management Application Platform"
 website "http://www.opennms.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "JagoanStore-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-04
+]
 version "0.1"
 description "JagoanStore CMS"
 website "http://www.jagoanstore.com/"

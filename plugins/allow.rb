@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Allow"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-01
+]
 version "0.1"
 description "This plugin retrieves the allowed methods from the HTTP Allow header. - More info: http://en.wikipedia.org/wiki/List_of_HTTP_header_fields"
 

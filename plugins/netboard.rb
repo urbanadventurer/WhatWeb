@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "netboard"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-17
+]
 version "0.1"
 description "netboard forum"
 

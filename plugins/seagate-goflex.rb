@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Seagate-GoFlex"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-03
+]
 version "0.1"
 description "Seagate-GoFlex - centralized file storage with remote access via seagateshare.com"
 website "http://www.seagate.com/home-entertainment/media-sharing-devices/goflex-home/"

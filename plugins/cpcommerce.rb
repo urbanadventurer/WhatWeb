@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "cpCommerce"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-14
+]
 version "0.1"
 description "Web shopping cart"
 website "http://cpcommerce.org/"

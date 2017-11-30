@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Novell-Sentinel-Log-Manager"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-15
+]
 version "0.1"
 description "Novell Sentinel Log Manager - log management solution"
 website "http://www.novell.com/promo/slm/slm25.html"

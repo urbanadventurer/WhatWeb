@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PacketShaper"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-19
+]
 version "0.1"
 description "The Blue Coat PacketShaper provides application performance monitoring for an accurate picture of network traffic and ensures business-critical applications have the resources they need to operate effectively"
 website "http://www.bluecoat.com/products/packetshaper"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Dr-Web-Anti-Virus"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-31
+]
 version "0.1"
 description "Dr.Web anti-virus"
 website "http://www.drweb.com/"

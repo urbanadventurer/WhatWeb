@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ORCA-Platform"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-04
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-04
+]
 version "0.1"
 description "Welcome to ORCA Websites... We specialise in designing Professional & Affordable Websites for small to medium sized businesses across the UK."
 website "http://www.orcawebsites.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "adxstudio-cms"
-author "Aung Khant <http://yehg.net/>" # 2012-02-12
+authors [
+  "Aung Khant <http://yehg.net/>", # 2012-02-12
+]
 version "0.1"
 description "ADXStudio CMS - http://www.adxstudio.com"
 

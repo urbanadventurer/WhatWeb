@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Cisco-VPN-3000-Concentrator"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+]
 version "0.1"
 description "Cisco VPN 3000 Series Concentrators provide your business with unprecedented cost savings through flexible, reliable, and high-performance remote-access solutions. Last Date of Support: 2012-08-31"
 website "http://www.cisco.com/en/US/products/hw/vpndevc/ps2284/index.html"

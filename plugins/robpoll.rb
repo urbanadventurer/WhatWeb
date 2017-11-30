@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "RobPoll"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-20
+]
 version "0.1"
 description "RobPoll - CGI poll system"
 website "Offline"

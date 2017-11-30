@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Rainmail"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-27
+]
 version "0.1"
 description "Rainmail Intranet Server is integrated software for providing complete Intranet and Network Infrastructure to enterprises."
 website "http://www.carizen.com/carizen/index.php?task=ris"

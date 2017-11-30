@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TestLink"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-21
+]
 version "0.1"
 description "TestLink - open source test management tool"
 website "http://www.teamst.org/"

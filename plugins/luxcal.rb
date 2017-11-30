@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "LuxCal"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-10
+]
 version "0.1"
 description "LuxCal is a free user-friendly and lightweight web based event calendar. Requires PHP and MySQL"
 website "http://www.luxsoft.eu/"

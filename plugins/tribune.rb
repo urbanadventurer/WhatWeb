@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define do
 name "TribuneNews"
-author "Shuai Lin"
+authors [
+  "Shuai Lin",
+]
 version "0.1"
 description "TribuneNews is a news website engine for sites of Tribune Newspaper."
 

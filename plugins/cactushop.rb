@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CactuShop"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-19
+]
 version "0.1"
 description "ASP and ASP.NET SEO optimized database-driven e-commerce storefront software."
 website "http://www.cactushop.com/"

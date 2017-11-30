@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "phpCollab"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-17
+]
 version "0.1"
 description "phpCollab is an open source internet-enabled system for use in projects that require collaboration over the internet."
 website "http://www.php-collab.org/"

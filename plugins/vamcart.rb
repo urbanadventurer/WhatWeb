@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "VamCart"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-18
+]
 version "0.1"
 description "VamCart - CakePHP Based Open Source Shopping Cart"
 website "http://vamcart.com/"

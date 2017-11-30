@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Harris-NetVX"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-30
+]
 version "0.1"
 description "NetVX combines standards-compliant audio, video and data networking interfaces to integrate with any video plant"
 website "http://www.broadcast.harris.com/productsandsolutions/NetworkingEncoding/NetVX/default.asp"

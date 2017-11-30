@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-18 # Andrew Horton
-# Added website parameter
-#  
-##
 Plugin.define do
 name "Barracuda-Load-Balancer"
-author "Aung Khant <http://yehg.net/>" # 2011-02-04
+authors [
+  "Aung Khant <http://yehg.net/>", # 2011-02-04
+  "Andrew Horton", # v0.2 # 2016-04-18 # # Added website parameter
+]
 version "0.2"
 description "Barracuda Load Balancer"
 website "http://www.barracudanetworks.com/ns/products/balancer_overview.php"

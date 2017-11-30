@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MJNioHttpDaemon"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-14
+]
 version "0.1"
 description "MJNioHttpDaemon"
 # Any idea who makes this? Please contact me

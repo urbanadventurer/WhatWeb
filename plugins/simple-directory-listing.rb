@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Simple-Directory-Listing"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-01
+]
 version "0.1"
 description "A php application that provides a web-based graphical interface similar to apache directory listing. Functions:copy, move, delete, rename files, etc."
 website "http://sourceforge.net/simpledirectory"

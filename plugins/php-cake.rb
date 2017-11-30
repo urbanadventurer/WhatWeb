@@ -4,14 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-# Version 0.2
-# remove :certainty
-
 Plugin.define do
 name "PHPCake"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty
+]
 version "0.2"
 description "PHP MVC web framework"
 

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Ecomat-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "Ecomat CMS"
 website "http://www.ecomat.ch/"

@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3
-# Uses :version=>//
-##
-# Version 0.2
-# removed :name & :probability
-##
 Plugin.define do
 name "InvisionPowerBoard"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name & :probability. 
+  # v0.3 # Uses :version=>//. 
+]
 version "0.3"
 description "Invision Power Board - PHP Web Forum"
 website "http://www.invisionpower.com/"

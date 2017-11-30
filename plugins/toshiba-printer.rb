@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty=>100 & :name. convert :regexp to :text
-
 Plugin.define do
 name "ToshibaPrinter"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 #  removed :certainty=>100 & :name. convert :regexp to :text
+]
 version "0.2"
 description "Toshiba printer Top Access"
 

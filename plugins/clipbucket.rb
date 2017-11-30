@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ClipBucket"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-18
+]
 version "0.1"
 description "ClipBucket is an OpenSource Multimedia Management Script"
 website "http://clip-bucket.com"

@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define do
 name "MongoDB"
-author "Steve 'Ashcrow' Milner"
+authors [
+  "Steve 'Ashcrow' Milner",
+]
 version "0.1"
 description "Identifies the admnistration console of MondoDB. http://www.mongodb.org/"
 

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "net2ftp"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-30
+]
 version "0.1"
 description "net2ftp is a web based FTP client"
 website "http://www.net2ftp.com/"

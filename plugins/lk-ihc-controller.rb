@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "LK-IHC-Controller"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-01
+]
 version "0.1"
 description "Visualization of an IHC Control electrical installation."
 website "http://www.prolor.dk/ihc.php"

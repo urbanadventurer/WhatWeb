@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Aruba-Device"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-17
+]
 version "0.1"
 description "Aruba network device - web interface for router, access point, switch, etc"
 website "http://www.arubanetworks.com/"

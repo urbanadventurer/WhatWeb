@@ -4,24 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.6 # 2013-12-31 # @csalazar
-# Added a new version detection match
-##
-# Version 0.5 # 2012-08-16 # Andrew Horton
-# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
-##
-# Version 0.4 # 2011-04-09 # Brendan Coles <bcoles at gmail dot com>
-# Added aggressive md5 matches
-##
-# Version 0.3 # 2011-03-05 #
-# Updated version detection
-##
-# Version 0.2
-# removed :certainty=>100
-##
 Plugin.define do
 name "SMF"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100. 
+  # v0.3 # 2011-03-05 # Updated version detection. 
+  "Brendan Coles <bcoles at gmail dot com>", # v0.4 # 2011-04-09 # Added aggressive md5 matches. 
+  # Andrew Horton, # v0.5 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array. 
+  "@csalazar", # v0.6 # 2013-12-31 # Added a new version detection match. 
+]
 version "0.6"
 description "SMF (Simple Machines Forum) is an opensource forum written in PHP"
 website "www.simplemachines.org"

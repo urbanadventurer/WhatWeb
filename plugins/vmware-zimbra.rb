@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "VMware-Zimbra"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-15
+]
 version "0.1"
 description "Zimbra is a next-generation collaboration server that provides organizations greater overall flexibility and simplicity with integrated email, contacts, calendaring, sharing and document management plus mobility and desktop synchronization to users on any computer."
 website "http://www.zimbra.com/products/"

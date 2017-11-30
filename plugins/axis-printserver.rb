@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define do
 name "Axis-PrintServer"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+]
 version "0.1"
 description "Axis 540/542 Network Print Server"
 website "http://www.axis.com/products/axis_540p/index.htm"

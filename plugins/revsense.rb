@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "RevSense"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-21
+]
 version "0.1"
 description "RevSense is an online pay per click ad-market. Publicise your ads to a large community using RevSense advertiser account."
 website "http://www.revsense.com/"

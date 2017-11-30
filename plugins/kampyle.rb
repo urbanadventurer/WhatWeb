@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Kampyle"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-17
+]
 version "0.1"
 description "Feedback form solutions for websites & software. [JavaScript]"
 website "http://www.kampyle.com/"

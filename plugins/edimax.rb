@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Added website parameter
-##
 Plugin.define do
 name "EDIMAX"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-01
+  "Andrew Horton", # v0.2 # 2016-04-17 # Added website parameter. 
+]
 version "0.2"
 description "EDIMAX Device # Wireless Access Point / Broadband Routers / Ethernet Hub / Printer Server / Load Balancing Router"
 website "http://www.edimax.com"

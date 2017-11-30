@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Werkzeug"
-author "Brendan Coles <bcoles@gmail.com>" # 2015-04-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2015-04-30
+]
 version "0.1"
 description "Werkzeug is a WSGI utility library for Python. - Homepage: http://werkzeug.pocoo.org/"
 

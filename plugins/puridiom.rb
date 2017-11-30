@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Puridiom"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-14
+]
 version "0.1"
 description "Puridiom - eProcurement software"
 website "http://www.puridiom.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHP-Hosting-Directory"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-10
+]
 version "0.1"
 description "PHP Hosting Directory"
 website "http://www.jnshosts.com/php-hosting-directory.html"

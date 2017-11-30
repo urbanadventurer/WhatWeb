@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SocketTimesheet"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-08
+]
 version "0.1"
 description "PHP Timesheet web application"
 website "http://www.sockettimesheet.com/"

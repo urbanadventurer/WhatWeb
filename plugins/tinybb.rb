@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TinyBB"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-17
+]
 version "0.1"
 description "TinyBB is a free, simple bulletin board script."
 website "http://tinybb.net/"

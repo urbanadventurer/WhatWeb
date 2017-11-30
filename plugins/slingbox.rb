@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SlingBox"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-11-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-11-17
+]
 version "0.1"
 description "The Slingbox is a TV streaming media device that encodes video for transmission over the Internet"
 website "http://slingbox.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "NetWin-DBabble"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "DBabble is a chat, discussion, and instant messaging server and client, which allows users to send encrypted instant messages, have private conversations, and create and participate in private or public chat rooms and discussions."
 website "http://netwinsite.com/dbabble/index.html"

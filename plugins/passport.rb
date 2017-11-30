@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Passport"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-09
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-09
+]
 version "0.1"
 description "This plugin detects instances of Microsoft Live Passport servers using the MSNSERVER, X-MSNSERVER and PPServer HTTP headers."
 # More info: http://code.entersources.com/f/Generate-Valid-MSNP9-ClientTicket_2_3254_0.aspx

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TOTVS-SmartClient"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-24
+]
 version "0.1"
 description "TOTVS SmartClient MacOS TOTVS Application Server."
 website "http://www.totvs.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Qcodo-Development-Framework"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+]
 version "0.1"
 description "The Qcodo Development Framework is an open-source PHP framework that focuses on freeing developers from unnecessary tedious, mundane coding."
 website "http://www.qcodo.com/"

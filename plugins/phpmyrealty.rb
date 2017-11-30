@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "phpMyRealty"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-19
+]
 version "0.1"
 description "phpMyRealty - customizable real estate web application - Requires: PHP"
 website "http://www.phpmyrealty.com/"

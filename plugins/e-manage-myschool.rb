@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "E-Manage-MySchool"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-25
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-25
+]
 version "0.1"
 description "My School is an essential web-based school management system with an influential impact on schools' performance. It is a deliberate and comprehensive user-friendly system that offers numerous features to students, parents, teachers, and school management. It presents a well organized and effective collaboration tool between all parties."
 website "http://em.com.eg/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Dell-KACE-Appliance"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-02
+]
 version "0.1"
 description "Dell KACE System Management Appliance"
 website "http://www.kace.com/products/overview"

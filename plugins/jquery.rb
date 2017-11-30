@@ -4,18 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2
-# removed :probability
-##
-# Version 0.3
-# rewrite
-##
-# Version 0.4
-# added another match line from Eric Sesterhenn
-
 Plugin.define do
 name "JQuery"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :probability. 
+  # v0.3 # rewrite. 
+  "Eric Sesterhenn", # v0.4 # added another match line
+]
 version "0.4"
 description "A fast, concise, JavaScript that simplifies how to traverse HTML documents, handle events, perform animations, and add AJAX."
 website "http://jquery.com/"

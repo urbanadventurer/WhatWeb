@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "openEngine"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-02
+]
 version "0.1"
 description "openEngine - Content Management System (CMS)"
 website "http://www.openengine.de/"

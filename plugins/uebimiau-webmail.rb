@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Uebimiau-Webmail"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-12-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-12-29
+]
 version "0.1"
 description "Uebimiau Webmail"
 website "http://www.uebimiau.org/download.php"

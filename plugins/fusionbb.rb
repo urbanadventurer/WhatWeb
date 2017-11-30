@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define do
 name "FusionBB"
-author "Claudio Salazar"
+authors [
+  "Claudio Salazar",
+]
 version "0.1"
 description "FusionBB is a PHP forum."
 

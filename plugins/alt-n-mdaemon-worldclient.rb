@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Alt-N-MDaemon-WorldClient"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-13
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-13
+]
 version "0.1"
 description "MDaemon Messaging Server, mail server software, supports IMAP, SMTP, and POP3 protocols. MDaemon Messaging Server's webmail client, WorldClient is provided free with every version of MDaemon Messaging Server."
 website "http://www.altn.com/Products/MDaemon-Email-Server-Windows/WorldClient-WebMail-MDaemon/"

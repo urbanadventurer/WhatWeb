@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 #
-# Fixed Changelog version detection now prefixed with >
-##
-# Version 0.2 #
-# remove :certainty and :name, change :regexp to :text
-##
 Plugin.define do
 name "phpBB"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty and :name, change :regexp to :text. 
+  # v0.3 # Fixed Changelog version detection now prefixed with >. 
+]
 version "0.3"
 description "phpBB is a free forum"
 website "http://phpbb.org/"

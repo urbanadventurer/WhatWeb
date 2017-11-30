@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Sipura-VoIP-Phone"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-10
+]
 version "0.1"
 description "Sipura VoIP phone. Cisco Systems acquired Sipura Technologies for its Linksys division in 2005."
 website "http://www.sipura.net/"

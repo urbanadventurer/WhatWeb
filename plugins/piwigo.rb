@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Piwigo"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-12
+]
 version "0.1"
 description "Piwigo is a photo gallery software for the web, built by an active community of users and developers."
 website "http://piwigo.org/"

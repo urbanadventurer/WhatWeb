@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "VidiScript"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-24
+]
 version "0.1"
 description "VidiScript - video sharing script"
 website "http://www.VidiScript.com"

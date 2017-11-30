@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ACTi-Web-Configurator"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-27
+]
 version "0.1"
 description "ACTi Web Configurator - camera web interface"
 website "http://www.acti.com/home/index.asp"

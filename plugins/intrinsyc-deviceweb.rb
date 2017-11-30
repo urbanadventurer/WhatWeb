@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Intrinsyc-deviceWEB"
-author "Brendan Coles <bcoles@gmail.com>" # 2013-07-28
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-07-28
+]
 version "0.1"
 description "Intrinsyc deviceWEB - a web server specialized for embedded devices"
 website "http://www.intrinsyc.com/"

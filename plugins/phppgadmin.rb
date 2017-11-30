@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "phpPgAdmin"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-14 
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-14 
+]
 version "0.1"
 description "phpPgAdmin is a web-based administration tool for PostgreSQL. It is perfect for PostgreSQL DBAs, newbies and hosting services"
 website "http://phppgadmin.sourceforge.net/"

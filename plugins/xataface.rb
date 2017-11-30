@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Xataface"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-10
+]
 version "0.1"
 description "Xataface is a full-featured Web application framework. It automatically generates the appropriate forms, lists, and menus for a user to interact with a MySQL database without having to know any SQL."
 website "http://xataface.com/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Social-Strata"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-21
+]
 version "0.1"
 description "Homepage: http://socialstrata.com/"
 

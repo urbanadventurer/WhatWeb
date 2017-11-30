@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Allomani-E-Store"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-02
+]
 version "0.1"
 description "E-Store with shopping cart for online shopping websites , hosting & designing , Paid services , etc ... Requirements : PHP, MySQL, ionCube"
 website "http://allomani.com/en/store_script.html"

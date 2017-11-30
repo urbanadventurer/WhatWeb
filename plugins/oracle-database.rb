@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Oracle-Database"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-22
+]
 version "0.1"
 description "Oracle Database"
 website "http://www.oracle.com/technetwork/database/enterprise-edition/overview/index.html"

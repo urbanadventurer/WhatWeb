@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MantisBT"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-12
+]
 version "0.1"
 description "MantisBT is a popular free web-based bug tracking system. It is written in PHP works with MySQL, MS SQL, and PostgreSQL databases."
 website "http://www.mantisbt.org/"

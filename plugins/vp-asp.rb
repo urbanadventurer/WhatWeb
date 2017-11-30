@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty=>100 & :name, converted :regexp to :text
-# Version 0.3
-# Uses :version=>//
-
 Plugin.define do
 name "VP-ASP"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 & :name, converted :regexp to :text
+  # v0.3 # Uses :version=>//
+]
 version "0.3"
 
 description "VP-ASP (Virtual Programming - ASP) Shopping Cart. Free & commercial versions. http://johnny.ihackstuff.com/ghdb/?function=detail&id=324  Homepage:www.vpasp.com"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ZTE-IAD"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-01
+]
 version "0.1"
 description "ZTE IAD (Integrated Access Device)"
 website "http://wwwen.zte.com.cn/en/solutions/wireless/"

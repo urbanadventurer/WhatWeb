@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AM4SS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-11
+]
 version "0.1"
 description "Advanced Management For Services Sites (AM4SS)"
 website "http://am4ss.org/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Sony-Video-Network-Station"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+]
 version "0.1"
 description "The Sony SNT-V304 Video Network Station enables video surveillance cameras to be remotely monitored"
 website "http://www.sony.com/"

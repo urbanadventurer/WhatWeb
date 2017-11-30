@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Zenoss-Core"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-29
+]
 version "0.1"
 description "Zenoss (Zenoss Core) is an open-source application, server, and network management platform based on the Zope application server."
 website "http://sourceforge.net/projects/zenoss/"

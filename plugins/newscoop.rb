@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Newscoop"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-09
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-09
+]
 version "0.1"
 description "Open content management system for professional journalists & online newspapers."
 website "http://www.sourcefabric.org/en/newscoop/"

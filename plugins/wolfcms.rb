@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define do
 name "WolfCMS"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+]
 version "1.0"
 description "WolfCMS is an open-source content management system built with PHP."
 website "https://www.wolfcms.org/"

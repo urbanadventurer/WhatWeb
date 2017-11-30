@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PHPCityportal"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-07
+]
 version "0.1"
 description "PHPCityportal - build your own business portal - Requires PHP and MySQL"
 website "http://phpcityportal.com/"

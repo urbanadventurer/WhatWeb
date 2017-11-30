@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "AChecker"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-17
+]
 version "0.1"
 description "AChecker  is an open source Web accessibility evaluation tool. It can be used to review the accessibility of Web pages based on a variety international accessibility guidelines."
 website "http://www.atutor.ca/achecker/"

@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated regex and version detection
-##
 Plugin.define do
 name "Advanced-Image-Hosting-Script"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-30
+  # v0.2 # Updated regex and version detection. 
+]
 version "0.2"
 description "AIHS is a highly-flexible advanced image hosting solution for anyone who wants to offer an image hosting services of any kind."
 website "http://yabsoft.com/aihs-feature.php"

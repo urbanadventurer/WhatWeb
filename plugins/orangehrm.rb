@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "OrangeHRM"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-18
+]
 version "0.1"
 description "OrangeHRM - Open Source Human Resource Management Software (HRMS)"
 website "http://www.orangehrm.com/"

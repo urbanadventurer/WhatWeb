@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "TeamSpeak-Server-Log"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-15
+]
 version "0.1"
 description "This plugin extracts the username and password from TeamSpeak server.log files."
 

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Kibana"
-author "Brendan Coles <bcoles@gmail.com>" # 2015-04-26
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2015-04-26
+]
 version "0.1"
 description "Kibana is an open source data visualization platform that allows you to interact with your data - Homepage: https://www.elastic.co/products/kibana"
 

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "MiniBB"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "MiniBB is a free standalone open source program for building your own Internet forum."
 website "http://www.minibb.com/"

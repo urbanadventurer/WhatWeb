@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "OpenWrt"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+]
 version "0.1"
 description "A GNU/Linux based firmware program for embedded devices such as residential gateways and routers."
 website "http://openwrt.org/"

@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
-# Added and updated cookies
-##
-#
 Plugin.define do
 name "Django"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-27
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.2 # 2016-08-19 # Added and updated cookies. 
+]
 version "0.2"
 description "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 website "https://www.djangoproject.com/"

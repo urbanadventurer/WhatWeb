@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Adobe-Connect"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-05
+]
 version "0.1"
 description "Adobe Connect is an enterprise web conferencing solution for online meetings, eLearning, and webinars used by leading corporations and government agencies."
 website "https://www.adobe.com/products/adobeconnect.html"

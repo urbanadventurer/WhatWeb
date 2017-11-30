@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "NexusPHP"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-01
+]
 version "0.1"
 description "BitTorrent private tracker scripts written in PHP"
 website "http://sourceforge.net/projects/nexusphp/"

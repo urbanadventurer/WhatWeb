@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Centreon"
-    author "Brendan Coles <bcoles@gmail.com>" # 2011-11-09
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-09
+]
     version "0.2"
     description "Centreon is a network, system, applicative supervision and monitoring tool, it is based upon Nagios."
 website "http://www.centreon.com/"

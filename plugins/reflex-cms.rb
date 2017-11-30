@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ReFlex-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-12-28
+]
 version "0.1"
 description "ReFlex CMS is an extremely flexible ASP.NET based website and content management platform that can be used to construct highly functional commercial websites, social networking applications, intranets, personal portals and blog sites. ReFlex CMS can also be easily added to existing sites."
 website "http://www.impelsystems.com.au/reflex-cms-website-framework/overview-5.aspx"

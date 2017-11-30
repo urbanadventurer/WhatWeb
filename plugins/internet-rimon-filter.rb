@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Internet-Rimon-Filter"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-15
+]
 version "0.1"
 description "Internet Rimon (Israeli ISP) server based filtering server"
 website "http://internet-rimon.com/"

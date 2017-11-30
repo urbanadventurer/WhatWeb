@@ -4,18 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-01-21 #
-# Updated credential extraction
-# Added SHA1 hashes for common admin passwords
-# Renamed plugin from "Credentials" to "htpasswd"
-##
-# Version 0.2
-# Now requires htpasswd in the URL path to reduce false positives
-#
-##
 Plugin.define do
 name "htpasswd"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-23
+  # v0.2 # Now requires htpasswd in the URL path to reduce false positives
+  # v0.3 # 2011-01-21 # Updated credential extraction. Added SHA1 hashes for common admin passwords. Renamed plugin from "Credentials" to "htpasswd". 
+]
 version "0.3"
 description ".htpasswd is a flat-file used to store usernames and password for basic authentication of Apache HTTP Server. This plugin attempts to retrievs credentials from .htpasswd files in user:pass format. - More info: http://en.wikipedia.org/wiki/Htpasswd"
 

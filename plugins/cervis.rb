@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CERVIS"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-02
+]
 version "0.1"
 description "Community Event Registration and Volunteer Information System (CERVIS) is the most complete and customizable web-based volunteer management software available."
 website "https://www.cervistech.com/"

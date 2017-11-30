@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SlideShowPro-Director"
-author "Brendan Coles <bcoles@gmail.com>" # 2013-03-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-03-18
+]
 version "0.1"
 description "Content management and universal slideshow publishing for desktops, Apple iOS and Android."
 website "http://slideshowpro.net/products/slideshowpro_director/"

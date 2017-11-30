@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Micronet-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-11
+]
 version "0.1"
 description "Micronet Communications Router"
 website "http://www.micronet.com.tw/mod/product/index.php?NodeID=23"

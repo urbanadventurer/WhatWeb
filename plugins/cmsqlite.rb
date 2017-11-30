@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CMSQLite"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-18
+]
 version "0.1"
 description "CMSQLite is a small, fast, flexible and complete Content-Management-System (CMS). "
 website "http://cmsqlite.net/"

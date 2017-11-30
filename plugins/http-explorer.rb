@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Http-Explorer"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-10
+]
 version "0.1"
 description "Http explorer is a free easy-to-use web server with which you can share your musics, videos and images for several web displays"
 website "http://http-explorer.sourceforge.net/"

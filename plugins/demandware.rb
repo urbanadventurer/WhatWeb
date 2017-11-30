@@ -2,9 +2,12 @@
 # Version 0.2 # 2016-08-19 # Bhavin Senjaliya <bhavin.senjaliya@gmail.com>
 # Add cookies
 #
+##
 Plugin.define do
 name "DemandWare eCommerce System"
-author "Claudio Salazar <csalazar at spect dot cl>"
+authors [
+  "Claudio Salazar <csalazar at spect dot cl>",
+]
 version "0.2"
 description "Digital commerce for the changing face of retail."
 website "https://www.demandware.com/"

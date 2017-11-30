@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
 Plugin.define do
 name "Kinja"
-author "Sigit Dewanto"
+authors [
+  "Sigit Dewanto",
+]
 version "0.1"
 description "Kinja is Gawker Media's discussion platform."
 

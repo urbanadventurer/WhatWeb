@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Intermec-EasyLAN"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-10
+]
 version "0.1"
 description "Intermec EasyLAN web interface"
 website "http://www.intermec.com"

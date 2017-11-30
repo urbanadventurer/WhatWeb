@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :name and :certainty=>100
-
 Plugin.define do
 name "Citrix-Metaframe"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100
+]
 version "0.2"
 description "Citrix-Metaframe. Thin clients."
 

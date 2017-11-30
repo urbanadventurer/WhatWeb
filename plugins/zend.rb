@@ -4,22 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-# Version 3.0 by Andrew Horton
-# new routine for POST requests
-##
-# Version 2.0 by Andrew Horton
-# Added meta generator match and vendor matches. bug fixes. new random string function
-##
-# Version 0.1 
-# detection works mainly for default installation state 
-# tomatocms is based on zend framework
-##
 Plugin.define do
 name "Zend"
-author "Aung Khant <http://yehg.net>"
+authors [
+  "Aung Khant <http://yehg.net>",
+  # v0.1 # detection works mainly for default installation state . tomatocms is based on zend framework. 
+  "Andrew Horton", # v0.2 # Added meta generator match and vendor matches. bug fixes. new random string function. 
+  # Andrew Horton # v0.3 # new routine for POST requests. 
+  # Andrew Horton # v0.4 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.4"
 description "Zend PHP Framework (http://framework.zend.com/) and Zend Server (http://zend.com) Detection"
 

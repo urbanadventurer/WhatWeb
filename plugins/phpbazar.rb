@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "phpBazar"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-29
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-29
+]
 version "0.1"
 description "PHP3/PHP4/mySql Classified AD and/or Matchmaking"
 website "http://www.smartisoft.com/"

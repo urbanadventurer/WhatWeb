@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Artiphp-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-17
+]
 version "0.1"
 description "Artiphp CMS - open source CMS - Requires PHP"
 website "http://www.artiphp.com/"

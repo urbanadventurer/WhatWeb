@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Semaphore"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-19
+]
 version "0.1"
 description "Bridging the gap between layman's terms and official language to provide users with more accurate search results."
 website "http://www.smartlogic.com/poweredbysemaphore"

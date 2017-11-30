@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2017-11-27 # Andrew Horton
-# Added website and updated description
-##
-# Version 0.2 # 2016-08-19 # Bhavin Senjaliya
-# Add cookie
-##
 Plugin.define do
 name "BLOX"
-author "Shuai Lin"
+authors [
+  "Shuai Lin",
+  "Bhavin Senjaliya", # v0.2 # 2016-08-19 # Add cookie. 
+  "Andrew Horton", # v0.3 # 2017-11-27 # Added website and updated description. 
+]
 version "0.2"
 description "BLOX is a cloud based CMS"
 website "https://www.townnews365.com./"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "DiamondList"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-18
+]
 version "0.1"
 description "DiamondList is a free open source ruby on rails wishlist management program. It allows you to track one or more wishlists for one or more people, for any kind of event!"
 website "http://www.hulihanapplications.com/projects/diamondlist"

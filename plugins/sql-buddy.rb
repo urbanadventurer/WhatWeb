@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "SQL-Buddy"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-28
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-28
+]
 version "0.1"
 description "SQL Buddy - Web based MySQL administration"
 website "http://www.sqlbuddy.com/"

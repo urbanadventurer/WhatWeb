@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-08-19 # Bhavin Senjaliya 
-# Added cookies
-##
 Plugin.define do
 name "SquareSpace"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+  "Bhavin Senjaliya", # v0.2 # 2016-08-19 # Added cookies. 
+]
 version "0.2"
 description "A fully hosted, completely managed environment for creating and maintaining a website, blog or portfolio."
 website "http://www.squarespace.com/"

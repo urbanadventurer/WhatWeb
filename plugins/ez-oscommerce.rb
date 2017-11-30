@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ez-oscommerce"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "PHP powered shopping cart"
 website "http://www.eptcel.com.br/"

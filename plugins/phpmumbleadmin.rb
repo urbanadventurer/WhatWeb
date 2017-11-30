@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "phpMumbleAdmin"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+]
 version "0.1"
 description "Php Mumble Admin is an administration panel control for murmur 1.2.0 and higher. It's communicate over ICE and It's designed for multiple servers."
 website "http://phpmumbleadmin.sourceforge.net/"

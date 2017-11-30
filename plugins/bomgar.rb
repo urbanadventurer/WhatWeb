@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Bomgar"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-31
+]
 version "0.1"
 description "Bomgar simplifies support by letting technicians control remote computers, servers, smartphones and network devices over the internet or network. With Bomgar, a support rep can see what customers see or control their computers for support."
 website "http://www.bomgar.com/remotedesktopaccess/"

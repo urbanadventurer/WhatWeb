@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Advantech-WebAccess"
-author "Brendan Coles <bcoles@gmail.com>" # 2013-01-09
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-01-09
+]
 version "0.1"
 description "Advantech WebAccess HMI/SCADA software"
 website "http://webaccess.advantech.com/"

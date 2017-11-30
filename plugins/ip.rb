@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# added - unless @ip.empty?
-
 Plugin.define do
 name "IP"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # added - unless @ip.empty?
+]
 version "0.2"
 description "IP address of the target, if available."
 

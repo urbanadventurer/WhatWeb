@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-05 #
-# Updated string detection
-##
 Plugin.define do
 name "OpenSearch"
-author "Caleb Anderson"
+authors [
+  "Caleb Anderson",
+  # v0.2 # 2011-03-05 # Updated string detection. 
+]
 version "0.2"
 description "This plugin identifies open search and extracts the URL. OpenSearch is a collection of simple formats for the sharing of search results."
 # More Info: http://www.opensearch.org/ 

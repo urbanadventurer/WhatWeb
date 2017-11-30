@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CL-HTTP"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-15
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-15
+]
 version "0.1"
 description "Common Lisp Hypermedia Server (CL-HTTP) - HTTP server"
 website "http://www.cl-http.org:8001/cl-http/"

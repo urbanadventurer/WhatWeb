@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-02 #
-# Updated firmware version detection
-##
 Plugin.define do
 name "Intellinet-IP-Camera"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-18
+  # v0.2 # 2011-03-02 # Updated firmware version detection. 
+]
 version "0.2"
 description "Intellinet IP camera"
 website "http://www.intellinet-network.com"

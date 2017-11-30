@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "CloudFront"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-02
+]
 version "0.1"
 description "CloudFront Server"
 

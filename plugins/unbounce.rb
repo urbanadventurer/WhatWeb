@@ -3,14 +3,13 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
-#
-##
-# Version 0.2 # 2017-11-27 # Andrew Horton
-# Added website and updated description.
 ##
 Plugin.define do
 name "UnBounce"
-author "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>" # 2016-08-19
+authors [
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # 2016-08-19
+  "Andrew Horton", # v0.2 # 2017-11-27 # Added website and updated description.. 
+]
 version "0.2"
 description "UnBounce - Landing page system."
 website "https://www.unbounce.com/"

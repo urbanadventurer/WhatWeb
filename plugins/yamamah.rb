@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Yamamah"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-30
+]
 version "0.1"
 description "Yamamah - Free photo Gallery"
 website "www.yamamah.org/home/"

@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2 by Andrew Horton. Updated everything
-
 Plugin.define do
 name "HP-OfficeJet-Printer"
-author "Andrew Horton"
+authors [
+  "Andrew Horton",
+  # v0.2 # Andrew Horton. Updated everything
+]
 version "0.2"
 description "HP Officejet Pro and Officejet printers"
 website "http://www.hp.com/products1/inkjetprinter/officejet.html"

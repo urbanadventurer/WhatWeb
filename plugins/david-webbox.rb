@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "David-WebBox"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-27
+]
 version "0.1"
 description "David WebBox is a remote data storage center."
 website "http://www.tobit.com/davidfx/access/"

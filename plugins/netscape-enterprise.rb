@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
 Plugin.define do
 name "Netscape-Enterprise"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Netscape Enterprise Server was a web server developed originally by Netscape Communications Corporation. The product has since been renamed Sun Java System Web Server, reflecting the product's acquisition by Sun Microsystems."
 website "http://wikis.sun.com/display/WebServer/Sun+Java+System+Web+Server"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Hughes-Satellite-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-14
+]
 version "0.1"
 description "Hughes IPoS (IP over Satellite) router"
 website "http://www.hughes.com/ProductsAndTechnology/BroadbandSatelliteSystems/Pages/default.aspx"

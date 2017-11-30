@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Sony-Projector"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-07
+]
 version "0.1"
 description "Sony projecter"
 website "http://pro.sony.com/bbsc/ssr/cat-projectors/"

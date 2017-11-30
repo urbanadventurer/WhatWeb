@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ThoughtConduit"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-19
+]
 version "0.1"
 description "ThoughtConduit is a groupware application for people who create with sound, video, animation, text and Virtual Reality. ThoughtConduit provides a creative environment on the internet where users have access to cross-platform tools for articulating, organizing, and distributing multimedia. The ThoughtConduit System consists of two primary components: The Web Server Framework and the desktop Client Application. The Web framework allows access to many ThoughtConduit features from virtually any modern web browser. The Client Application provides communication between other clients and the web server."
 website "http://www.thoughtconduit.net/"

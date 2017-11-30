@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Apache-Traffic-Server"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-05
+]
 version "0.1"
 description "Apache Traffic Server is a fast, scalable and extensible HTTP/1.1 compliant caching proxy server."
 website "http://trafficserver.apache.org/"

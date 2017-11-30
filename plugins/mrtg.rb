@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 by Andrew Horton
-# Replaced matches, replaced Google dork, replaced examples
-# Plugin still needs to be tested on all versions of MRTG
-
 Plugin.define do
 name "MRTG"
-author "Aung Khant <http://yehg.net/>" # 2012-02-10
+authors [
+  "Aung Khant <http://yehg.net/>", # 2012-02-10
+  "Andrew Horton", # v0.2 # Replaced matches, replaced Google dork, replaced examples. Plugin still needs to be tested on all versions of MRTG
+]
 version "0.2"
 description "MRTG - Multi Router Traffic Grapher - http://oss.oetiker.ch/mrtg/"
 

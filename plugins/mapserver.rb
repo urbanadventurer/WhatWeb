@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-07-30 # Brendan Coles <bcoles@gmail.com>
-# Added examples URLs, added passive match and added google dork
-##
-# Version 0.3 Andrew Horton. Replaced aggressive function with matches
-
 Plugin.define do
 name "MapServer"
-author "Aung Khant, http://yehg.net"
+authors [
+  "Aung Khant, http://yehg.net",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-07-30 # Added examples URLs, added passive match and added google dork. 
+  "Andrew Horton", # v0.3 # Replaced aggressive function with matches
+]
 version "0.3"
 description "Detect MapServer CGI application (http://www.mapserver.org/)"
 

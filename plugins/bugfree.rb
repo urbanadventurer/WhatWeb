@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "BugFree"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-22
+]
 version "0.1"
 description "BugFree [Chinese]"
 website "http://www.bugfree.org.cn/"

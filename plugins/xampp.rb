@@ -4,16 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-03-06 #
-# Updated OS detection
-##
-# Version 0.2 # 2011-01-24 #
-# Updated version detection
-# Added match for 403 error page
-##
 Plugin.define do
 name "XAMPP"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-21
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-21
+  # v0.2 # 2011-01-24 # Updated version detection. Added match for 403 error page. 
+  # v0.3 # 2011-03-06 # Updated OS detection. 
+]
 version "0.3"
 description "XAMPP is an easy to install Apache distribution containing MySQL, PHP and Perl. XAMPP is really very easy to install and to use - just download, extract and start."
 website "http://www.apachefriends.org/en/xampp.html"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PTCPay"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "PTCPay is a sofware development company that develops and supports the GeN4 Security+ GPT/PTC/Bux script."
 website "http://ptcpay.com/"

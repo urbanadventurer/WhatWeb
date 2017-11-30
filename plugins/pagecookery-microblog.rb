@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "PageCookery-Microblog"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+]
 version "0.1"
 description "Blog [Chinese]"
 website "http://www.pagecookery.com/"

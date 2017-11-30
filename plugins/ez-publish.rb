@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "eZ-Publish"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-17
+]
 version "0.1"
 description "eZ Publish is an Open Source Content Management System chosen by thousands of enterprises and organizations world wide."
 website "http://ez.no/"

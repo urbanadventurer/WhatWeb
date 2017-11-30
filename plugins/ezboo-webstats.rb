@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ezBOO-WebStats"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-05 
+]
 version "0.1"
 description "ezBOO WebStats is a high level statistical tool for web sites monitoring."
 website "http://www.ezboo.com/softs/"

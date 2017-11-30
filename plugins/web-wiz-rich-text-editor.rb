@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Web-Wiz-Rich-Text-Editor"
-author "Brendan Coles <bcoles@gmail.com>" # 2013-04-01
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-04-01
+]
 version "0.1"
 description "Web Wiz Rich Text Editor"
 website "http://www.richtexteditor.org/"

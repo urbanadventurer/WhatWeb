@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Added version detection. Updated matches.
-##
 Plugin.define do
 name "SolarWinds-Network-Performance-Monitor"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-31
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-31
+  # v0.2 # Added version detection. Updated matches.. 
+]
 version "0.2"
 description "Our flagship network monitoring software manages dynamic networks of all sizes, simply and affordably. Discover how easy it is to detect, diagnose, and resolve network problems with Orion Network Performance Monitor (NPM)."
 website "http://www.solarwinds.com/products/orion/"

@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Windows-Internet-Printing"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-22
+]
 version "0.1"
 description "Windows internet printing web frontend"
 website "http://www.microsoft.com/"

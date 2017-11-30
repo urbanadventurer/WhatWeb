@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "eSitesBuilder"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-03
+]
 version "0.1"
 description "Professional online website builder is complete website creation tool that offers everything you need to build a website: ad-free hosting, free domain names, website templates and website design, CMS, eCommerce and Real Estate solutions. Make your own website today, create a website in minutes: turnkey solutions from a Personal Website to a big Online Store. Try it now for Free!"
 website "http://www.esitesbuilder.com"

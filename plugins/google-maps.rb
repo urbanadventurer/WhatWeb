@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Google-Maps"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-16
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-16
+]
 version "0.1"
 description "Google Maps"
 website "http://maps.google.com/"

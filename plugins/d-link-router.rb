@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Added :status=>200 matches
-##
 Plugin.define do
 name "D-Link-Router"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-27
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-27
+  # v0.2 # Added :status=>200 matches. 
+]
 version "0.2"
 description "D-Link Router - D-Link is the global leader in connectivity for small, medium and large enterprise business networking."
 website "http://www.dlink.com/"

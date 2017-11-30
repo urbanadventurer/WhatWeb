@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Hycus-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-12
+]
 version "0.1"
 description "India's first CMS. Free and open-source PHP based CMS."
 website "http://www.hycus.com/"

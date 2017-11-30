@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "ImpressPages-CMS"
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-22
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-22
+]
 version "0.1"
 description "ImpressPages - Web CMS built on PHP5.3 and MySQL"
 website "http://www.impresspages.org/"

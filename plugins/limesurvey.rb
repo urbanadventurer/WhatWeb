@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Lime-Survey"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06 
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-06 
+]
 version "0.1"
 description "LimeSurvey basically contains everything you need for doing nearly every survey with grace."
 website "http://www.limesurvey.org/"
