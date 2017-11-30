@@ -10,7 +10,9 @@
 ##
 Plugin.define do
 	name "Plugin-Tutorial-3"
-	author "Your preferred name <email@address>" # 1999-12-31
+	authors [
+		"Your preferred name <email@address>", # 1999-12-31
+	]
 	version "0.2" # <----- updated from tutorial 1
 	description "Generic CMS is an open-source Content Management System developed in PHP."
 	website "http://example.com/"

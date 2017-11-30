@@ -6,7 +6,9 @@
 #
 Plugin.define do
 	name "Plugin-Tutorial-6"
-	author "Your preferred name <email@address>" # 1999-12-31
+	authors [
+		"Your preferred name <email@address>", # 1999-12-31
+	]
 	version "0.1"
 	description "Describe what the plugin identifies"
 	website "http://example.com/"
