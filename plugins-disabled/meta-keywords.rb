@@ -6,7 +6,9 @@
 ##
 Plugin.define do
 name "Meta-Keywords"
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-20
+]
 version "0.1"
 description "This plugin retrieves the keywords from the meta keywords tag."
 

@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # Brendan Coles <bcoles@gmail.com>
-# Fixed regex
-##
 Plugin.define do
 name "RSS-Feed"
-author "Caleb Anderson"
+authors [
+  "Caleb Anderson",
+  "Brendan Coles <bcoles@gmail.com>", # Version 0.2 # Fixed regex
+]
 version "0.2"
 description "This plugin detects RSS feeds and extracts the RSS feed source."
 
