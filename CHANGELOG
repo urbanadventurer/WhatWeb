@@ -9,6 +9,7 @@ Version 0.5.0 - In development
 * Changed plugin locking  @Code0x58
 * Bug fix - clean incorrent UTF-8 byte sequences when loading from file @dirtyfilthy
 * Merged 31 new plugins by Bhavin Senjaliya and 22 plugin updates from the unofficial WhatWeb gem at https://rubygems.org/gems/whatweb/
+* Updated all plugins with an authors array to show multiple authors
 * Reached over 1800 plugins
 
 * 48 New plugins
