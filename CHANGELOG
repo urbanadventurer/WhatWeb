@@ -11,6 +11,7 @@ Version 0.5.0 - In development
 * Merged 31 new plugins by Bhavin Senjaliya and 22 plugin updates from the unofficial WhatWeb gem at https://rubygems.org/gems/whatweb/
 * Updated all plugins with an authors array to show multiple authors
 * Added plugin-development/convert-plugin-authors.rb script
+* Changed the behaviour of --grep to only output results that match the grep plugin
 * Reached over 1800 plugins
 
 * 48 New plugins
