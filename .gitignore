@@ -1,1 +1,3 @@
 .project
+.DS_Store
+Gemfile.lock
