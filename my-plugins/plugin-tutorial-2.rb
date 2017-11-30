@@ -6,7 +6,9 @@
 #
 Plugin.define do
 	name "Plugin-Tutorial-2" 
-	author "Your preferred name <email@address>" # 1999-12-31
+	authors [
+		"Your preferred name <email@address>", # 1999-12-31
+	]
 	version "0.1"
 	description "GenericServer is an HTTP server for head-mounted devices that use the FOOT processor."
 	website "http://example.com/"
