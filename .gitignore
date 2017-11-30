@@ -1,2 +1,3 @@
-.project
 Gemfile.lock
+.project
+.DS_Store
