@@ -20,7 +20,7 @@ class Plugin
   @registered_plugins = {}
   @attributes = %i[
     aggressive
-    author
+    authors
     description
     dorks
     matches
@@ -469,7 +469,7 @@ does not work correctly with mixed plugin names and files
       custom = %{ # coding: ascii-8bit
       Plugin.define do
       name "Grep"
-      author "Unknown"
+      authors ["Unknown"]
       description "User defined"
       website "User defined"
       #{matches}
@@ -495,7 +495,7 @@ does not work correctly with mixed plugin names and files
       custom = %{# coding: ascii-8bit
       Plugin.define do
       name "Custom-Plugin"
-      author "Unknown"
+      authors ["Unknown"]
       description "User defined"
       website "User defined"
       #{matches}
@@ -577,7 +577,7 @@ does not work correctly with mixed plugin names and files
     count = {plugins: 0, version_detection: 0, matches: 0, dorks: 0, aggressive: 0, passive: 0 }
 
     Plugin.registered_plugins.sort_by { |a, b| a.downcase }.each do |name, plugin|
-      dump = [name, plugin.author, plugin.description, plugin.website, plugin.matches].flatten.compact.to_a.join.downcase
+      dump = [name, plugin.authors, plugin.description, plugin.website, plugin.matches].flatten.compact.to_a.join.downcase
 
       # this will fail is an expected variable is not defined or empty
       if keywords.empty? or keywords.map { |k| dump.include?(k.downcase) }.compact.include?(true)
@@ -600,7 +600,7 @@ does not work correctly with mixed plugin names and files
 
         puts "Website:".ljust(16) + (plugin.website || "<Not defined>")
         puts
-        puts "Author:".ljust(16) + (plugin.author || "<Not defined>")
+        puts "Authors:".ljust(16) + (plugin.authors.join(", ") || "<Not defined>")
         puts "Version:".ljust(16) + (plugin.version || "<Not defined>")
         puts
         print "Features:".ljust(16)
