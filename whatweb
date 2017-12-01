@@ -50,6 +50,13 @@ require 'open-uri'
 require 'ipaddr'
 require 'addressable'
 require 'json'
+require 'digest/md5'
+
+# Ruby Version Compatability
+if RUBY_VERSION !~ /^2\./
+	puts 'Unsupported version of Ruby. WhatWeb requires Ruby 2.0 or later.'
+	exit 1
+end
 
 ## set up load paths - must be before loading lib/ files
 # add the directory of the file currently being executed to the load path
@@ -63,48 +70,11 @@ if File.symlink?(__FILE__)
   $LOAD_PATH << File.dirname( Pathname.new(__FILE__).realpath )
 end
 
-
-# Ruby Version Compatability
-if RUBY_VERSION =~ /^1\.9/
-	require 'digest/md5'
-    require 'lib/extend-http_ruby1.9.rb'   
-
-elsif RUBY_VERSION =~ /^2\./
-	require 'digest/md5'
-	require 'lib/extend-http_ruby2.rb'
-
-elsif RUBY_VERSION =~ /^1\.8/
-	puts "Sorry but Ruby 1.8 is not supported. WhatWeb requires Ruby 1.9 or later."
-	exit 1
-
-else
-	puts "Unsupported version of Ruby"
-	exit 1
-
-end
-
-
 ### gem detection & loading
 def gem_available?(gemname)
-	#  gem_available_new_rubygems?(gemname) or gem_available_old_rubygems?(gemname)
-	if defined?(Gem::Specification) and defined?(Gem::Specification.find_by_name)
-		gem_available_new_rubygems?(gemname)
-	else
-		gem_available_old_rubygems?(gemname)
-	end
-end
-
-# Needed by Ruby 1.8.7 (2010-08-16 patchlevel 302) used as stable in Debian in Aug2012.
-def gem_available_old_rubygems?(gemname)
-	Gem.available?(gemname)
-end
-
-def gem_available_new_rubygems?(gemname)
-	begin
-		true if Gem::Specification.find_by_name(gemname)
-	rescue LoadError
-		false 
-	end
+	Gem::Specification.find_by_name(gemname) ? true : false
+rescue LoadError
+	return false 
 end
 
 # requires gem "mongoid", "~> 2.0"
@@ -113,10 +83,7 @@ gems = %w(mongo rchardet)
 gems.each do |thisgem|
 	begin
 		require 'rubygems' # rubygems is optional
-		if gem_available?(thisgem) #
-			require thisgem			
-		else
-end
+		require thisgem if gem_available?(thisgem)
 	rescue LoadError
 		# that failed.. no big deal
 		raise if $WWDEBUG==true
@@ -130,6 +97,7 @@ require 'lib/colour.rb'
 require 'lib/tld.rb'
 require 'lib/version_class.rb'
 require 'lib/http-status.rb'
+require 'lib/extend-http_ruby2.rb'
 HTTP_Status.initialize
 
 # look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
@@ -605,12 +573,15 @@ EXAMPLE USAGE:
   ./whatweb -i plugin-development/alexa-top-100.txt \\
   --url-suffix /crossdomain.xml -p crossdomain_xml\n"
 
-	suggestions=""
+	suggestions = ''
 	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
 	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
 
 	unless suggestions.empty?
-		print "\nOPTIONAL DEPENDENCIES\n--------------------------------------------------------------------------------\n" + suggestions + "\n"
+		puts
+		puts 'OPTIONAL DEPENDENCIES'
+		puts '-' * 80
+		puts suggestions
 	end
 
 	puts
