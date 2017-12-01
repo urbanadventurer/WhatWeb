@@ -62,6 +62,7 @@ Most WhatWeb plugins are thorough and recognise a range of cues from subtle to o
 * Fuzzy matching
 * Result certainty awareness
 * Custom plugins defined on the command line
+* IDN (International Domain Name) support
 
 ## Example Usage
 
