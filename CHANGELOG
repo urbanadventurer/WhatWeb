@@ -2,6 +2,7 @@ Version 0.5.0 - In development
 * Added 9 unit tests
 * Better error reporting in commandline options.
 * Updated README and converted to Markdown format.
+* Updated manpage
 * Added loading cookies from a FILE with --cookie-jar=FILE in the document.cookie format
 * Plugins instance variable handling improvement. @Code0x58
 * Plugin name defined within plugin as variable. @Code0x58
