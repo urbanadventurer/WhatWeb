@@ -175,7 +175,7 @@ def randstr
 	rand(36 ** 8).to_s(36)
 end 
 
-
+# could convert this into matches []
 def match_ghdb(ghdb, body, meta, status, base_uri)
 	# this could be made faster by creating code to eval once for each plugin
 
@@ -337,9 +337,14 @@ end
 
 # backwards compatible convenience method for plugins to use
 def open_target( url )
-	newt = Target.new(url)
-	newt.open
-	[ newt.status, newt.uri, newt.ip, newt.body, newt.headers, newt.raw_headers ]
+	newtarget = Target.new(url)
+  begin
+    newtarget.open
+  rescue => err
+    error("ERROR Opening: #{newtarget} - #{err}")
+  end
+  # it doesn't matter if the plugin only pulls 5 instead of 6 variables
+	[ newtarget.status, newtarget.uri, newtarget.ip, newtarget.body, newtarget.headers, newtarget.raw_headers ]
 end
 
 ### output
