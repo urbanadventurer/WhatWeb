@@ -451,8 +451,9 @@ puts
 puts "Usage: whatweb [options] <URLs>"
 puts "
 TARGET SELECTION:
-  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, 
-  \t\t\t\tfilenames, or nmap-format IP address ranges.
+  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, filenames or
+  \t\t\t\tIP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
+  \t\t\t\tformat.
   --input-file=FILE, -i\t\tRead targets from a file. You can pipe
 \t\t\t\thostnames or URLs directly with -i /dev/stdin.
 
@@ -607,8 +608,9 @@ puts
 puts "Usage: whatweb [options] <URLs>"
 puts "
 TARGET SELECTION:
-  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, or 
-  \t\t\t\tnmap-format IP ranges.
+  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, filenames or
+  \t\t\t\tIP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
+  \t\t\t\tformat.
   --input-file=FILE, -i\t\tRead targets from a file.
 
 AGGRESSION:

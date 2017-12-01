@@ -58,7 +58,7 @@ Most WhatWeb plugins are thorough and recognise a range of cues from subtle to o
 * Custom HTTP headers
 * Basic HTTP authentication
 * Control over webpage redirection
-* Nmap-style IP ranges
+* IP address ranges
 * Fuzzy matching
 * Result certainty awareness
 * Custom plugins defined on the command line
@@ -94,8 +94,9 @@ Homepage: http://www.morningstarsecurity.com/research/whatweb
 Usage: whatweb [options] <URLs>
 
 TARGET SELECTION:
-  <TARGETs>             Enter URLs, hostnames, IP adddresses, filenames,
-                        or nmap-format IP address ranges.
+  <TARGETs>             Enter URLs, hostnames, IP adddresses, filenames or
+                        IP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
+                        format.
   --input-file=FILE, -i Read targets from a file. You can pipe
                         hostnames or URLs directly with -i /dev/stdin.
 
@@ -365,7 +366,7 @@ The --wait and --max-threads commands can be used to assist in IDS evasion.
 
 Changing the user-agent using the -U or --user-agent command line option will avoid the Snort IDS rule for WhatWeb.
 
-If you are scanning ranges of IP addresses, it is much more efficient to use a port scanner like nmap to discover which have port 80 open before scanning with WhatWeb.
+If you are scanning ranges of IP addresses, it is much more efficient to use a port scanner like massscan to discover which have port 80 open before scanning with WhatWeb.
 
 Character set detection, with the Charset plugin dramatically decreases performance by requiring more CPU. This is required by JSON and MongoDB logging.
 

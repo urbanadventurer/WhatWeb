@@ -6,6 +6,9 @@
 ##
 source 'https://rubygems.org'
 
+# IP Address Ranges
+gem 'ipaddr'
+
 # JSON logging - optional
 group :json do
   #gem 'json'
