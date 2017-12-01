@@ -13,6 +13,7 @@ Version 0.5.0 - In development
 * Added plugin-development/convert-plugin-authors.rb script
 * Changed the behaviour of --grep to only output results that match the grep plugin
 * Changed the behaviour of --grep so regexp or text can be matched
+* Removed requirement for 'nmap' and now use the IPAddr gem for IP address ranges. CIDR, x.x.x.x-x.x.x.x and x.x.x.x-x supported.
 * Reached over 1800 plugins
 
 * 48 New plugins

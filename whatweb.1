@@ -35,7 +35,7 @@ Features:
 .TP
 	* Control over webpage redirection
 .TP
-	* Nmap-style IP ranges
+	* IP address ranges
 .TP
 	* Fuzzy matching
 .TP
@@ -46,8 +46,8 @@ Features:
 
 .SH TARGET SELECTION
 .TP
-.B \<URLs\>
-Enter URLs, filenames or nmap-format IP ranges. Use /dev/stdin to pipe HTML directly
+.B \<TARGETs\>
+Enter URLs, hostnames, IP adddresses, filenames or IP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x format.
 .TP
 .B \-\-input-file=FILE \-i
 Identify URLs found in FILE
@@ -128,7 +128,7 @@ title,md5,+./plugins-disabled/
 Search for STRING or a Regular Expression. Shows only the results that match.
 .TP
 .nf
-Examples: \-\-grep "hello"
+Examples: \-\/-grep "hello"
 \-\-grep "/he[l]*o/"
 .ni
 .TP
