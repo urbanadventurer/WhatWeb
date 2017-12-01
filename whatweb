@@ -48,6 +48,7 @@ require 'resolv'
 require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
 require 'ipaddr'
+require 'addressable'
 
 ## set up load paths - must be before loading lib/ files
 # add the directory of the file currently being executed to the load path
@@ -282,7 +283,7 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 		url_list += File.open(inputfile).readlines.each { |line| line.strip! }.delete_if { |line| line =~ /^#.*/ }.each { |line| line.delete!("\n") }
 	end
 
-	genrange=url_list.map do |x|
+	genrange = url_list.map do |x|
 		range = nil
 		# Parse IP ranges
 		if x =~ /^[0-9\.\-\/]+$/ && x !~ /^[\d\.]+$/
@@ -314,6 +315,7 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 
 	#make urls friendlier, test if it's a file, if test for not assume it's http://
 	# http, https, ftp, etc
+	push_to_urllist = []
 	url_list = url_list.map do |x|   
 		if File.exists?(x)
 			x
@@ -323,15 +325,39 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 				x = $URL_PATTERN.gsub('%insert%',x)
 			end
 			# add prefix & suffix
-			x=$URL_PREFIX + x + $URL_SUFFIX
+			x = $URL_PREFIX + x + $URL_SUFFIX
 
+			# need to move this into a URI parsing function
+			#
+			# check for URI prefix
 			if x =~ (/^[a-z]+:\/\//)
 				x
 			else
-				x.sub(/^/,"http://")
+			  # add missing URI prefix
+				if $AGGRESSION == 1
+					x.sub!(/^/,"http://")
+				elsif $AGGRESSION > 1
+				# add the https:// prefix too if aggression > 3
+					push_to_urllist << x.sub!(/^/,"https://")
+				end
 			end
-		end	
+
+			# is it a valid domain?
+			begin
+				domain = Addressable::URI.parse(x)				
+				# check validity
+				raise ("Unable to parse invalid target. No hostname.") if domain.host.empty?
+				# convert IDN domain
+				x = domain.normalize.to_s
+			rescue
+				# if it fails it's not valid
+				error("Unable to parse invalid target #{x}")
+			end
+
+		end
 	end
+
+	url_list += push_to_urllist unless push_to_urllist.empty?
 
 	url_list = url_list.flatten #.sort.uniq
 end
