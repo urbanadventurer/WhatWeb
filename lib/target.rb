@@ -154,6 +154,13 @@ class Target
   end
 
   def open_url(options)
+
+    begin
+      @ip = Resolv.getaddress(@uri.host)
+    rescue => err
+      raise
+    end
+
     begin
       if $USE_PROXY == true
         http = ExtendedHTTP::Proxy($PROXY_HOST, $PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host, @uri.port)
@@ -204,34 +211,10 @@ class Target
       @status = res.code.to_i
       puts @uri.to_s + " [#{status}]" if $verbose > 1
 
-    rescue SocketError => err
-      error(@target + " ERROR: Socket error #{err}")
-      return
-    rescue Timeout::Error => err
-      error(@target + " ERROR: Timed out #{err}")
-      return
-    rescue Errno::ETIMEDOUT => err # for ruby 1.8.7 patch level 249
-      error(@target + " ERROR: Timed out (ETIMEDOUT) #{err}")
-      return
-    rescue EOFError => err
-      error(@target + " ERROR: EOF error #{err}")
-      return
-    rescue StandardError => err
-      err = "Not HTTP or cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-      error(@target + " ERROR: #{err}")
-      return
     rescue => err
-      error(@target + " ERROR: #{err}")
-      return
+      raise
     end
 
-    begin
-      @ip = Resolv.getaddress(@uri.host)
-    rescue StandardError => err
-      err = "Cannot resolve hostname" if err.to_s == "undefined method `closed?' for nil:NilClass"
-      error(@target + " ERROR: #{err}")
-      return
-    end
   end
 
 
