@@ -492,8 +492,7 @@ PLUGINS:
 \t\t\t\ttitle,md5,+./plugins-disabled/
 \t\t\t\t./plugins-disabled,-md5
 \t\t\t\t-p + is a shortcut for -p +plugins-disabled.
-
-  --grep, -g=STRING|REGEXP\t\tSearch for STRING or a Regular Expression. Shows 
+  --grep, -g=STRING|REGEXP\tSearch for STRING or a Regular Expression. Shows 
 \t\t\t\tonly the results that match.
 \t\t\t\tExamples: --grep \"hello\"
 \t\t\t\t--grep \"/he[l]*o/\"

@@ -151,8 +151,11 @@ PLUGINS:
                       ./plugins-disabled,-md5
                       -p + is a shortcut for -p +plugins-disabled.
 
-  --grep, -g=STRING     Search for STRING in HTTP responses. Reports with a
-                        plugin named Grep.
+  --grep, -g=STRING|REGEXP      Search for STRING or a Regular Expression. Shows 
+                                only the results that match.
+                                Examples: --grep \"hello\"
+                                --grep \"/he[l]*o/\"
+  --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
   --custom-plugin=DEFINITION  Define a custom plugin named Custom-Plugin,
                         Examples: ":text=>'powered by abc'"
                         ":version=>/powered[ ]?by ab[0-9]/"
