@@ -864,9 +864,9 @@ begin
 			when '--url-pattern'
 				$URL_PATTERN=arg
 			when '--custom-plugin'
-				use_custom_plugin=true if PluginSupport.custom_plugin(arg)
+				use_custom_plugin = true if PluginSupport.custom_plugin(arg)
 			when '--grep','-g'
-				use_custom_grep_plugin=true if PluginSupport.custom_plugin(arg,"grep")
+				use_custom_grep_plugin = true if PluginSupport.custom_plugin(arg,"grep")
 			when '--follow-redirect'	
 				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
 					$FOLLOW_REDIRECT=arg.downcase
@@ -932,6 +932,7 @@ rescue StandardError, GetoptLong::Error => err
 	end
 	puts
 	error("Error in processing commandline options - #{err}")
+	error err.backtrace if $WWDEBUG
 	exit
 end
 

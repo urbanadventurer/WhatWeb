@@ -498,7 +498,7 @@ does not work correctly with mixed plugin names and files
 
       abort("Invalid custom plugin syntax: #{c}") if matches.nil?
 
-      custom = %{# coding: ascii-8bit
+      custom = %{ # coding: ascii-8bit
       Plugin.define do
       name "Custom-Plugin"
       authors ["Unknown"]
