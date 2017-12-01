@@ -34,7 +34,6 @@ You should have received a copy of the GNU General Public License
 along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
-
 #require 'profile' 
 require 'getoptlong'
 require 'pp'
@@ -47,9 +46,6 @@ require 'rbconfig'  # detect environment, e.g. windows or linux
 require 'resolv'
 require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
-require 'ipaddr'
-require 'addressable'
-require 'json'
 require 'digest/md5'
 
 # Ruby Version Compatability
@@ -77,10 +73,19 @@ rescue LoadError
 	return false 
 end
 
-# requires gem "mongoid", "~> 2.0"
-gems = %w(mongo rchardet)
+# check required gems
+required_gems = %w(ipaddr addressable json axa)
+required_gems.each do |thisgem|
+		if gem_available?(thisgem)
+			require thisgem
+		else
+			puts "WhatWeb requires the following gems as dependencies:\n#{required_gems.join(', ')}\n\nTo install execute 'bundler install'"
+			exit 1
+		end
+end
 
-gems.each do |thisgem|
+optional_gems = %w(mongo rchardet)
+optional_gems.each do |thisgem|
 	begin
 		require 'rubygems' # rubygems is optional
 		require thisgem if gem_available?(thisgem)
@@ -89,6 +94,7 @@ gems.each do |thisgem|
 		raise if $WWDEBUG==true
 	end
 end
+
 
 require 'lib/target.rb'
 require 'lib/plugins.rb'
@@ -396,9 +402,6 @@ def word_wrap( s,width=10 )
 
 	ret
 end
-
-
-
 
 
 ### core
