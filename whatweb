@@ -299,16 +299,13 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 			# need to move this into a URI parsing function
 			#
 			# check for URI prefix
-			if x =~ (/^[a-z]+:\/\//)
-				x
-			else
+			if x !~ (/^[a-z]+:\/\//)
 			  # add missing URI prefix
-				if $AGGRESSION == 1
 					x.sub!(/^/,"http://")
-				elsif $AGGRESSION > 1
-				# add the https:// prefix too if aggression > 3
-					push_to_urllist << x.sub!(/^/,"https://")
-				end
+					if $AGGRESSION > 1
+						# add the https:// prefix too if aggression > 1
+						push_to_urllist << x.sub!(/^/,"https://")
+					end
 			end
 
 			# is it a valid domain?
@@ -316,13 +313,18 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 				domain = Addressable::URI.parse(x)				
 				# check validity
 				raise ("Unable to parse invalid target. No hostname.") if domain.host.empty?
+				
 				# convert IDN domain
-				x = domain.normalize.to_s
+				if domain.host !~ /^[a-zA-Z0-9\.:\/]*$/
+					x = domain.normalize.to_s
+				end
 			rescue
 				# if it fails it's not valid
+				x = nil
 				error("Unable to parse invalid target #{x}")
 			end
-
+			# return x
+			x
 		end
 	end
 
