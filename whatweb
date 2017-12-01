@@ -258,7 +258,7 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 		if x =~ /^[0-9\.\-\/]+$/ && x !~ /^[\d\.]+$/
 			begin
 				# CIDR notation
-				if x =~ %r{\d+\.\d+\.\d+\./\d+$}
+				if x =~ %r{\d+\.\d+\.\d+\.\d+/\d+$}
 					range = IPAddr.new(x).to_range.map(&:to_s)
 				# x.x.x.x-x
 				elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+)$/
@@ -273,6 +273,7 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 				end
 			rescue
 				# Something went horribly wrong parsing the target IP range
+				raise "Error parsing target IP range"
 			end
 		end
 		range
