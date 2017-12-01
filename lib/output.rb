@@ -1020,6 +1020,43 @@ end
 
 
 class OutputSQL < Output
+
+
+  def initialize(f = STDOUT)
+    super
+    insert_request_config
+  end
+
+  def insert_request_config
+    # the config doesn't change between targets
+
+    foo = {}
+    req_config = {}
+
+    # when this is called by OutputSQL.new there won't be a user-agent set
+    # $CUSTOM_HEADERS["User-Agent"] isn't set until after the command option loop
+    $CUSTOM_HEADERS["User-Agent"] = $USER_AGENT unless $CUSTOM_HEADERS["User-Agent"]
+    
+    if $USE_PROXY
+      req_config[:proxy] = {:proxy_host=>$PROXY_HOST, :proxy_port=>$PROXY_PORT}
+      req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
+    end
+
+    req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
+    $CUSTOM_HEADERS.each do |header_name, header_value|
+      req_config[:headers][header_name] = header_value.dup
+    end
+    foo[:request_config] = req_config
+
+    flatten_elements!(foo)
+    # pp foo[:request_config]
+
+    insert = [escape_for_sql(JSON.dump( foo[:request_config] ))].join(",")
+    query = "INSERT IGNORE INTO request_configs (value) VALUES (#{insert})"
+    @f.puts query
+    ##
+  end
+
   def flatten_elements!(obj)
     if obj.class == Hash
       obj.each_value { |x| flatten_elements!(x) }
@@ -1035,10 +1072,6 @@ class OutputSQL < Output
     else
       "'"+ s.gsub("'","\'")+"'"
     end
-  end
-
-  def initialize(f=STDOUT)
-    super
   end
 
 	def create_tables
@@ -1069,19 +1102,6 @@ class OutputSQL < Output
   def out(target, status, results)
     # nice
     foo= {:target=>target, :http_status=>status, :plugins=>{}, :request_config=>{}}
-
-		# config
-		req_config = {}
-		if $USE_PROXY
-			req_config[:proxy] = {:proxy_host=>$PROXY_HOST, :proxy_port=>$PROXY_PORT}
-			req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
-		end
-
-		req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
-		$CUSTOM_HEADERS.each do |header_name, header_value|
-			req_config[:headers][header_name] = header_value.dup
-		end
-		foo[:request_config] = req_config
 
     results.each do |plugin_name, plugin_results|
       thisplugin = {}
@@ -1122,11 +1142,7 @@ class OutputSQL < Output
     insert = [escape_for_sql(foo[:http_status]), i_target].join(",")
     query = "INSERT IGNORE INTO targets (status,target) VALUES (#{ insert });";
     @f.puts query
-   
-		insert = [escape_for_sql(JSON.dump(foo[:request_config]))].join(",")
-		query = "INSERT INTO request_configs (value) VALUES (#{insert})"
-		@f.puts query
-    
+
     foo[:plugins].each do |x|
       plugin_name = escape_for_sql(x.first.to_s)
       insert = [escape_for_sql(x[1][:version].join(",").to_s), escape_for_sql(x[1][:os].join(",").to_s),
