@@ -47,7 +47,7 @@ require 'rbconfig'  # detect environment, e.g. windows or linux
 require 'resolv'
 require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
-
+require 'ipaddr'
 
 ## set up load paths - must be before loading lib/ files
 # add the directory of the file currently being executed to the load path
@@ -284,11 +284,26 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 
 	genrange=url_list.map do |x|
 		range = nil
-		if x =~ /^[0-9\.\-*\/]+$/ and not x =~ /^[\d\.]+$/
-			# check for nmap
-			error "Target ranges require nmap to be in the path" if `which nmap` == ""
-			range = `nmap -n -sL #{x} 2>&1 | egrep -o "([0-9]{1,3}\\.){3}[0-9]{1,3}"`
-			range = range.split("\n")
+		# Parse IP ranges
+		if x =~ /^[0-9\.\-\/]+$/ && x !~ /^[\d\.]+$/
+			begin
+				# CIDR notation
+				if x =~ %r{\d+\.\d+\.\d+\./\d+$}
+					range = IPAddr.new(x).to_range.map(&:to_s)
+				# x.x.x.x-x
+				elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+)$/
+					start_ip = IPAddr.new($1, Socket::AF_INET)
+					end_ip   = IPAddr.new("#{start_ip.to_s.split('.')[0..2].join('.')}.#{$2}", Socket::AF_INET)
+					range = (start_ip..end_ip).map(&:to_s)
+				# x.x.x.x-x.x.x.x
+				elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+\.\d+\.\d+\.\d+)$/
+					start_ip = IPAddr.new($1, Socket::AF_INET)
+					end_ip   = IPAddr.new($2, Socket::AF_INET)
+					range = (start_ip..end_ip).map(&:to_s) 
+				end
+			rescue
+				# Something went horribly wrong parsing the target IP range
+			end
 		end
 		range
 	end.compact.flatten
