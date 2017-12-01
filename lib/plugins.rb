@@ -191,7 +191,7 @@ class ScanContext
         has_query = false
       end
 
-      if is_relative and not has_query
+      if is_relative and !has_query
         url_matched = true if target.uri.path =~ /#{match[:url]}$/
       end
 
@@ -201,13 +201,13 @@ class ScanContext
         end
       end
 
-      if not is_relative and has_query
+      if !is_relative and has_query
         if target.uri.query
           url_matched = true if "#{target.uri.path}?#{target.uri.query}" == match[:url]
         end
       end
 
-      if not is_relative and not has_query
+      if !is_relative and !has_query
         url_matched = true if target.uri.path == match[:url]
       end
     end
@@ -225,13 +225,13 @@ class ScanContext
       else
         r = []
       end
-    elsif not match[:status] and match[:url]
+    elsif !match[:status] and match[:url]
       if url_matched
         r << match
       else
         r = []
       end
-    elsif not match[:status] and not match[:url]
+    elsif !match[:status] and !match[:url]
       # nothing to do
     end
 
