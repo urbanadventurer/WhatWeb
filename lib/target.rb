@@ -245,9 +245,6 @@ class Target
           newtarget = newtarget_m
         when "same-site"
           newtarget = (newtarget_h or newtarget_m) if URI.parse((newtarget_h or newtarget_m)).host == @uri.host # defaults to _h if both are present
-        when "same-domain"
-          newtarget = (newtarget_h or newtarget_m) if TLD.same_domain?(
-              @uri.host, URI.parse((newtarget_h or newtarget_m)).host)
         when "always"
           newtarget = (newtarget_h or newtarget_m)
         else
