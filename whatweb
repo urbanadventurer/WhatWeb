@@ -518,10 +518,10 @@ PLUGINS:
 \t\t\t\t--grep "/he[l]*o/"
   --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
 \t\t\t\tExamples: ":text=>'powered by abc'"
-\t\t\t\t\":version=>/powered[ ]?by ab[0-9]/"
-\t\t\t\t\":ghdb=>'intitle:abc \\"powered by abc\\"'"
-\t\t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'"
-\t\t\t\t\"{:text=>'powered by abc'}"
+\t\t\t\t":version=>/powered[ ]?by ab[0-9]/"
+\t\t\t\t":ghdb=>'intitle:abc \\"powered by abc\\"'"
+\t\t\t\t":md5=>'8666257030b94d3bdb46e05945f60b42'"
+\t\t\t\t"{:text=>'powered by abc'}"
   --dorks=PLUGIN\t\tList Google dorks for the selected plugin.
 
 OUTPUT:
