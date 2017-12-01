@@ -53,20 +53,20 @@ class Target
     @is_url
   end
 
-  def initialize(target=nil)
-    @target=target
-    @headers={}
-    @http_options={:method => "GET"}
+  def initialize(target = nil)
+    @target = target
+    @headers = {}
+    @http_options = {:method => "GET"}
 #		@status=0
 
     if @target =~ /^http[s]?:\/\//
-      @is_url=true
+      @is_url = true
     else
-      @is_url=false
+      @is_url = false
     end
 
     if File.exists?(@target)
-      @is_file=true
+      @is_file = true
       if File.directory?(@target)
         raise "Error: #{@target} is a directory"
       end
@@ -74,7 +74,7 @@ class Target
         raise "Error: You do not have permission to view #{@target}"
       end
     else
-      @is_file=false
+      @is_file = false
     end
 
     if self.is_url?
@@ -85,7 +85,7 @@ class Target
       @uri.path = "/" if @uri.path.empty?
     else
       # @uri=URI.parse("file://"+@target)
-      @uri=URI.parse("")
+      @uri = URI.parse("")
     end
   end
 
@@ -100,16 +100,16 @@ class Target
     if @body.nil?
       # Initialize @body variable if the connection is terminated prematurely
       # This is usually caused by HTTP status codes: 101, 102, 204, 205, 305
-      @body=""
+      @body = ""
     else
-      @md5sum=Digest::MD5.hexdigest(@body)
+      @md5sum = Digest::MD5.hexdigest(@body)
       @tag_pattern = make_tag_pattern(@body)
       if @raw_headers
         @raw_response = @raw_headers + @body
       else
         @raw_response = @body
         @raw_headers = ""
-        @cookies=[]
+        @cookies = []
       end
     end
   end
@@ -129,17 +129,17 @@ class Target
       # target is a http packet file
       if @body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
         # extract http header
-        @headers=Hash.new
+        @headers = Hash.new
         pageheaders = body.to_s.split(/\r\n\r\n/).first.to_s.split(/\r\n/)
         @raw_headers = pageheaders.join("\n") + "\r\n\r\n"
         @status = pageheaders.first.scan(/^HTTP\/1\.\d ([\d]{3}) /).flatten.first.to_i
-        @cookies=[]
+        @cookies = []
         for k in 1...pageheaders.length
-          section=pageheaders[k].split(/:/).first.to_s.downcase
+          section = pageheaders[k].split(/:/).first.to_s.downcase
           if section =~ /^set-cookie$/i
             @cookies << pageheaders[k].scan(/:[\s]*(.+)$/).flatten.first
           else
-            @headers[section]=pageheaders[k].scan(/:[\s]*(.+)$/).flatten.first
+            @headers[section] = pageheaders[k].scan(/:[\s]*(.+)$/).flatten.first
           end
         end
         @headers["set-cookie"] = @cookies.join("\n") unless @cookies.nil? or @cookies.empty?
@@ -156,9 +156,9 @@ class Target
   def open_url(options)
     begin
       if $USE_PROXY == true
-        http=ExtendedHTTP::Proxy($PROXY_HOST, $PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host, @uri.port)
+        http = ExtendedHTTP::Proxy($PROXY_HOST, $PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host, @uri.port)
       else
-        http=ExtendedHTTP.new(@uri.host, @uri.port)
+        http = ExtendedHTTP.new(@uri.host, @uri.port)
       end
 
       # set timeouts
@@ -169,21 +169,21 @@ class Target
       # i wont worry about certificates, verfication, etc
       if @uri.class == URI::HTTPS
         http.use_ssl = true
-	OpenSSL::SSL::SSLContext::DEFAULT_PARAMS[:ciphers] = "TLSv1:TLSv1.1:TLSv1.2:SSLv3:SSLv2"
+	      OpenSSL::SSL::SSLContext::DEFAULT_PARAMS[:ciphers] = "TLSv1:TLSv1.1:TLSv1.2:SSLv3:SSLv2"
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
 
       getthis = @uri.path + (@uri.query.nil? ? "" : "?" + @uri.query)
-      req=nil
+      req = nil
 
       if options[:method] == "GET"
-        req=ExtendedHTTP::Get.new(getthis, $CUSTOM_HEADERS)
+        req = ExtendedHTTP::Get.new(getthis, $CUSTOM_HEADERS)
       end
       if options[:method] == "HEAD"
-        req=ExtendedHTTP::Head.new(getthis, $CUSTOM_HEADERS)
+        req = ExtendedHTTP::Head.new(getthis, $CUSTOM_HEADERS)
       end
       if options[:method] == "POST"
-        req=ExtendedHTTP::Post.new(getthis, $CUSTOM_HEADERS)
+        req = ExtendedHTTP::Post.new(getthis, $CUSTOM_HEADERS)
         req.set_form_data(options[:data])
       end
 
@@ -191,15 +191,18 @@ class Target
         req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS
       end
 
-      res=http.request(req)
+      res = http.request(req)
       
-      @raw_headers=http.raw.join("\n")
-      @headers={}; res.each_header { |x, y| @headers[x]=y }
+      @raw_headers = http.raw.join("\n")
+      
+      @headers = {}
+      res.each_header { |x, y| @headers[x] = y }
+
       @headers["set-cookie"] = res.get_fields('set-cookie').join("\n") unless @headers["set-cookie"].nil?
 
-      @body=res.body            
-      @status=res.code.to_i
-      puts @uri.to_s + " [#{status}]" if  $verbose > 1
+      @body = res.body            
+      @status = res.code.to_i
+      puts @uri.to_s + " [#{status}]" if $verbose > 1
 
     rescue SocketError => err
       error(@target + " ERROR: Socket error #{err}")
@@ -233,21 +236,19 @@ class Target
 
 
   def get_redirection_target
-    newtarget_m=nil
-    newtarget_h=nil
-    newtarget=nil
+    newtarget_m, newtarget_h, newtarget = nil
 
     if @@meta_refresh_regex =~ @body
-      metarefresh=@body.scan(@@meta_refresh_regex).flatten.first
-      metarefresh=decode_html_entities(metarefresh)
-      newtarget_m=URI.join(@target, metarefresh).to_s # this works for relative and absolute
+      metarefresh = @body.scan(@@meta_refresh_regex).flatten.first
+      metarefresh = decode_html_entities(metarefresh)
+      newtarget_m = URI.join(@target, metarefresh).to_s # this works for relative and absolute
     end
 
     # HTTP 3XX redirect
     if (300..399) === @status and @headers and @headers['location']
       # downcase location scheme
       location = @headers["location"].gsub(/^HTTPS:\/\//, 'https://').gsub(/^HTTP:\/\//, 'http://')
-      newtarget_h=URI.join(@target,location).to_s
+      newtarget_h = URI.join(@target,location).to_s
     end
 
     # if both meta refresh location and HTTP location are set, then the HTTP location overrides
@@ -270,7 +271,7 @@ class Target
           error("Error: Invalid REDIRECT mode")
       end
     end
-    newtarget=nil if newtarget == @uri.to_s # circular redirection not allowed
+    newtarget = nil if newtarget == @uri.to_s # circular redirection not allowed
 
     newtarget
   end
