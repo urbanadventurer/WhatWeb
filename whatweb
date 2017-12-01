@@ -49,6 +49,7 @@ require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
 require 'ipaddr'
 require 'addressable'
+require 'json'
 
 ## set up load paths - must be before loading lib/ files
 # add the directory of the file currently being executed to the load path
@@ -107,7 +108,7 @@ def gem_available_new_rubygems?(gemname)
 end
 
 # requires gem "mongoid", "~> 2.0"
-gems = %w|json mongo rchardet |
+gems = %w(mongo rchardet)
 
 gems.each do |thisgem|
 	begin
@@ -605,7 +606,6 @@ EXAMPLE USAGE:
   --url-suffix /crossdomain.xml -p crossdomain_xml\n"
 
 	suggestions=""
-	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
 	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
 	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
 
