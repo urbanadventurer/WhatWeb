@@ -493,8 +493,10 @@ PLUGINS:
 \t\t\t\t./plugins-disabled,-md5
 \t\t\t\t-p + is a shortcut for -p +plugins-disabled.
 
-  --grep, -g=STRING\t\tSearch for STRING in HTTP responses. Reports 
-\t\t\t\twith a plugin named Grep.
+  --grep, -g=STRING|REGEXP\t\tSearch for STRING or a Regular Expression. Shows 
+\t\t\t\tonly the results that match.
+\t\t\t\tExamples: --grep \"hello\"
+\t\t\t\t--grep \"/he[l]*o/\"
   --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
 \t\t\t\tExamples: \":text=>'powered by abc'\"
 \t\t\t\t\":version=>/powered[ ]?by ab[0-9]/\"
@@ -1025,6 +1027,8 @@ loop do
     next
   end
   target, result = result_queue.pop(true)
+
+#  pp target, result
   output_list.each do |output|
     begin
 

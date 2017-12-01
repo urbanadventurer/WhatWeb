@@ -124,8 +124,13 @@ title,md5,+./plugins-disabled/
 \-p + is a shortcut for -p +plugins\-disabled.
 .ni
 .TP
-.B  \-\-grep, \-g=STRING
-Search for STRING in HTTP responses. Reports with a plugin named Grep.
+.B  \-\-grep, \-g=STRING|REGEXP
+Search for STRING or a Regular Expression. Shows only the results that match.
+.TP
+.nf
+Examples: \-\-grep "hello"
+\-\-grep "/he[l]*o/"
+.ni
 .TP
 .B  \-\-custom\-plugin=DEFINITION
 Define a custom plugin named Custom-Plugin,

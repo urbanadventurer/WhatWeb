@@ -464,7 +464,13 @@ does not work correctly with mixed plugin names and files
 
   def PluginSupport.custom_plugin(c, *option)
     if option == ["grep"]
-      matches = "matches [:text=>\"#{c}\"]"
+
+      if c[0] == "/" and c[-1] == "/"
+        # it's a regex. this might cause some issues?
+        matches = "matches [:regexp=>/#{c[1..-2]}/]"
+      else
+        matches = "matches [:text=>\"#{c}\"]"
+      end
 
       custom = %{ # coding: ascii-8bit
       Plugin.define do
