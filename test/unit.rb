@@ -17,7 +17,7 @@ class WhatWebTest < Minitest::Test
     res = p.read.to_s
     p.close
     assert res
-    assert res =~ %r{^WhatWeb version \d.\d.\d[-dev]? \( http://www.morningstarsecurity.com/research/whatweb/ \)$}
+    assert res =~ %r{^WhatWeb version ([\d\.]+(-dev)?) \( http://www.morningstarsecurity.com/research/whatweb/ \)$}
   end
 
   def test_invalid_url
@@ -222,7 +222,6 @@ class WhatWebTest < Minitest::Test
 # add test for IDN name
 # www.ødegaard.dk
 # http://www.詹姆斯.com/
-
 
 end
 
