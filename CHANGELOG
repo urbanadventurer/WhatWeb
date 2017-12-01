@@ -16,6 +16,7 @@ Version 0.5.0 - In development
 * Removed feature --follow-redirect same-domain because it relies on the out-dated TLD library for valid TLDs and SLDs.
 * Removed requirement for 'nmap' and now use the IPAddr gem for IP address ranges. CIDR, x.x.x.x-x.x.x.x and x.x.x.x-x supported.
 * Added IDN (International Domain Name) support.
+* Moved output classes into the lib/output/ folder
 * Merged 31 new plugins by Bhavin Senjaliya and 22 plugin updates from the unofficial WhatWeb gem at https://rubygems.org/gems/whatweb/
 
 * Reached over 1800 plugins
