@@ -359,7 +359,8 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 
 	url_list += push_to_urllist unless push_to_urllist.empty?
 
-	url_list = url_list.flatten #.sort.uniq
+  # compact removes nils
+	url_list = url_list.flatten.compact #.sort.uniq
 end
 
 # backwards compatible convenience method for plugins to use
@@ -1009,8 +1010,8 @@ $CUSTOM_HEADERS.delete_if {|k,v| v=="" }
 $targets = make_target_list(ARGV, input_file, $plugins_to_use)
 
 # fail & show usage if no targets.
-if $targets.size < 1
-  error("No targets selected")
+if $targets.empty?
+  error("No targets selected. Exiting.")
   exit 1
 end
 
