@@ -1003,12 +1003,12 @@ workers = (1..$MAX_THREADS).map do
       Thread.exit unless target
       redirects = 0
       # keep processing until there are no more redirects or the limit is hit
-      while target
+      while target # wtf?
         begin
           target.open
         rescue => err
           error("ERROR Opening: #{target} - #{err}")
-          raise if $WWDEBUG
+					target = nil # break target loop
           next
         end
         result = run_plugins(target)
@@ -1041,7 +1041,7 @@ loop do
     alive == target_queue.num_waiting and result_queue.empty?
   end
   if result_queue.empty?
-    sleep 0.1
+    #sleep 0.1
     next
   end
   target, result = result_queue.pop(true)
