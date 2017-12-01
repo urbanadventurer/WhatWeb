@@ -9,6 +9,9 @@ source 'https://rubygems.org'
 # IP Address Ranges
 gem 'ipaddr'
 
+# IDN Domains
+gem 'addressable'
+
 # JSON logging - optional
 group :json do
   #gem 'json'
