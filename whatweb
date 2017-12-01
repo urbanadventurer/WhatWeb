@@ -100,7 +100,6 @@ require 'lib/target.rb'
 require 'lib/plugins.rb'
 require 'lib/output.rb'
 require 'lib/colour.rb'
-require 'lib/tld.rb'
 require 'lib/version_class.rb'
 require 'lib/http-status.rb'
 require 'lib/extend-http_ruby2.rb'
@@ -484,7 +483,7 @@ HTTP OPTIONS:
 \t\t\t\tempty value, e.g. \"User-Agent:\" will remove it.
   --follow-redirect=WHEN\tControl when to follow redirects. WHEN may be
 \t\t\t\t`never', `http-only', `meta-only', `same-site',
-\t\t\t\t`same-domain' or `always'. Default: #{$FOLLOW_REDIRECT}.
+\t\t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}.
   --max-redirects=NUM\t\tMaximum number of redirects. Default: 10.
 
 AUTHENTICATION:
@@ -873,7 +872,7 @@ begin
 			when '--grep','-g'
 				use_custom_grep_plugin = true if PluginSupport.custom_plugin(arg,"grep")
 			when '--follow-redirect'	
-				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
+				if ["never","http-only","meta-only","same-site","always"].include?(arg.downcase)
 					$FOLLOW_REDIRECT=arg.downcase
 				else
 					raise("Invalid --follow-redirect parameter.")
