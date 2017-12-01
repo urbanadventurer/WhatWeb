@@ -153,8 +153,8 @@ PLUGINS:
 
   --grep, -g=STRING|REGEXP      Search for STRING or a Regular Expression. Shows 
                                 only the results that match.
-                                Examples: --grep \"hello\"
-                                --grep \"/he[l]*o/\"
+                                Examples: --grep "hello"
+                                --grep "/he[l]*o/"
   --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
   --custom-plugin=DEFINITION  Define a custom plugin named Custom-Plugin,
                         Examples: ":text=>'powered by abc'"
