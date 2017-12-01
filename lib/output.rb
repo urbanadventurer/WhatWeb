@@ -43,7 +43,6 @@ class Output
     suj
   end
 
-
   # sort and uniq but no join. just for one plugin result
   def sortuniq(p)
     su = {}
@@ -68,7 +67,6 @@ class OutputErrors < Output
 end
 
 # load the lib/output/ folder
-
 $LOAD_PATH.map do |folder|  
   if File.exists?(folder + "lib/output/")
       Dir.glob("#{folder}/lib/output/*.rb").each do |x|
