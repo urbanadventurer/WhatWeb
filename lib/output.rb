@@ -749,6 +749,7 @@ class OutputJSON < Output
 end
 
 # Elasticseach Output, copy of JSON ouput then a HTTP request to send result to elastic
+# Does not use elasticsearch gem. Instead only sends HTTP
 class OutputElastic < Output
 
 	def initialize(s)
@@ -848,7 +849,7 @@ class OutputElastic < Output
 			end
 		end
 
-		@charset=results.map {|n,r| r[0][:string] if n=="Charset" }.compact.first
+		@charset = results.map {|n,r| r[0][:string] if n == "Charset" }.compact.first
 
 		unless @charset.nil? or @charset == "Failed"
 			utf8_elements!(foo) # convert foo to utf-8
@@ -861,7 +862,7 @@ class OutputElastic < Output
 		url = URI('http://' + @host + '/' + @index + '/whatwebresult')
 		req = Net::HTTP::Post.new(url)
 		req.body = JSON::generate(foo)
-		res = Net::HTTP.start(url.hostname, url.port) {|http|
+		res = Net::HTTP.start(url.hostname, url.port) { |http|
 			http.request(req)
 		}
 
