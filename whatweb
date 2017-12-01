@@ -302,11 +302,7 @@ def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
 			# check for URI prefix
 			if x !~ (/^[a-z]+:\/\//)
 			  # add missing URI prefix
-					x.sub!(/^/,"http://")
-					if $AGGRESSION > 1
-						# add the https:// prefix too if aggression > 1
-						push_to_urllist << x.sub!(/^/,"https://")
-					end
+				x.sub!(/^/,"http://")
 			end
 
 			# is it a valid domain?
