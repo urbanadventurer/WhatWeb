@@ -976,7 +976,7 @@ if elastic[:use_elastic_log]
 end
 
 ## Headers
-$CUSTOM_HEADERS["User-Agent"]=$USER_AGENT unless $CUSTOM_HEADERS["User-Agent"]
+$CUSTOM_HEADERS["User-Agent"] = $USER_AGENT unless $CUSTOM_HEADERS["User-Agent"]
 $CUSTOM_HEADERS.delete_if {|k,v| v=="" }
 
 ### TARGETS
