@@ -12,10 +12,8 @@ gem 'ipaddr'
 # IDN Domains
 gem 'addressable'
 
-# JSON logging - optional
-group :json do
-  #gem 'json'
-end
+# JSON logging
+gem 'json'
 
 # MongoDB logging - optional
 group :mongo do
