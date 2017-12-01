@@ -74,7 +74,7 @@ rescue LoadError
 end
 
 # check required gems
-required_gems = %w(ipaddr addressable json axa)
+required_gems = %w(ipaddr addressable json)
 required_gems.each do |thisgem|
 		if gem_available?(thisgem)
 			require thisgem
