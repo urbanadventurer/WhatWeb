@@ -447,11 +447,13 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 ")
 
-puts "WhatWeb - Next generation web scanner version #{$VERSION}.\nDeveloped by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)."
-puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
-puts
-puts "Usage: whatweb [options] <URLs>"
-puts "
+puts(<<-EOT)
+WhatWeb - Next generation web scanner version #{$VERSION}.
+Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles).
+Homepage: http://www.morningstarsecurity.com/research/whatweb
+
+Usage: whatweb [options] <URLs>
+
 TARGET SELECTION:
   <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, filenames or
   \t\t\t\tIP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
@@ -478,9 +480,9 @@ reliability.
 
 HTTP OPTIONS:
   --user-agent, -U=AGENT\tIdentify as AGENT instead of WhatWeb/#{$VERSION}.
-  --header, -H\t\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a 
+  --header, -H\t\t\tAdd an HTTP header. eg "Foo:Bar". Specifying a 
 \t\t\t\tdefault header will replace it. Specifying an 
-\t\t\t\tempty value, e.g. \"User-Agent:\" will remove it.
+\t\t\t\tempty value, e.g. "User-Agent:" will remove it.
   --follow-redirect=WHEN\tControl when to follow redirects. WHEN may be
 \t\t\t\t`never', `http-only', `meta-only', `same-site',
 \t\t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}.
@@ -512,14 +514,14 @@ PLUGINS:
 \t\t\t\t-p + is a shortcut for -p +plugins-disabled.
   --grep, -g=STRING|REGEXP\tSearch for STRING or a Regular Expression. Shows 
 \t\t\t\tonly the results that match.
-\t\t\t\tExamples: --grep \"hello\"
-\t\t\t\t--grep \"/he[l]*o/\"
+\t\t\t\tExamples: --grep "hello"
+\t\t\t\t--grep "/he[l]*o/"
   --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
-\t\t\t\tExamples: \":text=>'powered by abc'\"
-\t\t\t\t\":version=>/powered[ ]?by ab[0-9]/\"
-\t\t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
-\t\t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
-\t\t\t\t\"{:text=>'powered by abc'}\"
+\t\t\t\tExamples: ":text=>'powered by abc'"
+\t\t\t\t\":version=>/powered[ ]?by ab[0-9]/"
+\t\t\t\t\":ghdb=>'intitle:abc \\"powered by abc\\"'"
+\t\t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'"
+\t\t\t\t\"{:text=>'powered by abc'}"
   --dorks=PLUGIN\t\tList Google dorks for the selected plugin.
 
 OUTPUT:
@@ -577,8 +579,9 @@ EXAMPLE USAGE:
   whatweb --no-errors --url-prefix https:// 192.168.0.0/24
 * Scan for crossdomain policies in the Alexa Top 1000.
   ./whatweb -i plugin-development/alexa-top-100.txt \\
-  --url-suffix /crossdomain.xml -p crossdomain_xml\n"
+  --url-suffix /crossdomain.xml -p crossdomain_xml
 
+EOT
 	suggestions = ''
 	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
 	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
@@ -588,9 +591,9 @@ EXAMPLE USAGE:
 		puts 'OPTIONAL DEPENDENCIES'
 		puts '-' * 80
 		puts suggestions
+		puts
 	end
 
-	puts
 end
 
 def usage_short()
@@ -606,11 +609,13 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 ")
 
-puts "WhatWeb - Next generation web scanner version #{$VERSION}.\nDeveloped by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)"
-puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
-puts
-puts "Usage: whatweb [options] <URLs>"
-puts "
+puts(<<-EOT)
+WhatWeb - Next generation web scanner version #{$VERSION}.
+Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
+Homepage: http://www.morningstarsecurity.com/research/whatweb
+
+Usage: whatweb [options] <URLs>
+
 TARGET SELECTION:
   <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, filenames or
   \t\t\t\tIP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
@@ -657,10 +662,9 @@ EXAMPLE USAGE:
   --url-suffix /crossdomain.xml -p crossdomain_xml
 
   Note: This is the short usage help. 
-  For the complete usage help use -h or --help.\n"
+  For the complete usage help use -h or --help.
 
-puts
-
+EOT
 end
 
 
