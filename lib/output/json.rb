@@ -38,11 +38,11 @@ class OutputJSON < Output
       # read this - http://blog.grayproductions.net/articles/ruby_19s_string
       # replace invalid UTF-8 chars
       # based on http://stackoverflow.com/a/8873922/388038
-      if String.method_defined?(:encode)
-        obj.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
-        obj.encode!('UTF-8', 'UTF-16')
-      end
-      obj.force_encoding('UTF-8')
+    #  if String.method_defined?(:encode)
+    #    obj.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
+    #    obj.encode!('UTF-8', 'UTF-16')
+    #  end
+    #  obj.force_encoding('UTF-8')
 
       #  obj=obj.force_encoding("ASCII-8BIT")
       # puts obj.encoding.name

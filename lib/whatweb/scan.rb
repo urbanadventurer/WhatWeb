@@ -93,24 +93,9 @@ class Scan
     end
 
     target, result = result_queue.pop(true)
+
+    yield target,result
     #  pp target, result
-    opts[:output_list].each do |output|
-      begin
-
-        if opts[:use_custom_grep_plugin]
-          if result.map { |plugin_name, _plugin_result| plugin_name }.include? 'Grep'
-            output.out(target, target.status, result)
-          end
-        else
-          # Hide output if Grep plugin did not match
-          output.out(target, target.status, result)
-        end
-
-      rescue => err
-        error("ERROR Logging failed: #{target} - #{err}")
-        raise if $WWDEBUG == true
-      end
-    end
   end
 
   # Shut down workers, output, and plugins
@@ -147,7 +132,6 @@ class Scan
       end
       results << [name, result] unless result.nil? || result.empty?
     end
-
     results
   end
 
