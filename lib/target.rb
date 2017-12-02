@@ -8,6 +8,206 @@
 #
 # You should have received a copy of the GNU General Public License along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
+# try to make a new Target object, may return nil
+def prepare_target(url)
+  Target.new(url)
+rescue => err
+  error("Prepare Target Failed - #{err}")
+  nil
+end
+
+def make_target_list(cmdline_args, inputfile = nil, _pluginlist = nil)
+  url_list = cmdline_args
+
+  # read each line as a url, skipping lines that begin with a #
+  if !inputfile.nil? && File.exist?(inputfile)
+    pp "loading input file: #{inputfile}" if $verbose > 2
+    url_list += File.open(inputfile).readlines.each(&:strip!).delete_if { |line| line =~ /^#.*/ }.each { |line| line.delete!("\n") }
+  end
+
+  genrange = url_list.map do |x|
+    range = nil
+    # Parse IP ranges
+    if x =~ /^[0-9\.\-\/]+$/ && x !~ /^[\d\.]+$/
+      begin
+        # CIDR notation
+        if x =~ %r{\d+\.\d+\.\d+\.\d+/\d+$}
+          range = IPAddr.new(x).to_range.map(&:to_s)
+        # x.x.x.x-x
+        elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+)$/
+          start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
+          end_ip   = IPAddr.new("#{start_ip.to_s.split('.')[0..2].join('.')}.#{Regexp.last_match(2)}", Socket::AF_INET)
+          range = (start_ip..end_ip).map(&:to_s)
+        # x.x.x.x-x.x.x.x
+        elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+\.\d+\.\d+\.\d+)$/
+          start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
+          end_ip   = IPAddr.new(Regexp.last_match(2), Socket::AF_INET)
+          range = (start_ip..end_ip).map(&:to_s)
+        end
+      rescue
+        # Something went horribly wrong parsing the target IP range
+        raise 'Error parsing target IP range'
+      end
+    end
+    range
+  end.compact.flatten
+
+  url_list = url_list.select { |x| !(x =~ /^[0-9\.\-*\/]+$/) || x =~ /^[\d\.]+$/ }
+  url_list += genrange unless genrange.empty?
+
+  # make urls friendlier, test if it's a file, if test for not assume it's http://
+  # http, https, ftp, etc
+  push_to_urllist = []
+  url_list = url_list.map do |x|
+    if File.exist?(x)
+      x
+    else
+      # use url pattern
+      x = $URL_PATTERN.gsub('%insert%', x) if $URL_PATTERN
+      # add prefix & suffix
+      x = $URL_PREFIX + x + $URL_SUFFIX
+
+      # need to move this into a URI parsing function
+      #
+      # check for URI prefix
+      if x !~ /^[a-z]+:\/\//
+        # add missing URI prefix
+        x.sub!(/^/, 'http://')
+      end
+
+      # is it a valid domain?
+      begin
+        domain = Addressable::URI.parse(x)
+        # check validity
+        raise 'Unable to parse invalid target. No hostname.' if domain.host.empty?
+
+        # convert IDN domain
+        x = domain.normalize.to_s if domain.host !~ /^[a-zA-Z0-9\.:\/]*$/
+      rescue
+        # if it fails it's not valid
+        x = nil
+        error("Unable to parse invalid target #{x}")
+      end
+      # return x
+      x
+    end
+  end
+
+  url_list += push_to_urllist unless push_to_urllist.empty?
+
+  # compact removes nils
+  url_list = url_list.flatten.compact # .sort.uniq
+end
+
+# backwards compatible convenience method for plugins to use
+def open_target(url)
+  newtarget = Target.new(url)
+  begin
+    newtarget.open
+  rescue => err
+    error("ERROR Opening: #{newtarget} - #{err}")
+  end
+  # it doesn't matter if the plugin only pulls 5 instead of 6 variables
+  [newtarget.status, newtarget.uri, newtarget.ip, newtarget.body, newtarget.headers, newtarget.raw_headers]
+end
+
+def decode_html_entities(s)
+  t = s.dup
+  html_entities = { '&quot;' => '"', '&apos;' => "'", '&amp;' => '&', '&lt;' => '<', '&gt;' => '>' }
+  html_entities.each_pair { |from, to| t.gsub!(from, to) }
+  t
+end
+
+### matching
+
+# fuzzy matching ftw
+def make_tag_pattern(b)
+  # remove stuff between script and /script
+  # don't bother with  !--, --> or noscript and /noscript
+  inscript = false
+
+  b.scan(/<([^\s>]*)/).flatten.map do |x|
+    x.downcase!
+    r = nil
+    r = x if inscript == false
+    inscript = true if x == 'script'
+    (inscript = false; r = x) if x == '/script'
+    r
+  end.compact.join(',')
+end
+
+# some plugins want a random string in URLs
+def randstr
+  rand(36**8).to_s(36)
+end
+
+def match_ghdb(ghdb, body, _meta, _status, base_uri)
+  # this could be made faster by creating code to eval once for each plugin
+
+  pp 'match_ghdb', ghdb if $verbose > 2
+
+  # take a GHDB string and turn it into code to be evaluated
+  matches = [] # fill with true or false. succeeds if all true
+  s = ghdb
+
+  # does it contain intitle?
+  if s =~ /intitle:/i
+    # extract either the next word or the following words enclosed in "s, it can't possibly be both
+    intitle = (s.scan(/intitle:"([^"]*)"/i) + s.scan(/intitle:([^"]\w+)/i)).to_s
+    matches << ((body =~ /<title>[^<]*#{Regexp.escape(intitle)}[^<]*<\/title>/i).nil? ? false : true)
+    # strip out the intitle: part
+    s = s.gsub(/intitle:"([^"]*)"/i, '').gsub(/intitle:([^"]\w+)/i, '')
+  end
+
+  if s =~ /filetype:/i
+    filetype = (s.scan(/filetype:"([^"]*)"/i) + s.scan(/filetype:([^"]\w+)/i)).to_s
+    # lame method: check if the URL ends in the filetype
+    unless base_uri.nil?
+      unless base_uri.path.split('?')[0].nil?
+        matches << ((base_uri.path.split('?')[0] =~ /#{Regexp.escape(filetype)}$/i).nil? ? false : true)
+      end
+    end
+    s = s.gsub(/filetype:"([^"]*)"/i, '').gsub(/filetype:([^"]\w+)/i, '')
+  end
+
+  if s =~ /inurl:/i
+    inurl = (s.scan(/inurl:"([^"]*)"/i) + s.scan(/inurl:([^"]\w+)/i)).flatten
+    # can occur multiple times.
+    inurl.each { |x| matches << ((base_uri.to_s =~ /#{Regexp.escape(x)}/i).nil? ? false : true) }
+    # strip out the inurl: part
+    s = s.gsub(/inurl:"([^"]*)"/i, '').gsub(/inurl:([^"]\w+)/i, '')
+  end
+
+  # split the remaining words except those enclosed in quotes, remove the quotes and sort them
+
+  remaining_words = s.scan(/([^ "]+)|("[^"]+")/i).flatten.compact.each { |w| w.delete!('"') }.sort.uniq
+
+  pp 'Remaining GHDB words', remaining_words if $verbose > 2
+
+  remaining_words.each do |w|
+    # does it start with a - ?
+    if w[0..0] == '-'
+      # reverse true/false if it begins with a -
+      matches << ((body =~ /#{Regexp.escape(w[1..-1])}/i).nil? ? true : false)
+    else
+      w = w[1..-1] if w[0..0] == '+' # if it starts with +, ignore the 1st char
+      matches << ((body =~ /#{Regexp.escape(w)}/i).nil? ? false : true)
+    end
+  end
+
+  pp matches if $verbose > 2
+
+  # if all matcbhes are true, then true
+  if matches.uniq == [true]
+    true
+  else
+    false
+  end
+end
+
+#
+# Target
+#
 class Target
   attr_reader :target
   attr_reader :uri, :status, :ip, :body, :headers, :raw_headers, :raw_response
