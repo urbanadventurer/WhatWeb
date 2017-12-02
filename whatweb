@@ -54,15 +54,11 @@ end
 
 ## set up load paths - must be before loading lib/ files
 # add the directory of the file currently being executed to the load path
-$LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless
-    $LOAD_PATH.include?(File.dirname(__FILE__)) || $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
-$LOAD_PATH << '/usr/share/whatweb/'
-
-# if __FILE__ is a symlink then follow *every* symlink
-if File.symlink?(__FILE__)
-  require 'pathname'
-  $LOAD_PATH << File.dirname(Pathname.new(__FILE__).realpath)
-end
+$:.unshift(File.join(File.expand_path(File.dirname(__FILE__)), '.'))
+$root_dir = []
+$root_dir << File.expand_path('..', __FILE__)
+#$root_dir << '/usr/share/whatweb/'
+$root_dir << "#{Dir.home}/.whatweb/"
 
 require 'lib/whatweb.rb'
 
@@ -285,8 +281,8 @@ end
 
 HTTP_Status.initialize
 
-# look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
-PLUGIN_DIRS = ['plugins', 'my-plugins'].map { |x| $LOAD_PATH.map { |y| y + '/' + x if File.exist?(y + '/' + x) } }.flatten.compact
+# look through $root_dir for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
+PLUGIN_DIRS = ['plugins', 'my-plugins'].map { |x| $root_dir.map { |y| y + '/' + x if File.exist?(y + '/' + x) } }.flatten.compact
 
 ### output
 $semaphore = Mutex.new

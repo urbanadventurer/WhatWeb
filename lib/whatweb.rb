@@ -29,6 +29,9 @@ require 'lib/version_class.rb'
 require 'lib/http-status.rb'
 require 'lib/extend-http.rb'
 
+# load the lib/output/ folder
+Dir["#{File.expand_path(File.dirname(__FILE__))}/output/*.rb"].each {|file| require file }
+
 # Output options
 $WWDEBUG = false # raise exceptions in plugins, etc
 $verbose = 0 # $VERBOSE is reserved in ruby

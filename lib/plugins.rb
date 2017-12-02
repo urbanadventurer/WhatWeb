@@ -346,7 +346,7 @@ class PluginSupport
       list = list.split(',')
 
       plugins_disabled_location = ['plugins-disabled'].map do |x|
-        $LOAD_PATH.map do |y|
+        $root_dir.map do |y|
           path = "#{y}/#{x}"
           path if File.exist?(path)
         end
