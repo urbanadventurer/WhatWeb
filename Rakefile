@@ -28,7 +28,7 @@ task :bundle_audit do
   Rake::Task['bundle_audit:check'].invoke
 end
 
-desc 'Generate API documentation to doc/rdocs/index.html'
+desc 'Generate documentation to doc/rdocs/index.html'
 task :rdoc do
   Rake::Task['rdoc:rerdoc'].invoke
 end
@@ -41,13 +41,14 @@ RuboCop::RakeTask.new
 namespace :rdoc do
   require 'rdoc/task'
 
-  desc 'Generate API documentation to doc/rdocs/index.html'
+  desc 'Generate documentation to doc/rdocs/index.html'
   Rake::RDocTask.new do |rd|
+    rd.title = 'WhatWeb'
     rd.rdoc_dir = 'doc/rdocs'
-    rd.main = 'README'
+    rd.main = 'README.md'
     rd.rdoc_files.include(
       'whatweb',
-      'lib/*\.rb')
+      'lib/**/*\.rb')
     rd.options << '--line-numbers'
     rd.options << '--all'
   end
