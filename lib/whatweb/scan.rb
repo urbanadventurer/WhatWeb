@@ -18,9 +18,14 @@
 module WhatWeb
 class Scan
 
-  def initialize(targets, opts)
+  def initialize(urls, opts)
 
-  # fail if no targets.
+  if opts[:input_file].nil?
+    targets = make_target_list(urls)
+  else
+    targets = make_target_list(urls, opts[:input_file])
+  end
+
   if targets.empty?
     error('No targets selected. Exiting.')
     exit 1
@@ -113,6 +118,8 @@ class Scan
   # pp $PLUGIN_TIMES.sort_by {|x,y|y }
   end
 
+  private
+
   def run_plugins(target)
     results = []
 
@@ -131,6 +138,94 @@ class Scan
     end
 
     results
+  end
+
+  #
+  # Make Target List
+  #
+  # Make a list of targets from a list of URLs and/or input file
+  #
+  def make_target_list(urls, inputfile = nil)
+    url_list = urls
+
+    # read each line as a url, skipping lines that begin with a #
+    if !inputfile.nil? && File.exist?(inputfile)
+      pp "loading input file: #{inputfile}" if $verbose > 2
+      url_list += File.open(inputfile).readlines.each(&:strip!).delete_if { |line| line =~ /^#.*/ }.each { |line| line.delete!("\n") }
+    end
+
+    genrange = url_list.map do |x|
+      range = nil
+      # Parse IP ranges
+      if x =~ /^[0-9\.\-\/]+$/ && x !~ /^[\d\.]+$/
+        begin
+          # CIDR notation
+          if x =~ %r{\d+\.\d+\.\d+\.\d+/\d+$}
+            range = IPAddr.new(x).to_range.map(&:to_s)
+          # x.x.x.x-x
+          elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+)$/
+            start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
+            end_ip   = IPAddr.new("#{start_ip.to_s.split('.')[0..2].join('.')}.#{Regexp.last_match(2)}", Socket::AF_INET)
+            range = (start_ip..end_ip).map(&:to_s)
+          # x.x.x.x-x.x.x.x
+          elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+\.\d+\.\d+\.\d+)$/
+            start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
+            end_ip   = IPAddr.new(Regexp.last_match(2), Socket::AF_INET)
+            range = (start_ip..end_ip).map(&:to_s)
+          end
+        rescue
+          # Something went horribly wrong parsing the target IP range
+          raise 'Error parsing target IP range'
+        end
+      end
+      range
+    end.compact.flatten
+
+    url_list = url_list.select { |x| !(x =~ /^[0-9\.\-*\/]+$/) || x =~ /^[\d\.]+$/ }
+    url_list += genrange unless genrange.empty?
+
+    # make urls friendlier, test if it's a file, if test for not assume it's http://
+    # http, https, ftp, etc
+    push_to_urllist = []
+    url_list = url_list.map do |x|
+      if File.exist?(x)
+        x
+      else
+        # use url pattern
+        x = $URL_PATTERN.gsub('%insert%', x) if $URL_PATTERN
+        # add prefix & suffix
+        x = $URL_PREFIX + x + $URL_SUFFIX
+
+        # need to move this into a URI parsing function
+        #
+        # check for URI prefix
+        if x !~ /^[a-z]+:\/\//
+          # add missing URI prefix
+          x.sub!(/^/, 'http://')
+        end
+
+        # is it a valid domain?
+        begin
+          domain = Addressable::URI.parse(x)
+          # check validity
+          raise 'Unable to parse invalid target. No hostname.' if domain.host.empty?
+
+          # convert IDN domain
+          x = domain.normalize.to_s if domain.host !~ /^[a-zA-Z0-9\.:\/]*$/
+        rescue
+          # if it fails it's not valid
+          x = nil
+          error("Unable to parse invalid target #{x}")
+        end
+        # return x
+        x
+      end
+    end
+
+    url_list += push_to_urllist unless push_to_urllist.empty?
+
+    # compact removes nils
+    url_list = url_list.flatten.compact # .sort.uniq
   end
 end
 end
