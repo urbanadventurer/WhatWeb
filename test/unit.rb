@@ -20,6 +20,14 @@ class WhatWebTest < Minitest::Test
     assert res =~ %r{^WhatWeb version ([\d\.]+(-dev)?) \( http://www.morningstarsecurity.com/research/whatweb/ \)$}
   end
 
+  def test_usage
+    p = IO.popen(['./whatweb', '--help'], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert res =~ /^WhatWeb - Next generation web scanner version ([\d\.]+(-dev)?)\.$/
+  end
+
   def test_invalid_url
     p = IO.popen(['./whatweb',
       '--color', 'never',
