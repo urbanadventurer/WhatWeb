@@ -23,8 +23,8 @@ class Scan
   targets = make_target_list(
     urls,
     input_file: opts[:input_file],
-    url_prefix: opts[:url_prefix],
-    url_suffix: opts[:url_suffix],
+    url_prefix: opts[:url_prefix] || '',
+    url_suffix: opts[:url_suffix] || '',
     url_pattern: opts[:url_pattern]
   )
 
@@ -37,8 +37,9 @@ class Scan
   result_queue = Queue.new # workers return results here for output
   result_mutex = Mutex.new
   Thread.abort_on_exception = true if $WWDEBUG
+  max_threads = opts[:max_threads].to_i || 25
 
-  workers = (1..$MAX_THREADS).map do
+  workers = (1..max_threads).map do
     Thread.new do
       # keep reading in root tasks until a nil is received
       loop do
@@ -81,7 +82,7 @@ class Scan
 
   loop do
     break if result_mutex.synchronize do
-      # more defensive than comparing against $MAX_THREADS
+      # more defensive than comparing against max_threads
       alive = workers.map { |worker| worker if worker.alive? }.compact.length
       alive == target_queue.num_waiting && result_queue.empty?
     end
@@ -113,7 +114,7 @@ class Scan
   end
 
   # Shut down workers, output, and plugins
-  (1..$MAX_THREADS).each { target_queue << nil }
+  (1..max_threads).each { target_queue << nil }
   workers.each(&:join)
   opts[:output_list].each(&:close)
   Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }

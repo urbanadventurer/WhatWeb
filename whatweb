@@ -176,7 +176,7 @@ LOGGING:
   --log-elastic-host\t\tHost:port of the elastic http interface. Default: 127.0.0.1:9200
 
 PERFORMANCE & STABILITY:
-  --max-threads, -t\t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
+  --max-threads, -t\t\tNumber of simultaneous threads. Default: #{max_threads}.
   --open-timeout\t\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}.
   --read-timeout\t\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}.
   --wait=SECONDS\t\tWait SECONDS between connections.
@@ -340,18 +340,32 @@ def word_wrap(s, width = 10)
   ret
 end
 
+#
+# Default options
+#
+
+# Plugins
 plugin_selection = nil
 use_custom_plugin = false
 use_custom_grep_plugin = false
+
+# Targets
 input_file = nil
+
+# Output
 output_list = []
 mongo = {}
 mongo[:use_mongo_log] = false
 elastic = {}
 elastic[:use_elastic_log] = false
+
+# Target modification
 url_prefix = ''
 url_suffix = ''
 url_pattern = nil
+
+# HTTP connection
+max_threads = 25
 
 # optional arguments work badly with URLs
 opts = GetoptLong.new(
@@ -522,7 +536,7 @@ begin
     when '-U', '--user-agent'
       $USER_AGENT = arg
     when '-t', '--max-threads'
-      $MAX_THREADS = arg.to_i
+      max_threads = arg.to_i
     when '-a', '--aggression'
       raise "Agression level must be 1,3, or 4. #{arg} is invalid." unless [1, 3, 4].include? arg.to_i
       $AGGRESSION = arg.to_i
@@ -659,6 +673,9 @@ whatweb = WhatWeb::Scan.new(
   ARGV,
   output_list: output_list,
   input_file: input_file,
+
+  # HTTP connection
+  max_threads: max_threads,
 
   # Target modification
   url_prefix: url_prefix,

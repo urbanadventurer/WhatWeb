@@ -38,7 +38,6 @@ $PLUGIN_TIMES = Hash.new(0)
 
 # HTTP connection options
 $USER_AGENT = "WhatWeb/#{WhatWeb::VERSION}"
-$MAX_THREADS = 25
 $AGGRESSION = 1
 $FOLLOW_REDIRECT = 'always'
 $MAX_REDIRECTS = 10
