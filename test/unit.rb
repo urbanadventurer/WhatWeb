@@ -74,7 +74,9 @@ class WhatWebTest < Minitest::Test
     res = p.read.to_s
     p.close
     assert res
-    assert res.split("\n").flatten.first =~ %r{^INSERT IGNORE INTO targets \(status,target\) VALUES \('200','https://#{@test_host}/'\);$}
+    lines = res.split("\n").flatten
+    assert lines[0] =~ %r{^INSERT IGNORE INTO request_configs \(value\)}
+    assert lines[1] =~ %r{^INSERT IGNORE INTO targets \(status,target\) VALUES \('200','https://#{@test_host}/'\);$}
   end
 
   def test_verbose_output
