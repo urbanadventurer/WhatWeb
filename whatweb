@@ -272,6 +272,9 @@ else
   $semaphore.synchronize(&work)
 end
 
+#
+# Display error messages
+#
 def error(s)
   return if $NO_ERRORS
   $semaphore.reentrant_synchronize do
@@ -280,35 +283,6 @@ def error(s)
     STDERR.flush
     $OUTPUT_ERRORS.out(s) if $OUTPUT_ERRORS
   end
-end
-
-# takes a string and returns an array of lines. used by plugin_info and OutputVerbose
-def word_wrap(s, width = 10)
-  ret = []
-  line = ''
-  s.split.map do |x|
-    word = x
-    if line.size + x.size + 1 <= width
-      line += x + ' '
-    else
-      if word.size > width
-        ret << line
-        line = ''
-        w = word.clone
-        while w.size > width
-          ret << w[0..(width - 1)]
-          w = w[width.to_i..-1]
-        end
-        ret << w unless w.empty?
-      else
-        ret << line
-        line = x + ' '
-      end
-    end
-  end
-  ret << line unless line.empty?
-
-  ret
 end
 
 #
