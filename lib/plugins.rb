@@ -332,100 +332,99 @@ class PluginSupport
   # does not work correctly with mixed plugin names and files
   #
   def self.load_plugins(list = nil)
-    # separate list into a and b
-    #  a = make list of dir & filenames
-    #  b = make list of assumed pluginnames
-
     a = []
     b = []
 
     plugin_dirs = PLUGIN_DIRS.clone
     plugin_dirs.map { |p| p = File.expand_path(p) }
 
-    if list
-      list.split(',').each do |p|
-        choice = PluginChoice.new
-        choice.fill(p)
-        a << choice if choice.type == 'file'
-        b << choice if choice.type == 'plugin'
-      end
-
-      # puts "a: list of dir + filenames"
-      # pp a
-      # puts "b: list of plugin names"
-      # pp b
-      # puts "Plugin Dirs"
-      # pp plugin_dirs
-
-      # sort by neither, add, minus
-      a = a.sort
-
-      # plugin_dirs gets wiped out if no modifier is used on a file/folder
-      plugin_dirs = [] if a.map(&:modifier).include?(nil)
-
-      minus_files = [] # make list of files not to load
-      a.map do |c|
-        plugin_dirs << c.name if c.modifier.nil? || c.modifier == '+'
-        plugin_dirs -= [c.name] if c.modifier == '-' # for Dirs
-        minus_files << c.name if c.modifier == '-' # for files
-      end
-
-      # puts "Plugin Dirs"
-      # pp plugin_dirs
-
-      # puts "before plugin_dirs.each "
-      # pp Plugin.registered_plugins.size
-
-      # load files from plugin_dirs unless a file is minused
-      plugin_dirs.each do |d|
-        # if a folder, then load all files
-        if File.directory?(d)
-          (Dir.glob("#{d}/*.rb") - minus_files).each { |x| PluginSupport.load_plugin(x) }
-        elsif File.exist?(d)
-          PluginSupport.load_plugin(d)
-        else
-          error("Error: #{d} is not Dir or File")
-        end
-      end
-
-      # puts "after plugin_dirs.each "
-      # pp Plugin.registered_plugins.size
-
-      # make list of plugins to run
-      # go through all plugins, remove from list any that match b minus
-      selected_plugin_names = []
-
-      if b.map(&:modifier).include?(nil)
-        selected_plugin_names = []
-      else
-        selected_plugin_names = Plugin.registered_plugins.map { |n, _p| n.downcase }
-      end
-
-      b.map do |c|
-        selected_plugin_names << c.name if c.modifier.nil? || c.modifier == '+'
-        selected_plugin_names -= [c.name] if c.modifier == '-'
-      end
-
-      # pp selected_plugin_names
-      # Plugin.registered_plugins is getting wiped out
-
-      plugins_to_use = Plugin.registered_plugins.map do |n, p|
-        [n, p] if selected_plugin_names.include?(n.downcase)
-      end.compact
-      # puts "after "
-
-      # report on plugins that couldn't be found
-      unfound_plugins = selected_plugin_names - plugins_to_use.map { |n, _p| n.downcase }
-      unless unfound_plugins.empty?
-        puts 'Error: The following plugins were not found: ' + unfound_plugins.join(',')
-      end
-
-    else
-      # no selection, so it's default
+    # no selection, so it's default
+    unless list
       plugin_dirs.each do |d|
         Dir.glob("#{d}/*.rb").each { |x| PluginSupport.load_plugin(x) }
       end
-      plugins_to_use = Plugin.registered_plugins
+      return Plugin.registered_plugins
+    end
+
+    # separate list into a and b
+    #  a = make list of dir & filenames
+    #  b = make list of assumed pluginnames
+
+    list.split(',').each do |p|
+      choice = PluginChoice.new
+      choice.fill(p)
+      a << choice if choice.type == 'file'
+      b << choice if choice.type == 'plugin'
+    end
+
+    # puts "a: list of dir + filenames"
+    # pp a
+    # puts "b: list of plugin names"
+    # pp b
+    # puts "Plugin Dirs"
+    # pp plugin_dirs
+
+    # sort by neither, add, minus
+    a = a.sort
+
+    # plugin_dirs gets wiped out if no modifier is used on a file/folder
+    plugin_dirs = [] if a.map(&:modifier).include?(nil)
+
+    minus_files = [] # make list of files not to load
+    a.map do |c|
+      plugin_dirs << c.name if c.modifier.nil? || c.modifier == '+'
+      plugin_dirs -= [c.name] if c.modifier == '-' # for Dirs
+      minus_files << c.name if c.modifier == '-' # for files
+    end
+
+    # puts "Plugin Dirs"
+    # pp plugin_dirs
+
+    # puts "before plugin_dirs.each "
+    # pp Plugin.registered_plugins.size
+
+    # load files from plugin_dirs unless a file is minused
+    plugin_dirs.each do |d|
+      # if a folder, then load all files
+      if File.directory?(d)
+        (Dir.glob("#{d}/*.rb") - minus_files).each { |x| PluginSupport.load_plugin(x) }
+      elsif File.exist?(d)
+        PluginSupport.load_plugin(d)
+      else
+        error("Error: #{d} is not Dir or File")
+      end
+    end
+
+    # puts "after plugin_dirs.each "
+    # pp Plugin.registered_plugins.size
+
+    # make list of plugins to run
+    # go through all plugins, remove from list any that match b minus
+    selected_plugin_names = []
+
+    if b.map(&:modifier).include?(nil)
+      selected_plugin_names = []
+    else
+      selected_plugin_names = Plugin.registered_plugins.map { |n, _p| n.downcase }
+    end
+
+    b.map do |c|
+      selected_plugin_names << c.name if c.modifier.nil? || c.modifier == '+'
+      selected_plugin_names -= [c.name] if c.modifier == '-'
+    end
+
+    # pp selected_plugin_names
+    # Plugin.registered_plugins is getting wiped out
+
+    plugins_to_use = Plugin.registered_plugins.map do |n, p|
+      [n, p] if selected_plugin_names.include?(n.downcase)
+    end.compact
+    # puts "after "
+
+    # report on plugins that couldn't be found
+    unfound_plugins = selected_plugin_names - plugins_to_use.map { |n, _p| n.downcase }
+    unless unfound_plugins.empty?
+      puts 'Error: The following plugins were not found: ' + unfound_plugins.join(',')
     end
 
     # puts "-" * 80
