@@ -16,6 +16,8 @@
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
 class Output
+  include OutputHelper
+
   # if no f, output to STDOUT,
   # if f is a filename then open it, if f is a file use it
   def initialize(f = STDOUT)
@@ -55,23 +57,6 @@ class Output
   end
 end
 
-class OutputErrors < Output
-  # don't need semaphore.synchronize, as it's locked by the error handling routine
-  def out(error)
-    @f.puts error
-  end
-end
-
-def certainty_to_words(p)
-  case p
-  when 0..49
-    'maybe'
-  when 50..99
-    'probably'
-  when 100
-    'certain'
-  end
-end
 
 # load the lib/output/ folder
 $LOAD_PATH.map do |folder|
