@@ -23,7 +23,7 @@ class Parser
       begin
         # Hide output if Grep plugin did not match
         if use_custom_grep_plugin
-          if result.map { |plugin_name, _plugin_result| plugin_name }.eql? 'Grep'
+          if result.map { |plugin_name, _plugin_result| plugin_name }.include? 'Grep'
             output.out(target, target.status, result)
           end
         else
