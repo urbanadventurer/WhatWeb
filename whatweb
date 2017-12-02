@@ -93,6 +93,8 @@ optional_gems.each do |thisgem|
   end
 end
 
+require 'lib/whatweb/version.rb'
+require 'lib/whatweb/banner.rb'
 require 'lib/target.rb'
 require 'lib/plugins.rb'
 require 'lib/output.rb'
@@ -106,11 +108,10 @@ HTTP_Status.initialize
 PLUGIN_DIRS = ['plugins', 'my-plugins'].map { |x| $LOAD_PATH.map { |y| y + '/' + x if File.exist?(y + '/' + x) } }.flatten.compact
 
 # nothing says pro-developer like using global variables
-$VERSION = '0.5.0-dev'
 $WWDEBUG = false # raise exceptions in plugins, etc
 $verbose = 0 # $VERBOSE is reserved in ruby
 $use_colour = 'auto'
-$USER_AGENT = "WhatWeb/#{$VERSION}"
+$USER_AGENT = "WhatWeb/#{WhatWeb::VERSION}"
 $MAX_THREADS = 25
 $AGGRESSION = 1
 $FOLLOW_REDIRECT = 'always'
@@ -418,20 +419,10 @@ rescue => err
 end
 
 def usage_full
-  puts blue("
-  .$$$     $.                                   .$$$     $.
-  $$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$.
-  $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
-  $ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
-  $. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
-  $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
-  $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
-  $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
-
-  ")
+  puts blue(WhatWeb::BANNER)
 
   puts(<<-EOT)
-WhatWeb - Next generation web scanner version #{$VERSION}.
+WhatWeb - Next generation web scanner version #{WhatWeb::VERSION}.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles).
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
@@ -462,7 +453,7 @@ reliability.
   \t\t\t\tfrom all plugins are attempted.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT\tIdentify as AGENT instead of WhatWeb/#{$VERSION}.
+  --user-agent, -U=AGENT\tIdentify as AGENT instead of WhatWeb/#{WhatWeb::VERSION}.
   --header, -H\t\t\tAdd an HTTP header. eg "Foo:Bar". Specifying a
 \t\t\t\tdefault header will replace it. Specifying an
 \t\t\t\tempty value, e.g. "User-Agent:" will remove it.
@@ -592,7 +583,7 @@ def usage_short
   ")
 
   puts(<<-EOT)
-WhatWeb - Next generation web scanner version #{$VERSION}.
+WhatWeb - Next generation web scanner version #{WhatWeb::VERSION}.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
@@ -908,7 +899,7 @@ begin
     when '-v', '--verbose'
       $verbose = $verbose + 1
     when '--version'
-      puts "WhatWeb version #{$VERSION} ( http://www.morningstarsecurity.com/research/whatweb/ )"
+      puts "WhatWeb version #{WhatWeb::VERSION} ( http://www.morningstarsecurity.com/research/whatweb/ )"
       exit
     end
   end
