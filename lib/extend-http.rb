@@ -14,7 +14,7 @@ require 'timeout'
 # http=ExtendedHTTP.new(@uri.host,@uri.port)
 # The ExtendedHTTP class uses the ExtendedHTTPResponse class
 
-class ExtendedHTTP < Net::HTTP   #:nodoc:
+class ExtendedHTTP < Net::HTTP #:nodoc:
   include Net
 
   # Creates a new Net::HTTP object for the specified server address,
@@ -55,19 +55,16 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 
     # added for whatweb
     @raw = []
-
   end
 
   # ExtendedHTTP :: raw
   # added for whatweb
-  def raw
-    @raw
-  end
+  attr_reader :raw
 
   # added @raw for whatweb
   def connect
-    @raw=[]
-    if proxy? then
+    @raw = []
+    if proxy?
       conn_address = proxy_address
       conn_port    = proxy_port
     else
@@ -76,18 +73,18 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
     end
 
     D "opening connection to #{conn_address}:#{conn_port}..."
-    s = Timeout.timeout(@open_timeout, Net::OpenTimeout) {
+    s = Timeout.timeout(@open_timeout, Net::OpenTimeout) do
       TCPSocket.open(conn_address, conn_port, @local_host, @local_port)
-    }
+    end
     s.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, 1)
-    D "opened"
+    D 'opened'
 
     if use_ssl?
-      ssl_parameters = Hash.new
+      ssl_parameters = {}
       iv_list = instance_variables
       SSL_IVNAMES.each_with_index do |ivname, i|
-        if iv_list.include?(ivname) and
-          value = instance_variable_get(ivname)
+        if iv_list.include?(ivname) &&
+           (value = instance_variable_get(ivname))
           ssl_parameters[SSL_ATTRIBUTES[i]] = value if value
         end
       end
@@ -97,7 +94,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
       D "starting SSL for #{conn_address}:#{conn_port}..."
       s = OpenSSL::SSL::SSLSocket.new(s, @ssl_context)
       s.sync_close = true
-      D "SSL established"
+      D 'SSL established'
     end
 
     @socket = BufferedIO.new(s)
@@ -121,14 +118,14 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
 
           # HTTPResponse.read_new(@socket).value
           # added this
-          x,raw=ExtendedHTTPResponse.read_new(@socket)
+          x, raw = ExtendedHTTPResponse.read_new(@socket)
           @raw << raw
           res = x.value
           #
         end
 
-        if @ssl_session and
-          Process.clock_gettime(Process::CLOCK_REALTIME) < @ssl_session.time.to_f + @ssl_session.timeout
+        if @ssl_session &&
+           Process.clock_gettime(Process::CLOCK_REALTIME) < @ssl_session.time.to_f + @ssl_session.timeout
           s.session = @ssl_session if @ssl_session
         end
 
@@ -142,8 +139,8 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
         @ssl_session = s.session
       rescue => exception
         D "Conn close because of connect error #{exception}"
-          @socket.close if @socket and not @socket.closed?
-          raise exception
+        @socket.close if @socket && !@socket.closed?
+        raise exception
       end
     end
 
@@ -156,25 +153,25 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
     count = 0
     begin
       begin_transport req
-      res = catch(:response) {
+      res = catch(:response) do
         req.exec @socket, @curr_http_version, edit_path(req.path)
         begin
 
           # added for whatweb
-          #res = HTTPResponse.read_new(@socket)
+          # res = HTTPResponse.read_new(@socket)
           res, y = ExtendedHTTPResponse.read_new(@socket)
           @raw << y
           #
           res.decode_content = req.decode_content
-        end while res.kind_of?(HTTPContinue)
+        end while res.is_a?(HTTPContinue)
 
         res.uri = req.uri
 
-        res.reading_body(@socket, req.response_body_permitted?) {
+        res.reading_body(@socket, req.response_body_permitted?) do
           yield res if block_given?
-        }
+        end
         res
-      }
+      end
     rescue Net::OpenTimeout
       raise
     rescue Net::ReadTimeout, IOError, EOFError,
@@ -184,12 +181,12 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
            Timeout::Error => exception
       if count == 0 && IDEMPOTENT_METHODS_.include?(req.method)
         count += 1
-        @socket.close if @socket and not @socket.closed?
+        @socket.close if @socket && !@socket.closed?
         D "Conn close because of error #{exception}, and retry"
         retry
       end
       D "Conn close because of error #{exception}"
-      @socket.close if @socket and not @socket.closed?
+      @socket.close if @socket && !@socket.closed?
       raise
     end
 
@@ -197,7 +194,7 @@ class ExtendedHTTP < Net::HTTP   #:nodoc:
     res
   rescue => exception
     D "Conn close because of error #{exception}"
-    @socket.close if @socket and not @socket.closed?
+    @socket.close if @socket && !@socket.closed?
     raise exception
   end
 end
@@ -207,38 +204,37 @@ class ExtendedHTTPResponse < Net::HTTPResponse # reopen
   include Net
 
   class << self
-
-  def read_new(sock)   #:nodoc: internal use only
-    x,httpv, code, msg = read_status_line(sock)
-    @rawlines= x + "\n"
+  def read_new(sock) #:nodoc: internal use only
+    x, httpv, code, msg = read_status_line(sock)
+    @rawlines = x + "\n"
     res = response_class(code).new(httpv, code, msg)
-    each_response_header(sock) do |k,v|
+    each_response_header(sock) do |k, v|
       res.add_field k, v
     end
     # added for whatweb
     real = @rawlines
-    [res,real]
+    [res, real]
   end
 
-  private
+    private
 
   def read_status_line(sock)
     str = sock.readline
-    m = /\AHTTP(?:\/(\d+\.\d+))?\s+(\d\d\d)\s*(.*)\z/in.match(str) or
-      raise HTTPBadResponse, "wrong status line: #{str.dump}"
+    (m = /\AHTTP(?:\/(\d+\.\d+))?\s+(\d\d\d)\s*(.*)\z/in.match(str)) ||
+      raise(HTTPBadResponse, "wrong status line: #{str.dump}")
     [str] + m.captures
   end
 
   def each_response_header(sock)
     key = value = nil
-    while true
+    loop do
       line = sock.readuntil("\n", true).sub(/\s+\z/, '')
       # added for whatweb
       @rawlines << line + "\n" unless line.nil?
       #
       break if line.empty?
 
-      if line[0] == ?\s or line[0] == ?\t and value
+      if line[0] == ' ' || line[0] == "\t" && value
         value << ' ' unless value.empty?
         value << line.strip
       else
@@ -251,11 +247,13 @@ class ExtendedHTTPResponse < Net::HTTPResponse # reopen
   end
 end
 
-###################
-  public
-#    include HTTPHeader
+  ###################
 
-  def initialize(httpv, code, msg)   #:nodoc: internal use only
+  public
+
+  #    include HTTPHeader
+
+  def initialize(httpv, code, msg) #:nodoc: internal use only
     @http_version = httpv
     @code         = code
     @message      = msg
@@ -266,6 +264,6 @@ end
     @decode_content = false
 
     # added for whatweb
-    @rawlines=""
+    @rawlines = ''
   end
 end
