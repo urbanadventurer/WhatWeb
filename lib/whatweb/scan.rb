@@ -18,10 +18,10 @@
 module WhatWeb
 class Scan
 
-  def initialize(opts)
+  def initialize(targets, opts)
 
   # fail if no targets.
-  if opts[:targets].empty?
+  if targets.empty?
     error('No targets selected. Exiting.')
     exit 1
   end
@@ -67,7 +67,7 @@ class Scan
     end
   end
 
-  opts[:targets].each do |url|
+  targets.each do |url|
     target = prepare_target(url)
     target_queue << target if target
   end

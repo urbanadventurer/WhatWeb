@@ -656,7 +656,7 @@ targets = make_target_list(ARGV, input_file, $plugins_to_use)
 
 # Run scan
 whatweb = WhatWeb::Scan.new(
-  targets: targets,
+  targets,
   output_list: output_list,
   use_custom_grep_plugin: use_custom_grep_plugin
 )
