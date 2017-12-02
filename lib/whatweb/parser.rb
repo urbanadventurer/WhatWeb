@@ -1,30 +1,39 @@
+# Copyright 2009 to 2017, Andrew Horton and Brendan Coles
+#
+# This file is part of WhatWeb.
+#
+# WhatWeb is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# at your option) any later version.
+#
+# WhatWeb is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
 module WhatWeb
-
 class Parser
-
-	def parse_results(target, result, output_list, use_custom_grep_plugin)
-  # results
+  def parse_results(target, result, output_list, use_custom_grep_plugin)
+    # results
     output_list.each do |output|
-	    begin
-
-	      # Hide output if Grep plugin did not match  
-	      if use_custom_grep_plugin
-	        if result.map { |plugin_name, _plugin_result| plugin_name }.include? 'Grep'
-	          output.out(target, target.status, result)
-	        end
-	      else
-	        output.out(target, target.status, result)
-	      end
-
-	    rescue => err
-	      error("ERROR Logging failed: #{target} - #{err}")
-	      raise if $WWDEBUG == true
-	    end
- 	 	end
-
-
-	end
+      begin
+        # Hide output if Grep plugin did not match
+        if use_custom_grep_plugin
+          if result.map { |plugin_name, _plugin_result| plugin_name }.eql? 'Grep'
+            output.out(target, target.status, result)
+          end
+        else
+          output.out(target, target.status, result)
+        end
+      rescue => err
+        error("ERROR Logging failed: #{target} - #{err}")
+        raise if $WWDEBUG == true
+      end
+    end
+  end
 end
-
 end
