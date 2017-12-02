@@ -343,18 +343,7 @@ class PluginSupport
     plugin_dirs.map { |p| p = File.expand_path(p) }
 
     if list
-      list = list.split(',')
-
-      plugins_disabled_location = ['plugins-disabled'].map do |x|
-        $root_dir.map do |y|
-          path = "#{y}/#{x}"
-          path if File.exist?(path)
-        end
-      end.flatten.compact.first
-
-      list.each { |x| x.gsub!(/^\+$/, "+#{plugins_disabled_location}") } # + is short for +plugins-disabled
-
-      list.each do |p|
+      list.split(',').each do |p|
         choice = PluginChoice.new
         choice.fill(p)
         a << choice if choice.type == 'file'
