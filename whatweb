@@ -32,36 +32,13 @@
 # You should have received a copy of the GNU General Public License
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
-# require 'profile'
-require 'getoptlong'
-require 'pp'
-require 'net/http'
-require 'open-uri'
-require 'cgi'
-require 'thread'
-require 'tempfile'
-require 'rbconfig' # detect environment, e.g. windows or linux
-require 'resolv'
-require 'resolv-replace' # asynchronous DNS
-require 'open-uri'
-require 'digest/md5'
-
-# Ruby Version Compatability
-if RUBY_VERSION !~ /^2\./
-  puts 'Unsupported version of Ruby. WhatWeb requires Ruby 2.0 or later.'
-  exit 1
-end
-
-## set up load paths - must be before loading lib/ files
-# add the directory of the file currently being executed to the load path
 $:.unshift(File.join(File.expand_path(File.dirname(__FILE__)), '.'))
-$root_dir = []
-$root_dir << File.expand_path('..', __FILE__)
-#$root_dir << '/usr/share/whatweb/'
-$root_dir << "#{Dir.home}/.whatweb/"
 
-require 'lib/whatweb.rb'
+require 'lib/whatweb'
 
+#
+# Command-line usage information (full)
+#
 def usage_full
   puts blue(WhatWeb::BANNER)
 
@@ -213,6 +190,9 @@ EOT
   end
 end
 
+#
+# Command-line usage information (short)
+#
 def usage_short
   puts blue(WhatWeb::BANNER)
 
@@ -278,11 +258,6 @@ if ARGV.empty? # faster usage info
   usage_short
   exit
 end
-
-HTTP_Status.initialize
-
-# look through $root_dir for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
-PLUGIN_DIRS = ['plugins', 'my-plugins'].map { |x| $root_dir.map { |y| y + '/' + x if File.exist?(y + '/' + x) } }.flatten.compact
 
 ### output
 $semaphore = Mutex.new
@@ -663,10 +638,12 @@ output_list << OutputElastic.new(elastic) if elastic[:use_elastic_log]
 $CUSTOM_HEADERS['User-Agent'] = $USER_AGENT unless $CUSTOM_HEADERS['User-Agent']
 $CUSTOM_HEADERS.delete_if { |_k, v| v == '' }
 
+urls = ARGV
+
 # Run scan
 whatweb = WhatWeb::Scan.new(
   # Targets
-  ARGV,
+  urls,
   output_list: output_list,
   input_file: input_file,
 
@@ -676,13 +653,9 @@ whatweb = WhatWeb::Scan.new(
   # Target modification
   url_prefix: url_prefix,
   url_suffix: url_suffix,
-  url_pattern: url_pattern,
-
-  # Plugins
-  use_custom_grep_plugin: use_custom_grep_plugin
+  url_pattern: url_pattern
 ) do | target, result | 
   parser = WhatWeb::Parser.new
   parser.parse_results(target, result, output_list, use_custom_grep_plugin)
-
 end
 

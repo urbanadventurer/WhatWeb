@@ -15,6 +15,21 @@
 # You should have received a copy of the GNU General Public License
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
+# require 'profile' # debugging
+require 'getoptlong'
+require 'pp'
+require 'net/http'
+require 'open-uri'
+require 'cgi'
+require 'thread'
+require 'tempfile'
+require 'rbconfig' # detect environment, e.g. windows or linux
+require 'resolv'
+require 'resolv-replace' # asynchronous DNS
+require 'open-uri'
+require 'digest/md5'
+
+# WhatWeb libs
 require 'lib/whatweb/version.rb'
 require 'lib/whatweb/banner.rb'
 require 'lib/whatweb/scan.rb'
@@ -57,4 +72,22 @@ $WAIT = nil
 $CUSTOM_HEADERS = {}
 $BASIC_AUTH_USER = nil
 $BASIC_AUTH_PASS = nil
+
+# Ruby Version Compatability
+if Gem::Version.new(RUBY_VERSION) < Gem::Version.new(2.0)
+  puts 'Unsupported version of Ruby. WhatWeb requires Ruby 2.0 or later.'
+  exit 1
+end
+
+# Initialize HTTP Status class
+HTTP_Status.initialize
+
+# Look for directories 'plugins' and 'my-plugins'
+# in the the WhatWeb root directory and ~/.whatweb directory
+PLUGIN_DIRS = []
+[ File.expand_path('..', __FILE__), "#{Dir.home}/.whatweb/" ].map do |dir|
+  ['plugins', 'my-plugins'].each do |plugin_dir|
+    PLUGIN_DIRS << plugin_dir if File.exist? plugin_dir
+  end
+end
 
