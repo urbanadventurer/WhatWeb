@@ -176,7 +176,7 @@ LOGGING:
   --log-elastic-host\t\tHost:port of the elastic http interface. Default: 127.0.0.1:9200
 
 PERFORMANCE & STABILITY:
-  --max-threads, -t\t\tNumber of simultaneous threads. Default: 25.
+  --max-threads, -t\t\tNumber of simultaneous threads. Default: #{max_threads}.
   --open-timeout\t\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}.
   --read-timeout\t\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}.
   --wait=SECONDS\t\tWait SECONDS between connections.
@@ -684,5 +684,9 @@ whatweb = WhatWeb::Scan.new(
 
   # Plugins
   use_custom_grep_plugin: use_custom_grep_plugin
-)
+) do | target, result | 
+  parser = WhatWeb::Parser.new
+  parser.parse_results(target, result, output_list, use_custom_grep_plugin)
+
+end
 
