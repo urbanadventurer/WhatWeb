@@ -104,7 +104,7 @@ class ScanContext
 
     # search location
     search_context = target.body # by default
-    unless match[:search].nil?
+    if match[:search]
       case match[:search]
       when 'all'
         search_context = target.raw_response
@@ -122,29 +122,29 @@ class ScanContext
       end
     end
 
-    unless match[:ghdb].nil?
+    if match[:ghdb]
       r << match if match_ghdb(match[:ghdb], target.body, target.headers, target.status, target.uri)
     end
 
-    unless match[:text].nil?
+    if match[:text]
       r << match if match[:regexp_compiled] =~ search_context
     end
 
-    unless match[:md5].nil?
+    if match[:md5]
       r << match if target.md5sum == match[:md5]
     end
 
-    unless match[:tagpattern].nil?
+    if match[:tagpattern]
       r << match if target.tag_pattern == match[:tagpattern]
     end
 
-    if !match[:regexp_compiled].nil? and !search_context.nil?
+    if match[:regexp_compiled] and search_context
       [:regexp, :account, :version, :os, :module, :model, :string, :firmware, :filepath].each do |symbol|
         if match[symbol] and match[symbol].class==Regexp
           regexpmatch = search_context.scan(match[:regexp_compiled])
           unless regexpmatch.empty?
             m = match.dup
-            m[symbol] = regexpmatch.map {|eachmatch|
+            m[symbol] = regexpmatch.map do |eachmatch|
               if eachmatch.is_a?(Array) and match[:offset]
                 eachmatch[match[:offset]]
               elsif eachmatch.is_a?(Array)
@@ -152,7 +152,7 @@ class ScanContext
               elsif eachmatch.is_a?(String)
                 eachmatch
               end
-            }.flatten.compact.sort.uniq
+            end.flatten.compact.sort.uniq
             r << m
           end
         end
@@ -191,7 +191,7 @@ class ScanContext
         has_query = false
       end
 
-      if is_relative and not has_query
+      if is_relative and !has_query
         url_matched = true if target.uri.path =~ /#{match[:url]}$/
       end
 
@@ -201,13 +201,13 @@ class ScanContext
         end
       end
 
-      if not is_relative and has_query
+      if !is_relative and has_query
         if target.uri.query
           url_matched = true if "#{target.uri.path}?#{target.uri.query}" == match[:url]
         end
       end
 
-      if not is_relative and not has_query
+      if !is_relative and !has_query
         url_matched = true if target.uri.path == match[:url]
       end
     end
@@ -225,13 +225,13 @@ class ScanContext
       else
         r = []
       end
-    elsif match[:status].nil? and match[:url]
+    elsif !match[:status] and match[:url]
       if url_matched
         r << match
       else
         r = []
       end
-    elsif match[:status].nil? and match[:url].nil?
+    elsif !match[:status] and !match[:url]
       # nothing to do
     end
 
@@ -252,16 +252,15 @@ class ScanContext
 
     # if the plugin has an aggressive method and we're in aggressive mode, use it
     # or if we're guessing all URLs
-    if ($AGGRESSION == 3 and !results.empty?) or ($AGGRESSION == 4)
+    if ($AGGRESSION == 3 and results.any?) or ($AGGRESSION == 4)
       results += aggressive_scan() if @plugin.aggressive
       # if any of our matches have a url then fetch it
       # and check the matches[]
       # later we can do some caching
 
       # we have no caching, so we sort the URLs to fetch and only get 1 unique url per plugin. not great..
-      unless @matches.nil?
-        lastbase_uri = nil
-        thisstatus, thisurl, thisbody, thisheaders = nil # this shouldn't be necessary but ruby thinks its a local variable to the if end statement
+      if @matches
+        lastbase_uri. thisstatus, thisurl, thisbody, thisheaders = nil # this shouldn't be necessary but ruby thinks its a local variable to the if end statement
 
         @matches.map { |x| x if x[:url] }.compact.sort_by { |x| x[:url] }.map do |match|
           r = [] # temp results
@@ -281,6 +280,7 @@ class ScanContext
     # clean up results
     unless results.empty?
       results.each do |r|
+        # default certainty is 100%
         r[:certainty] = 100 if r[:certainty].nil?
       end
     end
@@ -498,7 +498,7 @@ does not work correctly with mixed plugin names and files
 
       abort("Invalid custom plugin syntax: #{c}") if matches.nil?
 
-      custom = %{# coding: ascii-8bit
+      custom = %{ # coding: ascii-8bit
       Plugin.define do
       name "Custom-Plugin"
       authors ["Unknown"]
