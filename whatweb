@@ -340,26 +340,6 @@ def word_wrap(s, width = 10)
   ret
 end
 
-### core
-def run_plugins(target)
-  results = []
-  $plugins_to_use.each do |name, plugin|
-    begin
-       # eXecute the plugin
-       # start_time = Time.now
-       result = plugin.scan(target)
-     # end_time = Time.now
-     # $PLUGIN_TIMES[name] += end_time - start_time
-     rescue Exception => err
-       error("ERROR: Plugin #{name} failed for #{target}. #{err}")
-       raise if $WWDEBUG == true
-     end
-    results << [name, result] unless result.nil? || result.empty?
-  end
-  results
-end
-
-
 plugin_selection = nil
 use_custom_plugin = false
 use_custom_grep_plugin = false
@@ -674,12 +654,7 @@ $CUSTOM_HEADERS.delete_if { |_k, v| v == '' }
 # clean up urls
 targets = make_target_list(ARGV, input_file, $plugins_to_use)
 
-# fail & show usage if no targets.
-if targets.empty?
-  error('No targets selected. Exiting.')
-  exit 1
-end
-
+# Run scan
 whatweb = WhatWeb::Scan.new(
   targets: targets,
   output_list: output_list,
