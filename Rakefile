@@ -13,6 +13,8 @@ desc 'Run all tests'
 task :all do
   puts 'Running unit tests'
   Rake::Task['unit'].invoke
+  puts 'Running integration tests'
+  Rake::Task['integration'].invoke
 end
 
 task :default => :unit
@@ -20,6 +22,11 @@ task :default => :unit
 Rake::TestTask.new(:unit) do |t|
   t.description = 'Run unit tests'
   t.test_files = FileList['test/unit.rb']
+end
+
+Rake::TestTask.new(:integration) do |t|
+  t.description = 'Run integration tests'
+  t.test_files = FileList['test/integration.rb']
 end
 
 desc 'Run bundle-audit'
