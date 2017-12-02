@@ -120,6 +120,14 @@ class Scan
 
   private
 
+  # try to make a new Target object, may return nil
+  def prepare_target(url)
+    Target.new(url)
+  rescue => err
+    error("Prepare Target Failed - #{err}")
+    nil
+  end
+
   def run_plugins(target)
     results = []
 
