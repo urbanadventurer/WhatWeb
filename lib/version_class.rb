@@ -1,14 +1,12 @@
-=begin
-Copyright 2009, 2017 Andrew Horton and Brendan Coles
-
-This file is part of WhatWeb.
-
-WhatWeb is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or at your option) any later version.
-
-WhatWeb is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
-=end
+# Copyright 2009, 2017 Andrew Horton and Brendan Coles
+#
+# This file is part of WhatWeb.
+#
+# WhatWeb is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or at your option) any later version.
+#
+# WhatWeb is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
 class Version
   def initialize(name_product = nil, versions = nil, url = nil)
@@ -46,8 +44,8 @@ class Version
       while !@best_versions.empty? && @best_versions[0][1] < count
         @best_versions.delete_at(0)
       end
-      if count > 0 && (@best_versions.empty? || @best_versions[0][1] == count) and \
-         !@best_versions.include? [version[0], count]
+      if count > 0 && (@best_versions.empty? || @best_versions[0][1] == count) && \
+         !@best_versions.include?([version[0], count])
         @best_versions.insert(0, [version[0], count])
       end
     end
@@ -61,7 +59,7 @@ class Version
   end
 
   def matches_format
-    self.best_matches if @got_best_versions == false
+    best_matches if @got_best_versions == false
     @best_versions
   end
 end
