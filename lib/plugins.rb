@@ -435,23 +435,14 @@ class PluginSupport
 
   def self.custom_plugin(c, *option)
     if option == ['grep']
+      plugin_name = 'Grep'
 
       matches = if c[0] == '/' && c[-1] == '/'
                   # it's a regex. this might cause some issues?
-                  "matches [:regexp=>/#{c[1..-2]}/]"
+                  "matches([:regexp=>/#{c[1..-2]}/])"
                 else
-                  "matches [:text=>\"#{c}\"]"
+                  "matches([:text=>\"#{c}\"])"
                 end
-
-      custom = %( # coding: ascii-8bit
-      Plugin.define do
-      name "Grep"
-      authors ["Unknown"]
-      description "User defined"
-      website "User defined"
-      #{matches}
-      end
-      )
     else
       # define a custom plugin on the cmdline
       # ":text=>'powered by abc'" or
@@ -459,35 +450,30 @@ class PluginSupport
 
       # then it's ok..
       if c =~ /:(text|ghdb|md5|regexp|tagpattern)=>[\/'"].*/
-        matches = "matches [\{#{c}\}]"
+        matches = "matches([\{#{c}\}])"
       end
 
       # this isn't checked for sanity... loading plugins = cmd exec anyway
-      matches = "matches [#{c}]" if c =~ /\{.*\}/
+      matches = "matches([#{c}])" if c =~ /\{.*\}/
+
+      plugin_name = 'Custom-Plugin'
 
       abort("Invalid custom plugin syntax: #{c}") if matches.nil?
-
-      custom = %( # coding: ascii-8bit
-      Plugin.define do
-      name "Custom-Plugin"
-      authors ["Unknown"]
-      description "User defined"
-      website "User defined"
-      #{matches}
-      end
-      )
     end
 
+    custom = %(
+    Plugin.define do
+    name "#{plugin_name}"
+    authors ["WhatWeb"]
+    description "User defined"
+    website "User defined"
+    #{matches}
+    end
+    )
+
     begin
-      # open tmp file
-      f = Tempfile.new('whatweb-custom-plugin')
-      # write
-      f.write(custom)
-      f.close
       pp custom if $verbose > 2
-      # load
-      load f.path
-      f.unlink
+      eval(custom)
       true
     rescue SyntaxError
       error('Error: Cannot load custom plugin')
