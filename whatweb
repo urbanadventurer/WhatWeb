@@ -650,14 +650,11 @@ output_list << OutputElastic.new(elastic) if elastic[:use_elastic_log]
 $CUSTOM_HEADERS['User-Agent'] = $USER_AGENT unless $CUSTOM_HEADERS['User-Agent']
 $CUSTOM_HEADERS.delete_if { |_k, v| v == '' }
 
-### TARGETS
-# clean up urls
-targets = make_target_list(ARGV, input_file, $plugins_to_use)
-
 # Run scan
 whatweb = WhatWeb::Scan.new(
-  targets,
+  ARGV,
   output_list: output_list,
+  input_file: input_file,
   use_custom_grep_plugin: use_custom_grep_plugin
 )
 

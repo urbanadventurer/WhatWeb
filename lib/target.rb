@@ -16,8 +16,8 @@ rescue => err
   nil
 end
 
-def make_target_list(cmdline_args, inputfile = nil, _pluginlist = nil)
-  url_list = cmdline_args
+def make_target_list(urls, inputfile = nil)
+  url_list = urls
 
   # read each line as a url, skipping lines that begin with a #
   if !inputfile.nil? && File.exist?(inputfile)
