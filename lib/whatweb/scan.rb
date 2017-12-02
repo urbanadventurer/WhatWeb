@@ -19,6 +19,13 @@ module WhatWeb
 class Scan
 
   def initialize(opts)
+
+  # fail if no targets.
+  if opts[:targets].empty?
+    error('No targets selected. Exiting.')
+    exit 1
+  end
+
   target_queue = Queue.new # workers consume from this
   result_queue = Queue.new # workers return results here for output
   result_mutex = Mutex.new
@@ -104,6 +111,26 @@ class Scan
   opts[:output_list].each(&:close)
   Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
   # pp $PLUGIN_TIMES.sort_by {|x,y|y }
+  end
+
+  def run_plugins(target)
+    results = []
+
+    $plugins_to_use.each do |name, plugin|
+      begin
+        # eXecute the plugin
+        # start_time = Time.now
+        result = plugin.scan(target)
+        # end_time = Time.now
+        # $PLUGIN_TIMES[name] += end_time - start_time
+      rescue Exception => err
+        error("ERROR: Plugin #{name} failed for #{target}. #{err}")
+        raise if $WWDEBUG == true
+      end
+      results << [name, result] unless result.nil? || result.empty?
+    end
+
+    results
   end
 end
 end
