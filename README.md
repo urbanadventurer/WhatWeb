@@ -124,8 +124,8 @@ HTTP OPTIONS:
                         header will replace it. Specifying an empty value, eg.
                         "User-Agent:" will remove the header.
   --follow-redirect=WHEN Control when to follow redirects. WHEN may be `never',
-                        `http-only', `meta-only', `same-site', `same-domain'
-                        or `always'. Default: always.
+                        `http-only', `meta-only', `same-site', or `always'.
+                        Default: always.
   --max-redirects=NUM   Maximum number of contiguous redirects. Default: 10.
 
 AUTHENTICATION:

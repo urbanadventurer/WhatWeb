@@ -1,0 +1,126 @@
+# Elasticseach Output, copy of JSON ouput then a HTTP request to send result to elastic
+# Does not use elasticsearch gem. Instead only sends HTTP
+class OutputElastic < Output
+
+	def initialize(s)
+		@host = s[:host] || "127.0.0.1:9200"
+		@index = s[:index] || "whatweb"
+	end
+
+	def close
+		# nothin'
+	end
+
+	def flatten_elements!(obj)
+		if obj.class == Hash
+			obj.each_value {|x|
+				flatten_elements!(x)
+			}
+		end
+
+		if obj.class == Array
+			obj.flatten!
+		end
+	end
+
+	def utf8_elements!(obj)
+		if obj.class == Hash
+			obj.each_value {|x|
+				utf8_elements!(x)
+			}
+		end
+
+		if obj.class == Array
+			obj.each {|x|
+				utf8_elements!(x)
+			}
+		end
+
+		if obj.class == String
+#			obj=obj.upcase!
+#			obj=Iconv.iconv("UTF-8",@charset,obj).join
+#pp @charset
+#pp obj.encoding
+# read this - http://blog.grayproductions.net/articles/ruby_19s_string
+			# replace invalid UTF-8 chars
+			# based on http://stackoverflow.com/a/8873922/388038
+			if String.method_defined?(:encode)
+			  obj.encode!('UTF-16', 'UTF-8', :invalid => :replace, :replace => '')
+			  obj.encode!('UTF-8', 'UTF-16')
+			end
+            obj = obj.force_encoding('UTF-8')
+
+	#	obj=obj.force_encoding("ASCII-8BIT")
+#puts obj.encoding.name
+#		obj.encode!("UTF-8",{:invalid=>:replace,:undef=>:replace})
+
+		end
+	end
+
+	def out(target, status, results)
+
+		# nice | date be like 2009-11-15T14:12:12 to be autodetected by elastic
+		foo= {:target=>target.to_s, :http_status=>status, :date=>Time.now.strftime('%FT%T'), :plugins=>{} } 
+		
+		results.each do |plugin_name,plugin_results|		
+
+#			thisplugin = {:name=>plugin_name}
+			thisplugin = {}
+
+			unless plugin_results.empty?
+				# important info in brief mode is version, type and ?
+				# what's the highest probability for the match?
+
+				certainty = plugin_results.map {|x| x[:certainty] unless x[:certainty].class==Regexp }.flatten.compact.sort.uniq.last
+
+				version = plugin_results.map {|x| x[:version] unless x[:version].class==Regexp }.flatten.compact.sort.uniq
+				os = plugin_results.map {|x| x[:os] unless x[:os].class==Regexp }.flatten.compact.sort.uniq
+				string = plugin_results.map {|x| x[:string] unless x[:string].class==Regexp }.flatten.compact.sort.uniq
+				accounts = plugin_results.map {|x| x[:account] unless x[:account].class==Regexp }.flatten.compact.sort.uniq
+				model = plugin_results.map {|x| x[:model] unless x[:model].class==Regexp }.flatten.compact.sort.uniq
+				firmware = plugin_results.map {|x| x[:firmware] unless x[:firmware].class==Regexp }.flatten.compact.sort.uniq
+				modules = plugin_results.map {|x| x[:module] unless x[:module].class==Regexp }.flatten.compact.sort.uniq
+				filepath = plugin_results.map {|x| x[:filepath] unless x[:filepath].class==Regexp }.flatten.compact.sort.uniq
+
+				if !certainty.nil? and certainty != 100
+					thisplugin[:certainty] = certainty
+				end
+
+				thisplugin[:version] = version unless version.empty?
+				thisplugin[:os] = os unless os.empty?
+				thisplugin[:string] = string unless string.empty?
+				thisplugin[:account] = accounts unless accounts.empty?
+				thisplugin[:model] = model unless model.empty?
+				thisplugin[:firmware] = firmware unless firmware.empty?
+				thisplugin[:module] = modules unless modules.empty?
+				thisplugin[:filepath] = filepath unless filepath.empty?
+#				foo[:plugins] << thisplugin
+				foo[:plugins][plugin_name.to_sym] = thisplugin
+			end
+		end
+
+		@charset = results.map {|n,r| r[0][:string] if n == "Charset" }.compact.first
+
+		unless @charset.nil? or @charset == "Failed"
+			utf8_elements!(foo) # convert foo to utf-8
+			flatten_elements!(foo)
+		else
+			# could not find encoding force UTF-8 anyway
+			utf8_elements!(foo)
+		end
+
+		url = URI('http://' + @host + '/' + @index + '/whatwebresult')
+		req = Net::HTTP::Post.new(url)
+		req.body = JSON::generate(foo)
+		res = Net::HTTP.start(url.hostname, url.port) { |http|
+			http.request(req)
+		}
+
+		case res
+		when Net::HTTPSuccess
+			#ok
+		else
+			error(res.code + " " + res.message + "\n" + res.body)
+		end
+	end
+end
