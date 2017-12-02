@@ -579,11 +579,11 @@ end
 ### PLUGINS
 plugin_selection += ',+Custom-Plugin'	if use_custom_plugin && plugin_selection
 plugin_selection += ',+Grep'	if use_custom_grep_plugin && plugin_selection
-$plugins_to_use = PluginSupport.load_plugins(plugin_selection)
+plugins = PluginSupport.load_plugins(plugin_selection)
 # load all the plugins
 
 # sanity check # no plugins?
-if $plugins_to_use.empty?
+if plugins.empty?
   error 'No plugins selected, exiting.'
   exit 1
 end
@@ -598,7 +598,7 @@ output_list << OutputVerbose.new if $verbose > 0 # full output if -v
 
 ## output dependencies
 if mongo[:use_mongo_log]
-  if $plugins_to_use.map { |a, _b| a }.include?('Charset')
+  if plugins.map { |a, _b| a }.include?('Charset')
     output_list << OutputMongo.new(mongo)
   else
     error('MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/charset.rb to enable it.')
@@ -620,6 +620,9 @@ whatweb = WhatWeb::Scan.new(
   urls,
   output_list: output_list,
   input_file: input_file,
+
+  # Plugins
+  plugins: plugins,
 
   # HTTP connection
   max_threads: max_threads,

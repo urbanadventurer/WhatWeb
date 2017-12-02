@@ -19,6 +19,12 @@ module WhatWeb
 class Scan
 
   def initialize(urls, opts)
+    plugins = opts[:plugins] || []
+
+  if plugins.empty?
+    error 'No plugins selected, exiting.'
+    return
+  end
 
   targets = make_target_list(
     urls,
@@ -30,7 +36,7 @@ class Scan
 
   if targets.empty?
     error('No targets selected. Exiting.')
-    exit 1
+    return
   end
 
   target_queue = Queue.new # workers consume from this
@@ -55,7 +61,7 @@ class Scan
             target = nil # break target loop
             next
           end
-          result = run_plugins(target)
+          result = run_plugins(target, plugins)
           result_mutex.synchronize do
             result_queue << [target, result]
           end
@@ -116,10 +122,10 @@ class Scan
     nil
   end
 
-  def run_plugins(target)
+  def run_plugins(target, plugins)
     results = []
 
-    $plugins_to_use.each do |name, plugin|
+    plugins.each do |name, plugin|
       begin
         # eXecute the plugin
         # start_time = Time.now
