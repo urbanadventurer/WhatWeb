@@ -17,6 +17,7 @@
 
 require 'lib/whatweb/version.rb'
 require 'lib/whatweb/banner.rb'
+require 'lib/whatweb/scan.rb'
 require 'lib/gems.rb'
 require 'lib/target.rb'
 require 'lib/plugins.rb'
