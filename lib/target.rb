@@ -201,6 +201,8 @@ class Target
       open_url(@http_options)
     end
 
+    sleep $WAIT if $WAIT
+
     ## after open
     if @body.nil?
       # Initialize @body variable if the connection is terminated prematurely

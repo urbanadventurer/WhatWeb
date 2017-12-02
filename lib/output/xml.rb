@@ -9,7 +9,7 @@ class OutputXML < Output
     super
     @substitutions = { '&' => '&amp;', '"' => '&quot;', '<' => '&lt;', '>' => '&gt;' }
     # only output <?xml line if it's a new file or STDOUT
-    if @f == STDOUT || @f.empty?
+    if @f == STDOUT #|| @f.empty?
       @f.puts '<?xml version="1.0"?><?xml-stylesheet type="text/xml" href="whatweb.xsl"?>'
     end
     @f.puts '<log>'

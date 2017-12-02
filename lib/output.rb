@@ -75,7 +75,7 @@ end
 
 # load the lib/output/ folder
 $LOAD_PATH.map do |folder|
-  next unless File.exist?(folder + 'lib/output/')
+  next unless File.exist?(folder + '/lib/output/')
   Dir.glob("#{folder}/lib/output/*.rb").each do |x|
     load x
   end
