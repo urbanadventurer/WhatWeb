@@ -62,6 +62,17 @@ class OutputErrors < Output
   end
 end
 
+def certainty_to_words(p)
+  case p
+  when 0..49
+    'maybe'
+  when 50..99
+    'probably'
+  when 100
+    'certain'
+  end
+end
+
 # load the lib/output/ folder
 $LOAD_PATH.map do |folder|
   next unless File.exist?(folder + 'lib/output/')

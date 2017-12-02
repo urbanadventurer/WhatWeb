@@ -17,6 +17,7 @@
 
 require 'lib/whatweb/version.rb'
 require 'lib/whatweb/banner.rb'
+require 'lib/gems.rb'
 require 'lib/target.rb'
 require 'lib/plugins.rb'
 require 'lib/output.rb'
@@ -24,3 +25,32 @@ require 'lib/colour.rb'
 require 'lib/version_class.rb'
 require 'lib/http-status.rb'
 require 'lib/extend-http.rb'
+
+# nothing says pro-developer like using global variables
+$WWDEBUG = false # raise exceptions in plugins, etc
+$verbose = 0 # $VERBOSE is reserved in ruby
+$use_colour = 'auto'
+$USER_AGENT = "WhatWeb/#{WhatWeb::VERSION}"
+$MAX_THREADS = 25
+$AGGRESSION = 1
+$FOLLOW_REDIRECT = 'always'
+$MAX_REDIRECTS = 10
+$USE_PROXY = false
+$PROXY_HOST = nil
+$PROXY_PORT = 8080
+$PROXY_USER = nil
+$PROXY_PASS = nil
+$URL_PREFIX = ''
+$URL_SUFFIX = ''
+$URL_PATTERN = nil
+$NO_THREADS = false
+$HTTP_OPEN_TIMEOUT = 15
+$HTTP_READ_TIMEOUT = 30
+$WAIT = nil
+$OUTPUT_ERRORS = nil
+$QUIET = false
+$CUSTOM_HEADERS = {}
+$BASIC_AUTH_USER = nil
+$BASIC_AUTH_PASS = nil
+$PLUGIN_TIMES = Hash.new(0)
+$NO_ERRORS = false
