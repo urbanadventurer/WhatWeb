@@ -349,6 +349,9 @@ mongo = {}
 mongo[:use_mongo_log] = false
 elastic = {}
 elastic[:use_elastic_log] = false
+url_prefix = ''
+url_suffix = ''
+url_pattern = nil
 
 # optional arguments work badly with URLs
 opts = GetoptLong.new(
@@ -533,11 +536,11 @@ begin
     when '-q', '--quiet'
       $QUIET = true
     when '--url-prefix'
-      $URL_PREFIX = arg
+      url_prefix = arg
     when '--url-suffix'
-      $URL_SUFFIX = arg
+      url_suffix = arg
     when '--url-pattern'
-      $URL_PATTERN = arg
+      url_pattern = arg
     when '--custom-plugin'
       use_custom_plugin = true if PluginSupport.custom_plugin(arg)
     when '--grep', '-g'
@@ -652,9 +655,17 @@ $CUSTOM_HEADERS.delete_if { |_k, v| v == '' }
 
 # Run scan
 whatweb = WhatWeb::Scan.new(
+  # Targets
   ARGV,
   output_list: output_list,
   input_file: input_file,
+
+  # Target modification
+  url_prefix: url_prefix,
+  url_suffix: url_suffix,
+  url_pattern: url_pattern,
+
+  # Plugins
   use_custom_grep_plugin: use_custom_grep_plugin
 )
 

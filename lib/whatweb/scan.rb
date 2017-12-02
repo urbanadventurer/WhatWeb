@@ -20,11 +20,13 @@ class Scan
 
   def initialize(urls, opts)
 
-  if opts[:input_file].nil?
-    targets = make_target_list(urls)
-  else
-    targets = make_target_list(urls, opts[:input_file])
-  end
+  targets = make_target_list(
+    urls,
+    input_file: opts[:input_file],
+    url_prefix: opts[:url_prefix],
+    url_suffix: opts[:url_suffix],
+    url_pattern: opts[:url_pattern]
+  )
 
   if targets.empty?
     error('No targets selected. Exiting.')
@@ -153,8 +155,9 @@ class Scan
   #
   # Make a list of targets from a list of URLs and/or input file
   #
-  def make_target_list(urls, inputfile = nil)
+  def make_target_list(urls, opts)
     url_list = urls
+    inputfile = opts[:input_file] || nil
 
     # read each line as a url, skipping lines that begin with a #
     if !inputfile.nil? && File.exist?(inputfile)
@@ -200,9 +203,9 @@ class Scan
         x
       else
         # use url pattern
-        x = $URL_PATTERN.gsub('%insert%', x) if $URL_PATTERN
+        x = opts[:url_pattern].gsub('%insert%', x) if opts[:url_pattern]
         # add prefix & suffix
-        x = $URL_PREFIX + x + $URL_SUFFIX
+        x = opts[:url_prefix] + x + opts[:url_suffix]
 
         # need to move this into a URI parsing function
         #
