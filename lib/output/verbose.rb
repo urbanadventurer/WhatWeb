@@ -75,7 +75,7 @@ class OutputVerbose < Output
           coloured_plugin = grey(plugin_name) if plugin_name == 'CSS'
           coloured_plugin = grey(plugin_name) if plugin_name == 'Tag-Hash'
 
-          p = ((certainty && certainty < 100) ? "#{grey(certainty_to_words(certainty))} " : '') +
+          p = ((certainty && certainty < 100) ? "#{grey(OutputHelper::certainty_to_words(certainty))} " : '') +
               coloured_plugin + (!version.empty? ? "[#{green(version)}]" : '') +
               (!os.empty? ? "[#{red(os)}]" : '') +
               (!string.empty? ? "[#{coloured_string}]" : '') +
@@ -87,7 +87,7 @@ class OutputVerbose < Output
 
           brief_results << p
         else
-          brief_results << ((certainty && certainty < 100) ? "#{certainty_to_words(certainty)} " : '') +
+          brief_results << ((certainty && certainty < 100) ? "#{OutputHelper::certainty_to_words(certainty)} " : '') +
                            plugin_name + (!version.empty? ? "[#{version}]" : '') +
                            (!os.empty? ? "[#{os}]" : '') +
                            (!string.empty? ? "[#{string}]" : '') +
@@ -111,7 +111,7 @@ class OutputVerbose < Output
         description = ['']
         if Plugin.registered_plugins[plugin_name].description
           d = Plugin.registered_plugins[plugin_name].description
-          description = word_wrap(d, 60)
+          description = OutputHelper::word_wrap(d, 60)
         end
         #          @f.puts "\tCategory   : " + Plugin.registered_plugins[plugin_name].category.first unless Plugin.registered_plugins[plugin_name].category.nil?
         @f.puts "\t" + description.first
@@ -120,7 +120,7 @@ class OutputVerbose < Output
 
         top_certainty = suj(plugin_results)[:certainty].to_i
         unless top_certainty == 100
-          @f.puts "\t" + 'Certainty'.ljust(13) + ': ' + certainty_to_words(top_certainty)
+          @f.puts "\t" + 'Certainty'.ljust(13) + ': ' + OutputHelper::certainty_to_words(top_certainty)
         end
 
         plugin_results.map { |x| sortuniq(x) }.each do |pr|

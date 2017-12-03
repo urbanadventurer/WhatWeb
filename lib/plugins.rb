@@ -547,7 +547,7 @@ class PluginSupport
       puts '-' * terminal_width
 
       if plugin.description
-        word_wrap(plugin.description, terminal_width - 16).each_with_index do |line, index|
+        OutputHelper::word_wrap(plugin.description, terminal_width - 16).each_with_index do |line, index|
           if index == 0
             print 'Description:'.ljust(16)
           else
