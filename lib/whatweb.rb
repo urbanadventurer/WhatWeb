@@ -22,7 +22,6 @@ require 'net/http'
 require 'open-uri'
 require 'cgi'
 require 'thread'
-require 'tempfile'
 require 'rbconfig' # detect environment, e.g. windows or linux
 require 'resolv'
 require 'resolv-replace' # asynchronous DNS
