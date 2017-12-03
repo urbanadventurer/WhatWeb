@@ -614,15 +614,17 @@ $CUSTOM_HEADERS.delete_if { |_k, v| v == '' }
 
 urls = ARGV
 
+
+
+
+
+
 # Run scan
-whatweb = WhatWeb::Scan.new(
+scanner = WhatWeb::Scan.new(
   # Targets
   urls,
   logging_list: logging_list,
   input_file: input_file,
-
-  # Plugins
-  plugins: plugins,
 
   # HTTP connection
   max_threads: max_threads,
@@ -631,8 +633,56 @@ whatweb = WhatWeb::Scan.new(
   url_prefix: url_prefix,
   url_suffix: url_suffix,
   url_pattern: url_pattern
-) do | target, result | 
-  parser = WhatWeb::Parser.new
+)
+
+parser = WhatWeb::Parser.new
+
+scanner.scan do | target |
+
+#pp target
+#pp plugins 
+#exit
+ # result_queue = Queue.new # workers return results here for logging
+
+ #pp target
+#    plugins = opts[:plugins] || []
+
+  # need to call directly with Headers, HTML, etc.
+  result = parser.run_plugins(target, plugins)
+
+  # this is out of place
+  # redirects = 0
+
+  redirect_url = target.get_redirection_target
+  if redirect_url
+    # send it to the WhatWeb::Scan object
+    error "redirect"
+  end
+
+=begin
+  redirect_url = target.get_redirection_target
+  if redirect_url
+    redirects += 1
+    target = prepare_target(redirect_url)
+    if redirects > $MAX_REDIRECTS
+      error("ERROR Too many redirects: #{target}")
+      break
+    end
+  else
+    target = nil
+  end
+=end
+
+ # result_mutex.synchronize do
+    # result_queue << [target, result]
+ # end
+
+#  target, result = result_queue.pop(true) 
+
   parser.parse_results(target, result, logging_list, use_custom_grep_plugin)
+
 end
 
+# close down logging and plugins
+logging_list.each(&:close)
+Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }

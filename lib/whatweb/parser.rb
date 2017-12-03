@@ -17,6 +17,31 @@
 
 module WhatWeb
 class Parser
+
+  def run_plugins(target, plugins)
+    results = []
+
+    if plugins.empty?
+      error 'No plugins selected, exiting.'
+      return
+    end
+
+    plugins.each do |name, plugin|
+      begin
+        # eXecute the plugin
+        # start_time = Time.now
+        result = plugin.scan(target)
+        # end_time = Time.now
+        # $PLUGIN_TIMES[name] += end_time - start_time
+      rescue Exception => err
+        error("ERROR: Plugin #{name} failed for #{target}. #{err}")
+        raise if $WWDEBUG == true
+      end
+      results << [name, result] unless result.nil? || result.empty?
+    end
+    results
+  end
+
   def parse_results(target, result, logging_list, use_custom_grep_plugin)
     # results
     logging_list.each do |log|
