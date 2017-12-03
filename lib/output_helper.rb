@@ -24,7 +24,7 @@ module OutputHelper
   #
   # returns String a word representing the certainty
   #
-  def certainty_to_words(p)
+  def self.certainty_to_words(p)
     case p
     when 0..49
       'maybe'
@@ -40,7 +40,7 @@ module OutputHelper
   #
   # returns Array an array of lines.
   #
-  def word_wrap(s, width = 10)
+  def self.word_wrap(s, width = 10)
     ret = []
     line = ''
     s.split.map do |x|

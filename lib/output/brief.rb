@@ -56,7 +56,7 @@ class OutputBrief < Output
         coloured_plugin = grey(plugin_name) if plugin_name == 'CSS'
         coloured_plugin = grey(plugin_name) if plugin_name == 'Tag-Hash'
 
-        p = ((certainty && certainty < 100) ? "#{grey(certainty_to_words(certainty))} " : '') +
+        p = ((certainty && certainty < 100) ? "#{grey(OutputHelper::certainty_to_words(certainty))} " : '') +
             coloured_plugin + (!version.empty? ? "[#{green(version)}]" : '') +
             (!os.empty? ? "[#{red(os)}]" : '') +
             (!string.empty? ? "[#{coloured_string}]" : '') +
@@ -69,7 +69,7 @@ class OutputBrief < Output
         brief_results << p
       else
 
-        brief_results << ((certainty && certainty < 100) ? "#{certainty_to_words(certainty)} " : '') +
+        brief_results << ((certainty && certainty < 100) ? "#{OutputHelper::certainty_to_words(certainty)} " : '') +
                          plugin_name + (!version.empty? ? "[#{version}]" : '') +
                          (!os.empty? ? "[#{os}]" : '') +
                          (!string.empty? ? "[#{string}]" : '') +
