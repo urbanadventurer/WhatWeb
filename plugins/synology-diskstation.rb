@@ -26,28 +26,30 @@ dorks [
 'intitle:"Synology DiskStation" inurl:"webman/index.cgi"'
 ]
 
-
-
 # Matches #
 matches [
 
-# Extract Device Name # Title
-{ :string=>/<title>Synology DiskStation - ([^\s]+)<\/title>/ },
+{ :name=>'Device Name in Page Title',
+  :string=>%r{<title>Synology DiskStation - ([^\s]+)</title>} },
 
-# HTML Comment
-{ :text=>"<!-- Don't contain any text node to avoid IE insertBefore bug -->" },
+{ :name=>'Login Page HTML Comment',
+  :text=>"<!-- Don't contain any text node to avoid IE insertBefore bug -->" },
 
-# JavaScript
-{ :text=>'<script type="text/javascript">SYNO.SDS.Session = {' },
+{ :name=>'SYNO.SDS.Session JavaScript',
+  :text=>'<script type="text/javascript">SYNO.SDS.Session = {' },
 
-# div id="sds-login-dialog-form"
-{ :text=>'<div id="sds-login-dialog-form" style="position: absolute; top: -10000px; left: -10000px;"><form id="login-form" class="x-plain-body" method="POST" action="login.cgi" target="login_iframe"' },
+{ :name=>'Login Form HTML',
+  :text=>'<div id="sds-login-dialog-form" style="position: absolute; top: -10000px; left: -10000px;"><form id="login-form" class="x-plain-body" method="POST" action="login.cgi" target="login_iframe"' },
 
-# Version Detection
-{ :url=>"/webman/index.cgi", :version=>/<script type="text\/javascript" src="synodefs\.cgi\?v=([\d]+)"><\/script>/ },
+{ :name=>'synodefs.cgi Version Detection',
+  :url=>"/webman/index.cgi",
+  :version=>%r{<script type="text/javascript" src="synodefs\.cgi\?v=([\d]+)"></script>} },
 
-# Stauts Header
-{ :certainty=>75, :search=>"headers[stauts]", :status=>302, :url=>"/", :regexp=>/^301 Moved Permanently$/ },
+{ :name=>'Stauts Header',
+  :certainty=>75,
+  :search=>"headers[stauts]",
+  :url=>'/',
+  :regexp=>/^30[12] Moved/ },
 
 ]
 
