@@ -638,17 +638,10 @@ scanner = WhatWeb::Scan.new(
 # run scan
 scanner.scan do | target |
 
- # result_queue = Queue.new # workers return results here for logging
-
- #pp target
- # plugins = opts[:plugins] || []
-
-  # need to call directly with Headers, HTML, etc.
-  # this modifies target
+  # change so we can call it without Target object and with just Headers, HTML, etc.
+  
+  # note this modifies target with redirection info
   result = WhatWeb::Parser.run_plugins(target, plugins)
-
-  # this is out of place
-  # redirects = 0
 
   redirect_url = target.get_redirection_target
   if redirect_url
@@ -656,25 +649,25 @@ scanner.scan do | target |
     error "redirect"
   end
 
-=begin
-  redirect_url = target.get_redirection_target
-  if redirect_url
-    redirects += 1
-    target = prepare_target(redirect_url)
-    if redirects > $MAX_REDIRECTS
-      error("ERROR Too many redirects: #{target}")
-      break
-    end
-  else
-    target = nil
-  end
-=end
+  #  redirects = 0
+  #   ... 
+  #  redirect_url = target.get_redirection_target
+  #  if redirect_url
+  #    redirects += 1
+  #    target = prepare_target(redirect_url)
+  #    if redirects > $MAX_REDIRECTS
+  #      error("ERROR Too many redirects: #{target}")
+  #      break
+  #    end
+  #  end
 
- # result_mutex.synchronize do
-    # result_queue << [target, result]
- # end
-
-#  target, result = result_queue.pop(true) 
+  # <--- if we want multithreads to match plugins
+  # result_queue = Queue.new # workers return results here for logging
+  # ... run_plugins ...
+  # result_mutex.synchronize do
+  # result_queue << [target, result]
+  # end
+  # target, result = result_queue.pop(true) 
 
   WhatWeb::Parser.parse_results(target, result, logging_list, use_custom_grep_plugin)
 end
@@ -682,3 +675,4 @@ end
 # close down logging and plugins
 logging_list.each(&:close)
 Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
+# pp $PLUGIN_TIMES.sort_by {|x,y|y }
