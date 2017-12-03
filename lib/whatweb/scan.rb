@@ -19,128 +19,123 @@ module WhatWeb
 class Scan
 
   def initialize(urls, opts)
-    plugins = opts[:plugins] || []
 
-  if plugins.empty?
-    error 'No plugins selected, exiting.'
-    return
+
+     @targets = make_target_list(
+      urls,
+      input_file: opts[:input_file],
+      url_prefix: opts[:url_prefix] || '',
+      url_suffix: opts[:url_suffix] || '',
+      url_pattern: opts[:url_pattern]
+    )
+
+    if @targets.empty?
+      error('No targets selected. Exiting.')
+      return
+    end
+    @opts = opts
   end
 
-  targets = make_target_list(
-    urls,
-    input_file: opts[:input_file],
-    url_prefix: opts[:url_prefix] || '',
-    url_suffix: opts[:url_suffix] || '',
-    url_pattern: opts[:url_pattern]
-  )
+  def scan  
 
-  if targets.empty?
-    error('No targets selected. Exiting.')
-    return
-  end
+    target_queue = Queue.new # workers consume from this
+    result_mutex = Mutex.new
+    Thread.abort_on_exception = true if $WWDEBUG
+    max_threads = @opts[:max_threads].to_i || 25
 
-  target_queue = Queue.new # workers consume from this
-  result_queue = Queue.new # workers return results here for logging
-  result_mutex = Mutex.new
-  Thread.abort_on_exception = true if $WWDEBUG
-  max_threads = opts[:max_threads].to_i || 25
+    workers = (1..max_threads).map do
+      Thread.new do
+        # keep reading in root tasks until a nil is received
+        loop do
+          target = target_queue.pop
+          Thread.exit unless target
+   
+  ##        
+  #        redirects = 0
 
-  workers = (1..max_threads).map do
-    Thread.new do
-      # keep reading in root tasks until a nil is received
-      loop do
-        target = target_queue.pop
-        Thread.exit unless target
-        redirects = 0
-        # keep processing until there are no more redirects or the limit is hit
-        while target # wtf?
-          begin
-            target.open
-          rescue => err
-            error("ERROR Opening: #{target} - #{err}")
-            target = nil # break target loop
-            next
-          end
-          
-          result = run_plugins(target, plugins)
-
-          result_mutex.synchronize do
-            result_queue << [target, result]
-          end
-          redirect_url = target.get_redirection_target
-          if redirect_url
-            redirects += 1
-            target = prepare_target(redirect_url)
-            if redirects > $MAX_REDIRECTS
-              error("ERROR Too many redirects: #{target}")
-              break
+          # keep processing until there are no more redirects or the limit is hit
+          while target # wtf?
+            begin
+              target.open
+            rescue => err
+              error("ERROR Opening: #{target} - #{err}")
+              target = nil # break target loop
+              next
             end
-          else
-            target = nil
+   
+   ## new         
+            yield target #, plugins ]
+
+  ##
+  #          result = run_plugins(target, plugins)
+
+  ##
+  #          result_mutex.synchronize do
+  #            result_queue << [target, result]
+  #          end
+
+  ##
+  #          redirect_url = target.get_redirection_target
+  #          if redirect_url
+  #            redirects += 1
+  #            target = prepare_target(redirect_url)
+  #            if redirects > $MAX_REDIRECTS
+  #              error("ERROR Too many redirects: #{target}")
+  #              break
+  #            end
+  #          else
+              target = nil
+  #          end
+
+
           end
         end
       end
     end
-  end
 
-  targets.each do |url|
-    target = prepare_target(url)
-    target_queue << target if target
-  end
-
-  loop do
-    break if result_mutex.synchronize do
-      # more defensive than comparing against max_threads
-      alive = workers.map { |worker| worker if worker.alive? }.compact.length
-      alive == target_queue.num_waiting && result_queue.empty?
+    @targets.each do |url|
+      target = prepare_target(url)
+      target_queue << target if target
     end
 
-    if result_queue.empty?
-      # sleep 0.1
-      next
+    loop do
+      break if result_mutex.synchronize do
+        # more defensive than comparing against max_threads
+        alive = workers.map { |worker| worker if worker.alive? }.compact.length
+        alive == target_queue.num_waiting # && result_queue.empty?
+      end
+
+  #    if result_queue.empty?
+        # sleep 0.1
+  #      next
+  #    end
+
+      #target, result = result_queue.pop(true)
+
+  #    yield target,result
+
+      #  pp target, result
     end
 
-    target, result = result_queue.pop(true)
+    # Shut down workers, logging, and plugins
+    (1..max_threads).each { target_queue << nil }
+    workers.each(&:join)
 
-    yield target,result
-    #  pp target, result
+## need to move this out
+#   opts[:logging_list].each(&:close)
+## need to move this
+#   Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
+    # pp $PLUGIN_TIMES.sort_by {|x,y|y }
   end
 
-  # Shut down workers, logging, and plugins
-  (1..max_threads).each { target_queue << nil }
-  workers.each(&:join)
-  opts[:logging_list].each(&:close)
-  Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
-  # pp $PLUGIN_TIMES.sort_by {|x,y|y }
-  end
 
   private
-
   # try to make a new Target object, may return nil
   def prepare_target(url)
     Target.new(url)
   rescue => err
     error("Prepare Target Failed - #{err}")
     nil
-  end
-
-  def run_plugins(target, plugins)
-    results = []
-
-    plugins.each do |name, plugin|
-      begin
-        # eXecute the plugin
-        # start_time = Time.now
-        result = plugin.scan(target)
-        # end_time = Time.now
-        # $PLUGIN_TIMES[name] += end_time - start_time
-      rescue Exception => err
-        error("ERROR: Plugin #{name} failed for #{target}. #{err}")
-        raise if $WWDEBUG == true
-      end
-      results << [name, result] unless result.nil? || result.empty?
-    end
-    results
   end
 
   #
