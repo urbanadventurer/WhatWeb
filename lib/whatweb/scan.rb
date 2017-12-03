@@ -20,7 +20,6 @@ class Scan
 
   def initialize(urls, opts)
 
-
      @targets = make_target_list(
       urls,
       input_file: opts[:input_file],
@@ -29,6 +28,8 @@ class Scan
       url_pattern: opts[:url_pattern]
     )
 
+    @target_queue = Queue.new # workers consume from this
+
     if @targets.empty?
       error('No targets selected. Exiting.')
       return
@@ -36,10 +37,7 @@ class Scan
     @opts = opts
   end
 
-  def scan  
-
-    target_queue = Queue.new # workers consume from this
-    result_mutex = Mutex.new
+  def scan
     Thread.abort_on_exception = true if $WWDEBUG
     max_threads = @opts[:max_threads].to_i || 25
 
@@ -47,46 +45,56 @@ class Scan
       Thread.new do
         # keep reading in root tasks until a nil is received
         loop do
-          target = target_queue.pop
+          target = @target_queue.pop
           Thread.exit unless target
    
-          # redirects = 0
-
           # keep processing until there are no more redirects or the limit is hit
           # while target
-            begin
-              target.open
-            rescue => err
-              error("ERROR Opening: #{target} - #{err}")
-              target = nil # break target loop
-              next
-            end
-   
-            yield target
-
+          begin
+            target.open
+          rescue => err
+            error("ERROR Opening: #{target} - #{err}")
+            target = nil # break target loop
+            next
+          end
+ 
+          yield target
         end
+
       end
     end
 
+    # initialize target_queue
     @targets.each do |url|
       target = prepare_target(url)
-      target_queue << target if target
+      @target_queue << target if target
+      #pp target
+
     end
 
-    loop do
-      break if result_mutex.synchronize do
-        # more defensive than comparing against max_threads
-        alive = workers.map { |worker| worker if worker.alive? }.compact.length
-        alive == target_queue.num_waiting # && result_queue.empty?
-      end
+   # exit
 
+    loop do
+        # this might miss redirects from final targets
+
+        # more defensive than comparing against max_threads
+        alive = workers.map { |worker| worker if worker.alive? }.compact.length  
+        break if alive == @target_queue.num_waiting # && result_queue.empty?
     end
 
     # Shut down workers, logging, and plugins
-    (1..max_threads).each { target_queue << nil }
+    (1..max_threads).each { @target_queue << nil }
     workers.each(&:join)
   end
 
+  def add_target(url)
+      target = Target.new(url)
+      if target
+        @target_queue << target 
+      else
+        return nil
+      end
+  end
 
   private
   # try to make a new Target object, may return nil

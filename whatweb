@@ -647,6 +647,7 @@ scanner.scan do | target |
   if redirect_url
     # send it to the WhatWeb::Scan object
     error "redirect"
+    scanner.add_target(redirect_url)
   end
 
   #  redirects = 0
@@ -660,14 +661,6 @@ scanner.scan do | target |
   #      break
   #    end
   #  end
-
-  # <--- if we want multithreads to match plugins
-  # result_queue = Queue.new # workers return results here for logging
-  # ... run_plugins ...
-  # result_mutex.synchronize do
-  # result_queue << [target, result]
-  # end
-  # target, result = result_queue.pop(true) 
 
   WhatWeb::Parser.parse_results(target, result, logging_list, use_custom_grep_plugin)
 end
