@@ -1,4 +1,4 @@
-class OutputObject < Output
+class LoggingObject < Logging
   def out(target, status, results)
     $semaphore.synchronize do
       @f.puts "Identifying: #{target}"

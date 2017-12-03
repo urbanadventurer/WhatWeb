@@ -40,7 +40,7 @@ class Scan
   end
 
   target_queue = Queue.new # workers consume from this
-  result_queue = Queue.new # workers return results here for output
+  result_queue = Queue.new # workers return results here for logging
   result_mutex = Mutex.new
   Thread.abort_on_exception = true if $WWDEBUG
   max_threads = opts[:max_threads].to_i || 25
@@ -61,7 +61,9 @@ class Scan
             target = nil # break target loop
             next
           end
+          
           result = run_plugins(target, plugins)
+
           result_mutex.synchronize do
             result_queue << [target, result]
           end
@@ -104,10 +106,10 @@ class Scan
     #  pp target, result
   end
 
-  # Shut down workers, output, and plugins
+  # Shut down workers, logging, and plugins
   (1..max_threads).each { target_queue << nil }
   workers.each(&:join)
-  opts[:output_list].each(&:close)
+  opts[:logging_list].each(&:close)
   Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
   # pp $PLUGIN_TIMES.sort_by {|x,y|y }
   end

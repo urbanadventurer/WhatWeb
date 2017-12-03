@@ -4,7 +4,7 @@
 # We'd love to hear any suggestions you may have!
 # Does it bother you that some types of output are joined by commas
 # but other types aren't?
-class OutputXML < Output
+class LoggingXML < Logging
   def initialize(f = STDOUT)
     super
     @substitutions = { '&' => '&amp;', '"' => '&quot;', '<' => '&lt;', '>' => '&gt;' }

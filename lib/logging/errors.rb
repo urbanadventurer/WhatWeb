@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
-class OutputErrors < Output
+class LoggingErrors < Logging
   # don't need semaphore.synchronize, as it's locked by the error handling routine
   def out(error)
     @f.puts error

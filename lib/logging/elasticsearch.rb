@@ -1,27 +1,13 @@
-
-# basically the same as OutputJSON
-class OutputMongo < Output
+# Elasticseach Output, copy of JSON ouput then a HTTP request to send result to elastic
+# Does not use elasticsearch gem. Instead only sends HTTP
+class LoggingElastic < Logging
   def initialize(s)
-    host = s[:host] || '0.0.0.0'
-    database = s[:database] || raise('Missing MongoDB database name')
-    collection = s[:collection] || 'whatweb'
-
-    # should make databse and collection comma or fullstop delimited, eg. test,scan
-
-    # @db.authenticate(s[:username], s[:password]) if s[:username]
-    options = { database: database }
-    if s[:username]
-      options[:username] = s[:username]
-      options[:password] = s[:password]
-    end
-
-    @db = Mongo::Client.new([host], options)
-    @coll = @db[collection]
-    @charset = nil
+    @host = s[:host] || '127.0.0.1:9200'
+    @index = s[:index] || 'whatweb'
   end
 
   def close
-    @db.close
+    # nothin'
   end
 
   def flatten_elements!(obj)
@@ -48,39 +34,40 @@ class OutputMongo < Output
     end
 
     if obj.class == String
-      #      obj=obj.upcase!
-      #      obj=Iconv.iconv("UTF-8",@charset,obj).join
-      obj.force_encoding('UTF-8')
+      #			obj=obj.upcase!
+      #			obj=Iconv.iconv("UTF-8",@charset,obj).join
+      # pp @charset
+      # pp obj.encoding
+      # read this - http://blog.grayproductions.net/articles/ruby_19s_string
+      # replace invalid UTF-8 chars
+      # based on http://stackoverflow.com/a/8873922/388038
+      if String.method_defined?(:encode)
+        obj.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
+        obj.encode!('UTF-8', 'UTF-16')
+      end
+      obj = obj.force_encoding('UTF-8')
+
+      #	obj=obj.force_encoding("ASCII-8BIT")
+      # puts obj.encoding.name
+      #		obj.encode!("UTF-8",{:invalid=>:replace,:undef=>:replace})
+
     end
   end
 
   def out(target, status, results)
-    # nice
-
-    foo = { target: target.to_s, http_status: status, request_config: {}, plugins: {} }
-
-    # request-config
-    req_config = {}
-    if $USE_PROXY
-      req_config[:proxy] = { proxy_host: $PROXY_HOST, proxy_port: $PROXY_PORT }
-      req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
-    end
-
-    req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
-    $CUSTOM_HEADERS.each do |header_name, header_value|
-      req_config[:headers][header_name] = header_value.dup
-    end
-    foo[:request_config] = req_config
+    # nice | date be like 2009-11-15T14:12:12 to be autodetected by elastic
+    foo = { target: target.to_s, http_status: status, date: Time.now.strftime('%FT%T'), plugins: {} }
 
     results.each do |plugin_name, plugin_results|
-      #      thisplugin = {name: plugin_name}
+      #			thisplugin = {:name=>plugin_name}
       thisplugin = {}
 
       next if plugin_results.empty?
       # important info in brief mode is version, type and ?
       # what's the highest probability for the match?
 
-      certainty = plugin_results.map { |x| x[:certainty] unless x[:certainty].class == Regexp }.compact.sort.uniq.last
+      certainty = plugin_results.map { |x| x[:certainty] unless x[:certainty].class == Regexp }.flatten.compact.sort.uniq.last
+
       version = plugin_results.map { |x| x[:version] unless x[:version].class == Regexp }.flatten.compact.sort.uniq
       os = plugin_results.map { |x| x[:os] unless x[:os].class == Regexp }.flatten.compact.sort.uniq
       string = plugin_results.map { |x| x[:string] unless x[:string].class == Regexp }.flatten.compact.sort.uniq
@@ -91,6 +78,7 @@ class OutputMongo < Output
       filepath = plugin_results.map { |x| x[:filepath] unless x[:filepath].class == Regexp }.flatten.compact.sort.uniq
 
       thisplugin[:certainty] = certainty if !certainty.nil? && certainty != 100
+
       thisplugin[:version] = version unless version.empty?
       thisplugin[:os] = os unless os.empty?
       thisplugin[:string] = string unless string.empty?
@@ -99,18 +87,32 @@ class OutputMongo < Output
       thisplugin[:firmware] = firmware unless firmware.empty?
       thisplugin[:module] = modules unless modules.empty?
       thisplugin[:filepath] = filepath unless filepath.empty?
-      #        foo[:plugins] << thisplugin
+      #				foo[:plugins] << thisplugin
       foo[:plugins][plugin_name.to_sym] = thisplugin
     end
 
     @charset = results.map { |n, r| r[0][:string] if n == 'Charset' }.compact.first
 
     if @charset.nil? || @charset == 'Failed'
-      error("#{target}: Failed to detect Character set and log to MongoDB")
+      # could not find encoding force UTF-8 anyway
+      utf8_elements!(foo)
     else
       utf8_elements!(foo) # convert foo to utf-8
       flatten_elements!(foo)
-      @coll.insert_one(foo)
+    end
+
+    url = URI('http://' + @host + '/' + @index + '/whatwebresult')
+    req = Net::HTTP::Post.new(url)
+    req.body = JSON.generate(foo)
+    res = Net::HTTP.start(url.hostname, url.port) do |http|
+      http.request(req)
+    end
+
+    case res
+    when Net::HTTPSuccess
+      # ok
+    else
+      error(res.code + ' ' + res.message + "\n" + res.body)
     end
   end
 end

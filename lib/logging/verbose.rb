@@ -1,5 +1,5 @@
 
-class OutputVerbose < Output
+class LoggingVerbose < Logging
   def coloured(s, colour)
     use_colour = ((@f == STDOUT && $use_colour == 'auto') || ($use_colour == 'always'))
     if use_colour

@@ -1,5 +1,5 @@
 
-class OutputBrief < Output
+class LoggingBrief < Logging
   def escape(s)
     # Encode all special characters # More info: http://www.asciitable.com/
     # r=/[^\x20-\x5A\x5E-\x7E]/
