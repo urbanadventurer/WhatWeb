@@ -50,11 +50,10 @@ class Scan
           target = target_queue.pop
           Thread.exit unless target
    
-  ##        
-  #        redirects = 0
+          # redirects = 0
 
           # keep processing until there are no more redirects or the limit is hit
-          while target # wtf?
+          # while target
             begin
               target.open
             rescue => err
@@ -63,32 +62,8 @@ class Scan
               next
             end
    
-   ## new         
-            yield target #, plugins ]
+            yield target
 
-  ##
-  #          result = run_plugins(target, plugins)
-
-  ##
-  #          result_mutex.synchronize do
-  #            result_queue << [target, result]
-  #          end
-
-  ##
-  #          redirect_url = target.get_redirection_target
-  #          if redirect_url
-  #            redirects += 1
-  #            target = prepare_target(redirect_url)
-  #            if redirects > $MAX_REDIRECTS
-  #              error("ERROR Too many redirects: #{target}")
-  #              break
-  #            end
-  #          else
-              target = nil
-  #          end
-
-
-          end
         end
       end
     end
@@ -105,27 +80,11 @@ class Scan
         alive == target_queue.num_waiting # && result_queue.empty?
       end
 
-  #    if result_queue.empty?
-        # sleep 0.1
-  #      next
-  #    end
-
-      #target, result = result_queue.pop(true)
-
-  #    yield target,result
-
-      #  pp target, result
     end
 
     # Shut down workers, logging, and plugins
     (1..max_threads).each { target_queue << nil }
     workers.each(&:join)
-
-## need to move this out
-#   opts[:logging_list].each(&:close)
-## need to move this
-#   Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
-    # pp $PLUGIN_TIMES.sort_by {|x,y|y }
   end
 
 
