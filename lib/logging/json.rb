@@ -1,13 +1,18 @@
-# Elasticseach Output, copy of JSON ouput then a HTTP request to send result to elastic
-# Does not use elasticsearch gem. Instead only sends HTTP
-class OutputElastic < Output
-  def initialize(s)
-    @host = s[:host] || '127.0.0.1:9200'
-    @index = s[:index] || 'whatweb'
+
+# JSON Output #
+class LoggingJSON < Logging
+  def initialize(f = STDOUT)
+    super
+    # opening bracket
+    @f.puts '['
   end
 
   def close
-    # nothin'
+    # empty hash because each hash ends with a comma
+    @f.puts '{}'
+    # closing bracket
+    @f.puts ']'
+    @f.close
   end
 
   def flatten_elements!(obj)
@@ -21,45 +26,53 @@ class OutputElastic < Output
   end
 
   def utf8_elements!(obj)
-    if obj.class == Hash
-      obj.each_value do |x|
-        utf8_elements!(x)
-      end
-    end
+    obj.each_value { |x| utf8_elements!(x) } if obj.class == Hash
 
-    if obj.class == Array
-      obj.each do |x|
-        utf8_elements!(x)
-      end
-    end
+    obj.each { |x| utf8_elements!(x) } if obj.class == Array
 
     if obj.class == String
-      #			obj=obj.upcase!
-      #			obj=Iconv.iconv("UTF-8",@charset,obj).join
+      #      obj=obj.upcase!
+      #      obj=Iconv.iconv("UTF-8",@charset,obj).join
       # pp @charset
       # pp obj.encoding
       # read this - http://blog.grayproductions.net/articles/ruby_19s_string
       # replace invalid UTF-8 chars
       # based on http://stackoverflow.com/a/8873922/388038
-      if String.method_defined?(:encode)
-        obj.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
-        obj.encode!('UTF-8', 'UTF-16')
-      end
-      obj = obj.force_encoding('UTF-8')
+    #  if String.method_defined?(:encode)
+    #    obj.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
+    #    obj.encode!('UTF-8', 'UTF-16')
+    #  end
+    #  obj.force_encoding('UTF-8')
 
-      #	obj=obj.force_encoding("ASCII-8BIT")
+      #  obj=obj.force_encoding("ASCII-8BIT")
       # puts obj.encoding.name
-      #		obj.encode!("UTF-8",{:invalid=>:replace,:undef=>:replace})
+      #    obj.encode!("UTF-8",{invalid: :replace,undef: :replace})
 
     end
   end
 
   def out(target, status, results)
-    # nice | date be like 2009-11-15T14:12:12 to be autodetected by elastic
-    foo = { target: target.to_s, http_status: status, date: Time.now.strftime('%FT%T'), plugins: {} }
+    # nice
+
+    foo = { target: target.to_s, http_status: status, request_config: {}, plugins: {} }
+
+    # request-config
+    req_config = {}
+    if $USE_PROXY
+      req_config[:proxy] = { proxy_host: $PROXY_HOST, proxy_port: $PROXY_PORT }
+      req_config[:proxy][:proxy_user] = $PROXY_USER if $PROXY_USER
+    end
+
+    req_config[:headers] = {} unless $CUSTOM_HEADERS.empty?
+    $CUSTOM_HEADERS.each do |header_name, header_value|
+      req_config[:headers][header_name] = header_value.dup
+    end
+    foo[:request_config] = req_config
+
+    # plugins
 
     results.each do |plugin_name, plugin_results|
-      #			thisplugin = {:name=>plugin_name}
+      #      thisplugin = {name: plugin_name}
       thisplugin = {}
 
       next if plugin_results.empty?
@@ -87,7 +100,7 @@ class OutputElastic < Output
       thisplugin[:firmware] = firmware unless firmware.empty?
       thisplugin[:module] = modules unless modules.empty?
       thisplugin[:filepath] = filepath unless filepath.empty?
-      #				foo[:plugins] << thisplugin
+      #        foo[:plugins] << thisplugin
       foo[:plugins][plugin_name.to_sym] = thisplugin
     end
 
@@ -101,18 +114,8 @@ class OutputElastic < Output
       flatten_elements!(foo)
     end
 
-    url = URI('http://' + @host + '/' + @index + '/whatwebresult')
-    req = Net::HTTP::Post.new(url)
-    req.body = JSON.generate(foo)
-    res = Net::HTTP.start(url.hostname, url.port) do |http|
-      http.request(req)
-    end
-
-    case res
-    when Net::HTTPSuccess
-      # ok
-    else
-      error(res.code + ' ' + res.message + "\n" + res.body)
+    $semaphore.synchronize do
+      @f.puts JSON.generate(foo) + ','
     end
   end
 end

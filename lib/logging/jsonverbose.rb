@@ -1,6 +1,6 @@
 
 # This is not JSON compliant as a list
-class OutputJSONVerbose < Output
+class LoggingJSONVerbose < Logging
   def out(target, status, results)
     # brutal and simple
     $semaphore.synchronize do

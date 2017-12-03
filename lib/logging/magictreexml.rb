@@ -1,7 +1,7 @@
 
 # MagicTree #
 # Output XML file in MagicTree XML format
-class OutputMagicTreeXML < Output
+class LoggingMagicTreeXML < Logging
   def initialize(f = STDOUT)
     super
     @substitutions = { '&' => '&amp;', '"' => '&quot;', '<' => '&lt;', '>' => '&gt;' }

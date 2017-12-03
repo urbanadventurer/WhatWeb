@@ -1,5 +1,5 @@
 
-class OutputSQL < Output
+class LoggingSQL < Logging
   def initialize(f = STDOUT)
     super
     insert_request_config

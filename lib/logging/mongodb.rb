@@ -1,18 +1,27 @@
 
-# JSON Output #
-class OutputJSON < Output
-  def initialize(f = STDOUT)
-    super
-    # opening bracket
-    @f.puts '['
+# basically the same as OutputJSON
+class LoggingMongo < Logging
+  def initialize(s)
+    host = s[:host] || '0.0.0.0'
+    database = s[:database] || raise('Missing MongoDB database name')
+    collection = s[:collection] || 'whatweb'
+
+    # should make databse and collection comma or fullstop delimited, eg. test,scan
+
+    # @db.authenticate(s[:username], s[:password]) if s[:username]
+    options = { database: database }
+    if s[:username]
+      options[:username] = s[:username]
+      options[:password] = s[:password]
+    end
+
+    @db = Mongo::Client.new([host], options)
+    @coll = @db[collection]
+    @charset = nil
   end
 
   def close
-    # empty hash because each hash ends with a comma
-    @f.puts '{}'
-    # closing bracket
-    @f.puts ']'
-    @f.close
+    @db.close
   end
 
   def flatten_elements!(obj)
@@ -26,28 +35,22 @@ class OutputJSON < Output
   end
 
   def utf8_elements!(obj)
-    obj.each_value { |x| utf8_elements!(x) } if obj.class == Hash
+    if obj.class == Hash
+      obj.each_value do |x|
+        utf8_elements!(x)
+      end
+    end
 
-    obj.each { |x| utf8_elements!(x) } if obj.class == Array
+    if obj.class == Array
+      obj.each do |x|
+        utf8_elements!(x)
+      end
+    end
 
     if obj.class == String
       #      obj=obj.upcase!
       #      obj=Iconv.iconv("UTF-8",@charset,obj).join
-      # pp @charset
-      # pp obj.encoding
-      # read this - http://blog.grayproductions.net/articles/ruby_19s_string
-      # replace invalid UTF-8 chars
-      # based on http://stackoverflow.com/a/8873922/388038
-    #  if String.method_defined?(:encode)
-    #    obj.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
-    #    obj.encode!('UTF-8', 'UTF-16')
-    #  end
-    #  obj.force_encoding('UTF-8')
-
-      #  obj=obj.force_encoding("ASCII-8BIT")
-      # puts obj.encoding.name
-      #    obj.encode!("UTF-8",{invalid: :replace,undef: :replace})
-
+      obj.force_encoding('UTF-8')
     end
   end
 
@@ -69,8 +72,6 @@ class OutputJSON < Output
     end
     foo[:request_config] = req_config
 
-    # plugins
-
     results.each do |plugin_name, plugin_results|
       #      thisplugin = {name: plugin_name}
       thisplugin = {}
@@ -79,8 +80,7 @@ class OutputJSON < Output
       # important info in brief mode is version, type and ?
       # what's the highest probability for the match?
 
-      certainty = plugin_results.map { |x| x[:certainty] unless x[:certainty].class == Regexp }.flatten.compact.sort.uniq.last
-
+      certainty = plugin_results.map { |x| x[:certainty] unless x[:certainty].class == Regexp }.compact.sort.uniq.last
       version = plugin_results.map { |x| x[:version] unless x[:version].class == Regexp }.flatten.compact.sort.uniq
       os = plugin_results.map { |x| x[:os] unless x[:os].class == Regexp }.flatten.compact.sort.uniq
       string = plugin_results.map { |x| x[:string] unless x[:string].class == Regexp }.flatten.compact.sort.uniq
@@ -91,7 +91,6 @@ class OutputJSON < Output
       filepath = plugin_results.map { |x| x[:filepath] unless x[:filepath].class == Regexp }.flatten.compact.sort.uniq
 
       thisplugin[:certainty] = certainty if !certainty.nil? && certainty != 100
-
       thisplugin[:version] = version unless version.empty?
       thisplugin[:os] = os unless os.empty?
       thisplugin[:string] = string unless string.empty?
@@ -107,15 +106,11 @@ class OutputJSON < Output
     @charset = results.map { |n, r| r[0][:string] if n == 'Charset' }.compact.first
 
     if @charset.nil? || @charset == 'Failed'
-      # could not find encoding force UTF-8 anyway
-      utf8_elements!(foo)
+      error("#{target}: Failed to detect Character set and log to MongoDB")
     else
       utf8_elements!(foo) # convert foo to utf-8
       flatten_elements!(foo)
-    end
-
-    $semaphore.synchronize do
-      @f.puts JSON.generate(foo) + ','
+      @coll.insert_one(foo)
     end
   end
 end

@@ -37,14 +37,14 @@ require 'lib/gems.rb'
 require 'lib/target.rb'
 require 'lib/output_helper.rb'
 require 'lib/plugins.rb'
-require 'lib/output.rb'
+require 'lib/logging.rb'
 require 'lib/colour.rb'
 require 'lib/version_class.rb'
 require 'lib/http-status.rb'
 require 'lib/extend-http.rb'
 
-# load the lib/output/ folder
-Dir["#{File.expand_path(File.dirname(__FILE__))}/output/*.rb"].each {|file| require file }
+# load the lib/logging/ folder
+Dir["#{File.expand_path(File.dirname(__FILE__))}/logging/*.rb"].each {|file| require file }
 
 # Output options
 $WWDEBUG = false # raise exceptions in plugins, etc
@@ -52,7 +52,7 @@ $verbose = 0 # $VERBOSE is reserved in ruby
 $use_colour = 'auto'
 $QUIET = false
 $NO_ERRORS = false
-$OUTPUT_ERRORS = nil
+$LOG_ERRORS = nil
 $PLUGIN_TIMES = Hash.new(0)
 
 # HTTP connection options

@@ -259,7 +259,7 @@ if ARGV.empty? # faster usage info
   exit
 end
 
-### output
+### logging
 $semaphore = Mutex.new
 # this is noisy in debug
 def $semaphore.reentrant_synchronize(&work)
@@ -281,7 +281,7 @@ def error(s)
     # TODO: make use_color smart, so it detects a tty
     STDERR.puts((($use_colour == 'auto') || ($use_colour == 'always')) ? red(s) : s)
     STDERR.flush
-    $OUTPUT_ERRORS.out(s) if $OUTPUT_ERRORS
+    $LOG_ERRORS.out(s) if $LOG_ERRORS
   end
 end
 
@@ -298,7 +298,7 @@ use_custom_grep_plugin = false
 input_file = nil
 
 # Output
-output_list = []
+logging_list = []
 mongo = {}
 mongo[:use_mongo_log] = false
 elastic = {}
@@ -398,17 +398,17 @@ begin
         raise('--colour argument not recognized')
         end
     when '--log-object'
-      output_list << OutputObject.new(arg)
+      logging_list << LoggingObject.new(arg)
     when '--log-brief'
-      output_list << OutputBrief.new(arg)
+      logging_list << LoggingBrief.new(arg)
     when '--log-xml'
-      output_list << OutputXML.new(arg)
+      logging_list << LoggingXML.new(arg)
     when '--log-magictree'
-      output_list << OutputMagicTreeXML.new(arg)
+      logging_list << LoggingMagicTreeXML.new(arg)
     when '--log-verbose'
-      output_list << OutputVerbose.new(arg)
+      logging_list << LoggingVerbose.new(arg)
     when '--log-sql'
-      output_list << OutputSQL.new(arg)
+      logging_list << LoggingSQL.new(arg)
     when '--log-sql-create'
       PluginSupport.load_plugins('+')
       # delete the file if it already exists
@@ -416,18 +416,18 @@ begin
         File.delete(arg)
       rescue
       end
-      OutputSQL.new(arg).create_tables
+      LoggingSQL.new(arg).create_tables
       puts "SQL CREATE statements written to #{arg}"
       exit
     when '--log-json'
       if defined?(JSON)
-        output_list << OutputJSON.new(arg)
+        output_list << LoggingJSON.new(arg)
       else
         raise('Sorry. The JSON gem is required for JSON output')
       end
     when '--log-json-verbose'
       if defined?(JSON)
-        output_list << OutputJSONVerbose.new(arg)
+        logging_list << LoggingJSONVerbose.new(arg)
       else
         raise('Sorry. The JSON gem is required for JSONVerbose output')
       end
@@ -475,7 +475,7 @@ begin
       elastic[:host] = arg
       elastic[:use_elastic_log] = true
     when '--log-errors'
-      $OUTPUT_ERRORS = OutputErrors.new(arg)
+      $LOG_ERRORS = LoggingErrors.new(arg)
     when '--no-errors'
       $NO_ERRORS = true
     when '-U', '--user-agent'
@@ -592,21 +592,21 @@ end
 PluginSupport.precompile_regular_expressions
 
 ### OUTPUT
-output_list << OutputBrief.new unless $QUIET || $verbose > 0 # by default output brief
-output_list << OutputObject.new if $verbose > 1 # full output if -vv
-output_list << OutputVerbose.new if $verbose > 0 # full output if -v
+logging_list << LoggingBrief.new unless $QUIET || $verbose > 0 # by default logging brief
+logging_list << LoggingObject.new if $verbose > 1 # full logging if -vv
+logging_list << LoggingVerbose.new if $verbose > 0 # full logging if -v
 
-## output dependencies
+## logging dependencies
 if mongo[:use_mongo_log]
   if plugins.map { |a, _b| a }.include?('Charset')
-    output_list << OutputMongo.new(mongo)
+    logging_list << OutputMongo.new(mongo)
   else
     error('MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/charset.rb to enable it.')
     exit
   end
 end
 
-output_list << OutputElastic.new(elastic) if elastic[:use_elastic_log]
+logging_list << LoggingElastic.new(elastic) if elastic[:use_elastic_log]
 
 ## Headers
 $CUSTOM_HEADERS['User-Agent'] = $USER_AGENT unless $CUSTOM_HEADERS['User-Agent']
@@ -618,7 +618,7 @@ urls = ARGV
 whatweb = WhatWeb::Scan.new(
   # Targets
   urls,
-  output_list: output_list,
+  logging_list: logging_list,
   input_file: input_file,
 
   # Plugins
@@ -633,6 +633,6 @@ whatweb = WhatWeb::Scan.new(
   url_pattern: url_pattern
 ) do | target, result | 
   parser = WhatWeb::Parser.new
-  parser.parse_results(target, result, output_list, use_custom_grep_plugin)
+  parser.parse_results(target, result, logging_list, use_custom_grep_plugin)
 end
 

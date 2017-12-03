@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
-class Output
+class Logging
   include OutputHelper
 
   # if no f, output to STDOUT,
