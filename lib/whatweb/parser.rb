@@ -18,7 +18,7 @@
 module WhatWeb
 class Parser
 
-  def run_plugins(target, plugins)
+  def self.run_plugins(target, plugins)
     results = []
 
     if plugins.empty?
@@ -42,7 +42,7 @@ class Parser
     results
   end
 
-  def parse_results(target, result, logging_list, use_custom_grep_plugin)
+  def self.parse_results(target, result, logging_list, use_custom_grep_plugin)
     # results
     logging_list.each do |log|
       begin

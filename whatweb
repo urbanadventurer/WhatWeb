@@ -619,7 +619,7 @@ urls = ARGV
 
 
 
-# Run scan
+# Initialize Scanner
 scanner = WhatWeb::Scan.new(
   # Targets
   urls,
@@ -635,20 +635,17 @@ scanner = WhatWeb::Scan.new(
   url_pattern: url_pattern
 )
 
-parser = WhatWeb::Parser.new
-
+# run scan
 scanner.scan do | target |
 
-#pp target
-#pp plugins 
-#exit
  # result_queue = Queue.new # workers return results here for logging
 
  #pp target
-#    plugins = opts[:plugins] || []
+ # plugins = opts[:plugins] || []
 
   # need to call directly with Headers, HTML, etc.
-  result = parser.run_plugins(target, plugins)
+  # this modifies target
+  result = WhatWeb::Parser.run_plugins(target, plugins)
 
   # this is out of place
   # redirects = 0
@@ -679,8 +676,7 @@ scanner.scan do | target |
 
 #  target, result = result_queue.pop(true) 
 
-  parser.parse_results(target, result, logging_list, use_custom_grep_plugin)
-
+  WhatWeb::Parser.parse_results(target, result, logging_list, use_custom_grep_plugin)
 end
 
 # close down logging and plugins
