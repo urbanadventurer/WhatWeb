@@ -294,7 +294,7 @@ class PluginSupport
   rescue SystemExit, Interrupt
     error('ERROR: Failed to load plugins: Interrupted')
     raise if $WWDEBUG == true || $verbose > 1
-    exit 1
+    exit 1 # exit only for debugging
   end
 
   # precompile regular expressions in plugins for performance
