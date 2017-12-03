@@ -281,36 +281,3 @@ class ScanContext
     results
   end
 end
-
-
-# This is used in plugin selection by load_plugins
-class PluginChoice
-  attr_accessor :modifier, :type, :name
-
-  def <=>(_s)
-    x = -1 if modifier.nil?
-    x = 0 if modifier == '+'
-    x = 1 if modifier == '-'
-    x
-  end
-
-  def fill(s)
-    self.modifier = nil
-    self.modifier = s[0].chr if ['+', '-'].include?(s[0].chr)
-
-    self.name = if modifier
-                  s[1..-1]
-                else
-                  s
-                end
-
-    # figure out and store the filename or pluginname
-    if File.exist?(File.expand_path(name))
-      self.type = 'file'
-      self.name = File.expand_path(name)
-    else
-      name.downcase!
-      self.type = 'plugin'
-    end
-  end
-end
