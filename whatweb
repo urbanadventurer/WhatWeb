@@ -311,6 +311,7 @@ url_pattern = nil
 
 # HTTP connection
 max_threads = 25
+max_redirects = 10
 
 # optional arguments work badly with URLs
 opts = GetoptLong.new(
@@ -511,7 +512,7 @@ begin
         raise('Invalid --follow-redirect parameter.')
       end
     when '--max-redirects'
-      $MAX_REDIRECTS = arg.to_i
+      max_redirects = arg.to_i
     when '--open-timeout'
       $HTTP_OPEN_TIMEOUT = arg.to_i
     when '--read-timeout'
@@ -653,7 +654,7 @@ scanner.scan do | target |
 
   # check for redirection
   if redirect_url = target.get_redirection_target
-    if target.redirect_counter < $MAX_REDIRECTS
+    if target.redirect_counter < max_redirects
       # pp target.redirect_counter, redirect_url
       puts "redirect #{target.redirect_counter + 1} from #{target.target} to #{redirect_url}" if $verbose > 1
       scanner.add_target(redirect_url, target.redirect_counter + 1)
