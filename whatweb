@@ -658,5 +658,5 @@ end
 
 # close down logging and plugins
 logging_list.each(&:close)
-Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
+Plugin.shutdown_all
 # pp $PLUGIN_TIMES.sort_by {|x,y|y }
