@@ -58,6 +58,10 @@ class Plugin
     Plugin.registered_plugins[p.name] = p
   end
 
+  def self.shutdown_all
+    Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
+  end
+
   def version_detection?
     return false unless @matches
     !@matches.map { |m| m[:version] }.compact.empty?
