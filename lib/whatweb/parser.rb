@@ -22,8 +22,7 @@ class Parser
     results = []
 
     if plugins.empty?
-      error 'No plugins selected, exiting.'
-      return
+      raise('No plugins selected')
     end
 
     plugins.each do |name, plugin|
@@ -42,12 +41,11 @@ class Parser
     results
   end
 
-  def self.log_results(target, result, logging_list, use_custom_grep_plugin)
-    # results
+  def self.parse(target, result, logging_list: nil, grep_plugin: false)
     logging_list.each do |log|
       begin
         # Hide log if Grep plugin did not match
-        if use_custom_grep_plugin
+        if grep_plugin
           if result.map { |plugin_name, _plugin_result| plugin_name }.include? 'Grep'
             log.out(target, target.status, result)
           end
@@ -58,6 +56,14 @@ class Parser
         error("ERROR Logging failed: #{target} - #{err}")
         raise if $WWDEBUG == true
       end
+    end unless logging_list.nil?
+
+    if grep_plugin
+      if result.map { |plugin_name, _plugin_result| plugin_name }.include? 'Grep'
+        return [target, target.status, result]
+      end
+    else
+      return [target, target.status, result]
     end
   end
 end

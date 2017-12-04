@@ -620,20 +620,29 @@ urls = ARGV
 
 
 # Initialize Scanner
-scanner = WhatWeb::Scan.new(
-  # Targets
-  urls,
-  logging_list: logging_list,
-  input_file: input_file,
+begin
+  scanner = WhatWeb::Scan.new(
+    # Targets
+    urls,
+    logging_list: logging_list,
+    input_file: input_file,
 
-  # HTTP connection
-  max_threads: max_threads,
+    # HTTP connection
+    max_threads: max_threads,
 
-  # Target modification
-  url_prefix: url_prefix,
-  url_suffix: url_suffix,
-  url_pattern: url_pattern
-)
+    # Target modification
+    url_prefix: url_prefix,
+    url_suffix: url_suffix,
+    url_pattern: url_pattern
+  )
+rescue SystemExit, Interrupt => err
+  error 'Interrupted. Exiting...'
+  exit 1
+rescue => e
+  puts "#{e.message}"
+  puts "#{e.backtrace}"
+  exit 1
+end
 
 # run scan
 scanner.scan do | target |
@@ -653,7 +662,7 @@ scanner.scan do | target |
     end
   end
 
-  WhatWeb::Parser.log_results(target, result, logging_list, use_custom_grep_plugin)
+  WhatWeb::Parser.parse(target, result, logging_list: logging_list, grep_plugin: use_custom_grep_plugin)
 end
 
 # close down logging and plugins
