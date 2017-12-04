@@ -42,7 +42,7 @@ class Parser
     results
   end
 
-  def self.parse_results(target, result, logging_list, use_custom_grep_plugin)
+  def self.log_results(target, result, logging_list, use_custom_grep_plugin)
     # results
     logging_list.each do |log|
       begin
