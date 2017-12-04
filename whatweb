@@ -638,29 +638,20 @@ scanner = WhatWeb::Scan.new(
 # run scan
 scanner.scan do | target |
 
-  # change so we can call it without Target object and with just Headers, HTML, etc.
-  
+  # change so we can call it without Target object and with just Headers, HTML, etc.  
   # note this modifies target with redirection info
   result = WhatWeb::Parser.run_plugins(target, plugins)
 
-  redirect_url = target.get_redirection_target
-  if redirect_url
-    # send it to the WhatWeb::Scan object
-    error "redirect"
-    scanner.add_target(redirect_url)
+  # check for redirection
+  if redirect_url = target.get_redirection_target
+    if target.redirect_counter < $MAX_REDIRECTS
+      # pp target.redirect_counter, redirect_url
+      puts "redirect #{target.redirect_counter + 1} from #{target.target} to #{redirect_url}" if $verbose > 1
+      scanner.add_target(redirect_url, target.redirect_counter + 1)
+    else
+      error("ERROR Too many redirects: #{target} => #{redirect_url}")
+    end
   end
-
-  #  redirects = 0
-  #   ... 
-  #  redirect_url = target.get_redirection_target
-  #  if redirect_url
-  #    redirects += 1
-  #    target = prepare_target(redirect_url)
-  #    if redirects > $MAX_REDIRECTS
-  #      error("ERROR Too many redirects: #{target}")
-  #      break
-  #    end
-  #  end
 
   WhatWeb::Parser.parse_results(target, result, logging_list, use_custom_grep_plugin)
 end

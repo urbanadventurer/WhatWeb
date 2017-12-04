@@ -68,8 +68,6 @@ class Scan
     @targets.each do |url|
       target = prepare_target(url)
       @target_queue << target if target
-      #pp target
-
     end
 
    # exit
@@ -87,11 +85,13 @@ class Scan
     workers.each(&:join)
   end
 
-  def add_target(url)
-      target = Target.new(url)
+  def add_target(url, redirect_counter = 0)
+      # should this use prepare_target?
+      target = Target.new(url, redirect_counter)
       if target
         @target_queue << target 
       else
+        error("Add Target Failed - #{err}")
         return nil
       end
   end
