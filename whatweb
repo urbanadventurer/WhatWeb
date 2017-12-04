@@ -653,7 +653,7 @@ scanner.scan do | target |
     end
   end
 
-  WhatWeb::Parser.parse_results(target, result, logging_list, use_custom_grep_plugin)
+  WhatWeb::Parser.log_results(target, result, logging_list, use_custom_grep_plugin)
 end
 
 # close down logging and plugins
