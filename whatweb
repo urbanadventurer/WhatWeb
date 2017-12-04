@@ -421,7 +421,7 @@ begin
       exit
     when '--log-json'
       if defined?(JSON)
-        output_list << LoggingJSON.new(arg)
+        logging_list << LoggingJSON.new(arg)
       else
         raise('Sorry. The JSON gem is required for JSON output')
       end
