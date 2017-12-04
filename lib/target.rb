@@ -312,6 +312,9 @@ class Target
       @headers['set-cookie'] = res.get_fields('set-cookie').join("\n") unless @headers['set-cookie'].nil?
 
       @body = res.body
+      
+      @body = @body.force_encoding("UTF-8") # do we only need this in the body?
+
       @status = res.code.to_i
       puts @uri.to_s + " [#{status}]" if $verbose > 1
 
