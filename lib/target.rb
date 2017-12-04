@@ -125,6 +125,7 @@ class Target
   attr_reader :tag_pattern
   attr_reader :is_url, :is_file
   attr_accessor :http_options
+  attr_reader :redirect_counter
 
   @@meta_refresh_regex = /<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"'>]+)['"]?[^>]*>/i
 
@@ -133,6 +134,7 @@ class Target
     "URI\n#{'*' * 40}\n#{@uri}" \
       "status\n#{'*' * 40}\n#{@status}" \
       "ip\n#{'*' * 40}\n#{@ip}" \
+      "redirects\n#{'*' * 40}\n#{@redirect_counter}" \
       "header\n#{'*' * 40}\n#{@headers}" \
       "cookies\n#{'*' * 40}\n#{@cookies}" \
       "raw_headers\n#{'*' * 40}\n#{@raw_headers}" \
@@ -160,8 +162,9 @@ class Target
     @is_url
   end
 
-  def initialize(target = nil)
+  def initialize(target = nil, redirect_counter = 0)
     @target = target
+    @redirect_counter = redirect_counter
     @headers = {}
     @http_options = { method: 'GET' }
     #		@status=0
