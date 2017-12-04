@@ -75,8 +75,7 @@ $BASIC_AUTH_PASS = nil
 
 # Ruby Version Compatability
 if Gem::Version.new(RUBY_VERSION) < Gem::Version.new(2.0)
-  puts 'Unsupported version of Ruby. WhatWeb requires Ruby 2.0 or later.'
-  exit 1
+  raise('Unsupported version of Ruby. WhatWeb requires Ruby 2.0 or later.')
 end
 
 # Initialize HTTP Status class

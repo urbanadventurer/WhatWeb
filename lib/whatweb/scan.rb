@@ -31,9 +31,9 @@ class Scan
     @target_queue = Queue.new # workers consume from this
 
     if @targets.empty?
-      error('No targets selected. Exiting.')
-      return
+      raise('No targets selected')
     end
+
     @opts = opts
   end
 
