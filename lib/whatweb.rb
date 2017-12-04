@@ -60,7 +60,6 @@ $PLUGIN_TIMES = Hash.new(0)
 $USER_AGENT = "WhatWeb/#{WhatWeb::VERSION}"
 $AGGRESSION = 1
 $FOLLOW_REDIRECT = 'always'
-$MAX_REDIRECTS = 10
 $USE_PROXY = false
 $PROXY_HOST = nil
 $PROXY_PORT = 8080
