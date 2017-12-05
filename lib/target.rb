@@ -227,13 +227,10 @@ class Target
   def open_file
     # target is a file
     @body = File.open(@target).read
-    if String.method_defined?(:encode)
-      @body.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
-      @body.encode!('UTF-8', 'UTF-16')
-    else
-      ic = Iconv.new('UTF-8', 'UTF-8//IGNORE')
-      @body = ic.iconv(@body)
-    end
+
+    @body.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
+    @body.encode!('UTF-8', 'UTF-16')
+
     # target is a http packet file
     if @body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
       # extract http header
@@ -313,6 +310,11 @@ class Target
 
       @body = res.body
       
+    
+#      @body.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
+#      @body.encode!('UTF-8', 'UTF-16')
+    
+
       @body = @body.force_encoding("UTF-8") # do we only need this in the body?
 
       @status = res.code.to_i
