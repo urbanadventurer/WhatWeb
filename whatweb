@@ -653,15 +653,7 @@ scanner.scan do | target |
   result = WhatWeb::Parser.run_plugins(target, plugins)
 
   # check for redirection
-  if redirect_url = target.get_redirection_target
-    if target.redirect_counter < max_redirects
-      # pp target.redirect_counter, redirect_url
-      puts "redirect #{target.redirect_counter + 1} from #{target.target} to #{redirect_url}" if $verbose > 1
-      scanner.add_target(redirect_url, target.redirect_counter + 1)
-    else
-      error("ERROR Too many redirects: #{target} => #{redirect_url}")
-    end
-  end
+  WhatWeb::Redirect.new(target, scanner, max_redirects)
 
   WhatWeb::Parser.parse(target, result, logging_list: logging_list, grep_plugin: use_custom_grep_plugin)
 end
