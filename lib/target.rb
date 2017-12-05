@@ -228,8 +228,7 @@ class Target
     # target is a file
     @body = File.open(@target).read
 
-    @body.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
-    @body.encode!('UTF-8', 'UTF-16')
+    @body = @body.encode('UTF-16', 'UTF-8', invalid: :replace, replace: '').encode('UTF-8')
 
     # target is a http packet file
     if @body =~ /^HTTP\/1\.\d [\d]{3} (.+)\r\n\r\n/m
@@ -300,30 +299,43 @@ class Target
       req.basic_auth $BASIC_AUTH_USER, $BASIC_AUTH_PASS if $BASIC_AUTH_USER
 
       res = http.request(req)
-
       @raw_headers = http.raw.join("\n")
-
       @headers = {}
-      res.each_header { |x, y| @headers[x] = y }
-
-      @headers['set-cookie'] = res.get_fields('set-cookie').join("\n") unless @headers['set-cookie'].nil?
 
       @body = res.body
       
-    
-#      @body.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
-#      @body.encode!('UTF-8', 'UTF-16')
-    
+      @body = convert_to_ut8f(@body)
+      @raw_headers = convert_to_ut8f(@raw_headers)
 
-      @body = @body.force_encoding("UTF-8") # do we only need this in the body?
+      res.each_header do |x, y| 
+        newx, newy = x.dup, y.dup
+        @headers[ convert_to_ut8f(newx) ] = convert_to_ut8f(newy)
+      end
+
+      @headers['set-cookie'] = res.get_fields('set-cookie').join("\n") unless @headers['set-cookie'].nil?
 
       @status = res.code.to_i
       puts @uri.to_s + " [#{status}]" if $verbose > 1
 
     rescue => err
       raise
+
     end
   end
+
+  def convert_to_ut8f(s)
+    begin
+      if defined?(String.new.scrub) # Defined in Ruby 2.1
+        return s.force_encoding("UTF-8").scrub
+      else # Ruby 2.0
+        return s.encode('UTF-16', 'UTF-8', invalid: :replace, replace: '').encode('UTF-8')
+      end
+
+    rescue => err
+      raise "Can't convert to UTF-8 #{err}"
+    end
+  end
+
 
   def get_redirection_target
     newtarget_m, newtarget_h, newtarget = nil
