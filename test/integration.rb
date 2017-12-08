@@ -36,7 +36,7 @@ class WhatWebTest < Minitest::Test
     res = p.read.to_s
     p.close
     assert res
-    assert_equal '', res
+    assert(res =~ /No targets selected/)
   end
 
   def test_xml_output
