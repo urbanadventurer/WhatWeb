@@ -20,23 +20,23 @@ dorks [
 '"powered by XMB"'
 ]
 
-
-
 matches [
 
 # Default HTML comments
-{ :text=>'<!-- Powered by XMB  -->' },
-{ :text=>'<!-- Aventure Media & The XMB Group -->' },
-{ :text=>'<!-- www.aventure-media.co.uk  :  www.xmbforum.com -->' },
+{ :text => '<!-- Powered by XMB ' },
+{ :text => '<!-- The XMB Group -->' },
 
 # Version detection # Powered by text
-{ :version=>/^Powered by XMB ([^<]+)<br \/>/ },
+{ :name => 'Powered by footer',
+  :version => /^Powered by XMB ([\d\.]+)<br \/>/ },
 
 # Version detection # Default title
-{ :version=>/<title>[^\-]+- Powered by XMB ([^<]+)<\/title>/ },
+{ :name => 'Title',
+  :version => /<title>[^<]+- Powered by XMB ([\d\.]+) / },
 
 # Version detection # HTML comments
-{ :version=>/^<!-- Powered by XMB ([^\ \ ]+)/ },
+{ :name => 'HTML comment',
+  :version => /^<!-- Powered by XMB ([\d\.]+) / },
 
 ]
 

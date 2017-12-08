@@ -18,24 +18,19 @@ website "http://www.caudium.net/"
 # About 209 ShodanHQ results for Server: Caudium @ 2011-08-02
 
 matches [
-	# Version Detection # HTTP Server Header
-	{:version=>/^[\s]*Caudium\/([^\s^\r^\n]+)/, :search=>"headers[server]"},
+# Version Detection # HTTP Server Header
+{ :version => /Caudium\/([\d\.]+)/,
+  :search => "headers[server]" },
 
-	# Catch-All # HTTP Server Header
-	{:name=>"HTTP Server Header", :regexp=>/^[\s]*Caudium[^\s^\r^\n]*/, :search=>"headers[server]"},
+# Catch-All # HTTP Server Header
+{ :name => "HTTP Server Header",
+  :regexp => /Caudium/,
+  :search => "headers[server]" },
 
+# Pike Version Detection # HTTP X-Got-Fish Header
+{ :module => /(Pike v[\d\.]+ release [\d]+)$/,
+  :search => "headers[x-got-fish]" }
 ]
-
-# Passive #
-passive do
-	m=[]
-
-	# Pike Version Detection # HTTP X-Got-Fish Header
-	m << { :module=>"Pike:"+@headers["x-got-fish"].to_s.scan(/^[\s]*Pike v([^\r^\n]+)/i).flatten.first.to_s } if @headers["x-got-fish"].to_s =~ /^[\s]*Pike v([^\r^\n]+)/i
-
-	m
-
-end
 
 end
 

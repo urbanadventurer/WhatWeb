@@ -15,18 +15,19 @@ website "http://www.stardot-tech.com/"
 
 # 20 results for intitle:"Express6 Live Image" @ 2010-07-18
 # http://www.hackersforcharity.org/ghdb/?function=detail&id=1552
-
+dorks [
+'intitle:"Express6 Live Image"'
+]
 
 matches [
 
-{ :regexp=>/<title>Express6 Live Image[\ Popup]*<\/title>/, :version=>"6" },
+{ :regexp => %r{<title>Express6 Live Image( Popup)?</title>}, :version => '6' },
 
-{ :text=>'  <tr><td><a href="http://www.stardot-tech.com" target="_new"><img src="logo.gif" alt="" width="227" height="45" border="0"></a></td>' },
+{ :regexp => %r{<tr><td><a href="http://www.stardot(-tech)?.com" target="(_new|_blank)"><img src="logo.gif" alt="" width="227" height="45"} },
 
-{ :text=>'  <tr><td><a href="http://www.stardot.com" target="_blank"><img src="logo.gif" alt="" width="227" height="45"></a></td>' },
+{ :status => 401, :certainty => 75, :name => 'WWW-Authenticate realm', :regexp => /^Basic realm="Express6"/, :search=>"headers[www-authenticate]" }
 
 ]
-
 
 end
 

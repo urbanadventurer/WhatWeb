@@ -130,21 +130,21 @@ class Target
 
   @@meta_refresh_regex = /<meta[\s]+http\-equiv[\s]*=[\s]*['"]?refresh['"]?[^>]+content[\s]*=[^>]*[0-9]+;[\s]*url=['"]?([^"'>]+)['"]?[^>]*>/i
 
-  def inspect
+  def pretty_print
     #	"#{target} " + [@uri,@status,@ip,@body,@headers,@raw_headers,@raw_response,@cookies,@md5sum,@tag_pattern,@is_url,@is_file].join(",")
-    "URI\n#{'*' * 40}\n#{@uri}" \
-      "status\n#{'*' * 40}\n#{@status}" \
-      "ip\n#{'*' * 40}\n#{@ip}" \
-      "redirects\n#{'*' * 40}\n#{@redirect_counter}" \
-      "header\n#{'*' * 40}\n#{@headers}" \
-      "cookies\n#{'*' * 40}\n#{@cookies}" \
-      "raw_headers\n#{'*' * 40}\n#{@raw_headers}" \
-      "raw_response\n#{'*' * 40}\n#{@raw_response}" \
-      "body\n#{'*' * 40}\n#{@body}" \
-      "md5sum\n#{'*' * 40}\n#{@md5sum}" \
-      "tag_pattern\n#{'*' * 40}\n#{@tag_pattern}" \
-      "is_url\n#{'*' * 40}\n#{@is_url}" \
-      "is_file\n#{'*' * 40}\n#{@is_file}"
+    "URI\n#{'*' * 40}\n#{@uri}\n" \
+      "status\n#{'*' * 40}\n#{@status}\n" \
+      "ip\n#{'*' * 40}\n#{@ip}\n" \
+      "redirects\n#{'*' * 40}\n#{@redirect_counter}\n" \
+      "header\n#{'*' * 40}\n#{@headers}\n" \
+      "cookies\n#{'*' * 40}\n#{@cookies}\n" \
+      "raw_headers\n#{'*' * 40}\n#{@raw_headers}\n" \
+      "raw_response\n#{'*' * 40}\n#{@raw_response}\n" \
+      "body\n#{'*' * 40}\n#{@body}\n" \
+      "md5sum\n#{'*' * 40}\n#{@md5sum}\n" \
+      "tag_pattern\n#{'*' * 40}\n#{@tag_pattern}\n" \
+      "is_url\n#{'*' * 40}\n#{@is_url}\n" \
+      "is_file\n#{'*' * 40}\n#{@is_file}\n"
   end
 
   def to_s
