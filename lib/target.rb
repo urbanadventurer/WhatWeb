@@ -118,6 +118,7 @@ end
 # Target
 #
 class Target
+  include Helper
   attr_reader :target
   attr_reader :uri, :status, :ip, :body, :headers, :raw_headers, :raw_response
   attr_reader :cookies
@@ -304,12 +305,12 @@ class Target
 
       @body = res.body
       
-      @body = convert_to_ut8f(@body)
-      @raw_headers = convert_to_ut8f(@raw_headers)
+      @body = Helper::convert_to_ut8f(@body)
+      @raw_headers = Helper::convert_to_ut8f(@raw_headers)
 
       res.each_header do |x, y| 
         newx, newy = x.dup, y.dup
-        @headers[ convert_to_ut8f(newx) ] = convert_to_ut8f(newy)
+        @headers[ Helper::convert_to_ut8f(newx) ] = Helper::convert_to_ut8f(newy)
       end
 
       @headers['set-cookie'] = res.get_fields('set-cookie').join("\n") unless @headers['set-cookie'].nil?
@@ -320,19 +321,6 @@ class Target
     rescue => err
       raise
 
-    end
-  end
-
-  def convert_to_ut8f(s)
-    begin
-      if defined?(String.new.scrub) # Defined in Ruby 2.1
-        return s.force_encoding("UTF-8").scrub
-      else # Ruby 2.0
-        return s.encode('UTF-16', 'UTF-8', invalid: :replace, replace: '').encode('UTF-8')
-      end
-
-    rescue => err
-      raise "Can't convert to UTF-8 #{err}"
     end
   end
 
