@@ -20,39 +20,6 @@ class LoggingElastic < Logging
     obj.flatten! if obj.class == Array
   end
 
-  def utf8_elements!(obj)
-    if obj.class == Hash
-      obj.each_value do |x|
-        utf8_elements!(x)
-      end
-    end
-
-    if obj.class == Array
-      obj.each do |x|
-        utf8_elements!(x)
-      end
-    end
-
-    if obj.class == String
-      #			obj=obj.upcase!
-      #			obj=Iconv.iconv("UTF-8",@charset,obj).join
-      # pp @charset
-      # pp obj.encoding
-      # read this - http://blog.grayproductions.net/articles/ruby_19s_string
-      # replace invalid UTF-8 chars
-      # based on http://stackoverflow.com/a/8873922/388038
-      if String.method_defined?(:encode)
-        obj.encode!('UTF-16', 'UTF-8', invalid: :replace, replace: '')
-        obj.encode!('UTF-8', 'UTF-16')
-      end
-      obj = obj.force_encoding('UTF-8')
-
-      #	obj=obj.force_encoding("ASCII-8BIT")
-      # puts obj.encoding.name
-      #		obj.encode!("UTF-8",{:invalid=>:replace,:undef=>:replace})
-
-    end
-  end
 
   def out(target, status, results)
     # nice | date be like 2009-11-15T14:12:12 to be autodetected by elastic
@@ -95,9 +62,9 @@ class LoggingElastic < Logging
 
     if @charset.nil? || @charset == 'Failed'
       # could not find encoding force UTF-8 anyway
-      utf8_elements!(foo)
+      Helper::utf8_elements!(foo)
     else
-      utf8_elements!(foo) # convert foo to utf-8
+      Helper::utf8_elements!(foo) # convert foo to utf-8
       flatten_elements!(foo)
     end
 

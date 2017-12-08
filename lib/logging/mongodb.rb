@@ -34,26 +34,6 @@ class LoggingMongo < Logging
     obj.flatten! if obj.class == Array
   end
 
-  def utf8_elements!(obj)
-    if obj.class == Hash
-      obj.each_value do |x|
-        utf8_elements!(x)
-      end
-    end
-
-    if obj.class == Array
-      obj.each do |x|
-        utf8_elements!(x)
-      end
-    end
-
-    if obj.class == String
-      #      obj=obj.upcase!
-      #      obj=Iconv.iconv("UTF-8",@charset,obj).join
-      obj.force_encoding('UTF-8')
-    end
-  end
-
   def out(target, status, results)
     # nice
 
@@ -108,7 +88,7 @@ class LoggingMongo < Logging
     if @charset.nil? || @charset == 'Failed'
       error("#{target}: Failed to detect Character set and log to MongoDB")
     else
-      utf8_elements!(foo) # convert foo to utf-8
+      Helper::utf8_elements!(foo) # convert foo to utf-8
       flatten_elements!(foo)
       @coll.insert_one(foo)
     end

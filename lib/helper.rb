@@ -21,7 +21,7 @@
 module Helper
 
   # converts Hash, Array, or String to UTF-8
-  def utf8_elements!(obj)
+  def self.utf8_elements!(obj)
     if obj.class == Hash
       obj.each_value do |x|
         utf8_elements!(x)
