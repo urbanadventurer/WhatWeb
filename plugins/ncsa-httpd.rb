@@ -18,10 +18,13 @@ website "http://web.archive.org/web/20071020024535/hoohoo.ncsa.uiuc.edu/docs/Ove
 # 306 for NCSA -apache -IIS -TakaC
 
 matches [
-	# HTTP Server Header
-	{ :regexp=>/^NCSA/, :search=>"headers[server]" },
-	# Version Detection # HTTP Server Header
-	{ :version=>/^NCSA\/([^\s^\r^\n]+)$/, :search=>"headers[server]" },
+# HTTP Server Header
+{ :regexp => /^NCSA/,
+  :search=>"headers[server]" },
+
+# Version Detection # HTTP Server Header
+{ :version => /^NCSA\/([\d\.]+)$/,
+  :search => "headers[server]" },
 
 ]
 

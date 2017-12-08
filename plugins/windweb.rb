@@ -14,17 +14,9 @@ description "WindWeb Webserver"
 
 # About 21746 ShodanHQ results for "server: WindWeb" @ 2010-10-26
 
-
-# HTTP Header
-passive do
-	m=[]
-
-	# Server
-	m << { :version=>@headers["server"].to_s.scan(/^[\s]*WindWeb\/([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /^[\s]*WindWeb\/([^\s^\r^\n]+)/i
-
-	m
-
-end
+matches [
+  { :version => /^WindWeb\/([^\s]+)$/, :search => "headers[server]" }
+]
 
 end
 
