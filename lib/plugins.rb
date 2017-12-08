@@ -96,6 +96,7 @@ class ScanContext
     @ip = target.ip
     @raw_response = target.raw_response
     @raw_headers = target.raw_headers
+    @scanner = scanner
   end
 
   def make_matches(target, match)
