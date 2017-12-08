@@ -616,10 +616,6 @@ $CUSTOM_HEADERS.delete_if { |_k, v| v == '' }
 urls = ARGV
 
 
-
-
-
-
 # Initialize Scanner
 begin
   scanner = WhatWeb::Scan.new(
