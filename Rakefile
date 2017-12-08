@@ -21,7 +21,7 @@ task :default => :unit
 
 Rake::TestTask.new(:unit) do |t|
   t.description = 'Run unit tests'
-  t.test_files = FileList['test/unit.rb']
+  t.test_files = FileList['test/unit/test_*.rb']
 end
 
 Rake::TestTask.new(:integration) do |t|
