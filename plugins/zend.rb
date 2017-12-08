@@ -11,9 +11,10 @@ authors [
   # v0.1 # detection works mainly for default installation state . tomatocms is based on zend framework. 
   "Andrew Horton", # v0.2 # Added meta generator match and vendor matches. bug fixes. new random string function. 
   # Andrew Horton # v0.3 # new routine for POST requests. 
-  # Andrew Horton # v0.4 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+  # Andrew Horton # v0.4 # 2016-04-23 # Moved patterns from passive function to matches[].
+  # Andrew Horton # v0.5 # 2017-12-09 # Bug fix with aggressive HTTP params
 ]
-version "0.4"
+version "0.5"
 description "Zend PHP Framework (http://framework.zend.com/) and Zend Server (http://zend.com) Detection"
 
 	
@@ -60,7 +61,7 @@ aggressive do
 
 	m=[]
 	aggressive_target = Target.new(@base_uri.to_s)
-	aggressive_target.http_options={:method=>"POST", :data=>"whatweb=true"}
+	aggressive_target.http_options={:method=>"POST", :data=> {"whatweb"=>"true"} }
 	aggressive_target.open
 	# open_url
 
