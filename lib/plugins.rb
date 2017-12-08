@@ -259,10 +259,9 @@ class ScanContext
       # we have no caching, so we sort the URLs to fetch and only get 1 unique url per plugin. not great..
       if @matches
         @matches.map { |x| x if x[:url] }.compact.sort_by { |x| x[:url] }.map do |match|
-          r = [] # temp results
-
           newbase_uri = URI.join(@base_uri.to_s, match[:url]).to_s
 
+          # todo: use scanner here
           aggressivetarget = Target.new(newbase_uri)
           aggressivetarget.open
 
