@@ -16,197 +16,190 @@
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
 module WhatWeb
-class Scan
+  class Scan
+    def initialize(urls, input_file: nil, url_prefix: nil, url_suffix: nil, url_pattern: nil, max_threads: 25)
+      urls = [urls] if urls.is_a?(String)
 
-  def initialize(urls, input_file: nil, url_prefix: nil, url_suffix: nil, url_pattern: nil, max_threads: 25)
+      @targets = make_target_list(
+        urls,
+        input_file: input_file,
+        url_prefix: url_prefix,
+        url_suffix: url_suffix,
+        url_pattern: url_pattern
+      )
 
-    urls = [urls] if urls.is_a?(String)
+      raise('No targets selected') if @targets.empty?
 
-    @targets = make_target_list(
-      urls,
-      input_file: input_file,
-      url_prefix: url_prefix,
-      url_suffix: url_suffix,
-      url_pattern: url_pattern
-    )
-
-    if @targets.empty?
-      raise('No targets selected')
+      @max_threads = max_threads.to_i || 25
+      @target_queue = Queue.new # workers consume from this
     end
 
-    @max_threads = max_threads.to_i || 25
-    @target_queue = Queue.new # workers consume from this
-  end
+    def scan
+      Thread.abort_on_exception = true if $WWDEBUG
 
-  def scan
-    Thread.abort_on_exception = true if $WWDEBUG
+      workers = (1..@max_threads).map do
+        Thread.new do
+          # keep reading in root tasks until a nil is received
+          loop do
+            target = @target_queue.pop
+            Thread.exit unless target
 
-    workers = (1..@max_threads).map do
-      Thread.new do
-        # keep reading in root tasks until a nil is received
-        loop do
-          target = @target_queue.pop
-          Thread.exit unless target
-   
-          # keep processing until there are no more redirects or the limit is hit
-          # while target
-          begin
-            target.open
-          rescue => err
-            error("ERROR Opening: #{target} - #{err}")
-            target = nil # break target loop
-            next
+            # keep processing until there are no more redirects or the limit is hit
+            # while target
+            begin
+              target.open
+            rescue => err
+              error("ERROR Opening: #{target} - #{err}")
+              target = nil # break target loop
+              next
+            end
+
+            yield target
           end
- 
-          yield target
         end
-
       end
-    end
 
-    # initialize target_queue
-    @targets.each do |url|
-      target = prepare_target(url)
-      @target_queue << target if target
-    end
+      # initialize target_queue
+      @targets.each do |url|
+        target = prepare_target(url)
+        @target_queue << target if target
+      end
 
-   # exit
+      # exit
 
-    loop do
+      loop do
         # this might miss redirects from final targets
 
         # more defensive than comparing against max_threads
-        alive = workers.map { |worker| worker if worker.alive? }.compact.length  
+        alive = workers.map { |worker| worker if worker.alive? }.compact.length
         break if alive == @target_queue.num_waiting # && result_queue.empty?
+      end
+
+      # Shut down workers, logging, and plugins
+      (1..@max_threads).each { @target_queue << nil }
+      workers.each(&:join)
     end
 
-    # Shut down workers, logging, and plugins
-    (1..@max_threads).each { @target_queue << nil }
-    workers.each(&:join)
-  end
+    # for use by Plugins
+    def scan_from_plugin(target: nil)
+      raise 'No target' unless target
 
-
-  # for use by Plugins
-  def scan_from_plugin(target: nil)
-
-    raise "No target" unless target
-
-    begin
-      target.open
-    rescue => err
-      error("ERROR Opening: #{target} - #{err}")
+      begin
+        target.open
+      rescue => err
+        error("ERROR Opening: #{target} - #{err}")
+      end
+      target
     end
-    target
-  end
 
-
-  def add_target(url, redirect_counter = 0)
+    def add_target(url, redirect_counter = 0)
       # should this use prepare_target?
       target = Target.new(url, redirect_counter)
       if target
-        @target_queue << target 
+        @target_queue << target
       else
         error("Add Target Failed - #{err}")
         return nil
       end
-  end
-
-  private
-  # try to make a new Target object, may return nil
-  def prepare_target(url)
-    Target.new(url)
-  rescue => err
-    error("Prepare Target Failed - #{err}")
-    nil
-  end
-
-  #
-  # Make Target List
-  #
-  # Make a list of targets from a list of URLs and/or input file
-  #
-  def make_target_list(urls, opts)
-    url_list = urls
-    inputfile = opts[:input_file] || nil
-
-    # read each line as a url, skipping lines that begin with a #
-    if !inputfile.nil? && File.exist?(inputfile)
-      pp "loading input file: #{inputfile}" if $verbose > 2
-      url_list += File.open(inputfile).readlines.each(&:strip!).delete_if { |line| line =~ /^#.*/ }.each { |line| line.delete!("\n") }
     end
 
-    genrange = url_list.map do |x|
-      range = nil
-      # Parse IP ranges
-      if x =~ /^[0-9\.\-\/]+$/ && x !~ /^[\d\.]+$/
-        begin
-          # CIDR notation
-          if x =~ %r{\d+\.\d+\.\d+\.\d+/\d+$}
-            range = IPAddr.new(x).to_range.map(&:to_s)
-          # x.x.x.x-x
-          elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+)$/
-            start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
-            end_ip   = IPAddr.new("#{start_ip.to_s.split('.')[0..2].join('.')}.#{Regexp.last_match(2)}", Socket::AF_INET)
-            range = (start_ip..end_ip).map(&:to_s)
-          # x.x.x.x-x.x.x.x
-          elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+\.\d+\.\d+\.\d+)$/
-            start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
-            end_ip   = IPAddr.new(Regexp.last_match(2), Socket::AF_INET)
-            range = (start_ip..end_ip).map(&:to_s)
+    private
+
+    # try to make a new Target object, may return nil
+    def prepare_target(url)
+      Target.new(url)
+    rescue => err
+      error("Prepare Target Failed - #{err}")
+      nil
+    end
+
+    #
+    # Make Target List
+    #
+    # Make a list of targets from a list of URLs and/or input file
+    #
+    def make_target_list(urls, opts)
+      url_list = urls
+      inputfile = opts[:input_file] || nil
+
+      # read each line as a url, skipping lines that begin with a #
+      if !inputfile.nil? && File.exist?(inputfile)
+        pp "loading input file: #{inputfile}" if $verbose > 2
+        url_list += File.open(inputfile).readlines.each(&:strip!).delete_if { |line| line =~ /^#.*/ }.each { |line| line.delete!("\n") }
+      end
+
+      genrange = url_list.map do |x|
+        range = nil
+        # Parse IP ranges
+        if x =~ /^[0-9\.\-\/]+$/ && x !~ /^[\d\.]+$/
+          begin
+            # CIDR notation
+            if x =~ %r{\d+\.\d+\.\d+\.\d+/\d+$}
+              range = IPAddr.new(x).to_range.map(&:to_s)
+            # x.x.x.x-x
+            elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+)$/
+              start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
+              end_ip   = IPAddr.new("#{start_ip.to_s.split('.')[0..2].join('.')}.#{Regexp.last_match(2)}", Socket::AF_INET)
+              range = (start_ip..end_ip).map(&:to_s)
+            # x.x.x.x-x.x.x.x
+            elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+\.\d+\.\d+\.\d+)$/
+              start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
+              end_ip   = IPAddr.new(Regexp.last_match(2), Socket::AF_INET)
+              range = (start_ip..end_ip).map(&:to_s)
+            end
+          rescue
+            # Something went horribly wrong parsing the target IP range
+            raise 'Error parsing target IP range'
           end
-        rescue
-          # Something went horribly wrong parsing the target IP range
-          raise 'Error parsing target IP range'
+        end
+        range
+      end.compact.flatten
+
+      url_list = url_list.select { |x| !(x =~ /^[0-9\.\-*\/]+$/) || x =~ /^[\d\.]+$/ }
+      url_list += genrange unless genrange.empty?
+
+      # make urls friendlier, test if it's a file, if test for not assume it's http://
+      # http, https, ftp, etc
+      push_to_urllist = []
+      url_list = url_list.map do |x|
+        if File.exist?(x)
+          x
+        else
+          # use url pattern
+          x = opts[:url_pattern].gsub('%insert%', x) unless opts[:url_pattern].to_s.eql?('')
+          # add prefix & suffix
+          x = "#{opts[:url_prefix]}#{x}#{opts[:url_suffix]}"
+
+          # need to move this into a URI parsing function
+          #
+          # check for URI prefix
+          if x !~ /^[a-z]+:\/\//
+            # add missing URI prefix
+            x.sub!(/^/, 'http://')
+          end
+
+          # is it a valid domain?
+          begin
+            domain = Addressable::URI.parse(x)
+            # check validity
+            raise 'Unable to parse invalid target. No hostname.' if domain.host.empty?
+
+            # convert IDN domain
+            x = domain.normalize.to_s if domain.host !~ /^[a-zA-Z0-9\.:\/]*$/
+          rescue
+            # if it fails it's not valid
+            x = nil
+            error("Unable to parse invalid target #{x}")
+          end
+          # return x
+          x
         end
       end
-      range
-    end.compact.flatten
 
-    url_list = url_list.select { |x| !(x =~ /^[0-9\.\-*\/]+$/) || x =~ /^[\d\.]+$/ }
-    url_list += genrange unless genrange.empty?
+      url_list += push_to_urllist unless push_to_urllist.empty?
 
-    # make urls friendlier, test if it's a file, if test for not assume it's http://
-    # http, https, ftp, etc
-    push_to_urllist = []
-    url_list = url_list.map do |x|
-      if File.exist?(x)
-        x
-      else
-        # use url pattern
-        x = opts[:url_pattern].gsub('%insert%', x) unless opts[:url_pattern].to_s.eql?('')
-        # add prefix & suffix
-        x = "#{opts[:url_prefix]}#{x}#{opts[:url_suffix]}"
-
-        # need to move this into a URI parsing function
-        #
-        # check for URI prefix
-        if x !~ /^[a-z]+:\/\//
-          # add missing URI prefix
-          x.sub!(/^/, 'http://')
-        end
-
-        # is it a valid domain?
-        begin
-          domain = Addressable::URI.parse(x)
-          # check validity
-          raise 'Unable to parse invalid target. No hostname.' if domain.host.empty?
-
-          # convert IDN domain
-          x = domain.normalize.to_s if domain.host !~ /^[a-zA-Z0-9\.:\/]*$/
-        rescue
-          # if it fails it's not valid
-          x = nil
-          error("Unable to parse invalid target #{x}")
-        end
-        # return x
-        x
-      end
+      # compact removes nils
+      url_list = url_list.flatten.compact # .sort.uniq
     end
-
-    url_list += push_to_urllist unless push_to_urllist.empty?
-
-    # compact removes nils
-    url_list = url_list.flatten.compact # .sort.uniq
   end
-end
 end
