@@ -41,7 +41,7 @@ class Parser
     results
   end
 
-  def self.parse(target, result, logging_list: nil, grep_plugin: false)
+  def self.parse(target: nil, result: nil, logging_list: nil, grep_plugin: false)
     logging_list.each do |log|
       begin
         # Hide log if Grep plugin did not match
