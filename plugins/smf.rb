@@ -78,7 +78,7 @@ files=[
 	downloads={}
 	to_download.each do |d|
 		target = URI.join(@base_uri.to_s,d).to_s	
-		status,url,ip,body,headers=open_target(target)
+		_status,_url,_ip,body,_headers = open_target(target)
 		downloads[d] = {:md5sum=>Digest::MD5.hexdigest(body).to_s}	
 	end
 
