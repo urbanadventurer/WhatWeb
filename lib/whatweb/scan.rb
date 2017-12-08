@@ -20,7 +20,9 @@ class Scan
 
   def initialize(urls, input_file: nil, url_prefix: nil, url_suffix: nil, url_pattern: nil, max_threads: 25)
 
-     @targets = make_target_list(
+    urls = [urls] if urls.is_a?(String)
+
+    @targets = make_target_list(
       urls,
       input_file: input_file,
       url_prefix: url_prefix,
@@ -171,9 +173,9 @@ class Scan
         x
       else
         # use url pattern
-        x = opts[:url_pattern].gsub('%insert%', x) if opts[:url_pattern]
+        x = opts[:url_pattern].gsub('%insert%', x) unless opts[:url_pattern].to_s.eql?('')
         # add prefix & suffix
-        x = opts[:url_prefix] + x + opts[:url_suffix]
+        x = "#{opts[:url_prefix]}#{x}#{opts[:url_suffix]}"
 
         # need to move this into a URI parsing function
         #
