@@ -621,7 +621,6 @@ begin
   scanner = WhatWeb::Scan.new(
     # Targets
     urls,
-    logging_list: logging_list,
     input_file: input_file,
 
     # HTTP connection

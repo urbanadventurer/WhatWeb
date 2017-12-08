@@ -18,30 +18,28 @@
 module WhatWeb
 class Scan
 
-  def initialize(urls, opts)
+  def initialize(urls, input_file: nil, url_prefix: nil, url_suffix: nil, url_pattern: nil, max_threads: 25)
 
      @targets = make_target_list(
       urls,
-      input_file: opts[:input_file],
-      url_prefix: opts[:url_prefix] || '',
-      url_suffix: opts[:url_suffix] || '',
-      url_pattern: opts[:url_pattern]
+      input_file: input_file,
+      url_prefix: url_prefix,
+      url_suffix: url_suffix,
+      url_pattern: url_pattern
     )
-
-    @target_queue = Queue.new # workers consume from this
 
     if @targets.empty?
       raise('No targets selected')
     end
 
-    @opts = opts
+    @max_threads = max_threads.to_i || 25
+    @target_queue = Queue.new # workers consume from this
   end
 
   def scan
     Thread.abort_on_exception = true if $WWDEBUG
-    max_threads = @opts[:max_threads].to_i || 25
 
-    workers = (1..max_threads).map do
+    workers = (1..@max_threads).map do
       Thread.new do
         # keep reading in root tasks until a nil is received
         loop do
@@ -81,7 +79,7 @@ class Scan
     end
 
     # Shut down workers, logging, and plugins
-    (1..max_threads).each { @target_queue << nil }
+    (1..@max_threads).each { @target_queue << nil }
     workers.each(&:join)
   end
 
