@@ -46,6 +46,7 @@ class Plugin
     @passive = nil
     @aggressive = nil
     @variables = {}
+    @website = nil
   end
 
   def self.define(&block)
