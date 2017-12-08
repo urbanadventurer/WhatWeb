@@ -21,7 +21,7 @@ module WhatWeb
 	class Redirect
 		# adds Target to Scanner
 		# returns true if it redirects, otherwise false
-		def initialize(target, scanner, max_redirects)
+		def initialize(target: nil, scanner: nil, max_redirects: nil)
 			# check for redirection
 		  if redirect_url = target.get_redirection_target
 		    if target.redirect_counter < max_redirects
