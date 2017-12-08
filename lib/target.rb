@@ -305,12 +305,12 @@ class Target
 
       @body = res.body
       
-      @body = Helper::convert_to_ut8f(@body)
-      @raw_headers = Helper::convert_to_ut8f(@raw_headers)
+      @body = Helper::convert_to_utf8(@body)
+      @raw_headers = Helper::convert_to_utf8(@raw_headers)
 
       res.each_header do |x, y| 
         newx, newy = x.dup, y.dup
-        @headers[ Helper::convert_to_ut8f(newx) ] = Helper::convert_to_ut8f(newy)
+        @headers[ Helper::convert_to_utf8(newx) ] = Helper::convert_to_utf8(newy)
       end
 
       @headers['set-cookie'] = res.get_fields('set-cookie').join("\n") unless @headers['set-cookie'].nil?
