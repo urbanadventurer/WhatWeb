@@ -16,7 +16,7 @@
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
 class Logging
-  include OutputHelper
+  include Helper
 
   # if no f, output to STDOUT,
   # if f is a filename then open it, if f is a file use it
