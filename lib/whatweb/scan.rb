@@ -85,6 +85,21 @@ class Scan
     workers.each(&:join)
   end
 
+
+  # for use by Plugins
+  def scan_from_plugin(target: nil)
+
+    raise "No target" unless target
+
+    begin
+      target.open
+    rescue => err
+      error("ERROR Opening: #{target} - #{err}")
+    end
+    target
+  end
+
+
   def add_target(url, redirect_counter = 0)
       # should this use prepare_target?
       target = Target.new(url, redirect_counter)

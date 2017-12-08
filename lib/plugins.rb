@@ -74,7 +74,7 @@ class Plugin
   def shutdown; end
 
   def scan(target)
-    scan_context = ScanContext.new(plugin: self, target: target, scanner: scanner)
+    scan_context = ScanContext.new(plugin: self, target: target, scanner: nil)
     scan_context.instance_variable_set(:@variables, @variables)
     scan_context.x
   end
@@ -258,12 +258,11 @@ class ScanContext
 
       # we have no caching, so we sort the URLs to fetch and only get 1 unique url per plugin. not great..
       if @matches
-        lastbase_uri. thisstatus, thisurl, thisbody, thisheaders = nil # this shouldn't be necessary but ruby thinks its a local variable to the if end statement
-
         @matches.map { |x| x if x[:url] }.compact.sort_by { |x| x[:url] }.map do |match|
           r = [] # temp results
 
           newbase_uri = URI.join(@base_uri.to_s, match[:url]).to_s
+
           aggressivetarget = Target.new(newbase_uri)
           aggressivetarget.open
 
