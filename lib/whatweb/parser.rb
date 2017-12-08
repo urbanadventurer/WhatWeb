@@ -55,13 +55,12 @@ module WhatWeb
         end
       end unless logging_list.nil?
 
-      if grep_plugin
-        if result.map { |plugin_name, _plugin_result| plugin_name }.include? 'Grep'
-          return [target, target.status, result]
-        end
-      else
-        return [target, target.status, result]
-      end
+      result = { 'target' => target,
+                 'status' => target.status,
+                 'result' => result}
+
+      return result unless grep_plugin
+      return result if result.map { |plugin_name, _plugin_result| plugin_name }.include? 'Grep'
     end
   end
 end
