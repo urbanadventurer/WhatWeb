@@ -11,10 +11,11 @@ Plugin.define do
 		"Louis Nyffenegger",
 		"Andrew Horton", # v0.3 by Andrew Horton # renamed plugin from Tomcat to Apache-Tomcat, added aggressive /RELEASE-NOTES.txt to get version, added footer version, added /manager/status tests
     "Code0x58" # v0.4 # change random string function and new aggressive plugin behaviour
+    # Andrew Horton # v0.5 # change random string to use randstr method
 		] 
 	description "Apache Tomcat Web Server"
 	website "http://tomcat.apache.org/"
-	version "0.4"
+	version "0.5"
 
 	matches [
 		#
@@ -41,8 +42,8 @@ Plugin.define do
 		# get a random page to check for default 404 tomcat page
 		# TODO: consider using 404 matching more, caching could be used
 		## 
-		random_string = (1..length).map{|i| ('a'..'z').to_a[rand(26)]}.join
-		target = "http://#{@base_uri.host}:#{@base_uri.port.to_s}/#{random_string}"
+
+		target = URI.join(@base_uri.to_s,"/#{randstr}").to_s	
 		info = []
 
 		begin 
