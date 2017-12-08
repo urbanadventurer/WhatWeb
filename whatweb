@@ -646,13 +646,13 @@ scanner.scan do | target |
 
   # change so we can call it without Target object and with just Headers, HTML, etc.  
   # note this modifies target with redirection info
-  result = WhatWeb::Parser.run_plugins(target: target, scanner: scanner, plugins: plugins)
+  result = WhatWeb::Parser.run_plugins(target, plugins, scanner: scanner)
 
   # check for redirection
-  WhatWeb::Redirect.new(target: target, scanner: scanner, max_redirects: max_redirects)
+  WhatWeb::Redirect.new(target, scanner, max_redirects)
 
-  WhatWeb::Parser.parse(target: target, 
-                        result: result, 
+  WhatWeb::Parser.parse(target, 
+                        result, 
                         logging_list: logging_list, 
                         grep_plugin: use_custom_grep_plugin)
 end
