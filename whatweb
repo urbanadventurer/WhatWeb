@@ -653,7 +653,7 @@ scanner.scan do | target |
   result = WhatWeb::Parser.run_plugins(target: target, scanner: scanner, plugins: plugins)
 
   # check for redirection
-  WhatWeb::Redirect.new(target, scanner, max_redirects)
+  WhatWeb::Redirect.new(target: target, scanner: scanner, max_redirects: max_redirects)
 
   WhatWeb::Parser.parse(target: target, 
                         result: result, 
