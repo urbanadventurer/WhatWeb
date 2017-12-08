@@ -655,7 +655,10 @@ scanner.scan do | target |
   # check for redirection
   WhatWeb::Redirect.new(target, scanner, max_redirects)
 
-  WhatWeb::Parser.parse(target, result, logging_list: logging_list, grep_plugin: use_custom_grep_plugin)
+  WhatWeb::Parser.parse(target: target, 
+                        result: result, 
+                        logging_list: logging_list, 
+                        grep_plugin: use_custom_grep_plugin)
 end
 
 # close down logging and plugins
