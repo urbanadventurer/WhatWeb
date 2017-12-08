@@ -74,14 +74,14 @@ class Plugin
   def shutdown; end
 
   def scan(target)
-    scan_context = ScanContext.new(self, target)
+    scan_context = ScanContext.new(plugin: self, target: target, scanner: scanner)
     scan_context.instance_variable_set(:@variables, @variables)
     scan_context.x
   end
 end
 
 class ScanContext
-  def initialize(plugin, target)
+  def initialize(plugin: nil, target: nil, scanner: nil)
     @plugin = plugin
     @matches = plugin.matches
     define_singleton_method(:passive_scan, plugin.passive) if plugin.passive

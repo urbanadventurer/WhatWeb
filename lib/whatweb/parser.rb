@@ -18,7 +18,7 @@
 module WhatWeb
 class Parser
 
-  def self.run_plugins(target: target, plugins: plugins, scanner: scanner)
+  def self.run_plugins(target: nil, plugins: nil, scanner: nil)
     results = []
 
     if plugins.empty?
