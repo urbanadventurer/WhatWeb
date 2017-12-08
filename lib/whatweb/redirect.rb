@@ -15,26 +15,24 @@
 # You should have received a copy of the GNU General Public License
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>
 
-# 
+#
 module WhatWeb
-
-	class Redirect
-		# adds Target to Scanner
-		# returns true if it redirects, otherwise false
-		def initialize(target, scanner, max_redirects)
-			# check for redirection
-		  if redirect_url = target.get_redirection_target
-		    if target.redirect_counter < max_redirects
-		      # pp target.redirect_counter, redirect_url
-		      puts "redirect #{target.redirect_counter + 1} from #{target.target} to #{redirect_url}" if $verbose > 1
-		      scanner.add_target(redirect_url, target.redirect_counter + 1)
-		      return true
-		    else
-		      error("ERROR Too many redirects: #{target} => #{redirect_url}")
-		    end
-		  end
-		  false
-		end
-
-	end
+  class Redirect
+    # adds Target to Scanner
+    # returns true if it redirects, otherwise false
+    def initialize(target, scanner, max_redirects)
+      # check for redirection
+      if redirect_url = target.get_redirection_target
+        if target.redirect_counter < max_redirects
+          # pp target.redirect_counter, redirect_url
+          puts "redirect #{target.redirect_counter + 1} from #{target.target} to #{redirect_url}" if $verbose > 1
+          scanner.add_target(redirect_url, target.redirect_counter + 1)
+          return true
+        else
+          error("ERROR Too many redirects: #{target} => #{redirect_url}")
+        end
+      end
+      false
+    end
+  end
 end
