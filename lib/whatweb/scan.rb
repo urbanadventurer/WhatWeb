@@ -118,15 +118,27 @@ module WhatWeb
     #
     # Make a list of targets from a list of URLs and/or input file
     #
-    def make_target_list(urls, opts)
-      url_list = urls
-      inputfile = opts[:input_file] || nil
+    def make_target_list(urls, opts = {})
+      url_list = []
 
+      # parse URLs
+      if urls.is_a?(Array)
+        urls.flatten.reject { |u| u.nil? }.map { |u| u.strip }.reject { |u| u.eql?('') }.each do |url|
+          url_list << url
+        end
+      end
+
+      # parse input file
       # read each line as a url, skipping lines that begin with a #
+      inputfile = opts[:input_file] || nil
       if !inputfile.nil? && File.exist?(inputfile)
         pp "loading input file: #{inputfile}" if $verbose > 2
-        url_list += File.open(inputfile).readlines.each(&:strip!).delete_if { |line| line =~ /^#.*/ }.each { |line| line.delete!("\n") }
+        File.open(inputfile).readlines.each(&:strip!).reject { |line| line.start_with?('#') || line.eql?('') }.each do |line|
+          url_list << line
+        end
       end
+
+      return [] if url_list.empty?
 
       genrange = url_list.map do |x|
         range = nil
