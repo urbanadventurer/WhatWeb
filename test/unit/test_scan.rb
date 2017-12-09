@@ -31,12 +31,24 @@ class WhatWebTest < Minitest::Test
   end
 
   def test_invalid_url
-    WhatWeb::Scan.new(nil)
-    WhatWeb::Scan.new('')
-    WhatWeb::Scan.new([])
-    WhatWeb::Scan.new({})
-    WhatWeb::Scan.new([[]])
-    WhatWeb::Scan.new([{}])
+    assert_raises 'No targets selected' do
+      WhatWeb::Scan.new(nil)
+    end
+    assert_raises 'No targets selected' do
+      WhatWeb::Scan.new('')
+    end
+    assert_raises 'No targets selected' do
+      WhatWeb::Scan.new([])
+    end
+    assert_raises 'No targets selected' do
+      WhatWeb::Scan.new({})
+    end
+    assert_raises 'No targets selected' do
+      WhatWeb::Scan.new([[]])
+    end
+    assert_raises 'No targets selected' do
+      WhatWeb::Scan.new([{}])
+    end
   end
 
   def test_scanner
@@ -59,9 +71,10 @@ class WhatWebTest < Minitest::Test
       WhatWeb::Redirect.new(target, scanner, max_redirects)
 
       whatweb_result = WhatWeb::Parser.parse(target, result)
-      assert(whatweb_result[0])
-      assert(whatweb_result[1])
-      assert_equal('Country', whatweb_result[2].first[0])
+      assert(whatweb_result['target'])
+      assert(whatweb_result['status'])
+      assert(whatweb_result['result'])
+      assert_equal('Country', whatweb_result['result'].first[0])
     end
   end 
 end
