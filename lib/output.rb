@@ -1221,7 +1221,7 @@ class OutputSQL < Output
     @f.puts query
    
 		insert = [escape_for_sql(JSON.dump(foo[:request_config]))].join(",")
-		query = "INSERT INTO request_configs (value) VALUES (#{insert})"
+		query = "INSERT INTO request_configs (value) VALUES (#{insert});"
 		@f.puts query
     
     foo[:plugins].each do |x|
