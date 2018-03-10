@@ -21,7 +21,7 @@ website "http://typo3.com/"
 matches [
 
 # Version Detection # Meta Generator
-{ :version=>/<meta name="generator" content="TYPO3 ([\d\.]+) CMS"( \/)?>/, :offset=>0 },
+{ :version=>/<meta name="generator" content="TYPO3 ([\d\.]+) CMS"/ },
 
 # HTML Comment
 { :text=>'<!--TYPO3SEARCH_end-->', :certainty=>75 },
