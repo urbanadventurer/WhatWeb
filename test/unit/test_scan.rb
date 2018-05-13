@@ -74,7 +74,8 @@ class WhatWebTest < Minitest::Test
       assert(whatweb_result['target'])
       assert(whatweb_result['status'])
       assert(whatweb_result['result'])
-      assert_equal('Country', whatweb_result['result'].first[0])
+      countries = whatweb_result['result'].select { |a| a[0] == 'Country' }
+      assert_equal('Country', countries.first[0])
     end
   end 
 end
