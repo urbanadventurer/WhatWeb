@@ -374,9 +374,6 @@ Character set detection, with the Charset plugin dramatically decreases performa
 
 ## Optional Dependencies
 
-To enable JSON logging install the json gem.
-    gem install json
-
 To enable MongoDB logging install the mongo gem.
     gem install mongo
 
