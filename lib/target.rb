@@ -336,9 +336,16 @@ class Target
 
     # HTTP 3XX redirect
     if (300..399) === @status && @headers && @headers['location']
-      # downcase location scheme
-      location = @headers['location'].gsub(/^HTTPS:\/\//, 'https://').gsub(/^HTTP:\/\//, 'http://')
-      newtarget_h = URI.join(@target, location).to_s
+
+      location = @headers['location']
+      begin
+        newtarget_h = URI.join(@target, location).to_s
+      rescue
+        # the combinaton of the current target and the new location must be invalid 
+        error("Error: Invalid redirection from #{@target} to #{location}")
+        return nil
+      end
+
     end
 
     # if both meta refresh location and HTTP location are set, then the HTTP location overrides
