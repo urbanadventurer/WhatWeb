@@ -30,7 +30,7 @@ class LoggingSQL < Logging
     # pp foo[:request_config]
 
     insert = [escape_for_sql(JSON.dump(foo[:request_config]))].join(',')
-    query = "INSERT IGNORE INTO request_configs (value) VALUES (#{insert})"
+    query = "INSERT IGNORE INTO request_configs (value) VALUES (#{insert});"
     @f.puts query
     ##
   end
