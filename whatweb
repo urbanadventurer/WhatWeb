@@ -47,6 +47,7 @@ require 'rbconfig'  # detect environment, e.g. windows or linux
 require 'resolv'
 require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
+require 'openssl'
 
 
 ## set up load paths - must be before loading lib/ files
