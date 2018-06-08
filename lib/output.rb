@@ -957,6 +957,7 @@ class OutputElastic < Output
 
 		url = URI('http://' + @host + '/' + @index + '/whatwebresult')
 		req = Net::HTTP::Post.new(url)
+    req.add_field('Content-Type', 'application/json')
 		req.body = JSON::generate(foo)
 		res = Net::HTTP.start(url.hostname, url.port) {|http|
 			http.request(req)
