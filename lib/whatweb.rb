@@ -27,6 +27,8 @@ require 'resolv'
 require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
 require 'digest/md5'
+require 'openssl' # required for Ruby version ~> 2.4
+
 
 # WhatWeb libs
 require './lib/whatweb/version.rb'
