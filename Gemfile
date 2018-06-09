@@ -33,4 +33,5 @@ group :test do
   gem 'rubocop'
   gem 'rdoc'
   gem 'bundler-audit'
+  gem 'pry'
 end
