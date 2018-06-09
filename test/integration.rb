@@ -233,5 +233,21 @@ class WhatWebTest < Minitest::Test
 # www.ødegaard.dk
 # http://www.詹姆斯.com/
 
+
+  def test_deprecated_plugin_format
+#    plugins = PluginSupport.load_plugins("plugins/deprecated-plugin-format.rb")
+#    assert(plugins)
+    p = IO.popen(['./whatweb',
+      '-p','./test/plugins/deprecated-plugin-format.rb','https://',
+      "#{@test_host}/"], 'r+')
+    res = p.read.to_s
+    p.close
+    assert res
+    assert_match %r{deprecated plugin format}, res
+
+  end
+
+
+
 end
 
