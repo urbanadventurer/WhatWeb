@@ -15,9 +15,13 @@
 # You should have received a copy of the GNU General Public License
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
+# Debugging
 # require 'profile' # debugging
-require 'getoptlong'
+require 'pry' # use binding.pry in code to debug
 require 'pp'
+
+# Standard Ruby
+require 'getoptlong'
 require 'net/http'
 require 'open-uri'
 require 'cgi'
@@ -28,7 +32,6 @@ require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
 require 'digest/md5'
 require 'openssl' # required for Ruby version ~> 2.4
-
 
 # WhatWeb libs
 require './lib/whatweb/version.rb'
