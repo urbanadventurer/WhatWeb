@@ -21,14 +21,22 @@ class PluginSupport
   # this is used by load_plugins
   def self.load_plugin(f)
     load f
-  rescue => err
-    error("Error: failed to load - #{err}")
+
+  rescue ArgumentError => err
+    if err.message =~ /wrong number of arguments \(given 1, expected 0\)/
+      # this error can be caused by other reasons
+      error("Error loading plugin #{f}. This plugin may be using a deprecated plugin format for WhatWeb version < 0.5.0. Error message: #{err.message}")
+    end
+    raise if $WWDEBUG == true
+
   rescue SyntaxError => err
-    error("Error: Failed to load - #{err}")
-  rescue SystemExit, Interrupt
-    error('ERROR: Failed to load plugins: Interrupted')
-    raise if $WWDEBUG == true || $verbose > 1
-    exit 1 # exit only for debugging
+    error("Error loading plugin #{f}. Error details: #{err.message}")
+    raise if $WWDEBUG == true
+
+  rescue Interrupt
+    error("Interrupt detected. Failed to load plugin #{f}.")
+    raise if $WWDEBUG == true
+    exit 1 # exit with ctrl-c
   end
 
   # precompile regular expressions in plugins for performance
