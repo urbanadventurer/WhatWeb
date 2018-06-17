@@ -267,6 +267,7 @@ def $semaphore.reentrant_synchronize(&work)
   $semaphore.lock
   $semaphore.unlock
 rescue ThreadError
+  raise if $WWDEBUG
   work.call
 else
   $semaphore.synchronize(&work)
