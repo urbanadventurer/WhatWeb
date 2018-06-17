@@ -253,14 +253,14 @@ class Target
         @body = @body.scan(/^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m).flatten.first
       end
     end
-  rescue => err
+  rescue
     raise
   end
 
   def open_url(options)
     begin
       @ip = Resolv.getaddress(@uri.host)
-    rescue => err
+    rescue
       raise
     end
 
@@ -352,7 +352,7 @@ class Target
     if newtarget_m || newtarget_h
       case $FOLLOW_REDIRECT
       when 'never'
-        no_redirects = true # this never gets back to main loop but no prob
+        # no_redirects = true # this never gets back to main loop but no prob
       when 'http-only'
         newtarget = newtarget_h
       when 'meta-only'
