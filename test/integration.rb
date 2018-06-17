@@ -230,9 +230,6 @@ class WhatWebTest < Minitest::Test
     assert_match %r{WhatWeb - Next generation web scanner.}, res
   end
   
-# add test for IDN name
-# www.ødegaard.dk
-# http://www.詹姆斯.com/
 
   def test_inform_user_deprecated_plugin
   # using Open3 to access stderr 
@@ -243,6 +240,18 @@ class WhatWebTest < Minitest::Test
     Open3.popen3 (cmd) do |stdin, stdout, stderr, wait_thr|
       assert_includes stderr.read, "This plugin may be using a deprecated plugin format"
     end
+  end
+
+
+  def test_idn_domains
+    p = IO.popen(['./whatweb',
+      '--color', 'never',
+      "http://www.詹姆斯.com/"], 'r+')
+
+    res = p.read.to_s
+    p.close
+    assert res
+    assert_includes res, "http://www.xn--8ws00zhy3a.com/ [200 OK]"
   end
 
 
