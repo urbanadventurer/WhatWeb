@@ -120,7 +120,7 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
           # added this
           x, raw = ExtendedHTTPResponse.read_new(@socket)
           @raw << raw
-          res = x.value
+          # res = x.value
           #
         end
 
@@ -245,7 +245,7 @@ class ExtendedHTTPResponse < Net::HTTPResponse # reopen
     end
     yield key, value if key
   end
-end
+  end
 
   ###################
 
