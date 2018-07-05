@@ -545,8 +545,12 @@ begin
         raise("Could not read cookies from #{arg}.")
       end
     when '-u', '--user'
-      $BASIC_AUTH_USER = arg.split(':').first
-      $BASIC_AUTH_PASS = arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
+      if arg.include?(':')
+        $BASIC_AUTH_USER, $BASIC_AUTH_PASS = arg.split(":", 2)
+      else
+        raise("Incorrect credentials format.")
+      end
+
     when '--debug'
       $WWDEBUG = true
     when '--short-help'
