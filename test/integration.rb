@@ -254,6 +254,5 @@ class WhatWebTest < Minitest::Test
     assert_includes res, "http://www.xn--8ws00zhy3a.com/ [200 OK]"
   end
 
-
 end
 
