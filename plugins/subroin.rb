@@ -6,7 +6,7 @@
 ##
 # Dhiraj Mishra <@mishradhiraj_>
 
-Plugin.define 'phpmyfaq' do
+Plugin.define 'subrion' do
   author 'Dhiraj Mishra'
   version '0.1'
   description 'Subrion is a PHP/MySQL based CMS & framework that allows you to build websites for any purpose. Yes, from blog to corporate mega portal.'
