@@ -12,15 +12,18 @@ Plugin.define 'subrion' do
   description 'Subrion is a PHP/MySQL based CMS & framework that allows you to build websites for any purpose. Yes, from blog to corporate mega portal.'
   website 'Homepage: https://subrion.org/'
 
-# Dorks #
 dorks [
 '"Powered by subrion"'
 ]
-  
-# Matches #
+
   matches [
+    { :name => 'title', :text=>'<title>Home :: Powered by Subrion 4.0</title>' },
+    { :name => 'title', :text=>'<title>Home :: Powered by Subrion 4.2</title>' },
+    { :name => 'title', :text=>'<title>iaBootstrap :: Powered by Subrion 3.2</title>' },
+    { :name => 'title', :text=>'<title>Car Listings :: Powered by Subrion 2.3</title>' },
     { :name => 'favicon', :url => '/favicon.ico', :md5 => '09BDDB30D6AE11E854BFF82ED638542B'},
-    { :name => 'powered by', :text=>' <meta property="og:url" content="https://subrion.org/">' },
-    { :name => 'powered by', :text=>'<meta name="generator" content="Subrion CMS - Open Source Content Management System">' },
+    { :name => 'powered by', :text=>'<meta property="og:url" content="https://subrion.org/">' },
+    { :name => 'meta', :text=>'<meta name="generator" content="Subrion CMS 2.3.1 - Open Source Content Management System" />' },
   ]
+
 end
