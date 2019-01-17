@@ -3,8 +3,8 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
-## Version 0.6 # 2019-01-19
-# Updated version detection list up to wordpress 5.0.2
+## Version 0.6 # 2019-01-19 # @ajgon (Igor Rzegocki)
+# Updated version detection list from Wordpress 3.9.1 to 5.0.2.
 ##
 # Version 0.5 # 2012-03-05
 # Added regex version detection for /readme.html
@@ -17,7 +17,7 @@
 ##
 Plugin.define 'WordPress' do
   author 'Andrew Horton'
-  version '0.5'
+  version '0.6'
   description 'WordPress is an opensource blogging system commonly used as a CMS.'
   website 'http://www.wordpress.org/'
 
