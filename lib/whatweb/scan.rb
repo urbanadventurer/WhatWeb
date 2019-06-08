@@ -72,7 +72,7 @@ module WhatWeb
 
         # more defensive than comparing against max_threads
         alive = workers.map { |worker| worker if worker.alive? }.compact.length
-        break if alive == @target_queue.num_waiting # && result_queue.empty?
+        break if alive == @target_queue.num_waiting and @target_queue.empty?
       end
 
       # Shut down workers, logging, and plugins
