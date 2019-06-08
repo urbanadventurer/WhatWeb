@@ -15,6 +15,7 @@ Version 0.4.9 November 23rd 2017
 * Updated IP to Country database
 * Updated man page
 * Updated Mongo DB output for Mongo 2.x
+* Fix bug causing WhatWeb to exit with no output. Thanks @mguillau42 for tracking down this race condition.
 
 Version 0.4.8-dev (Continuous release 2012 - 2017)
 
