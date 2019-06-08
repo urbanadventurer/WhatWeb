@@ -1021,7 +1021,7 @@ loop do
   break if result_mutex.synchronize do
     # more defensive than comparing against $MAX_THREADS
     alive = workers.map { |worker| worker if worker.alive? }.compact.length
-    alive == target_queue.num_waiting and result_queue.empty?
+    alive == target_queue.num_waiting and result_queue.empty? and target_queue.empty?
   end
   if result_queue.empty?
     sleep 0.1
