@@ -424,17 +424,9 @@ begin
       puts "SQL CREATE statements written to #{arg}"
       exit
     when '--log-json'
-      if defined?(JSON)
-        logging_list << LoggingJSON.new(arg)
-      else
-        raise('Sorry. The JSON gem is required for JSON output')
-      end
+      logging_list << LoggingJSON.new(arg)
     when '--log-json-verbose'
-      if defined?(JSON)
-        logging_list << LoggingJSONVerbose.new(arg)
-      else
-        raise('Sorry. The JSON gem is required for JSONVerbose output')
-      end
+      logging_list << LoggingJSONVerbose.new(arg)
     when '--log-mongo-collection'
       if defined?(Mongo) && defined?(CharDet)
         mongo[:collection] = arg
