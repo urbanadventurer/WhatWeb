@@ -80,7 +80,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner version 0.4.9.
+WhatWeb - Next generation web scanner version 0.5.0.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
@@ -111,7 +111,7 @@ AGGRESSION:
       all plugins are used for all URLs.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.4.9.
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.5.0.
   --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
                         header will replace it. Specifying an empty value, eg.
                         "User-Agent:" will remove the header.
@@ -212,10 +212,6 @@ EXAMPLE USAGE:
   ./whatweb -i plugin-development/alexa-top-100.txt \
   --url-suffix /crossdomain.xml -p crossdomain_xml
 
-OPTIONAL DEPENDENCIES
---------------------------------------------------------------------------------
-To enable MongoDB logging install the mongo gem.
-To enable character set detection and MongoDB logging install the rchardet gem.
 ```
 
 ## Logging & Output
