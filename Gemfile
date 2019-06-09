@@ -34,4 +34,5 @@ group :test do
   gem 'rdoc'
   gem 'bundler-audit'
   gem 'pry'
+  gem 'rb-readline' # needed by pry on some systems
 end
