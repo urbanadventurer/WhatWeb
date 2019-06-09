@@ -2,7 +2,7 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# http://www.morningstarsecurity.com/research/whatweb
+# https://www.morningstarsecurity.com/research/whatweb
 ##
 require 'minitest/autorun'
 require 'open3'
@@ -18,7 +18,7 @@ class WhatWebTest < Minitest::Test
     res = p.read.to_s
     p.close
     assert res
-    assert res =~ %r{^WhatWeb version ([\d\.]+(-dev)?) \( http://www.morningstarsecurity.com/research/whatweb/ \)$}
+    assert res =~ %r{^WhatWeb version ([\d\.]+(-dev)?) \( https://www.morningstarsecurity.com/research/whatweb/ \)$}
   end
 
   def test_usage
