@@ -29,8 +29,8 @@ required_gems.each do |thisgem|
   else
     puts "WhatWeb is not installed and is missing dependencies.\nThe following gems are missing:"
 
-    missing_gems = required_gems.map.select { |thisgem| thisgem unless gem_available?(thisgem) }
-    missing_gems.sort.each {|thisgem| puts " - #{thisgem}" }
+    missing_gems = required_gems.map.select { |thisgem2| thisgem2 unless gem_available?(thisgem2) }
+    missing_gems.sort.each {|thisgem2| puts " - #{thisgem2}" }
 
     puts "\nTo install run the following command from the WhatWeb folder:\n'bundle install'\n\n"
     exit 1
