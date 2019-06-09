@@ -74,7 +74,7 @@ Version 0.5.0 - In development
 	tribune.rb - Shuai Lin (@lins05)
 	genexus.rb - Daniel Maldonado (@elcodigok)
 
-* 29 plugins updated
+* 31 plugins updated
 	3dcart.rb - Bhavin Senjaliya (@bhavin1223)
 	asp-net.rb - Bhavin Senjaliya (@bhavin1223)
 	big-commerce.rb  - Bhavin Senjaliya (@bhavin1223)
@@ -104,6 +104,8 @@ Version 0.5.0 - In development
 	wordpress.rb - @SlivTaMere
 	joomla.rb (aggressive version detection) - @anozoozian
 	wordpress.rb (aggressive version detection) - @anozoozian
+	jquery.rb - Janosch Maier (@Phylu)
+	typo3.rb - Janosch Maier (@Phylu)
 	+ 30 plugin updates by Andrew Horton (@urbanadventurer)
 
 Version 0.4.9 November 23rd 2017
