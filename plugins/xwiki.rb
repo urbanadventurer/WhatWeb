@@ -7,9 +7,10 @@
 Plugin.define do
 name "XWiki"
 authors [
-  "Brendan Coles <bcoles@gmail.com>", # 2011-11-08
+  "Brendan Coles <bcoles@gmail.com>", # v0.1 # 2011-11-08
+  "Andrew Horton", # v0.2 # 2019-07-10 # Fix warning: character class has duplicated range
 ]
-version "0.1"
+version "0.2"
 description "XWiki - Open Source Wiki and Content-Oriented Application Platform"
 website "http://www.xwiki.org/"
 
@@ -37,7 +38,7 @@ matches [
 { :text=>'<div id="xwikilicence">' },
 
 # Version Detection # div id="xwikiplatformversion"
-{ :version=>/<div id="xwikiplatformversion">(Powered by )?(XWiki Enterprise )?([^\s^<^>]+)/, :offset=>2 },
+{ :version=>/<div id="xwikiplatformversion">(Powered by )?(XWiki Enterprise )?([^\s<>]+)/, :offset=>2 },
 
 ]
 
