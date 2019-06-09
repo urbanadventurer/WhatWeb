@@ -18,7 +18,7 @@
 # Debugging
 # require 'profile' # debugging
 require 'pry' # use binding.pry in code to debug
-require 'pp'
+require 'rb-readline' # needed by pry on some systems
 
 # Standard Ruby
 require 'getoptlong'
@@ -32,6 +32,7 @@ require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
 require 'digest/md5'
 require 'openssl' # required for Ruby version ~> 2.4
+require 'pp'
 
 # WhatWeb libs
 require_relative 'whatweb/version.rb'
@@ -86,12 +87,22 @@ end
 # Initialize HTTP Status class
 HTTP_Status.initialize
 
-# Look for directories 'plugins' and 'my-plugins'
-# in the the WhatWeb root directory and ~/.whatweb directory
-PLUGIN_DIRS = []
-[ File.expand_path('..', __FILE__), "#{Dir.home}/.whatweb/" ].map do |dir|
-  ['plugins', 'my-plugins'].each do |plugin_dir|
-    PLUGIN_DIRS << plugin_dir if File.exist? plugin_dir
-  end
-end
 
+PLUGIN_DIRS = []
+
+# Load plugins from only one location
+# Check for plugins in folders relative to the whatweb file first
+# __dir__ follows symlinks
+# this will work when whatweb is a symlink in /usr/bin/
+$load_path_plugins = [
+	File.expand_path('../', __dir__),
+	"/usr/share/whatweb" # location Makefile installs into, also used in Kali
+]
+
+$load_path_plugins.each do |dir|
+	if Dir.exists?(File.expand_path("plugins", dir)) and Dir.exists?(File.expand_path("my-plugins", dir))
+		PLUGIN_DIRS << File.expand_path("plugins", dir)
+		PLUGIN_DIRS << File.expand_path("my-plugins", dir)
+		break
+	end
+end
