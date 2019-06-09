@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "RFI-Scanner-Bot" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
+Plugin.define do
+name "RFI-Scanner-Bot"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-15
+]
 version "0.1"
 description "This plugin idenitfies instances of Remote File Include Scanner bots (aka feelscanz.pl, gmjk.pl, FeeLCoMz.pl, rfi.pl) and extracts the command and control servers, channels and passwords."
 
@@ -15,7 +18,7 @@ description "This plugin idenitfies instances of Remote File Include Scanner bot
 
 
 # Extract bot config
-def passive
+passive do
 	m=[]
 
 	if @body =~ /^## + RFI Scan & Exploit \(Exploit per engine\)        ##/ or @body =~ /^######################################################/ or @body =~ /^##   perl feelscanz.pl <chan w\/o #> <server> <port> ##/ or @body =~ /##\[ RUTIN SEARCH ENGINE \]##/ or @body =~ /^## + Fixed cryptz command \(v4.5\)/ and @body =~ /^#!\/usr\/bin\/perl/

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Site4" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
+Plugin.define do
+name "Site4"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-01
+]
 version "0.1"
 description "Site4 is a danish CMS system for webshops and homepages."
 website "http://www.Site4.dk/"

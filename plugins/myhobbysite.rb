@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-16 #
-# Updated version detection
-##
-Plugin.define "MyHobbySite" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
+Plugin.define do
+name "MyHobbySite"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-12
+  # v0.2 # 2011-02-16 # Updated version detection. 
+]
 version "0.2"
 description "MyHobbySite is a website Content Management System (CMS) programmed in PHP and tailored specifically for collectors of live music. Like any other CMS, MyHobbySite supports page creation, file management, and dynamic text editing via a WYSIWYG editor."
 website "http://www.myhobbysite.net/"

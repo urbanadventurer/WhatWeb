@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DV-Cart" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
+Plugin.define do
+name "DV-Cart"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-22
+]
 version "0.1"
 description "DV Cart - fully featured Shopping Cart software - Requires: PHP and MySQL"
 website "http://www.esmistudio.com/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sweetrice" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
+Plugin.define do
+name "Sweetrice"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-26
+]
 version "0.1"
 description "SweeRice is a simple website management system ,it is not just free and open source, it provides popular functions such as SEO."
 website "http://www.basic-cms.org/"

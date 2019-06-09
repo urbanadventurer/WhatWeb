@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Aurion" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
+Plugin.define do
+name "Aurion"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-25
+]
 version "0.1"
 description "Integrated HR and Payroll software available online, hosted or in-house. [Australian]"
 website "http://www.aurion.com.au/"

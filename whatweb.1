@@ -1,4 +1,4 @@
-.TH WHATWEB 1 "November 23rd, 2017"
+.TH WHATWEB 1 "June 8th, 2018"
 .SH NAME
 WhatWeb \- Next generation Web scanner. Identify technologies used by websites.
 .SH SYNOPSIS
@@ -9,7 +9,7 @@ WhatWeb \- Next generation Web scanner. Identify technologies used by websites.
 .br
 .SH DESCRIPTION
 .PP
-WhatWeb identifies websites. It's goal is to answer the question, "What is that Website?". WhatWeb recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. WhatWeb has over 1700 plugins, each to recognise something different. WhatWeb also identifies version numbers, email addresses, account ID's, web framework modules, SQL errors, and more.
+WhatWeb identifies websites. It's goal is to answer the question, "What is that Website?". WhatWeb recognises web technologies including content management systems (CMS), blogging platforms, statistic/analytics packages, JavaScript libraries, web servers, and embedded devices. WhatWeb has over 1800 plugins, each to recognise something different. WhatWeb also identifies version numbers, email addresses, account ID's, web framework modules, SQL errors, and more.
 
 WhatWeb can be stealthy and fast, or thorough but slow. WhatWeb supports an aggression level to control the trade off between speed and reliability. When you visit a website in your browser, the transaction includes many hints of what web technologies are powering that website. Sometimes a single webpage visit contains enough information to identify a website but when it does not, WhatWeb can interrogate the website further. The default level of aggression, called 'passive', is the fastest and requires only one HTTP request of a website. This is suitable for scanning public websites. More aggressive modes were developed for in penetration tests.
 
@@ -19,7 +19,7 @@ Most WhatWeb plugins are thorough and recognise a range of cues from subtle to o
 .B
 Features:
 .TP
-	* Over 1700 plugins
+	* Over 1800 plugins
 .TP
 	* Control the trade off between speed/stealth and reliability
 .TP
@@ -35,19 +35,21 @@ Features:
 .TP
 	* Control over webpage redirection
 .TP
-	* Nmap-style IP ranges
+	* IP address ranges
 .TP
 	* Fuzzy matching
 .TP
 	* Result certainty awareness
 .TP
 	* Custom plugins defined on the command line
+.TP
+	* IDN (International Domain Name) support
 
 
 .SH TARGET SELECTION
 .TP
-.B \<URLs\>
-Enter URLs, filenames or nmap-format IP ranges. Use /dev/stdin to pipe HTML directly
+.B \<TARGETs\>
+Enter URLs, hostnames, IP adddresses, filenames or IP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x format.
 .TP
 .B \-\-input-file=FILE \-i
 Identify URLs found in FILE
@@ -82,7 +84,7 @@ Identify as AGENT instead of WhatWeb/0.4.9.
 Add an HTTP header. eg "Foo:Bar". Specifying a default header will replace it. Specifying an empty value, e.g. "User-Agent:" will remove it.
 .TP
 .B  \-\-follow\-redirect=WHEN
-Control when to follow redirects. WHEN may be `never', `http-only', `meta-only', `same-site', `same-domain' or `always'. Default: always.
+Control when to follow redirects. WHEN may be `never', `http-only', `meta-only', `same-site', or `always'. Default: always.
 .TP
 .B  \-\-max\-redirects=NUM
 Maximum number of redirects. Default: 10.
@@ -124,8 +126,13 @@ title,md5,+./plugins-disabled/
 \-p + is a shortcut for -p +plugins\-disabled.
 .ni
 .TP
-.B  \-\-grep, \-g=STRING
-Search for STRING in HTTP responses. Reports with a plugin named Grep.
+.B  \-\-grep, \-g=STRING|REGEXP
+Search for STRING or a Regular Expression. Shows only the results that match.
+.TP
+.nf
+Examples: \-\/-grep "hello"
+\-\-grep "/he[l]*o/"
+.ni
 .TP
 .B  \-\-custom\-plugin=DEFINITION
 Define a custom plugin named Custom-Plugin,
@@ -265,6 +272,9 @@ Report bugs and feature requests to https://github.com/urbanadventurer/WhatWeb
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles).
 
 .SH HOMEPAGE
-http://www.morningstarsecurity.com/research/whatweb
+https://www.morningstarsecurity.com/research/whatweb
+
+.SH SOURCECODE
+https://github.com/urbanadventurer/WhatWeb/
 .PP
 

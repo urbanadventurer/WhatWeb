@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WebSocket" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-27
+Plugin.define do
+name "WebSocket"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-27
+]
 version "0.1"
 description "WebSocket is a technology providing for bi-directional, full-duplex communications channels, over a single Transmission Control Protocol (TCP) socket. - More info: https://secure.wikimedia.org/wikipedia/en/wiki/WebSocket - Protocol: https://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-12"
 

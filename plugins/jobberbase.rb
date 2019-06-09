@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Update regex and ghdb matches
-##
-Plugin.define "jobberBase" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
+Plugin.define do
+name "jobberBase"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-06
+  # v0.2 # Update regex and ghdb matches. 
+]
 version "0.2"
 description "jobberBase is the open-source job board software that helps you set up a jobsite in minutes!"
 website "http://www.jobberbase.com/"

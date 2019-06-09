@@ -4,23 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2016-05-1 # Brendan Coles
-# Updated phpMyAdmin Cookie
-##
-# Version 0.4 # 2012-08-16 # Andrew Horton
-# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
-##
-# Version 0.3 # 2011-04-06 #
-# Added aggressive md5 matches
-##
-# Version 0.2 #
-# Updated regex
-# Added version detection
-# Added favicon md5 hash
-# Added cookie matches
-##
-Plugin.define "phpMyAdmin" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
+Plugin.define do
+name "phpMyAdmin"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-01 
+  # v0.2 # Updated regex. Added version detection. Added favicon md5 hash. Added cookie matches. 
+  # v0.3 # 2011-04-06 # Added aggressive md5 matches. 
+  "Andrew Horton", # v0.4 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array. 
+  # Brendan Coles <bcoles@gmail.com> # v0.5 # 2016-05-1 # Updated phpMyAdmin Cookie. 
+]
 version "0.5"
 description "phpMyAdmin is a free software tool written in PHP intended to handle the administration of MySQL over the World Wide Web."
 website "http://www.phpmyadmin.net/home_page/index.php"
@@ -63,7 +55,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Cookies
@@ -75,7 +67,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 # the paths are relative to the url path if they don't start with /

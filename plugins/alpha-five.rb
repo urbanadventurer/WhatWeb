@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Alpha-Five" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
+Plugin.define do
+name "Alpha-Five"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-20
+]
 version "0.1"
 description "The Alpha Five Application Server allows you to deploy the web applications you build with Alpha Five Developer. Each license allows you to install the server on one PC. - https://www.alphasoftware.com/shop/"
 

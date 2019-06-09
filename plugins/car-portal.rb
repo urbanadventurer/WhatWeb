@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Car-Portal" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-30
+Plugin.define do
+name "Car-Portal"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-30
+]
 version "0.1"
 description "Car Portal is a powerful, professional looking and easy customizable php script for running auto classieds websites."
 website "http://www.netartmedia.net/carsportal"

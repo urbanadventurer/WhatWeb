@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BloofoxCMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+Plugin.define do
+name "BloofoxCMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "bloofoxCMS is a free open source content management system (CMS). bloofoxCMS is a small and easy to use CMS."
 website "http://bloofox.com/"

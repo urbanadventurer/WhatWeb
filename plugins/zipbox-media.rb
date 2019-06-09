@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ZIPBOX-Media" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
+Plugin.define do
+name "ZIPBOX-Media"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-13
+]
 version "0.1"
 description "With ZIPBOX start selling digital music, images, videos, books and more with your own secure online customizable website with credit card processing, file storage and much more."
 website "http://www.zipboxmedia.com/"

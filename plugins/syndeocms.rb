@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "SyndeoCMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
+Plugin.define do
+name "SyndeoCMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-06
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "A Content Management System (CMS) for primary schools, which helps you manage and maintain your website. It can also be a very usefull CMS for small companies or non profit organizations. "
 website "http://www.syndeocms.org"

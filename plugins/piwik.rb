@@ -4,12 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "Piwik" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
-version "0.2"
+Plugin.define do
+name "Piwik"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-06
+  # v0.2 # 2011-02-25 # Updated version detection. 
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.3 # 2016-08-19 # Added _pk_ cookie. 
+]
+version "0.3"
 description "Piwik is a downloadable, open source (GPL licensed) real time web analytics software program."
 website "http://piwik.org/"
 
@@ -38,18 +40,12 @@ matches [
 # Version Detection # Meta Generator
 { :version=>/<meta name=\"generator\"[^>]*content=\"Piwik ([0-9\.]+)/ },
 
+# Cookies
+{ :search => "headers[set-cookie]", :regexp => /^_pk_/, :name=>"_pk_ cookie" },
+{ :search => "headers[set-cookie]", :regexp => /^PIWIK_SESSID/, :name=>"PIWIK_SESSID cookie" },
+
 ]
 
-# Passive #
-def passive
-        m=[]
-
-	# PIWIK_SESSID Cookie
-	m << { :name=>"PIWIK_SESSID Cookie" } if @headers["set-cookie"] =~ /PIWIK_SESSID/
-        
-	# Return passive matches
-	m
-end
 
 end
 

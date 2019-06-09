@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Fixed regex
-##
-Plugin.define "PHP-Link-Directory" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
+Plugin.define do
+name "PHP-Link-Directory"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-13 
+  # v0.2 # Fixed regex. 
+]
 version "0.2"
 description "phpLD is the most widely used directory script on the internet, installed on over 100,000 websites. phpLD is a great addition to any site, and is easy to install."
 website "http://www.phplinkdirectory.com/"

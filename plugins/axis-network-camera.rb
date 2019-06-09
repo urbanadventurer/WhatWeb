@@ -4,17 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-31 #
-# Updated regex
-##
-# Version 0.2 # 2011-01-07 #
-# Updated version detection
-# Updated matches
-# Added model detection
-# Added module detection
-##
-Plugin.define "Axis-Network-Camera" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-29
+Plugin.define do
+name "Axis-Network-Camera"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-29
+  # v0.2 # 2011-01-07 # Updated version detection. Updated matches. Added model detection. Added module detection. 
+  # v0.2 # 2011-03-31 # Updated regex. 
+]
 version "0.2"
 description "Axis network camera"
 website "http://www.axis.com/"

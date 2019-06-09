@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-01-26 #
-# Updated regex
-##
-# Version 0.2
-# remove :certainty
-##
-Plugin.define "MetaGenerator" do
-author "Andrew Horton"
+Plugin.define do
+name "MetaGenerator"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty. 
+  # v0.3 # 2011-01-26 # Updated regex. 
+]
 version "0.3"
 description "This plugin identifies meta generator tags and extracts its value."
 

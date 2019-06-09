@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "VidiScript" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
+Plugin.define do
+name "VidiScript"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-24
+]
 version "0.1"
 description "VidiScript - video sharing script"
 website "http://www.VidiScript.com"

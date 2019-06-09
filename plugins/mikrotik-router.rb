@@ -4,15 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2
-# remove :certainty & :name 
-# Version 0.3
-# Uses :version=>//
-# Version 0.4
-# Added md5 match for 401 page
-##
-Plugin.define "MikroTik" do
-author "Andrew Horton"
+Plugin.define do
+name "MikroTik"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty & :name . 
+  # v0.3. Uses :version=>//. 
+  # v0.4. Added md5 match for 401 page. 
+]
 version "0.4"
 description "MikroTik router"
 website "http://www.mikrotik.com"

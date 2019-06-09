@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-
-Plugin.define "IBM-Internet-Connection-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-07
+Plugin.define do
+name "IBM-Internet-Connection-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-07
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "IBM Internet Connection Server - Homepage [offline] : http://www.ics.raleigh.ibm.com"
 

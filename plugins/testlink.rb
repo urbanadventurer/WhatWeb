@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TestLink" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-21
+Plugin.define do
+name "TestLink"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-21
+]
 version "0.1"
 description "TestLink - open source test management tool"
 website "http://www.teamst.org/"

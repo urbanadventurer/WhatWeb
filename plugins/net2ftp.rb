@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "net2ftp" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-30
+Plugin.define do
+name "net2ftp"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-30
+]
 version "0.1"
 description "net2ftp is a web based FTP client"
 website "http://www.net2ftp.com/"

@@ -4,12 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# remove :name & :certainty
-
-Plugin.define "ModxCMS" do
-  author "Andrew Horton"
+Plugin.define do
+name "ModxCMS"
+authors [
+  "Andrew Horton",
+]
   version "0.2"
   description "OpenSource CMS written in PHP."
   website "http://modxcms.com/"
@@ -36,7 +35,7 @@ Plugin.define "ModxCMS" do
   
   
   # Aggressive #
-  def aggressive
+  aggressive do
     m = []
 
     versions = Hash[
@@ -234,7 +233,7 @@ Plugin.define "ModxCMS" do
     m
   end
 
-  def passive
+  passive do
     m=[]
     m << {:name=>"SN4 Cookie", :certainty=>75 } if @headers["set-cookie"] =~ /^SN4[a-z0-9]{12}=/
     m << {:name=>"P3P" } if @headers["P3P"] =~ /CP="NOI NID ADMa OUR IND UNI COM NAV"/

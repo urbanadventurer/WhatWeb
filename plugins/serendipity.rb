@@ -4,17 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2014-10-12 # Napz
-# Added Serendipity text search
-##
-# Version 0.3 # 2012-08-16 # Andrew Horton
-# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
-##
-# Version 0.2 # 2011-04-09 # Brendan Coles <bcoles at gmail dot com>
-# Added aggressive md5 matches
-##
-Plugin.define "Serendipity" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
+Plugin.define do
+name "Serendipity"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-24
+  "Brendan Coles <bcoles at gmail dot com>", # v0.2 # 2011-04-09 # Added aggressive md5 matches. 
+  "Andrew Horton", # v0.3 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array. 
+  "Napz", # v0.4 # 2014-10-12 # Added Serendipity text search. 
+]
 version "0.3"
 description "Serendipity - a PHP Weblog/Blog software. Serendipity is a PHP-powered weblog application which gives the user an easy way to maintain an online diary, weblog or even a complete homepage."
 website "http://www.s9y.org"
@@ -62,7 +59,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# x-serendipity-interfacelang
@@ -79,7 +76,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 # the paths are relative to the url path if they don't start with /

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-21 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Lantronix-Device" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
+Plugin.define do
+name "Lantronix-Device"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-02
+  "Andrew Horton", # v0.2 # 2016-04-21 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Lantronix provides device networking and remote access products for remote IT management allowing remote computer access and offsite device control. Manage industrial control systems, or administer your entire data center using KVM over IP switches."
 website "http://www.lantronix.com/"
@@ -40,7 +41,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

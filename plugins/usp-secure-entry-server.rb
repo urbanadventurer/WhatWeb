@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "USP-Secure-Entry-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
+Plugin.define do
+name "USP-Secure-Entry-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-25
+]
 version "0.1"
 description "United Security Providers (USP; previously known as Tetrade) Secure Entry Server (SES) Web Application Firewall (WAF)"
 website "http://www.united-security-providers.com/"

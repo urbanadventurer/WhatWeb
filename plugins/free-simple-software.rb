@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Added website parameter
-##
-Plugin.define "Free-Simple-Software" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-26
+Plugin.define do
+name "Free-Simple-Software"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-26
+  "Andrew Horton", # v0.2 # 2016-04-17 # Added website parameter. 
+]
 version "0.2"
 description "Free Simple Software - Full list of homepages: http://www.freesimpleshop.com/ http://www.freesimplecms.com/ http://www.freesimpleblog.com/ http://www.freesimplehost.com/"
 website "http://www.freesimpleshop.com/"

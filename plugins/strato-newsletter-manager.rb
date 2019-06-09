@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "STRATO-Newsletter-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
+Plugin.define do
+name "STRATO-Newsletter-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-02
+]
 version "0.1"
 description "STRATO Newsletter Manager - Requires PHP"
 website "http://www.strato-cgi.de/"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-12 #
-# Updated version detection
-##
-Plugin.define "Webmedia-Explorer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-07
+Plugin.define do
+name "Webmedia-Explorer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-07
+  # v0.2 # 2011-02-12 # Updated version detection. 
+]
 version "0.2"
 description "Webmedia Explorer scans and indexes everything under a folder called 'media' under the document root and builds a website automaticaly, generating file and folder listings, image galleries, message boards, news or simply text, anywhere it finds the corresponding data."
 website "http://www.webmediaexplorer.com/"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-21 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "LANCOM-Device" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
+Plugin.define do
+name "LANCOM-Device"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-02
+  "Andrew Horton", # v0.2 # 2016-04-21 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "LANCOM Systems is a provider of innovative and reliable communications solutions, Secure Access, VPN and Wireless LAN with high technological capabilities, easy configuration and unified control of all products."
 website "http://www.lancom-systems.nl/"

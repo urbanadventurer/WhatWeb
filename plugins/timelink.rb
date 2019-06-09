@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TimeLink" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
+Plugin.define do
+name "TimeLink"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-01
+]
 version "0.1"
 description "Full-featured web-based Time and Attendance, Workforce Scheduling, Leave Management and Labor Activity software"
 website "http://www.timelink.com/productsbyproducts.html"
@@ -36,7 +39,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Title

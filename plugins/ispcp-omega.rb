@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Added website parameter
-##
-# Version 0.2
-# removed :probability
-##
-Plugin.define "ispCP-Omega" do
-author "Andrew Horton"
+Plugin.define do
+name "ispCP-Omega"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :probability. 
+  # Andrew Horton, # v0.3 # 2016-04-17 # Added website parameter. 
+]
 version "0.3"
 description "PHP opensource, virtual hosting system"
 website "http://www.isp-control.net/"

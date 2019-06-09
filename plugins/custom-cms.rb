@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-16 #
-# Updated version detection
-##
-Plugin.define "Custom-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
+Plugin.define do
+name "Custom-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-03
+  # v0.2 # 2011-02-16 # Updated version detection. 
+]
 version "0.2"
 description "Custom CMS Gaming is a Content Management System geared towards all Gamers that would like to maintain and create fully functional gaming sources. "
 website "http://www.customcms.net/"

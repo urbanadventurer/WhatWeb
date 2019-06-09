@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DVWA" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-05
+Plugin.define do
+name "DVWA"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-05
+]
 version "0.1"
 description "Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable."
 website "http://www.dvwa.co.uk/"

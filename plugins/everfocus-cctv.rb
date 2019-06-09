@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "EverFocus-CCTV" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+Plugin.define do
+name "EverFocus-CCTV"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+]
 version "0.1"
 description "EverFoxus CCTV router web interface"
 website "http://www.everfocus.com/products.cfm"
@@ -32,7 +35,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

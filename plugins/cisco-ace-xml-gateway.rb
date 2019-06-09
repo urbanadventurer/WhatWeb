@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Cisco-ACE-XML-Gateway" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
+Plugin.define do
+name "Cisco-ACE-XML-Gateway"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-21
+]
 version "0.1"
 description "The Cisco ACE XML Gateway is a key component of the Cisco Application Control Engine (ACE) family of products. The ACE XML Gateway delivers an integrated XML firewall."
 website "http://www.cisco.com/en/US/products/ps7314/index.html"

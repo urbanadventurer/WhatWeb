@@ -4,17 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2011-05-30 #
-# Updated regex
-##
-# Version 0.3 # 2011-03-02 #
-# Removed false positives
-##
-# Version 0.2 # 2011-01-09 #
-# Updated model detection
-##
-Plugin.define "Router" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-03
+Plugin.define do
+name "Router"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-03
+  # v0.2 # 2011-01-09 # Updated model detection. 
+  # v0.3 # 2011-03-02 # Removed false positives. 
+  # v0.4 # 2011-05-30 # Updated regex. 
+]
 version "0.4"
 description "This plugin identifies routers for which the vendor is unknown or where fingerprinting is exceptionally difficult."
 
@@ -36,7 +33,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# About 62 ShodanHQ results for WWW-Authenticate: Basic realm="LOGIN Enter Password (default is private)"

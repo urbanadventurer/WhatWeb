@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Dradis-Framework" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-17
+Plugin.define do
+name "Dradis-Framework"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-17
+]
 version "0.1"
 description "Dradis is an open source framework to enable effective information sharing, specially during security assessments. Dradis is a self-contained web application that provides a centralised repository of information to keep track of what has been done so far, and what is still ahead."
 website "http://Dradisframework.org/"
@@ -45,7 +48,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# _dradis_session cookie

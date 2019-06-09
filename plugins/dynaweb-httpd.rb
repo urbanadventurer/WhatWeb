@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DynaWeb-httpd" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
+Plugin.define do
+name "DynaWeb-httpd"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-07
+]
 version "0.1"
 description "DynaWeb web server. Ships with Sun Microsystem's AnswerBook"
 website "http://www.oracle.com/"
@@ -19,7 +22,7 @@ website "http://www.oracle.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

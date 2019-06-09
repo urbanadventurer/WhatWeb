@@ -1,12 +1,14 @@
-# coding: ascii-8bit
 ##
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BM-Classifieds" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+Plugin.define do
+name "BM-Classifieds"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+]
 version "0.1"
 description "A complete classifieds site ready to run in 15 minutes."
 website "http://www.bmscripts.com/"

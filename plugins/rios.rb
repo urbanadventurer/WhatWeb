@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "RiOS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
+Plugin.define do
+name "RiOS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-26
+]
 version "0.1"
 description "Riverbed Optimization System (RiOS)"
 website "http://www.riverbed.com/"

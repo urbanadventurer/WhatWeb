@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-30 #
-# Updated regex
-##
-Plugin.define "Mobile-Website" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
+Plugin.define do
+name "Mobile-Website"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-27
+  # v0.2 # 2011-03-30 # Updated regex. 
+]
 version "0.2"
 description "This plugin detects websites designed for mobile devices."
 

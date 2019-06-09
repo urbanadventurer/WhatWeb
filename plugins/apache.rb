@@ -4,24 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.8 # 2011-05-25 #
-# Updated module detection
-# Added htaccess www-authenticate realm detection
-##
-# Version 0.7 # 2011-04-06 #
-# Removed favicon matches in favor of /icons/ matches
-##
-# Version 0.6 #
-# Updated module detection
-##
-# Version 0.5 #
-# Added module detection
-##
-# Version 0.4 #
-# Combined Apache and Apache default pages plugins
-##
-Plugin.define "Apache" do
-author "Andrew Horton & Brendan Coles"
+Plugin.define do
+name "Apache"
+authors [
+  "Andrew Horton",
+  "Brendan Coles <bcoles@gmail.com>",
+  # v0.4 # Combined Apache and Apache default pages plugins. 
+  # v0.5 # Added module detection. 
+  # v0.6 # Updated module detection. 
+  # v0.7 # 2011-04-06 # Removed favicon matches in favor of /icons/ matches. 
+  # v0.8 # 2011-05-25 # Updated module detection. Added htaccess www-authenticate realm detection. 
+]
 version "0.8"
 description "The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows NT. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards."
 website "http://httpd.apache.org/"
@@ -90,7 +83,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header # Apache

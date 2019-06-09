@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 
-# Fixed regex to return multiple scripts
-##
-Plugin.define "Script-URLs" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
+Plugin.define do
+name "Script-URLs"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+  # v0.2 # Fixed regex to return multiple scripts. 
+]
 version "0.2"
 description "This plugin detects instances of script HTML elements and retrieves the URL."
 

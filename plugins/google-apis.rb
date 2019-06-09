@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-02 #
-# Updated regex
-# Added dynamic match
-##
-Plugin.define "Google-API" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09 
+Plugin.define do
+name "Google-API"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-09 
+  # v0.2 # 2011-03-02 # Updated regex. Added dynamic match. 
+]
 version "0.2"
 description "This plugin identifies references to Google API in <script>."
 

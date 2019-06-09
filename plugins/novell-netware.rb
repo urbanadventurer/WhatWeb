@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Novell-NetWare" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-08
+Plugin.define do
+name "Novell-NetWare"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-08
+]
 version "0.1"
 description "Novell NetWare server."
 website "http://www.novell.com/"
@@ -60,7 +63,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Informatics-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-20
+Plugin.define do
+name "Informatics-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-20
+]
 version "0.1"
 description "Informatics custom Content Management System (CMS)"
 website "http://www.informaticsinc.com/Content/Services/Web-Design-and-Development/Content-Management-Systems.aspx"

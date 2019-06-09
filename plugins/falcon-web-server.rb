@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Falcon-Web-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
+Plugin.define do
+name "Falcon-Web-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-31
+]
 version "0.1"
 description "Falcon Web Server"
 website "http://www.blueface.com/"
@@ -16,7 +19,7 @@ website "http://www.blueface.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

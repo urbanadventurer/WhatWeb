@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 #
-# Update version detection and added cookie and javascript matches
-##
-# Version 0.2 #
-# Update version detection and ghdb match
-##
-Plugin.define "Liferay" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
+Plugin.define do
+name "Liferay"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-13
+  # v0.2 # Update version detection and ghdb match. 
+  # v0.3 # Update version detection and added cookie and javascript matches. 
+]
 version "0.3"
 description "Liferay Portal is an enterprise web platform for building business solutions that deliver immediate results and long-term value."
 website "http://www.liferay.com/"

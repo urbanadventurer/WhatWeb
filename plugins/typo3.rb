@@ -4,18 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2012-08-16 # Andrew Horton
-# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
-##
-Plugin.define "TYPO3" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-09
-version "0.2"
+Plugin.define do
+name "TYPO3"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-09
+  "Andrew Horton", # v0.2 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array. 
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.3 # 2016-08-19 # Added cookie
+  "Janosch Maier @Phylu", # v0.4 # 2018-04-20 # bugfix in regex 
+]
+version "0.4"
 description "TYPO3 is a free Open Source content management system for enterprise purposes on the web and in intranets. It offers full flexibility and extendability while featuring an accomplished set of ready-made interfaces, functions and modules."
 website "http://typo3.com/"
 
 # More examples here: http://welovet3.com/
-
-
 
 # Matches #
 matches [
@@ -26,10 +27,12 @@ matches [
 # HTML Comment
 { :text=>'<!--TYPO3SEARCH_end-->', :certainty=>75 },
 
+{ :search => "headers[set-cookie]", :regexp => /^fe_typo_user/, :name=>"fe_typo_user cookie" },
+
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# the paths are relative to the url path if they don't start with /

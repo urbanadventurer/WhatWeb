@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Allow" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
+Plugin.define do
+name "Allow"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-01
+]
 version "0.1"
 description "This plugin retrieves the allowed methods from the HTTP Allow header. - More info: http://en.wikipedia.org/wiki/List_of_HTTP_header_fields"
 
@@ -14,7 +17,7 @@ description "This plugin retrieves the allowed methods from the HTTP Allow heade
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Allow HTTP Header

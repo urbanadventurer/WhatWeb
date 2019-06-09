@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "iGiveTest" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-23
+Plugin.define do
+name "iGiveTest"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-23
+]
 version "0.1"
 description "iGiveTest is a comprehensive solution for creating, administering, and providing thorough analysis of tests on the Internet and Intranet. It is a quick and professional way to create and organize tests for employees, students, and people in training."
 website "http://igivetest.com/"

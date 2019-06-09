@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "eXtreme-Message-Board" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+Plugin.define do
+name "eXtreme-Message-Board"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "XMB is a lightweight PHP forum software with all the features you need to support a growing community."
 website "http://www.xmbforum.com/"
@@ -17,23 +20,23 @@ dorks [
 '"powered by XMB"'
 ]
 
-
-
 matches [
 
 # Default HTML comments
-{ :text=>'<!-- Powered by XMB  -->' },
-{ :text=>'<!-- Aventure Media & The XMB Group -->' },
-{ :text=>'<!-- www.aventure-media.co.uk  :  www.xmbforum.com -->' },
+{ :text => '<!-- Powered by XMB ' },
+{ :text => '<!-- The XMB Group -->' },
 
 # Version detection # Powered by text
-{ :version=>/^Powered by XMB ([^<]+)<br \/>/ },
+{ :name => 'Powered by footer',
+  :version => /^Powered by XMB ([\d\.]+)<br \/>/ },
 
 # Version detection # Default title
-{ :version=>/<title>[^\-]+- Powered by XMB ([^<]+)<\/title>/ },
+{ :name => 'Title',
+  :version => /<title>[^<]+- Powered by XMB ([\d\.]+) / },
 
 # Version detection # HTML comments
-{ :version=>/^<!-- Powered by XMB ([^\ \ ]+)/ },
+{ :name => 'HTML comment',
+  :version => /^<!-- Powered by XMB ([\d\.]+) / },
 
 ]
 

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated matches and version detection
-##
-Plugin.define "Burning-Board-Lite" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
+Plugin.define do
+name "Burning-Board-Lite"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-26
+  # v0.2 # Updated matches and version detection. 
+]
 version "0.2"
 description "Burning Board 3 is the modern, secure and user friendly solution for your discussion board!"
 website "http://www.woltlab.com/products/burning_board/index_en.php"

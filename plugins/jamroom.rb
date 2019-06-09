@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "Jamroom" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
+Plugin.define do
+name "Jamroom"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-25
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "Jamroom specializes in building web communities centered around media producers such as musicians, photographers, video enthusiasts and more - Jamroom gives you the capability to provide dozens of different services to your users."
 website "http://www.jamroom.net/"

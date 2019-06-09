@@ -4,18 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2012-08-16 # Andrew Horton
-# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
-##
-# Version 0.4 # 2011-04-06 # Brendan Coles <bcoles at gmail dot com>
-# Added md5 matches for 1.4.x
-# Added passive version detection
-##
-# Version 0.3
-# removed :name and :certainty=>100
-##
-Plugin.define "FluxBB" do
-author "Andrew Horton"
+Plugin.define do
+name "FluxBB"
+authors [
+  "Andrew Horton",
+  # v0.3 # removed :name and :certainty=>100. 
+  "Brendan Coles <bcoles at gmail dot com>", # v0.4 # 2011-04-06 # Added md5 matches for 1.4.x. Added passive version detection. 
+  # Andrew Horton, # v0.5 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array. 
+]
 version "0.5"
 description "Open Source forum written in PHP"
 website "http://fluxbb.org/ - Aggressive matches can identify 1.2.x, 1.3.x and 1.4.x"
@@ -51,7 +47,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 # the paths are relative to the url path if they don't start with /

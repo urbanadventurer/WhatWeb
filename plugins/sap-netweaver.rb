@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "SAP-NetWeaver" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
+Plugin.define do
+name "SAP-NetWeaver"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-10
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "SAP NetWeaver provides the technical foundation for SAP applications. In addition, it delivers a portfolio of enterprise technology that allows you to extend your applications to reach more people and to adopt new processes, devices, and consumption models."
 website "http://www.sap.com/platform/netweaver/index.epx"

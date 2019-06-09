@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty=>100 & :name
-# Version 0.3
-# Uses :version=>//
-
-Plugin.define "SearchFitShoppingCart" do
-author "Andrew Horton"
+Plugin.define do
+name "SearchFitShoppingCart"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 & :name
+  # v0.3 # Uses :version=>//
+]
 version "0.3"
 description "Commercial ecommerce system written in PHP"
 website "http://www.searchfit.com/shopping-cart-features.htm"

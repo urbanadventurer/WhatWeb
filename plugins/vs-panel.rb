@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-21 #
-# Updated version detection
-##
-Plugin.define "VS-Panel" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
+Plugin.define do
+name "VS-Panel"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-29
+  # v0.2 # 2011-02-21 # Updated version detection. 
+]
 version "0.2"
 description "VS-Panel"
 website "http://www.vertigostudios.com"

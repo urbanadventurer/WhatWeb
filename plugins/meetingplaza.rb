@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-21 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "MeetingPlaza" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-21
+Plugin.define do
+name "MeetingPlaza"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-21
+  "Andrew Horton", # v0.2 # 2016-04-21 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "MeetingPlaza Distance Conference Service for internet conferencing, meeting, presentations, seminars, collaboration, events, and training."
 website "http://www.meetingplaza.com/e/"

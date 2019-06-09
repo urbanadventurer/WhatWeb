@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Etano" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
+Plugin.define do
+name "Etano"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-24
+]
 version "0.1"
 description "Etano - Dating and social networking script"
 website "https://code.google.com/p/etano/"

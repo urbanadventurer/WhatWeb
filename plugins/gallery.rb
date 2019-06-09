@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Gallery" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-10
+Plugin.define do
+name "Gallery"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-10
+]
 version "0.1"
 description "Photo gallery - Requires PHP and MySQL"
 website "http://gallery.menalto.com/"

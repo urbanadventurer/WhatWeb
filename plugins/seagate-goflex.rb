@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Seagate-GoFlex" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-03
+Plugin.define do
+name "Seagate-GoFlex"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-03
+]
 version "0.1"
 description "Seagate-GoFlex - centralized file storage with remote access via seagateshare.com"
 website "http://www.seagate.com/home-entertainment/media-sharing-devices/goflex-home/"

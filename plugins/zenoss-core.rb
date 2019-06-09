@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Zenoss-Core" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-29
+Plugin.define do
+name "Zenoss-Core"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-29
+]
 version "0.1"
 description "Zenoss (Zenoss Core) is an open-source application, server, and network management platform based on the Zope application server."
 website "http://sourceforge.net/projects/zenoss/"

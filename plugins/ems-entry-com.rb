@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "EMS-ENTRY-COM" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "EMS-ENTRY-COM"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+]
 version "0.1"
 description "EMS-ENTRY-COM is database software that gathers data from Beckmann Zent5 main control panels and payment systems and makes them available as an SQL database. The retrieved data are analysed, reviewed and subsequently transformed into a relational database."
 website "http://www.beckmann-gmbh.de/en/products/pc_software/ems_entry_com"
@@ -16,7 +19,7 @@ website "http://www.beckmann-gmbh.de/en/products/pc_software/ems_entry_com"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Chamilo" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-16
+Plugin.define do
+name "Chamilo"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-16
+]
 version "0.1"
 description "Chamilo is a fully-fledged e-learning system. Chamilo can be connected to any open-specification system."
 website "http://www.chamilo.org/"

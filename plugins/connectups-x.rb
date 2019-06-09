@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ConnectUPS-X" do
-author "Andrew Horton"
+Plugin.define do
+name "ConnectUPS-X"
+authors [
+  "Andrew Horton",
+]
 version "0.1"
 description "The ConnectUPS-X Web/SNMP device allows you to connect various types of UPS directly to the Ethernet network and the Internet. It provides telnet, SSH, SNMP and a web interface"
 website "http://powerquality.eaton.com/Products-services/Power-Management/Connectivity/connectups.asp"

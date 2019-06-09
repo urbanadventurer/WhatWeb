@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Updated description
-##
-Plugin.define "DUforum" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-02 
+Plugin.define do
+name "DUforum"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-02 
+  "Andrew Horton", # v0.2 # 2016-04-17 # Updated description. 
+]
 version "0.2"
 description "Forum. Homepage used to be http://www.duware.com/"
 

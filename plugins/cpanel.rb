@@ -4,19 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2011-08-04 Andrew Horton - added default meta refresh page
-##
-# Version 0.4 # 2011-04-06 # Brendan Coles <bcoles@gmail.com>
-# Added /cgi-sys/defaultwebpage.cgi and /img-sys/header.jpg aggressive matches
-##
-# Version 0.3 # Brendan Coles <bcoles@gmail.com>
-# Added version detection. Added OS detection.
-##
-# Version 0.2
-# removed :name and :certainty=>100
-##
-Plugin.define "cPanel" do
-author "Andrew Horton"
+Plugin.define do
+name "cPanel"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # Added version detection. Added OS detection.. 
+  # v0.4 # 2011-04-06 # Brendan Coles <bcoles@gmail.com> # Added /cgi-sys/defaultwebpage.cgi and /img-sys/header.jpg aggressive matches. 
+  # v0.5 # 2011-08-04 # Andrew Horton # added default meta refresh page 
+]
 version "0.5"
 description "Site configuration and management software application. Supporting many operating systems while allowing endusers to control every aspect of their webhosting experience."
 website "http://www.cpanel.net/"

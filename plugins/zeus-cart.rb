@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "Zeus-Cart" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
+Plugin.define do
+name "Zeus-Cart"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-06
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "Control every facet of your store, from merchandising to promotions and more. There are no limits to creativity with ZeusCart."
 website "http://www.ajsquare.com/AJE-Commerce/product-home.php"

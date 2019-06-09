@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Updated website parameter
-##
-Plugin.define "X10media-Torrent-Search-Engine" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
+Plugin.define do
+name "X10media-Torrent-Search-Engine"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-01
+  "Andrew Horton", # v0.2 # 2016-04-17 # Updated website parameter. 
+]
 version "0.2"
 description "X10 Torrent Script is a bittorrent search engine, users fill in a keyword and get access to 5 000 000 files for search."
 website "http://www.x10media.com/torrent-search-engine-script/"

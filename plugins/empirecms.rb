@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Empire-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-04
+Plugin.define do
+name "Empire-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-04
+]
 version "0.1"
 description "Open source CMS"
 website "http://www.phome.net/"

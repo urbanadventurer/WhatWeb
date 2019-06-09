@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "LotusCMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
+Plugin.define do
+name "LotusCMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-16
+]
 version "0.1"
 description "LotusCMS (previously ArboroianCMS) brings to the forefront design and design integration into one of the most neglected CMS niches - Databaseless Web-Design and Development."
 website "http://www.lotuscms.org/"

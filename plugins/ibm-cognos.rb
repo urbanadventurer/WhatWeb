@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "IBM-Cognos" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
+Plugin.define do
+name "IBM-Cognos"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-26
+]
 version "0.1"
 description "IBM Cognos - Business Intelligence and Financial Performance Management"
 website "http://www-01.ibm.com/software/au/data/cognos/"

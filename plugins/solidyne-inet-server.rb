@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Solidyne-iNET-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-11-17
+Plugin.define do
+name "Solidyne-iNET-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-11-17
+]
 version "0.1"
 description "Solidyne iNET Server - web interface for Solidyne devices"
 website "http://www.solidyne.com/"

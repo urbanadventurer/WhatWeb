@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-25 #
-# Updated version detection
-##
-Plugin.define "GetSimple" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
+Plugin.define do
+name "GetSimple"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-28
+  # v0.2 # 2011-01-25 # Updated version detection. 
+]
 version "0.2"
 description "GetSimple is an open source CMS that utilizes the speed and convenience of XML, a best-in-class UI and the easiest learning curve of any simple Content Management System out there."
 website "http://get-simple.info/"

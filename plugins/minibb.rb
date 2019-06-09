@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MiniBB" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+Plugin.define do
+name "MiniBB"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "MiniBB is a free standalone open source program for building your own Internet forum."
 website "http://www.minibb.com/"

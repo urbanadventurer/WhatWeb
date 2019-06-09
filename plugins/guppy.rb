@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-10 #
-# Updated version detection
-##
-Plugin.define "GuppY" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
+Plugin.define do
+name "GuppY"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-06
+  # v0.2 # 2011-02-10 # Updated version detection. 
+]
 version "0.2"
 description "An easy, free web portal, GuppY will allow you to generate very easily a complete and interactive web site. It requires no database."
 website "http://www.freeguppy.org/?lng=en"

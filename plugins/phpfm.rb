@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Added website parameter and updated description
-##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "PHPFM" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09
+Plugin.define do
+name "PHPFM"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-09
+  # v0.2 # 2011-02-24 # Updated version detection. 
+  "Andrew Horton", # v0.3 # 2016-04-17 # Added website parameter and updated description. 
+]
 version "0.3"
 description "PHP-Fusion is a lightweight open source content management system (CMS). It uses PHP and MySQL."
 website "http://www.php-fusion.co.uk/"

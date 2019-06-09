@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Mibew-Messenger" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-02
+Plugin.define do
+name "Mibew-Messenger"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-02
+]
 version "0.1"
 description "Mibew Messenger (also known as Open Web Messenger) is an open-source live support application written in PHP and MySQL."
 website "http://mibew.org/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Dell-KACE-Appliance" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
+Plugin.define do
+name "Dell-KACE-Appliance"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-02
+]
 version "0.1"
 description "Dell KACE System Management Appliance"
 website "http://www.kace.com/products/overview"

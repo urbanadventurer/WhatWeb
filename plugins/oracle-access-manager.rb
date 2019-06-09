@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Oracle-Access-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2013-02-06
+Plugin.define do
+name "Oracle-Access-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-02-06
+]
 version "0.1"
 description "Oracle Access Manager - Comprehensive Access Management for Applications, Data, and Web Services -H omepage: http://www.oracle.com/us/products/middleware/identity-management/access-management/overview/index.html"
 

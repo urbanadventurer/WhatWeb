@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CalendarScript" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
+Plugin.define do
+name "CalendarScript"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-19
+]
 version "0.1"
 description "CalendarScript is a fully customizable event-publishing solution. It gives you everything you'll need to begin, then gives you the power to redefine it to fit your specific needs."
 website "http://www.calendarscript.com/"
@@ -50,7 +53,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Local File Path Detection # Find application base path

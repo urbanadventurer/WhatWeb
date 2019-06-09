@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "Seagull-PHP-Framework" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
+Plugin.define do
+name "Seagull-PHP-Framework"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-12
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "Seagull is a mature OOP framework for building web, command line and GUI applications. Licensed under BSD, the project allows PHP developers to easily integrate and manage code resources, and build complex applications quickly."
 website "http://seagullproject.org/"

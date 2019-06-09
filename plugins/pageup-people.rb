@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Added website parameter and description
-##
-Plugin.define "PageUp-People" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-03
+Plugin.define do
+name "PageUp-People"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-03
+  "Andrew Horton", # v0.2 # 2016-04-17 # Added website parameter and description. 
+]
 version "0.2"
 description "PageUpPeople is a commercial SaaS platform to recruit, onboard, train, develop, manage and retain employees."
 website "http://www.pageuppeople.com/"
@@ -35,7 +36,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# sPULastSelectedLanguage Cookie

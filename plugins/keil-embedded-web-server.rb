@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Keil-Embedded-WEB-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
+Plugin.define do
+name "Keil-Embedded-WEB-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-31
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Keil Embedded WEB Server"
 website "http://www.keil.com/"

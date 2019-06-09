@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Nintendo-Wii" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
+Plugin.define do
+name "Nintendo-Wii"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-02
+]
 version "0.1"
 description "Nintendo Wii video game console"
 website "http://www.nintendo.com/"
@@ -22,7 +25,7 @@ website "http://www.nintendo.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

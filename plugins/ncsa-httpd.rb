@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-21 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "NCSA-HTTPd" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
+Plugin.define do
+name "NCSA-HTTPd"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-13
+  "Andrew Horton", # v0.2 # 2016-04-21 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "NCSA HTTPd"
 website "http://web.archive.org/web/20071020024535/hoohoo.ncsa.uiuc.edu/docs/Overview.html"
@@ -17,10 +18,13 @@ website "http://web.archive.org/web/20071020024535/hoohoo.ncsa.uiuc.edu/docs/Ove
 # 306 for NCSA -apache -IIS -TakaC
 
 matches [
-	# HTTP Server Header
-	{ :regexp=>/^NCSA/, :search=>"headers[server]" },
-	# Version Detection # HTTP Server Header
-	{ :version=>/^NCSA\/([^\s^\r^\n]+)$/, :search=>"headers[server]" },
+# HTTP Server Header
+{ :regexp => /^NCSA/,
+  :search=>"headers[server]" },
+
+# Version Detection # HTTP Server Header
+{ :version => /^NCSA\/([\d\.]+)$/,
+  :search => "headers[server]" },
 
 ]
 

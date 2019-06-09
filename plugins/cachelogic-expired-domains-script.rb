@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Cachelogic-Expired-Domains-Script" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-20
+Plugin.define do
+name "Cachelogic-Expired-Domains-Script"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-20
+]
 version "0.1"
 description "Expired Domains Script runs daily and updates the database with the latest expiring domains. Requires: Unix Host, PHP5, MYSQL5, CURL Enabled, Cron, Support for the zip extension in PHP."
 website "http://cachelogic.net/"

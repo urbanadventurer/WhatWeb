@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Muster-Render-Farm" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-08
+Plugin.define do
+name "Muster-Render-Farm"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-08
+]
 version "0.1"
 description "Muster is a render farm management system for film production, game development, and visual effect industry."
 website "http://www.vvertex.com/products.php"

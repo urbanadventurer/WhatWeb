@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Nintendo-GameCube" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
+Plugin.define do
+name "Nintendo-GameCube"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-02
+]
 version "0.1"
 description "Nintendo GameCube video game console"
 website "http://www.nintendo.com/"
@@ -25,7 +28,7 @@ dorks [
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Server: GameCube

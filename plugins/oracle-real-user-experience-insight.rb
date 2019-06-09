@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Oracle-Real-User-Experience-Insight" do
-author "Brendan Coles <bcoles@gmail.com>" # 2013-03-30
+Plugin.define do
+name "Oracle-Real-User-Experience-Insight"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-03-30
+]
 version "0.1"
 description "Oracle Real User Experience Insight - passive network performance analysis and usage analysis"
 website "http://www.oracle.com/technetwork/oem/uxinsight/"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-29 #
-# Updated version detection
-##
-Plugin.define "Glossword" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
+Plugin.define do
+name "Glossword"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-01
+  # v0.2 # 2011-01-29 # Updated version detection. 
+]
 version "0.2"
 description "Glossword helps you to create and publish online multilingual dictionary, glossary, or reference."
 website "http://glossword.biz/"

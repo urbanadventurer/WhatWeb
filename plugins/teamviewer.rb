@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TeamViewer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
+Plugin.define do
+name "TeamViewer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-17
+]
 version "0.1"
 description "TeamViewer - the All-In-One Solution for Remote Access and Support over the Internet"
 website "http://www.TeamViewer.com"

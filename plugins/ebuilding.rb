@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "eBuilding-Network-Controller" do
-author "Brendan Coles <bcoles@gmail.com>" # 2013-07-28
+Plugin.define do
+name "eBuilding-Network-Controller"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-07-28
+]
 version "0.1"
 description "Teletrol Systems Inc. - eBuilding Network Controller - web interface - facility automation system - More info: http://www.trademarkia.com/ebuilding-webbased-facility-automation-systems-75885297.html"
 

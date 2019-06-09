@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Added website parameter
-##
-Plugin.define "WSN-Links" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
+Plugin.define do
+name "WSN-Links"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-16
+  "Andrew Horton", # v0.2 # 2016-04-17 # Added website parameter. 
+]
 version "0.2"
 description "WSN Links is a links directory with google pageranks, link checking, reciprocal linking facilities and much more. Multilingual and highly extensible, it offers more than you could imagine in a links directory."
 website "http://www.wsnlinks.com/"
@@ -43,7 +44,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection

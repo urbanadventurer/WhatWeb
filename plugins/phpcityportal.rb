@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHPCityportal" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-07
+Plugin.define do
+name "PHPCityportal"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-07
+]
 version "0.1"
 description "PHPCityportal - build your own business portal - Requires PHP and MySQL"
 website "http://phpcityportal.com/"

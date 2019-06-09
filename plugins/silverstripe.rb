@@ -4,17 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # Pedro Worcel (Security-Assessment.com) <pedro@worcel.com>
-# Added agressive scanning.
-# ##
-# Version 0.3 # 2011-03-06 # Brendan Coles <bcoles@gmail.com>
-# Updated version detection
-##
-# Version 0.2
-# removed :certainty=>100 and :name
-##
-Plugin.define "SilverStripe" do
-    author "Andrew Horton"
+Plugin.define do
+name "SilverStripe"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 and :name. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2011-03-06 # Updated version detection
+  "Pedro Worcel (Security-Assessment.com) <pedro@worcel.com>", # v0.4 # Added agressive scanning.
+]
     version "0.3"
     description "SilverStripe is an opensource CMS written in PHP. It can run on Apache, IIS or lighthttpd."
     website "http://www.silverstripe.com"
@@ -39,7 +36,7 @@ Plugin.define "SilverStripe" do
     ] 
 
     # Passive #
-    def passive
+    passive do
         m=[]
 
         # Set-Cookie: PastVisitor
@@ -49,7 +46,7 @@ Plugin.define "SilverStripe" do
             m
     end
 
-    def aggressive
+    aggressive do
         m=[]
         versions = Hash[
             "2.4.10" => [

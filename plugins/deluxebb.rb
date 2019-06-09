@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DeluxeBB" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+Plugin.define do
+name "DeluxeBB"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "DeluxeBB is a powerful open source bulletin board, which helps you create your own web communities in less than 10 minutes. The board is written completely in PHP and uses a MySQL database to store its content."
 website "http://www.deluxebb.com/"

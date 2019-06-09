@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Parature" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-29
+Plugin.define do
+name "Parature"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-29
+]
 version "0.1"
 description "Parature - web-based customer service software combine"
 website "http://www.parature.com/"

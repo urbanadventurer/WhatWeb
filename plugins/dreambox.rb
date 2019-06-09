@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Dreambox" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+Plugin.define do
+name "Dreambox"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "The Dreambox is a series of Linux-powered DVB satellite, terrestrial and cable digital television receivers (set-top box), produced by German multimedia vendor Dream Multimedia. Enigma2 WebInterface - Control a DreamBox using a Browser. The Dreambox Webinterface (short WebIf) is included in all newer Images. - More info: http://en.wikipedia.org/wiki/Dreambox"
 # More info on Enigma2: http://dream.reichholf.net/wiki/Enigma2:WebInterface
@@ -36,7 +37,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header # TwistedWeb

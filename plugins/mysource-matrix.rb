@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MySource-Matrix" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
+Plugin.define do
+name "MySource-Matrix"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-04
+]
 version "0.1"
 description "MySource Matrix is a feature-rich, enterprise-class Supported Open Source CMS (Content Management System)."
 website "http://www.squiz.co.uk/mysource-matrix-open-source-cms"
@@ -32,7 +35,7 @@ matches [
 ]
 
 # Version detection
-def passive
+passive do
         m=[]
 
 	# Powered by text

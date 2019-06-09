@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "eMeeting-Online-Dating-Software" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
+Plugin.define do
+name "eMeeting-Online-Dating-Software"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-30
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "Dating Software by eMeeting Ltd"
 website "http://www.datingscripts.org/"

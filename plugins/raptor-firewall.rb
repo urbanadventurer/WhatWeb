@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Raptor-Firewall" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
+Plugin.define do
+name "Raptor-Firewall"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-13
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Raptor Firewall (previously known as Raptor EagleNT) was acquired by Symantec and has been discontinued"
 website "http://www.symantec.com/en/nz/business/support/overview.jsp?pid=52789"

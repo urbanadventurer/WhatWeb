@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-09-14 #
-# Updated model/version detection and added server header match.
-##
-Plugin.define "ARRIS-Touchstone-Router" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
+Plugin.define do
+name "ARRIS-Touchstone-Router"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-14
+  # v0.2 # 2011-09-14 # Updated model/version detection and added server header match.. 
+]
 version "0.2"
 description "ARRIS Touchstone router"
 website "http://www.arrisi.com/products/touchstone/"

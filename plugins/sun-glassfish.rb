@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Sun-GlassFish" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-19
+Plugin.define do
+name "Sun-GlassFish"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-19
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "GlassFish is an open source application server project led by Sun Microsystems for the Java EE platform. The proprietary version is called Sun GlassFish Enterprise Server. GlassFish supports All Java EE API specifications, such as JDBC, RMI, e-mail, JMS, web services, XML, etc., and defines how to coordinate them."
 website "http://glassfish.java.net/"

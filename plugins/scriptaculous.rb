@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :name & :certainty=>100
-
-Plugin.define "Scriptaculous" do
-author "Andrew Horton"
+Plugin.define do
+name "Scriptaculous"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name & :certainty=>100
+]
 version "0.2"
 description "Javascript library"
 

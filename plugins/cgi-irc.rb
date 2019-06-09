@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CGI:IRC" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-08
+Plugin.define do
+name "CGI:IRC"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-08
+]
 version "0.1"
 description "CGI:IRC is a Perl/CGI program to use IRC from a web browser. This plugin extracts the version and the default server, channel and nickname"
 website "http://cgiirc.org/"

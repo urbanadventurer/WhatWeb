@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "JagoanStore-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-04
+Plugin.define do
+name "JagoanStore-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-04
+]
 version "0.1"
 description "JagoanStore CMS"
 website "http://www.jagoanstore.com/"

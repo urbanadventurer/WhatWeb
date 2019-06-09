@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "b2evolution" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
+Plugin.define do
+name "b2evolution"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-11
+]
 version "0.1"
 description "b2evolution is a powerful blog tool you can install on your own website."
 website "http://b2evolution.net/"

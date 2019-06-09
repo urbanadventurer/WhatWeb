@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "thin" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-13
+Plugin.define do
+name "thin"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-13
+]
 version "0.1"
 description "Thin is a Ruby web server that glues together 3 of the best Ruby libraries in web history: the Mongrel parser, Event Machine, and Rack"
 website "http://code.macournoyer.com/thin/"

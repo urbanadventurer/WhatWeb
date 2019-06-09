@@ -4,21 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2013-03-29 #
-# Due to a renewed web interface (v3.8), all existing matches didn't see the QNAP anymore
-# New matches need to be determined
-
-# Version 0.4 # 2011-03-22 #
-# Removed aggressive section
-##
-# Version 0.3 #
-# Added aggressive model, firmware and module extraction from /cgi-bin/authLogin.cgi
-##
-# Version 0.2 #
-# Added passive model, firmware and module extraction support for /cgi-bin/authLogin.cgi
-## 
-Plugin.define "QNAP-NAS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2013-03-29
+Plugin.define do
+name "QNAP-NAS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-03-29
+  # v0.2 # Added passive model, firmware and module extraction support for /cgi-bin/authLogin.cgi. 
+  # v0.3 # Added aggressive model, firmware and module extraction from /cgi-bin/authLogin.cgi. 
+  # v0.4 # 2011-03-22 # Removed aggressive section
+  # v0.5 # 2013-03-29 # Due to a renewed web interface (v3.8), all existing matches didn't see the QNAP anymore. New matches need to be determined
+]
 version "0.5"
 description "QNAP provides a series of network attached storage (NAS) products and network video recorder (NVR) solutions - homepage:http://www.qnap.com/"
 
@@ -88,7 +82,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# /cgi-bin/authLogin.cgi # Check document is QNAP XML

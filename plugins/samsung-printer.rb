@@ -4,9 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-Plugin.define "Samsung-Printer" do
-author "Andrew Horton"
+Plugin.define do
+name "Samsung-Printer"
+authors [
+  "Andrew Horton",
+]
 version "0.1"
 description "Samsung. SyncThru Web Service - Embedded Web Server"
 

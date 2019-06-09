@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-## Version 0.2 by Andrew Horton
-# Added acpowered.gif logo, and powered by footer 
-
-Plugin.define "activeCollab" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
+Plugin.define do
+name "activeCollab"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-02
+  "Andrew Horton" # Version 0.2 by Andrew Horton # Added acpowered.gif logo, and powered by footer 
+]
 version "0.2"
 description "activeCollab - project management & collaboration tool - Requires PHP and MySQL"
 website "http://www.activecollab.com/"

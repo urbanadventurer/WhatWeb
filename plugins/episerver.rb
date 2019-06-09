@@ -1,17 +1,16 @@
-# coding: ascii-8bit
 ##
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2 by Andrew Horton
-# removed VIEWSTATE match as it matches ASP.NET, removed :probability=>100
-# Version 0.3 by Andrew Horton - added version detection with EPiServer logos and more examples from http://www.episerver.com/en/Customers/
-
-Plugin.define "EPiServer" do
-author "Patrik Wallström"
+Plugin.define do
+name "EPiServer"
+authors [
+  "Patrik Wallström",
+  "Andrew Horton", # v0.2 # removed VIEWSTATE match as it matches ASP.NET, removed :probability=>100
+  # v0.3 # Andrew Horton # added version detection with EPiServer logos and more examples from http://www.episerver.com/en/Customers/
+]
 version "0.2"
 description "CMS from EPiServer - http://episerver.com/"
 

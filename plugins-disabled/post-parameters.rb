@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "POST-Parameters" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-10
+Plugin.define do
+name "POST-Parameters"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-10
+]
 version "0.1"
 description "This plugin extracts the form post URL as well as all 'id' and 'name' parameters from <input>, <select> and <textarea> elements inside <form> elements which use the POST method. It cannot detect POST parameters used by asynchronous javascript. - More Info: http://en.wikipedia.org/wiki/POST_%28HTTP%29"
 
@@ -21,7 +24,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Form Detection

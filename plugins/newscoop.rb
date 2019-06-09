@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Newscoop" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-09
+Plugin.define do
+name "Newscoop"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-09
+]
 version "0.1"
 description "Open content management system for professional journalists & online newspapers."
 website "http://www.sourcefabric.org/en/newscoop/"

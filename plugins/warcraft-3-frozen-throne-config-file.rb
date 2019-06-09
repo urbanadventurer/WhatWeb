@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Warcraft-3-Frozen-Throne-Mod-Config-File" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
+Plugin.define do
+name "Warcraft-3-Frozen-Throne-Mod-Config-File"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-04
+]
 version "0.1"
 description "The Warcraft 3 mod for AMX-Mod-X for Half-Life uses a config file which contains mySQL username, password, server, database name, table name. This plugin grabs the mySQL username, password and server."
 
@@ -19,7 +22,7 @@ matches [
 ]
 
 # Grab mySQL username, server and database details
-def passive
+passive do
         m=[]
 
         if @body =~ /wc3_sql_dbhost		"([^\"]+)"/ and @body =~ /wc3_sql_dbuser		"([^\"]+)"/ and @body =~ /wc3_sql_dbpass		"([^\"]*)"/

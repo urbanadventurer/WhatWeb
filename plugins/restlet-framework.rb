@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Restlet-Framework" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
+Plugin.define do
+name "Restlet-Framework"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-21
+]
 version "0.1"
 description "Restlet is a lightweight, comprehensive, open source REST framework for the Java platform."
 website "http://www.restlet.org/"

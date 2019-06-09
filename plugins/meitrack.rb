@@ -4,9 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-Plugin.define "MeiTrack" do
-author "Andrew Horton"
+Plugin.define do
+name "MeiTrack"
+authors [
+  "Andrew Horton",
+]
 version "0.1"
 description "MS02 GPS Tracking System from MeiTrack. Provides a web server to manage tracking of vehicles, chidren, pets, etc. The devices have plenty of features including eavesdropping, control by SMS, RFID, GPRS, panic alarms, etc"
 website "http://www.meitrack.net"

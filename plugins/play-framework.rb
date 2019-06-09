@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Play-Framework" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
+Plugin.define do
+name "Play-Framework"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-21
+]
 version "0.1"
 description "Play is an open source web application framework, written in Java, which follows the model-view-controller architectural pattern. Build and deployment is all handled by Python scripts."
 website "http://www.playframework.org/"

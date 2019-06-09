@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "3COM-NBX" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-09
+Plugin.define do
+name "3COM-NBX"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-09
+]
 version "0.1"
 description "3COM NBX phone system. The NBX NetSet utility is a web interface in which you configure and manage the NBX system. NBX systems present the NBX NetSet utility through an embedded web server that is integrated in system software."
 website "http://inpath.com/products/3com-nbx.html"
@@ -52,7 +55,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Headers

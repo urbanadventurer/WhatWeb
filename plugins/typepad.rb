@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty=>100 & :name
-
-Plugin.define "TypePad" do
-author "Andrew Horton"
+Plugin.define do
+name "TypePad"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 & :name
+]
 version "0.2"
 description "Blogging platform http://www.typepad.com/"
 # identifying strings

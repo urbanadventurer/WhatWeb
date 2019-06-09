@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Atlassian-JIRA" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-11
+Plugin.define do
+name "Atlassian-JIRA"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-11
+]
 version "0.1"
 description "JIRA provides issue tracking and project tracking for software development teams to improve code quality and the speed of development."
 website "http://www.atlassian.com/software/jira/"
@@ -43,7 +46,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# x-arequestid

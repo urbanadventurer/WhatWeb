@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Webduino" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
+Plugin.define do
+name "Webduino"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-25
+]
 version "0.1"
 description "Simple and extensible web server library for the Arduino using the Wiznet-based Ethernet shields."
 website "https://code.google.com/p/webduino/"

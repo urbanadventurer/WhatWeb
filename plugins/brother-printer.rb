@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-18 #
-# Replaced passive function with matches
-##
-# Version 0.2 # 2011-01-08 #
-# Updated model detection
-# Added frameset match
-##
-Plugin.define "Brother-Printer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
+Plugin.define do
+name "Brother-Printer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-22
+  # v0.2 # 2011-01-08 # Updated model detection. Added frameset match. 
+  # v0.3 # 2016-04-18 # Replaced passive function with matches. 
+]
 version "0.3"
 description "Brother printer web interface"
 website "http://www.brother.com/"

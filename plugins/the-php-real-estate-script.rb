@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "The-PHP-Real-Estate-Script" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+Plugin.define do
+name "The-PHP-Real-Estate-Script"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+]
 version "0.1"
 description "The Real Estate Script is a fully scalable turn-key PHP MySQL Real Estate Classifieds."
 website "http://www.therealestatescript.com/"

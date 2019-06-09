@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated regex and version detection
-##
-Plugin.define "360-Web-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
+Plugin.define do
+name "360-Web-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-12
+  # v0.2 # Updated regex and version detection. 
+]
 version "0.2"
 description "360-Web-Manager"
 website "http://www.360webmanager.com"

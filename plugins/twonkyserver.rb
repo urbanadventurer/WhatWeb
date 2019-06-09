@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TwonkyServer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
+Plugin.define do
+name "TwonkyServer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-17
+]
 version "0.1"
 description "Twonky is a line of computer and mobile applications that finds all of your digital media collections and shares them with PCs, TVs, stereos and other devices connected to your network."
 website "http://www.twonky.com/"

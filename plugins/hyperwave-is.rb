@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Hyperwave-IS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-07
+Plugin.define do
+name "Hyperwave-IS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-07
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Hyperwave Information Server"
 website "http://www.hyperwave.com/"

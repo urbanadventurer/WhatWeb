@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "DataflexViNE-VoIP-IAD" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
+Plugin.define do
+name "DataflexViNE-VoIP-IAD"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-11
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "The ViNE range of VoIP ADSL and VoIP SHDSL IADs support both SIP and MGCP protocols depending on the infrastructure and application for VoIP. Remote updates are possible to switch between either VoIP protocols and VoDSL."
 website "http://www.dataflex.com/"

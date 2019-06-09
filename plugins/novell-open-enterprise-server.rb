@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Novell-Open-Enterprise-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-16
+Plugin.define do
+name "Novell-Open-Enterprise-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-16
+]
 version "0.1"
 description "Novell Open Enterprise Server"
 website "http://www.novell.com/products/openenterpriseserver/"

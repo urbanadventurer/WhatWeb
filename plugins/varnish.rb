@@ -4,30 +4,29 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Varnish" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
-version "0.1"
+Plugin.define do
+name "Varnish"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-15
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.2 # 2016-08-19 # Added cookie
+]
+version "0.2"
 description "Varnish is an HTTP accelerator written in C designed for content-heavy dynamic web sites. In contrast to other HTTP accelerators, such as Squid, which began life as a client-side cache, or Apache, which is primarily an origin server, Varnish was designed from the ground up as an HTTP accelerator."
 website "http://www.varnish-cache.org/"
 
 # ShodanHQ results as at 2011-04-15 #
 # 14,040 for X-Varnish
 
+matches [
 
+	{ :search => "headers[x-varnish]", :regexp => //, :name=>"x-varnish header" },
 
-# Passive #
-def passive
-	m=[]
+	{ :search => "headers[server]", :regexp => /^Varnish$/, :name=>"Varnish Server Header" },
 
-	# X-Varnish Header
-	m << { :name=>"X-Varnish Header" } unless @headers["x-varnish"].nil?
+	# Cookie
+	{ :search => "headers[set-cookie]", :regexp => /ENUnique/, :name=>"ENUnique cookie" },
 
-	# Server Header
-	m << { :name=>"Server Header" } if @headers["server"] =~ /^Varnish$/
-
-	# Return passive matches
-	m
-end
+]
 
 end
 

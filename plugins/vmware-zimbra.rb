@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "VMware-Zimbra" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-15
+Plugin.define do
+name "VMware-Zimbra"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-15
+]
 version "0.1"
 description "Zimbra is a next-generation collaboration server that provides organizations greater overall flexibility and simplicity with integrated email, contacts, calendaring, sharing and document management plus mobility and desktop synchronization to users on any computer."
 website "http://www.zimbra.com/products/"
@@ -50,7 +53,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ZM_TEST Cookie

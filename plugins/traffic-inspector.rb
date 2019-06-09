@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 by Andrew Horton
-## changed a match so it doens't use both url and status as this is leading to false positives because of a bug in the core in 0.4.8-dev
-
-Plugin.define "Traffic-Inspector" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-30
+Plugin.define do
+name "Traffic-Inspector"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-30
+  "Andrew Horton", # v0.2 # changed a match so it doens't use both url and status as this is leading to false positives because of a bug in the core in 0.4.8-dev
+]
 version "0.2"
 description "An integrated gateway solution for controlling access to the Internet and for providing data transmission services."
 website "http://www.trafinsp.com/products/Traffic-Inspector/"

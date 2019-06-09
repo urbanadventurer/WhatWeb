@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-17 # Brendan Coles <bcoles@gmail.com>
-# Updated version detection
-##
-Plugin.define "CommonSpot" do
-author "Tonmoy Saikia"
+Plugin.define do
+name "CommonSpot"
+authors [
+  "Tonmoy Saikia",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-02-17 # Updated version detection. 
+]
 version "0.2"
 description "The CommonSpot Web content management solution (Web CMS) increases the value of content by creating engaging Web experiences that generate high impact results."
 website "http://www.paperthin.com/"

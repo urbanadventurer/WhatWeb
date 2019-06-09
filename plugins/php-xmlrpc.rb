@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP-XMLRPC" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-17
+Plugin.define do
+name "PHP-XMLRPC"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-17
+]
 version "0.1"
 description "XML-RPC for PHP is a library implementing the XML-RPC protocol, written in PHP. It is also known as PHPXMLRPC."
 website "http://phpxmlrpc.sourceforge.net/"

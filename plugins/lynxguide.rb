@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "LynxGuide" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-07
+Plugin.define do
+name "LynxGuide"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-07
+]
 version "0.1"
 description "The Lynx System is a Facility-wide, Network based, Duress and Emergency Notification System. "
 website "http://www.lynxguide.com/"

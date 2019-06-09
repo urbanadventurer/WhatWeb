@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Citrix-Access-Gateway" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-28
+Plugin.define do
+name "Citrix-Access-Gateway"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-28
+]
 version "0.1"
 description "Citrix Access Gateway is a secure application access solution that provides administrators granular application-level control while empowering users with remote access from anywhere."
 website "https://www.citrix.com/English/ps2/products/product.asp?contentID=15005"

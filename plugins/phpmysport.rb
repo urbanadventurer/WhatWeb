@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpMySport" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-01
+Plugin.define do
+name "phpMySport"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-01
+]
 version "0.1"
 description "PhpMySport is an open source software designed for all sport clubs and leagues which want to easily create and manage their website."
 website "phpmysport.sourceforge.net"

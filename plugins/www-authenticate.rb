@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-23 # Brendan Coles <bcoles at gmail dot com>
-# Fixed regex bug where WWW-Authenticate header is present but regex match fails
-# Updated regex to accept more than one www-authenticate header
-# Added examples
-##
-Plugin.define "WWW-Authenticate" do
-author "Aung Khant, http://yehg.net" # modified by Andrew Horton
+Plugin.define do
+name "WWW-Authenticate"
+authors [
+  "Aung Khant, http://yehg.net", # modified by Andrew Horton
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-01-23 # Fixed regex bug where WWW-Authenticate header is present but regex match fails. Updated regex to accept more than one www-authenticate header. Added examples. 
+]
 version "0.2"
 description "This plugin identifies the WWW-Authenticate HTTP header and extracts the authentication method and realm."
 
@@ -26,7 +25,7 @@ description "This plugin identifies the WWW-Authenticate HTTP header and extract
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Check HTTP Header for www-authenticate

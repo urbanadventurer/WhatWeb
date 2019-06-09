@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CafeEngine" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+Plugin.define do
+name "CafeEngine"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "CafeEngine is a professional CMS for cafe or restaurant web site with integrated shopping cart. It's not a set of scripts only, but allow to provide new level of service to restaurant visitors and administration. "
 

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Apache-CouchDB" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-03
+Plugin.define do
+name "Apache-CouchDB"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-03
+]
 version "0.1"
 description "Apache CouchDB is a document-oriented database written in Erlang that can be queried and indexed in a MapReduce fashion using JavaScript. CouchDB provides a RESTful JSON API than can be accessed from any environment that allows HTTP requests."
 website "http://couchdb.apache.org/"
@@ -20,7 +23,7 @@ website "http://couchdb.apache.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

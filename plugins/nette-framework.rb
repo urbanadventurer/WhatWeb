@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Nette-Framework" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+Plugin.define do
+name "Nette-Framework"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+]
 version "0.1"
 description "Nette Framework is a powerful framework for rapid and easy creation of high quality and innovative web applications in PHP 5.3"
 website "http://nette.org/cs/"
@@ -16,7 +19,7 @@ website "http://nette.org/cs/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Powered-By Header

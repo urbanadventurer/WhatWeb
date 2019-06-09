@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Removed passive function and replaced with :search=>"headers[location]"
-# Added the Powered by the match
-# Added another version match
-##
-Plugin.define "Zest-Web-Engine" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+Plugin.define do
+name "Zest-Web-Engine"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+  # v0.2 # Removed passive function and replaced with :search=>"headers[location]". Added the Powered by the match. Added another version match. 
+]
 version "0.2"
 description "Zest Web Engine"
 website "http://www.zest-leisure.com/"

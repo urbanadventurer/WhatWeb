@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Net2Phone" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-19
+Plugin.define do
+name "Net2Phone"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-19
+]
 version "0.1"
 description "Net2Phone CommCenter is software that allows you to make phone calls and send faxes to anywhere in the world."
 website "http://www.net2phone.com/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Astaro-Command-Center" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-12
+Plugin.define do
+name "Astaro-Command-Center"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-12
+]
 version "0.1"
 description "Astaro Command Center is a central management solution which provides direct access for application configuration, enables real-time system status surveillance and maintains device software and pattern updates."
 website "http://www.astaro.com/"

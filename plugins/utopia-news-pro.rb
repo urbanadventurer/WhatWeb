@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Utopia-News-Pro" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-30
+Plugin.define do
+name "Utopia-News-Pro"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-30
+]
 version "0.1"
 description "Utopia News Pro - news management system"
 website "http://www.utopiasoftware.net/newspro/"

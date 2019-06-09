@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated regex and version detection
-##
-Plugin.define "Allinta-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
+Plugin.define do
+name "Allinta-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-15
+  # v0.2 # Updated regex and version detection. 
+]
 version "0.2"
 description "Allinta - easy to use ASP CMS (Content Management System) - professional features & superior value."
 website "http://www.allinta.com/"

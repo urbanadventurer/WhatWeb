@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Mura-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
+Plugin.define do
+name "Mura-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-27
+]
 version "0.1"
 description "Mura CMS (previously known as Sava CMS) is an open source CMS for ColdFusion."
 website "http://www.getmura.com/"

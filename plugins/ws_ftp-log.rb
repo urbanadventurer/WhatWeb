@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WS_FTP-log" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
+Plugin.define do
+name "WS_FTP-log"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-15
+]
 version "0.1"
 description "This plugin extratcs ftp servers from WS_FTP log files - As the leading developer of secure and managed file transfer solutions, Ipswitch offers WS_FTP Professional.the most secure and easy-to-use FTP client available."
 website "http://www.ipswitchft.com/products/ws_ftp_pro/index.aspx?n=1&k_id=ipshome"

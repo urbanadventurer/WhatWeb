@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PithCMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
+Plugin.define do
+name "PithCMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+]
 version "0.1"
 description "PithCMS - requirements: Linux, PHP 4.4.4-8"
 website "http://pithcms.altervista.org/index.php?pagina=data/info.php"

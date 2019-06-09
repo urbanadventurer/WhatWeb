@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "Quick_Cms" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
+Plugin.define do
+name "Quick_Cms"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-30
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "Freeware, fast and easy to customize Content Management System."
 website "http://opensolution.org/quick.cms,en,10.html"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "M2Soft-RDServer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-03
+Plugin.define do
+name "M2Soft-RDServer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-03
+]
 version "0.1"
 description "M2Soft Report Designer Server - reporting tool"
 website "http://www.m2soft.co.kr/english/reporting-tool.asp"

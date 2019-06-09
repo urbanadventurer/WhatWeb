@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "X-Host" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-08
+Plugin.define do
+name "X-Host"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-08
+]
 version "0.1"
 description "This plugin retrieves the X-Host, X-HostName, X-Host-Name and X-Host-IP value from the HTTP header."
 
@@ -15,7 +18,7 @@ description "This plugin retrieves the X-Host, X-HostName, X-Host-Name and X-Hos
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Host HTTP Header

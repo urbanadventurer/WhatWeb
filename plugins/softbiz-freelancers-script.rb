@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Softbiz-Freelancers-Script" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+Plugin.define do
+name "Softbiz-Freelancers-Script"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+]
 version "0.1"
 description "Softbiz Freelancers Script is an Extensive and Powerful script written in PHP to launch your own Freelancers website."
 website "http://www.softbizscripts.com/freelancers-script-features.php"

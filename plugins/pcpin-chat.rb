@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PCPIN-Chat" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
+Plugin.define do
+name "PCPIN-Chat"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-15
+]
 version "0.1"
 description "PCPIN Chat is a powerful and secure professional instant messaging system written in PHP and MySQL. It has large ammount of features and highly customizable. PCPIN Chat was written with security considerations in mind, so there is only one public discovered vulnerability in a default configuration since more than 5 years!"
 website "http://www.pcpin.com/?view=Projects"

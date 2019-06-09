@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-07 #
-# Updated version detection
-##
-Plugin.define "ASPThai_Net-Webboard" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
+Plugin.define do
+name "ASPThai_Net-Webboard"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-30
+  # v0.2 # 2011-01-07 # Updated version detection. 
+]
 version "0.2"
 description "ASPThai.Net Webboard"
 website "http://www.aspthai.net/"

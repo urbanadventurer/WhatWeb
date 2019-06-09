@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Tickets-CAD-System" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-05
+Plugin.define do
+name "Tickets-CAD-System"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-05
+]
 version "0.1"
 description "Tickets CAD System - Open Source Dispatch System"
 website "http://www.ticketscad.org/"

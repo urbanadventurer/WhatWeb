@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2
-# removed :probability
-##
-Plugin.define "HTML5" do
-author "Andrew Horton"
+Plugin.define do
+name "HTML5"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :probability. 
+]
 version "0.2"
 description "HTML version 5, detected by the doctype declaration"
 

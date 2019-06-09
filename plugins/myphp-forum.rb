@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "MyPHP-Forum" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-31
+Plugin.define do
+name "MyPHP-Forum"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-31
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "MyPHP-Forum"
 website "http://www.myphp.ws/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Pygopherd" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-19
+Plugin.define do
+name "Pygopherd"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-19
+]
 version "0.1"
 description "An open source multi-protocol gopher server written in Python. Also works as an HTTP and WAP server."
 website "http://quux.org:70/devel/gopher/pygopherd"

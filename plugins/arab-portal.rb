@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated version detection and regex
-##
-Plugin.define "Arab-Portal" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
+Plugin.define do
+name "Arab-Portal"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-25
+  # v0.2 # Updated version detection and regex. 
+]
 version "0.2"
 description "Arab-Portal"
 

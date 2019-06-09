@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Elxis-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
+Plugin.define do
+name "Elxis-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-11
+]
 version "0.1"
 description "Elxis is powerful open source content management system (CMS) released for free under the GNU/GPL license."
 website "http://www.elxis.org/"

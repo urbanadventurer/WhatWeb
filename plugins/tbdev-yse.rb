@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TBDev-YSE" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-14
+Plugin.define do
+name "TBDev-YSE"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-14
+]
 version "0.1"
 description "TBDev Yuna Scatari Edition - Torrent tracker"
 website "http://bit-torrent.kiev.ua/"
@@ -38,7 +41,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Powered-By header

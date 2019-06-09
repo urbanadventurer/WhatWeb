@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "jCore" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-10-22
+Plugin.define do
+name "jCore"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-10-22
+]
 version "0.1"
 description "jCore is a free and open source content management system (CMS) written in PHP and distributed under the GNU General Public License."
 website "http://jcore.net/about"

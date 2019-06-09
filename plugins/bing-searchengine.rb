@@ -4,13 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :name, :certainty=>100, and changed regexp to text
-
-Plugin.define "Bing-SearchEngine" do
-author "Andrew Horton"
-version "0.1"
+Plugin.define do
+name "Bing-SearchEngine"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name, :certainty=>100, and changed regexp to text
+]
+version "0.2"
 description "Bing.com is Microsoft's search engine"
 
 

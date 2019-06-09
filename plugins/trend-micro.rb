@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Trend-Micro" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-12
+Plugin.define do
+name "Trend-Micro"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-12
+]
 version "0.1"
 description "Trend Micro server - http://www.trendmicro.com/"
 

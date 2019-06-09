@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-18 #
-# Replaced passive function with matches
-##
-# Version 0.2 # 2011-04-02 #
-# Updated regex
-##
-Plugin.define "BinarySec-Firewall" do
-author "Aung Khant <http://yehg.net/>" # 2011-02-04
+Plugin.define do
+name "BinarySec-Firewall"
+authors [
+  "Aung Khant <http://yehg.net/>", # 2011-02-04
+  # v0.2 # 2011-04-02 # Updated regex. 
+  "Andrew Horton", # v0.3 # 2016-04-18 # Replaced passive function with matches. 
+]
 version "0.3"
 description "BinarySec Web Application Firewall - http://www.binarysec.com"
 

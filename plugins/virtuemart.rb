@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "VirtueMart" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
+Plugin.define do
+name "VirtueMart"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-23
+]
 version "0.1"
 description "VirtueMart is an Open Source E-Commerce solution to be used together with a Content Management System (CMS) called Joomla!. Joomla! and VirtueMart are written in PHP and can be used in typical PHP/MySQL environments."
 website "http://virtuemart.net/"
@@ -27,7 +30,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# virtuemart cookie

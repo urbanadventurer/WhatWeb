@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Fixed regex to return multiple frames
-##
-Plugin.define "Frame" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-13
+Plugin.define do
+name "Frame"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-13
+  # v0.2 # Fixed regex to return multiple frames. 
+]
 version "0.2"
 description "This plugin detects instances of frame and iframe HTML elements."
 

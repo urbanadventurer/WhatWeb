@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-09-21 # Brendan Coles <bcoles@gmail.com>
-# Added google dorks and version detection
-##
-Plugin.define "MediaWiki" do
-author "Tonmoy Saikia"
+Plugin.define do
+name "MediaWiki"
+authors [
+  "Tonmoy Saikia",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-09-21 # Added google dorks and version detection. 
+]
 version "0.2"
 description "MediaWiki is a free software wiki  package written in PHP, originally for use on Wikipedia http://www.mediawiki.org/wiki/MediaWiki"
 

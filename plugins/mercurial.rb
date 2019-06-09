@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Mercurial" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-16
+Plugin.define do
+name "Mercurial"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-16
+]
 version "0.1"
 description "Mercurial is a free, distributed source control management tool."
 website "http://mercurial.selenic.com/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Alt-N-MDaemon-WorldClient" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-13
+Plugin.define do
+name "Alt-N-MDaemon-WorldClient"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-13
+]
 version "0.1"
 description "MDaemon Messaging Server, mail server software, supports IMAP, SMTP, and POP3 protocols. MDaemon Messaging Server's webmail client, WorldClient is provided free with every version of MDaemon Messaging Server."
 website "http://www.altn.com/Products/MDaemon-Email-Server-Windows/WorldClient-WebMail-MDaemon/"

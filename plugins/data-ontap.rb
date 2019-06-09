@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Data-ONTAP" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-05
+Plugin.define do
+name "Data-ONTAP"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-05
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Data ONTAP - fully virtualized data management environment. Data ONTAP provides a virtualized data environment with a simple interface that enables you to create virtual storage volumes, make changes quickly, and achieve superior storage utilization."
 website "http://www.netapp.com/us/products/platform-os/data-ontap/"

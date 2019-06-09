@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Steam-Steal0r-Log" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
+Plugin.define do
+name "Steam-Steal0r-Log"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-15
+]
 version "0.1"
 description "This plugin extracts passwords from Steam Steal0r logs."
 
@@ -13,7 +16,7 @@ description "This plugin extracts passwords from Steam Steal0r logs."
 
 
 # Extract passwords
-def passive
+passive do
 	m=[]
 
 	if @body =~ /^--------------------[\s]+Steam Steal0r v2 by -=Player=-/

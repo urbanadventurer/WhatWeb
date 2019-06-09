@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "esoTalk" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-29
+Plugin.define do
+name "esoTalk"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-29
+]
 version "0.1"
 description "esoTalk is a simple, fast, free web-forum."
 website "http://esotalk.com/"

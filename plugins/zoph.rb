@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Fixed regex
-##
-Plugin.define "Zoph" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
+Plugin.define do
+name "Zoph"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-11
+  # v0.2 # Fixed regex. 
+]
 version "0.2"
 description "Zoph (Zoph Organizes Photos) is a web based digital image presentation and management system. In other words, a photo album. It is built with PHP, MySQL and Perl."
 website "http://www.zoph.org/"
@@ -33,7 +34,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
         # new versions

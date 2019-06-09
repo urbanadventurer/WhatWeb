@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-25 #
-# Updated regex
-##
-Plugin.define "KaZaA" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
+Plugin.define do
+name "KaZaA"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-25
+  # v0.2 # 2011-01-25 # Updated regex. 
+]
 version "0.2"
 description "This plugin retrieves the KaZaA IP:port combination, network and username from the HTTP headers."
 
@@ -18,7 +19,7 @@ description "This plugin retrieves the KaZaA IP:port combination, network and us
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Kazaa-IP

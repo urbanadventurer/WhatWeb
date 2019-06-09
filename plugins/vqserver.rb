@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "vqServer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
+Plugin.define do
+name "vqServer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-07
+]
 version "0.1"
 description "vqServer is multi-platform compatible. vqServer is a personal web server with support for password protection, file uploading, Java servlets and CGI scripts."
 
@@ -15,7 +18,7 @@ description "vqServer is multi-platform compatible. vqServer is a personal web s
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

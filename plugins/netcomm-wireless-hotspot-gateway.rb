@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "NetComm-Wireless-HotSpot-Gateway" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-27
+Plugin.define do
+name "NetComm-Wireless-HotSpot-Gateway"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-27
+]
 version "0.1"
 description "NetComm Hotspot gateway device - http://www.netcomm.com.au/products/hotspots"
 

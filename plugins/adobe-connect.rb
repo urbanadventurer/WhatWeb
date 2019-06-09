@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Adobe-Connect" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-05
+Plugin.define do
+name "Adobe-Connect"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-05
+]
 version "0.1"
 description "Adobe Connect is an enterprise web conferencing solution for online meetings, eLearning, and webinars used by leading corporations and government agencies."
 website "https://www.adobe.com/products/adobeconnect.html"

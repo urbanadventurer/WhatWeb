@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Simple-Forum-PHP" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
+Plugin.define do
+name "Simple-Forum-PHP"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-26
+]
 version "0.1"
 description "Simple Forum PHP is a script that is very easy to install and administer. Visitors to your website will be able to post new topics or discuss and reply other topics."
 website "http://www.simpleforumphp.com/"

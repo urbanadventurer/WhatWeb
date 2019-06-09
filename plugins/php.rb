@@ -4,24 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.6 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-# Version 0.5 # 2011-08-23 # Andrew Horton
-##
-# Version 0.4 # 2011-05-25 # Brendan Coles <bcoles@gmail.com>
-# Merged php-error plugin and PHP plugin
-# Added aggressive version detection using PHP credits page
-# Added detection for "PHP Warning" HTTP header
-##
-# Version 0.3 # 2011-03-26 # Brendan Coles <bcoles@gmail.com>
-# Added module detection
-##
-# Version 0.2 # 2011-01-19 # Brendan Coles <bcoles@gmail.com>
-# Updated regex matches
-##
-Plugin.define "PHP" do
-author "Andrew Horton & Brendan Coles" # 2010-10-26
+Plugin.define do
+name "PHP"
+authors [
+  "Andrew Horton", # 2010-10-26
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-01-19 # Updated regex matches. 
+  # Brendan Coles <bcoles@gmail.com>, # v0.3 # 2011-03-26 # Added module detection. 
+  # Brendan Coles <bcoles@gmail.com>, # v0.4 # 2011-05-25 # Merged php-error plugin and PHP plugin. Added aggressive version detection using PHP credits page. Added detection for "PHP Warning" HTTP header. 
+  # Andrew Horton, # v0.5 # 2011-08-23 # 
+  # Andrew Horton, # v0.6 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.6"
 description "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML. This plugin identifies PHP errors, modules and versions and extracts the local file path and username if present."
 website "http://www.php.net/"

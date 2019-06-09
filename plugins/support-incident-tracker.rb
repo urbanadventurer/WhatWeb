@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Support-Incident-Tracker" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
+Plugin.define do
+name "Support-Incident-Tracker"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-12-28
+]
 version "0.1"
 description "Support Incident Tracker (or SiT!) is a Free Software/Open Source (GPL) web based application which uses PHP and MySQL for tracking technical support calls/emails (also commonly known as a 'Help Desk' or 'Support Ticket System')"
 website "http://sitracker.org/"
@@ -38,7 +41,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTML Comment # Copyright Notice

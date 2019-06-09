@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "VPON" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-20
+Plugin.define do
+name "VPON"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-20
+]
 version "0.1"
 description "Video Picture on Net (VPON) is a remote video web server"
 website "http://www.vpon21.com/"

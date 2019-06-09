@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2012-10-08 #
-# Added version detection
-# Added 'groupoffice' cookie match
-##
-Plugin.define "Group-Office" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
+Plugin.define do
+name "Group-Office"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-18
+  # v0.2 # 2012-10-08 # Added version detection. Added 'groupoffice' cookie match. 
+]
 version "0.2"
 description "Share projects, calendars, files and e-mail online with co-workers and clients. Easy to use and fully customizable, Group-Office takes online collaboration to the next level."
 website "http://www.group-office.com/"

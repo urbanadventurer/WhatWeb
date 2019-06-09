@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "DirectAdmin" do
-author "Brendan Coles <bcoles@gmail.com>" # 201-04-22
+Plugin.define do
+name "DirectAdmin"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 201-04-22
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Control panel for web hosting companies running Red Hat 7.x, 8.x, 9.x, Red Hat Enterprise and FreeBSD."
 website "http://www.directadmin.com/"

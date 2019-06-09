@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "TVersity" do
-author "Andrew Horton"
+Plugin.define do
+name "TVersity"
+authors [
+  "Andrew Horton",
+  # Andrew Horton, # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "The TVersity Media Server lets you manage your Internet and home media"
 website "tversity.com"

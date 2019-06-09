@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OpenWrt" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+Plugin.define do
+name "OpenWrt"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+]
 version "0.1"
 description "A GNU/Linux based firmware program for embedded devices such as residential gateways and routers."
 website "http://openwrt.org/"
@@ -28,7 +31,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate: Basic realm="OpenWrt"

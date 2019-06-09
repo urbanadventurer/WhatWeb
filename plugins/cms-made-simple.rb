@@ -1,11 +1,15 @@
-##
+###
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 #
-Plugin.define "CMS-Made-Simple" do
-author "Andrew Horton" # 2016-05-25
+##
+Plugin.define do
+name "CMS-Made-Simple"
+authors [
+  "Andrew Horton", # 2016-05-25
+]
 version "0.1"
 description "CMS Made Simple is an opensource Content Management System developed in PHP."
 website "http://www.cmsmadesimple.org/"

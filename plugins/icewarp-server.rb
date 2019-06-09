@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "IceWarp-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
+Plugin.define do
+name "IceWarp-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-17
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "IceWarp Unified Communications Server is a fully integrated email server, webmail server, groupware, instant messaging, VoIP / SIP, text messaging."
 website "http://www.icewarp.com/"

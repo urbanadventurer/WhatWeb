@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-Plugin.define "PasswordField" do
-author "Caleb Anderson"
+Plugin.define do
+name "PasswordField"
+authors [
+  "Caleb Anderson",
+]
 version "0.1"
 description "find password fields"
 
@@ -21,7 +22,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
     m=[]
     fields=@body.scan(/<input [^>]*?type=["']password["'][^>]*>/i)
     fields.each do |field|

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Open-Realty" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+Plugin.define do
+name "Open-Realty"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "Open-Realty is a FREE commercial web based real estate listing management application."
 website "http://www.open-realty.org/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "fsaATLAS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-29
+Plugin.define do
+name "fsaATLAS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-29
+]
 version "0.1"
 description "fsaAtlas is an international student and scholar management system."
 website "http://www.sungardhe.com/Solutions/fsaATLAS/"

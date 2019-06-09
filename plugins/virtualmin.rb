@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Virtualmin" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-14 
+Plugin.define do
+name "Virtualmin"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-14 
+]
 version "0.1"
 description "Virtualmin is a powerful and flexible web server control panel based on the well-known Open Source web-based systems management GUI, Webmin."
 website "http://www.virtualmin.com/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Object" do
-author "Andrew Horton"
+Plugin.define do
+name "Object"
+authors [
+  "Andrew Horton",
+]
 version "0.1"
 description "HTML object tag. This can be audio, video, Flash, ActiveX, Python, etc. More info: http://www.w3schools.com/tags/tag_object.asp"
 

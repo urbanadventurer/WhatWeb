@@ -4,14 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# ~ Brendan Coles bcoles@gmail.com
-# Added JavaScript detection
-# Added <embed> element detection
-# Added flash file path retrieval
-##
-Plugin.define "Adobe-Flash-URLs" do
-author "Caleb Anderson"
+Plugin.define do
+name "Adobe-Flash-URLs"
+authors [
+  "Caleb Anderson",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # Added JavaScript detection. Added <embed> element detection. Added flash file path retrieval. 
+]
 version "0.2"
 description "This plugin identifies instances of embedded adobe flash files and attempts to retrieve the flash file path."
 

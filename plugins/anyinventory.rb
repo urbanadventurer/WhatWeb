@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated version detection
-##
-Plugin.define "anyInventory" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
+Plugin.define do
+name "anyInventory"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-25
+  # v0.2 # Updated version detection. 
+]
 version "0.2"
 description "anyInventory, the most flexible and powerful web-based inventory system"
 website "http://anyinventory.sourceforge.net/"

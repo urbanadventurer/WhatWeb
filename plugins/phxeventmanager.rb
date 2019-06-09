@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phxEventManager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-03
+Plugin.define do
+name "phxEventManager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-03
+]
 version "0.1"
 description "phxEventManager is an event resource calendar system designed to manage all aspects of an occasion."
 website "http://phxeventmanager.com/"

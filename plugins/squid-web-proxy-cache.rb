@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-30 #
-# Updated regex
-##
-Plugin.define "Squid-Web-Proxy-Cache" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
+Plugin.define do
+name "Squid-Web-Proxy-Cache"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-25
+  # v0.2 # 2011-01-30 # Updated regex. 
+]
 version "0.2"
 description "Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages."
 website "http://www.squid-cache.org/"
@@ -19,7 +20,7 @@ website "http://www.squid-cache.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Squid-Error # Also used by iPrism, CachePower, and MecGuard 

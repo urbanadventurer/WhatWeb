@@ -4,17 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2012-04-12 #
-# Updated matches for new versions of BeEF
-##
-# Version 0.3 # 2011-03-26 #
-# Added version detection
-##
-# Version 0.2 # 2011-03-02 #
-# Added favicon and beefmagic.js.php matches
-##
-Plugin.define "BeEF" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04
+Plugin.define do
+name "BeEF"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-04
+  # v0.2 # 2011-03-02 # Added favicon and beefmagic.js.php matches. 
+  # v0.3 # 2011-03-26 # Added version detection. 
+  # v0.4 # 2012-04-12 # Updated matches for new versions of BeEF. 
+]
 version "0.4"
 description "BeEF - Browser Exploitation Framework"
 website "http://beefproject.com/"

@@ -4,12 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :name and :certainty=>100
-
-Plugin.define "Belkin-Modem" do
-author "Andrew Horton"
+Plugin.define do
+name "Belkin-Modem"
+authors [
+  "Andrew Horton",
+  # Version 0.2
+  # removed :name and :certainty=>100
+]
 version "0.2"
 description "Homepage: http://www.belkin.com/"
 

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-19 #
-# Updated version detection
-##
-Plugin.define "XHP-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+Plugin.define do
+name "XHP-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+  # v0.2 # 2011-02-19 # Updated version detection. 
+]
 version "0.2"
 description "XHP CMS - eXpandable Home Page is an easy to install, easy to use, easy to expand content management system (CMS) written in PHP and using MySQL as the database engine."
 website "http://xhp.targetit.ro/"

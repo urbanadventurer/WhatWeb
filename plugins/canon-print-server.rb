@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Replaced passive function with match
-##
-Plugin.define "Canon-Print-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+Plugin.define do
+name "Canon-Print-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+  "Andrew Horton", # v0.2 # 2016-04-19 # Replaced passive function with match. 
+]
 version "0.2"
 description "Canon Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."
 website "http://canon.com"

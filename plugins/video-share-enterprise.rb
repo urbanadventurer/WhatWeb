@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "VideoShareEnterprise" do
-author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-20
+Plugin.define do
+name "VideoShareEnterprise"
+authors [
+  "Brendan Coles <bcoles at gmail dot com>", # 2010-06-20
+]
 version "0.1"
 description "online video sharing community web application"
 website "http://www.alstrasoft.com"

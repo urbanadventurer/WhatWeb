@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Zeus-Traffic-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
+Plugin.define do
+name "Zeus-Traffic-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-17
+]
 version "0.1"
 description "Zeus Traffic Manager - Application Delivery Controller - allows you to deliver fast, secure and available applications to your users at minimum infrastructure cost across any combination of physical, virtual and cloud infrastructures."
 website "http://www.zeus.com/products/traffic-manager/index.html"
@@ -16,7 +19,7 @@ website "http://www.zeus.com/products/traffic-manager/index.html"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Set-Cookie # X-Mapping

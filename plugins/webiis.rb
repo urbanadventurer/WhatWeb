@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WebIIS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
+Plugin.define do
+name "WebIIS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-10
+]
 version "0.1"
 description "WebIIS - Mini ASP Web Server [Chinese]"
 
@@ -16,7 +19,7 @@ description "WebIIS - Mini ASP Web Server [Chinese]"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP WebIIS Header

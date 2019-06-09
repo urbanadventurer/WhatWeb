@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-18 # Andrew Horton
-# Added website parameter
-#  
-##
-Plugin.define "Barracuda-Load-Balancer" do
-author "Aung Khant <http://yehg.net/>" # 2011-02-04
+Plugin.define do
+name "Barracuda-Load-Balancer"
+authors [
+  "Aung Khant <http://yehg.net/>", # 2011-02-04
+  "Andrew Horton", # v0.2 # 2016-04-18 # # Added website parameter
+]
 version "0.2"
 description "Barracuda Load Balancer"
 website "http://www.barracudanetworks.com/ns/products/balancer_overview.php"
@@ -19,7 +19,7 @@ matches [
     {:name=>"BNI_BARRACUDA_LB_COOKIE cookie", :text => "BNI_BARRACUDA_LB_COOKIE", :search => "headers[set-cookie]" },
 ]
 
-def passive
+passive do
     m = []
     
     if @headers["set-cookie"] =~ /BARRACUDA_LB_COOKIE=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/i

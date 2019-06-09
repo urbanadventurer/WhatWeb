@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.1 # 2016-05-10
-# David P Robinson <david@intruder.io>
-# Intiial version of plugin created
-##
-
-Plugin.define "BugTracker.NET" do
-author "David P Robinson <david@intruder.io>"
+Plugin.define do
+name "BugTracker.NET"
+authors [
+  "David P Robinson <david@intruder.io>",
+  # v0.1 # 2016-05-10 # David P Robinson <david@intruder.io>. Intiial version of plugin created. 
+]
 version "0.1"
 description "BugTracker.NET is a free, open-source, web-based bug tracking and general purpose issue tracking application. It is written using ASP.NET, C#, and Microsoft SQL Server"
 website "http://ifdefined.com/bugtrackernet.html"

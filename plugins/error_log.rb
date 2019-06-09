@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "error_log" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-12-28
+Plugin.define do
+name "error_log"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-12-28
+]
 version "0.1"
 description "This plugin identifies PHP error_logs and and extracts the local file path."
 

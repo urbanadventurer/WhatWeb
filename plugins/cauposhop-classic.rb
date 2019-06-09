@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Added website parameter and description
-##
-# Version 0.2 # 2011-01-23 #
-# Updated version detection
-##
-Plugin.define "CaupoShop-Classic" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-29
+Plugin.define do
+name "CaupoShop-Classic"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-29
+  # v0.2 # 2011-01-23 # Updated version detection. 
+  "Andrew Horton", # v0.3 # 2016-04-17 # Added website parameter and description. 
+]
 version "0.3"
 description "German eCommerce and Content management system"
 website "http://www.caupo.net/"

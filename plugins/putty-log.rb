@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PuTTY-Log" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-15
+Plugin.define do
+name "PuTTY-Log"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-15
+]
 version "0.1"
 description "This plugin identifies instances of PuTTY log files and attempts to extract usernames, servers and software versions."
 
@@ -20,7 +23,7 @@ matches [
 ]
 
 # Extract username, server & software versions.
-def passive
+passive do
 	m=[]
 
 	if @body =~ /=~=~=~=~=~=~=~=~=~=~=~= PuTTY log [0-9]{4}.[0-9]{2}.[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} =~=~=~=~=~=~=~=~=~=~=~=/

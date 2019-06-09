@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Truition" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
+Plugin.define do
+name "Truition"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-30
+]
 version "0.1"
 description "CDC eCommerce - On Demand eCommerce and Online Auction Software - formerly Truition"
 website "http://www.truition.com/"

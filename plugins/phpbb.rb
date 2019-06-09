@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 #
-# Fixed Changelog version detection now prefixed with >
-##
-# Version 0.2 #
-# remove :certainty and :name, change :regexp to :text
-##
-Plugin.define "phpBB" do
-author "Andrew Horton"
+Plugin.define do
+name "phpBB"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty and :name, change :regexp to :text. 
+  # v0.3 # Fixed Changelog version detection now prefixed with >. 
+]
 version "0.3"
 description "phpBB is a free forum"
 website "http://phpbb.org/"
@@ -64,7 +63,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	if @headers["set-cookie"] =~ /([^ ]+)_u=1; expires/
@@ -77,7 +76,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	target = URI.join(@base_uri.to_s,"docs/CHANGELOG.html").to_s

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "iRealty" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+Plugin.define do
+name "iRealty"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+]
 version "0.1"
 description "iRealty is an advanced flexible php real estate software and CMS with open source code."
 website "http://www.irealtysoft.com/"
@@ -32,7 +35,7 @@ matches [
 ]
 
 # Match PHPSESSID%28_%29 cookie
-def passive
+passive do
         m=[]
 
 	m << { :name=>"iRealty PHPSESSID%28_%29 cookie" } if @headers["set-cookie"] =~ /^PHPSESSID%28_%29=[a-z0-9]{32}/

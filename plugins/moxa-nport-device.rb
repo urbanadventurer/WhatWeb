@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Moxa-NPort-Device" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-07
+Plugin.define do
+name "Moxa-NPort-Device"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-07
+]
 version "0.1"
 description "Moxa serial-to-ethernet NPort device server"
 website "http://www.moxa.com/product/nport_device_server_1.htm"
@@ -45,7 +48,7 @@ matches [
 # Extract system details
 # This could be looped however some models provide the in different formats
 # Models with system details in HTML rather than JS are currently not supported
-def passive
+passive do
 	m=[]
 
 	device={};

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-08-23 # Brendan Coles <bcoles@gmail.com>
-# Added version detection and google dorks
-##
-Plugin.define "AvantFAX" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-10
+Plugin.define do
+name "AvantFAX"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-10
+  # Brendan Coles <bcoles@gmail.com>, # v0.2 # 2011-08-23 # Added version detection and google dorks. 
+]
 version "0.2"
 description "AvantFAX is a web application for managing faxes on HylaFAX fax servers."
 website "http://avantfax.com/"

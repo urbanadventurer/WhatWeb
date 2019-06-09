@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Softbiz-Online-Auctions-Script" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+Plugin.define do
+name "Softbiz-Online-Auctions-Script"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+]
 version "0.1"
 description "Softbiz Online Auctions Script is an Extensive and Powerful script written in PHP. It has potential to generate very heavy revenues for you. Script is built with focus on increased ease of users and raised profits of webmasters."
 website "http://www.softbizscripts.com/auctions-script-features.php"

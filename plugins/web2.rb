@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Web2" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
+Plugin.define do
+name "Web2"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-11
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "A nice web server, easy to setup! lots of features including cgi, ssi, aliasing, virtual domains and more! - Homepage : Way Back Machine [2005-04-01] - http://web.archive.org/web/20050401233601/http://dink.org/"
 # Homepage [Offline] : http://dink.org/web2/

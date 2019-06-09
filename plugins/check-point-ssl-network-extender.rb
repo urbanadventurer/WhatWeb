@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Check-Point-SSL-Network-Extender" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-24
+Plugin.define do
+name "Check-Point-SSL-Network-Extender"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-24
+]
 version "0.1"
 description "SSL Network Extender adds SSL VPN functionality to the IPSec VPN capabilities of VPN-1 gateways"
 website "http://www.checkpoint.com/products/ssl_network_ext/"

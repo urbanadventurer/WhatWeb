@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SmarterStats" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
+Plugin.define do
+name "SmarterStats"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-13
+]
 version "0.1"
 description "Complete SEO and Web Analytics for Individuals and Enterprises"
 website "http://www.smartertools.com/smarterstats/web-analytics-seo-software.aspx"

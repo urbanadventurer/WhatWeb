@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Think-Plus" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-07
+Plugin.define do
+name "Think-Plus"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-07
+]
 version "0.1"
 description "Think+ - Social Media Marketing"
 website "http://think-plus.gr/"

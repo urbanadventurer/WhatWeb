@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Visualware-MyConnection-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+Plugin.define do
+name "Visualware-MyConnection-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "MyConnection Server (MCS) delivers a broad range of support managed automated and user initiated self-help connection testing and monitoring services directly via the browser to any online customer/location anywhere in the world. MCS incorporates testing solutions for critical time dependent applications such as VoIP, Video, IPTV, video conferencing."
 website "http://www.myconnectionserver.com/"

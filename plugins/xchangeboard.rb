@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-19 #
-# Updated version detection
-##
-Plugin.define "XchangeBoard" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
+Plugin.define do
+name "XchangeBoard"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-21
+  # v0.2 # 2011-02-19 # Updated version detection. 
+]
 version "0.2"
 description "Old forum"
 website "http://www.xchangeboard.de"

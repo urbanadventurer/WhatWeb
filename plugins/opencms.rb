@@ -4,17 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-# Version 0.3 # 2011-03-21 # Brendan Coles <bcoles@gmail.com>
-# Updated regex
-##
-# Version 0.2 # 2011-03-06 # Andrew Horton
-# fixed examples= bug
-##
-Plugin.define "OpenCms" do
-author "Emilio Casbas" #mostly
+Plugin.define do
+name "OpenCms"
+authors [
+  "Emilio Casbas", #mostly
+  "Andrew Horton", # v0.2 # 2011-03-06 # fixed examples= bug. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2011-03-21 # Updated regex. 
+  # Andrew Horton, # v0.4 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.4"
 description "OpenCms, professional and easy to use CMS."
 website "http://www.opencms.org/"

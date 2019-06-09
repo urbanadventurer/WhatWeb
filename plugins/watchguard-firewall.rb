@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-18 # Brendan Coles <bcoles@gmail.com>
-# Updated regex
-# Added HTTP Server Header match
-# Added string extraction from www-authenticate realm
-##
-Plugin.define "WatchGuard-Firewall" do
-author "Aung Khant <http://yehg.net/>" # 2011-02-04
+Plugin.define do
+name "WatchGuard-Firewall"
+authors [
+  "Aung Khant <http://yehg.net/>", # 2011-02-04
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-03-18 # Updated regex. Added HTTP Server Header match. Added string extraction from www-authenticate realm. 
+]
 version "0.2"
 description "WatchGuard Firewall - http://www.watchguard.com/products/edge-e/overview.asp"
 
@@ -21,7 +20,7 @@ description "WatchGuard Firewall - http://www.watchguard.com/products/edge-e/ove
 
 
 # Passive #
-def passive
+passive do
 	m = []
 
 	# HTTP Server Header

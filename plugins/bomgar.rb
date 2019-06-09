@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Bomgar" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
+Plugin.define do
+name "Bomgar"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-31
+]
 version "0.1"
 description "Bomgar simplifies support by letting technicians control remote computers, servers, smartphones and network devices over the internet or network. With Bomgar, a support rep can see what customers see or control their computers for support."
 website "http://www.bomgar.com/remotedesktopaccess/"
@@ -35,7 +38,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

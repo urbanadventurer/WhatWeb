@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Bentley-Systems-ProjectWise" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-28
+Plugin.define do
+name "Bentley-Systems-ProjectWise"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-28
+]
 version "0.1"
 description "ProjectWise - Project Collaboration and Content Management Software for Architecture, Construction, and Engineering Projects"
 website "http://www.bentley.com/en-US/Products/ProjectWise"

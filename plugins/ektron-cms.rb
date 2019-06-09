@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ektron-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-09
-version "0.1"
+Plugin.define do
+name "Ektron-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-09
+  "Bhavin Senjaliya", # v0.2 # 2016-08-19 # Add EkAnalytics cookie. 
+]
+version "0.2"
 description "Ektron provides web content management and social software. Ektron's primary product is CMS400.NET, which is built on the Microsoft .NET Framework."
 website "http://www.ektron.com/"
 
@@ -28,6 +32,9 @@ matches [
 
 # EktGUID Cookie
 { :search=>"headers[set-cookie]", :regexp=>/EktGUID=[a-f\d]{8}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{12}; expires=/ },
+
+# EkAnalytics
+{ :search => "headers[set-cookie]", :regexp => /EkAnalytics/, :name=>"EkAnalytics cookie" },
 
 # ecm Cookie
 { :search=>"headers[set-cookie]", :regexp=>/ecm=user_id=[\d]+&isMembershipUser=[\d]+&site_id=&username=&new_site=[^&]+&unique_id=[\d]+&site_preview=[\d]+&langvalue=[\d]+&DefaultLanguage=[\d]+/ },

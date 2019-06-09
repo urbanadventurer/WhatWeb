@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Videoconference-Management-System" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+Plugin.define do
+name "Videoconference-Management-System"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+]
 version "0.1"
 description "TANDBERG video conferencing management system web interface - http://www.tandberg.com/"
 

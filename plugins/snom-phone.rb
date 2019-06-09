@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Added website parameter and description
-##
-# Version 0.2
-# removed :certainty=>100
-##
-Plugin.define "SnomPhone" do
-author "Andrew Horton"
+Plugin.define do
+name "SnomPhone"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100. 
+  # Andrew Horton, # v0.3 # 2016-04-17 # Added website parameter and description. 
+]
 version "0.3"
 description "VoIP phones and teleconferencing systems"
 website "http://www.snom.com/"

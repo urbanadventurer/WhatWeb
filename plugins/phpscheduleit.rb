@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "phpScheduleIt" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
+Plugin.define do
+name "phpScheduleIt"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-01
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "A web-based resource scheduling system that allows administered management of reservations on any number of resources. Typical applications are conference room or machine reservation management. Written in PHP and tested on MySQL. "
 website "http://phpscheduleit.sourceforge.net"

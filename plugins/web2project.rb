@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "web2Project" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-11-02
+Plugin.define do
+name "web2Project"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-11-02
+]
 version "0.1"
 description "web2Project is a Free Open Source business-oriented Project Management System (PMS)"
 website "http://web2project.net/"

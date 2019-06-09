@@ -4,15 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty=>100 & :name
-# Version 0.3
-# Uses :version=>//
-
-Plugin.define "VBulletin" do
-author "Andrew Horton"
-version "0.3"
+Plugin.define do
+name "VBulletin"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 & :name
+  # v0.3 # Uses :version=>//
+  "@csalazar", # v0.4 # 2014-01-07 # 5 new version detection matches. 
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.5 # 2016-08-19 # Added cookies. 
+]
+version "0.5"
 description "VBulletin is a PHP forum."
 
 
@@ -33,7 +34,19 @@ matches [
 
 {:version=>/Powered by(:)? vBulletin(&reg;)? Version ([0-9a-z.]+)/, :offset=>2,  :name=>"version" },
 {:version=>/<meta name="generator" content="vBulletin ([0-9a-z.]+)" \/>/,  :name=>"version" },
-{:version=>/\* vBulletin ([0-9a-z.]+) CSS/,  :name=>"version" }
+{:version=>/\* vBulletin ([0-9a-z.]+) CSS/,  :name=>"version" },
+
+
+{:version=>/clientscript\/vbulletin_md5\.js,qv=(\d+)\.pagespeed\..*?js">/,  :name=>"version" },
+{:version=>/clientscript\/vbulletin-core\.js\?v=(\d+)/,  :name=>"version" },
+{:version=>/\/vbulletin\/clientscript\/guestforum\.js\?v=(\d+)/,  :name=>"version" },
+{:version=>/clientscript\/vbulletin_global\.js\?v=(\d+)/,  :name=>"version" },
+{:version=>/\/vbulletin_read_marker\.js\?v=(\d+)/,  :name=>"version" },
+
+# Cookie
+{ :search => "headers[set-cookie]", :regexp => /bblastactivity/, :name=>"bblastactivity cookie" },
+{ :search => "headers[set-cookie]", :regexp => /bblastvisit/, :name=>"bblastvisit cookie" },
+{ :search => "headers[set-cookie]", :regexp => /bbsessionhash/, :name=>"bbsessionhash cookie" },
 
 
 ]

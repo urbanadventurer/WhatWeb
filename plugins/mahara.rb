@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Mahara" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-05
+Plugin.define do
+name "Mahara"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-05
+]
 version "0.1"
 description "Mahara is an open source e-portfolio system"
 website "http://mahara.org/"

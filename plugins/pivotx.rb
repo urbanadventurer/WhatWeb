@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PivotX" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-18
+Plugin.define do
+name "PivotX"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-18
+]
 version "0.1"
 description "PivotX - blog software"
 website "http://pivotx.net/"

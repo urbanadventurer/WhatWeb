@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "VSP-Stats-Processor" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
+Plugin.define do
+name "VSP-Stats-Processor"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-15
+]
 version "0.1"
 description "vsp stats processor is a multi game log analyzer / stats generator / log parser."
 website "http://www.scivox.net/vsp/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "FatWire-Content-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-14
+Plugin.define do
+name "FatWire-Content-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-14
+]
 version "0.1"
 description "FatWire Content Server - previously known as Future Tense Content Server CMS"
 website "http://www.fatwire.com/"

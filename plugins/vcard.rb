@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "vcard" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-07
+Plugin.define do
+name "vcard"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-07
+]
 version "0.1"
 description "vCard is a file format standard for electronic business cards. This plugin identifies vcards and extracts the vcard version, name, full name and organization details."
 # More info: http://en.wikipedia.org/wiki/VCard
@@ -16,7 +19,7 @@ description "vCard is a file format standard for electronic business cards. This
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract vcard Details

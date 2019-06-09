@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WordPress-Mobile-Pack" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
+Plugin.define do
+name "WordPress-Mobile-Pack"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-29
+]
 version "0.1"
 description "The WordPress Mobile Pack is a complete toolkit to help mobilize your WordPress site."
 website "http://wordpress.org/extend/plugins/wordpress-mobile-pack/"

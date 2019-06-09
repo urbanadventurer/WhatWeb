@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-06 #
-# Updated OS detection
-##
-Plugin.define "Java" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-28
+Plugin.define do
+name "Java"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-28
+  # v0.2 # 2011-03-06 # Updated OS detection. 
+]
 version "0.2"
 description "Java allows you to play online games, chat with people around the world, calculate your mortgage interest, and view images in 3D, just to name a few. It's also integral to the intranet applications and other e-business solutions that are the foundation of corporate computing."
 website "http://www.java.com/"
@@ -24,7 +25,7 @@ website "http://www.java.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# JSESSIONID Cookie

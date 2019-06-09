@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "HP-ProCurve-Switch" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
+Plugin.define do
+name "HP-ProCurve-Switch"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-12
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "HP ProCurve Switch"
 website "http://www.hp.com/rnd/"
@@ -29,7 +30,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

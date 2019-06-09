@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AContent" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
+Plugin.define do
+name "AContent"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-17
+]
 version "0.1"
 description "AContent  is an open source learning content authoring system and respository used to create interoperable, accessible, adaptive Web-based learning content."
 website "http://www.atutor.ca/acontent/"

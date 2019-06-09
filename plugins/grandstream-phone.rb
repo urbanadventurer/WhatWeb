@@ -4,13 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-#version 0.2 Andrew Horton - added matches[] for devices without a Server: header, removed out of date examples
-##
-Plugin.define "Grandstream-Phone" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "Grandstream-Phone"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+  "Andrew Horton", # v0.2 # added matches[] for devices without a Server: header, removed out of date examples
+  # v0.3 # 2016-04-20 # Andrew Horton # Moved patterns from passive function to matches[]. 
+]
 version "0.3"
 description "Grandstream Networks is the leading manufacturer of IP voice/video telephony and video surveillance solutions."
 website "http://www.grandstream.com/"

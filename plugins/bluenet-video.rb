@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BlueNet-Video" do
-author "Andrew Horton" # 2015-05-07
+Plugin.define do
+name "BlueNet-Video"
+authors [
+  "Andrew Horton", # 2015-05-07
+]
 version "0.1"
 description "BlueNet Video Server is an device that can stream CTV video over the internet. It uses an ActiveX plugin. Product listing - http://kelgor.net/kelcart/products/Bluenet-Video-Server.html"
 website "http://www.batblue.com/themes/BatBlue/videos/BlueNETVideo.html"

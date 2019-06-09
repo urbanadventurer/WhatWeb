@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AutoIndex-PHP-Script" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-30
+Plugin.define do
+name "AutoIndex-PHP-Script"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-30
+]
 version "0.1"
 description "AutoIndex PHP Script - A Website Directory Indexer and File Manager"
 website "autoindex.sourceforge.net"

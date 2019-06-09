@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2011-07-07 #
-# updated regex and added google dorks
-##
-# Version 0.3
-# remove :certainty and :name
-##
-Plugin.define "OSCommerce" do
-author "Andrew Horton"
+Plugin.define do
+name "OSCommerce"
+authors [
+  "Andrew Horton",
+  # v0.3 # remove :certainty and :name. 
+  # v0.4 # 2011-07-07 # updated regex and added google dorks. 
+]
 version "0.4"
 description "Open Source Ecommerce System in PHP. It was first released in March 2000 as 'The Exchange Project'. Branched projects include : Ian's Loaded, ZenCart, CRE Loaded,   http://www.oscommerce.com. This plugin recognises security warnings for file permissions and the installation directory. Aggressive plugin attempts to get version from /admin/login.php page."
 

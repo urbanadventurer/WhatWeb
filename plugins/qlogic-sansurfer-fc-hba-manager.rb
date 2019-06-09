@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "QLogic-SANsurfer-FC-HBA-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-12
+Plugin.define do
+name "QLogic-SANsurfer-FC-HBA-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-12
+]
 version "0.1"
 description "QLogic SANsurfer Fibre Channel (FC) Host Bus Adapter (HBA) management utility web interface (disabled by default). Remote command and control of QLogic Host Bus Adapters - Homepage:http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&cc=us&prodTypeId=12169&prodSeriesId=1809835&prodNameId=1809832&swEnvOID=1113&swLang=8&mode=2&taskId=135&swItem=co-80231-1"
 

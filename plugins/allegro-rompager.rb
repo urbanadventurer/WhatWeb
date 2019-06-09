@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-19 # Andrew Horton
-# Replaced passive function with match
-##
-# Version 0.2 #
-# Added EXT HTTP header
-##
-Plugin.define "Allegro-RomPager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
+Plugin.define do
+name "Allegro-RomPager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-26
+  # v0.2 # Added EXT HTTP header. 
+  "Andrew Horton", # v0.3 # 2016-04-19 # Replaced passive function with match. 
+]
 version "0.3"
 description "The RomPager suite of products enable your engineering team to leverage proven Web-based technologies in your networked embedded device."
 website "http://www.allegrosoft.com/embedded-web-server"

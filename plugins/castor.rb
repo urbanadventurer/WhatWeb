@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CAStor" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-21
+Plugin.define do
+name "CAStor"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-21
+]
 version "0.1"
 description "CAStor is object storage software designed to store unstructured data also referred to as fixed content or reference information. This includes documents, e-mail, images, audio, video, voice mails, ring tones, and medical images and records."
 website "http://www.caringo.com/"

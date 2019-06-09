@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WebSideStory" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-14
+Plugin.define do
+name "WebSideStory"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+]
 version "0.1"
 description "On-Demand Web Analytics For Optimizing Online Business Performance
 HBX Analytics service is a comprehensive on-demand web analytics solution, delivering up-to-the second insight into online visitor and customer behavior."

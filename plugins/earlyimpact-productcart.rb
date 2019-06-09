@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-07-07
-# Updated text matches
-##
-# Version 0.2
-# removed :name and :certainty=>100
-##
-Plugin.define "EarlyImpact-ProductCart" do
-author "Andrew Horton"
+Plugin.define do
+name "EarlyImpact-ProductCart"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100. 
+  # v0.3 # 2011-07-07 # Updated text matches. 
+]
 version "0.3"
 description "EarlyImpact ProductCart is an ASP commercial ecommerce system "
 website "http://www.earlyimpact.com. Version < 2.53 is vulnerable http://www.securityfocus.com/bid/9669"

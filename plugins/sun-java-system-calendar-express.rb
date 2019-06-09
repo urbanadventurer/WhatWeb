@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sun-Java-System-Calendar-Express" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
+Plugin.define do
+name "Sun-Java-System-Calendar-Express"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-26
+]
 version "0.1"
 description "Sun Java System Calendar Server is Sun's calendar (scheduling) server."
 website "http://www.sun.com/software/products/calendar_srvr/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Syncrify" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-29
+Plugin.define do
+name "Syncrify"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-29
+]
 version "0.1"
 description "Syncrify is a fast incremental remote backup that backs up files using the HTTP protocol."
 website "http://web.synametrics.com/Syncrify.htm"

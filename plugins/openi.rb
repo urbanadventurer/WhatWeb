@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OpenI" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-04
+Plugin.define do
+name "OpenI"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-04
+]
 version "0.1"
 description "OpenI is a Business Intelligence web application for on-demand or SaaS deployments. OpenI enables simple and clean data visualization from OLAP and RDBMS, so users can intuitively build and publish interactive reports, analyses, and dashboards."
 website "http://openi.org/"
@@ -32,7 +35,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection

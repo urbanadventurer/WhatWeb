@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :name & :probability
-# Version 0.3
-# Uses :version=>//
-
-Plugin.define "FormMail" do
-author "Andrew Horton"
+Plugin.define do
+name "FormMail"
+authors [
+  "Andrew Horton",
+	# v0.2 # removed :name & :probability
+	# v0.3 # Uses :version=>//
+]
 version "0.3"
 description "Common form email script.
 

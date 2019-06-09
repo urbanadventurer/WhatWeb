@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MooTools" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
+Plugin.define do
+name "MooTools"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-02
+]
 version "0.1"
 description "MooTools is a compact, modular, Object-Oriented JavaScript framework designed for the intermediate to advanced JavaScript developer. It allows you to write powerful, flexible, and cross-browser code with its elegant, well documented, and coherent API."
 website "http://mootools.net/"

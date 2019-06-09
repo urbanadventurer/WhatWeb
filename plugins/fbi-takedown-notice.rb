@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "FBI-Takedown-Notice" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-29
+Plugin.define do
+name "FBI-Takedown-Notice"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-29
+]
 version "0.1"
 description "This plugin detects instances of the joint Department of Justice, FBI and IPR Center take down notice."
 website "http://fbi.gov/"

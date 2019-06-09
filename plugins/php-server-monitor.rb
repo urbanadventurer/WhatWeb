@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP-Server-Monitor" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-21
+Plugin.define do
+name "PHP-Server-Monitor"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-21
+]
 version "0.1"
 description "PHP Server Monitor is a script that checks whether the servers on your list are up and running on the selected ports.It comes with a web based user interface where you can add and remove servers and users from the MySQL database."
 website "http://sourceforge.net/projects/phpservermon/"

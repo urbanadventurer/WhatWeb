@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-09-21 # Brendan Coles <bcoles@gmail.com>
-# Updated model detection
-# Updated http server header matches
-##
-Plugin.define "Canon-Printer" do
-author "Andrew Horton"
+Plugin.define do
+name "Canon-Printer"
+authors [
+  "Andrew Horton",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-09-21 # Updated model detection. Updated http server header matches. 
+]
 version "0.2"
 description "Remote UI for Canon Printers"
 website "http://www.canon.com/"

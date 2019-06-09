@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Isolsoft-Support-Center" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-25
+Plugin.define do
+name "Isolsoft-Support-Center"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-25
+]
 version "0.1"
 description "Support Center is a fully automated Help Desk solution."
 website "http://www.isolsoft.com/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "RoSpora" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
+Plugin.define do
+name "RoSpora"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-24
+]
 version "0.1"
 description "Spora The Burning Crusade Edition Means RoSpora - web script build for MaNGOS Free MMORPG Server. Revolution of Simple Page Of Registration of Accounts"
 website "http://code.google.com/p/rospora/"

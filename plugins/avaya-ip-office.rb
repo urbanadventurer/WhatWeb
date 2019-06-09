@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Replaced passive function with matches
-##
-Plugin.define "Avaya-IP-Office" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+Plugin.define do
+name "Avaya-IP-Office"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+  "Andrew Horton", # v0.2 # 2016-04-19 # Replaced passive function with matches. 
+]
 version "0.2"
 description "IP Office is Avaya's telephone system for small and medium enterprises. IP Office systems can be run in several modes."
 website "http://marketingtools.avaya.com/knowledgebase/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Uebimiau-Webmail" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-12-29
+Plugin.define do
+name "Uebimiau-Webmail"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-12-29
+]
 version "0.1"
 description "Uebimiau Webmail"
 website "http://www.uebimiau.org/download.php"

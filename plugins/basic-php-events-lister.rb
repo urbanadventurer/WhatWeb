@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Basic-PHP-Events-Lister" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-21
+Plugin.define do
+name "Basic-PHP-Events-Lister"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-21
+]
 version "0.1"
 description "PHP event calendar"
 website "http://www.mevin.com/"

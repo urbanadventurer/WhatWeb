@@ -4,21 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2016-04-18 # Andrew Horton
-# Replaced passive function with :search=>"headers[p3p]" pattern
-##
-# Version 0.4 # 2016-04-17 # Andrew Horton
-# Added website parameter
-##
-# Version 0.3
-# Uses :version=>//
-##
-# Changelog
-# Version 0.2
-# Removed :name and :probility
-
-Plugin.define "ASP-Nuke" do
-author "Andrew Horton"
+Plugin.define do
+name "ASP-Nuke"
+authors [
+  "Andrew Horton",
+  # v0.2 # Removed :name and :probability
+  # v0.3 # Uses :version=>//. 
+  # Andrew Horton, # v0.4 # 2016-04-17 # Added website parameter. 
+  # Andrew Horton, # v0.5 # 2016-04-18 # Replaced passive function with :search=>"headers[p3p]" pattern. 
+]
 version "0.5"
 description "ASP Nuke is an open-source software application for running a community-based web site on a web server. The requirements for the ASP Nuke content management system are: 1. Microsoft SQL Server 2000 and 2. Microsoft Internet Information Server (IIS) 5.0"
 website "http://www.aspnuke.com/"

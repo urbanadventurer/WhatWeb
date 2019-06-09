@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Jenkins" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-23
+Plugin.define do
+name "Jenkins"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-23
+]
 version "0.1"
 description "Jenkins is an application that monitors executions of repeated jobs, such as building a software project or jobs run by cron."
 website "http://jenkins-ci.org/"

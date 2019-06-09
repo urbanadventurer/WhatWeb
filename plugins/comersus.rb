@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Updated description, added website, and changed name to ComersusCart
-##
-# Version 0.2
-# removed :name and :certainty=>100
-
-Plugin.define "ComersusCart" do
-author "Andrew Horton"
+Plugin.define do
+name "ComersusCart"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100
+  # Andrew Horton, # v0.3 # 2016-04-17 # Updated description, added website, and changed name to ComersusCart. 
+]
 version "0.3"
 
 description "ComersusCart is an open-source shopping cart using ASP. Comersus is an active server pages software for running a professional store, seamlessly integrated with the rest of your web site. Comersus Cart is free and it can be used for commercial purposes. Full source code included and compatible with Windows and Linux Servers."

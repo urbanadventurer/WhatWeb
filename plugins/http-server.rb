@@ -3,23 +3,20 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
-#
-# Version 0.4 # 2011-04-08 # Brendan Coles <bcoles@gmail.com>
-# Updated OS detection
 ##
-# Version 0.3 # 2011-02-21 # Brendan Coles <bcoles@gmail.com>
-# Added OS detection
-##
-# Version 0.2
-# removed :probability
-##
-Plugin.define "HTTPServer" do
-author "Andrew Horton"
+Plugin.define do
+name "HTTPServer"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :probability. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2011-02-21 # Added OS detection. 
+  # Brendan Coles <bcoles@gmail.com>, # v0.4 # 2011-04-08 # Updated OS detection. 
+]
 version "0.4"
 description "HTTP server header string. This plugin also attempts to identify the operating system from the server header."
 
 # Passive #
-def passive
+passive do
 	m=[]
 	
 	unless @headers["server"].nil?

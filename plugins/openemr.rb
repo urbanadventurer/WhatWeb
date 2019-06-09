@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OpenEMR" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-20
+Plugin.define do
+name "OpenEMR"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-20
+]
 version "0.1"
 description "OpenEMR is a Free and Open Source electronic health records and medical practice management application."
 website "http://www.open-emr.org/"

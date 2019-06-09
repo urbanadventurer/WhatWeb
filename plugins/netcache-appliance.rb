@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "NetCache-Appliance" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-09
+Plugin.define do
+name "NetCache-Appliance"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-09
+]
 version "0.1"
 description "NetCache is a former web cache software product which was owned and developed by NetApp and sold to Blue Coat Systems."
 website "http://www.netapp.com/us/products/netcache.html"

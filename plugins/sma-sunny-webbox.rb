@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SMA-Sunny-WebBox" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-27
+Plugin.define do
+name "SMA-Sunny-WebBox"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-27
+]
 version "0.1"
 description "Sunny WebBox is a high-performance communication hub for medium to large-scale solar power plants. It features system monitoring, remote diagnosis, data storage and visualization."
 website "http://www.sma-america.com/en_US/products/monitoring-systems/sunny-webbox.html"

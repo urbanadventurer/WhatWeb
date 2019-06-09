@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "IB-Lite" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-23
+Plugin.define do
+name "IB-Lite"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-23
+]
 version "0.1"
 description "ComAp IB-Lite - Internet / Ethernet Module including Web Server - Plug-in communication module for IL-NT, IC-NT, IA-NT and ID-Lite controllers and their clones."
 website "http://www.comap.cz/products/detail/ib-lite/"
@@ -28,7 +31,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Firmware / Bootloader Detection

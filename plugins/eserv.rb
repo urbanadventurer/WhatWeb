@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Eserv" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-10-22
+Plugin.define do
+name "Eserv"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-10-22
+]
 version "0.1"
 description "Eserv - Mail Server - SMTP/POP3/IMAP/HTTP"
 website "http://www.eserv.ru/"

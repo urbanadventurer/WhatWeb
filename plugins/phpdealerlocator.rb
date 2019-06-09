@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpDealerLocator" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-16
+Plugin.define do
+name "phpDealerLocator"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-16
+]
 version "0.1"
 description "phpDealerLocator is a full featured zip code locator software - Requires: PHP and MySQL"
 website "http://www.yourphppro.com/version/en-us/content/page_4.html"

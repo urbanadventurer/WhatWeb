@@ -4,16 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-############################
-# WhatWeb plugin by NetAgence.com
-############################
-Plugin.define "PrestaShop" do
-author "Chris, NetAgence.com"
-version "1.0"
+Plugin.define do
+name "PrestaShop"
+authors [
+  "Chris@NetAgence.com", # WhatWeb plugin by NetAgence.com
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.2 # Reduced version from 1.0 to 0.2.. Added Bhavin's cookie. 
+]
+version "0.2"
 description "Ecommerce CMS Prestashop."
 website "http://www.prestashop.com/"
-
-
 
 # Google results as at 2011-07-19 #
 # 989 for inurl:id_cms
@@ -43,7 +42,10 @@ matches [
   :regexp=>/<meta name="description"[^>]*content="Shop powered by PrestaShop/},
 
   {:name=>"html comment",
-  :regexp=>/<!-- \/Block permanent links module HEADER -->/}
+  :regexp=>/<!-- \/Block permanent links module HEADER -->/},
+
+  # Cookie 
+  { :search => "headers[set-cookie]", :regexp => /PrestaShop/, :name=>"PrestaShop cookie" },
 
 #{:text=>"<meta name=\"description\" content=\"Boutique propuls&eacute;e par PrestaShop\" />", :name=>"PrestaShop-Powered meta description (FR)"},
 #{:text=>"<meta name=\"description\" content=\"Shop powered by PrestaShop\" />", :name=>"PrestaShop-Powered meta description (EN)"},

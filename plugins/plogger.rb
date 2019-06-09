@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Plogger" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
+Plugin.define do
+name "Plogger"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-18
+]
 version "0.1"
 description "Plogger is the next generation in open-source photo gallery systems."
 website "http://www.plogger.org/"

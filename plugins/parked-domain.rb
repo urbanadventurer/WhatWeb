@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-06 #
-# Added matches for multiple hosts
-##
-Plugin.define "Parked-Domain" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
+Plugin.define do
+name "Parked-Domain"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-14
+  # v0.2 # 2011-03-06 # Added matches for multiple hosts. 
+]
 version "0.2"
 description "This plugin recognises web pages for common web hosts who allow domain parking."
 

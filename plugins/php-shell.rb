@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Fixed regex
-##
-Plugin.define "PHP-Shell" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
+Plugin.define do
+name "PHP-Shell"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-06
+  # v0.2 # Fixed regex. 
+]
 version "0.2"
 description "php remote shell and file explorer"
 

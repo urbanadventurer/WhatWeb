@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MyBB" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-26
+Plugin.define do
+name "MyBB"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-26
+]
 version "0.1"
 description "MyBB is a powerful, efficient and free forum package developed in PHP and MySQL. MyBB has been designed with the end users in mind, you and your subscribers. Full control over your discussion system is presented right at the tip of your fingers, from multiple styles and themes to the ultimate customization of your forums using the template system."
 website "http://mybb.com/"

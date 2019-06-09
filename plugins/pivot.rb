@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Pivot" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-18
+Plugin.define do
+name "Pivot"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-18
+]
 version "0.1"
 description "Pivot is a web-based tool to help you maintain dynamic sites, like weblogs or online journals."
 website "http://www.pivotlog.net/"

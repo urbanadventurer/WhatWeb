@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2012-02-05 #
-# Added header match. Updated matches. Updated version detection.
-##
-# Version 0.2 # 2011-04-25 #
-# Added cookie matches
-##
-Plugin.define "ColdFusion" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
+Plugin.define do
+name "ColdFusion"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-15
+  # v0.2 # 2011-04-25 # Added cookie matches. 
+  # v0.3 # 2012-02-05 # Added header match. Updated matches. Updated version detection.. 
+]
 version "0.3"
 description "Adobe ColdFusion application server and software enables developers to rapidly build, deploy, and maintain robust Internet applications for the enterprise."
 website "http://www.adobe.com/products/coldfusion/"
@@ -70,7 +69,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# CFID and CFTOKEN cookie

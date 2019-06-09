@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Wordpress-Contact-Form" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
+Plugin.define do
+name "Wordpress-Contact-Form"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-25
+]
 version "0.1"
 description "WordPress Contact Form plugin - Contact Form 7 can manage multiple contact forms, plus you can customize the form and the mail contents flexibly with simple markup. The form supports Ajax-powered submitting, CAPTCHA, Akismet spam filtering and so on."
 website "http://wordpress.org/extend/plugins/contact-form-7/"
@@ -20,7 +23,7 @@ matches [
 ]
 
 # Version Detection # Default HTML form input
-def passive
+passive do
 	m=[]
 
 	if @body =~ /<input type="hidden" name="_wpcf([\d]+)_version" value="[\d\.]+" \/>/

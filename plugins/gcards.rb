@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "gCards" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-15
+Plugin.define do
+name "gCards"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-15
+]
 version "0.1"
 description "gCards is a free PHP-based eCard system that is easy to setup and use. gCards simple Administration Console allows the administrator to upload images (JPEGs of GIFs), add eCard categories, and modify existing settings - Note: This project is dormant - no further updates will be done"
 website "http://www.gregphoto.net/gcards/index.php"

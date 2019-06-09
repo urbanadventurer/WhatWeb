@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Jcow" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
+Plugin.define do
+name "Jcow"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-20
+]
 version "0.1"
 description "Jcow - social networking"
 website "http://www.jcow.net/"

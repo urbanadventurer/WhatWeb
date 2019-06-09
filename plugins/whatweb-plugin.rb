@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-04-12 #
-# Updated regex
-##
-Plugin.define "WhatWeb-Plugin" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-16
+Plugin.define do
+name "WhatWeb-Plugin"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-16
+  # v0.2 # 2011-04-12 # Updated regex. 
+]
 version "0.2"
 description "This plugin detects instances of WhatWeb plugins. If this plugin is returned then chances are the other results are false positives."
 
@@ -16,7 +17,7 @@ description "This plugin detects instances of WhatWeb plugins. If this plugin is
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract plugin details

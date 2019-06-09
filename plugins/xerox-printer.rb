@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-09-17 #
-# Updated Phaser model/version/firmware detection
-##
-# Version 0.2 # 2011-02-25 #
-# Updated model detection
-##
-Plugin.define "Xerox-Printers" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
+Plugin.define do
+name "Xerox-Printers"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-22
+  # v0.2 # 2011-02-25 # Updated model detection. 
+  # v0.3 # 2011-09-17 # Updated Phaser model/version/firmware detection. 
+]
 version "0.2"
 description "Xerox printers web interface"
 website "http://www.xerox.com/"

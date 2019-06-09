@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Tiger-Netcom-Device" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
+Plugin.define do
+name "Tiger-Netcom-Device"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-27
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Tiger Netcom is a manufacturer and distributor of Voice over Internet Protocol (VoIP) equipment."
 website "http://www.vanaccess.com/"

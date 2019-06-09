@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Contentteller-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+Plugin.define do
+name "Contentteller-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "Contentteller - A powerful Content Management System with 20 modules designed for high traffic websites."
 website "http://www.contentteller.com/en/"

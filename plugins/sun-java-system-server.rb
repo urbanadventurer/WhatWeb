@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-# Version 0.2 # 2011-01-30 #
-# Updated version detection
-# Added Application Server version detection
-##
-Plugin.define "Sun-Java-System-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
+Plugin.define do
+name "Sun-Java-System-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-23
+  # v0.2 # 2011-01-30 # Updated version detection. Added Application Server version detection. 
+  "Andrew Horton", # v0.3 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.3"
 description "Sun Java System Web/Proxy Server."
 website "http://developers.sun.com/appserver/"
@@ -35,7 +33,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # Application Server

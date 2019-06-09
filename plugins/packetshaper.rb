@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PacketShaper" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-19
+Plugin.define do
+name "PacketShaper"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-19
+]
 version "0.1"
 description "The Blue Coat PacketShaper provides application performance monitoring for an accurate picture of network traffic and ensures business-critical applications have the resources they need to operate effectively"
 website "http://www.bluecoat.com/products/packetshaper"
@@ -36,7 +39,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# PScfgstr cookie

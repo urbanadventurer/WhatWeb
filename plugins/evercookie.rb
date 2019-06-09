@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-23 # Brendan Coles <bcoles@gmail.com>
-# Updated regex
-# Added version detection and script src path extraction
-##
-Plugin.define "evercookie" do
-author "Aung Khant <http://yehg.net/>" # 2011-02-04
+Plugin.define do
+name "evercookie"
+authors [
+  "Aung Khant <http://yehg.net/>", # 2011-02-04
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-03-23 # Updated regex. Added version detection and script src path extraction. 
+]
 version "0.2"
 description "EverCookie - evercookie is a javascript API available that produces extremely persistent cookies in a browser. Its goal is to identify a client even after they've removed standard cookies, Flash cookies (Local Shared Objects or LSOs), and others."
 website "http://samy.pl/evercookie/"

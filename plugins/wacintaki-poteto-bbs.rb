@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Wacintaki-Poteto-BBS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-23
+Plugin.define do
+name "Wacintaki-Poteto-BBS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-23
+]
 version "0.1"
 description "Wacintaki Poteto BBS is a CSS conversion of Oekaki Poteto 5.x."
 website "http://www.ninechime.com/products/"

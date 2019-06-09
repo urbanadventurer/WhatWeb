@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "KMSoft-Guestbook" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
+Plugin.define do
+name "KMSoft-Guestbook"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-11
+]
 version "0.1"
 description "Guestbook"
 website "http://www.kmsoft.org/"

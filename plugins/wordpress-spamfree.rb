@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-02-18 # Brendan Coles <bcoles@gmail.com>
-# Updated version detection
-##
-# Version 0.2
-# removed :certainty=>100
-##
-Plugin.define "WordPressSpamFree" do
-author "Andrew Horton"
+Plugin.define do
+name "WordPressSpamFree"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2011-02-18 # Updated version detection. 
+]
 version "0.3"
 description "Wordpress SpamFree module. Get your WordPress Blog Spam-Free with this plugin. Normal users doesnt even know your using it. But it keeps away the spammers."
 website "http://wordpress.org/extend/plugins/spam-free/"

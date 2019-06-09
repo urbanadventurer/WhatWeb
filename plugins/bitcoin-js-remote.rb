@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "bitcoin-js-remote" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-17
+Plugin.define do
+name "bitcoin-js-remote"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-17
+]
 version "0.1"
 description "A JavaScript Remote for Bitcoin - bitcoin-js-remote is a user interface for Bitcoin written in JavaScript and released under the MIT/X11 License. It works in most modern browsers as well as on Android and iPhones."
 website "http://tcatm.github.com/bitcoin-js-remote/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP-Support-Tickets" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
+Plugin.define do
+name "PHP-Support-Tickets"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-12
+]
 version "0.1"
 description "PHP Support Tickets - PHP5 / MySQL helpdesk system."
 website "http://www.phpsupporttickets.com/"

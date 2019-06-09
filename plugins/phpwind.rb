@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHPWind" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
+Plugin.define do
+name "PHPWind"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-18
+]
 version "0.1"
 description "BBS [Chinese]"
 website "http://www.phpwind.net/"

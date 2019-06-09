@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "PHP-Live" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
+Plugin.define do
+name "PHP-Live"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-03
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "PHP Live! enables live help and live customer support communication directly from your website."
 website "http://www.phplivesupport.com/"

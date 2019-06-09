@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-11-04 #
-# Updated matches to use :search instead of passive[]
-##
-Plugin.define "Bitrix-Site-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-04
+Plugin.define do
+name "Bitrix-Site-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-04
+  # v0.2 # 2011-11-04 # Updated matches to use :search instead of passive[]. 
+]
 version "0.1"
 description "Website management, e-commerce and e-marketing solution that delivers extreme value in performance, functionality, and ease-of-use."
 website "http://www.bitrixsoft.com/"

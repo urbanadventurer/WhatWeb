@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Added website
-##
-# Version 0.2 #
-# Added version detection. Updated matches.
-##
-Plugin.define "CMSimple" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
+Plugin.define do
+name "CMSimple"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-05 
+  # v0.2 # Added version detection. Updated matches.. 
+  "Andrew Horton", # v0.3 # 2016-04-17 # Added website. 
+]
 version "0.3"
 description "CMSimple is a simple content management system for smart maintainance of small commercial or private sites."
 website "http://www.cmsimple.org/"

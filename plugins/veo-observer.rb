@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Veo-Observer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+Plugin.define do
+name "Veo-Observer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+]
 version "0.1"
 description "Web interface for discontinued network cameras from Veo"
 

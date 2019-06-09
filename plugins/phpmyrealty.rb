@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpMyRealty" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-19
+Plugin.define do
+name "phpMyRealty"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-19
+]
 version "0.1"
 description "phpMyRealty - customizable real estate web application - Requires: PHP"
 website "http://www.phpmyrealty.com/"

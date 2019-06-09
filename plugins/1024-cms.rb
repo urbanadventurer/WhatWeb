@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "1024-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-12
+Plugin.define do
+name "1024-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-12
+]
 version "0.1"
 description "1024 is one of a few CMS's leading the way with the implementation of the AJAX technology  into all its areas. This includes dynamic adminstration and user interaction. 1024 offers you to ability to set up your own community forums, download area, news posts, member management and more."
 website "http://www.1024cms.org/"

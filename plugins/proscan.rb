@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "ProScan" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-13
+Plugin.define do
+name "ProScan"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-13
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Streams audio"
 website "http://www.proscan.org/"

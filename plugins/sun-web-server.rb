@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sun-Web-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
+Plugin.define do
+name "Sun-Web-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-06
+]
 version "0.1"
 description "Sun web server"
 website "http://www.sun.com/"
@@ -18,7 +21,7 @@ website "http://www.sun.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	if @headers["server"] =~ /^Sun/

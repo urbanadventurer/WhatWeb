@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Quest-Password-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-26
+Plugin.define do
+name "Quest-Password-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-26
+]
 version "0.1"
 description "Quest Password Manager enables the end user to reset forgotten passwords securely, allowing administrators to implement stronger password policies while reducing the help desk workload."
 website "http://www.quest.com/password-manager/"

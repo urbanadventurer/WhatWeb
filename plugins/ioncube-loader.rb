@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ionCube-Loader" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-05
+Plugin.define do
+name "ionCube-Loader"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-05
+]
 version "0.1"
 description "ionCube Loader handles the reading and execution of ionCube encoded PHP files at run time."
 website "http://www.ioncube.com/loaders.php"

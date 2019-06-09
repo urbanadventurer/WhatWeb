@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-
-Plugin.define "Embedthis-AppWeb" do
-author "Andrew Horton"
+Plugin.define do
+name "Embedthis-AppWeb"
+authors [
+  "Andrew Horton",
+  # Andrew Horton, # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Web server for embedded devices"
 website "http://embedthis.com/products/appweb/embedded-web-server.html"

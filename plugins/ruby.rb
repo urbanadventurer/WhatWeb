@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-# Version 0.2 # 2011-05-24 #
-# Added WEBrick detection
-##
-Plugin.define "Ruby" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
+Plugin.define do
+name "Ruby"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-26
+  # v0.2 # 2011-05-24 # Added WEBrick detection. 
+  "Andrew Horton", # v0.3 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.3"
 description "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write."
 website "http://www.ruby-lang.org/"
