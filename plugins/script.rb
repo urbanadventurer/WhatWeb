@@ -8,8 +8,9 @@ Plugin.define do
 name "Script"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2010-10-14
+  "Andrew Horton", # v0.2 # 2019-07-10 # Fix warning: character class has duplicated range
 ]
-version "0.1"
+version "0.2"
 description "This plugin detects instances of script HTML elements and returns the script language/type."
 
 # Google results as at 2010-10-14 #
@@ -24,7 +25,7 @@ matches [
 { :regexp=>/<script(\s|>)/i },
 
 # <script> tag # Detect type/language
-{ :string=>/<script[^>]+(language|type)\s*=\s*['"]?([^'^"^\s]+)['"]?/, :offset=>1 },
+{ :string=>/<script[^>]+(language|type)\s*=\s*['"]?([^'"\s]+)['"]?/, :offset=>1 },
 
 ]
 
