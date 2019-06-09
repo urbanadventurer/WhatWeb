@@ -10,8 +10,9 @@ authors [
   "Brendan Coles <bcoles@gmail.com>", # 2010-10-26
   # v0.2 # Added EXT HTTP header. 
   "Andrew Horton", # v0.3 # 2016-04-19 # Replaced passive function with match. 
+  # Andrew Horton # v0.4 # 2019-07-10 # Fix warning: character class has duplicated range
 ]
-version "0.3"
+version "0.4"
 description "The RomPager suite of products enable your engineering team to leverage proven Web-based technologies in your networked embedded device."
 website "http://www.allegrosoft.com/embedded-web-server"
 
@@ -22,10 +23,10 @@ website "http://www.allegrosoft.com/embedded-web-server"
 
 matches [
 	# Server # RomPager
-	{ :version=>/^[\s]*RomPager\/([^\s^\r^\n]+)/, :search=>"headers[server]" },
+	{ :version=>/^[\s]*RomPager\/([^\s]+)/, :search=>"headers[server]" },
 
 	# Server # Allegro-Software-RomPager
-	{ :version=>/^[\s]*Allegro-Software-RomPager\/([^\s^\r^\n]+)/, :search=>"headers[server]" },
+	{ :version=>/^[\s]*Allegro-Software-RomPager\/([^\s]+)/, :search=>"headers[server]" },
 	
 	# EXT
 	{ :text=>"", :search=>"headers[ext]" },
