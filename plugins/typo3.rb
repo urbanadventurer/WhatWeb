@@ -10,13 +10,13 @@ authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-04-09
   "Andrew Horton", # v0.2 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array. 
   "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.3 # 2016-08-19 # Added cookie
+  "Janosch Maier @Phylu", # v0.4 # 2018-04-20 # bugfix in regex 
 ]
-version "0.3"
+version "0.4"
 description "TYPO3 is a free Open Source content management system for enterprise purposes on the web and in intranets. It offers full flexibility and extendability while featuring an accomplished set of ready-made interfaces, functions and modules."
 website "http://typo3.com/"
 
 # More examples here: http://welovet3.com/
-
 
 # Matches #
 matches [
