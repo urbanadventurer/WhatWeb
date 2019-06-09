@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Web-Publishing-Wizard" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-22
+Plugin.define do
+name "Web-Publishing-Wizard"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-22
+]
 version "0.1"
 description "If your Internet service provider (ISP) provides space for publishing personal Web pages, you can use Web Publishing Wizard (WPW) to post your personal Web pages. Normally, you must first manually configure WPW before posting your pages. To prevent you from having to manually configure WPW, ISPs can place a file named Postinfo.html in the root folder of Web servers. This file contains all the server-specific information that you would normally have to enter. The file makes posting Web pages faster and easier. - More Info: http://support.microsoft.com/kb/163838"
 
@@ -15,7 +18,7 @@ description "If your Internet service provider (ISP) provides space for publishi
 
 
 # Extract details
-def passive
+passive do
 	m=[]
 
 	if @body =~ /<TITLE> WEB POSTING INFORMATION <\/TITLE>/i

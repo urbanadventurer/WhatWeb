@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Nintendo-DS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-02
+Plugin.define do
+name "Nintendo-DS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-02
+]
 version "0.1"
 description "Nintendo DS video game console"
 website "http://www.nintendo.com/"
@@ -21,7 +24,7 @@ website "http://www.nintendo.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate Header

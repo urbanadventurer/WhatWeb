@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-09 #
-# Updated version detection
-##
-Plugin.define "CaLogic-Calendars" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
+Plugin.define do
+name "CaLogic-Calendars"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-27
+  # v0.2 # 2011-01-09 # Updated version detection. 
+]
 version "0.2"
 description "Web calendar"
 website "http://calogic.de/"

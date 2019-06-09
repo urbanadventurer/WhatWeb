@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OCS-Inventory-NG" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-20
+Plugin.define do
+name "OCS-Inventory-NG"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-20
+]
 version "0.1"
 description "Open Computers and Software Inventory Next Generation - computer hardware management - http://www.ocsinventory-ng.org/en/"
 

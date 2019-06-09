@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Symantec-Endpoint-Protection-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-19
+Plugin.define do
+name "Symantec-Endpoint-Protection-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-19
+]
 version "0.1"
 description "Antivirus and personal firewall"
 website "http://www.symantec.com/business/endpoint-protection"

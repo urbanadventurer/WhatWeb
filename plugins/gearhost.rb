@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-03-06 #
-# Updated OS detection
-##
-# Version 0.2 # 2011-02-10 #
-# Updated regex match
-##
-Plugin.define "GearHost" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
+Plugin.define do
+name "GearHost"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-25
+  # v0.2 # 2011-02-10 # Updated regex match. 
+  # v0.3 # 2011-03-06 # Updated OS detection. 
+]
 version "0.3"
 description "GearHost is a Microsoft Gold Certified Windows Hosting Partner that specializes in complex hosted managed servers, CloudServers and shared Windows Web Hosting Solutions for ASP.NET, ColdFusion, Exchange Business Email and other technologies."
 website "http://www.gearhost.com/"
@@ -22,7 +21,7 @@ website "http://www.gearhost.com/"
 
 
 # HTTP Header
-def passive
+passive do
 	m=[]
 
 	# Hosted-With HTTP Header

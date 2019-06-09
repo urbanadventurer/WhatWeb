@@ -4,21 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2012-08-16 # Andrew Horton
-# Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array
-##
-# Version 0.4 # 2011-04-09 # Brendan Coles <bcoles at gmail dot com>
-# Added aggressive md5 matches
-##
-# Version 0.3 # 2011-03-05 #
-# Updated version detection
-##
-# Version 0.2
-# removed :certainty=>100
-##
-Plugin.define "SMF" do
-author "Andrew Horton"
-version "0.5"
+Plugin.define do
+name "SMF"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100. 
+  # v0.3 # 2011-03-05 # Updated version detection. 
+  "Brendan Coles <bcoles at gmail dot com>", # v0.4 # 2011-04-09 # Added aggressive md5 matches. 
+  # Andrew Horton, # v0.5 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array. 
+  "@csalazar", # v0.6 # 2013-12-31 # Added a new version detection match. 
+]
+version "0.6"
 description "SMF (Simple Machines Forum) is an opensource forum written in PHP"
 website "www.simplemachines.org"
 
@@ -44,10 +40,14 @@ matches [
 # Version Detection # Powered by text
 { :version=>/<a href="http:\/\/www.simplemachines.org\/" title="Simple Machines Forum" target="_blank"( class="new_win")?>Powered by SMF ([^<]+)/, :offset=>1 },
 
+# Version Detection 
+{ :version=>/<a href=".*?" title="Simple Machines Forum" target="_blank" class="new_win">SMF ([^<]+)/},
+
+
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 # the paths are relative to the url path if they don't start with /
@@ -78,7 +78,7 @@ files=[
 	downloads={}
 	to_download.each do |d|
 		target = URI.join(@base_uri.to_s,d).to_s	
-		status,url,ip,body,headers=open_target(target)
+		_status,_url,_ip,body,_headers = open_target(target)
 		downloads[d] = {:md5sum=>Digest::MD5.hexdigest(body).to_s}	
 	end
 

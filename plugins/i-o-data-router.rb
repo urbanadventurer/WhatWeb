@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "I-O-DATA-Router" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
+Plugin.define do
+name "I-O-DATA-Router"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-05
+]
 version "0.1"
 description "I-O DATA router [Japanese] - http://www.iodata.jp/product/"
 
@@ -32,7 +35,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version + Model Detection # HTTP Server Header

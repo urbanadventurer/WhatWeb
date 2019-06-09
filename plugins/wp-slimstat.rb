@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WP-SlimStat" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-18
+Plugin.define do
+name "WP-SlimStat"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-18
+]
 version "0.1"
 description "A lightwight but powerful real-time web analytics plugin for WordPress"
 website "https://wordpress.org/extend/plugins/wp-slimstat/"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "EZCMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
+Plugin.define do
+name "EZCMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-28
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "Building your own website is easy with the EZ Websites Builder"
 website "http://www.ezwebsites.com.au"

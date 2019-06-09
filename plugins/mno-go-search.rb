@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3
-# changed âo .{3}
-##
-# Version 0.2
-# remove :certainty, :name and vulnerability description
-##
-Plugin.define "MnoGoSearch" do
-author "Andrew Horton"
+Plugin.define do
+name "MnoGoSearch"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty, :name and vulnerability description. 
+  # v0.3 # changed âo .{3}. 
+]
 version "0.3"
 description "mnoGoSearch is an opensource website search engine. Homepage http://www.mnogosearch.org"
 

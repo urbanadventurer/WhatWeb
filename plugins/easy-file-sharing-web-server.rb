@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Easy-File-Sharing-Web-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+Plugin.define do
+name "Easy-File-Sharing-Web-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Easy File Sharing Web Server is a file sharing software that allows visitors to upload/download files easily through a Web Browser"
 website "http://www.sharing-file.com/"

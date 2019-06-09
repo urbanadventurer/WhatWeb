@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ericsson-TV-Web-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+Plugin.define do
+name "Ericsson-TV-Web-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+]
 version "0.1"
 description "Ericsson Integrated Receiver Decoders - web interface"
 website "http://www.ericsson.com/ourportfolio/products/integrated-receiver-decoders?nav=fgb_101_348|fgb_101_749"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Hughes-Satellite-Router" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-14
+Plugin.define do
+name "Hughes-Satellite-Router"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-14
+]
 version "0.1"
 description "Hughes IPoS (IP over Satellite) router"
 website "http://www.hughes.com/ProductsAndTechnology/BroadbandSatelliteSystems/Pages/default.aspx"

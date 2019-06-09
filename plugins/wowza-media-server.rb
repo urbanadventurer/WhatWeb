@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Wowza-Media-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-18
+Plugin.define do
+name "Wowza-Media-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-18
+]
 version "0.1"
 description "Wowza Media Server is used for streaming of live and on-demand video, audio, and RIAs (rich Internet applications) over public and private IP networks to desktop, laptop, and tablet computers, mobile devices, IPTV set-top boxes, internet-connected TV sets, and other network-connected devices"
 website "www.wowza.com/"

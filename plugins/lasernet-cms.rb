@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Lasernet-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-10
+Plugin.define do
+name "Lasernet-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-10
+]
 version "0.1"
 description "Lasernet CMS"
 website "http://lasernet.gr/cms.php"

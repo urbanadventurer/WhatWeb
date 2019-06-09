@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "X-Vortech-PHP" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
+Plugin.define do
+name "X-Vortech-PHP"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-30
+]
 version "0.1"
 description "X-Vortech-PHP HTTP header."
 
@@ -13,7 +16,7 @@ description "X-Vortech-PHP HTTP header."
 
 
 # HTTP Header
-def passive
+passive do
 	m=[]
 
 	m << { :version=>@headers["x-vortech-php"].to_s } unless @headers["x-vortech-php"].nil?

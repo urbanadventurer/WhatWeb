@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-08 #
-# Updated version detection
-##
-Plugin.define "bSpeak" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
+Plugin.define do
+name "bSpeak"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-27
+  # v0.2 # 2011-01-08 # Updated version detection. 
+]
 version "0.2"
 description "bSpeak is 26th Avenue's threaded message board application. It is full-featured and fast, allowing you to create a community, provide online support, or provide announcements for your website."
 website "http://www.bspeak.com/"

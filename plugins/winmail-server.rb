@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Winmail-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-27
+Plugin.define do
+name "Winmail-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-27
+]
 version "0.1"
 description "Winmail Server is an enterprise class mail server software system offering a robust feature set, including extensive security measures. Winmail Server supports SMTP, POP3, IMAP, Webmail, LDAP, multiple domains, SMTP authentication, spam protection, anti-virus protection, SSL/TLS security, RBL ,SPF, SpamAssassin, Network Storage, remote access, Web-based administration, and a wide array of standard email options such as filtering, signatures, real-time monitoring, archiving, and public email folders."
 website "http://www.magicwinmail.net/"
@@ -51,7 +54,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# magicwinmail_default_language cookie

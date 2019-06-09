@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Redmine" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-15
+Plugin.define do
+name "Redmine"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-15
+]
 version "0.1"
 description "Redmine is a flexible project management web application. Written using Ruby on Rails framework, it is cross-platform and cross-database."
 

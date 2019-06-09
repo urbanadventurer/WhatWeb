@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CERN" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-13
+Plugin.define do
+name "CERN"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-13
+]
 version "0.1"
 description "The CERN httpd (also known as W3C httpd) is a generic public domain full-featured hypertext server which can be used as a regular HTTP server. Version 3.0A is the final version. It was generated July 15th 1996."
 website "http://www.w3.org/Daemon/"

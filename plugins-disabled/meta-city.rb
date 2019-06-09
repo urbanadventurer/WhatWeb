@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-31 #
-# Updated regex
-##
-Plugin.define "Meta-City" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
+Plugin.define do
+name "Meta-City"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-20
+  # v0.2 # 2011-03-31 # Updated regex. 
+]
 version "0.2"
 description "This plugin retrieves the city from the meta city tag. This tag is used by the Gigablast search engine."
 

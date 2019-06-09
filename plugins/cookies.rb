@@ -4,20 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2011-05-14 # Brendan Coles <bcoles@gmail.com>
-# Changed @cookies to @headers["set-cookie"] to support recursive mode
-##
-# Version 0.4 # 2011-04-08 # Brendan Coles <bcoles@gmail.com>
-# Added username and localfile path detection for cookies containing public_html
-##
-# Version 0.3 # 2011-01-30 # Brendan Coles <bcoles@gmail.com>
-# Fixed regex bug # Cookies were always split by "=" even when it wasn't present
-##
-# Version 0.2
-# removed :certainty=>100
-##
-Plugin.define "Cookies" do
-author "Andrew Horton"
+Plugin.define do
+name "Cookies"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2011-01-30 # Fixed regex bug Cookies were always split by "=" even when it wasn't present. 
+  # Brendan Coles <bcoles@gmail.com>, # v0.4 # 2011-04-08 # Added username and localfile path detection for cookies containing public_html. 
+  # Brendan Coles <bcoles@gmail.com>, # v0.5 # 2011-05-14 # Changed @cookies to @headers["set-cookie"] to support recursive mode. 
+]
 version "0.5"
 description "Display the names of cookies in the HTTP headers. The values are not returned to save on space."
 
@@ -27,7 +22,7 @@ description "Display the names of cookies in the HTTP headers. The values are no
 # 17 for set-cookie path=/home/ /public_html
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	unless @headers["set-cookie"].nil? or @headers["set-cookie"].empty?

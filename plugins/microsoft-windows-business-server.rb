@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # Brendan Coles <bcoles@gmail.com>
-# Renamed to Microsoft-Windows-Business-Server
-# Added Remote Web Workplace module detection
-##
-# Version 0.2
-# removed :certainty=>100 & :name
-##
-Plugin.define "Microsoft-Windows-Business-Server" do
-author "Andrew Horton"
+Plugin.define do
+name "Microsoft-Windows-Business-Server"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 & :name. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # Renamed to Microsoft-Windows-Business-Server. Added Remote Web Workplace module detection. 
+]
 version "0.3"
 description "Microsoft Small/Essential Business Server"
 website "http://www.microsoft.com/"

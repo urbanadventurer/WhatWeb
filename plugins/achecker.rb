@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AChecker" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
+Plugin.define do
+name "AChecker"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-17
+]
 version "0.1"
 description "AChecker  is an open source Web accessibility evaluation tool. It can be used to review the accessibility of Web pages based on a variety international accessibility guidelines."
 website "http://www.atutor.ca/achecker/"
@@ -28,7 +31,7 @@ matches [
 ]
 
 # Version detection
-def passive
+passive do
         m=[]
 
         if @body =~ /	<br \/><h1>Web Accessibility Checker<\/h1>/

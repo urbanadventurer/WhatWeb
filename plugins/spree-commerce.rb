@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Spree-Commerce" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
+Plugin.define do
+name "Spree-Commerce"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-22
+]
 version "0.1"
 description "Spree Commerce is an open source e-commerce solution"
 website "http://spreecommerce.com/"

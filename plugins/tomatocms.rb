@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TomatoCMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-10
+Plugin.define do
+name "TomatoCMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-10
+]
 version "0.1"
 description "TomatoCMS considers each web page made up of many different elements called widgets. You can easily create, customize the layout of your site like never before through a visual tool called Layout Editor very easy and convenient."
 website "http://www.tomatocms.com/"

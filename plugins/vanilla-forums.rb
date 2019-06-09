@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Vanilla-Forums" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
+Plugin.define do
+name "Vanilla-Forums"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-11
+]
 version "0.1"
 description "Vanilla Forums - open-source, standards-compliant, customizable discussion forums."
 website "http://vanillaforums.org/"

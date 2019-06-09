@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Oracle-Primerva" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-13
+Plugin.define do
+name "Oracle-Primerva"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-13
+]
 version "0.1"
 description "Enterprise Project Portfolio Management (EPPM) solutions"
 website "http://www.oracle.com/oms/eppm/index.html"

@@ -1,13 +1,15 @@
+##
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Conexant-EmWeb" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
+Plugin.define do
+name "Conexant-EmWeb"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-30
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "This plugin identifies the Conexant-EmWeb DSL router web interface."
 website "http://www.conexant.com/"
@@ -76,7 +78,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Check HTTP Header
@@ -92,7 +94,7 @@ def passive
 end
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Check HTTP Header

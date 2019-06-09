@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Pandora-FMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
+Plugin.define do
+name "Pandora-FMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-19
+]
 version "0.1"
 description "Pandora Flexible Monitoring System (FMS) is a performance & availability monitoring system, ready for big environments. It uses agents for local monitoring and can do several kinds of remote network monitoring. Agents works on Linux, Windows, AIX, HP-UX, Solaris and BSD systems."
 website "http://pandorafms.org/"

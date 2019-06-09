@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-30 #
-# Updated regex
-##
-Plugin.define "Zimplit-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-11
+Plugin.define do
+name "Zimplit-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-11
+  # v0.2 # 2011-03-30 # Updated regex. 
+]
 version "0.2"
 description "Zimplit CMS: The easiest Open Source Content Management System for small web- and minisites"
 website "http://www.zimplit.com/"

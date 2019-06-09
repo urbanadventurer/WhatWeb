@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Adcon-Telemetry-Gateway" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-23
+Plugin.define do
+name "Adcon-Telemetry-Gateway"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-23
+]
 version "0.1"
 description "Adcon Telemetry Gateway base station - Manages large networks of UHF, GSM and GPRS RTUs automatically."
 website "http://www.adcon.at/"

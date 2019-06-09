@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Lotus-Domino" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-22
+Plugin.define do
+name "Lotus-Domino"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-22
+]
 version "0.1"
 description "Lotus Domino - Social business application platform"
 website "https://www-01.ibm.com/software/lotus/products/domino/"

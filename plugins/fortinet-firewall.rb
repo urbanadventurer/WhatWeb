@@ -4,14 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-09-14 # Brendan Coles <bcoles@gmail.com>
-# Updated random string generation
-# Updated cookie match
-# Changed :string to :name
-# Added JavaScript match, aggressive image match and google dork
-##
-Plugin.define "Fortinet-Firewall" do
-author "Aung Khant, http://yehg.net"
+Plugin.define do
+name "Fortinet-Firewall"
+authors [
+  "Aung Khant, http://yehg.net",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-09-14 # Updated random string generation. Updated cookie match. Changed :string to :name. Added JavaScript match, aggressive image match and google dork. 
+]
 version "0.2"
 description "Fortinet firewall technology combines ASIC-accelerated stateful inspection with an arsenal of integrated application security engines to quickly identify and block complex threats."
 website "http://www.fortinet.com/solutions/firewall.html"
@@ -54,7 +52,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# APSCOOKIE and log_filters cookies

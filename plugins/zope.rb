@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Zope" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
+Plugin.define do
+name "Zope"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-02
+]
 version "0.1"
 description "Zope is an open source web application server primarily written in the Python programming language. It features a transactional object database which can store not only content and custom data, but also dynamic HTML templates, scripts, a search engine, and relational database (RDBMS) connections and code."
 website "http://www.zope.org/"

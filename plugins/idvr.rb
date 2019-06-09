@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-02-25 #
-# Updated version detection
-##
-# Version 0.2 #
-# Fixed regex
-##
-Plugin.define "iDVR" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+Plugin.define do
+name "iDVR"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+  # v0.2 # Fixed regex. 
+  # v0.3 # 2011-02-25 # Updated version detection. 
+]
 version "0.3"
 description "iDVR (formerly Devloution Security System) is a video surveillance system for the Linux/X11 platform."
 website "http://code.google.com/p/idvr/"

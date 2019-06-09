@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ZoneMinder" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-01
+Plugin.define do
+name "ZoneMinder"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-01
+]
 version "0.1"
 description "Linux video camera security and surveillance solution - Web interface - Requires MySQL and PHP"
 website "http://www.zoneminder.com/"
@@ -49,7 +52,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Combined Match # h1 Heading and Password field

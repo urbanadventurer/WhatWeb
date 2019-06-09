@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Xataface" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-10
+Plugin.define do
+name "Xataface"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-10
+]
 version "0.1"
 description "Xataface is a full-featured Web application framework. It automatically generates the appropriate forms, lists, and menus for a user to interact with a MySQL database without having to know any SQL."
 website "http://xataface.com/"

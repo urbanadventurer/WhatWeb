@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Lotus-Notes-Traveler" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-22
+Plugin.define do
+name "Lotus-Notes-Traveler"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-22
+]
 version "0.1"
 description "IBM Lotus Notes Traveler is a push email solution providing quick access to email, calendar, address book, journal, and to-do list for Lotus Notes mobile users."
 website "https://www-01.ibm.com/software/lotus/products/notes/traveler.html"

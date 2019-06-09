@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Zen-Load-Balancer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-09-29
+Plugin.define do
+name "Zen-Load-Balancer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-09-29
+]
 version "0.1"
 description "Zen Load Balancer is a complete solution for load balancing to provide a high availability for TCP and UDP services and data line communications."
 website "http://www.zenloadbalancer.com/web/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ipTIME-Router" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-19
+Plugin.define do
+name "ipTIME-Router"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-19
+]
 version "0.1"
 description "ipTIME Rrouter [Korean] - developed by EFM Networks"
 website "http://www.iptime.co.kr/~iptime/prd.php?pf=3"

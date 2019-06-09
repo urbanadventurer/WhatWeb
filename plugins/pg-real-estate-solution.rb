@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PG-Real-Estate-Solution" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-03
+Plugin.define do
+name "PG-Real-Estate-Solution"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-03
+]
 version "0.1"
 description "Turnkey Multilingual Real Estate Website script for Real Estate professionals."
 website "http://www.realtysoft.pro/realestate/index.php"

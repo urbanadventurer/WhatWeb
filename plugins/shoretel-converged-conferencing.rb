@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ShoreTel-Converged-Conferencing" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-20
+Plugin.define do
+name "ShoreTel-Converged-Conferencing"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-20
+]
 version "0.1"
 description "ShoreTel Converged Conferencing"
 website "http://www.shoretel.com/"

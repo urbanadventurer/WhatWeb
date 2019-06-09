@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ManageEngine-DeviceExpert" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-24
+Plugin.define do
+name "ManageEngine-DeviceExpert"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-24
+]
 version "0.1"
 description "DeviceExpert is a web.based, multi vendor network change, configuration and compliance management (NCCCM) solution for switches, routers, firewalls and other network devices."
 website "http://www.manageengine.com/products/device-expert/"

@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-06-04 #
-# Updated regex
-# Added matches
-##
-# Version 0.2 # 2011-01-24 #
-# Added HTTP Header match
-##
-Plugin.define "Microsoft-Sharepoint" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
+Plugin.define do
+name "Microsoft-Sharepoint"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-05 
+  # v0.2 # 2011-01-24 # Added HTTP Header match. 
+  # v0.3 # 2011-06-04 # Updated regex. Added matches. 
+]
 version "0.3"
 description "Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions."
 website "http://sharepoint.microsoft.com/"
@@ -55,7 +53,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# MicrosoftSharePointTeamServices HTTP Header

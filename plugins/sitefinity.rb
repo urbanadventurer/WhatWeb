@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2012-03-09 #
-# Added match. Added google dork. Updated version detection.
-##
-Plugin.define "Sitefinity" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-04
+Plugin.define do
+name "Sitefinity"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-04
+  # v0.2 # 2012-03-09 # Added match. Added google dork. Updated version detection.. 
+]
 version "0.2"
 description "sitefinity ASP.NET CMS"
 website "http://www.sitefinity.com/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP-Mall" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-20
+Plugin.define do
+name "PHP-Mall"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-20
+]
 version "0.1"
 description "PHP Mall (formerly iBoutique.MALL) is a powerful and flexible multi vendors mall solution."
 website "http://www.netartmedia.net/mall"

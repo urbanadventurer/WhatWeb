@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MikroTik-RouterOS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-07
+Plugin.define do
+name "MikroTik-RouterOS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-07
+]
 version "0.1"
 description "RouterOS is the operating system used on the MikroTik RouterBOARD series of routers. It can also be installed on a PC and will turn it into a router with all the necessary features - routing, firewall, bandwidth management, wireless access point, backhaul link, hotspot gateway, VPN server and more."
 website "http://www.mikrotik.com/software.html & http://www.routerboard.com/"
@@ -29,7 +32,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Logo HTML

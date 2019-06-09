@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Post-Revolution" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
+Plugin.define do
+name "Post-Revolution"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-06
+]
 version "0.1"
 description "Post Revolution - CMS"
 website "http://postrev.com.ar/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Stronghold" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-04
+Plugin.define do
+name "Stronghold"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-04
+]
 version "0.1"
 description "Stronghold was a fork of the Apache HTTP Server. Stronghold was created by C2Net, which was eventually purchased by Red Hat. Red Hat Stronghold products are no longer available for purchase."
 website "https://www.redhat.com/software/stronghold/"

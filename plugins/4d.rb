@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "4D" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-11
+Plugin.define do
+name "4D"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-11
+]
 version "0.1"
 description "4D web application deployment server"
 website "Homepage: http://www.4d.com/products.html"

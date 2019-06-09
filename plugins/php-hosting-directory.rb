@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP-Hosting-Directory" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
+Plugin.define do
+name "PHP-Hosting-Directory"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-10
+]
 version "0.1"
 description "PHP Hosting Directory"
 website "http://www.jnshosts.com/php-hosting-directory.html"

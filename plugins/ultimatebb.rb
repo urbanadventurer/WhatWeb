@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ultimate-Bulletin-Board" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-29
+Plugin.define do
+name "Ultimate-Bulletin-Board"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-29
+]
 version "0.1"
 description "Since 1997, thousands of websites have chosen UBB for their forum software solution. With the integrated Portal and Photo Gallery (UBB.Gallery) you can create your entire website using UBB without the need to buy anything else"
 website "http://ubbcentral.com/"

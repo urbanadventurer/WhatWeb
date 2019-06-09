@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "Pc4Uploader" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
+Plugin.define do
+name "Pc4Uploader"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-17
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "File upload web app"
 website "http://www.pc4arb.com/"

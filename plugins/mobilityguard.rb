@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MobilityGuard" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
+Plugin.define do
+name "MobilityGuard"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-05
+]
 version "0.1"
 description "MobilityGuard is a suite of security products from the company by the same name."
 website "http://www.mobilityguard.com/"
@@ -24,7 +27,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

@@ -4,16 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Squarespace" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
-version "0.1"
+Plugin.define do
+name "SquareSpace"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+  "Bhavin Senjaliya", # v0.2 # 2016-08-19 # Added cookies. 
+]
+version "0.2"
 description "A fully hosted, completely managed environment for creating and maintaining a website, blog or portfolio."
 website "http://www.squarespace.com/"
 
 # Google results as at 2011-03-03 #
 # 116 for "This site is completely powered by the Squarespace platform."
-
-
 
 # Matches #
 matches [
@@ -27,6 +29,11 @@ matches [
 # favicon.ico
 { :url=>"favicon.ico", :md5=>"89cc5689b952ee12d13a68e98119183f" },
 
+# Cookie 
+{ :search => "headers[set-cookie]", :regexp => /^WebPersCookie/, :name=>"WebPersCookie cookie" },
+{ :search => "headers[set-cookie]", :regexp => /^SS_MID/, :name=>"SS_MID cookie" },
+{ :search => "headers[set-cookie]", :regexp => /^ss_sd/, :name=>"ss_sd cookie" },
+	
 ]
 
 end

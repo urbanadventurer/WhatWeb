@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Magento" do
-author "Andrew Horton"
-version "0.1"
+Plugin.define do
+name "Magento"
+authors [
+  "Andrew Horton",
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.2 # 2016-08-19 # Added CUSTOMER cookie. 
+]
+version "0.2"
 description "Opensource ecommerce platform written in PHP"
 website "http://www.magentocommerce.com"
 
@@ -58,7 +62,9 @@ Set-Cookie: frontend=s0ucd54lq2js68cp05sp6r2u92; 	ALPHA	1.4.0.1
 # Set-Cookie: magento=3s3piyt6bil5carswndryvwak6zqzo3x; expires=Tue, 02-Nov-2010 04:42:28 GMT; path=/; domain=www.malenasflowers.com (ver. 1.2.0.2)
 
 { :name=>"cookie called magento", :search=>"headers[set-cookie]", :regexp=>/^magento=[0-9a-f]+/ },
-{ :name=>"cookie called frontend", :search=>"headers[set-cookie]", :regexp=>/^frontend=[0-9a-z]+/ }
+{ :name=>"cookie called frontend", :search=>"headers[set-cookie]", :regexp=>/^frontend=[0-9a-z]+/ },
+
+{ :name=>"cookie called CUSTOMER", :search => "headers[set-cookie]", :regexp => /^CUSTOMER/i, :certainty => 25 },
 
 ]
 

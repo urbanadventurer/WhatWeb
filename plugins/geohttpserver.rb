@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "GeoHttpServer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+Plugin.define do
+name "GeoHttpServer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+]
 version "0.1"
 description "GeoHttpServer"
 website "http://www.geovision.com.tw/english/index.asp"
@@ -26,7 +29,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

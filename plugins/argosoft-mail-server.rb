@@ -4,21 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.5 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-# Version 0.4 # 2011-03-06 #
-# Updated OS detection
-##
-# Version 0.3 # 2011-01-07 #
-# Updated HTTP Server Header match
-# Added OS detection
-##
-# Version 0.2 #
-# Updated matches and version detection
-##
-Plugin.define "ArGoSoft-Mail-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
+Plugin.define do
+name "ArGoSoft-Mail-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-13 
+  # v0.2 # Updated matches and version detection. 
+  # v0.3 # 2011-01-07 # Updated HTTP Server Header match. Added OS detection. 
+  # v0.4 # 2011-03-06 # Updated OS detection. 
+  "Andrew Horton", # v0.5 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.5"
 description "ArGoSoft-Mail-Server web interface"
 website "http://www.argosoft.com/"

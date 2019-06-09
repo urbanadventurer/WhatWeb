@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Pre-Printing-Press" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-19
+Plugin.define do
+name "Pre-Printing-Press"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-19
+]
 version "0.1"
 description "A complete printing press website script contains all features required for online printing business. Developed in PHP, MYSQL and Flash AS3, with all browsers compatibility and easy to navigate."
 website "http://www.preprojects.com/printing.asp"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-11-22 #
-# Updated matches to use matches instead of passive
-##
-Plugin.define "Oracle-iPlanet" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
+Plugin.define do
+name "Oracle-iPlanet"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-23
+  # v0.2 # 2011-11-22 # Updated matches to use matches instead of passive. 
+]
 version "0.2"
 description "Oracle-iPlanet Web Server and Proxy Server."
 website "http://www.oracle.com/technetwork/middleware/iplanetwebserver-098726.html"

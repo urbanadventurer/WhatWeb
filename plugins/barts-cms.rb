@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Barts-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-03
+Plugin.define do
+name "Barts-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-03
+]
 version "0.1"
 description "Bart's CMS is a website Content Management System that is build with Codecharge Studio."
 website "http://trinityhome.org/"

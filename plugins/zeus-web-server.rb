@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Zeus-Web-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-25
+Plugin.define do
+name "Zeus-Web-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-25
+]
 version "0.1"
 description "Zeus Web Server is the most scalable, high-performance web server software available, underpinning business-critical solutions for the world's leading web hosting, content provider and secure e-commerce companies."
 website "http://www.zeus.com/products/web-server/"

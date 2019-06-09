@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-02 #
-# Updated version detection
-# Renamed from MAXdev to MD-Pro
-##
-Plugin.define "MD-Pro" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
+Plugin.define do
+name "MD-Pro"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-28
+  # v0.2 # 2011-03-02 # Updated version detection. Renamed from MAXdev to MD-Pro. 
+]
 version "0.2"
 description "MaxDev is proud to introduce MD-Pro, the most complete, flexible and reliable CMS available on the market."
 website "http://www.maxdev.com/AboutMD.phtml"

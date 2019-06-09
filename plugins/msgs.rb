@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MSGS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-20
+Plugin.define do
+name "MSGS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-20
+]
 version "0.1"
 description "Mercury Satellite Ground Station is a software system for commanding and controlling a satellite ground station. It's goal is to help enable ubiquitous access to satellite resources via the Internet."
 website "Homepage: http://mgsn.sourceforge.net/"

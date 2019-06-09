@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 #
-# Updated model detection
-##
-# Version 0.2 #
-# Updated version detection
-##
-Plugin.define "IQeye-Netcam" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
+Plugin.define do
+name "IQeye-Netcam"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-11
+  # v0.2 # Updated version detection. 
+  # v0.3 # Updated model detection. 
+]
 version "0.3"
 description "IQeye netcam web interface"
 

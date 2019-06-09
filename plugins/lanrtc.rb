@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-21 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "LanRTC" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-09
+Plugin.define do
+name "LanRTC"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-09
+  "Andrew Horton", # v0.2 # 2016-04-21 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "LanRTC Device"
 website "http://www.dorma-time-access.de/prod/content/view/full/36922/%28code%29/product_detail/%28parent%29/36921"

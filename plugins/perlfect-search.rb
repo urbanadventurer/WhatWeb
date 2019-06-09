@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Perlfect-Search" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-16
+Plugin.define do
+name "Perlfect-Search"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-16
+]
 version "0.1"
 description "Perlfect Search is a free, sophisticated, powerful, versatile, customizable and effective site indexing/searching suite available under an open source license (GPL). It comes as a pair of distinct scripts. The indexer, that automatically scans and indexes a web site, and the search engine"
 website "http://www.perlfect.com/freescripts/search/"

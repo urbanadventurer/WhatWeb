@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "LandShop" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-01
+Plugin.define do
+name "LandShop"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-01
+]
 version "0.1"
 description "LandShop - Open Source Real Estate System"
 website "http://www.landshop.gr/"

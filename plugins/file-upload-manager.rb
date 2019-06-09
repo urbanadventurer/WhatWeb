@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Added website parameter
-##
-# Version 0.2 # 2011-02-19 #
-# Updated version detection
-##
-Plugin.define "File-Upload-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-05 
+Plugin.define do
+name "File-Upload-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-05 
+  # v0.2 # 2011-02-19 # Updated version detection. 
+  "Andrew Horton", # v0.3 # 2016-04-17 # Added website parameter. 
+]
 version "0.3"
 description "Web based file upload manager written in PHP."
 website "http://www.mtnpeak.net"

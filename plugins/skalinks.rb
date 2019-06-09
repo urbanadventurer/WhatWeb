@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SkaLinks" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
+Plugin.define do
+name "SkaLinks"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-14
+]
 version "0.1"
 description "SkaLinks - Free Links Exchange software"
 website "http://www.skalinks.com/"

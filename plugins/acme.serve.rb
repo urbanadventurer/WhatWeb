@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-18 # Andrew Horton
-# Replaced passive function with match
-##
-Plugin.define "Acme_Serve" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
+Plugin.define do
+name "Acme_Serve"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-01
+  "Andrew Horton", # v0.2 # 2016-04-18 # Replaced passive function with match. 
+]
 version "0.2"
 description "Minimal Java HTTP server class. This class implements a very small embeddable HTTP server. It runs Servlets compatible with the API used by JavaSoft's JavaServer server. Used as an embedded server for many devices."
 website "http://www.acme.com/java/software/Acme.Serve.Serve.html"

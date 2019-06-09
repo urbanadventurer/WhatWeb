@@ -4,17 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2011-03-06 # Brendan Coles <bcoles@gmail.com>
-# Updated module detection
-##
-# Version 0.3
-# uses :module
-##
-# Version 0.2
-# remove :certainty
-##
-Plugin.define "PHPNuke" do
-author "Andrew Horton"
+Plugin.define do
+name "PHPNuke"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty. 
+  # v0.3 # uses :module. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.4 # 2011-03-06 # Updated module detection. 
+]
 version "0.4"
 description "PHP-Nuke is a free CMS"
 website "phpnuke.org. The plugin passively recognises modules. An obvious improvement would be to aggresively discover modules and discover the phpnuke version"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "WebPress" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
+Plugin.define do
+name "WebPress"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-18
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "WebPress is the foundation on which we build web sites. It.s our unique Content Management System (CMS), flexible enough for us to build your dream site, and easy enough for you to maintain it yourself."
 website "http://www.goywp.com/view/cms"

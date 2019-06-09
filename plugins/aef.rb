@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AEF" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-27
+Plugin.define do
+name "AEF"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-27
+]
 version "0.1"
 description "Advanced Electron Forum (AEF) - bulletin board software - requires PHP and MySQL"
 website "http://www.anelectron.com/"

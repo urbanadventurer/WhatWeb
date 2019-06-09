@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "X-Frame-Options" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-08
+Plugin.define do
+name "X-Frame-Options"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-08
+]
 version "0.1"
 description "This plugin retrieves the X-Frame-Options value from the HTTP header. - More Info: http://msdn.microsoft.com/en-us/library/cc288472%28VS.85%29.aspx"
 
@@ -16,7 +19,7 @@ description "This plugin retrieves the X-Frame-Options value from the HTTP heade
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Frame-Options HTTP Header

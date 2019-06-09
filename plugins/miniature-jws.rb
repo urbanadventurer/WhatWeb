@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-21 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Miniature-JWS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
+Plugin.define do
+name "Miniature-JWS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-01
+  "Andrew Horton", # v0.2 # 2016-04-21 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Tiny Java Web Server and Servlet Container (aka Miniature JWS) with security update, J2EE deployment, JSP, and J2EE (without application server)"
 website "http://tjws.sourceforge.net/"

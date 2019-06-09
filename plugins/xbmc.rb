@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "XBMC" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-05
+Plugin.define do
+name "XBMC"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-05
+]
 version "0.1"
 description "XBMC (formerly 'Xbox Media Center') is a free, open source (GPL) multimedia player that runs on the first-generation Microsoft Xbox, (not the newer Xbox 360), as well as on computers running Linux, Mac OS X, and Windows."
 
@@ -27,7 +30,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# realm=XBMC # realm="Keimo-XBMC" # realm="XBMC WebServer"

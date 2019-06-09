@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "Open-Blog" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
+Plugin.define do
+name "Open-Blog"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-06
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "Open blog is a free and open source blogging platform built using the CodeIgniter PHP framework and released under the GPL v3 license."
 website "http://www.open-blog.info/"

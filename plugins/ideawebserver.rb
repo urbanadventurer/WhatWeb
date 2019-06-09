@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "IdeaWebServer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "IdeaWebServer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "home.net.pl hosting - a major polish hosting company home.pl uses its own server software (Idea Web Server)"
 website "http://home.net.pl"

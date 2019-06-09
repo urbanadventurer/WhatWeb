@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "HttpFileServer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+Plugin.define do
+name "HttpFileServer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "You can use HFS (HTTP File Server) to send and receive files. Access your remote files, over the network."
 website "http://www.rejetto.com/hfs/"

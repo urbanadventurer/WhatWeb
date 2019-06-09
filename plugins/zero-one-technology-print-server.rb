@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Zero-One-Technology-Print-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "Zero-One-Technology-Print-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Zero One Technology Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."
 website "http://www.01tech.com/p1-1product.asp?Bid=2"

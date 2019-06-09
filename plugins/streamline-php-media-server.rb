@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Streamline-PHP-Media-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
+Plugin.define do
+name "Streamline-PHP-Media-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-27
+]
 version "0.1"
 description "Streamline is a streaming media web application written in php."
 website "http://streamline.sourceforge.net/about.php"

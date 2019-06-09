@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "USP-Secure-Login-Service" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
+Plugin.define do
+name "USP-Secure-Login-Service"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-25
+]
 version "0.1"
 description "United Security Providers (USP; previously known as Tetrade) Secure Login Service (SLS) Framework. The SLS works alongside the USP Secure Entry Server (SES) which functions as a Reverse-Proxy and Web Application Firewall (WAF) and also fulfills the role of user authentication."
 website "http://www.united-security-providers.com/"

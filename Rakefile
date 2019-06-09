@@ -13,13 +13,20 @@ desc 'Run all tests'
 task :all do
   puts 'Running unit tests'
   Rake::Task['unit'].invoke
+  puts 'Running integration tests'
+  Rake::Task['integration'].invoke
 end
 
 task :default => :unit
 
 Rake::TestTask.new(:unit) do |t|
   t.description = 'Run unit tests'
-  t.test_files = FileList['test/unit.rb']
+  t.test_files = FileList['test/unit/test_*.rb']
+end
+
+Rake::TestTask.new(:integration) do |t|
+  t.description = 'Run integration tests'
+  t.test_files = FileList['test/integration.rb']
 end
 
 desc 'Run bundle-audit'
@@ -28,7 +35,7 @@ task :bundle_audit do
   Rake::Task['bundle_audit:check'].invoke
 end
 
-desc 'Generate API documentation to doc/rdocs/index.html'
+desc 'Generate documentation to doc/rdocs/index.html'
 task :rdoc do
   Rake::Task['rdoc:rerdoc'].invoke
 end
@@ -41,13 +48,14 @@ RuboCop::RakeTask.new
 namespace :rdoc do
   require 'rdoc/task'
 
-  desc 'Generate API documentation to doc/rdocs/index.html'
+  desc 'Generate documentation to doc/rdocs/index.html'
   Rake::RDocTask.new do |rd|
+    rd.title = 'WhatWeb'
     rd.rdoc_dir = 'doc/rdocs'
-    rd.main = 'README'
+    rd.main = 'README.md'
     rd.rdoc_files.include(
       'whatweb',
-      'lib/*\.rb')
+      'lib/**/*\.rb')
     rd.options << '--line-numbers'
     rd.options << '--all'
   end

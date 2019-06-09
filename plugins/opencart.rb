@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OpenCart" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-11
+Plugin.define do
+name "OpenCart"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-11
+]
 version "0.1"
 description "OpenCart - Open Source Shopping Cart Solution"
 website "http://www.opencart.com/"

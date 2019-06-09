@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-Plugin.define "AtomFeed" do
-author "Caleb Anderson"
+Plugin.define do
+name "AtomFeed"
+authors [
+  "Caleb Anderson",
+]
 version "0.1"
 description "Atom feed detection"
 
@@ -21,7 +22,7 @@ matches [
 ]
 
 
-def passive
+passive do
 	m=[]
 	re=/<link .*?type=["']application\/atom\+xml["'].*?>/im #"
 	if @body =~ re

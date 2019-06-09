@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Digital-Scribe" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-31
+Plugin.define do
+name "Digital-Scribe"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-31
+]
 version "0.1"
 description "The Digital Scribe is a free, intuitive system designed to help teachers put student work and homework assignments online. Requires: PHP & MySQL."
 website "http://www.digital-scribe.org/"

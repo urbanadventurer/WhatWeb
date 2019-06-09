@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "i-Catcher-Console" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+Plugin.define do
+name "i-Catcher-Console"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "i-Catcher is a Digital CCTV system for security, surveillance and remote monitoring applications."
 website "http://www.icode.co.uk/icatcher/"

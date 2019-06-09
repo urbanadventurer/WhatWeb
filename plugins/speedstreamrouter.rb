@@ -1,9 +1,4 @@
 ##
-# This file is part of WhatWeb and may be subject to
-# redistribution and commercial restrictions. Please see the WhatWeb
-# web site for more information on licensing and terms of use.
-# http://www.morningstarsecurity.com/research/whatweb
-##
 # Version 0.3 # 2011-05-30 # Brendan Coles <bcoles@gmail.com> #
 # Added model detection
 # Added google dorks
@@ -12,8 +7,20 @@
 # Version 0.2
 # removed :certainty=>100
 ##
-Plugin.define "Siemens-SpeedStream-Router" do
-author "Andrew Horton"
+
+##
+# This file is part of WhatWeb and may be subject to
+# redistribution and commercial restrictions. Please see the WhatWeb
+# web site for more information on licensing and terms of use.
+# http://www.morningstarsecurity.com/research/whatweb
+##
+Plugin.define do
+name "Siemens-SpeedStream-Router"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2011-05-30 # Added model detection. Added google dorks. Added MAC address detection. 
+]
 version "0.3"
 description "Siemens SpeedStream 4200 and 6520 modems are only sold in Australia through selected internet providers, which include them in their internet access packs. - More Info: http://bc.whirlpool.net.au/bc/hardware/?action=h_view&model_id=279"
 

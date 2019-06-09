@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AlstraSoft-AskMe" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+Plugin.define do
+name "AlstraSoft-AskMe"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+]
 version "0.1"
 description "AskMe Pro is an expert knowledge management system that allows site owners to setup an expert advice service similar to highly popular sites like   Google Answers, Yahoo Answers and Kasamba.com."
 website "http://www.alstrasoft.com/askme.htm"

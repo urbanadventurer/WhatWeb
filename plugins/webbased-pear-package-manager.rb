@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Webbased-PEAR-Package-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-20
+Plugin.define do
+name "Webbased-PEAR-Package-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-20
+]
 version "0.1"
 description "Webbased PEAR Package Manager - The most accessible way to manage your pear-compatible packages."
 website "http://pear.php.net/package/PEAR_Frontend_Web"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "envezion~media" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-15
+Plugin.define do
+name "envezion~media"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-15
+]
 version "0.1"
 description "envezion~MEDIA makes it possible for the small business owner to you reach your goals through our consulting services."
 website "http://envezion.com/"

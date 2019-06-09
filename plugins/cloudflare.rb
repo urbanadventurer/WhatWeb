@@ -4,17 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-05-10
-# David P Robinson <david@intruder.io>
-# Added regex to detect CloudFlare email address protection feature
-##
-##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-# Change plugin name captilization
-##
-Plugin.define "CloudFlare" do
-author "Aung Khant <http://yehg.net/> & David P Robinson <david@intruder.io>" # 2011-02-04
+Plugin.define do
+name "CloudFlare"
+authors [
+  "Aung Khant <http://yehg.net/> & David P Robinson <david@intruder.io>", # 2011-02-04
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. Change plugin name captilization. 
+  "David P Robinson <david@intruder.io>", # v0.3 # 2016-05-10 # Added regex to detect CloudFlare email address protection feature. 
+]
 version "0.3"
 description "CloudFlare is a content delivery network. Its features include DDoS protection and Web Application Firewall functionality"
 website "https://www.cloudflare.com/"

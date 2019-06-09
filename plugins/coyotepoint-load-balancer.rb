@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Replaced passive function with matches
-##
-Plugin.define "CoyotePoint-Load-Balancer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
+Plugin.define do
+name "CoyotePoint-Load-Balancer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-16
+  "Andrew Horton", # v0.2 # 2016-04-19 # Replaced passive function with matches. 
+]
 version "0.2"
 description "CoyotePoint load balancing device"
 website "http://www.coyotepoint.com/products/"

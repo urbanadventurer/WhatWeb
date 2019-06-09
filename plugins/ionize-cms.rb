@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ionize-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
+Plugin.define do
+name "Ionize-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-16
+]
 version "0.1"
 description "Ionize is a powerful & friendly Content Management System"
 website "http://www.ionizecms.com/"
@@ -52,7 +55,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ionize_session Cookie

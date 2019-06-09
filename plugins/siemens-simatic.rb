@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Siemens-Simatic" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+Plugin.define do
+name "Siemens-Simatic"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+]
 version "0.1"
 description "SCADA - Siemens Simatic"
 website "http://www.automation.siemens.com/mcms/topics/en/simatic/Pages/Default.aspx"

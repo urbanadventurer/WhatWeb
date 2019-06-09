@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Replaced passive function with matches
-##
-Plugin.define "Allen-Bradley-PLC" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
+Plugin.define do
+name "Allen-Bradley-PLC"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+  "Andrew Horton", # v0.2 # 2016-04-19 # Replaced passive function with matches. 
+]
 version "0.2"
 description "SCADA - Allen Bradley programmable logic controller (PLC)"
 website "http://ab.rockwellautomation.com/Programmable-Controllers"

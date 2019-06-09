@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SonicWALL-Firewall" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-25
+Plugin.define do
+name "SonicWALL-Firewall"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-25
+]
 version "0.1"
 description "SonicWALL Firewall device"
 website "http://www.sonicwall.com/us/products/Network_Security.html"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Kontaktformular" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-13
+Plugin.define do
+name "Kontaktformular"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-13
+]
 version "0.1"
 description "PHP contact form"
 website "http://www.radbekleidung.eu/gratis-kontaktformular.html"

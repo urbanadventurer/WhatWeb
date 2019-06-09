@@ -4,17 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2012-02-19 # Brendan Coles <bcoles@gmail.com>
-# Added aggressive logo match
-# Added version detection
-# Added google dork
-# Removed JavaScript matches
-##
-# Version 0.2
-# Removed :certainty=>100 & :name
-##
-Plugin.define "WebGuard" do
-author "Andrew Horton"
+Plugin.define do
+name "WebGuard"
+authors [
+  "Andrew Horton",
+  # v0.2 # Removed :certainty=>100 & :name. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2012-02-19 # Added aggressive logo match. Added version detection. Added google dork. Removed JavaScript matches. 
+]
 version "0.3"
 description "Security surveillance"
 website "http://novuscctv.com/"

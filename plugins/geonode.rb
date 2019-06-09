@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "GeoNode" do
-author "Brendan Coles <bcoles@gmail.com>" # 2016-06-02
+Plugin.define do
+name "GeoNode"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2016-06-02
+]
 version "0.1"
 description "GeoNode is a web-based application and platform for developing geospatial information systems (GIS) and for deploying spatial data infrastructures (SDI). "
 website "https://github.com/GeoNode/geonode/"

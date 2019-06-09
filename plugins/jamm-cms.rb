@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-04-12 #
-# Updated regex
-##
-# Version 0.2 #
-# Fixed regex and ghdb matches
-##
-Plugin.define "JAMM-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+Plugin.define do
+name "JAMM-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+  # v0.2 # Fixed regex and ghdb matches. 
+  # v0.3 # 2011-04-12 # Updated regex. 
+]
 version "0.2"
 description "JAMM CMS"
 website "http://www.branchen-plz.de/"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-08-23 #
-# Added version detection
-##
-Plugin.define "WeBid" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-17
+Plugin.define do
+name "WeBid"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-17
+  # v0.2 # 2011-08-23 # Added version detection. 
+]
 version "0.1"
 description "Open source php/mysql fully featured auction script."
 website "http://www.webidsupport.com/"

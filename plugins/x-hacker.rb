@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "x-hacker" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+Plugin.define do
+name "x-hacker"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+]
 version "0.1"
 description "This plugin identifies the X-Hacker HTTP header and returns its value."
 
@@ -15,7 +18,7 @@ description "This plugin identifies the X-Hacker HTTP header and returns its val
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 	
 	# X-Hacker HTTP Header

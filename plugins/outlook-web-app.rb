@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-08-08 # Brendan Coles <bcoles@gmail.com> #
-# Updated matches and version detection
-##
-Plugin.define "Outlook-Web-App" do
-author "Aung Khant <http://yehg.net/>" # 2011-02-03
+Plugin.define do
+name "Outlook-Web-App"
+authors [
+  "Aung Khant <http://yehg.net/>", # 2011-02-03
+  "Brendan Coles <bcoles@gmail.com> #", # v0.2 # 2011-08-08 # Updated matches and version detection. 
+]
 version "0.2"
 description "Outlook Web App (OWA), originally called Outlook Web Access and before that Exchange Web Connect (EWC), is a webmail service of Microsoft Exchange Server 5.0 and later. OWA is used to access e-mail (including support for S/MIME), calendars, contacts, tasks, and other mailbox content when access to the Microsoft Outlook desktop application is unavailable. In the Exchange 2007 release, OWA also offers read-only access to documents stored in Microsoft SharePoint sites and network (UNC) shares. Microsoft provides Outlook Web App as part of Exchange Server to allow users to connect remotely via a web browser."
 website "http://help.outlook.com/"
@@ -68,7 +69,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # x-owa-version HTTP Header

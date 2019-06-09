@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Astaro-Security-Gateway" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-12
+Plugin.define do
+name "Astaro-Security-Gateway"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-12
+]
 version "0.1"
 description "Astaro Security Gateway - Unified Threat Management (UTF) Firewall device"
 website "http://www.astaro.com/products/hardware-appliances"

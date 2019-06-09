@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WordPress-Stats" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-12
+Plugin.define do
+name "WordPress-Stats"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-12
+]
 version "0.1"
 description "WordPress.com Stats"
 website "https://wordpress.com"

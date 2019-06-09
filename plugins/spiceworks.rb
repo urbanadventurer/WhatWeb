@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Spiceworks" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-23
+Plugin.define do
+name "Spiceworks"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-23
+]
 version "0.1"
 description "Spiceworks' single, easy-to-use interface combines Network Inventory, Help Desk, Mapping, Reporting, Monitoring and Troubleshooting"
 website "http://www.spiceworks.com/product/"
@@ -31,7 +34,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# spiceworks_session cookie

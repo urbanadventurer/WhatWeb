@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "x-machine" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+Plugin.define do
+name "x-machine"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+]
 version "0.1"
 description "This plugin identifies the x-machine and x-machine-id headers and extracts their values."
 
@@ -15,7 +18,7 @@ description "This plugin identifies the x-machine and x-machine-id headers and e
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 	
 	# X-Machine HTTP Header

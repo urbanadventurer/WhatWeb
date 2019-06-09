@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated version detection and matches
-##
-Plugin.define "CGIProxy" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
+Plugin.define do
+name "CGIProxy"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-06
+  # v0.2 # Updated version detection and matches. 
+]
 version "0.2"
 description "This CGI script acts as an HTTP or FTP proxy. Through it, you can retrieve any resource that is accessible from the server it runs on."
 website "http://www.jmarshall.com/tools/cgiproxy/"

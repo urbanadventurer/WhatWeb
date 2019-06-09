@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "SpirePRO-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-16
+Plugin.define do
+name "SpirePRO-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-16
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Custom CMS from Boston web design and hosting company 1stOmni - http://www.1stomni.com/"
 

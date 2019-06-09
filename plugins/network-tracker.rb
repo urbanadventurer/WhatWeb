@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Network-Tracker" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-19
+Plugin.define do
+name "Network-Tracker"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-19
+]
 version "0.1"
 description "Network Tracker is a free web-based network management tool. Network tracker allows you to track all changes and updates made to a network device. - Requires PHP and MySQL"
 website "http://networktracker.org/"

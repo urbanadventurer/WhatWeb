@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TimeLive" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-29
+Plugin.define do
+name "TimeLive"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-29
+]
 version "0.1"
 description "TimeLive Time and Expense Tracking - TimeLive Web timesheet suite is an integrated suite for time record, time tracking and time billing software."
 website "http://www.livetecs.com/"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated regex matches and version detection
-##
-Plugin.define "BlognPlus" do
-author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
+Plugin.define do
+name "BlognPlus"
+authors [
+  "Brendan Coles <bcoles at gmail dot com>", # 2010-06-15
+  # v0.2 # Updated regex matches and version detection. 
+]
 version "0.2"
 description "BlognPlus"
 website "http://www.blogn.org/"

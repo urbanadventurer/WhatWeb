@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "eZ-Publish" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-17
+Plugin.define do
+name "eZ-Publish"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-17
+]
 version "0.1"
 description "eZ Publish is an Open Source Content Management System chosen by thousands of enterprises and organizations world wide."
 website "http://ez.no/"

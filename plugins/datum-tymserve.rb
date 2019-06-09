@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Datum-TymServe" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-09
+Plugin.define do
+name "Datum-TymServe"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-09
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "GPS NTP Network Appliances make it easy to manage and monitor time synchronization through workstations, servers and routers, thus assuring the highest integrity throughout the network."
 website "http://www.datum.com/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sony-Video-Network-Station" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+Plugin.define do
+name "Sony-Video-Network-Station"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+]
 version "0.1"
 description "The Sony SNT-V304 Video Network Station enables video surveillance cameras to be remotely monitored"
 website "http://www.sony.com/"

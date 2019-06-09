@@ -4,18 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-03-06 #
-# Updated OS detection
-##
-# Version 0.2 # 2011-01-21 #
-# Updated version detection
-# Updated examples
-# Added OS detection
-# Added document root detection
-# Added cpanel credentials detection
-##
-Plugin.define "phpinfo" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-07 
+Plugin.define do
+name "phpinfo"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-07 
+  # v0.2 # 2011-01-21 # Updated version detection. Updated examples. Added OS detection. Added document root detection. Added cpanel credentials detection. 
+  # v0.3 # 2011-03-06 # Updated OS detection. 
+]
 version "0.3"
 description "This plugin detects instances of phpinfo() results and extracts the operating system, PHP version, document root and remote cpanel credentials."
 
@@ -32,7 +27,7 @@ dorks [
 
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# Check if the document is a valid phpinfo() file

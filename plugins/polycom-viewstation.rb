@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Polycom-ViewStation" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
+Plugin.define do
+name "Polycom-ViewStation"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-11
+]
 version "0.1"
 description "Polycom ViewStation - video server"
 website "http://www.polycom.com/"
@@ -16,7 +19,7 @@ website "http://www.polycom.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :name and :certainty=>100
-# Version 0.3
-# Uses :version=>//
-
-Plugin.define "Concrete5" do
-    author "Andrew Horton"
+Plugin.define do
+name "Concrete5"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100
+  # v0.3 # Uses :version=>//
+]
     version "0.3"
     description "Concrete5 is an OpenSource CMS written in PHP."
     website "www.concrete5.org"
@@ -29,7 +28,7 @@ Plugin.define "Concrete5" do
 
 # Set-Cookie: CONCRETE5=8d653f8a1afccc70f75646ab8d44420f; path=/
 
-    def aggressive
+    aggressive do
         m = []
 
         versions = Hash[

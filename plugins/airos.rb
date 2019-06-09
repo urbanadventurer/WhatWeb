@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AirOS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
+Plugin.define do
+name "AirOS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-30
+]
 version "0.1"
 description "AirOS is an intuitive, versatile, highly developed Ubiquiti firmware technology that resides on Ubiquiti Station products. It is exceptionally intuitive and was designed to require no training to operate. Behind the user interface is a powerful firmware architecture which enables hi-performance outdoor multipoint networking. "
 website "http://www.ubnt.com/airos"
@@ -24,7 +27,7 @@ matches [
 ]
 
 # Passive # HTTP Header
-def passive
+passive do
 	m=[]
 
 	# Cookie

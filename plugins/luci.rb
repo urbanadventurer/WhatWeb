@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "LuCI" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+Plugin.define do
+name "LuCI"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+]
 version "0.1"
 description "LuCI was founded in March 2008 as 'FFLuCI' as part of the efforts to create a port of the Freifunk-Firmware from OpenWrt Whiterussian to Kamikaze"
 website "http://luci.subsignal.org/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "VoIP-Router-Gateway" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
+Plugin.define do
+name "VoIP-Router-Gateway"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-01
+]
 version "0.1"
 description "ALLWIN Tech VoIP Router Gateway device [ Chinese ] - Runs EIA AOS software"
 # Default login: admin/admin
@@ -21,7 +24,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Check HTTP Server Header

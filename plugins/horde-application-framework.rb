@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-08-04 #
-# Added matches and passive cookie matches
-##
-# Version 0.2 # 2011-01-31 #
-# Updated version detection
-##
-Plugin.define "Horde-Application-Framework" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-08
+Plugin.define do
+name "Horde-Application-Framework"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-08
+  # v0.2 # 2011-01-31 # Updated version detection. 
+  # v0.3 # 2011-08-04 # Added matches and passive cookie matches. 
+]
 version "0.3"
 description "A web application framework. Projects using the framework include webmail, a wiki and groupware. (Mostly PHP)"
 website "http://www.horde.org/"
@@ -78,7 +77,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# webmail_version Cookie

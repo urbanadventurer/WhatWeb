@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-02 #
-# Updated version detection
-##
-Plugin.define "X10media-MP3-Search-Engine" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
+Plugin.define do
+name "X10media-MP3-Search-Engine"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-01
+  # v0.2 # 2011-03-02 # Updated version detection. 
+]
 version "0.2"
 description "X10media MP3 search engine"
 website "http://www.x10media.com/mp3-script.php"

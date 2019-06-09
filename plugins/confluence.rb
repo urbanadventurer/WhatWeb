@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-03-19 #
-# Updated version detection
-# Added HTTP header matches
-##
-# Version 0.2 #
-# Updated version detection
-##
-Plugin.define "Confluence" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06
+Plugin.define do
+name "Confluence"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-06
+  # v0.2 # Updated version detection. 
+  # v0.3 # 2011-03-19 # Updated version detection. Added HTTP header matches. 
+]
 version "0.3"
 description "Confluence combines powerful online authoring capabilities, deep Office integration and an extensive plugin catalog to help people work better together and share information effortlessly."
 website "http://www.atlassian.com/software/confluence/"
@@ -43,7 +41,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# x-confluence-cluster-node

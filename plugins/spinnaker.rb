@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Spinnaker" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-04
+Plugin.define do
+name "Spinnaker"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-04
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Spinnaker web server - Searchight Software sold Searchlight BBS, along with Spinnaker Web Server, to TeleGrafix Communications in 1998. TeleGrafix Communications, Inc., closed its doors in late 2000."
 website "http://www.telegrafix.com/"

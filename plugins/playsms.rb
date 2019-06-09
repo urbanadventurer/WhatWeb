@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "playSMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-10
+Plugin.define do
+name "playSMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-10
+]
 version "0.1"
 description "Free and Open Source SMS Gateway"
 website "http://playsms.org/"

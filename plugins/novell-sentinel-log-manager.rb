@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Novell-Sentinel-Log-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-15
+Plugin.define do
+name "Novell-Sentinel-Log-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-15
+]
 version "0.1"
 description "Novell Sentinel Log Manager - log management solution"
 website "http://www.novell.com/promo/slm/slm25.html"

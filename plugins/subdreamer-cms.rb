@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Subdreamer-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-15 
+Plugin.define do
+name "Subdreamer-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-15 
+]
 version "0.1"
 description "Whether your goal is creating a simple or full scale website, Subdreamer will get you there by providing unbeatable content management tools."
 website "http://www.subdreamer.com/"
@@ -51,7 +54,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
         m << {:name=>"sdsessionid Cookie" } if @headers["set-cookie"] =~ /sdsessionid=[a-z0-9]{32}/
 	m

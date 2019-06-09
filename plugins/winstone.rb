@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Winstone" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-02-23
+Plugin.define do
+name "Winstone"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-02-23
+]
 version "0.1"
 description "Winstone is a servlet container that was written out of a desire to provide servlet functionality without the bloat that full J2EE compliance introduces."
 website "http://winstone.sourceforge.net/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "KaiBB" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-05
+Plugin.define do
+name "KaiBB"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-05
+]
 version "0.1"
 description "KaiBB Free and Open Bulletin Board Software - Requires: PHP and MySQL"
 website "http://www.kaibb.co.uk/"

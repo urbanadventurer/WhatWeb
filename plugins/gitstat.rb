@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "gitstat" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-23
+Plugin.define do
+name "gitstat"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-23
+]
 version "0.1"
 description "gitstat is a web-based statistics and monitoring system for git"
 website "http://sourceforge.net/projects/gitstat/"

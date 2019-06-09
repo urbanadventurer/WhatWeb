@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ClanSphere" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-18
+Plugin.define do
+name "ClanSphere"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-18
+]
 version "0.1"
 description "Free OpenSource Clan CMS"
 website "www.csphere.eu/index/clansphere/about"

@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-# Added WWW-Authenticate match
-##
-Plugin.define "NetBotz-Network-Monitoring-Device" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+Plugin.define do
+name "NetBotz-Network-Monitoring-Device"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+  # v0.2 # 2011-02-24 # Updated version detection. Added WWW-Authenticate match. 
+]
 version "0.2"
 description "NetBotz monitoring and management web front end"
 website "http://www.netbotz.com/products/index.html"
@@ -50,7 +50,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP WWW Authenticate header

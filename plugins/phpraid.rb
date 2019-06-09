@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-21 #
-# Updated version detection
-##
-Plugin.define "phpRaid" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-16
+Plugin.define do
+name "phpRaid"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-16
+  # v0.2 # 2011-02-21 # Updated version detection. 
+]
 version "0.2"
 description "phpRaid is a raid management tool for World of Warcraft - a MMORPG developed by Blizzard."
 website "http://www.spiffyjr.com/"

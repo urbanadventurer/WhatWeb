@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Buddy-Zone" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
+Plugin.define do
+name "Buddy-Zone"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-04
+]
 version "0.1"
 description "Buddy Zone is a social network script which has all latest technologies needed to run a new version 2.0 Social Network Website."
 website "http://www.vastal.com/buddy-zone-social-networking-script.html"

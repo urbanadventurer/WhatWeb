@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-18 #
-# Updated version detection
-##
-Plugin.define "PHP-Layers" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13 
+Plugin.define do
+name "PHP-Layers"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-13 
+  # v0.2 # 2011-02-18 # Updated version detection. 
+]
 version "0.2"
 description 'PHP Layers Menu is a hierarchical menu system to prepare "on the fly" DHTML menus relying on the PHP scripting engine for the processing of data items."
 website "http://phplayersmenu.sourceforge.net'

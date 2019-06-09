@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Zones-Web-Solution" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
+Plugin.define do
+name "Zones-Web-Solution"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-27
+]
 version "0.1"
 description "This plugin identifies websites designed by Zones Web Solution"
 website "http://www.zones.in/"

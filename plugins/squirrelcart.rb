@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Squirrelcart" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-15
+Plugin.define do
+name "Squirrelcart"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-15
+]
 version "0.1"
 description "Squirrelcart PHP Shopping Cart software - Requires PHP and MySQL"
 website "http://www.squirrelcart.com/"

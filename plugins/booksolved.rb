@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BOOKSolved" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-16
+Plugin.define do
+name "BOOKSolved"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-16
+]
 version "0.1"
 description "BOOKSolved - guestbook script"
 website "http://www.usolved.net/scripts_9.html"

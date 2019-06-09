@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Edito-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-20
+Plugin.define do
+name "Edito-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-20
+]
 version "0.1"
 description "Edito CMS [Polish]"
 website "http://www.edito.pl/"

@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2012-02-22 #
-# Added Google dorks
-# Added cookie match
-##
-Plugin.define "webSPELL" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "webSPELL"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+  # v0.2 # 2012-02-22 # Added Google dorks. Added cookie match. 
+]
 version "0.2"
 description "webSPELL is a free Content Management System which was especially developed for the needs of esport related communities."
 website "http://www.webspell.org/"

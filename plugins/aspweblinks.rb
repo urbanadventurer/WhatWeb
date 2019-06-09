@@ -4,10 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated version detection #
-Plugin.define "aspWebLinks" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
+Plugin.define do
+name "aspWebLinks"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-28
+  # Version 0.2 # Updated version detection #
+]
 version "0.2"
 description "Web app for categorizing links"
 website "http://www.fullrevolution.com/"

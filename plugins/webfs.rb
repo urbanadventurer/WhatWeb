@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "webfs" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
+Plugin.define do
+name "webfs"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-31
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "This is a simple http server for mostly static content.  You can use it to serve the content of a ftp server via http for example."
 website "http://linux.bytesex.org/misc/webfs.html"

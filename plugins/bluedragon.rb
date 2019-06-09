@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Replaced passive function with matches
-##
-Plugin.define "BlueDragon" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-30
+Plugin.define do
+name "BlueDragon"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-30
+  "Andrew Horton", # v0.2 # 2016-04-19 # Replaced passive function with matches. 
+]
 version "0.2"
 description "BlueDragon for the Microsoft .NET Framework allows you to natively integrate and deploy your ColdFusion applications on the .NET platform."
 website "http://www.newatlanta.com/products/bluedragon/product_info/overview.cfm"

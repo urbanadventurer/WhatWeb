@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PmWiki" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-18
+Plugin.define do
+name "PmWiki"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-18
+]
 version "0.1"
 description "PmWiki is a wiki-based system for collaborative creation and maintenance of websites."
 website "http://www.pmwiki.org/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "php-Charts" do
-author "Brendan Coles <bcoles@gmail.com>" # 2013-01-21
+Plugin.define do
+name "php-Charts"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2013-01-21
+]
 version "0.1"
 description "php-Charts is a class which can be used to generate different charts in different formats (PDF, PNG, JPG, HTML) using different data sources (csv, xml, MySQL, MS Sql, MS Access, PostgreSql, user defined data)."
 website "http://php-charts.com/"

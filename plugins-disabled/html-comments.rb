@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "HTML-Comments" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
+Plugin.define do
+name "HTML-Comments"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-20
+]
 version "0.1"
 description "This plugin extracts the HTML comments from the HTML source."
 

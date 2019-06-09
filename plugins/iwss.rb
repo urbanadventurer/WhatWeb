@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-10 #
-# Updated regex match
-##
-Plugin.define "IWSS-Proxy" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
+Plugin.define do
+name "IWSS-Proxy"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-23
+  # v0.2 # 2011-02-10 # Updated regex match. 
+]
 version "0.2"
 description "Trend Micro InterScan Web Security Suite (IWSS) Proxy server"
 website "http://us.trendmicro.com/us/products/enterprise/interscan-web-security-suite/"
@@ -19,7 +20,7 @@ website "http://us.trendmicro.com/us/products/enterprise/interscan-web-security-
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Proxy-Agent HTTP Header

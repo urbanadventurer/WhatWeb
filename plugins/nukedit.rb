@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "Nukedit" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
+Plugin.define do
+name "Nukedit"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-25
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "Nukedit CMS"
 website "http://www.nukedit.com/"

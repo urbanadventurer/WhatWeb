@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "wpQuiz" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
+Plugin.define do
+name "wpQuiz"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-21
+]
 version "0.1"
 description "wpQuiz is a fully-featured quiz script."
 website "http://www.wireplastik.com/"
@@ -21,7 +24,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
         if @body =~ /<span class='big'><b><img src='img\/mainlogo.png' alt='[^\']+' \/> [\d\.a-z]+<\/b><\/span>/

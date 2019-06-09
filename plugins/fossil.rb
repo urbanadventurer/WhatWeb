@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Fossil" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-01
+Plugin.define do
+name "Fossil"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-01
+]
 version "0.1"
 description "Simple, high-reliability, distributed software configuration management"
 website "http://fossil-scm.org/index.html/doc/trunk/www/index.wiki"

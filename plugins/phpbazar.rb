@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpBazar" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-29
+Plugin.define do
+name "phpBazar"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-29
+]
 version "0.1"
 description "PHP3/PHP4/mySql Classified AD and/or Matchmaking"
 website "http://www.smartisoft.com/"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-18 # Andrew Horton
-# Replaced passive function with match for server header
-##
-Plugin.define "AdSubtract" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-06
+Plugin.define do
+name "AdSubtract"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-06
+  "Andrew Horton", # v0.2 # 2016-04-18 # Replaced passive function with match for server header. 
+]
 version "0.2"
 description "AdSubtract - a Windows proxy which removes popup ads."
 website "http://AdSubtract.com"

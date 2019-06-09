@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "SkyX" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+Plugin.define do
+name "SkyX"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "The Mentat SkyX series were designed for TCP acceleration/compression and high latency link optimization. Mentat was acquired by Packeteer in 2004. Packeteer was acquired by Blue Coat Systems in 2008 and the SkyX series was discontinued"
 website "http://www.bluecoat.com/"
@@ -43,7 +44,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

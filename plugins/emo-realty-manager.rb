@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "EMO-Realty-Manager" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
+Plugin.define do
+name "EMO-Realty-Manager"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-25
+]
 version "0.1"
 description "EMO Realty Manager is a full PHP/MySQL content management system for property companies, real estate agents or FSBO site."
 website "http://www.emophp.com/"

@@ -4,12 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.1
-# Based on the contao plugin
-
-Plugin.define "Contao" do
-author "Eric Sesterhenn"
+Plugin.define do
+name "Contao"
+authors [
+  "Eric Sesterhenn", # v0.1 # Based on the contao plugin
+]
 version "0.1"
 description "Contao is an OpenSource CMS written in PHP"
 website "www.contao.org"
@@ -21,7 +20,7 @@ matches [
 {:text=>'<!-- indexer::continue -->'}
 ]
 
-def aggressive
+aggressive do
 	m=[]
 	
 	target = URI.join(@base_uri.to_s,"/contao/").to_s

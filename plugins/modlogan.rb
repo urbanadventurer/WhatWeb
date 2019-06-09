@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ModLogAn" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-11-11
+Plugin.define do
+name "ModLogAn"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-11-11
+]
 version "0.1"
 description "Modlogan is a modular logfile analyzer which is currently able to parse ftp-, webserver and squid logs."
 website "http://modlogan.com/"

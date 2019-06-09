@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sitecom-NAS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-09-07
+Plugin.define do
+name "Sitecom-NAS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-09-07
+]
 version "0.1"
 description "Sitecom Home Storage Center - Network Attached Storage (NAS)"
 website "http://www.sitecom.com/home-storage-center/p/863"

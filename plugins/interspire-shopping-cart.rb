@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Interspire-Shopping-Cart" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
+Plugin.define do
+name "Interspire-Shopping-Cart"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-06
+]
 version "0.1"
 description "Interspire Shopping Cart is an all-in-one e-commerce and shopping cart software platform that includes absolutely everything you need to sell online and attract more customers using the power, reach and affordability of the Internet."
 website "http://www.interspire.com/shoppingcart/"

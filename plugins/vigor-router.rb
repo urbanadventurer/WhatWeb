@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Vigor-Router" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-25
+Plugin.define do
+name "Vigor-Router"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-25
+]
 version "0.1"
 description "Vigor router"
 website "http://www.draytek.com/user/PdInfoDetail.php?Id=20"

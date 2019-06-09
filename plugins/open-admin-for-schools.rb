@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Open-Admin-for-Schools" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-31
+Plugin.define do
+name "Open-Admin-for-Schools"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-31
+]
 version "0.1"
 description "Open Admin for Schools is a School Administration Program."
 website "http://richtech.ca/openadmin/"

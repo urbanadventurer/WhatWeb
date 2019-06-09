@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Kandidat-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
+Plugin.define do
+name "Kandidat-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-24
+]
 version "0.1"
 description "Kandidat-CMS [Russian] - Homepage http://www.kan-studio.ru/"
 

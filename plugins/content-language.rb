@@ -4,15 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-##
-Plugin.define "Content-Language" do
-author "Peter van der Laan"
+Plugin.define do
+name "Content-Language"
+authors [
+  "Peter van der Laan",
+]
 version "0.1"
 description "Detect the content-language setting from the HTTP header."
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header # Content-Language

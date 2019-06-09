@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Footprint" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-31
+Plugin.define do
+name "Footprint"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-31
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Caching server"
 

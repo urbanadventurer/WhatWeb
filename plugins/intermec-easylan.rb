@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Intermec-EasyLAN" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-10
+Plugin.define do
+name "Intermec-EasyLAN"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-10
+]
 version "0.1"
 description "Intermec EasyLAN web interface"
 website "http://www.intermec.com"
@@ -24,7 +27,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

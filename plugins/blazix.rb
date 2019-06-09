@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Replaced passive function with match
-##
-Plugin.define "Blazix" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-06
+Plugin.define do
+name "Blazix"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-06
+  "Andrew Horton", # v0.2 # 2016-04-19 # Replaced passive function with match. 
+]
 version "0.2"
 description "Blazix is a high-performance full-featured Java application server. Blazix can be used as an Application Server or as a full Web Server."
 website "http://www.blazix.com/"

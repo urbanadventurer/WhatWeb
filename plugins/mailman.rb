@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-03-05 # Brendan Coles <bcoles@gmail.com>
-# Updated version detection
-##
-Plugin.define "Mailman" do
-author "Tonmoy Saikia"
+Plugin.define do
+name "Mailman"
+authors [
+  "Tonmoy Saikia",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-03-05 # Updated version detection. 
+]
 version "0.2"
 description "Mailman is free software for managing electronic mail discussion and e-newsletter lists. WEB:http://www.gnu.org/software/mailman/index.html"
 

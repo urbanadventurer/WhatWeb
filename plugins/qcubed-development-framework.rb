@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "QCubed-Development-Framework" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "QCubed-Development-Framework"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+]
 version "0.1"
 description "The Qcodo Development Framework is an open-source PHP framework that focuses on freeing developers from unnecessary tedious, mundane coding."
 website "http://www.qcodo.com/"
@@ -33,7 +36,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Detect Title

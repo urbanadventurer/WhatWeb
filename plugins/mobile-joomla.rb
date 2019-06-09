@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Mobile-Joomla" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-15
+Plugin.define do
+name "Mobile-Joomla"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-15
+]
 version "0.1"
 description "Mobile Joomla"
 website "http://www.mobilejoomla.com/"

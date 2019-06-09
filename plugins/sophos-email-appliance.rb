@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sophos-Email-Appliance" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-11-11
+Plugin.define do
+name "Sophos-Email-Appliance"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-11-11
+]
 version "0.1"
 description "Sophos Email Appliances provide simple, powerful protection against spam, malware and data loss."
 website "http://www.sophos.com/en-us/products/email/email-appliances.aspx"

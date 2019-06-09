@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CL-HTTP" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-15
+Plugin.define do
+name "CL-HTTP"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-15
+]
 version "0.1"
 description "Common Lisp Hypermedia Server (CL-HTTP) - HTTP server"
 website "http://www.cl-http.org:8001/cl-http/"

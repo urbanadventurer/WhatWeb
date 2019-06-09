@@ -6,10 +6,14 @@
 ##
 source 'https://rubygems.org'
 
-# JSON logging - optional
-group :json do
-  #gem 'json'
-end
+# IP Address Ranges
+gem 'ipaddr'
+
+# IDN Domains
+gem 'addressable'
+
+# JSON logging
+gem 'json'
 
 # MongoDB logging - optional
 group :mongo do
@@ -29,4 +33,5 @@ group :test do
   gem 'rubocop'
   gem 'rdoc'
   gem 'bundler-audit'
+  gem 'pry'
 end

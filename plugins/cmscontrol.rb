@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated regex and ghdb matches
-##
-Plugin.define "CMScontrol" do
-author "Brendan Coles <bcoles at gmail dot com>" # 2010-06-15
+Plugin.define do
+name "CMScontrol"
+authors [
+  "Brendan Coles <bcoles at gmail dot com>", # 2010-06-15
+  # v0.2 # Updated regex and ghdb matches. 
+]
 version "0.2"
 description "CMScontrol"
 website "http://www.cmscontrol.com/"

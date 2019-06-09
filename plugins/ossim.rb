@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "OSSIM" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-15
+Plugin.define do
+name "OSSIM"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-15
+]
 version "0.1"
 description "AlienVault OSSIM (Open Source Security Information Management). Its goal is to provide a comprehensive compilation of tools which, when working together, grant network/security administrators with a detailed view over each and every aspect of his or her networks, hosts, physical access devices, server, etc."
 website "http://alienvault.com/community"

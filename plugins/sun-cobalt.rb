@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Sun-Cobalt" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-25
+Plugin.define do
+name "Sun-Cobalt"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-25
+]
 version "0.1"
 description "The Cobalt Qube was a computer server appliance product line developed by Cobalt Networks. The Cobalt RaQ is a 1U rackmount server product line developed by Cobalt Networks, Inc. - More Info: http://en.wikipedia.org/wiki/Cobalt_RaQ  &  http://en.wikipedia.org/wiki/Cobalt_Qube"
 

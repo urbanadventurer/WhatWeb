@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Koala-Web-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-23
+Plugin.define do
+name "Koala-Web-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-23
+]
 version "0.1"
 description "Koala is an HTTP server written in Dylan programming language."
 website "http://wiki.opendylan.org/wiki/view.dsp?title=Koala"

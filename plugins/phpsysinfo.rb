@@ -4,17 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2016-04-17 # Andrew Horton
-# Added website parameter
-##
-# Version 0.3 # 2011-02-25 #
-# Updated OS detection
-##
-# Version 0.2 #
-# Updated version detection. Added OS extraction.
-##
-Plugin.define "phpSysInfo" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-12
+Plugin.define do
+name "phpSysInfo"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-12
+  # v0.2 # Updated version detection. Added OS extraction.. 
+  # v0.3 # 2011-02-25 # Updated OS detection. 
+  "Andrew Horton", # v0.4 # 2016-04-17 # Added website parameter. 
+]
 version "0.4"
 description "PHPSysInfo is a customizable PHP Script that parses /proc, and formats information nicely. It will display information about system facts like Uptime, CPU, Memory, PCI devices, SCSI devices, IDE devices, Network adapters, Disk usage, and more."
 website "http://phpsysinfo.sourceforge.net/"

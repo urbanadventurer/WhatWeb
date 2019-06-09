@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "Open-Auto-Classifieds" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-27
+Plugin.define do
+name "Open-Auto-Classifieds"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-27
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "OAC is a free, open source vehicle classifieds manager. Intended to be easy to install and easy to administer, Open Auto Classifieds is based on open technologies such as the PHP scripting language, the MySQL database engine, XHTML eXtensible Hypertext Markup Language, and CSS Cascading Style Sheet styling."
 website "http://www.openautoclassifieds.com/index.php"

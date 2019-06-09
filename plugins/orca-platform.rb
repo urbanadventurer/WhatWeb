@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ORCA-Platform" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-04
+Plugin.define do
+name "ORCA-Platform"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-04
+]
 version "0.1"
 description "Welcome to ORCA Websites... We specialise in designing Professional & Affordable Websites for small to medium sized businesses across the UK."
 website "http://www.orcawebsites.com/"

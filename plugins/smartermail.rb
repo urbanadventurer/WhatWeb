@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SmarterMail" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "SmarterMail"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+]
 version "0.1"
 description "SmarterMail delivers Exchange-level email server software features for a fraction of the cost. With lower hardware requirements, superior stability and reduced maintenance costs, SmarterMail has significantly lower Total Cost of Ownership (TCO) and is the best-in-class Microsoft Exchange alternative for businesses and hosting companies."
 website "http://www.smartertools.com/smartermail/mail-server-software.aspx"

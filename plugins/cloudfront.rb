@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "CloudFront" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-02
+Plugin.define do
+name "CloudFront"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-02
+]
 version "0.1"
 description "CloudFront Server"
 

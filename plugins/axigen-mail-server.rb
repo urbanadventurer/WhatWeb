@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-07 #
-# Updated version detection
-##
-Plugin.define "Axigen-Mail-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
+Plugin.define do
+name "Axigen-Mail-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-17
+  # v0.2 # 2011-01-07 # Updated version detection. 
+]
 version "0.2"
 description "Axigen is an integrated email, calendaring & collaboration platform, masterfully built on our unique Linux mail server technology, for increased speed & security."
 website "http://www.axigen.com/"
@@ -44,7 +45,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# Version Detection # Powered by text

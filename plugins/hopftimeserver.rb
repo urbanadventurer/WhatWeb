@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-07-30 # Brendan Coles <bcoles@gmail.com>
-# Added examples URLs, cookie match and google dork
-# Updated matches and version detection
-##
-Plugin.define "HopfTimeServer" do
-author "Aung Khant, http://yehg.net"
+Plugin.define do
+name "HopfTimeServer"
+authors [
+  "Aung Khant, http://yehg.net",
+  "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-07-30 # Added examples URLs, cookie match and google dork. Updated matches and version detection. 
+]
 version "0.2"
 description "Detect Hopf Time Server CGI application (http://www.hopf.com/)"
 
@@ -41,7 +41,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# NCD_COOKIE Cookie

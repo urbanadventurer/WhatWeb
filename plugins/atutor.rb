@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ATutor" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-17
+Plugin.define do
+name "ATutor"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-17
+]
 version "0.2"
 description "ATutor is a free Open Source Web-based elearning environment designed with accessibility and adaptability in mind."
 website "http://www.atutor.ca/"

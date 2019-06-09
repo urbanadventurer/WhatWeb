@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-18 #
-# Updated version detection
-##
-Plugin.define "My-PHP-Indexer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-01
+Plugin.define do
+name "My-PHP-Indexer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-01
+  # v0.2 # 2011-02-18 # Updated version detection. 
+]
 version "0.2"
 description "PHP file indexer"
 website "http://www.mafiatic.com"

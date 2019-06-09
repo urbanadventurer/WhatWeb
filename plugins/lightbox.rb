@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-# Version 0.2
-# removed :probability & :name
-
-Plugin.define "Lightbox" do
-author "Andrew Horton"
+Plugin.define do
+name "Lightbox"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :probability & :name
+]
 version "0.2"
 description "Javascript for nice image popups"
 

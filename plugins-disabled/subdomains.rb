@@ -4,15 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Subdomains" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-18
+Plugin.define do
+name "Subdomains"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-18
+]
 version "0.1"
 description "This plugin finds and extracts subdomains from the href and src parameters of any HTML elements it finds."
 
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Extract subdomains

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Procon-Electronics-Mod-Mux" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
+Plugin.define do
+name "Procon-Electronics-Mod-Mux"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-27
+]
 version "0.1"
 description "Procon Electronics Mod-Mux (Serial/Ethernet Converter & Modbus Gateway) is a MODBUS TCP Converter. This converter is used to connect an Ethernet network to a RS485/232 network, and converts the Modbus TCP protocol to the standard Modbus RTU serial protocol on RS485/232."
 website "http://www.proconel.com/"
@@ -16,7 +19,7 @@ website "http://www.proconel.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

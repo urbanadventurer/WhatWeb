@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Updated description
-##
-Plugin.define "Antiboard" do
-author "Andrew Horton"
+Plugin.define do
+name "Antiboard"
+authors [
+  "Andrew Horton", 
+  # v0.2 # 2016-04-17 # Updated description. 
+]
 version "0.2"
 description "Antiboard is a PHP forum. Homepage used to be http://www.resynthesize.com/code/antiboard.php."
 

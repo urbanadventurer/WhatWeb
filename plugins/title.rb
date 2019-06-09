@@ -4,18 +4,17 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.3 - 2014-08-22
-# Remove newlines in title, give warning when newlines are found.
-# Version 0.2
-# removed :certainty=>100
-
-Plugin.define "Title" do
-author "Andrew Horton"
+Plugin.define do
+name "Title"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100
+  # v0.3 # 2014-08-22 # Remove newlines in title, give warning when newlines are found.
+]
 version "0.3"
 description "The HTML page title"
 
-def passive
+passive do
 	m=[]
  	if @body =~ /<title>[^<]+<\/title>/i
 		title=@body.scan(/<title>([^<]+)<\/title>/i)[0][0]

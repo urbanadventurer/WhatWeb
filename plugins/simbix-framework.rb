@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Simbix-Framework" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
+Plugin.define do
+name "Simbix-Framework"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-06
+]
 version "0.1"
 description "Simbix Framework [Russian]"
 website "http://www.simbix.com/"
@@ -31,7 +34,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # X-Powered-By Header

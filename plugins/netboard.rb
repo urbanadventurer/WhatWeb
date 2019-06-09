@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "netboard" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-17
+Plugin.define do
+name "netboard"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-17
+]
 version "0.1"
 description "netboard forum"
 

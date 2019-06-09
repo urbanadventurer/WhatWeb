@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-
-Plugin.define "IBM-CICS-Transaction-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-22
+Plugin.define do
+name "IBM-CICS-Transaction-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-22
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "IBM Customer Information Control System is the new face of CICS Integration point for CICS tooling with rich CICS views, data, and methods. CICS Transaction Server for z/OS is a modern, dependable, and cost effective application platform. z/OS is a 64-bit operating system for mainframe computers, produced by IBM."
 website " http://www-01.ibm.com/software/htp/cics/tserver/v41/"

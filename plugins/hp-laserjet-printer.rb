@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-19 #
-# Updated model detection
-##
-Plugin.define "HP-LaserJet-Printer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-22
+Plugin.define do
+name "HP-LaserJet-Printer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-22
+  # v0.2 # 2011-02-19 # Updated model detection. 
+]
 version "0.2"
 description "HP LaserJet printer web interface"
 website "http://www.hp.com/"
@@ -48,7 +49,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# Server: HP-ChaiServer

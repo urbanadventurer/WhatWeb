@@ -4,17 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2013-04-16
-# Changed homepage
-#
-# Version 0.3 # 2011-01-29 # Brendan Coles <bcoles@gmail.com>
-# Updated regex
-##
-# Version 0.2
-# removed :name & :probability
-##
-Plugin.define "GoAhead-Webs" do
-author "Andrew Horton"
+Plugin.define do
+name "GoAhead-Webs"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name & :probability. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2011-01-29 # Updated regex
+  # v0.4 # 2013-04-16 # Changed homepage
+]
 version "0.4"
 description "Opensource, embedded webserver"
 website "http://embedthis.com/products/goahead/"
@@ -32,7 +29,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server header

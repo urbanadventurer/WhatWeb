@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-16 #
-# Updated version detection
-##
-Plugin.define "Ultrastats" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
+Plugin.define do
+name "Ultrastats"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-22
+  # v0.2 # 2011-02-16 # Updated version detection. 
+]
 version "0.2"
 description "UltraStats is a php based gamelog parser for the famous Call of Duty franchise supporting Call of Duty, Call of Duty: United Office, Call of Duty2, Call of Duty 4: Modern Warfare and Call of Duty: World at War. In order to fully support UltraStats, you need a Apache or IIS Webserver with PHP5 ( PHP4 should still work ) installed. You also need a MySQL Database to store the data into."
 website "http://www.ultrastats.org/"

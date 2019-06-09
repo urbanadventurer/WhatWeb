@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Plandora" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-04
+Plugin.define do
+name "Plandora"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-04
+]
 version "0.1"
 description "Web-based project management suite including time track, dashboard gadgets, requests, BSC (KPI), knowledge base, risks, agile board, resource capacity, surveys, SVN integration and gantt chart."
 website "http://www.plandora.org/"
@@ -28,7 +31,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# td background

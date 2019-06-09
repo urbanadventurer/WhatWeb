@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2
-# remove :certainty=>100
-##
-Plugin.define "Plone" do
-author "Andrew Horton"
+Plugin.define do
+name "Plone"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty=>100. 
+]
 version "0.2"
 description "Plone Content Management System (CMS)"
 website "http://plone.org"

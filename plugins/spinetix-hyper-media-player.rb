@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SpinetiX-Hyper-Media-Player" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
+Plugin.define do
+name "SpinetiX-Hyper-Media-Player"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-30
+]
 version "0.1"
 description "SpinetiX HMP100 is the first networked Hyper Media Player appliance dedicated to the professional digital signage industry. In this field it represents for final users, integrators and service providers a better alternative of choice to personal and industrial computers and proprietary dedicated software."
 website "http://www.spinetix.com/hmp100"
@@ -32,7 +35,7 @@ matches [
 ]
 
 # Passive
-def passive
+passive do
 	m=[]
 
 	# HTTP Headers

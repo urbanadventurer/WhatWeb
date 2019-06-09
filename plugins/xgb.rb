@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-19 #
-# Updated version detection
-##
-Plugin.define "xGB" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-14
+Plugin.define do
+name "xGB"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-14
+  # v0.2 # 2011-02-19 # Updated version detection. 
+]
 version "0.2"
 description "xGB guestbook"
 website "http://www.x-gfx.de/"

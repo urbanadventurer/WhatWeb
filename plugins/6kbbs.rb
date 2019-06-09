@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "6kbbs" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-29
+Plugin.define do
+name "6kbbs"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-29
+]
 version "0.1"
 description "6kbbs - Forum"
 website "http://www.6kbbs.net/"

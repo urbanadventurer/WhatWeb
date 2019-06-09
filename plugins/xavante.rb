@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Xavante" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-26
+Plugin.define do
+name "Xavante"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-26
+]
 version "0.1"
 description "Xavante is a Lua HTTP 1.1 Web server that uses a modular architecture based on URI mapped handlers."
 website "http://keplerproject.github.com/xavante/"

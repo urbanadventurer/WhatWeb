@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TutorTrac" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
+Plugin.define do
+name "TutorTrac"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-02
+]
 version "0.1"
 description "Online management software for learning, writing, tutoring departments, and academic skills centers for traditional and athletic students. "
 website "http://www.go-redrock.com/"
@@ -47,7 +50,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# No server HTTP header

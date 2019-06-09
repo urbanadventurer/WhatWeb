@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-18 # Andrew Horton
-# Replaced passive function with match for WWW-Authenticate
-##
-Plugin.define "APC-UPS-Management-Card" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-12
+Plugin.define do
+name "APC-UPS-Management-Card"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-12
+  "Andrew Horton", # v0.2 # 2016-04-18 # Replaced passive function with match for WWW-Authenticate. 
+]
 version "0.2"
 description "APC UPS Network Management Cards allow for secure monitoring and control of an individual APC UPS via web browser, command line interface, or SNMP."
 website "http://www.apc.com/products/family/index.cfm?id=98"

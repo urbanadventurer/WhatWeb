@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Enigma2" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-10
+Plugin.define do
+name "Enigma2"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-10
+]
 version "0.1"
 description "Enigma2 is a framebuffer-based zapping application (GUI) for linux."
 website "http://dream.reichholf.net/wiki/Enigma2"

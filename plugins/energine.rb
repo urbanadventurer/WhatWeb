@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Energine" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+Plugin.define do
+name "Energine"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "Energine Content Management Framework - XML based PHP5 content management framework"
 website "http://energine.org/"

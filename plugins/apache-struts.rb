@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 by Andrew Horton
-## added org.apache.struts.action. seen in stack traces and GET/POST request parameter names
-
-Plugin.define "Apache-Struts" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-08
+Plugin.define do
+name "Apache-Struts"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-08
+  "Andrew Horton", # v0.2 # added org.apache.struts.action. seen in stack traces and GET/POST request parameter names
+]
 version "0.2"
 description "The Apache Struts web framework is a free open-source solution for creating Java web applications."
 website "https://struts.apache.org/"

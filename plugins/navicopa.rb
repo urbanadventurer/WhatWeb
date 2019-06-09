@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "NaviCOPA" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-25
+Plugin.define do
+name "NaviCOPA"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-25
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "The NaviCOPA Web Server Software installs on any version of the Microsoft Windows operating system from 98 and up, including Windows Vista, and automatically configures itself for instant HTTP access. NaviCOPA does not limit the number of connections and comfortably serves 1000's of simultaneous connections"
 website "http://www.navicopa.com/"

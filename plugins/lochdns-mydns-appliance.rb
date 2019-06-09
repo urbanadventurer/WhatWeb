@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "lochDNS-MyDNS-Appliance" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-09-29
+Plugin.define do
+name "lochDNS-MyDNS-Appliance"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-09-29
+]
 version "0.1"
 description "lochDNS MyDNS Appliance provides a web-based user interface for appliance administration."
 website "http://wiki.rpath.com/wiki/Appliance:LochDNS"

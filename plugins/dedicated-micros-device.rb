@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Dedicated-Micros-Device" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
+Plugin.define do
+name "Dedicated-Micros-Device"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-11
+]
 version "0.1"
 description "Dedicated Micros is the world's leading manufacturer of CCTV solutions from megapixel IP cameras to high performance high definition recording, transmission and decoding systems."
 website "http://www.dedicatedmicros.com/"

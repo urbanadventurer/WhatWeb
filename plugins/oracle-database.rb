@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Oracle-Database" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
+Plugin.define do
+name "Oracle-Database"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-22
+]
 version "0.1"
 description "Oracle Database"
 website "http://www.oracle.com/technetwork/database/enterprise-edition/overview/index.html"

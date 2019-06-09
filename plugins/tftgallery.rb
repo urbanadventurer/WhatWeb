@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TFTgallery" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-27
+Plugin.define do
+name "TFTgallery"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-27
+]
 version "0.1"
 description "TFTgallery is a PHP based web image gallery which doesn't need a database. It uses the directory structure for data storage. The main features are: an on-the-fly thumbnail creation, PDF and ZIP creation, image calendars, EXIF support."
 website "http://www.tftgallery.org/"

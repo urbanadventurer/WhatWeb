@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "XOOPS-Cube" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-11
+Plugin.define do
+name "XOOPS-Cube"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-11
+]
 version "0.1"
 description "XOOPS Cube is an Open Source Web Application Platform"
 website "http://xoopscube.org/"

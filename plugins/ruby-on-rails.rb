@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ruby-on-Rails" do
-author "Andrew Horton"
-version "0.1"
+Plugin.define do
+name "Ruby-on-Rails"
+authors [
+  "Andrew Horton",
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.2 # 2016-08-19 # Added ^request_method cookie. 
+]
+version "0.2"
 description "Ruby on rails is an MVC web application framework written in the ruby language. Doesn't detect all RoR sites"
 website "http://www.rubyonrails.org."
 
@@ -51,10 +55,13 @@ matches [
 # Error Page # div id="session_dump"
 { :text=>'<div id="session_dump" style="display:none"><pre class=\'debug_dump\'>---' },
 
+# Cookie
+{ :search => "headers[set-cookie]", :regexp => /^request_method/, :name=>"request_method cookie" },
+
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 	m << {:name=>'5 JS files', :certainty=>75} if @body =~ /javascripts\/prototype\.js\?[0-9]+/ and @body =~ /javascripts\/effects\.js\?[0-9]+/ and @body =~ /javascripts\/dragdrop\.js\?[0-9]+/ and @body =~ /javascripts\/controls\.js\?[0-9]+/ and @body =~ /javascripts\/application\.js\?[0-9]+/
 

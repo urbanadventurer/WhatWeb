@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Sambar-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-06
+Plugin.define do
+name "Sambar-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-06
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Sambar server is a multi-threaded, extensible application server, web server and multi-protocol proxy server with highly programmable API. It has virtual domain support (currently name based) with independent document/CGI directories, log files, and error templates. Development and support of Sambar Server has been discontinued - More Info: http://en.wikipedia.org/wiki/Sambar_Server"
 

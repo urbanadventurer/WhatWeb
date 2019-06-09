@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Oracle-Siebel-CRM" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-11-01
+Plugin.define do
+name "Oracle-Siebel-CRM"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-11-01
+]
 version "0.1"
 description "The world's most complete customer relationship management (CRM) solution, Oracle's Siebel CRM helps organizations differentiate their businesses to achieve maximum top-and bottom-line growth. It delivers a combination of transactional, analytical, and engagement features to manage all customer-facing operations."
 website "http://www.oracle.com/us/products/applications/siebel/index.html"
@@ -51,7 +54,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Cookies

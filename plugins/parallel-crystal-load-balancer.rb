@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Parallel-Crystal-Load-Balancer" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-27
+Plugin.define do
+name "Parallel-Crystal-Load-Balancer"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-27
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Parallel Crystal load balancing server"
 website "http://www.dynalivery.com/products/parallelcrystal/parallelcrystal2_x.html"

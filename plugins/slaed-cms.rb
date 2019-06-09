@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SLAED-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-12
+Plugin.define do
+name "SLAED-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-12
+]
 version "0.1"
 description "Homepage: http://slaed.net/"
 

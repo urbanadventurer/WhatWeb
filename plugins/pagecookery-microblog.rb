@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PageCookery-Microblog" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
+Plugin.define do
+name "PageCookery-Microblog"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+]
 version "0.1"
 description "Blog [Chinese]"
 website "http://www.pagecookery.com/"

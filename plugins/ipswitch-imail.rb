@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Ipswitch-IMail" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
+Plugin.define do
+name "Ipswitch-IMail"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-24
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "IMail Server matches the capabilities of Exchange without the maintenance headache or hefty price tag. From install assistance to unlimited tech support, IMail delivers your complete messaging solution."
 website "http://www.imailserver.com/"

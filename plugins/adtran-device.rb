@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-
-Plugin.define "ADTRAN-Device" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-31
+Plugin.define do
+name "ADTRAN-Device"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-31
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "ADTRAN device - Total Access and NetVanta Network Management - Includes: Fast Ethernet switches, Gigabit Ethernet switches, Power over Ethernet Switches, Integrated switch-routers, Fixed port Routers, Modular Routers, Multiservice Access Routers, Internet security/firewall appliance, IP Business Gateways, IP Communication Platforms, IP Phones, Integrated Access Devices, 802.11a/b/g Wireless Access Points, Network Management"
 website "http://www.adtran.com/web/page/portal/Adtran/group/3310"

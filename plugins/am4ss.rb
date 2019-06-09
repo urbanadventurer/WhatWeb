@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AM4SS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-11
+Plugin.define do
+name "AM4SS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-11
+]
 version "0.1"
 description "Advanced Management For Services Sites (AM4SS)"
 website "http://am4ss.org/"

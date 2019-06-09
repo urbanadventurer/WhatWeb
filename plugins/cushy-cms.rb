@@ -4,13 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-# Version 0.2
-# removed :name and :certainty=>100
-
-Plugin.define "CushyCMS" do
-author "Andrew Horton"
+Plugin.define do
+name "CushyCMS"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100
+]
 version "0.2"
 description "Simple, closed-source CMS. Free and paid versions. Built with Ruby on Rails"
 website "http://www.cushycms.com/"
@@ -30,7 +29,7 @@ matches [
 {:regexp=>/<[^>]+class="cushycms"/}
 ]
 
-def passive
+passive do
   m=[]
   m << {:name=>"Cushy Cookie" } if @headers["set-cookie"] =~ /_cushy_session=.*/
   m

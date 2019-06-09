@@ -4,18 +4,19 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Added form action extraction
-##
-Plugin.define "Links" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-20
+Plugin.define do
+name "Links"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-20
+  # v0.2 # Added form action extraction. 
+]
 version "0.2"
 description "This plugin attempts to extract all the links from the HTML source."
 
 
 
 # Extract links
-def passive
+passive do
 	m=[]
 
 	# href

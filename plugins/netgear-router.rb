@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-# Version 0.2 # 2011-03-18 #
-# Added model detection
-##
-Plugin.define "Netgear-Router" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-30
+Plugin.define do
+name "Netgear-Router"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-30
+  # v0.2 # 2011-03-18 # Added model detection. 
+  "Andrew Horton", # v0.3 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.3"
 description "Netgear Router - From wireless routers and adapters to Layer 3 Managed Switches we have the networking equipment you need for your home or small business."
 website "http://www.netgear.com/products/"

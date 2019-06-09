@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty
-
-Plugin.define "Prototype" do
-author "Andrew Horton"
+Plugin.define do
+name "Prototype"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty
+]
 version "0.2"
 description "Javascript library"
 # identifying strings

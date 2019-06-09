@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-# Version 0.2 # 2011-03-11 #
-# Updated version detection
-##
-Plugin.define "Resin" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-24
+Plugin.define do
+name "Resin"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-24
+  # v0.2 # 2011-03-11 # Updated version detection. 
+  "Andrew Horton", # v0.3 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.3"
 description "Resin provides a reliable, fast Web server which can also be used as a load balancer. Resin can operate as a standalone server or as a fast servlet runner for IIS or Apache"
 website "http://www.caucho.com/resin/admin/http-server.xtp"

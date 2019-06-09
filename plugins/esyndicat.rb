@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-25 #
-# Updated version detection
-##
-Plugin.define "eSyndiCat" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-08
+Plugin.define do
+name "eSyndiCat"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-08
+  # v0.2 # 2011-01-25 # Updated version detection. 
+]
 version "0.2"
 description "eSyndiCat is a professional, affordable directory software solution."
 website "http://www.esyndicat.com/"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "WhatsUp" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-24
+Plugin.define do
+name "WhatsUp"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-24
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "WhatsUp - Network and Server Management Software"
 website "http://www.whatsupgold.com/"

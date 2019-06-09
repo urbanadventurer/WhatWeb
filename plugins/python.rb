@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Python" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-26
+Plugin.define do
+name "Python"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-26
+]
 version "0.1"
 description "Python is a programming language that lets you work more quickly and integrate your systems more effectively. You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs."
 website "http://www.python.org/"
@@ -14,7 +17,7 @@ website "http://www.python.org/"
 
 
 # HTTP Header
-def passive
+passive do
 	m=[]
 
 	# Server # Version Detection

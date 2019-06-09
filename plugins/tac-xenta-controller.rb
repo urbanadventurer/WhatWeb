@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "TAC-Xenta-Controller" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
+Plugin.define do
+name "TAC-Xenta-Controller"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "SCADA - The TAC Xenta devices are multifunctional control systems with an embedded web server that allows you to access your control application and configuration pages via a web browser anywhere in the world, anytime."
 website "http://www.tac.com/ap/Navigate?node=1656"

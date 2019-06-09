@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "Team-Board" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-25
+Plugin.define do
+name "Team-Board"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-25
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "Team Board forum [Chinese]"
 website "http://www.team5.cn/"

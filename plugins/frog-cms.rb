@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-# Version 0.2
-# removed :name & :probability
-# Version 0.3
-# changed Propulsé  to Propuls.{2}
-
-Plugin.define "FrogCMS" do
-author "Andrew Horton"
+Plugin.define do
+name "FrogCMS"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name & :probability
+  # v0.3 # changed Propulsé  to Propuls.{2}
+]
 version "0.3"
 description "Opensource CMS written in PHP. Frog CMS is a PHP version of Radiant CMS, a well known Ruby on Rails application. This CMS is not easily identified, expect some false-negatives"
 website "http://www.madebyfrog.com/"

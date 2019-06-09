@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "EulerianWS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-08
+Plugin.define do
+name "EulerianWS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-08
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Eulerian Technologies Web Server (EulerianWS) [French]"
 website "http://www.eulerian.com/fr/"

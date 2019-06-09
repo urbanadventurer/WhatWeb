@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WikidForum" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-03-13
+Plugin.define do
+name "WikidForum"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-03-13
+]
 version "0.1"
 description "WikidForum is an open source free forum software combined with a Wiki which allows users to convert forum discussions into valuable Wiki articles."
 website "http://www.wikidforum.com/"

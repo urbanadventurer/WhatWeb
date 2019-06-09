@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SystemBase-PortBase" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-23
+Plugin.define do
+name "SystemBase-PortBase"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-23
+]
 version "0.1"
 description "Portbase is a Serial to Ethernet Device Server with an internal modem for PPP server and client. When a network failure has occurs, serial device can still be managed over PSTN connection. Also, RAS server feature enables both directly and network-connected devices to be accessed via Portbase. Uses telnet for remote management"
 website "http://www.sysbas.com/e-Products/?sNum=261"
@@ -18,7 +21,7 @@ website "http://www.sysbas.com/e-Products/?sNum=261"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Server: WindWeb # WWW-Authenticate: Basic realm="PortBase"

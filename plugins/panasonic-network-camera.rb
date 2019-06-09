@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Fixed regex
-##
-Plugin.define "Panasonic-Network-Camera" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+Plugin.define do
+name "Panasonic-Network-Camera"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+  # v0.2 # Fixed regex. 
+]
 version "0.2"
 description "Panasonic network cameras"
 
@@ -43,7 +44,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
         m=[]
 
 	# Version Detection

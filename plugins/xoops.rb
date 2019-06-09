@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "XOOPS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-12-11
+Plugin.define do
+name "XOOPS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-12-11
+]
 version "0.1"
 description "eXtensible Object Oriented Portal System (XOOPS) open source CMS and portal system"
 website "http://www.xoops.org/"

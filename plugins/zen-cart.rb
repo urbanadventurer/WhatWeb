@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Added website parameter
-##
-# Version 0.2 #
-# Updated matches and removed ghdb match
-##
-Plugin.define "Zen-Cart" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-01 
+Plugin.define do
+name "Zen-Cart"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-01 
+  # v0.2 # Updated matches and removed ghdb match. 
+  "Andrew Horton", # v0.3 # 2016-04-17 # Added website parameter. 
+]
 version "0.3"
 description "Zen Cart. truly is the art of e-commerce; free, user-friendly, open source shopping cart software."
 

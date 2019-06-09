@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-17 # Andrew Horton
-# Added website parameter and description
-##
-# Version 0.2 # 2011-03-04 #
-# Added match for setup page
-##
-Plugin.define "mojoPortal" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-09 
+Plugin.define do
+name "mojoPortal"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-09 
+  # v0.2 # 2011-03-04 # Added match for setup page. 
+  "Andrew Horton", # v0.3 # 2016-04-17 # Added website parameter and description. 
+]
 version "0.3"
 description "mojoPortal is Free and Open Source. Create accessible, standards compliant web pages and content right in the browser. Powerful content management, easy to learn, easy to use."
 website "http://www.mojoportal.com/"

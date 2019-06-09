@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Netjuke" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-13
+Plugin.define do
+name "Netjuke"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-13
+]
 version "0.1"
 description "Netjuke is a Web-Based Audio Streaming Jukebox"
 website "http://sourceforge.net/projects/netjuke"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-25 #
-# Updated version detection
-##
-Plugin.define "CubeCart" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-10
+Plugin.define do
+name "CubeCart"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-10
+  # v0.2 # 2011-01-25 # Updated version detection. 
+]
 version "0.2"
 description "CubeCart is an out of the box ecommerce shopping cart software solution which has been written to run on servers that have PHP & MySQL support."
 website "http://www.cubecart.com/"

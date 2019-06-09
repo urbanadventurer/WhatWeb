@@ -1,15 +1,15 @@
-# coding: ascii-8bit
 ##
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "Mihalism-Multi-Host" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
+Plugin.define do
+name "Mihalism-Multi-Host"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-28
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "An easy image hosting solution for everyone."
 website "http://www.mihalism.com/product/mmh/"

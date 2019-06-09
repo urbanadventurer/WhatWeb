@@ -4,48 +4,24 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "XenForo" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-16
-version "0.1"
-description "XenForo is a commercial Internet forum software written in the PHP programming language using the Zend Framework."
-website "http://xenforo.com/"
-
-# ShodanHQ results as at 2012-01-16 #
-# 123 for xf_session
-
-# Google results as at 2012-01-16 #
-# 202 for "Forum software by XenForo" "XenForo Ltd"
-
-# Dorks #
-dorks [
-'"Forum software by XenForo" "XenForo Ltd"'
+Plugin.define do
+name "XenForo"
+authors [
+  "Mateusz Golewski",
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.2 # 2016-08-19 # Added cookie. 
+  "Andrew Horton", # v0.3 # Added website. Tidied up description. 
 ]
+version "0.3"
+description "Commercial community forum developed in PHP."
+website "https://xenforo.com/"
 
-
-
-# Matches #
 matches [
 
-# StyleSheet
-{ :text=>'<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=' },
-{ :text=>'<link rel="stylesheet" type="text/css" href="css.php?css=xenforo,form,public&amp;style=' },
+{:name=>"HTML id element", :regex=>/<html[^>]+id="XenForo"/},
 
-# html tag
-{ :text=>'<html id="XenForo" ' },
-
-# Meta Description
-{ :text=>'<meta name="description" content="Forum software by XenForo" />' },
-
-# HTML Comment
-{ :certainty=>75, :text=>'<!-- h1 title, description -->' },
-
-# Set-Cookie # xf_session
-{ :certainty=>25, :search=>"headers[set-cookie]", :regexp=>/xf_session=[a-f\d]{32};/ },
-
-# div id="copyright" # Year Detection
-{ :string=>/<div id="copyright">Forum software by XenForo&trade; &copy;(20[\d]{2}) XenForo Ltd\.<\/div>/ },
+# Cookie
+{ :search => "headers[set-cookie]", :regexp => /^xf_session/, :name=>"xf_session cookie" },
 
 ]
 
 end
-

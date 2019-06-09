@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Added website parameter and description
-##
-Plugin.define "SHOUTcast-Administrator" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-03
+Plugin.define do
+name "SHOUTcast-Administrator"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-03
+  "Andrew Horton", # v0.2 # 2016-04-17 # Added website parameter and description. 
+]
 version "0.2"
 description "SHOUTcast is free cross-platform proprietary software for streaming media over the Internet. The software, developed by Nullsoft, allows digital audio content, primarily in MP3 or HE-AAC format, to be broadcast to and from media player software, enabling the creation of Internet radio stations. Wikipedia: https://en.wikipedia.org/wiki/SHOUTcast"
 website "http://www.shoutcast.com/"
@@ -23,7 +24,7 @@ matches [
 
 ]
 
-def passive
+passive do
         m=[]
 
         if @body =~ /<tr><td height=14 align=right><font class=ltv><a id=ltv href="http:\/\/www.shoutcast.com\/">SHOUTcast Server Version [0-9a-zA-Z\-\.\/\\_]+<\/a><\/font><\/td><\/tr>/

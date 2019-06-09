@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-07 #
-# Updated version detection method
-##
-Plugin.define "ArticlePublisherPRO" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-30
+Plugin.define do
+name "ArticlePublisherPRO"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-30
+  # v0.2 # 2011-01-07 # Updated version detection method. 
+]
 version "0.2"
 description "The Flexible and Easy Article Publishing System"
 website "http://article-publisher-pro.phparticlescript.com/"

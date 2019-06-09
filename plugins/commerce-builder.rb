@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Commerce-Builder" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-01
+Plugin.define do
+name "Commerce-Builder"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-01
+  "Andrew Horton", # v0.2 # 2016-04-19 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Internet Factory's Commerce Builder web server [Discontinued]"
 website "http://www.ifact.com/"

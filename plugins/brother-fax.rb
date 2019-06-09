@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-18 #
-# Replaced passive function with matches
-##
-Plugin.define "Brother-Fax" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-14
+Plugin.define do
+name "Brother-Fax"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-14
+  # v0.2 # 2016-04-18 # Replaced passive function with matches. 
+]
 version "0.2"
 description "Brother fax web interface"
 website "http://www.brother.com/"

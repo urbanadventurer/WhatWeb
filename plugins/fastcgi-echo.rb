@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "FastCGI-echo" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
+Plugin.define do
+name "FastCGI-echo"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-10
+]
 version "0.1"
 description "Many Oracle web server installations have a fcgi-bin/echo script left over from default demo (google for inurl:fcgi-bin/echo). This file should have been removed as per: http://download.oracle.com/docs/cd/B14099_19/core.1012/b13999/checklist.htm#BABIBCIC"
 # Vulnerable to XSS: /fcgi-bin/echo?<script>alert(1)</script>

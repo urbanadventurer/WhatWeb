@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "InverseFlow-Help-Desk-System" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-10-24
+Plugin.define do
+name "InverseFlow-Help-Desk-System"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-10-24
+]
 version "0.1"
 description "InverseFlow Help Desk System"
 website "http://www.inverseflow.com/products/helpdesk/index.php"

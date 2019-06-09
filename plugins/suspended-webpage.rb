@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Suspended-Webpage" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-04
+Plugin.define do
+name "Suspended-Webpage"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-04
+]
 version "0.1"
 description "Sometimes web hosts suspend their clients pages. This is often due to a breach a of the TOS or excessive traffic."
 

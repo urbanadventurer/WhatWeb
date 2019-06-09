@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Toshiba-Cable-Modem" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+Plugin.define do
+name "Toshiba-Cable-Modem"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+]
 version "0.1"
 description "Toshiba Cable Modem"
 website "http://www.toshiba.com/"
@@ -44,7 +47,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Server: PCX3000/1.0

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Openfiler" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-09-06
+Plugin.define do
+name "Openfiler"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-09-06
+]
 version "0.1"
 description "Openfiler is an Open Source Network Attached Storage and Storage Area Network Solution."
 website "http://www.openfiler.com/ "

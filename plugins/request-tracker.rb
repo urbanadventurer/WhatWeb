@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Request-Tracker" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-13
+Plugin.define do
+name "Request-Tracker"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-13
+]
 version "0.1"
 description "Request Tracker (RT) is an open-source issue tracking system which thousands of organizations use for bug tracking, help desk ticketing, customer service, workflow processes, change management, network operations, youth counselling and even more."
 website "http://bestpractical.com/rt/ - RT for Incident Response (RTIR) is an open source incident handling system targeted for computer security teams."

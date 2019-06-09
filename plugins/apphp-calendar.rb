@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ApPHP-Calendar" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-20
+Plugin.define do
+name "ApPHP-Calendar"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-20
+]
 version "0.1"
 description "The ApPHP Calendar (ApPHP CAL) is a powerful PHP calendar script that may be easily integrated and used with various PHP projects, such as schedulers, event processors etc. The calendar is very simple to install, implement and use."
 website "http://www.apphp.com/php-calendar/"
@@ -32,7 +35,7 @@ matches [
 ]
 
 # Aggressive #
-def aggressive
+aggressive do
 	m=[]
 
 	# Local File Path Detection # Confirm match # Find application base path

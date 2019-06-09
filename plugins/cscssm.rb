@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-12 #
-# Updated regex match
-##
-Plugin.define "CSCSSM" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-23
+Plugin.define do
+name "CSCSSM"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-23
+  # v0.2 # 2011-02-12 # Updated regex match. 
+]
 version "0.2"
 description "CSCSSM Proxy server"
 
@@ -18,7 +19,7 @@ description "CSCSSM Proxy server"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Proxy-Agent HTTP Header

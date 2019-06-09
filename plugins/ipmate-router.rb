@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "IPMATE-Router" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+Plugin.define do
+name "IPMATE-Router"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+]
 version "0.1"
 description "IPMATE router [Japanese] - http://www.ntt-east.co.jp/"
 
@@ -26,7 +29,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

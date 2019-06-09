@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Tumblr" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-30
+Plugin.define do
+name "Tumblr"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-30
+]
 version "0.1"
 description "A feature rich and free blog hosting platform offering professional and fully customizable templates, bookmarklets, photos, mobile apps, and social network"
 website "http://www.tumblr.com/"
@@ -35,7 +38,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Username Detection # x-tumblr-user Header

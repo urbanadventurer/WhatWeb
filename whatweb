@@ -1,444 +1,58 @@
 #!/usr/bin/env ruby
-=begin
+#
+# .$$$     $.                                   .$$$     $.
+# $$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$.
+# $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
+# $ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
+# $. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
+# $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
+# $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
+# $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
+#
+#
+# WhatWeb - Next generation web scanner.
+# Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
+#
+# Homepage: http://www.morningstarsecurity.com/research/whatweb
+#
+# Copyright 2009-2017 Andrew Horton <andrew at morningstarsecurity dot com> and Brendan Coles
+#
+# This file is part of WhatWeb.
+#
+# WhatWeb is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# WhatWeb is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
-.$$$     $.                                   .$$$     $.         
-$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
-$ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
-$ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
-$. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
-$::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
-$;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
-$$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
+$:.unshift(File.join(File.expand_path(File.dirname(__FILE__)), '.'))
 
+require 'lib/whatweb'
 
-WhatWeb - Next generation web scanner.
-Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
+#
+# Command-line usage information (full)
+#
+def usage_full
+  puts blue(WhatWeb::BANNER)
 
+  puts(<<-EOT)
+WhatWeb - Next generation web scanner version #{WhatWeb::VERSION}.
+Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles).
 Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-Copyright 2009-2017 Andrew Horton <andrew at morningstarsecurity dot com> and Brendan Coles
+Usage: whatweb [options] <URLs>
 
-This file is part of WhatWeb.
-
-WhatWeb is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
-
-WhatWeb is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
-=end
-
-
-#require 'profile' 
-require 'getoptlong'
-require 'pp'
-require 'net/http'
-require 'open-uri'
-require 'cgi'
-require 'thread'
-require 'tempfile'
-require 'rbconfig'  # detect environment, e.g. windows or linux
-require 'resolv'
-require 'resolv-replace' # asynchronous DNS
-require 'open-uri'
-require 'openssl'
-
-
-## set up load paths - must be before loading lib/ files
-# add the directory of the file currently being executed to the load path
-$LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless
-    $:.include?(File.dirname(__FILE__)) || $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
-$LOAD_PATH << "/usr/share/whatweb/"
-
-# if __FILE__ is a symlink then follow *every* symlink
-if File.symlink?(__FILE__)
-  require 'pathname'
-  $LOAD_PATH << File.dirname( Pathname.new(__FILE__).realpath )
-end
-
-
-# Ruby Version Compatability
-if RUBY_VERSION =~ /^1\.9/
-	require 'digest/md5'
-    require 'lib/extend-http_ruby1.9.rb'   
-
-elsif RUBY_VERSION =~ /^2\./
-	require 'digest/md5'
-	require 'lib/extend-http_ruby2.rb'
-
-elsif RUBY_VERSION =~ /^1\.8/
-	puts "Sorry but Ruby 1.8 is not supported. WhatWeb requires Ruby 1.9 or later."
-	exit 1
-
-else
-	puts "Unsupported version of Ruby"
-	exit 1
-
-end
-
-
-### gem detection & loading
-def gem_available?(gemname)
-	#  gem_available_new_rubygems?(gemname) or gem_available_old_rubygems?(gemname)
-	if defined?(Gem::Specification) and defined?(Gem::Specification.find_by_name)
-		gem_available_new_rubygems?(gemname)
-	else
-		gem_available_old_rubygems?(gemname)
-	end
-end
-
-# Needed by Ruby 1.8.7 (2010-08-16 patchlevel 302) used as stable in Debian in Aug2012.
-def gem_available_old_rubygems?(gemname)
-	Gem.available?(gemname)
-end
-
-def gem_available_new_rubygems?(gemname)
-	begin
-		true if Gem::Specification.find_by_name(gemname)
-	rescue LoadError
-		false 
-	end
-end
-
-# requires gem "mongoid", "~> 2.0"
-gems = %w|json mongo rchardet |
-
-gems.each do |thisgem|
-	begin
-		require 'rubygems' # rubygems is optional
-		if gem_available?(thisgem) #
-			require thisgem			
-		else
-end
-	rescue LoadError
-		# that failed.. no big deal
-		raise if $WWDEBUG==true
-	end
-end
-
-require 'lib/target.rb'
-require 'lib/plugins.rb'
-require 'lib/output.rb'
-require 'lib/colour.rb'
-require 'lib/tld.rb'
-require 'lib/version_class.rb'
-require 'lib/http-status.rb'
-HTTP_Status.initialize
-
-# look through LOAD_PATH for the following plugin directories. Could be in same dir as whatweb or /usr/share/whatweb, etc
-PLUGIN_DIRS=[ "plugins", "my-plugins"].map {|x| $LOAD_PATH.map {|y| y+"/"+x if File.exists?(y+"/"+x) } }.flatten.compact
-
-# nothing says pro-developer like using global variables
-$VERSION = "0.4.9"
-$WWDEBUG = false # raise exceptions in plugins, etc
-$verbose = 0 # $VERBOSE is reserved in ruby
-$use_colour = "auto"
-$USER_AGENT = "WhatWeb/#{$VERSION}"
-$MAX_THREADS = 25
-$AGGRESSION = 1
-$FOLLOW_REDIRECT = "always"
-$MAX_REDIRECTS = 10
-$USE_PROXY = false
-$PROXY_HOST = nil
-$PROXY_PORT = 8080
-$PROXY_USER = nil
-$PROXY_PASS = nil
-$URL_PREFIX = ""
-$URL_SUFFIX = ""
-$URL_PATTERN = nil
-$NO_THREADS = false
-$HTTP_OPEN_TIMEOUT = 15
-$HTTP_READ_TIMEOUT = 30
-$WAIT = nil
-$OUTPUT_ERRORS = nil
-$QUIET = false
-$CUSTOM_HEADERS = {}
-$BASIC_AUTH_USER = nil
-$BASIC_AUTH_PASS = nil
-$PLUGIN_TIMES = Hash.new(0)
-$NO_ERRORS = false
-
-
-### matching
-
-# fuzzy matching ftw
-def make_tag_pattern(b)
-	# remove stuff between script and /script
-	# don't bother with  !--, --> or noscript and /noscript
-	inscript = false;
-
-	b.scan(/<([^\s>]*)/).flatten.map {|x| 
-			x.downcase!
-			r = nil
-			r = x if inscript == false
-			inscript = true if x == "script"
-			(inscript = false; r = x) if x == "/script"
-			r
-		}.compact.join(",")
-end
-
-def decode_html_entities(s)
-	t = s.dup
-	html_entities = { "&quot;"=>'"', "&apos;"=>"'", "&amp;"=>"&", "&lt;"=>"<", "&gt;"=>">" }
-	html_entities.each_pair { |from,to| t.gsub!(from, to) }
-	t
-end
-
-def certainty_to_words(p)
-	case p
-		when 0..49
-			"maybe"
-		when 50..99
-			"probably"
-		when 100
-			"certain"
-	end
-end
-
-# some plugins want a random string in URLs
-def randstr
-	rand(36 ** 8).to_s(36)
-end 
-
-
-def match_ghdb(ghdb, body, meta, status, base_uri)
-	# this could be made faster by creating code to eval once for each plugin
-
-	pp "match_ghdb", ghdb if $verbose > 2
-	
-	# take a GHDB string and turn it into code to be evaluated
-	matches = [] # fill with true or false. succeeds if all true
-	s = ghdb
-
-	# does it contain intitle?
-	if s =~ /intitle:/i
-		# extract either the next word or the following words enclosed in "s, it can't possibly be both
-		intitle = (s.scan( /intitle:"([^"]*)"/i) + s.scan(/intitle:([^"]\w+)/i )).to_s
-		matches << (( body =~ /<title>[^<]*#{Regexp.escape(intitle)}[^<]*<\/title>/i ).nil? ? false : true)
-		# strip out the intitle: part
-		s=s.gsub( /intitle:"([^"]*)"/i ,'').gsub( /intitle:([^"]\w+)/i ,'')
-	end
-
-	if s =~ /filetype:/i
-		filetype = ( s.scan(/filetype:"([^"]*)"/i ) + s.scan( /filetype:([^"]\w+)/i )).to_s
-		# lame method: check if the URL ends in the filetype
-		unless base_uri.nil?
-			unless base_uri.path.split("?")[0].nil?
-				matches << (( base_uri.path.split("?")[0] =~ /#{Regexp.escape(filetype)}$/i ).nil? ? false : true)
-			end
-		end
-		s=s.gsub( /filetype:"([^"]*)"/i,'').gsub( /filetype:([^"]\w+)/i,'')
-	end
-
-	if s =~ /inurl:/i
-		inurl = ( s.scan(/inurl:"([^"]*)"/i ) + s.scan( /inurl:([^"]\w+)/i )).flatten
-		# can occur multiple times.
-		inurl.each { |x| matches << (( base_uri.to_s =~ /#{Regexp.escape(x)}/i ).nil? ? false : true)  }
-		# strip out the inurl: part
-		s = s.gsub( /inurl:"([^"]*)"/i,'').gsub( /inurl:([^"]\w+)/i,'' )
-	end
-
-	# split the remaining words except those enclosed in quotes, remove the quotes and sort them
-
-	remaining_words = s.scan( /([^ "]+)|("[^"]+")/i ).flatten.compact.each { |w| w.delete!('"') }.sort.uniq
-	
-	pp "Remaining GHDB words", remaining_words if $verbose > 2
-	
-	remaining_words.each do |w| 	
-		# does it start with a - ?
-		if w[0..0] == '-'
-			# reverse true/false if it begins with a -
-			matches << (( body =~ /#{Regexp.escape(w[1..-1])}/i ).nil? ? true : false) 
-		else
-			w = w[1..-1] if w[0..0] == '+' # if it starts with +, ignore the 1st char
-			matches << (( body =~ /#{Regexp.escape(w)}/i ).nil? ? false : true)
-		end	
-	end
-
-	pp matches if $verbose > 2
-
-	# if all matcbhes are true, then true	
-	if matches.uniq == [true]
-		true
-	else
-		false
-	end
-end
-
-
-### targets
-
-def make_target_list( cmdline_args, inputfile=nil, pluginlist = nil )
-	url_list = cmdline_args
-
-	# read each line as a url, skipping lines that begin with a #
-	if !inputfile.nil? and File.exists?(inputfile)
-		pp "loading input file: #{inputfile}" if $verbose > 2
-		url_list += File.open(inputfile).readlines.each { |line| line.strip! }.delete_if { |line| line =~ /^#.*/ }.each { |line| line.delete!("\n") }
-	end
-
-	genrange=url_list.map do |x|
-		range = nil
-		if x =~ /^[0-9\.\-*\/]+$/ and not x =~ /^[\d\.]+$/
-			# check for nmap
-			error "Target ranges require nmap to be in the path" if `which nmap` == ""
-			range = `nmap -n -sL #{x} 2>&1 | egrep -o "([0-9]{1,3}\\.){3}[0-9]{1,3}"`
-			range = range.split("\n")
-		end
-		range
-	end.compact.flatten
-	
-	url_list = url_list.select {|x| not x =~ /^[0-9\.\-*\/]+$/ or x =~ /^[\d\.]+$/ }
-	url_list += genrange unless genrange.empty?
-     
-
-	#make urls friendlier, test if it's a file, if test for not assume it's http://
-	# http, https, ftp, etc
-	url_list = url_list.map do |x|   
-		if File.exists?(x)
-			x
-		else
-			# use url pattern
-			if $URL_PATTERN
-				x = $URL_PATTERN.gsub('%insert%',x)
-			end
-			# add prefix & suffix
-			x=$URL_PREFIX + x + $URL_SUFFIX
-
-			if x =~ (/^[a-z]+:\/\//)
-				x
-			else
-				x.sub(/^/,"http://")
-			end
-		end	
-	end
-
-	url_list = url_list.flatten #.sort.uniq
-end
-
-# backwards compatible convenience method for plugins to use
-def open_target( url )
-	newt = Target.new(url)
-	newt.open
-	[ newt.status, newt.uri, newt.ip, newt.body, newt.headers, newt.raw_headers ]
-end
-
-### output
-$semaphore = Mutex.new
-# this is noisy in debug
-def $semaphore.reentrant_synchronize(&work)
-  begin
-    # This test is noisy in debug, shame there isn't a good way to test for mutex ownership
-    $semaphore.lock
-    $semaphore.unlock
-  rescue ThreadError
-    work.call
-  else
-    $semaphore.synchronize(&work)
-  end
-end
-def error(s)
-  return if $NO_ERRORS
-  $semaphore.reentrant_synchronize do
-    # TODO: make use_color smart, so it detects a tty
-    STDERR.puts((($use_colour == "auto") or ($use_colour == "always"))? red(s) : s)
-    STDERR.flush
-    $OUTPUT_ERRORS.out(s) if $OUTPUT_ERRORS
-  end
-end
-
-# takes a string and returns an array of lines. used by plugin_info
-def word_wrap( s,width=10 )
-	ret=[]
-	line=""
-	s.split.map { |x|
-		word=x
-		if line.size + x.size + 1 <= width
-			line += x + " "
-		else
-			if word.size > width
-				ret << line
-				line = ""
-				w = word.clone
-				while w.size > width
-					ret << w[0..(width-1)]
-					w = w[width.to_i..-1]
-				end
-				ret << w unless w.size == 0
-			else
-				ret << line
-				line = x + " "
-			end
-		end		
- 	}
-	ret << line unless line.empty?
-
-	ret
-end
-
-### core
-
-def run_plugins(target)
-		results=[]
-		$plugins_to_use.each do |name,plugin|
-			begin			
-				while plugin.locked?
-					#sleep 0.1
-					puts "Waiting for plugin:#{name} to unlock" if $verbose > 2
-					Thread.pass
-				end
-				plugin.lock
-
-				plugin.init(target)
-				
-				# eXecute the plugin			
-				#start_time = Time.now
-				result=plugin.x
-				#end_time = Time.now
-				#$PLUGIN_TIMES[name] += end_time - start_time
-
-				plugin.unlock
-
-			rescue Exception => err
-				error("ERROR: Plugin #{name} failed for #{target.to_s}. #{err}")
-				plugin.unlock
-				raise if $WWDEBUG == true
-			end
-			results << [name, result] unless result.nil? or result.empty?
-		end
-	results
-end
-
-
-
-
-def usage_full()
-puts"
-.$$$     $.                                   .$$$     $.         
-$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
-$ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
-$ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
-$. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
-$::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
-$;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
-$$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
-
-"
-
-puts "WhatWeb - Next generation web scanner version #{$VERSION}.\nDeveloped by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)."
-puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
-puts
-puts "Usage: whatweb [options] <URLs>"
-puts "
 TARGET SELECTION:
-  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, 
-  \t\t\t\tfilenames, or nmap-format IP address ranges.
+  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, filenames or
+  \t\t\t\tIP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
+  \t\t\t\tformat.
   --input-file=FILE, -i\t\tRead targets from a file. You can pipe
 \t\t\t\thostnames or URLs directly with -i /dev/stdin.
 
@@ -452,26 +66,27 @@ AGGRESSION:
 The aggression level controls the trade-off between speed/stealth and
 reliability.
   --aggression, -a=LEVEL\tSet the aggression level. Default: 1.
-  1. Stealthy\t\t\tMakes one HTTP request per target and also 
+  1. Stealthy\t\t\tMakes one HTTP request per target and also
   \t\t\t\tfollows redirects.
   3. Aggressive\t\t\tIf a level 1 plugin is matched, additional
   \t\t\t\trequests will be made.
-  4. Heavy\t\t\tMakes a lot of HTTP requests per target. URLs 
+  4. Heavy\t\t\tMakes a lot of HTTP requests per target. URLs
   \t\t\t\tfrom all plugins are attempted.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT\tIdentify as AGENT instead of WhatWeb/#{$VERSION}.
-  --header, -H\t\t\tAdd an HTTP header. eg \"Foo:Bar\". Specifying a 
-\t\t\t\tdefault header will replace it. Specifying an 
-\t\t\t\tempty value, e.g. \"User-Agent:\" will remove it.
+  --user-agent, -U=AGENT\tIdentify as AGENT instead of WhatWeb/#{WhatWeb::VERSION}.
+  --header, -H\t\t\tAdd an HTTP header. eg "Foo:Bar". Specifying a
+\t\t\t\tdefault header will replace it. Specifying an
+\t\t\t\tempty value, e.g. "User-Agent:" will remove it.
   --follow-redirect=WHEN\tControl when to follow redirects. WHEN may be
 \t\t\t\t`never', `http-only', `meta-only', `same-site',
-\t\t\t\t`same-domain' or `always'. Default: #{$FOLLOW_REDIRECT}.
+\t\t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}.
   --max-redirects=NUM\t\tMaximum number of redirects. Default: 10.
 
 AUTHENTICATION:
   --user, -u=<user:password>\tHTTP basic authentication.
   --cookie, -c=COOKIES\t\tUse cookies, e.g. 'name=value; name2=value2'.
+  --cookiejar=FILE\t\tRead cookies from a file.
 
 PROXY:
   --proxy\t\t\t<hostname[:port]> Set proxy hostname and port.
@@ -484,29 +99,30 @@ PLUGINS:
 \t\t\t\tOptionally search with keywords in a comma
 \t\t\t\tdelimited list.
   --search-plugins=STRING\tSearch plugins for a keyword.
-  --plugins, -p=LIST\t\tSelect plugins. LIST is a comma delimited set 
+  --plugins, -p=LIST\t\tSelect plugins. LIST is a comma delimited set
 \t\t\t\tof selected plugins. Default is all.
-\t\t\t\tEach element can be a directory, file or plugin 
+\t\t\t\tEach element can be a directory, file or plugin
 \t\t\t\tname and can optionally have a modifier, +/-.
 \t\t\t\tExamples: +/tmp/moo.rb,+/tmp/foo.rb
 \t\t\t\ttitle,md5,+./plugins-disabled/
 \t\t\t\t./plugins-disabled,-md5
 \t\t\t\t-p + is a shortcut for -p +plugins-disabled.
-
-  --grep, -g=STRING\t\tSearch for STRING in HTTP responses. Reports 
-\t\t\t\twith a plugin named Grep.
+  --grep, -g=STRING|REGEXP\tSearch for STRING or a Regular Expression. Shows
+\t\t\t\tonly the results that match.
+\t\t\t\tExamples: --grep "hello"
+\t\t\t\t--grep "/he[l]*o/"
   --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
-\t\t\t\tExamples: \":text=>'powered by abc'\"
-\t\t\t\t\":version=>/powered[ ]?by ab[0-9]/\"
-\t\t\t\t\":ghdb=>'intitle:abc \\\"powered by abc\\\"'\"
-\t\t\t\t\":md5=>'8666257030b94d3bdb46e05945f60b42'\"
-\t\t\t\t\"{:text=>'powered by abc'}\"
+\t\t\t\tExamples: ":text=>'powered by abc'"
+\t\t\t\t":version=>/powered[ ]?by ab[0-9]/"
+\t\t\t\t":ghdb=>'intitle:abc \\"powered by abc\\"'"
+\t\t\t\t":md5=>'8666257030b94d3bdb46e05945f60b42'"
+\t\t\t\t"{:text=>'powered by abc'}"
   --dorks=PLUGIN\t\tList Google dorks for the selected plugin.
 
 OUTPUT:
-  --verbose, -v\t\t\tVerbose output includes plugin descriptions. 
+  --verbose, -v\t\t\tVerbose output includes plugin descriptions.
 \t\t\t\tUse twice for debugging.
-  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be 
+  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be
 \t\t\t\t`never', `always', or `auto'.
   --quiet, -q\t\t\tDo not display brief logging to STDOUT.
   --no-errors\t\t\tSuppress error messages.
@@ -529,11 +145,11 @@ LOGGING:
 \t\t\t\tDefault: 0.0.0.0.
   --log-mongo-username\t\tMongoDB username. Default: nil.
   --log-mongo-password\t\tMongoDB password. Default: nil.
-  --log-elastic-index\t\tName of the index to store results. Default: whatweb 
+  --log-elastic-index\t\tName of the index to store results. Default: whatweb
   --log-elastic-host\t\tHost:port of the elastic http interface. Default: 127.0.0.1:9200
-  
+
 PERFORMANCE & STABILITY:
-  --max-threads, -t\t\tNumber of simultaneous threads. Default: #{$MAX_THREADS}.
+  --max-threads, -t\t\tNumber of simultaneous threads. Default: 25.
   --open-timeout\t\tTime in seconds. Default: #{$HTTP_OPEN_TIMEOUT}.
   --read-timeout\t\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}.
   --wait=SECONDS\t\tWait SECONDS between connections.
@@ -558,46 +174,44 @@ EXAMPLE USAGE:
   whatweb --no-errors --url-prefix https:// 192.168.0.0/24
 * Scan for crossdomain policies in the Alexa Top 1000.
   ./whatweb -i plugin-development/alexa-top-100.txt \\
-  --url-suffix /crossdomain.xml -p crossdomain_xml\n"
+  --url-suffix /crossdomain.xml -p crossdomain_xml
 
-	suggestions=""
-	suggestions << "To enable JSON logging install the json gem.\n" unless gem_available?('json')
-	suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
-	suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
+EOT
+  suggestions = ''
+  suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
+  suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
 
-	unless suggestions.empty?
-		print "\nOPTIONAL DEPENDENCIES\n--------------------------------------------------------------------------------\n" + suggestions + "\n"
-	end
-
-	puts
+  unless suggestions.empty?
+    puts
+    puts 'OPTIONAL DEPENDENCIES'
+    puts '-' * 80
+    puts suggestions
+    puts
+  end
 end
 
-def usage_short()
-puts"
-.$$$     $.                                   .$$$     $.         
-$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
-$ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
-$ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
-$. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
-$::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
-$;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
-$$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
+#
+# Command-line usage information (short)
+#
+def usage_short
+  puts blue(WhatWeb::BANNER)
 
-"
+  puts(<<-EOT)
+WhatWeb - Next generation web scanner version #{WhatWeb::VERSION}.
+Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
+Homepage: http://www.morningstarsecurity.com/research/whatweb
 
-puts "WhatWeb - Next generation web scanner version #{$VERSION}.\nDeveloped by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)"
-puts "Homepage: http://www.morningstarsecurity.com/research/whatweb"
-puts
-puts "Usage: whatweb [options] <URLs>"
-puts "
+Usage: whatweb [options] <URLs>
+
 TARGET SELECTION:
-  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, or 
-  \t\t\t\tnmap-format IP ranges.
+  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, filenames or
+  \t\t\t\tIP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
+  \t\t\t\tformat.
   --input-file=FILE, -i\t\tRead targets from a file.
 
 AGGRESSION:
   --aggression, -a=LEVEL\tSet the aggression level. Default: 1.
-  1. Stealthy\t\t\tMakes one HTTP request per target and also 
+  1. Stealthy\t\t\tMakes one HTTP request per target and also
   \t\t\t\tfollows redirects.
   3. Aggressive\t\t\tIf a level 1 plugin is matched, additional
   \t\t\t\trequests will be made.
@@ -610,11 +224,11 @@ PLUGINS:
   --grep, -g=STRING\t\tSearch for STRING in HTTP responses. Reports
 \t\t\t\twith a plugin named Grep.
 OUTPUT:
-  --verbose, -v\t\t\tVerbose output includes plugin descriptions. 
+  --verbose, -v\t\t\tVerbose output includes plugin descriptions.
 \t\t\t\tUse twice for debugging.
-  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be 
+  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be
 \t\t\t\t`never', `always', or `auto'.
- 
+
 HELP & MISCELLANEOUS:
   --short-help\t\t\tThis short usage help.
   --help, -h\t\t\tComplete usage help.
@@ -634,413 +248,421 @@ EXAMPLE USAGE:
   ./whatweb -i plugin-development/alexa-top-100.txt \\
   --url-suffix /crossdomain.xml -p crossdomain_xml
 
-  Note: This is the short usage help. 
-  For the complete usage help use -h or --help.\n"
+  Note: This is the short usage help.
+  For the complete usage help use -h or --help.
 
-puts
-
+EOT
 end
 
-
-if ARGV.size==0 # faster usage info
-	usage_short
-	exit 
+if ARGV.empty? # faster usage info
+  usage_short
+  exit
 end
 
-plugin_selection=nil
-use_custom_plugin=false
-use_custom_grep_plugin=false
-input_file=nil
-output_list = []
-mongo={}
-mongo[:use_mongo_log]=false
-elastic={}
-elastic[:use_elastic_log]=false
+### logging
+$semaphore = Mutex.new
+# this is noisy in debug
+def $semaphore.reentrant_synchronize(&work)
+  # This test is noisy in debug, shame there isn't a good way to test for mutex ownership
+  $semaphore.lock
+  $semaphore.unlock
+rescue ThreadError
+  raise if $WWDEBUG
+  work.call
+else
+  $semaphore.synchronize(&work)
+end
+
+#
+# Display error messages
+#
+def error(s)
+  return if $NO_ERRORS
+  $semaphore.reentrant_synchronize do
+    # TODO: make use_color smart, so it detects a tty
+    STDERR.puts((($use_colour == 'auto') || ($use_colour == 'always')) ? red(s) : s)
+    STDERR.flush
+    $LOG_ERRORS.out(s) if $LOG_ERRORS
+  end
+end
+
+#
+# Default options
+#
+
+# Plugins
+plugin_selection = nil
+use_custom_plugin = false
+use_custom_grep_plugin = false
+
+# Targets
+input_file = nil
+
+# Output
+logging_list = []
+mongo = {}
+mongo[:use_mongo_log] = false
+elastic = {}
+elastic[:use_elastic_log] = false
+
+# Target modification
+url_prefix = ''
+url_suffix = ''
+url_pattern = nil
+
+# HTTP connection
+max_threads = 25
+max_redirects = 10
 
 # optional arguments work badly with URLs
 opts = GetoptLong.new(
-      [ '-h', '--help', GetoptLong::NO_ARGUMENT ],
-      [ '--short-help', GetoptLong::NO_ARGUMENT ],      
-      [ '-v','--verbose', GetoptLong::NO_ARGUMENT ],
-      [ '-l','--list-plugins', GetoptLong::NO_ARGUMENT ],
-      [ '-p','--plugins', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-I','--info-plugins','--search-plugins', GetoptLong::OPTIONAL_ARGUMENT ],            
-      [ '--dorks', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--colour','--color', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-object', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-brief', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-xml', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-json', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-json-verbose', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-magictree', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-verbose', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-collection', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-host', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-username', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-mongo-password', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-elastic-index', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-elastic-host', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-sql', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-sql-create', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--log-errors', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--no-errors', GetoptLong::NO_ARGUMENT ],
-      [ '-i','--input-file', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-U','--user-agent', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-a','--aggression', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-t','--max-threads', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--follow-redirect', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--max-redirects', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--proxy', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--proxy-user', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--url-prefix', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--url-suffix', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--url-pattern', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--custom-plugin', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '-g','--grep', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--open-timeout', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--read-timeout', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--header','-H', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--cookie','-c', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--user','-u', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--wait', GetoptLong::REQUIRED_ARGUMENT ],
-      [ '--debug', GetoptLong::NO_ARGUMENT ],
-      [ '--version', GetoptLong::NO_ARGUMENT ],
-      [ '-q','--quiet', GetoptLong::NO_ARGUMENT]
-    )
+  ['-h', '--help', GetoptLong::NO_ARGUMENT],
+  ['--short-help', GetoptLong::NO_ARGUMENT],
+  ['-v', '--verbose', GetoptLong::NO_ARGUMENT],
+  ['-l', '--list-plugins', GetoptLong::NO_ARGUMENT],
+  ['-p', '--plugins', GetoptLong::REQUIRED_ARGUMENT],
+  ['-I', '--info-plugins', '--search-plugins', GetoptLong::OPTIONAL_ARGUMENT],
+  ['--dorks', GetoptLong::REQUIRED_ARGUMENT],
+  ['--colour', '--color', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-object', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-brief', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-xml', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-json', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-json-verbose', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-magictree', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-verbose', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-mongo-collection', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-mongo-host', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-mongo-database', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-mongo-username', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-mongo-password', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-elastic-index', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-elastic-host', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-sql', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-sql-create', GetoptLong::REQUIRED_ARGUMENT],
+  ['--log-errors', GetoptLong::REQUIRED_ARGUMENT],
+  ['--no-errors', GetoptLong::NO_ARGUMENT],
+  ['-i', '--input-file', GetoptLong::REQUIRED_ARGUMENT],
+  ['-U', '--user-agent', GetoptLong::REQUIRED_ARGUMENT],
+  ['-a', '--aggression', GetoptLong::REQUIRED_ARGUMENT],
+  ['-t', '--max-threads', GetoptLong::REQUIRED_ARGUMENT],
+  ['--follow-redirect', GetoptLong::REQUIRED_ARGUMENT],
+  ['--max-redirects', GetoptLong::REQUIRED_ARGUMENT],
+  ['--proxy', GetoptLong::REQUIRED_ARGUMENT],
+  ['--proxy-user', GetoptLong::REQUIRED_ARGUMENT],
+  ['--url-prefix', GetoptLong::REQUIRED_ARGUMENT],
+  ['--url-suffix', GetoptLong::REQUIRED_ARGUMENT],
+  ['--url-pattern', GetoptLong::REQUIRED_ARGUMENT],
+  ['--custom-plugin', GetoptLong::REQUIRED_ARGUMENT],
+  ['-g', '--grep', GetoptLong::REQUIRED_ARGUMENT],
+  ['--open-timeout', GetoptLong::REQUIRED_ARGUMENT],
+  ['--read-timeout', GetoptLong::REQUIRED_ARGUMENT],
+  ['--header', '-H', GetoptLong::REQUIRED_ARGUMENT],
+  ['--cookie', '-c', GetoptLong::REQUIRED_ARGUMENT],
+  ['--cookie-jar', GetoptLong::REQUIRED_ARGUMENT],
+  ['--user', '-u', GetoptLong::REQUIRED_ARGUMENT],
+  ['--wait', GetoptLong::REQUIRED_ARGUMENT],
+  ['--debug', GetoptLong::NO_ARGUMENT],
+  ['--version', GetoptLong::NO_ARGUMENT],
+  ['-q', '--quiet', GetoptLong::NO_ARGUMENT]
+)
 
-begin    
-	opts.each do |opt, arg|
-		case opt
-			when '-i','--input-file'
-				input_file=arg
-			when '-l','--list-plugins'
-				PluginSupport.load_plugins
-				PluginSupport.plugin_list
-				exit
-			when '-p','--plugins'
-				plugin_selection=arg
-			when '-I','--info-plugins'                
-				PluginSupport.load_plugins
-				PluginSupport.plugin_info(arg.split(","))
-				exit
-			when '--dorks'
-				PluginSupport.load_plugins
-				PluginSupport.plugin_dorks(arg)
-				exit
+begin
+  opts.each do |opt, arg|
+    case opt
+    when '-i', '--input-file'
+      input_file = arg
+    when '-l', '--list-plugins'
+      PluginSupport.load_plugins
+      PluginSupport.plugin_list
+      exit
+    when '-p', '--plugins'
+      plugin_selection = arg
+    when '-I', '--info-plugins'
+      PluginSupport.load_plugins
+      PluginSupport.plugin_info(arg.split(','))
+      exit
+    when '--dorks'
+      PluginSupport.load_plugins
+      PluginSupport.plugin_dorks(arg)
+      exit
 
-			when '--color','--colour'
-				$use_colour="always" unless arg # no argument
-				case arg.downcase
-					when 'auto'
-						$use_colour="auto"
-					when 'always'
-						$use_colour="always"
-					when 'never'
-						$use_colour=false
-					else
-						raise("--colour argument not recognized")
-					end
-			when '--log-object'
-				output_list << OutputObject.new(arg)
-			when '--log-brief'
-			 	output_list << OutputBrief.new(arg)
-			when '--log-xml'
-			 	output_list << OutputXML.new(arg)
-			when '--log-magictree'
-				output_list << OutputMagicTreeXML.new(arg)
-			when '--log-verbose'
-				output_list << OutputVerbose.new(arg)
-			when '--log-sql'
-			 	output_list << OutputSQL.new(arg)
-			when '--log-sql-create'
-				PluginSupport.load_plugins("+")
-				# delete the file if it already exists
-				begin
-					File.delete(arg)
-				rescue
-				end
-			 	OutputSQL.new(arg).create_tables
-				puts "SQL CREATE statements written to #{arg}"
-				exit
-			when '--log-json'
-				if defined?(JSON)
-			 		output_list << OutputJSON.new(arg)
-				else
-					raise("Sorry. The JSON gem is required for JSON output")
-				end
-			when '--log-json-verbose'
-				if defined?(JSON)
-			 		output_list << OutputJSONVerbose.new(arg)
-				else
-					raise("Sorry. The JSON gem is required for JSONVerbose output")
-				end
-			when '--log-mongo-collection'
-				if defined?(Mongo) and defined?(CharDet)
-					mongo[:collection]=arg
-					mongo[:use_mongo_log]=true
-				else
-					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
-				end
+    when '--color', '--colour'
+      $use_colour = 'always' unless arg # no argument
+      case arg.downcase
+      when 'auto'
+        $use_colour = 'auto'
+      when 'always'
+        $use_colour = 'always'
+      when 'never'
+        $use_colour = false
+      else
+        raise('--colour argument not recognized')
+        end
+    when '--log-object'
+      logging_list << LoggingObject.new(arg)
+    when '--log-brief'
+      logging_list << LoggingBrief.new(arg)
+    when '--log-xml'
+      logging_list << LoggingXML.new(arg)
+    when '--log-magictree'
+      logging_list << LoggingMagicTreeXML.new(arg)
+    when '--log-verbose'
+      logging_list << LoggingVerbose.new(arg)
+    when '--log-sql'
+      logging_list << LoggingSQL.new(arg)
+    when '--log-sql-create'
+      PluginSupport.load_plugins('+')
+      # delete the file if it already exists
+      begin
+        File.delete(arg)
+      rescue
+      end
+      LoggingSQL.new(arg).create_tables
+      puts "SQL CREATE statements written to #{arg}"
+      exit
+    when '--log-json'
+      if defined?(JSON)
+        logging_list << LoggingJSON.new(arg)
+      else
+        raise('Sorry. The JSON gem is required for JSON output')
+      end
+    when '--log-json-verbose'
+      if defined?(JSON)
+        logging_list << LoggingJSONVerbose.new(arg)
+      else
+        raise('Sorry. The JSON gem is required for JSONVerbose output')
+      end
+    when '--log-mongo-collection'
+      if defined?(Mongo) && defined?(CharDet)
+        mongo[:collection] = arg
+        mongo[:use_mongo_log] = true
+      else
+        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+      end
 
-			when '--log-mongo-host'
-				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:host]=arg
-					mongo[:use_mongo_log]=true
-				else
-					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
-				end
+    when '--log-mongo-host'
+      if defined?(Mongo) && defined?(CharDet)
+        mongo[:host] = arg
+        mongo[:use_mongo_log] = true
+      else
+        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+      end
 
-			when '--log-mongo-database'
-				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:database]=arg
-					mongo[:use_mongo_log]=true
-				else
-					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
-				end
-			when '--log-mongo-username'
-				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:username]=arg
-					mongo[:use_mongo_log]=true
-				else
-					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
-				end
-			when '--log-mongo-password'
-				if defined?(Mongo) and defined?(CharDet)
-			 		mongo[:password]=arg
-					mongo[:use_mongo_log]=true
-				else
-					raise("Sorry. The mongo and rchardet gems are required for Mongo output")
-				end
-			when '--log-elastic-index'
-				elastic[:index]=arg
-				elastic[:use_elastic_log]=true
-			when '--log-elastic-host'
-				elastic[:host] = arg
-				elastic[:use_elastic_log]=true
-			when '--log-errors'
-			 	$OUTPUT_ERRORS = OutputErrors.new(arg)
-			when '--no-errors'
-			 	$NO_ERRORS = true
-			when '-U','--user-agent'
-				$USER_AGENT=arg
-			when '-t','--max-threads'
-				$MAX_THREADS=arg.to_i
-			when '-a','--aggression'
-				raise "Agression level must be 1,3, or 4. #{arg} is invalid." unless [1,3,4].include? arg.to_i
-				$AGGRESSION=arg.to_i
-			when '--proxy'
-				$USE_PROXY=true
-				$PROXY_HOST = arg.to_s.split(":")[0]
-				$PROXY_PORT = arg.to_s.split(":")[1].to_i if arg.to_s.include?(":")		
-			when '--proxy-user'
-				$PROXY_USER=arg.to_s.split(":")[0]
-				$PROXY_PASS=arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
-			when '-q','--quiet'
-				$QUIET=true
-			when '--url-prefix'
-				$URL_PREFIX=arg
-			when '--url-suffix'
-				$URL_SUFFIX=arg
-			when '--url-pattern'
-				$URL_PATTERN=arg
-			when '--custom-plugin'
-				use_custom_plugin=true if PluginSupport.custom_plugin(arg)
-			when '--grep','-g'
-				use_custom_grep_plugin=true if PluginSupport.custom_plugin(arg,"grep")
-			when '--follow-redirect'	
-				if ["never","http-only","meta-only","same-site","same-domain","always"].include?(arg.downcase)
-					$FOLLOW_REDIRECT=arg.downcase
-				else
-					raise("Invalid --follow-redirect parameter.")
-				end
-			when '--max-redirects'
-				$MAX_REDIRECTS=arg.to_i
-			when '--open-timeout'					
-				$HTTP_OPEN_TIMEOUT=arg.to_i
-			when '--read-timeout'					
-				$HTTP_READ_TIMEOUT=arg.to_i
-			when '--wait'
-				$WAIT = arg.to_i
-			when '-H','--header'
-				begin
-					x=arg.scan(/([^:]+):(.*)/).flatten
-					raise if x.empty?
-					$CUSTOM_HEADERS[x.first]=x.last
-				rescue
-					raise("Invalid --header parameter.")
-				end
-			when '-c','--cookie'
-				begin
-					raise if arg.empty?
-					$CUSTOM_HEADERS["Cookie"]=arg
-				rescue
-					raise("Cookie require a parameter, e.g. name=value; name2=value2")
-				end
-			when '-u','--user'
-				if arg.include?(':')
-					$BASIC_AUTH_USER, $BASIC_AUTH_PASS = arg.split(":", 2)
-				else
-					raise("Incorrect credentials format.")
-				end
-			when '--debug'
-				$WWDEBUG = true
-			when '--short-help'
-				usage_short
-				exit
-			when '-h','--help'
-				usage_full
-				exit
-			when '-v','--verbose'
-				$verbose=$verbose+1
-			when '--version'
-				puts "WhatWeb version #{$VERSION} ( http://www.morningstarsecurity.com/research/whatweb/ )"
-				exit
-		end
-	end		
+    when '--log-mongo-database'
+      if defined?(Mongo) && defined?(CharDet)
+        mongo[:database] = arg
+        mongo[:use_mongo_log] = true
+      else
+        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+      end
+    when '--log-mongo-username'
+      if defined?(Mongo) && defined?(CharDet)
+        mongo[:username] = arg
+        mongo[:use_mongo_log] = true
+      else
+        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+      end
+    when '--log-mongo-password'
+      if defined?(Mongo) && defined?(CharDet)
+        mongo[:password] = arg
+        mongo[:use_mongo_log] = true
+      else
+        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+      end
+    when '--log-elastic-index'
+      elastic[:index] = arg
+      elastic[:use_elastic_log] = true
+    when '--log-elastic-host'
+      elastic[:host] = arg
+      elastic[:use_elastic_log] = true
+    when '--log-errors'
+      $LOG_ERRORS = LoggingErrors.new(arg)
+    when '--no-errors'
+      $NO_ERRORS = true
+    when '-U', '--user-agent'
+      $USER_AGENT = arg
+    when '-t', '--max-threads'
+      max_threads = arg.to_i
+    when '-a', '--aggression'
+      raise "Agression level must be 1,3, or 4. #{arg} is invalid." unless [1, 3, 4].include? arg.to_i
+      $AGGRESSION = arg.to_i
+    when '--proxy'
+      $USE_PROXY = true
+      $PROXY_HOST = arg.to_s.split(':')[0]
+      $PROXY_PORT = arg.to_s.split(':')[1].to_i if arg.to_s.include?(':')
+    when '--proxy-user'
+      $PROXY_USER = arg.to_s.split(':')[0]
+      $PROXY_PASS = arg.to_s.scan(/^[^:]*:(.+)/).to_s if arg =~ /^[^:]*:(.+)/
+    when '-q', '--quiet'
+      $QUIET = true
+    when '--url-prefix'
+      url_prefix = arg
+    when '--url-suffix'
+      url_suffix = arg
+    when '--url-pattern'
+      url_pattern = arg
+    when '--custom-plugin'
+      use_custom_plugin = true if PluginSupport.custom_plugin(arg)
+    when '--grep', '-g'
+      use_custom_grep_plugin = true if PluginSupport.custom_plugin(arg, 'grep')
+    when '--follow-redirect'
+      if ['never', 'http-only', 'meta-only', 'same-site', 'always'].include?(arg.downcase)
+        $FOLLOW_REDIRECT = arg.downcase
+      else
+        raise('Invalid --follow-redirect parameter.')
+      end
+    when '--max-redirects'
+      max_redirects = arg.to_i
+    when '--open-timeout'
+      $HTTP_OPEN_TIMEOUT = arg.to_i
+    when '--read-timeout'
+      $HTTP_READ_TIMEOUT = arg.to_i
+    when '--wait'
+      $WAIT = arg.to_i
+    when '-H', '--header'
+      begin
+        x = arg.scan(/([^:]+):(.*)/).flatten
+        raise if x.empty?
+        $CUSTOM_HEADERS[x.first] = x.last
+      rescue
+        raise('Invalid --header parameter.')
+      end
+    when '-c', '--cookie'
+      begin
+        raise if arg.empty?
+        $CUSTOM_HEADERS['Cookie'] = arg
+      rescue
+        raise('Cookie require a parameter, e.g. name=value; name2=value2')
+      end
+    when '--cookie-jar'
+      begin
+        raise unless File.readable?(arg)
+        # Reads cookies in document.cookie format
+        # Permits empty lines and trailing spaces. Semicolons on the end of the line are optional.
+        $CUSTOM_HEADERS['Cookie'] = File.readlines(arg).delete_if { |line| line =~ /^$/ }.map { |line| line.strip!; line.sub(/([^;])$/, '\1;'); line += ' ' }.join
+      rescue
+        raise("Could not read cookies from #{arg}.")
+      end
+    when '-u', '--user'
+      if arg.include?(':')
+        $BASIC_AUTH_USER, $BASIC_AUTH_PASS = arg.split(":", 2)
+      else
+        raise("Incorrect credentials format.")
+      end
+
+    when '--debug'
+      $WWDEBUG = true
+    when '--short-help'
+      usage_short
+      exit
+    when '-h', '--help'
+      usage_full
+      exit
+    when '-v', '--verbose'
+      $verbose = $verbose + 1
+    when '--version'
+      puts "WhatWeb version #{WhatWeb::VERSION} ( http://www.morningstarsecurity.com/research/whatweb/ )"
+      exit
+    end
+  end
 rescue Errno::EPIPE
-	exit
+  exit
 rescue StandardError, GetoptLong::Error => err
-	# Disable colours in Windows environments for errors in usage
-	if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
-		$use_colour = false
-	end
-	puts
-	error err
-	exit
+  # Disable colours in Windows environments for errors in usage
+  $use_colour = false if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
+  puts
+  error("Error in processing commandline options - #{err}")
+  error err.backtrace if $WWDEBUG
+  exit
 end
 
 # sanity check # Disable colours in Windows environments when set to auto
 if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
-	$use_colour = false unless $use_colour == "always"
+  $use_colour = false unless $use_colour == 'always'
 end
 
 ### PLUGINS
-plugin_selection += ",+Custom-Plugin" 	if use_custom_plugin and plugin_selection
-plugin_selection += ",+Grep" 		if use_custom_grep_plugin and plugin_selection
-$plugins_to_use = PluginSupport.load_plugins(plugin_selection)
+plugin_selection += ',+Custom-Plugin'	if use_custom_plugin && plugin_selection
+plugin_selection += ',+Grep'	if use_custom_grep_plugin && plugin_selection
+plugins = PluginSupport.load_plugins(plugin_selection)
 # load all the plugins
 
 # sanity check # no plugins?
-if $plugins_to_use.size == 0
-	error "No plugins selected, exiting."
-	exit 1
-end
-
-# optimise plugins
-PluginSupport.precompile_regular_expressions 
-
-### OUTPUT
-output_list << OutputBrief.new unless $QUIET or $verbose > 0 # by default output brief
-output_list << OutputObject.new() if $verbose > 1 # full output if -vv
-output_list << OutputVerbose.new() if $verbose > 0 # full output if -v
-
-## output dependencies
-if mongo[:use_mongo_log]
-	if $plugins_to_use.map { |a,b| a }.include?("Charset")
-		output_list << OutputMongo.new(mongo) 
-	else
-		error("MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/charset.rb to enable it.")
-		exit
-	end
-end
-
-if elastic[:use_elastic_log]
-	output_list << OutputElastic.new(elastic)
-end
-
-## Headers
-$CUSTOM_HEADERS["User-Agent"]=$USER_AGENT unless $CUSTOM_HEADERS["User-Agent"]
-$CUSTOM_HEADERS.delete_if {|k,v| v=="" }
-
-### TARGETS
-# clean up urls, add example urls if needed
-$targets = make_target_list(ARGV, input_file, $plugins_to_use)
-
-# fail & show usage if no targets.
-if $targets.size < 1
-  error("No targets selected")
+if plugins.empty?
+  error 'No plugins selected, exiting.'
   exit 1
 end
 
-# try to make a new Target object, may return nil
-def prepare_target(url)
-  begin
-    Target.new(url)
-  rescue => err
-    error(err)
-    nil
+# optimise plugins
+PluginSupport.precompile_regular_expressions
+
+### OUTPUT
+logging_list << LoggingBrief.new unless $QUIET || $verbose > 0 # by default logging brief
+logging_list << LoggingObject.new if $verbose > 1 # full logging if -vv
+logging_list << LoggingVerbose.new if $verbose > 0 # full logging if -v
+
+## logging dependencies
+if mongo[:use_mongo_log]
+  if plugins.map { |a, _b| a }.include?('Charset')
+    logging_list << OutputMongo.new(mongo)
+  else
+    error('MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/charset.rb to enable it.')
+    exit
   end
 end
 
-target_queue = Queue.new() # workers consume from this
-result_queue = Queue.new() # workers return results here for output
-result_mutex = Mutex.new()
-Thread.abort_on_exception = true if $WWDEBUG
+logging_list << LoggingElastic.new(elastic) if elastic[:use_elastic_log]
 
-workers = (1..$MAX_THREADS).map do
-  Thread.new() do
-    # keep reading in root tasks until a nil is received
-    loop do
-      target = target_queue.pop
-      Thread.exit unless target
-      redirects = 0
-      # keep processing until there are no more redirects or the limit is hit
-      while target
-        begin
-          target.open
-        rescue => err
-          error("ERROR Opening: #{target} - #{err}")
-          raise if $WWDEBUG
-          next
-        end
-        result = run_plugins(target)
-        result_mutex.synchronize do
-          result_queue << [target, result]
-        end
-        redirect_url = target.get_redirection_target
-        if redirect_url
-          redirects += 1
-          target = prepare_target(redirect_url)
-          if redirects > $MAX_REDIRECTS
-            error("ERROR Too many redirects: #{target}")
-            break
-          end
-        else
-          target = nil
-        end
-      end
-    end
-  end
-end
-$targets.each do |url|
-  target = prepare_target(url)
-  target_queue << target if target
-end
-loop do
-  break if result_mutex.synchronize do
-    # more defensive than comparing against $MAX_THREADS
-    alive = workers.map { |worker| worker if worker.alive? }.compact.length
-    alive == target_queue.num_waiting and result_queue.empty? and target_queue.empty?
-  end
-  if result_queue.empty?
-    sleep 0.1
-    next
-  end
-  target, result = result_queue.pop(true)
-  output_list.each do |output|
-    begin
-      output.out(target, target.status, result)
-    rescue => err
-      error("ERROR Logging failed: #{target} - #{err}")
-      raise if $WWDEBUG == true
-    end
-  end
+## Headers
+$CUSTOM_HEADERS['User-Agent'] = $USER_AGENT unless $CUSTOM_HEADERS['User-Agent']
+$CUSTOM_HEADERS.delete_if { |_k, v| v == '' }
+
+urls = ARGV
+
+
+# Initialize Scanner
+begin
+  scanner = WhatWeb::Scan.new(
+    # Targets
+    urls,
+    input_file: input_file,
+
+    # HTTP connection
+    max_threads: max_threads,
+
+    # Target modification
+    url_prefix: url_prefix,
+    url_suffix: url_suffix,
+    url_pattern: url_pattern
+  )
+rescue SystemExit, Interrupt => err
+  error 'Interrupted. Exiting...'
+  exit 1
+rescue => e
+  puts "#{e.message}"
+  puts "#{e.backtrace}"
+  exit 1
 end
 
-# Shut down workers, output, and plugins
-(1..$MAX_THREADS).each { target_queue << nil }
-workers.each { |worker| worker.join }
-output_list.each { |output| output.close }
-Plugin.registered_plugins.each { |_, plugin| plugin.shutdown }
-#pp $PLUGIN_TIMES.sort_by {|x,y|y }
+# run scan
+scanner.scan do | target |
+
+  # change so we can call it without Target object and with just Headers, HTML, etc.  
+  # note this modifies target with redirection info
+  result = WhatWeb::Parser.run_plugins(target, plugins, scanner: scanner)
+
+  # check for redirection
+  WhatWeb::Redirect.new(target, scanner, max_redirects)
+
+  WhatWeb::Parser.parse(target, 
+                        result, 
+                        logging_list: logging_list, 
+                        grep_plugin: use_custom_grep_plugin)
+end
+
+# close down logging and plugins
+logging_list.each(&:close)
+Plugin.shutdown_all
+
+# pp $PLUGIN_TIMES.sort_by {|x,y|y }

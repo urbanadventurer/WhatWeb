@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "LXR" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
+Plugin.define do
+name "LXR"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-19
+]
 version "0.1"
 description 'LXR (formerly "the Linux Cross Referencer") is a general purpose source code indexer and cross-referencer that provides web-based browsing of source code with links to the definition and usage of any identifier. Supports multiple languages."
 website "http://lxr.linux.no/'

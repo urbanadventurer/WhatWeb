@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Lussumo-Vanilla" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-07
+Plugin.define do
+name "Lussumo-Vanilla"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-07
+  "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "A free, open-source, standards-compliant discussion forum for the web. "
 website "http://code.google.com/p/lussumo-vanilla/"

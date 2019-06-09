@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated regex and version detection
-##
-Plugin.define "Aardvark-Topsites-PHP" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-26
+Plugin.define do
+name "Aardvark-Topsites-PHP"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-26
+  # v0.2 # Updated regex and version detection. 
+]
 version "0.2"
 description "Aardvark Topsites PHP is a free topsites script built on PHP and MySQL."
 website "http://www.aardvarktopsitesphp.com/topsites/"

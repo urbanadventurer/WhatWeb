@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Added website parameter and description
-##
-Plugin.define "PhpMesFilms" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-21
+Plugin.define do
+name "PhpMesFilms"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-21
+  "Andrew Horton", # v0.2 # 2016-04-17 # Added website parameter and description. 
+]
 version "0.2"
 description "Film database powered by PHP. Website used to be http://phpmesfilms.dyndns.org/"
 

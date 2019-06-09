@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "AIDeX-Webserver" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
+Plugin.define do
+name "AIDeX-Webserver"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-29
+]
 version "0.1"
 description "AIDeX Webserver - does not support CGI or PHP"
 website "http://www.aidex.de/software/webserver/"

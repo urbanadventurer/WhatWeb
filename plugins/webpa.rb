@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WebPA" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-08-25
+Plugin.define do
+name "WebPA"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-08-25
+]
 version "0.1"
 description "WebPA is an open source online peer assessment tool that enables every team member to recognise individual contributions to group work."
 website "http://www.webpaproject.com/"

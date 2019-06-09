@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Tandberg-TV-Web-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-30
+Plugin.define do
+name "Tandberg-TV-Web-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-30
+]
 version "0.1"
 description "Tandberg - Video Conferencing Solutions and Telepresence Products"
 website "http://www.tandberg.com/"
@@ -16,7 +19,7 @@ website "http://www.tandberg.com/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header or HTTP "Server " Header

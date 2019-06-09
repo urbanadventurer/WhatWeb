@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "TROY-Serial-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-11
+Plugin.define do
+name "TROY-Serial-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-11
+]
 version "0.1"
 description "TROY500 Serial Server allows connection for devices with RS232, RS422, RS485 serial ports."
 website "http://www.troygroup.com/index.aspx"
@@ -27,7 +30,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server & Date Header

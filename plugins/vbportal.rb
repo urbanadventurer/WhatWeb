@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "vbPortal" do
-author "Brendan Coles <bcoles@gmail.com>"
+Plugin.define do
+name "vbPortal"
+authors [
+  "Brendan Coles <bcoles@gmail.com>",
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "Portal and CMS for vBulletin"
 website "http://www.vbportal.com/"

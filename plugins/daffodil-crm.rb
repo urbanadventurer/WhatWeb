@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Daffodil-CRM" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-02
+Plugin.define do
+name "Daffodil-CRM"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-02
+]
 version "0.1"
 description "Daffodil CRM is a software that enables seamless coordination between sales, marketing, customer service, field support and other functions that handle customer contact for an enterprise."
 website "http://crm.daffodilsw.com/"

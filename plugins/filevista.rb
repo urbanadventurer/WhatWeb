@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "FileVista" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-07
+Plugin.define do
+name "FileVista"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-07
+]
 version "0.1"
 description "FileVista is a web file manager for storing, managing and sharing files online through your web browser."
 website "http://www.gleamtech.com/products/filevista/web-file-manager"

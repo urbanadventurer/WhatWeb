@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-21 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "NetGear-Print-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+Plugin.define do
+name "NetGear-Print-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+  "Andrew Horton", # v0.2 # 2016-04-21 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "NetGear Print Server - Print servers connect printers directly to the network so that multiple PCs can share them."
 website "http://www.netgear.com.au/au/Products/Print-Servers"

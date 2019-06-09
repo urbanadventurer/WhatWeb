@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "eDirectory" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-27
+Plugin.define do
+name "eDirectory"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-27
+]
 version "0.1"
 description "Arca Solutions eDirectory provides a php and .NET software platform to allow site owners to publish directory-driven websites with ease. - Hompage: http://www.edirectory.com/"
 

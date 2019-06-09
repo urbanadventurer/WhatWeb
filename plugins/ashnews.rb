@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-01-07 #
-# Updated version detection method
-##
-Plugin.define "ashnews" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-28
+Plugin.define do
+name "ashnews"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-28
+  # v0.2 # 2011-01-07 # Updated version detection method. 
+]
 version "0.2"
 description "ashnews is a simple program using PHP/MySQL that allows you to easily add a news/blog system to your site."
 website "http://projects.ashwebstudio.com/"

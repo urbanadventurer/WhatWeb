@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Lime-Survey" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-06 
+Plugin.define do
+name "Lime-Survey"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-06 
+]
 version "0.1"
 description "LimeSurvey basically contains everything you need for doing nearly every survey with grace."
 website "http://www.limesurvey.org/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "IBM-Remote-Supervisor-Adapter" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-15
+Plugin.define do
+name "IBM-Remote-Supervisor-Adapter"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-15
+]
 version "0.1"
 description "IBM Remote Supervisor Adapter (RSA) is the out-of-band management interface card optional on most IBM x86-based servers."
 website "https://www-947.ibm.com/support/entry/portal/docdisplay?lndocid=MIGR-50116"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DLI-LPC" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-07-15
+Plugin.define do
+name "DLI-LPC"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-07-15
+]
 version "0.1"
 description "Digital Loggers Inc remote switch with built-in web server for remote reboot and power control"
 website "http://www.digital-loggers.com/lpc.html"
@@ -44,7 +47,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# DLILPC Cookie

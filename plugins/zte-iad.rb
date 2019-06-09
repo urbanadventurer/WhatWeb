@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ZTE-IAD" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-01
+Plugin.define do
+name "ZTE-IAD"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-01
+]
 version "0.1"
 description "ZTE IAD (Integrated Access Device)"
 website "http://wwwen.zte.com.cn/en/solutions/wireless/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Mashery-Proxy" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "Mashery-Proxy"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+]
 version "0.1"
 description "The Mashery proxy is our patent pending software that sits between your developers and your API. The proxy intercepts all calls to your API, does some Mashery magic, passes the call on to your API, intercepts the response, does some more Mashery magic and sends the response back to the caller. The proxy is the mechanism for applying the business rules of your choosing to your new API channel."
 website "http://support.mashery.com/SolutionOverview"
@@ -17,7 +20,7 @@ website "http://support.mashery.com/SolutionOverview"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

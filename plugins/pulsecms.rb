@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PulseCMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-08
+Plugin.define do
+name "PulseCMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-08
+]
 version "0.1"
 description "Manage Content, Simply. Pulse is a simple CMS designed for small websites. It enables you to add content management to an existing site in five minutes."
 website "http://pulsecms.com/"

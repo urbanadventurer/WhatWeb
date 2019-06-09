@@ -4,9 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "bbPress" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-06
-version "0.1"
+Plugin.define do
+name "bbPress"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-06
+  "@lins05", # v0.2 # 2014-06-19 # Add div match. 
+]
+version "0.2"
 description "bbPress is forum software with a twist from the creators of WordPress."
 website "http://bbpress.org/"
 
@@ -31,6 +35,8 @@ matches [
 
 # HTML Comment
 { :text=>'<!-- If you like showing off the fact that your server rocks -->' },
+
+{ :text=>'<div id="bbpress-forums">' },
 
 ]
 

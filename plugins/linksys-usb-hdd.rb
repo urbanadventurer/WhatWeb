@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-02-25 #
-# Updated version detection
-##
-# Version 0.2 #
-# Updated firmware version detection.
-# Added model detection.
-##
-Plugin.define "Linksys-USB-HDD" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-27
+Plugin.define do
+name "Linksys-USB-HDD"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-27
+  # v0.2 # Updated firmware version detection.. Added model detection.. 
+  # v0.3 # 2011-02-25 # Updated version detection. 
+]
 version "0.3"
 description "Linksys external USB HDD web frontend"
 website "http://www.linksys.com/"

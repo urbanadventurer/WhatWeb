@@ -4,15 +4,15 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-04-09 # Brendan Coles <bcoles@gmail.com>
-# Added aggressive md5 matches
-##
-# Version 0.2
-# removed :name and :certainty=>100
-##
-Plugin.define "Drupal" do
-  author "Andrew Horton"
-  version "0.3"
+Plugin.define do
+name "Drupal"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100. 
+  "Brendan Coles <bcoles@gmail.com>", # v0.3 # 2011-04-09 # Added aggressive md5 matches. 
+  "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.4 # 2016-08-19 # Added SSESS cookie. 
+]
+  version "0.4"
   description "Drupal is an opensource CMS written in PHP."
   website "http://www.drupal.org"
   
@@ -48,6 +48,9 @@ Plugin.define "Drupal" do
              
              # SESS Drupal Cookie
              { :name=>"SESS Drupal Cookie", :certainty=>75, :search=>"headers[set-cookie]", :regexp=>/^SESS[a-z0-9]{32}=[a-z0-9]{32}/ },
+
+             # SESS Drupal Cookie
+             { :name=>"SSESS Drupal Cookie", :certainty=>75, :search=>"headers[set-cookie]", :regexp=>/^SSESS[a-z0-9]{32}=[a-z0-9]{32}/ },
              
              # Mobile Plugin Cookie
              { :module=>"Mobile Plugin", :name=>"Mobile Plugin Cookie", :search=>"headers[set-cookie]", :regexp=>/mobileplugin_group=/ },
@@ -58,7 +61,7 @@ Plugin.define "Drupal" do
             ]
 
   # Aggressive #
-  def aggressive
+  aggressive do
     m=[]
     
     # the paths are relative to the url path if they don't start with /

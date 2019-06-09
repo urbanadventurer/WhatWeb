@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "DataNet" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-23
+Plugin.define do
+name "DataNet"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-23
+]
 version "0.1"
 description "DataNET is a complete end-to-end system consisting of IP packet data routing server software called DataGate, which links to one or more client programs such as Datalink's DataHost, or third-party software connected over the Internet or Intranet."
 website "http://www.datalinksystemsinc.com/software.html"

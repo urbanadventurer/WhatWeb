@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Barracuda-Backup-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-20
+Plugin.define do
+name "Barracuda-Backup-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-20
+]
 version "0.1"
 description "Local inline Deduplication Backup Systems with available offsite Cloud Storage or site to site replication."
 website "https://www.barracudanetworks.com/ns/products/backup_overview.php"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "simpleSAMLphp" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-01-18
+Plugin.define do
+name "simpleSAMLphp"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-01-18
+]
 version "0.1"
 description "A PHP implementation of SAML 2.0 service provider and identity provider functionality."
 website "http://simplesamlphp.org"

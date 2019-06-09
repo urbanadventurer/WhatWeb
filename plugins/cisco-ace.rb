@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Cisco-ACE" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-05-02
+Plugin.define do
+name "Cisco-ACE"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-05-02
+]
 version "0.1"
 description "Cisco Application Control Engine (ACE) Device Manager"
 website "http://www.cisco.com/en/US/products/ps6906/index.html"

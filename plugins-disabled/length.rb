@@ -4,14 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-Plugin.define "Len" do
-author "Andrew Horton"
+Plugin.define do
+name "Len"
+authors [
+  "Andrew Horton",
+]
 version "0.1"
 description "The length of the HTML body"
 
 
-def passive
+passive do
 	[{:string=>@body.size}]
 end
 

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 by Andrew Horton
-# Added version detection
-##
-Plugin.define "AWStats" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-04
+Plugin.define do
+name "AWStats"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-04
+  # v0.2 # Added version detection. 
+]
 version "0.2"
 description "AWStats - Free log file analyzer for advanced statistics (GNU GPL)."
 website "http://awstats.sourceforge.net/"

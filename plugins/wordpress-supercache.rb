@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty=>100
-# Version 0.3
-# Changed Wallström to Wallstrom
-
-Plugin.define "WordpressSuperCache" do
-author "Patrik Wallstrom"
+Plugin.define do
+name "WordpressSuperCache"
+authors [
+  "Patrik Wallstrom",
+  # v0.2 # removed :certainty=>100
+  # v0.3 # Changed Wallström to Wallstrom
+]
 version "0.3"
 description "Cache functionality for Wordpress - http://wordpress.org/extend/plugins/wp-super-cache/"
 

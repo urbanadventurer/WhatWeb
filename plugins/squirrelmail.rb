@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# removed :certainty=>100 & :name
-# Version 0.3
-# Uses :version=>//
-
-Plugin.define "SquirrelMail" do
-author "Andrew Horton"
+Plugin.define do
+name "SquirrelMail"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100 & :name
+  # v0.3 # Uses :version=>//
+]
 version "0.3"
 description "Opensource Webmail written in PHP"
 website "http://squirrelmail.org"
@@ -29,7 +28,7 @@ matches [
 # <SMALL>SquirrelMail version 1.2.7<BR>
 # <small>SquirrelMail version 1.4.4<
 # <small>SquirrelMail version 1.4.9a<br />
-def passive
+passive do
 	m=[]
 	
 	# Set-Cookie: SQMSESSID=5055d75dbcac067f72b509effc42cc50; path=/

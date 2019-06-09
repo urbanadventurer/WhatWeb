@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-19 #
-# Updated version detection
-##
-Plugin.define "IPCop-Firewall" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-20
+Plugin.define do
+name "IPCop-Firewall"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-20
+  # v0.2 # 2011-02-19 # Updated version detection. 
+]
 version "0.2"
 description "The IPCop Firewall is a Linux firewall distribution. It is geared towards home and SOHO users. The IPCop web-interface is very user-friendly and makes usage easy."
 website "http://sf.net/projects/ipcop/"

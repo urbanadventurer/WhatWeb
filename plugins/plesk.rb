@@ -4,19 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2
-# convert :regexp to :text, remove :certainty=>100
-##
-# Version 0.3
-# added more matches for 1999- 2007 version, improved existing matches
-##
-# Version 0.4 # 2011-09-15 # Brendan Coles <bcoles@gmail.com>
-# Minor match updates
-# Added version detection
-# Added matches for favicon, redirect page and headers
-##
-Plugin.define "Plesk" do
-author "Andrew Horton"
+Plugin.define do
+name "Plesk"
+authors [
+  "Andrew Horton",
+  "Brendan Coles <bcoles@gmail.com>", # v0.4 # 2011-09-15 # Minor match updates. Added version detection. Added matches for favicon, redirect page and headers. 
+  # v0.3 # added more matches for 1999- 2007 version, improved existing matches. 
+  # v0.2 # convert :regexp to :text, remove :certainty=>100. 
+]
 version "0.4"
 description "Plesk is a web control panel"
 website "http://www.parallels.com/products/plesk/"

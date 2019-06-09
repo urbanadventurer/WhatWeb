@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# Version 0.2
-# remove :certainty and :name, changed :regexp to :text
-
-Plugin.define "Oce" do
-author "Andrew Horton"
+Plugin.define do
+name "Oce"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :certainty and :name, changed :regexp to :text
+]
 version "0.2"
 description "Oce Print Exec Workgroup is easy-to-use, web-based print management software for job submission of sets of technical drawings to a single large format printer"
 website "global.oce.com/products/print-exec-workgroup/default.aspx"

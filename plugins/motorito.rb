@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Motorito" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-25
+Plugin.define do
+name "Motorito"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-25
+]
 version "0.1"
 description "Motorito"
 website "http://www.motorito.com/"

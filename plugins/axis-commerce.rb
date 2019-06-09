@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Axis-Commerce" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-20
+Plugin.define do
+name "Axis-Commerce"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-20
+]
 version "0.1"
 description "Axis Commerce - open source eCommerce software - Requires: PHP and MySQL"
 website "http://axiscommerce.com/"

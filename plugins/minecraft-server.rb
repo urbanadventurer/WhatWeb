@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Minecraft-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
+Plugin.define do
+name "Minecraft-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-06
+]
 version "0.1"
 description "Minecraft server web UI. Minecraft is a deceptively simple yet addictive game with a clingy online community. MineOS is a Linux distribution designed for the sole purpose of hosting Minecraft worlds. It comes complete with web-admin interface, SSH interaction, and SCP capability for easy filesystem access."
 website "http://minecraft.com/ - MineO"
@@ -36,7 +39,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# WWW-Authenticate Header

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "zFeeder" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-22
+Plugin.define do
+name "zFeeder"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-22
+]
 version "0.1"
 description "check zFeeder if you want to show other's RSS content (news and much more) on your website, wapsite or use it on your PC (or intranet) as a news reader."
 website "http://zvonnews.sourceforge.net/"

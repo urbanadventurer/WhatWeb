@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Uniform-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-04-15
+Plugin.define do
+name "Uniform-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-04-15
+]
 version "0.1"
 description "Uniform Server is a lightweight server solution for running a web server under the WindowsOS. Includes the latest versions of Apache2, Perl5, PHP5, MySQL5, phpMyAdmin."
 website "http://www.uniformserver.com/"

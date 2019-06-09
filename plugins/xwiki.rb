@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "XWiki" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-08
+Plugin.define do
+name "XWiki"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-08
+]
 version "0.1"
 description "XWiki - Open Source Wiki and Content-Oriented Application Platform"
 website "http://www.xwiki.org/"

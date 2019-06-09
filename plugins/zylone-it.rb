@@ -4,12 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-17 # Andrew Horton
-# Added description. Added website parameter
-##
-
-Plugin.define "Zylone-IT" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-12
+Plugin.define do
+name "Zylone-IT"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-12
+  "Andrew Horton", # v0.2 # 2016-04-17 # Added description. Added website parameter. 
+]
 version "0.2"
 description "Zylone IT is an IT company in Singapore providing web design, web solutions and internet marketing."
 website "http://www.zylone.com/"

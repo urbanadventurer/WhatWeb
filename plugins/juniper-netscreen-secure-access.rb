@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Juniper-NetScreen-Secure-Access" do
-author "Aung Khant <http://yehg.net/>" # 2011-02-04
+Plugin.define do
+name "Juniper-NetScreen-Secure-Access"
+authors [
+  "Aung Khant <http://yehg.net/>", # 2011-02-04
+]
 version "0.1"
 description "Juniper Networks NetScreen Secure Access (SSL VPN) - http://www.juniper.net/"
 

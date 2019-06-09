@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-20 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-Plugin.define "Hitbox-Gateway" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-06
+Plugin.define do
+name "Hitbox-Gateway"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+  "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+]
 version "0.2"
 description "Adobe Omniture Hitbox Gateway collects HTTP headers for web site usage statistics"
 website "http://login.hitbox.com/"

@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "ONZE-Miner" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-20
+Plugin.define do
+name "ONZE-Miner"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-20
+]
 version "0.1"
 description "ONZE Miner is a browser-based linguistics research tool that stores audio recordings and regular-expression searchable text transcripts of interviews."
 website "http://sourceforge.net/projects/onzeminer/"

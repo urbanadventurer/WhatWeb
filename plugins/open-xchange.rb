@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Open-Xchange" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-07-14
+Plugin.define do
+name "Open-Xchange"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-07-14
+]
 version "0.1"
 description "Open-Xchange mail server"
 website "http://www.open-xchange.com/"

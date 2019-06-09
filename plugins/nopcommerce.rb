@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "nopCommerce" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "nopCommerce"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+]
 version "0.1"
 description "nopCommerce is an open source e-commerce solution that contains both a catalog frontend and an administration tool backend. nopCommerce is a fully customizable shopping cart. It's stable and highly usable. "
 website "http://www.nopcommerce.com/"

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2
-# remove :name & :certainty, updated description
-##
-Plugin.define "Moodle" do
-author "Andrew Horton"
+Plugin.define do
+name "Moodle"
+authors [
+  "Andrew Horton",
+  # v0.2 # remove :name & :certainty, updated description. 
+]
 version "0.2"
 description "Opensource educational software written in PHP."
 website "http://www.moodle.org/"

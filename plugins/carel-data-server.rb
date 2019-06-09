@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-19 # Andrew Horton
-# Move HTTP server match from passive function to matches[]
-##
-Plugin.define "Carel-Data-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-07
+Plugin.define do
+name "Carel-Data-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+  "Andrew Horton", # v0.2 # 2016-04-19 # Move HTTP server match from passive function to matches[]. 
+]
 version "0.2"
 description "Pl@ntVisor is a communication data server distributed by CAREL Italy. It is now obsolete and replaced by Pl@ntVisorPRO"
 
@@ -36,7 +37,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Server: CarelDataServer

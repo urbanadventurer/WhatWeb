@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-08-27 #
-# Added cookie matches
-##
-Plugin.define "DataLife-Engine" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-18
+Plugin.define do
+name "DataLife-Engine"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-18
+  # v0.2 # 2011-08-27 # Added cookie matches. 
+]
 version "0.2"
 description "DataLife Engine CMS"
 website "http://dle-news.ru"

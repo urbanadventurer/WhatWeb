@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "PHP-Photo-Album" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-11-22
+Plugin.define do
+name "PHP-Photo-Album"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-11-22
+]
 version "0.1"
 description "PHP Photo Album"
 website "http://www.phpalbum.net/dw"

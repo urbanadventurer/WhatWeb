@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "KSS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-02
+Plugin.define do
+name "KSS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-02
+]
 version "0.1"
 description "KSS (Kinetic Style Sheets) is an Ajax framework that allows UI development without writing any Javascript. It uses style sheets with CSS-compliant syntax to declare and bind dynamic behaviors in the browser. The engine supports a set of generic DOM-like commands; they are computed on the server and sent back to manipulate the HTML page."
 website "http://kssproject.org/"
@@ -22,7 +25,7 @@ website "http://kssproject.org/"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Ksscommands HTTP Header

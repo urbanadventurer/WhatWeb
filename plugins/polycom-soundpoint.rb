@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-06-11
-# Added account detection
-##
-Plugin.define "Polycom-SoundPoint" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-14
+Plugin.define do
+name "Polycom-SoundPoint"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-14
+  # v0.2 # 2011-06-11 # Added account detection. 
+]
 version "0.2"
 description "Polycom SoundPoint VOIP phone"
 website "http://www.polycom.com/products/voice/desktop_solutions/soundpoint/"
@@ -27,7 +28,7 @@ dorks [
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

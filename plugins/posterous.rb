@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Posterous" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-19
+Plugin.define do
+name "Posterous"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-19
+]
 version "0.1"
 description "Posterous publishing platform. If you can email, you can manage a website and share it with small groups or the world using Posterous. - https://posterous.com/"
 
@@ -35,7 +38,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# _sharebymail_session_id cookie

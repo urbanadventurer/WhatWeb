@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-04-02 #
-# Updated regex
-##
-# Version 0.2
-# removed :certainty=>100
-##
-Plugin.define "X-Powered-By" do
-author "Andrew Horton"
+Plugin.define do
+name "X-Powered-By"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :certainty=>100. 
+  # v0.3 # 2011-04-02 # Updated regex. 
+]
 version "0.3"
 description "X-Powered-By HTTP header"
 
@@ -21,7 +20,7 @@ description "X-Powered-By HTTP header"
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# X-Powered-By Headers

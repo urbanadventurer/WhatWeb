@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Hiki" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-07
+Plugin.define do
+name "Hiki"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-07
+]
 version "0.1"
 description "Hiki is a powerful and fast wiki clone written in Ruby."
 website "http://hikiwiki.org/en/"
@@ -35,7 +38,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Ruby Version Detection

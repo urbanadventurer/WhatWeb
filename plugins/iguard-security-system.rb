@@ -4,15 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2011-08-05 #
-# Updated http server header match
-# Added www-authenticate match and google dork
-##
-# Version 0.2 # 2011-02-19 #
-# Updated version detection
-##
-Plugin.define "iGuard-Security-System" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-18
+Plugin.define do
+name "iGuard-Security-System"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-18
+  # v0.2 # 2011-02-19 # Updated version detection. 
+  # v0.3 # 2011-08-05 # Updated http server header match. Added www-authenticate match and google dork. 
+]
 version "0.3"
 description "Lucky Technology iGuard security system, based on smart card and biometric fingerprint technology."
 website "http://www.lucky-tech.com/p1.php"
@@ -48,7 +46,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# HTTP Server Header

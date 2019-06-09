@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "sabros_us" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-08-06
+Plugin.define do
+name "sabros_us"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-08-06
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "sabros.us  is a CMS to put your bookmarks online with folksonomy support; just like del.icio.us, but the big diference is you will have the complete control of the source code."
 website "http://sabros.us/"

@@ -4,17 +4,14 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.4 # 2016-04-17 # Andrew Horton
-# Updated description and added website
-##
-# Version 0.3
-# Uses :version=>//
-##
-# Version 0.2
-# removed :name and :certainty=>100
-##
-Plugin.define "Coppermine" do
-author "Andrew Horton"
+Plugin.define do
+name "Coppermine"
+authors [
+  "Andrew Horton",
+  # v0.2 # removed :name and :certainty=>100. 
+  # v0.3 # Uses :version=>//. 
+  # Andrew Horton, # v0.4 # 2016-04-17 # Updated description and added website. 
+]
 version "0.4"
 description "Open-source Photo Gallery powered by PHP & MySQL"
 website "http://www.coppermine-gallery.net/"

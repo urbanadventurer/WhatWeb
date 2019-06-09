@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BAAP-Mobile-Version" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-29
+Plugin.define do
+name "BAAP-Mobile-Version"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-29
+]
 version "0.1"
 description "The BAAP Mobile Version is a complete toolkit to help mobilize your WordPress site."
 website "http://wordpress.org/extend/plugins/baap-mobile-version/"

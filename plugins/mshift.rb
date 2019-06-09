@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "MShift" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-05-12
+Plugin.define do
+name "MShift"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-05-12
+]
 version "0.1"
 description "MShift - Comprehensive Mobile Banking - Over 200 US Financial Institutions are MShift clients. With a base comprised of the largest banks in the world, as well as regional credit unions and local banks, MShift is the standard by which Mobile Banking is measured."
 website "http://www.mshift.com/"
@@ -34,7 +37,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# dcttype cookie

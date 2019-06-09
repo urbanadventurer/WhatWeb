@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Ushahidi" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-05
+Plugin.define do
+name "Ushahidi"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-05
+]
 version "0.1"
 description "The Ushahidi Platform is a platform for information collection, visualization and interactive mapping."
 website "http://www.ushahidi.com/"
@@ -24,7 +27,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# ushahidi cookie

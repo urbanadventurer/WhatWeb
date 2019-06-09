@@ -3,33 +3,24 @@
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
+##
+Plugin.define do
+name "ASP_NET"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-10
+  # v0.2 # 2011-01-28 # Added version detection. 
+  # v0.3 # 2011-02-19 # Added AnonymousIdentificationModule detection. 
+  # v0.4 # 2011-03-03 # Merged x-aspnetmvc-version plugin. 
+  # v0.5 # 2014-06-12 # Added Detailed errors and ViewState Encrypted. . 
+  "Andrew Horton", # v0.6 # 2016-04-18 # Replaced passive function with match for:. 1. x-powered-by HTTP header. 2. X-AspNet-Version HTTP header. 3. AnonymousIdentificationModule. 
+  "Bhavin Senjaliya", # v0.7 # 2016-08-19 # Add 4 cookies. 
+]
+version "0.7"
+description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world."
+website "http://www.asp.net/"
 
 # TODO
 # add detection true/false for ViewState MAC and Encryption
-##
-# Version 0.6 # 2016-04-18 # Andrew Horton
-# Replaced passive function with match for:
-# 1. x-powered-by HTTP header
-# 2. X-AspNet-Version HTTP header
-# 3. AnonymousIdentificationModule
-##
-# Version 0.5 # 2014-06-12
-# Added Detailed errors and ViewState Encrypted. 
-##
-# Version 0.4 # 2011-03-03 #
-# Merged x-aspnetmvc-version plugin
-##
-# Version 0.3 # 2011-02-19 #
-# Added AnonymousIdentificationModule detection
-##
-# Version 0.2 # 2011-01-28 #
-# Added version detection
-##
-Plugin.define "ASP_NET" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-10
-version "0.6"
-description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world."
-website "http://www.asp.net/"
 
 # The Global.asa file is an optional file that can contain declarations of objects, variables, and methods that can be accessed by every page in an ASP application. All valid browser scripts (JavaScript, VBScript, JScript, PerlScript, etc.) can be used within Global.asa. The Global.asa file must be stored in the root directory of the ASP application, and each application can only have one Global.asa file. - http://www.w3schools.com/ASP/asp_globalasa.asp
 
@@ -86,10 +77,15 @@ matches [
 	{ :module=>"AnonymousIdentificationModule", :search=>"headers[set-cookie]", :regexp => /^anonymousID=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/},
 	{ :module=>"AnonymousIdentificationModule", :search=>"headers[set-cookie]", :regexp => /^chkvalues=[^;]+; expires=[^;]+; path=[^;]+; HttpOnly/},
 
+	{ :search => "headers[set-cookie]", :regexp => /^__RequestVerificationToken/, :name=>"__RequestVerificationToken cookie" },
+	{ :search => "headers[set-cookie]", :regexp => /^.ASPXANONYMOUS/, :name=>".ASPXANONYMOUS cookie" },
+	{ :search => "headers[set-cookie]", :regexp => /^ASP.NET_SessionId/, :name=>"ASP.NET_SessionId cookie" },
+	{ :search => "headers[set-cookie]", :regexp => /^ASPSESSIONID/, :name=>"ASPSESSIONID cookie" },
+
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # X-AspNetmvc-version HTTP header

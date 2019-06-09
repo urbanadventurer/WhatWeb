@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "UseResponse" do
-author "Brendan Coles <bcoles@gmail.com>" # 2012-06-06
+Plugin.define do
+name "UseResponse"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2012-06-06
+]
 version "0.1"
 description "UseResponse is a fully customizable, open-source, self-hosted customer feedback software and support system"
 website "http://www.useresponse.com/"

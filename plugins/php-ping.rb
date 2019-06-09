@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 #
-# Updated regex
-##
-Plugin.define "php-ping" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-06-13
+Plugin.define do
+name "php-ping"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-06-13
+  # v0.2 # Updated regex. 
+]
 version "0.2"
 description "php-ping - PHP powered ping web interface."
 

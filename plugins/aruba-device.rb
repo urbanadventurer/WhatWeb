@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Aruba-Device" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-17
+Plugin.define do
+name "Aruba-Device"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-17
+]
 version "0.1"
 description "Aruba network device - web interface for router, access point, switch, etc"
 website "http://www.arubanetworks.com/"

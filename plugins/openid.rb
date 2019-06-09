@@ -4,10 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-
-Plugin.define "OpenID" do
-author "Caleb Anderson"
+Plugin.define do
+name "OpenID"
+authors [
+  "Caleb Anderson",
+]
 version "0.1"
 description "openid detection"
 

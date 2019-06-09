@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Tele-Data-CMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-06-11
+Plugin.define do
+name "Tele-Data-CMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-06-11
+]
 version "0.1"
 description "Tele Data's Contact Management Server - Contact Management Server for Windows / Asterisk - a custom designed HTTP server which act as a front end to a SQLite Database designed to provide contact management services, accessible from a Web Browser, to a single or group of users on a LAN or WAN network."
 website "http://teledata.qc.ca/td_cms/"

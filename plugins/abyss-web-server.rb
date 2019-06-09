@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2016-04-18 # Andrew Horton
-# Replaced passive function with match
-##
-Plugin.define "Abyss-Web-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-04-08
+Plugin.define do
+name "Abyss-Web-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-04-08
+  "Andrew Horton", # v0.2 # 2016-04-18 # Replaced passive function with match. 
+]
 version "0.2"
 description "Abyss Web Server is a compact web server available for Windows, Mac OS X, Linux, and FreeBSD operating systems."
 website "http://www.aprelium.com/abyssws/"

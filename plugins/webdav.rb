@@ -4,14 +4,13 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2016-04-23 # Andrew Horton
-# Moved patterns from passive function to matches[]
-##
-# Version 0.3 #
-# Added Server DAV/[\d\.]+ version detection
-##
-Plugin.define "WebDAV" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-25
+Plugin.define do
+name "WebDAV"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-25
+  # v0.2 # Added Server DAV/[\d\.]+ version detection. 
+  "Andrew Horton", # v0.3 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+]
 version "0.3"
 description "Web-based Distributed Authoring and Versioning (WebDAV) is a set of methods based on the Hypertext Transfer Protocol (HTTP) that facilitates collaboration between users in editing and managing documents and files stored on World Wide Web servers. - More Info: http://en.wikipedia.org/wiki/WebDAV"
 

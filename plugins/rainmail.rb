@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Rainmail" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-09-27
+Plugin.define do
+name "Rainmail"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-09-27
+]
 version "0.1"
 description "Rainmail Intranet Server is integrated software for providing complete Intranet and Network Infrastructure to enterprises."
 website "http://www.carizen.com/carizen/index.php?task=ris"

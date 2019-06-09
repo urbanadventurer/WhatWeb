@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Gitweb" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-01-24
+Plugin.define do
+name "Gitweb"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-01-24
+]
 version "0.1"
 description "Gitweb is a Git web interface, the one working on http://www.kernel.org/git/. It is written in Perl, and can be used as a CGI script, or as a mod_perl legacy script (run by ModPerl::Registry handler). It allows browsing a git repository (or a set of git repositories) using a web browser."
 website "http://git.or.cz/gitwiki/Gitweb"

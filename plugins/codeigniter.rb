@@ -4,20 +4,16 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-
-# v1.0
-# not so foolproof if the site uses its own custom 404 and custom cookie name
-# v2.0 by Andrew Horton
-# new random string
-
-Plugin.define "CodeIgniter-PHP-Framework" do
-author "Aung Khant <YGN Ethical Hacker Group, Myanmar, http://yehg.net>"
-version "0.2"
-description "CodeIgniter PHP Framework - http://codeigniter.com/ "
-
-# more http://codeigniter.com/projects/
-
-	
+Plugin.define do
+name "CodeIgniter-PHP-Framework"
+authors [
+  "Aung Khant <YGN Ethical Hacker Group, Myanmar, http://yehg.net>",
+  # v2.0 # new random string
+  "Andrew Horton", # v3 # 2017-11-27 # Tidied up. Added website.. 
+]
+version "0.3"
+description "CodeIgniter PHP Framework"
+website "http://codeigniter.com/"	
 
 # Matches #
 matches [
@@ -26,15 +22,10 @@ matches [
 {:string=>'Database Error Signature',:url=>'index.php/'+randstr(),:md5=>'951c845488483135e52252609a1d99b2'},
 {:string=>'Database Error Signature',:md5=>'951c845488483135e52252609a1d99b2'},
 {:string=>'Invalid Character Filter',:url=>randstr()+'!!!',:md5=>'c9b724012ab64481a034f9a453143ece'},
-{:string=>'Invalid Character Filter',:url=>randstr()+'!!!',:text=>'The URI you submitted has disallowed characters.'}
-]
+{:string=>'Invalid Character Filter',:url=>randstr()+'!!!',:text=>'The URI you submitted has disallowed characters.'},
+{:search => "headers[set-cookie]", :regexp => /ci_session/, :name=>"ci_session cookie" },
 
-# Passive #
-def passive
-        m=[]
-        m << {:string=>"ci_session Cookie" } if @headers["set-cookie"] =~ /ci_session=/
-	m
-end
+]
 
 end
 

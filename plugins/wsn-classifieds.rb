@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "WSN-Classifieds" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-03-16
+Plugin.define do
+name "WSN-Classifieds"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-03-16
+]
 version "0.1"
 description "WSN Classifieds gives you a powerful classified ads site. The vast array of features make it easy to make money from sponsored listings. Translate to any language and easily customize fields and functionality."
 website "http://www.wsnclassifieds.com/"

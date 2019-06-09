@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-25 #
-# Updated version detection
-##
-Plugin.define "SimpNews" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-07-11
+Plugin.define do
+name "SimpNews"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-07-11
+  # v0.2 # 2011-02-25 # Updated version detection. 
+]
 version "0.2"
 description "Simply a News system"
 website "http://www.boesch-it.de/"
@@ -41,7 +42,7 @@ matches [
 ]
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# cookie

@@ -4,11 +4,12 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.2 # 2011-02-24 #
-# Updated version detection
-##
-Plugin.define "Kayako-SupportSuite" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-09-24
+Plugin.define do
+name "Kayako-SupportSuite"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-09-24
+  # v0.2 # 2011-02-24 # Updated version detection. 
+]
 version "0.2"
 description "We offer all of our helpdesk solutions as licensed products (install and host it yourself) or as help desk hosting services."
 website "http://www.kayako.com/"

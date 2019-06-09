@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "SourceBans" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-02-14
+Plugin.define do
+name "SourceBans"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-02-14
+]
 version "0.1"
 description "SourceBans is a free global administration and banning system for Source engine based servers."
 website "http://www.sourcebans.net/"

@@ -4,15 +4,18 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "Essentia-Web-Server" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-06
+Plugin.define do
+name "Essentia-Web-Server"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-06
+]
 version "0.1"
 description "Essentia Web Server - High performance HTTP/1.1 compliant multi-threaded server."
 
 
 
 # Passive #
-def passive
+passive do
 	m=[]
 
 	# Version Detection # HTTP Server Header

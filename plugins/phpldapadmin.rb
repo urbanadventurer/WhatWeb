@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "phpLDAPadmin" do
-author "Brendan Coles <bcoles@gmail.com>" # 2011-08-01
+Plugin.define do
+name "phpLDAPadmin"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2011-08-01
+]
 version "0.1"
 description "phpLDAPadmin (also known as PLA) is a web-based LDAP client. It provides easy, anywhere-accessible, multi-language administration for your LDAP server. "
 website "http://phpldapadmin.sourceforge.net/"

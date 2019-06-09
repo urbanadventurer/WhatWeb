@@ -4,8 +4,11 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-Plugin.define "BrowserCMS" do
-author "Brendan Coles <bcoles@gmail.com>" # 2010-10-18
+Plugin.define do
+name "BrowserCMS"
+authors [
+  "Brendan Coles <bcoles@gmail.com>", # 2010-10-18
+]
 version "0.1"
 description "The newly redesigned BrowserCMS 2.0 is an easy, affordable way to control, edit, and organize website content."
 website "http://www.browsercms.com/"
