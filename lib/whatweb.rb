@@ -99,7 +99,7 @@ $load_path_plugins = [
 ]
 
 $load_path_plugins.each do |dir|
-	if Dir.exists?(File.expand_path("plugins", dir)) and Dir.exists?(File.expand_path("my-plugins", dir))
+	if Dir.exist?(File.expand_path("plugins", dir)) and Dir.exist?(File.expand_path("my-plugins", dir))
 		PLUGIN_DIRS << File.expand_path("plugins", dir)
 		PLUGIN_DIRS << File.expand_path("my-plugins", dir)
 		break
