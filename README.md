@@ -195,7 +195,7 @@ HELP & MISCELLANEOUS:
   --short-help            Short usage help.
   --help, -h              Complete usage help.
   --debug                 Raise errors in plugins.
-  --version               Display version information. (WhatWeb 0.4.9).
+  --version               Display version information. (WhatWeb 0.5.0).
 
 EXAMPLE USAGE:
 * Scan example.com.
