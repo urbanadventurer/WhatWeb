@@ -9,8 +9,9 @@ name "Hitbox-Gateway"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
   "Andrew Horton", # v0.2 # 2016-04-20 # Moved patterns from passive function to matches[]. 
+   # Andrew Horton # v0.3 # 2019-07-10 # Fix warning: character class has duplicated range
 ]
-version "0.2"
+version "0.3"
 description "Adobe Omniture Hitbox Gateway collects HTTP headers for web site usage statistics"
 website "http://login.hitbox.com/"
 
@@ -22,7 +23,7 @@ matches [
 	{ :regexp=>/^Hitbox Gateway/, :search=>"headers[server]" },
 
 	# Version Detection # Server: Hitbox Gateway
-	{ :version=>/^Hitbox Gateway ([^\s^\r^\n]{1,10})$/, :search=>"headers[server]" },
+	{ :version=>/^Hitbox Gateway ([^\s]{1,10})$/, :search=>"headers[server]" },
 	
 	# /favicon.ico
 	{ :url=>"/favicon.ico", :md5=>"0c7fdff990b60f5c7ec6ecf995c6f59f" },	
