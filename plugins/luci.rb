@@ -8,8 +8,9 @@ Plugin.define do
 name "LuCI"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-03-07
+  "Andrew Horton", # v0.2 # 2019-07-10 # warning: character class has duplicated range
 ]
-version "0.1"
+version "0.2"
 description "LuCI was founded in March 2008 as 'FFLuCI' as part of the efforts to create a port of the Freifunk-Firmware from OpenWrt Whiterussian to Kamikaze"
 website "http://luci.subsignal.org/"
 
@@ -44,10 +45,10 @@ matches [
 { :version=>/<p class="luci"><a href="\/cgi-bin\/luci\/about">Powered by LuCI ([\d\.]+)<\/a><\/p>/ },
 
 # Firmware Version Detection
-{ :firmware=>/<div id="header">[\r\n]*<h1>OpenWrt Firmware<\/h1>[\r\n]*<p>[\r\n]*([^<]+)<br \/>[\r\n]*Load: [^<]{10,15}<br \/>[\r\n]*Hostname: ([^\r^\n^<]+)[\s\r\n]*<\/p>[\r\n]*<\/div>/, :offset=>0 },
+{ :firmware=>/<div id="header">[\r\n]*<h1>OpenWrt Firmware<\/h1>[\r\n]*<p>[\r\n]*([^<]+)<br \/>[\r\n]*Load: [^<]{10,15}<br \/>[\r\n]*Hostname: ([^\r\n<]+)[\s]*<\/p>[\r\n]*<\/div>/, :offset=>0 },
 
 # Hostname Detection
-{ :string=>/<div id="header">[\r\n]*<h1>OpenWrt Firmware<\/h1>[\r\n]*<p>[\r\n]*([^<]+)<br \/>[\r\n]*Load: [^<]{10,15}<br \/>[\r\n]*Hostname: ([^\r^\n^<]+)[\s\r\n]*<\/p>[\r\n]*<\/div>/, :offset=>1 },
+{ :string=>/<div id="header">[\r\n]*<h1>OpenWrt Firmware<\/h1>[\r\n]*<p>[\r\n]*([^<]+)<br \/>[\r\n]*Load: [^<]{10,15}<br \/>[\r\n]*Hostname: ([^\r\n<]+)[\s]*<\/p>[\r\n]*<\/div>/, :offset=>1 },
 
 ]
 
