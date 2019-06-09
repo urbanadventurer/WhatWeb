@@ -432,7 +432,7 @@ begin
         mongo[:collection] = arg
         mongo[:use_mongo_log] = true
       else
-        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+        raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
 
     when '--log-mongo-host'
@@ -440,7 +440,7 @@ begin
         mongo[:host] = arg
         mongo[:use_mongo_log] = true
       else
-        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+        raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
 
     when '--log-mongo-database'
@@ -448,21 +448,21 @@ begin
         mongo[:database] = arg
         mongo[:use_mongo_log] = true
       else
-        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+        raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
     when '--log-mongo-username'
       if defined?(Mongo) && defined?(CharDet)
         mongo[:username] = arg
         mongo[:use_mongo_log] = true
       else
-        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+        raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
     when '--log-mongo-password'
       if defined?(Mongo) && defined?(CharDet)
         mongo[:password] = arg
         mongo[:use_mongo_log] = true
       else
-        raise('Sorry. The mongo and rchardet gems are required for Mongo output')
+        raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
     when '--log-elastic-index'
       elastic[:index] = arg
