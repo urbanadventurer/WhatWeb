@@ -11,12 +11,11 @@ authors [
   # v0.2 # removed :probability. 
   # v0.3 # rewrite. 
   "Eric Sesterhenn", # v0.4 # added another match line
+  "Janosch Maier @Phylu", # v0.5 # 2018-04-20 # added a version detection.
 ]
-version "0.4"
+version "0.5"
 description "A fast, concise, JavaScript that simplifies how to traverse HTML documents, handle events, perform animations, and add AJAX."
 website "http://jquery.com/"
-
-
 
 # Matches #
 matches [
