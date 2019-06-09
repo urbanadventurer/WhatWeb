@@ -21,6 +21,7 @@ Version 0.5.0 - In development
 * Bug fix - Ruby 2.4 and 2.5 OpenSSL issue
 * Bug fix - Fixed ElasticSearch version 6+ issue
 * Bug fix - SQL output issue
+* Bug fix - In HTTP Auth parsing @rmaksimov 
 
 * Reached over 1800 plugins
 
