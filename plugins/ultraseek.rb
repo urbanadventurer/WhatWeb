@@ -2,7 +2,7 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# http://www.morningstarsecurity.com/research/whatweb
+# https://www.morningstarsecurity.com/research/whatweb
 ##
 Plugin.define do
 name "Ultraseek"

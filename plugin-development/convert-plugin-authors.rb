@@ -43,7 +43,7 @@ puts FNAME.cyan
 puts "BEFORE".colorize(:color=>:black, :background => :yellow)
 cmd = "cat #{FNAME} | egrep \"^\s*author \""
 puts `#{cmd}`.strip.yellow
-cmd = "cat #{FNAME} | egrep -B 9999 \"^Plugin.define\" | egrep -A 999 '# http://www.morningstarsecurity.com/research/whatweb' | sed '1d;$d'"
+cmd = "cat #{FNAME} | egrep -B 9999 \"^Plugin.define\" | egrep -A 999 '# https://www.morningstarsecurity.com/research/whatweb' | sed '1d;$d'"
 OLDCOMMENTS = `#{cmd}`
 
 puts OLDCOMMENTS.yellow

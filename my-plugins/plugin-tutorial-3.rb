@@ -2,7 +2,7 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# http://www.morningstarsecurity.com/research/whatweb
+# https://www.morningstarsecurity.com/research/whatweb
 #
 ##
 # Version 0.2 # 1999-12-31 # Your Name      # <----- updated from tutorial 1

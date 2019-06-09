@@ -10,7 +10,7 @@ License: GPLv2
 
 This product is subject to the terms detailed in the license agreement. For more information about WhatWeb visit:
 
-Homepage: http://www.morningstarsecurity.com/research/whatweb
+Homepage: https://www.morningstarsecurity.com/research/whatweb
 
 Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
 
@@ -82,7 +82,7 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 WhatWeb - Next generation web scanner version 0.5.0.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
-Homepage: http://www.morningstarsecurity.com/research/whatweb
+Homepage: https://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
 

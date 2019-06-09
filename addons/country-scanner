@@ -56,7 +56,7 @@ do
 	if [ -z "`which $c`" ]; then
 		echo "$c not found. Aborting"
 		echo "You need to install geoipgen to generate country IP lists"
-		echo "Visit http://www.morningstarsecurity.com/research/geoipgen"
+		echo "Visit https://www.morningstarsecurity.com/research/geoipgen"
 		exit 1
 	fi
 done

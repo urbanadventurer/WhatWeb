@@ -13,7 +13,7 @@
 # WhatWeb - Next generation web scanner.
 # Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 #
-# Homepage: http://www.morningstarsecurity.com/research/whatweb
+# Homepage: https://www.morningstarsecurity.com/research/whatweb
 #
 # Copyright 2009-2017 Andrew Horton <andrew at morningstarsecurity dot com> and Brendan Coles
 #
@@ -45,7 +45,7 @@ def usage_full
   puts(<<-EOT)
 WhatWeb - Next generation web scanner version #{WhatWeb::VERSION}.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles).
-Homepage: http://www.morningstarsecurity.com/research/whatweb
+Homepage: https://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
 
@@ -201,7 +201,7 @@ def usage_short
   puts(<<-EOT)
 WhatWeb - Next generation web scanner version #{WhatWeb::VERSION}.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
-Homepage: http://www.morningstarsecurity.com/research/whatweb
+Homepage: https://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
 
@@ -556,7 +556,7 @@ begin
     when '-v', '--verbose'
       $verbose = $verbose + 1
     when '--version'
-      puts "WhatWeb version #{WhatWeb::VERSION} ( http://www.morningstarsecurity.com/research/whatweb/ )"
+      puts "WhatWeb version #{WhatWeb::VERSION} ( https://www.morningstarsecurity.com/research/whatweb/ )"
       exit
     end
   end
