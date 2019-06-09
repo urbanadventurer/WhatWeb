@@ -13,7 +13,7 @@ def open_target(url)
   newtarget = Target.new(url)
   begin
     newtarget.open
-  rescue => err
+  rescue StandardError => err
     error("ERROR Opening: #{newtarget} - #{err}")
   end
   # it doesn't matter if the plugin only pulls 5 instead of 6 variables
@@ -253,15 +253,15 @@ class Target
         @body = @body.scan(/^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m).flatten.first
       end
     end
-  rescue
-    raise
+  rescue StandardError => err
+    raise err
   end
 
   def open_url(options)
     begin
       @ip = Resolv.getaddress(@uri.host)
-    rescue
-      raise
+    rescue StandardError => err
+      raise err
     end
 
     begin
@@ -318,8 +318,8 @@ class Target
       @status = res.code.to_i
       puts @uri.to_s + " [#{status}]" if $verbose > 1
 
-    rescue => err
-      raise
+    rescue StandardError => err
+      raise err
 
     end
   end
@@ -340,9 +340,9 @@ class Target
       location = @headers['location']
       begin
         newtarget_h = URI.join(@target, location).to_s
-      rescue
+      rescue StandardError => err
         # the combinaton of the current target and the new location must be invalid 
-        error("Error: Invalid redirection from #{@target} to #{location}")
+        error("Error: Invalid redirection from #{@target} to #{location}. #{err}")
         return nil
       end
 
