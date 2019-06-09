@@ -8,8 +8,9 @@ Plugin.define do
 name "USP-Secure-Login-Service"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-08-25
+	"Andrew Horton", # v0.2 # 2019-07-10 # Fix warning: character class has duplicated range
 ]
-version "0.1"
+version "0.2"
 description "United Security Providers (USP; previously known as Tetrade) Secure Login Service (SLS) Framework. The SLS works alongside the USP Secure Entry Server (SES) which functions as a Reverse-Proxy and Web Application Firewall (WAF) and also fulfills the role of user authentication."
 website "http://www.united-security-providers.com/"
 
@@ -47,7 +48,7 @@ matches [
 
 # SCDID_S Cookie # This may indicate the presence of USP SES rather than USP SLS
 # It may also belong to both. It's hard to confirm without access to the source.
-{ :search=>"headers[set-cookie]", :module=>"zzzzzz", :regexp=>/SCDID_S=[^;^\s^\$]{54}\$\$;/ },
+{ :search=>"headers[set-cookie]", :module=>"zzzzzz", :regexp=>/SCDID_S=[^;\s\$]{54}\$\$;/ },
 
 ]
 
