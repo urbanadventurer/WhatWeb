@@ -10,8 +10,9 @@ authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-01-21
   # v0.2 # 2011-01-24 # Updated version detection. Added match for 403 error page. 
   # v0.3 # 2011-03-06 # Updated OS detection. 
+  "Andrew Horton", # v0.4 # 2019-07-10 # Fix warning: character class has duplicated range
 ]
-version "0.3"
+version "0.4"
 description "XAMPP is an easy to install Apache distribution containing MySQL, PHP and Perl. XAMPP is really very easy to install and to use - just download, extract and start."
 website "http://www.apachefriends.org/en/xampp.html"
 
@@ -37,10 +38,10 @@ matches [
 	{ :text=>'<meta name="author" content="Kai Oswald Seidler">', :certainty=>75 },
 
 	# Version Detection # Default title
-	{ :version=>/<title>XAMPP Version ([^\r^\n^<]+)[\s]*<\/title>/ },
+	{ :version=>/<title>XAMPP Version ([^\r\n<]+)[\s]*<\/title>/ },
 
 	# OS Detection # Default title
-	{ :os=>/<title>XAMPP for ([^\r^\n^<]{5,8}) [\d\.a-z]{3,6}[\s]*<\/title>/ },
+	{ :os=>/<title>XAMPP for ([^\r\n<]{5,8}) [\d\.a-z]{3,6}[\s]*<\/title>/ },
 
 	# Windows # Default logo
 	{ :url=>"img/head-windows.gif", :md5=>"567ebe64625942cbb8244eca918b06a0", :os=>"Windows" },
