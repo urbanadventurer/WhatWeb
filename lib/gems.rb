@@ -27,18 +27,19 @@ required_gems.each do |thisgem|
   if gem_available?(thisgem)
     require thisgem
   else
-    puts 'WhatWeb requires the following gems as dependencies:'
-    puts "#{required_gems.join(', ')}"
-    puts
-    puts "To install execute 'bundler install'"
+    puts "WhatWeb is not installed and is missing dependencies.\nThe following gems are missing:"
+
+    missing_gems = required_gems.map.select { |thisgem| thisgem unless gem_available?(thisgem) }
+    missing_gems.sort.each {|thisgem| puts " - #{thisgem}" }
+
+    puts "\nTo install run the following command from the WhatWeb folder:\n'bundle install'\n\n"
     exit 1
   end
 end
 
-optional_gems = %w(mongo rchardet)
+optional_gems = %w(mongo rchardet pry rb-readline)
 optional_gems.each do |thisgem|
   begin
-    require 'rubygems' # rubygems is optional
     require thisgem if gem_available?(thisgem)
   rescue LoadError
     # that failed.. no big deal
