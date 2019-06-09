@@ -8,8 +8,9 @@ Plugin.define do
 name "MSFWeb"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-03-06
+  "Andrew Horton", # v0.2 # 2019-07-10 # Fix warning: character class has duplicated range
 ]
-version "0.1"
+version "0.2"
 description "Metasploit Framework Web Console"
 website "http://www.metasploit.com/"
 
@@ -27,7 +28,7 @@ matches [
 { :text=>'<meta name="Copyright" content="(c) 2007, Mike Whitehead (mwhite22[at]caledonian.ac.uk), (c) 2006-2007 Metasploit LLC" />' },
 
 # Default JavaScript
-{ :regexp=>/<script>[\r\n\s]*document.writeln('<link rel="stylesheet" type="text\/css" href="' + mainStyle + '">'); \/\/ MSFWeb main stylesheet[\r\n\s]*document.writeln('<link rel="stylesheet" type="text\/css" href="' + windowStyle + '">'); \/\/ Window frame stylesheet[\r\n\s]*<\/script>/ },
+{ :regexp=>/<script>[\s]*document.writeln('<link rel="stylesheet" type="text\/css" href="' + mainStyle + '">'); \/\/ MSFWeb main stylesheet[\s]*document.writeln('<link rel="stylesheet" type="text\/css" href="' + windowStyle + '">'); \/\/ Window frame stylesheet[\s]*<\/script>/ },
 
 ]
 
