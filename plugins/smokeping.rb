@@ -8,8 +8,9 @@ Plugin.define do
 name "SmokePing"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2012-03-05
+	"Andrew Horton", # v0.2 # 2019-07-10 # Fix warning: character class has duplicated range
 ]
-version "0.1"
+version "0.2"
 description "SmokePing keeps track of your network latency"
 website "http://oss.oetiker.ch/smokeping/index.en.html"
 
@@ -30,7 +31,7 @@ matches [
 { :text=>'<tr><td class="menuitem" colspan="2">&nbsp;-&nbsp;<a class="menulink" HREF="?target=' },
 
 # Homepage Link # Version Detection
-{ :version=>/<A HREF="http:\/\/oss\.oetiker\.ch\/smokeping\/counter\.cgi\/([^\s^\/^\"]+)"><img border="0" src="[^"]+"><\/a>/ },
+{ :version=>/<A HREF="http:\/\/oss\.oetiker\.ch\/smokeping\/counter\.cgi\/([^\s\/\"]+)"><img border="0" src="[^"]+"><\/a>/ },
 
 ]
 
