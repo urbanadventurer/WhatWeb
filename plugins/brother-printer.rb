@@ -10,8 +10,9 @@ authors [
   "Brendan Coles <bcoles@gmail.com>", # 2010-07-22
   # v0.2 # 2011-01-08 # Updated model detection. Added frameset match. 
   # v0.3 # 2016-04-18 # Replaced passive function with matches. 
+  "Andrew Horton", # v0.4 # 2019-07-10 # Fixed false positves for model regex. Fix warning: character class has duplicated range
 ]
-version "0.3"
+version "0.4"
 description "Brother printer web interface"
 website "http://www.brother.com/"
 # Default login: Admin/Access
@@ -44,12 +45,10 @@ matches [
 
 	# Model Detection # HL-1x / HL-2x / HL-5x / HL-6x series
 	# Tested models: HL-6050D_DN / HL-5370DW / HL-5250DN / HL-5250DN /  HL-5270DN / HL-5370DW / HL-1650_1670N / HL-2150N / HL-2460 / HL-2170W / HL-2070N
-	# This regex could be improved
-	{ :model=>/<TITLE>Brother ([0-9A-Z\-\_]+) series[\ \(\ SLEEP\ \)|\ \(\ PAUSE\ \)|\ \(\ READY\ \)]*<\/TITLE>/ },
+	{ :model=>/<TITLE>[\s]*Brother ([\w-]+) series/ },
 	{ :certainty=>25, :search=>"headers[server]", :version=>/^[Dd]ebut\/([\d\.]+)$/ },
 
 ]
-
 
 end
 
