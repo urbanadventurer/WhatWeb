@@ -177,6 +177,7 @@ EXAMPLE USAGE:
   --url-suffix /crossdomain.xml -p crossdomain_xml
 
 EOT
+=begin
   suggestions = ''
   suggestions << "To enable MongoDB logging install the mongo gem.\n" unless gem_available?('mongo')
   suggestions << "To enable character set detection and MongoDB logging install the rchardet gem.\n" unless gem_available?('rchardet')
@@ -188,6 +189,7 @@ EOT
     puts suggestions
     puts
   end
+=end
 end
 
 #
