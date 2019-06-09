@@ -468,6 +468,9 @@ Thank you to the following people who have contributed to WhatWeb.
 + @elcodigok 
 + @SlivTaMere
 + @anozoozian
++ Bhavin Senjaliya (@bhavin1223)
++ Janosch Maier (@Phylu)
++ @rmaksimov
 
 Please let me know if I need to add any more names. 
 
