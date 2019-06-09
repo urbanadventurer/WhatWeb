@@ -33,6 +33,10 @@ group :test do
   gem 'rubocop'
   gem 'rdoc'
   gem 'bundler-audit'
-  gem 'pry'
-  gem 'rb-readline' # needed by pry on some systems
+end
+
+# Needed for debugging WhatWeb
+group :development do
+  gem 'pry', :require => false
+  gem 'rb-readline', :require => false # needed by pry on some systems
 end

@@ -17,8 +17,6 @@
 
 # Debugging
 # require 'profile' # debugging
-require 'pry' # use binding.pry in code to debug
-require 'rb-readline' # needed by pry on some systems
 
 # Standard Ruby
 require 'getoptlong'
@@ -33,6 +31,7 @@ require 'open-uri'
 require 'digest/md5'
 require 'openssl' # required for Ruby version ~> 2.4
 require 'pp'
+
 
 # WhatWeb libs
 require_relative 'whatweb/version.rb'
