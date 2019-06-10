@@ -21,10 +21,8 @@ def open_target(url)
 end
 
 def decode_html_entities(s)
-  t = s.dup
   html_entities = { '&quot;' => '"', '&apos;' => "'", '&amp;' => '&', '&lt;' => '<', '&gt;' => '>' }
-  html_entities.each_pair { |from, to| t.gsub!(from, to) }
-  t
+  s.gsub( /#{html_entities.keys.join("|")}/, html_entities)
 end
 
 ### matching
