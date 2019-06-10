@@ -8,10 +8,11 @@ Plugin.define do
 name "adxstudio-cms"
 authors [
   "Aung Khant <http://yehg.net/>", # 2012-02-12
+  "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
 ]
-version "0.1"
-description "ADXStudio CMS - http://www.adxstudio.com"
-
+version "0.2"
+description "ADXStudio CMS"
+website "http://www.adxstudio.com"
 
 
 # Matches #
