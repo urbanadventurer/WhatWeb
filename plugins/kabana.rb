@@ -8,12 +8,13 @@ Plugin.define do
 name "Kibana"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2015-04-26
+  "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
 ]
-version "0.1"
-description "Kibana is an open source data visualization platform that allows you to interact with your data - Homepage: https://www.elastic.co/products/kibana"
+version "0.2"
+description "Kibana is an open source data visualization platform that allows you to interact with your data"
+website "https://www.elastic.co/products/kibana"
 
 # Default Port: 5601
-
 
 # Matches #
 matches [
