@@ -205,53 +205,24 @@ Homepage: https://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
 
-TARGET SELECTION:
   <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, filenames or
   \t\t\t\tIP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
   \t\t\t\tformat.
   --input-file=FILE, -i\t\tRead targets from a file.
 
-AGGRESSION:
   --aggression, -a=LEVEL\tSet the aggression level. Default: 1.
   1. Stealthy\t\t\tMakes one HTTP request per target and also
   \t\t\t\tfollows redirects.
   3. Aggressive\t\t\tIf a level 1 plugin is matched, additional
   \t\t\t\trequests will be made.
 
-PLUGINS:
   --list-plugins, -l\t\tList all plugins.
   --info-plugins, -I=[SEARCH]\tList all plugins with detailed information.
 \t\t\t\tOptionally search with a keyword.
-  --search-plugins=STRING\tSearch plugins for a keyword.
-  --grep, -g=STRING\t\tSearch for STRING in HTTP responses. Reports
-\t\t\t\twith a plugin named Grep.
-OUTPUT:
+
   --verbose, -v\t\t\tVerbose output includes plugin descriptions.
-\t\t\t\tUse twice for debugging.
-  --colour,--color=WHEN\t\tcontrol whether colour is used. WHEN may be
-\t\t\t\t`never', `always', or `auto'.
 
-HELP & MISCELLANEOUS:
-  --short-help\t\t\tThis short usage help.
-  --help, -h\t\t\tComplete usage help.
-
-EXAMPLE USAGE:
-* Scan example.com.
-  ./whatweb example.com
-* Scan reddit.com slashdot.org with verbose plugin descriptions.
-  ./whatweb -v reddit.com slashdot.org
-* An aggressive scan of wired.com detects the exact version of WordPress.
-  ./whatweb -a 3 www.wired.com
-* Scan the local network quickly and suppress errors.
-  whatweb --no-errors 192.168.0.0/24
-* Scan the local network for HTTPS websites.
-  whatweb --no-errors --url-prefix https:// 192.168.0.0/24
-* Scan for crossdomain policies in the Alexa Top 1000.
-  ./whatweb -i plugin-development/alexa-top-100.txt \\
-  --url-suffix /crossdomain.xml -p crossdomain_xml
-
-  Note: This is the short usage help.
-  For the complete usage help use -h or --help.
+Note: This is the short usage help. For the complete usage help use -h or --help.
 
 EOT
 end
