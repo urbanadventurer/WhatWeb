@@ -4,14 +4,11 @@
 # web site for more information on licensing and terms of use.
 # https://www.morningstarsecurity.com/research/whatweb
 #
-##
-# Version 0.2 # 1999-12-31 # Your Name      # <----- updated from tutorial 1
-# Added cookie detection
-##
 Plugin.define do
 	name "Plugin-Tutorial-3"
 	authors [
-		"Your preferred name <email@address>", # 1999-12-31
+		"Your preferred name <email@address>", # v0.1 # 2019-01-01 # Created plugin
+		"@examplename" # v0.2 # 2019-03-12 # Added cookie detection     # <----- updated from tutorial 1
 	]
 	version "0.2" # <----- updated from tutorial 1
 	description "Generic CMS is an open-source Content Management System developed in PHP."

@@ -4,16 +4,12 @@
 # web site for more information on licensing and terms of use.
 # https://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.3 # 2000-01-01 # Your name
-# Added plenty of example matches
-##
-# Version 0.2 # 1999-12-31 # Your Name      # <----- updated from tutorial 1
-# Added cookie detection
-##
 Plugin.define do
 	name "Plugin-Tutorial-7"
 	authors [
-		"Your preferred name <email@address>", # 1999-12-31
+		"Your preferred name <email@address>", # v0.1 # 2019-01-01 # Created plugin
+		# Your preferred name # v0.2 # 2019-01-11 # Added cookie detection
+		# Your preferred name # v0.3 # 2019-03-17 # Added plenty of example matches
 	]
 	version "0.3"
 	description "Describe what the plugin identifies"
