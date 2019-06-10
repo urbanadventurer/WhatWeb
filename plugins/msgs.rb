@@ -8,10 +8,11 @@ Plugin.define do
 name "MSGS"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-05-20
+  "Andrew Horton", # v0.2 # 2019-07-10 # Removed Homepage: from the website
 ]
-version "0.1"
+version "0.2"
 description "Mercury Satellite Ground Station is a software system for commanding and controlling a satellite ground station. It's goal is to help enable ubiquitous access to satellite resources via the Internet."
-website "Homepage: http://mgsn.sourceforge.net/"
+website "http://mgsn.sourceforge.net/"
 
 # Google results as at 2011-05-20 #
 # 2 for intitle:"Mercury Satellite Ground Station"
