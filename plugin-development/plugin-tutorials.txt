@@ -1,2 +1,46 @@
-Look in the my-plugins/ folder for the plugin tutorials
+The plugin tutorials are in the my-plugins/ folder.
 
+
+Plugin Tutorial 1
+------------------
+A basic plugin with a text match, a regular expression, and version extraction.
+
+
+Plugin Tutorial 2
+------------------
+Building matches from HTTP server headers.
+
+
+Plugin Tutorial 3
+------------------
+How to make version 0.2 of a plugin.
+Matching cookies.
+Google dorks
+
+
+Plugin Tutorial 4
+------------------
+Server header
+Cookie value
+
+
+Plugin Tutorial 5
+------------------
+Aggressive plugins.
+Searching for known files and recognising versions from MD5 hashes.
+
+
+Plugin Tutorial 6
+------------------
+Custom functions for passive and aggressive detection 
+
+
+Plugin Tutorial 7
+------------------
+All the different types of matches.
+
+
+
+After looking at the tutorials look through the other plugins to see how it is done.
+
+There are more resources in the wiki https://github.com/urbanadventurer/WhatWeb/wiki
