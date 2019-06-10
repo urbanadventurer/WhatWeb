@@ -8,14 +8,13 @@ Plugin.define do
 name "Web-Crossing-Server"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2012-01-06
+  "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
 ]
-version "0.1"
-description "Homepage: http://bayspire.com/"
-
+version "0.2"
+description ""
+website "http://bayspire.com/"
 # ShodanHQ results as at 2011-01-06 #
 # 116 for Web Crossing(r)
-
-
 
 # Matches #
 matches [
