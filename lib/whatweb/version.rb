@@ -1,4 +1,4 @@
-# Copyright 2009 to 2017, Andrew Horton and Brendan Coles
+# Copyright 2009 to 2019 Andrew Horton and Brendan Coles
 #
 # This file is part of WhatWeb.
 #
