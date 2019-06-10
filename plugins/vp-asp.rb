@@ -10,12 +10,12 @@ authors [
   "Andrew Horton",
   # v0.2 # removed :certainty=>100 & :name, converted :regexp to :text
   # v0.3 # Uses :version=>//
+  # v0.5 # 2019-07-10 # Added website field.
 ]
-version "0.3"
+version "0.5"
 
-description "VP-ASP (Virtual Programming - ASP) Shopping Cart. Free & commercial versions. http://johnny.ihackstuff.com/ghdb/?function=detail&id=324  Homepage:www.vpasp.com"
-
-
+description "VP-ASP (Virtual Programming - ASP) Shopping Cart. Free & commercial versions. http://johnny.ihackstuff.com/ghdb/?function=detail&id=324"
+website "www.vpasp.com"
 
 matches [
 {:certainty=>75, :ghdb=>'filetype:asp inurl:"shopdisplayproducts.asp"'},
@@ -25,12 +25,6 @@ matches [
 {:certainty=>75, :text=>'shopdisplayproducts.asp?id='},
 {:version=>/<title>VP-ASP Shopping Cart ([^ <]*)/,  :name=>"powered by title" }
 ]
-
-# <title>VP-ASP Shopping Cart 6.00</title>
-# <title>VP-ASP Shopping Cart 4.50a</title>
-# <title>VP-ASP Shopping Cart 6.50</title>
-# <a href="http://www.vpasp.com">Powered By VP-ASP Shopping Cart</a>
-
 
 end
 
