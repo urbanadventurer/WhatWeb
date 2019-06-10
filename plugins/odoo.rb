@@ -9,10 +9,11 @@ Plugin.define do
 name "Odoo" 
   authors [
   	"Naglis Jonaitis",
+    "Andrew Horton", # v0.2 # 2019-07-10 # Removed Homepage: from the website
   ]
-  version '0.1'
+  version '0.2'
   description 'Odoo is an all-in-one management software that offers a range of business applications that form a complete suite of enterprise management applications targeting companies of all sizes.'
-  website 'Homepage: https://www.odoo.com/'
+  website 'https://www.odoo.com/'
 
   matches [
     { :name => 'generator', :text=>'<meta name="generator" content="Odoo"/>' },
