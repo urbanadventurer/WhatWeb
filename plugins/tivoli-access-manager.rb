@@ -8,10 +8,11 @@ Plugin.define do
 name "Tivoli-Access-Manager"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-03-05 #
+	"Andrew Horton", # v0.2 # 2019-07-10 # Removed Homepage: from the website
 ]
-version "0.1"
+version "0.2"
 description "Tivoli Access Manager for e-business software is a highly scalable user authentication, authorization and Web SSO solution for enforcing security policies over a wide range of Web and application resources. It centralizes user access management for online portal and business initiatives."
-website "Homepage: http://www.ibm.com/software/tivoli/products/access-mgr-e-bus/"
+website "http://www.ibm.com/software/tivoli/products/access-mgr-e-bus/"
 
 # ShodanHQ results as at 2011-03-05 #
 # 98 for realm Access Manager for e-business
