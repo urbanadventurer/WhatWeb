@@ -8,9 +8,11 @@ Plugin.define do
 name "SLAED-CMS"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-09-12
+  "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
 ]
-version "0.1"
-description "Homepage: http://slaed.net/"
+version "0.2"
+description ""
+website "http://slaed.net/"
 
 # Google results as at 2011-09-12 #
 # 268 for "Powered by SLAED CMS"
