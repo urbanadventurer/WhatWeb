@@ -281,6 +281,7 @@ class PluginSupport
     count = { plugins: 0, version_detection: 0, matches: 0, dorks: 0, aggressive: 0, passive: 0 }
 
     Plugin.registered_plugins.sort_by { |a, _b| a.downcase }.each do |name, plugin|
+      next if name == "?" # skip the Easter Egg plugin
       dump = [name, plugin.authors, plugin.description, plugin.website, plugin.matches].flatten.compact.to_a.join.downcase
 
       # this will fail is an expected variable is not defined or empty
