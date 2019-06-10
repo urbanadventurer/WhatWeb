@@ -228,16 +228,20 @@ class PluginSupport
     terminal_width = 80
     puts 'WhatWeb Plugin List'
     puts
-    puts 'Plugin Name - Description'
+    puts "Plugin" + " " * 24 + "Website"
     puts '-' * terminal_width
     Plugin.registered_plugins.sort_by { |a, _b| a.downcase }.each do |n, p|
       # output fits more description onto a line
-      line = "#{n} - "
-      line += p.description.delete("\r\n") unless p.description.empty?
+      line = "#{n}"
+      spaces = terminal_width - 50 - n.size
+      spaces = 1 if spaces <= 0
+      line += " " * spaces
 
-      if line.size > terminal_width - 1
-        line = line[0..terminal_width - 4] + '...'
-      end
+      line += p.website if p.website
+
+      #if line.size > terminal_width - 1
+      #  line = line[0..terminal_width - 4] + '...'
+      #end
       puts line
     end
     puts '-' * terminal_width
