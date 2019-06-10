@@ -9,9 +9,11 @@ name "Adobe-Flash"
 authors [
   "Caleb Anderson",
   "Brendan Coles <bcoles@gmail.com>", # v0.2 # Added JavaScript detection. Added <embed> element detection. Added flash file path retrieval. 
+  "Andrew Horton", # v0.3 # 2019-07-10 # Added website field.
 ]
-version "0.2"
+version "0.3"
 description "This plugin identifies instances of embedded adobe flash files."
+website "https://get.adobe.com/flashplayer/"
 
 # Google results as at 2010-10-14 #
 # 244 for "your browser does not support flash"
