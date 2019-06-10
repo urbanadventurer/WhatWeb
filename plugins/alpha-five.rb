@@ -8,9 +8,11 @@ Plugin.define do
 name "Alpha-Five"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-08-20
+  "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
 ]
-version "0.1"
-description "The Alpha Five Application Server allows you to deploy the web applications you build with Alpha Five Developer. Each license allows you to install the server on one PC. - https://www.alphasoftware.com/shop/"
+version "0.2"
+description "The Alpha Five Application Server allows you to deploy the web applications you build with Alpha Five Developer. Each license allows you to install the server on one PC."
+website "https://www.alphasoftware.com/"
 
 # ShodanHQ results as at 2011-08-20 #
 # 463 for Alpha Five
