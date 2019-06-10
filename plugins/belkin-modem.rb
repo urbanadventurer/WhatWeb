@@ -8,11 +8,13 @@ Plugin.define do
 name "Belkin-Modem"
 authors [
   "Andrew Horton",
-  # Version 0.2
-  # removed :name and :certainty=>100
+  # v0.2 # removed :name and :certainty=>100
+  # Andrew Horton # v0.3 # 2019-07-10 # Added website field.
+
 ]
-version "0.2"
-description "Homepage: http://www.belkin.com/"
+version "0.3"
+description "Belkin Consumer Modem / Router"
+website "http://www.belkin.com/"
 
 
 # http://122.58.46.235 Generic-Server = 'micro_httpd'
