@@ -231,14 +231,14 @@ class PluginSupport
     puts "Plugin" + " " * 24 + "Website"
     puts '-' * terminal_width
     Plugin.registered_plugins.sort_by { |a, _b| a.downcase }.each do |n, p|
+      next if n == "?" # skip the Easter Egg plugin
+
       # output fits more description onto a line
       line = "#{n}"
       spaces = terminal_width - 50 - n.size
       spaces = 1 if spaces <= 0
       line += " " * spaces
-
       line += p.website if p.website
-
       puts line
     end
     puts '-' * terminal_width
