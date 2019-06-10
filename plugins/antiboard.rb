@@ -9,9 +9,11 @@ name "Antiboard"
 authors [
   "Andrew Horton", 
   # v0.2 # 2016-04-17 # Updated description. 
+  # Andrew Horton # v0.3 # 2019-07-10 # Added website field.
 ]
-version "0.2"
-description "Antiboard is a PHP forum. Homepage used to be http://www.resynthesize.com/code/antiboard.php."
+version "0.3"
+description "Antiboard is a PHP forum."
+website "http://www.resynthesize.com/code/antiboard.php"
 
 # Dorks #
 dorks [
