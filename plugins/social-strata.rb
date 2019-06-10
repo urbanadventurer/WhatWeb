@@ -8,9 +8,11 @@ Plugin.define do
 name "Social-Strata"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-04-21
+  "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
 ]
-version "0.1"
-description "Homepage: http://socialstrata.com/"
+version "0.2"
+description ""
+website "http://socialstrata.com/"
 
 # Google results as at 2011-04-21 #
 # 60 for inurl:"/eve/personal?x_myspace_page=profile"
@@ -20,7 +22,6 @@ description "Homepage: http://socialstrata.com/"
 dorks [
 'inurl:"/eve/personal?x_myspace_page=profile"'
 ]
-
 
 
 # Matches #
