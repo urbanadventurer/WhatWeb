@@ -239,9 +239,6 @@ class PluginSupport
 
       line += p.website if p.website
 
-      #if line.size > terminal_width - 1
-      #  line = line[0..terminal_width - 4] + '...'
-      #end
       puts line
     end
     puts '-' * terminal_width
