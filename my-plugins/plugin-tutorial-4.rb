@@ -7,7 +7,7 @@
 Plugin.define do
 	name "Plugin-Tutorial-4"
 	authors [
-		"Your preferred name <email@address>", # 1999-12-31
+		"Your preferred name <email@address>", # v0.1 # 2019-01-01 # Created plugin
 	]
 	version "0.1"
 	description "GenericWAF is a commercial Web Application Firewall (WAF)."
