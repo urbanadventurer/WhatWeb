@@ -330,7 +330,7 @@ class Target
 
     if @@meta_refresh_regex =~ @body
       metarefresh = @body.scan(@@meta_refresh_regex).flatten.first
-      metarefresh = decode_html_entities(metarefresh)
+      metarefresh = decode_html_entities(metarefresh).strip
       newtarget_m = URI.join(@target, metarefresh).to_s # this works for relative and absolute
     end
 
