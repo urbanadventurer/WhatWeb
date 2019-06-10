@@ -3,8 +3,8 @@ youtube.com
 facebook.com
 baidu.com
 wikipedia.org
-yahoo.com
-google.co.in
-reddit.com
 qq.com
 taobao.com
+tmall.com
+amazon.com
+yahoo.com
