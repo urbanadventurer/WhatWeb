@@ -8,9 +8,11 @@ Plugin.define do
 name "Alcatel-Lucent-Omniswitch"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2010-07-15
+  "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
 ]
-version "0.1"
+version "0.2"
 description "Alcatel Lucent's Omniswitch"
+website "https://www.al-enterprise.com/en/products/switches"
 # Default login: admin/switch
 
 # 1 result for intitle:"Webview+Logon+Page" @ 2010-07-15
