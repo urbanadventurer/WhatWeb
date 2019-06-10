@@ -9,9 +9,12 @@ name "Textpattern"
 authors [
   "Tonmoy Saikia",
   "Andrew Horton", # v0.2 # Removed the aggressive function as it causes false postives 
+  # Andrew Horton # v0.3 # 2019-07-10 # Added website field.
+
 ]
-version "0.2"
-description "A flexible, elegant and easy-to-use CMS. Homepage:http://textpattern.com/"
+version "0.3"
+description "A flexible, elegant and easy-to-use CMS."
+website "http://textpattern.com/"
 
 
 matches [
