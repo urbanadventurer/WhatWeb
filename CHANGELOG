@@ -20,6 +20,7 @@ Version 0.5.0 - June 9, 2019
 * Merged 31 new plugins by Bhavin Senjaliya and 22 plugin updates from the unofficial WhatWeb gem at https://rubygems.org/gems/whatweb/
 * Added WhatWeb Logo and icons.
 * Updated the usage help. Reduced the size of the short usage help.
+* Plugin list now shows plugin names and websites instead of a truncated plugin description.
 * Bug fix - Ruby 2.4 and 2.5 OpenSSL issue
 * Bug fix - Fixed ElasticSearch version 6+ issue
 * Bug fix - SQL output issue
