@@ -8,10 +8,11 @@ Plugin.define do
 name "Hyperic-HQ"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2012-08-19
+  "Andrew Horton", # v0.2 # 2019-07-10 # Removed Homepage: from the website
 ]
-version "0.1"
+version "0.2"
 description "Hyperic HQ - platform for custom web application monitoring and performance management in physical, virtual, and cloud environments."
-website "Homepage: http://www.vmware.com/products/application-platform/vfabric-hyperic.html"
+website "http://www.vmware.com/products/application-platform/vfabric-hyperic.html"
 
 # Default Port # 7443
 # Default User # hqadmin
