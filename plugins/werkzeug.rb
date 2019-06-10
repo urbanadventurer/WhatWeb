@@ -8,10 +8,12 @@ Plugin.define do
 name "Werkzeug"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2015-04-30
-]
-version "0.1"
-description "Werkzeug is a WSGI utility library for Python. - Homepage: http://werkzeug.pocoo.org/"
+  "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
 
+]
+version "0.2"
+description "Werkzeug is a WSGI utility library for Python."
+website "http://werkzeug.pocoo.org/"
 # About 2667 ShodanHQ results for server:Werkzeug @ 2015-04-30
 
 matches [
