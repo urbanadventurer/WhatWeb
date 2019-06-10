@@ -8,9 +8,11 @@ Plugin.define do
 name "The-Amazing-Little-Poll"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2012-06-04
+  "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
 ]
-version "0.1"
-description "The Amazing Little Poll is a very simple php polling script. - Homepage: http://www.mr-corner.com/LittlePoll/index.html"
+version "0.2"
+description "The Amazing Little Poll is a very simple php polling script."
+website "http://www.mr-corner.com/LittlePoll/index.html"
 
 # ShodanHQ results as at 2012-06-04 #
 # 35 for pollidcookie votingstep
