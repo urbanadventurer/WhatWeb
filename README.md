@@ -374,6 +374,8 @@ Plugins are easy to write. Start by going through the plugin tutorials in the *m
 
 * [Plugin Tutorials](https://github.com/urbanadventurer/WhatWeb/tree/master/my-plugins).
 
+An overview of the plugin tutorials is here. [plugin-tutorials.txt](https://github.com/urbanadventurer/WhatWeb/tree/master/plugin-development/plugin-tutorials.txt)
+
 After progressing through the tutorials read through the Development section of the [wiki](https://github.com/urbanadventurer/WhatWeb/wiki/). 
 
 * [Sources for Plugin Writing](https://github.com/urbanadventurer/WhatWeb/wiki/Sources-for-Plugin-Writing)
