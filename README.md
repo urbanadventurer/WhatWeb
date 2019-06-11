@@ -58,13 +58,12 @@ Most WhatWeb plugins are thorough and recognise a range of cues from subtle to o
 
 ## Example Usage
 
-Using WhatWeb on a couple of websites (standard WhatWeb output is in colour):
+Using WhatWeb to scan reddit.com.
 
 ```
-$ ./whatweb slashdot.org reddit.com
-http://reddit.com [302] HTTPServer[AkamaiGHost], RedirectLocation[http://www.reddit.com/], Via-Proxy[1.1 bc1], IP[173.223.232.64], Akamai-Global-Host, Country[UNITED STATES][US]
-http://slashdot.org [200] Script, HTTPServer[Unix][Apache/1.3.42 (Unix) mod_perl/1.31], Google-Analytics[GA][32013], Via-Proxy[1.1 bc5], UncommonHeaders[x-fry,x-varnish,x-xrds-location,slash_log_data], Apache[1.3.42][mod_perl/1.31], HTML5, IP[216.34.181.45], OpenGraphProtocol[100000696822412], X-Powered-By[Slash 2.005001], Title[Slashdot: News for nerds, stuff that matters], Email[canadaboy@nOspam.gmail.com,jbort@nww.com], Country[UNITED STATES][US]
-http://www.reddit.com/ [200] Frame, PasswordField[passwd,passwd2], Script, HTTPServer['; DROP TABLE servertypes; --], IP[203.97.86.202], JQuery, Cookies[reddit_first], Title[reddit: the voice of the internet -- news before it happens], Country[NEW ZEALAND][NZ]
+$ ./whatweb reddit.com
+http://reddit.com [301 Moved Permanently] Country[UNITED STATES][US], HTTPServer[snooserv], IP[151.101.65.140], RedirectLocation[https://www.reddit.com/], UncommonHeaders[retry-after,x-served-by,x-cache-hits,x-timer], Via-Proxy[1.1 varnish]
+https://www.reddit.com/ [200 OK] Cookies[edgebucket,eu_cookie_v2,loid,rabt,rseor3,session_tracker,token], Country[UNITED STATES][US], Email[banner@2x.png,snoo-home@2x.png], Frame, HTML5, HTTPServer[snooserv], HttpOnly[token], IP[151.101.37.140], Open-Graph-Protocol[website], Script[text/javascript], Strict-Transport-Security[max-age=15552000; includeSubDomains; preload], Title[reddit: the front page of the internet], UncommonHeaders[fastly-restarts,x-served-by,x-cache-hits,x-timer], Via-Proxy[1.1 varnish], X-Frame-Options[SAMEORIGIN]
 ```
 
 
