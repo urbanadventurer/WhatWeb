@@ -32,7 +32,6 @@ require 'fileutils'
 
 EDITOR="nano -Y ruby"
 
-
 #Authors = [
 #  'someone', # initial plugin
 #  'someone else', # added XYZ functionality
@@ -44,7 +43,13 @@ EDITOR="nano -Y ruby"
 # Moved patterns from passive function to matches[]
 ##
 
-FNAME = ARGV.first	 #"movable_type.rb"
+if ARGV.empty?
+	puts "Usage: #{$PROGRAM_NAME} plugin.rb"
+	puts "Convert plugins from the 0.4 to 0.5 format.\n"
+	exit
+end
+
+FNAME = ARGV.first 	 #"movable_type.rb"
 
 # check if file already converted
 OLDFILE = File.read FNAME
