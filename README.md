@@ -472,7 +472,7 @@ Thank you to the following people who have contributed to WhatWeb.
 + @rmaksimov
 + Naglis Jonaitis (@naglis)
 + Igor Rzegocki (@ajgon)
-+ Melvil Guillaume @mguillau42
++ Melvil Guillaume (@mguillau42)
 
 Please let me know if I need to add any more names. 
 
