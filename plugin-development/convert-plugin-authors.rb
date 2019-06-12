@@ -15,7 +15,15 @@ rescue LoadError
   return false
 end
 
+def has_program?(program)
+  ENV['PATH'].split(File::PATH_SEPARATOR).any? do |directory|
+    File.executable?(File.join(directory, program.to_s))
+  end
+end
+
 exit 1 if %w|colorize fileutils |.reject( &method(:gem_available?) ).map {|x| puts "Gem missing. Install with: gem install #{x}" }.any?
+
+puts("Editor missing. Install nano.") && exit(1) unless has_program?("nano")
 
 require 'pp'
 require 'colorize'
