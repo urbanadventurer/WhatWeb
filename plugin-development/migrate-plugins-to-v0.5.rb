@@ -64,6 +64,11 @@ end
 clear_code = %x{clear}
 puts clear_code
 
+# backup plugin
+BACKUP_FNAME = FNAME + ".bak"
+puts "[+] Backup #{FNAME} to #{BACKUP_FNAME}".colorize(:color=>:blue, :background => :black)
+FileUtils.cp(FNAME, BACKUP_FNAME)
+
 puts FNAME.cyan
 
 # show me the Versions block
