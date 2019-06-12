@@ -258,7 +258,7 @@ newfile.gsub!(/^[\s]*author.*/, FIRSTAUTHOR + "\n" + outblock)
 response = ""
 while response != "y" and response != "n"
 	# is it OK?
-	puts "Is it OK? y or n"
+	puts "Is it OK? y or n. (y to continue, or n to edit in nano)"
 	response = STDIN.gets.strip
 end
 
