@@ -45,7 +45,8 @@ EDITOR="nano -Y ruby"
 
 if ARGV.empty?
 	puts "Usage: #{$PROGRAM_NAME} plugin.rb"
-	puts "Convert plugins from the 0.4 to 0.5 format.\n"
+	puts "Convert plugins from the 0.4 to 0.5 format.\n\n"
+	puts "Note: This modifies the plugin file."
 	exit
 end
 
