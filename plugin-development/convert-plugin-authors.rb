@@ -1,9 +1,21 @@
 #!/usr/bin/env ruby
+# 
+# Convert Plugins from the old format to the new format.
+# Andrew Horton
+#
 # Use like this
 # for i in `ls my-plugins/*.rb`
 # do              
 # echo $i; ./convert-plugin.rb $i
 # done
+
+def gem_available?(gemname)
+  Gem::Specification.find_by_name(gemname) ? true : false
+rescue LoadError
+  return false
+end
+
+exit 1 if %w|colorize fileutils |.reject( &method(:gem_available?) ).map {|x| puts "Gem missing. Install with: gem install #{x}" }.any?
 
 require 'pp'
 require 'colorize'
@@ -11,6 +23,7 @@ require 'tempfile'
 require 'fileutils'
 
 EDITOR="nano -Y ruby"
+
 
 #Authors = [
 #  'someone', # initial plugin
