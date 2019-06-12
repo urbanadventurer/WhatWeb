@@ -44,11 +44,20 @@ EDITOR="nano -Y ruby"
 ##
 
 if ARGV.empty?
-	puts "Usage: #{$PROGRAM_NAME} plugin.rb"
-	puts "Migrate plugins from the v0.4 to v0.5 format.\n\n"
-	puts "This auto-converts the v0.4 plugin to the new v0.5 format."
-	puts "You will be prompted to approve the convesion result before it saves."
-	puts "If the plugin needs further changes it opens in nano for editing."
+	puts(<<-EOT) 
+Usage: #{$PROGRAM_NAME} plugin.rb
+Migrate plugins from the v0.4 to v0.5 format.
+
+DESCRIPTION:
+This auto-converts the v0.4 plugin to the new v0.5 format.
+You will be prompted to approve the convesion result before it saves.
+If the plugin needs further changes it will open in nano for editing.
+
+USAGE HINT:
+To convert a folder of plugins you can use this in a loop, e.g.
+for i in `ls my-plugins/*.rb` do echo $i; ./convert-plugin.rb $i; done
+
+EOT
 	exit
 end
 
