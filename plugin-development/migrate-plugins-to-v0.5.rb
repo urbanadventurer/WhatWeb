@@ -301,5 +301,7 @@ end
 
 puts "NEW".colorize(:color=>:black, :background => :cyan)
 puts File.read(FNAME).cyan
+
+puts "[+] Migrated plugin saved to #{FNAME}. Original plugin backup in #{BACKUP_FNAME}".colorize(:color=>:blue, :background => :black)
 puts "<press any key>"
 STDIN.gets
