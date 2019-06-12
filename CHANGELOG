@@ -11,7 +11,7 @@ Version 0.5.0 - June 9, 2019
 * Changed plugin locking  @Code0x58
 * Bug fix - clean incorrent UTF-8 byte sequences when loading from file @dirtyfilthy
 * Updated all plugins with an authors array to show multiple authors
-* Added plugin-development/convert-plugin-authors.rb script
+* Added Migration tool to convert plugins to the v0.5 format in plugin-development/migrate-plugins-to-v0.5.rb
 * Changed the behaviour of --grep to only output results that match the grep plugin
 * Changed the behaviour of --grep so regexp or text can be matched
 * Removed feature --follow-redirect same-domain because it relies on the out-dated TLD library for valid TLDs and SLDs
