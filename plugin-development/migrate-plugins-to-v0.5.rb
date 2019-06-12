@@ -50,6 +50,7 @@ if ARGV.empty?
 end
 
 FNAME = ARGV.first 	 #"movable_type.rb"
+abort "File #{FNAME} does not exist." unless File.exist? FNAME
 
 # check if file already converted
 OLDFILE = File.read FNAME
