@@ -45,8 +45,10 @@ EDITOR="nano -Y ruby"
 
 if ARGV.empty?
 	puts "Usage: #{$PROGRAM_NAME} plugin.rb"
-	puts "Convert plugins from the 0.4 to 0.5 format.\n\n"
-	puts "Note: This modifies the plugin file."
+	puts "Migrate plugins from the v0.4 to v0.5 format.\n\n"
+	puts "This auto-converts the v0.4 plugin to the new v0.5 format."
+	puts "You will be prompted to approve the convesion result before it saves."
+	puts "If the plugin needs further changes it opens in nano for editing."
 	exit
 end
 
@@ -64,12 +66,12 @@ end
 clear_code = %x{clear}
 puts clear_code
 
-# backup plugin
+# backup plugin first
 BACKUP_FNAME = FNAME + ".bak"
 puts "[+] Backup #{FNAME} to #{BACKUP_FNAME}".colorize(:color=>:blue, :background => :black)
 FileUtils.cp(FNAME, BACKUP_FNAME)
 
-puts FNAME.cyan
+puts "[+] Converting #{FNAME} to v0.5".colorize(:color=>:blue, :background => :black)
 
 # show me the Versions block
 puts "BEFORE".colorize(:color=>:black, :background => :yellow)
