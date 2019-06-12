@@ -23,7 +23,7 @@ end
 
 exit 1 if %w|colorize fileutils |.reject( &method(:gem_available?) ).map {|x| puts "Gem missing. Install with: gem install #{x}" }.any?
 
-puts("Editor missing. Install nano.") && exit(1) unless has_program?("nano")
+abort("Editor missing. Install nano.") unless has_program?("nano")
 
 require 'pp'
 require 'colorize'
@@ -56,7 +56,7 @@ abort "File #{FNAME} does not exist." unless File.exist? FNAME
 OLDFILE = File.read FNAME
 
 if OLDFILE =~ /^\s*authors /
-	puts "Already converted"
+	abort "Already converted"
 	exit
 end
 
