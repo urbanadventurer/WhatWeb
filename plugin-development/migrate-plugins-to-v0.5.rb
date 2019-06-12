@@ -57,8 +57,7 @@ abort "File #{FNAME} does not exist." unless File.exist? FNAME
 OLDFILE = File.read FNAME
 
 if OLDFILE =~ /^\s*authors /
-	abort "Already converted"
-	exit
+	abort("#{FNAME} was already converted.")
 end
 
 # clear screen
