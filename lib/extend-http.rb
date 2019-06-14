@@ -118,7 +118,7 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
 
           # HTTPResponse.read_new(@socket).value
           # added this
-          x, raw = ExtendedHTTPResponse.read_new(@socket)
+          _x, raw = ExtendedHTTPResponse.read_new(@socket)
           @raw << raw
           # res = x.value
           #
