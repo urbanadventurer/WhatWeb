@@ -26,7 +26,7 @@ class Version
         next if @files['filenames'].include? file[0]
         @files['filenames'].push(file[0])
         @files['files'].push(URI.join(@url.to_s, file[0]).to_s)
-        status, url, ip, body, headers = open_target(@files['files'].last)
+        _status, url, _ip, body, _headers = open_target(@files['files'].last)
         @files['md5'].push(Digest::MD5.hexdigest(body))
       end
     end
