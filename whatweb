@@ -50,7 +50,7 @@ Homepage: https://www.morningstarsecurity.com/research/whatweb
 Usage: whatweb [options] <URLs>
 
 TARGET SELECTION:
-  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, filenames or
+  <TARGETs>\t\t\tEnter URLs, hostnames, IP addresses, filenames or
   \t\t\t\tIP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
   \t\t\t\tformat.
   --input-file=FILE, -i\t\tRead targets from a file. You can pipe
@@ -210,7 +210,7 @@ Homepage: https://www.morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
 
-  <TARGETs>\t\t\tEnter URLs, hostnames, IP adddresses, filenames or
+  <TARGETs>\t\t\tEnter URLs, hostnames, IP addresses, filenames or
   \t\t\t\tIP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
   \t\t\t\tformat.
   --input-file=FILE, -i\t\tRead targets from a file.
