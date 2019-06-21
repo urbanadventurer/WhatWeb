@@ -86,7 +86,7 @@ Homepage: https://www.morningstarsecurity.com/research/whatweb
 Usage: whatweb [options] <URLs>
 
 TARGET SELECTION:
-  <TARGETs>             Enter URLs, hostnames, IP adddresses, filenames or
+  <TARGETs>             Enter URLs, hostnames, IP addresses, filenames or
                         IP ranges in CIDR, x.x.x-x, or x.x.x.x-x.x.x.x
                         format.
   --input-file=FILE, -i Read targets from a file. You can pipe
@@ -325,7 +325,7 @@ Level 3 aggressive plugins will guess more URLs and perform actions that are pot
 
 ### An example of the different results between level 1 and level 3:
 
-A level 1, stealthy scan identifes that smartor.is-root.com/forum/ uses phpBB version 2:
+A level 1, stealthy scan identifies that smartor.is-root.com/forum/ uses phpBB version 2:
 
     $ ./whatweb smartor.is-root.com/forum/
     http://smartor.is-root.com/forum/ [200] PasswordField[password], HTTPServer[Apache/2.2.15], PoweredBy[phpBB], Apache[2.2.15], IP[88.198.177.36], phpBB[2], PHP[5.2.13], X-Powered-By[PHP/5.2.13], Cookies[phpbb2mysql_data,phpbb2mysql_sid], Title[Smartors Mods Forums - Reloaded], Country[GERMANY][DE]
