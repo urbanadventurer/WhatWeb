@@ -87,6 +87,7 @@ AUTHENTICATION:
   --user, -u=<user:password>\tHTTP basic authentication.
   --cookie, -c=COOKIES\t\tUse cookies, e.g. 'name=value; name2=value2'.
   --cookiejar=FILE\t\tRead cookies from a file.
+  --update-cookies\t\tUpdate cookies according to responses.
 
 PROXY:
   --proxy\t\t\t<hostname[:port]> Set proxy hostname and port.
@@ -338,6 +339,7 @@ opts = GetoptLong.new(
   ['--header', '-H', GetoptLong::REQUIRED_ARGUMENT],
   ['--cookie', '-c', GetoptLong::REQUIRED_ARGUMENT],
   ['--cookie-jar', GetoptLong::REQUIRED_ARGUMENT],
+  ['--update-cookies', GetoptLong::NO_ARGUMENT],
   ['--user', '-u', GetoptLong::REQUIRED_ARGUMENT],
   ['--wait', GetoptLong::REQUIRED_ARGUMENT],
   ['--debug', GetoptLong::NO_ARGUMENT],
@@ -514,6 +516,8 @@ begin
       rescue
         raise("Could not read cookies from #{arg}.")
       end
+    when '--update-cookies'
+      $UPDATE_COOKIES = true
     when '-u', '--user'
       if arg.include?(':')
         $BASIC_AUTH_USER, $BASIC_AUTH_PASS = arg.split(":", 2)

@@ -246,6 +246,26 @@ class Target
         end
       end
       @headers['set-cookie'] = @cookies.join("\n") unless @cookies.nil? || @cookies.empty?
+      # update cookies
+      if $UPDATE_COOKIES and not @headers['set-cookie'].nil?
+        res.get_fields('set-cookie').each do |raw_cookie|
+          cookie = raw_cookie.split(';')[0]
+          cookie_name = cookie.split('=')[0]
+          cookie_pattern = Regexp.new('%s=.*?(?:$)' % cookie_name)
+          cookie_pattern_sep = Regexp.new('%s=.*?(?:;)' % cookie_name)
+          if not $CUSTOM_HEADERS.key? 'Cookie'
+            $CUSTOM_HEADERS['Cookie'] = cookie
+          elsif $CUSTOM_HEADERS['Cookie'].match cookie_pattern
+            $CUSTOM_HEADERS['Cookie'].sub!(cookie_pattern, cookie)
+          elsif $CUSTOM_HEADERS['Cookie'].match cookie_pattern_sep
+            cookie += '; '
+            $CUSTOM_HEADERS['Cookie'].sub!(cookie_pattern_sep, cookie)
+          else
+            $CUSTOM_HEADERS['Cookie'] += '; '
+            $CUSTOM_HEADERS['Cookie'] += cookie
+          end
+        end
+      end
       # extract html source
       if @body =~ /^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m
         @body = @body.scan(/^HTTP\/1\.\d [\d]{3} .+?\r\n\r\n(.+)/m).flatten.first
