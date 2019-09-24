@@ -317,19 +317,15 @@ class Target
         res.get_fields('set-cookie').each do |raw_cookie|
           cookie = raw_cookie.split(';')[0]
           cookie_name = cookie.split('=')[0]
-          cookie_pattern = Regexp.new('%s=.*?(?:$)' % cookie_name)
-          cookie_pattern_sep = Regexp.new('%s=.*?(?:;)' % cookie_name)
-          if not $CUSTOM_HEADERS.key? 'Cookie'
+          cookie_pattern = Regexp.new('%s=.*?(?=$|;)' % cookie_name)
+          if not $CUSTOM_HEADERS.has_key?('Cookie')
             $CUSTOM_HEADERS['Cookie'] = cookie
-          elsif $CUSTOM_HEADERS['Cookie'].match cookie_pattern
+          elsif $CUSTOM_HEADERS['Cookie'].match(cookie_pattern)
             $CUSTOM_HEADERS['Cookie'].sub!(cookie_pattern, cookie)
-          elsif $CUSTOM_HEADERS['Cookie'].match cookie_pattern_sep
-            cookie += '; '
-            $CUSTOM_HEADERS['Cookie'].sub!(cookie_pattern_sep, cookie)
           else
-            $CUSTOM_HEADERS['Cookie'] += '; '
-            $CUSTOM_HEADERS['Cookie'] += cookie
+            $CUSTOM_HEADERS['Cookie'] += '; %s' % cookie
           end
+          puts $CUSTOM_HEADERS['Cookie']
         end
       end
 
