@@ -325,7 +325,6 @@ class Target
           else
             $CUSTOM_HEADERS['Cookie'] += '; %s' % cookie
           end
-          puts $CUSTOM_HEADERS['Cookie']
         end
       end
 
