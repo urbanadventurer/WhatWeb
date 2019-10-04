@@ -26,6 +26,7 @@ Version 0.5.0 - June 9, 2019
 * Bug fix - SQL output issue
 * Bug fix - In HTTP Auth parsing @rmaksimov 
 * Fix bug causing WhatWeb to exit with no output. Thanks @mguillau42 for tracking down this race condition.
+* Typo fix. Thanks Jose Nazario (@paralax)
 
 * Reached over 1800 plugins
 
