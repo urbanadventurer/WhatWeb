@@ -1,120 +1,133 @@
-Version 0.5.0 - June 9, 2019
-* Refactored and modularised the codebase
-* Added 9 unit tests
-* Better error reporting in commandline options
-* Updated README and converted to Markdown format
-* Updated manpage
-* Added loading cookies from a FILE with --cookie-jar=FILE in the document.cookie format
-* Plugins instance variable handling improvement. @Code0x58
-* Plugin name defined within plugin as variable. @Code0x58
-* Changed from functions to blocks for passive and aggressive plugins. @Code0x58
-* Changed plugin locking  @Code0x58
-* Bug fix - clean incorrent UTF-8 byte sequences when loading from file @dirtyfilthy
-* Updated all plugins with an authors array to show multiple authors
-* Added Migration tool to convert plugins to the v0.5 format in plugin-development/migrate-plugins-to-v0.5.rb
-* Changed the behaviour of --grep to only output results that match the grep plugin
-* Changed the behaviour of --grep so regexp or text can be matched
-* Removed feature --follow-redirect same-domain because it relies on the out-dated TLD library for valid TLDs and SLDs
-* Removed requirement for 'nmap' and now use the IPAddr gem for IP address ranges. CIDR, x.x.x.x-x.x.x.x and x.x.x.x-x supported
+Version 0.5.0 - October 4, 2019
+
+Version 0.5.0 is a major version release form @urbanadventurer and @bcoles. 👏 With the help of the WhatWeb community we have reached over 1800 plugins!  
+
+⚠️ Plugin authors should take note that this release is not backwards compatible, and we have made a migration tool to help you update your private or unreleased plugins.
+
+## FEATURES
+* Added WhatWeb Logo and icons
 * Added IDN (International Domain Name) support
 * Merged 31 new plugins by Bhavin Senjaliya and 22 plugin updates from the unofficial WhatWeb gem at https://rubygems.org/gems/whatweb/
-* Added WhatWeb Logo and icons.
-* Updated the usage help. Reduced the size of the short usage help.
-* Plugin list now shows plugin names and websites instead of a truncated plugin description.
+* Added 9 unit tests
+* Added loading cookies from a FILE with --cookie-jar=FILE in the document.cookie format
+* Added Migration tool to convert plugins to the v0.5 format in plugin-development/migrate-plugins-to-v0.5.rb
+* Refactored and modularised the codebase -- @urbanadventurer and @bcoles 
+
+## FIXES
 * Bug fix - Ruby 2.4 and 2.5 OpenSSL issue
 * Bug fix - Fixed ElasticSearch version 6+ issue
 * Bug fix - SQL output issue
 * Bug fix - In HTTP Auth parsing @rmaksimov 
 * Fix bug causing WhatWeb to exit with no output. Thanks @mguillau42 for tracking down this race condition.
 * Typo fix. Thanks Jose Nazario (@paralax)
+* Bug fix - clean incorrent UTF-8 byte sequences when loading from file @dirtyfilthy
 
-* Reached over 1800 plugins
+## MISC
+* Updated all plugins with an authors array to show multiple authors
+* Plugin list now shows plugin names and websites instead of a truncated plugin description.
+* Updated the usage help. Reduced the size of the short usage help.
+* Better error reporting in commandline options
+* Updated README and converted to Markdown format
+* Updated manpage
+* Plugins instance variable handling improvement. @Code0x58
+* Plugin name defined within plugin as variable. @Code0x58
+* Changed from functions to blocks for passive and aggressive plugins. @Code0x58
+* Changed plugin locking  @Code0x58
+* Changed the behaviour of --grep to only output results that match the grep plugin
+* Changed the behaviour of --grep so regexp or text can be matched
+* Removed feature --follow-redirect same-domain because it relies on the out-dated TLD library for valid TLDs and SLDs
+* Removed requirement for 'nmap' and now use the IPAddr gem for IP address ranges. CIDR, x.x.x.x-x.x.x.x and x.x.x.x-x supported
 
-* 48 New plugins
-	1n1-hosting.rb - Bhavin Senjaliya (@bhavin1223)
-	amazon-elastic-load-balancer.rb - Bhavin Senjaliya (@bhavin1223)
-	azure.rb - Bhavin Senjaliya (@bhavin1223)
-	bad-behaviour-anti-spam-plugin.rb - Bhavin Senjaliya (@bhavin1223)
-	clickmotive.rb - Bhavin Senjaliya (@bhavin1223)
-	cdk-connected-website.rb - Bhavin Senjaliya (@bhavin1223)
-	craftcms.rb - Bhavin Senjaliya (@bhavin1223)
-	f5-big-ip.rb - Bhavin Senjaliya (@bhavin1223)
-	hubspot.rb - Bhavin Senjaliya (@bhavin1223)
-	jw-player.rb - Bhavin Senjaliya (@bhavin1223)
-	laravel.rb - Bhavin Senjaliya (@bhavin1223)
-	mezzanine.rb - Bhavin Senjaliya (@bhavin1223)
-	moonfruit.rb - Bhavin Senjaliya (@bhavin1223)
-	netsuite.rb - Bhavin Senjaliya (@bhavin1223)
-	nop-commerce.rb - Bhavin Senjaliya (@bhavin1223)
-	pyro-cms.rb - Bhavin Senjaliya (@bhavin1223)
-	sailsjs.rb - Bhavin Senjaliya (@bhavin1223)
-	schoolwires-centricity.rb - Bhavin Senjaliya (@bhavin1223)
-	shopify.rb - Bhavin Senjaliya (@bhavin1223)
-	sitecore.rb - Bhavin Senjaliya (@bhavin1223)
-	square-space.rb - Bhavin Senjaliya (@bhavin1223)
-	tealeaf.rb - Bhavin Senjaliya (@bhavin1223)
-	teleflora.rb - Bhavin Senjaliya (@bhavin1223)
-	unbounce.rb - Bhavin Senjaliya (@bhavin1223)
-	website-tonight.rb - Bhavin Senjaliya (@bhavin1223)
-	webtrends.rb - Bhavin Senjaliya (@bhavin1223)
-	weebly.rb - Bhavin Senjaliya (@bhavin1223)
-	wix.rb - Bhavin Senjaliya (@bhavin1223)
-	wordfence.rb - Bhavin Senjaliya (@bhavin1223)
-	world-now.rb - Bhavin Senjaliya (@bhavin1223)
-	wpml.rb - Bhavin Senjaliya (@bhavin1223)
-	bigcommerce.rb - Claudio Salazar (@csalazar)
-	demandware.rb - Claudio Salazar (@csalazar)
-	ocp.rb - Claudio Salazar (@csalazar)
-	aspforum.rb - Mateusz Golewski (@golewski)
-	lithium.rb - Mateusz Golewski (@golewski)
-	stackexchange.rb - Mateusz Golewski (@golewski)
-	xenforo.rb - Mateusz Golewski (@golewski)
-	kinja.rb - Sigit Dewanto
-	trbas.rb - Sigit Dewanto
-	advance_digitalmg.rb - Elias Dorneles (@eliasdorneles)
-	newbay_media.rb - Elias Dorneles (@eliasdorneles)
-	gannett.rb - Eugene Amirov (@Allactaga)
-	yaf.rb - Eugene Amirov (@Allactaga)
-	blox.rb - Shuai Lin (@lins05)
-	mcclatchy_interactive.rb - Shuai Lin (@lins05)
-	tribune.rb - Shuai Lin (@lins05)
-	genexus.rb - Daniel Maldonado (@elcodigok)
-	odoo.rb - Naglis Jonaitis (@naglis)
+##  PLUGINS
+* 48 new plugins from contributors
+* 31 plugins updated from contributors
+* 100+ plugin updates by Andrew Horton (@urbanadventurer)
 
-* 31 plugins updated
-	3dcart.rb - Bhavin Senjaliya (@bhavin1223)
-	asp-net.rb - Bhavin Senjaliya (@bhavin1223)
-	big-commerce.rb  - Bhavin Senjaliya (@bhavin1223)
-	blox.rb - Bhavin Senjaliya (@bhavin1223)
-	demandware.rb - Bhavin Senjaliya (@bhavin1223)
-	django.rb  - Bhavin Senjaliya (@bhavin1223)
-	dot-cms.rb - Bhavin Senjaliya (@bhavin1223)
-	DotNetNuke.rb - Bhavin Senjaliya (@bhavin1223)
-	drupal.rb - Bhavin Senjaliya (@bhavin1223)
-	ektron.rb - Bhavin Senjaliya (@bhavin1223)
-	expression-engine.rb  - Bhavin Senjaliya (@bhavin1223)
-	incapsula.rb - Bhavin Senjaliya (@bhavin1223)
-	kentico.rb - Bhavin Senjaliya (@bhavin1223)
-	magento.rb  - Bhavin Senjaliya (@bhavin1223)
-	nitix-netscaler.rb - Bhavin Senjaliya (@bhavin1223)
-	piwik.rb  - Bhavin Senjaliya (@bhavin1223)
-	prestashop.rb  - Bhavin Senjaliya (@bhavin1223)
-	ruby-on-rails.rb  - Bhavin Senjaliya (@bhavin1223)
-	symfony.rb  - Bhavin Senjaliya (@bhavin1223)
-  blox.rb - Bhavin Senjaliya (@bhavin1223)
-	typo3.rb  - Bhavin Senjaliya (@bhavin1223)
-	vbulletin.rb - Bhavin Senjaliya (@bhavin1223)
-	xenforo.rb - Bhavin Senjaliya (@bhavin1223)
-	smf.rb - Claudio Salazar (@csalazar)
-	vbulletin.rb - Claudio Salazar (@csalazar)
-	bbpress.rb - Shuai Lin (@lins05)
-	joomla.rb (aggressive version detection) - @anozoozian
-	jquery.rb - Janosch Maier (@Phylu)Janosch Maier (@Phylu)
-	typo3.rb - Janosch Maier (@Phylu)
-	wordpress.rb - @ajgon (Igor Rzegocki) - aggressive matches up to 5.0.2.
-	wordpress.rb - @SlivTaMere
-	wordpress.rb - @anozoozian
-	+ 40 plugin updates by Andrew Horton (@urbanadventurer)
+### NEW PLUGINS
+* 1n1-hosting.rb - Bhavin Senjaliya (@bhavin1223)
+* amazon-elastic-load-balancer.rb - Bhavin Senjaliya (@bhavin1223)
+* azure.rb - Bhavin Senjaliya (@bhavin1223)
+* bad-behaviour-anti-spam-plugin.rb - Bhavin Senjaliya (@bhavin1223)
+* clickmotive.rb - Bhavin Senjaliya (@bhavin1223)
+* cdk-connected-website.rb - Bhavin Senjaliya (@bhavin1223)
+* craftcms.rb - Bhavin Senjaliya (@bhavin1223)
+* f5-big-ip.rb - Bhavin Senjaliya (@bhavin1223)
+* hubspot.rb - Bhavin Senjaliya (@bhavin1223)
+* jw-player.rb - Bhavin Senjaliya (@bhavin1223)
+* laravel.rb - Bhavin Senjaliya (@bhavin1223)
+* mezzanine.rb - Bhavin Senjaliya (@bhavin1223)
+* moonfruit.rb - Bhavin Senjaliya (@bhavin1223)
+* netsuite.rb - Bhavin Senjaliya (@bhavin1223)
+* nop-commerce.rb - Bhavin Senjaliya (@bhavin1223)
+* pyro-cms.rb - Bhavin Senjaliya (@bhavin1223)
+* sailsjs.rb - Bhavin Senjaliya (@bhavin1223)
+* schoolwires-centricity.rb - Bhavin Senjaliya (@bhavin1223)
+* shopify.rb - Bhavin Senjaliya (@bhavin1223)
+* sitecore.rb - Bhavin Senjaliya (@bhavin1223)
+* square-space.rb - Bhavin Senjaliya (@bhavin1223)
+* tealeaf.rb - Bhavin Senjaliya (@bhavin1223)
+* teleflora.rb - Bhavin Senjaliya (@bhavin1223)
+* unbounce.rb - Bhavin Senjaliya (@bhavin1223)
+* website-tonight.rb - Bhavin Senjaliya (@bhavin1223)
+* webtrends.rb - Bhavin Senjaliya (@bhavin1223)
+* weebly.rb - Bhavin Senjaliya (@bhavin1223)
+* wix.rb - Bhavin Senjaliya (@bhavin1223)
+* wordfence.rb - Bhavin Senjaliya (@bhavin1223)
+* world-now.rb - Bhavin Senjaliya (@bhavin1223)
+* wpml.rb - Bhavin Senjaliya (@bhavin1223)
+* bigcommerce.rb - Claudio Salazar (@csalazar)
+* demandware.rb - Claudio Salazar (@csalazar)
+ *ocp.rb - Claudio Salazar (@csalazar)
+* aspforum.rb - Mateusz Golewski (@golewski)
+* lithium.rb - Mateusz Golewski (@golewski)
+* stackexchange.rb - Mateusz Golewski (@golewski)
+* xenforo.rb - Mateusz Golewski (@golewski)
+* kinja.rb - Sigit Dewanto
+* trbas.rb - Sigit Dewanto
+* advance_digitalmg.rb - Elias Dorneles (@eliasdorneles)
+* newbay_media.rb - Elias Dorneles (@eliasdorneles)
+* gannett.rb - Eugene Amirov (@Allactaga)
+* yaf.rb - Eugene Amirov (@Allactaga)
+* blox.rb - Shuai Lin (@lins05)
+* mcclatchy_interactive.rb - Shuai Lin (@lins05)
+* tribune.rb - Shuai Lin (@lins05)
+* genexus.rb - Daniel Maldonado (@elcodigok)
+* odoo.rb - Naglis Jonaitis (@naglis)
+
+###  PLUGIN UPDATES
+* 3dcart.rb - Bhavin Senjaliya (@bhavin1223)
+* asp-net.rb - Bhavin Senjaliya (@bhavin1223)
+* big-commerce.rb  - Bhavin Senjaliya (@bhavin1223)
+* blox.rb - Bhavin Senjaliya (@bhavin1223)
+* demandware.rb - Bhavin Senjaliya (@bhavin1223)
+* django.rb  - Bhavin Senjaliya (@bhavin1223)
+* dot-cms.rb - Bhavin Senjaliya (@bhavin1223)
+* DotNetNuke.rb - Bhavin Senjaliya (@bhavin1223)
+* drupal.rb - Bhavin Senjaliya (@bhavin1223)
+* ektron.rb - Bhavin Senjaliya (@bhavin1223)
+* expression-engine.rb  - Bhavin Senjaliya (@bhavin1223)
+* incapsula.rb - Bhavin Senjaliya (@bhavin1223)
+* kentico.rb - Bhavin Senjaliya (@bhavin1223)
+* magento.rb  - Bhavin Senjaliya (@bhavin1223)
+* nitix-netscaler.rb - Bhavin Senjaliya (@bhavin1223)
+* piwik.rb  - Bhavin Senjaliya (@bhavin1223)
+* prestashop.rb  - Bhavin Senjaliya (@bhavin1223)
+* ruby-on-rails.rb  - Bhavin Senjaliya (@bhavin1223)
+* symfony.rb  - Bhavin Senjaliya (@bhavin1223)
+*  blox.rb - Bhavin Senjaliya (@bhavin1223)
+* typo3.rb  - Bhavin Senjaliya (@bhavin1223)
+* vbulletin.rb - Bhavin Senjaliya (@bhavin1223)
+* xenforo.rb - Bhavin Senjaliya (@bhavin1223)
+* smf.rb - Claudio Salazar (@csalazar)
+* vbulletin.rb - Claudio Salazar (@csalazar)
+* bbpress.rb - Shuai Lin (@lins05)
+* joomla.rb (aggressive version detection) - @anozoozian
+* jquery.rb - Janosch Maier (@Phylu)Janosch Maier (@Phylu)
+* typo3.rb - Janosch Maier (@Phylu)
+* wordpress.rb - @ajgon (Igor Rzegocki) - aggressive matches up to 5.0.2.
+* wordpress.rb - @SlivTaMere
+* wordpress.rb - @anozoozian
+
 
 Version 0.4.9 November 23rd 2017
 * Added unit testing with rake @bcoles
