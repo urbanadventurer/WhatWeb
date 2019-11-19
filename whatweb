@@ -86,7 +86,7 @@ HTTP OPTIONS:
 AUTHENTICATION:
   --user, -u=<user:password>\tHTTP basic authentication.
   --cookie, -c=COOKIES\t\tUse cookies, e.g. 'name=value; name2=value2'.
-  --cookiejar=FILE\t\tRead cookies from a file.
+  --cookie-jar=FILE\t\tRead cookies from a file.
 
 PROXY:
   --proxy\t\t\t<hostname[:port]> Set proxy hostname and port.
