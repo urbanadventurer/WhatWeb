@@ -1,3 +1,13 @@
+Version 0.5.1 - ?, 2019
+
+## FIXES
+* Fixed typo for --cookie-jar commandline option
+* Fixed path loading issue when whatweb is installed as a symlink. @abenson and @blshkv
+
+## MISC
+* Makefile now installs a symlink in the PATH
+
+
 Version 0.5.0 - October 4, 2019
 
 Version 0.5.0 is a major version release form @urbanadventurer and @bcoles. 👏 With the help of the WhatWeb community we have reached over 1800 plugins!  
