@@ -1,11 +1,13 @@
 Version 0.5.1 - ?, 2019
 
 ## FIXES
+* Makefile now installs on macOS
 * Fixed typo for --cookie-jar commandline option
 * Fixed path loading issue when whatweb is installed as a symlink. @abenson and @blshkv
 
 ## MISC
 * Makefile now installs a symlink in the PATH
+* CHANGELOG.md and INSTALL.md files are now in MarkDown format
 
 
 Version 0.5.0 - October 4, 2019
