@@ -25,7 +25,7 @@ passive do
 		end
 
 		# Strip all newlines in title string (for better output)
-		m << {:name=>"page title",:string=>title.strip}
+		m << {:name=>"page title",:string=>CGI.unescapeHTML(title).strip}
 	end
 	m
 end
