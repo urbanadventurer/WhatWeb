@@ -14,10 +14,12 @@ authors [
   # v0.5 # 2014-06-12 # Added Detailed errors and ViewState Encrypted. . 
   "Andrew Horton", # v0.6 # 2016-04-18 # Replaced passive function with match for:. 1. x-powered-by HTTP header. 2. X-AspNet-Version HTTP header. 3. AnonymousIdentificationModule. 
   "Bhavin Senjaliya", # v0.7 # 2016-08-19 # Add 4 cookies. 
+  "Andrew Horton", # v0.8 # 2019-12-10 # Add __VIEWSTATE detection.
+
 ]
-version "0.7"
+version "0.8"
 description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world."
-website "http://www.asp.net/"
+website "https://www.asp.net/"
 
 # TODO
 # add detection true/false for ViewState MAC and Encryption
@@ -81,6 +83,9 @@ matches [
 	{ :search => "headers[set-cookie]", :regexp => /^.ASPXANONYMOUS/, :name=>".ASPXANONYMOUS cookie" },
 	{ :search => "headers[set-cookie]", :regexp => /^ASP.NET_SessionId/, :name=>"ASP.NET_SessionId cookie" },
 	{ :search => "headers[set-cookie]", :regexp => /^ASPSESSIONID/, :name=>"ASPSESSIONID cookie" },
+
+	# Detect ASP.NET ViewState
+	{ :search=>"body", :text=>'<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"' },
 
 ]
 
