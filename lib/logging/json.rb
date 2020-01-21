@@ -3,13 +3,12 @@
 class LoggingJSON < Logging
   def initialize(f = STDOUT)
     super
+    @is_first_log_entry = true
     # opening bracket
     @f.puts '['
   end
 
   def close
-    # empty hash because each hash ends with a comma
-    @f.puts '{}'
     # closing bracket
     @f.puts ']'
     @f.close
@@ -89,7 +88,13 @@ class LoggingJSON < Logging
     end
 
     $semaphore.synchronize do
-      @f.puts JSON.generate(foo) + ','
+      unless @is_first_log_entry
+        @f.puts ","
+      else
+        @is_first_log_entry = false
+      end
+
+      @f.puts JSON.generate(foo)
     end
   end
 end
