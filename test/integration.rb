@@ -38,14 +38,8 @@ class WhatWebTest < Minitest::Test
   end
 
   def test_invalid_url
-    p = IO.popen(['./whatweb',
-      '--color', 'never',
-      '--no-errors',
-      'https://'], 'r+')
-    res = p.read.to_s
-    p.close
-    assert res
-    assert(res =~ /No targets selected/)
+    res = IO.popen(['./whatweb','--color', 'never', 'https://'], :err => [ :child, :out ]).read
+    assert_match /No targets selected/, res
   end
 
   def test_xml_output
