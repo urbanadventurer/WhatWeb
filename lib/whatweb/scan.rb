@@ -28,7 +28,7 @@ module WhatWeb
         url_pattern: url_pattern
       )
 
-      raise('No targets selected') if @targets.empty?
+      error('No targets selected') if @targets.empty?
 
       @max_threads = max_threads.to_i || 25
       @target_queue = Queue.new # workers consume from this
