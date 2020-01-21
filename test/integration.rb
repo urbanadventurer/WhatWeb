@@ -54,15 +54,26 @@ class WhatWebTest < Minitest::Test
   end
 
   def test_json_output
-    p = IO.popen(['./whatweb',
+    res = IO.popen(['./whatweb',
       '--color', 'never',
       '--log-json', '/dev/stdout',
-      "https://#{@test_host}/"], 'r+')
-    res = p.read.to_s
-    p.close
-    assert res
-    assert res =~ %r{"http_status":200}
+      "https://#{@test_host}/"],
+      :err => [ :child, :out ]).read
+
+    assert_match %r{"http_status":200}, res
   end
+
+  def test_json_output_with_empty_input 
+    res = IO.popen(['./whatweb',
+      '--color', 'never',
+      '--log-json','/dev/stdout',
+      '--quiet',
+      '--no-errors',
+      '--input-file','/dev/null'], :err => [ :child, :out ]).read
+
+    assert valid_json?(res)
+  end
+
 
   def test_object_output
     p = IO.popen(['./whatweb',
