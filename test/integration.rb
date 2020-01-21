@@ -5,7 +5,6 @@
 # https://www.morningstarsecurity.com/research/whatweb
 ##
 require 'minitest/autorun'
-require 'open3'
 require 'json'
 
 class WhatWebTest < Minitest::Test
@@ -245,14 +244,12 @@ class WhatWebTest < Minitest::Test
   
 
   def test_inform_user_deprecated_plugin
-  # using Open3 to access stderr 
-  # https://www.rubydoc.info/stdlib/open3/Open3.popen3
-   
-    cmd = ['./whatweb','-p','./test/plugins/deprecated-plugin-format.rb',"https://#{@test_host}/"].join " "
 
-    Open3.popen3 (cmd) do |stdin, stdout, stderr, wait_thr|
-      assert_includes stderr.read, "This plugin may be using a deprecated plugin format"
-    end
+    res = IO.popen(['./whatweb',
+    '-p','./test/plugins/deprecated-plugin-format.rb',
+    "https://#{@test_host}/"], :err => [ :child, :out ]).read
+
+      assert_includes res, "This plugin may be using a deprecated plugin format"
   end
 
 
