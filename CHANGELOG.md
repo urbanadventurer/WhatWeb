@@ -1,13 +1,16 @@
-Version 0.5.1 - ?, 2019
+Version 0.5.1 - ?, 2020
 
 ## FIXES
-* Makefile now installs on macOS
-* Fixed typo for --cookie-jar commandline option
-* Fixed path loading issue when whatweb is installed as a symlink. @abenson and @blshkv
+* #275 Makefile now installs on macOS
+* #286 typo for --cookie-jar commandline option.
+* #283 path loading issue when whatweb is installed as a symlink. @abenson and @blshkv
+* #288 error with JSON output when the target list is empty
+* #289 removed empty object from end of JSON output
 
 ## MISC
 * Makefile now installs a symlink in the PATH
 * CHANGELOG.md and INSTALL.md files are now in MarkDown format
+* Removed requirement for open3 gem in Integration Tests
 
 
 Version 0.5.0 - October 4, 2019
