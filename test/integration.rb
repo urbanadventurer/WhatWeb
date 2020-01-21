@@ -6,11 +6,19 @@
 ##
 require 'minitest/autorun'
 require 'open3'
+require 'json'
 
 class WhatWebTest < Minitest::Test
 
   def setup
     @test_host = 'whatweb.net'
+  end
+
+  def valid_json?(json)
+    JSON.parse(json)
+    return true
+  rescue JSON::ParserError => e
+    return false
   end
 
   def test_version
