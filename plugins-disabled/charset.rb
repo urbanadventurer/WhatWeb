@@ -8,10 +8,12 @@
 Plugin.define do
 	name "Charset"
 	authors [
-		"Andrew Horton"
+		"Andrew Horton",
+		"Lars Kulseng"
 		# v0.2 # added example sites
+		# v0.3 # fixed reference bugs
 	]
-	version "0.2"
+	version "0.3"
 	description "Detects the character set of a page, this is required for MongoDB output. Only checks the meta content tag, not the HTTP header. It tries the specified charset, then ascii, then utf-8 then uses CharDet from the rchardet gem which is CPU intensive / slow. Tests conversion to UTF-8 using Iconv. Returns Failed if unsuccessful."
 
 	# requires rchardet
