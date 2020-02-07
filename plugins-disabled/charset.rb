@@ -25,18 +25,9 @@ Plugin.define do
 	end
 
 passive do
-	def get_charset(body)
-    charset = nil
-    meta_content_tag = body.scan(/<meta[^>]+Content-Type[^>]+>/i)[0]
-    # puts meta_content_tag
-    unless meta_content_tag.nil? or not meta_content_tag =~ /charset=['"]?([a-zA-Z0-9_-]+)/i
-      charset = meta_content_tag.scan(/charset=['"]?([a-zA-Z0-9_-]+)/i)[0][0]
-      charset.upcase!
-    end
-    charset
-  end
-  
+
   m = []
+  body=@body
 
 =begin
 			Arabic (Windows)	Windows-1256
@@ -76,9 +67,14 @@ passive do
 
 		trythese = %w| UTF_8 ASCII | # it's stack backwards
 
-		charset = get_charset(body)
+		charset = nil
+		meta_content_tag = body.scan(/<meta[^>]+Content-Type[^>]+>/i)[0]
+		# puts meta_content_tag
+		unless meta_content_tag.nil? or not meta_content_tag =~ /charset=['"]?([a-zA-Z0-9_-]+)/i
+			charset = meta_content_tag.scan(/charset=['"]?([a-zA-Z0-9_-]+)/i)[0][0]
+			charset.upcase!
+		end
 		trythese.push(charset) unless charset.nil?
-
 
 		found=false
 		while trythis = trythese.pop
@@ -87,7 +83,7 @@ passive do
 			found = true
 			m << {:string=> trythis}
 			break
-		rescue		
+		rescue
 			#
 		end
 
