@@ -176,7 +176,7 @@ EXAMPLE USAGE:
 
 * Scan the local network for https websites.
   whatweb --no-errors --url-prefix https:// 192.168.0.0/24
-  
+
 * Scan for crossdomain policies in the Alexa Top 1000.
   ./whatweb -i plugin-development/alexa-top-100.txt \\
   --url-suffix /crossdomain.xml -p crossdomain_xml
@@ -575,7 +575,7 @@ logging_list << LoggingVerbose.new if $verbose > 0 # full logging if -v
 ## logging dependencies
 if mongo[:use_mongo_log]
   if plugins.map { |a, _b| a }.include?('Charset')
-    logging_list << OutputMongo.new(mongo)
+    logging_list << LoggingMongo.new(mongo)
   else
     error('MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/charset.rb to enable it.')
     exit
@@ -618,16 +618,16 @@ end
 # run scan
 scanner.scan do | target |
 
-  # change so we can call it without Target object and with just Headers, HTML, etc.  
+  # change so we can call it without Target object and with just Headers, HTML, etc.
   # note this modifies target with redirection info
   result = WhatWeb::Parser.run_plugins(target, plugins, scanner: scanner)
 
   # check for redirection
   WhatWeb::Redirect.new(target, scanner, max_redirects)
 
-  WhatWeb::Parser.parse(target, 
-                        result, 
-                        logging_list: logging_list, 
+  WhatWeb::Parser.parse(target,
+                        result,
+                        logging_list: logging_list,
                         grep_plugin: use_custom_grep_plugin)
 end
 
