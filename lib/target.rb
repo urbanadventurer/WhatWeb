@@ -329,7 +329,13 @@ class Target
     if @@meta_refresh_regex =~ @body
       metarefresh = @body.scan(@@meta_refresh_regex).flatten.first
       metarefresh = decode_html_entities(metarefresh).strip
-      newtarget_m = URI.join(@target, metarefresh).to_s # this works for relative and absolute
+      begin
+        newtarget_m = URI.join(@target, metarefresh).to_s # this works for relative and absolute
+      rescue StandardError => err
+        # the combinaton of the current target and the new location must be invalid 
+        error("Error: Invalid redirection from #{@target} to #{metarefresh}. #{err}")
+        return nil
+      end
     end
 
     # HTTP 3XX redirect
