@@ -11,7 +11,7 @@ Plugin.define do
                                 # v0.2 # 2020-02-07 # Added aggressive version detection
                                 # v0.3 # 2020-02-19 # Improved aggressive version detection
 	]
-	version "0.1"
+	version "0.3"
 	description "Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. "
 	website "https://getbootstrap.com/"
 
