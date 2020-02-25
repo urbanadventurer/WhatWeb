@@ -5,7 +5,7 @@
 # WhatWeb - Next generation web scanner
 Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
-Latest Release: v0.5.1. January Xth, 2020
+Latest Release: v0.5.1. February 25th, 2020
 
 License: GPLv2
 
