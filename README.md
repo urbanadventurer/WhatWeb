@@ -475,6 +475,8 @@ Thank you to the following people who have contributed to WhatWeb.
 + Naglis Jonaitis (@naglis)
 + Igor Rzegocki (@ajgon)
 + Melvil Guillaume (@mguillau42)
++ @LrsK 
++ Janosch Maier (@phylu)
 
-Please let me know if I need to add any more names. 
+It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
 
