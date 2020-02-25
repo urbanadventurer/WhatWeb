@@ -6,15 +6,19 @@ Version 0.5.1 - ?, 2020
 * #283 path loading issue when whatweb is installed as a symlink. @abenson and @blshkv
 * #288 error with JSON output when the target list is empty
 * #289 removed empty object from end of JSON output
-* #293 and 294 Fix MongoDB output @LrsK
+* #293 and #294 Fix MongoDB output @LrsK
 
 ## MISC
 * Makefile now installs a symlink in the PATH
 * CHANGELOG.md and INSTALL.md files are now in MarkDown format
 * Removed requirement for open3 gem in Integration Tests
 
+### NEW PLUGINS
+* Bootstrap - @phylu
+
 ## PLUGIN UPDATES
-* Bootstrap - updates from @phylu
+* Kayako-SupportSuite - @urbanadventurer
+* ASP_NET - @urbanadventurer
 
 
 Version 0.5.0 - October 4, 2019
