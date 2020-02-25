@@ -394,7 +394,7 @@ Browse the wiki for more documentation and advanced usage techniques.
 
 ## Release History
 
-- Version 0.5.1 Released -----
+- Version 0.5.1 Released Feburary 25th, 2020
 - Version 0.5.0 Released June 9th, 2019
 - Version 0.4.9 Released November 23rd, 2017
 - Version 0.4.8-dev (Continuous release from 2012 to 2017)

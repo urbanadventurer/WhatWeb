@@ -1,4 +1,6 @@
-Version 0.5.1 - ?, 2020
+Version 0.5.1 - February 25, 2020
+
+This is a minor release with bug fixes, one new plugin, and a couple of plugin updates.
 
 ## FIXES
 * #275 Makefile now installs on macOS
