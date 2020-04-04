@@ -4,19 +4,21 @@
 # web site for more information on licensing and terms of use.
 # http://www.morningstarsecurity.com/research/whatweb
 ##
-# Version 0.1 # 2018-11-16 # Marcelo Gimenes
+# Version 0.1 # 2020-04-04 # Marcelo Gimenes
 ##
 Plugin.define "PHP-Slim" do
-  author "Marcelo Gimenes <marcelo.gimenes.oliveira@gmail.com>" # 2018-11-16
+  author "Marcelo Gimenes <marcelo.gimenes.oliveira@gmail.com>" # 2020-04-04
   version "0.1"
   description "Slim Framework"
   website "https://www.slimframework.com/"
 
   matches [
-    { :status => 404, :text => "The page you are looking for could not be found. Check the address bar" },
-    { :status => 404, :text => "to ensure your URL is spelled correctly. If all else fails, you can" },
-    { :status => 404, :text => "visit our home page at the link below.", :certainty => 90 },
-    { :status => 404, :text => "Visit the Home Page", :certainty => 90 },
+    { :name => 'Slim < 4.0', 
+      :status => 404, 
+      :text => "to ensure your URL is spelled correctly. If all else fails, you can" },
+    { :name => 'Slim > 4.0', 
+      :status => 404, 
+      :text => "The requested resource could not be found. Please verify the URI and try again." }
   ] 
 
   def random_string(length=32)
@@ -37,10 +39,8 @@ Plugin.define "PHP-Slim" do
       end
       if status == 404
         texts = [
-          { :text => "The page you are looking for could not be found. Check the address bar" },
-          { :text => "to ensure your URL is spelled correctly. If all else fails, you can" },
-          { :text => "visit our home page at the link below." },
-          { :text => "Visit the Home Page", :certainty => 10 },
+          { :text => "to ensure your URL is spelled correctly. If all else fails, you can" }, # Slim < 4.0
+          { :text => "The requested resource could not be found. Please verify the URI and try again." } # Slim > 4.0
         ]
         texts.each do |m|
           s = body.scan(m[:text])
