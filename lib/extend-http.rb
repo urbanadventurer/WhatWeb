@@ -20,11 +20,11 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
   # Creates a new Net::HTTP object for the specified server address,
   # without opening the TCP connection or initializing the HTTP session.
   # The +address+ should be a DNS hostname or IP address.
-  def initialize(address, port = nil)
+  def initialize(address, port = nil, local_host = nil, local_port = nil)
     @address = address
     @port    = (port || HTTP.default_port)
-    @local_host = nil
-    @local_port = nil
+    @local_host = local_host
+    @local_port = local_port
     @curr_http_version = HTTPVersion
     @keep_alive_timeout = 2
     @last_communicated = nil
