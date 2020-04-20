@@ -477,6 +477,9 @@ Thank you to the following people who have contributed to WhatWeb.
 + Melvil Guillaume (@mguillau42)
 + @LrsK 
 + Janosch Maier (@phylu)
++ @abenson
++ @blshkv
++ Weidsom Nascimento (@weidsom)
 
 It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
 
