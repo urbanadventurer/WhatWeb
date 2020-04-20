@@ -185,7 +185,7 @@ class Target
     end
 
     if is_url?
-      @uri = URI.parse(URI.encode(@target))
+      @uri = URI.parse(Addressable::URI.encode(@target))
 
       # is this taking control away from the user?
       # [400] http://www.alexa.com  [200] http://www.alexa.com/
