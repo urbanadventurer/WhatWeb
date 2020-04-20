@@ -1,3 +1,8 @@
+
+## FIXES
+* #299 Using Addressable Gem to fix `warning: URI.escape is obsolete`. Thanks @weidsom (Weidsom Nascimento)
+
+
 Version 0.5.1 - February 25, 2020
 
 This is a minor release with bug fixes, one new plugin, and a couple of plugin updates.
