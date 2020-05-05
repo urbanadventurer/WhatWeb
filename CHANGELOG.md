@@ -1,13 +1,31 @@
-Version 0.5.1 - ?, 2019
 
 ## FIXES
-* Makefile now installs on macOS
-* Fixed typo for --cookie-jar commandline option
-* Fixed path loading issue when whatweb is installed as a symlink. @abenson and @blshkv
+* #299 Using Addressable Gem to fix `warning: URI.escape is obsolete`. Thanks @weidsom (Weidsom Nascimento)
+
+
+Version 0.5.1 - February 25, 2020
+
+This is a minor release with bug fixes, one new plugin, and a couple of plugin updates.
+
+## FIXES
+* #275 Makefile now installs on macOS
+* #286 typo for --cookie-jar commandline option.
+* #283 path loading issue when whatweb is installed as a symlink. @abenson and @blshkv
+* #288 error with JSON output when the target list is empty
+* #289 removed empty object from end of JSON output
+* #293 and #294 Fix MongoDB output @LrsK
 
 ## MISC
 * Makefile now installs a symlink in the PATH
 * CHANGELOG.md and INSTALL.md files are now in MarkDown format
+* Removed requirement for open3 gem in Integration Tests
+
+### NEW PLUGINS
+* Bootstrap - @phylu
+
+## PLUGIN UPDATES
+* Kayako-SupportSuite - @urbanadventurer
+* ASP_NET - @urbanadventurer
 
 
 Version 0.5.0 - October 4, 2019

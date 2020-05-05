@@ -5,7 +5,7 @@
 # WhatWeb - Next generation web scanner
 Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
-Latest Release: v0.5.0. June 9th, 2019
+Latest Release: v0.5.1. February 25th, 2020
 
 License: GPLv2
 
@@ -80,7 +80,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner version 0.5.0.
+WhatWeb - Next generation web scanner version 0.5.1.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: https://www.morningstarsecurity.com/research/whatweb
 
@@ -111,7 +111,7 @@ AGGRESSION:
       all plugins are used for all URLs.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.5.0.
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.5.1.
   --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
                         header will replace it. Specifying an empty value, eg.
                         "User-Agent:" will remove the header.
@@ -195,7 +195,7 @@ HELP & MISCELLANEOUS:
   --short-help            Short usage help.
   --help, -h              Complete usage help.
   --debug                 Raise errors in plugins.
-  --version               Display version information. (WhatWeb 0.5.0).
+  --version               Display version information. (WhatWeb 0.5.1).
 
 EXAMPLE USAGE:
 * Scan example.com.
@@ -394,6 +394,7 @@ Browse the wiki for more documentation and advanced usage techniques.
 
 ## Release History
 
+- Version 0.5.1 Released Feburary 25th, 2020
 - Version 0.5.0 Released June 9th, 2019
 - Version 0.4.9 Released November 23rd, 2017
 - Version 0.4.8-dev (Continuous release from 2012 to 2017)
@@ -474,6 +475,11 @@ Thank you to the following people who have contributed to WhatWeb.
 + Naglis Jonaitis (@naglis)
 + Igor Rzegocki (@ajgon)
 + Melvil Guillaume (@mguillau42)
++ @LrsK 
++ Janosch Maier (@phylu)
++ @abenson
++ @blshkv
++ Weidsom Nascimento (@weidsom)
 
-Please let me know if I need to add any more names. 
+It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
 
