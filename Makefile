@@ -27,6 +27,7 @@ install:
 
 	# copy whatweb into LIBPATH/NAME/ and create a symbolic link in the BINPATH
 	install -p $(INSTALLD) -m 755 $(NAME) $(DESTDIR)$(LIBPATH)/$(NAME)
+	install -d $(DESTDIR)$(BINPATH)
 	ln -s $(DESTDIR)$(LIBPATH)/$(NAME)/$(NAME) $(DESTDIR)$(BINPATH)/$(NAME)
 
 	cp -p -r my-plugins $(DESTDIR)$(LIBPATH)/$(NAME)/
