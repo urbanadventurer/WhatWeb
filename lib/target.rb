@@ -257,16 +257,16 @@ class Target
 
   def open_url(options)
     begin
-      @ip = Resolv.getaddress(@uri.host)
+      @ip = Resolv.getaddress(@uri.hostname)
     rescue StandardError => err
       raise err
     end
 
     begin
       if $USE_PROXY == true
-        http = ExtendedHTTP::Proxy($PROXY_HOST, $PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host, @uri.port)
+        http = ExtendedHTTP::Proxy($PROXY_HOST, $PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.hostname, @uri.port)
       else
-        http = ExtendedHTTP.new(@uri.host, @uri.port)
+        http = ExtendedHTTP.new(@uri.hostname, @uri.port)
       end
 
       # set timeouts
