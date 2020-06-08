@@ -6,13 +6,15 @@ class LoggingMongo < Logging
     database = s[:database] || raise('Missing MongoDB database name')
     collection = s[:collection] || 'whatweb'
 
-    # should make databse and collection comma or fullstop delimited, eg. test,scan
-
-    # @db.authenticate(s[:username], s[:password]) if s[:username]
     options = { database: database }
     if s[:username]
       options[:username] = s[:username]
       options[:password] = s[:password]
+    end
+
+    if ! $WWDEBUG
+      # Default is DEBUG-level logging
+      Mongo::Logger.logger.level = Logger::FATAL
     end
 
     @db = Mongo::Client.new([host], options)

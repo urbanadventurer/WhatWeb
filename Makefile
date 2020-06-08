@@ -24,6 +24,7 @@ install:
 	gzip -f $(DESTDIR)$(MANPATH)/man1/$(NAME).1
 	install -d $(DESTDIR)$(LIBPATH)/$(NAME)
 	install -d $(DESTDIR)$(DOCPATH)/$(NAME)
+  install -d $(DESTDIR)$(BINPATH)
 
 	# copy whatweb into LIBPATH/NAME/ and create a symbolic link in the BINPATH
 	install -p $(INSTALLD) -m 755 $(NAME) $(DESTDIR)$(LIBPATH)/$(NAME)
