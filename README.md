@@ -31,7 +31,6 @@ If you have any questions, comments or concerns regarding WhatWeb, please consul
 * Updates & Additional Information
 * Release History
 * Credits
----
 
 ## About WhatWeb
 
