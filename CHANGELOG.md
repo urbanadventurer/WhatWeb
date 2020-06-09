@@ -1,6 +1,15 @@
+Version 0.5.2 - June 9, 2020
+
+This is a minor update with bug fixes, and one new plugin, PHP-Slim.
 
 ## FIXES
-* #299 Using Addressable Gem to fix `warning: URI.escape is obsolete`. Thanks @weidsom (Weidsom Nascimento)
+* #299 Fixed `warning: URI.escape is obsolete` error by using the Using Addressable Gem. Thanks @weidsom (Weidsom Nascimento)
+* #306, #307 Improvements to Makefile. @xambroz
+* #304 Log level for mongodb-logger is set to "FATAL", unless WhatWeb is run with debug-mode enabled. @helsecert
+
+## NEW PLUGINS
+
+* PHP-Slim Marcelo Gimenes (@cgimenes)
 
 
 Version 0.5.1 - February 25, 2020
