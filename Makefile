@@ -1,5 +1,5 @@
 NAME = whatweb
-PREFIX = /usr
+PREFIX ?= /usr
 BINPATH = $(PREFIX)/bin
 LIBPATH = $(PREFIX)/share
 MANPATH = $(PREFIX)/share/man
@@ -11,7 +11,7 @@ endif
 
 ifeq "$(PLATFORM)" "Darwin"
 INSTALLD =
-PREFIX = /usr/local
+PREFIX ?= /usr/local
 else
 INSTALLD = -D
 endif
@@ -20,6 +20,7 @@ install:
 	# upgrade/installation will leave the my-plugins folder
 	rm -Rf $(DESTDIR)$(BINPATH)/$(NAME) $(DESTDIR)$(MANPATH)/man1/$(NAME).1 $(DESTDIR)$(MANPATH)/man1/$(NAME).1.gz $(DESTDIR)$(DOCPATH)/$(NAME) $(DESTDIR)$(LIBPATH)/$(NAME)/plugins-disabled $(DESTDIR)$(LIBPATH)/$(NAME)/plugins $(DESTDIR)$(LIBPATH)/$(NAME)/lib $(DESTDIR)$(LIBPATH)/$(NAME)/plugin-development $(DESTDIR)$(LIBPATH)/$(NAME)/addons
 
+	install -d $(DESTDIR)$(MANPATH)/man1
 	install -p $(INSTALLD) -m 644 $(NAME).1 $(DESTDIR)$(MANPATH)/man1/$(NAME).1
 	gzip -f $(DESTDIR)$(MANPATH)/man1/$(NAME).1
 	install -d $(DESTDIR)$(LIBPATH)/$(NAME)
