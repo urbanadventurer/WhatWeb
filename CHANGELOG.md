@@ -1,3 +1,9 @@
+Version 0.5.3 - 
+
+## MISC
+* #314 Makefile now allows supports the PREFIX environment variable. Thanks @bfontaine
+
+
 Version 0.5.2 - June 9, 2020
 
 This is a minor update with bug fixes, and one new plugin, PHP-Slim.

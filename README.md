@@ -481,6 +481,7 @@ Thank you to the following people who have contributed to WhatWeb.
 + Weidsom Nascimento (@weidsom)
 + Marcelo Gimenes @cgimenes
 + @xambroz
++ Baptiste Fontaine (@bfontaine)
 
 It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
 
