@@ -380,9 +380,11 @@ begin
         when 1
           # ok use it
           Socket.getifaddrs.select { |x| x.name == "en0" and x.addr.ip? }.map(&:addr)
-        when > 1
+        when 2
           # select IPv4
           Socket.getifaddrs.select { |x| x.name == "en0" and x.addr.ip? and x.addr.ipv4? }.map(&:addr)
+        when > 2
+          raise "Too many IP addreses for this inteface.\n" 
       end
 
 
