@@ -82,6 +82,7 @@ HTTP OPTIONS:
 \t\t\t\t`never', `http-only', `meta-only', `same-site',
 \t\t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}.
   --max-redirects=NUM\t\tMaximum number of redirects. Default: 10.
+  --bind=IP, -b IP\t\tIP address of the interface on which to bind
 
 AUTHENTICATION:
   --user, -u=<user:password>\tHTTP basic authentication.
@@ -324,6 +325,7 @@ opts = GetoptLong.new(
   ['-U', '--user-agent', GetoptLong::REQUIRED_ARGUMENT],
   ['-a', '--aggression', GetoptLong::REQUIRED_ARGUMENT],
   ['-t', '--max-threads', GetoptLong::REQUIRED_ARGUMENT],
+  ['-b', '--bind', GetoptLong::REQUIRED_ARGUMENT],
   ['--follow-redirect', GetoptLong::REQUIRED_ARGUMENT],
   ['--max-redirects', GetoptLong::REQUIRED_ARGUMENT],
   ['--proxy', GetoptLong::REQUIRED_ARGUMENT],
@@ -356,6 +358,9 @@ begin
       exit
     when '-p', '--plugins'
       plugin_selection = arg
+    when '-b', '--bind'
+      $local_host = arg
+      $local_port = 61000
     when '-I', '--info-plugins'
       PluginSupport.load_plugins
       PluginSupport.plugin_info(arg.split(','))
@@ -636,3 +641,4 @@ logging_list.each(&:close)
 Plugin.shutdown_all
 
 # pp $PLUGIN_TIMES.sort_by {|x,y|y }
+
