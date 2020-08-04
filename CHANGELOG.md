@@ -3,6 +3,8 @@ Version 0.5.3 -
 ## MISC
 * #314 Makefile now allows supports the PREFIX environment variable. Thanks @bfontaine
 
+## FEATURES
+* #303 Added ability to select network interface. Thanks @audibleblink.
 
 Version 0.5.2 - June 9, 2020
 

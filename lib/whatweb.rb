@@ -55,7 +55,7 @@ require_relative 'extend-http.rb'
 Dir["#{File.expand_path(File.dirname(__FILE__))}/logging/*.rb"].each {|file| require file }
 
 # Output options
-$WWDEBUG = false # raise exceptions in plugins, etc
+$WWDEBUG = true # raise exceptions in plugins, etc
 $verbose = 0 # $VERBOSE is reserved in ruby
 $use_colour = 'auto'
 $QUIET = false
