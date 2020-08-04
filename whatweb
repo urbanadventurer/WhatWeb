@@ -82,7 +82,6 @@ HTTP OPTIONS:
 \t\t\t\t`never', `http-only', `meta-only', `same-site',
 \t\t\t\tor `always'. Default: #{$FOLLOW_REDIRECT}.
   --max-redirects=NUM\t\tMaximum number of redirects. Default: 10.
-  --bind=IP, -b IP\t\tIP address of the interface on which to bind
 
 AUTHENTICATION:
   --user, -u=<user:password>\tHTTP basic authentication.
@@ -155,6 +154,11 @@ PERFORMANCE & STABILITY:
   --read-timeout\t\tTime in seconds. Default: #{$HTTP_READ_TIMEOUT}.
   --wait=SECONDS\t\tWait SECONDS between connections.
 \t\t\t\tThis is useful when using a single thread.
+
+NETWORK INTERFACE:
+  --interface=INTERFACE\t\tUse specified network interface.
+  --source-port=PORT\t\tSpecify source TCP port to use.
+  --source-addr=ADDRESS\t\tSpecify source IP address to use.
 
 HELP & MISCELLANEOUS:
   --short-help\t\t\tShort usage help.
