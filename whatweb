@@ -364,9 +364,21 @@ begin
       exit
     when '-p', '--plugins'
       plugin_selection = arg
-    when '-b', '--bind'
+
+    when '--interface'
+      # TO DO
+      $interface = arg
+
+    when '--source-port'
+      $local_port = arg.to_i
+      raise "Source port must be betwen 0 and 65535\n" unless (0..65535).include? $local_port
+
+    when '--source-address'
       $local_host = arg
-      $local_port = 61000
+      valid_ip_addresses = Socket.ip_address_list.map { |x| x.ip_address.split("%").first }.uniq
+      raise "Valid IP address must be specified\n" unless valid_ip_addresses.include? $local_host
+      $local_port = 61000 unless $local_port
+
     when '-I', '--info-plugins'
       PluginSupport.load_plugins
       PluginSupport.plugin_info(arg.split(','))
