@@ -366,8 +366,25 @@ begin
       plugin_selection = arg
 
     when '--interface'
-      # TO DO
-      $interface = arg
+      $interface = arg.downcase
+      valid_interfaces = Socket.getifaddrs.map(&:name).uniq
+      raise "Valid network interface must be specified\n" unless valid_interfaces.include? $interface
+
+
+      number_of_ips_on_interface = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip?  }.compact.size
+     
+     # NOT WORKING YET
+      case number_of_ips_on_interface
+        when 0
+          raise "No IP addresses to use on $interface"
+        when 1
+          # ok use it
+          Socket.getifaddrs.select { |x| x.name == "en0" and x.addr.ip? }.map(&:addr)
+        when > 1
+          # select IPv4
+          Socket.getifaddrs.select { |x| x.name == "en0" and x.addr.ip? and x.addr.ipv4? }.map(&:addr)
+      end
+
 
     when '--source-port'
       $local_port = arg.to_i
