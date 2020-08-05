@@ -367,32 +367,46 @@ begin
 
     when '--interface'
       $interface = arg.downcase
+
       valid_interfaces = Socket.getifaddrs.map(&:name).uniq
       raise "Valid network interface must be specified\n" unless valid_interfaces.include? $interface
+      pp "Valid interfaces:  #{valid_interfaces}"  if $verbose > 2
 
+      # unless the user has already selected this manually
+      pp $local_host
+      unless $local_host
+        pp "in"
 
-      number_of_ips_on_interface = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip?  }.compact.size
-     
-     # NOT WORKING YET
-      case number_of_ips_on_interface
-        when 0
-          raise "No IP addresses to use on $interface"
-        when 1
-          # ok use it
-          Socket.getifaddrs.select { |x| x.name == "en0" and x.addr.ip? }.map(&:addr)
-        when 2
-          # select IPv4
-          Socket.getifaddrs.select { |x| x.name == "en0" and x.addr.ip? and x.addr.ipv4? }.map(&:addr)
-        when > 2
-          raise "Too many IP addreses for this inteface.\n" 
+        # choose the IP address to use
+        number_of_ips_on_interface   = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip?  }.compact.size
+        number_of_ipv4s_on_interface = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv4? }.compact.size
+        number_of_ipv6s_on_interface = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv6? }.compact.size
+
+        tmp_addr = if number_of_ips_on_interface == 0
+          raise "No IP addresses were found for #{$interface} interface."
+
+        elsif number_of_ipv4s_on_interface > 0 
+          Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv4? }.map(&:addr).first.ip_address
+
+        elsif number_of_ipv6s_on_interface > 0
+          Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv6? }.map(&:addr).first.ip_address.split("%").first
+
+        elsif number_of_ipv4s_on_interface == 0 and number_of_ipv6s_on_interface == 0
+          raise "No IPv4 or IPv6 addresses were found for #{$interface} interface."
+        end
+        
+        $local_host = tmp_addr
       end
 
+      pp "IP address: #{$local_host}" if $verbose > 2
 
     when '--source-port'
       $local_port = arg.to_i
       raise "Source port must be betwen 0 and 65535\n" unless (0..65535).include? $local_port
 
     when '--source-address'
+      raise "Specify source address or the interface, but not both." if $local_host 
+
       $local_host = arg
       valid_ip_addresses = Socket.ip_address_list.map { |x| x.ip_address.split("%").first }.uniq
       raise "Valid IP address must be specified\n" unless valid_ip_addresses.include? $local_host
