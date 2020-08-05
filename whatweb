@@ -396,8 +396,8 @@ begin
         end
         
         $local_host = tmp_addr
+        $local_port = 61000 unless $local_port
       end
-
       pp "IP address: #{$local_host}" if $verbose > 2
 
     when '--source-port'
@@ -602,6 +602,9 @@ rescue StandardError, GetoptLong::Error => err
   error err.backtrace if $WWDEBUG
   exit
 end
+
+# check interfaces
+pp "local_host: #{$local_host}, local_port: #{$local_port}" 
 
 # sanity check # Disable colours in Windows environments when set to auto
 if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/

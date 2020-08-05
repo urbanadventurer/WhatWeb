@@ -266,6 +266,7 @@ class Target
       if $USE_PROXY == true
         http = ExtendedHTTP::Proxy($PROXY_HOST, $PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host, @uri.port)
       else
+        puts "hi from open_url $local_host: #{$local_host} and $local_port: #{$local_port}"
         http = ExtendedHTTP.new(@uri.host, @uri.port, $local_host, $local_port)
       end
 

@@ -21,6 +21,9 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
   # without opening the TCP connection or initializing the HTTP session.
   # The +address+ should be a DNS hostname or IP address.
   def initialize(address, port = nil, local_host = nil, local_port = nil)
+
+    puts "hi from ExtendedHTTP.initialize address: #{address}, port: #{port}, local_host: #{local_host}, local_port: #{local_port}"
+
     @address = address
     @port    = (port || HTTP.default_port)
     @local_host = local_host
