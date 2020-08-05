@@ -319,8 +319,8 @@ class Target
       puts @uri.to_s + " [#{status}]" if $verbose > 1
 
     rescue StandardError => err
+      pp err
       raise err
-
     end
   end
 

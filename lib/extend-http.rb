@@ -77,10 +77,11 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
 
     puts "hi again from ExtendedHTTP.connect @local_host: #{@local_host.inspect}, @local_port: #{@local_port.inspect}"
 
-
     D "opening connection to #{conn_address}:#{conn_port}..."
     s = Timeout.timeout(@open_timeout, Net::OpenTimeout) do
       TCPSocket.open(conn_address, conn_port, @local_host, @local_port)
+     # TCPSocket.open(conn_address, conn_port, '127.0.0.1', '11111')
+
     end
     s.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, 1)
     D 'opened'
