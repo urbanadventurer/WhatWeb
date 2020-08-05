@@ -200,6 +200,7 @@ class Target
     if is_file?
       open_file
     else
+      puts "hi from Target.open "
       open_url(@http_options)
     end
 

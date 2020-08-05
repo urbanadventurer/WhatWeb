@@ -20,15 +20,12 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
   # Creates a new Net::HTTP object for the specified server address,
   # without opening the TCP connection or initializing the HTTP session.
   # The +address+ should be a DNS hostname or IP address.
-  def initialize(address, port = nil, local_host = nil, local_port = nil)
+  def initialize(address, port = nil)
 
-    puts "hi from ExtendedHTTP.initialize address: #{address}, port: #{port}, local_host: #{local_host.inspect}, local_port: #{local_port.inspect}"
-
-   # pry.binding
     @address = address
     @port    = (port || HTTP.default_port)
-    @local_host = local_host
-    @local_port = local_port
+    @local_host = $local_host
+    @local_port = $local_port
 
     puts "hi again from ExtendedHTTP.initialize @local_host: #{@local_host.inspect}, @local_port: #{@local_port.inspect}"
 
