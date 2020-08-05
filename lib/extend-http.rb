@@ -22,12 +22,16 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
   # The +address+ should be a DNS hostname or IP address.
   def initialize(address, port = nil, local_host = nil, local_port = nil)
 
-    puts "hi from ExtendedHTTP.initialize address: #{address}, port: #{port}, local_host: #{local_host}, local_port: #{local_port}"
+    puts "hi from ExtendedHTTP.initialize address: #{address}, port: #{port}, local_host: #{local_host.inspect}, local_port: #{local_port.inspect}"
 
+   # pry.binding
     @address = address
     @port    = (port || HTTP.default_port)
     @local_host = local_host
     @local_port = local_port
+
+    puts "hi again from ExtendedHTTP.initialize @local_host: #{@local_host.inspect}, @local_port: #{@local_port.inspect}"
+
     @curr_http_version = HTTPVersion
     @keep_alive_timeout = 2
     @last_communicated = nil

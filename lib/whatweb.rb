@@ -79,8 +79,8 @@ $CUSTOM_HEADERS = {}
 $BASIC_AUTH_USER = nil
 $BASIC_AUTH_PASS = nil
 
-#$local_host = nil
-#$local_post = nil
+$local_host = nil
+$local_post = nil
 
 # Ruby Version Compatability
 if Gem::Version.new(RUBY_VERSION) < Gem::Version.new(2.0)
