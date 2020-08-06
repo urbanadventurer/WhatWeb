@@ -408,7 +408,6 @@ begin
       $local_host = arg
       valid_ip_addresses = Socket.ip_address_list.map { |x| x.ip_address.split("%").first }.uniq
       raise "Valid IP address must be specified\n" unless valid_ip_addresses.include? $local_host
-      $local_port = 61000 unless $local_port
 
     when '-I', '--info-plugins'
       PluginSupport.load_plugins
