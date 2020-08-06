@@ -369,7 +369,7 @@ begin
       $interface = arg.downcase
 
       valid_interfaces = Socket.getifaddrs.map(&:name).uniq
-      raise "Valid network interface must be specified\n" unless valid_interfaces.include? $interface
+      raise "Network interface #{$interface} is not valid.\n" unless valid_interfaces.include? $interface
       pp "Found valid interfaces:  #{valid_interfaces}"  if $verbose > 2
 
       # unless the user has already selected this manually
@@ -381,7 +381,7 @@ begin
         number_of_ipv6s_on_interface = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv6? }.compact.size
 
         $local_host = if number_of_ips_on_interface == 0
-          raise "No IP addresses were found for #{$interface} interface."
+          raise "No IP addresses were found for the #{$interface} interface."
 
         elsif number_of_ipv4s_on_interface > 0 
           Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv4? }.map(&:addr).first.ip_address
