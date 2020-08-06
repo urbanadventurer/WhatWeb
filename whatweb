@@ -370,12 +370,10 @@ begin
 
       valid_interfaces = Socket.getifaddrs.map(&:name).uniq
       raise "Valid network interface must be specified\n" unless valid_interfaces.include? $interface
-      pp "Valid interfaces:  #{valid_interfaces}"  if $verbose > 2
+      pp "Found valid interfaces:  #{valid_interfaces}"  if $verbose > 2
 
       # unless the user has already selected this manually
-      pp $local_host
       unless $local_host
-        pp "in"
 
         # choose the IP address to use
         number_of_ips_on_interface   = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip?  }.compact.size
@@ -395,10 +393,11 @@ begin
           raise "No IPv4 or IPv6 addresses were found for #{$interface} interface."
         end
         
-        $local_host = tmp_addr
         $local_port = 61000 unless $local_port
+        pp "IP address auto-selected from interface: #{$local_host}" if $verbose > 2
+      else
+        pp "IP address already selected by user: #{$local_host}" if $verbose > 2
       end
-      pp "IP address: #{$local_host}" if $verbose > 2
 
     when '--source-port'
       $local_port = arg.to_i
