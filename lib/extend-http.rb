@@ -72,11 +72,6 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
       conn_port    = port
     end
 
-#    @local_host = $local_host
-#    @local_port = $local_port
-
-    puts "hi again from ExtendedHTTP.connect @local_host: #{@local_host.inspect}, @local_port: #{@local_port.inspect}"
-
     D "opening connection to #{conn_address}:#{conn_port}..."
     s = Timeout.timeout(@open_timeout, Net::OpenTimeout) do
       TCPSocket.open(conn_address, conn_port, @local_host, @local_port)

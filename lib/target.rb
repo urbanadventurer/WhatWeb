@@ -200,7 +200,6 @@ class Target
     if is_file?
       open_file
     else
-      puts "hi from Target.open "
       open_url(@http_options)
     end
 
@@ -267,7 +266,6 @@ class Target
       if $USE_PROXY == true
         http = ExtendedHTTP::Proxy($PROXY_HOST, $PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host, @uri.port)
       else
-        puts "hi from open_url $local_host: #{$local_host} and $local_port: #{$local_port}"
         http = ExtendedHTTP.new(@uri.host, @uri.port)
         http.local_host = $local_host
         http.local_port = $local_port
