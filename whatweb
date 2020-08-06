@@ -393,7 +393,6 @@ begin
           raise "No IPv4 or IPv6 addresses were found for #{$interface} interface."
         end
         
-        $local_port = 61000 unless $local_port
         pp "IP address auto-selected from interface: #{$local_host}" if $verbose > 2
       else
         pp "IP address already selected by user: #{$local_host}" if $verbose > 2
