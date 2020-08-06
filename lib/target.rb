@@ -268,7 +268,7 @@ class Target
       else
         http = ExtendedHTTP.new(@uri.host, @uri.port)
         http.local_host = $local_host
-        http.local_port = $local_port
+        http.local_port = $local_port if $local_port
       end
 
       # set timeouts
