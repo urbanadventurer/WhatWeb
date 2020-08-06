@@ -380,7 +380,7 @@ begin
         number_of_ipv4s_on_interface = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv4? }.compact.size
         number_of_ipv6s_on_interface = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv6? }.compact.size
 
-        tmp_addr = if number_of_ips_on_interface == 0
+        $local_host = if number_of_ips_on_interface == 0
           raise "No IP addresses were found for #{$interface} interface."
 
         elsif number_of_ipv4s_on_interface > 0 
