@@ -40,6 +40,8 @@ matches [
 # Version Detection # Default Title
 { :version=>/<title>phpMyAdmin ([^\s^<]+)[^<]*<\/title>/ },
 
+{:version=>/PMA_VERSION\:"([0-9\.]+)",auth_type/}, 
+
 # Version Detection # Default heading HTML
 { :version=>/<h2>Welcome to  phpMyAdmin ([^<]+)<\/h2>/ },
 
