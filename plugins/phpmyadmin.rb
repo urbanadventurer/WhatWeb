@@ -178,6 +178,8 @@ files=[
 {:version=>'3.3.10', :md5=>'faced5f008177dacea61ed953ec799e2', :path=>"README"},
 {:version=>'3.3.11-dev', :md5=>'3493c96f533215e62409dd8ab07126b8', :path=>"README"},
 {:version=>'3.4.0-beta4', :md5=>'1ee74431ac623654fd9a3dc2a3717c45', :path=>"README"},
+{:version=>'4.5.1', :md5=>'2d53318ad6d93bbc10e6ebe3be669c03', :path=>"README"},
+{:version=>'4.6.1', :md5=>'dbd24fb33b5a0c72ce12c36ffe274bee', :path=>"README"},
 
 ]
 
