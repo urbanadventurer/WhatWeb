@@ -8,7 +8,6 @@ Version 0.5.3 -
 * MobileIron-MDM (@bcoles)
 * Slack-Workspace (@bcoles)
 * Wobserver (@urbanadventurer)
-* Adobe-Experience-Manager (@definity - Chad Brigance @ChadBrigance, wh1tenoise @wh1tenoise2)
 
 Version 0.5.2 - June 9, 2020
 
