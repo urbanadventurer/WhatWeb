@@ -20,16 +20,16 @@ matches [
 ]
 
 passive do
-  return unless @target.to_s =~ %r{^https://[^\s^/]+?\.slack\.com}
-
   m = []
 
-  team_name = @body.scan(%r{teamName&quot;:&quot;(.+?)&quot;}).flatten.first
+  return m unless @base_uri.to_s =~ %r{^https://[^\s^/]+?\.slack\.com}
+
+  team_name = @body.to_s.scan(%r{teamName&quot;:&quot;(.+?)&quot;}).flatten.first
   if team_name
     m << { :string=>team_name }
   end
 
-  email_domain = @body.scan(%r{formattedEmailDomains&quot;:&quot;(.+?)&quot;}).flatten.first
+  email_domain = @body.to_s.scan(%r{formattedEmailDomains&quot;:&quot;(.+?)&quot;}).flatten.first
   if email_domain
     m << { :string=>email_domain }
   end
