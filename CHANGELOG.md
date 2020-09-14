@@ -3,6 +3,11 @@ Version 0.5.3 -
 ## MISC
 * #314 Makefile now allows supports the PREFIX environment variable. Thanks @bfontaine
 
+## NEW PLUGINS
+
+* MobileIron-MDM (@bcoles)
+* Slack-Workspace (@bcoles)
+* Wobserver (@urbanadventurer)
 
 Version 0.5.2 - June 9, 2020
 
