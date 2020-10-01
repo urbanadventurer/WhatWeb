@@ -1,13 +1,24 @@
-Version 0.5.3 - 
+Version 0.5.3 - October 1, 2020
+
+This is a minor release with miscellaneous changes, seven new plugins, and two plugin updates.
 
 ## MISC
-* #314 Makefile now allows supports the PREFIX environment variable. Thanks @bfontaine
+* #319 MongoDB logging now uses upsert (update by default, insert if new) (@juananpe)
+* #314 Makefile now allows supports the PREFIX environment variable (@bfontaine)
 
 ## NEW PLUGINS
-
+* Adobe Experience Manager (AEM) (@definity)
+* JFrog Artifactory (@bcoles)
+* Matomo (@urbanadventurer)
 * MobileIron-MDM (@bcoles)
 * Slack-Workspace (@bcoles)
 * Wobserver (@urbanadventurer)
+* Zoom (@bcoles)
+
+## PLUGIN UPDATES
+* Magento (@huntertl)
+* phpMyAdmin (@juananpe)
+
 
 Version 0.5.2 - June 9, 2020
 
@@ -21,7 +32,6 @@ This is a minor update with bug fixes, and one new plugin, PHP-Slim.
 ## NEW PLUGINS
 
 * PHP-Slim Marcelo Gimenes (@cgimenes)
-
 
 Version 0.5.1 - February 25, 2020
 
