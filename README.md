@@ -1,11 +1,11 @@
-[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.5.2-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1805-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
+[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.5.3-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1805-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
 
 ![logo](https://www.morningstarsecurity.com/wp-content/uploads/2019/02/WhatWeb-Logo-800px.png "WhatWeb Logo")
 
 # WhatWeb - Next generation web scanner
 Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
-Latest Release: v0.5.2. June 9th, 2020
+Latest Release: v0.5.3. October 1st, 2020
 
 License: GPLv2
 
@@ -78,7 +78,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner version 0.5.2.
+WhatWeb - Next generation web scanner version 0.5.3.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: https://www.morningstarsecurity.com/research/whatweb
 
@@ -109,7 +109,7 @@ AGGRESSION:
       all plugins are used for all URLs.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.5.2.
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.5.3.
   --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
                         header will replace it. Specifying an empty value, eg.
                         "User-Agent:" will remove the header.
@@ -193,7 +193,7 @@ HELP & MISCELLANEOUS:
   --short-help            Short usage help.
   --help, -h              Complete usage help.
   --debug                 Raise errors in plugins.
-  --version               Display version information. (WhatWeb 0.5.2).
+  --version               Display version information. (WhatWeb 0.5.3).
 
 EXAMPLE USAGE:
 * Scan example.com.
@@ -392,6 +392,7 @@ Browse the wiki for more documentation and advanced usage techniques.
 
 ## Release History
 
+- Version 0.5.3 Released October 1st, 2020
 - Version 0.5.2 Released June 9th, 2020
 - Version 0.5.1 Released Feburary 25th, 2020
 - Version 0.5.0 Released June 9th, 2019
@@ -482,6 +483,9 @@ Thank you to the following people who have contributed to WhatWeb.
 + Marcelo Gimenes @cgimenes
 + @xambroz
 + Baptiste Fontaine (@bfontaine)
++ @juananpe
++ @definity
++ @huntertl
 
 It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
 
