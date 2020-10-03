@@ -26,31 +26,24 @@ module Helper
       obj.each_value do |x|
         utf8_elements!(x)
       end
-    end
-
-    if obj.class == Array
+    elsif obj.class == Array
       obj.each do |x|
         utf8_elements!(x)
       end
-    end
-
-    if obj.class == String
-      obj = convert_to_utf8(obj)
+    elsif obj.class == String
+      convert_to_utf8(obj)
     end
   end
 
   # converts a string to UTF-8
-  def self.convert_to_utf8(s)
-    begin
-      if defined?(String.new.scrub) # Defined in Ruby 2.1
-        return s.force_encoding("UTF-8").scrub
-      else # Ruby 2.0
-        return s.encode('UTF-16', 'UTF-8', invalid: :replace, replace: '').encode('UTF-8')
-      end
-
-    rescue => err
-      raise "Can't convert to UTF-8 #{err}"
+  def self.convert_to_utf8(str)
+    if defined?(String.new.scrub) # Defined in Ruby 2.1
+      str.force_encoding("UTF-8").scrub
+    else # Ruby 2.0
+      str.encode('UTF-16', 'UTF-8', invalid: :replace, replace: '').encode('UTF-8')
     end
+  rescue => e
+    raise "Can't convert to UTF-8 #{e}"
   end
 
 
@@ -59,8 +52,8 @@ module Helper
   #
   # returns String a word representing the certainty
   #
-  def self.certainty_to_words(p)
-    case p
+  def self.certainty_to_words(certainty)
+    case certainty
     when 0..49
       'maybe'
     when 50..99
@@ -75,29 +68,34 @@ module Helper
   #
   # returns Array an array of lines.
   #
-  def self.word_wrap(s, width = 10)
+  def self.word_wrap(str, width = 10)
     ret = []
     line = ''
-    s.split.map do |x|
-      word = x
-      if line.size + x.size + 1 <= width
-        line += x + ' '
-      else
-        if word.size > width
-          ret << line
-          line = ''
-          w = word.clone
-          while w.size > width
-            ret << w[0..(width - 1)]
-            w = w[width.to_i..-1]
-          end
-          ret << w unless w.empty?
-        else
-          ret << line
-          line = x + ' '
-        end
+
+    str.to_s.split.each do |word|
+      if line.size + word.size + 1 <= width
+        line += "#{word} "
+        next
       end
+
+      ret << line
+
+      if word.size <= width
+        line = "#{word} "
+        next
+      end
+
+      line = ''
+      w = word.clone
+
+      while w.size > width
+        ret << w[0..(width - 1)]
+        w = w[width.to_i..-1]
+      end
+
+      ret << w unless w.empty?
     end
+
     ret << line unless line.empty?
     ret
   end
