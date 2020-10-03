@@ -14,33 +14,36 @@
 # You should have received a copy of the GNU General Public License
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
-### gem detection & loading
 def gem_available?(gemname)
   Gem::Specification.find_by_name(gemname) ? true : false
 rescue LoadError
-  return false
+  false
 end
 
 # check required gems
-required_gems = %w(ipaddr addressable json)
-required_gems.each do |thisgem|
-  if gem_available?(thisgem)
-    require thisgem
-  else
-    puts "WhatWeb is not installed and is missing dependencies.\nThe following gems are missing:"
+required_gems = %w[ipaddr addressable json]
 
-    missing_gems = required_gems.map.select { |thisgem2| thisgem2 unless gem_available?(thisgem2) }
-    missing_gems.sort.each {|thisgem2| puts " - #{thisgem2}" }
+missing_gems = required_gems.map.select { |g| g unless gem_available?(g) }
 
-    puts "\nTo install run the following command from the WhatWeb folder:\n'bundle install'\n\n"
-    exit 1
+unless missing_gems.empty?
+  puts "WhatWeb is not installed and is missing dependencies.\nThe following gems are missing:"
+
+  missing_gems.sort.each do |g|
+    puts " - #{g}"
   end
+
+  puts "\nTo install run the following command from the WhatWeb folder:\n'bundle install'\n\n"
+  exit 1
 end
 
-optional_gems = %w(mongo rchardet pry rb-readline)
-optional_gems.each do |thisgem|
+required_gems.each { |g| require g }
+
+optional_gems = %w[mongo rchardet pry rb-readline]
+optional_gems.each do |g|
+  next unless gem_available?(g)
+
   begin
-    require thisgem if gem_available?(thisgem)
+    require g
   rescue LoadError
     # that failed.. no big deal
     raise if $WWDEBUG == true
