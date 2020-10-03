@@ -48,8 +48,8 @@ module WhatWeb
             # while target
             begin
               target.open
-            rescue => err
-              error("ERROR Opening: #{target} - #{err}")
+            rescue => e
+              error("ERROR Opening: #{target} - #{e}")
               target = nil # break target loop
               next
             end
@@ -62,7 +62,8 @@ module WhatWeb
       # initialize target_queue
       @targets.each do |url|
         target = prepare_target(url)
-        @target_queue << target if target
+        next unless target
+        @target_queue << target
       end
 
       # exit
@@ -72,7 +73,7 @@ module WhatWeb
 
         # more defensive than comparing against max_threads
         alive = workers.map { |worker| worker if worker.alive? }.compact.length
-        break if alive == @target_queue.num_waiting and @target_queue.empty?
+        break if alive == @target_queue.num_waiting && @target_queue.empty?
       end
 
       # Shut down workers, logging, and plugins
@@ -86,21 +87,22 @@ module WhatWeb
 
       begin
         target.open
-      rescue => err
-        error("ERROR Opening: #{target} - #{err}")
+      rescue => e
+        error("ERROR Opening: #{target} - #{e}")
       end
       target
     end
 
     def add_target(url, redirect_counter = 0)
-      # should this use prepare_target?
+      # TODO: REVIEW: should this use prepare_target?
       target = Target.new(url, redirect_counter)
-      if target
-        @target_queue << target
-      else
-        error("Add Target Failed - #{err}")
-        return nil
+
+      unless target
+        error("Add Target Failed - #{url}")
+        return
       end
+
+      @target_queue << target
     end
 
     private
@@ -108,8 +110,8 @@ module WhatWeb
     # try to make a new Target object, may return nil
     def prepare_target(url)
       Target.new(url)
-    rescue => err
-      error("Prepare Target Failed - #{err}")
+    rescue => e
+      error("Prepare Target Failed - #{e}")
       nil
     end
 
@@ -140,39 +142,43 @@ module WhatWeb
 
       return [] if url_list.empty?
 
-      genrange = url_list.map do |x|
+      # TODO: refactor this
+      ip_range = url_list.map do |x|
         range = nil
         # Parse IP ranges
-        if x =~ /^[0-9\.\-\/]+$/ && x !~ /^[\d\.]+$/
+        if x =~ %r{^[0-9\.\-\/]+$} && x !~ %r{^[\d\.]+$}
           begin
             # CIDR notation
             if x =~ %r{\d+\.\d+\.\d+\.\d+/\d+$}
               range = IPAddr.new(x).to_range.map(&:to_s)
             # x.x.x.x-x
-            elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+)$/
+            elsif x =~ %r{^(\d+\.\d+\.\d+\.\d+)-(\d+)$}
               start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
               end_ip   = IPAddr.new("#{start_ip.to_s.split('.')[0..2].join('.')}.#{Regexp.last_match(2)}", Socket::AF_INET)
               range = (start_ip..end_ip).map(&:to_s)
             # x.x.x.x-x.x.x.x
-            elsif x =~ /^(\d+\.\d+\.\d+\.\d+)-(\d+\.\d+\.\d+\.\d+)$/
+            elsif x =~ %r{^(\d+\.\d+\.\d+\.\d+)-(\d+\.\d+\.\d+\.\d+)$}
               start_ip = IPAddr.new(Regexp.last_match(1), Socket::AF_INET)
               end_ip   = IPAddr.new(Regexp.last_match(2), Socket::AF_INET)
               range = (start_ip..end_ip).map(&:to_s)
             end
-          rescue
+          rescue => e
             # Something went horribly wrong parsing the target IP range
-            raise 'Error parsing target IP range'
+            raise "Error parsing target IP range: #{e}"
           end
         end
         range
       end.compact.flatten
 
-      url_list = url_list.select { |x| !(x =~ /^[0-9\.\-*\/]+$/) || x =~ /^[\d\.]+$/ }
-      url_list += genrange unless genrange.empty?
+      # TODO: refactor this. data which matches these regexs should be taken care of above
+      url_list = url_list.select { |x| !(x =~ %r{^[0-9\.\-*\/]+$}) || x =~ /^[\d\.]+$/ }
+      url_list += ip_range unless ip_range.empty?
 
       # make urls friendlier, test if it's a file, if test for not assume it's http://
       # http, https, ftp, etc
       push_to_urllist = []
+
+      # TODO: refactor this
       url_list = url_list.map do |x|
         if File.exist?(x)
           x
@@ -185,7 +191,7 @@ module WhatWeb
           # need to move this into a URI parsing function
           #
           # check for URI prefix
-          if x !~ /^[a-z]+:\/\//
+          if x !~ %r{^[a-z]+:\/\/}
             # add missing URI prefix
             x.sub!(/^/, 'http://')
           end
@@ -197,11 +203,12 @@ module WhatWeb
             raise 'Unable to parse invalid target. No hostname.' if domain.host.empty?
 
             # convert IDN domain
-            x = domain.normalize.to_s if domain.host !~ /^[a-zA-Z0-9\.:\/]*$/
-          rescue
+            x = domain.normalize.to_s if domain.host !~ %r{^[a-zA-Z0-9\.:\/]*$}
+          rescue => e
             # if it fails it's not valid
             x = nil
-            error("Unable to parse invalid target #{x}")
+            # TODO: print something more useful
+            error("Unable to parse invalid target #{x}: #{e}")
           end
           # return x
           x

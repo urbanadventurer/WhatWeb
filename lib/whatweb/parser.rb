@@ -24,13 +24,13 @@ module WhatWeb
 
       plugins.each do |name, plugin|
         begin
-          # eXecute the plugin
+          # execute the plugin
           # start_time = Time.now
           result = plugin.scan(target)
           # end_time = Time.now
           # $PLUGIN_TIMES[name] += end_time - start_time
-        rescue Exception => err
-          error("ERROR: Plugin #{name} failed for #{target}. #{err}")
+        rescue => e
+          error("ERROR: Plugin #{name} failed for #{target}. #{e}")
           raise if $WWDEBUG == true
         end
         results << [name, result] unless result.nil? || result.empty?
@@ -49,15 +49,17 @@ module WhatWeb
           else
             log.out(target, target.status, result)
           end
-        rescue => err
-          error("ERROR Logging failed: #{target} - #{err}")
+        rescue => e
+          error("ERROR Logging failed: #{target} - #{e}")
           raise if $WWDEBUG == true
         end
       end unless logging_list.nil?
 
-      result = { 'target' => target,
-                 'status' => target.status,
-                 'result' => result}
+      result = {
+        'target' => target,
+        'status' => target.status,
+        'result' => result
+      }
 
       return result unless grep_plugin
       return result if result.map { |plugin_name, _plugin_result| plugin_name }.include? 'Grep'
