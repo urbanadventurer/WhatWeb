@@ -21,7 +21,8 @@ task :default => :unit
 
 Rake::TestTask.new(:unit) do |t|
   t.description = 'Run unit tests'
-  t.test_files = FileList['test/unit/test_*.rb']
+  t.test_files = FileList['test/enable_coverage.rb', 'test/unit/test_*.rb']
+  t.verbose = true
 end
 
 Rake::TestTask.new(:integration) do |t|
