@@ -18,21 +18,19 @@
 #
 module WhatWeb
   class Redirect
-    # adds Target to Scanner
-    # returns true if it redirects, otherwise false
+    # Checks for redirect and adds redirection target URL to Scanner
     def initialize(target, scanner, max_redirects)
-      # check for redirection
-      if redirect_url = target.get_redirection_target
-        if target.redirect_counter < max_redirects
-          # pp target.redirect_counter, redirect_url
-          puts "redirect #{target.redirect_counter + 1} from #{target.target} to #{redirect_url}" if $verbose > 1
-          scanner.add_target(redirect_url, target.redirect_counter + 1)
-          return true
-        else
-          error("ERROR Too many redirects: #{target} => #{redirect_url}")
-        end
+      redirect_url = target.get_redirection_target
+      return if redirect_url.nil?
+
+      if target.redirect_counter >= max_redirects
+        error("ERROR Too many redirects: #{target} => #{redirect_url}")
+        return
       end
-      false
+
+      # pp target.redirect_counter, redirect_url
+      puts "redirect #{target.redirect_counter + 1} from #{target.target} to #{redirect_url}" if $verbose > 1
+      scanner.add_target(redirect_url, target.redirect_counter + 1)
     end
   end
 end
