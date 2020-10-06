@@ -1,3 +1,9 @@
+Version 0.5.4 - 
+
+## NEW PLUGINS
+* BlockScout (@urbanadventurer)
+
+
 Version 0.5.3 - October 1, 2020
 
 This is a minor release with miscellaneous changes, seven new plugins, and two plugin updates.
