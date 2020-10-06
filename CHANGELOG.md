@@ -3,6 +3,9 @@ Version 0.5.4 -
 ## NEW PLUGINS
 * BlockScout (@urbanadventurer)
 
+## MISC
+* Renamed kabana.rb to kibana.rb
+
 
 Version 0.5.3 - October 1, 2020
 
