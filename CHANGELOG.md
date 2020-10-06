@@ -2,6 +2,7 @@ Version 0.5.4 -
 
 ## NEW PLUGINS
 * BlockScout (@urbanadventurer)
+* ElasticSearch (@urbanadventurer)
 
 ## PLUGIN UPDATES
 * Kibana (@urbanadventurer)
