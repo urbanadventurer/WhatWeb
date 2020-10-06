@@ -32,7 +32,7 @@
 # You should have received a copy of the GNU General Public License
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
-$:.unshift(File.join(File.expand_path(__dir__)), '.')
+$LOAD_PATH.unshift(File.join(File.expand_path(__dir__)), '.')
 
 require 'lib/whatweb'
 
@@ -256,6 +256,7 @@ end
 #
 def error(s)
   return if $NO_ERRORS
+
   $semaphore.reentrant_synchronize do
     # TODO: make use_color smart, so it detects a tty
     STDERR.puts((($use_colour == 'auto') || ($use_colour == 'always')) ? red(s) : s)
@@ -376,7 +377,7 @@ begin
         $use_colour = false
       else
         raise('--colour argument not recognized')
-        end
+      end
     when '--log-object'
       logging_list << LoggingObject.new(arg)
     when '--log-brief'
@@ -395,6 +396,7 @@ begin
       begin
         File.delete(arg)
       rescue
+        puts "File #{arg} already exists and cannot be removed"
       end
       LoggingSQL.new(arg).create_tables
       puts "SQL CREATE statements written to #{arg}"
@@ -404,42 +406,40 @@ begin
     when '--log-json-verbose'
       logging_list << LoggingJSONVerbose.new(arg)
     when '--log-mongo-collection'
-      if defined?(Mongo) && defined?(CharDet)
-        mongo[:collection] = arg
-        mongo[:use_mongo_log] = true
-      else
+      unless defined?(Mongo) && defined?(CharDet)
         raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
 
+      mongo[:collection] = arg
+      mongo[:use_mongo_log] = true
     when '--log-mongo-host'
-      if defined?(Mongo) && defined?(CharDet)
-        mongo[:host] = arg
-        mongo[:use_mongo_log] = true
-      else
+      unless defined?(Mongo) && defined?(CharDet)
         raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
 
+      mongo[:host] = arg
+      mongo[:use_mongo_log] = true
     when '--log-mongo-database'
-      if defined?(Mongo) && defined?(CharDet)
-        mongo[:database] = arg
-        mongo[:use_mongo_log] = true
-      else
+      unless defined?(Mongo) && defined?(CharDet)
         raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
+
+      mongo[:database] = arg
+      mongo[:use_mongo_log] = true
     when '--log-mongo-username'
-      if defined?(Mongo) && defined?(CharDet)
-        mongo[:username] = arg
-        mongo[:use_mongo_log] = true
-      else
+      unless defined?(Mongo) && defined?(CharDet)
         raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
+
+      mongo[:username] = arg
+      mongo[:use_mongo_log] = true
     when '--log-mongo-password'
-      if defined?(Mongo) && defined?(CharDet)
-        mongo[:password] = arg
-        mongo[:use_mongo_log] = true
-      else
+      unless defined?(Mongo) && defined?(CharDet)
         raise "Mongo logging requires the following gems to be installed.\n - mongo\n - rchardet\n"
       end
+
+      mongo[:password] = arg
+      mongo[:use_mongo_log] = true
     when '--log-elastic-index'
       elastic[:index] = arg
       elastic[:use_elastic_log] = true
@@ -456,6 +456,7 @@ begin
       max_threads = arg.to_i
     when '-a', '--aggression'
       raise "Agression level must be 1,3, or 4. #{arg} is invalid." unless [1, 3, 4].include? arg.to_i
+
       $AGGRESSION = arg.to_i
     when '--proxy'
       $USE_PROXY = true
@@ -477,11 +478,9 @@ begin
     when '--grep', '-g'
       use_custom_grep_plugin = true if PluginSupport.custom_plugin(arg, 'grep')
     when '--follow-redirect'
-      if ['never', 'http-only', 'meta-only', 'same-site', 'always'].include?(arg.downcase)
-        $FOLLOW_REDIRECT = arg.downcase
-      else
-        raise('Invalid --follow-redirect parameter.')
-      end
+      raise('Invalid --follow-redirect parameter.') unless %w[never http-only meta-only same-site always].include?(arg.downcase)
+
+      $FOLLOW_REDIRECT = arg.downcase
     when '--max-redirects'
       max_redirects = arg.to_i
     when '--open-timeout'
@@ -494,6 +493,7 @@ begin
       begin
         x = arg.scan(/([^:]+):(.*)/).flatten
         raise if x.empty?
+
         $CUSTOM_HEADERS[x.first] = x.last
       rescue
         raise('Invalid --header parameter.')
@@ -501,6 +501,7 @@ begin
     when '-c', '--cookie'
       begin
         raise if arg.empty?
+
         $CUSTOM_HEADERS['Cookie'] = arg
       rescue
         raise('Cookie require a parameter, e.g. name=value; name2=value2')
@@ -510,17 +511,16 @@ begin
         raise unless File.readable?(arg)
         # Reads cookies in document.cookie format
         # Permits empty lines and trailing spaces. Semicolons on the end of the line are optional.
-        $CUSTOM_HEADERS['Cookie'] = File.readlines(arg).delete_if { |line| line =~ /^$/ }.map { |line| line.strip!; line.sub(/([^;])$/, '\1;'); line += ' ' }.join
+        $CUSTOM_HEADERS['Cookie'] = File.readlines(arg).delete_if { |line| line.strip =~ /^$/ }.map { |line| line.strip.sub(/([^;])$/, '\1;') }.join(' ')
       rescue
         raise("Could not read cookies from #{arg}.")
       end
     when '-u', '--user'
-      if arg.include?(':')
-        $BASIC_AUTH_USER, $BASIC_AUTH_PASS = arg.split(":", 2)
-      else
+      unless arg.include?(':')
         raise("Incorrect credentials format.")
       end
 
+      $BASIC_AUTH_USER, $BASIC_AUTH_PASS = arg.split(':', 2)
     when '--debug'
       $WWDEBUG = true
     when '--short-help'
@@ -538,12 +538,12 @@ begin
   end
 rescue Errno::EPIPE
   exit
-rescue StandardError, GetoptLong::Error => err
+rescue StandardError, GetoptLong::Error => e
   # Disable colours in Windows environments for errors in usage
   $use_colour = false if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
   puts
-  error("Error in processing commandline options - #{err}")
-  error err.backtrace if $WWDEBUG
+  error("Error in processing commandline options - #{e}")
+  error e.backtrace if $WWDEBUG
   exit
 end
 
@@ -574,12 +574,12 @@ logging_list << LoggingVerbose.new if $verbose > 0 # full logging if -v
 
 ## logging dependencies
 if mongo[:use_mongo_log]
-  if plugins.map { |a, _b| a }.include?('Charset')
-    logging_list << LoggingMongo.new(mongo)
-  else
+  unless plugins.map { |a, _b| a }.include?('Charset')
     error('MongoDB logging requires the Charset plugin to be activated. The Charset plugin is the slowest whatweb plugin, it not included by default, and resides in the plugins-disabled folder. Use ./whatweb -p +./plugins-disabled/charset.rb to enable it.')
-    exit
+    exit 1
   end
+
+  logging_list << LoggingMongo.new(mongo)
 end
 
 logging_list << LoggingElastic.new(elastic) if elastic[:use_elastic_log]
@@ -606,29 +606,30 @@ begin
     url_suffix: url_suffix,
     url_pattern: url_pattern
   )
-rescue SystemExit, Interrupt => err
+rescue SystemExit, Interrupt
   error 'Interrupted. Exiting...'
   exit 1
 rescue => e
-  puts "#{e.message}"
-  puts "#{e.backtrace}"
+  puts e.message
+  puts e.backtrace
   exit 1
 end
 
 # run scan
-scanner.scan do | target |
-
-  # change so we can call it without Target object and with just Headers, HTML, etc.
+scanner.scan do |target|
+  # TODO: change so we can call it without Target object and with just Headers, HTML, etc.
   # note this modifies target with redirection info
   result = WhatWeb::Parser.run_plugins(target, plugins, scanner: scanner)
 
   # check for redirection
   WhatWeb::Redirect.new(target, scanner, max_redirects)
 
-  WhatWeb::Parser.parse(target,
-                        result,
-                        logging_list: logging_list,
-                        grep_plugin: use_custom_grep_plugin)
+  WhatWeb::Parser.parse(
+    target,
+    result,
+    logging_list: logging_list,
+    grep_plugin: use_custom_grep_plugin
+  )
 end
 
 # close down logging and plugins
