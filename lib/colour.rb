@@ -68,9 +68,12 @@ def dark_cyan(text)
 end
 
 def white(text)
-  colorize(text, "\e[1m\e[37m")
+  # quick patch for issue #345 so it's readable with a white terminal background
+  # not white, but bold
+  colorize(text, "\e[1m")
 end
 
 def grey(text)
-  colorize(text, "\e[37m")
+  # not grey, but reset
+  colorize(text, "\e[0m\e[22m")
 end
