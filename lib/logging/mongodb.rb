@@ -8,7 +8,7 @@ class LoggingMongo < Logging
 
     options = { database: database }
     if s[:username]
-      options[:username] = s[:username]
+      options[:user] = s[:username]
       options[:password] = s[:password]
     end
 
@@ -92,7 +92,7 @@ class LoggingMongo < Logging
     else
       Helper::utf8_elements!(foo) # convert foo to utf-8
       flatten_elements!(foo)
-      @coll.insert_one(foo)
+      @coll.replace_one({ target: foo[:target]}, foo, { upsert: true})
     end
   end
 end

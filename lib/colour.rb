@@ -1,14 +1,19 @@
-# colours for consoles
-
 # Copyright 2009 to 2020 Andrew Horton and Brendan Coles
 #
 # This file is part of WhatWeb.
 #
-# WhatWeb is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or at your option) any later version.
+# WhatWeb is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# at your option) any later version.
 #
-# WhatWeb is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+# WhatWeb is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 
 def colorize(text, color_code)
   "#{color_code}#{text}\e[0m"
@@ -63,9 +68,12 @@ def dark_cyan(text)
 end
 
 def white(text)
-  colorize(text, "\e[1m\e[37m")
+  # quick patch for issue #345 so it's readable with a white terminal background
+  # not white, but bold
+  colorize(text, "\e[1m")
 end
 
 def grey(text)
-  colorize(text, "\e[37m")
+  # not grey, but reset
+  colorize(text, "\e[0m\e[22m")
 end

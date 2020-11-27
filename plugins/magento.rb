@@ -66,6 +66,9 @@ Set-Cookie: frontend=s0ucd54lq2js68cp05sp6r2u92; 	ALPHA	1.4.0.1
 
 { :name=>"cookie called CUSTOMER", :search => "headers[set-cookie]", :regexp => /^CUSTOMER/i, :certainty => 25 },
 
+# Magento init script
+{ :text=>'<script type="text/x-magento-init">' }
+
 ]
 
 end

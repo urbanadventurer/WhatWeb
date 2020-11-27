@@ -1,0 +1,2 @@
+SimpleCov.start do
+end
