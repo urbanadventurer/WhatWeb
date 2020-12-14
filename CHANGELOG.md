@@ -1,7 +1,8 @@
 Version 0.5.4 - December 14, 2020
 
 ## FIXES
-* #345 Fixed colour output problem with white text being invisible when users have a white terminal background.
+* #345 Fixed colour output problem with white text being invisible when users have a white terminal background (@urbanadventurer)
+* #347 Fixed MongoDB compatability logging issue (@juananpe)
 
 ## NEW PLUGINS
 * BlockScout (@urbanadventurer)
