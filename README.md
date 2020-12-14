@@ -5,7 +5,7 @@
 # WhatWeb - Next generation web scanner
 Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
-Latest Release: v0.5.3. October 1st, 2020
+Latest Release: v0.5.4. December 14th, 2020
 
 License: GPLv2
 
@@ -78,7 +78,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner version 0.5.3.
+WhatWeb - Next generation web scanner version 0.5.4.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: https://www.morningstarsecurity.com/research/whatweb
 
@@ -109,7 +109,7 @@ AGGRESSION:
       all plugins are used for all URLs.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.5.3.
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.5.4.
   --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
                         header will replace it. Specifying an empty value, eg.
                         "User-Agent:" will remove the header.
@@ -193,7 +193,7 @@ HELP & MISCELLANEOUS:
   --short-help            Short usage help.
   --help, -h              Complete usage help.
   --debug                 Raise errors in plugins.
-  --version               Display version information. (WhatWeb 0.5.3).
+  --version               Display version information. (WhatWeb 0.5.4).
 
 EXAMPLE USAGE:
 * Scan example.com.
@@ -392,6 +392,7 @@ Browse the wiki for more documentation and advanced usage techniques.
 
 ## Release History
 
+- Version 0.5.3 Released December 14th, 2020
 - Version 0.5.3 Released October 1st, 2020
 - Version 0.5.2 Released June 9th, 2020
 - Version 0.5.1 Released Feburary 25th, 2020
