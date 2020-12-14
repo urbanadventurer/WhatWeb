@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.5.3-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1814-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
+[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.5.4-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1817-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
 
 ![logo](https://www.morningstarsecurity.com/wp-content/uploads/2019/02/WhatWeb-Logo-800px.png "WhatWeb Logo")
 
@@ -392,7 +392,7 @@ Browse the wiki for more documentation and advanced usage techniques.
 
 ## Release History
 
-- Version 0.5.3 Released December 14th, 2020
+- Version 0.5.4 Released December 14th, 2020
 - Version 0.5.3 Released October 1st, 2020
 - Version 0.5.2 Released June 9th, 2020
 - Version 0.5.1 Released Feburary 25th, 2020
