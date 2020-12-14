@@ -1,5 +1,8 @@
 Version 0.5.4 - 
 
+## FIXES
+* #345 Fixed colour output problem with white text being invisible when users have a white terminal background.
+
 ## NEW PLUGINS
 * BlockScout (@urbanadventurer)
 * ElasticSearch (@urbanadventurer)
