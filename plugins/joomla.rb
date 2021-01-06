@@ -30,6 +30,7 @@ authors [
   
 # Matches #
     matches [
+             { :url=>'/administrator/manifests/files/joomla.xml', :version=>/<version>(.*?)<\/version>/ } ,
              { :version=>"1.0", :regexp=>/<meta name="Generator" content="Joomla! - Copyright \(C\) 200[0-9] - 200[0-9] Open Source Matters. All rights reserved." \/>/ },
              { :version=>/<meta name="generator" content="Joomla! (\d\.\d) - Open Source Content Management" \/>/ },
              { :text=>'Powered by <a href="http://www.joomla.org">Joomla!</a>.' },
