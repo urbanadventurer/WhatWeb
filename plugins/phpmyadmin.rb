@@ -180,9 +180,14 @@ files=[
 {:version=>'3.3.10', :md5=>'faced5f008177dacea61ed953ec799e2', :path=>"README"},
 {:version=>'3.3.11-dev', :md5=>'3493c96f533215e62409dd8ab07126b8', :path=>"README"},
 {:version=>'3.4.0-beta4', :md5=>'1ee74431ac623654fd9a3dc2a3717c45', :path=>"README"},
+{:version=>'3.5.8.2', :md5=>'61020688e0c93426da8e26698d86a353', :path=>"README"},
+{:version=>'4.1.9', :md5=>'510f3fba339c091dbbb92df00ff3e706', :path=>"README"},
 {:version=>'4.4.15', :md5=>'c57c2a3873e5bdf7daaf56b14b1c1a2f', :path=>"README"},
 {:version=>'4.5.1', :md5=>'2d53318ad6d93bbc10e6ebe3be669c03', :path=>"README"},
 {:version=>'4.6.1', :md5=>'dbd24fb33b5a0c72ce12c36ffe274bee', :path=>"README"},
+{:version=>'4.6.6', :md5=>'3e12f16f443ff6941063f97d2575223a', :path=>"README"},
+{:version=>'4.9.7', :md5=>'8424d7ba6fdc70f44b2318f1d7f54474', :path=>"README"},
+{:version=>'5.0.4', :md5=>'a1babfbb758b5dfe9292a51db7c0b545', :path=>"README"},
 
 ]
 
