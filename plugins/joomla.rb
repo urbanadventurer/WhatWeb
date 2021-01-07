@@ -8,26 +8,27 @@ Plugin.define do
 name "Joomla"
 authors [
   "Andrew Horton",
-  # v0.4 # removed :probability & :name. 
-  # v0.5 # uses :module instead of :string, changed the 3rd regexp from 75 certainty to 25.. 
-  # v0.6 # added seconds since epoch match from the mambo plugin. 
-  "Brendan Coles <bcoles@gmail.com>", # v0.7 # 2011-03-19 # Added aggressive match for /administrator/. Updated matches to remove false positives. 
+  # v0.4 # removed :probability & :name.
+  # v0.5 # uses :module instead of :string, changed the 3rd regexp from 75 certainty to 25..
+  # v0.6 # added seconds since epoch match from the mambo plugin.
+  "Brendan Coles <bcoles@gmail.com>", # v0.7 # 2011-03-19 # Added aggressive match for /administrator/. Updated matches to remove false positives.
   # Andrew Horton # v0.8 #  Added aggressive match for /administrator/. Use match now
-  "@anozoozian", # v0.9 # 2016-12-16 # Updated aggressive version detection for Joomla 3.1.4 -> 3.6.4. 
+  "@anozoozian", # v0.9 # 2016-12-16 # Updated aggressive version detection for Joomla 3.1.4 -> 3.6.4.
+  "Juanan Pereira", # v0.9.1 Added aggressive version detection for /administrator/manifests/files/joomla.xml
 ]
-  version "0.9"
+  version "0.9.1"
   description "Opensource CMS written in PHP. Aggressive version detection compares just 5 files, checks for version 1.0.0 up to 3.6.4"
   website "http://joomla.org"
-  
+
   # Google results as at 2011-03-19 #
   # 602 for "powered by joomla" inurl:option=com_content
   # 537 for "powered by joomla"
-  
+
   # Dorks #
   dorks [
          '"powered by joomla" inurl:option=com_content'
         ]
-  
+
 # Matches #
     matches [
              { :url=>'/administrator/manifests/files/joomla.xml', :version=>/<version>(.*?)<\/version>/ } ,
@@ -37,43 +38,43 @@ authors [
 
              { :url=>'/administrator/', :regexp=>/<div id="joomla"><img src="[^"]*\/images\/header_text.png" alt="Joomla! Logo"/ , :name=>'admin page'} #"
             ]
-   
+
   # Passive #
   passive do
     m=[]
-    
+
     # mosvisitor cookie # Also used by mambo
-    m << { :certainty=>75, :name=>"mosvisitor cookie" } if @headers["set-cookie"] =~ /mosvisitor=[0-9]+/ 
-    
+    m << { :certainty=>75, :name=>"mosvisitor cookie" } if @headers["set-cookie"] =~ /mosvisitor=[0-9]+/
+
     # P3P Privacy Headers # Also used by phpcake
     m << { :name=>"P3P Privacy Headers", :certainty=>25 } if @headers["p3p"] == 'CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"'
-    
+
     # HTML Comment # seconds since epoch # Also used by mambo
     if @body =~ /<\/html>.*(\n)*<!-- [0-9]+.*-->(\n)*\z/ and @body !~ /mambo/i
       m << {:name=>"seconds since epoch in html comment after </html>",:certainty=>25}
     end
-    
-    
+
+
     # Module Detection # Doesn't work in SEO mode # Also used by mambo
     if @body =~ /<a href="[^"]*index.php\?option=(com_[^&^"]+)/
-      
+
       # Absolute URL
       m << { :certainty=>75, :module=>@body.scan(/<a href="https?:\/\/#{Regexp.escape(@base_uri.host)}[^"]*index.php\?option=(com_[^&^"]+)/) } if @body =~ /<a href="https?:\/\/#{Regexp.escape(@base_uri.host)}[^"]*index.php\?option=(com_[^&^"]+)/
-      
+
       # Relative URL
       m << { :certainty=>75, :module=>@body.scan(/<a href="[^"^:]*index.php\?option=(com_[^&^"]+)/) } if @body =~ /<a href="[^"^:]*index.php\?option=(com_[^&^"]+)/
-      
+
     end
-    
-    
+
+
     # Return passive matches
     m
   end
-  
+
   # Aggressive #
   aggressive do
     m=[]
-    
+
     versions = Hash["1.0.0" =>
                     [["mambots/editors/tinymce.xml",
                       "edefdf03134820ce7c70c5259efb9933"]],
@@ -150,7 +151,7 @@ authors [
                       "0b5554f8f2da6df6b7d979d0042c7fbf"],
                      ["mambots/editors/tinymce.xml",
                       "679c382f2ae3f8fb4056f09bd0014e89"]],
-                    
+
                     "1.5.0" =>
                     [["language/en-GB/en-GB.ini",
                       "903fb75f4369d78373b7b00db1c86c20"]],
@@ -334,7 +335,7 @@ authors [
                       "2f60cbc0aacc748ead8942eff735e632"]],
                     "2.5.9" =>
                     [["joomla.xml",
-                      "02f88367ece6d41aa277de57c48828b3"]],                     
+                      "02f88367ece6d41aa277de57c48828b3"]],
                     "2.5.10" =>
                     [["joomla.xml",
                       "0327fe30ad173c02eed4d38b9db65326"]],
@@ -489,16 +490,16 @@ authors [
         v = Version.new("Joomla", versions, @base_uri)
 
         version = v.matches_format
-  
+
 	# Return version matches from md5 hashes, if present
 	unless version.empty?
         version.each { |ver|
             m << {:name => "MD5 sums", :version => ver}
         }
-	end	
-    
+	end
+
     # Return aggressive matches
     m
   end
-  
+
 end
