@@ -35,6 +35,9 @@ matches [
 # Under Construction # 7.x # Welcome image link # From iis-underconstruction.rb by Andrew Horton
 { :text=>'<a href="http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409"><img src="welcome.png" alt="IIS7" width="571" height="411" /></a>', :module=>"Under Construction" },
 
+# Under Construction # 8.5 # Welcome image link
+{ :text=>'<a href="http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409"><img src="iis-85.png" alt="IIS" width="960" height="600" /></a>', :module=>"Under Construction" },
+  
 # 5.x # 404
 { :status=>404, :text=>'<h1 style="COLOR:000000; FONT: 13pt/15pt verdana"><!--Problem-->The page cannot be found</h1>' },
 
