@@ -14,9 +14,9 @@ authors [
   "Brendan Coles <bcoles@gmail.com>", # v0.7 # 2011-03-19 # Added aggressive match for /administrator/. Updated matches to remove false positives.
   # Andrew Horton # v0.8 #  Added aggressive match for /administrator/. Use match now
   "@anozoozian", # v0.9 # 2016-12-16 # Updated aggressive version detection for Joomla 3.1.4 -> 3.6.4.
-  "Juanan Pereira", # v0.9.1 Added aggressive version detection for /administrator/manifests/files/joomla.xml
+  "Juanan Pereira", # v1.0 Added aggressive version detection for /administrator/manifests/files/joomla.xml
 ]
-  version "0.9.1"
+  version "1.0"
   description "Opensource CMS written in PHP. Aggressive version detection compares just 5 files, checks for version 1.0.0 up to 3.6.4"
   website "http://joomla.org"
 

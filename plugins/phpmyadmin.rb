@@ -12,11 +12,11 @@ authors [
   # v0.3 # 2011-04-06 # Added aggressive md5 matches.
   "Andrew Horton", # v0.4 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array.
   # Brendan Coles <bcoles@gmail.com> # v0.5 # 2016-05-1 # Updated phpMyAdmin Cookie.
-  "Juanan Pereira", # 2021-01-06
-  # v0.5   # Added version detection via PMA_VERSION
-  # v0.5.1 # Updated version detection for 3.5.8.2, 4.1.9, 4.4.15, 4.5.1, 4.6.1, 4.6.6, 4.9.7, 5.0.4
+  "Juanan Pereira", # v0.6 # 2021-01-06
+   # Added version detection via PMA_VERSION
+   # Updated version detection for 3.5.8.2, 4.1.9, 4.4.15, 4.5.1, 4.6.1, 4.6.6, 4.9.7, 5.0.4
 ]
-version "0.5.1"
+version "0.6"
 description "phpMyAdmin is a free software tool written in PHP intended to handle the administration of MySQL over the World Wide Web."
 website "http://www.phpmyadmin.net/home_page/index.php"
 
