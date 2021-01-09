@@ -59,9 +59,10 @@ matches [
 { :url=>'/umbraco', :text=>'<p>For full functionality of Umbraco CMS it is necessary to enable JavaScript.</p>', :name=>'Admin Page' },
 
 # Umbraco logo MD5 match - seen in the official release package for 7.x and 8.x versions
-{ :url=>'/umbraco/assets/img/application/logo.png', :md5=>'b7dcca0229da530204697a309c7e6593' }
-# Umbraco logo MD5 match - seen in the src code for 7.x and 8.x versions
-{ :url=>'/umbraco/assets/img/application/logo.png', :md5=>'26c06a23c7722bbca3e5a9cd55b941d3' }
+{ :url=>'/umbraco/assets/img/application/logo.png', :md5=>'b7dcca0229da530204697a309c7e6593' },
+
+# Version Detection # init.js MD5
+{ :url=>'/umbraco/Js/init.js', :md5=>'2b2680e180639be67d09c78543a2f8f2', :version=>"7.15.6" }
 
 ]
 
