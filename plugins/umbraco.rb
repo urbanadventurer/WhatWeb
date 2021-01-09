@@ -9,8 +9,9 @@ name "Umbraco"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2010-06-12
   # v0.2 # Updated matches and version detection. 
+  "Chad Brigance @ChadBrigance" # 2021-01-09
 ]
-version "0.3"
+version "0.4"
 description "umbraco is an open source project with roots back to year 2000 even though it wasn't released as open source until 2004."
 website "http://www.umbraco.org"
 
@@ -56,9 +57,6 @@ matches [
 
 # Admin panel
 { :url=>'/umbraco', :text=>'<p>For full functionality of Umbraco CMS it is necessary to enable JavaScript.</p>', :name=>'Admin Page' },
-
-# Umbraco logo
-{ :url=>'/umbraco/assets/img/application/logo.png', },
 
 # Umbraco logo MD5 match - verison range unknown
 { :url=>'/umbraco/assets/img/application/logo.png', :md5=>'b7dcca0229da530204697a309c7e6593' }
