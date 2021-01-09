@@ -11,7 +11,7 @@ authors [
   # v0.2 # Updated matches and version detection. 
   "Chad Brigance @ChadBrigance" # 2021-01-09
 ]
-version "0.4"
+version "0.3"
 description "umbraco is an open source project with roots back to year 2000 even though it wasn't released as open source until 2004."
 website "http://www.umbraco.org"
 
