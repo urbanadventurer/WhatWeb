@@ -8,8 +8,9 @@ Plugin.define do
 name "Microsoft-IIS"
 authors [
   "Andrew Horton",
+  "Max Davitt", # v0.2 # 2021-01-07 # Added website and updated description.
 ]
-version "0.1"
+version "0.2"
 description "Microsoft Internet Information Services (IIS) for Windows Server is a flexible, secure and easy-to-manage Web server for hosting anything on the Web. From media streaming to web application hosting, IIS's scalable and open architecture is ready to handle the most demanding tasks."
 website "http://www.iis.net/"
 
