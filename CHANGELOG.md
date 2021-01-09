@@ -1,3 +1,14 @@
+Version 0.5.5 - ? 2021
+
+## NEW PLUGINS
+* Apache Flink (@juananpe)
+* VMware Horizon (@themaxdavitt)
+
+## PLUGIN UPDATES
+* Joomla (@juananpe)
+* phpMyAdmin (@juananpe)
+
+
 Version 0.5.4 - December 14, 2020
 
 ## FIXES
