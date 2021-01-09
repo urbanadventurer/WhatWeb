@@ -488,6 +488,7 @@ Thank you to the following people who have contributed to WhatWeb.
 + @juananpe
 + @definity
 + @huntertl
++ Max Davitt (@themaxdavitt)
 
 It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
 
