@@ -8,8 +8,9 @@ Plugin.define do
 name "Microsoft-IIS"
 authors [
   "Andrew Horton",
+  "Max Davitt", # v0.2 # 2021-01-07 # Added support for 8.5 "Under Construction" page
 ]
-version "0.1"
+version "0.2"
 description "Microsoft Internet Information Services (IIS) for Windows Server is a flexible, secure and easy-to-manage Web server for hosting anything on the Web. From media streaming to web application hosting, IIS's scalable and open architecture is ready to handle the most demanding tasks."
 website "http://www.iis.net/"
 
@@ -35,6 +36,9 @@ matches [
 # Under Construction # 7.x # Welcome image link # From iis-underconstruction.rb by Andrew Horton
 { :text=>'<a href="http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409"><img src="welcome.png" alt="IIS7" width="571" height="411" /></a>', :module=>"Under Construction" },
 
+# Under Construction # 8.5 # Welcome image link
+{ :text=>'<a href="http://go.microsoft.com/fwlink/?linkid=66138&amp;clcid=0x409"><img src="iis-85.png" alt="IIS" width="960" height="600" /></a>', :module=>"Under Construction" },
+  
 # 5.x # 404
 { :status=>404, :text=>'<h1 style="COLOR:000000; FONT: 13pt/15pt verdana"><!--Problem-->The page cannot be found</h1>' },
 
