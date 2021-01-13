@@ -18,14 +18,13 @@ matches [
 # Telerik_stylesheet
 { :text=>'type="text/css" rel="stylesheet" class="Telerik_stylesheet" />' },
 
-# Telerik.Web.UI.RadListView
+# Telerik.Web.UI.RadListView, RadAjaxManager, and other Rad*
 { :regexp=>/\$create\(Telerik\.Web\.UI\.Rad[a-zA-Z]+,/ },
 
-# Telerik.Web.UI.WebResource.axd
-{ :text=>'href="/Telerik.Web.UI.WebResource.axd?' },
-{ :text=>'src="/Telerik.Web.UI.WebResource.axd?' },
+# Telerik.Web.UI.WebResource.axd - in older versions it was just WebResource.axd
+{ :regexp=>/(src|href)="\/(Telerik.Web.UI.)?WebResource.axd\?/ },
 
-# Version detection, should set confidence level
+# Version detection, for a later version.  This is not accurate unless it's done only in aggressive mode
 #{ :version=>/(20[0-9]{2}\.[0-9]+\.[0-9]+\.[0-9]+)/ },
 
 # Verification using a known endpoint that produces a known response
