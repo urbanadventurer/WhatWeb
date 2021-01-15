@@ -45,11 +45,7 @@ class LoggingSQL < Logging
 
   def escape_for_sql(s)
     s = s.to_s
-    if s.nil?
-      "''"
-    else
-      "'" + s.tr("'", "\'") + "'"
-    end
+    "'" + s.gsub("'"){"\\'"} + "'"
   end
 
   def create_tables
