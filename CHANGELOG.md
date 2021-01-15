@@ -6,6 +6,7 @@ Version 0.5.5 - ? 2021
 ## NEW PLUGINS
 * Apache Flink (@juananpe)
 * Dell-OpenManage-Switch-Administrator (@themaxdavitt)
+* FLIR AX8 (@urbanadventurer)
 * Huginn (@urbanadventurer)
 * Telerik UI (@definity)
 * Umbraco (@definity / @ChadBrigance
