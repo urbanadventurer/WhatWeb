@@ -5,10 +5,11 @@ Version 0.5.5 - ? 2021
 
 ## NEW PLUGINS
 * Apache Flink (@juananpe)
-* VMware Horizon (@themaxdavitt)
-* Umbraco (@definity / @ChadBrigance
 * Dell-OpenManage-Switch-Administrator (@themaxdavitt)
+* Huginn (@urbanadventurer)
 * Telerik UI (@definity)
+* Umbraco (@definity / @ChadBrigance
+* VMware Horizon (@themaxdavitt)
 
 ## PLUGIN UPDATES
 * Joomla (@juananpe)
