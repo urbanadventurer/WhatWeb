@@ -1,5 +1,8 @@
 Version 0.5.5 - ? 2021
 
+## FIXES
+* #358 Fixed escape_for_sql method (@juananpe)
+
 ## NEW PLUGINS
 * Apache Flink (@juananpe)
 * VMware Horizon (@themaxdavitt)
