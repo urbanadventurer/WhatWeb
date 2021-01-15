@@ -1,4 +1,4 @@
-Version 0.5.5 - ? 2021
+Version 0.5.5 - January 16, 2021
 
 ## FIXES
 * #358 Fixed escape_for_sql method (@juananpe)
@@ -8,6 +8,7 @@ Version 0.5.5 - ? 2021
 * Dell-OpenManage-Switch-Administrator (@themaxdavitt)
 * FLIR AX8 (@urbanadventurer)
 * Huginn (@urbanadventurer)
+* OpenResty (@urbanadventurer)
 * Telerik UI (@definity)
 * Umbraco (@definity / @ChadBrigance
 * VMware Horizon (@themaxdavitt)
