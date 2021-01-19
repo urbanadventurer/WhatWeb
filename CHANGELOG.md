@@ -1,3 +1,11 @@
+Version 0.5.6 - ?, 2021
+
+## FIXES
+* #311 - JSON Logging fails... UTF-8 can't modify frozen String (@juananpe)
+
+## MISC
+*  Refactored Helper::convert_to_utf8. Droped Ruby 2.0 support (@urbanadventurer)
+
 Version 0.5.5 - January 16, 2021
 
 ## FIXES
