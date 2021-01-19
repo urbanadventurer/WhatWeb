@@ -55,6 +55,8 @@ class Plugin
     p.instance_eval(&block)
     p.startup
     # TODO: make sure required attributes are set
+
+    # Freeze the plugin attributes so they cannot be self-modified by a plugin
     Plugin.attributes.each { |symbol| p.instance_variable_get("@#{symbol}").freeze }
     Plugin.registered_plugins[p.name] = p
   end
