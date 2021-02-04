@@ -86,7 +86,7 @@ puts "[+] Converting #{FNAME} to v0.5".colorize(:color=>:blue, :background => :b
 puts "BEFORE".colorize(:color=>:black, :background => :yellow)
 cmd = "cat #{FNAME} | egrep \"^\s*author \""
 puts `#{cmd}`.strip.yellow
-cmd = "cat #{FNAME} | egrep -B 9999 \"^Plugin.define\" | egrep -A 999 '# https://www.morningstarsecurity.com/research/whatweb' | sed '1d;$d'"
+cmd = "cat #{FNAME} | egrep -B 9999 \"^Plugin.define\" | egrep -A 999 '# https://morningstarsecurity.com/research/whatweb' | sed '1d;$d'"
 OLDCOMMENTS = `#{cmd}`
 
 puts OLDCOMMENTS.yellow

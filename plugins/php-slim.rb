@@ -2,7 +2,7 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# http://www.morningstarsecurity.com/research/whatweb
+# http://morningstarsecurity.com/research/whatweb
 ##
 # Version 0.1 # 2020-04-04 # Marcelo Gimenes
 # Version 0.2 # 2020-04-21 # Marcelo Gimenes
