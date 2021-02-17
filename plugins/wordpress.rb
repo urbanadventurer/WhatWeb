@@ -1436,9 +1436,138 @@ aggressive do
                    ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
                   '5.0.2' =>
                   [['wp-includes/js/dist/edit-post.js', 'b8a4b45d991460d09f63361df8cece80'],
-                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']]
-  ]
-
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.3'=>
+                   [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.6'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.7'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.8'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.9'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.10'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.11'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.1.0'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.5'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.6'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.7'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.8'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.2.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.5'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.6'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.7'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.8'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.9'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.3.0'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'c449b708d25d875ac9266227666fef95']],
+                  '5.3.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.5'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.6'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.0'=>
+                   [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.5.0'=>
+                  [['wp-includes/js/dist/edit-post.js', '9620f0a72d8c82019c7ec8a45dd14f92'],
+                   ['wp-includes/css/editor.css', '1e7b5cfcfc656cad1c8dcd3bb09ee8ca']],
+                  '5.5.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '9620f0a72d8c82019c7ec8a45dd14f92'],
+                   ['wp-includes/css/editor.css', '1e7b5cfcfc656cad1c8dcd3bb09ee8ca']],
+                  '5.5.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '9620f0a72d8c82019c7ec8a45dd14f92'],
+                   ['wp-includes/css/editor.css', '1e7b5cfcfc656cad1c8dcd3bb09ee8ca']],
+                  '5.5.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '9620f0a72d8c82019c7ec8a45dd14f92'],
+                   ['wp-includes/css/editor.css', '1e7b5cfcfc656cad1c8dcd3bb09ee8ca']],
+                  '5.6.0'=>
+                  [['wp-includes/js/dist/edit-post.js', '22419332501f620be339216513af3f5f'],
+                   ['wp-includes/css/editor.css', '6c1db6b35d1f5b39a367f03fbbb6363e']]
+                  ]
+                                 
   v = Version.new('WordPress', versions, @base_uri)
 
   version = v.matches_format
