@@ -13,6 +13,7 @@ authors [
   # Brendan Coles <bcoles@gmail.com>, # v0.4 # 2011-05-25 # Merged php-error plugin and PHP plugin. Added aggressive version detection using PHP credits page. Added detection for "PHP Warning" HTTP header. 
   # Andrew Horton, # v0.5 # 2011-08-23 # 
   # Andrew Horton, # v0.6 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+  # Andrew Horton # v0.7 #2021-01-28 # added file extension detections and another Google Dork
 ]
 version "0.6"
 description "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML. This plugin identifies PHP errors, modules and versions and extracts the local file path and username if present."
@@ -32,7 +33,8 @@ website "http://www.php.net/"
 # Dorks #
 dorks [
 'PHP warning|error "in /home/*.php on line" ext:php -forum',
-'warning|error PHP inurl:error_log "in /home/*.php on line"'
+'warning|error PHP inurl:error_log "in /home/*.php on line"',
+"filetype:php"
 ]
 
 
@@ -52,7 +54,6 @@ matches [
 
 # PHP-Error # Extract username from windows style file path
 { :account=>/<b>(Warning|Fatal error)<\/b>: .* in <b>[A-Z]{1}:\\(Documents and Settings|Users)\\([^<^\\]+)\\[^<]*<\/b> on line <b>[0-9]+<\/b><br \/>/i, :offset=>2 },
-
 
 # HTTP # Server # Version Detection
 { :version=>/[^\r^\n]*PHP\/([^\s^\r^\n]+)/, :search=>"headers[server]" },
@@ -78,8 +79,9 @@ matches [
 # PHP Warning Header
 { :name=>"PHP Warning Header", :regexp=>//, :search=>"headers[php warning]" },
 
+# File Extension
+{ :name=>"File extension", :regexp=>/^(php|phtml|php3|php4|php5|phps)$/, :search=>"uri.extension" }
+
 ]
-
-
 end
 
