@@ -489,6 +489,7 @@ Thank you to the following people who have contributed to WhatWeb.
 + @definity
 + @huntertl
 + Max Davitt (@themaxdavitt)
++ Gregory Boddin (@gboddin)
 
 It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
 

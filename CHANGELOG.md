@@ -6,6 +6,9 @@ Version 0.5.6 - ?, 2021
 ## MISC
 *  Refactored Helper::convert_to_utf8. Droped Ruby 2.0 support (@urbanadventurer)
 
+## PLUGIN UPDATES
+* Drupal (@gboddin)
+
 Version 0.5.5 - January 16, 2021
 
 ## FIXES
