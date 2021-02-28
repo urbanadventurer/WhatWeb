@@ -1,15 +1,36 @@
 Version 0.5.6 - ?, 2021
 
+This release introduces three new search contexts for plugin authors to use:
+
+- uri.path
+- uri.query
+- uri.extension
+
+An example of how to use this is from the PHP plugin.
+
+```
+# File Extension
+{ :name=>"File extension", :regexp=>/^(php|phtml|php3|php4|php5|phps)$/, :search=>"uri.extension" }
+```
+
 ## FIXES
 * #311 - JSON Logging fails... UTF-8 can't modify frozen String (@juananpe)
 
 ## MISC
 * Refactored Helper::convert_to_utf8. Droped Ruby 2.0 support (@urbanadventurer)
-* Added new search contexts for plugins: uri.path, uri.query, uri.extension
+* Added new search contexts for plugins: uri.path, uri.query, uri.extension (@urbanadventurer)
 
 ## PLUGIN UPDATES
+* Adobe-Flash (@urbanadventurer)
+* ASP_NET (@urbanadventurer)
+* ColdFusion (@urbanadventurer)
 * Drupal (@gboddin)
+* Java (@urbanadventurer)
+* Perl (@urbanadventurer)
 * PHP (@urbanadventurer)
+* Python (@urbanadventurer)
+* Ruby (@urbanadventurer)
+
 
 Version 0.5.5 - January 16, 2021
 
