@@ -88,6 +88,9 @@ matches [
 	# Detect ASP.NET ViewState
 	{ :search=>"body", :text=>'<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"' },
 
+	# File Extension
+	{ :name=>"File extension", :regexp=>/^(asp|aspx|ashx)$/, :search=>"uri.extension" }
+
 ]
 
 # Passive #
