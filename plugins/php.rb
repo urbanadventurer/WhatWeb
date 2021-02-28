@@ -13,9 +13,9 @@ authors [
   # Brendan Coles <bcoles@gmail.com>, # v0.4 # 2011-05-25 # Merged php-error plugin and PHP plugin. Added aggressive version detection using PHP credits page. Added detection for "PHP Warning" HTTP header. 
   # Andrew Horton, # v0.5 # 2011-08-23 # 
   # Andrew Horton, # v0.6 # 2016-04-23 # Moved patterns from passive function to matches[]. 
-  # Andrew Horton # v0.7 #2021-01-28 # added file extension detections and another Google Dork
+  # Andrew Horton # v0.7 #2021-02-28 # added file extension detections and another Google Dork
 ]
-version "0.6"
+version "0.7"
 description "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML. This plugin identifies PHP errors, modules and versions and extracts the local file path and username if present."
 website "http://www.php.net/"
 
