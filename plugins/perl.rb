@@ -9,27 +9,29 @@ name "Perl"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2010-10-26
   # v0.2 # Added content-type application/perl match. 
+  "Andrew Horton" # v0.3 #2021-02-28 # added file extension detections and move passive block to matches
+
 ]
-version "0.2"
+version "0.3"
 description "Perl is a highly capable, feature-rich programming language with over 22 years of development."
 website "http://www.perl.org/"
 
 # About 309934 ShodanHQ results for "server: perl/v" @ 2010-10-26
 
-
-# Passive #
-passive do
-	m=[]
+# Matches #
+matches [
 
 	# HTTP Server Header
-	m << { :version=>@headers["server"].to_s.scan(/[^\r^\n]*Perl\/v([^\s^\r^\n]+)/i).flatten } if @headers["server"].to_s =~ /[^\r^\n]*Perl\/v([^\s^\r^\n]+)/i
+	{ :name=>"HTTP Server Header", :version=>/[^\r^\n]*Perl\/v([^\s^\r^\n]+)/i, :search=>"headers[server]" },
 
 	# HTTP Content-Type Header
-	m << { :name=>"application/perl" } if @headers["content-type"] =~ /application\/perl/i
+	{ :name=>"HTTP Content-Type Header", :regexp=>/application\/perl/i, :search=>"headers[content-type]" },
 
-	m
+	# File Extension
+	{ :name=>"File extension", :regexp=>/^(pl)$/, :search=>"uri.extension" }
 
-end
+]
+
 
 end
 
