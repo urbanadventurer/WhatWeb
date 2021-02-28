@@ -15,6 +15,7 @@ authors [
   "@SlivTaMere", # v0.7 # 2016-10-25 # Added "wp-includes" and "wp-json" in href and src detection.. 
   "@anoroozian", # v0.8 # 2016-12-16 # Aggressive version detection matches 4.0 -> 4.0-beta4. Plugin format update. 
   "@ajgon", # v0.9 # 2019-01-19 # @ajgon (Igor Rzegocki) # Updated version detection list from Wordpress 3.9.1 to 5.0.2.
+  "@juananpe", #v1.0 #2021-02-28 # Updated version detection, from 5.0.3 to 5.6.0
 ]
 version "0.9"
 description "WordPress is an opensource blogging system commonly used as a CMS."
