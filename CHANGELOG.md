@@ -20,6 +20,9 @@ An example of how to use this is from the PHP plugin.
 * Refactored Helper::convert_to_utf8. Droped Ruby 2.0 support (@urbanadventurer)
 * Added new search contexts for plugins: uri.path, uri.query, uri.extension (@urbanadventurer)
 
+## NEW PLUGINS
+* Plex Media Server (@urbanadventurer)
+
 ## PLUGIN UPDATES
 * Adobe-Flash (@urbanadventurer)
 * ASP_NET (@urbanadventurer)
