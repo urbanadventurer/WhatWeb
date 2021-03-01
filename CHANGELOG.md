@@ -30,6 +30,7 @@ An example of how to use this is from the PHP plugin.
 * PHP (@urbanadventurer)
 * Python (@urbanadventurer)
 * Ruby (@urbanadventurer)
+* WordPress (@juananpe)
 
 
 Version 0.5.5 - January 16, 2021
