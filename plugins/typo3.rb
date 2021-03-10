@@ -11,7 +11,7 @@ authors [
   "Andrew Horton", # v0.2 # 2012-08-16 # Updated MD5 syntax. In future someone should move the MD5 hash matches into the matches array. 
   "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # v0.3 # 2016-08-19 # Added cookie
   "Janosch Maier @Phylu", # v0.4 # 2018-04-20 # bugfix in regex 
-  "Chad Brigance @definity", # v0.5 # 2021-03-10 # added hashes for versions 9-11
+  "Chad Brigance @definity", # v0.5 # 2021-03-10 # added more passive detection and hashes for versions 9-11
 ]
 version "0.5"
 description "TYPO3 is a free Open Source content management system for enterprise purposes on the web and in intranets. It offers full flexibility and extendability while featuring an accomplished set of ready-made interfaces, functions and modules."
