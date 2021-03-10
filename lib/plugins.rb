@@ -55,6 +55,8 @@ class Plugin
     p.instance_eval(&block)
     p.startup
     # TODO: make sure required attributes are set
+
+    # Freeze the plugin attributes so they cannot be self-modified by a plugin
     Plugin.attributes.each { |symbol| p.instance_variable_get("@#{symbol}").freeze }
     Plugin.registered_plugins[p.name] = p
   end
@@ -109,6 +111,13 @@ class ScanContext
       case match[:search]
       when 'all'
         search_context = target.raw_response
+      when 'uri.path'
+        search_context = target.uri.path
+      when 'uri.query'
+        search_context = target.uri.query
+      when 'uri.extension'
+        search_context = target.uri.path.scan(/\.(\w{3,6})$/).flatten.first
+        return r if search_context.nil?
       when 'headers'
         search_context = target.raw_headers
       when /headers\[(.*)\]/

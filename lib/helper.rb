@@ -35,17 +35,18 @@ module Helper
     end
   end
 
-  # converts a string to UTF-8
+  # Converts a string to UTF-8
   def self.convert_to_utf8(str)
-    if defined?(String.new.scrub) # Defined in Ruby 2.1
-      str.force_encoding("UTF-8").scrub
-    else # Ruby 2.0
-      str.encode('UTF-16', 'UTF-8', invalid: :replace, replace: '').encode('UTF-8')
+    begin
+      if (str.frozen?)
+        str.dup.force_encoding("UTF-8").scrub
+      else
+        str.force_encoding("UTF-8").scrub
+      end
+    rescue => e
+      raise "Can't convert to UTF-8 #{e}"
     end
-  rescue => e
-    raise "Can't convert to UTF-8 #{e}"
   end
-
 
   #
   # Takes an integer of certainty (between 1 - 100)

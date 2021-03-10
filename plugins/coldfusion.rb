@@ -2,16 +2,17 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# https://www.morningstarsecurity.com/research/whatweb
+# https://morningstarsecurity.com/research/whatweb
 ##
 Plugin.define do
 name "ColdFusion"
 authors [
-  "Brendan Coles <bcoles@gmail.com>", # 2010-08-15
+  "Brendan Coles <bcoles@gmail.com>", # v0.1 # 2010-08-15
   # v0.2 # 2011-04-25 # Added cookie matches. 
   # v0.3 # 2012-02-05 # Added header match. Updated matches. Updated version detection.. 
+  "Andrew Horton @urbanadventurer", # v0.4 # 2021-02-28 # Added file extensions
 ]
-version "0.3"
+version "0.4"
 description "Adobe ColdFusion application server and software enables developers to rapidly build, deploy, and maintain robust Internet applications for the enterprise."
 website "http://www.adobe.com/products/coldfusion/"
 
@@ -27,8 +28,6 @@ website "http://www.adobe.com/products/coldfusion/"
 dorks [
 'intitle:"ColdFusion Administrator Login"'
 ]
-
-
 
 # Matches #
 matches [
@@ -65,6 +64,9 @@ matches [
 
 # Set-Cookie # /CFAUTHORIZATION_cfadmin=/
 { :search=>"headers[set-cookie]", :regexp=>/CFAUTHORIZATION_cfadmin=/ },
+
+# File Extension
+{ :name=>"File extension", :regexp=>/^(cfm|cfc)$/, :search=>"uri.extension" }
 
 ]
 

@@ -2,7 +2,7 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# https://www.morningstarsecurity.com/research/whatweb
+# https://morningstarsecurity.com/research/whatweb
 ##
 Plugin.define do
 name "Ruby"
@@ -10,8 +10,9 @@ authors [
   "Brendan Coles <bcoles@gmail.com>", # 2010-10-26
   # v0.2 # 2011-05-24 # Added WEBrick detection. 
   "Andrew Horton", # v0.3 # 2016-04-23 # Moved patterns from passive function to matches[]. 
+  # "Andrew Horton", # v0.4 # 2021-02-28 # Added File Extensions
 ]
-version "0.3"
+version "0.4"
 description "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write."
 website "http://www.ruby-lang.org/"
 
@@ -35,6 +36,9 @@ matches [
 
 	# WEBrick Server # Ruby Version Detection
 	{ :version=>/^WEBrick\/[\d\.]+ \(Ruby\/([\d\.]+)\/[\d]{4}-[\d]{2}-[\d]{2}\)/, :search=>"headers[server]" },
+
+	# File Extension
+	{ :name=>"File extension", :regexp=>/^(rb|rhtml)$/, :search=>"uri.extension" }
 
 ]
 

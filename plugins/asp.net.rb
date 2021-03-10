@@ -2,7 +2,7 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# https://www.morningstarsecurity.com/research/whatweb
+# https://morningstarsecurity.com/research/whatweb
 ##
 Plugin.define do
 name "ASP_NET"
@@ -14,10 +14,11 @@ authors [
   # v0.5 # 2014-06-12 # Added Detailed errors and ViewState Encrypted. . 
   "Andrew Horton", # v0.6 # 2016-04-18 # Replaced passive function with match for:. 1. x-powered-by HTTP header. 2. X-AspNet-Version HTTP header. 3. AnonymousIdentificationModule. 
   "Bhavin Senjaliya", # v0.7 # 2016-08-19 # Add 4 cookies. 
-  "Andrew Horton", # v0.8 # 2019-12-10 # Add __VIEWSTATE detection.
+#  "Andrew Horton", # v0.8 # 2019-12-10 # Add __VIEWSTATE detection.
+#  "Andrew Horton", # v0.9 # 2021-02-28 # Add file extensions
 
 ]
-version "0.8"
+version "0.9"
 description "ASP.NET is a free web framework that enables great Web applications. Used by millions of developers, it runs some of the biggest sites in the world."
 website "https://www.asp.net/"
 
@@ -86,6 +87,9 @@ matches [
 
 	# Detect ASP.NET ViewState
 	{ :search=>"body", :text=>'<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"' },
+
+	# File Extension
+	{ :name=>"File extension", :regexp=>/^(asp|aspx|ashx)$/, :search=>"uri.extension" }
 
 ]
 

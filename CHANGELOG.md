@@ -1,12 +1,60 @@
-Version 0.5.5 - ? 2021
+Version 0.5.6 - ?, 2021
+
+This release introduces three new search contexts for plugin authors to use:
+
+- uri.path
+- uri.query
+- uri.extension
+
+An example of how to use this is from the PHP plugin.
+
+```
+# File Extension
+{ :name=>"File extension", :regexp=>/^(php|phtml|php3|php4|php5|phps)$/, :search=>"uri.extension" }
+```
+
+## FIXES
+* #311 - JSON Logging fails... UTF-8 can't modify frozen String (@juananpe)
+
+## MISC
+* Refactored Helper::convert_to_utf8. Droped Ruby 2.0 support (@urbanadventurer)
+* Added new search contexts for plugins: uri.path, uri.query, uri.extension (@urbanadventurer)
+
+## NEW PLUGINS
+* Plex Media Server (@urbanadventurer)
+
+## PLUGIN UPDATES
+* Adobe-Flash (@urbanadventurer)
+* ASP_NET (@urbanadventurer)
+* ColdFusion (@urbanadventurer)
+* Drupal (@gboddin)
+* Java (@urbanadventurer)
+* Perl (@urbanadventurer)
+* PHP (@urbanadventurer)
+* Python (@urbanadventurer)
+* Ruby (@urbanadventurer)
+* WordPress (@juananpe)
+
+
+Version 0.5.5 - January 16, 2021
+
+## FIXES
+* #358 Fixed escape_for_sql method (@juananpe)
 
 ## NEW PLUGINS
 * Apache Flink (@juananpe)
+* Dell-OpenManage-Switch-Administrator (@themaxdavitt)
+* FLIR AX8 (@urbanadventurer)
+* Huginn (@urbanadventurer)
+* OpenResty (@urbanadventurer)
+* Telerik UI (@definity)
+* Umbraco (@definity / @ChadBrigance
 * VMware Horizon (@themaxdavitt)
 
 ## PLUGIN UPDATES
 * Joomla (@juananpe)
 * phpMyAdmin (@juananpe)
+* Microsoft IIS (@themaxdavitt)
 
 
 Version 0.5.4 - December 14, 2020

@@ -1,17 +1,17 @@
-[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.5.5-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1817-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
+[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.5.5-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1824-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
 
-![logo](https://www.morningstarsecurity.com/wp-content/uploads/2019/02/WhatWeb-Logo-800px.png "WhatWeb Logo")
+![logo](https://morningstarsecurity.com/wp-content/uploads/2019/02/WhatWeb-Logo-800px.png "WhatWeb Logo")
 
 # WhatWeb - Next generation web scanner
 Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
-Latest Release: v0.5.5. ?, 2021
+Latest Release: v0.5.5. January 16, 2021
 
 License: GPLv2
 
 This product is subject to the terms detailed in the license agreement. For more information about WhatWeb visit:
 
-Homepage: https://www.morningstarsecurity.com/research/whatweb
+Homepage: https://morningstarsecurity.com/research/whatweb
 
 Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
 
@@ -80,7 +80,7 @@ $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
 WhatWeb - Next generation web scanner version 0.5.5.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
-Homepage: https://www.morningstarsecurity.com/research/whatweb
+Homepage: https://morningstarsecurity.com/research/whatweb
 
 Usage: whatweb [options] <URLs>
 
@@ -392,7 +392,7 @@ Browse the wiki for more documentation and advanced usage techniques.
 
 ## Release History
 
-- Version 0.5.5 Released ? 2021
+- Version 0.5.5 Released January 16th, 2021
 - Version 0.5.4 Released December 14th, 2020
 - Version 0.5.3 Released October 1st, 2020
 - Version 0.5.2 Released June 9th, 2020
@@ -489,6 +489,7 @@ Thank you to the following people who have contributed to WhatWeb.
 + @definity
 + @huntertl
 + Max Davitt (@themaxdavitt)
++ Gregory Boddin (@gboddin)
 
 It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
 

@@ -2,7 +2,7 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# https://www.morningstarsecurity.com/research/whatweb
+# https://morningstarsecurity.com/research/whatweb
 ##
 Plugin.define do
 name "WordPress"
@@ -15,6 +15,7 @@ authors [
   "@SlivTaMere", # v0.7 # 2016-10-25 # Added "wp-includes" and "wp-json" in href and src detection.. 
   "@anoroozian", # v0.8 # 2016-12-16 # Aggressive version detection matches 4.0 -> 4.0-beta4. Plugin format update. 
   "@ajgon", # v0.9 # 2019-01-19 # @ajgon (Igor Rzegocki) # Updated version detection list from Wordpress 3.9.1 to 5.0.2.
+  "@juananpe", #v1.0 #2021-02-28 # Updated version detection, from 5.0.3 to 5.6.0
 ]
 version "0.9"
 description "WordPress is an opensource blogging system commonly used as a CMS."
@@ -1436,9 +1437,138 @@ aggressive do
                    ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
                   '5.0.2' =>
                   [['wp-includes/js/dist/edit-post.js', 'b8a4b45d991460d09f63361df8cece80'],
-                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']]
-  ]
-
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.3'=>
+                   [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.6'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.7'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.8'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.9'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.10'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.0.11'=>
+                  [['wp-includes/js/dist/edit-post.js', '3a8f886d748dd1bc6390f29b8b1cc909'],
+                   ['wp-includes/css/editor.css', '049a4b5288c49f627f02b150bc28a8be']],
+                  '5.1.0'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.5'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.6'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.7'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.1.8'=>
+                  [['wp-includes/js/dist/edit-post.js', '6205cc50d16c3911195c4ba650eae2a5'],
+                   ['wp-includes/css/editor.css', '8f9006245f6630fe4dd7c0768668ea6d']],
+                  '5.2.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.5'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.6'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.7'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.8'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.2.9'=>
+                  [['wp-includes/js/dist/edit-post.js', '4d75a79aec7e44bd8e9ecb609af8ef0b'],
+                   ['wp-includes/css/editor.css', '517db4d19d1e3484a0339dc765cd3902']],
+                  '5.3.0'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'c449b708d25d875ac9266227666fef95']],
+                  '5.3.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.5'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.3.6'=>
+                  [['wp-includes/js/dist/edit-post.js', '401d4d2ca31482d7008b546483ce4ed7'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.0'=>
+                   [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.4.4'=>
+                  [['wp-includes/js/dist/edit-post.js', '7ac36a48ae712d480e11fdc9a45b193c'],
+                   ['wp-includes/css/editor.css', 'b440cfaf53dc78b60e479c8e43df12d1']],
+                  '5.5.0'=>
+                  [['wp-includes/js/dist/edit-post.js', '9620f0a72d8c82019c7ec8a45dd14f92'],
+                   ['wp-includes/css/editor.css', '1e7b5cfcfc656cad1c8dcd3bb09ee8ca']],
+                  '5.5.1'=>
+                  [['wp-includes/js/dist/edit-post.js', '9620f0a72d8c82019c7ec8a45dd14f92'],
+                   ['wp-includes/css/editor.css', '1e7b5cfcfc656cad1c8dcd3bb09ee8ca']],
+                  '5.5.2'=>
+                  [['wp-includes/js/dist/edit-post.js', '9620f0a72d8c82019c7ec8a45dd14f92'],
+                   ['wp-includes/css/editor.css', '1e7b5cfcfc656cad1c8dcd3bb09ee8ca']],
+                  '5.5.3'=>
+                  [['wp-includes/js/dist/edit-post.js', '9620f0a72d8c82019c7ec8a45dd14f92'],
+                   ['wp-includes/css/editor.css', '1e7b5cfcfc656cad1c8dcd3bb09ee8ca']],
+                  '5.6.0'=>
+                  [['wp-includes/js/dist/edit-post.js', '22419332501f620be339216513af3f5f'],
+                   ['wp-includes/css/editor.css', '6c1db6b35d1f5b39a367f03fbbb6363e']]
+                  ]
+                                 
   v = Version.new('WordPress', versions, @base_uri)
 
   version = v.matches_format

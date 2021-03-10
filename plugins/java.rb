@@ -2,15 +2,16 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# https://www.morningstarsecurity.com/research/whatweb
+# https://morningstarsecurity.com/research/whatweb
 ##
 Plugin.define do
 name "Java"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-01-28
   # v0.2 # 2011-03-06 # Updated OS detection. 
+  "Andrew Horton", # v0.3 # 2021-02-28 # Added File Extension, convereted passive block to matches array
 ]
-version "0.2"
+version "0.3"
 description "Java allows you to play online games, chat with people around the world, calculate your mortgage interest, and view images in 3D, just to name a few. It's also integral to the intranet applications and other e-business solutions that are the foundation of corporate computing."
 website "http://www.java.com/"
 
@@ -22,45 +23,37 @@ website "http://www.java.com/"
 #	118 for "x-powered-by" JSP JRE
 #	13950 for server JAVA
 
-
-
-# Passive #
-passive do
-	m=[]
+# Matches #
+matches [
 
 	# JSESSIONID Cookie
-	m << { :name=>"JSESSIONID Cookie" } if @headers["set-cookie"] =~ /JSESSIONID=[^;]{0,32};[\s]?path=\//i
+	{ :name=>"JSESSIONID Cookie", :search=>"headers[set-cookie]", :regexp => /JSESSIONID=[^;]{0,32};[\s]?path=\//i},
 
 	# X-Powered-By # JSP Version Detection
-	m << { :version=>@headers['x-powered-by'].scan(/JSP\/([\d\.]+)/) } if @headers['x-powered-by'] =~ /JSP\/([\d\.]+)/
+	{ :name=>"X-Powered-By # JSP Version Detection", :search=>"headers[x-powered-by]", :version => /JSP\/([\d\.]+)/},
+
 	# X-Powered-By # Servlet Version Detection
-	m << { :string=>@headers['x-powered-by'].scan(/(Servlet\/[\d\.]+)/i) } if @headers['x-powered-by'] =~ /(Servlet\/[\d\.]+)/i
+	{ :name=>"X-Powered-By # Servlet Version Detection", :search=>"headers[x-powered-by]", :string => /(Servlet\/[\d\.]+)/i},
+
 	# X-Powered-By # JRE Version Detection
-	m << { :string=>@headers['x-powered-by'].scan(/(JRE\/[\d\.\-\_]+)/) } if @headers['x-powered-by'] =~ /(JRE\/[\d\.\-\_]+)/
+	{ :name=>"X-Powered-By # JRE Version Detection", :search=>"headers[x-powered-by]", :string => /(JRE\/[\d\.\-\_]+)/},
 
 	# Server # Version Detection
-	m << { :version=>@headers['server'].scan(/java\/([\d\.\-\_]+)/) } if @headers['server'] =~ /java\/([\d\.\-\_]+)/
+	{ :name=>"Server # Version Detection", :search=>"headers[server]", :version => /java\/([\d\.\-\_]+)/},
+
 	# Server # JDK Version Detection
-	m << { :string=>@headers['server'].scan(/(JDK [\d\.\-\_]+)/) } if @headers['server'] =~ /(JDK [\d\.\-\_]+)/
+	{ :name=>"Server # Version Detection", :search=>"headers[server]", :string => /(JDK [\d\.\-\_]+)/},
 
 	# Servlet-Engine
-	if @headers['servlet-engine'] =~ /\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/
+	{ :name=>"Servlet-Engine # JSP Version Detection", :search=>"headers[servlet-engine]", :string => /\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/, :offset=>0},
+	{ :name=>"Servlet-Engine # Servlet Version Detection", :search=>"headers[servlet-engine]", :string => /\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/, :offset=>1},
+	{ :name=>"Servlet-Engine # Version Detection", :search=>"headers[servlet-engine]", :version => /\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/, :offset=>2},
+	{ :name=>"Servlet-Engine # OS Detection", :search=>"headers[servlet-engine]", :os => /\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/, :offset=>3},
 
-		# JSP Version Detection
-		m << { :string=>@headers['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][0] }
-		# Servlet Version Detection
-		m << { :string=>@headers['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][1] }
-		# Version Detection
-		m << { :version=>@headers['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][2] }
-		# OS Detection
-		m << { :os=>@headers['servlet-engine'].scan(/\((.*?); (.*?); Java (.*?); (.*?); java.vendor=[^\)]{0,50}\)/)[0][3] }
+	# File Extension
+	{ :name=>"File extension", :regexp=>/^(jsp|jpx|wss|do)$/, :search=>"uri.extension" }
+]
 
-	end
-
-	# Return passive matches
-	m
-
-end
 
 end
 

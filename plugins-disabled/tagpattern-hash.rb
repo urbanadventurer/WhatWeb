@@ -2,7 +2,7 @@
 # This file is part of WhatWeb and may be subject to
 # redistribution and commercial restrictions. Please see the WhatWeb
 # web site for more information on licensing and terms of use.
-# https://www.morningstarsecurity.com/research/whatweb
+# https://morningstarsecurity.com/research/whatweb
 ##
 Plugin.define do
 name "Tag-Hash"
@@ -15,7 +15,7 @@ description "Fuzzy pattern matching. Analyze the structure of HTML tags. Turns t
 # div & span has found nothing yet
 # this produces nothing useful for just div or just span
 
-# inspired by this work - http://www.aharef.info/static/htmlgraph/?url=https://www.morningstarsecurity.com/
+# inspired by this work - http://www.aharef.info/static/htmlgraph/?url=https://morningstarsecurity.com/
 
 
 # a method to keep the pattern, yet encode to reduce size would be..
