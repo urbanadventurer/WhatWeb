@@ -33,6 +33,7 @@ An example of how to use this is from the PHP plugin.
 * PHP (@urbanadventurer)
 * Python (@urbanadventurer)
 * Ruby (@urbanadventurer)
+* TYPO3 (@definity)
 * WordPress (@juananpe)
 
 
