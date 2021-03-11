@@ -5,7 +5,7 @@
 # https://morningstarsecurity.com/research/whatweb
 ##
 Plugin.define do
-name "Telerik UI"
+name "Telerik-UI"
 authors [
   "Chad Brigance @ChadBrigance" # 2021-01-13
 ]
