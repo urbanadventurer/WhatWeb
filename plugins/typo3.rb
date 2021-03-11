@@ -27,8 +27,9 @@ matches [
 
 # HTML Comment
 { :text=>'<!--TYPO3SEARCH_end-->', :certainty=>75 },
-{ :text=>'This website is powered by TYPO3', :certainty=>75 },
+{ :name=>"Powered by HTML comment", :regexp=>/<!--\W+This website is powered by TYPO3/ },
 
+# Header Checks
 { :search => "headers[set-cookie]", :regexp => /^fe_typo_user/, :name=>"fe_typo_user cookie" },
 { :search => "headers[x-typo3-parsetime]", :regexp => /\d+ms/, :name=>"X-TYPO3-Parsetime header" },
 
