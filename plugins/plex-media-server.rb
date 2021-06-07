@@ -19,8 +19,8 @@ Plugin.define do
 	matches [
 
 	# http headers on ports 32400 and 32401
-	{ :name => "X-Plex-Protocol header", :text => "", :search=>"header[X-Plex-Protocol]" },
-	{ :name => "X-Plex-Content-Original-Length header", :text => "", :search=>"header[X-Plex-Content-Original-Length]" },
+	{ :name => "X-Plex-Protocol header", :text => "", :search=>"headers[X-Plex-Protocol]" },
+	{ :name => "X-Plex-Content-Original-Length header", :text => "", :search=>"headers[X-Plex-Content-Original-Length]" },
 
 	# XML media tag on port 32600
 	{ :name => "XML MediaGrabber tag", :text => '<MediaGrabber identifier="tv.plex.dvblex"'},
