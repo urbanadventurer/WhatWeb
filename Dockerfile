@@ -1,10 +1,12 @@
-FROM ruby:2.5
+FROM ruby:alpine
+WORKDIR /root/
 
-WORKDIR /usr/src/app
+ADD lib ./lib/
+ADD plugins ./plugins/
+ADD my-plugins ./my-plugins/
+ADD Gemfile ./
+ADD whatweb ./
 
-ADD . ./
 RUN bundle install
-RUN make install
 
 ENTRYPOINT ["./whatweb"]
-CMD ["--help"]
