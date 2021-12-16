@@ -34,6 +34,7 @@
 
 $LOAD_PATH.unshift(File.join(File.expand_path(__dir__)), '.')
 
+require 'bundler/setup'
 require 'lib/whatweb'
 
 #
