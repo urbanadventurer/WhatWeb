@@ -1,7 +1,6 @@
 Version 0.5.6 - ?, 2021
 
 This release introduces three new search contexts for plugin authors to use:
-
 - uri.path
 - uri.query
 - uri.extension
