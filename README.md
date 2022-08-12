@@ -357,6 +357,11 @@ If you are scanning ranges of IP addresses, it is much more efficient to use a p
 
 Character set detection, with the Charset plugin dramatically decreases performance by requiring more CPU. This is required by JSON and MongoDB logging.
 
+## Docker approach
+```
+docker build -t whatweb .
+docker run --rm -it whatweb https://example.com
+```
 
 ## Optional Dependencies
 
