@@ -1,8 +1,9 @@
 [![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.5.5-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1824-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
 
-![logo](https://morningstarsecurity.com/wp-content/uploads/2019/02/WhatWeb-Logo-800px.png "WhatWeb Logo")
+![logo](https://morningstarsecurity.com/wp-content/uploads/2019/02/WhatWeb-Logo-800px.png 'WhatWeb Logo')
 
 # WhatWeb - Next generation web scanner
+
 Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
 Latest Release: v0.5.5. January 16, 2021
@@ -15,22 +16,22 @@ Homepage: https://morningstarsecurity.com/research/whatweb
 
 Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
 
-If you have any questions, comments or concerns regarding WhatWeb, please consult the documentation prior to contacting one of the developers. Your feedback is always welcome. 
+If you have any questions, comments or concerns regarding WhatWeb, please consult the documentation prior to contacting one of the developers. Your feedback is always welcome.
 
-##  Contents
+## Contents
 
-* About WhatWeb
-* Example Usage
-* Usage 
-* Logging & Output
-* Plugins
-* Aggression
-* Performance & Stability
-* Optional Dependencies
-* Writing Plugins
-* Updates & Additional Information
-* Release History
-* Credits
+- About WhatWeb
+- Example Usage
+- Usage
+- Logging & Output
+- Plugins
+- Aggression
+- Performance & Stability
+- Optional Dependencies
+- Writing Plugins
+- Updates & Additional Information
+- Release History
+- Credits
 
 ## About WhatWeb
 
@@ -40,21 +41,21 @@ WhatWeb can be stealthy and fast, or thorough but slow. WhatWeb supports an aggr
 
 Most WhatWeb plugins are thorough and recognise a range of cues from subtle to obvious. For example, most WordPress websites can be identified by the meta HTML tag, e.g. '<meta name="generator" content="WordPress 2.6.5">', but a minority of WordPress websites remove this identifying tag but this does not thwart WhatWeb. The WordPress WhatWeb plugin has over 15 tests, which include checking the favicon, default installation files, login pages, and checking for "/wp-content/" within relative links.
 
-
 ### Features
-* Over 1800 plugins
-* Control the trade off between speed/stealth and reliability
-* Performance tuning. Control how many websites to scan concurrently.
-* Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB, ElasticSearch, SQL.
-* Proxy support including TOR
-* Custom HTTP headers
-* Basic HTTP authentication
-* Control over webpage redirection
-* IP address ranges
-* Fuzzy matching
-* Result certainty awareness
-* Custom plugins defined on the command line
-* IDN (International Domain Name) support
+
+- Over 1800 plugins
+- Control the trade off between speed/stealth and reliability
+- Performance tuning. Control how many websites to scan concurrently.
+- Multiple log formats: Brief (greppable), Verbose (human readable), XML, JSON, MagicTree, RubyObject, MongoDB, ElasticSearch, SQL.
+- Proxy support including TOR
+- Custom HTTP headers
+- Basic HTTP authentication
+- Control over webpage redirection
+- IP address ranges
+- Fuzzy matching
+- Result certainty awareness
+- Custom plugins defined on the command line
+- IDN (International Domain Name) support
 
 ## Example Usage
 
@@ -67,10 +68,11 @@ https://www.reddit.com/ [200 OK] Cookies[edgebucket,eu_cookie_v2,loid,rabt,rseor
 ```
 
 ## Usage
+
 ```
 
-.$$$     $.                                   .$$$     $.         
-$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$. 
+.$$$     $.                                   .$$$     $.
+$$$$     $$. .$$$  $$$ .$$$$$$.  .$$$$$$$$$$. $$$$     $$. .$$$$$$$. .$$$$$$.
 $ $$     $$$ $ $$  $$$ $ $$$$$$. $$$$$ $$$$$$ $ $$     $$$ $ $$   $$ $ $$$$$$.
 $ `$     $$$ $ `$  $$$ $ `$  $$$ $$' $ `$ `$$ $ `$     $$$ $ `$      $ `$  $$$'
 $. $     $$$ $. $$$$$$ $. $$$$$$ `$  $. $  :' $. $     $$$ $. $$$$   $. $$$$$.
@@ -95,7 +97,7 @@ TARGET MODIFICATION:
   --url-prefix          Add a prefix to target URLs.
   --url-suffix          Add a suffix to target URLs.
   --url-pattern         Insert the targets into a URL. Requires --input-file,
-                        eg. www.example.com/%insert%/robots.txt 
+                        eg. www.example.com/%insert%/robots.txt
 
 AGGRESSION:
   The aggression level controls the trade-off between speed/stealth and
@@ -134,7 +136,7 @@ PLUGINS:
                                 Optionally search with keywords in a comma
                                 delimited list.
   --search-plugins=STRING       Search plugins for a keyword.
-  --plugins, -p=LIST  Select plugins. LIST is a comma delimited set of 
+  --plugins, -p=LIST  Select plugins. LIST is a comma delimited set of
                       selected plugins. Default is all.
                       Each element can be a directory, file or plugin name and
                       can optionally have a modifier, eg. + or -
@@ -143,7 +145,7 @@ PLUGINS:
                       ./plugins-disabled,-md5
                       -p + is a shortcut for -p +plugins-disabled.
 
-  --grep, -g=STRING|REGEXP      Search for STRING or a Regular Expression. Shows 
+  --grep, -g=STRING|REGEXP      Search for STRING or a Regular Expression. Shows
                                 only the results that match.
                                 Examples: --grep "hello"
                                 --grep "/he[l]*o/"
@@ -178,10 +180,10 @@ LOGGING:
   --log-mongo-collection  Name of the MongoDB collection. Default: whatweb.
   --log-mongo-host        MongoDB hostname or IP address. Default: 0.0.0.0.
   --log-mongo-username    MongoDB username. Default: nil.
-  --log-mongo-password    MongoDB password. Default: nil.  
-  --log-elastic-index     Name of the index to store results. Default: whatweb 
+  --log-mongo-password    MongoDB password. Default: nil.
+  --log-elastic-index     Name of the index to store results. Default: whatweb
   --log-elastic-host      Host:port of the elastic http interface. Default: 127.0.0.1:9200
-  
+
 PERFORMANCE & STABILITY:
   --max-threads, -t       Number of simultaneous threads. Default: 25.
   --open-timeout          Time in seconds. Default: 15.
@@ -215,34 +217,36 @@ EXAMPLE USAGE:
 ## Logging & Output
 
 The following types of logging are supported:
-* --log-brief=FILE    Brief, one-line, greppable format
-* --log-verbose=FILE  Verbose
-* --log-xml=FILE    XML format. XSL stylesheet is provided
-* --log-json=FILE   JSON format
-* --log-json-verbose=FILE JSON verbose format
-* --log-magictree=FILE  MagicTree XML format
-* --log-object=FILE Ruby object inspection format
-* --log-mongo-database  Name of the MongoDB database
-* --log-mongo-collection  Name of the MongoDB collection. Default: whatweb
-* --log-mongo-host  MongoDB hostname or IP address. Default: 0.0.0.0
-* --log-mongo-username  MongoDB username. Default: nil
-* --log-mongo-password  MongoDB password. Default: nil
-* --log-elastic-index   Name of the index to store results. Default: whatweb 
-* --log-elastic-host    Host:port of the elastic http interface. Default: 127.0.0.1:9200
-* --log-errors=FILE Log errors. This is usually printed to the screen in red.
+
+- --log-brief=FILE Brief, one-line, greppable format
+- --log-verbose=FILE Verbose
+- --log-xml=FILE XML format. XSL stylesheet is provided
+- --log-json=FILE JSON format
+- --log-json-verbose=FILE JSON verbose format
+- --log-magictree=FILE MagicTree XML format
+- --log-object=FILE Ruby object inspection format
+- --log-mongo-database Name of the MongoDB database
+- --log-mongo-collection Name of the MongoDB collection. Default: whatweb
+- --log-mongo-host MongoDB hostname or IP address. Default: 0.0.0.0
+- --log-mongo-username MongoDB username. Default: nil
+- --log-mongo-password MongoDB password. Default: nil
+- --log-elastic-index Name of the index to store results. Default: whatweb
+- --log-elastic-host Host:port of the elastic http interface. Default: 127.0.0.1:9200
+- --log-errors=FILE Log errors. This is usually printed to the screen in red.
 
 You can output to multiple logs simultaneously by specifying multiple command line logging options. Advanced users who want SQL output should read the source code to see unsupported features.
 
 ## Plugins
 
 Matches are made with:
-* Text strings (case sensitive)
-* Regular expressions
-* Google Hack Database queries (limited set of keywords)
-* MD5 hashes
-* URL recognition
-* HTML tag patterns
-* Custom ruby code for passive and aggressive operations
+
+- Text strings (case sensitive)
+- Regular expressions
+- Google Hack Database queries (limited set of keywords)
+- MD5 hashes
+- URL recognition
+- HTML tag patterns
+- Custom ruby code for passive and aggressive operations
 
 To list the plugins supported:
 
@@ -261,6 +265,7 @@ To list the plugins supported:
     ... (truncated)
 
 ### Search Plugins
+
 To view more detail about a plugin or search plugins for a keyword:
 
     $ ./whatweb -I phpBB
@@ -270,23 +275,24 @@ To view more detail about a plugin or search plugins for a keyword:
     ================================================================================
     Plugin:         phpBB
     --------------------------------------------------------------------------------
-    Description:    phpBB is a free forum 
+    Description:    phpBB is a free forum
     Website:        http://phpbb.org/
-    
+
     Author:         Andrew Horton
     Version:        0.3
-    
+
     Features:       [Yes]  Pattern Matching (7)
                     [Yes]  Version detection from pattern matching
                     [Yes]  Function for passive matches
                     [Yes]  Function for aggressive matches
                     [Yes]  Google Dorks (1)
-    
+
     Google Dorks:
     [1] "Powered by phpBB"
     ================================================================================
 
 ### Plugin Selection
+
 All plugins are loaded by default.
 
 Plugins can be selected by directories, files or plugin names as a comma delimited list with the -p or --plugin command line option.
@@ -295,23 +301,22 @@ Each list item may have a modifier: + adds to the full set, - removes from the f
 
 ### Examples
 
-* --plugins +plugins-disabled,-foobar
-* --plugins +/tmp/moo.rb
-* --plugins foobar (only select foobar)
-* -p title,md5,+./plugins-disabled/
-* -p ./plugins-disabled,-md5
+- --plugins +plugins-disabled,-foobar
+- --plugins +/tmp/moo.rb
+- --plugins foobar (only select foobar)
+- -p title,md5,+./plugins-disabled/
+- -p ./plugins-disabled,-md5
 
 The --dorks <plugin name> command line option returns google dorks for the selected plugin. For example, --dorks wordpress returns "is proudly powered by WordPress"
 
 The --grep, -g command line option searches the target page for the selected string and returns a match in a plugin called Grep if it is found.
-
 
 ## Aggression
 
 WhatWeb features several levels of aggression. By default the aggression level is set to 1 (stealthy) which sends a single HTTP GET request and also follows redirects.
 
     --aggression, -a
-    
+
       1. Stealthy Makes one HTTP request per target. Also follows redirects.
         2. Unused
         3. Aggressive Can make a handful of HTTP requests per target. This triggers
@@ -338,16 +343,15 @@ Note the use of the -p argument to select only the phpBB plugin. It is advisable
 
 WhatWeb has no caching so if you use aggressive plugins on redirecting URLs you may fetch the same files multiple times.
 
-
 ## Performance & Stability
 
 WhatWeb features several options to increase performance and stability.
 
-*  --max-threads, -t     Number of simultaneous threads. Default: 25.
-*  --open-timeout        Time in seconds. Default: 15
-*  --read-timeout        Time in seconds. Default: 30
-*  --wait=SECONDS        Wait SECONDS between connections
-                        This is useful when using a single thread.
+- --max-threads, -t Number of simultaneous threads. Default: 25.
+- --open-timeout Time in seconds. Default: 15
+- --read-timeout Time in seconds. Default: 30
+- --wait=SECONDS Wait SECONDS between connections
+  This is useful when using a single thread.
 
 The --wait and --max-threads commands can be used to assist in IDS evasion.
 
@@ -357,38 +361,37 @@ If you are scanning ranges of IP addresses, it is much more efficient to use a p
 
 Character set detection, with the Charset plugin dramatically decreases performance by requiring more CPU. This is required by JSON and MongoDB logging.
 
-
 ## Optional Dependencies
 
 To enable MongoDB logging install the mongo gem.
-    gem install mongo
+gem install mongo
 
 To enable character set detection and MongoDB logging install the rchardet gem.
-  gem install rchardet
-  cp plugins-disabled/charset.rb my-plugins/
+gem install rchardet
+cp plugins-disabled/charset.rb my-plugins/
 
 ## Writing Plugins
 
-Plugins are easy to write. Start by going through the plugin tutorials in the *my-plugins/* folder.
+Plugins are easy to write. Start by going through the plugin tutorials in the _my-plugins/_ folder.
 
-* [Plugin Tutorials](https://github.com/urbanadventurer/WhatWeb/tree/master/my-plugins).
+- [Plugin Tutorials](https://github.com/urbanadventurer/WhatWeb/tree/master/my-plugins).
 
 An overview of the plugin tutorials is here. [plugin-tutorials.txt](https://github.com/urbanadventurer/WhatWeb/tree/master/plugin-development/plugin-tutorials.txt)
 
-After progressing through the tutorials read through the Development section of the [wiki](https://github.com/urbanadventurer/WhatWeb/wiki/). 
+After progressing through the tutorials read through the Development section of the [wiki](https://github.com/urbanadventurer/WhatWeb/wiki/).
 
-* [Sources for Plugin Writing](https://github.com/urbanadventurer/WhatWeb/wiki/Sources-for-Plugin-Writing)
-* [How to Develop WhatWeb Plugins (not up to date)](https://github.com/urbanadventurer/WhatWeb/wiki/How-to-develop-WhatWeb-plugins)
+- [Sources for Plugin Writing](https://github.com/urbanadventurer/WhatWeb/wiki/Sources-for-Plugin-Writing)
+- [How to Develop WhatWeb Plugins (not up to date)](https://github.com/urbanadventurer/WhatWeb/wiki/How-to-develop-WhatWeb-plugins)
 
 ## Updates & Additional Information
 
 The WhatWeb development build features regular updates.
 
-* Check the development branches for unreleased updates.
+- Check the development branches for unreleased updates.
 
 Browse the wiki for more documentation and advanced usage techniques.
 
-* Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
+- Wiki: https://github.com/urbanadventurer/WhatWeb/wiki/
 
 ## Release History
 
@@ -407,89 +410,89 @@ Browse the wiki for more documentation and advanced usage techniques.
 - Version 0.4.3 Released May 24th, 2010
 - Version 0.4.2 Released April 30th, 2010
 - Version 0.4.1 Released April 28th, 2010
-- Version 0.4   Released March 14th, 2010
-- Version 0.3   Released at Kiwicon III (kiwicon.org), November 2nd, 2009
+- Version 0.4 Released March 14th, 2010
+- Version 0.3 Released at Kiwicon III (kiwicon.org), November 2nd, 2009
 
 ## Credits
 
 ### Developers
 
-+ Andrew Horton (@urbanadventurer)
-+ Brendan Coles (@bcoles)
+- Andrew Horton (@urbanadventurer)
+- Brendan Coles (@bcoles)
 
 ### Contributors
 
-Thank you to the following people who have contributed to WhatWeb. 
+Thank you to the following people who have contributed to WhatWeb.
 
-+ Emilio Casbas
-+ Louis Nyffenegger
-+ Patrik Wallström (@pawal)
-+ Caleb Anderson (@dirtyfilthy)
-+ Tonmoy Saikia
-+ Aung Khant (@yehgdotnet)
-+ Erik Inge Bolsø
-+ nk@dsigned.gr
-+ Steve Milner (@ashcrow)
-+ Michal Ambroz
-+ Gremwell
-+ Sagar Prakash Junnarkar (@sagarjunnarkar)
-+ GertBerger 
-+ Quintin Poirier
-+ Eric Sesterhenn
-+ dengjw (@jawa)
-+ Pedro Worcel (@droop)
-+ Matthieu Keller (@maggick)
-+ Peter (2pvdl)
-+ Napz (@RootCon)
-+ @nilx042
-+ Fabian Affolter (@fabaff)
-+ Andrew Silvernail (@buff3r)
-+ Andre Ricardo (@andrericardo)
-+ nikosk
-+ Patrick Thomas (@coffeetocode)
-+ Guillaume Delcaour (@guikcd)
-+ Sean (@wiifm69)
-+ Matthieu Keller (@maggick)
-+ Raul (@raurodse)
-+ Andrew Petro (@apetro)
-+ Artem Taranyuk (@610)
-+ Matti Paksula (@matti)
-+ Tim Smith (@tas50)
-+ Sarthak Munshi (@saru95)
-+ @rdubourguais
-+ @SlivTaMere
-+ @Code0x58
-+ @iGeek098
-+ @andreas-becker
-+ @csalazar
-+ @golewski
-+ @Allactaga
-+ @lins05
-+ @eliasdorneles
-+ @sigit
-+ dewanto
-+ @elcodigok 
-+ @SlivTaMere
-+ @anozoozian
-+ Bhavin Senjaliya (@bhavin1223)
-+ Janosch Maier (@Phylu)
-+ @rmaksimov
-+ Naglis Jonaitis (@naglis)
-+ Igor Rzegocki (@ajgon)
-+ Melvil Guillaume (@mguillau42)
-+ @LrsK 
-+ Janosch Maier (@phylu)
-+ @abenson
-+ @blshkv
-+ Weidsom Nascimento (@weidsom)
-+ Marcelo Gimenes @cgimenes
-+ @xambroz
-+ Baptiste Fontaine (@bfontaine)
-+ @juananpe
-+ @definity
-+ @huntertl
-+ Max Davitt (@themaxdavitt)
-+ Gregory Boddin (@gboddin)
+- Emilio Casbas
+- Louis Nyffenegger
+- Patrik Wallström (@pawal)
+- Caleb Anderson (@dirtyfilthy)
+- Tonmoy Saikia
+- Aung Khant (@yehgdotnet)
+- Erik Inge Bolsø
+- nk@dsigned.gr
+- Steve Milner (@ashcrow)
+- Michal Ambroz
+- Gremwell
+- Sagar Prakash Junnarkar (@sagarjunnarkar)
+- GertBerger
+- Quintin Poirier
+- Eric Sesterhenn
+- dengjw (@jawa)
+- Pedro Worcel (@droop)
+- Matthieu Keller (@maggick)
+- Peter (2pvdl)
+- Napz (@RootCon)
+- @nilx042
+- Fabian Affolter (@fabaff)
+- Andrew Silvernail (@buff3r)
+- Andre Ricardo (@andrericardo)
+- nikosk
+- Patrick Thomas (@coffeetocode)
+- Guillaume Delcaour (@guikcd)
+- Sean (@wiifm69)
+- Matthieu Keller (@maggick)
+- Raul (@raurodse)
+- Andrew Petro (@apetro)
+- Artem Taranyuk (@610)
+- Matti Paksula (@matti)
+- Tim Smith (@tas50)
+- Sarthak Munshi (@saru95)
+- @rdubourguais
+- @SlivTaMere
+- @Code0x58
+- @iGeek098
+- @andreas-becker
+- @csalazar
+- @golewski
+- @Allactaga
+- @lins05
+- @eliasdorneles
+- @sigit
+- dewanto
+- @elcodigok
+- @SlivTaMere
+- @anozoozian
+- Bhavin Senjaliya (@bhavin1223)
+- Janosch Maier (@Phylu)
+- @rmaksimov
+- Naglis Jonaitis (@naglis)
+- Igor Rzegocki (@ajgon)
+- Melvil Guillaume (@mguillau42)
+- @LrsK
+- Janosch Maier (@phylu)
+- @abenson
+- @blshkv
+- Weidsom Nascimento (@weidsom)
+- Marcelo Gimenes @cgimenes
+- @xambroz
+- Baptiste Fontaine (@bfontaine)
+- @juananpe
+- @definity
+- @huntertl
+- Max Davitt (@themaxdavitt)
+- Gregory Boddin (@gboddin)
+- @LeoFVO
 
 It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
-
