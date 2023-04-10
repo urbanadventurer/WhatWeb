@@ -1,0 +1,31 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    branches: [master]
+    paths-ignore:
+      - '*.md'
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu, macos]
+        ruby-version: [2.0, 2.1, 2.2, 2.3, 2.4, 2.6]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - name: Install dependencies
+        run: bundle install
+      - name: Run tests
+        run: bundle exec rake
