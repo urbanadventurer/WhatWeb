@@ -16,6 +16,8 @@ require 'timeout'
 
 class ExtendedHTTP < Net::HTTP #:nodoc:
   include Net
+  
+  SSL_ATTRIBUTES = [ :verify_mode ]
 
   # Creates a new Net::HTTP object for the specified server address,
   # without opening the TCP connection or initializing the HTTP session.
@@ -80,16 +82,50 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
     D 'opened'
 
     if use_ssl?
-      ssl_parameters = {}
-      iv_list = instance_variables
-      SSL_IVNAMES.each_with_index do |ivname, i|
-        if iv_list.include?(ivname) &&
-           (value = instance_variable_get(ivname))
-          ssl_parameters[SSL_ATTRIBUTES[i]] = value if value
-        end
-      end
       @ssl_context = OpenSSL::SSL::SSLContext.new
-      @ssl_context.set_params(ssl_parameters)
+
+      # Set SSL options for maximum compatibility with all servers
+      @ssl_context.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      
+      # Configure SSL context for maximum compatibility with ALL protocols
+      begin
+        # First try to enable all protocols by removing restrictions
+        if @ssl_context.respond_to?(:ssl_version=)
+          # SSLv23_method allows for negotiation of ANY supported SSL/TLS version
+          # including SSLv2, SSLv3, TLS 1.0, and up if available
+          @ssl_context.ssl_version = :SSLv23_method rescue nil
+          
+          # Fall back to TLS_method if SSLv23_method isn't available
+          @ssl_context.ssl_version = :TLS_method rescue nil
+        end
+        
+        # Clear any minimum version restrictions to allow legacy protocols
+        if @ssl_context.respond_to?(:min_version=)
+          begin
+            # Set to lowest possible to allow SSLv2/SSLv3 where available
+            @ssl_context.min_version = 0
+          rescue
+            # Some Ruby versions may have different ways to handle this
+            # Try alternate approach for legacy support
+            if defined?(OpenSSL::SSL::SSL2_VERSION)
+              @ssl_context.min_version = OpenSSL::SSL::SSL2_VERSION rescue nil
+            elsif defined?(OpenSSL::SSL::SSL3_VERSION)
+              @ssl_context.min_version = OpenSSL::SSL::SSL3_VERSION rescue nil
+            end
+          end
+        end
+        
+        # Try to explicitly enable SSLv2 and SSLv3 through options if available
+        @ssl_context.options &= ~OpenSSL::SSL::OP_NO_SSLv2 if defined?(OpenSSL::SSL::OP_NO_SSLv2)
+        @ssl_context.options &= ~OpenSSL::SSL::OP_NO_SSLv3 if defined?(OpenSSL::SSL::OP_NO_SSLv3)
+        @ssl_context.options &= ~OpenSSL::SSL::OP_NO_TLSv1 if defined?(OpenSSL::SSL::OP_NO_TLSv1)
+      rescue => e
+        # Ignore errors from unsupported SSL options
+      end
+
+
+#      pry.binding
+      
 
       D "starting SSL for #{conn_address}:#{conn_port}..."
       s = OpenSSL::SSL::SSLSocket.new(s, @ssl_context)
