@@ -1,11 +1,11 @@
-[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.5.5-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1824-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
+[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.6.1-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1824-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
 
 ![logo](https://morningstarsecurity.com/wp-content/uploads/2019/02/WhatWeb-Logo-800px.png "WhatWeb Logo")
 
 # WhatWeb - Next generation web scanner
 Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
-Latest Release: v0.5.5. January 16, 2021
+Latest Release: v0.6.1. August 2, 2025
 
 License: GPLv2
 
@@ -55,6 +55,7 @@ Most WhatWeb plugins are thorough and recognise a range of cues from subtle to o
 * Result certainty awareness
 * Custom plugins defined on the command line
 * IDN (International Domain Name) support
+* Dual-protocol scanning for simple hostnames (automatically tests both HTTP and HTTPS)
 
 ## Example Usage
 
@@ -78,7 +79,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner version 0.5.5.
+WhatWeb - Next generation web scanner version 0.6.1.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: https://morningstarsecurity.com/research/whatweb
 
@@ -109,7 +110,7 @@ AGGRESSION:
       all plugins are used for all URLs.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.5.5.
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.6.1.
   --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
                         header will replace it. Specifying an empty value, eg.
                         "User-Agent:" will remove the header.
@@ -193,7 +194,7 @@ HELP & MISCELLANEOUS:
   --short-help            Short usage help.
   --help, -h              Complete usage help.
   --debug                 Raise errors in plugins.
-  --version               Display version information. (WhatWeb 0.5.5).
+  --version               Display version information. (WhatWeb 0.6.1).
 
 EXAMPLE USAGE:
 * Scan example.com.
@@ -360,12 +361,52 @@ Character set detection, with the Charset plugin dramatically decreases performa
 
 ## Optional Dependencies
 
-To enable MongoDB logging install the mongo gem.
-    gem install mongo
+WhatWeb supports optional dependencies for MongoDB logging and character set detection. 
 
-To enable character set detection and MongoDB logging install the rchardet gem.
-  gem install rchardet
-  cp plugins-disabled/charset.rb my-plugins/
+Optional dependencies is why the Gemfile is split into groups and WhatWeb does not come with a Gemfile.lock. Should you want a Gemfile.lock, it will be created when you run `bundle install`.
+
+You can install them using Bundler groups:
+
+### MongoDB Support
+
+To enable MongoDB logging:
+
+```bash
+# Install dependencies
+bundle install --with mongo
+
+# If you're using an older version of Bundler
+GEMFILE_GROUPS="default mongo" bundle install
+```
+
+### Character Set Detection
+
+To enable character set detection (required for JSON and MongoDB logging):
+
+```bash
+# Install dependencies
+bundle install --with rchardet
+
+# If you're using an older version of Bundler
+GEMFILE_GROUPS="default rchardet" bundle install
+
+# Copy the charset plugin
+cp plugins-disabled/charset.rb my-plugins/
+```
+
+### All Optional Dependencies
+
+To install all optional dependencies at once:
+
+```bash
+# Install all optional groups
+bundle install --with mongo rchardet
+
+# If you're using an older version of Bundler
+GEMFILE_GROUPS="default mongo rchardet" bundle install
+```
+
+Note: Character set detection dramatically decreases performance by requiring more CPU. Only enable it if you need it.
 
 ## Writing Plugins
 
@@ -392,7 +433,7 @@ Browse the wiki for more documentation and advanced usage techniques.
 
 ## Release History
 
-- Version 0.5.5 Released January 16th, 2021
+- Version 0.6.1 Released July 30th, 2025
 - Version 0.5.4 Released December 14th, 2020
 - Version 0.5.3 Released October 1st, 2020
 - Version 0.5.2 Released June 9th, 2020
@@ -462,34 +503,38 @@ Thank you to the following people who have contributed to WhatWeb.
 + @iGeek098
 + @andreas-becker
 + @csalazar
-+ @golewski
-+ @Allactaga
++ Igor Rzegocki (@ajgon)
++ @juananpe
 + @lins05
-+ @eliasdorneles
-+ @sigit
-+ dewanto
-+ @elcodigok 
-+ @SlivTaMere
 + @anozoozian
 + Bhavin Senjaliya (@bhavin1223)
-+ Janosch Maier (@Phylu)
-+ @rmaksimov
-+ Naglis Jonaitis (@naglis)
-+ Igor Rzegocki (@ajgon)
-+ Melvil Guillaume (@mguillau42)
-+ @LrsK 
++ Chad Brigance (@ChadBrigance)
++ Daniel Maldonado
++ Elias Dorneles (@eliasdorneles)
++ Eugene Amirov
++ Gregory Boddin (@gboddin)
++ Guillaume Delacour
 + Janosch Maier (@phylu)
++ Max Davitt (@themaxdavitt)
++ Naglis Jonaitis (@naglis)
++ Shuai Lin
++ Sigit Dewanto (@sigit)
++ @wh1tenoise
++ @golewski
++ @Allactaga
++ @elcodigok
++ @SlivTaMere
++ @rmaksimov
++ Melvil Guillaume (@mguillau42)
++ @LrsK
 + @abenson
 + @blshkv
 + Weidsom Nascimento (@weidsom)
-+ Marcelo Gimenes @cgimenes
++ Marcelo Gimenes (@cgimenes)
 + @xambroz
 + Baptiste Fontaine (@bfontaine)
-+ @juananpe
 + @definity
 + @huntertl
-+ Max Davitt (@themaxdavitt)
-+ Gregory Boddin (@gboddin)
 
 It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
 

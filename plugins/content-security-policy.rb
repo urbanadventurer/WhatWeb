@@ -8,9 +8,11 @@ Plugin.define do
 name "Content-Security-Policy"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2012-05-17
+  "Andrew Horton", # v0.2 # 2025-08-02 # Added modern CSP header detection
 ]
-version "0.1"
-description "Content Security Policy (CSP) - More Info: https://en.wikipedia.org/wiki/Content_Security_Policy"
+version "0.2"
+description "Content Security Policy (CSP) helps prevent XSS attacks by restricting which resources can be loaded."
+website "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
 
 # ShodanHQ results as at 2012-05-17 #
 # 785 for X-Content-Security-Policy
@@ -25,6 +27,10 @@ matches [
 
 # X-WebKit-CSP # HTTP Server Header
 { :search=>"headers[x-webkit-csp]", :string=>/^(.*)$/ },
+
+# Modern CSP headers
+{ :search=>"headers[content-security-policy]", :string=>true, :name=>"CSP Header" },
+{ :search=>"headers[content-security-policy-report-only]", :string=>true, :name=>"CSP Report-Only Header" },
 
 ]
 

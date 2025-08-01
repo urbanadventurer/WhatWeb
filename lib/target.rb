@@ -1,4 +1,4 @@
-# Copyright 2009 to 2020 Andrew Horton and Brendan Coles
+# Copyright 2009 to 2025 Andrew Horton and Brendan Coles
 #
 # This file is part of WhatWeb.
 #

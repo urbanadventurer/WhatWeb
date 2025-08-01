@@ -1,6 +1,6 @@
 #!/bin/bash
 # Verify Nikto logs
-# Copyright 2014, Andrew Horton 
+# Copyright 2014 to 2025, Andrew Horton 
 VERSION=0.1b
  
 if [ -z "$1" ]; then

@@ -16,21 +16,24 @@ gem 'addressable'
 gem 'json'
 
 # MongoDB logging - optional
-group :mongo do
-  #gem 'mongo'
-  #gem 'rchardet'
+# To use: bundle install --with mongo
+group :mongo, optional: true do
+  gem 'mongo'
+  gem 'rchardet'
 end
 
 # Character set detection - optional
-group :rchardet do
-  #gem 'rchardet'
+# To use: bundle install --with rchardet
+group :rchardet, optional: true do
+  gem 'rchardet'
 end
 
 # Development dependencies required for tests
 group :test do
   gem 'rake'
-  gem 'minitest'
-  gem 'rubocop'
+  # Support both older and newer Ruby versions
+  gem 'minitest', '>= 5.14.2', '< 6.0'
+  gem 'rubocop', '~> 1.0'
   gem 'rdoc'
   gem 'bundler-audit'
   gem 'simplecov', require: false

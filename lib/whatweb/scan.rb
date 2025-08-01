@@ -1,4 +1,4 @@
-# Copyright 2009 to 2020 Andrew Horton and Brendan Coles
+# Copyright 2009 to 2025 Andrew Horton and Brendan Coles
 #
 # This file is part of WhatWeb.
 #
@@ -19,6 +19,9 @@ module WhatWeb
   class Scan
     def initialize(urls, input_file: nil, url_prefix: nil, url_suffix: nil, url_pattern: nil, max_threads: 25)
       urls = [urls] if urls.is_a?(String)
+      
+      # Initialize URL tracking to avoid duplicates
+      initialize_url_tracking
 
       @targets = make_target_list(
         urls,
@@ -94,6 +97,15 @@ module WhatWeb
     end
 
     def add_target(url, redirect_counter = 0)
+      # Normalize the URL for comparison
+      normalized_url = normalize_url_for_comparison(url)
+      
+      # Check if this URL or a very similar one is already in the queue
+      if already_queued_or_processed?(normalized_url)
+        puts "[+] Skipping duplicate target: #{url} (already queued or similar)" if $verbose > 0
+        return
+      end
+      
       # TODO: REVIEW: should this use prepare_target?
       target = Target.new(url, redirect_counter)
 
@@ -101,11 +113,57 @@ module WhatWeb
         error("Add Target Failed - #{url}")
         return
       end
-
+      
+      # Add the normalized URL to our tracking list
+      track_url(normalized_url)
+      
       @target_queue << target
     end
 
     private
+    
+    # Track URLs that have been processed or queued to avoid duplicates
+    def initialize_url_tracking
+      # Track normalized URLs that are queued or processed
+      @processed_urls = Set.new
+    end
+    
+    # Normalize a URL for comparison to detect similar/duplicate URLs
+    # This helps avoid scanning the same content with trivial URL differences
+    def normalize_url_for_comparison(url)
+      begin
+        # Parse the URL
+        uri = URI.parse(url.to_s.strip)
+        
+        # Convert to lowercase
+        host = uri.host.to_s.downcase
+        path = uri.path.to_s.downcase
+        
+        # Remove trailing slashes from path
+        path = path.gsub(/\/$/, '')
+        path = '/' if path.empty?
+        
+        # Rebuild normalized URL (without query parameters)
+        normalized = "#{uri.scheme}://#{host}#{path}"
+        
+        return normalized
+      rescue => e
+        # If URL can't be parsed, just return as is
+        return url.to_s
+      end
+    end
+    
+    # Track a URL as processed or queued
+    def track_url(normalized_url)
+      @processed_urls ||= Set.new
+      @processed_urls << normalized_url
+    end
+    
+    # Check if a normalized URL or a similar one is already being processed
+    def already_queued_or_processed?(normalized_url)
+      @processed_urls ||= Set.new
+      @processed_urls.include?(normalized_url)
+    end
 
     # try to make a new Target object, may return nil
     def prepare_target(url)
@@ -135,7 +193,11 @@ module WhatWeb
       inputfile = opts[:input_file] || nil
       if !inputfile.nil? && File.exist?(inputfile)
         pp "loading input file: #{inputfile}" if $verbose > 2
+        consecutive_errors = 0
+        total_lines = 0
+        
         File.open(inputfile).readlines.each(&:strip!).reject { |line| line.start_with?('#') || line.eql?('') }.each do |line|
+          total_lines += 1
           url_list << line
         end
       end
@@ -177,10 +239,13 @@ module WhatWeb
       # make urls friendlier, test if it's a file, if test for not assume it's http://
       # http, https, ftp, etc
       push_to_urllist = []
-
+      consecutive_errors = 0
+      inputfile_name = opts[:input_file] # Store for error messages
+      
       # TODO: refactor this
       url_list = url_list.map do |x|
         if File.exist?(x)
+          consecutive_errors = 0 # Reset counter on success
           x
         else
           # use url pattern
@@ -191,9 +256,22 @@ module WhatWeb
           # need to move this into a URI parsing function
           #
           # check for URI prefix
-          if x !~ %r{^[a-z]+:\/\/}
-            # add missing URI prefix
-            x.sub!(/^/, 'http://')
+          if x !~ %r{^[a-z]+://}
+            # If target is a simple hostname with no scheme, create both HTTP and HTTPS targets
+            if x !~ %r{/} && x !~ %r{:} # No path separators or ports, likely just a hostname
+              # Store original for informational message
+              original_hostname = x.dup
+              # Add HTTPS version
+              https_version = "https://#{x}" 
+              push_to_urllist << https_version
+              # add HTTP prefix to current target
+              x.sub!(/^/, 'http://')
+              # Provide informational message to user
+              puts "[+] Simple hostname detected: #{original_hostname}. Testing both HTTP and HTTPS." if $verbose > 0
+            else
+              # For more complex paths, just use HTTP prefix as before
+              x.sub!(/^/, 'http://')
+            end
           end
 
           # is it a valid domain?
@@ -203,11 +281,25 @@ module WhatWeb
             raise 'Unable to parse invalid target. No hostname.' if domain.host.empty?
 
             # convert IDN domain
-            x = domain.normalize.to_s if domain.host !~ %r{^[a-zA-Z0-9\.:\/]*$}
+            x = domain.normalize.to_s if domain.host !~ %r{^[a-zA-Z0-9\.:/]*$}
+            
+            # Reset counter on successful parse
+            consecutive_errors = 0
           rescue => e
+            # Count consecutive errors
+            consecutive_errors += 1
+            
+            # Abort after 10 consecutive parsing errors
+            if consecutive_errors >= 10
+              error("Aborting target processing after #{consecutive_errors} consecutive parsing errors.")
+              error("The input appears to contain invalid URLs or non-URL data.")
+              error("Please check your input and ensure it contains valid URLs.")
+              break
+            end
+            
             # if it fails it's not valid
             x = nil
-            # TODO: print something more useful
+            # Print the error message
             error("Unable to parse invalid target #{x}: #{e}")
           end
           # return x

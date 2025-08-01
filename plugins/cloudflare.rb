@@ -10,8 +10,9 @@ authors [
   "Aung Khant <http://yehg.net/> & David P Robinson <david@intruder.io>", # 2011-02-04
   "Andrew Horton", # v0.2 # 2016-04-23 # Moved patterns from passive function to matches[]. Change plugin name captilization. 
   "David P Robinson <david@intruder.io>", # v0.3 # 2016-05-10 # Added regex to detect CloudFlare email address protection feature. 
+  "Andrew Horton", # v0.4 # 2025-08-02 # Added CloudFlare-specific header detection.
 ]
-version "0.3"
+version "0.4"
 description "CloudFlare is a content delivery network. Its features include DDoS protection and Web Application Firewall functionality"
 website "https://www.cloudflare.com/"
 
@@ -36,7 +37,13 @@ matches [
 
 {:search=>"headers[set-cookie]", :regexp => /__cfduid/, :name=>"__cfduid cookie" },
 
-{:name => "email address protection", :regexp => /\/cdn-cgi\/l\/email-protection#[a-f0-9]{36}/ }
+{:name => "email address protection", :regexp => /\/cdn-cgi\/l\/email-protection#[a-f0-9]{36}/ },
+
+# CloudFlare-specific headers
+{:search=>"headers[cf-ray]", :name=>"CF-RAY Header" },
+{:search=>"headers[cf-cache-status]", :name=>"CF Cache Status Header" },
+{:search=>"headers[cf-worker]", :name=>"CF Worker Header" },
+{:search=>"headers[x-zone]", :regexp=>/cloudflare/i, :name=>"CloudFlare Zone" }
 
 ]
 

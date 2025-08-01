@@ -8,11 +8,12 @@ Plugin.define do
 name "Shopify"
 authors [
   "Bhavin Senjaliya <bhavin.senjaliya@gmail.com>", # 2016-08-19
-  "Andrew Horton", # v0.2 # 2017-11-27 # Updated description and added website. 
+  "Andrew Horton", # v0.2 # 2017-11-27 # Updated description and added website.
+  "Andrew Horton", # v0.3 # 2025-08-02 # Added Shopify-specific header detection.
 ]
-version "0.2"
-description "Shopify CMS and ecommerce platform."
-website "http://shopify.com/"
+version "0.3"
+description "Shopify is an e-commerce platform that allows individuals and businesses to create online stores."
+website "https://www.shopify.com/"
 
 # Matches #
 matches [
@@ -28,6 +29,13 @@ matches [
 	{ :search => "headers[set-cookie]", :regexp => /cart_sig/, :name=>"cart_sig cookie" },
 	{ :search => "headers[set-cookie]", :regexp => /customer_sig/, :name=>"customer_sig cookie" },
 	{ :search => "headers[set-cookie]", :regexp => /secure_customer_sig/, :name=>"secure_customer_sig cookie" },
+
+	# Shopify-specific headers
+	{ :search => "headers[shopify-edge-ip]", :name => "Shopify Edge IP header" },
+	{ :search => "headers[x-shopify-stage]", :name => "Shopify Stage Environment" },
+	{ :search => "headers[x-sorting-hat-podid]", :name => "Shopify Pod ID" },
+	{ :search => "headers[x-shopify-api-version]", :name => "Shopify API Version" },
+	{ :regexp => /<meta name="shopify-digital-wallet"/i, :name => "Shopify Digital Wallet Meta Tag" },
 	
 ] 
 

@@ -5,12 +5,14 @@
 # https://morningstarsecurity.com/research/whatweb
 ##
 Plugin.define do
-name "CloudFront"
+name "Amazon-CloudFront"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2010-11-02
+  "Andrew Horton", # v0.2 # 2025-08-02 # Updated name, description, website and added CloudFront-specific header detection
 ]
-version "0.1"
-description "CloudFront Server"
+version "0.2"
+description "Amazon CloudFront is a content delivery network (CDN) that delivers static and dynamic web content, including live and on-demand video."
+website "https://aws.amazon.com/cloudfront/"
 
 # ShodanHQ results as at 2010-11-02 #
 # 3,530 for X-Cache: Error from cloudfront
@@ -28,6 +30,10 @@ matches [
 
 # HTTP X-Cache Header
 { :search=>"headers[x-cache]", :regexp=>/^Error from cloudfront/ },
+
+# Additional CloudFront-specific headers
+{ :search=>"headers[x-amz-cf-pop]", :name=>"CloudFront POP Location" },
+{ :search=>"headers[x-amz-cf-id]", :name=>"CloudFront Request ID" },
 
 ]
 

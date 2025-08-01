@@ -1,4 +1,24 @@
-Version 0.5.6 - ?, 2021
+Version 0.6.1 - August 2, 2025
+
+Changelog:
+* Updated version from 0.5.5 to 0.6.1
+* Improved SSL/TLS security with comprehensive cipher suite support (TLSv1, TLSv1.1, TLSv1.2, SSLv3, SSLv2)
+  - Added SSL_ATTRIBUTES constant for verify_mode
+  - Replaced dynamic SSL parameter collection with explicit SSLContext configuration
+  - Set verify_mode to VERIFY_NONE for maximum compatibility
+  - Enabled negotiation of all SSL/TLS versions including legacy SSLv2/SSLv3
+* Enhanced HTTPS connection handling with optimized verification settings
+  - Cleared minimum version restrictions and disabled protocol exclusion flags
+  - Added fallback handling for different OpenSSL configurations
+* Added dual-protocol feature: simple hostnames (without paths or ports) are now scanned using both HTTP and HTTPS protocols
+  - Automatically creates and tests both HTTP and HTTPS versions of simple hostnames
+  - Shows informational message when dual-protocol scanning is performed
+  - Intelligently detects and avoids duplicate URL scanning with redirect handling
+* Added robust input validation and error handling
+  - Automatically aborts processing after 10 consecutive parsing errors
+  - Prevents wasted resources when processing invalid data sources
+  - Provides helpful error messages to guide users in troubleshooting input issues
+  - Handles various error cases including malformed URLs and non-URL input data
 
 This release introduces three new search contexts for plugin authors to use:
 - uri.path
@@ -21,6 +41,14 @@ An example of how to use this is from the PHP plugin.
 
 ## NEW PLUGINS
 * Plex Media Server (@urbanadventurer)
+* Meta-Facebook-Infrastructure (@urbanadventurer)
+* Netflix-Platform (@urbanadventurer)
+* VKontakte-Platform (@urbanadventurer)
+* Distributed-Tracing (@urbanadventurer)
+* Modern-Security-Headers (@urbanadventurer)
+* Baidu-Platform (@urbanadventurer)
+* Alibaba-Aliyun (@urbanadventurer)
+* Weibo-Platform (@urbanadventurer)
 
 ## PLUGIN UPDATES
 * Adobe-Flash (@urbanadventurer)
@@ -34,6 +62,13 @@ An example of how to use this is from the PHP plugin.
 * Ruby (@urbanadventurer)
 * TYPO3 (@definity)
 * WordPress (@juananpe)
+* Shopify (enhanced HTTP header detection) (@urbanadventurer)
+* CloudFlare (enhanced with CF-RAY and other headers) (@urbanadventurer)
+* CloudFront (renamed to Amazon-CloudFront and enhanced) (@urbanadventurer)
+* Tengine Web Server (added Alibaba-specific headers) (@urbanadventurer)
+* Content-Security-Policy (added modern CSP headers) (@urbanadventurer)
+* Azure (renamed to Microsoft-Azure and enhanced) (@urbanadventurer)
+
 
 
 Version 0.5.5 - January 16, 2021
