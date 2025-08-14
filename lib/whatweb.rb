@@ -31,6 +31,8 @@ require 'open-uri'
 require 'digest/md5'
 require 'openssl' # required for Ruby version ~> 2.4
 require 'pp'
+require 'set'
+
 
 
 # WhatWeb libs
