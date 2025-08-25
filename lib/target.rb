@@ -264,7 +264,13 @@ class Target
 
   def open_url(options)
     begin
-      @ip = Resolv.getaddress(@uri.host)
+      # Skip DNS resolution for .onion domains
+      if @uri.host.end_with?('.onion')
+        # For .onion domains, we'll use the hostname directly
+        @ip = @uri.host
+      else
+        @ip = Resolv.getaddress(@uri.host)
+      end
     rescue StandardError => err
       raise err
     end

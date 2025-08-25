@@ -15,5 +15,5 @@
 # You should have received a copy of the GNU General Public License
 # along with WhatWeb.  If not, see <http://www.gnu.org/licenses/>.
 module WhatWeb
-  VERSION = '0.6.1'.freeze
+  VERSION = '0.6.2'.freeze
 end

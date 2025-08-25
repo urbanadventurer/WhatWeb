@@ -1,11 +1,11 @@
-[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.6.1-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1824-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
+[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.6.2-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1824-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
 
 ![logo](https://morningstarsecurity.com/wp-content/uploads/2019/02/WhatWeb-Logo-800px.png "WhatWeb Logo")
 
 # WhatWeb - Next generation web scanner
 Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
-Latest Release: v0.6.1. August 2, 2025
+Latest Release: v0.6.2. August 25, 2025
 
 License: GPLv2
 
@@ -79,7 +79,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner version 0.6.1.
+WhatWeb - Next generation web scanner version 0.6.2.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: https://morningstarsecurity.com/research/whatweb
 
@@ -110,7 +110,7 @@ AGGRESSION:
       all plugins are used for all URLs.
 
 HTTP OPTIONS:
-  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.6.1.
+  --user-agent, -U=AGENT Identify as AGENT instead of WhatWeb/0.6.2.
   --header, -H          Add an HTTP header. eg "Foo:Bar". Specifying a default
                         header will replace it. Specifying an empty value, eg.
                         "User-Agent:" will remove the header.
@@ -148,7 +148,6 @@ PLUGINS:
                                 only the results that match.
                                 Examples: --grep "hello"
                                 --grep "/he[l]*o/"
-  --custom-plugin=DEFINITION\tDefine a custom plugin named Custom-Plugin,
   --custom-plugin=DEFINITION  Define a custom plugin named Custom-Plugin,
                         Examples: ":text=>'powered by abc'"
                         ":version=>/powered[ ]?by ab[0-9]/"
@@ -194,7 +193,7 @@ HELP & MISCELLANEOUS:
   --short-help            Short usage help.
   --help, -h              Complete usage help.
   --debug                 Raise errors in plugins.
-  --version               Display version information. (WhatWeb 0.6.1).
+  --version               Display version information. (WhatWeb 0.6.2).
 
 EXAMPLE USAGE:
 * Scan example.com.
@@ -437,7 +436,7 @@ Browse the wiki for more documentation and advanced usage techniques.
 - Version 0.5.4 Released December 14th, 2020
 - Version 0.5.3 Released October 1st, 2020
 - Version 0.5.2 Released June 9th, 2020
-- Version 0.5.1 Released Feburary 25th, 2020
+- Version 0.5.1 Released February 25th, 2020
 - Version 0.5.0 Released June 9th, 2019
 - Version 0.4.9 Released November 23rd, 2017
 - Version 0.4.8-dev (Continuous release from 2012 to 2017)

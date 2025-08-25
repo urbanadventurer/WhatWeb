@@ -1,3 +1,13 @@
+Version 0.6.2 - August 25, 2025
+
+Changelog:
+* Fixed uninitialized constant error. Requires 'set' gem for specific Ruby versions. (@J-Run)
+* Added support for scanning .onion (Tor) domains when using HTTP proxy
+  - Bypasses DNS resolution for .onion domains to enable scanning through Tor proxy
+  - Allows scanning of Tor hidden services without DNS resolution errors
+  - Compatible with custom/internal TLDs
+
+
 Version 0.6.1 - August 2, 2025
 
 Changelog:
@@ -19,6 +29,16 @@ Changelog:
   - Prevents wasted resources when processing invalid data sources
   - Provides helpful error messages to guide users in troubleshooting input issues
   - Handles various error cases including malformed URLs and non-URL input data
+* Improved dependency management with Bundler group support
+  - Reorganized Gemfile with proper optional group definitions for mongo and rchardet
+  - Added clear installation instructions for optional dependencies
+  - Set explicit version constraints for test dependencies
+  - Added support for older Bundler versions through GEMFILE_GROUPS environment variable
+* Expanded documentation for optional dependencies
+  - Added detailed installation instructions for MongoDB support
+  - Added clear steps for character set detection configuration
+  - Provided combined installation commands for all optional features
+  - Improved explanation of performance implications
 
 This release introduces three new search contexts for plugin authors to use:
 - uri.path
