@@ -15,6 +15,12 @@ gem 'addressable'
 # JSON logging
 gem 'json'
 
+# CLI argument parsing
+gem 'getoptlong', '~> 0.1'
+
+# asynchronous DNS
+gem 'resolv-replace', '~> 0.1'
+
 # MongoDB logging - optional
 # To use: bundle install --with mongo
 group :mongo, optional: true do
