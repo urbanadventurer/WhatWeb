@@ -39,6 +39,7 @@ matches [
 
 # /netaccess/redirect.html # Form
 { :regexp=>/<FORM ACTION="\/netaccess\/redirect\.html">\s+<INPUT type=hidden name=sid VALUE=/ },
+{ :regexp=>/document\.location\.replace\(['"]\/\+CSCOE\+\/logon\.html(?:\?[^'"]*)?['"]\)/ },
 
 ]
 
