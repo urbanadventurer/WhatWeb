@@ -8,8 +8,9 @@ Plugin.define do
 name "Cisco-Adaptive-Security-Appliance"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-11-11
+  "Francesco Pavanello <frapava98@gmail.com>", # 2025-10-01
 ]
-version "0.1"
+version "0.2"
 description "The Cisco Adaptive Security Appliance (ASA) family of security devices protects corporate networks. It provides users with highly secure access to data - anytime, anywhere, using any device."
 website "http://www.cisco.com/web/ANZ/products/security/asa_software.html"
 
@@ -39,6 +40,7 @@ matches [
 
 # /netaccess/redirect.html # Form
 { :regexp=>/<FORM ACTION="\/netaccess\/redirect\.html">\s+<INPUT type=hidden name=sid VALUE=/ },
+{ :regexp=>/document\.location\.replace\(['"]\/\+CSCOE\+\/logon\.html(?:\?[^'"]*)?['"]\)/ },
 
 ]
 
