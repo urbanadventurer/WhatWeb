@@ -155,6 +155,11 @@ PERFORMANCE & STABILITY:
   --wait=SECONDS\t\tWait SECONDS between connections.
 \t\t\t\tThis is useful when using a single thread.
 
+NETWORK INTERFACE:
+  --interface=INTERFACE\t\tUse specified network interface.
+  --source-port=PORT\t\tSpecify source TCP port to use.
+  --source-addr=ADDRESS\t\tSpecify source IP address to use.
+
 HELP & MISCELLANEOUS:
   --short-help\t\t\tShort usage help.
   --help, -h\t\t\tComplete usage help.
@@ -325,6 +330,9 @@ opts = GetoptLong.new(
   ['-U', '--user-agent', GetoptLong::REQUIRED_ARGUMENT],
   ['-a', '--aggression', GetoptLong::REQUIRED_ARGUMENT],
   ['-t', '--max-threads', GetoptLong::REQUIRED_ARGUMENT],
+  ['--interface', GetoptLong::REQUIRED_ARGUMENT],
+  ['--source-port', GetoptLong::REQUIRED_ARGUMENT],
+  ['--source-address', GetoptLong::REQUIRED_ARGUMENT],
   ['--follow-redirect', GetoptLong::REQUIRED_ARGUMENT],
   ['--max-redirects', GetoptLong::REQUIRED_ARGUMENT],
   ['--proxy', GetoptLong::REQUIRED_ARGUMENT],
@@ -357,6 +365,51 @@ begin
       exit
     when '-p', '--plugins'
       plugin_selection = arg
+
+    when '--interface'
+      $interface = arg.downcase
+
+      valid_interfaces = Socket.getifaddrs.map(&:name).uniq
+      raise "Network interface #{$interface} is not valid.\n" unless valid_interfaces.include? $interface
+      pp "Found valid interfaces:  #{valid_interfaces}"  if $verbose > 2
+
+      # unless the user has already selected this manually
+      unless $local_host
+
+        # choose the IP address to use
+        number_of_ips_on_interface   = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip?  }.compact.size
+        number_of_ipv4s_on_interface = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv4? }.compact.size
+        number_of_ipv6s_on_interface = Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv6? }.compact.size
+
+        $local_host = if number_of_ips_on_interface == 0
+          raise "No IP addresses were found for the #{$interface} interface."
+
+        elsif number_of_ipv4s_on_interface > 0 
+          Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv4? }.map(&:addr).first.ip_address
+
+        elsif number_of_ipv6s_on_interface > 0
+          Socket.getifaddrs.select { |x| x.name == $interface and x.addr.ip? and x.addr.ipv6? }.map(&:addr).first.ip_address.split("%").first
+
+        elsif number_of_ipv4s_on_interface == 0 and number_of_ipv6s_on_interface == 0
+          raise "No IPv4 or IPv6 addresses were found for #{$interface} interface."
+        end
+        
+        pp "IP address auto-selected from interface: #{$local_host}" if $verbose > 2
+      else
+        pp "IP address already selected by user: #{$local_host}" if $verbose > 2
+      end
+
+    when '--source-port'
+      $local_port = arg.to_i
+      raise "Source port must be betwen 0 and 65535\n" unless (0..65535).include? $local_port
+
+    when '--source-address'
+      raise "Specify source address or the interface, but not both." if $local_host 
+
+      $local_host = arg
+      valid_ip_addresses = Socket.ip_address_list.map { |x| x.ip_address.split("%").first }.uniq
+      raise "Valid IP address must be specified\n" unless valid_ip_addresses.include? $local_host
+
     when '-I', '--info-plugins'
       PluginSupport.load_plugins
       PluginSupport.plugin_info(arg.split(','))
@@ -547,6 +600,9 @@ rescue StandardError, GetoptLong::Error => e
   exit
 end
 
+# check interfaces
+pp "interface: $interface, local_host: #{$local_host}, local_port: #{$local_port}" if $verbose > 2
+
 # sanity check # Disable colours in Windows environments when set to auto
 if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
   $use_colour = false unless $use_colour == 'always'
@@ -637,3 +693,4 @@ logging_list.each(&:close)
 Plugin.shutdown_all
 
 # pp $PLUGIN_TIMES.sort_by {|x,y|y }
+

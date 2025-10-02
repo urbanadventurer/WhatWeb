@@ -148,6 +148,8 @@ This is a minor release with miscellaneous changes, seven new plugins, and two p
 * Magento (@huntertl)
 * phpMyAdmin (@juananpe)
 
+## FEATURES
+* #303 Added ability to select network interface. Thanks @audibleblink.
 
 Version 0.5.2 - June 9, 2020
 

@@ -23,10 +23,10 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
   # without opening the TCP connection or initializing the HTTP session.
   # The +address+ should be a DNS hostname or IP address.
   def initialize(address, port = nil)
+
     @address = address
     @port    = (port || HTTP.default_port)
-    @local_host = nil
-    @local_port = nil
+
     @curr_http_version = HTTPVersion
     @keep_alive_timeout = 2
     @last_communicated = nil
@@ -77,6 +77,8 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
     D "opening connection to #{conn_address}:#{conn_port}..."
     s = Timeout.timeout(@open_timeout, Net::OpenTimeout) do
       TCPSocket.open(conn_address, conn_port, @local_host, @local_port)
+     # TCPSocket.open(conn_address, conn_port, '127.0.0.1', '11111')
+
     end
     s.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, 1)
     D 'opened'

@@ -30,6 +30,7 @@ require 'resolv-replace' # asynchronous DNS
 require 'open-uri'
 require 'digest/md5'
 require 'openssl' # required for Ruby version ~> 2.4
+require 'socket'
 require 'pp'
 require 'set'
 
@@ -56,7 +57,7 @@ require_relative 'extend-http.rb'
 Dir["#{File.expand_path(File.dirname(__FILE__))}/logging/*.rb"].each {|file| require file }
 
 # Output options
-$WWDEBUG = false # raise exceptions in plugins, etc
+$WWDEBUG = true # raise exceptions in plugins, etc
 $verbose = 0 # $VERBOSE is reserved in ruby
 $use_colour = 'auto'
 $QUIET = false
@@ -79,6 +80,9 @@ $WAIT = nil
 $CUSTOM_HEADERS = {}
 $BASIC_AUTH_USER = nil
 $BASIC_AUTH_PASS = nil
+
+$local_host = nil
+$local_post = nil
 
 # Ruby Version Compatability
 if Gem::Version.new(RUBY_VERSION) < Gem::Version.new(2.0)

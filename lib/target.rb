@@ -280,6 +280,8 @@ class Target
         http = ExtendedHTTP::Proxy($PROXY_HOST, $PROXY_PORT, $PROXY_USER, $PROXY_PASS).new(@uri.host, @uri.port)
       else
         http = ExtendedHTTP.new(@uri.host, @uri.port)
+        http.local_host = $local_host
+        http.local_port = $local_port if $local_port
       end
 
       # set timeouts
@@ -330,8 +332,8 @@ class Target
       puts @uri.to_s + " [#{status}]" if $verbose > 1
 
     rescue StandardError => err
+      pp err
       raise err
-
     end
   end
 
