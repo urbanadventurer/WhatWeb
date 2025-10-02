@@ -120,8 +120,8 @@ Plugin.define do
 
 
 		# Generic CMS has a default favicon that displays the logo of the web application
-		# In aggressive mdoe, the /favicon.ico path will be fetched
-		# This matches if the HTTP response body, in this case the favicon.co image, has the follow MD5sum hash.
+		# In aggressive mode, the /favicon.ico path will be fetched
+		# This matches if the HTTP response body, in this case the favicon.co image, has the following MD5sum hash.
 		{ :url => "/favicon.ico", :md5 => '12dead87beef7f00d90cafed82babe5' },
 
 
