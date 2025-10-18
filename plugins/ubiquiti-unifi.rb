@@ -10,7 +10,7 @@ Plugin.define do
     "John de Kroon <john.de.kroon@cyberant.com>", # 2025-10-18
   ]
   version "0.1"
-  description "Ubiquiti UniFy network"
+  description "Ubiquiti UniFy network / UniFy OS"
   website "https://ui.com/"
 
   # Dorks #
@@ -26,6 +26,15 @@ Plugin.define do
     },
     {
       :text => "<title>UniFi Network</title>"
+    },
+    {
+        :text => "<title>UniFi OS</title>",
+    },
+    {
+        :model => /"shortName"\s*:\s*"([^"]+)"/,
+    },
+    {
+        :version => /\/assets\/images\/1024\.png\?udmpro-([0-9]+\.[0-9]+\.[0-9]+)(?:[^\"]*)/,
     },
 
     # Detect the public status page to extract the version
