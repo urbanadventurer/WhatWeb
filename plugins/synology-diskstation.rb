@@ -54,7 +54,7 @@ matches [
 
 { :name=>'UIString Version Detection',
   :url=>'/webapi/entry.cgi?api=SYNO.Core.Desktop.UIString&version=1&method=getjs',
-  :version=>%r{"whats_new"\s*:\s*"[^"]*DSM\s+(\d+(?:\.\d+){0,2})"}, },
+  :version => %r{"whats_new"\s*:\s*"[^"]*DSM\s+(\d+)} },
 
 ]
 
