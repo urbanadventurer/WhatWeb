@@ -9,15 +9,15 @@ name "TP-Link-Router"
 authors [
   "Aung Khant, http://yehg.net",
   "Brendan Coles <bcoles@gmail.com>", # v0.2 # 2011-01-29 # Added model detection. Added HTTP server header match. Added 401 error match. 
+  "John de Kroon <john.de.kroon@cyberant.com", # v0.3 # 2025-10-23 # added server header check
 ]
-version "0.2"
+version "0.3"
 description "Detect TP-Link Router"
 website "http://www.tp-link.com/"
 
 # ShodanHQ results as at 2011-01-29 #
 # 13,292 for TP-LINK
 
-	
 
 # Matches #
 matches [
@@ -27,6 +27,8 @@ matches [
 
 	# 401 Error
 	{ :text=>'Operating System Error Nr:3997698: HTM <P><HR><H2>Access denied</H2>' },
+
+	{ :search=>"headers[server]", :regexp=>/TP\-LINK HTTPD/i }
 
 ]
 
