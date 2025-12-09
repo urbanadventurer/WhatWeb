@@ -279,7 +279,7 @@ else
 end
 
 # Load message handling functions
-require_relative 'lib/messages'
+require 'lib/messages'
 
 #
 # Check for cookie performance warnings based on thread count
@@ -672,7 +672,7 @@ $CUSTOM_HEADERS.delete_if { |_k, v| v == '' }
 
 ## Cookie Jar Initialization
 unless $NO_COOKIES
-  require_relative 'lib/simple_cookie_jar'
+  require 'lib/simple_cookie_jar'
   $COOKIE_JAR = SimpleCookieJar.new(max_domains: 10_000, cookie_jar_file: cookie_jar_file)
   
   # Warn about performance implications
