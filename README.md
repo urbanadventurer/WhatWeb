@@ -1,11 +1,11 @@
-[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.6.3-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1824-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
+[![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://raw.githubusercontent.com/urbanadventurer/whatweb/master/LICENSE) ![Stable Release](https://img.shields.io/badge/stable_release-0.6.4-blue.svg) ![WhatWeb Plugins](https://img.shields.io/badge/plugins-1824-brightgreen.svg) [![Repositories](https://repology.org/badge/tiny-repos/whatweb.svg)](https://repology.org/project/whatweb/versions)
 
 ![logo](https://github.com/user-attachments/assets/57950281-dec2-4132-a166-6387331bfd34 "WhatWeb Logo")
 
 # WhatWeb - Next generation web scanner
 Developed by Andrew Horton [urbanadventurer](https://github.com/urbanadventurer/) and Brendan Coles [bcoles](https://github.com/bcoles/)
 
-Latest Release: v0.6.3. October 18, 2025
+Latest Release: v0.6.4. April 3, 2026
 
 License: GPLv2
 
@@ -77,7 +77,7 @@ $::$  .  $$$ $::$  $$$ $::$  $$$     $::$     $::$  .  $$$ $::$      $::$  $$$$
 $;;$ $$$ $$$ $;;$  $$$ $;;$  $$$     $;;$     $;;$ $$$ $$$ $;;$      $;;$  $$$$
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$'
 
-WhatWeb - Next generation web scanner version 0.6.3.
+WhatWeb - Next generation web scanner version 0.6.4.
 Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 Homepage: https://morningstarsecurity.com/research/whatweb
 
@@ -203,7 +203,7 @@ HELP & MISCELLANEOUS:
   --short-help            Short usage help.
   --help, -h              Complete usage help.
   --debug                 Raise errors in plugins.
-  --version               Display version information. (WhatWeb 0.6.3).
+  --version               Display version information. (WhatWeb 0.6.4).
 
 EXAMPLE USAGE:
 * Scan example.com.
@@ -506,6 +506,7 @@ Browse the wiki for more documentation and advanced usage techniques.
 
 ## Release History
 
+- Version 0.6.4 Released April 3, 2026
 - Version 0.6.3 Released October 18, 2025
 - Version 0.6.2 Released August 25, 2025
 - Version 0.6.1 Released July 30th, 2025
@@ -615,6 +616,7 @@ Thank you to the following people who have contributed to WhatWeb.
 + @frapava98
 + John de Kroon (@johndekroon)
 + @mtisec
++ Claude from Anthropic
 
 
 It is difficult to keep track of all the people who have contributed to WhatWeb. If your name is missing then please let me know.
