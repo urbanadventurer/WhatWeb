@@ -11,6 +11,13 @@
 #
 #
 # WhatWeb - Next generation web scanner.
+#
+# Set up Bundler to find gems in vendor/bundle if available
+gemfile_path = File.join(File.expand_path(__dir__), 'Gemfile')
+if File.exist?(gemfile_path)
+  ENV['BUNDLE_GEMFILE'] ||= gemfile_path
+  require 'bundler/setup'
+end
 # Developed by Andrew Horton (urbanadventurer) and Brendan Coles (bcoles)
 #
 # Homepage: https://morningstarsecurity.com/research/whatweb
