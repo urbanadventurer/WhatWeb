@@ -12,8 +12,10 @@ authors [
   # v0.3 # Added aggressive model, firmware and module extraction from /cgi-bin/authLogin.cgi. 
   # v0.4 # 2011-03-22 # Removed aggressive section
   # v0.5 # 2013-03-29 # Due to a renewed web interface (v3.8), all existing matches didn't see the QNAP anymore. New matches need to be determined
+  "John de Kroon <john.de.kroon@cyberant.com", # 2025-10-22
+  # v0.6 # added a fingerprint regex to match the new interface
 ]
-version "0.5"
+version "0.6"
 description "QNAP provides a series of network attached storage (NAS) products and network video recorder (NVR) solutions - homepage:http://www.qnap.com/"
 
 # Tested on TS Models:
@@ -74,6 +76,10 @@ matches [
 
 # HTML title
 { :text=>'<title>Welcome to QNAP Turbo NAS</title>' },
+
+# Newer versions will do a Javascript redirect that WhatWeb is not able to follow. This javascript is pretty recognizable though,
+# so I created a fingerprint regex that matches on two typical parts in the script to avoid false positives.
+{ :regexp => /redirect_suffix\s*=\s*"\/redirect\.html\?count="\s*\+\s*Math\.random\(\)/i },
 
 # favicon.ico
 { :url=>"/ajax_obj/images/favicon.ico", :md5=>"9afa5d60e5ef15dc75d7662e418cac72" },
