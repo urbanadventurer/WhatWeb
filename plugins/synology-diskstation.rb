@@ -8,8 +8,9 @@ Plugin.define do
 name "Synology-DiskStation"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-08-07
+  "John de Kroon <john.de.kroon@cyberant.com" # 2025-10-22 # v0.2 # Added version detection for version 7.x
 ]
-version "0.1"
+version "0.2"
 description "Synology DiskStation provides a full-featured Network Attached Storage (NAS) solution which offers RAID storage, backup, and network surveillance (NVR)."
 website "http://www.synology.com/"
 
@@ -50,6 +51,10 @@ matches [
   :search=>"headers[stauts]",
   :url=>'/',
   :regexp=>/^30[12] Moved/ },
+
+{ :name=>'UIString Version Detection',
+  :url=>'/webapi/entry.cgi?api=SYNO.Core.Desktop.UIString&version=1&method=getjs',
+  :version => %r{"whats_new"\s*:\s*"[^"]*DSM\s+(\d+)} },
 
 ]
 
