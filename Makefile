@@ -1,5 +1,4 @@
 NAME = whatweb
-PREFIX ?= /usr
 BINPATH = $(PREFIX)/bin
 LIBPATH = $(PREFIX)/share
 MANPATH = $(PREFIX)/share/man
@@ -14,6 +13,7 @@ INSTALLD =
 PREFIX ?= /usr/local
 else
 INSTALLD = -D
+PREFIX ?= /usr
 endif
 
 install:
