@@ -182,6 +182,12 @@ PERFORMANCE & STABILITY:
   --output-buffer-size=SIZE\tSet output buffer size. 0=unbuffered,
 \t\t\t\tdefault=auto based on thread count.
 
+CLIENT AUTHENTICATION:
+  --client-cert=FILE\t\tClient SSL certificate (PEM format) for
+\t\t\t\tmutual TLS authentication.
+  --client-key=FILE\t\tClient SSL private key (PEM format).
+  --client-key-pass=PASS\tPassphrase for the client key, if encrypted.
+
 HELP & MISCELLANEOUS:
   --short-help\t\t\tShort usage help.
   --help, -h\t\t\tComplete usage help.
@@ -380,6 +386,9 @@ opts = GetoptLong.new(
   ['-g', '--grep', GetoptLong::REQUIRED_ARGUMENT],
   ['--open-timeout', GetoptLong::REQUIRED_ARGUMENT],
   ['--read-timeout', GetoptLong::REQUIRED_ARGUMENT],
+  ['--client-cert', GetoptLong::REQUIRED_ARGUMENT],
+  ['--client-key', GetoptLong::REQUIRED_ARGUMENT],
+  ['--client-key-pass', GetoptLong::REQUIRED_ARGUMENT],
   ['--header', '-H', GetoptLong::REQUIRED_ARGUMENT],
   ['--cookie', '-c', GetoptLong::REQUIRED_ARGUMENT],
   ['--cookie-jar', GetoptLong::REQUIRED_ARGUMENT],
@@ -534,6 +543,16 @@ begin
       $HTTP_OPEN_TIMEOUT = arg.to_i
     when '--read-timeout'
       $HTTP_READ_TIMEOUT = arg.to_i
+    when '--client-cert'
+      raise("Client certificate file not found: #{arg}") unless File.readable?(arg)
+
+      $CLIENT_CERT_FILE = arg
+    when '--client-key'
+      raise("Client key file not found: #{arg}") unless File.readable?(arg)
+      
+      $CLIENT_KEY_FILE = arg
+    when '--client-key-pass'
+      $CLIENT_KEY_PASS = arg
     when '--wait'
       $WAIT = arg.to_i
     when '-H', '--header'
