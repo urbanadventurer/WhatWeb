@@ -177,6 +177,16 @@ class ExtendedHTTP < Net::HTTP #:nodoc:
       @ssl_context = OpenSSL::SSL::SSLContext.new
       @ssl_context.verify_mode = OpenSSL::SSL::VERIFY_NONE
       
+      if defined?($CLIENT_CERT_FILE) && $CLIENT_CERT_FILE
+        begin
+          @ssl_context.cert = OpenSSL::X509::Certificate.new(File.read($CLIENT_CERT_FILE))
+          @ssl_context.key  = OpenSSL::PKey.read(File.read($CLIENT_KEY_FILE), $CLIENT_KEY_PASS)
+        rescue StandardError => e
+          warn "ERROR loading client certificate/key: #{e.message}"
+          exit 1
+        end
+      end
+
       # Configure SSL context for maximum compatibility with ALL protocols
       begin
         if @ssl_context.respond_to?(:ssl_version=)
