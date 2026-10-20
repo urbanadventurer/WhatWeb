@@ -6,18 +6,16 @@
 # https://morningstarsecurity.com/research/whatweb
 ##
 #  wget-alexa-top-1m
-#  - Download and extract the Alexa top one million domains in newline format
+#  - Download the NetAPI Top 1M domains in newline format
 #    and write alexa-top-1m.txt, alexa-top-1000.txt and alexa-top-100.txt
-#  - Requires: wget and unzip
+#  - The Alexa Top 1M list this script used to fetch was retired by Alexa in
+#    2022 and the old S3 address now serves a third-party placeholder; the
+#    NetAPI Top 1M (https://netapi.com/top-1-mln-websites/, CC BY 4.0) has the
+#    same rank,domain layout. The output file names are kept for the examples.
+#  - Requires: wget
 #  - Written by : Brendan Coles <bcoles@gmail.com> 2011-01-25
+#  - Source replaced: 2026-10-20
 ##
-
-# Check if unzip is installed
-UNZIP=`which unzip 2>/dev/null`
-if [ -z "$UNZIP" ]; then
-	echo "[*] Fatal Error: unzip is not installed - Aborting..."
-	exit 1
-fi
 
 # Check if wget is installed
 WGET=`which wget 2>/dev/null`
@@ -27,13 +25,14 @@ if [ -z "$WGET" ]; then
 fi
 
 # Download
-echo "[*] Downloading: http://s3.amazonaws.com/alexa-static/top-1m.csv.zip"
-wget "http://s3.amazonaws.com/alexa-static/top-1m.csv.zip" && unzip top-1m.csv.zip && rm top-1m.csv.zip
+echo "[*] Downloading: https://netapi.com/netapi_top1mln.csv"
+wget -O top-1m.csv "https://netapi.com/netapi_top1mln.csv"
 
-# Check if top-1m.csv was extracted
+# Check if top-1m.csv was downloaded
 if [ -f "top-1m.csv" ]; then
 	echo "[*] Formatting: top-1m.csv"
-	cut -d, -f2- top-1m.csv > alexa-top-1m.txt
+	# skip the header line (NetAPI_Rank,Domain), keep the domain column
+	tail -n +2 top-1m.csv | cut -d, -f2- > alexa-top-1m.txt
 else
 	echo "[*] Fatal Error: top-1m.csv does not exist - Aborting..."
 	exit 1
