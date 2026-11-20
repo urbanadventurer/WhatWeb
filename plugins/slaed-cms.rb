@@ -9,10 +9,11 @@ name "SLAED-CMS"
 authors [
   "Brendan Coles <bcoles@gmail.com>", # 2011-09-12
   "Andrew Horton", # v0.2 # 2019-07-10 # Added website field.
+  "Eduard Laas", # v0.3 # 2026-11-20 # Added SLAED CMS 8 detection.
 ]
-version "0.2"
+version "0.3"
 description ""
-website "http://slaed.net/"
+website "https://slaed.net/"
 
 # Google results as at 2011-09-12 #
 # 268 for "Powered by SLAED CMS"
@@ -29,6 +30,15 @@ matches [
 
 # Version Detection # Meta Generator
 { :version=>/<meta name="generator" content="SLAED CMS ([^"^>]+)">/ },
+
+# Meta Generator without version # SLAED CMS 8+
+{ :text=>'<meta name="generator" content="SLAED CMS">' },
+
+# CSRF token meta tag # SLAED CMS 8+
+{ :text=>'<meta name="sl-token" content="' },
+
+# Core JavaScript # SLAED CMS 8+
+{ :regexp=>/<script[^>]+src="[^"]*\/plugins\/system\/slaed\.js/ },
 
 # Year Detection # Powered by text
 { :string=>/<br \/>Powered by <a href="http:\/\/www\.slaed\.net" target="_blank" title="SLAED CMS">SLAED CMS<\/a> &copy; 2005-(20[\d]{2}) SLAED/ },
